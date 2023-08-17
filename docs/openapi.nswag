@@ -4,7 +4,7 @@
   "documentGenerator": {
     "fromDocument": {
       "json": "",
-      "url": "https://web.smith.langchain.com/openapi.json",
+      "url": "openapi.yaml",
       "output": null,
       "newLineBehavior": "Auto"
     }
@@ -42,7 +42,7 @@
       "serializeTypeInformation": false,
       "queryNullValue": "",
       "className": "{controller}LangSmithApi",
-      "operationGenerationMode": "MultipleClientsFromOperationId",
+      "operationGenerationMode": "SingleClientFromOperationId",
       "additionalNamespaceUsages": [],
       "additionalContractNamespaceUsages": [],
       "generateOptionalParameters": true,
