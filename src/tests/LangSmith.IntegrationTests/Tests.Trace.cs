@@ -6,6 +6,7 @@
 //
 // public partial class Tests
 // {
+//     // https://docs.smith.langchain.com/how_to_guides/tracing/trace_with_api
 //     [TestMethod]
 //     public async Task Trace()
 //     {
