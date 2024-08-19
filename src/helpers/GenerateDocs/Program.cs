@@ -7,19 +7,36 @@ Directory.CreateDirectory(newDir);
 
 File.Copy(
     Path.Combine(solutionDirectory, "README.md"),
-    Path.Combine(solutionDirectory, "docs", "index.md"));
+    Path.Combine(solutionDirectory, "docs", "index.md"),
+    overwrite: true);
 
 Console.WriteLine($"Generating samples from {sampleDirectory}...");
 foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Tests.*.cs", SearchOption.AllDirectories))
 {
     var code = await File.ReadAllTextAsync(path);
 
-    var start = code.IndexOf("\n    {", StringComparison.Ordinal);
-    var end = code.IndexOf("\n    }", StringComparison.Ordinal);
-    code = code.Substring(start + 4, end - start + 4);
+    var lines = code.Split('\n').ToList();
+    if (lines.All(x => string.IsNullOrWhiteSpace(x) || x.StartsWith("//")))
+    {
+        continue;
+    }
     
-    var lines = code.Split('\n')[1..^2];
-    code = string.Join('\n', lines.Select(x => x.Length > 8 ? x[8..] : string.Empty));
+    var start = lines.IndexOf("    {");
+    var end = lines.IndexOf("    }");
+    lines = lines.GetRange(start + 1, end - start - 1);
+    
+    code = string.Join('\n', lines
+        .Where(x => !x.Contains(".Should()"))
+        .Select(x => x.Length > 8 ? x[8..] : string.Empty));
+
+    code = code
+            .Replace(
+                "using var api = GetAuthorizedApi();",
+                "using var api = new LangSmithApi(\"API_KEY\");")
+            .Replace(
+                "using var openAiApi = GetAuthorizedOpenAiApi();",
+                "using var openAiApi = new OpenAiApi(\"API_KEY\");")
+        ;
     
     var newPath = Path.Combine(newDir, $"{Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.')}.md");
     await File.WriteAllTextAsync(newPath, $@"```csharp
