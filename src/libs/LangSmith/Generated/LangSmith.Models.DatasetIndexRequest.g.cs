@@ -8,7 +8,7 @@ namespace LangSmith
     /// <summary>
     /// Dataset schema for serving.
     /// </summary>
-    public sealed partial class DatasetServeRequest
+    public sealed partial class DatasetIndexRequest
     {
         /// <summary>
         /// Default Value: latest
