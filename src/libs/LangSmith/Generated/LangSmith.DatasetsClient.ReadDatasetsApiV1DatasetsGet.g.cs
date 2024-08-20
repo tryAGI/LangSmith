@@ -8,7 +8,7 @@ namespace LangSmith
         partial void PrepareReadDatasetsApiV1DatasetsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            ref global::System.AnyOf<global::LangSmith.DataType2?, object>? dataType,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType,
             ref global::System.AnyOf<string?, object>? name,
             ref global::System.AnyOf<string?, object>? nameContains,
             ref global::System.AnyOf<string?, object>? metadata,
@@ -21,7 +21,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::LangSmith.DataType2?, object>? dataType,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType,
             global::System.AnyOf<string?, object>? name,
             global::System.AnyOf<string?, object>? nameContains,
             global::System.AnyOf<string?, object>? metadata,
@@ -65,7 +65,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsApiV1DatasetsGetAsync(
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::LangSmith.DataType2?, object>? dataType,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType,
             global::System.AnyOf<string?, object>? name,
             global::System.AnyOf<string?, object>? nameContains,
             global::System.AnyOf<string?, object>? metadata,
