@@ -2031,6 +2031,9 @@ paths:
           schema:
             title: Data Type
             anyOf:
+              - type: array
+                items:
+                  $ref: '#/components/schemas/DataType'
               - $ref: '#/components/schemas/DataType'
               - type: 'null'
         - name: name
@@ -7414,6 +7417,45 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TagKeyWithValues'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/workspaces/current/tags/resource:
+    get:
+      tags:
+        - workspaces
+      summary: List Tags For Resource
+      operationId: list_tags_for_resource_api_v1_workspaces_current_tags_resource_get
+      parameters:
+        - name: resource_type
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/ResourceType'
+        - name: resource_id
+          in: query
+          required: true
+          schema:
+            title: Resource Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Tags For Resource Api V1 Workspaces Current Tags Resource Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagKeyWithValuesAndTaggings'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -16471,6 +16513,42 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TagValue'
+    TagKeyWithValuesAndTaggings:
+      title: TagKeyWithValuesAndTaggings
+      required:
+        - key
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        key:
+          title: Key
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        values:
+          title: Values
+          type: array
+          items:
+            $ref: '#/components/schemas/TagValueWithTaggings'
     TagValue:
       title: TagValue
       required:
@@ -16539,6 +16617,47 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+    TagValueWithTaggings:
+      title: TagValueWithTaggings
+      required:
+        - value
+        - id
+        - tag_key_id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        value:
+          title: Value
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tag_key_id:
+          title: Tag Key Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        taggings:
+          title: Taggings
+          type: array
+          items:
+            $ref: '#/components/schemas/Tagging'
     Tagging:
       title: Tagging
       required:
