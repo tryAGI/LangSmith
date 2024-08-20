@@ -5,47 +5,47 @@ namespace LangSmith
 {
     public partial class DatasetsClient
     {
-        partial void PrepareGetServedInfoApiV1DatasetsDatasetIdIndexGetArguments(
+        partial void PrepareRemoveIndexApiV1DatasetsDatasetIdIndexDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId);
-        partial void PrepareGetServedInfoApiV1DatasetsDatasetIdIndexGetRequest(
+        partial void PrepareRemoveIndexApiV1DatasetsDatasetIdIndexDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId);
-        partial void ProcessGetServedInfoApiV1DatasetsDatasetIdIndexGetResponse(
+        partial void ProcessRemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetServedInfoApiV1DatasetsDatasetIdIndexGetResponseContent(
+        partial void ProcessRemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Served Info<br/>
-        /// Get served dataset info.
+        /// Remove Index<br/>
+        /// Remove an index for a dataset.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ServedDatasetInfo> GetServedInfoApiV1DatasetsDatasetIdIndexGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.RemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponse> RemoveIndexApiV1DatasetsDatasetIdIndexDeleteAsync(
             string datasetId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetServedInfoApiV1DatasetsDatasetIdIndexGetArguments(
+            PrepareRemoveIndexApiV1DatasetsDatasetIdIndexDeleteArguments(
                 httpClient: _httpClient,
                 datasetId: ref datasetId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets/{datasetId}/index", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetServedInfoApiV1DatasetsDatasetIdIndexGetRequest(
+            PrepareRemoveIndexApiV1DatasetsDatasetIdIndexDeleteRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 datasetId: datasetId);
@@ -58,7 +58,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetServedInfoApiV1DatasetsDatasetIdIndexGetResponse(
+            ProcessRemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -68,7 +68,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGetServedInfoApiV1DatasetsDatasetIdIndexGetResponseContent(
+            ProcessRemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -83,7 +83,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.ServedDatasetInfo) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.RemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponse) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

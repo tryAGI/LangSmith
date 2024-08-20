@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class UnserveApiV1DatasetsDatasetIdIndexDeleteResponse
+    public sealed partial class IndexApiV1DatasetsDatasetIdIndexPostResponse
     {
 
         /// <summary>
