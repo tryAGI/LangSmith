@@ -2979,9 +2979,9 @@ paths:
     post:
       tags:
         - datasets
-      summary: Serve
-      description: Serve a dataset.
-      operationId: serve_api_v1_datasets__dataset_id__index_post
+      summary: Index
+      description: Index a dataset.
+      operationId: index_api_v1_datasets__dataset_id__index_post
       parameters:
         - name: dataset_id
           in: path
@@ -2994,7 +2994,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DatasetServeRequest'
+              $ref: '#/components/schemas/DatasetIndexRequest'
         required: true
       responses:
         '200':
@@ -3015,9 +3015,9 @@ paths:
     delete:
       tags:
         - datasets
-      summary: Unserve
-      description: Serve a dataset.
-      operationId: unserve_api_v1_datasets__dataset_id__index_delete
+      summary: Remove Index
+      description: Remove an index for a dataset.
+      operationId: remove_index_api_v1_datasets__dataset_id__index_delete
       parameters:
         - name: dataset_id
           in: path
@@ -3045,9 +3045,9 @@ paths:
     get:
       tags:
         - datasets
-      summary: Get Served Info
-      description: Get served dataset info.
-      operationId: get_served_info_api_v1_datasets__dataset_id__index_get
+      summary: Get Index Info
+      description: Get index info.
+      operationId: get_index_info_api_v1_datasets__dataset_id__index_get
       parameters:
         - name: dataset_id
           in: path
@@ -3062,7 +3062,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServedDatasetInfo'
+                $ref: '#/components/schemas/DatasetIndexInfo'
         '422':
           description: Validation Error
           content:
@@ -10723,6 +10723,40 @@ components:
             type: string
             format: uuid
       description: Dataset diff schema.
+    DatasetIndexInfo:
+      title: DatasetIndexInfo
+      required:
+        - dataset_id
+      type: object
+      properties:
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+        tag:
+          title: Tag
+          anyOf:
+            - type: string
+            - type: 'null'
+          default: latest
+        last_updated_version:
+          title: Last Updated Version
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+      description: Dataset schema for serving.
+    DatasetIndexRequest:
+      title: DatasetIndexRequest
+      type: object
+      properties:
+        tag:
+          title: Tag
+          anyOf:
+            - type: string
+            - type: 'null'
+          default: latest
+      description: Dataset schema for serving.
     DatasetPublicSchema:
       title: DatasetPublicSchema
       required:
@@ -10821,17 +10855,6 @@ components:
           title: Tenant Id
           type: string
           format: uuid
-    DatasetServeRequest:
-      title: DatasetServeRequest
-      type: object
-      properties:
-        tag:
-          title: Tag
-          anyOf:
-            - type: string
-            - type: 'null'
-          default: latest
-      description: Dataset schema for serving.
     DatasetShareSchema:
       title: DatasetShareSchema
       required:
@@ -12790,6 +12813,7 @@ components:
         - compare_trace_enabled
         - consolidate_playground_comparative
         - resource_tags
+        - langgraph_deploy_own_cloud_enabled
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
@@ -13172,6 +13196,7 @@ components:
             compare_trace_enabled: false
             consolidate_playground_comparative: false
             resource_tags: false
+            langgraph_deploy_own_cloud_enabled: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
@@ -15890,29 +15915,6 @@ components:
           anyOf:
             - type: string
             - type: 'null'
-    ServedDatasetInfo:
-      title: ServedDatasetInfo
-      required:
-        - dataset_id
-      type: object
-      properties:
-        dataset_id:
-          title: Dataset Id
-          type: string
-          format: uuid
-        tag:
-          title: Tag
-          anyOf:
-            - type: string
-            - type: 'null'
-          default: latest
-        last_updated_version:
-          title: Last Updated Version
-          anyOf:
-            - type: string
-              format: date-time
-            - type: 'null'
-      description: Dataset schema for serving.
     ServiceAccount:
       title: ServiceAccount
       required:
