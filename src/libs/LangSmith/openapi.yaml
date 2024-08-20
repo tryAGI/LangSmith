@@ -2031,6 +2031,9 @@ paths:
           schema:
             title: Data Type
             anyOf:
+              - type: array
+                items:
+                  $ref: '#/components/schemas/DataType'
               - $ref: '#/components/schemas/DataType'
               - type: 'null'
         - name: name
@@ -2979,9 +2982,9 @@ paths:
     post:
       tags:
         - datasets
-      summary: Serve
-      description: Serve a dataset.
-      operationId: serve_api_v1_datasets__dataset_id__index_post
+      summary: Index
+      description: Index a dataset.
+      operationId: index_api_v1_datasets__dataset_id__index_post
       parameters:
         - name: dataset_id
           in: path
@@ -2994,7 +2997,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DatasetServeRequest'
+              $ref: '#/components/schemas/DatasetIndexRequest'
         required: true
       responses:
         '200':
@@ -3015,9 +3018,9 @@ paths:
     delete:
       tags:
         - datasets
-      summary: Unserve
-      description: Serve a dataset.
-      operationId: unserve_api_v1_datasets__dataset_id__index_delete
+      summary: Remove Index
+      description: Remove an index for a dataset.
+      operationId: remove_index_api_v1_datasets__dataset_id__index_delete
       parameters:
         - name: dataset_id
           in: path
@@ -3045,9 +3048,9 @@ paths:
     get:
       tags:
         - datasets
-      summary: Get Served Info
-      description: Get served dataset info.
-      operationId: get_served_info_api_v1_datasets__dataset_id__index_get
+      summary: Get Index Info
+      description: Get index info.
+      operationId: get_index_info_api_v1_datasets__dataset_id__index_get
       parameters:
         - name: dataset_id
           in: path
@@ -3062,7 +3065,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServedDatasetInfo'
+                $ref: '#/components/schemas/DatasetIndexInfo'
         '422':
           description: Validation Error
           content:
@@ -7418,6 +7421,45 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/workspaces/current/tags/resource:
+    get:
+      tags:
+        - workspaces
+      summary: List Tags For Resource
+      operationId: list_tags_for_resource_api_v1_workspaces_current_tags_resource_get
+      parameters:
+        - name: resource_type
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/ResourceType'
+        - name: resource_id
+          in: query
+          required: true
+          schema:
+            title: Resource Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Tags For Resource Api V1 Workspaces Current Tags Resource Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagKeyWithValuesAndTaggings'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/playground-settings:
     get:
       tags:
@@ -10723,6 +10765,40 @@ components:
             type: string
             format: uuid
       description: Dataset diff schema.
+    DatasetIndexInfo:
+      title: DatasetIndexInfo
+      required:
+        - dataset_id
+      type: object
+      properties:
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+        tag:
+          title: Tag
+          anyOf:
+            - type: string
+            - type: 'null'
+          default: latest
+        last_updated_version:
+          title: Last Updated Version
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+      description: Dataset schema for serving.
+    DatasetIndexRequest:
+      title: DatasetIndexRequest
+      type: object
+      properties:
+        tag:
+          title: Tag
+          anyOf:
+            - type: string
+            - type: 'null'
+          default: latest
+      description: Dataset schema for serving.
     DatasetPublicSchema:
       title: DatasetPublicSchema
       required:
@@ -10821,17 +10897,6 @@ components:
           title: Tenant Id
           type: string
           format: uuid
-    DatasetServeRequest:
-      title: DatasetServeRequest
-      type: object
-      properties:
-        tag:
-          title: Tag
-          anyOf:
-            - type: string
-            - type: 'null'
-          default: latest
-      description: Dataset schema for serving.
     DatasetShareSchema:
       title: DatasetShareSchema
       required:
@@ -12790,6 +12855,7 @@ components:
         - compare_trace_enabled
         - consolidate_playground_comparative
         - resource_tags
+        - langgraph_deploy_own_cloud_enabled
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
@@ -13172,6 +13238,7 @@ components:
             compare_trace_enabled: false
             consolidate_playground_comparative: false
             resource_tags: false
+            langgraph_deploy_own_cloud_enabled: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
@@ -15890,29 +15957,6 @@ components:
           anyOf:
             - type: string
             - type: 'null'
-    ServedDatasetInfo:
-      title: ServedDatasetInfo
-      required:
-        - dataset_id
-      type: object
-      properties:
-        dataset_id:
-          title: Dataset Id
-          type: string
-          format: uuid
-        tag:
-          title: Tag
-          anyOf:
-            - type: string
-            - type: 'null'
-          default: latest
-        last_updated_version:
-          title: Last Updated Version
-          anyOf:
-            - type: string
-              format: date-time
-            - type: 'null'
-      description: Dataset schema for serving.
     ServiceAccount:
       title: ServiceAccount
       required:
@@ -16469,6 +16513,42 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TagValue'
+    TagKeyWithValuesAndTaggings:
+      title: TagKeyWithValuesAndTaggings
+      required:
+        - key
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        key:
+          title: Key
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        values:
+          title: Values
+          type: array
+          items:
+            $ref: '#/components/schemas/TagValueWithTaggings'
     TagValue:
       title: TagValue
       required:
@@ -16537,6 +16617,47 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+    TagValueWithTaggings:
+      title: TagValueWithTaggings
+      required:
+        - value
+        - id
+        - tag_key_id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        value:
+          title: Value
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tag_key_id:
+          title: Tag Key Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        taggings:
+          title: Taggings
+          type: array
+          items:
+            $ref: '#/components/schemas/Tagging'
     Tagging:
       title: Tagging
       required:

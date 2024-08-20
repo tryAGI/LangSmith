@@ -8,7 +8,7 @@ namespace LangSmith
     /// <summary>
     /// Dataset schema for serving.
     /// </summary>
-    public sealed partial class ServedDatasetInfo
+    public sealed partial class DatasetIndexInfo
     {
         /// <summary>
         /// 

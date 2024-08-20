@@ -3,52 +3,57 @@
 
 namespace LangSmith
 {
-    public partial class DatasetsClient
+    public partial class WorkspacesClient
     {
-        partial void PrepareUnserveApiV1DatasetsDatasetIdIndexDeleteArguments(
+        partial void PrepareListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId);
-        partial void PrepareUnserveApiV1DatasetsDatasetIdIndexDeleteRequest(
+            ref global::LangSmith.ResourceType resourceType,
+            ref string resourceId);
+        partial void PrepareListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId);
-        partial void ProcessUnserveApiV1DatasetsDatasetIdIndexDeleteResponse(
+            global::LangSmith.ResourceType resourceType,
+            string resourceId);
+        partial void ProcessListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUnserveApiV1DatasetsDatasetIdIndexDeleteResponseContent(
+        partial void ProcessListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Unserve<br/>
-        /// Serve a dataset.
+        /// List Tags For Resource
         /// </summary>
-        /// <param name="datasetId"></param>
+        /// <param name="resourceType"></param>
+        /// <param name="resourceId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UnserveApiV1DatasetsDatasetIdIndexDeleteResponse> UnserveApiV1DatasetsDatasetIdIndexDeleteAsync(
-            string datasetId,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TagKeyWithValuesAndTaggings>> ListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetAsync(
+            global::LangSmith.ResourceType resourceType,
+            string resourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareUnserveApiV1DatasetsDatasetIdIndexDeleteArguments(
+            PrepareListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetArguments(
                 httpClient: _httpClient,
-                datasetId: ref datasetId);
+                resourceType: ref resourceType,
+                resourceId: ref resourceId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets/{datasetId}/index", global::System.UriKind.RelativeOrAbsolute));
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/workspaces/current/tags/resource?resource_type={resourceType}&resource_id={resourceId}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareUnserveApiV1DatasetsDatasetIdIndexDeleteRequest(
+            PrepareListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                datasetId: datasetId);
+                resourceType: resourceType,
+                resourceId: resourceId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -58,7 +63,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessUnserveApiV1DatasetsDatasetIdIndexDeleteResponse(
+            ProcessListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -68,7 +73,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessUnserveApiV1DatasetsDatasetIdIndexDeleteResponseContent(
+            ProcessListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -83,7 +88,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.UnserveApiV1DatasetsDatasetIdIndexDeleteResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.IListTagKeyWithValuesAndTaggings) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
