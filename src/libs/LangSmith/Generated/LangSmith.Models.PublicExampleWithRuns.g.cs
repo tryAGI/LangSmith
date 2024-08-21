@@ -13,13 +13,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PublicExampleWithRunsInputs Inputs { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::System.AnyOf<global::LangSmith.PublicExampleWithRunsOutputs, object>? Outputs { get; set; }
@@ -44,6 +37,13 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::System.AnyOf<global::LangSmith.PublicExampleWithRunsMetadata, object>? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.PublicExampleWithRunsInputs Inputs { get; set; }
 
         /// <summary>
         /// 

@@ -7658,6 +7658,85 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/charts/section:
+    get:
+      tags:
+        - charts
+      summary: Read Sections
+      description: Get all sections for the tenant.
+      operationId: read_sections_api_v1_charts_section_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 100
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+        - name: title_contains
+          in: query
+          schema:
+            title: Title Contains
+            anyOf:
+              - type: string
+              - type: 'null'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Read Sections Api V1 Charts Section Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - charts
+      summary: Create Section
+      description: Create a new section.
+      operationId: create_section_api_v1_charts_section_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/charts:
     post:
       tags:
@@ -7708,36 +7787,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CustomChartResponse'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/charts/section:
-    post:
-      tags:
-        - charts
-      summary: Create Section
-      description: Create a new section.
-      operationId: create_section_api_v1_charts_section_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CustomChartsSectionCreate'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CustomChartsSectionResponse'
         '422':
           description: Validation Error
           content:
@@ -11020,15 +11069,12 @@ components:
     Example:
       title: Example
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -11049,6 +11095,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -11070,13 +11119,9 @@ components:
     ExampleBulkCreate:
       title: ExampleBulkCreate
       required:
-        - inputs
         - dataset_id
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -11097,38 +11142,43 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          anyOf:
+            - type: object
+            - type: 'null'
+        split:
+          title: Split
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: string
+            - type: 'null'
+          default: base
+        id:
+          title: Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        use_source_run_io:
+          title: Use Source Run Io
+          type: boolean
+          default: false
         created_at:
           title: Created At
           anyOf:
             - type: string
               format: date-time
             - type: 'null'
-        split:
-          title: Split
-          anyOf:
-            - type: array
-              items:
-                type: string
-            - type: string
-            - type: 'null'
-          default: base
-        id:
-          title: Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
       description: Example class with optional created_at field to prevent multiple versions when bulk creating examples.
     ExampleCreate:
       title: ExampleCreate
       required:
-        - inputs
         - dataset_id
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -11149,15 +11199,10 @@ components:
           anyOf:
             - type: object
             - type: 'null'
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        id:
-          title: Id
+        inputs:
+          title: Inputs
           anyOf:
-            - type: string
-              format: uuid
+            - type: object
             - type: 'null'
         split:
           title: Split
@@ -11168,6 +11213,20 @@ components:
             - type: string
             - type: 'null'
           default: base
+        id:
+          title: Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        use_source_run_io:
+          title: Use Source Run Io
+          type: boolean
+          default: false
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
       description: Create class for Example.
     ExampleListOrder:
       title: ExampleListOrder
@@ -11266,16 +11325,13 @@ components:
     ExampleWithRuns:
       title: ExampleWithRuns
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
         - runs
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -11296,6 +11352,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -11322,16 +11381,13 @@ components:
     ExampleWithRunsCH:
       title: ExampleWithRunsCH
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
         - runs
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -11352,6 +11408,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -13635,16 +13694,13 @@ components:
     PublicExampleWithRuns:
       title: PublicExampleWithRuns
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
         - runs
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -13665,6 +13721,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string

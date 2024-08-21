@@ -99,39 +99,44 @@ namespace LangSmith
         /// Create Example<br/>
         /// Create a new example.
         /// </summary>
-        /// <param name="inputs"></param>
         /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
         /// <param name="sourceRunId"></param>
         /// <param name="metadata"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="id"></param>
+        /// <param name="inputs"></param>
         /// <param name="split">
         /// Default Value: base
         /// </param>
+        /// <param name="id"></param>
+        /// <param name="useSourceRunIo">
+        /// Default Value: false
+        /// </param>
+        /// <param name="createdAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Example> CreateExampleApiV1ExamplesPostAsync(
-            global::LangSmith.ExampleCreateInputs inputs,
             string datasetId,
             global::System.AnyOf<global::LangSmith.ExampleCreateOutputs, object>? outputs = default,
             global::System.AnyOf<string, object>? sourceRunId = default,
             global::System.AnyOf<global::LangSmith.ExampleCreateMetadata, object>? metadata = default,
-            global::System.DateTime createdAt = default,
-            global::System.AnyOf<string, object>? id = default,
+            global::System.AnyOf<global::LangSmith.ExampleCreateInputs, object>? inputs = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? split = default,
+            global::System.AnyOf<string, object>? id = default,
+            bool useSourceRunIo = false,
+            global::System.DateTime createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.ExampleCreate
             {
-                Inputs = inputs,
                 Outputs = outputs,
                 DatasetId = datasetId,
                 SourceRunId = sourceRunId,
                 Metadata = metadata,
-                CreatedAt = createdAt,
-                Id = id,
+                Inputs = inputs,
                 Split = split,
+                Id = id,
+                UseSourceRunIo = useSourceRunIo,
+                CreatedAt = createdAt,
             };
 
             return await CreateExampleApiV1ExamplesPostAsync(
