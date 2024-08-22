@@ -7767,6 +7767,36 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/charts/preview:
+    post:
+      tags:
+        - charts
+      summary: Read Chart Preview
+      description: Get a preview for a chart without actually creating it.
+      operationId: read_chart_preview_api_v1_charts_preview_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartPreviewRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleCustomChartResponseBase'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/charts/create:
     post:
       tags:
@@ -7970,6 +8000,16 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/ok:
+    get:
+      summary: Ok
+      operationId: ok_api_v1_ok_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
   /api/v1/repos:
     get:
       tags:
@@ -8997,16 +9037,6 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  /ok:
-    get:
-      summary: Ok
-      operationId: ok_ok_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
 components:
   schemas:
     APIFeedbackSource:
@@ -10251,6 +10281,17 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+    CustomChartCreatePreview:
+      title: CustomChartCreatePreview
+      required:
+        - series
+      type: object
+      properties:
+        series:
+          title: Series
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartSeries'
     CustomChartMetric:
       title: CustomChartMetric
       enum:
@@ -10273,6 +10314,17 @@ components:
         - streaming_rate
       type: string
       description: Metrics you can chart.
+    CustomChartPreviewRequest:
+      title: CustomChartPreviewRequest
+      required:
+        - bucket_info
+        - chart
+      type: object
+      properties:
+        bucket_info:
+          $ref: '#/components/schemas/CustomChartsRequestBase'
+        chart:
+          $ref: '#/components/schemas/CustomChartCreatePreview'
     CustomChartResponse:
       title: CustomChartResponse
       required:
@@ -10529,6 +10581,33 @@ components:
                 type: string
                 format: uuid
             - type: 'null'
+    CustomChartsRequestBase:
+      title: CustomChartsRequestBase
+      required:
+        - start_time
+      type: object
+      properties:
+        timezone:
+          title: Timezone
+          type: string
+          default: UTC
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+        stride:
+          allOf:
+            - $ref: '#/components/schemas/TimedeltaInput'
+          default:
+            days: 0
+            minutes: 15
+            hours: 0
     CustomChartsResponse:
       title: CustomChartsResponse
       required:
@@ -16188,14 +16267,19 @@ components:
     SingleCustomChartResponse:
       title: SingleCustomChartResponse
       required:
+        - data
         - id
         - title
         - index
         - chart_type
         - series
-        - data
       type: object
       properties:
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartsDataPoint'
         id:
           title: Id
           type: string
@@ -16223,6 +16307,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomChartSeries'
+    SingleCustomChartResponseBase:
+      title: SingleCustomChartResponseBase
+      required:
+        - data
+      type: object
+      properties:
         data:
           title: Data
           type: array
