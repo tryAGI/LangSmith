@@ -5,16 +5,16 @@ namespace LangSmith
 {
     public partial class LangSmithApi
     {
-        partial void PrepareOkOkGetArguments(
+        partial void PrepareOkApiV1OkGetArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareOkOkGetRequest(
+        partial void PrepareOkApiV1OkGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessOkOkGetResponse(
+        partial void ProcessOkApiV1OkGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessOkOkGetResponseContent(
+        partial void ProcessOkApiV1OkGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -24,22 +24,22 @@ namespace LangSmith
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.OkOkGetResponse> OkOkGetAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.OkApiV1OkGetResponse> OkApiV1OkGetAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareOkOkGetArguments(
+            PrepareOkApiV1OkGetArguments(
                 httpClient: _httpClient);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/ok", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/ok", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareOkOkGetRequest(
+            PrepareOkApiV1OkGetRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest);
 
@@ -51,7 +51,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessOkOkGetResponse(
+            ProcessOkApiV1OkGetResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -61,7 +61,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessOkOkGetResponseContent(
+            ProcessOkApiV1OkGetResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -76,7 +76,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.OkOkGetResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.OkApiV1OkGetResponse) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
