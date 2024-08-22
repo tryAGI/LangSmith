@@ -22,8 +22,7 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Query Runs<br/>
-        /// Get all runs by query in body payload.
+        /// Query Runs
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -96,8 +95,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Query Runs<br/>
-        /// Get all runs by query in body payload.
+        /// Query Runs
         /// </summary>
         /// <param name="id"></param>
         /// <param name="trace"></param>
