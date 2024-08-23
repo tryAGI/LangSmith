@@ -37,6 +37,8 @@ namespace LangSmith
             typeof(global::OpenApiGenerator.JsonConverters.CustomChartTypeNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.CustomChartMetricJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.CustomChartMetricNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.MissingMissing1JsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.MissingMissing1NullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.PaymentPlanTierJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.PaymentPlanTierNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ExampleListOrderJsonConverter),
