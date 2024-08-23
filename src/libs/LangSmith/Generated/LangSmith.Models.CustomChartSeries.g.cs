@@ -21,8 +21,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.CustomChartSeriesFilters Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<global::LangSmith.CustomChartSeriesFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart.

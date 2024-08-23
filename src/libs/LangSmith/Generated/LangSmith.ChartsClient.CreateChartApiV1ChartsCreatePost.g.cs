@@ -108,6 +108,7 @@ namespace LangSmith
         /// <param name="series"></param>
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
+        /// <param name="commonFilters"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> CreateChartApiV1ChartsCreatePostAsync(
@@ -118,6 +119,7 @@ namespace LangSmith
             global::System.AnyOf<int?, object>? index = default,
             global::System.AnyOf<string, object>? sectionId = default,
             global::System.AnyOf<global::LangSmith.CustomChartCreateMetadata, object>? metadata = default,
+            global::System.AnyOf<global::LangSmith.CustomChartSeriesFilters, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.CustomChartCreate
@@ -129,6 +131,7 @@ namespace LangSmith
                 Series = series,
                 SectionId = sectionId,
                 Metadata = metadata,
+                CommonFilters = commonFilters,
             };
 
             return await CreateChartApiV1ChartsCreatePostAsync(
