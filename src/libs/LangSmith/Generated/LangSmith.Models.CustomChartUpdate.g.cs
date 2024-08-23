@@ -36,7 +36,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? ChartType { get; set; } = global::LangSmith.CustomChartType.;
+        public global::System.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? ChartType { get; set; }
 
         /// <summary>
         /// 
