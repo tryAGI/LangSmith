@@ -10812,11 +10812,6 @@ components:
           title: Created At
           type: string
           format: date-time
-        data_type:
-          anyOf:
-            - $ref: '#/components/schemas/DataType'
-            - type: 'null'
-          default: kv
         inputs_schema_definition:
           title: Inputs Schema Definition
           anyOf:
@@ -10833,6 +10828,11 @@ components:
             - type: boolean
             - type: 'null'
           default: false
+        data_type:
+          anyOf:
+            - $ref: '#/components/schemas/DataType'
+            - type: 'null'
+          default: kv
         id:
           title: Id
           type: string
@@ -10876,11 +10876,6 @@ components:
           title: Created At
           type: string
           format: date-time
-        data_type:
-          anyOf:
-            - $ref: '#/components/schemas/DataType'
-            - type: 'null'
-          default: kv
         inputs_schema_definition:
           title: Inputs Schema Definition
           anyOf:
@@ -10908,6 +10903,10 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        data_type:
+          allOf:
+            - $ref: '#/components/schemas/DataType'
+          default: kv
       description: Create class for Dataset.
     DatasetDiffInfo:
       title: DatasetDiffInfo
@@ -10990,11 +10989,6 @@ components:
           title: Created At
           type: string
           format: date-time
-        data_type:
-          anyOf:
-            - $ref: '#/components/schemas/DataType'
-            - type: 'null'
-          default: kv
         inputs_schema_definition:
           title: Inputs Schema Definition
           anyOf:
@@ -11011,6 +11005,11 @@ components:
             - type: boolean
             - type: 'null'
           default: false
+        data_type:
+          anyOf:
+            - $ref: '#/components/schemas/DataType'
+            - type: 'null'
+          default: kv
         id:
           title: Id
           type: string
@@ -11039,11 +11038,6 @@ components:
           title: Created At
           type: string
           format: date-time
-        data_type:
-          anyOf:
-            - $ref: '#/components/schemas/DataType'
-            - type: 'null'
-          default: kv
         inputs_schema_definition:
           title: Inputs Schema Definition
           anyOf:
@@ -11060,6 +11054,11 @@ components:
             - type: boolean
             - type: 'null'
           default: false
+        data_type:
+          anyOf:
+            - $ref: '#/components/schemas/DataType'
+            - type: 'null'
+          default: kv
         id:
           title: Id
           type: string
@@ -13053,6 +13052,7 @@ components:
         - consolidate_playground_comparative
         - resource_tags
         - langgraph_deploy_own_cloud_enabled
+        - custom_charts_enabled
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
@@ -13413,6 +13413,10 @@ components:
           title: Max Langgraph Cloud Deployments
           type: integer
           default: 1
+        collated_threads_view:
+          title: Collated Threads View
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -13436,6 +13440,7 @@ components:
             consolidate_playground_comparative: false
             resource_tags: false
             langgraph_deploy_own_cloud_enabled: false
+            custom_charts_enabled: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme

@@ -31,13 +31,6 @@ namespace LangSmith
         public global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Default Value: kv
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::LangSmith.DataType2?, object>? DataType { get; set; } = global::LangSmith.DataType2.Kv;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
@@ -71,6 +64,13 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::System.AnyOf<global::LangSmith.DatasetCreateExtra, object>? Extra { get; set; }
+
+        /// <summary>
+        /// Default Value: kv
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
+        public global::System.AllOf<global::LangSmith.DataType2?>? DataType { get; set; } = global::LangSmith.DataType2.Kv;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

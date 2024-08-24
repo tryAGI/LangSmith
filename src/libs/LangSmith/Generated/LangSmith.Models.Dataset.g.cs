@@ -31,13 +31,6 @@ namespace LangSmith
         public global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Default Value: kv
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::LangSmith.DataType2?, object>? DataType { get; set; } = global::LangSmith.DataType2.Kv;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
@@ -57,6 +50,13 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("externally_managed")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::System.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: kv
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<global::LangSmith.DataType2?, object>? DataType { get; set; } = global::LangSmith.DataType2.Kv;
 
         /// <summary>
         /// 
