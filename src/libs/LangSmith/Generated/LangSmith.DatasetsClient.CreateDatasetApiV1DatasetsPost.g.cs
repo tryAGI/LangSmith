@@ -102,9 +102,6 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
-        /// <param name="dataType">
-        /// Default Value: kv
-        /// </param>
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="externallyManaged">
@@ -112,18 +109,21 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="extra"></param>
+        /// <param name="dataType">
+        /// Default Value: kv
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Dataset> CreateDatasetApiV1DatasetsPostAsync(
             string name,
             global::System.AnyOf<string?, object>? description = default,
             global::System.DateTime createdAt = default,
-            global::System.AnyOf<global::LangSmith.DataType2?, object>? dataType = default,
             global::System.AnyOf<global::LangSmith.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
             global::System.AnyOf<global::LangSmith.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
             global::System.AnyOf<bool?, object>? externallyManaged = default,
             global::System.AnyOf<string, object>? id = default,
             global::System.AnyOf<global::LangSmith.DatasetCreateExtra, object>? extra = default,
+            global::System.AllOf<global::LangSmith.DataType2?>? dataType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.DatasetCreate
@@ -131,12 +131,12 @@ namespace LangSmith
                 Name = name,
                 Description = description,
                 CreatedAt = createdAt,
-                DataType = dataType,
                 InputsSchemaDefinition = inputsSchemaDefinition,
                 OutputsSchemaDefinition = outputsSchemaDefinition,
                 ExternallyManaged = externallyManaged,
                 Id = id,
                 Extra = extra,
+                DataType = dataType,
             };
 
             return await CreateDatasetApiV1DatasetsPostAsync(

@@ -617,23 +617,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<global::LangSmith.DataType2?, object>? Type151 { get; set; }
+        public global::System.AnyOf<global::LangSmith.DatasetInputsSchemaDefinition, object>? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<global::LangSmith.DatasetInputsSchemaDefinition, object>? Type152 { get; set; }
+        public global::LangSmith.DatasetInputsSchemaDefinition? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetInputsSchemaDefinition? Type153 { get; set; }
+        public global::System.AnyOf<global::LangSmith.DatasetOutputsSchemaDefinition, object>? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<global::LangSmith.DatasetOutputsSchemaDefinition, object>? Type154 { get; set; }
+        public global::LangSmith.DatasetOutputsSchemaDefinition? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetOutputsSchemaDefinition? Type155 { get; set; }
+        public global::System.AnyOf<global::LangSmith.DataType2?, object>? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>

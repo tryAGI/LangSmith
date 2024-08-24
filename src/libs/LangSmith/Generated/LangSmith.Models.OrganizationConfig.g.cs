@@ -74,6 +74,12 @@ namespace LangSmith
         public int MaxLanggraphCloudDeployments { get; set; } = 1;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("collated_threads_view")]
+        public bool CollatedThreadsView { get; set; } = false;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
