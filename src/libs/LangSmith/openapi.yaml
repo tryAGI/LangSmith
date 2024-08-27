@@ -12280,7 +12280,6 @@ components:
     FilterView:
       title: FilterView
       required:
-        - filter_string
         - display_name
         - id
         - created_at
@@ -12289,7 +12288,19 @@ components:
       properties:
         filter_string:
           title: Filter String
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
+        trace_filter_string:
+          title: Trace Filter String
+          anyOf:
+            - type: string
+            - type: 'null'
+        tree_filter_string:
+          title: Tree Filter String
+          anyOf:
+            - type: string
+            - type: 'null'
         display_name:
           title: Display Name
           type: string
@@ -12319,13 +12330,24 @@ components:
     FilterViewCreate:
       title: FilterViewCreate
       required:
-        - filter_string
         - display_name
       type: object
       properties:
         filter_string:
           title: Filter String
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
+        trace_filter_string:
+          title: Trace Filter String
+          anyOf:
+            - type: string
+            - type: 'null'
+        tree_filter_string:
+          title: Tree Filter String
+          anyOf:
+            - type: string
+            - type: 'null'
         display_name:
           title: Display Name
           type: string
@@ -12350,6 +12372,16 @@ components:
             - type: 'null'
         description:
           title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        trace_filter_string:
+          title: Trace Filter String
+          anyOf:
+            - type: string
+            - type: 'null'
+        tree_filter_string:
+          title: Tree Filter String
           anyOf:
             - type: string
             - type: 'null'

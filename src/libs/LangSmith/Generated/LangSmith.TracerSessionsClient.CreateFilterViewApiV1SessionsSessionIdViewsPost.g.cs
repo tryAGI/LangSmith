@@ -107,20 +107,26 @@ namespace LangSmith
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="filterString"></param>
+        /// <param name="traceFilterString"></param>
+        /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FilterView> CreateFilterViewApiV1SessionsSessionIdViewsPostAsync(
             string sessionId,
-            string filterString,
             string displayName,
+            global::System.AnyOf<string?, object>? filterString = default,
+            global::System.AnyOf<string?, object>? traceFilterString = default,
+            global::System.AnyOf<string?, object>? treeFilterString = default,
             global::System.AnyOf<string?, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.FilterViewCreate
             {
                 FilterString = filterString,
+                TraceFilterString = traceFilterString,
+                TreeFilterString = treeFilterString,
                 DisplayName = displayName,
                 Description = description,
             };
