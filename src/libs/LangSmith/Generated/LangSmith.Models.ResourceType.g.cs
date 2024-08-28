@@ -35,7 +35,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ChartsSection,
+        Dashboard,
     }
 
     /// <summary>
@@ -56,7 +56,7 @@ namespace LangSmith
                 ResourceType.Deployment => "deployment",
                 ResourceType.Experiment => "experiment",
                 ResourceType.Dataset => "dataset",
-                ResourceType.ChartsSection => "charts_section",
+                ResourceType.Dashboard => "dashboard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,7 +73,7 @@ namespace LangSmith
                 "deployment" => ResourceType.Deployment,
                 "experiment" => ResourceType.Experiment,
                 "dataset" => ResourceType.Dataset,
-                "charts_section" => ResourceType.ChartsSection,
+                "dashboard" => ResourceType.Dashboard,
                 _ => null,
             };
         }

@@ -14220,7 +14220,7 @@ components:
         - deployment
         - experiment
         - dataset
-        - charts_section
+        - dashboard
       type: string
     ResponseBodyForRunsGenerateQuery:
       title: ResponseBodyForRunsGenerateQuery
@@ -16987,8 +16987,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Resource'
-        charts_sections:
-          title: Charts Sections
+        dashboards:
+          title: Dashboards
           type: array
           items:
             $ref: '#/components/schemas/Resource'

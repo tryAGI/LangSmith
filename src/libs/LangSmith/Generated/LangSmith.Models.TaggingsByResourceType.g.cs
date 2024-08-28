@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("charts_sections")]
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? ChartsSections { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("dashboards")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Dashboards { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
