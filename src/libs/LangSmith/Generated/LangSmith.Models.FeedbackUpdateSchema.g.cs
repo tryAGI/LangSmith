@@ -22,21 +22,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory6))]
-        public global::System.AnyOf<double?, int?, bool?, string?, global::LangSmith.FeedbackUpdateSchemaValue, object>? Value { get; set; }
+        public global::System.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackUpdateSchemaValue, object>? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Comment { get; set; }
+        public global::System.AnyOf<string, object>? Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::System.AnyOf<global::LangSmith.FeedbackUpdateSchemaCorrection, string?, object>? Correction { get; set; }
+        public global::System.AnyOf<global::LangSmith.FeedbackUpdateSchemaCorrection, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 

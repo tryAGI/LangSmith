@@ -116,9 +116,9 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> UpdateFeedbackApiV1FeedbackFeedbackIdPatchAsync(
             string feedbackId,
             global::System.AnyOf<double?, int?, bool?, object>? score = default,
-            global::System.AnyOf<double?, int?, bool?, string?, global::LangSmith.FeedbackUpdateSchemaValue, object>? value = default,
-            global::System.AnyOf<string?, object>? comment = default,
-            global::System.AnyOf<global::LangSmith.FeedbackUpdateSchemaCorrection, string?, object>? correction = default,
+            global::System.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackUpdateSchemaValue, object>? value = default,
+            global::System.AnyOf<string, object>? comment = default,
+            global::System.AnyOf<global::LangSmith.FeedbackUpdateSchemaCorrection, string, object>? correction = default,
             global::System.AnyOf<global::LangSmith.FeedbackConfig, object>? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

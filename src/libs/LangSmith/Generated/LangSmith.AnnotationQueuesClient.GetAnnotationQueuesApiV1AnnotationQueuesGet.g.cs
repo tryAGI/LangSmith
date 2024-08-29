@@ -8,8 +8,8 @@ namespace LangSmith
         partial void PrepareGetAnnotationQueuesApiV1AnnotationQueuesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
-            ref global::System.AnyOf<string?, object>? name,
-            ref global::System.AnyOf<string?, object>? nameContains,
+            ref global::System.AnyOf<string, object>? name,
+            ref global::System.AnyOf<string, object>? nameContains,
             ref int offset,
             ref int limit,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
@@ -17,8 +17,8 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
             int offset,
             int limit,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
@@ -48,8 +48,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesApiV1AnnotationQueuesGetAsync(
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
             int offset,
             int limit,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,

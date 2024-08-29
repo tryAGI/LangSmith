@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Tag { get; set; } = "latest";
+        public global::System.AnyOf<string, object>? Tag { get; set; } = "latest";
 
         /// <summary>
         /// 

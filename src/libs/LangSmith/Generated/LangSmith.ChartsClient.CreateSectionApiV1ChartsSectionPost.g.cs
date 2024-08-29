@@ -106,7 +106,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> CreateSectionApiV1ChartsSectionPostAsync(
             string title,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<int?, object>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

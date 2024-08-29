@@ -120,7 +120,7 @@ namespace LangSmith
             global::System.AnyOf<string, object>? sourceRunId = default,
             global::System.AnyOf<global::LangSmith.ExampleCreateMetadata, object>? metadata = default,
             global::System.AnyOf<global::LangSmith.ExampleCreateInputs, object>? inputs = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? split = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::System.AnyOf<string, object>? id = default,
             bool useSourceRunIo = false,
             global::System.DateTime createdAt = default,

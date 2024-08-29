@@ -9,13 +9,13 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string sessionId,
             ref bool includeStats,
-            ref global::System.AnyOf<string?, object>? accept);
+            ref global::System.AnyOf<string, object>? accept);
         partial void PrepareReadTracerSessionApiV1SessionsSessionIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string sessionId,
             bool includeStats,
-            global::System.AnyOf<string?, object>? accept);
+            global::System.AnyOf<string, object>? accept);
         partial void ProcessReadTracerSessionApiV1SessionsSessionIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,7 +39,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> ReadTracerSessionApiV1SessionsSessionIdGetAsync(
             string sessionId,
             bool includeStats,
-            global::System.AnyOf<string?, object>? accept,
+            global::System.AnyOf<string, object>? accept,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

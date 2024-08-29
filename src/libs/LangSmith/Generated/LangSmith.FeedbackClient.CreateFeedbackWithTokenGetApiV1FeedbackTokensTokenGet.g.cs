@@ -9,17 +9,17 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string token,
             ref global::System.AnyOf<double?, int?, bool?, object>? score,
-            ref global::System.AnyOf<double?, int?, bool?, string?, object>? value,
-            ref global::System.AnyOf<string?, object>? comment,
-            ref global::System.AnyOf<string?, object>? correction);
+            ref global::System.AnyOf<double?, int?, bool?, string, object>? value,
+            ref global::System.AnyOf<string, object>? comment,
+            ref global::System.AnyOf<string, object>? correction);
         partial void PrepareCreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string token,
             global::System.AnyOf<double?, int?, bool?, object>? score,
-            global::System.AnyOf<double?, int?, bool?, string?, object>? value,
-            global::System.AnyOf<string?, object>? comment,
-            global::System.AnyOf<string?, object>? correction);
+            global::System.AnyOf<double?, int?, bool?, string, object>? value,
+            global::System.AnyOf<string, object>? comment,
+            global::System.AnyOf<string, object>? correction);
         partial void ProcessCreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,9 +43,9 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetAsync(
             string token,
             global::System.AnyOf<double?, int?, bool?, object>? score,
-            global::System.AnyOf<double?, int?, bool?, string?, object>? value,
-            global::System.AnyOf<string?, object>? comment,
-            global::System.AnyOf<string?, object>? correction,
+            global::System.AnyOf<double?, int?, bool?, string, object>? value,
+            global::System.AnyOf<string, object>? comment,
+            global::System.AnyOf<string, object>? correction,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

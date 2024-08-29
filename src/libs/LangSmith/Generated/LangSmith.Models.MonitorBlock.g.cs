@@ -36,7 +36,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subtitle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Subtitle { get; set; }
+        public global::System.AnyOf<string, object>? Subtitle { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("click_target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? ClickTarget { get; set; }
+        public global::System.AnyOf<string, object>? ClickTarget { get; set; }
 
         /// <summary>
         /// 

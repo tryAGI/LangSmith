@@ -118,8 +118,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartApiV1ChartsChartIdPatchAsync(
             string chartId,
-            global::System.AnyOf<string?, global::LangSmith.Missing>? title = default,
-            global::System.AnyOf<string?, global::LangSmith.Missing, object>? description = default,
+            global::System.AnyOf<string, global::LangSmith.Missing>? title = default,
+            global::System.AnyOf<string, global::LangSmith.Missing, object>? description = default,
             global::System.AnyOf<int?, global::LangSmith.Missing>? index = default,
             global::System.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? chartType = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? series = default,

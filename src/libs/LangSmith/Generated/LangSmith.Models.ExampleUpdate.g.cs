@@ -43,7 +43,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? Split { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

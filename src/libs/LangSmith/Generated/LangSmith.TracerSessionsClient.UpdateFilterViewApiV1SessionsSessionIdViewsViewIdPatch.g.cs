@@ -123,11 +123,11 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.FilterView> UpdateFilterViewApiV1SessionsSessionIdViewsViewIdPatchAsync(
             string sessionId,
             string viewId,
-            global::System.AnyOf<string?, object>? filterString = default,
-            global::System.AnyOf<string?, object>? displayName = default,
-            global::System.AnyOf<string?, object>? description = default,
-            global::System.AnyOf<string?, object>? traceFilterString = default,
-            global::System.AnyOf<string?, object>? treeFilterString = default,
+            global::System.AnyOf<string, object>? filterString = default,
+            global::System.AnyOf<string, object>? displayName = default,
+            global::System.AnyOf<string, object>? description = default,
+            global::System.AnyOf<string, object>? traceFilterString = default,
+            global::System.AnyOf<string, object>? treeFilterString = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.FilterViewUpdate

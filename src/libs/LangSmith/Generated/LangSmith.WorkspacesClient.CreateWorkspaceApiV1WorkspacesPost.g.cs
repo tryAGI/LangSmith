@@ -107,7 +107,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateWorkspaceApiV1WorkspacesPostAsync(
             string displayName,
             string? id = default,
-            global::System.AnyOf<string?, object>? tenantHandle = default,
+            global::System.AnyOf<string, object>? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.WorkspaceCreate

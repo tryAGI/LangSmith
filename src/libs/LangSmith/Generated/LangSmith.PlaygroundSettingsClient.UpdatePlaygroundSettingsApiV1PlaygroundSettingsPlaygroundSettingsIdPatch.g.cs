@@ -111,7 +111,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdPatchAsync(
             string playgroundSettingsId,
-            global::System.AnyOf<string?, object>? name = default,
+            global::System.AnyOf<string, object>? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.PlaygroundSettingsUpdateRequest

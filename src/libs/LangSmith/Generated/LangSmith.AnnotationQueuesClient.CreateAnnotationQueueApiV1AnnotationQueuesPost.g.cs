@@ -116,7 +116,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSchema> CreateAnnotationQueueApiV1AnnotationQueuesPostAsync(
             string name,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.DateTime createdAt = default,
             global::System.DateTime updatedAt = default,
             global::System.AnyOf<string, object>? defaultDataset = default,

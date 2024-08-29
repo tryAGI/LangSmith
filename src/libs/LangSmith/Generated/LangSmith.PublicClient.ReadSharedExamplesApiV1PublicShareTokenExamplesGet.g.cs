@@ -10,23 +10,23 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string shareToken,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            ref global::System.AnyOf<global::System.DateTime?, string?>? asOf,
-            ref global::System.AnyOf<string?, object>? metadata,
+            ref global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            ref global::System.AnyOf<string, object>? metadata,
             ref int offset,
             ref int limit,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            ref global::System.AnyOf<string?, object>? filter);
+            ref global::System.AnyOf<string, object>? filter);
         partial void PrepareReadSharedExamplesApiV1PublicShareTokenExamplesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string shareToken,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
-            global::System.AnyOf<string?, object>? metadata,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<string, object>? metadata,
             int offset,
             int limit,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            global::System.AnyOf<string?, object>? filter);
+            global::System.AnyOf<string, object>? filter);
         partial void ProcessReadSharedExamplesApiV1PublicShareTokenExamplesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,12 +62,12 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> ReadSharedExamplesApiV1PublicShareTokenExamplesGetAsync(
             string shareToken,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
-            global::System.AnyOf<string?, object>? metadata,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<string, object>? metadata,
             int offset,
             int limit,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            global::System.AnyOf<string?, object>? filter,
+            global::System.AnyOf<string, object>? filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

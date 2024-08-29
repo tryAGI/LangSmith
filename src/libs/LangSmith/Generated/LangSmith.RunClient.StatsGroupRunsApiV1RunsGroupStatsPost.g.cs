@@ -115,7 +115,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunGroupStats> StatsGroupRunsApiV1RunsGroupStatsPostAsync(
             string sessionId,
             global::LangSmith.RunGroupBy groupBy = default,
-            global::System.AnyOf<string?, object>? filter = default,
+            global::System.AnyOf<string, object>? filter = default,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             int offset = 0,

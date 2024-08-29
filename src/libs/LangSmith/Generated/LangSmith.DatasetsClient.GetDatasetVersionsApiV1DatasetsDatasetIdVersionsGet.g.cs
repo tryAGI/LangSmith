@@ -8,7 +8,7 @@ namespace LangSmith
         partial void PrepareGetDatasetVersionsApiV1DatasetsDatasetIdVersionsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<string?, object>? search,
+            ref global::System.AnyOf<string, object>? search,
             ref global::System.AnyOf<string, object>? example,
             ref int limit,
             ref int offset);
@@ -16,7 +16,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<string?, object>? search,
+            global::System.AnyOf<string, object>? search,
             global::System.AnyOf<string, object>? example,
             int limit,
             int offset);
@@ -46,7 +46,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.DatasetVersion>> GetDatasetVersionsApiV1DatasetsDatasetIdVersionsGetAsync(
             string datasetId,
-            global::System.AnyOf<string?, object>? search,
+            global::System.AnyOf<string, object>? search,
             global::System.AnyOf<string, object>? example,
             int limit,
             int offset,

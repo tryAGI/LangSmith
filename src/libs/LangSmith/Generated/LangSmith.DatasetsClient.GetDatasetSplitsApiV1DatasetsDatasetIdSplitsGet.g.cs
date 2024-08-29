@@ -8,12 +8,12 @@ namespace LangSmith
         partial void PrepareGetDatasetSplitsApiV1DatasetsDatasetIdSplitsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<global::System.DateTime?, string?>? asOf);
+            ref global::System.AnyOf<global::System.DateTime?, string>? asOf);
         partial void PrepareGetDatasetSplitsApiV1DatasetsDatasetIdSplitsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, string?>? asOf);
+            global::System.AnyOf<global::System.DateTime?, string>? asOf);
         partial void ProcessGetDatasetSplitsApiV1DatasetsDatasetIdSplitsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<string>> GetDatasetSplitsApiV1DatasetsDatasetIdSplitsGetAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

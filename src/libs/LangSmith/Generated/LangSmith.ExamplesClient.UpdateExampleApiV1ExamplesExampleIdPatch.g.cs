@@ -119,7 +119,7 @@ namespace LangSmith
             global::System.AnyOf<global::LangSmith.ExampleUpdateInputs, object>? inputs = default,
             global::System.AnyOf<global::LangSmith.ExampleUpdateOutputs, object>? outputs = default,
             global::System.AnyOf<global::LangSmith.ExampleUpdateMetadata, object>? metadata = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? split = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.ExampleUpdate

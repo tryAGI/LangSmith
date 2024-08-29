@@ -115,8 +115,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetApiV1DatasetsDatasetIdPatchAsync(
             string datasetId,
-            global::System.AnyOf<string?, global::LangSmith.Missing, object>? name = default,
-            global::System.AnyOf<string?, global::LangSmith.Missing, object>? description = default,
+            global::System.AnyOf<string, global::LangSmith.Missing, object>? name = default,
+            global::System.AnyOf<string, global::LangSmith.Missing, object>? description = default,
             global::System.AnyOf<global::LangSmith.DatasetUpdateInputsSchemaDefinition, global::LangSmith.Missing, object>? inputsSchemaDefinition = default,
             global::System.AnyOf<global::LangSmith.DatasetUpdateOutputsSchemaDefinition, global::LangSmith.Missing, object>? outputsSchemaDefinition = default,
             global::System.AnyOf<global::LangSmith.DatasetUpdatePatchExamples, object>? patchExamples = default,

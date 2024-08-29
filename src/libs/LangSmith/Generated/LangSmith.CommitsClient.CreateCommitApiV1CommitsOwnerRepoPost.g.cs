@@ -122,7 +122,7 @@ namespace LangSmith
             string owner,
             string repo,
             global::LangSmith.CreateRepoCommitRequestManifest manifest,
-            global::System.AnyOf<string?, object>? parentCommit = default,
+            global::System.AnyOf<string, object>? parentCommit = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? exampleRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -118,8 +118,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.TagValue> UpdateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdPatchAsync(
             string tagKeyId,
             string tagValueId,
-            global::System.AnyOf<string?, object>? value = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? value = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.TagValueUpdate

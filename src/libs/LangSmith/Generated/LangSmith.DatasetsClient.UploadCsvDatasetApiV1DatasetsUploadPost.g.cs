@@ -148,10 +148,10 @@ namespace LangSmith
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
-            global::System.AnyOf<string?, object>? name = default,
+            global::System.AnyOf<string, object>? name = default,
             global::System.AllOf<global::LangSmith.DataType2?>? dataType = default,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost

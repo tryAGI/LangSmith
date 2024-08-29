@@ -50,7 +50,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? TenantHandle { get; set; }
+        public global::System.AnyOf<string, object>? TenantHandle { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -70,7 +70,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? RoleName { get; set; }
+        public global::System.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
         /// 

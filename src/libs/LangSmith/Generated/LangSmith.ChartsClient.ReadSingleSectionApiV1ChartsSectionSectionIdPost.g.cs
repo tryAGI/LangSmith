@@ -3,52 +3,52 @@
 
 namespace LangSmith
 {
-    public partial class RunClient
+    public partial class ChartsClient
     {
-        partial void PrepareGroupRunsApiV1RunsGroupPostArguments(
+        partial void PrepareReadSingleSectionApiV1ChartsSectionSectionIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<string, object>? accept,
-            global::LangSmith.RunGroupRequest request);
-        partial void PrepareGroupRunsApiV1RunsGroupPostRequest(
+            ref string sectionId,
+            global::LangSmith.CustomChartsRequestBase request);
+        partial void PrepareReadSingleSectionApiV1ChartsSectionSectionIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<string, object>? accept,
-            global::LangSmith.RunGroupRequest request);
-        partial void ProcessGroupRunsApiV1RunsGroupPostResponse(
+            string sectionId,
+            global::LangSmith.CustomChartsRequestBase request);
+        partial void ProcessReadSingleSectionApiV1ChartsSectionSectionIdPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGroupRunsApiV1RunsGroupPostResponseContent(
+        partial void ProcessReadSingleSectionApiV1ChartsSectionSectionIdPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Group Runs<br/>
-        /// Get runs grouped by an expression
+        /// Read Single Section<br/>
+        /// Get a single section by ID.
         /// </summary>
-        /// <param name="accept"></param>
+        /// <param name="sectionId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsApiV1RunsGroupPostAsync(
-            global::System.AnyOf<string, object>? accept,
-            global::LangSmith.RunGroupRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionApiV1ChartsSectionSectionIdPostAsync(
+            string sectionId,
+            global::LangSmith.CustomChartsRequestBase request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareGroupRunsApiV1RunsGroupPostArguments(
+            PrepareReadSingleSectionApiV1ChartsSectionSectionIdPostArguments(
                 httpClient: _httpClient,
-                accept: ref accept,
+                sectionId: ref sectionId,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/runs/group", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.RunGroupRequest);
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/charts/section/{sectionId}", global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.CustomChartsRequestBase);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -58,10 +58,10 @@ namespace LangSmith
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGroupRunsApiV1RunsGroupPostRequest(
+            PrepareReadSingleSectionApiV1ChartsSectionSectionIdPostRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                accept: accept,
+                sectionId: sectionId,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -72,7 +72,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGroupRunsApiV1RunsGroupPostResponse(
+            ProcessReadSingleSectionApiV1ChartsSectionSectionIdPostResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -82,7 +82,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGroupRunsApiV1RunsGroupPostResponseContent(
+            ProcessReadSingleSectionApiV1ChartsSectionSectionIdPostResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -97,52 +97,41 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.GroupRunsApiV1RunsGroupPostResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.CustomChartsSection) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Group Runs<br/>
-        /// Get runs grouped by an expression
+        /// Read Single Section<br/>
+        /// Get a single section by ID.
         /// </summary>
-        /// <param name="accept"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="groupBy"></param>
-        /// <param name="filter"></param>
+        /// <param name="sectionId"></param>
+        /// <param name="timezone">
+        /// Default Value: UTC
+        /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 10
-        /// </param>
+        /// <param name="stride"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsApiV1RunsGroupPostAsync(
-            string sessionId,
-            global::System.AnyOf<string, object>? accept = default,
-            global::LangSmith.RunGroupBy groupBy = default,
-            global::System.AnyOf<string, object>? filter = default,
-            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionApiV1ChartsSectionSectionIdPostAsync(
+            string sectionId,
+            global::System.DateTime startTime,
+            string? timezone = "UTC",
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
-            int offset = 0,
-            int limit = 10,
+            global::System.AllOf<global::LangSmith.TimedeltaInput>? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::LangSmith.RunGroupRequest
+            var request = new global::LangSmith.CustomChartsRequestBase
             {
-                SessionId = sessionId,
-                GroupBy = groupBy,
-                Filter = filter,
+                Timezone = timezone,
                 StartTime = startTime,
                 EndTime = endTime,
-                Offset = offset,
-                Limit = limit,
+                Stride = stride,
             };
 
-            return await GroupRunsApiV1RunsGroupPostAsync(
-                accept: accept,
+            return await ReadSingleSectionApiV1ChartsSectionSectionIdPostAsync(
+                sectionId: sectionId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

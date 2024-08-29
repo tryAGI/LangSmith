@@ -15,14 +15,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::System.AnyOf<string?, global::LangSmith.Missing, object>? Name { get; set; }
+        public global::System.AnyOf<string, global::LangSmith.Missing, object>? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::System.AnyOf<string?, global::LangSmith.Missing, object>? Description { get; set; }
+        public global::System.AnyOf<string, global::LangSmith.Missing, object>? Description { get; set; }
 
         /// <summary>
         /// 
