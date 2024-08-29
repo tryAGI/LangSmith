@@ -50,7 +50,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? Split { get; set; } = "base";
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; } = "base";
 
         /// <summary>
         /// 

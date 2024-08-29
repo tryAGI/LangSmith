@@ -29,7 +29,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string?>?, object>? AsOf { get; set; }
+        public global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string>?, object>? AsOf { get; set; }
 
         /// <summary>
         /// 

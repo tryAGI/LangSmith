@@ -115,7 +115,7 @@ namespace LangSmith
             string title,
             global::LangSmith.CustomChartType chartType,
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate> series,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<int?, object>? index = default,
             global::System.AnyOf<string, object>? sectionId = default,
             global::System.AnyOf<global::LangSmith.CustomChartCreateMetadata, object>? metadata = default,

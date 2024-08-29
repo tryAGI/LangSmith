@@ -85,28 +85,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Query { get; set; }
+        public global::System.AnyOf<string, object>? Query { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Filter { get; set; }
+        public global::System.AnyOf<string, object>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? TraceFilter { get; set; }
+        public global::System.AnyOf<string, object>? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? TreeFilter { get; set; }
+        public global::System.AnyOf<string, object>? TreeFilter { get; set; }
 
         /// <summary>
         /// 
@@ -127,7 +127,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Cursor { get; set; }
+        public global::System.AnyOf<string, object>? Cursor { get; set; }
 
         /// <summary>
         /// Default Value: 100

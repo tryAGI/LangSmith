@@ -7687,6 +7687,42 @@ paths:
             anyOf:
               - type: string
               - type: 'null'
+        - name: ids
+          in: query
+          schema:
+            title: Ids
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
+        - name: sort_by
+          in: query
+          schema:
+            title: Sort By
+            anyOf:
+              - type: string
+              - type: 'null'
+            default: created_at
+        - name: sort_by_desc
+          in: query
+          schema:
+            title: Sort By Desc
+            anyOf:
+              - type: boolean
+              - type: 'null'
+            default: true
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -7932,6 +7968,43 @@ paths:
         - TenantId: [ ]
         - BearerAuth: [ ]
   '/api/v1/charts/section/{section_id}':
+    post:
+      tags:
+        - charts
+      summary: Read Single Section
+      description: Get a single section by ID.
+      operationId: read_single_section_api_v1_charts_section__section_id__post
+      parameters:
+        - name: section_id
+          in: path
+          required: true
+          schema:
+            title: Section Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsRequestBase'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
     patch:
       tags:
         - charts
@@ -10730,10 +10803,22 @@ components:
           title: Id
           type: string
           format: uuid
-        is_at_capacity:
-          title: Is At Capacity
+        chart_count:
+          title: Chart Count
           anyOf:
-            - type: boolean
+            - type: integer
+            - type: 'null'
+        created_at:
+          title: Created At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+        modified_at:
+          title: Modified At
+          anyOf:
+            - type: string
+              format: date-time
             - type: 'null'
     CustomChartsSectionUpdate:
       title: CustomChartsSectionUpdate
@@ -17237,7 +17322,7 @@ components:
         - tracer_session_count
         - repo_count
         - annotation_queue_count
-        - charts_count
+        - dashboards_count
       type: object
       properties:
         tenant_id:
@@ -17256,8 +17341,8 @@ components:
         annotation_queue_count:
           title: Annotation Queue Count
           type: integer
-        charts_count:
-          title: Charts Count
+        dashboards_count:
+          title: Dashboards Count
           type: integer
       description: Stats for a tenant.
     TenantUsageLimitInfo:

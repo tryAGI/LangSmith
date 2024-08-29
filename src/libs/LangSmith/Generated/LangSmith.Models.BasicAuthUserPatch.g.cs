@@ -15,14 +15,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("password")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Password { get; set; }
+        public global::System.AnyOf<string, object>? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? FullName { get; set; }
+        public global::System.AnyOf<string, object>? FullName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

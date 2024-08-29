@@ -116,10 +116,10 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.FilterView> CreateFilterViewApiV1SessionsSessionIdViewsPostAsync(
             string sessionId,
             string displayName,
-            global::System.AnyOf<string?, object>? filterString = default,
-            global::System.AnyOf<string?, object>? traceFilterString = default,
-            global::System.AnyOf<string?, object>? treeFilterString = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? filterString = default,
+            global::System.AnyOf<string, object>? traceFilterString = default,
+            global::System.AnyOf<string, object>? treeFilterString = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.FilterViewCreate

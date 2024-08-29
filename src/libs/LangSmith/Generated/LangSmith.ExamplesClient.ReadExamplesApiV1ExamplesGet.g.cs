@@ -9,8 +9,8 @@ namespace LangSmith
         partial void PrepareReadExamplesApiV1ExamplesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            ref global::System.AnyOf<global::System.DateTime?, string?>? asOf,
-            ref global::System.AnyOf<string?, object>? metadata,
+            ref global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            ref global::System.AnyOf<string, object>? metadata,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
             ref global::System.AnyOf<string, object>? dataset,
@@ -19,13 +19,13 @@ namespace LangSmith
             ref global::System.AllOf<global::LangSmith.ExampleListOrder?>? order,
             ref global::System.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            ref global::System.AnyOf<string?, object>? filter);
+            ref global::System.AnyOf<string, object>? filter);
         partial void PrepareReadExamplesApiV1ExamplesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
-            global::System.AnyOf<string?, object>? metadata,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<string, object>? metadata,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
             global::System.AnyOf<string, object>? dataset,
@@ -34,7 +34,7 @@ namespace LangSmith
             global::System.AllOf<global::LangSmith.ExampleListOrder?>? order,
             global::System.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            global::System.AnyOf<string?, object>? filter);
+            global::System.AnyOf<string, object>? filter);
         partial void ProcessReadExamplesApiV1ExamplesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -75,8 +75,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> ReadExamplesApiV1ExamplesGetAsync(
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
-            global::System.AnyOf<string?, object>? metadata,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<string, object>? metadata,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
             global::System.AnyOf<string, object>? dataset,
@@ -85,7 +85,7 @@ namespace LangSmith
             global::System.AllOf<global::LangSmith.ExampleListOrder?>? order,
             global::System.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            global::System.AnyOf<string?, object>? filter,
+            global::System.AnyOf<string, object>? filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

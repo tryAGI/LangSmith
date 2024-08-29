@@ -9,13 +9,13 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
             ref global::System.AnyOf<global::System.DateTime?, object>? asOf,
-            ref global::System.AnyOf<string?, object>? tag);
+            ref global::System.AnyOf<string, object>? tag);
         partial void PrepareGetDatasetVersionApiV1DatasetsDatasetIdVersionGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
             global::System.AnyOf<global::System.DateTime?, object>? asOf,
-            global::System.AnyOf<string?, object>? tag);
+            global::System.AnyOf<string, object>? tag);
         partial void ProcessGetDatasetVersionApiV1DatasetsDatasetIdVersionGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetVersion> GetDatasetVersionApiV1DatasetsDatasetIdVersionGetAsync(
             string datasetId,
             global::System.AnyOf<global::System.DateTime?, object>? asOf,
-            global::System.AnyOf<string?, object>? tag,
+            global::System.AnyOf<string, object>? tag,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

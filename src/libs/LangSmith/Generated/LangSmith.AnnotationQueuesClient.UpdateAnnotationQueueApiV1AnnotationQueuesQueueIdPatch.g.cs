@@ -118,8 +118,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchAsync(
             string queueId,
-            global::System.AnyOf<string?, object>? name = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<string, object>? defaultDataset = default,
             global::System.AnyOf<int?, object>? numReviewersPerItem = default,
             bool enableReservations = true,

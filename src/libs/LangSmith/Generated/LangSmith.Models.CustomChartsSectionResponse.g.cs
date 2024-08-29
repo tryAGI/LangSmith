@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Description { get; set; }
+        public global::System.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -41,9 +41,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_at_capacity")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("chart_count")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<bool?, object>? IsAtCapacity { get; set; }
+        public global::System.AnyOf<int?, object>? ChartCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

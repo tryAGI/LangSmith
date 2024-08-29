@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line2")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Line2 { get; set; }
+        public global::System.AnyOf<string, object>? Line2 { get; set; }
 
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? State { get; set; }
+        public global::System.AnyOf<string, object>? State { get; set; }
 
         /// <summary>
         /// 

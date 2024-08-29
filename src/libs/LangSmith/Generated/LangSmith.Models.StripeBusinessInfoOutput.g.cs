@@ -29,7 +29,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invoice_email")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? InvoiceEmail { get; set; }
+        public global::System.AnyOf<string, object>? InvoiceEmail { get; set; }
 
         /// <summary>
         /// Default Value: false

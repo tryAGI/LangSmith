@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_commit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? ParentCommit { get; set; }
+        public global::System.AnyOf<string, object>? ParentCommit { get; set; }
 
         /// <summary>
         /// 

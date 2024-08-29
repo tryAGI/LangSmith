@@ -119,11 +119,11 @@ namespace LangSmith
             string id,
             string name,
             string matchPattern,
-            global::System.AnyOf<double?, string?> promptCost,
-            global::System.AnyOf<double?, string?> completionCost,
+            global::System.AnyOf<double?, string> promptCost,
+            global::System.AnyOf<double?, string> completionCost,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::System.Collections.Generic.IList<string>? matchPath = default,
-            global::System.AnyOf<string?, object>? provider = default,
+            global::System.AnyOf<string, object>? provider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.ModelPriceMapUpdateSchema

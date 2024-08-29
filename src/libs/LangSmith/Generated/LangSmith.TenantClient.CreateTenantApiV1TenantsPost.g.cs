@@ -109,7 +109,7 @@ namespace LangSmith
             string displayName,
             string? id = default,
             global::System.AnyOf<string, object>? organizationId = default,
-            global::System.AnyOf<string?, object>? tenantHandle = default,
+            global::System.AnyOf<string, object>? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.TenantCreate

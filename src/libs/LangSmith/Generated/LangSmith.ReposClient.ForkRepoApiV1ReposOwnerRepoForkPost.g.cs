@@ -124,8 +124,8 @@ namespace LangSmith
             string owner,
             string repo,
             string repoHandle,
-            global::System.AnyOf<string?, object>? readme = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? readme = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
             global::System.AnyOf<bool?, object>? isPublic = default,
             global::System.Threading.CancellationToken cancellationToken = default)

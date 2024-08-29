@@ -8,8 +8,8 @@ namespace LangSmith
         partial void PrepareReadComparativeExperimentsApiV1DatasetsDatasetIdComparativeGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<string?, object>? name,
-            ref global::System.AnyOf<string?, object>? nameContains,
+            ref global::System.AnyOf<string, object>? name,
+            ref global::System.AnyOf<string, object>? nameContains,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
             ref int offset,
             ref int limit,
@@ -19,8 +19,8 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
             int offset,
             int limit,
@@ -59,8 +59,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ComparativeExperiment>> ReadComparativeExperimentsApiV1DatasetsDatasetIdComparativeGetAsync(
             string datasetId,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
             int offset,
             int limit,

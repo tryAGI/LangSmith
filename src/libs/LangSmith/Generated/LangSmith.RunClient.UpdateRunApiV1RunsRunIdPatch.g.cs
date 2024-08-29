@@ -123,10 +123,10 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunApiV1RunsRunIdPatchAsync(
             string runId,
             global::System.OneOf<string, object>? traceId = default,
-            global::System.OneOf<string?, object>? dottedOrder = default,
+            global::System.OneOf<string, object>? dottedOrder = default,
             global::System.OneOf<string, object>? parentRunId = default,
-            global::System.OneOf<string?, double?, object>? endTime = default,
-            global::System.OneOf<string?, object>? error = default,
+            global::System.OneOf<string, double?, object>? endTime = default,
+            global::System.OneOf<string, object>? error = default,
             global::System.OneOf<global::LangSmith.UpdateRunRequestInputs, object>? inputs = default,
             global::System.OneOf<global::LangSmith.UpdateRunRequestOutputs, object>? outputs = default,
             global::System.OneOf<global::System.Collections.Generic.IList<global::LangSmith.UpdateRunRequestEventsVariant1Item>, object>? events = default,

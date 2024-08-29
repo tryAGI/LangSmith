@@ -116,7 +116,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Dataset> CreateDatasetApiV1DatasetsPostAsync(
             string name,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.DateTime createdAt = default,
             global::System.AnyOf<global::LangSmith.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
             global::System.AnyOf<global::LangSmith.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,

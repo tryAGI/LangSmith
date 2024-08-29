@@ -8,8 +8,8 @@ namespace LangSmith
         partial void PrepareReadSharedComparativeExperimentsApiV1PublicShareTokenDatasetsComparativeGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string shareToken,
-            ref global::System.AnyOf<string?, object>? name,
-            ref global::System.AnyOf<string?, object>? nameContains,
+            ref global::System.AnyOf<string, object>? name,
+            ref global::System.AnyOf<string, object>? nameContains,
             ref int offset,
             ref int limit,
             ref global::System.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy,
@@ -18,8 +18,8 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string shareToken,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
             int offset,
             int limit,
             global::System.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy,
@@ -56,8 +56,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.PublicComparativeExperiment>> ReadSharedComparativeExperimentsApiV1PublicShareTokenDatasetsComparativeGetAsync(
             string shareToken,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
             int offset,
             int limit,
             global::System.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy,

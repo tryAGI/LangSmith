@@ -105,7 +105,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> CreatePlaygroundSettingsApiV1PlaygroundSettingsPostAsync(
             global::LangSmith.PlaygroundSettingsCreateRequestSettings settings,
-            global::System.AnyOf<string?, object>? name = default,
+            global::System.AnyOf<string, object>? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.PlaygroundSettingsCreateRequest

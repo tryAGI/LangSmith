@@ -116,8 +116,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> UpdateTracerSessionApiV1SessionsSessionIdPatchAsync(
             string sessionId,
-            global::System.AnyOf<string?, object>? name = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<string, object>? defaultDatasetId = default,
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.AnyOf<global::LangSmith.TracerSessionUpdateExtra, object>? extra = default,

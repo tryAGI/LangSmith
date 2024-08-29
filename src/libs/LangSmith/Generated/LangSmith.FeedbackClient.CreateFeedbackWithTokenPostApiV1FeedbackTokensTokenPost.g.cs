@@ -116,9 +116,9 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostAsync(
             string token,
             global::System.AnyOf<double?, int?, bool?, object>? score = default,
-            global::System.AnyOf<double?, int?, bool?, string?, object>? value = default,
-            global::System.AnyOf<string?, object>? comment = default,
-            global::System.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaCorrection, string?, object>? correction = default,
+            global::System.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::System.AnyOf<string, object>? comment = default,
+            global::System.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaCorrection, string, object>? correction = default,
             global::System.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

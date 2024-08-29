@@ -108,7 +108,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostAsync(
             global::System.AnyOf<global::LangSmith.StripeBusinessBillingInfo, object>? companyInfo = default,
             global::System.AnyOf<global::LangSmith.StripeTaxId, object>? taxId = default,
-            global::System.AnyOf<string?, object>? invoiceEmail = default,
+            global::System.AnyOf<string, object>? invoiceEmail = default,
             bool isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

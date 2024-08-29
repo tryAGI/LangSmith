@@ -110,8 +110,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TagKey> UpdateTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdPatchAsync(
             string tagKeyId,
-            global::System.AnyOf<string?, object>? key = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? key = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.TagKeyUpdate

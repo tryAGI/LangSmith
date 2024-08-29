@@ -8,14 +8,14 @@ namespace LangSmith
         partial void PrepareDiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<global::System.DateTime?, string?> fromVersion,
-            ref global::System.AnyOf<global::System.DateTime?, string?> toVersion);
+            ref global::System.AnyOf<global::System.DateTime?, string> fromVersion,
+            ref global::System.AnyOf<global::System.DateTime?, string> toVersion);
         partial void PrepareDiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, string?> fromVersion,
-            global::System.AnyOf<global::System.DateTime?, string?> toVersion);
+            global::System.AnyOf<global::System.DateTime?, string> fromVersion,
+            global::System.AnyOf<global::System.DateTime?, string> toVersion);
         partial void ProcessDiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetDiffInfo> DiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGetAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, string?> fromVersion,
-            global::System.AnyOf<global::System.DateTime?, string?> toVersion,
+            global::System.AnyOf<global::System.DateTime?, string> fromVersion,
+            global::System.AnyOf<global::System.DateTime?, string> toVersion,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
