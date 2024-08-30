@@ -17322,6 +17322,7 @@ components:
         - tracer_session_count
         - repo_count
         - annotation_queue_count
+        - deployment_count
         - dashboards_count
       type: object
       properties:
@@ -17340,6 +17341,9 @@ components:
           type: integer
         annotation_queue_count:
           title: Annotation Queue Count
+          type: integer
+        deployment_count:
+          title: Deployment Count
           type: integer
         dashboards_count:
           title: Dashboards Count

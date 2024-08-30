@@ -46,6 +46,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deployment_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DeploymentCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dashboards_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DashboardsCount { get; set; }
