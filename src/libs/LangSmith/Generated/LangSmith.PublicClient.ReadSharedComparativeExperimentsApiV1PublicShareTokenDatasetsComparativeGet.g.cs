@@ -56,12 +56,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.PublicComparativeExperiment>> ReadSharedComparativeExperimentsApiV1PublicShareTokenDatasetsComparativeGetAsync(
             string shareToken,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
-            int offset,
-            int limit,
-            global::System.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy,
-            bool sortByDesc,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? nameContains = default,
+            int offset = 0,
+            int limit = 100,
+            global::System.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy = default,
+            bool sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

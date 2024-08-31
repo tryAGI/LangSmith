@@ -43,8 +43,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListCommentsResponse> GetCommentsApiV1CommentsOwnerRepoGetAsync(
             string owner,
             string repo,
-            int limit,
-            int offset,
+            int limit = 20,
+            int offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

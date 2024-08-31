@@ -36,8 +36,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetVersion> GetDatasetVersionApiV1DatasetsDatasetIdVersionGetAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, object>? asOf,
-            global::System.AnyOf<string, object>? tag,
+            global::System.AnyOf<global::System.DateTime?, object>? asOf = default,
+            global::System.AnyOf<string, object>? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

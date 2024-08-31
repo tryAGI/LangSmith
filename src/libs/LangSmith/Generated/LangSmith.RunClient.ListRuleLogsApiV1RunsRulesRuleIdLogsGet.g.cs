@@ -46,10 +46,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>> ListRuleLogsApiV1RunsRulesRuleIdLogsGetAsync(
             string ruleId,
-            int limit,
-            int offset,
-            global::System.AnyOf<global::System.DateTime?, object>? startTime,
-            global::System.AnyOf<global::System.DateTime?, object>? endTime,
+            int limit = 720,
+            int offset = 0,
+            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

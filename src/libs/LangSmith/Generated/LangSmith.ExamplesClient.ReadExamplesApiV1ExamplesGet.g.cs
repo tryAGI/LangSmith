@@ -74,18 +74,18 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> ReadExamplesApiV1ExamplesGetAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
-            global::System.AnyOf<string, object>? metadata,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
-            global::System.AnyOf<string, object>? dataset,
-            int offset,
-            int limit,
-            global::System.AllOf<global::LangSmith.ExampleListOrder?>? order,
-            global::System.AnyOf<double?, object>? randomSeed,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            global::System.AnyOf<string, object>? filter,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::System.AnyOf<string, object>? metadata = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits = default,
+            global::System.AnyOf<string, object>? dataset = default,
+            int offset = 0,
+            int limit = 100,
+            global::System.AllOf<global::LangSmith.ExampleListOrder?>? order = default,
+            global::System.AnyOf<double?, object>? randomSeed = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            global::System.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

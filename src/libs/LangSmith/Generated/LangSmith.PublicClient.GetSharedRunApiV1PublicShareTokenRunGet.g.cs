@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunPublicSchema> GetSharedRunApiV1PublicShareTokenRunGetAsync(
             string shareToken,
-            bool excludeS3StoredAttributes,
+            bool excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
