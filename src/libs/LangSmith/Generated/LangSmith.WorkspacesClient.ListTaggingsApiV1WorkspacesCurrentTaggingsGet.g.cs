@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TaggingsResponse>> ListTaggingsApiV1WorkspacesCurrentTaggingsGetAsync(
-            global::System.AnyOf<string, object>? tagValueId,
+            global::System.AnyOf<string, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

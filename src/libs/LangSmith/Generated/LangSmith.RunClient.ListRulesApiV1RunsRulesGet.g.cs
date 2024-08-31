@@ -32,8 +32,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>> ListRulesApiV1RunsRulesGetAsync(
-            global::System.AnyOf<string, object>? datasetId,
-            global::System.AnyOf<string, object>? sessionId,
+            global::System.AnyOf<string, object>? datasetId = default,
+            global::System.AnyOf<string, object>? sessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

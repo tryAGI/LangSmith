@@ -55,13 +55,13 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>> ReadSectionsApiV1ChartsSectionGetAsync(
-            int limit,
-            int offset,
-            global::System.AnyOf<string, object>? titleContains,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
-            global::System.AnyOf<string, object>? sortBy,
-            global::System.AnyOf<bool?, object>? sortByDesc,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            int limit = 100,
+            int offset = 0,
+            global::System.AnyOf<string, object>? titleContains = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids = default,
+            global::System.AnyOf<string, object>? sortBy = default,
+            global::System.AnyOf<bool?, object>? sortByDesc = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

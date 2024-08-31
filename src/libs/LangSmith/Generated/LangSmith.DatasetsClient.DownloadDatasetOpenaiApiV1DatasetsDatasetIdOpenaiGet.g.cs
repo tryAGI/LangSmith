@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse> DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, object>? asOf,
+            global::System.AnyOf<global::System.DateTime?, object>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

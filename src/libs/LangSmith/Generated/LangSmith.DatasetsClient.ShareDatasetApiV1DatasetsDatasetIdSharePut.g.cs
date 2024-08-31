@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetShareSchema> ShareDatasetApiV1DatasetsDatasetIdSharePutAsync(
             string datasetId,
-            bool shareProjects,
+            bool shareProjects = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

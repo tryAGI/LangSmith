@@ -39,7 +39,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunPublicDatasetSchema> ReadSharedDatasetRunApiV1PublicShareTokenDatasetsRunsRunIdGetAsync(
             string runId,
             string shareToken,
-            bool excludeS3StoredAttributes,
+            bool excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

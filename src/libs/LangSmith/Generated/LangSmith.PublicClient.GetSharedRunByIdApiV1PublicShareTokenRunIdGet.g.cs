@@ -39,7 +39,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunPublicSchema> GetSharedRunByIdApiV1PublicShareTokenRunIdGetAsync(
             string id,
             string shareToken,
-            bool excludeS3StoredAttributes,
+            bool excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<string>> GetDatasetSplitsApiV1DatasetsDatasetIdSplitsGetAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

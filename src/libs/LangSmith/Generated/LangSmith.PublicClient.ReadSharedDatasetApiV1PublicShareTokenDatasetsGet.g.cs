@@ -50,10 +50,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetPublicSchema> ReadSharedDatasetApiV1PublicShareTokenDatasetsGetAsync(
             string shareToken,
-            int offset,
-            int limit,
-            global::System.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
-            bool sortByDesc,
+            int offset = 0,
+            int limit = 100,
+            global::System.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy = default,
+            bool sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

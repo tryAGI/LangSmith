@@ -36,7 +36,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Example> ReadExampleApiV1ExamplesExampleIdGetAsync(
             string exampleId,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
