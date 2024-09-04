@@ -26,6 +26,12 @@ namespace LangSmith
         public required global::LangSmith.TraceTier3 DefaultTraceTier { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("apply_to_all_projects")]
+        public bool ApplyToAllProjects { get; set; } = false;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
