@@ -76,10 +76,6 @@ namespace LangSmith
         /// 
         /// </summary>
         LanggraphDeployOwnCloudEnabled,
-        /// <summary>
-        /// 
-        /// </summary>
-        CustomChartsEnabled,
     }
 
     /// <summary>
@@ -111,7 +107,6 @@ namespace LangSmith
                 OrgFeatureFlags.ConsolidatePlaygroundComparative => "consolidate_playground_comparative",
                 OrgFeatureFlags.ResourceTags => "resource_tags",
                 OrgFeatureFlags.LanggraphDeployOwnCloudEnabled => "langgraph_deploy_own_cloud_enabled",
-                OrgFeatureFlags.CustomChartsEnabled => "custom_charts_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -139,7 +134,6 @@ namespace LangSmith
                 "consolidate_playground_comparative" => OrgFeatureFlags.ConsolidatePlaygroundComparative,
                 "resource_tags" => OrgFeatureFlags.ResourceTags,
                 "langgraph_deploy_own_cloud_enabled" => OrgFeatureFlags.LanggraphDeployOwnCloudEnabled,
-                "custom_charts_enabled" => OrgFeatureFlags.CustomChartsEnabled,
                 _ => null,
             };
         }
