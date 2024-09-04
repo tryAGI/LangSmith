@@ -99,17 +99,22 @@ namespace LangSmith
         /// </summary>
         /// <param name="tenantId"></param>
         /// <param name="defaultTraceTier"></param>
+        /// <param name="applyToAllProjects">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsApiV1TtlSettingsPutAsync(
             global::LangSmith.TraceTier3 defaultTraceTier,
             global::System.AnyOf<string, object>? tenantId = default,
+            bool applyToAllProjects = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.UpsertTTLSettingsRequest
             {
                 TenantId = tenantId,
                 DefaultTraceTier = defaultTraceTier,
+                ApplyToAllProjects = applyToAllProjects,
             };
 
             return await UpsertTtlSettingsApiV1TtlSettingsPutAsync(

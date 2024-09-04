@@ -1287,7 +1287,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpsertOrgOrWorkspaceTTLSettingsRequest'
+              $ref: '#/components/schemas/UpsertTTLSettingsRequest'
         required: true
       responses:
         '200':
@@ -16716,6 +16716,10 @@ components:
             - type: 'null'
         default_trace_tier:
           $ref: '#/components/schemas/TraceTier'
+        apply_to_all_projects:
+          title: Apply To All Projects
+          type: boolean
+          default: false
         id:
           title: Id
           type: string
@@ -17771,15 +17775,6 @@ components:
           type: array
           items:
             type: string
-    UpsertOrgOrWorkspaceTTLSettingsRequest:
-      title: UpsertOrgOrWorkspaceTTLSettingsRequest
-      required:
-        - default_trace_tier
-      type: object
-      properties:
-        default_trace_tier:
-          $ref: '#/components/schemas/TraceTier'
-      description: Base upsert TTL settings model.
     UpsertTTLSettingsRequest:
       title: UpsertTTLSettingsRequest
       required:
@@ -17794,6 +17789,10 @@ components:
             - type: 'null'
         default_trace_tier:
           $ref: '#/components/schemas/TraceTier'
+        apply_to_all_projects:
+          title: Apply To All Projects
+          type: boolean
+          default: false
       description: Base TTL settings model.
     UpsertUsageLimit:
       title: UpsertUsageLimit
