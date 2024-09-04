@@ -13169,7 +13169,6 @@ components:
         - consolidate_playground_comparative
         - resource_tags
         - langgraph_deploy_own_cloud_enabled
-        - custom_charts_enabled
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
@@ -13557,7 +13556,6 @@ components:
             consolidate_playground_comparative: false
             resource_tags: false
             langgraph_deploy_own_cloud_enabled: false
-            custom_charts_enabled: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
