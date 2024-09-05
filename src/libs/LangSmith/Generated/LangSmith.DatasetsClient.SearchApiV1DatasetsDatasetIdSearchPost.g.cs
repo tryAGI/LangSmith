@@ -113,6 +113,7 @@ namespace LangSmith
         /// <param name="debug">
         /// Default Value: false
         /// </param>
+        /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SearchDatasetResponse> SearchApiV1DatasetsDatasetIdSearchPostAsync(
@@ -120,6 +121,7 @@ namespace LangSmith
             global::LangSmith.SearchDatasetRequestInputs inputs,
             int limit = 5,
             bool debug = false,
+            global::System.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.SearchDatasetRequest
@@ -127,6 +129,7 @@ namespace LangSmith
                 Inputs = inputs,
                 Limit = limit,
                 Debug = debug,
+                Filter = filter,
             };
 
             return await SearchApiV1DatasetsDatasetIdSearchPostAsync(

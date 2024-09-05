@@ -16213,6 +16213,11 @@ components:
           title: Debug
           type: boolean
           default: false
+        filter:
+          title: Filter
+          anyOf:
+            - type: string
+            - type: 'null'
       description: Dataset schema for serving.
     SearchDatasetResponse:
       title: SearchDatasetResponse
