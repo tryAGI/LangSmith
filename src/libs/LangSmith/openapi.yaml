@@ -1306,6 +1306,57 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/sso-settings:
+    get:
+      tags:
+        - orgs
+      summary: Get Current Sso Settings
+      description: Get SSO provider settings for the current organization.
+      operationId: get_current_sso_settings_api_v1_orgs_current_sso_settings_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Current Sso Settings Api V1 Orgs Current Sso Settings Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/SSOProvider'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - orgs
+      summary: Create Sso Settings
+      description: Create SSO provider settings for the current organization.
+      operationId: create_sso_settings_api_v1_orgs_current_sso_settings_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SSOSettingsCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Create Sso Settings Api V1 Orgs Current Sso Settings Post
+                type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/login:
     post:
       tags:
@@ -3380,6 +3431,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RunRulesSchema'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/runs/rules/trigger:
+    post:
+      tags:
+        - run
+      summary: Trigger Rules
+      description: Trigger an array of run rules manually.
+      operationId: trigger_rules_api_v1_runs_rules_trigger_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TriggerRulesRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
         '422':
           description: Validation Error
           content:
@@ -9877,6 +9957,15 @@ components:
         tier:
           $ref: '#/components/schemas/ChangePaymentPlanReq'
       description: Change payment plan schema.
+    CodeEvaluatorTopLevel:
+      title: CodeEvaluatorTopLevel
+      required:
+        - code
+      type: object
+      properties:
+        code:
+          title: Code
+          type: string
     Comment:
       title: Comment
       required:
@@ -13169,6 +13258,7 @@ components:
         - consolidate_playground_comparative
         - resource_tags
         - langgraph_deploy_own_cloud_enabled
+        - arbitrary_code_execution_enabled
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
@@ -13533,6 +13623,10 @@ components:
           title: Collated Threads View
           type: boolean
           default: false
+        can_use_saml_sso:
+          title: Can Use Saml Sso
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -13556,6 +13650,7 @@ components:
             consolidate_playground_comparative: false
             resource_tags: false
             langgraph_deploy_own_cloud_enabled: false
+            arbitrary_code_execution_enabled: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
@@ -15100,6 +15195,13 @@ components:
               items:
                 $ref: '#/components/schemas/EvaluatorTopLevel'
             - type: 'null'
+        code_evaluators:
+          title: Code Evaluators
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/CodeEvaluatorTopLevel'
+            - type: 'null'
         alerts:
           title: Alerts
           anyOf:
@@ -15252,6 +15354,13 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/EvaluatorTopLevel'
+            - type: 'null'
+        code_evaluators:
+          title: Code Evaluators
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/CodeEvaluatorTopLevel'
             - type: 'null'
         alerts:
           title: Alerts
@@ -16194,6 +16303,50 @@ components:
         - results_size
         - valid_filter
       type: string
+    SSOProvider:
+      title: SSOProvider
+      required:
+        - id
+        - provider_id
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        provider_id:
+          title: Provider Id
+          type: string
+          format: uuid
+        metadata_url:
+          title: Metadata Url
+          anyOf:
+            - type: string
+            - type: 'null'
+        metadata_xml:
+          title: Metadata Xml
+          anyOf:
+            - type: string
+            - type: 'null'
+    SSOSettingsCreate:
+      title: SSOSettingsCreate
+      type: object
+      properties:
+        metadata_xml:
+          title: Metadata Xml
+          anyOf:
+            - type: string
+            - type: 'null'
+        metadata_url:
+          title: Metadata Url
+          anyOf:
+            - type: string
+            - type: 'null'
+        attribute_mapping:
+          title: Attribute Mapping
+          type: object
+          additionalProperties:
+            type: string
     SearchDatasetRequest:
       title: SearchDatasetRequest
       required:
@@ -17709,6 +17862,18 @@ components:
               format: date-time
             - type: 'null'
       description: TracerSession schema.
+    TriggerRulesRequest:
+      title: TriggerRulesRequest
+      required:
+        - rule_ids
+      type: object
+      properties:
+        rule_ids:
+          title: Rule Ids
+          type: array
+          items:
+            type: string
+            format: uuid
     UpdateFeedbackConfigSchema:
       title: UpdateFeedbackConfigSchema
       required:
