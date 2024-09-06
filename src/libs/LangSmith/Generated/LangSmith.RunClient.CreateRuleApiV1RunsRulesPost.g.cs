@@ -123,6 +123,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="evaluators"></param>
+        /// <param name="codeEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -144,6 +145,7 @@ namespace LangSmith
             global::System.AnyOf<string, object>? addToDatasetId = default,
             bool addToDatasetPreferCorrection = false,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>, object>? evaluators = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>, object>? codeEvaluators = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>, object>? alerts = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>, object>? webhooks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -166,6 +168,7 @@ namespace LangSmith
                 AddToDatasetId = addToDatasetId,
                 AddToDatasetPreferCorrection = addToDatasetPreferCorrection,
                 Evaluators = evaluators,
+                CodeEvaluators = codeEvaluators,
                 Alerts = alerts,
                 Webhooks = webhooks,
             };
