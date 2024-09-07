@@ -70,6 +70,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AceClient Ace => new AceClient(_httpClient);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TenantClient Tenant => new TenantClient(_httpClient);
 
         /// <summary>

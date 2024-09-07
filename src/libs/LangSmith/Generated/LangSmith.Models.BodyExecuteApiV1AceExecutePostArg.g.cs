@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse
+    public sealed partial class BodyExecuteApiV1AceExecutePostArg
     {
 
         /// <summary>
