@@ -1340,13 +1340,44 @@ paths:
               $ref: '#/components/schemas/SSOSettingsCreate'
         required: true
       responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SSOProvider'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/orgs/current/sso-settings/{id}':
+    delete:
+      tags:
+        - orgs
+      summary: Delete Sso Settings
+      description: Delete SSO provider settings for the current organization.
+      operationId: delete_sso_settings_api_v1_orgs_current_sso_settings__id__delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            title: Id
+            type: string
+            format: uuid
+      responses:
         '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                title: Response Create Sso Settings Api V1 Orgs Current Sso Settings Post
-                type: object
+                $ref: '#/components/schemas/SSOProvider'
         '422':
           description: Validation Error
           content:
@@ -3225,6 +3256,23 @@ paths:
             anyOf:
               - type: string
                 format: uuid
+              - type: 'null'
+        - name: type
+          in: query
+          schema:
+            title: Type
+            anyOf:
+              - enum:
+                  - session
+                  - dataset
+                type: string
+              - type: 'null'
+        - name: name_contains
+          in: query
+          schema:
+            title: Name Contains
+            anyOf:
+              - type: string
               - type: 'null'
       responses:
         '200':
@@ -5216,6 +5264,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/public/sso-settings/{sso_login_slug}':
+    get:
+      tags:
+        - public
+      summary: Get Sso Settings
+      description: Get SSO provider settings from login slug.
+      operationId: get_sso_settings_api_v1_public_sso_settings__sso_login_slug__get
+      parameters:
+        - name: sso_login_slug
+          in: path
+          required: true
+          schema:
+            title: Sso Login Slug
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Sso Settings Api V1 Public Sso Settings  Sso Login Slug  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/SSOProviderSlim'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
   /api/v1/annotation-queues:
     get:
       tags:
@@ -5667,6 +5745,37 @@ paths:
           content:
             application/json:
               schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/ace/execute:
+    post:
+      tags:
+        - ace
+      summary: Execute
+      description: Execute some custom code for testing purposes.
+      operationId: execute_api_v1_ace_execute_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Body_execute_api_v1_ace_execute_post'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Execute Api V1 Ace Execute Post
+                type: object
         '422':
           description: Validation Error
           content:
@@ -8629,6 +8738,36 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/repos/optimize:
+    post:
+      tags:
+        - repos
+      summary: Optimize Prompt
+      description: Optimize prompt tables.
+      operationId: optimize_prompt_api_v1_repos_optimize_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptimizePromptRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OptimizePromptResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/likes/{owner}/{repo}':
     post:
       tags:
@@ -9861,6 +10000,20 @@ components:
           items:
             type: string
             format: uuid
+    Body_execute_api_v1_ace_execute_post:
+      title: Body_execute_api_v1_ace_execute_post
+      required:
+        - args
+        - code
+      type: object
+      properties:
+        args:
+          title: Args
+          type: array
+          items: { }
+        code:
+          title: Code
+          type: string
     Body_update_dataset_splits_api_v1_datasets__dataset_id__splits_put:
       title: Body_update_dataset_splits_api_v1_datasets__dataset_id__splits_put
       required:
@@ -11538,6 +11691,32 @@ components:
         - random
         - recently_created
       type: string
+    ExampleRunWithFeedback:
+      title: ExampleRunWithFeedback
+      required:
+        - input
+        - reference_output
+        - output
+        - feedback
+        - run_id
+      type: object
+      properties:
+        input:
+          title: Input
+          type: string
+        reference_output:
+          title: Reference Output
+          type: string
+        output:
+          title: Output
+          type: string
+        feedback:
+          title: Feedback
+          type: string
+        run_id:
+          title: Run Id
+          type: string
+      description: An example run with feedback.
     ExampleSelect:
       title: ExampleSelect
       enum:
@@ -13238,6 +13417,51 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MonitorBlock'
+    OptimizePromptRequest:
+      title: OptimizePromptRequest
+      required:
+        - prompt
+        - metaprompt_name
+        - template_format
+        - examples
+        - overall_feedback
+      type: object
+      properties:
+        prompt:
+          title: Prompt
+          type: string
+        metaprompt_name:
+          title: Metaprompt Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        template_format:
+          title: Template Format
+          enum:
+            - f-string
+            - mustache
+          type: string
+        examples:
+          title: Examples
+          type: array
+          items:
+            $ref: '#/components/schemas/ExampleRunWithFeedback'
+        overall_feedback:
+          title: Overall Feedback
+          anyOf:
+            - type: string
+            - type: 'null'
+      description: Request to optimize a prompt.
+    OptimizePromptResponse:
+      title: OptimizePromptResponse
+      required:
+        - prompt
+      type: object
+      properties:
+        prompt:
+          title: Prompt
+          type: string
+      description: Response from optimizing a prompt.
     OrgFeatureFlags:
       title: OrgFeatureFlags
       enum:
@@ -13259,6 +13483,7 @@ components:
         - resource_tags
         - langgraph_deploy_own_cloud_enabled
         - arbitrary_code_execution_enabled
+        - prompt_optimization
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
@@ -13651,6 +13876,7 @@ components:
             resource_tags: false
             langgraph_deploy_own_cloud_enabled: false
             arbitrary_code_execution_enabled: false
+            prompt_optimization: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
@@ -13717,6 +13943,11 @@ components:
           title: Disabled
           type: boolean
           default: false
+        sso_login_slug:
+          title: Sso Login Slug
+          anyOf:
+            - type: string
+            - type: 'null'
       description: Information about an organization.
     OrganizationMembers:
       title: OrganizationMembers
@@ -13781,6 +14012,11 @@ components:
         disabled:
           title: Disabled
           type: boolean
+        sso_login_slug:
+          title: Sso Login Slug
+          anyOf:
+            - type: string
+            - type: 'null'
       description: Schema for an organization in postgres for list views.
     PagerdutySeverity:
       title: PagerdutySeverity
@@ -16328,6 +16564,25 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+    SSOProviderSlim:
+      title: SSOProviderSlim
+      required:
+        - provider_id
+        - organization_id
+        - organization_display_name
+      type: object
+      properties:
+        provider_id:
+          title: Provider Id
+          type: string
+          format: uuid
+        organization_id:
+          title: Organization Id
+          type: string
+          format: uuid
+        organization_display_name:
+          title: Organization Display Name
+          type: string
     SSOSettingsCreate:
       title: SSOSettingsCreate
       type: object

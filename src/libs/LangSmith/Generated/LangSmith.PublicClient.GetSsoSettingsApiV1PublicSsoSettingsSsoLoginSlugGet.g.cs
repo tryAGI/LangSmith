@@ -3,70 +3,52 @@
 
 namespace LangSmith
 {
-    public partial class RunClient
+    public partial class PublicClient
     {
-        partial void PrepareListRulesApiV1RunsRulesGetArguments(
+        partial void PrepareGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<string, object>? datasetId,
-            ref global::System.AnyOf<string, object>? sessionId,
-            ref global::System.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? type,
-            ref global::System.AnyOf<string, object>? nameContains);
-        partial void PrepareListRulesApiV1RunsRulesGetRequest(
+            ref string ssoLoginSlug);
+        partial void PrepareGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<string, object>? datasetId,
-            global::System.AnyOf<string, object>? sessionId,
-            global::System.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? type,
-            global::System.AnyOf<string, object>? nameContains);
-        partial void ProcessListRulesApiV1RunsRulesGetResponse(
+            string ssoLoginSlug);
+        partial void ProcessGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListRulesApiV1RunsRulesGetResponseContent(
+        partial void ProcessGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Rules<br/>
-        /// List all run rules.
+        /// Get Sso Settings<br/>
+        /// Get SSO provider settings from login slug.
         /// </summary>
-        /// <param name="datasetId"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="type"></param>
-        /// <param name="nameContains"></param>
+        /// <param name="ssoLoginSlug"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>> ListRulesApiV1RunsRulesGetAsync(
-            global::System.AnyOf<string, object>? datasetId = default,
-            global::System.AnyOf<string, object>? sessionId = default,
-            global::System.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? type = default,
-            global::System.AnyOf<string, object>? nameContains = default,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>> GetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetAsync(
+            string ssoLoginSlug,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareListRulesApiV1RunsRulesGetArguments(
+            PrepareGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetArguments(
                 httpClient: _httpClient,
-                datasetId: ref datasetId,
-                sessionId: ref sessionId,
-                type: ref type,
-                nameContains: ref nameContains);
+                ssoLoginSlug: ref ssoLoginSlug);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/runs/rules?dataset_id={datasetId}&session_id={sessionId}&type={type}&name_contains={nameContains}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/sso-settings/{ssoLoginSlug}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareListRulesApiV1RunsRulesGetRequest(
+            PrepareGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                datasetId: datasetId,
-                sessionId: sessionId,
-                type: type,
-                nameContains: nameContains);
+                ssoLoginSlug: ssoLoginSlug);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -76,7 +58,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessListRulesApiV1RunsRulesGetResponse(
+            ProcessGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -86,7 +68,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessListRulesApiV1RunsRulesGetResponseContent(
+            ProcessGetSsoSettingsApiV1PublicSsoSettingsSsoLoginSlugGetResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -101,7 +83,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.IListRunRulesSchema) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.IListSSOProviderSlim) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -3,47 +3,47 @@
 
 namespace LangSmith
 {
-    public partial class OrgsClient
+    public partial class ReposClient
     {
-        partial void PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostArguments(
+        partial void PrepareOptimizePromptApiV1ReposOptimizePostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.SSOSettingsCreate request);
-        partial void PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostRequest(
+            global::LangSmith.OptimizePromptRequest request);
+        partial void PrepareOptimizePromptApiV1ReposOptimizePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.SSOSettingsCreate request);
-        partial void ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse(
+            global::LangSmith.OptimizePromptRequest request);
+        partial void ProcessOptimizePromptApiV1ReposOptimizePostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponseContent(
+        partial void ProcessOptimizePromptApiV1ReposOptimizePostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Sso Settings<br/>
-        /// Create SSO provider settings for the current organization.
+        /// Optimize Prompt<br/>
+        /// Optimize prompt tables.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
-            global::LangSmith.SSOSettingsCreate request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptApiV1ReposOptimizePostAsync(
+            global::LangSmith.OptimizePromptRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostArguments(
+            PrepareOptimizePromptApiV1ReposOptimizePostArguments(
                 httpClient: _httpClient,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/orgs/current/sso-settings", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.SSOSettingsCreate);
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/repos/optimize", global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.OptimizePromptRequest);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -53,7 +53,7 @@ namespace LangSmith
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostRequest(
+            PrepareOptimizePromptApiV1ReposOptimizePostRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -66,7 +66,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse(
+            ProcessOptimizePromptApiV1ReposOptimizePostResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -76,7 +76,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponseContent(
+            ProcessOptimizePromptApiV1ReposOptimizePostResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -91,33 +91,39 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.SSOProvider) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.OptimizePromptResponse) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Create Sso Settings<br/>
-        /// Create SSO provider settings for the current organization.
+        /// Optimize Prompt<br/>
+        /// Optimize prompt tables.
         /// </summary>
-        /// <param name="metadataXml"></param>
-        /// <param name="metadataUrl"></param>
-        /// <param name="attributeMapping"></param>
+        /// <param name="prompt"></param>
+        /// <param name="metapromptName"></param>
+        /// <param name="templateFormat"></param>
+        /// <param name="examples"></param>
+        /// <param name="overallFeedback"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
-            global::System.AnyOf<string, object>? metadataXml = default,
-            global::System.AnyOf<string, object>? metadataUrl = default,
-            global::LangSmith.SSOSettingsCreateAttributeMapping? attributeMapping = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptApiV1ReposOptimizePostAsync(
+            string prompt,
+            global::System.AnyOf<string, object> metapromptName,
+            global::LangSmith.OptimizePromptRequestTemplateFormat templateFormat,
+            global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
+            global::System.AnyOf<string, object> overallFeedback,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::LangSmith.SSOSettingsCreate
+            var request = new global::LangSmith.OptimizePromptRequest
             {
-                MetadataXml = metadataXml,
-                MetadataUrl = metadataUrl,
-                AttributeMapping = attributeMapping,
+                Prompt = prompt,
+                MetapromptName = metapromptName,
+                TemplateFormat = templateFormat,
+                Examples = examples,
+                OverallFeedback = overallFeedback,
             };
 
-            return await CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
+            return await OptimizePromptApiV1ReposOptimizePostAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -80,6 +80,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ArbitraryCodeExecutionEnabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptOptimization,
     }
 
     /// <summary>
@@ -112,6 +116,7 @@ namespace LangSmith
                 OrgFeatureFlags.ResourceTags => "resource_tags",
                 OrgFeatureFlags.LanggraphDeployOwnCloudEnabled => "langgraph_deploy_own_cloud_enabled",
                 OrgFeatureFlags.ArbitraryCodeExecutionEnabled => "arbitrary_code_execution_enabled",
+                OrgFeatureFlags.PromptOptimization => "prompt_optimization",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -140,6 +145,7 @@ namespace LangSmith
                 "resource_tags" => OrgFeatureFlags.ResourceTags,
                 "langgraph_deploy_own_cloud_enabled" => OrgFeatureFlags.LanggraphDeployOwnCloudEnabled,
                 "arbitrary_code_execution_enabled" => OrgFeatureFlags.ArbitraryCodeExecutionEnabled,
+                "prompt_optimization" => OrgFeatureFlags.PromptOptimization,
                 _ => null,
             };
         }

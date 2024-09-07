@@ -3,47 +3,47 @@
 
 namespace LangSmith
 {
-    public partial class OrgsClient
+    public partial class AceClient
     {
-        partial void PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostArguments(
+        partial void PrepareExecuteApiV1AceExecutePostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.SSOSettingsCreate request);
-        partial void PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostRequest(
+            global::LangSmith.BodyExecuteApiV1AceExecutePost request);
+        partial void PrepareExecuteApiV1AceExecutePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.SSOSettingsCreate request);
-        partial void ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse(
+            global::LangSmith.BodyExecuteApiV1AceExecutePost request);
+        partial void ProcessExecuteApiV1AceExecutePostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponseContent(
+        partial void ProcessExecuteApiV1AceExecutePostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Sso Settings<br/>
-        /// Create SSO provider settings for the current organization.
+        /// Execute<br/>
+        /// Execute some custom code for testing purposes.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
-            global::LangSmith.SSOSettingsCreate request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ExecuteApiV1AceExecutePostResponse> ExecuteApiV1AceExecutePostAsync(
+            global::LangSmith.BodyExecuteApiV1AceExecutePost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostArguments(
+            PrepareExecuteApiV1AceExecutePostArguments(
                 httpClient: _httpClient,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/orgs/current/sso-settings", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.SSOSettingsCreate);
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/ace/execute", global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.BodyExecuteApiV1AceExecutePost);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -53,7 +53,7 @@ namespace LangSmith
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostRequest(
+            PrepareExecuteApiV1AceExecutePostRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -66,7 +66,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse(
+            ProcessExecuteApiV1AceExecutePostResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -76,7 +76,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponseContent(
+            ProcessExecuteApiV1AceExecutePostResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -91,33 +91,30 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.SSOProvider) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::LangSmith.SourceGenerationContext.Default.ExecuteApiV1AceExecutePostResponse) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Create Sso Settings<br/>
-        /// Create SSO provider settings for the current organization.
+        /// Execute<br/>
+        /// Execute some custom code for testing purposes.
         /// </summary>
-        /// <param name="metadataXml"></param>
-        /// <param name="metadataUrl"></param>
-        /// <param name="attributeMapping"></param>
+        /// <param name="args"></param>
+        /// <param name="code"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
-            global::System.AnyOf<string, object>? metadataXml = default,
-            global::System.AnyOf<string, object>? metadataUrl = default,
-            global::LangSmith.SSOSettingsCreateAttributeMapping? attributeMapping = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ExecuteApiV1AceExecutePostResponse> ExecuteApiV1AceExecutePostAsync(
+            global::System.Collections.Generic.IList<global::LangSmith.BodyExecuteApiV1AceExecutePostArg> args,
+            string code,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::LangSmith.SSOSettingsCreate
+            var request = new global::LangSmith.BodyExecuteApiV1AceExecutePost
             {
-                MetadataXml = metadataXml,
-                MetadataUrl = metadataUrl,
-                AttributeMapping = attributeMapping,
+                Args = args,
+                Code = code,
             };
 
-            return await CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
+            return await ExecuteApiV1AceExecutePostAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
