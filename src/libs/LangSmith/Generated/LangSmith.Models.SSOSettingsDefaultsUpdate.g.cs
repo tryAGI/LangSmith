@@ -8,28 +8,8 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class SSOSettingsCreate
+    public sealed partial class SSOSettingsDefaultsUpdate
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_xml")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? MetadataXml { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_url")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? MetadataUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("attribute_mapping")]
-        public global::LangSmith.SSOSettingsCreateAttributeMapping? AttributeMapping { get; set; }
-
         /// <summary>
         /// 
         /// </summary>

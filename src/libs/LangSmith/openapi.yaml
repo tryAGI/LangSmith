@@ -1357,6 +1357,43 @@ paths:
         - OrganizationId: [ ]
         - BearerAuth: [ ]
   '/api/v1/orgs/current/sso-settings/{id}':
+    patch:
+      tags:
+        - orgs
+      summary: Update Sso Settings
+      description: Update SSO provider settings defaults for the current organization.
+      operationId: update_sso_settings_api_v1_orgs_current_sso_settings__id__patch
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            title: Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SSOSettingsDefaultsUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SSOProvider'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
     delete:
       tags:
         - orgs
@@ -16564,6 +16601,20 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+        default_workspace_role_id:
+          title: Default Workspace Role Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        default_workspace_ids:
+          title: Default Workspace Ids
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
     SSOProviderSlim:
       title: SSOProviderSlim
       required:
@@ -16602,6 +16653,38 @@ components:
           type: object
           additionalProperties:
             type: string
+        default_workspace_role_id:
+          title: Default Workspace Role Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        default_workspace_ids:
+          title: Default Workspace Ids
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
+    SSOSettingsDefaultsUpdate:
+      title: SSOSettingsDefaultsUpdate
+      type: object
+      properties:
+        default_workspace_role_id:
+          title: Default Workspace Role Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        default_workspace_ids:
+          title: Default Workspace Ids
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
     SearchDatasetRequest:
       title: SearchDatasetRequest
       required:
