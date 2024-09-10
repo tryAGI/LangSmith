@@ -5,45 +5,50 @@ namespace LangSmith
 {
     public partial class OrgsClient
     {
-        partial void PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostArguments(
+        partial void PrepareUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.SSOSettingsCreate request);
-        partial void PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostRequest(
+            ref string id,
+            global::LangSmith.SSOSettingsDefaultsUpdate request);
+        partial void PrepareUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.SSOSettingsCreate request);
-        partial void ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse(
+            string id,
+            global::LangSmith.SSOSettingsDefaultsUpdate request);
+        partial void ProcessUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponseContent(
+        partial void ProcessUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Sso Settings<br/>
-        /// Create SSO provider settings for the current organization.
+        /// Update Sso Settings<br/>
+        /// Update SSO provider settings defaults for the current organization.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
-            global::LangSmith.SSOSettingsCreate request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> UpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchAsync(
+            string id,
+            global::LangSmith.SSOSettingsDefaultsUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostArguments(
+            PrepareUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchArguments(
                 httpClient: _httpClient,
+                id: ref id,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/orgs/current/sso-settings", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.SSOSettingsCreate);
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/orgs/current/sso-settings/{id}", global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::LangSmith.SourceGenerationContext.Default.SSOSettingsDefaultsUpdate);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -53,9 +58,10 @@ namespace LangSmith
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostRequest(
+            PrepareUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                id: id,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -66,7 +72,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponse(
+            ProcessUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -76,7 +82,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessCreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostResponseContent(
+            ProcessUpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -96,34 +102,28 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Create Sso Settings<br/>
-        /// Create SSO provider settings for the current organization.
+        /// Update Sso Settings<br/>
+        /// Update SSO provider settings defaults for the current organization.
         /// </summary>
-        /// <param name="metadataXml"></param>
-        /// <param name="metadataUrl"></param>
-        /// <param name="attributeMapping"></param>
+        /// <param name="id"></param>
         /// <param name="defaultWorkspaceRoleId"></param>
         /// <param name="defaultWorkspaceIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
-            global::System.AnyOf<string, object>? metadataXml = default,
-            global::System.AnyOf<string, object>? metadataUrl = default,
-            global::LangSmith.SSOSettingsCreateAttributeMapping? attributeMapping = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> UpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchAsync(
+            string id,
             global::System.AnyOf<string, object>? defaultWorkspaceRoleId = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? defaultWorkspaceIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::LangSmith.SSOSettingsCreate
+            var request = new global::LangSmith.SSOSettingsDefaultsUpdate
             {
-                MetadataXml = metadataXml,
-                MetadataUrl = metadataUrl,
-                AttributeMapping = attributeMapping,
                 DefaultWorkspaceRoleId = defaultWorkspaceRoleId,
                 DefaultWorkspaceIds = defaultWorkspaceIds,
             };
 
-            return await CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
+            return await UpdateSsoSettingsApiV1OrgsCurrentSsoSettingsIdPatchAsync(
+                id: id,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
