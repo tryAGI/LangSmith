@@ -1438,6 +1438,118 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BasicAuthResponse'
+  /api/v1/sso/email-verification/send:
+    post:
+      tags:
+        - auth
+      summary: Send Sso Email Confirmation
+      description: Send an email to confirm the email address for an SSO user.
+      operationId: send_sso_email_confirmation_api_v1_sso_email_verification_send_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SSOEmailVerificationSendRequest'
+        required: true
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Send Sso Email Confirmation Api V1 Sso Email Verification Send Post
+                type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - BearerAuth: [ ]
+  /api/v1/sso/email-verification/status:
+    post:
+      tags:
+        - auth
+      summary: Check Sso Email Verification Status
+      description: Retrieve the email verification status of an SSO user.
+      operationId: check_sso_email_verification_status_api_v1_sso_email_verification_status_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SSOEmailVerificationStatusRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SSOEmailVerificationStatusResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/sso/email-verification/confirm:
+    post:
+      tags:
+        - auth
+      summary: Confirm Sso User Email
+      description: Confirm the email of an SSO user.
+      operationId: confirm_sso_user_email_api_v1_sso_email_verification_confirm_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SSOConfirmEmailRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Confirm Sso User Email Api V1 Sso Email Verification Confirm Post
+                type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/sso/settings/{sso_login_slug}':
+    get:
+      tags:
+        - auth
+      summary: Get Sso Settings
+      description: Get SSO provider settings from login slug.
+      operationId: get_sso_settings_api_v1_sso_settings__sso_login_slug__get
+      parameters:
+        - name: sso_login_slug
+          in: path
+          required: true
+          schema:
+            title: Sso Login Slug
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Sso Settings Api V1 Sso Settings  Sso Login Slug  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/SSOProviderSlim'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
   /api/v1/api-key:
     get:
       tags:
@@ -5295,36 +5407,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/PublicComparativeExperiment'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-  '/api/v1/public/sso-settings/{sso_login_slug}':
-    get:
-      tags:
-        - public
-      summary: Get Sso Settings
-      description: Get SSO provider settings from login slug.
-      operationId: get_sso_settings_api_v1_public_sso_settings__sso_login_slug__get
-      parameters:
-        - name: sso_login_slug
-          in: path
-          required: true
-          schema:
-            title: Sso Login Slug
-            type: string
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                title: Response Get Sso Settings Api V1 Public Sso Settings  Sso Login Slug  Get
-                type: array
-                items:
-                  $ref: '#/components/schemas/SSOProviderSlim'
         '422':
           description: Validation Error
           content:
@@ -16576,6 +16658,53 @@ components:
         - results_size
         - valid_filter
       type: string
+    SSOConfirmEmailRequest:
+      title: SSOConfirmEmailRequest
+      required:
+        - token
+      type: object
+      properties:
+        token:
+          title: Token
+          type: string
+    SSOEmailVerificationSendRequest:
+      title: SSOEmailVerificationSendRequest
+      required:
+        - email
+        - saml_provider_id
+      type: object
+      properties:
+        email:
+          title: Email
+          type: string
+        saml_provider_id:
+          title: Saml Provider Id
+          type: string
+          format: uuid
+    SSOEmailVerificationStatusRequest:
+      title: SSOEmailVerificationStatusRequest
+      required:
+        - email
+        - saml_provider_id
+      type: object
+      properties:
+        email:
+          title: Email
+          type: string
+        saml_provider_id:
+          title: Saml Provider Id
+          type: string
+          format: uuid
+    SSOEmailVerificationStatusResponse:
+      title: SSOEmailVerificationStatusResponse
+      type: object
+      properties:
+        email_confirmed_at:
+          title: Email Confirmed At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
     SSOProvider:
       title: SSOProvider
       required:
