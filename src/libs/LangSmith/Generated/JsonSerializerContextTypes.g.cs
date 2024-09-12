@@ -2345,7 +2345,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.SSOSettingsDefaultsUpdate? Type583 { get; set; }
+        public global::LangSmith.SSOSettingsUpdate? Type583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
