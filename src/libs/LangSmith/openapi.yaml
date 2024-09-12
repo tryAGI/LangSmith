@@ -1375,7 +1375,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SSOSettingsDefaultsUpdate'
+              $ref: '#/components/schemas/SSOSettingsUpdate'
         required: true
       responses:
         '200':
@@ -13598,7 +13598,6 @@ components:
         - playground_comparative
         - show_dataset_schemas
         - compare_trace_enabled
-        - consolidate_playground_comparative
         - resource_tags
         - langgraph_deploy_own_cloud_enabled
         - arbitrary_code_execution_enabled
@@ -13991,7 +13990,6 @@ components:
             playground_comparative: false
             show_dataset_schemas: false
             compare_trace_enabled: false
-            consolidate_playground_comparative: false
             resource_tags: false
             langgraph_deploy_own_cloud_enabled: false
             arbitrary_code_execution_enabled: false
@@ -16709,17 +16707,34 @@ components:
       title: SSOProvider
       required:
         - id
+        - organization_id
         - provider_id
+        - default_workspace_role_id
+        - default_workspace_ids
       type: object
       properties:
         id:
           title: Id
           type: string
           format: uuid
+        organization_id:
+          title: Organization Id
+          type: string
+          format: uuid
         provider_id:
           title: Provider Id
           type: string
           format: uuid
+        default_workspace_role_id:
+          title: Default Workspace Role Id
+          type: string
+          format: uuid
+        default_workspace_ids:
+          title: Default Workspace Ids
+          type: array
+          items:
+            type: string
+            format: uuid
         metadata_url:
           title: Metadata Url
           anyOf:
@@ -16729,20 +16744,6 @@ components:
           title: Metadata Xml
           anyOf:
             - type: string
-            - type: 'null'
-        default_workspace_role_id:
-          title: Default Workspace Role Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
-        default_workspace_ids:
-          title: Default Workspace Ids
-          anyOf:
-            - type: array
-              items:
-                type: string
-                format: uuid
             - type: 'null'
     SSOProviderSlim:
       title: SSOProviderSlim
@@ -16765,8 +16766,21 @@ components:
           type: string
     SSOSettingsCreate:
       title: SSOSettingsCreate
+      required:
+        - default_workspace_role_id
+        - default_workspace_ids
       type: object
       properties:
+        default_workspace_role_id:
+          title: Default Workspace Role Id
+          type: string
+          format: uuid
+        default_workspace_ids:
+          title: Default Workspace Ids
+          type: array
+          items:
+            type: string
+            format: uuid
         metadata_xml:
           title: Metadata Xml
           anyOf:
@@ -16782,22 +16796,8 @@ components:
           type: object
           additionalProperties:
             type: string
-        default_workspace_role_id:
-          title: Default Workspace Role Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
-        default_workspace_ids:
-          title: Default Workspace Ids
-          anyOf:
-            - type: array
-              items:
-                type: string
-                format: uuid
-            - type: 'null'
-    SSOSettingsDefaultsUpdate:
-      title: SSOSettingsDefaultsUpdate
+    SSOSettingsUpdate:
+      title: SSOSettingsUpdate
       type: object
       properties:
         default_workspace_role_id:
@@ -16813,6 +16813,16 @@ components:
               items:
                 type: string
                 format: uuid
+            - type: 'null'
+        metadata_url:
+          title: Metadata Url
+          anyOf:
+            - type: string
+            - type: 'null'
+        metadata_xml:
+          title: Metadata Xml
+          anyOf:
+            - type: string
             - type: 'null'
     SearchDatasetRequest:
       title: SearchDatasetRequest

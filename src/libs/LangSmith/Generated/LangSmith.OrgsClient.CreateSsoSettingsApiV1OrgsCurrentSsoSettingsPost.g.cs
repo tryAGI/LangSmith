@@ -99,28 +99,28 @@ namespace LangSmith
         /// Create Sso Settings<br/>
         /// Create SSO provider settings for the current organization.
         /// </summary>
+        /// <param name="defaultWorkspaceRoleId"></param>
+        /// <param name="defaultWorkspaceIds"></param>
         /// <param name="metadataXml"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="attributeMapping"></param>
-        /// <param name="defaultWorkspaceRoleId"></param>
-        /// <param name="defaultWorkspaceIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(
+            string defaultWorkspaceRoleId,
+            global::System.Collections.Generic.IList<string> defaultWorkspaceIds,
             global::System.AnyOf<string, object>? metadataXml = default,
             global::System.AnyOf<string, object>? metadataUrl = default,
             global::LangSmith.SSOSettingsCreateAttributeMapping? attributeMapping = default,
-            global::System.AnyOf<string, object>? defaultWorkspaceRoleId = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? defaultWorkspaceIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.SSOSettingsCreate
             {
+                DefaultWorkspaceRoleId = defaultWorkspaceRoleId,
+                DefaultWorkspaceIds = defaultWorkspaceIds,
                 MetadataXml = metadataXml,
                 MetadataUrl = metadataUrl,
                 AttributeMapping = attributeMapping,
-                DefaultWorkspaceRoleId = defaultWorkspaceRoleId,
-                DefaultWorkspaceIds = defaultWorkspaceIds,
             };
 
             return await CreateSsoSettingsApiV1OrgsCurrentSsoSettingsPostAsync(

@@ -8,7 +8,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class SSOSettingsDefaultsUpdate
+    public sealed partial class SSOSettingsUpdate
     {
         /// <summary>
         /// 
@@ -23,6 +23,20 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? DefaultWorkspaceIds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_url")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string, object>? MetadataUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_xml")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string, object>? MetadataXml { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

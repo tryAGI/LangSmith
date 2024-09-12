@@ -67,10 +67,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ConsolidatePlaygroundComparative,
-        /// <summary>
-        /// 
-        /// </summary>
         ResourceTags,
         /// <summary>
         /// 
@@ -112,7 +108,6 @@ namespace LangSmith
                 OrgFeatureFlags.PlaygroundComparative => "playground_comparative",
                 OrgFeatureFlags.ShowDatasetSchemas => "show_dataset_schemas",
                 OrgFeatureFlags.CompareTraceEnabled => "compare_trace_enabled",
-                OrgFeatureFlags.ConsolidatePlaygroundComparative => "consolidate_playground_comparative",
                 OrgFeatureFlags.ResourceTags => "resource_tags",
                 OrgFeatureFlags.LanggraphDeployOwnCloudEnabled => "langgraph_deploy_own_cloud_enabled",
                 OrgFeatureFlags.ArbitraryCodeExecutionEnabled => "arbitrary_code_execution_enabled",
@@ -141,7 +136,6 @@ namespace LangSmith
                 "playground_comparative" => OrgFeatureFlags.PlaygroundComparative,
                 "show_dataset_schemas" => OrgFeatureFlags.ShowDatasetSchemas,
                 "compare_trace_enabled" => OrgFeatureFlags.CompareTraceEnabled,
-                "consolidate_playground_comparative" => OrgFeatureFlags.ConsolidatePlaygroundComparative,
                 "resource_tags" => OrgFeatureFlags.ResourceTags,
                 "langgraph_deploy_own_cloud_enabled" => OrgFeatureFlags.LanggraphDeployOwnCloudEnabled,
                 "arbitrary_code_execution_enabled" => OrgFeatureFlags.ArbitraryCodeExecutionEnabled,
