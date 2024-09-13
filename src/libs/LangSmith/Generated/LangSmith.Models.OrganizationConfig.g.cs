@@ -76,12 +76,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("collated_threads_view")]
-        public bool CollatedThreadsView { get; set; } = false;
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_saml_sso")]
         public bool CanUseSamlSso { get; set; } = false;
 
