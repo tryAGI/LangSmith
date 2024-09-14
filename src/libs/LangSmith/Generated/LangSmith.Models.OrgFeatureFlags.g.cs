@@ -11,10 +11,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        PlaygroundRunnables,
-        /// <summary>
-        /// 
-        /// </summary>
         HostedLangserveEnabled,
         /// <summary>
         /// 
@@ -94,7 +90,6 @@ namespace LangSmith
         {
             return value switch
             {
-                OrgFeatureFlags.PlaygroundRunnables => "playground_runnables",
                 OrgFeatureFlags.HostedLangserveEnabled => "hosted_langserve_enabled",
                 OrgFeatureFlags.PaymentEnabled => "payment_enabled",
                 OrgFeatureFlags.RunRulesEnabled => "run_rules_enabled",
@@ -122,7 +117,6 @@ namespace LangSmith
         {
             return value switch
             {
-                "playground_runnables" => OrgFeatureFlags.PlaygroundRunnables,
                 "hosted_langserve_enabled" => OrgFeatureFlags.HostedLangserveEnabled,
                 "payment_enabled" => OrgFeatureFlags.PaymentEnabled,
                 "run_rules_enabled" => OrgFeatureFlags.RunRulesEnabled,

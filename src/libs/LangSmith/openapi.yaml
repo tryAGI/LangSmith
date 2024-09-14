@@ -9845,6 +9845,12 @@ components:
             - type: string
               format: uuid
             - type: 'null'
+        ls_user_id:
+          title: Ls User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
         email:
           title: Email
           type: string
@@ -13584,7 +13590,6 @@ components:
     OrgFeatureFlags:
       title: OrgFeatureFlags
       enum:
-        - playground_runnables
         - hosted_langserve_enabled
         - payment_enabled
         - run_rules_enabled
@@ -13972,7 +13977,6 @@ components:
           additionalProperties:
             type: boolean
           default:
-            playground_runnables: false
             hosted_langserve_enabled: false
             payment_enabled: false
             run_rules_enabled: false
@@ -18495,6 +18499,7 @@ components:
       title: UserWithPassword
       required:
         - id
+        - ls_user_id
         - created_at
         - updated_at
         - email
@@ -18506,10 +18511,8 @@ components:
           format: uuid
         ls_user_id:
           title: Ls User Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
+          type: string
+          format: uuid
         created_at:
           title: Created At
           type: string
