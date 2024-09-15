@@ -21,8 +21,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::LangSmith.RunRulesWebhookSchemaHeaders, object>? Headers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::LangSmith.RunRulesWebhookSchemaHeaders, object>? Headers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunRulesAlertTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.RunRulesAlertType>

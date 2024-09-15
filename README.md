@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
 ## Features 🔥
-- Fully generated C# SDK based on [official OpenAPI specification](https://api.smith.langchain.com/openapi.json) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Fully generated C# SDK based on [official OpenAPI specification](https://api.smith.langchain.com/openapi.json) using [AutoSDK](https://github.com/tryAGI/AutoSDK)
 - Automatic releases of new preview versions if there was an update to the OpenAPI specification
 - Source generator to define tools natively through C# interfaces
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
@@ -17,47 +17,78 @@
 ### Initializing
 
 ```csharp
-using var ollama = new OllamaApiClient();
+using var api = new LangSmithApi();
+using var openAiApi = new OpenAiApi();
 
-var models = await ollama.Models.ListModelsAsync();
+api.JsonSerializerContext = new SpecialJsonSerializerContext(OpenAI.SourceGenerationContext.Default);
 
-// Pulling a model and reporting progress
-await foreach (var response in ollama.PullModelAsync("all-minilm", stream: true))
+// This can be a user input to your app
+var question = "Can you summarize this morning's meetings?";
+
+// This can be retrieved in a retrieval step
+const string context = "During this morning's meeting, we solved all world conflict.";
+var messages = new[]
 {
-    Console.WriteLine($"{response.Status}. Progress: {response.Completed}/{response.Total}");
-}
-// or just pull the model and wait for it to finish
-await ollama.Models.PullModelAndEnsureSuccessAsync("all-minilm");
+    "You are a helpful assistant. Please respond to the user's request only based on the given context."
+        .AsSystemMessage(),
+    $"Question: {question}\\nContext: {context}",
+};
 
-// Generating an embedding
-var embedding = await ollama.Embeddings.GenerateEmbeddingAsync(
-    model: "all-minilm",
-    prompt: "hello");
+// Create parent run
+var parentRunId = Guid.NewGuid();
+await api.Run.CreateRunAsync(
+    name: "Chat Pipeline",
+    runType: CreateRunRequestRunType.Chain,
+    id: parentRunId,
+    inputs: new CreateRunRequestInputs
+    {
+        AdditionalProperties = new Dictionary<string, object>
+        {
+            ["question"] = question,
+        },
+    });
 
-// Streaming a completion directly into the console
-// keep reusing the context to keep the chat topic going
-IList<long>? context = null;
-var enumerable = ollama.Completions.GenerateCompletionAsync("llama3", "answer 5 random words", stream: true);
-await foreach (var response in enumerable)
-{
-    Console.WriteLine($"> {response.Response}");
-    
-    context = response.Context;
-}
+// Create child run
+var childRunId = Guid.NewGuid();
+await api.Run.CreateRunAsync(
+    name: "OpenAI Call",
+    runType: CreateRunRequestRunType.Llm,
+    id: childRunId,
+    parentRunId: parentRunId,
+    inputs: new CreateRunRequestInputs
+    {
+        AdditionalProperties = new Dictionary<string, object>
+        {
+            ["messages"] = messages,
+        },
+    });
 
-var lastResponse = await ollama.Completions.GenerateCompletionAsync("llama3", "answer 123", stream: false, context: context).WaitAsync();
-Console.WriteLine(lastResponse.Response);
+// Generate a completion
+var chatCompletion = await openAiApi.Chat.CreateChatCompletionAsync(
+    model: CreateChatCompletionRequestModel.Gpt35Turbo,
+    messages: messages);
 
-var chat = ollama.Chat("mistral");
-while (true)
-{
-    var message = await chat.SendAsync("answer 123");
-    
-    Console.WriteLine(message.Content);
-    
-    var newMessage = Console.ReadLine();
-    await chat.Send(newMessage);
-}
+// End runs
+await api.Run.UpdateRunAsync(
+    runId: childRunId,
+    outputs: new UpdateRunRequestOutputs
+    {
+        AdditionalProperties = new Dictionary<string, object>
+        {
+            ["chatCompletion"] = chatCompletion,
+        },
+    },
+    endTime: DateTime.UtcNow.ToString("O"));
+await api.Run.UpdateRunAsync(
+    runId: parentRunId,
+    outputs: new UpdateRunRequestOutputs
+    {
+        AdditionalProperties = new Dictionary<string, object>
+        {
+            ["answer"] = chatCompletion.Choices[0].Message.Content ?? string.Empty,
+        },
+    },
+    endTime: DateTime.UtcNow.ToString("O"));
 ```
 
 ## Support
@@ -65,3 +96,13 @@ while (true)
 Priority place for bugs: https://github.com/tryAGI/LangSmith/issues  
 Priority place for ideas and general questions: https://github.com/tryAGI/LangSmith/discussions  
 Discord: https://discord.gg/Ca2xhfBf3v  
+
+## Acknowledgments
+
+![JetBrains logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.png)
+
+This project is supported by JetBrains through the [Open Source Support Program](https://jb.gg/OpenSourceSupport).
+
+![CodeRabbit logo](https://opengraph.githubassets.com/1c51002d7d0bbe0c4fd72ff8f2e58192702f73a7037102f77e4dbb98ac00ea8f/marketplace/coderabbitai)
+
+This project is supported by CodeRabbit through the [Open Source Support Program](https://github.com/marketplace/coderabbitai).

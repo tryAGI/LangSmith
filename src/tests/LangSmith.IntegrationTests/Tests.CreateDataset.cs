@@ -7,10 +7,10 @@ public partial class Tests
     {
         using var api = GetAuthorizedApi();
         
-        var response = await api.Datasets.CreateDatasetApiV1DatasetsPostAsync(name: "test3");
+        var response = await api.Datasets.CreateDatasetAsync(name: "test3");
         try
         {
-            var response2 = await api.Datasets.DeleteDatasetApiV1DatasetsDatasetIdDeleteAsync(datasetId: response.Id);
+            var response2 = await api.Datasets.DeleteDatasetAsync(datasetId: response.Id);
         }
         catch (Exception e)
         {

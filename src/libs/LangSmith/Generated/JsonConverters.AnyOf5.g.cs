@@ -1,12 +1,12 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public class AnyOfJsonConverter<T1, T2, T3, T4, T5> : global::System.Text.Json.Serialization.JsonConverter<global::System.AnyOf<T1, T2, T3, T4, T5>>
+    public class AnyOfJsonConverter<T1, T2, T3, T4, T5> : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AnyOf<T1, T2, T3, T4, T5>>
     {
         /// <inheritdoc />
-        public override global::System.AnyOf<T1, T2, T3, T4, T5> Read(
+        public override global::LangSmith.AnyOf<T1, T2, T3, T4, T5> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -75,7 +75,7 @@ namespace OpenApiGenerator.JsonConverters
             {
             }
 
-            var result = new global::System.AnyOf<T1, T2, T3, T4, T5>(
+            var result = new global::LangSmith.AnyOf<T1, T2, T3, T4, T5>(
                 value1,
                 value2,
                 value3,
@@ -120,7 +120,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::System.AnyOf<T1, T2, T3, T4, T5> value,
+            global::LangSmith.AnyOf<T1, T2, T3, T4, T5> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

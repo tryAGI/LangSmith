@@ -16,146 +16,235 @@ namespace LangSmith
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::LangSmith.SourceGenerationContext.Default;
+
 
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient);
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(_httpClient);
+        public OrgsClient Orgs => new OrgsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(_httpClient);
+        public AuthClient Auth => new AuthClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient);
+        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples => new ExamplesClient(_httpClient);
+        public ExamplesClient Examples => new ExamplesClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient);
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run => new RunClient(_httpClient);
+        public RunClient Run => new RunClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackClient Feedback => new FeedbackClient(_httpClient);
+        public FeedbackClient Feedback => new FeedbackClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public => new PublicClient(_httpClient);
+        public PublicClient Public => new PublicClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient);
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public AceClient Ace => new AceClient(_httpClient);
+        public AceClient Ace => new AceClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TenantClient Tenant => new TenantClient(_httpClient);
+        public TenantClient Tenant => new TenantClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public InfoClient Info => new InfoClient(_httpClient);
+        public InfoClient Info => new InfoClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient);
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient);
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient);
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient);
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(_httpClient);
+        public PromptsClient Prompts => new PromptsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient);
+        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient);
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient);
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ChartsClient Charts => new ChartsClient(_httpClient);
+        public ChartsClient Charts => new ChartsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ReposClient Repos => new ReposClient(_httpClient);
+        public ReposClient Repos => new ReposClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public LikesClient Likes => new LikesClient(_httpClient);
+        public LikesClient Likes => new LikesClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits => new CommitsClient(_httpClient);
+        public CommitsClient Commits => new CommitsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public SettingsClient Settings => new SettingsClient(_httpClient);
+        public SettingsClient Settings => new SettingsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public EventsClient Events => new EventsClient(_httpClient);
+        public EventsClient Events => new EventsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(_httpClient);
+        public CommentsClient Comments => new CommentsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Creates a new instance of the LangSmithApi.
@@ -166,8 +255,7 @@ namespace LangSmith
         /// <param name="baseUri"></param> 
         public LangSmithApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null 
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);

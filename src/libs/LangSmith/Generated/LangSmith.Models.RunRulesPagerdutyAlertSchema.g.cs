@@ -14,8 +14,8 @@ namespace LangSmith
         /// Default Value: pagerduty
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::LangSmith.RunRulesAlertType?, object>? Type { get; set; } = global::LangSmith.RunRulesAlertType.Pagerduty;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::LangSmith.RunRulesAlertType?, object>? Type { get; set; } = global::LangSmith.RunRulesAlertType.Pagerduty;
 
         /// <summary>
         /// 
@@ -28,15 +28,15 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? Summary { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<string, object>? Summary { get; set; }
 
         /// <summary>
         /// Default Value: warning
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::LangSmith.PagerdutySeverity?, object>? Severity { get; set; } = global::LangSmith.PagerdutySeverity.Warning;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::LangSmith.PagerdutySeverity?, object>? Severity { get; set; } = global::LangSmith.PagerdutySeverity.Warning;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2?>

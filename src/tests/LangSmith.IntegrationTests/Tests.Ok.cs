@@ -6,6 +6,6 @@ public partial class Tests
     public async Task Ok()
     {
         using var api = GetAuthorizedApi();
-        var response = await api.OkApiV1OkGetAsync();
+        var response = await api.OkAsync();
     }
 }

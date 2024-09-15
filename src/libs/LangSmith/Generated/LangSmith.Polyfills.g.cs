@@ -7,7 +7,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public static partial class OpenApiGeneratorPolyfills
+    public static partial class AutoSDKPolyfills
     {
         /// <summary>
         /// 

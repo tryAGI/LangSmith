@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ResourceTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.ResourceType?>

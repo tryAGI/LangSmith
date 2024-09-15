@@ -20,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TagKeyId { get; set; }
+        public required global::System.Guid TagKeyId { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TagValueId { get; set; }
+        public required global::System.Guid TagValueId { get; set; }
 
         /// <summary>
         /// 

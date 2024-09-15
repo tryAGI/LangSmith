@@ -12,7 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("__missing__")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MissingMissing1JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.MissingMissing1JsonConverter))]
         public global::LangSmith.MissingMissing1 Missing1 { get; set; }
 
         /// <summary>

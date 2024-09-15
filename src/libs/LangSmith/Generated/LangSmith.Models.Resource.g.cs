@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tagging_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TaggingId { get; set; }
+        public required global::System.Guid TaggingId { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResourceId { get; set; }
+        public required global::System.Guid ResourceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

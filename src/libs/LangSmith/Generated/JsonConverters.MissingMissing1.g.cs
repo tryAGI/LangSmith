@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MissingMissing1JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.MissingMissing1>

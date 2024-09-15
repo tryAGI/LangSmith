@@ -16,6 +16,11 @@ namespace LangSmith
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::LangSmith.SourceGenerationContext.Default;
+
 
         /// <summary>
         /// Creates a new instance of the EventsClient.
@@ -26,8 +31,7 @@ namespace LangSmith
         /// <param name="baseUri"></param> 
         public EventsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null 
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);

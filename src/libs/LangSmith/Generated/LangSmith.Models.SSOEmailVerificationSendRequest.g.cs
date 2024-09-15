@@ -20,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("saml_provider_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SamlProviderId { get; set; }
+        public required global::System.Guid SamlProviderId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

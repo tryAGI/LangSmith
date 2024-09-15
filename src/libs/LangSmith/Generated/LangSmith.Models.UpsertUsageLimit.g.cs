@@ -12,7 +12,7 @@ namespace LangSmith
         /// Type of usage limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UsageLimitType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.UsageLimitType2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.UsageLimitType2 LimitType { get; set; }
 
@@ -27,7 +27,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
