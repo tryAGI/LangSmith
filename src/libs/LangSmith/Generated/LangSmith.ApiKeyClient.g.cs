@@ -7,7 +7,7 @@ namespace LangSmith
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class ApiKeyClient : global::System.IDisposable
+    public sealed partial class ApiKeyClient : global::LangSmith.IApiKeyClient, global::System.IDisposable
     {
         /// <summary>
         /// 
