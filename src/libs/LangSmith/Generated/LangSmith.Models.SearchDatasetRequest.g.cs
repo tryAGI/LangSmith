@@ -21,13 +21,13 @@ namespace LangSmith
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int Limit { get; set; } = 5;
+        public int? Limit { get; set; } = 5;
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("debug")]
-        public bool Debug { get; set; } = false;
+        public bool? Debug { get; set; } = false;
 
         /// <summary>
         /// 

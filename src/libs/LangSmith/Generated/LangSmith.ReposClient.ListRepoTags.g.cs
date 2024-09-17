@@ -7,8 +7,8 @@ namespace LangSmith
     {
         partial void PrepareListRepoTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
-            ref int offset,
+            ref int? limit,
+            ref int? offset,
             ref global::LangSmith.AnyOf<string, object>? tenantHandle,
             ref global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId,
             ref global::LangSmith.AnyOf<string, object>? query,
@@ -23,8 +23,8 @@ namespace LangSmith
         partial void PrepareListRepoTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
-            int offset,
+            int? limit,
+            int? offset,
             global::LangSmith.AnyOf<string, object>? tenantHandle,
             global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId,
             global::LangSmith.AnyOf<string, object>? query,
@@ -71,8 +71,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListTagsResponse> ListRepoTagsAsync(
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::LangSmith.AnyOf<string, object>? tenantHandle = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::LangSmith.AnyOf<string, object>? query = default,

@@ -42,8 +42,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::LangSmith.ExampleCreateInputs, object>? inputs = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
-            bool useSourceRunIo = false,
-            global::System.DateTime createdAt = default,
+            bool? useSourceRunIo = false,
+            global::System.DateTime? createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

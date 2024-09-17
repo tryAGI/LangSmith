@@ -22,8 +22,8 @@ namespace LangSmith
             string owner,
             string repo,
             global::System.Guid parentCommentId,
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -7,12 +7,12 @@ namespace LangSmith
     {
         partial void PrepareCreateTracerSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool upsert,
+            ref bool? upsert,
             global::LangSmith.TracerSessionCreate request);
         partial void PrepareCreateTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool upsert,
+            bool? upsert,
             global::LangSmith.TracerSessionCreate request);
         partial void ProcessCreateTracerSessionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
             global::LangSmith.TracerSessionCreate request,
-            bool upsert = false,
+            bool? upsert = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -122,8 +122,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
-            bool upsert = false,
-            global::System.DateTime startTime = default,
+            bool? upsert = false,
+            global::System.DateTime? startTime = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::LangSmith.AnyOf<global::LangSmith.TracerSessionCreateExtra, object>? extra = default,
             string? name = default,

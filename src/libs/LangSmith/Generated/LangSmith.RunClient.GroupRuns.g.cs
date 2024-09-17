@@ -126,8 +126,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? filter = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.RunGroupRequest

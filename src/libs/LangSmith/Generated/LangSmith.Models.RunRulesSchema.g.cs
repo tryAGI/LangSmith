@@ -28,7 +28,7 @@ namespace LangSmith
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_enabled")]
-        public bool IsEnabled { get; set; } = true;
+        public bool? IsEnabled { get; set; } = true;
 
         /// <summary>
         /// 
@@ -125,7 +125,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_dataset_prefer_correction")]
-        public bool AddToDatasetPreferCorrection { get; set; } = false;
+        public bool? AddToDatasetPreferCorrection { get; set; } = false;
 
         /// <summary>
         /// 
@@ -138,7 +138,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_corrections_dataset")]
-        public bool UseCorrectionsDataset { get; set; } = false;
+        public bool? UseCorrectionsDataset { get; set; } = false;
 
         /// <summary>
         /// 
@@ -180,7 +180,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extend_only")]
-        public bool ExtendOnly { get; set; } = false;
+        public bool? ExtendOnly { get; set; } = false;
 
         /// <summary>
         /// 

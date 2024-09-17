@@ -8,16 +8,16 @@ namespace LangSmith
         partial void PrepareListRuleLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid ruleId,
-            ref int limit,
-            ref int offset,
+            ref int? limit,
+            ref int? offset,
             ref global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime,
             ref global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid ruleId,
-            int limit,
-            int offset,
+            int? limit,
+            int? offset,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime);
         partial void ProcessListRuleLogsResponse(
@@ -46,8 +46,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>> ListRuleLogsAsync(
             global::System.Guid ruleId,
-            int limit = 720,
-            int offset = 0,
+            int? limit = 720,
+            int? offset = 0,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)

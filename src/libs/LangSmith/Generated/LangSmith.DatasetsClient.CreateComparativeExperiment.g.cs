@@ -112,11 +112,11 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.ComparativeExperimentBase> CreateComparativeExperimentAsync(
             global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
             global::System.Guid referenceDatasetId,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? description = default,
-            global::System.DateTime createdAt = default,
-            global::System.DateTime modifiedAt = default,
+            global::System.DateTime? createdAt = default,
+            global::System.DateTime? modifiedAt = default,
             global::LangSmith.AnyOf<global::LangSmith.ComparativeExperimentCreateExtra, object>? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

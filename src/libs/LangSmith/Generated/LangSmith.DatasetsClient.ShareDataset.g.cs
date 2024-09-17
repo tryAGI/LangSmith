@@ -8,12 +8,12 @@ namespace LangSmith
         partial void PrepareShareDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref bool shareProjects);
+            ref bool? shareProjects);
         partial void PrepareShareDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            bool shareProjects);
+            bool? shareProjects);
         partial void ProcessShareDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetShareSchema> ShareDatasetAsync(
             global::System.Guid datasetId,
-            bool shareProjects = false,
+            bool? shareProjects = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

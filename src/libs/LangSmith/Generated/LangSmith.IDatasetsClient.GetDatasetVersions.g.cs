@@ -23,8 +23,8 @@ namespace LangSmith
             global::System.Guid datasetId,
             global::LangSmith.AnyOf<string, object>? search = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? example = default,
-            int limit = 100,
-            int offset = 0,
+            int? limit = 100,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

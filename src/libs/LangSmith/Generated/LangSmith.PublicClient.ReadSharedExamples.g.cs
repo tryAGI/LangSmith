@@ -12,8 +12,8 @@ namespace LangSmith
             ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
             ref global::LangSmith.AnyOf<string, object>? metadata,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
             ref global::LangSmith.AnyOf<string, object>? filter);
         partial void PrepareReadSharedExamplesRequest(
@@ -23,8 +23,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
             global::LangSmith.AnyOf<string, object>? metadata,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
             global::LangSmith.AnyOf<string, object>? filter);
         partial void ProcessReadSharedExamplesResponse(
@@ -64,8 +64,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::LangSmith.AnyOf<string, object>? metadata = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
             global::LangSmith.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)

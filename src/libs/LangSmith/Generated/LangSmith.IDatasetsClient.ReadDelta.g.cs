@@ -41,8 +41,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,
             string feedbackKey,
             global::LangSmith.AnyOf<global::LangSmith.QueryFeedbackDeltaFilters, object>? filters = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::LangSmith.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
