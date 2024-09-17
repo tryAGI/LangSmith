@@ -1425,6 +1425,37 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/login-methods:
+    patch:
+      tags:
+        - orgs
+      summary: Update Allowed Login Methods
+      description: Update allowed login methods for the current organization.
+      operationId: update_allowed_login_methods_api_v1_orgs_current_login_methods_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllowedLoginMethodsUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Update Allowed Login Methods Api V1 Orgs Current Login Methods Patch
+                type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/login:
     post:
       tags:
@@ -8380,6 +8411,92 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/playground/invoke:
+    post:
+      tags:
+        - playground
+      summary: Invoke Handler
+      operationId: invoke_handler_api_v1_playground_invoke_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundInvokeRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Invoke Handler Api V1 Playground Invoke Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/playground/batch:
+    post:
+      tags:
+        - playground
+      summary: Batch Handler
+      operationId: batch_handler_api_v1_playground_batch_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundBatchRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Batch Handler Api V1 Playground Batch Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/playground/stream:
+    post:
+      tags:
+        - playground
+      summary: Stream Handler
+      operationId: stream_handler_api_v1_playground_stream_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundStreamRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/ok:
     get:
       summary: Ok
@@ -9544,6 +9661,15 @@ components:
         - organization
         - workspace
       type: string
+    AllowedLoginMethodsUpdate:
+      title: AllowedLoginMethodsUpdate
+      required:
+        - sso_only
+      type: object
+      properties:
+        sso_only:
+          title: Sso Only
+          type: boolean
     AnnotationQueueCreateSchema:
       title: AnnotationQueueCreateSchema
       required:
@@ -14060,6 +14186,10 @@ components:
           title: Disabled
           type: boolean
           default: false
+        sso_only:
+          title: Sso Only
+          type: boolean
+          default: false
         sso_login_slug:
           title: Sso Login Slug
           anyOf:
@@ -14134,6 +14264,10 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+        sso_only:
+          title: Sso Only
+          type: boolean
+          default: false
       description: Schema for an organization in postgres for list views.
     PagerdutySeverity:
       title: PagerdutySeverity
@@ -14298,6 +14432,80 @@ components:
           type: string
         access_scope:
           $ref: '#/components/schemas/AccessScope'
+    PlaygroundBatchRequestSchema:
+      title: PlaygroundBatchRequestSchema
+      required:
+        - manifest
+        - secrets
+        - options
+        - input
+      type: object
+      properties:
+        manifest:
+          title: Manifest
+        secrets:
+          title: Secrets
+          type: object
+          additionalProperties:
+            type: string
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        repo_id:
+          title: Repo Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        tools:
+          title: Tools
+          anyOf:
+            - type: array
+              items: { }
+            - type: 'null'
+        options:
+          $ref: '#/components/schemas/RunnableConfig'
+        input:
+          title: Input
+          type: array
+          items: { }
+    PlaygroundInvokeRequestSchema:
+      title: PlaygroundInvokeRequestSchema
+      required:
+        - manifest
+        - secrets
+        - options
+        - input
+      type: object
+      properties:
+        manifest:
+          title: Manifest
+        secrets:
+          title: Secrets
+          type: object
+          additionalProperties:
+            type: string
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        repo_id:
+          title: Repo Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        tools:
+          title: Tools
+          anyOf:
+            - type: array
+              items: { }
+            - type: 'null'
+        options:
+          $ref: '#/components/schemas/RunnableConfig'
+        input:
+          title: Input
     PlaygroundSettingsCreateRequest:
       title: PlaygroundSettingsCreateRequest
       required:
@@ -14350,6 +14558,42 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+    PlaygroundStreamRequestSchema:
+      title: PlaygroundStreamRequestSchema
+      required:
+        - manifest
+        - secrets
+        - options
+        - input
+      type: object
+      properties:
+        manifest:
+          title: Manifest
+        secrets:
+          title: Secrets
+          type: object
+          additionalProperties:
+            type: string
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        repo_id:
+          title: Repo Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        tools:
+          title: Tools
+          anyOf:
+            - type: array
+              items: { }
+            - type: 'null'
+        options:
+          $ref: '#/components/schemas/RunnableConfig'
+        input:
+          title: Input
     PublicComparativeExperiment:
       title: PublicComparativeExperiment
       required:
@@ -16638,6 +16882,46 @@ components:
         - parser
       type: string
       description: Enum for run types.
+    RunnableConfig:
+      title: RunnableConfig
+      type: object
+      properties:
+        tags:
+          title: Tags
+          type: array
+          items:
+            type: string
+        metadata:
+          title: Metadata
+          type: object
+        callbacks:
+          title: Callbacks
+          anyOf:
+            - type: array
+              items: { }
+            - { }
+            - type: 'null'
+        run_name:
+          title: Run Name
+          type: string
+        max_concurrency:
+          title: Max Concurrency
+          anyOf:
+            - type: integer
+            - type: 'null'
+        recursion_limit:
+          title: Recursion Limit
+          type: integer
+        configurable:
+          title: Configurable
+          type: object
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+      description: Configuration for a Runnable.
     RunsFilterDataSourceTypeEnum:
       title: RunsFilterDataSourceTypeEnum
       enum:

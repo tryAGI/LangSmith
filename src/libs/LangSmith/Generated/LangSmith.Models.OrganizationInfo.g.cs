@@ -64,6 +64,12 @@ namespace LangSmith
         public bool Disabled { get; set; } = false;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
+        public bool SsoOnly { get; set; } = false;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]

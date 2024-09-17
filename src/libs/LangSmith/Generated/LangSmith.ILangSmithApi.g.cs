@@ -128,6 +128,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public PlaygroundClient Playground { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ReposClient Repos { get; }
 
         /// <summary>
