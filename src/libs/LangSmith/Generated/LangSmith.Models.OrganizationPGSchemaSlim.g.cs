@@ -67,6 +67,12 @@ namespace LangSmith
         public global::LangSmith.AnyOf<string, object>? SsoLoginSlug { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
+        public bool SsoOnly { get; set; } = false;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
