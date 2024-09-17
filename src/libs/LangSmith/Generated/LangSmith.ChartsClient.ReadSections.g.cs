@@ -7,8 +7,8 @@ namespace LangSmith
     {
         partial void PrepareReadSectionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
-            ref int offset,
+            ref int? limit,
+            ref int? offset,
             ref global::LangSmith.AnyOf<string, object>? titleContains,
             ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
             ref global::LangSmith.AnyOf<string, object>? sortBy,
@@ -17,8 +17,8 @@ namespace LangSmith
         partial void PrepareReadSectionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
-            int offset,
+            int? limit,
+            int? offset,
             global::LangSmith.AnyOf<string, object>? titleContains,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
             global::LangSmith.AnyOf<string, object>? sortBy,
@@ -55,8 +55,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>> ReadSectionsAsync(
-            int limit = 100,
-            int offset = 0,
+            int? limit = 100,
+            int? offset = 0,
             global::LangSmith.AnyOf<string, object>? titleContains = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
             global::LangSmith.AnyOf<string, object>? sortBy = default,

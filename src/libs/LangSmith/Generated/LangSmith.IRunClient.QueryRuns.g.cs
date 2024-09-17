@@ -63,7 +63,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<bool?, object>? isRoot = default,
             global::LangSmith.AnyOf<global::LangSmith.RunsFilterDataSourceTypeEnum?, object>? dataSourceType = default,
             global::LangSmith.AnyOf<string, object>? cursor = default,
-            int limit = 100,
+            int? limit = 100,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
             global::LangSmith.AllOf<global::LangSmith.RunDateOrder?>? order = default,
             global::System.Threading.CancellationToken cancellationToken = default);

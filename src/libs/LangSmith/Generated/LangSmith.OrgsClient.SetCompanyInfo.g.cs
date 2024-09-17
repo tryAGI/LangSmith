@@ -109,7 +109,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::LangSmith.StripeBusinessBillingInfo, object>? companyInfo = default,
             global::LangSmith.AnyOf<global::LangSmith.StripeTaxId, object>? taxId = default,
             global::LangSmith.AnyOf<string, object>? invoiceEmail = default,
-            bool isBusiness = false,
+            bool? isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.StripeBusinessInfoInput

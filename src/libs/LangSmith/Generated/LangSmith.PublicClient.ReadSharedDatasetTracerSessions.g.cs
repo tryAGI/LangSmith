@@ -13,11 +13,11 @@ namespace LangSmith
             ref global::LangSmith.AnyOf<string, object>? nameContains,
             ref global::LangSmith.AnyOf<string, object>? datasetVersion,
             ref global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy,
-            ref bool sortByDesc,
+            ref bool? sortByDesc,
             ref global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
-            ref int offset,
-            ref int limit,
-            ref bool facets,
+            ref int? offset,
+            ref int? limit,
+            ref bool? facets,
             ref global::LangSmith.AnyOf<string, object>? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -28,11 +28,11 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? nameContains,
             global::LangSmith.AnyOf<string, object>? datasetVersion,
             global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy,
-            bool sortByDesc,
+            bool? sortByDesc,
             global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
-            int offset,
-            int limit,
-            bool facets,
+            int? offset,
+            int? limit,
+            bool? facets,
             global::LangSmith.AnyOf<string, object>? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -78,11 +78,11 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? nameContains = default,
             global::LangSmith.AnyOf<string, object>? datasetVersion = default,
             global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
-            int offset = 0,
-            int limit = 100,
-            bool facets = false,
+            int? offset = 0,
+            int? limit = 100,
+            bool? facets = false,
             global::LangSmith.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -46,7 +46,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recursion_limit")]
-        public int RecursionLimit { get; set; }
+        public int? RecursionLimit { get; set; }
 
         /// <summary>
         /// 

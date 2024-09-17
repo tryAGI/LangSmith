@@ -117,8 +117,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             string key,
-            global::System.DateTime createdAt = default,
-            global::System.DateTime modifiedAt = default,
+            global::System.DateTime? createdAt = default,
+            global::System.DateTime? modifiedAt = default,
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackCreateSchemaValue, object>? value = default,
             global::LangSmith.AnyOf<string, object>? comment = default,
@@ -127,7 +127,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? runId = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? sessionId = default,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource, object>? feedbackSource = default,
             global::LangSmith.AnyOf<global::LangSmith.FeedbackConfig, object>? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)

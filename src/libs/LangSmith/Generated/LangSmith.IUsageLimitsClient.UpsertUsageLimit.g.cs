@@ -29,7 +29,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.UsageLimit> UpsertUsageLimitAsync(
             global::LangSmith.UsageLimitType2 limitType,
             int limitValue,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

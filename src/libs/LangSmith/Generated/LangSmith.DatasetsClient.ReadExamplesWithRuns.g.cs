@@ -122,8 +122,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::LangSmith.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::LangSmith.AnyOf<global::LangSmith.QueryExampleSchemaWithRunsFilters, object>? filters = default,
-            int offset = 0,
-            int limit = 20,
+            int? offset = 0,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.QueryExampleSchemaWithRuns

@@ -30,7 +30,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
-            bool readOnly = false,
+            bool? readOnly = false,
             global::LangSmith.AnyOf<global::System.Guid?, object>? roleId = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? workspaceIds = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? workspaceRoleId = default,

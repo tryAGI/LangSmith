@@ -43,13 +43,13 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? nameContains = default,
             global::LangSmith.AnyOf<string, object>? datasetVersion = default,
             global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::LangSmith.AnyOf<string, object>? metadata = default,
             global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
-            bool facets = false,
+            bool? facets = false,
             global::LangSmith.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

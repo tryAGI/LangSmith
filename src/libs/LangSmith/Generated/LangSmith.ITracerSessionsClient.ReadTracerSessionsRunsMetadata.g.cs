@@ -23,8 +23,8 @@ namespace LangSmith
             global::System.Guid sessionId,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
-            int k = 10,
-            bool rootRunsOnly = false,
+            int? k = 10,
+            bool? rootRunsOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

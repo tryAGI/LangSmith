@@ -18,7 +18,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
-        public bool ReadOnly { get; set; } = false;
+        public bool? ReadOnly { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

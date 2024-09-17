@@ -9,13 +9,13 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id,
             ref global::System.Guid shareToken,
-            ref bool excludeS3StoredAttributes);
+            ref bool? excludeS3StoredAttributes);
         partial void PrepareGetSharedRunByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid id,
             global::System.Guid shareToken,
-            bool excludeS3StoredAttributes);
+            bool? excludeS3StoredAttributes);
         partial void ProcessGetSharedRunByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,7 +39,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunPublicSchema> GetSharedRunByIdAsync(
             global::System.Guid id,
             global::System.Guid shareToken,
-            bool excludeS3StoredAttributes = false,
+            bool? excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

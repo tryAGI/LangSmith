@@ -35,7 +35,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
-        public global::System.DateTime AddedAt { get; set; }
+        public global::System.DateTime? AddedAt { get; set; }
 
         /// <summary>
         /// 

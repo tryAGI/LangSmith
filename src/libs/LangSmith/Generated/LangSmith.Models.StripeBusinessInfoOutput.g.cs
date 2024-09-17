@@ -35,7 +35,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_business")]
-        public bool IsBusiness { get; set; } = false;
+        public bool? IsBusiness { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

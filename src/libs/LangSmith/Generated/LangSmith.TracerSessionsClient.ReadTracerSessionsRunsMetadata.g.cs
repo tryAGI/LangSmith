@@ -10,16 +10,16 @@ namespace LangSmith
             ref global::System.Guid sessionId,
             ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
             ref global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime,
-            ref int k,
-            ref bool rootRunsOnly);
+            ref int? k,
+            ref bool? rootRunsOnly);
         partial void PrepareReadTracerSessionsRunsMetadataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime,
-            int k,
-            bool rootRunsOnly);
+            int? k,
+            bool? rootRunsOnly);
         partial void ProcessReadTracerSessionsRunsMetadataResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,8 +48,8 @@ namespace LangSmith
             global::System.Guid sessionId,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
-            int k = 10,
-            bool rootRunsOnly = false,
+            int? k = 10,
+            bool? rootRunsOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

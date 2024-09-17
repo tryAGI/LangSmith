@@ -117,7 +117,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.Dataset> CreateDatasetAsync(
             string name,
             global::LangSmith.AnyOf<string, object>? description = default,
-            global::System.DateTime createdAt = default,
+            global::System.DateTime? createdAt = default,
             global::LangSmith.AnyOf<global::LangSmith.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
             global::LangSmith.AnyOf<global::LangSmith.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
             global::LangSmith.AnyOf<bool?, object>? externallyManaged = default,

@@ -8,18 +8,18 @@ namespace LangSmith
         partial void PrepareReadSharedDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
-            ref bool sortByDesc);
+            ref bool? sortByDesc);
         partial void PrepareReadSharedDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
-            bool sortByDesc);
+            bool? sortByDesc);
         partial void ProcessReadSharedDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,10 +50,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetPublicSchema> ReadSharedDatasetAsync(
             global::System.Guid shareToken,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

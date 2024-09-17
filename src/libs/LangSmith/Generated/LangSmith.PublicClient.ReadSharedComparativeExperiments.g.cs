@@ -10,20 +10,20 @@ namespace LangSmith
             ref global::System.Guid shareToken,
             ref global::LangSmith.AnyOf<string, object>? name,
             ref global::LangSmith.AnyOf<string, object>? nameContains,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref global::LangSmith.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy,
-            ref bool sortByDesc);
+            ref bool? sortByDesc);
         partial void PrepareReadSharedComparativeExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
             global::LangSmith.AnyOf<string, object>? name,
             global::LangSmith.AnyOf<string, object>? nameContains,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::LangSmith.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy,
-            bool sortByDesc);
+            bool? sortByDesc);
         partial void ProcessReadSharedComparativeExperimentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,10 +58,10 @@ namespace LangSmith
             global::System.Guid shareToken,
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? nameContains = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::LangSmith.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

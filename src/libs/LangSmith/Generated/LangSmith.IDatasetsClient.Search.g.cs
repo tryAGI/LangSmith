@@ -35,8 +35,8 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.SearchDatasetResponse> SearchAsync(
             global::System.Guid datasetId,
             global::LangSmith.SearchDatasetRequestInputs inputs,
-            int limit = 5,
-            bool debug = false,
+            int? limit = 5,
+            bool? debug = false,
             global::LangSmith.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

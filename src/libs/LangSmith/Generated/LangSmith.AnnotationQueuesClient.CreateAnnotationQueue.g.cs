@@ -117,13 +117,13 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSchema> CreateAnnotationQueueAsync(
             string name,
             global::LangSmith.AnyOf<string, object>? description = default,
-            global::System.DateTime createdAt = default,
-            global::System.DateTime updatedAt = default,
+            global::System.DateTime? createdAt = default,
+            global::System.DateTime? updatedAt = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDataset = default,
             global::LangSmith.AnyOf<int?, object>? numReviewersPerItem = default,
             global::LangSmith.AnyOf<bool?, object>? enableReservations = default,
             global::LangSmith.AnyOf<int?, object>? reservationMinutes = default,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.AnnotationQueueCreateSchema

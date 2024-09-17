@@ -38,7 +38,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? description = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDataset = default,
             global::LangSmith.AnyOf<int?, object>? numReviewersPerItem = default,
-            bool enableReservations = true,
+            bool? enableReservations = true,
             global::LangSmith.AnyOf<int?, object>? reservationMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

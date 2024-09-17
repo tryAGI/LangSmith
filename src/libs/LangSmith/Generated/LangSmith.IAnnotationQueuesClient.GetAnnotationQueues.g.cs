@@ -23,8 +23,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? nameContains = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

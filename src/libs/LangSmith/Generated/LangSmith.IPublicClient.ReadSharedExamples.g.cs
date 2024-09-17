@@ -32,8 +32,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::LangSmith.AnyOf<string, object>? metadata = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
             global::LangSmith.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);

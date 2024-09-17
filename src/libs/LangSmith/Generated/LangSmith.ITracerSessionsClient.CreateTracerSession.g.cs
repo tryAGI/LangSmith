@@ -16,7 +16,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
             global::LangSmith.TracerSessionCreate request,
-            bool upsert = false,
+            bool? upsert = false,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
-            bool upsert = false,
-            global::System.DateTime startTime = default,
+            bool? upsert = false,
+            global::System.DateTime? startTime = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::LangSmith.AnyOf<global::LangSmith.TracerSessionCreateExtra, object>? extra = default,
             string? name = default,
