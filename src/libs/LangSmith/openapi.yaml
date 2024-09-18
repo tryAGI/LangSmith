@@ -8469,6 +8469,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/playground/dataset:
+    post:
+      tags:
+        - playground
+      summary: Dataset Handler
+      operationId: dataset_handler_api_v1_playground_dataset_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Dataset Handler Api V1 Playground Dataset Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/playground/stream:
     post:
       tags:
@@ -14466,6 +14495,11 @@ components:
             - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'
+        project_name:
+          title: Project Name
+          anyOf:
+            - type: string
+            - type: 'null'
         input:
           title: Input
           type: array
@@ -14504,8 +14538,56 @@ components:
             - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'
+        project_name:
+          title: Project Name
+          anyOf:
+            - type: string
+            - type: 'null'
         input:
           title: Input
+    PlaygroundRunOverDatasetRequestSchema:
+      title: PlaygroundRunOverDatasetRequestSchema
+      required:
+        - manifest
+        - secrets
+        - options
+        - dataset_id
+      type: object
+      properties:
+        manifest:
+          title: Manifest
+        secrets:
+          title: Secrets
+          type: object
+          additionalProperties:
+            type: string
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        repo_id:
+          title: Repo Id
+          anyOf:
+            - type: string
+            - type: 'null'
+        tools:
+          title: Tools
+          anyOf:
+            - type: array
+              items: { }
+            - type: 'null'
+        options:
+          $ref: '#/components/schemas/RunnableConfig'
+        project_name:
+          title: Project Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
     PlaygroundSettingsCreateRequest:
       title: PlaygroundSettingsCreateRequest
       required:
@@ -14592,6 +14674,11 @@ components:
             - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'
+        project_name:
+          title: Project Name
+          anyOf:
+            - type: string
+            - type: 'null'
         input:
           title: Input
     PublicComparativeExperiment:

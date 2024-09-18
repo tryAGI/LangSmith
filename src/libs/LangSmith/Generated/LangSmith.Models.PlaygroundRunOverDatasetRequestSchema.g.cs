@@ -8,21 +8,21 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class PlaygroundStreamRequestSchema
+    public sealed partial class PlaygroundRunOverDatasetRequestSchema
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PlaygroundStreamRequestSchemaManifest Manifest { get; set; }
+        public required global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest Manifest { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secrets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PlaygroundStreamRequestSchemaSecrets Secrets { get; set; }
+        public required global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets Secrets { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundStreamRequestSchemaToolsVariant1Item>, object>? Tools { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? Tools { get; set; }
 
         /// <summary>
         /// Configuration for a Runnable.
@@ -62,9 +62,9 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PlaygroundStreamRequestSchemaInput Input { get; set; }
+        public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

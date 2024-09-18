@@ -5,17 +5,17 @@ namespace LangSmith
     public partial interface IPlaygroundClient
     {
         /// <summary>
-        /// Stream Handler
+        /// Dataset Handler
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.StreamHandlerApiV1PlaygroundStreamPostResponse> StreamHandlerAsync(
-            global::LangSmith.PlaygroundStreamRequestSchema request,
+        global::System.Threading.Tasks.Task<global::LangSmith.DatasetHandlerApiV1PlaygroundDatasetPostResponse> DatasetHandlerAsync(
+            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Stream Handler
+        /// Dataset Handler
         /// </summary>
         /// <param name="manifest"></param>
         /// <param name="secrets"></param>
@@ -26,17 +26,17 @@ namespace LangSmith
         /// Configuration for a Runnable.
         /// </param>
         /// <param name="projectName"></param>
-        /// <param name="input"></param>
+        /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.StreamHandlerApiV1PlaygroundStreamPostResponse> StreamHandlerAsync(
-            global::LangSmith.PlaygroundStreamRequestSchemaManifest manifest,
-            global::LangSmith.PlaygroundStreamRequestSchemaSecrets secrets,
+        global::System.Threading.Tasks.Task<global::LangSmith.DatasetHandlerApiV1PlaygroundDatasetPostResponse> DatasetHandlerAsync(
+            global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
+            global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets secrets,
             global::LangSmith.RunnableConfig options,
-            global::LangSmith.PlaygroundStreamRequestSchemaInput input,
+            global::System.Guid datasetId,
             global::LangSmith.AnyOf<string, object>? runId = default,
             global::LangSmith.AnyOf<string, object>? repoId = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundStreamRequestSchemaToolsVariant1Item>, object>? tools = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? tools = default,
             global::LangSmith.AnyOf<string, object>? projectName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
