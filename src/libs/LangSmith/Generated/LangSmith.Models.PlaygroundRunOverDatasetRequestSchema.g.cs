@@ -67,6 +67,12 @@ namespace LangSmith
         public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repetitions")]
+        public int? Repetitions { get; set; } = 1;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -9,11 +11,12 @@ namespace LangSmith
     public sealed partial class PutDatasetVersionsSchema
     {
         /// <summary>
-        /// 
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime AsOf { get; set; }
+        public required global::LangSmith.AnyOf<global::System.DateTime?, string> AsOf { get; set; }
 
         /// <summary>
         /// 

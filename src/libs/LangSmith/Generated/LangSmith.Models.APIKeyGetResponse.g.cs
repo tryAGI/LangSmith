@@ -45,6 +45,13 @@ namespace LangSmith
         public bool? ReadOnly { get; set; } = false;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::System.DateTime?, object>? LastUsedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

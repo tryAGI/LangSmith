@@ -9731,6 +9731,12 @@ components:
           title: Read Only
           type: boolean
           default: false
+        last_used_at:
+          title: Last Used At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
         key:
           title: Key
           type: string
@@ -9763,6 +9769,12 @@ components:
           title: Read Only
           type: boolean
           default: false
+        last_used_at:
+          title: Last Used At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
       description: API key GET schema.
     AccessScope:
       title: AccessScope
@@ -14640,6 +14652,12 @@ components:
             - type: 'null'
         input:
           title: Input
+        repetitions:
+          title: Repetitions
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          default: 1
     PlaygroundRunOverDatasetRequestSchema:
       title: PlaygroundRunOverDatasetRequestSchema
       required:
@@ -14683,6 +14701,12 @@ components:
           title: Dataset Id
           type: string
           format: uuid
+        repetitions:
+          title: Repetitions
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          default: 1
     PlaygroundSettingsCreateRequest:
       title: PlaygroundSettingsCreateRequest
       required:
@@ -14888,8 +14912,11 @@ components:
       properties:
         as_of:
           title: As Of
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+          description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
         tag:
           title: Tag
           type: string
