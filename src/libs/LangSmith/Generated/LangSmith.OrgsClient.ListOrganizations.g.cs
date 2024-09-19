@@ -6,10 +6,12 @@ namespace LangSmith
     public partial class OrgsClient
     {
         partial void PrepareListOrganizationsArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref bool? skipCreate);
         partial void PrepareListOrganizationsRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool? skipCreate);
         partial void ProcessListOrganizationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,26 +25,32 @@ namespace LangSmith
         /// List Organizations<br/>
         /// Get all orgs visible to this auth
         /// </summary>
+        /// <param name="skipCreate">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.OrganizationPGSchemaSlim>> ListOrganizationsAsync(
+            bool? skipCreate = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListOrganizationsArguments(
-                httpClient: _httpClient);
+                httpClient: _httpClient,
+                skipCreate: ref skipCreate);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/orgs", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/orgs?skip_create={skipCreate}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
             PrepareListOrganizationsRequest(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest);
+                httpRequestMessage: httpRequest,
+                skipCreate: skipCreate);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
