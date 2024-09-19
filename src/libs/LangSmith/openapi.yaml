@@ -587,6 +587,13 @@ paths:
       summary: List Organizations
       description: Get all orgs visible to this auth
       operationId: list_organizations_api_v1_orgs_get
+      parameters:
+        - name: skip_create
+          in: query
+          schema:
+            title: Skip Create
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -597,6 +604,38 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/OrganizationPGSchemaSlim'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - orgs
+      summary: Create Organization
+      operationId: create_organization_api_v1_orgs_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationPGSchemaSlim'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - BearerAuth: [ ]
   /api/v1/orgs/current/setup:
@@ -5943,6 +5982,13 @@ paths:
       summary: List Tenants
       description: Get all tenants visible to this auth
       operationId: list_tenants_api_v1_tenants_get
+      parameters:
+        - name: skip_create
+          in: query
+          schema:
+            title: Skip Create
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -5953,6 +5999,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TenantForUser'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - BearerAuth: [ ]
     post:
@@ -8526,6 +8578,34 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/playground/stream_dataset:
+    post:
+      tags:
+        - playground
+      summary: Stream Dataset Handler
+      operationId: stream_dataset_handler_api_v1_playground_stream_dataset_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/ok:
     get:
       summary: Ok
@@ -10235,7 +10315,6 @@ components:
             - dotted_order
             - last_queued_at
             - feedback_stats
-            - child_run_ids
             - parent_run_ids
             - tags
             - in_dataset
@@ -14150,6 +14229,22 @@ components:
             arbitrary_code_execution_enabled: false
             prompt_optimization: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
+    OrganizationCreate:
+      title: OrganizationCreate
+      required:
+        - display_name
+        - is_personal
+      type: object
+      properties:
+        display_name:
+          title: Display Name
+          minLength: 1
+          pattern: '^[a-zA-Z0-9\-_ ]+$'
+          type: string
+        is_personal:
+          title: Is Personal
+          type: boolean
+      description: Create organization schema.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
       enum:
