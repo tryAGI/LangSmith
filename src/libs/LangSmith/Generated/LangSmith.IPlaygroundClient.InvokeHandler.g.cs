@@ -27,6 +27,9 @@ namespace LangSmith
         /// </param>
         /// <param name="projectName"></param>
         /// <param name="input"></param>
+        /// <param name="repetitions">
+        /// Default Value: 1
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.InvokeHandlerApiV1PlaygroundInvokePostResponse> InvokeHandlerAsync(
@@ -38,6 +41,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? repoId = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundInvokeRequestSchemaToolsVariant1Item>, object>? tools = default,
             global::LangSmith.AnyOf<string, object>? projectName = default,
+            int? repetitions = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

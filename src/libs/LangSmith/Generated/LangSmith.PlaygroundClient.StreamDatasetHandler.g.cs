@@ -107,6 +107,9 @@ namespace LangSmith
         /// </param>
         /// <param name="projectName"></param>
         /// <param name="datasetId"></param>
+        /// <param name="repetitions">
+        /// Default Value: 1
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse> StreamDatasetHandlerAsync(
@@ -118,6 +121,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? repoId = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? tools = default,
             global::LangSmith.AnyOf<string, object>? projectName = default,
+            int? repetitions = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.PlaygroundRunOverDatasetRequestSchema
@@ -130,6 +134,7 @@ namespace LangSmith
                 Options = options,
                 ProjectName = projectName,
                 DatasetId = datasetId,
+                Repetitions = repetitions,
             };
 
             return await StreamDatasetHandlerAsync(
