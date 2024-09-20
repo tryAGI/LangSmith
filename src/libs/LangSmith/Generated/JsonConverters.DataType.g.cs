@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class DataType2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.DataType2>
+    public sealed class DataTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.DataType>
     {
         /// <inheritdoc />
-        public override global::LangSmith.DataType2 Read(
+        public override global::LangSmith.DataType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.DataType2Extensions.ToEnum(stringValue) ?? default;
+                        return global::LangSmith.DataTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.DataType2)numValue;
+                    return (global::LangSmith.DataType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,12 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.DataType2 value,
+            global::LangSmith.DataType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::LangSmith.DataType2Extensions.ToValueString(value));
+            writer.WriteStringValue(global::LangSmith.DataTypeExtensions.ToValueString(value));
         }
     }
 }

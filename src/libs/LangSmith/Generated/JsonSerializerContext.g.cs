@@ -23,8 +23,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.RunSelectNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunDateOrderJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunDateOrderNullableJsonConverter),
-            typeof(global::LangSmith.JsonConverters.DataType2JsonConverter),
-            typeof(global::LangSmith.JsonConverters.DataType2NullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter),
+            typeof(global::LangSmith.JsonConverters.DataTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqJsonConverter),
             typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ConfiguredByJsonConverter),
@@ -104,13 +104,13 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2JsonConverter),
             typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2NullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::LangSmith.JsonConverters.AllOfJsonConverterFactory1),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory3),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory4),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory6),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory5),
             typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory3),
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverterFactory1),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.JsonSerializerContextTypes))]

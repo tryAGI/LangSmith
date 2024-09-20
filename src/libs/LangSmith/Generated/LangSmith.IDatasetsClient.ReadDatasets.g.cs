@@ -30,7 +30,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsAsync(
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? nameContains = default,
             global::LangSmith.AnyOf<string, object>? metadata = default,

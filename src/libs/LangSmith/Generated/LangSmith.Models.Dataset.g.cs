@@ -56,7 +56,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.DataType2?, object>? DataType { get; set; } = global::LangSmith.DataType2.Kv;
+        public global::LangSmith.AnyOf<global::LangSmith.DataType?, object>? DataType { get; set; } = global::LangSmith.DataType.Kv;
 
         /// <summary>
         /// 

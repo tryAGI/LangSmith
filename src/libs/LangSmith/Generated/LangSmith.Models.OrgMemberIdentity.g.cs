@@ -74,11 +74,11 @@ namespace LangSmith
         public global::LangSmith.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
-        /// Default Value: workspace
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::LangSmith.AllOf<global::LangSmith.AccessScope?>? AccessScope { get; set; } = global::LangSmith.AccessScope.Workspace;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter))]
+        public global::LangSmith.AccessScope? AccessScope { get; set; }
 
         /// <summary>
         /// 
