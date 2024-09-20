@@ -24,7 +24,7 @@ namespace LangSmith
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Default Value: kv
+        /// Enum for dataset data types.
         /// </param>
         /// <param name="outputKeys"></param>
         /// <param name="description"></param>
@@ -35,7 +35,7 @@ namespace LangSmith
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AllOf<global::LangSmith.DataType2?>? dataType = default,
+            global::LangSmith.DataType? dataType = default,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
             global::LangSmith.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);

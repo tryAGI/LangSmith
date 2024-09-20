@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// Enum for dataset data types.
     /// </summary>
-    public enum DataType2
+    public enum DataType
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace LangSmith
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class DataType2Extensions
+    public static class DataTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this DataType2 value)
+        public static string ToValueString(this DataType value)
         {
             return value switch
             {
-                DataType2.Kv => "kv",
-                DataType2.Llm => "llm",
-                DataType2.Chat => "chat",
+                DataType.Kv => "kv",
+                DataType.Llm => "llm",
+                DataType.Chat => "chat",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DataType2? ToEnum(string value)
+        public static DataType? ToEnum(string value)
         {
             return value switch
             {
-                "kv" => DataType2.Kv,
-                "llm" => DataType2.Llm,
-                "chat" => DataType2.Chat,
+                "kv" => DataType.Kv,
+                "llm" => DataType.Llm,
+                "chat" => DataType.Chat,
                 _ => null,
             };
         }

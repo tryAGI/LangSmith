@@ -115,7 +115,9 @@ namespace LangSmith
         /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="stride"></param>
+        /// <param name="stride">
+        /// Timedelta input.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
@@ -123,7 +125,7 @@ namespace LangSmith
             global::System.DateTime startTime,
             string? timezone = "UTC",
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::LangSmith.AllOf<global::LangSmith.TimedeltaInput>? stride = default,
+            global::LangSmith.TimedeltaInput? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.CustomChartsRequestBase

@@ -8,7 +8,7 @@ namespace LangSmith
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
             ref global::LangSmith.AnyOf<string, object>? name,
             ref global::LangSmith.AnyOf<string, object>? nameContains,
             ref global::LangSmith.AnyOf<string, object>? metadata,
@@ -21,7 +21,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
             global::LangSmith.AnyOf<string, object>? name,
             global::LangSmith.AnyOf<string, object>? nameContains,
             global::LangSmith.AnyOf<string, object>? metadata,
@@ -65,7 +65,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsAsync(
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType2>, global::LangSmith.DataType2?, object>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? nameContains = default,
             global::LangSmith.AnyOf<string, object>? metadata = default,
