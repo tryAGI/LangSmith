@@ -103,9 +103,25 @@ namespace LangSmith
                 facets: ref facets,
                 accept: ref accept);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/public/{shareToken}/datasets/sessions",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("facets", facets?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/datasets/sessions?id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&facets={facets}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
