@@ -15,6 +15,8 @@ namespace LangSmith
         { 
             typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter),
             typeof(global::LangSmith.JsonConverters.AccessScopeNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.AuthProviderJsonConverter),
+            typeof(global::LangSmith.JsonConverters.AuthProviderNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunTypeEnumJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunTypeEnumNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter),

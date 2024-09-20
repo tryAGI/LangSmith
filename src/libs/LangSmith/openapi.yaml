@@ -1495,6 +1495,27 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/user/login-methods:
+    get:
+      tags:
+        - orgs
+      summary: Get Current User Login Methods
+      description: Get login methods for the current user.
+      operationId: get_current_user_login_methods_api_v1_orgs_current_user_login_methods_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Current User Login Methods Api V1 Orgs Current User Login Methods Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProviderUserSlim'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/login:
     post:
       tags:
@@ -10066,6 +10087,14 @@ components:
             - type: object
             - type: 'null'
       description: Feedback from the LangChainPlus App.
+    AuthProvider:
+      title: AuthProvider
+      enum:
+        - email
+        - supabase:non-sso
+        - supabase:sso
+        - oidc
+      type: string
     AutoEvalFeedbackSource:
       title: AutoEvalFeedbackSource
       type: object
@@ -14800,6 +14829,63 @@ components:
             - type: 'null'
         input:
           title: Input
+    ProviderUserSlim:
+      title: ProviderUserSlim
+      required:
+        - id
+        - ls_user_id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        provider:
+          anyOf:
+            - $ref: '#/components/schemas/AuthProvider'
+            - type: 'null'
+        ls_user_id:
+          title: Ls User Id
+          type: string
+          format: uuid
+        saml_provider_id:
+          title: Saml Provider Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        provider_user_id:
+          title: Provider User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        email:
+          title: Email
+          anyOf:
+            - type: string
+            - type: 'null'
+        full_name:
+          title: Full Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        email_confirmed_at:
+          title: Email Confirmed At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
     PublicComparativeExperiment:
       title: PublicComparativeExperiment
       required:
