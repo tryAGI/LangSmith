@@ -118,6 +118,11 @@ namespace LangSmith
                 facets: ref facets,
                 accept: ref accept);
 
+            if (accept != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: _httpClient.BaseAddress); 
