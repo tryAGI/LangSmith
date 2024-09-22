@@ -67,7 +67,7 @@ namespace LangSmith
                     content: new global::System.Net.Http.StringContent(request.Name?.Value1?.ToString() ?? request.Name?.Value2?.ToString() ?? string.Empty),
                     name: "name");
             } 
-            if (request.DataType != default)
+            if (request.DataType != global::LangSmith.DataType.Kv)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.DataType?.ToValueString()}"),
@@ -141,7 +141,7 @@ namespace LangSmith
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </param>
         /// <param name="outputKeys"></param>
         /// <param name="description"></param>
@@ -152,7 +152,7 @@ namespace LangSmith
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.DataType? dataType = default,
+            global::LangSmith.DataType? dataType = global::LangSmith.DataType.Kv,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
             global::LangSmith.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)

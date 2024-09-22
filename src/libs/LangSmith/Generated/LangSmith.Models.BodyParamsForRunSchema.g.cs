@@ -142,11 +142,11 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? Select { get; set; }
 
         /// <summary>
-        /// Enum for run start date order.
+        /// Default Value: desc
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("order")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunDateOrderJsonConverter))]
-        public global::LangSmith.RunDateOrder? Order { get; set; }
+        public global::LangSmith.RunDateOrder? Order { get; set; } = global::LangSmith.RunDateOrder.Desc;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

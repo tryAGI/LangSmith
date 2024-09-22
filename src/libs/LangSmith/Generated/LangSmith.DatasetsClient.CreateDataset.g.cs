@@ -114,7 +114,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="extra"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -127,7 +127,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<bool?, object>? externallyManaged = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
             global::LangSmith.AnyOf<global::LangSmith.DatasetCreateExtra, object>? extra = default,
-            global::LangSmith.DataType? dataType = default,
+            global::LangSmith.DataType? dataType = global::LangSmith.DataType.Kv,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.DatasetCreate
