@@ -39,11 +39,11 @@ namespace LangSmith
         public global::LangSmith.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter))]
-        public global::LangSmith.DataType? DataType { get; set; }
+        public global::LangSmith.DataType? DataType { get; set; } = global::LangSmith.DataType.Kv;
 
         /// <summary>
         /// 
