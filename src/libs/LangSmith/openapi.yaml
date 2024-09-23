@@ -18920,16 +18920,22 @@ components:
       description: TracerSession schema.
     TriggerRulesRequest:
       title: TriggerRulesRequest
-      required:
-        - rule_ids
       type: object
       properties:
         rule_ids:
           title: Rule Ids
-          type: array
-          items:
-            type: string
-            format: uuid
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
+        dataset_id:
+          title: Dataset Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
     UpdateFeedbackConfigSchema:
       title: UpdateFeedbackConfigSchema
       required:
