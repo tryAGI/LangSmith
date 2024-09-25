@@ -112,7 +112,6 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory5),
             typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory3),
-            typeof(global::LangSmith.JsonConverters.AllOfJsonConverterFactory1),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.JsonSerializerContextTypes))]

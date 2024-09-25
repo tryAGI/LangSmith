@@ -10,7 +10,7 @@ namespace LangSmith
             ref global::System.Guid shareToken,
             ref int? offset,
             ref int? limit,
-            ref global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
+            ref global::LangSmith.SortByDatasetColumn? sortBy,
             ref bool? sortByDesc);
         partial void PrepareReadSharedDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -18,7 +18,7 @@ namespace LangSmith
             global::System.Guid shareToken,
             int? offset,
             int? limit,
-            global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
+            global::LangSmith.SortByDatasetColumn? sortBy,
             bool? sortByDesc);
         partial void ProcessReadSharedDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,7 +41,7 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: last_session_start_time
+        /// Enum for available dataset columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -52,7 +52,7 @@ namespace LangSmith
             global::System.Guid shareToken,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy = default,
+            global::LangSmith.SortByDatasetColumn? sortBy = default,
             bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -72,7 +72,7 @@ namespace LangSmith
             __pathBuilder 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

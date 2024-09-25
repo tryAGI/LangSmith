@@ -14,7 +14,7 @@ namespace LangSmith
             ref global::LangSmith.AnyOf<string, object>? metadata,
             ref int? offset,
             ref int? limit,
-            ref global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
+            ref global::LangSmith.SortByDatasetColumn? sortBy,
             ref bool? sortByDesc,
             ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void PrepareReadDatasetsRequest(
@@ -27,7 +27,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? metadata,
             int? offset,
             int? limit,
-            global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy,
+            global::LangSmith.SortByDatasetColumn? sortBy,
             bool? sortByDesc,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void ProcessReadDatasetsResponse(
@@ -55,7 +55,7 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: last_session_start_time
+        /// Enum for available dataset columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -71,7 +71,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? metadata = default,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy = default,
+            global::LangSmith.SortByDatasetColumn? sortBy = default,
             bool? sortByDesc = true,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -102,7 +102,7 @@ namespace LangSmith
                 .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
                 ; 

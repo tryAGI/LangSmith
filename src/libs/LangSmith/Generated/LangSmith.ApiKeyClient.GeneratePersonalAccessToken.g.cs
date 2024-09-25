@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareGeneratePersonalAccessTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.AllOf<global::LangSmith.APIKeyCreateRequest> request);
+            global::LangSmith.APIKeyCreateRequest request);
         partial void PrepareGeneratePersonalAccessTokenRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AllOf<global::LangSmith.APIKeyCreateRequest> request);
+            global::LangSmith.APIKeyCreateRequest request);
         partial void ProcessGeneratePersonalAccessTokenResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,9 +29,11 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GeneratePersonalAccessTokenAsync(
-            global::LangSmith.AllOf<global::LangSmith.APIKeyCreateRequest> request,
+            global::LangSmith.APIKeyCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: _httpClient);
             PrepareGeneratePersonalAccessTokenArguments(
@@ -101,13 +103,23 @@ namespace LangSmith
         /// Generate Personal Access Token<br/>
         /// Generate a Personal Access Token the user
         /// </summary>
+        /// <param name="description">
+        /// Default Value: Default API key
+        /// </param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GeneratePersonalAccessTokenAsync(
+            string? description = "Default API key",
+            bool? readOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::LangSmith.AllOf<global::LangSmith.APIKeyCreateRequest>
+            var request = new global::LangSmith.APIKeyCreateRequest
             {
+                Description = description,
+                ReadOnly = readOnly,
             };
 
             return await GeneratePersonalAccessTokenAsync(

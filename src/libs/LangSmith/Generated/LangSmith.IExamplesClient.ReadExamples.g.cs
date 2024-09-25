@@ -23,9 +23,7 @@ namespace LangSmith
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
-        /// <param name="order">
-        /// Default Value: recent
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
@@ -42,7 +40,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Guid?, object>? dataset = default,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AllOf<global::LangSmith.ExampleListOrder?>? order = default,
+            global::LangSmith.ExampleListOrder? order = default,
             global::LangSmith.AnyOf<double?, object>? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
             global::LangSmith.AnyOf<string, object>? filter = default,

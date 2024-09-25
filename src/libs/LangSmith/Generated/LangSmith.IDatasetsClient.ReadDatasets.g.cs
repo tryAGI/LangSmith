@@ -20,7 +20,7 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: last_session_start_time
+        /// Enum for available dataset columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -36,7 +36,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? metadata = default,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AllOf<global::LangSmith.SortByDatasetColumn?>? sortBy = default,
+            global::LangSmith.SortByDatasetColumn? sortBy = default,
             bool? sortByDesc = true,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

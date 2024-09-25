@@ -22,13 +22,13 @@ namespace LangSmith
         public required global::System.Collections.Generic.IList<global::LangSmith.MonitorGroupSpec> Groups { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         public global::LangSmith.TimedeltaInput? Interval { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::LangSmith.TimedeltaInput? Stride { get; set; }

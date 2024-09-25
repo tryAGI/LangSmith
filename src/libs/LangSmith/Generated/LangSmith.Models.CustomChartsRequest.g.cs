@@ -31,7 +31,7 @@ namespace LangSmith
         public global::LangSmith.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::LangSmith.TimedeltaInput? Stride { get; set; }

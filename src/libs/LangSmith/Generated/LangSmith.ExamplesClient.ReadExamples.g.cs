@@ -15,7 +15,7 @@ namespace LangSmith
             ref global::LangSmith.AnyOf<global::System.Guid?, object>? dataset,
             ref int? offset,
             ref int? limit,
-            ref global::LangSmith.AllOf<global::LangSmith.ExampleListOrder?>? order,
+            ref global::LangSmith.ExampleListOrder? order,
             ref global::LangSmith.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
             ref global::LangSmith.AnyOf<string, object>? filter);
@@ -30,7 +30,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Guid?, object>? dataset,
             int? offset,
             int? limit,
-            global::LangSmith.AllOf<global::LangSmith.ExampleListOrder?>? order,
+            global::LangSmith.ExampleListOrder? order,
             global::LangSmith.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
             global::LangSmith.AnyOf<string, object>? filter);
@@ -62,9 +62,7 @@ namespace LangSmith
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
-        /// <param name="order">
-        /// Default Value: recent
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
@@ -81,7 +79,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Guid?, object>? dataset = default,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AllOf<global::LangSmith.ExampleListOrder?>? order = default,
+            global::LangSmith.ExampleListOrder? order = default,
             global::LangSmith.AnyOf<double?, object>? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
             global::LangSmith.AnyOf<string, object>? filter = default,
@@ -116,7 +114,7 @@ namespace LangSmith
                 .AddOptionalParameter("dataset", dataset?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("random_seed", randomSeed?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("filter", filter?.ToString() ?? string.Empty) 
                 ; 
