@@ -46,6 +46,13 @@ namespace LangSmith
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? Tools { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<string, object>? ToolChoice { get; set; }
+
+        /// <summary>
         /// Configuration for a Runnable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]

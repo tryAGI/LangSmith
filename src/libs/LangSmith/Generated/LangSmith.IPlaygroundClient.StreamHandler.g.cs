@@ -22,6 +22,7 @@ namespace LangSmith
         /// <param name="runId"></param>
         /// <param name="repoId"></param>
         /// <param name="tools"></param>
+        /// <param name="toolChoice"></param>
         /// <param name="options">
         /// Configuration for a Runnable.
         /// </param>
@@ -37,6 +38,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? runId = default,
             global::LangSmith.AnyOf<string, object>? repoId = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundStreamRequestSchemaToolsVariant1Item>, object>? tools = default,
+            global::LangSmith.AnyOf<string, object>? toolChoice = default,
             global::LangSmith.AnyOf<string, object>? projectName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

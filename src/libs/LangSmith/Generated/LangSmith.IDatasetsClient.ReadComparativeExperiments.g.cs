@@ -19,7 +19,7 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: created_at
+        /// Enum for available comparative experiment columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -33,7 +33,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AllOf<global::LangSmith.SortByComparativeExperimentColumn?>? sortBy = default,
+            global::LangSmith.SortByComparativeExperimentColumn? sortBy = default,
             bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

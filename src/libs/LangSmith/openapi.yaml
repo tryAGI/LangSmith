@@ -176,10 +176,7 @@ paths:
         - name: sort_by
           in: query
           schema:
-            title: Sort By
-            allOf:
-              - $ref: '#/components/schemas/SessionSortableColumns'
-            default: start_time
+            $ref: '#/components/schemas/SessionSortableColumns'
         - name: sort_by_desc
           in: query
           schema:
@@ -1672,12 +1669,7 @@ paths:
         content:
           application/json:
             schema:
-              title: Payload
-              allOf:
-                - $ref: '#/components/schemas/APIKeyCreateRequest'
-              default:
-                description: Default API key
-                read_only: false
+              $ref: '#/components/schemas/APIKeyCreateRequest'
       responses:
         '200':
           description: Successful Response
@@ -1758,12 +1750,7 @@ paths:
         content:
           application/json:
             schema:
-              title: Payload
-              allOf:
-                - $ref: '#/components/schemas/APIKeyCreateRequest'
-              default:
-                description: Default API key
-                read_only: false
+              $ref: '#/components/schemas/APIKeyCreateRequest'
       responses:
         '200':
           description: Successful Response
@@ -2002,10 +1989,7 @@ paths:
         - name: order
           in: query
           schema:
-            title: Order
-            allOf:
-              - $ref: '#/components/schemas/ExampleListOrder'
-            default: recent
+            $ref: '#/components/schemas/ExampleListOrder'
         - name: random_seed
           in: query
           schema:
@@ -2397,10 +2381,7 @@ paths:
         - name: sort_by
           in: query
           schema:
-            title: Sort By
-            allOf:
-              - $ref: '#/components/schemas/SortByDatasetColumn'
-            default: last_session_start_time
+            $ref: '#/components/schemas/SortByDatasetColumn'
         - name: sort_by_desc
           in: query
           schema:
@@ -3091,10 +3072,7 @@ paths:
         - name: sort_by
           in: query
           schema:
-            title: Sort By
-            allOf:
-              - $ref: '#/components/schemas/SortByComparativeExperimentColumn'
-            default: created_at
+            $ref: '#/components/schemas/SortByComparativeExperimentColumn'
         - name: sort_by_desc
           in: query
           schema:
@@ -4868,10 +4846,7 @@ paths:
         - name: sort_by
           in: query
           schema:
-            title: Sort By
-            allOf:
-              - $ref: '#/components/schemas/SortByDatasetColumn'
-            default: last_session_start_time
+            $ref: '#/components/schemas/SortByDatasetColumn'
         - name: sort_by_desc
           in: query
           schema:
@@ -5037,10 +5012,7 @@ paths:
         - name: sort_by
           in: query
           schema:
-            title: Sort By
-            allOf:
-              - $ref: '#/components/schemas/SessionSortableColumns'
-            default: start_time
+            $ref: '#/components/schemas/SessionSortableColumns'
         - name: sort_by_desc
           in: query
           schema:
@@ -5478,10 +5450,7 @@ paths:
         - name: sort_by
           in: query
           schema:
-            title: Sort By
-            allOf:
-              - $ref: '#/components/schemas/SortByComparativeExperimentColumn'
-            default: created_at
+            $ref: '#/components/schemas/SortByComparativeExperimentColumn'
         - name: sort_by_desc
           in: query
           schema:
@@ -10366,9 +10335,7 @@ components:
             - ttl_seconds
             - trace_upgrade
         order:
-          allOf:
-            - $ref: '#/components/schemas/RunDateOrder'
-          default: desc
+          $ref: '#/components/schemas/RunDateOrder'
       description: Query params for run endpoints.
     Body_clone_dataset_api_v1_datasets_clone_post:
       title: Body_clone_dataset_api_v1_datasets_clone_post
@@ -10456,9 +10423,7 @@ components:
             - type: string
             - type: 'null'
         data_type:
-          allOf:
-            - $ref: '#/components/schemas/DataType'
-          default: kv
+          $ref: '#/components/schemas/DataType'
         output_keys:
           title: Output Keys
           type: array
@@ -11309,12 +11274,7 @@ components:
               format: date-time
             - type: 'null'
         stride:
-          allOf:
-            - $ref: '#/components/schemas/TimedeltaInput'
-          default:
-            days: 0
-            minutes: 15
-            hours: 0
+          $ref: '#/components/schemas/TimedeltaInput'
         after_index:
           title: After Index
           anyOf:
@@ -11349,12 +11309,7 @@ components:
               format: date-time
             - type: 'null'
         stride:
-          allOf:
-            - $ref: '#/components/schemas/TimedeltaInput'
-          default:
-            days: 0
-            minutes: 15
-            hours: 0
+          $ref: '#/components/schemas/TimedeltaInput'
     CustomChartsResponse:
       title: CustomChartsResponse
       required:
@@ -11631,9 +11586,7 @@ components:
             - type: object
             - type: 'null'
         data_type:
-          allOf:
-            - $ref: '#/components/schemas/DataType'
-          default: kv
+          $ref: '#/components/schemas/DataType'
       description: Create class for Dataset.
     DatasetDiffInfo:
       title: DatasetDiffInfo
@@ -13257,9 +13210,7 @@ components:
             - type: string
             - type: 'null'
         access_scope:
-          allOf:
-            - $ref: '#/components/schemas/AccessScope'
-          default: workspace
+          $ref: '#/components/schemas/AccessScope'
     IdentityAnnotationQueueRunStatusCreateSchema:
       title: IdentityAnnotationQueueRunStatusCreateSchema
       type: object
@@ -13555,9 +13506,7 @@ components:
             - type: string
             - type: 'null'
         access_scope:
-          allOf:
-            - $ref: '#/components/schemas/AccessScope'
-          default: workspace
+          $ref: '#/components/schemas/AccessScope'
         email:
           title: Email
           anyOf:
@@ -13793,19 +13742,9 @@ components:
           items:
             $ref: '#/components/schemas/MonitorGroupSpec'
         interval:
-          allOf:
-            - $ref: '#/components/schemas/TimedeltaInput'
-          default:
-            days: 7
-            minutes: 0
-            hours: 0
+          $ref: '#/components/schemas/TimedeltaInput'
         stride:
-          allOf:
-            - $ref: '#/components/schemas/TimedeltaInput'
-          default:
-            days: 0
-            minutes: 15
-            hours: 0
+          $ref: '#/components/schemas/TimedeltaInput'
     MonitorResponse:
       title: MonitorResponse
       required:
@@ -13957,9 +13896,7 @@ components:
             - type: string
             - type: 'null'
         access_scope:
-          allOf:
-            - $ref: '#/components/schemas/AccessScope'
-          default: workspace
+          $ref: '#/components/schemas/AccessScope'
         email:
           title: Email
           anyOf:
@@ -14027,9 +13964,7 @@ components:
             - type: string
             - type: 'null'
         access_scope:
-          allOf:
-            - $ref: '#/components/schemas/AccessScope'
-          default: workspace
+          $ref: '#/components/schemas/AccessScope'
         id:
           title: Id
           type: string
@@ -14504,9 +14439,7 @@ components:
             - type: string
             - type: 'null'
         access_scope:
-          allOf:
-            - $ref: '#/components/schemas/AccessScope'
-          default: workspace
+          $ref: '#/components/schemas/AccessScope'
         id:
           title: Id
           type: string
@@ -14629,6 +14562,11 @@ components:
             - type: array
               items: { }
             - type: 'null'
+        tool_choice:
+          title: Tool Choice
+          anyOf:
+            - type: string
+            - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'
         project_name:
@@ -14671,6 +14609,11 @@ components:
           anyOf:
             - type: array
               items: { }
+            - type: 'null'
+        tool_choice:
+          title: Tool Choice
+          anyOf:
+            - type: string
             - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'
@@ -14718,6 +14661,11 @@ components:
           anyOf:
             - type: array
               items: { }
+            - type: 'null'
+        tool_choice:
+          title: Tool Choice
+          anyOf:
+            - type: string
             - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'
@@ -14819,6 +14767,11 @@ components:
           anyOf:
             - type: array
               items: { }
+            - type: 'null'
+        tool_choice:
+          title: Tool Choice
+          anyOf:
+            - type: string
             - type: 'null'
         options:
           $ref: '#/components/schemas/RunnableConfig'

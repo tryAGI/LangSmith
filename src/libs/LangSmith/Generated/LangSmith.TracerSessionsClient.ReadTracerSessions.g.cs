@@ -13,7 +13,7 @@ namespace LangSmith
             ref global::LangSmith.AnyOf<string, object>? name,
             ref global::LangSmith.AnyOf<string, object>? nameContains,
             ref global::LangSmith.AnyOf<string, object>? datasetVersion,
-            ref global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy,
+            ref global::LangSmith.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
             ref global::LangSmith.AnyOf<string, object>? metadata,
             ref global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
@@ -31,7 +31,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? name,
             global::LangSmith.AnyOf<string, object>? nameContains,
             global::LangSmith.AnyOf<string, object>? datasetVersion,
-            global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy,
+            global::LangSmith.SessionSortableColumns? sortBy,
             bool? sortByDesc,
             global::LangSmith.AnyOf<string, object>? metadata,
             global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
@@ -59,9 +59,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
+        /// <param name="sortBy"></param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -87,7 +85,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? nameContains = default,
             global::LangSmith.AnyOf<string, object>? datasetVersion = default,
-            global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy = default,
+            global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
             global::LangSmith.AnyOf<string, object>? metadata = default,
             global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
@@ -133,7 +131,7 @@ namespace LangSmith
                 .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 

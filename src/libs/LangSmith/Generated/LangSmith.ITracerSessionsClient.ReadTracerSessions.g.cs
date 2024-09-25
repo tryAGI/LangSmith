@@ -14,9 +14,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
+        /// <param name="sortBy"></param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -42,7 +40,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? name = default,
             global::LangSmith.AnyOf<string, object>? nameContains = default,
             global::LangSmith.AnyOf<string, object>? datasetVersion = default,
-            global::LangSmith.AllOf<global::LangSmith.SessionSortableColumns?>? sortBy = default,
+            global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
             global::LangSmith.AnyOf<string, object>? metadata = default,
             global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
