@@ -3717,11 +3717,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetHandlerApiV1PlaygroundDatasetPostResponse? Type926 { get; set; }
+        public global::LangSmith.StreamHandlerApiV1PlaygroundStreamPostResponse? Type926 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.StreamHandlerApiV1PlaygroundStreamPostResponse? Type927 { get; set; }
+        public global::LangSmith.DatasetHandlerApiV1PlaygroundDatasetPostResponse? Type927 { get; set; }
         /// <summary>
         /// 
         /// </summary>
