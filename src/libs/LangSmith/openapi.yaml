@@ -8511,6 +8511,34 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/playground/stream:
+    post:
+      tags:
+        - playground
+      summary: Stream Handler
+      operationId: stream_handler_api_v1_playground_stream_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundStreamRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/playground/dataset:
     post:
       tags:
@@ -8530,34 +8558,6 @@ paths:
             application/json:
               schema:
                 title: Response Dataset Handler Api V1 Playground Dataset Post
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/playground/stream:
-    post:
-      tags:
-        - playground
-      summary: Stream Handler
-      operationId: stream_handler_api_v1_playground_stream_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PlaygroundStreamRequestSchema'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
         '422':
           description: Validation Error
           content:
