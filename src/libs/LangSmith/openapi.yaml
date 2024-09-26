@@ -14181,6 +14181,10 @@ components:
           title: Can Use Saml Sso
           type: boolean
           default: false
+        use_python_playground_service:
+          title: Use Python Playground Service
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -16981,6 +16985,7 @@ components:
         - outputs_or_signed_url
         - s3_urls
         - error_or_signed_url
+        - events_or_signed_url
         - parent_run_id
         - manifest_id
         - manifest_s3_id

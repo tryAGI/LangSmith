@@ -80,6 +80,12 @@ namespace LangSmith
         public bool? CanUseSamlSso { get; set; } = false;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_python_playground_service")]
+        public bool? UsePythonPlaygroundService { get; set; } = false;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
