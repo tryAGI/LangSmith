@@ -4071,6 +4071,23 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/runs/multipart:
+    post:
+      tags:
+        - run
+      summary: Multipart Ingest Runs
+      description: Batch ingest runs.
+      operationId: multipart_ingest_runs_api_v1_runs_multipart_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/runs/group:
     post:
       tags:
@@ -10161,6 +10178,10 @@ components:
       title: BatchIngestConfig
       type: object
       properties:
+        use_multipart_endpoint:
+          title: Use Multipart Endpoint
+          type: boolean
+          default: true
         scale_up_qsize_trigger:
           title: Scale Up Qsize Trigger
           type: integer
