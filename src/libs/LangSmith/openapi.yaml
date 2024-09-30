@@ -18096,7 +18096,7 @@ components:
         display_name:
           title: Display Name
           minLength: 1
-          pattern: '^[a-zA-Z0-9\-_ ]+$'
+          pattern: '^[a-zA-Z0-9\-_ '']+$'
           type: string
         tenant_handle:
           title: Tenant Handle
@@ -18905,7 +18905,7 @@ components:
         display_name:
           title: Display Name
           minLength: 1
-          pattern: '^[a-zA-Z0-9\-_ ]+$'
+          pattern: '^[a-zA-Z0-9\-_ '']+$'
           type: string
         tenant_handle:
           title: Tenant Handle
@@ -18922,7 +18922,7 @@ components:
         display_name:
           title: Display Name
           minLength: 1
-          pattern: '^[a-zA-Z0-9\-_ ]+$'
+          pattern: '^[a-zA-Z0-9\-_ '']+$'
           type: string
       description: Patch model for the workspace.
     app__hub__crud__tenants__Tenant:
