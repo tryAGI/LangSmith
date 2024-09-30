@@ -1526,6 +1526,80 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BasicAuthResponse'
+  '/api/v1/oauth/{provider}/callback':
+    get:
+      tags:
+        - auth
+      summary: Oauth Provider Callback
+      operationId: oauth_provider_callback_api_v1_oauth__provider__callback_get
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/OAuthProvider'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Oauth Provider Callback Api V1 Oauth  Provider  Callback Get
+                type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/oauth/{provider}/logout':
+    get:
+      tags:
+        - auth
+      summary: Oauth Provider Logout
+      operationId: oauth_provider_logout_api_v1_oauth__provider__logout_get
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/OAuthProvider'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/oauth/{provider}':
+    get:
+      tags:
+        - auth
+      summary: Oauth Provider Auth
+      operationId: oauth_provider_auth_api_v1_oauth__provider__get
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/OAuthProvider'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
   /api/v1/sso/email-verification/send:
     post:
       tags:
@@ -9994,6 +10068,7 @@ components:
         - supabase:non-sso
         - supabase:sso
         - oidc
+        - custom-oidc
       type: string
     AutoEvalFeedbackSource:
       title: AutoEvalFeedbackSource
@@ -13691,6 +13766,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MonitorBlock'
+    OAuthProvider:
+      title: OAuthProvider
+      enum:
+        - custom-oidc
+      type: string
     OptimizePromptRequest:
       title: OptimizePromptRequest
       required:
