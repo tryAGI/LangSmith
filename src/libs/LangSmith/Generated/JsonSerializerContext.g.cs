@@ -51,6 +51,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.TraceTier3NullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.FeedbackLevelJsonConverter),
             typeof(global::LangSmith.JsonConverters.FeedbackLevelNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.OAuthProviderJsonConverter),
+            typeof(global::LangSmith.JsonConverters.OAuthProviderNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.OptimizePromptRequestTemplateFormatJsonConverter),
             typeof(global::LangSmith.JsonConverters.OptimizePromptRequestTemplateFormatNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.OrgFeatureFlagsJsonConverter),

@@ -24,6 +24,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Oidc,
+        /// <summary>
+        /// 
+        /// </summary>
+        CustomOidc,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace LangSmith
                 AuthProvider.Supabase_nonSso => "supabase:non-sso",
                 AuthProvider.Supabase_sso => "supabase:sso",
                 AuthProvider.Oidc => "oidc",
+                AuthProvider.CustomOidc => "custom-oidc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace LangSmith
                 "supabase:non-sso" => AuthProvider.Supabase_nonSso,
                 "supabase:sso" => AuthProvider.Supabase_sso,
                 "oidc" => AuthProvider.Oidc,
+                "custom-oidc" => AuthProvider.CustomOidc,
                 _ => null,
             };
         }
