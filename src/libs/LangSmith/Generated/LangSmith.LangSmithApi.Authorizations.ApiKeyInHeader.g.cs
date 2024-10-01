@@ -9,12 +9,16 @@ namespace LangSmith
         /// Authorize using ApiKey authentication.
         /// </summary>
         /// <param name="apiKey"></param>
-        public void AuthorizeUsingApiKey(
+        public void AuthorizeUsingApiKeyInHeader(
             string apiKey)
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _httpClient.DefaultRequestHeaders.Add("X-API-Key", apiKey);
+            _authorization = new global::LangSmith.EndPointAuthorization
+            {
+                Name = "X-API-Key",
+                Value = apiKey,
+            };
         }
     }
 }

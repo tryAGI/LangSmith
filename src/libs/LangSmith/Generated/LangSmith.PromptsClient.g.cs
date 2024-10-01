@@ -15,6 +15,7 @@ namespace LangSmith
         public const string BaseUrl = "https://api.smith.langchain.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::LangSmith.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -28,13 +29,16 @@ namespace LangSmith
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param> 
+        /// <param name="baseUri"></param>
+        /// <param name="authorization"></param>
         public PromptsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::LangSmith.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }
