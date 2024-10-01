@@ -14,11 +14,14 @@ namespace LangSmith
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _authorization = new global::LangSmith.EndPointAuthorization
+            _authorizations.Clear();
+            _authorizations.Add(new global::LangSmith.EndPointAuthorization
             {
+                Type = "ApiKey",
+                Location = "Header",
                 Name = "X-API-Key",
                 Value = apiKey,
-            };
+            });
         }
     }
 }

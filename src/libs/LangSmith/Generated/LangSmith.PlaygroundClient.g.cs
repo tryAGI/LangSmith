@@ -15,7 +15,7 @@ namespace LangSmith
         public const string BaseUrl = "https://api.smith.langchain.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::LangSmith.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::LangSmith.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -30,15 +30,15 @@ namespace LangSmith
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public PlaygroundClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::LangSmith.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::LangSmith.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::LangSmith.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }
