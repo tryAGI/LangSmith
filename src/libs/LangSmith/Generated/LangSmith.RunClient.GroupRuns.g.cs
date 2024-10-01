@@ -45,11 +45,6 @@ namespace LangSmith
                 accept: ref accept,
                 request: request);
 
-            if (accept != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept);
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/runs/group",
                 baseUri: _httpClient.BaseAddress); 
@@ -57,6 +52,19 @@ namespace LangSmith
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (_authorization != null)
+            {{
+                httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                    scheme: _authorization.Name,
+                    parameter: _authorization.Value);
+            }}
+
+            if (accept != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
+            }
+
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

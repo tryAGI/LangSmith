@@ -15,6 +15,7 @@ namespace LangSmith
         public const string BaseUrl = "https://api.smith.langchain.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::LangSmith.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -25,7 +26,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient)
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -33,7 +34,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(_httpClient)
+        public OrgsClient Orgs => new OrgsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -41,7 +42,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(_httpClient)
+        public AuthClient Auth => new AuthClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -49,7 +50,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient)
+        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -57,7 +58,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples => new ExamplesClient(_httpClient)
+        public ExamplesClient Examples => new ExamplesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -65,7 +66,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -73,7 +74,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run => new RunClient(_httpClient)
+        public RunClient Run => new RunClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -81,7 +82,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackClient Feedback => new FeedbackClient(_httpClient)
+        public FeedbackClient Feedback => new FeedbackClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -89,7 +90,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public => new PublicClient(_httpClient)
+        public PublicClient Public => new PublicClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -97,7 +98,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient)
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -105,7 +106,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AceClient Ace => new AceClient(_httpClient)
+        public AceClient Ace => new AceClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -113,7 +114,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TenantClient Tenant => new TenantClient(_httpClient)
+        public TenantClient Tenant => new TenantClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -121,7 +122,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public InfoClient Info => new InfoClient(_httpClient)
+        public InfoClient Info => new InfoClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -129,7 +130,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient)
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -137,7 +138,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient)
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -145,7 +146,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient)
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -153,7 +154,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient)
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -161,7 +162,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(_httpClient)
+        public PromptsClient Prompts => new PromptsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -169,7 +170,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient)
+        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -177,7 +178,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient)
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -185,7 +186,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient)
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -193,7 +194,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ChartsClient Charts => new ChartsClient(_httpClient)
+        public ChartsClient Charts => new ChartsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -201,7 +202,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundClient Playground => new PlaygroundClient(_httpClient)
+        public PlaygroundClient Playground => new PlaygroundClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -209,7 +210,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ReposClient Repos => new ReposClient(_httpClient)
+        public ReposClient Repos => new ReposClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -217,7 +218,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public LikesClient Likes => new LikesClient(_httpClient)
+        public LikesClient Likes => new LikesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -225,7 +226,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits => new CommitsClient(_httpClient)
+        public CommitsClient Commits => new CommitsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -233,7 +234,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SettingsClient Settings => new SettingsClient(_httpClient)
+        public SettingsClient Settings => new SettingsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -241,7 +242,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public EventsClient Events => new EventsClient(_httpClient)
+        public EventsClient Events => new EventsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -249,7 +250,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(_httpClient)
+        public CommentsClient Comments => new CommentsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -260,13 +261,16 @@ namespace LangSmith
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param> 
+        /// <param name="baseUri"></param>
+        /// <param name="authorization"></param>
         public LangSmithApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::LangSmith.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

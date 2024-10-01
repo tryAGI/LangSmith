@@ -50,11 +50,6 @@ namespace LangSmith
                 includeStats: ref includeStats,
                 accept: ref accept);
 
-            if (accept != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept);
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}",
                 baseUri: _httpClient.BaseAddress); 
@@ -65,6 +60,19 @@ namespace LangSmith
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (_authorization != null)
+            {{
+                httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                    scheme: _authorization.Name,
+                    parameter: _authorization.Value);
+            }}
+
+            if (accept != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
+            }
+
 
             PrepareRequest(
                 client: _httpClient,
