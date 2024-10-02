@@ -20,9 +20,9 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("manifest_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid ManifestId { get; set; }
+        public required global::LangSmith.CommitWithLookupsManifest Manifest { get; set; }
 
         /// <summary>
         /// 

@@ -686,6 +686,34 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+    patch:
+      tags:
+        - orgs
+      summary: Update Current Organization Info
+      operationId: update_current_organization_info_api_v1_orgs_current_info_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationInfo'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/orgs/current/billing:
     get:
       tags:
@@ -10578,7 +10606,7 @@ components:
       title: CommitWithLookups
       required:
         - id
-        - manifest_id
+        - manifest
         - repo_id
         - commit_hash
         - created_at
@@ -10592,10 +10620,9 @@ components:
           title: Id
           type: string
           format: uuid
-        manifest_id:
-          title: Manifest Id
-          type: string
-          format: uuid
+        manifest:
+          title: Manifest
+          type: object
         repo_id:
           title: Repo Id
           type: string
@@ -14388,6 +14415,16 @@ components:
           type: boolean
           default: false
       description: Schema for an organization in postgres for list views.
+    OrganizationUpdate:
+      title: OrganizationUpdate
+      type: object
+      properties:
+        display_name:
+          title: Display Name
+          anyOf:
+            - type: string
+            - type: 'null'
+      description: Update organization schema. only support display_name for now.
     PagerdutySeverity:
       title: PagerdutySeverity
       enum:
