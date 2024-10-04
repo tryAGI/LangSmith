@@ -202,14 +202,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundClient Playground => new PlaygroundClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ReposClient Repos => new ReposClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,

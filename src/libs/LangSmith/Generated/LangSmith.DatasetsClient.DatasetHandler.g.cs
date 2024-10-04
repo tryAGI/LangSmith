@@ -3,31 +3,31 @@
 
 namespace LangSmith
 {
-    public partial class PlaygroundClient
+    public partial class DatasetsClient
     {
-        partial void PrepareStreamDatasetHandlerArguments(
+        partial void PrepareDatasetHandlerArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
-        partial void PrepareStreamDatasetHandlerRequest(
+        partial void PrepareDatasetHandlerRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
-        partial void ProcessStreamDatasetHandlerResponse(
+        partial void ProcessDatasetHandlerResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessStreamDatasetHandlerResponseContent(
+        partial void ProcessDatasetHandlerResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Stream Dataset Handler
+        /// Dataset Handler
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse> StreamDatasetHandlerAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse> DatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -35,12 +35,12 @@ namespace LangSmith
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareStreamDatasetHandlerArguments(
+            PrepareDatasetHandlerArguments(
                 httpClient: _httpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/playground/stream_dataset",
+                path: "/api/v1/datasets/playground_experiment/batch",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -72,7 +72,7 @@ namespace LangSmith
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareStreamDatasetHandlerRequest(
+            PrepareDatasetHandlerRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -85,7 +85,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessStreamDatasetHandlerResponse(
+            ProcessDatasetHandlerResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -95,7 +95,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessStreamDatasetHandlerResponseContent(
+            ProcessDatasetHandlerResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -110,12 +110,12 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse), JsonSerializerContext) as global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse), JsonSerializerContext) as global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Stream Dataset Handler
+        /// Dataset Handler
         /// </summary>
         /// <param name="manifest"></param>
         /// <param name="secrets"></param>
@@ -133,7 +133,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse> StreamDatasetHandlerAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse> DatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
             global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets secrets,
             global::LangSmith.RunnableConfig options,
@@ -160,7 +160,7 @@ namespace LangSmith
                 Repetitions = repetitions,
             };
 
-            return await StreamDatasetHandlerAsync(
+            return await DatasetHandlerAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

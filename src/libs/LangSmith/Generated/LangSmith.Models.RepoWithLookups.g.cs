@@ -166,6 +166,13 @@ namespace LangSmith
         public global::LangSmith.AnyOf<string, object>? UpstreamRepoFullName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("latest_commit_manifest")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::LangSmith.CommitManifestResponse, object>? LatestCommitManifest { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

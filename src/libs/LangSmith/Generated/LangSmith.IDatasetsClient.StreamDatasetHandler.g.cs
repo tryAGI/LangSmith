@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public partial interface IPlaygroundClient
+    public partial interface IDatasetsClient
     {
         /// <summary>
         /// Stream Dataset Handler
@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse> StreamDatasetHandlerAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -33,7 +33,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1PlaygroundStreamDatasetPostResponse> StreamDatasetHandlerAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
             global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets secrets,
             global::LangSmith.RunnableConfig options,
