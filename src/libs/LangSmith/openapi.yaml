@@ -3553,6 +3553,63 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/datasets/playground_experiment/batch:
+    post:
+      tags:
+        - datasets
+      summary: Dataset Handler
+      operationId: dataset_handler_api_v1_datasets_playground_experiment_batch_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Dataset Handler Api V1 Datasets Playground Experiment Batch Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/datasets/playground_experiment/stream:
+    post:
+      tags:
+        - datasets
+      summary: Stream Dataset Handler
+      operationId: stream_dataset_handler_api_v1_datasets_playground_experiment_stream_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/runs/rules:
     get:
       tags:
@@ -8572,63 +8629,6 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  /api/v1/playground/dataset:
-    post:
-      tags:
-        - playground
-      summary: Dataset Handler
-      operationId: dataset_handler_api_v1_playground_dataset_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                title: Response Dataset Handler Api V1 Playground Dataset Post
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/playground/stream_dataset:
-    post:
-      tags:
-        - playground
-      summary: Stream Dataset Handler
-      operationId: stream_dataset_handler_api_v1_playground_stream_dataset_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
   /api/v1/ok:
     get:
       summary: Ok
@@ -8647,6 +8647,12 @@ paths:
       description: Get all repos.
       operationId: list_repos_api_v1_repos_get
       parameters:
+        - name: with_latest_manifest
+          in: query
+          schema:
+            title: With Latest Manifest
+            type: boolean
+            default: false
         - name: limit
           in: query
           schema:
@@ -15110,6 +15116,10 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+        latest_commit_manifest:
+          anyOf:
+            - $ref: '#/components/schemas/CommitManifestResponse'
+            - type: 'null'
       description: 'All database fields for repos, plus helpful computed fields.'
     RequestBodyForRunsGenerateQuery:
       title: RequestBodyForRunsGenerateQuery
@@ -19022,7 +19032,7 @@ components:
         display_name:
           title: Display Name
           minLength: 1
-          pattern: '^[a-zA-Z0-9\-_ '']+$'
+          pattern: '^[a-zA-Z0-9\-_ ''@()]+$'
           type: string
         tenant_handle:
           title: Tenant Handle
@@ -19039,7 +19049,7 @@ components:
         display_name:
           title: Display Name
           minLength: 1
-          pattern: '^[a-zA-Z0-9\-_ '']+$'
+          pattern: '^[a-zA-Z0-9\-_ ''@()]+$'
           type: string
       description: Patch model for the workspace.
     app__hub__crud__tenants__Tenant:

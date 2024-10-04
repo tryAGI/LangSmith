@@ -7,6 +7,7 @@ namespace LangSmith
     {
         partial void PrepareListReposArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref bool? withLatestManifest,
             ref int? limit,
             ref int? offset,
             ref global::LangSmith.AnyOf<string, object>? tenantHandle,
@@ -25,6 +26,7 @@ namespace LangSmith
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool? withLatestManifest,
             int? limit,
             int? offset,
             global::LangSmith.AnyOf<string, object>? tenantHandle,
@@ -53,6 +55,9 @@ namespace LangSmith
         /// List Repos<br/>
         /// Get all repos.
         /// </summary>
+        /// <param name="withLatestManifest">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -77,6 +82,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
+            bool? withLatestManifest = false,
             int? limit = 20,
             int? offset = 0,
             global::LangSmith.AnyOf<string, object>? tenantHandle = default,
@@ -98,6 +104,7 @@ namespace LangSmith
                 client: _httpClient);
             PrepareListReposArguments(
                 httpClient: _httpClient,
+                withLatestManifest: ref withLatestManifest,
                 limit: ref limit,
                 offset: ref offset,
                 tenantHandle: ref tenantHandle,
@@ -118,6 +125,7 @@ namespace LangSmith
                 path: "/api/v1/repos",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
+                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("tenant_handle", tenantHandle?.ToString() ?? string.Empty) 
@@ -161,6 +169,7 @@ namespace LangSmith
             PrepareListReposRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                withLatestManifest: withLatestManifest,
                 limit: limit,
                 offset: offset,
                 tenantHandle: tenantHandle,

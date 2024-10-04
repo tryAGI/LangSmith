@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class DatasetHandlerApiV1PlaygroundDatasetPostResponse
+    public sealed partial class DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse
     {
 
         /// <summary>
