@@ -1902,6 +1902,93 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/examples/count:
+    get:
+      tags:
+        - examples
+      summary: Count Examples
+      description: Count all examples by query params
+      operationId: count_examples_api_v1_examples_count_get
+      parameters:
+        - name: id
+          in: query
+          schema:
+            title: Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
+        - name: as_of
+          in: query
+          description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
+          schema:
+            title: As Of
+            anyOf:
+              - type: string
+                format: date-time
+              - type: string
+            description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
+            default: latest
+        - name: metadata
+          in: query
+          schema:
+            title: Metadata
+            anyOf:
+              - type: string
+              - type: 'null'
+        - name: full_text_contains
+          in: query
+          schema:
+            title: Full Text Contains
+            anyOf:
+              - type: array
+                items:
+                  type: string
+              - type: 'null'
+        - name: splits
+          in: query
+          schema:
+            title: Splits
+            anyOf:
+              - type: array
+                items:
+                  type: string
+              - type: 'null'
+        - name: dataset
+          in: query
+          schema:
+            title: Dataset
+            anyOf:
+              - type: string
+                format: uuid
+              - type: 'null'
+        - name: filter
+          in: query
+          schema:
+            title: Filter
+            anyOf:
+              - type: string
+              - type: 'null'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Count Examples Api V1 Examples Count Get
+                type: integer
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/examples/{example_id}':
     get:
       tags:
@@ -5036,6 +5123,70 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DatasetPublicSchema'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/public/{share_token}/examples/count':
+    get:
+      tags:
+        - public
+      summary: Count Shared Examples
+      description: Count all examples by query params
+      operationId: count_shared_examples_api_v1_public__share_token__examples_count_get
+      parameters:
+        - name: share_token
+          in: path
+          required: true
+          schema:
+            title: Share Token
+            type: string
+            format: uuid
+        - name: id
+          in: query
+          schema:
+            title: Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
+        - name: as_of
+          in: query
+          description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
+          schema:
+            title: As Of
+            anyOf:
+              - type: string
+                format: date-time
+              - type: string
+            description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
+            default: latest
+        - name: metadata
+          in: query
+          schema:
+            title: Metadata
+            anyOf:
+              - type: string
+              - type: 'null'
+        - name: filter
+          in: query
+          schema:
+            title: Filter
+            anyOf:
+              - type: string
+              - type: 'null'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Count Shared Examples Api V1 Public  Share Token  Examples Count Get
+                type: integer
         '422':
           description: Validation Error
           content:
@@ -13808,8 +13959,7 @@ components:
       title: OptimizePromptRequest
       required:
         - prompt
-        - metaprompt_name
-        - template_format
+        - metaprompt
         - examples
         - overall_feedback
       type: object
@@ -13817,17 +13967,9 @@ components:
         prompt:
           title: Prompt
           type: string
-        metaprompt_name:
-          title: Metaprompt Name
-          anyOf:
-            - type: string
-            - type: 'null'
-        template_format:
-          title: Template Format
-          enum:
-            - f-string
-            - mustache
-          type: string
+        metaprompt:
+          title: Metaprompt
+          type: object
         examples:
           title: Examples
           type: array
@@ -13843,11 +13985,17 @@ components:
       title: OptimizePromptResponse
       required:
         - prompt
+        - error
       type: object
       properties:
         prompt:
           title: Prompt
           type: string
+        error:
+          title: Error
+          anyOf:
+            - type: string
+            - type: 'null'
       description: Response from optimizing a prompt.
     OrgFeatureFlags:
       title: OrgFeatureFlags
