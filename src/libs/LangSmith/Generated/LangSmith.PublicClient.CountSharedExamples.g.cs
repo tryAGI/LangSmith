@@ -3,49 +3,76 @@
 
 namespace LangSmith
 {
-    public partial class ReposClient
+    public partial class PublicClient
     {
-        partial void PrepareOptimizePromptArguments(
+        partial void PrepareCountSharedExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.OptimizePromptRequest request);
-        partial void PrepareOptimizePromptRequest(
+            ref global::System.Guid shareToken,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            ref global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
+            ref global::LangSmith.AnyOf<string, object>? metadata,
+            ref global::LangSmith.AnyOf<string, object>? filter);
+        partial void PrepareCountSharedExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.OptimizePromptRequest request);
-        partial void ProcessOptimizePromptResponse(
+            global::System.Guid shareToken,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
+            global::LangSmith.AnyOf<string, object>? metadata,
+            global::LangSmith.AnyOf<string, object>? filter);
+        partial void ProcessCountSharedExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessOptimizePromptResponseContent(
+        partial void ProcessCountSharedExamplesResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Optimize Prompt<br/>
-        /// Optimize prompt tables.
+        /// Count Shared Examples<br/>
+        /// Count all examples by query params
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="shareToken"></param>
+        /// <param name="id"></param>
+        /// <param name="asOf">
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.<br/>
+        /// Default Value: latest
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptAsync(
-            global::LangSmith.OptimizePromptRequest request,
+        public async global::System.Threading.Tasks.Task<int> CountSharedExamplesAsync(
+            global::System.Guid shareToken,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::LangSmith.AnyOf<string, object>? metadata = default,
+            global::LangSmith.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
-            PrepareOptimizePromptArguments(
+            PrepareCountSharedExamplesArguments(
                 httpClient: _httpClient,
-                request: request);
+                shareToken: ref shareToken,
+                id: ref id,
+                asOf: ref asOf,
+                metadata: ref metadata,
+                filter: ref filter);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/repos/optimize",
+                path: $"/api/v1/public/{shareToken}/examples/count",
                 baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("filter", filter?.ToString() ?? string.Empty) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var _authorization in _authorizations)
@@ -63,20 +90,18 @@ namespace LangSmith
                     httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareOptimizePromptRequest(
+            PrepareCountSharedExamplesRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                request: request);
+                shareToken: shareToken,
+                id: id,
+                asOf: asOf,
+                metadata: metadata,
+                filter: filter);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -86,7 +111,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessOptimizePromptResponse(
+            ProcessCountSharedExamplesResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -96,7 +121,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessOptimizePromptResponseContent(
+            ProcessCountSharedExamplesResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -111,38 +136,8 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.OptimizePromptResponse), JsonSerializerContext) as global::LangSmith.OptimizePromptResponse ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(int?), JsonSerializerContext) as int? ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-        }
-
-        /// <summary>
-        /// Optimize Prompt<br/>
-        /// Optimize prompt tables.
-        /// </summary>
-        /// <param name="prompt"></param>
-        /// <param name="metaprompt"></param>
-        /// <param name="examples"></param>
-        /// <param name="overallFeedback"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptAsync(
-            string prompt,
-            global::LangSmith.OptimizePromptRequestMetaprompt metaprompt,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
-            global::LangSmith.AnyOf<string, object> overallFeedback,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var request = new global::LangSmith.OptimizePromptRequest
-            {
-                Prompt = prompt,
-                Metaprompt = metaprompt,
-                Examples = examples,
-                OverallFeedback = overallFeedback,
-            };
-
-            return await OptimizePromptAsync(
-                request: request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

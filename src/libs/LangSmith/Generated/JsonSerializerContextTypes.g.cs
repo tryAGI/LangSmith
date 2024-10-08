@@ -1866,7 +1866,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OptimizePromptRequestTemplateFormat? Type462 { get; set; }
+        public global::LangSmith.OptimizePromptRequestMetaprompt? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
