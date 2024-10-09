@@ -73,6 +73,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public BulkExportsClient BulkExports { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TenantClient Tenant { get; }
 
         /// <summary>

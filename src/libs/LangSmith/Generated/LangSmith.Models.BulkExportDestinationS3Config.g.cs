@@ -6,42 +6,38 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Creation model for the tenant.
+    /// 
     /// </summary>
-    public sealed partial class TenantCreate
+    public sealed partial class BulkExportDestinationS3Config
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid? Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("bucket_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DisplayName { get; set; }
+        public required string BucketName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? TenantHandle { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.AnyOf<string, object> Prefix { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
-        public bool? IsPersonal { get; set; } = false;
+        [global::System.Text.Json.Serialization.JsonPropertyName("region")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<string, object>? Region { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_url")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<string, object>? EndpointUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

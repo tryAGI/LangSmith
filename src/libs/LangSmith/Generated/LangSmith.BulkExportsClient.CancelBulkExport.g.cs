@@ -3,49 +3,54 @@
 
 namespace LangSmith
 {
-    public partial class TenantClient
+    public partial class BulkExportsClient
     {
-        partial void PrepareCreateTenantArguments(
+        partial void PrepareCancelBulkExportArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.TenantCreate request);
-        partial void PrepareCreateTenantRequest(
+            ref global::System.Guid bulkExportId,
+            global::LangSmith.BulkExportUpdate request);
+        partial void PrepareCancelBulkExportRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.TenantCreate request);
-        partial void ProcessCreateTenantResponse(
+            global::System.Guid bulkExportId,
+            global::LangSmith.BulkExportUpdate request);
+        partial void ProcessCancelBulkExportResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTenantResponseContent(
+        partial void ProcessCancelBulkExportResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Tenant<br/>
-        /// Create a new organization and corresponding workspace.
+        /// Cancel Bulk Export<br/>
+        /// Cancel a bulk export by ID
         /// </summary>
+        /// <param name="bulkExportId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
-            global::LangSmith.TenantCreate request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.BulkExport> CancelBulkExportAsync(
+            global::System.Guid bulkExportId,
+            global::LangSmith.BulkExportUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareCreateTenantArguments(
+            PrepareCancelBulkExportArguments(
                 httpClient: _httpClient,
+                bulkExportId: ref bulkExportId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/tenants",
+                path: $"/api/v1/bulk-exports/{bulkExportId}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var _authorization in _authorizations)
@@ -73,9 +78,10 @@ namespace LangSmith
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareCreateTenantRequest(
+            PrepareCancelBulkExportRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                bulkExportId: bulkExportId,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -86,7 +92,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessCreateTenantResponse(
+            ProcessCancelBulkExportResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -96,7 +102,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessCreateTenantResponseContent(
+            ProcessCancelBulkExportResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -111,41 +117,30 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.AppSchemasTenant), JsonSerializerContext) as global::LangSmith.AppSchemasTenant ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.BulkExport), JsonSerializerContext) as global::LangSmith.BulkExport ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Create Tenant<br/>
-        /// Create a new organization and corresponding workspace.
+        /// Cancel Bulk Export<br/>
+        /// Cancel a bulk export by ID
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="displayName"></param>
-        /// <param name="tenantHandle"></param>
-        /// <param name="isPersonal">
-        /// Default Value: false
-        /// </param>
+        /// <param name="bulkExportId"></param>
+        /// <param name="status"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
-            string displayName,
-            global::System.Guid? id = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? organizationId = default,
-            global::LangSmith.AnyOf<string, object>? tenantHandle = default,
-            bool? isPersonal = false,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.BulkExport> CancelBulkExportAsync(
+            global::System.Guid bulkExportId,
+            global::LangSmith.BulkExportUpdateStatus status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::LangSmith.TenantCreate
+            var request = new global::LangSmith.BulkExportUpdate
             {
-                Id = id,
-                OrganizationId = organizationId,
-                DisplayName = displayName,
-                TenantHandle = tenantHandle,
-                IsPersonal = isPersonal,
+                Status = status,
             };
 
-            return await CreateTenantAsync(
+            return await CancelBulkExportAsync(
+                bulkExportId: bulkExportId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
