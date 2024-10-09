@@ -23,6 +23,9 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="displayName"></param>
         /// <param name="tenantHandle"></param>
+        /// <param name="isPersonal">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
@@ -30,6 +33,7 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? organizationId = default,
             global::LangSmith.AnyOf<string, object>? tenantHandle = default,
+            bool? isPersonal = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

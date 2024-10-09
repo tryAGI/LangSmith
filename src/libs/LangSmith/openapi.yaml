@@ -6292,6 +6292,281 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/bulk-exports:
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Exports
+      description: Get the current workspace's bulk exports
+      operationId: get_bulk_exports_api_v1_bulk_exports_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Bulk Exports Api V1 Bulk Exports Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/BulkExport'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - bulk-exports
+      summary: Create Bulk Export
+      description: Create a new bulk export
+      operationId: create_bulk_export_api_v1_bulk_exports_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkExportCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkExport'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/bulk-exports/destinations:
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Export Destinations
+      description: Get the current workspace's bulk export destinations
+      operationId: get_bulk_export_destinations_api_v1_bulk_exports_destinations_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Bulk Export Destinations Api V1 Bulk Exports Destinations Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/BulkExportDestination'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - bulk-exports
+      summary: Create Bulk Export Destination
+      description: Create a new bulk export destination
+      operationId: create_bulk_export_destination_api_v1_bulk_exports_destinations_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkExportDestinationCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkExportDestination'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/bulk-exports/{bulk_export_id}':
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Export
+      description: Get a single bulk export by ID
+      operationId: get_bulk_export_api_v1_bulk_exports__bulk_export_id__get
+      parameters:
+        - name: bulk_export_id
+          in: path
+          required: true
+          schema:
+            title: Bulk Export Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkExport'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - bulk-exports
+      summary: Cancel Bulk Export
+      description: Cancel a bulk export by ID
+      operationId: cancel_bulk_export_api_v1_bulk_exports__bulk_export_id__patch
+      parameters:
+        - name: bulk_export_id
+          in: path
+          required: true
+          schema:
+            title: Bulk Export Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkExportUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkExport'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/bulk-exports/destinations/{destination_id}':
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Export Destination
+      description: Get a single bulk export destination by ID
+      operationId: get_bulk_export_destination_api_v1_bulk_exports_destinations__destination_id__get
+      parameters:
+        - name: destination_id
+          in: path
+          required: true
+          schema:
+            title: Destination Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkExportDestination'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/bulk-exports/{bulk_export_id}/runs':
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Export Runs
+      description: Get a bulk export's runs
+      operationId: get_bulk_export_runs_api_v1_bulk_exports__bulk_export_id__runs_get
+      parameters:
+        - name: bulk_export_id
+          in: path
+          required: true
+          schema:
+            title: Bulk Export Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Bulk Export Runs Api V1 Bulk Exports  Bulk Export Id  Runs Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/BulkExportRun'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/bulk-exports/{bulk_export_id}/runs/{run_id}':
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Export Run
+      description: Get a single bulk export's run by ID
+      operationId: get_bulk_export_run_api_v1_bulk_exports__bulk_export_id__runs__run_id__get
+      parameters:
+        - name: bulk_export_id
+          in: path
+          required: true
+          schema:
+            title: Bulk Export Id
+            type: string
+            format: uuid
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            title: Run Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkExportRun'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/tenants:
     get:
       tags:
@@ -10650,6 +10925,318 @@ components:
           type: array
           items:
             type: string
+    BulkExport:
+      title: BulkExport
+      required:
+        - bulk_export_destination_id
+        - session_id
+        - start_time
+        - end_time
+        - id
+        - tenant_id
+        - status
+        - created_at
+        - updated_at
+        - finished_at
+      type: object
+      properties:
+        bulk_export_destination_id:
+          title: Bulk Export Destination Id
+          type: string
+          format: uuid
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+        format:
+          $ref: '#/components/schemas/BulkExportFormat'
+        compression:
+          $ref: '#/components/schemas/BulkExportCompression'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tenant_id:
+          title: Tenant Id
+          type: string
+          format: uuid
+        status:
+          $ref: '#/components/schemas/BulkExportStatus'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        finished_at:
+          title: Finished At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+    BulkExportCompression:
+      title: BulkExportCompression
+      enum:
+        - none
+        - gzip
+        - snappy
+      type: string
+    BulkExportCreate:
+      title: BulkExportCreate
+      required:
+        - bulk_export_destination_id
+        - session_id
+        - start_time
+        - end_time
+      type: object
+      properties:
+        bulk_export_destination_id:
+          title: Bulk Export Destination Id
+          type: string
+          format: uuid
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+        format:
+          $ref: '#/components/schemas/BulkExportFormat'
+        compression:
+          $ref: '#/components/schemas/BulkExportCompression'
+    BulkExportDestination:
+      title: BulkExportDestination
+      required:
+        - display_name
+        - config
+        - id
+        - tenant_id
+        - created_at
+        - updated_at
+        - credentials_keys
+      type: object
+      properties:
+        destination_type:
+          $ref: '#/components/schemas/BulkExportDestinationType'
+        display_name:
+          title: Display Name
+          minLength: 1
+          pattern: '^[a-zA-Z0-9\-_ '']+$'
+          type: string
+        config:
+          $ref: '#/components/schemas/BulkExportDestinationS3Config'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tenant_id:
+          title: Tenant Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        credentials_keys:
+          title: Credentials Keys
+          type: array
+          items:
+            type: string
+    BulkExportDestinationCreate:
+      title: BulkExportDestinationCreate
+      required:
+        - display_name
+        - config
+        - credentials
+      type: object
+      properties:
+        destination_type:
+          $ref: '#/components/schemas/BulkExportDestinationType'
+        display_name:
+          title: Display Name
+          minLength: 1
+          pattern: '^[a-zA-Z0-9\-_ '']+$'
+          type: string
+        config:
+          $ref: '#/components/schemas/BulkExportDestinationS3Config'
+        credentials:
+          $ref: '#/components/schemas/BulkExportDestinationS3Credentials'
+    BulkExportDestinationS3Config:
+      title: BulkExportDestinationS3Config
+      required:
+        - bucket_name
+        - prefix
+      type: object
+      properties:
+        bucket_name:
+          title: Bucket Name
+          maxLength: 63
+          minLength: 3
+          type: string
+        prefix:
+          title: Prefix
+          anyOf:
+            - maxLength: 2048
+              type: string
+            - type: 'null'
+        region:
+          title: Region
+          anyOf:
+            - minLength: 1
+              type: string
+            - type: 'null'
+        endpoint_url:
+          title: Endpoint Url
+          anyOf:
+            - maxLength: 2048
+              type: string
+            - type: 'null'
+    BulkExportDestinationS3Credentials:
+      title: BulkExportDestinationS3Credentials
+      required:
+        - access_key_id
+        - secret_access_key
+      type: object
+      properties:
+        access_key_id:
+          title: Access Key Id
+          maxLength: 255
+          minLength: 1
+          type: string
+        secret_access_key:
+          title: Secret Access Key
+          maxLength: 2048
+          minLength: 1
+          type: string
+    BulkExportDestinationType:
+      title: BulkExportDestinationType
+      enum:
+        - s3
+      type: string
+    BulkExportFormat:
+      title: BulkExportFormat
+      enum:
+        - Parquet
+      type: string
+    BulkExportRun:
+      title: BulkExportRun
+      required:
+        - bulk_export_id
+        - metadata
+        - id
+        - status
+        - created_at
+        - updated_at
+        - finished_at
+      type: object
+      properties:
+        bulk_export_id:
+          title: Bulk Export Id
+          type: string
+          format: uuid
+        metadata:
+          $ref: '#/components/schemas/BulkExportRunS3Metadata'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        status:
+          $ref: '#/components/schemas/BulkExportRunStatus'
+        retry_number:
+          title: Retry Number
+          type: integer
+          default: 0
+        errors:
+          title: Errors
+          anyOf:
+            - type: object
+            - type: 'null'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        finished_at:
+          title: Finished At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+    BulkExportRunS3Metadata:
+      title: BulkExportRunS3Metadata
+      required:
+        - prefix
+        - start_time
+        - end_time
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+    BulkExportRunStatus:
+      title: BulkExportRunStatus
+      enum:
+        - Cancelled
+        - Completed
+        - Created
+        - Failed
+        - FailedRetryable
+        - TimedOut
+        - Running
+      type: string
+    BulkExportStatus:
+      title: BulkExportStatus
+      enum:
+        - Cancelled
+        - Completed
+        - Created
+        - Failed
+        - FailedRetryable
+        - TimedOut
+        - Running
+      type: string
+    BulkExportUpdate:
+      title: BulkExportUpdate
+      required:
+        - status
+      type: object
+      properties:
+        status:
+          title: Status
+          enum:
+            - Cancelled
+          type: string
     ChangePaymentPlanReq:
       title: ChangePaymentPlanReq
       enum:
@@ -14375,6 +14962,10 @@ components:
           default: 1
         can_use_saml_sso:
           title: Can Use Saml Sso
+          type: boolean
+          default: false
+        can_use_bulk_export:
+          title: Can Use Bulk Export
           type: boolean
           default: false
         use_python_playground_service:
@@ -18378,6 +18969,10 @@ components:
           anyOf:
             - type: string
             - type: 'null'
+        is_personal:
+          title: Is Personal
+          type: boolean
+          default: false
       description: Creation model for the tenant.
     TenantForUser:
       title: TenantForUser

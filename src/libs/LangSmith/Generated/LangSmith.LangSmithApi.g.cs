@@ -114,6 +114,14 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public BulkExportsClient BulkExports => new BulkExportsClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TenantClient Tenant => new TenantClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,

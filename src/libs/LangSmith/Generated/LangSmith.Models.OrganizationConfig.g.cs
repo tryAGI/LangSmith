@@ -82,6 +82,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_bulk_export")]
+        public bool? CanUseBulkExport { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_python_playground_service")]
         public bool? UsePythonPlaygroundService { get; set; } = false;
 

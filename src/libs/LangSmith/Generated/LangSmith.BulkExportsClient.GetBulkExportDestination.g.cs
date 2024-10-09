@@ -3,49 +3,47 @@
 
 namespace LangSmith
 {
-    public partial class TenantClient
+    public partial class BulkExportsClient
     {
-        partial void PrepareCreateTenantArguments(
+        partial void PrepareGetBulkExportDestinationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.TenantCreate request);
-        partial void PrepareCreateTenantRequest(
+            ref global::System.Guid destinationId);
+        partial void PrepareGetBulkExportDestinationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.TenantCreate request);
-        partial void ProcessCreateTenantResponse(
+            global::System.Guid destinationId);
+        partial void ProcessGetBulkExportDestinationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTenantResponseContent(
+        partial void ProcessGetBulkExportDestinationResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Tenant<br/>
-        /// Create a new organization and corresponding workspace.
+        /// Get Bulk Export Destination<br/>
+        /// Get a single bulk export destination by ID
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="destinationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
-            global::LangSmith.TenantCreate request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.BulkExportDestination> GetBulkExportDestinationAsync(
+            global::System.Guid destinationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
-            PrepareCreateTenantArguments(
+            PrepareGetBulkExportDestinationArguments(
                 httpClient: _httpClient,
-                request: request);
+                destinationId: ref destinationId);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/tenants",
+                path: $"/api/v1/bulk-exports/destinations/{destinationId}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var _authorization in _authorizations)
@@ -63,20 +61,14 @@ namespace LangSmith
                     httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareCreateTenantRequest(
+            PrepareGetBulkExportDestinationRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                request: request);
+                destinationId: destinationId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -86,7 +78,7 @@ namespace LangSmith
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessCreateTenantResponse(
+            ProcessGetBulkExportDestinationResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -96,7 +88,7 @@ namespace LangSmith
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessCreateTenantResponseContent(
+            ProcessGetBulkExportDestinationResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -111,43 +103,8 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.AppSchemasTenant), JsonSerializerContext) as global::LangSmith.AppSchemasTenant ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.BulkExportDestination), JsonSerializerContext) as global::LangSmith.BulkExportDestination ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-        }
-
-        /// <summary>
-        /// Create Tenant<br/>
-        /// Create a new organization and corresponding workspace.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="organizationId"></param>
-        /// <param name="displayName"></param>
-        /// <param name="tenantHandle"></param>
-        /// <param name="isPersonal">
-        /// Default Value: false
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
-            string displayName,
-            global::System.Guid? id = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? organizationId = default,
-            global::LangSmith.AnyOf<string, object>? tenantHandle = default,
-            bool? isPersonal = false,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var request = new global::LangSmith.TenantCreate
-            {
-                Id = id,
-                OrganizationId = organizationId,
-                DisplayName = displayName,
-                TenantHandle = tenantHandle,
-                IsPersonal = isPersonal,
-            };
-
-            return await CreateTenantAsync(
-                request: request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
