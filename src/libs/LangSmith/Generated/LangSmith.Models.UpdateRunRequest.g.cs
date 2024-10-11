@@ -95,6 +95,20 @@ namespace LangSmith
         public global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestOutputAttachments, object>? OutputAttachments { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::LangSmith.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::LangSmith.OneOf<string, object>? SessionName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

@@ -20178,6 +20178,15 @@ components:
           oneOf:
             - type: object
             - type: 'null'
+        session_id:
+          oneOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        session_name:
+          oneOf:
+            - type: string
+            - type: 'null'
   securitySchemes:
     ApiKey:
       type: apiKey
