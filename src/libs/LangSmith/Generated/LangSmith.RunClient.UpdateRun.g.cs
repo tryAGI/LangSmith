@@ -138,6 +138,8 @@ namespace LangSmith
         /// <param name="extra"></param>
         /// <param name="inputAttachments"></param>
         /// <param name="outputAttachments"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
@@ -154,6 +156,8 @@ namespace LangSmith
             global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestExtra, object>? extra = default,
             global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestInputAttachments, object>? inputAttachments = default,
             global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestOutputAttachments, object>? outputAttachments = default,
+            global::LangSmith.OneOf<global::System.Guid?, object>? sessionId = default,
+            global::LangSmith.OneOf<string, object>? sessionName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.UpdateRunRequest
@@ -170,6 +174,8 @@ namespace LangSmith
                 Extra = extra,
                 InputAttachments = inputAttachments,
                 OutputAttachments = outputAttachments,
+                SessionId = sessionId,
+                SessionName = sessionName,
             };
 
             return await UpdateRunAsync(
