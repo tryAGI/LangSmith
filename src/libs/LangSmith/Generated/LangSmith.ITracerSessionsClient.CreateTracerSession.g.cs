@@ -41,7 +41,7 @@ namespace LangSmith
             bool? upsert = false,
             global::System.DateTime? startTime = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::LangSmith.AnyOf<global::LangSmith.TracerSessionCreateExtra, object>? extra = default,
+            global::LangSmith.AnyOf<object, object>? extra = default,
             string? name = default,
             global::LangSmith.AnyOf<string, object>? description = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,

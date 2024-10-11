@@ -24,7 +24,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> CreatePlaygroundSettingsAsync(
-            global::LangSmith.PlaygroundSettingsCreateRequestSettings settings,
+            object settings,
             global::LangSmith.AnyOf<string, object>? name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

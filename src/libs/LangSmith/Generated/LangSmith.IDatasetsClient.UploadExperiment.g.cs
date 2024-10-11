@@ -41,7 +41,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? datasetName = default,
             global::LangSmith.AnyOf<string, object>? datasetDescription = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>, object>? summaryExperimentScores = default,
-            global::LangSmith.AnyOf<global::LangSmith.ExperimentResultsUploadExperimentMetadata, object>? experimentMetadata = default,
+            global::LangSmith.AnyOf<object, object>? experimentMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

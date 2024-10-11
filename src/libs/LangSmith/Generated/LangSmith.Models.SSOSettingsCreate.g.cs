@@ -42,7 +42,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute_mapping")]
-        public global::LangSmith.SSOSettingsCreateAttributeMapping? AttributeMapping { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? AttributeMapping { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

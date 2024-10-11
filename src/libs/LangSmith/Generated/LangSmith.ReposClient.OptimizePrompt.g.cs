@@ -127,7 +127,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptAsync(
             string prompt,
-            global::LangSmith.OptimizePromptRequestMetaprompt metaprompt,
+            object metaprompt,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
             global::LangSmith.AnyOf<string, object> overallFeedback,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -34,7 +34,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SearchDatasetResponse> SearchAsync(
             global::System.Guid datasetId,
-            global::LangSmith.SearchDatasetRequestInputs inputs,
+            object inputs,
             int? limit = 5,
             bool? debug = false,
             global::LangSmith.AnyOf<string, object>? filter = default,

@@ -33,9 +33,9 @@ namespace LangSmith
             global::System.Guid datasetId,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? name = default,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
-            global::LangSmith.AnyOf<global::LangSmith.DatasetUpdateInputsSchemaDefinition, global::LangSmith.Missing, object>? inputsSchemaDefinition = default,
-            global::LangSmith.AnyOf<global::LangSmith.DatasetUpdateOutputsSchemaDefinition, global::LangSmith.Missing, object>? outputsSchemaDefinition = default,
-            global::LangSmith.AnyOf<global::LangSmith.DatasetUpdatePatchExamples, object>? patchExamples = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? inputsSchemaDefinition = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? outputsSchemaDefinition = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>, object>? patchExamples = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -135,7 +135,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets secrets,
+            global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.RunnableConfig options,
             global::System.Guid datasetId,
             global::LangSmith.AnyOf<string, object>? runId = default,

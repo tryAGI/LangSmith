@@ -21,7 +21,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        public global::LangSmith.BatchIngestRunsRequestPostItemInputs? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemExtra, object>? Extra { get; set; }
+        public global::LangSmith.OneOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -65,14 +65,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemSerialized, object>? Serialized { get; set; }
+        public global::LangSmith.OneOf<object, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemOutputs, object>? Outputs { get; set; }
+        public global::LangSmith.OneOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -86,7 +86,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItemEventsVariant1Item>, object>? Events { get; set; }
+        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -142,14 +142,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_attachments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemInputAttachments, object>? InputAttachments { get; set; }
+        public global::LangSmith.OneOf<object, object>? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_attachments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemOutputAttachments, object>? OutputAttachments { get; set; }
+        public global::LangSmith.OneOf<object, object>? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

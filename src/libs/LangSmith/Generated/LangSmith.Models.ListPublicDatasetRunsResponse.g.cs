@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.ListPublicDatasetRunsResponseCursors Cursors { get; set; }
+        public required object Cursors { get; set; }
 
         /// <summary>
         /// 

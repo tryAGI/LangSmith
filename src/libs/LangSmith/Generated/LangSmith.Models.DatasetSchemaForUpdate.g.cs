@@ -35,14 +35,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetSchemaForUpdateInputsSchemaDefinition, object>? InputsSchemaDefinition { get; set; }
+        public global::LangSmith.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetSchemaForUpdateOutputsSchemaDefinition, object>? OutputsSchemaDefinition { get; set; }
+        public global::LangSmith.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false

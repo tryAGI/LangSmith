@@ -57,7 +57,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartUpdateMetadata, global::LangSmith.Missing, object>? Metadata { get; set; }
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? Metadata { get; set; }
 
         /// <summary>
         /// 

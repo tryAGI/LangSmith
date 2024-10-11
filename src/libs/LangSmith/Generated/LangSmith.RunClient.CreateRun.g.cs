@@ -144,15 +144,15 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunApiV1RunsPostResponse> CreateRunAsync(
             string name,
             global::LangSmith.CreateRunRequestRunType runType,
-            global::LangSmith.OneOf<global::LangSmith.CreateRunRequestInputs, object>? inputs = default,
+            global::LangSmith.OneOf<object, object>? inputs = default,
             global::LangSmith.OneOf<string, double?, object>? startTime = default,
             global::LangSmith.OneOf<string, double?, object>? endTime = default,
-            global::LangSmith.OneOf<global::LangSmith.CreateRunRequestExtra, object>? extra = default,
+            global::LangSmith.OneOf<object, object>? extra = default,
             global::LangSmith.OneOf<string, object>? error = default,
-            global::LangSmith.OneOf<global::LangSmith.CreateRunRequestSerialized, object>? serialized = default,
-            global::LangSmith.OneOf<global::LangSmith.CreateRunRequestOutputs, object>? outputs = default,
+            global::LangSmith.OneOf<object, object>? serialized = default,
+            global::LangSmith.OneOf<object, object>? outputs = default,
             global::LangSmith.OneOf<global::System.Guid?, object>? parentRunId = default,
-            global::LangSmith.OneOf<global::System.Collections.Generic.IList<global::LangSmith.CreateRunRequestEventsVariant1Item>, object>? events = default,
+            global::LangSmith.OneOf<global::System.Collections.Generic.IList<object>, object>? events = default,
             global::LangSmith.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
             global::LangSmith.OneOf<global::System.Guid?, object>? traceId = default,
             global::LangSmith.OneOf<string, object>? dottedOrder = default,
@@ -160,8 +160,8 @@ namespace LangSmith
             global::LangSmith.OneOf<global::System.Guid?, object>? sessionId = default,
             global::LangSmith.OneOf<string, object>? sessionName = default,
             global::LangSmith.OneOf<global::System.Guid?, object>? referenceExampleId = default,
-            global::LangSmith.OneOf<global::LangSmith.CreateRunRequestInputAttachments, object>? inputAttachments = default,
-            global::LangSmith.OneOf<global::LangSmith.CreateRunRequestOutputAttachments, object>? outputAttachments = default,
+            global::LangSmith.OneOf<object, object>? inputAttachments = default,
+            global::LangSmith.OneOf<object, object>? outputAttachments = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.CreateRunRequest

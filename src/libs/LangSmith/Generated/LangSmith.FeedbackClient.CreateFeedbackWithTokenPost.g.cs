@@ -138,8 +138,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             global::LangSmith.AnyOf<string, object>? comment = default,
-            global::LangSmith.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaCorrection, string, object>? correction = default,
-            global::LangSmith.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? metadata = default,
+            global::LangSmith.AnyOf<object, string, object>? correction = default,
+            global::LangSmith.AnyOf<object, object>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.FeedbackCreateWithTokenExtendedSchema

@@ -36,10 +36,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Example> CreateExampleAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<global::LangSmith.ExampleCreateOutputs, object>? outputs = default,
+            global::LangSmith.AnyOf<object, object>? outputs = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? sourceRunId = default,
-            global::LangSmith.AnyOf<global::LangSmith.ExampleCreateMetadata, object>? metadata = default,
-            global::LangSmith.AnyOf<global::LangSmith.ExampleCreateInputs, object>? inputs = default,
+            global::LangSmith.AnyOf<object, object>? metadata = default,
+            global::LangSmith.AnyOf<object, object>? inputs = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
             bool? useSourceRunIo = false,

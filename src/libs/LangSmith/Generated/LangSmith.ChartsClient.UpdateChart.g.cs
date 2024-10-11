@@ -144,7 +144,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? chartType = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? series = default,
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? sectionId = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartUpdateMetadata, global::LangSmith.Missing, object>? metadata = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
             global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

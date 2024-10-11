@@ -50,7 +50,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.PublicComparativeExperimentExtra, object>? Extra { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_stats")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.PublicComparativeExperimentFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::LangSmith.AnyOf<object, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

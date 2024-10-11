@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.OauthProviderCallbackApiV1OauthProviderCallbackGetResponse> OauthProviderCallbackAsync(
+        public async global::System.Threading.Tasks.Task<object> OauthProviderCallbackAsync(
             global::LangSmith.OAuthProvider provider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,7 +102,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.OauthProviderCallbackApiV1OauthProviderCallbackGetResponse), JsonSerializerContext) as global::LangSmith.OauthProviderCallbackApiV1OauthProviderCallbackGetResponse ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(object), JsonSerializerContext) as object ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

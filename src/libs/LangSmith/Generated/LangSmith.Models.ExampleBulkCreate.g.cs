@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleBulkCreateOutputs, object>? Outputs { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -36,14 +36,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleBulkCreateMetadata, object>? Metadata { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleBulkCreateInputs, object>? Inputs { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// Default Value: base
