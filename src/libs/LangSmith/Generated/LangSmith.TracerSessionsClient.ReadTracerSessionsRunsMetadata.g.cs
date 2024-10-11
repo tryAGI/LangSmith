@@ -44,7 +44,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RootModelDictStrListStr> ReadTracerSessionsRunsMetadataAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>> ReadTracerSessionsRunsMetadataAsync(
             global::System.Guid sessionId,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
@@ -137,7 +137,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.RootModelDictStrListStr), JsonSerializerContext) as global::LangSmith.RootModelDictStrListStr ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>> ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
