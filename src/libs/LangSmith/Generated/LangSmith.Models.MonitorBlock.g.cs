@@ -50,7 +50,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_spec")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.MonitorBlockChartSpec ChartSpec { get; set; }
+        public required object ChartSpec { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toggleable_marks")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.MonitorBlockToggleableMarks, object>? ToggleableMarks { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>, object>? ToggleableMarks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

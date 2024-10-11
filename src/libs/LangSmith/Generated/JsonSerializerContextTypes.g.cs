@@ -26,3770 +26,2406 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.APIFeedbackSourceMetadata, object>? Type2 { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.APIFeedbackSourceMetadata? Type3 { get; set; }
+        public object? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type4 { get; set; }
+        public global::LangSmith.APIKeyCreateRequest? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.APIKeyCreateRequest? Type5 { get; set; }
+        public bool? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type6 { get; set; }
+        public global::LangSmith.APIKeyCreateResponse? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.APIKeyCreateResponse? Type7 { get; set; }
+        public global::LangSmith.AnyOf<global::System.DateTime?, object>? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.DateTime?, object>? Type8 { get; set; }
+        public global::System.DateTime? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type9 { get; set; }
+        public global::System.Guid? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type10 { get; set; }
+        public global::LangSmith.APIKeyGetResponse? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.APIKeyGetResponse? Type11 { get; set; }
+        public global::LangSmith.AccessScope? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AccessScope? Type12 { get; set; }
+        public global::LangSmith.AllowedLoginMethodsUpdate? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllowedLoginMethodsUpdate? Type13 { get; set; }
+        public global::LangSmith.AnnotationQueueCreateSchema? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueCreateSchema? Type14 { get; set; }
+        public global::LangSmith.AnyOf<string, object>? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<string, object>? Type15 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Guid?, object>? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Guid?, object>? Type16 { get; set; }
+        public global::LangSmith.AnyOf<int?, object>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<int?, object>? Type17 { get; set; }
+        public int? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type18 { get; set; }
+        public global::LangSmith.AnyOf<bool?, object>? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<bool?, object>? Type19 { get; set; }
+        public global::LangSmith.AnnotationQueueRunSchema? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueRunSchema? Type20 { get; set; }
+        public global::LangSmith.AnnotationQueueRunUpdateSchema? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueRunUpdateSchema? Type21 { get; set; }
+        public global::LangSmith.AnnotationQueueSchema? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSchema? Type22 { get; set; }
+        public global::LangSmith.AnnotationQueueSchemaWithSize? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSchemaWithSize? Type23 { get; set; }
+        public global::LangSmith.AnnotationQueueSizeSchema? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSizeSchema? Type24 { get; set; }
+        public global::LangSmith.AnnotationQueueUpdateSchema? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueUpdateSchema? Type25 { get; set; }
+        public global::LangSmith.AppFeedbackSource? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AppFeedbackSource? Type26 { get; set; }
+        public global::LangSmith.AuthProvider? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSourceMetadata, object>? Type27 { get; set; }
+        public global::LangSmith.AutoEvalFeedbackSource? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AppFeedbackSourceMetadata? Type28 { get; set; }
+        public global::LangSmith.BasicAuthMemberCreate? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AuthProvider? Type29 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AutoEvalFeedbackSource? Type30 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.AutoEvalFeedbackSourceMetadata, object>? Type31 { get; set; }
+        public global::LangSmith.BasicAuthResponse? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AutoEvalFeedbackSourceMetadata? Type32 { get; set; }
+        public global::LangSmith.BasicAuthUserPatch? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BasicAuthMemberCreate? Type33 { get; set; }
+        public global::LangSmith.BatchIngestConfig? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Type34 { get; set; }
+        public global::LangSmith.BodyParamsForRunSchema? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid>? Type35 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.RunTypeEnum?, object>? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BasicAuthResponse? Type36 { get; set; }
+        public global::LangSmith.RunTypeEnum? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BasicAuthUserPatch? Type37 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.RunsFilterDataSourceTypeEnum?, object>? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BatchIngestConfig? Type38 { get; set; }
+        public global::LangSmith.RunsFilterDataSourceTypeEnum? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyParamsForRunSchema? Type39 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunTypeEnum?, object>? Type40 { get; set; }
+        public global::LangSmith.RunSelect? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunTypeEnum? Type41 { get; set; }
+        public global::LangSmith.RunDateOrder? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunsFilterDataSourceTypeEnum?, object>? Type42 { get; set; }
+        public global::LangSmith.BodyCloneDatasetApiV1DatasetsClonePost? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunsFilterDataSourceTypeEnum? Type43 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.AnyOf<global::System.DateTime?, string>?, object>? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? Type44 { get; set; }
+        public global::LangSmith.AnyOf<global::System.DateTime?, string>? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSelect? Type45 { get; set; }
+        public global::LangSmith.BodyExecuteApiV1AceExecutePost? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunDateOrder? Type46 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BodyExecuteApiV1AceExecutePostArg>? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyCloneDatasetApiV1DatasetsClonePost? Type47 { get; set; }
+        public global::LangSmith.BodyExecuteApiV1AceExecutePostArg? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.AnyOf<global::System.DateTime?, string>?, object>? Type48 { get; set; }
+        public global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.DateTime?, string>? Type49 { get; set; }
+        public global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyExecuteApiV1AceExecutePost? Type50 { get; set; }
+        public byte[]? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BodyExecuteApiV1AceExecutePostArg>? Type51 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyExecuteApiV1AceExecutePostArg? Type52 { get; set; }
+        public global::LangSmith.DataType? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut? Type53 { get; set; }
+        public global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost? Type54 { get; set; }
+        public global::LangSmith.BulkExport? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type55 { get; set; }
+        public global::LangSmith.BulkExportFormat? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type56 { get; set; }
+        public global::LangSmith.BulkExportCompression? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DataType? Type57 { get; set; }
+        public global::LangSmith.BulkExportStatus? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost? Type58 { get; set; }
+        public global::LangSmith.BulkExportCreate? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExport? Type59 { get; set; }
+        public global::LangSmith.BulkExportDestination? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportFormat? Type60 { get; set; }
+        public global::LangSmith.BulkExportDestinationType? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportCompression? Type61 { get; set; }
+        public global::LangSmith.BulkExportDestinationS3Config? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportStatus? Type62 { get; set; }
+        public global::LangSmith.BulkExportDestinationCreate? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportCreate? Type63 { get; set; }
+        public global::LangSmith.BulkExportDestinationS3Credentials? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportDestination? Type64 { get; set; }
+        public global::LangSmith.BulkExportRun? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportDestinationType? Type65 { get; set; }
+        public global::LangSmith.BulkExportRunS3Metadata? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportDestinationS3Config? Type66 { get; set; }
+        public global::LangSmith.BulkExportRunStatus? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportDestinationCreate? Type67 { get; set; }
+        public global::LangSmith.BulkExportUpdate? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportDestinationS3Credentials? Type68 { get; set; }
+        public global::LangSmith.BulkExportUpdateStatus? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportRun? Type69 { get; set; }
+        public global::LangSmith.ChangePaymentPlanReq? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportRunS3Metadata? Type70 { get; set; }
+        public global::LangSmith.ChangePaymentPlanSchema? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportRunStatus? Type71 { get; set; }
+        public global::LangSmith.CodeEvaluatorTopLevel? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.BulkExportRunErrors, object>? Type72 { get; set; }
+        public global::LangSmith.Comment? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportRunErrors? Type73 { get; set; }
+        public global::LangSmith.CommitManifestResponse? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportUpdate? Type74 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>, object>? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportUpdateStatus? Type75 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ChangePaymentPlanReq? Type76 { get; set; }
+        public global::LangSmith.RepoExampleResponse? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ChangePaymentPlanSchema? Type77 { get; set; }
+        public global::LangSmith.CommitWithLookups? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CodeEvaluatorTopLevel? Type78 { get; set; }
+        public global::LangSmith.ComparativeExperiment? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Comment? Type79 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SimpleExperimentInfo>? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CommitManifestResponse? Type80 { get; set; }
+        public global::LangSmith.SimpleExperimentInfo? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CommitManifestResponseManifest? Type81 { get; set; }
+        public global::LangSmith.ComparativeExperimentBase? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>, object>? Type82 { get; set; }
+        public global::LangSmith.ComparativeExperimentCreate? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>? Type83 { get; set; }
+        public global::LangSmith.ConfiguredBy? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RepoExampleResponse? Type84 { get; set; }
+        public global::LangSmith.CreateCommentRequest? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RepoExampleResponseInputs, object>? Type85 { get; set; }
+        public global::LangSmith.CreateEventRequest? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RepoExampleResponseInputs? Type86 { get; set; }
+        public global::LangSmith.CreateEventRequestEventType? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RepoExampleResponseOutputs, object>? Type87 { get; set; }
+        public global::LangSmith.CreateFeedbackConfigSchema? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RepoExampleResponseOutputs? Type88 { get; set; }
+        public global::LangSmith.FeedbackConfig? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CommitWithLookups? Type89 { get; set; }
+        public global::LangSmith.FeedbackType? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CommitWithLookupsManifest? Type90 { get; set; }
+        public global::LangSmith.AnyOf<double?, object>? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperiment? Type91 { get; set; }
+        public double? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ComparativeExperimentExtra, object>? Type92 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>, object>? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperimentExtra? Type93 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SimpleExperimentInfo>? Type94 { get; set; }
+        public global::LangSmith.FeedbackCategory? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.SimpleExperimentInfo? Type95 { get; set; }
+        public global::LangSmith.CreateRepoCommitRequest? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ComparativeExperimentFeedbackStats, object>? Type96 { get; set; }
+        public global::LangSmith.CreateRepoCommitResponse? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperimentFeedbackStats? Type97 { get; set; }
+        public global::LangSmith.CreateRepoRequest? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperimentBase? Type98 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ComparativeExperimentBaseExtra, object>? Type99 { get; set; }
+        public global::LangSmith.CreateRepoResponse? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperimentBaseExtra? Type100 { get; set; }
+        public global::LangSmith.RepoWithLookups? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperimentCreate? Type101 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.CommitManifestResponse, object>? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ComparativeExperimentCreateExtra, object>? Type102 { get; set; }
+        public global::LangSmith.CreateRoleRequest? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ComparativeExperimentCreateExtra? Type103 { get; set; }
+        public global::LangSmith.CustomChartCreate? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ConfiguredBy? Type104 { get; set; }
+        public global::LangSmith.CustomChartType? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateCommentRequest? Type105 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate>? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateEventRequest? Type106 { get; set; }
+        public global::LangSmith.CustomChartSeriesCreate? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateEventRequestEventType? Type107 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, object>? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateFeedbackConfigSchema? Type108 { get; set; }
+        public global::LangSmith.CustomChartSeriesFilters? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackConfig? Type109 { get; set; }
+        public global::LangSmith.CustomChartMetric? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackType? Type110 { get; set; }
+        public global::LangSmith.CustomChartCreatePreview? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, object>? Type111 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type112 { get; set; }
+        public global::LangSmith.CustomChartSeries? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>, object>? Type113 { get; set; }
+        public global::LangSmith.CustomChartPreviewRequest? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? Type114 { get; set; }
+        public global::LangSmith.CustomChartsRequestBase? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCategory? Type115 { get; set; }
+        public global::LangSmith.TimedeltaInput? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateRepoCommitRequest? Type116 { get; set; }
+        public global::LangSmith.CustomChartResponse? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateRepoCommitRequestManifest? Type117 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>, object>? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateRepoCommitResponse? Type118 { get; set; }
+        public global::LangSmith.CustomChartSeriesUpdate? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateRepoRequest? Type119 { get; set; }
+        public global::LangSmith.CustomChartUpdate? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? Type120 { get; set; }
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateRepoResponse? Type121 { get; set; }
+        public global::LangSmith.Missing? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RepoWithLookups? Type122 { get; set; }
+        public global::LangSmith.MissingMissing1? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CommitManifestResponse, object>? Type123 { get; set; }
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreateRoleRequest? Type124 { get; set; }
+        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartCreate? Type125 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartType? Type126 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate>? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartSeriesCreate? Type128 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, object>? Type129 { get; set; }
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartSeriesFilters? Type130 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartMetric? Type131 { get; set; }
+        public global::LangSmith.CustomChartsDataPoint? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartCreateMetadata, object>? Type132 { get; set; }
+        public global::LangSmith.AnyOf<int?, double?, object, object>? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartCreateMetadata? Type133 { get; set; }
+        public global::LangSmith.CustomChartsRequest? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartCreatePreview? Type134 { get; set; }
+        public global::LangSmith.CustomChartsResponse? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>? Type135 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSection>? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartSeries? Type136 { get; set; }
+        public global::LangSmith.CustomChartsSection? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartPreviewRequest? Type137 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartResponse>? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsRequestBase? Type138 { get; set; }
+        public global::LangSmith.SingleCustomChartResponse? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TimedeltaInput? Type139 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsDataPoint>? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartResponse? Type140 { get; set; }
+        public global::LangSmith.CustomChartsSectionCreate? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartResponseMetadata, object>? Type141 { get; set; }
+        public global::LangSmith.CustomChartsSectionResponse? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartResponseMetadata? Type142 { get; set; }
+        public global::LangSmith.CustomChartsSectionUpdate? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>, object>? Type143 { get; set; }
+        public global::LangSmith.CustomerVisiblePlanInfo? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartSeriesUpdate? Type144 { get; set; }
+        public global::LangSmith.PaymentPlanTier? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartUpdate? Type145 { get; set; }
+        public global::LangSmith.Dataset? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Type146 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.DataType?, object>? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Missing? Type147 { get; set; }
+        public global::LangSmith.DatasetCreate? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MissingMissing1? Type148 { get; set; }
+        public global::LangSmith.DatasetDiffInfo? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? Type149 { get; set; }
+        public global::LangSmith.DatasetIndexInfo? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? Type150 { get; set; }
+        public global::LangSmith.DatasetIndexRequest? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? Type151 { get; set; }
+        public global::LangSmith.DatasetPublicSchema? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? Type152 { get; set; }
+        public global::LangSmith.DatasetSchemaForUpdate? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>? Type153 { get; set; }
+        public global::LangSmith.DatasetShareSchema? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? Type154 { get; set; }
+        public global::LangSmith.DatasetUpdate? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartUpdateMetadata, global::LangSmith.Missing, object>? Type155 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>, object>? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartUpdateMetadata? Type156 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? Type157 { get; set; }
+        public global::LangSmith.ExampleUpdate? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsDataPoint? Type158 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<int?, double?, global::LangSmith.CustomChartsDataPointValue, object>? Type159 { get; set; }
+        public global::LangSmith.DatasetVersion? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsDataPointValue? Type160 { get; set; }
+        public global::LangSmith.EvaluatorStructuredOutput? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsRequest? Type161 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, object>? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsResponse? Type162 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSection>? Type163 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, object>? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsSection? Type164 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartResponse>? Type165 { get; set; }
+        public global::LangSmith.EvaluatorTopLevel? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.SingleCustomChartResponse? Type166 { get; set; }
+        public global::LangSmith.Example? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsDataPoint>? Type167 { get; set; }
+        public global::LangSmith.ExampleBulkCreate? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.SingleCustomChartResponseMetadata, object>? Type168 { get; set; }
+        public global::LangSmith.ExampleCreate? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.SingleCustomChartResponseMetadata? Type169 { get; set; }
+        public global::LangSmith.ExampleListOrder? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsSectionCreate? Type170 { get; set; }
+        public global::LangSmith.ExampleRunWithFeedback? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsSectionResponse? Type171 { get; set; }
+        public global::LangSmith.ExampleSelect? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomChartsSectionUpdate? Type172 { get; set; }
+        public global::LangSmith.ExampleUpdateWithID? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CustomerVisiblePlanInfo? Type173 { get; set; }
+        public global::LangSmith.ExampleWithRuns? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PaymentPlanTier? Type174 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunSchema>? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Dataset? Type175 { get; set; }
+        public global::LangSmith.RunSchema? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetInputsSchemaDefinition, object>? Type176 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object>? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetInputsSchemaDefinition? Type177 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetOutputsSchemaDefinition, object>? Type178 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, object>, object>? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetOutputsSchemaDefinition? Type179 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DataType?, object>? Type180 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.TraceTier3?, object>? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetCreate? Type181 { get; set; }
+        public global::LangSmith.TraceTier3? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetCreateInputsSchemaDefinition, object>? Type182 { get; set; }
+        public global::LangSmith.ExampleWithRunsCH? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetCreateInputsSchemaDefinition? Type183 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunSchemaComparisonView>? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetCreateOutputsSchemaDefinition, object>? Type184 { get; set; }
+        public global::LangSmith.RunSchemaComparisonView? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetCreateOutputsSchemaDefinition? Type185 { get; set; }
+        public global::LangSmith.ExperimentResultRow? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetCreateExtra, object>? Type186 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>, object>? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetCreateExtra? Type187 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetDiffInfo? Type188 { get; set; }
+        public global::LangSmith.FeedbackCreateCoreSchema? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetIndexInfo? Type189 { get; set; }
+        public global::LangSmith.AnyOf<double?, int?, bool?, object>? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetIndexRequest? Type190 { get; set; }
+        public global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetPublicSchema? Type191 { get; set; }
+        public global::LangSmith.AnyOf<object, string, object>? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetPublicSchemaInputsSchemaDefinition, object>? Type192 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource, object>? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetPublicSchemaInputsSchemaDefinition? Type193 { get; set; }
+        public global::LangSmith.ModelFeedbackSource? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetPublicSchemaOutputsSchemaDefinition, object>? Type194 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.FeedbackConfig, object>? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetPublicSchemaOutputsSchemaDefinition? Type195 { get; set; }
+        public global::LangSmith.ExperimentResultsUpload? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetSchemaForUpdate? Type196 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow>? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetSchemaForUpdateInputsSchemaDefinition, object>? Type197 { get; set; }
+        public global::LangSmith.ExperimentResultsUploadResult? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetSchemaForUpdateInputsSchemaDefinition? Type198 { get; set; }
+        public global::LangSmith.TracerSession? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetSchemaForUpdateOutputsSchemaDefinition, object>? Type199 { get; set; }
+        public global::LangSmith.FeedbackConfigSchema? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetSchemaForUpdateOutputsSchemaDefinition? Type200 { get; set; }
+        public global::LangSmith.FeedbackCreateSchema? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetShareSchema? Type201 { get; set; }
+        public global::LangSmith.FeedbackCreateWithTokenExtendedSchema? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetUpdate? Type202 { get; set; }
+        public global::LangSmith.AnyOf<double?, int?, bool?, string, object>? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetUpdateInputsSchemaDefinition, global::LangSmith.Missing, object>? Type203 { get; set; }
+        public global::LangSmith.FeedbackDelta? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetUpdateInputsSchemaDefinition? Type204 { get; set; }
+        public global::LangSmith.FeedbackIngestTokenCreateSchema? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetUpdateOutputsSchemaDefinition, global::LangSmith.Missing, object>? Type205 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.TimedeltaInput, object>? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetUpdateOutputsSchemaDefinition? Type206 { get; set; }
+        public global::LangSmith.FeedbackIngestTokenSchema? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetUpdatePatchExamples, object>? Type207 { get; set; }
+        public global::LangSmith.FeedbackLevel? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetUpdatePatchExamples? Type208 { get; set; }
+        public global::LangSmith.FeedbackSchema? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdate? Type209 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.FeedbackSource4, object>? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleUpdateInputs, object>? Type210 { get; set; }
+        public global::LangSmith.FeedbackSource4? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateInputs? Type211 { get; set; }
+        public global::LangSmith.FeedbackUpdateSchema? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleUpdateOutputs, object>? Type212 { get; set; }
+        public global::LangSmith.FilterQueryParamsForRunSchema? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateOutputs? Type213 { get; set; }
+        public global::LangSmith.FilterView? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleUpdateMetadata, object>? Type214 { get; set; }
+        public global::LangSmith.FilterViewCreate? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateMetadata? Type215 { get; set; }
+        public global::LangSmith.FilterViewUpdate? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Type216 { get; set; }
+        public global::LangSmith.ForkRepoRequest? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetVersion? Type217 { get; set; }
+        public global::LangSmith.GenerateSyntheticExamplesBody? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.EvaluatorStructuredOutput? Type218 { get; set; }
+        public global::LangSmith.GetRepoResponse? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, object>? Type219 { get; set; }
+        public global::LangSmith.HTTPValidationError? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type220 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ValidationError>? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.EvaluatorStructuredOutputSchema, object>? Type221 { get; set; }
+        public global::LangSmith.ValidationError? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.EvaluatorStructuredOutputSchema? Type222 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, int?>>? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.EvaluatorStructuredOutputVariableMapping, object>? Type223 { get; set; }
+        public global::LangSmith.AnyOf<string, int?>? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.EvaluatorStructuredOutputVariableMapping? Type224 { get; set; }
+        public global::LangSmith.Identity? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.EvaluatorStructuredOutputModel? Type225 { get; set; }
+        public global::LangSmith.IdentityAnnotationQueueRunStatusCreateSchema? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.EvaluatorTopLevel? Type226 { get; set; }
+        public global::LangSmith.IdentityCreate? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Example? Type227 { get; set; }
+        public global::LangSmith.IdentityPatch? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleOutputs, object>? Type228 { get; set; }
+        public global::LangSmith.InfoGetResponse? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleOutputs? Type229 { get; set; }
+        public global::LangSmith.InvokePromptPayload? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleMetadata, object>? Type230 { get; set; }
+        public global::LangSmith.LikeRepoRequest? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleMetadata? Type231 { get; set; }
+        public global::LangSmith.LikeRepoResponse? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleInputs? Type232 { get; set; }
+        public global::LangSmith.ListCommentsResponse? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleBulkCreate? Type233 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Comment>? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleBulkCreateOutputs, object>? Type234 { get; set; }
+        public global::LangSmith.ListCommitsResponse? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleBulkCreateOutputs? Type235 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CommitWithLookups>? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleBulkCreateMetadata, object>? Type236 { get; set; }
+        public global::LangSmith.ListPublicDatasetRunsResponse? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleBulkCreateMetadata? Type237 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema>? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleBulkCreateInputs, object>? Type238 { get; set; }
+        public global::LangSmith.RunPublicDatasetSchema? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleBulkCreateInputs? Type239 { get; set; }
+        public global::LangSmith.ListPublicRunsResponse? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleCreate? Type240 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicSchema>? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleCreateOutputs, object>? Type241 { get; set; }
+        public global::LangSmith.RunPublicSchema? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleCreateOutputs? Type242 { get; set; }
+        public global::LangSmith.ListReposResponse? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleCreateMetadata, object>? Type243 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RepoWithLookups>? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleCreateMetadata? Type244 { get; set; }
+        public global::LangSmith.ListRunsResponse? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleCreateInputs, object>? Type245 { get; set; }
+        public global::LangSmith.ListTagsResponse? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleCreateInputs? Type246 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TagCount>? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleListOrder? Type247 { get; set; }
+        public global::LangSmith.TagCount? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleRunWithFeedback? Type248 { get; set; }
+        public global::LangSmith.MemberIdentity? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleSelect? Type249 { get; set; }
+        public global::LangSmith.MetadataKeyValue? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateWithID? Type250 { get; set; }
+        public global::LangSmith.ModelPriceMapCreateSchema? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleUpdateWithIDInputs, object>? Type251 { get; set; }
+        public global::LangSmith.AnyOf<double?, string>? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateWithIDInputs? Type252 { get; set; }
+        public global::LangSmith.ModelPriceMapUpdateSchema? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleUpdateWithIDOutputs, object>? Type253 { get; set; }
+        public global::LangSmith.MonitorBlock? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateWithIDOutputs? Type254 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LangSmith.MonitorBlockRowItem>>? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleUpdateWithIDMetadata, object>? Type255 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.MonitorBlockRowItem>? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleUpdateWithIDMetadata? Type256 { get; set; }
+        public global::LangSmith.MonitorBlockRowItem? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRuns? Type257 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>, object>? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleWithRunsOutputs, object>? Type258 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsOutputs? Type259 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleWithRunsMetadata, object>? Type260 { get; set; }
+        public global::LangSmith.MonitorGroupSpec? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsMetadata? Type261 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.MetadataKeyValue, object>? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsInputs? Type262 { get; set; }
+        public global::LangSmith.MonitorRequest? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunSchema>? Type263 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.MonitorGroupSpec>? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchema? Type264 { get; set; }
+        public global::LangSmith.MonitorResponse? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaInputs, object>? Type265 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.MonitorBlock>? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaInputs? Type266 { get; set; }
+        public global::LangSmith.OAuthProvider? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaExtra, object>? Type267 { get; set; }
+        public global::LangSmith.OptimizePromptRequest? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaExtra? Type268 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback>? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaSerialized, object>? Type269 { get; set; }
+        public global::LangSmith.OptimizePromptResponse? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaSerialized? Type270 { get; set; }
+        public global::LangSmith.OrgFeatureFlags? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaOutputs, object>? Type271 { get; set; }
+        public global::LangSmith.OrgIdentityPatch? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaOutputs? Type272 { get; set; }
+        public global::LangSmith.OrgMemberIdentity? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaEventsVariant1Item>, object>? Type273 { get; set; }
+        public global::LangSmith.OrgPendingIdentity? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunSchemaEventsVariant1Item>? Type274 { get; set; }
+        public global::LangSmith.Organization? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaEventsVariant1Item? Type275 { get; set; }
+        public global::LangSmith.OrganizationConfig? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaInputsS3Urls, object>? Type276 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaInputsS3Urls? Type277 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.PaymentPlanTier?, object>? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaOutputsS3Urls, object>? Type278 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.StripePaymentMethodInfo, object>? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaOutputsS3Urls? Type279 { get; set; }
+        public global::LangSmith.StripePaymentMethodInfo? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaS3Urls, object>? Type280 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.CustomerVisiblePlanInfo, object>? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaS3Urls? Type281 { get; set; }
+        public global::LangSmith.OrganizationBillingInfo? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaFeedbackStats, object>? Type282 { get; set; }
+        public global::LangSmith.OrganizationCreate? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaFeedbackStats? Type283 { get; set; }
+        public global::LangSmith.OrganizationDashboardColorScheme? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaFeedbackStats2? Type284 { get; set; }
+        public global::LangSmith.OrganizationDashboardSchema? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TraceTier3?, object>? Type285 { get; set; }
+        public global::LangSmith.OrganizationDashboardType? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TraceTier3? Type286 { get; set; }
+        public global::LangSmith.OrganizationInfo? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsCH? Type287 { get; set; }
+        public global::LangSmith.OrganizationMembers? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleWithRunsCHOutputs, object>? Type288 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.OrgMemberIdentity>? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsCHOutputs? Type289 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExampleWithRunsCHMetadata, object>? Type290 { get; set; }
+        public global::LangSmith.OrganizationPGSchemaSlim? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsCHMetadata? Type291 { get; set; }
+        public global::LangSmith.OrganizationUpdate? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExampleWithRunsCHInputs? Type292 { get; set; }
+        public global::LangSmith.PagerdutySeverity? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunSchemaComparisonView>? Type293 { get; set; }
+        public global::LangSmith.PendingIdentity? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonView? Type294 { get; set; }
+        public global::LangSmith.PendingIdentityCreate? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewInputs, object>? Type295 { get; set; }
+        public global::LangSmith.PermissionResponse? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewInputs? Type296 { get; set; }
+        public global::LangSmith.PlaygroundRunOverDatasetRequestSchema? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewExtra, object>? Type297 { get; set; }
+        public global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewExtra? Type298 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewSerialized, object>? Type299 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewSerialized? Type300 { get; set; }
+        public global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewOutputs, object>? Type301 { get; set; }
+        public global::LangSmith.RunnableConfig? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewOutputs? Type302 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>, global::LangSmith.RunnableConfigCallbacks, object>? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaComparisonViewEventsVariant1Item>, object>? Type303 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunSchemaComparisonViewEventsVariant1Item>? Type304 { get; set; }
+        public global::LangSmith.RunnableConfigCallback? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewEventsVariant1Item? Type305 { get; set; }
+        public global::LangSmith.RunnableConfigCallbacks? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewInputsS3Urls, object>? Type306 { get; set; }
+        public global::LangSmith.PlaygroundSettingsCreateRequest? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewInputsS3Urls? Type307 { get; set; }
+        public global::LangSmith.PlaygroundSettingsResponse? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewOutputsS3Urls, object>? Type308 { get; set; }
+        public global::LangSmith.PlaygroundSettingsUpdateRequest? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewOutputsS3Urls? Type309 { get; set; }
+        public global::LangSmith.ProviderUserSlim? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewS3Urls, object>? Type310 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.AuthProvider?, object>? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewS3Urls? Type311 { get; set; }
+        public global::LangSmith.PublicComparativeExperiment? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewFeedbackStats, object>? Type312 { get; set; }
+        public global::LangSmith.PublicExampleWithRuns? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewFeedbackStats? Type313 { get; set; }
+        public global::LangSmith.PutDatasetVersionsSchema? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaComparisonViewFeedbackStats2? Type314 { get; set; }
+        public global::LangSmith.QueryExampleSchemaWithRuns? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultRow? Type315 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultRowInputs? Type316 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExperimentResultRowExpectedOutputs, object>? Type317 { get; set; }
+        public global::LangSmith.QueryFeedbackDelta? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultRowExpectedOutputs? Type318 { get; set; }
+        public global::LangSmith.QueryParamsForPublicRunSchema? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExperimentResultRowActualOutputs, object>? Type319 { get; set; }
+        public global::LangSmith.RequestBodyForRunsGenerateQuery? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultRowActualOutputs? Type320 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunsGenerateQueryFeedbackKeys>? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>, object>? Type321 { get; set; }
+        public global::LangSmith.RunsGenerateQueryFeedbackKeys? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>? Type322 { get; set; }
+        public global::LangSmith.Resource? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateCoreSchema? Type323 { get; set; }
+        public global::LangSmith.ResourceType? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, int?, bool?, object>? Type324 { get; set; }
+        public global::LangSmith.ResponseBodyForRunsGenerateQuery? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackCreateCoreSchemaValue, object>? Type325 { get; set; }
+        public global::LangSmith.Role? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateCoreSchemaValue? Type326 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.AccessScope?, object>? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackCreateCoreSchemaCorrection, string, object>? Type327 { get; set; }
+        public global::LangSmith.RuleLogActionOutcome? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateCoreSchemaCorrection? Type328 { get; set; }
+        public global::LangSmith.RuleLogActionResponse? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource, object>? Type329 { get; set; }
+        public global::LangSmith.RuleLogSchema? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ModelFeedbackSource? Type330 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.RuleLogActionResponse, object>? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ModelFeedbackSourceMetadata, object>? Type331 { get; set; }
+        public global::LangSmith.RunGroupBy? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ModelFeedbackSourceMetadata? Type332 { get; set; }
+        public global::LangSmith.RunGroupRequest? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackConfig, object>? Type333 { get; set; }
+        public global::LangSmith.RunGroupStats? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExperimentResultRowRunMetadata, object>? Type334 { get; set; }
+        public global::LangSmith.RunRulesAlertType? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultRowRunMetadata? Type335 { get; set; }
+        public global::LangSmith.RunRulesCreateSchema? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultsUpload? Type336 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>, object>? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow>? Type337 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ExperimentResultsUploadExperimentMetadata, object>? Type338 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>, object>? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultsUploadExperimentMetadata? Type339 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ExperimentResultsUploadResult? Type340 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>, object>? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TracerSession? Type341 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionExtra, object>? Type342 { get; set; }
+        public global::LangSmith.RunRulesPagerdutyAlertSchema? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TracerSessionExtra? Type343 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.RunRulesAlertType?, object>? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionFeedbackStats, object>? Type344 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.PagerdutySeverity?, object>? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TracerSessionFeedbackStats? Type345 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>, object>? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionSessionFeedbackStats, object>? Type346 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TracerSessionSessionFeedbackStats? Type347 { get; set; }
+        public global::LangSmith.RunRulesWebhookSchema? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionRunFacetsVariant1Item>, object>? Type348 { get; set; }
+        public global::LangSmith.RunRulesSchema? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TracerSessionRunFacetsVariant1Item>? Type349 { get; set; }
+        public global::LangSmith.RunSchemaWithAnnotationQueueInfo? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TracerSessionRunFacetsVariant1Item? Type350 { get; set; }
+        public global::LangSmith.RunShareSchema? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackConfigSchema? Type351 { get; set; }
+        public global::LangSmith.RunStats? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateSchema? Type352 { get; set; }
+        public global::LangSmith.SSOConfirmEmailRequest? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackCreateSchemaValue, object>? Type353 { get; set; }
+        public global::LangSmith.SSOEmailVerificationSendRequest? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateSchemaValue? Type354 { get; set; }
+        public global::LangSmith.SSOEmailVerificationStatusRequest? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackCreateSchemaCorrection, string, object>? Type355 { get; set; }
+        public global::LangSmith.SSOEmailVerificationStatusResponse? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateSchemaCorrection? Type356 { get; set; }
+        public global::LangSmith.SSOProvider? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateWithTokenExtendedSchema? Type357 { get; set; }
+        public global::LangSmith.SSOProviderSlim? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, object>? Type358 { get; set; }
+        public global::LangSmith.SSOSettingsCreate? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaCorrection, string, object>? Type359 { get; set; }
+        public global::LangSmith.SSOSettingsUpdate? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateWithTokenExtendedSchemaCorrection? Type360 { get; set; }
+        public global::LangSmith.SearchDatasetRequest? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? Type361 { get; set; }
+        public global::LangSmith.SearchDatasetResponse? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateWithTokenExtendedSchemaMetadata? Type362 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SearchedFewShotExample>? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackDelta? Type363 { get; set; }
+        public global::LangSmith.SearchedFewShotExample? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackIngestTokenCreateSchema? Type364 { get; set; }
+        public global::LangSmith.SecretKey? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TimedeltaInput, object>? Type365 { get; set; }
+        public global::LangSmith.SecretUpsert? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackIngestTokenSchema? Type366 { get; set; }
+        public global::LangSmith.ServiceAccount? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackLevel? Type367 { get; set; }
+        public global::LangSmith.ServiceAccountCreateRequest? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackSchema? Type368 { get; set; }
+        public global::LangSmith.ServiceAccountCreateResponse? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackSchemaValue, object>? Type369 { get; set; }
+        public global::LangSmith.ServiceAccountDeleteResponse? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackSchemaValue? Type370 { get; set; }
+        public global::LangSmith.SessionFeedbackDelta? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackSchemaCorrection, string, object>? Type371 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.FeedbackDelta>? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackSchemaCorrection? Type372 { get; set; }
+        public global::LangSmith.SessionSortableColumns? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackSource4, object>? Type373 { get; set; }
+        public global::LangSmith.SetTenantHandleRequest? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackSource4? Type374 { get; set; }
+        public global::LangSmith.SingleCustomChartResponseBase? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackSourceMetadata, object>? Type375 { get; set; }
+        public global::LangSmith.SortByComparativeExperimentColumn? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackSourceMetadata? Type376 { get; set; }
+        public global::LangSmith.SortByDatasetColumn? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackUpdateSchema? Type377 { get; set; }
+        public global::LangSmith.SourceType? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, global::LangSmith.FeedbackUpdateSchemaValue, object>? Type378 { get; set; }
+        public global::LangSmith.StripeBusinessBillingInfo? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackUpdateSchemaValue? Type379 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.StripeCustomerAddress, object>? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackUpdateSchemaCorrection, string, object>? Type380 { get; set; }
+        public global::LangSmith.StripeCustomerAddress? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackUpdateSchemaCorrection? Type381 { get; set; }
+        public global::LangSmith.StripeBusinessInfoInput? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FilterQueryParamsForRunSchema? Type382 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.StripeBusinessBillingInfo, object>? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FilterView? Type383 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.StripeTaxId, object>? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FilterViewCreate? Type384 { get; set; }
+        public global::LangSmith.StripeTaxId? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FilterViewUpdate? Type385 { get; set; }
+        public global::LangSmith.StripeBusinessInfoOutput? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ForkRepoRequest? Type386 { get; set; }
+        public global::LangSmith.StripeCustomerBillingInfo? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.GenerateSyntheticExamplesBody? Type387 { get; set; }
+        public global::LangSmith.StripePaymentInformation? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.GetRepoResponse? Type388 { get; set; }
+        public global::LangSmith.StripeSetupIntentResponse? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.HTTPValidationError? Type389 { get; set; }
+        public global::LangSmith.TTLSettings? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ValidationError>? Type390 { get; set; }
+        public global::LangSmith.TagKey? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ValidationError? Type391 { get; set; }
+        public global::LangSmith.TagKeyCreate? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, int?>>? Type392 { get; set; }
+        public global::LangSmith.TagKeyUpdate? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<string, int?>? Type393 { get; set; }
+        public global::LangSmith.TagKeyWithValues? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Identity? Type394 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TagValue>? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.IdentityAnnotationQueueRunStatusCreateSchema? Type395 { get; set; }
+        public global::LangSmith.TagValue? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.IdentityCreate? Type396 { get; set; }
+        public global::LangSmith.TagKeyWithValuesAndTaggings? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.IdentityPatch? Type397 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TagValueWithTaggings>? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.InfoGetResponse? Type398 { get; set; }
+        public global::LangSmith.TagValueWithTaggings? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.InfoGetResponseInstanceFlags? Type399 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Tagging>? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.InvokePromptPayload? Type400 { get; set; }
+        public global::LangSmith.Tagging? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.InvokePromptPayloadInputs? Type401 { get; set; }
+        public global::LangSmith.TagValueCreate? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.LikeRepoRequest? Type402 { get; set; }
+        public global::LangSmith.TagValueUpdate? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.LikeRepoResponse? Type403 { get; set; }
+        public global::LangSmith.TaggingCreate? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListCommentsResponse? Type404 { get; set; }
+        public global::LangSmith.TaggingsByResourceType? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.Comment>? Type405 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListCommitsResponse? Type406 { get; set; }
+        public global::LangSmith.TaggingsResponse? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CommitWithLookups>? Type407 { get; set; }
+        public global::LangSmith.TenantBulkUnshareRequest? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListPublicDatasetRunsResponse? Type408 { get; set; }
+        public global::LangSmith.TenantCreate? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema>? Type409 { get; set; }
+        public global::LangSmith.TenantForUser? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchema? Type410 { get; set; }
+        public global::LangSmith.TenantMembers? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaInputs, object>? Type411 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.MemberIdentity>? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaInputs? Type412 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PendingIdentity>? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaExtra, object>? Type413 { get; set; }
+        public global::LangSmith.TenantShareDatasetToken? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaExtra? Type414 { get; set; }
+        public global::LangSmith.TenantShareDatasetTokenType? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaSerialized, object>? Type415 { get; set; }
+        public global::LangSmith.TenantShareRunToken? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaSerialized? Type416 { get; set; }
+        public global::LangSmith.TenantShareRunTokenType? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaOutputs, object>? Type417 { get; set; }
+        public global::LangSmith.TenantShareTokensResponse? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaOutputs? Type418 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.TenantShareRunToken, global::LangSmith.TenantShareDatasetToken>>? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchemaEventsVariant1Item>, object>? Type419 { get; set; }
+        public global::LangSmith.OneOf<global::LangSmith.TenantShareRunToken, global::LangSmith.TenantShareDatasetToken>? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchemaEventsVariant1Item>? Type420 { get; set; }
+        public global::LangSmith.TenantStats? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaEventsVariant1Item? Type421 { get; set; }
+        public global::LangSmith.TenantUsageLimitInfo? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaInputsS3Urls, object>? Type422 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.TenantUsageLimitType?, object>? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaInputsS3Urls? Type423 { get; set; }
+        public global::LangSmith.TenantUsageLimitType? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaOutputsS3Urls, object>? Type424 { get; set; }
+        public global::LangSmith.TracerSessionCreate? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaOutputsS3Urls? Type425 { get; set; }
+        public global::LangSmith.TracerSessionUpdate? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaS3Urls, object>? Type426 { get; set; }
+        public global::LangSmith.TracerSessionWithoutVirtualFields? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaS3Urls? Type427 { get; set; }
+        public global::LangSmith.TriggerRulesRequest? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicDatasetSchemaFeedbackStats, object>? Type428 { get; set; }
+        public global::LangSmith.UpdateFeedbackConfigSchema? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaFeedbackStats? Type429 { get; set; }
+        public global::LangSmith.UpdateRepoRequest? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicDatasetSchemaFeedbackStats2? Type430 { get; set; }
+        public global::LangSmith.UpdateRoleRequest? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListPublicDatasetRunsResponseCursors? Type431 { get; set; }
+        public global::LangSmith.UpsertTTLSettingsRequest? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListPublicRunsResponse? Type432 { get; set; }
+        public global::LangSmith.UpsertUsageLimit? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicSchema>? Type433 { get; set; }
+        public global::LangSmith.UsageLimitType2? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchema? Type434 { get; set; }
+        public global::LangSmith.UsageLimit? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaInputs, object>? Type435 { get; set; }
+        public global::LangSmith.UserWithPassword? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaInputs? Type436 { get; set; }
+        public global::LangSmith.WorkspaceCreate? Type436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaExtra, object>? Type437 { get; set; }
+        public global::LangSmith.WorkspacePatch? Type437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaExtra? Type438 { get; set; }
+        public global::LangSmith.AppHubCrudTenantsTenant? Type438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaSerialized, object>? Type439 { get; set; }
+        public global::LangSmith.AppSchemasTenant? Type439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaSerialized? Type440 { get; set; }
+        public global::LangSmith.CreateRunRequest? Type440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaOutputs, object>? Type441 { get; set; }
+        public global::LangSmith.OneOf<object, object>? Type441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaOutputs? Type442 { get; set; }
+        public global::LangSmith.CreateRunRequestRunType? Type442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunPublicSchemaEventsVariant1Item>, object>? Type443 { get; set; }
+        public global::LangSmith.OneOf<string, double?, object>? Type443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicSchemaEventsVariant1Item>? Type444 { get; set; }
+        public global::LangSmith.OneOf<string, object>? Type444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaEventsVariant1Item? Type445 { get; set; }
+        public global::LangSmith.OneOf<global::System.Guid?, object>? Type445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaInputsS3Urls, object>? Type446 { get; set; }
+        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<object>, object>? Type446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaInputsS3Urls? Type447 { get; set; }
+        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<string>, object>? Type447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaOutputsS3Urls, object>? Type448 { get; set; }
+        public global::LangSmith.BatchIngestRunsRequest? Type448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaOutputsS3Urls? Type449 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItem>? Type449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaS3Urls, object>? Type450 { get; set; }
+        public global::LangSmith.BatchIngestRunsRequestPostItem? Type450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaS3Urls? Type451 { get; set; }
+        public global::LangSmith.BatchIngestRunsRequestPostItemRunType? Type451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunPublicSchemaFeedbackStats, object>? Type452 { get; set; }
+        public global::LangSmith.OneOf<string, double?>? Type452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaFeedbackStats? Type453 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPatchItem>? Type453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunPublicSchemaFeedbackStats2? Type454 { get; set; }
+        public global::LangSmith.BatchIngestRunsRequestPatchItem? Type454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListPublicRunsResponseCursors? Type455 { get; set; }
+        public global::LangSmith.UpdateRunRequest? Type455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListReposResponse? Type456 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PendingIdentityCreate>? Type456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RepoWithLookups>? Type457 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BasicAuthMemberCreate>? Type457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListRunsResponse? Type458 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExampleBulkCreate>? Type458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListRunsResponseCursors? Type459 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID>? Type459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ListTagsResponse? Type460 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>>? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TagCount>? Type461 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.TagCount? Type462 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SecretUpsert>? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MemberIdentity? Type463 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.OrganizationDashboardColorScheme?, object>? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MetadataKeyValue? Type464 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? Type464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ModelPriceMapCreateSchema? Type465 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? Type465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<double?, string>? Type466 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.DataType>? Type466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ModelPriceMapUpdateSchema? Type467 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? Type467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorBlock? Type468 { get; set; }
+        public global::LangSmith.ListRulesApiV1RunsRulesGetType2? Type468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LangSmith.MonitorBlockRowItem>>? Type469 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.SourceType>, object>? Type469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.MonitorBlockRowItem>? Type470 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SourceType>? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorBlockRowItem? Type471 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.FeedbackLevel?, object>? Type471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorBlockChartSpec? Type472 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsArchived2?, object>? Type472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.MonitorBlockToggleableMarks, object>? Type473 { get; set; }
+        public global::LangSmith.ListReposApiV1ReposGetIsArchived2? Type473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorBlockToggleableMarks? Type474 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsPublic2?, object>? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type475 { get; set; }
+        public global::LangSmith.ListReposApiV1ReposGetIsPublic2? Type475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorGroupSpec? Type476 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?, object>? Type476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.MetadataKeyValue, object>? Type477 { get; set; }
+        public global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1? Type477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorRequest? Type478 { get; set; }
+        public global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2? Type478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.MonitorGroupSpec>? Type479 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2?, object>? Type479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.MonitorResponse? Type480 { get; set; }
+        public global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? Type480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.MonitorBlock>? Type481 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic2?, object>? Type481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OAuthProvider? Type482 { get; set; }
+        public global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic2? Type482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OptimizePromptRequest? Type483 { get; set; }
+        public global::LangSmith.DeleteTracerSessionApiV1SessionsSessionIdDeleteResponse? Type483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OptimizePromptRequestMetaprompt? Type484 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TracerSession>? Type484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback>? Type485 { get; set; }
+        public global::LangSmith.DeleteTracerSessionsApiV1SessionsDeleteResponse? Type485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OptimizePromptResponse? Type486 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FilterView>? Type486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrgFeatureFlags? Type487 { get; set; }
+        public global::LangSmith.DeleteFilterViewApiV1SessionsSessionIdViewsViewIdDeleteResponse? Type487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrgIdentityPatch? Type488 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.OrganizationPGSchemaSlim>? Type488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrgMemberIdentity? Type489 { get; set; }
+        public global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse? Type489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrgPendingIdentity? Type490 { get; set; }
+        public global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse? Type490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Organization? Type491 { get; set; }
+        public global::LangSmith.ChangePaymentPlanApiV1OrgsCurrentPlanPostResponse? Type491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationConfig? Type492 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Role>? Type492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationConfigFlags? Type493 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PermissionResponse>? Type493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.PaymentPlanTier?, object>? Type494 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.UserWithPassword>? Type494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.StripePaymentMethodInfo, object>? Type495 { get; set; }
+        public global::LangSmith.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteResponse? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.StripePaymentMethodInfo? Type496 { get; set; }
+        public global::LangSmith.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse? Type496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.CustomerVisiblePlanInfo, object>? Type497 { get; set; }
+        public global::LangSmith.RemoveMemberFromCurrentOrgApiV1OrgsCurrentMembersIdentityIdDeleteResponse? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationBillingInfo? Type498 { get; set; }
+        public global::LangSmith.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse? Type498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationCreate? Type499 { get; set; }
+        public global::LangSmith.UpdateCurrentUserApiV1OrgsMembersBasicPatchResponse? Type499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationDashboardColorScheme? Type500 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationDashboardSchema? Type501 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SSOProvider>? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationDashboardType? Type502 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationInfo? Type503 { get; set; }
+        public global::LangSmith.OauthProviderLogoutApiV1OauthProviderLogoutGetResponse? Type503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationMembers? Type504 { get; set; }
+        public global::LangSmith.OauthProviderAuthApiV1OauthProviderGetResponse? Type504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.OrgMemberIdentity>? Type505 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>? Type505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>? Type506 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>? Type506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationPGSchemaSlim? Type507 { get; set; }
+        public global::LangSmith.UpdateExampleApiV1ExamplesExampleIdPatchResponse? Type507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.OrganizationUpdate? Type508 { get; set; }
+        public global::LangSmith.DeleteExampleApiV1ExamplesExampleIdDeleteResponse? Type508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PagerdutySeverity? Type509 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Example>? Type509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PendingIdentity? Type510 { get; set; }
+        public global::LangSmith.DeleteExamplesApiV1ExamplesDeleteResponse? Type510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PendingIdentityCreate? Type511 { get; set; }
+        public global::LangSmith.UpdateExamplesApiV1ExamplesBulkPatchResponse? Type511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PermissionResponse? Type512 { get; set; }
+        public global::LangSmith.DeleteDatasetApiV1DatasetsDatasetIdDeleteResponse? Type512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundRunOverDatasetRequestSchema? Type513 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Dataset>? Type513 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest? Type514 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.DatasetVersion>? Type514 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets? Type515 { get; set; }
+        public global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse? Type515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? Type516 { get; set; }
+        public global::LangSmith.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetResponse? Type516 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>? Type517 { get; set; }
+        public global::LangSmith.DownloadDatasetCsvApiV1DatasetsDatasetIdCsvGetResponse? Type517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item? Type518 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>? Type518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunnableConfig? Type519 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>? Type519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunnableConfigMetadata? Type520 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>? Type520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>, global::LangSmith.RunnableConfigCallbacks, object>? Type521 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.DatasetShareSchema, object>? Type521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>? Type522 { get; set; }
+        public global::LangSmith.UnshareDatasetApiV1DatasetsDatasetIdShareDeleteResponse? Type522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunnableConfigCallback? Type523 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ComparativeExperiment>? Type523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunnableConfigCallbacks? Type524 { get; set; }
+        public global::LangSmith.DeleteComparativeExperimentApiV1DatasetsComparativeComparativeExperimentIdDeleteResponse? Type524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunnableConfigConfigurable? Type525 { get; set; }
+        public global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse? Type525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundSettingsCreateRequest? Type526 { get; set; }
+        public global::LangSmith.RemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponse? Type526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundSettingsCreateRequestSettings? Type527 { get; set; }
+        public global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse? Type527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundSettingsResponse? Type528 { get; set; }
+        public global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse? Type528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundSettingsResponseSettings? Type529 { get; set; }
+        public global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse? Type529 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundSettingsUpdateRequest? Type530 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>? Type530 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ProviderUserSlim? Type531 { get; set; }
+        public global::LangSmith.DeleteRuleApiV1RunsRulesRuleIdDeleteResponse? Type531 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.AuthProvider?, object>? Type532 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>? Type532 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicComparativeExperiment? Type533 { get; set; }
+        public global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse? Type533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.PublicComparativeExperimentExtra, object>? Type534 { get; set; }
+        public global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse? Type534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicComparativeExperimentExtra? Type535 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.RunShareSchema, object>? Type535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.PublicComparativeExperimentFeedbackStats, object>? Type536 { get; set; }
+        public global::LangSmith.UnshareRunApiV1RunsRunIdShareDeleteResponse? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicComparativeExperimentFeedbackStats? Type537 { get; set; }
+        public global::LangSmith.CreateRunApiV1RunsPostResponse? Type537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicExampleWithRuns? Type538 { get; set; }
+        public global::LangSmith.BatchIngestRunsApiV1RunsBatchPostResponse? Type538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.PublicExampleWithRunsOutputs, object>? Type539 { get; set; }
+        public global::LangSmith.MultipartIngestRunsApiV1RunsMultipartPostResponse? Type539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicExampleWithRunsOutputs? Type540 { get; set; }
+        public global::LangSmith.GroupRunsApiV1RunsGroupPostResponse? Type540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.PublicExampleWithRunsMetadata, object>? Type541 { get; set; }
+        public global::LangSmith.DeleteFeedbackApiV1FeedbackFeedbackIdDeleteResponse? Type541 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicExampleWithRunsMetadata? Type542 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? Type542 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PublicExampleWithRunsInputs? Type543 { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>? Type543 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PutDatasetVersionsSchema? Type544 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>? Type544 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.QueryExampleSchemaWithRuns? Type545 { get; set; }
+        public global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse? Type545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.QueryExampleSchemaWithRunsFilters, object>? Type546 { get; set; }
+        public global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse? Type546 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.QueryExampleSchemaWithRunsFilters? Type547 { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>? Type547 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.QueryFeedbackDelta? Type548 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>? Type548 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.QueryFeedbackDeltaFilters, object>? Type549 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PublicComparativeExperiment>? Type549 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.QueryFeedbackDeltaFilters? Type550 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>? Type550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.QueryParamsForPublicRunSchema? Type551 { get; set; }
+        public global::LangSmith.DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDeleteResponse? Type551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RequestBodyForRunsGenerateQuery? Type552 { get; set; }
+        public global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse? Type552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunsGenerateQueryFeedbackKeys>? Type553 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunSchema>? Type553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunsGenerateQueryFeedbackKeys? Type554 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchema>? Type554 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Resource? Type555 { get; set; }
+        public global::LangSmith.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse? Type555 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ResourceType? Type556 { get; set; }
+        public global::LangSmith.DeleteRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdDeleteResponse? Type556 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ResponseBodyForRunsGenerateQuery? Type557 { get; set; }
+        public global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse? Type557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ResponseBodyForRunsGenerateQueryFeedbackUrls? Type558 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BulkExport>? Type558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Role? Type559 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BulkExportDestination>? Type559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.AccessScope?, object>? Type560 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.BulkExportRun>? Type560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type561 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>? Type561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RuleLogActionOutcome? Type562 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.AppSchemasTenant>? Type562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RuleLogActionResponse? Type563 { get; set; }
+        public global::LangSmith.DeletePendingTenantInviteApiV1TenantsPendingIdDeleteResponse? Type563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RuleLogActionResponsePayload, object>? Type564 { get; set; }
+        public global::LangSmith.ClaimPendingTenantInviteApiV1TenantsPendingTenantIdClaimPostResponse? Type564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RuleLogActionResponsePayload? Type565 { get; set; }
+        public global::LangSmith.BulkUnshareEntitiesApiV1TenantsCurrentSharedDeleteResponse? Type565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RuleLogSchema? Type566 { get; set; }
+        public global::LangSmith.DeleteCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdDeleteResponse? Type566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RuleLogActionResponse, object>? Type567 { get; set; }
+        public global::LangSmith.PatchCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdPatchResponse? Type567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunGroupBy? Type568 { get; set; }
+        public global::LangSmith.DeleteCurrentTenantPendingMemberApiV1TenantsCurrentMembersIdentityIdPendingDeleteResponse? Type568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunGroupRequest? Type569 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SecretKey>? Type569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunGroupStats? Type570 { get; set; }
+        public global::LangSmith.UpsertCurrentTenantSecretsApiV1TenantsCurrentSecretsPostResponse? Type570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunGroupStatsFeedbackStats, object>? Type571 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackConfigSchema>? Type571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunGroupStatsFeedbackStats? Type572 { get; set; }
+        public global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetResponse? Type572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunGroupStatsRunFacetsVariant1Item>, object>? Type573 { get; set; }
+        public global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse? Type573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunGroupStatsRunFacetsVariant1Item>? Type574 { get; set; }
+        public global::LangSmith.UpdateModelPriceApiV1ModelPriceMapIdPutResponse? Type574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunGroupStatsRunFacetsVariant1Item? Type575 { get; set; }
+        public global::LangSmith.DeleteModelPriceApiV1ModelPriceMapIdDeleteResponse? Type575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunRulesAlertType? Type576 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.UsageLimit>? Type576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunRulesCreateSchema? Type577 { get; set; }
+        public global::LangSmith.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteResponse? Type577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>, object>? Type578 { get; set; }
+        public global::LangSmith.InvokePromptApiV1PromptsInvokePromptPostResponse? Type578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? Type579 { get; set; }
+        public global::LangSmith.DeletePendingWorkspaceInviteApiV1WorkspacesPendingIdDeleteResponse? Type579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>, object>? Type580 { get; set; }
+        public global::LangSmith.ClaimPendingWorkspaceInviteApiV1WorkspacesPendingWorkspaceIdClaimPostResponse? Type580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? Type581 { get; set; }
+        public global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse? Type581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>, object>? Type582 { get; set; }
+        public global::LangSmith.DeleteCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdDeleteResponse? Type582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? Type583 { get; set; }
+        public global::LangSmith.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse? Type583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunRulesPagerdutyAlertSchema? Type584 { get; set; }
+        public global::LangSmith.DeleteCurrentWorkspacePendingMemberApiV1WorkspacesCurrentMembersIdentityIdPendingDeleteResponse? Type584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunRulesAlertType?, object>? Type585 { get; set; }
+        public global::LangSmith.UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostResponse? Type585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.PagerdutySeverity?, object>? Type586 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TagKey>? Type586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>, object>? Type587 { get; set; }
+        public global::LangSmith.DeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse? Type587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? Type588 { get; set; }
+        public global::LangSmith.DeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse? Type588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunRulesWebhookSchema? Type589 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TaggingsResponse>? Type589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunRulesWebhookSchemaHeaders, object>? Type590 { get; set; }
+        public global::LangSmith.DeleteTaggingApiV1WorkspacesCurrentTaggingsTaggingIdDeleteResponse? Type590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunRulesWebhookSchemaHeaders? Type591 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TagKeyWithValues>? Type591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunRulesSchema? Type592 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TagKeyWithValuesAndTaggings>? Type592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfo? Type593 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.PlaygroundSettingsResponse>? Type593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoInputs, object>? Type594 { get; set; }
+        public global::LangSmith.DeletePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdDeleteResponse? Type594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoInputs? Type595 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ServiceAccount>? Type595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoExtra, object>? Type596 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>? Type596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoExtra? Type597 { get; set; }
+        public global::LangSmith.DeleteChartApiV1ChartsChartIdDeleteResponse? Type597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoSerialized, object>? Type598 { get; set; }
+        public global::LangSmith.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse? Type598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoSerialized? Type599 { get; set; }
+        public global::LangSmith.OkApiV1OkGetResponse? Type599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoOutputs, object>? Type600 { get; set; }
+        public global::LangSmith.DeleteRepoApiV1ReposOwnerRepoDeleteResponse? Type600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoOutputs? Type601 { get; set; }
+        public global::LangSmith.CreateEventApiV1EventsPostResponse? Type601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfoEventsVariant1Item>, object>? Type602 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfoEventsVariant1Item>? Type603 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoEventsVariant1Item? Type604 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoInputsS3Urls, object>? Type605 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoInputsS3Urls? Type606 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoOutputsS3Urls, object>? Type607 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoOutputsS3Urls? Type608 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoS3Urls, object>? Type609 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoS3Urls? Type610 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaWithAnnotationQueueInfoFeedbackStats, object>? Type611 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoFeedbackStats? Type612 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunSchemaWithAnnotationQueueInfoFeedbackStats2? Type613 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunShareSchema? Type614 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunStats? Type615 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunStatsFeedbackStats, object>? Type616 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunStatsFeedbackStats? Type617 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunStatsRunFacetsVariant1Item>, object>? Type618 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunStatsRunFacetsVariant1Item>? Type619 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RunStatsRunFacetsVariant1Item? Type620 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOConfirmEmailRequest? Type621 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOEmailVerificationSendRequest? Type622 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOEmailVerificationStatusRequest? Type623 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOEmailVerificationStatusResponse? Type624 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOProvider? Type625 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOProviderSlim? Type626 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOSettingsCreate? Type627 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOSettingsCreateAttributeMapping? Type628 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SSOSettingsUpdate? Type629 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchDatasetRequest? Type630 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchDatasetRequestInputs? Type631 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchDatasetResponse? Type632 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SearchedFewShotExample>? Type633 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchedFewShotExample? Type634 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchedFewShotExampleInputs? Type635 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchedFewShotExampleOutputs? Type636 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.SearchedFewShotExampleDebugInfo, object>? Type637 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SearchedFewShotExampleDebugInfo? Type638 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SecretKey? Type639 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SecretUpsert? Type640 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ServiceAccount? Type641 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ServiceAccountCreateRequest? Type642 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ServiceAccountCreateResponse? Type643 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ServiceAccountDeleteResponse? Type644 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SessionFeedbackDelta? Type645 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SessionFeedbackDeltaFeedbackDeltas? Type646 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SessionSortableColumns? Type647 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SetTenantHandleRequest? Type648 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SingleCustomChartResponseBase? Type649 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SortByComparativeExperimentColumn? Type650 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SortByDatasetColumn? Type651 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SourceType? Type652 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeBusinessBillingInfo? Type653 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.StripeCustomerAddress, object>? Type654 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeCustomerAddress? Type655 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeBusinessInfoInput? Type656 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.StripeBusinessBillingInfo, object>? Type657 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.StripeTaxId, object>? Type658 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeTaxId? Type659 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeBusinessInfoOutput? Type660 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeCustomerBillingInfo? Type661 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripePaymentInformation? Type662 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StripeSetupIntentResponse? Type663 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TTLSettings? Type664 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagKey? Type665 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagKeyCreate? Type666 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagKeyUpdate? Type667 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagKeyWithValues? Type668 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TagValue>? Type669 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagValue? Type670 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagKeyWithValuesAndTaggings? Type671 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TagValueWithTaggings>? Type672 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagValueWithTaggings? Type673 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.Tagging>? Type674 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.Tagging? Type675 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagValueCreate? Type676 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TagValueUpdate? Type677 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TaggingCreate? Type678 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TaggingsByResourceType? Type679 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Type680 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TaggingsResponse? Type681 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantBulkUnshareRequest? Type682 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantCreate? Type683 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantForUser? Type684 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantMembers? Type685 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.MemberIdentity>? Type686 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PendingIdentity>? Type687 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantShareDatasetToken? Type688 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantShareDatasetTokenType? Type689 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantShareRunToken? Type690 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantShareRunTokenType? Type691 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantShareTokensResponse? Type692 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.TenantShareRunToken, global::LangSmith.TenantShareDatasetToken>>? Type693 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.TenantShareRunToken, global::LangSmith.TenantShareDatasetToken>? Type694 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantStats? Type695 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantUsageLimitInfo? Type696 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TenantUsageLimitType?, object>? Type697 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TenantUsageLimitType? Type698 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TracerSessionCreate? Type699 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionCreateExtra, object>? Type700 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TracerSessionCreateExtra? Type701 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TracerSessionUpdate? Type702 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionUpdateExtra, object>? Type703 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TracerSessionUpdateExtra? Type704 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TracerSessionWithoutVirtualFields? Type705 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionWithoutVirtualFieldsExtra, object>? Type706 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TracerSessionWithoutVirtualFieldsExtra? Type707 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TriggerRulesRequest? Type708 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateFeedbackConfigSchema? Type709 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRepoRequest? Type710 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRoleRequest? Type711 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpsertTTLSettingsRequest? Type712 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpsertUsageLimit? Type713 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UsageLimitType2? Type714 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UsageLimit? Type715 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UserWithPassword? Type716 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.WorkspaceCreate? Type717 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.WorkspacePatch? Type718 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AppHubCrudTenantsTenant? Type719 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AppSchemasTenant? Type720 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequest? Type721 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.CreateRunRequestInputs, object>? Type722 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestInputs? Type723 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestRunType? Type724 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<string, double?, object>? Type725 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.CreateRunRequestExtra, object>? Type726 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestExtra? Type727 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<string, object>? Type728 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.CreateRunRequestSerialized, object>? Type729 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestSerialized? Type730 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.CreateRunRequestOutputs, object>? Type731 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestOutputs? Type732 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::System.Guid?, object>? Type733 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<global::LangSmith.CreateRunRequestEventsVariant1Item>, object>? Type734 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CreateRunRequestEventsVariant1Item>? Type735 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestEventsVariant1Item? Type736 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<string>, object>? Type737 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.CreateRunRequestInputAttachments, object>? Type738 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestInputAttachments? Type739 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.CreateRunRequestOutputAttachments, object>? Type740 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunRequestOutputAttachments? Type741 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequest? Type742 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItem>? Type743 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItem? Type744 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemInputs? Type745 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemRunType? Type746 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<string, double?>? Type747 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemExtra, object>? Type748 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemExtra? Type749 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemSerialized, object>? Type750 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemSerialized? Type751 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemOutputs, object>? Type752 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemOutputs? Type753 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItemEventsVariant1Item>, object>? Type754 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItemEventsVariant1Item>? Type755 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemEventsVariant1Item? Type756 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemInputAttachments, object>? Type757 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemInputAttachments? Type758 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPostItemOutputAttachments, object>? Type759 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPostItemOutputAttachments? Type760 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPatchItem>? Type761 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItem? Type762 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPatchItemInputs, object>? Type763 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItemInputs? Type764 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPatchItemOutputs, object>? Type765 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItemOutputs? Type766 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPatchItemEventsVariant1Item>, object>? Type767 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPatchItemEventsVariant1Item>? Type768 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItemEventsVariant1Item? Type769 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPatchItemExtra, object>? Type770 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItemExtra? Type771 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPatchItemInputAttachments, object>? Type772 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItemInputAttachments? Type773 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.BatchIngestRunsRequestPatchItemOutputAttachments, object>? Type774 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsRequestPatchItemOutputAttachments? Type775 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequest? Type776 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestInputs, object>? Type777 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequestInputs? Type778 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestOutputs, object>? Type779 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequestOutputs? Type780 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::System.Collections.Generic.IList<global::LangSmith.UpdateRunRequestEventsVariant1Item>, object>? Type781 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.UpdateRunRequestEventsVariant1Item>? Type782 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequestEventsVariant1Item? Type783 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestExtra, object>? Type784 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequestExtra? Type785 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestInputAttachments, object>? Type786 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequestInputAttachments? Type787 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OneOf<global::LangSmith.UpdateRunRequestOutputAttachments, object>? Type788 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunRequestOutputAttachments? Type789 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PendingIdentityCreate>? Type790 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BasicAuthMemberCreate>? Type791 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleBulkCreate>? Type792 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID>? Type793 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>>? Type794 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>? Type795 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SecretUpsert>? Type796 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.OrganizationDashboardColorScheme?, object>? Type797 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? Type798 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? Type799 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.DataType>? Type800 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? Type801 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListRulesApiV1RunsRulesGetType2? Type802 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.SourceType>, object>? Type803 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SourceType>? Type804 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackLevel?, object>? Type805 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsArchived2?, object>? Type806 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListReposApiV1ReposGetIsArchived2? Type807 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsPublic2?, object>? Type808 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListReposApiV1ReposGetIsPublic2? Type809 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?, object>? Type810 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1? Type811 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2? Type812 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2?, object>? Type813 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? Type814 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic2?, object>? Type815 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic2? Type816 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteTracerSessionApiV1SessionsSessionIdDeleteResponse? Type817 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TracerSession>? Type818 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteTracerSessionsApiV1SessionsDeleteResponse? Type819 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FilterView>? Type820 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteFilterViewApiV1SessionsSessionIdViewsViewIdDeleteResponse? Type821 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.OrganizationPGSchemaSlim>? Type822 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse? Type823 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse? Type824 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ChangePaymentPlanApiV1OrgsCurrentPlanPostResponse? Type825 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.Role>? Type826 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PermissionResponse>? Type827 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.UserWithPassword>? Type828 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteResponse? Type829 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse? Type830 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RemoveMemberFromCurrentOrgApiV1OrgsCurrentMembersIdentityIdDeleteResponse? Type831 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse? Type832 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateCurrentUserApiV1OrgsMembersBasicPatchResponse? Type833 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>? Type834 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SSOProvider>? Type835 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateAllowedLoginMethodsApiV1OrgsCurrentLoginMethodsPatchResponse? Type836 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? Type837 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OauthProviderCallbackApiV1OauthProviderCallbackGetResponse? Type838 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OauthProviderLogoutApiV1OauthProviderLogoutGetResponse? Type839 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OauthProviderAuthApiV1OauthProviderGetResponse? Type840 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.SendSsoEmailConfirmationApiV1SsoEmailVerificationSendPostResponse? Type841 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ConfirmSsoUserEmailApiV1SsoEmailVerificationConfirmPostResponse? Type842 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>? Type843 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>? Type844 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateExampleApiV1ExamplesExampleIdPatchResponse? Type845 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteExampleApiV1ExamplesExampleIdDeleteResponse? Type846 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.Example>? Type847 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteExamplesApiV1ExamplesDeleteResponse? Type848 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateExamplesApiV1ExamplesBulkPatchResponse? Type849 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteDatasetApiV1DatasetsDatasetIdDeleteResponse? Type850 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.Dataset>? Type851 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.DatasetVersion>? Type852 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse? Type853 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetResponse? Type854 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DownloadDatasetCsvApiV1DatasetsDatasetIdCsvGetResponse? Type855 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>? Type856 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>? Type857 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>? Type858 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.DatasetShareSchema, object>? Type859 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UnshareDatasetApiV1DatasetsDatasetIdShareDeleteResponse? Type860 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ComparativeExperiment>? Type861 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteComparativeExperimentApiV1DatasetsComparativeComparativeExperimentIdDeleteResponse? Type862 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse? Type863 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.RemoveIndexApiV1DatasetsDatasetIdIndexDeleteResponse? Type864 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse? Type865 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse? Type866 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse? Type867 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>? Type868 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteRuleApiV1RunsRulesRuleIdDeleteResponse? Type869 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>? Type870 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse? Type871 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse? Type872 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.RunShareSchema, object>? Type873 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UnshareRunApiV1RunsRunIdShareDeleteResponse? Type874 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateRunApiV1RunsPostResponse? Type875 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BatchIngestRunsApiV1RunsBatchPostResponse? Type876 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.MultipartIngestRunsApiV1RunsMultipartPostResponse? Type877 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.GroupRunsApiV1RunsGroupPostResponse? Type878 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteFeedbackApiV1FeedbackFeedbackIdDeleteResponse? Type879 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? Type880 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>? Type881 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>? Type882 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse? Type883 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse? Type884 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>? Type885 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>? Type886 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PublicComparativeExperiment>? Type887 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>? Type888 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDeleteResponse? Type889 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse? Type890 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunSchema>? Type891 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchema>? Type892 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse? Type893 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdDeleteResponse? Type894 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse? Type895 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ExecuteApiV1AceExecutePostResponse? Type896 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BulkExport>? Type897 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BulkExportDestination>? Type898 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.BulkExportRun>? Type899 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>? Type900 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.AppSchemasTenant>? Type901 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeletePendingTenantInviteApiV1TenantsPendingIdDeleteResponse? Type902 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ClaimPendingTenantInviteApiV1TenantsPendingTenantIdClaimPostResponse? Type903 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BulkUnshareEntitiesApiV1TenantsCurrentSharedDeleteResponse? Type904 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdDeleteResponse? Type905 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.PatchCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdPatchResponse? Type906 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteCurrentTenantPendingMemberApiV1TenantsCurrentMembersIdentityIdPendingDeleteResponse? Type907 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.SecretKey>? Type908 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpsertCurrentTenantSecretsApiV1TenantsCurrentSecretsPostResponse? Type909 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackConfigSchema>? Type910 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetResponse? Type911 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse? Type912 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpdateModelPriceApiV1ModelPriceMapIdPutResponse? Type913 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteModelPriceApiV1ModelPriceMapIdDeleteResponse? Type914 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.UsageLimit>? Type915 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteResponse? Type916 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.InvokePromptApiV1PromptsInvokePromptPostResponse? Type917 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeletePendingWorkspaceInviteApiV1WorkspacesPendingIdDeleteResponse? Type918 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.ClaimPendingWorkspaceInviteApiV1WorkspacesPendingWorkspaceIdClaimPostResponse? Type919 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse? Type920 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdDeleteResponse? Type921 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse? Type922 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteCurrentWorkspacePendingMemberApiV1WorkspacesCurrentMembersIdentityIdPendingDeleteResponse? Type923 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostResponse? Type924 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TagKey>? Type925 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse? Type926 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse? Type927 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TaggingsResponse>? Type928 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteTaggingApiV1WorkspacesCurrentTaggingsTaggingIdDeleteResponse? Type929 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TagKeyWithValues>? Type930 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.TagKeyWithValuesAndTaggings>? Type931 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.PlaygroundSettingsResponse>? Type932 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeletePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdDeleteResponse? Type933 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ServiceAccount>? Type934 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>? Type935 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteChartApiV1ChartsChartIdDeleteResponse? Type936 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse? Type937 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.OkApiV1OkGetResponse? Type938 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.DeleteRepoApiV1ReposOwnerRepoDeleteResponse? Type939 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateEventApiV1EventsPostResponse? Type940 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.CreateCommentApiV1CommentsOwnerRepoPostResponse? Type941 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.LikeCommentApiV1CommentsOwnerRepoParentCommentIdLikePostResponse? Type942 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::LangSmith.UnlikeCommentApiV1CommentsOwnerRepoParentCommentIdLikeDeleteResponse? Type943 { get; set; }
+        public global::LangSmith.CreateCommentApiV1CommentsOwnerRepoPostResponse? Type602 { get; set; }
     }
 }

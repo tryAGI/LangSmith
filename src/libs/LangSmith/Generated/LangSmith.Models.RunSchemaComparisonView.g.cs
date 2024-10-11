@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewInputs, object>? Inputs { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewExtra, object>? Extra { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -77,14 +77,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewSerialized, object>? Serialized { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewOutputs, object>? Outputs { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -119,7 +119,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaComparisonViewEventsVariant1Item>, object>? Events { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -133,21 +133,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_s3_urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewInputsS3Urls, object>? InputsS3Urls { get; set; }
+        public global::LangSmith.AnyOf<object, object>? InputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_s3_urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewOutputsS3Urls, object>? OutputsS3Urls { get; set; }
+        public global::LangSmith.AnyOf<object, object>? OutputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("s3_urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewS3Urls, object>? S3Urls { get; set; }
+        public global::LangSmith.AnyOf<object, object>? S3Urls { get; set; }
 
         /// <summary>
         /// 
@@ -238,7 +238,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_stats")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunSchemaComparisonViewFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, object>, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 

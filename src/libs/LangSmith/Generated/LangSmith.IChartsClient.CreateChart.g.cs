@@ -38,7 +38,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? description = default,
             global::LangSmith.AnyOf<int?, object>? index = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? sectionId = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartCreateMetadata, object>? metadata = default,
+            global::LangSmith.AnyOf<object, object>? metadata = default,
             global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

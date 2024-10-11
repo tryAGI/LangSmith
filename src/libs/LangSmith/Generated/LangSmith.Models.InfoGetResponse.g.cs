@@ -34,7 +34,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instance_flags")]
-        public global::LangSmith.InfoGetResponseInstanceFlags? InstanceFlags { get; set; }
+        public object? InstanceFlags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -20,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_urls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.ResponseBodyForRunsGenerateQueryFeedbackUrls FeedbackUrls { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string> FeedbackUrls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

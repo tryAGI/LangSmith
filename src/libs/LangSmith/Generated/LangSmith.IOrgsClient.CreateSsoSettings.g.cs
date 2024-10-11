@@ -31,7 +31,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
             global::LangSmith.AnyOf<string, object>? metadataXml = default,
             global::LangSmith.AnyOf<string, object>? metadataUrl = default,
-            global::LangSmith.SSOSettingsCreateAttributeMapping? attributeMapping = default,
+            global::System.Collections.Generic.Dictionary<string, string>? attributeMapping = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

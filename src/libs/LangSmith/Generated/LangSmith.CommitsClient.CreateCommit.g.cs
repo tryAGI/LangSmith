@@ -141,7 +141,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoCommitResponse> CreateCommitAsync(
             string owner,
             string repo,
-            global::LangSmith.CreateRepoCommitRequestManifest manifest,
+            object manifest,
             global::LangSmith.AnyOf<string, object>? parentCommit = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secrets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PlaygroundRunOverDatasetRequestSchemaSecrets Secrets { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string> Secrets { get; set; }
 
         /// <summary>
         /// 

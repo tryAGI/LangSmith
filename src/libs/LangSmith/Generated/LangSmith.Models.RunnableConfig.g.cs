@@ -20,7 +20,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::LangSmith.RunnableConfigMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configurable")]
-        public global::LangSmith.RunnableConfigConfigurable? Configurable { get; set; }
+        public object? Configurable { get; set; }
 
         /// <summary>
         /// 

@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PlaygroundSettingsCreateRequestSettings Settings { get; set; }
+        public required object Settings { get; set; }
 
         /// <summary>
         /// 

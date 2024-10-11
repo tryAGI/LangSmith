@@ -28,7 +28,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionExtra, object>? Extra { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -174,21 +174,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_stats")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::LangSmith.AnyOf<object, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_feedback_stats")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionSessionFeedbackStats, object>? SessionFeedbackStats { get; set; }
+        public global::LangSmith.AnyOf<object, object>? SessionFeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_facets")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionRunFacetsVariant1Item>, object>? RunFacets { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object>? RunFacets { get; set; }
 
         /// <summary>
         /// 

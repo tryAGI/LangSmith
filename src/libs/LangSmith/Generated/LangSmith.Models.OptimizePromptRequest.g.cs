@@ -22,7 +22,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metaprompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OptimizePromptRequestMetaprompt Metaprompt { get; set; }
+        public required object Metaprompt { get; set; }
 
         /// <summary>
         /// 

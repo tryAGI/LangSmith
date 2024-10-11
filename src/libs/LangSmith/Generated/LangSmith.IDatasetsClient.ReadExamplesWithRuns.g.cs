@@ -37,7 +37,7 @@ namespace LangSmith
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::LangSmith.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
-            global::LangSmith.AnyOf<global::LangSmith.QueryExampleSchemaWithRunsFilters, object>? filters = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? filters = default,
             int? offset = 0,
             int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default);

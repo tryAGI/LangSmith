@@ -37,7 +37,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? description = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? modifiedAt = default,
-            global::LangSmith.AnyOf<global::LangSmith.ComparativeExperimentCreateExtra, object>? extra = default,
+            global::LangSmith.AnyOf<object, object>? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

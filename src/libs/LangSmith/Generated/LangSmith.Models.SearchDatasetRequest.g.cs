@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.SearchDatasetRequestInputs Inputs { get; set; }
+        public required object Inputs { get; set; }
 
         /// <summary>
         /// Default Value: 5

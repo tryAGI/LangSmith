@@ -28,7 +28,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.TracerSessionWithoutVirtualFieldsExtra, object>? Extra { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 

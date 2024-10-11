@@ -25,7 +25,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.InvokePromptApiV1PromptsInvokePromptPostResponse> InvokePromptAsync(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
             string templateFormat,
-            global::LangSmith.InvokePromptPayloadInputs inputs,
+            object inputs,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

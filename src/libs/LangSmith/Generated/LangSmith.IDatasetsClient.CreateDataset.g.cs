@@ -38,11 +38,11 @@ namespace LangSmith
             string name,
             global::LangSmith.AnyOf<string, object>? description = default,
             global::System.DateTime? createdAt = default,
-            global::LangSmith.AnyOf<global::LangSmith.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
-            global::LangSmith.AnyOf<global::LangSmith.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
+            global::LangSmith.AnyOf<object, object>? inputsSchemaDefinition = default,
+            global::LangSmith.AnyOf<object, object>? outputsSchemaDefinition = default,
             global::LangSmith.AnyOf<bool?, object>? externallyManaged = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
-            global::LangSmith.AnyOf<global::LangSmith.DatasetCreateExtra, object>? extra = default,
+            global::LangSmith.AnyOf<object, object>? extra = default,
             global::LangSmith.DataType? dataType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

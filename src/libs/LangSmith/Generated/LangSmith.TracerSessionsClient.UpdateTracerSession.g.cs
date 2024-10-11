@@ -140,7 +140,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, object>? description = default,
             global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,
             global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::LangSmith.AnyOf<global::LangSmith.TracerSessionUpdateExtra, object>? extra = default,
+            global::LangSmith.AnyOf<object, object>? extra = default,
             global::LangSmith.AnyOf<global::LangSmith.TraceTier3?, object>? traceTier = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

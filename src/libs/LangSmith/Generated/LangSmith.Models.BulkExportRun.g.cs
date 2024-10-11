@@ -50,7 +50,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.BulkExportRunErrors, object>? Errors { get; set; }
+        public global::LangSmith.AnyOf<object, object>? Errors { get; set; }
 
         /// <summary>
         /// 
