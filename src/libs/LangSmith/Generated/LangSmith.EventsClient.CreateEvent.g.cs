@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateEventApiV1EventsPostResponse> CreateEventAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateEventAsync(
             global::LangSmith.CreateEventRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CreateEventApiV1EventsPostResponse), JsonSerializerContext) as global::LangSmith.CreateEventApiV1EventsPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -123,7 +121,7 @@ namespace LangSmith
         /// <param name="commit"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateEventApiV1EventsPostResponse> CreateEventAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateEventAsync(
             global::LangSmith.CreateEventRequestEventType eventType,
             string owner,
             string repo,

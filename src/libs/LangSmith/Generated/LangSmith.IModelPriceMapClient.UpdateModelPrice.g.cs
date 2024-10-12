@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.UpdateModelPriceApiV1ModelPriceMapIdPutResponse> UpdateModelPriceAsync(
+        global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
             global::System.Guid id,
             global::LangSmith.ModelPriceMapUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.UpdateModelPriceApiV1ModelPriceMapIdPutResponse> UpdateModelPriceAsync(
+        global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
             global::System.Guid id,
             string name,
             string matchPattern,

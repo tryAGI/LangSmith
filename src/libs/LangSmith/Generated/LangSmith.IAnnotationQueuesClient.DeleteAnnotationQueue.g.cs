@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="queueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDeleteResponse> DeleteAnnotationQueueAsync(
+        global::System.Threading.Tasks.Task<string> DeleteAnnotationQueueAsync(
             global::System.Guid queueId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

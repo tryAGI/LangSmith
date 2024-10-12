@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+        global::System.Threading.Tasks.Task<string> GroupRunsAsync(
             global::LangSmith.RunGroupRequest request,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -35,7 +35,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+        global::System.Threading.Tasks.Task<string> GroupRunsAsync(
             global::System.Guid sessionId,
             string? accept = default,
             global::LangSmith.RunGroupBy groupBy = default,

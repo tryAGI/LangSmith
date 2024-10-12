@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunApiV1RunsPostResponse> CreateRunAsync(
+        global::System.Threading.Tasks.Task<string> CreateRunAsync(
             global::LangSmith.CreateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -41,7 +41,7 @@ namespace LangSmith
         /// <param name="outputAttachments"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunApiV1RunsPostResponse> CreateRunAsync(
+        global::System.Threading.Tasks.Task<string> CreateRunAsync(
             string name,
             global::LangSmith.CreateRunRequestRunType runType,
             object? inputs = default,

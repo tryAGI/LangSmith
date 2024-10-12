@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse> DeletePendingOrganizationInviteAsync(
+        public async global::System.Threading.Tasks.Task<string> DeletePendingOrganizationInviteAsync(
             global::System.Guid organizationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -101,9 +101,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse), JsonSerializerContext) as global::LangSmith.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

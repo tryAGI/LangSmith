@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DeleteDatasetApiV1DatasetsDatasetIdDeleteResponse> DeleteDatasetAsync(
+        global::System.Threading.Tasks.Task<string> DeleteDatasetAsync(
             global::System.Guid datasetId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

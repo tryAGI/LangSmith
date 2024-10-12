@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="identityId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteResponse> DeleteCurrentOrgPendingMemberAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteCurrentOrgPendingMemberAsync(
             global::System.Guid identityId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,9 +102,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteResponse), JsonSerializerContext) as global::LangSmith.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

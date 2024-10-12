@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> SetCompanyInfoAsync(
             global::LangSmith.StripeBusinessInfoInput request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse), JsonSerializerContext) as global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -129,7 +127,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> SetCompanyInfoAsync(
             global::LangSmith.StripeBusinessBillingInfo? companyInfo = default,
             global::LangSmith.StripeTaxId? taxId = default,
             string? invoiceEmail = default,

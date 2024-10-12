@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
+        public async global::System.Threading.Tasks.Task<string> StreamDatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse), JsonSerializerContext) as global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -133,14 +131,14 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
+        public async global::System.Threading.Tasks.Task<string> StreamDatasetHandlerAsync(
+            object manifest,
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.RunnableConfig options,
             global::System.Guid datasetId,
             string? runId = default,
             string? repoId = default,
-            global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaTool>? tools = default,
+            global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
             string? projectName = default,
             int? repetitions = 1,

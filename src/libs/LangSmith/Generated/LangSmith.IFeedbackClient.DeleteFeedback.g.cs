@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="feedbackId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DeleteFeedbackApiV1FeedbackFeedbackIdDeleteResponse> DeleteFeedbackAsync(
+        global::System.Threading.Tasks.Task<string> DeleteFeedbackAsync(
             global::System.Guid feedbackId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

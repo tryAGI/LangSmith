@@ -30,7 +30,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse> CreateIdentityAnnotationQueueRunStatusAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateIdentityAnnotationQueueRunStatusAsync(
             global::System.Guid annotationQueueRunId,
             global::LangSmith.IdentityAnnotationQueueRunStatusCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -115,9 +115,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse), JsonSerializerContext) as global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -128,7 +126,7 @@ namespace LangSmith
         /// <param name="overrideAddedAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse> CreateIdentityAnnotationQueueRunStatusAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateIdentityAnnotationQueueRunStatusAsync(
             global::System.Guid annotationQueueRunId,
             string? status = default,
             global::System.DateTime? overrideAddedAt = default,

@@ -30,7 +30,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
             global::LangSmith.AnnotationQueueUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -115,9 +115,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse), JsonSerializerContext) as global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -136,7 +134,7 @@ namespace LangSmith
         /// <param name="reservationMinutes"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
             string? name = default,
             string? description = default,

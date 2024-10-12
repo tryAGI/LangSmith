@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> UpdateAllowedLoginMethodsAsync(
+        global::System.Threading.Tasks.Task<string> UpdateAllowedLoginMethodsAsync(
             global::LangSmith.AllowedLoginMethodsUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -22,7 +22,7 @@ namespace LangSmith
         /// <param name="ssoOnly"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> UpdateAllowedLoginMethodsAsync(
+        global::System.Threading.Tasks.Task<string> UpdateAllowedLoginMethodsAsync(
             bool ssoOnly,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

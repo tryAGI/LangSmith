@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
+        global::System.Threading.Tasks.Task<string> UpdateCurrentOrgMemberAsync(
             global::System.Guid identityId,
             global::LangSmith.OrgIdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="roleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
+        global::System.Threading.Tasks.Task<string> UpdateCurrentOrgMemberAsync(
             global::System.Guid identityId,
             string? password = default,
             string? fullName = default,

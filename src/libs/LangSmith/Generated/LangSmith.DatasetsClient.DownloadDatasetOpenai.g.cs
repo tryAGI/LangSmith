@@ -33,7 +33,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse> DownloadDatasetOpenaiAsync(
+        public async global::System.Threading.Tasks.Task<string> DownloadDatasetOpenaiAsync(
             global::System.Guid datasetId,
             global::System.DateTime? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -113,9 +113,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse), JsonSerializerContext) as global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

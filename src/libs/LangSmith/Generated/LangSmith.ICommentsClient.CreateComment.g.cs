@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateCommentApiV1CommentsOwnerRepoPostResponse> CreateCommentAsync(
+        global::System.Threading.Tasks.Task<string> CreateCommentAsync(
             string owner,
             string repo,
             global::LangSmith.CreateCommentRequest request,
@@ -26,7 +26,7 @@ namespace LangSmith
         /// <param name="content"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateCommentApiV1CommentsOwnerRepoPostResponse> CreateCommentAsync(
+        global::System.Threading.Tasks.Task<string> CreateCommentAsync(
             string owner,
             string repo,
             string content,

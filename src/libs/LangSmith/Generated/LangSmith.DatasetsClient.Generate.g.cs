@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse> GenerateAsync(
+        public async global::System.Threading.Tasks.Task<string> GenerateAsync(
             global::System.Guid datasetId,
             global::LangSmith.GenerateSyntheticExamplesBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -116,9 +116,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse), JsonSerializerContext) as global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -130,7 +128,7 @@ namespace LangSmith
         /// <param name="numExamples"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse> GenerateAsync(
+        public async global::System.Threading.Tasks.Task<string> GenerateAsync(
             global::System.Guid datasetId,
             int numExamples,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,

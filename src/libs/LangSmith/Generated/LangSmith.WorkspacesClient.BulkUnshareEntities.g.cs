@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntitiesAsync(
+        public async global::System.Threading.Tasks.Task<string> BulkUnshareEntitiesAsync(
             global::LangSmith.TenantBulkUnshareRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse), JsonSerializerContext) as global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -122,7 +120,7 @@ namespace LangSmith
         /// <param name="shareTokens"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntitiesAsync(
+        public async global::System.Threading.Tasks.Task<string> BulkUnshareEntitiesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? shareTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

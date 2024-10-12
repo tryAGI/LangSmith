@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteTracerSessionApiV1SessionsSessionIdDeleteResponse> DeleteTracerSessionAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteTracerSessionAsync(
             global::System.Guid sessionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,9 +102,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeleteTracerSessionApiV1SessionsSessionIdDeleteResponse), JsonSerializerContext) as global::LangSmith.DeleteTracerSessionApiV1SessionsSessionIdDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

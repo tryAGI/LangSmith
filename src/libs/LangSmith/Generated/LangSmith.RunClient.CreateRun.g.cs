@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunApiV1RunsPostResponse> CreateRunAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateRunAsync(
             global::LangSmith.CreateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CreateRunApiV1RunsPostResponse), JsonSerializerContext) as global::LangSmith.CreateRunApiV1RunsPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -141,7 +139,7 @@ namespace LangSmith
         /// <param name="outputAttachments"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunApiV1RunsPostResponse> CreateRunAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateRunAsync(
             string name,
             global::LangSmith.CreateRunRequestRunType runType,
             object? inputs = default,

@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
             global::LangSmith.UpdateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -116,9 +116,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse), JsonSerializerContext) as global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -142,7 +140,7 @@ namespace LangSmith
         /// <param name="sessionName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
             global::System.Guid? traceId = default,
             string? dottedOrder = default,

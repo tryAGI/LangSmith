@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteDatasetApiV1DatasetsDatasetIdDeleteResponse> DeleteDatasetAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteDatasetAsync(
             global::System.Guid datasetId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,9 +102,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeleteDatasetApiV1DatasetsDatasetIdDeleteResponse), JsonSerializerContext) as global::LangSmith.DeleteDatasetApiV1DatasetsDatasetIdDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

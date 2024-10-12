@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse> OnPaymentMethodCreatedAsync(
+        public async global::System.Threading.Tasks.Task<string> OnPaymentMethodCreatedAsync(
             global::LangSmith.StripePaymentInformation request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse), JsonSerializerContext) as global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -123,7 +121,7 @@ namespace LangSmith
         /// <param name="setupIntent"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse> OnPaymentMethodCreatedAsync(
+        public async global::System.Threading.Tasks.Task<string> OnPaymentMethodCreatedAsync(
             global::LangSmith.StripeCustomerBillingInfo billingInfo,
             string setupIntent,
             global::System.Threading.CancellationToken cancellationToken = default)
