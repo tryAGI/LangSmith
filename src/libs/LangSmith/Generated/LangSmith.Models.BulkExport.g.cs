@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -92,9 +90,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<global::System.DateTime?, object> FinishedAt { get; set; }
+        public required global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -34,8 +34,8 @@ namespace LangSmith
             string owner,
             string repo,
             object manifest,
-            global::LangSmith.AnyOf<string, object>? parentCommit = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleRunIds = default,
+            string? parentCommit = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

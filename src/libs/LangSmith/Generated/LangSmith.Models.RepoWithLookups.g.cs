@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -21,15 +19,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("readme")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? Readme { get; set; }
+        public string? Readme { get; set; }
 
         /// <summary>
         /// 
@@ -84,23 +80,20 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Guid?, object>? OriginalRepoId { get; set; }
+        public global::System.Guid? OriginalRepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_repo_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Guid?, object>? UpstreamRepoId { get; set; }
+        public global::System.Guid? UpstreamRepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<string, object> Owner { get; set; }
+        public required string? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -134,15 +127,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("liked_by_auth_user")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<bool?, object>? LikedByAuthUser { get; set; }
+        public bool? LikedByAuthUser { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_commit_hash")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? LastCommitHash { get; set; }
+        public string? LastCommitHash { get; set; }
 
         /// <summary>
         /// 
@@ -155,22 +146,19 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_full_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? OriginalRepoFullName { get; set; }
+        public string? OriginalRepoFullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_repo_full_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? UpstreamRepoFullName { get; set; }
+        public string? UpstreamRepoFullName { get; set; }
 
         /// <summary>
-        /// 
+        /// Response model for get_commit_manifest.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_commit_manifest")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.CommitManifestResponse, object>? LatestCommitManifest { get; set; }
+        public global::LangSmith.CommitManifestResponse? LatestCommitManifest { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

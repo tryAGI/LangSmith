@@ -27,7 +27,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackConfigSchema> CreateFeedbackConfigEndpointAsync(
             string feedbackKey,
             global::LangSmith.FeedbackConfig feedbackConfig,
-            global::LangSmith.AnyOf<bool?, object>? isLowerScoreBetter = default,
+            bool? isLowerScoreBetter = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

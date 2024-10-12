@@ -7,29 +7,29 @@ namespace LangSmith
     {
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
-            ref global::LangSmith.AnyOf<string, object>? name,
-            ref global::LangSmith.AnyOf<string, object>? nameContains,
-            ref global::LangSmith.AnyOf<string, object>? metadata,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType,
+            ref string? name,
+            ref string? nameContains,
+            ref string? metadata,
             ref int? offset,
             ref int? limit,
             ref global::LangSmith.SortByDatasetColumn? sortBy,
             ref bool? sortByDesc,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void PrepareReadDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
-            global::LangSmith.AnyOf<string, object>? name,
-            global::LangSmith.AnyOf<string, object>? nameContains,
-            global::LangSmith.AnyOf<string, object>? metadata,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType,
+            string? name,
+            string? nameContains,
+            string? metadata,
             int? offset,
             int? limit,
             global::LangSmith.SortByDatasetColumn? sortBy,
             bool? sortByDesc,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void ProcessReadDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,23 +64,23 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
-            global::LangSmith.AnyOf<string, object>? metadata = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
+            string? name = default,
+            string? nameContains = default,
+            string? metadata = default,
             int? offset = 0,
             int? limit = 100,
             global::LangSmith.SortByDatasetColumn? sortBy = default,
             bool? sortByDesc = true,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareReadDatasetsArguments(
                 httpClient: _httpClient,
-                id: ref id,
+                id: id,
                 dataType: ref dataType,
                 name: ref name,
                 nameContains: ref nameContains,
@@ -89,22 +89,22 @@ namespace LangSmith
                 limit: ref limit,
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc,
-                tagValueId: ref tagValueId);
+                tagValueId: tagValueId);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/datasets",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("name_contains", nameContains) 
+                .AddOptionalParameter("metadata", metadata) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

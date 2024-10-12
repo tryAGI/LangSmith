@@ -8,9 +8,9 @@ namespace LangSmith
         partial void PrepareReadComparativeExperimentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::LangSmith.AnyOf<string, object>? name,
-            ref global::LangSmith.AnyOf<string, object>? nameContains,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            ref string? name,
+            ref string? nameContains,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
             ref int? offset,
             ref int? limit,
             ref global::LangSmith.SortByComparativeExperimentColumn? sortBy,
@@ -19,9 +19,9 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<string, object>? name,
-            global::LangSmith.AnyOf<string, object>? nameContains,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            string? name,
+            string? nameContains,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
             int? offset,
             int? limit,
             global::LangSmith.SortByComparativeExperimentColumn? sortBy,
@@ -59,9 +59,9 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ComparativeExperiment>> ReadComparativeExperimentsAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             int? offset = 0,
             int? limit = 100,
             global::LangSmith.SortByComparativeExperimentColumn? sortBy = default,
@@ -75,7 +75,7 @@ namespace LangSmith
                 datasetId: ref datasetId,
                 name: ref name,
                 nameContains: ref nameContains,
-                id: ref id,
+                id: id,
                 offset: ref offset,
                 limit: ref limit,
                 sortBy: ref sortBy,
@@ -85,9 +85,9 @@ namespace LangSmith
                 path: $"/api/v1/datasets/{datasetId}/comparative",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("name_contains", nameContains) 
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 

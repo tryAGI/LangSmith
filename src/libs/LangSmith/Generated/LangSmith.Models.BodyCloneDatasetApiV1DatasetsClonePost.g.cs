@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -25,11 +23,10 @@ namespace LangSmith
         public required global::System.Guid SourceDatasetId { get; set; }
 
         /// <summary>
-        /// 
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.AnyOf<global::System.DateTime?, string>?, object>? AsOf { get; set; }
+        public object? AsOf { get; set; }
 
         /// <summary>
         /// 

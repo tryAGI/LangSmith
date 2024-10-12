@@ -17,10 +17,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
-            global::LangSmith.AnyOf<string, object>? comment = default,
-            global::LangSmith.AnyOf<string, object>? correction = default,
+            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
+            string? comment = default,
+            string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

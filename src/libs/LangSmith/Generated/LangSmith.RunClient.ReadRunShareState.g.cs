@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="runId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunShareSchema, object>> ReadRunShareStateAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.RunShareSchema> ReadRunShareStateAsync(
             global::System.Guid runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,7 +103,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.AnyOf<global::LangSmith.RunShareSchema, object>?), JsonSerializerContext) as global::LangSmith.AnyOf<global::LangSmith.RunShareSchema, object>? ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.RunShareSchema), JsonSerializerContext) as global::LangSmith.RunShareSchema ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

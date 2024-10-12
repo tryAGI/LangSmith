@@ -1,23 +1,23 @@
-using System.Text.RegularExpressions;
+using AutoSDK.Helpers;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 
 var path = args[0];
-var text = await File.ReadAllTextAsync(path);
+var yamlOrJson = await File.ReadAllTextAsync(path);
 
-text = text.Replace("\"openapi\":\"3.1.0\"", "\"openapi\":\"3.0.1\"");
-// Regex replace string like "\"const\": \"$any\"," to string empty
-text = Regex.Replace(text, "\"const\":\\s*\"([^\"]+)\",", "");
-text = text.Replace("\"prefixItems\":[{\"type\":\"string\"},{\"type\":\"string\"}],", "\"items\":{\"type\":\"string\"},");
+yamlOrJson = yamlOrJson.Replace("\"API Key\"", "\"ApiKey\"");
+yamlOrJson = yamlOrJson.Replace("\"Tenant ID\"", "\"TenantId\"");
+yamlOrJson = yamlOrJson.Replace("\"Bearer Auth\"", "\"BearerAuth\"");
+yamlOrJson = yamlOrJson.Replace("\"Organization ID\"", "\"OrganizationId\"");
 
-text = text.Replace("\"API Key\"", "\"ApiKey\"");
-text = text.Replace("\"Tenant ID\"", "\"TenantId\"");
-text = text.Replace("\"Bearer Auth\"", "\"BearerAuth\"");
-text = text.Replace("\"Organization ID\"", "\"OrganizationId\"");
+if (OpenApi31Support.IsOpenApi31(yamlOrJson))
+{
+    yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
+}
 
-var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
+var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
 
 openApiDocument.Servers.Add(new OpenApiServer { Url = "https://api.smith.langchain.com" });
 
@@ -40,8 +40,8 @@ openApiDocument.SecurityRequirements = new List<OpenApiSecurityRequirement>
     }
 };
 
-text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader().Read(text, out diagnostics);
+yamlOrJson = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
+_ = new OpenApiStringReader().Read(yamlOrJson, out diagnostics);
 
 if (diagnostics.Errors.Count > 0)
 {
@@ -53,4 +53,4 @@ if (diagnostics.Errors.Count > 0)
     Environment.Exit(1);
 }
 
-await File.WriteAllTextAsync(path, text);
+await File.WriteAllTextAsync(path, yamlOrJson);

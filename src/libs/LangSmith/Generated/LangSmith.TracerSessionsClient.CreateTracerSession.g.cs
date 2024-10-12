@@ -147,14 +147,14 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
             bool? upsert = false,
             global::System.DateTime? startTime = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::LangSmith.AnyOf<object, object>? extra = default,
+            global::System.DateTime? endTime = default,
+            object? extra = default,
             string? name = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? referenceDatasetId = default,
-            global::LangSmith.AnyOf<global::LangSmith.TraceTier3?, object>? traceTier = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
+            string? description = default,
+            global::System.Guid? defaultDatasetId = default,
+            global::System.Guid? referenceDatasetId = default,
+            global::LangSmith.TraceTier? traceTier = default,
+            global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.TracerSessionCreate

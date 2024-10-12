@@ -28,11 +28,11 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>> ReadSectionsAsync(
             int? limit = 100,
             int? offset = 0,
-            global::LangSmith.AnyOf<string, object>? titleContains = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
-            global::LangSmith.AnyOf<string, object>? sortBy = default,
-            global::LangSmith.AnyOf<bool?, object>? sortByDesc = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            string? titleContains = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? ids = default,
+            string? sortBy = "created_at",
+            bool? sortByDesc = true,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

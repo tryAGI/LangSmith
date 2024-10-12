@@ -36,10 +36,10 @@ namespace LangSmith
             string owner,
             string repo,
             string repoHandle,
-            global::LangSmith.AnyOf<string, object>? readme = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::LangSmith.AnyOf<bool?, object>? isPublic = default,
+            string? readme = default,
+            string? description = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            bool? isPublic = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -134,10 +134,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> UpdateSsoSettingsAsync(
             global::System.Guid id,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? defaultWorkspaceRoleId = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? defaultWorkspaceIds = default,
-            global::LangSmith.AnyOf<string, object>? metadataUrl = default,
-            global::LangSmith.AnyOf<string, object>? metadataXml = default,
+            global::System.Guid? defaultWorkspaceRoleId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? defaultWorkspaceIds = default,
+            string? metadataUrl = default,
+            string? metadataXml = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.SSOSettingsUpdate

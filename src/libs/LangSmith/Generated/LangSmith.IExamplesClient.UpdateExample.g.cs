@@ -31,11 +31,11 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.UpdateExampleApiV1ExamplesExampleIdPatchResponse> UpdateExampleAsync(
             global::System.Guid exampleId,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? datasetId = default,
-            global::LangSmith.AnyOf<object, object>? inputs = default,
-            global::LangSmith.AnyOf<object, object>? outputs = default,
-            global::LangSmith.AnyOf<object, object>? metadata = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
+            global::System.Guid? datasetId = default,
+            object? inputs = default,
+            object? outputs = default,
+            object? metadata = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

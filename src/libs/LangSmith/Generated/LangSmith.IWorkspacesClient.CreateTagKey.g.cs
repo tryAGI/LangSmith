@@ -23,7 +23,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.TagKey> CreateTagKeyAsync(
             string key,
-            global::LangSmith.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

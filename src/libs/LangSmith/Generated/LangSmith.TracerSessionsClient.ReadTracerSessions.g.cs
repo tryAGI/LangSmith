@@ -7,39 +7,39 @@ namespace LangSmith
     {
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<bool?, object>? referenceFree,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::LangSmith.AnyOf<string, object>? name,
-            ref global::LangSmith.AnyOf<string, object>? nameContains,
-            ref global::LangSmith.AnyOf<string, object>? datasetVersion,
+            ref bool? referenceFree,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            ref string? name,
+            ref string? nameContains,
+            ref string? datasetVersion,
             ref global::LangSmith.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
-            ref global::LangSmith.AnyOf<string, object>? metadata,
-            ref global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
+            ref string? metadata,
+            ref string? sortByFeedbackKey,
             ref int? offset,
             ref int? limit,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref bool? facets,
-            ref global::LangSmith.AnyOf<string, object>? accept);
+            ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<bool?, object>? referenceFree,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::LangSmith.AnyOf<string, object>? name,
-            global::LangSmith.AnyOf<string, object>? nameContains,
-            global::LangSmith.AnyOf<string, object>? datasetVersion,
+            bool? referenceFree,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            string? name,
+            string? nameContains,
+            string? datasetVersion,
             global::LangSmith.SessionSortableColumns? sortBy,
             bool? sortByDesc,
-            global::LangSmith.AnyOf<string, object>? metadata,
-            global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
+            string? metadata,
+            string? sortByFeedbackKey,
             int? offset,
             int? limit,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             bool? facets,
-            global::LangSmith.AnyOf<string, object>? accept);
+            string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -79,21 +79,21 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>> ReadTracerSessionsAsync(
-            global::LangSmith.AnyOf<bool?, object>? referenceFree = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
-            global::LangSmith.AnyOf<string, object>? datasetVersion = default,
+            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            string? datasetVersion = default,
             global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
-            global::LangSmith.AnyOf<string, object>? metadata = default,
-            global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
+            string? metadata = default,
+            string? sortByFeedbackKey = default,
             int? offset = 0,
             int? limit = 100,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? facets = false,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,8 +101,8 @@ namespace LangSmith
             PrepareReadTracerSessionsArguments(
                 httpClient: _httpClient,
                 referenceFree: ref referenceFree,
-                referenceDataset: ref referenceDataset,
-                id: ref id,
+                referenceDataset: referenceDataset,
+                id: id,
                 name: ref name,
                 nameContains: ref nameContains,
                 datasetVersion: ref datasetVersion,
@@ -112,7 +112,7 @@ namespace LangSmith
                 sortByFeedbackKey: ref sortByFeedbackKey,
                 offset: ref offset,
                 limit: ref limit,
-                tagValueId: ref tagValueId,
+                tagValueId: tagValueId,
                 facets: ref facets,
                 accept: ref accept);
 
@@ -120,19 +120,19 @@ namespace LangSmith
                 path: "/api/v1/sessions",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("reference_free", referenceFree?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("reference_dataset", referenceDataset?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("reference_free", referenceFree?.ToString()) 
+                .AddOptionalParameter("reference_dataset", referenceDataset, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("name_contains", nameContains) 
+                .AddOptionalParameter("dataset_version", datasetVersion) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("metadata", metadata) 
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("facets", facets?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

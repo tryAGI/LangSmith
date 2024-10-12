@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -11,11 +9,11 @@ namespace LangSmith
     public sealed partial class RunRulesPagerdutyAlertSchema
     {
         /// <summary>
-        /// Default Value: pagerduty
+        /// Enum for alert types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.RunRulesAlertType?, object>? Type { get; set; } = global::LangSmith.RunRulesAlertType.Pagerduty;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter))]
+        public global::LangSmith.RunRulesAlertType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -28,15 +26,14 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? Summary { get; set; }
+        public string? Summary { get; set; }
 
         /// <summary>
-        /// Default Value: warning
+        /// Enum for severity.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.PagerdutySeverity?, object>? Severity { get; set; } = global::LangSmith.PagerdutySeverity.Warning;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PagerdutySeverityJsonConverter))]
+        public global::LangSmith.PagerdutySeverity? Severity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

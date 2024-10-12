@@ -140,8 +140,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? filters = default,
+            global::System.Guid? comparativeExperimentId = default,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             int? offset = 0,
             int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)

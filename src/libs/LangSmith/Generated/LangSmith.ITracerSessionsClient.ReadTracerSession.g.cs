@@ -18,7 +18,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> ReadTracerSessionAsync(
             global::System.Guid sessionId,
             bool? includeStats = false,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

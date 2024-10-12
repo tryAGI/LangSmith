@@ -7,12 +7,12 @@ namespace LangSmith
     {
         partial void PrepareGroupRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<string, object>? accept,
+            ref string? accept,
             global::LangSmith.RunGroupRequest request);
         partial void PrepareGroupRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<string, object>? accept,
+            string? accept,
             global::LangSmith.RunGroupRequest request);
         partial void ProcessGroupRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
             global::LangSmith.RunGroupRequest request,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -147,11 +147,11 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
             global::System.Guid sessionId,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::LangSmith.RunGroupBy groupBy = default,
-            global::LangSmith.AnyOf<string, object>? filter = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
+            string? filter = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
             int? offset = 0,
             int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -32,18 +32,18 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> ReadExamplesAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
-            global::LangSmith.AnyOf<string, object>? metadata = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? dataset = default,
+            string? metadata = default,
+            global::System.Collections.Generic.IList<string>? fullTextContains = default,
+            global::System.Collections.Generic.IList<string>? splits = default,
+            global::System.Guid? dataset = default,
             int? offset = 0,
             int? limit = 100,
             global::LangSmith.ExampleListOrder? order = default,
-            global::LangSmith.AnyOf<double?, object>? randomSeed = default,
+            double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
-            global::LangSmith.AnyOf<string, object>? filter = default,
+            string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -18,11 +16,10 @@ namespace LangSmith
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Stripe customer address.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("address")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.StripeCustomerAddress, object>? Address { get; set; }
+        public global::LangSmith.StripeCustomerAddress? Address { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

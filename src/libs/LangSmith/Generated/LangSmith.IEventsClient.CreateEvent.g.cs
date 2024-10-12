@@ -27,7 +27,7 @@ namespace LangSmith
             global::LangSmith.CreateEventRequestEventType eventType,
             string owner,
             string repo,
-            global::LangSmith.AnyOf<string, object>? commit = default,
+            string? commit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

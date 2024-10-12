@@ -29,7 +29,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.GenerateApiV1DatasetsDatasetIdGeneratePostResponse> GenerateAsync(
             global::System.Guid datasetId,
             int numExamples,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

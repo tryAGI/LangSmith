@@ -143,11 +143,11 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.FilterView> UpdateFilterViewAsync(
             global::System.Guid sessionId,
             global::System.Guid viewId,
-            global::LangSmith.AnyOf<string, object>? filterString = default,
-            global::LangSmith.AnyOf<string, object>? displayName = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<string, object>? traceFilterString = default,
-            global::LangSmith.AnyOf<string, object>? treeFilterString = default,
+            string? filterString = default,
+            string? displayName = default,
+            string? description = default,
+            string? traceFilterString = default,
+            string? treeFilterString = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.FilterViewUpdate

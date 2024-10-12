@@ -12,9 +12,9 @@ namespace LangSmith
         /// Type of usage limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.UsageLimitType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.UsageLimitTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.UsageLimitType2 LimitType { get; set; }
+        public required global::LangSmith.UsageLimitType LimitType { get; set; }
 
         /// <summary>
         /// 

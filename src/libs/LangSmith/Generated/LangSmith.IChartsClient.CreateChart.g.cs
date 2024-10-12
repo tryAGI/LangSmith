@@ -35,11 +35,11 @@ namespace LangSmith
             string title,
             global::LangSmith.CustomChartType chartType,
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate> series,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<int?, object>? index = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? sectionId = default,
-            global::LangSmith.AnyOf<object, object>? metadata = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, object>? commonFilters = default,
+            string? description = default,
+            int? index = default,
+            global::System.Guid? sectionId = default,
+            object? metadata = default,
+            global::LangSmith.CustomChartSeriesFilters? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

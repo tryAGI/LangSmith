@@ -28,7 +28,7 @@ namespace LangSmith
             string commit,
             bool? getExamples = false,
             bool? isView = false,
-            global::LangSmith.AnyOf<bool?, object>? includeModel = default,
+            bool? includeModel = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

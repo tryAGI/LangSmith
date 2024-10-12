@@ -8,32 +8,32 @@ namespace LangSmith
         partial void PrepareReadSharedDatasetTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::LangSmith.AnyOf<string, object>? name,
-            ref global::LangSmith.AnyOf<string, object>? nameContains,
-            ref global::LangSmith.AnyOf<string, object>? datasetVersion,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            ref string? name,
+            ref string? nameContains,
+            ref string? datasetVersion,
             ref global::LangSmith.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
-            ref global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
+            ref string? sortByFeedbackKey,
             ref int? offset,
             ref int? limit,
             ref bool? facets,
-            ref global::LangSmith.AnyOf<string, object>? accept);
+            ref string? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::LangSmith.AnyOf<string, object>? name,
-            global::LangSmith.AnyOf<string, object>? nameContains,
-            global::LangSmith.AnyOf<string, object>? datasetVersion,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            string? name,
+            string? nameContains,
+            string? datasetVersion,
             global::LangSmith.SessionSortableColumns? sortBy,
             bool? sortByDesc,
-            global::LangSmith.AnyOf<string, object>? sortByFeedbackKey,
+            string? sortByFeedbackKey,
             int? offset,
             int? limit,
             bool? facets,
-            global::LangSmith.AnyOf<string, object>? accept);
+            string? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -71,17 +71,17 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
-            global::LangSmith.AnyOf<string, object>? datasetVersion = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            string? datasetVersion = default,
             global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
-            global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
+            string? sortByFeedbackKey = default,
             int? offset = 0,
             int? limit = 100,
             bool? facets = false,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -89,7 +89,7 @@ namespace LangSmith
             PrepareReadSharedDatasetTracerSessionsArguments(
                 httpClient: _httpClient,
                 shareToken: ref shareToken,
-                id: ref id,
+                id: id,
                 name: ref name,
                 nameContains: ref nameContains,
                 datasetVersion: ref datasetVersion,
@@ -105,13 +105,13 @@ namespace LangSmith
                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("name_contains", nameContains) 
+                .AddOptionalParameter("dataset_version", datasetVersion) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("facets", facets?.ToString()) 

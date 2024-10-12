@@ -138,8 +138,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.TagValue> UpdateTagValueAsync(
             global::System.Guid tagKeyId,
             global::System.Guid tagValueId,
-            global::LangSmith.AnyOf<string, object>? value = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
+            string? value = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.TagValueUpdate

@@ -27,7 +27,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
             string playgroundSettingsId,
-            global::LangSmith.AnyOf<string, object>? name = default,
+            string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

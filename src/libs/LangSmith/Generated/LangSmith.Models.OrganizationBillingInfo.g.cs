@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -14,8 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
@@ -56,36 +53,32 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.PaymentPlanTier?, object>? Tier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
+        public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// 
+        /// Stripe customer billing info.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payment_method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.StripePaymentMethodInfo, object>? PaymentMethod { get; set; }
+        public global::LangSmith.StripePaymentMethodInfo? PaymentMethod { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_of_billing_period")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.DateTime?, object>? EndOfBillingPeriod { get; set; }
+        public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// 
+        /// Customer visible plan information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_plan")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.CustomerVisiblePlanInfo, object>? CurrentPlan { get; set; }
+        public global::LangSmith.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// 
+        /// Customer visible plan information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upcoming_plan")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::LangSmith.CustomerVisiblePlanInfo, object>? UpcomingPlan { get; set; }
+        public global::LangSmith.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
 
         /// <summary>
         /// Default Value: false

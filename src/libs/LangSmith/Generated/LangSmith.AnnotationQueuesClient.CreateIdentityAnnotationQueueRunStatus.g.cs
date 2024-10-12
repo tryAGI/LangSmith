@@ -130,8 +130,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse> CreateIdentityAnnotationQueueRunStatusAsync(
             global::System.Guid annotationQueueRunId,
-            global::LangSmith.AnyOf<string, object>? status = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? overrideAddedAt = default,
+            string? status = default,
+            global::System.DateTime? overrideAddedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.IdentityAnnotationQueueRunStatusCreateSchema

@@ -28,9 +28,9 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ComparativeExperiment>> ReadComparativeExperimentsAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             int? offset = 0,
             int? limit = 100,
             global::LangSmith.SortByComparativeExperimentColumn? sortBy = default,

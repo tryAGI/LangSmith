@@ -7,17 +7,17 @@ namespace LangSmith
     {
         partial void PrepareListRulesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<global::System.Guid?, object>? datasetId,
-            ref global::LangSmith.AnyOf<global::System.Guid?, object>? sessionId,
-            ref global::LangSmith.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? type,
-            ref global::LangSmith.AnyOf<string, object>? nameContains);
+            ref global::System.Guid? datasetId,
+            ref global::System.Guid? sessionId,
+            ref global::LangSmith.ListRulesApiV1RunsRulesGetType? type,
+            ref string? nameContains);
         partial void PrepareListRulesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? datasetId,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? sessionId,
-            global::LangSmith.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? type,
-            global::LangSmith.AnyOf<string, object>? nameContains);
+            global::System.Guid? datasetId,
+            global::System.Guid? sessionId,
+            global::LangSmith.ListRulesApiV1RunsRulesGetType? type,
+            string? nameContains);
         partial void ProcessListRulesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>> ListRulesAsync(
-            global::LangSmith.AnyOf<global::System.Guid?, object>? datasetId = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? sessionId = default,
-            global::LangSmith.AnyOf<global::LangSmith.ListRulesApiV1RunsRulesGetType2?, object>? type = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
+            global::System.Guid? datasetId = default,
+            global::System.Guid? sessionId = default,
+            global::LangSmith.ListRulesApiV1RunsRulesGetType? type = default,
+            string? nameContains = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -57,10 +57,10 @@ namespace LangSmith
                 path: "/api/v1/runs/rules",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("dataset_id", datasetId?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("session_id", sessionId?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("type", type?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
+                .AddOptionalParameter("session_id", sessionId?.ToString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("name_contains", nameContains) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

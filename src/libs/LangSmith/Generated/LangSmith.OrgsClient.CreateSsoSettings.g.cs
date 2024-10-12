@@ -129,8 +129,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.SSOProvider> CreateSsoSettingsAsync(
             global::System.Guid defaultWorkspaceRoleId,
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
-            global::LangSmith.AnyOf<string, object>? metadataXml = default,
-            global::LangSmith.AnyOf<string, object>? metadataUrl = default,
+            string? metadataXml = default,
+            string? metadataUrl = default,
             global::System.Collections.Generic.Dictionary<string, string>? attributeMapping = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

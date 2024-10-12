@@ -26,8 +26,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>, global::LangSmith.RunnableConfigCallbacks, object>? Callbacks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>, global::LangSmith.RunnableConfigCallbacks>? Callbacks { get; set; }
 
         /// <summary>
         /// 
@@ -39,8 +39,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_concurrency")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<int?, object>? MaxConcurrency { get; set; }
+        public int? MaxConcurrency { get; set; }
 
         /// <summary>
         /// 
@@ -58,8 +57,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Guid?, object>? RunId { get; set; }
+        public global::System.Guid? RunId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

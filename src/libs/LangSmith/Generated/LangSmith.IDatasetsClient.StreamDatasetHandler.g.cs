@@ -38,11 +38,11 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.RunnableConfig options,
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<string, object>? runId = default,
-            global::LangSmith.AnyOf<string, object>? repoId = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? tools = default,
-            global::LangSmith.AnyOf<string, object>? toolChoice = default,
-            global::LangSmith.AnyOf<string, object>? projectName = default,
+            string? runId = default,
+            string? repoId = default,
+            global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaTool>? tools = default,
+            string? toolChoice = default,
+            string? projectName = default,
             int? repetitions = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

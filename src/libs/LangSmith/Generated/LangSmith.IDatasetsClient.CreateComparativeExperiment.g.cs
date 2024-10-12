@@ -33,11 +33,11 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
             global::System.Guid referenceDatasetId,
             global::System.Guid? id = default,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
+            string? name = default,
+            string? description = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? modifiedAt = default,
-            global::LangSmith.AnyOf<object, object>? extra = default,
+            object? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

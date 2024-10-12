@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareListTaggingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<global::System.Guid?, object>? tagValueId);
+            ref global::System.Guid? tagValueId);
         partial void PrepareListTaggingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? tagValueId);
+            global::System.Guid? tagValueId);
         partial void ProcessListTaggingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TaggingsResponse>> ListTaggingsAsync(
-            global::LangSmith.AnyOf<global::System.Guid?, object>? tagValueId = default,
+            global::System.Guid? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -41,7 +41,7 @@ namespace LangSmith
                 path: "/api/v1/workspaces/current/taggings",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

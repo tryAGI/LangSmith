@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareGetCurrentWorkspaceStatsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void PrepareGetCurrentWorkspaceStatsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void ProcessGetCurrentWorkspaceStatsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,20 +28,20 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TenantStats> GetCurrentWorkspaceStatsAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareGetCurrentWorkspaceStatsArguments(
                 httpClient: _httpClient,
-                tagValueId: ref tagValueId);
+                tagValueId: tagValueId);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/workspaces/current/stats",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

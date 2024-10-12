@@ -10,12 +10,14 @@ namespace LangSmith
         /// <param name="type">
         /// Enum for acceptable types of dashboards.
         /// </param>
-        /// <param name="colorScheme"></param>
+        /// <param name="colorScheme">
+        /// Enum for acceptable color schemes of dashboards.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.OrganizationDashboardSchema> GetDashboardAsync(
             global::LangSmith.OrganizationDashboardType type,
-            global::LangSmith.AnyOf<global::LangSmith.OrganizationDashboardColorScheme?, object> colorScheme,
+            global::LangSmith.OrganizationDashboardColorScheme colorScheme,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

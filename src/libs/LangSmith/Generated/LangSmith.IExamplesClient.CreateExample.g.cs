@@ -36,12 +36,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Example> CreateExampleAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<object, object>? outputs = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? sourceRunId = default,
-            global::LangSmith.AnyOf<object, object>? metadata = default,
-            global::LangSmith.AnyOf<object, object>? inputs = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
+            object? outputs = default,
+            global::System.Guid? sourceRunId = default,
+            object? metadata = default,
+            object? inputs = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
+            global::System.Guid? id = default,
             bool? useSourceRunIo = false,
             global::System.DateTime? createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default);

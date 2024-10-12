@@ -28,9 +28,9 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<int?, double?, object, object> Value { get; set; }
+        public required global::LangSmith.AnyOf<int?, double?, object>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -36,13 +36,13 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Dataset> CreateDatasetAsync(
             string name,
-            global::LangSmith.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.DateTime? createdAt = default,
-            global::LangSmith.AnyOf<object, object>? inputsSchemaDefinition = default,
-            global::LangSmith.AnyOf<object, object>? outputsSchemaDefinition = default,
-            global::LangSmith.AnyOf<bool?, object>? externallyManaged = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? id = default,
-            global::LangSmith.AnyOf<object, object>? extra = default,
+            object? inputsSchemaDefinition = default,
+            object? outputsSchemaDefinition = default,
+            bool? externallyManaged = false,
+            global::System.Guid? id = default,
+            object? extra = default,
             global::LangSmith.DataType? dataType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

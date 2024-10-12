@@ -32,17 +32,17 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? nameContains = default,
-            global::LangSmith.AnyOf<string, object>? datasetVersion = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            string? datasetVersion = default,
             global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
-            global::LangSmith.AnyOf<string, object>? sortByFeedbackKey = default,
+            string? sortByFeedbackKey = default,
             int? offset = 0,
             int? limit = 100,
             bool? facets = false,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

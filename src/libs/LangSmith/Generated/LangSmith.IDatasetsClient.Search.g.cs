@@ -37,7 +37,7 @@ namespace LangSmith
             object inputs,
             int? limit = 5,
             bool? debug = false,
-            global::LangSmith.AnyOf<string, object>? filter = default,
+            string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

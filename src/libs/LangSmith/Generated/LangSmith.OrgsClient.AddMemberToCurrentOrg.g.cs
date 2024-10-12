@@ -131,11 +131,11 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
             bool? readOnly = false,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? roleId = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? workspaceIds = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? workspaceRoleId = default,
-            global::LangSmith.AnyOf<string, object>? password = default,
-            global::LangSmith.AnyOf<string, object>? fullName = default,
+            global::System.Guid? roleId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds = default,
+            global::System.Guid? workspaceRoleId = default,
+            string? password = default,
+            string? fullName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.PendingIdentityCreate

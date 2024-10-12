@@ -133,7 +133,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<string, object>? tag = default,
+            string? tag = "latest",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.DatasetIndexRequest

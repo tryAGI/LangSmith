@@ -8,18 +8,18 @@ namespace LangSmith
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
-            ref global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
-            ref global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
-            ref global::LangSmith.AnyOf<string, object>? comment,
-            ref global::LangSmith.AnyOf<string, object>? correction);
+            ref global::LangSmith.AnyOf<double?, int?, bool?>? score,
+            ref global::LangSmith.AnyOf<double?, int?, bool?, string>? value,
+            ref string? comment,
+            ref string? correction);
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
-            global::LangSmith.AnyOf<string, object>? comment,
-            global::LangSmith.AnyOf<string, object>? correction);
+            global::LangSmith.AnyOf<double?, int?, bool?>? score,
+            global::LangSmith.AnyOf<double?, int?, bool?, string>? value,
+            string? comment,
+            string? correction);
         partial void ProcessCreateFeedbackWithTokenGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,10 +42,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
-            global::LangSmith.AnyOf<string, object>? comment = default,
-            global::LangSmith.AnyOf<string, object>? correction = default,
+            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
+            string? comment = default,
+            string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -64,8 +64,8 @@ namespace LangSmith
             __pathBuilder 
                 .AddOptionalParameter("score", score?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("value", value?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("comment", comment?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("correction", correction?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("comment", comment) 
+                .AddOptionalParameter("correction", correction) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

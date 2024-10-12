@@ -133,9 +133,9 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
             global::System.Guid identityId,
-            global::LangSmith.AnyOf<string, object>? password = default,
-            global::LangSmith.AnyOf<string, object>? fullName = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? roleId = default,
+            string? password = default,
+            string? fullName = default,
+            global::System.Guid? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.OrgIdentityPatch

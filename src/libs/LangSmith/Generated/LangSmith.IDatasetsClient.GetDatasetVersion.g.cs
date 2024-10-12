@@ -15,8 +15,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetVersion> GetDatasetVersionAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? asOf = default,
-            global::LangSmith.AnyOf<string, object>? tag = default,
+            global::System.DateTime? asOf = default,
+            string? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

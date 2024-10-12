@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.UsageLimit> UpsertUsageLimitAsync(
-            global::LangSmith.UsageLimitType2 limitType,
+            global::LangSmith.UsageLimitType limitType,
             int limitValue,
             global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);

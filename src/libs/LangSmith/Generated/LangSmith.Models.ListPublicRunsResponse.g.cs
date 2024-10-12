@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -22,14 +20,13 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Cursors { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string?> Cursors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parsed_query")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<string, object>? ParsedQuery { get; set; }
+        public string? ParsedQuery { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

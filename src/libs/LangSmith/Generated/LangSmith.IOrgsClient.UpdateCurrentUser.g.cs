@@ -24,8 +24,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.UpdateCurrentUserApiV1OrgsMembersBasicPatchResponse> UpdateCurrentUserAsync(
-            global::LangSmith.AnyOf<string, object>? password = default,
-            global::LangSmith.AnyOf<string, object>? fullName = default,
+            string? password = default,
+            string? fullName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

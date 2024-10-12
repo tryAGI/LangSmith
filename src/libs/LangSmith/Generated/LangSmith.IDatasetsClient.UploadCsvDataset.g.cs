@@ -34,10 +34,10 @@ namespace LangSmith
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
-            global::LangSmith.AnyOf<string, object>? name = default,
+            string? name = default,
             global::LangSmith.DataType? dataType = default,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -125,8 +125,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
-            global::LangSmith.TraceTier3 defaultTraceTier,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId = default,
+            global::LangSmith.TraceTier defaultTraceTier,
+            global::System.Guid? tenantId = default,
             bool? applyToAllProjects = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

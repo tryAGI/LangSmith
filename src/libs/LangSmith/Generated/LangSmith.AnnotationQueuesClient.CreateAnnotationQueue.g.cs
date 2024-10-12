@@ -136,13 +136,13 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSchema> CreateAnnotationQueueAsync(
             string name,
-            global::LangSmith.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? updatedAt = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDataset = default,
-            global::LangSmith.AnyOf<int?, object>? numReviewersPerItem = default,
-            global::LangSmith.AnyOf<bool?, object>? enableReservations = default,
-            global::LangSmith.AnyOf<int?, object>? reservationMinutes = default,
+            global::System.Guid? defaultDataset = default,
+            int? numReviewersPerItem = 1,
+            bool? enableReservations = true,
+            int? reservationMinutes = 1,
             global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

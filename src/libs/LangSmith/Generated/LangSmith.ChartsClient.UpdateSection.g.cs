@@ -134,7 +134,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description = default,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

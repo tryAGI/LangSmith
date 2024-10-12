@@ -34,12 +34,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDataset = default,
-            global::LangSmith.AnyOf<int?, object>? numReviewersPerItem = default,
+            string? name = default,
+            string? description = default,
+            global::System.Guid? defaultDataset = default,
+            int? numReviewersPerItem = 1,
             bool? enableReservations = true,
-            global::LangSmith.AnyOf<int?, object>? reservationMinutes = default,
+            int? reservationMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

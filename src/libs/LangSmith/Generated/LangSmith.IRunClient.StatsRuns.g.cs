@@ -22,7 +22,9 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="trace"></param>
         /// <param name="parentRun"></param>
-        /// <param name="runType"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
         /// <param name="session"></param>
         /// <param name="referenceExample"></param>
         /// <param name="executionOrder"></param>
@@ -34,26 +36,28 @@ namespace LangSmith
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="isRoot"></param>
-        /// <param name="dataSourceType"></param>
+        /// <param name="dataSourceType">
+        /// Enum for run data source types.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? trace = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? parentRun = default,
-            global::LangSmith.AnyOf<global::LangSmith.RunTypeEnum?, object>? runType = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceExample = default,
-            global::LangSmith.AnyOf<int?, object>? executionOrder = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::LangSmith.AnyOf<bool?, object>? error = default,
-            global::LangSmith.AnyOf<string, object>? query = default,
-            global::LangSmith.AnyOf<string, object>? filter = default,
-            global::LangSmith.AnyOf<string, object>? traceFilter = default,
-            global::LangSmith.AnyOf<string, object>? treeFilter = default,
-            global::LangSmith.AnyOf<bool?, object>? isRoot = default,
-            global::LangSmith.AnyOf<global::LangSmith.RunsFilterDataSourceTypeEnum?, object>? dataSourceType = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            global::System.Guid? trace = default,
+            global::System.Guid? parentRun = default,
+            global::LangSmith.RunTypeEnum? runType = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? session = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceExample = default,
+            int? executionOrder = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
+            bool? error = default,
+            string? query = default,
+            string? filter = default,
+            string? traceFilter = default,
+            string? treeFilter = default,
+            bool? isRoot = default,
+            global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

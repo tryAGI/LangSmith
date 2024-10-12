@@ -29,7 +29,7 @@ namespace LangSmith
             string prompt,
             object metaprompt,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
-            global::LangSmith.AnyOf<string, object> overallFeedback,
+            string? overallFeedback,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

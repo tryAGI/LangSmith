@@ -124,8 +124,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackConfigSchema> UpdateFeedbackConfigEndpointAsync(
             string feedbackKey,
-            global::LangSmith.AnyOf<global::LangSmith.FeedbackConfig, object>? feedbackConfig = default,
-            global::LangSmith.AnyOf<bool?, object>? isLowerScoreBetter = default,
+            global::LangSmith.FeedbackConfig? feedbackConfig = default,
+            bool? isLowerScoreBetter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.UpdateFeedbackConfigSchema

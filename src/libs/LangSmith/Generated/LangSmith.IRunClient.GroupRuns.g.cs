@@ -14,7 +14,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
             global::LangSmith.RunGroupRequest request,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
             global::System.Guid sessionId,
-            global::LangSmith.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::LangSmith.RunGroupBy groupBy = default,
-            global::LangSmith.AnyOf<string, object>? filter = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
+            string? filter = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
             int? offset = 0,
             int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default);

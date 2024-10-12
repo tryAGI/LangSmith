@@ -35,11 +35,11 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> UpdateRepoAsync(
             string owner,
             string repo,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<string, object>? readme = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::LangSmith.AnyOf<bool?, object>? isPublic = default,
-            global::LangSmith.AnyOf<bool?, object>? isArchived = default,
+            string? description = default,
+            string? readme = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            bool? isPublic = default,
+            bool? isArchived = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -10,38 +10,38 @@ namespace LangSmith
             ref bool? withLatestManifest,
             ref int? limit,
             ref int? offset,
-            ref global::LangSmith.AnyOf<string, object>? tenantHandle,
-            ref global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId,
-            ref global::LangSmith.AnyOf<string, object>? query,
-            ref global::LangSmith.AnyOf<bool?, object>? hasCommits,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
-            ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsArchived2?, object>? isArchived,
-            ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsPublic2?, object>? isPublic,
-            ref global::LangSmith.AnyOf<string, object>? upstreamRepoOwner,
-            ref global::LangSmith.AnyOf<string, object>? upstreamRepoHandle,
-            ref global::LangSmith.AnyOf<bool?, object>? matchPrefix,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
-            ref global::LangSmith.AnyOf<string, object>? sortField,
-            ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection);
+            ref string? tenantHandle,
+            ref global::System.Guid? tenantId,
+            ref string? query,
+            ref bool? hasCommits,
+            global::System.Collections.Generic.IList<string>? tags,
+            ref global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived,
+            ref global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic,
+            ref string? upstreamRepoOwner,
+            ref string? upstreamRepoHandle,
+            ref bool? matchPrefix,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            ref string? sortField,
+            ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? withLatestManifest,
             int? limit,
             int? offset,
-            global::LangSmith.AnyOf<string, object>? tenantHandle,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId,
-            global::LangSmith.AnyOf<string, object>? query,
-            global::LangSmith.AnyOf<bool?, object>? hasCommits,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsArchived2?, object>? isArchived,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsPublic2?, object>? isPublic,
-            global::LangSmith.AnyOf<string, object>? upstreamRepoOwner,
-            global::LangSmith.AnyOf<string, object>? upstreamRepoHandle,
-            global::LangSmith.AnyOf<bool?, object>? matchPrefix,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
-            global::LangSmith.AnyOf<string, object>? sortField,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection);
+            string? tenantHandle,
+            global::System.Guid? tenantId,
+            string? query,
+            bool? hasCommits,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived,
+            global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic,
+            string? upstreamRepoOwner,
+            string? upstreamRepoHandle,
+            bool? matchPrefix,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            string? sortField,
+            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
         partial void ProcessListReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -85,19 +85,19 @@ namespace LangSmith
             bool? withLatestManifest = false,
             int? limit = 20,
             int? offset = 0,
-            global::LangSmith.AnyOf<string, object>? tenantHandle = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? tenantId = default,
-            global::LangSmith.AnyOf<string, object>? query = default,
-            global::LangSmith.AnyOf<bool?, object>? hasCommits = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsArchived2?, object>? isArchived = default,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetIsPublic2?, object>? isPublic = default,
-            global::LangSmith.AnyOf<string, object>? upstreamRepoOwner = default,
-            global::LangSmith.AnyOf<string, object>? upstreamRepoHandle = default,
-            global::LangSmith.AnyOf<bool?, object>? matchPrefix = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
-            global::LangSmith.AnyOf<string, object>? sortField = default,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection = default,
+            string? tenantHandle = default,
+            global::System.Guid? tenantId = default,
+            string? query = default,
+            bool? hasCommits = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived = default,
+            global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic = default,
+            string? upstreamRepoOwner = default,
+            string? upstreamRepoHandle = default,
+            bool? matchPrefix = false,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            string? sortField = default,
+            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -111,13 +111,13 @@ namespace LangSmith
                 tenantId: ref tenantId,
                 query: ref query,
                 hasCommits: ref hasCommits,
-                tags: ref tags,
+                tags: tags,
                 isArchived: ref isArchived,
                 isPublic: ref isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 matchPrefix: ref matchPrefix,
-                tagValueId: ref tagValueId,
+                tagValueId: tagValueId,
                 sortField: ref sortField,
                 sortDirection: ref sortDirection);
 
@@ -128,18 +128,18 @@ namespace LangSmith
                 .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("tenant_handle", tenantHandle?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("tenant_id", tenantId?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("query", query?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("has_commits", hasCommits?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("tags", tags?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("is_archived", isArchived?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("is_public", isPublic?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("match_prefix", matchPrefix?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("sort_field", sortField?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tenant_handle", tenantHandle) 
+                .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
+                .AddOptionalParameter("query", query) 
+                .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
+                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true) 
+                .AddOptionalParameter("is_archived", isArchived?.ToValueString()) 
+                .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
+                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
+                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
+                .AddOptionalParameter("match_prefix", matchPrefix?.ToString()) 
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("sort_field", sortField) 
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();

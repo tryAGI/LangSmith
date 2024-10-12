@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace LangSmith
@@ -28,8 +26,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>, object>? Examples { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

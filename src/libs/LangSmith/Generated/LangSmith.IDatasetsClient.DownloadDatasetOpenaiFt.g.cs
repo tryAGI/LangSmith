@@ -16,7 +16,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetResponse> DownloadDatasetOpenaiFtAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? asOf = default,
+            global::System.DateTime? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

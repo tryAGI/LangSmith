@@ -117,8 +117,12 @@ namespace LangSmith
         /// <summary>
         /// Set Company Info
         /// </summary>
-        /// <param name="companyInfo"></param>
-        /// <param name="taxId"></param>
+        /// <param name="companyInfo">
+        /// Stripe customer billing information.
+        /// </param>
+        /// <param name="taxId">
+        /// Stripe tax ID.
+        /// </param>
         /// <param name="invoiceEmail"></param>
         /// <param name="isBusiness">
         /// Default Value: false
@@ -126,9 +130,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
-            global::LangSmith.AnyOf<global::LangSmith.StripeBusinessBillingInfo, object>? companyInfo = default,
-            global::LangSmith.AnyOf<global::LangSmith.StripeTaxId, object>? taxId = default,
-            global::LangSmith.AnyOf<string, object>? invoiceEmail = default,
+            global::LangSmith.StripeBusinessBillingInfo? companyInfo = default,
+            global::LangSmith.StripeTaxId? taxId = default,
+            string? invoiceEmail = default,
             bool? isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

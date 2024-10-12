@@ -136,12 +136,12 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow> results,
             global::System.DateTime experimentStartTime,
             global::System.DateTime experimentEndTime,
-            global::LangSmith.AnyOf<string, object>? experimentDescription = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? datasetId = default,
-            global::LangSmith.AnyOf<string, object>? datasetName = default,
-            global::LangSmith.AnyOf<string, object>? datasetDescription = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>, object>? summaryExperimentScores = default,
-            global::LangSmith.AnyOf<object, object>? experimentMetadata = default,
+            string? experimentDescription = default,
+            global::System.Guid? datasetId = default,
+            string? datasetName = default,
+            string? datasetDescription = default,
+            global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>? summaryExperimentScores = default,
+            object? experimentMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.ExperimentResultsUpload

@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.DatasetShareSchema, object>> ReadDatasetShareStateAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetShareSchema> ReadDatasetShareStateAsync(
             global::System.Guid datasetId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,7 +103,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.AnyOf<global::LangSmith.DatasetShareSchema, object>?), JsonSerializerContext) as global::LangSmith.AnyOf<global::LangSmith.DatasetShareSchema, object>? ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DatasetShareSchema), JsonSerializerContext) as global::LangSmith.DatasetShareSchema ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

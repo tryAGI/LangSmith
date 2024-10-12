@@ -21,7 +21,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.OrganizationInfo> UpdateCurrentOrganizationInfoAsync(
-            global::LangSmith.AnyOf<string, object>? displayName = default,
+            string? displayName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

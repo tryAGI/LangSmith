@@ -35,9 +35,9 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.RunGroupStats> StatsGroupRunsAsync(
             global::System.Guid sessionId,
             global::LangSmith.RunGroupBy groupBy = default,
-            global::LangSmith.AnyOf<string, object>? filter = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
+            string? filter = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
             int? offset = 0,
             int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default);

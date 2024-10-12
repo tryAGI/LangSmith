@@ -12,7 +12,7 @@ namespace LangSmith
             ref string commit,
             ref bool? getExamples,
             ref bool? isView,
-            ref global::LangSmith.AnyOf<bool?, object>? includeModel);
+            ref bool? includeModel);
         partial void PrepareGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,7 +21,7 @@ namespace LangSmith
             string commit,
             bool? getExamples,
             bool? isView,
-            global::LangSmith.AnyOf<bool?, object>? includeModel);
+            bool? includeModel);
         partial void ProcessGetCommitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,7 +55,7 @@ namespace LangSmith
             string commit,
             bool? getExamples = false,
             bool? isView = false,
-            global::LangSmith.AnyOf<bool?, object>? includeModel = default,
+            bool? includeModel = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -75,7 +75,7 @@ namespace LangSmith
             __pathBuilder 
                 .AddOptionalParameter("get_examples", getExamples?.ToString()) 
                 .AddOptionalParameter("is_view", isView?.ToString()) 
-                .AddOptionalParameter("include_model", includeModel?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("include_model", includeModel?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -20,10 +20,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<int> CountSharedExamplesAsync(
             global::System.Guid shareToken,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
-            global::LangSmith.AnyOf<string, object>? metadata = default,
-            global::LangSmith.AnyOf<string, object>? filter = default,
+            string? metadata = default,
+            string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

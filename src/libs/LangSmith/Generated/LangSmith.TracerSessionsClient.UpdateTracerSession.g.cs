@@ -136,12 +136,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> UpdateTracerSessionAsync(
             global::System.Guid sessionId,
-            global::LangSmith.AnyOf<string, object>? name = default,
-            global::LangSmith.AnyOf<string, object>? description = default,
-            global::LangSmith.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,
-            global::LangSmith.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::LangSmith.AnyOf<object, object>? extra = default,
-            global::LangSmith.AnyOf<global::LangSmith.TraceTier3?, object>? traceTier = default,
+            string? name = default,
+            string? description = default,
+            global::System.Guid? defaultDatasetId = default,
+            global::System.DateTime? endTime = default,
+            object? extra = default,
+            global::LangSmith.TraceTier? traceTier = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::LangSmith.TracerSessionUpdate
