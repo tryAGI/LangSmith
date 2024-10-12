@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest Manifest { get; set; }
+        public required object Manifest { get; set; }
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaTool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<object>? Tools { get; set; }
 
         /// <summary>
         /// 

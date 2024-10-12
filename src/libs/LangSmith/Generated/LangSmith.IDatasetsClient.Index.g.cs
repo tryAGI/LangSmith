@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             global::LangSmith.DatasetIndexRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,7 +27,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             string? tag = "latest",
             global::System.Threading.CancellationToken cancellationToken = default);

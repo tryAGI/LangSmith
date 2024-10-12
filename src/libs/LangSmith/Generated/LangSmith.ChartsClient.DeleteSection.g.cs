@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="sectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse> DeleteSectionAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteSectionAsync(
             global::System.Guid sectionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,9 +102,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse), JsonSerializerContext) as global::LangSmith.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

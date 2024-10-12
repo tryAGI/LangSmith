@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
             global::LangSmith.FeedbackCreateWithTokenExtendedSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -116,9 +116,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse), JsonSerializerContext) as global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -133,7 +131,7 @@ namespace LangSmith
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,

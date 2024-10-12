@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntitiesAsync(
+        global::System.Threading.Tasks.Task<string> BulkUnshareEntitiesAsync(
             global::LangSmith.TenantBulkUnshareRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -22,7 +22,7 @@ namespace LangSmith
         /// <param name="shareTokens"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntitiesAsync(
+        global::System.Threading.Tasks.Task<string> BulkUnshareEntitiesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? shareTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

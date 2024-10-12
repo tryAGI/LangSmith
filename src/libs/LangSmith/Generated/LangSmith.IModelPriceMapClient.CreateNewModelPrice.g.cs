@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse> CreateNewModelPriceAsync(
+        global::System.Threading.Tasks.Task<string> CreateNewModelPriceAsync(
             global::LangSmith.ModelPriceMapCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse> CreateNewModelPriceAsync(
+        global::System.Threading.Tasks.Task<string> CreateNewModelPriceAsync(
             string name,
             string matchPattern,
             global::LangSmith.AnyOf<double?, string> promptCost,

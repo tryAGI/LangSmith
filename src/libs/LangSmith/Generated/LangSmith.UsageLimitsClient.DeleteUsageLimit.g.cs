@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="usageLimitId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteResponse> DeleteUsageLimitAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteUsageLimitAsync(
             global::System.Guid usageLimitId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,9 +102,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteResponse), JsonSerializerContext) as global::LangSmith.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

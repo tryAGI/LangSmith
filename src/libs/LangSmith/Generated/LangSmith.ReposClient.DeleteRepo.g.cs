@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteRepoApiV1ReposOwnerRepoDeleteResponse> DeleteRepoAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteRepoAsync(
             string owner,
             string repo,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -108,9 +108,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DeleteRepoApiV1ReposOwnerRepoDeleteResponse), JsonSerializerContext) as global::LangSmith.DeleteRepoApiV1ReposOwnerRepoDeleteResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

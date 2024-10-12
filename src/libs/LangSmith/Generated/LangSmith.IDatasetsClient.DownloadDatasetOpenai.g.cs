@@ -14,7 +14,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse> DownloadDatasetOpenaiAsync(
+        global::System.Threading.Tasks.Task<string> DownloadDatasetOpenaiAsync(
             global::System.Guid datasetId,
             global::System.DateTime? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default);

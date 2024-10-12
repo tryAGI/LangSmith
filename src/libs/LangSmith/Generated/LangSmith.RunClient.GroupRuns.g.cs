@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+        public async global::System.Threading.Tasks.Task<string> GroupRunsAsync(
             global::LangSmith.RunGroupRequest request,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -122,9 +122,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.GroupRunsApiV1RunsGroupPostResponse), JsonSerializerContext) as global::LangSmith.GroupRunsApiV1RunsGroupPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -145,7 +143,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+        public async global::System.Threading.Tasks.Task<string> GroupRunsAsync(
             global::System.Guid sessionId,
             string? accept = default,
             global::LangSmith.RunGroupBy groupBy = default,

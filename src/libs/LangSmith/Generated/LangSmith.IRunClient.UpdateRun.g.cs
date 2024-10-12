@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
+        global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
             global::LangSmith.UpdateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -38,7 +38,7 @@ namespace LangSmith
         /// <param name="sessionName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
+        global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
             global::System.Guid? traceId = default,
             string? dottedOrder = default,

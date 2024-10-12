@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateExamplesApiV1ExamplesBulkPatchResponse> UpdateExamplesAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateExamplesAsync(
             global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.UpdateExamplesApiV1ExamplesBulkPatchResponse), JsonSerializerContext) as global::LangSmith.UpdateExamplesApiV1ExamplesBulkPatchResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

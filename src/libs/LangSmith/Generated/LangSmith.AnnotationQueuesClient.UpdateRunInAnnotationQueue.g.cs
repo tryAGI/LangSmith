@@ -33,7 +33,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse> UpdateRunInAnnotationQueueAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateRunInAnnotationQueueAsync(
             global::System.Guid queueId,
             global::System.Guid queueRunId,
             global::LangSmith.AnnotationQueueRunUpdateSchema request,
@@ -121,9 +121,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse), JsonSerializerContext) as global::LangSmith.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -135,7 +133,7 @@ namespace LangSmith
         /// <param name="addedAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse> UpdateRunInAnnotationQueueAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateRunInAnnotationQueueAsync(
             global::System.Guid queueId,
             global::System.Guid queueRunId,
             global::System.DateTime? lastReviewedTime = default,

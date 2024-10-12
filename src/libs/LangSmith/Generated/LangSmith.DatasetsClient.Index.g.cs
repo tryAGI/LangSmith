@@ -31,7 +31,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        public async global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             global::LangSmith.DatasetIndexRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -116,9 +116,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse), JsonSerializerContext) as global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -131,7 +129,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        public async global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             string? tag = "latest",
             global::System.Threading.CancellationToken cancellationToken = default)

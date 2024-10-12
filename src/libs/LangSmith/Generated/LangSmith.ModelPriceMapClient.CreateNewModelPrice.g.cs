@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse> CreateNewModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateNewModelPriceAsync(
             global::LangSmith.ModelPriceMapCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse), JsonSerializerContext) as global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -128,7 +126,7 @@ namespace LangSmith
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateNewModelPriceApiV1ModelPriceMapPostResponse> CreateNewModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateNewModelPriceAsync(
             string name,
             string matchPattern,
             global::LangSmith.AnyOf<double?, string> promptCost,

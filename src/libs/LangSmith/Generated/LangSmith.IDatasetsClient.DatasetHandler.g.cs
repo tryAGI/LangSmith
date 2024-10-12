@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse> DatasetHandlerAsync(
+        global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -33,14 +33,14 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DatasetHandlerApiV1DatasetsPlaygroundExperimentBatchPostResponse> DatasetHandlerAsync(
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
+        global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
+            object manifest,
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.RunnableConfig options,
             global::System.Guid datasetId,
             string? runId = default,
             string? repoId = default,
-            global::System.Collections.Generic.IList<global::LangSmith.PlaygroundRunOverDatasetRequestSchemaTool>? tools = default,
+            global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
             string? projectName = default,
             int? repetitions = 1,

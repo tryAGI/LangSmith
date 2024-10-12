@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
+        global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
             global::LangSmith.FeedbackCreateWithTokenExtendedSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -29,7 +29,7 @@ namespace LangSmith
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
+        global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,

@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ChangePaymentPlanApiV1OrgsCurrentPlanPostResponse> ChangePaymentPlanAsync(
+        public async global::System.Threading.Tasks.Task<string> ChangePaymentPlanAsync(
             global::LangSmith.ChangePaymentPlanSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.ChangePaymentPlanApiV1OrgsCurrentPlanPostResponse), JsonSerializerContext) as global::LangSmith.ChangePaymentPlanApiV1OrgsCurrentPlanPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -122,7 +120,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ChangePaymentPlanApiV1OrgsCurrentPlanPostResponse> ChangePaymentPlanAsync(
+        public async global::System.Threading.Tasks.Task<string> ChangePaymentPlanAsync(
             global::LangSmith.ChangePaymentPlanReq tier,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

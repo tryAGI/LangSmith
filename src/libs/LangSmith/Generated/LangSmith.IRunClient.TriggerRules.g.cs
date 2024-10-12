@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::LangSmith.TriggerRulesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -23,7 +23,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? ruleIds = default,
             global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

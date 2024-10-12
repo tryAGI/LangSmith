@@ -40,7 +40,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rows")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::LangSmith.MonitorBlockRowItem>> Rows { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>> Rows { get; set; }
 
         /// <summary>
         /// 

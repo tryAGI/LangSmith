@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ConfirmSsoUserEmailAsync(
+        public async global::System.Threading.Tasks.Task<string> ConfirmSsoUserEmailAsync(
             global::LangSmith.SSOConfirmEmailRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(object), JsonSerializerContext) as object ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -122,7 +120,7 @@ namespace LangSmith
         /// <param name="token"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ConfirmSsoUserEmailAsync(
+        public async global::System.Threading.Tasks.Task<string> ConfirmSsoUserEmailAsync(
             string token,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

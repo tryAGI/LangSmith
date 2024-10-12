@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DeleteRepoApiV1ReposOwnerRepoDeleteResponse> DeleteRepoAsync(
+        global::System.Threading.Tasks.Task<string> DeleteRepoAsync(
             string owner,
             string repo,
             global::System.Threading.CancellationToken cancellationToken = default);

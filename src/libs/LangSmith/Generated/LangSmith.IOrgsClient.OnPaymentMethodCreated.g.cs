@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse> OnPaymentMethodCreatedAsync(
+        global::System.Threading.Tasks.Task<string> OnPaymentMethodCreatedAsync(
             global::LangSmith.StripePaymentInformation request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -23,7 +23,7 @@ namespace LangSmith
         /// <param name="setupIntent"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostResponse> OnPaymentMethodCreatedAsync(
+        global::System.Threading.Tasks.Task<string> OnPaymentMethodCreatedAsync(
             global::LangSmith.StripeCustomerBillingInfo billingInfo,
             string setupIntent,
             global::System.Threading.CancellationToken cancellationToken = default);

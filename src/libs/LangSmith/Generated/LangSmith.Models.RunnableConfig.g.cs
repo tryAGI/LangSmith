@@ -27,7 +27,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.RunnableConfigCallback>, global::LangSmith.RunnableConfigCallbacks>? Callbacks { get; set; }
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object>? Callbacks { get; set; }
 
         /// <summary>
         /// 

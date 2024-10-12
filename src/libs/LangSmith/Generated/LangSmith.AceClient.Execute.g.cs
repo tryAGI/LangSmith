@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ExecuteAsync(
+        public async global::System.Threading.Tasks.Task<string> ExecuteAsync(
             global::LangSmith.BodyExecuteApiV1AceExecutePost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(object), JsonSerializerContext) as object ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -123,8 +121,8 @@ namespace LangSmith
         /// <param name="code"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ExecuteAsync(
-            global::System.Collections.Generic.IList<global::LangSmith.BodyExecuteApiV1AceExecutePostArg> args,
+        public async global::System.Threading.Tasks.Task<string> ExecuteAsync(
+            global::System.Collections.Generic.IList<object> args,
             string code,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

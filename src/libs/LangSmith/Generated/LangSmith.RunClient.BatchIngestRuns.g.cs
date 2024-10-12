@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.BatchIngestRunsApiV1RunsBatchPostResponse> BatchIngestRunsAsync(
+        public async global::System.Threading.Tasks.Task<string> BatchIngestRunsAsync(
             global::LangSmith.BatchIngestRunsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.BatchIngestRunsApiV1RunsBatchPostResponse), JsonSerializerContext) as global::LangSmith.BatchIngestRunsApiV1RunsBatchPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -123,7 +121,7 @@ namespace LangSmith
         /// <param name="patch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.BatchIngestRunsApiV1RunsBatchPostResponse> BatchIngestRunsAsync(
+        public async global::System.Threading.Tasks.Task<string> BatchIngestRunsAsync(
             global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItem>? post = default,
             global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPatchItem>? patch = default,
             global::System.Threading.CancellationToken cancellationToken = default)

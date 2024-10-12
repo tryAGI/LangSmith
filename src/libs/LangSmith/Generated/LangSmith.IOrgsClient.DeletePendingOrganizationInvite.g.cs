@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse> DeletePendingOrganizationInviteAsync(
+        global::System.Threading.Tasks.Task<string> DeletePendingOrganizationInviteAsync(
             global::System.Guid organizationId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

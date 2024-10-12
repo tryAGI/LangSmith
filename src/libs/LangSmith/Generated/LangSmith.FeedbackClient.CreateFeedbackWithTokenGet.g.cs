@@ -40,7 +40,7 @@ namespace LangSmith
         /// <param name="correction"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
@@ -132,9 +132,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse), JsonSerializerContext) as global::LangSmith.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        public async global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::LangSmith.TriggerRulesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse), JsonSerializerContext) as global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -123,7 +121,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        public async global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? ruleIds = default,
             global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)

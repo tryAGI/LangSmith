@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse> PatchCurrentWorkspaceMemberAsync(
+        global::System.Threading.Tasks.Task<string> PatchCurrentWorkspaceMemberAsync(
             global::System.Guid identityId,
             global::LangSmith.IdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -24,7 +24,7 @@ namespace LangSmith
         /// <param name="roleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse> PatchCurrentWorkspaceMemberAsync(
+        global::System.Threading.Tasks.Task<string> PatchCurrentWorkspaceMemberAsync(
             global::System.Guid identityId,
             global::System.Guid roleId,
             bool? readOnly = default,
