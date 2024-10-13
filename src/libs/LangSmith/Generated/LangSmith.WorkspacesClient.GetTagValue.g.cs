@@ -108,7 +108,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.TagValue), JsonSerializerContext) as global::LangSmith.TagValue ??
+                global::LangSmith.TagValue.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

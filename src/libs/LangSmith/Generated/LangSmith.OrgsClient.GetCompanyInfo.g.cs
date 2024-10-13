@@ -96,7 +96,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.StripeBusinessInfoOutput), JsonSerializerContext) as global::LangSmith.StripeBusinessInfoOutput ??
+                global::LangSmith.StripeBusinessInfoOutput.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

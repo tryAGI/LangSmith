@@ -114,7 +114,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DatasetShareSchema), JsonSerializerContext) as global::LangSmith.DatasetShareSchema ??
+                global::LangSmith.DatasetShareSchema.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
