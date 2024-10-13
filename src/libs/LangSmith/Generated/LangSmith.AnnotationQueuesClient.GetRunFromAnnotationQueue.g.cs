@@ -108,7 +108,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.RunSchemaWithAnnotationQueueInfo), JsonSerializerContext) as global::LangSmith.RunSchemaWithAnnotationQueueInfo ??
+                global::LangSmith.RunSchemaWithAnnotationQueueInfo.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

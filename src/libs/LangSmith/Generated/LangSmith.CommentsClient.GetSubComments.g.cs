@@ -134,7 +134,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.ListCommentsResponse), JsonSerializerContext) as global::LangSmith.ListCommentsResponse ??
+                global::LangSmith.ListCommentsResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

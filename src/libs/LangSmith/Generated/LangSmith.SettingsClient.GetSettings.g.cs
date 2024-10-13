@@ -97,7 +97,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.AppHubCrudTenantsTenant), JsonSerializerContext) as global::LangSmith.AppHubCrudTenantsTenant ??
+                global::LangSmith.AppHubCrudTenantsTenant.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

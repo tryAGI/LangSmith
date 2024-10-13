@@ -103,7 +103,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.DatasetIndexInfo), JsonSerializerContext) as global::LangSmith.DatasetIndexInfo ??
+                global::LangSmith.DatasetIndexInfo.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
