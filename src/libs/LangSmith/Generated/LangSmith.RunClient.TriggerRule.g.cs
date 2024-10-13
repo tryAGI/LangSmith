@@ -103,7 +103,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.RunRulesSchema), JsonSerializerContext) as global::LangSmith.RunRulesSchema ??
+                global::LangSmith.RunRulesSchema.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

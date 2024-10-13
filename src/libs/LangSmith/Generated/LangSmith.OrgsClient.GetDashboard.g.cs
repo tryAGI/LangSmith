@@ -116,7 +116,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.OrganizationDashboardSchema), JsonSerializerContext) as global::LangSmith.OrganizationDashboardSchema ??
+                global::LangSmith.OrganizationDashboardSchema.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
