@@ -144,7 +144,7 @@ namespace LangSmith
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::LangSmith.CommitManifestResponse), JsonSerializerContext) as global::LangSmith.CommitManifestResponse ??
+                global::LangSmith.CommitManifestResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
