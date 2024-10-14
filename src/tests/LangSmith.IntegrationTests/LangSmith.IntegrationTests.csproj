@@ -15,7 +15,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="3.6.1" />
     <PackageReference Include="FluentAssertions" Version="6.12.1" />
     <PackageReference Include="Testcontainers" Version="3.10.0" />
-    <PackageReference Include="tryAGI.OpenAI" Version="3.8.0" />
+    <PackageReference Include="tryAGI.OpenAI" Version="3.8.1" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
