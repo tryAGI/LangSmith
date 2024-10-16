@@ -8,7 +8,6 @@
 ## Features 🔥
 - Fully generated C# SDK based on [official OpenAPI specification](https://api.smith.langchain.com/openapi.json) using [AutoSDK](https://github.com/tryAGI/AutoSDK)
 - Automatic releases of new preview versions if there was an update to the OpenAPI specification
-- Source generator to define tools natively through C# interfaces
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
 - Support .Net Framework/.Net Standard 2.0
 
