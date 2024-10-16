@@ -40,12 +40,9 @@ await api.Run.CreateRunAsync(
     name: "Chat Pipeline",
     runType: CreateRunRequestRunType.Chain,
     id: parentRunId,
-    inputs: new CreateRunRequestInputs
+    inputs: new Dictionary<string, object>
     {
-        AdditionalProperties = new Dictionary<string, object>
-        {
-            ["question"] = question,
-        },
+        ["question"] = question,
     });
 
 // Create child run
@@ -55,12 +52,9 @@ await api.Run.CreateRunAsync(
     runType: CreateRunRequestRunType.Llm,
     id: childRunId,
     parentRunId: parentRunId,
-    inputs: new CreateRunRequestInputs
+    inputs: new Dictionary<string, object>
     {
-        AdditionalProperties = new Dictionary<string, object>
-        {
-            ["messages"] = messages,
-        },
+        ["messages"] = messages,
     });
 
 // Generate a completion
@@ -71,22 +65,16 @@ var chatCompletion = await openAiApi.Chat.CreateChatCompletionAsync(
 // End runs
 await api.Run.UpdateRunAsync(
     runId: childRunId,
-    outputs: new UpdateRunRequestOutputs
+    outputs: new Dictionary<string, object>
     {
-        AdditionalProperties = new Dictionary<string, object>
-        {
-            ["chatCompletion"] = chatCompletion,
-        },
+        ["chatCompletion"] = chatCompletion,
     },
     endTime: DateTime.UtcNow.ToString("O"));
 await api.Run.UpdateRunAsync(
     runId: parentRunId,
-    outputs: new UpdateRunRequestOutputs
+    outputs: new Dictionary<string, object>
     {
-        AdditionalProperties = new Dictionary<string, object>
-        {
-            ["answer"] = chatCompletion.Choices[0].Message.Content ?? string.Empty,
-        },
+        ["answer"] = chatCompletion.Choices[0].Message.Content ?? string.Empty,
     },
     endTime: DateTime.UtcNow.ToString("O"));
 ```
