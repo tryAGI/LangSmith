@@ -87,6 +87,12 @@ namespace LangSmith
         public bool? UsePythonPlaygroundService { get; set; } = false;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_sidenav")]
+        public bool? ShowUpdatedSidenav { get; set; } = false;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
