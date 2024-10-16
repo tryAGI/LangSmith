@@ -7,10 +7,12 @@ namespace LangSmith
     {
         partial void PrepareCreateFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref bool? error,
             global::LangSmith.FeedbackCreateSchema request);
         partial void PrepareCreateFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool? error,
             global::LangSmith.FeedbackCreateSchema request);
         partial void ProcessCreateFeedbackResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,11 +27,13 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             global::LangSmith.FeedbackCreateSchema request,
+            bool? error = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,11 +42,15 @@ namespace LangSmith
                 client: _httpClient);
             PrepareCreateFeedbackArguments(
                 httpClient: _httpClient,
+                error: ref error,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("error", error?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -76,6 +84,7 @@ namespace LangSmith
             PrepareCreateFeedbackRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                error: error,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -119,6 +128,7 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="key"></param>
@@ -137,6 +147,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             string key,
+            bool? error = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? modifiedAt = default,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
@@ -171,6 +182,7 @@ namespace LangSmith
             };
 
             return await CreateFeedbackAsync(
+                error: error,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

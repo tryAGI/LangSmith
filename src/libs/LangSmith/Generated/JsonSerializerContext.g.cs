@@ -95,6 +95,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.TenantShareDatasetTokenTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.TenantShareRunTokenTypeJsonConverter),
             typeof(global::LangSmith.JsonConverters.TenantShareRunTokenTypeNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter),
+            typeof(global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeJsonConverter),
             typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.UsageLimitTypeJsonConverter),
@@ -121,6 +123,7 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory3),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory5),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory4),
+            typeof(global::LangSmith.JsonConverters.EntitiesItemJsonConverter),
             typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2),
         })]
 

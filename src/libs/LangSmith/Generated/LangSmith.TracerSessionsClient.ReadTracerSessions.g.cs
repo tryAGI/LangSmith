@@ -21,6 +21,7 @@ namespace LangSmith
             ref int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref bool? facets,
+            ref string? filter,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,6 +40,7 @@ namespace LangSmith
             int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             bool? facets,
+            string? filter,
             string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -75,6 +77,7 @@ namespace LangSmith
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="filter"></param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -93,6 +96,7 @@ namespace LangSmith
             int? limit = 100,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? facets = false,
+            string? filter = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -114,6 +118,7 @@ namespace LangSmith
                 limit: ref limit,
                 tagValueId: tagValueId,
                 facets: ref facets,
+                filter: ref filter,
                 accept: ref accept);
 
             var __pathBuilder = new PathBuilder(
@@ -134,6 +139,7 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("facets", facets?.ToString()) 
+                .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -182,6 +188,7 @@ namespace LangSmith
                 limit: limit,
                 tagValueId: tagValueId,
                 facets: facets,
+                filter: filter,
                 accept: accept);
 
             using var response = await _httpClient.SendAsync(

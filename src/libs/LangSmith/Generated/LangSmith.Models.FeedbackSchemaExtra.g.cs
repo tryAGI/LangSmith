@@ -6,14 +6,8 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class TenantShareTokensResponse
+    public sealed partial class FeedbackSchemaExtra
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("entities")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.EntitiesItem> Entities { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,14 +46,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.TenantShareTokensResponse? FromJson(
+        public static global::LangSmith.FeedbackSchemaExtra? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.TenantShareTokensResponse),
-                jsonSerializerContext) as global::LangSmith.TenantShareTokensResponse;
+                typeof(global::LangSmith.FeedbackSchemaExtra),
+                jsonSerializerContext) as global::LangSmith.FeedbackSchemaExtra;
         }
 
         /// <summary>
@@ -69,11 +63,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.TenantShareTokensResponse? FromJson(
+        public static global::LangSmith.FeedbackSchemaExtra? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TenantShareTokensResponse>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.FeedbackSchemaExtra>(
                 json,
                 jsonSerializerOptions);
         }
