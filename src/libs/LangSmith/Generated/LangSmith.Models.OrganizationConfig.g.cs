@@ -93,6 +93,12 @@ namespace LangSmith
         public bool? ShowUpdatedSidenav { get; set; } = false;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
+        public bool? KvDatasetMessageSupport { get; set; } = false;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]

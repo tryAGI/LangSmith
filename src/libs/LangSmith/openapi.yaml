@@ -218,6 +218,12 @@ paths:
             title: Facets
             type: boolean
             default: false
+        - name: filter
+          in: query
+          schema:
+            title: Filter
+            type: string
+            nullable: true
         - name: accept
           in: header
           schema:
@@ -4565,6 +4571,13 @@ paths:
       summary: Create Feedback
       description: Create a new feedback.
       operationId: create_feedback_api_v1_feedback_post
+      parameters:
+        - name: error
+          in: query
+          schema:
+            title: Error
+            type: boolean
+            nullable: true
       requestBody:
         content:
           application/json:
@@ -5689,6 +5702,31 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/PublicComparativeExperiment'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/public/schemas/{version}/message.json':
+    get:
+      tags:
+        - public
+      summary: Get Message Json Schema
+      operationId: get_message_json_schema_api_v1_public_schemas__version__message_json_get
+      parameters:
+        - name: version
+          in: path
+          required: true
+          schema:
+            title: Version
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
         '422':
           description: Validation Error
           content:
@@ -12956,6 +12994,10 @@ components:
           nullable: true
         feedback_config:
           $ref: '#/components/schemas/FeedbackConfig'
+        extra:
+          title: Extra
+          type: object
+          nullable: true
       description: Schema used for creating feedback without run id or session id.
     FeedbackCreateSchema:
       title: FeedbackCreateSchema
@@ -13215,6 +13257,10 @@ components:
           format: uuid
         feedback_source:
           $ref: '#/components/schemas/FeedbackSource'
+        extra:
+          title: Extra
+          type: object
+          nullable: true
       description: Schema for getting feedback.
     FeedbackSource:
       title: FeedbackSource
@@ -14467,6 +14513,10 @@ components:
           default: false
         show_updated_sidenav:
           title: Show Updated Sidenav
+          type: boolean
+          default: false
+        kv_dataset_message_support:
+          title: Kv Dataset Message Support
           type: boolean
           default: false
         flags:

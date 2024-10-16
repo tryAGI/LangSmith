@@ -30,6 +30,7 @@ namespace LangSmith
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="filter"></param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -48,6 +49,7 @@ namespace LangSmith
             int? limit = 100,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? facets = false,
+            string? filter = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

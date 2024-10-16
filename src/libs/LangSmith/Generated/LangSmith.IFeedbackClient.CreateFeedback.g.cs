@@ -8,17 +8,20 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             global::LangSmith.FeedbackCreateSchema request,
+            bool? error = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="key"></param>
@@ -37,6 +40,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             string key,
+            bool? error = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? modifiedAt = default,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,

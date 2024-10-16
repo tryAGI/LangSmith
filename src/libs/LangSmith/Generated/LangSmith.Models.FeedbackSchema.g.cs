@@ -94,6 +94,12 @@ namespace LangSmith
         public global::LangSmith.FeedbackSource3? FeedbackSource { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
+        public object? Extra { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
