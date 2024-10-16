@@ -10877,28 +10877,27 @@ components:
     BulkExportDestinationS3Config:
       title: BulkExportDestinationS3Config
       required:
-        - bucket_name
-        - prefix
+        - endpoint_url
       type: object
       properties:
-        bucket_name:
-          title: Bucket Name
-          maxLength: 63
-          minLength: 3
+        endpoint_url:
+          title: Endpoint Url
+          maxLength: 2048
           type: string
         prefix:
           title: Prefix
           maxLength: 2048
           type: string
+          default: ''
+        bucket_name:
+          title: Bucket Name
+          maxLength: 63
+          minLength: 3
+          type: string
           nullable: true
         region:
           title: Region
           minLength: 1
-          type: string
-          nullable: true
-        endpoint_url:
-          title: Endpoint Url
-          maxLength: 2048
           type: string
           nullable: true
     BulkExportDestinationS3Credentials:
@@ -14464,6 +14463,10 @@ components:
           default: false
         use_python_playground_service:
           title: Use Python Playground Service
+          type: boolean
+          default: false
+        show_updated_sidenav:
+          title: Show Updated Sidenav
           type: boolean
           default: false
         flags:

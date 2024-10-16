@@ -11,28 +11,27 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bucket_name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string BucketName { get; set; }
+        public required string EndpointUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Prefix { get; set; }
+        public string? Prefix { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bucket_name")]
+        public string? BucketName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
         public string? Region { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_url")]
-        public string? EndpointUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
