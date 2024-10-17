@@ -27,10 +27,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        FailedRetryable,
-        /// <summary>
-        /// 
-        /// </summary>
         TimedOut,
         /// <summary>
         /// 
@@ -54,7 +50,6 @@ namespace LangSmith
                 BulkExportRunStatus.Completed => "Completed",
                 BulkExportRunStatus.Created => "Created",
                 BulkExportRunStatus.Failed => "Failed",
-                BulkExportRunStatus.FailedRetryable => "FailedRetryable",
                 BulkExportRunStatus.TimedOut => "TimedOut",
                 BulkExportRunStatus.Running => "Running",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -71,7 +66,6 @@ namespace LangSmith
                 "Completed" => BulkExportRunStatus.Completed,
                 "Created" => BulkExportRunStatus.Created,
                 "Failed" => BulkExportRunStatus.Failed,
-                "FailedRetryable" => BulkExportRunStatus.FailedRetryable,
                 "TimedOut" => BulkExportRunStatus.TimedOut,
                 "Running" => BulkExportRunStatus.Running,
                 _ => null,
