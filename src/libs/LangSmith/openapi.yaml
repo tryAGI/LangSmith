@@ -11036,7 +11036,6 @@ components:
         - Completed
         - Created
         - Failed
-        - FailedRetryable
         - TimedOut
         - Running
       type: string
@@ -11047,7 +11046,6 @@ components:
         - Completed
         - Created
         - Failed
-        - FailedRetryable
         - TimedOut
         - Running
       type: string
