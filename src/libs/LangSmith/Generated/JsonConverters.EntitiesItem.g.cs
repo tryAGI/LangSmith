@@ -16,11 +16,10 @@ namespace LangSmith.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::LangSmith.TenantShareTokensResponseEntitieDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareTokensResponseEntitieDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareTokensResponseEntitieDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.TenantShareTokensResponseEntitieDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LangSmith.TenantShareRunToken? tenantShareRunToken = default;
             if (discriminator?.Type == global::LangSmith.TenantShareTokensResponseEntitieDiscriminatorType.Run)
@@ -38,6 +37,7 @@ namespace LangSmith.JsonConverters
             }
 
             var result = new global::LangSmith.EntitiesItem(
+                discriminator?.Type,
                 tenantShareRunToken,
                 tenantShareDatasetToken
                 );

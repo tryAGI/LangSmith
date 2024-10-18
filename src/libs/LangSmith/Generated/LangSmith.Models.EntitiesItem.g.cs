@@ -13,6 +13,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public global::LangSmith.TenantShareTokensResponseEntitieDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LangSmith.TenantShareRunToken? TenantShareRunToken { get; init; }
 #else
@@ -84,10 +89,13 @@ namespace LangSmith
         /// 
         /// </summary>
         public EntitiesItem(
+            global::LangSmith.TenantShareTokensResponseEntitieDiscriminatorType? type,
             global::LangSmith.TenantShareRunToken? tenantShareRunToken,
             global::LangSmith.TenantShareDatasetToken? tenantShareDatasetToken
             )
         {
+            Type = type;
+
             TenantShareRunToken = tenantShareRunToken;
             TenantShareDatasetToken = tenantShareDatasetToken;
         }
