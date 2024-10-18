@@ -8986,6 +8986,16 @@ paths:
           content:
             application/json:
               schema: { }
+  /api/v1/health:
+    get:
+      summary: Health
+      operationId: health_api_v1_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
   /api/v1/repos:
     get:
       tags:
@@ -11010,6 +11020,30 @@ components:
           type: string
           format: date-time
           nullable: true
+    BulkExportRunProgress:
+      title: BulkExportRunProgress
+      required:
+        - rows_written
+        - exported_files
+        - export_path
+        - latest_cursor
+      type: object
+      properties:
+        rows_written:
+          title: Rows Written
+          type: integer
+        exported_files:
+          title: Exported Files
+          type: array
+          items:
+            type: string
+        export_path:
+          title: Export Path
+          type: string
+        latest_cursor:
+          title: Latest Cursor
+          type: string
+          nullable: true
     BulkExportRunS3Metadata:
       title: BulkExportRunS3Metadata
       required:
@@ -11029,6 +11063,8 @@ components:
           title: End Time
           type: string
           format: date-time
+        result:
+          $ref: '#/components/schemas/BulkExportRunProgress'
     BulkExportRunStatus:
       title: BulkExportRunStatus
       enum:
@@ -12051,6 +12087,12 @@ components:
           type: boolean
           default: false
           nullable: true
+        inputs_filters:
+          title: Inputs Filters
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetInputFilter'
+          nullable: true
         data_type:
           $ref: '#/components/schemas/DataType'
         id:
@@ -12106,6 +12148,12 @@ components:
           title: Externally Managed
           type: boolean
           default: false
+          nullable: true
+        inputs_filters:
+          title: Inputs Filters
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetInputFilter'
           nullable: true
         id:
           title: Id
@@ -12177,6 +12225,26 @@ components:
           default: latest
           nullable: true
       description: Dataset schema for serving.
+    DatasetInputFilter:
+      title: DatasetInputFilter
+      required:
+        - path
+        - filter_type
+      type: object
+      properties:
+        path:
+          title: Path
+          type: array
+          items:
+            type: string
+        filter_type:
+          $ref: '#/components/schemas/DatasetInputFilterType'
+    DatasetInputFilterType:
+      title: DatasetInputFilterType
+      enum:
+        - remove_system_messages
+      type: string
+      description: Enum for dataset data types.
     DatasetPublicSchema:
       title: DatasetPublicSchema
       required:
@@ -12208,6 +12276,12 @@ components:
           title: Externally Managed
           type: boolean
           default: false
+          nullable: true
+        inputs_filters:
+          title: Inputs Filters
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetInputFilter'
           nullable: true
         data_type:
           $ref: '#/components/schemas/DataType'
@@ -12250,6 +12324,12 @@ components:
           title: Externally Managed
           type: boolean
           default: false
+          nullable: true
+        inputs_filters:
+          title: Inputs Filters
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetInputFilter'
           nullable: true
         data_type:
           $ref: '#/components/schemas/DataType'
@@ -14511,6 +14591,10 @@ components:
           default: false
         show_updated_sidenav:
           title: Show Updated Sidenav
+          type: boolean
+          default: false
+        show_updated_resource_tags:
+          title: Show Updated Resource Tags
           type: boolean
           default: false
         kv_dataset_message_support:
