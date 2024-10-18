@@ -46,6 +46,12 @@ namespace LangSmith
         public bool? ExternallyManaged { get; set; } = false;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputs_filters")]
+        public global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? InputsFilters { get; set; }
+
+        /// <summary>
         /// Enum for dataset data types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]

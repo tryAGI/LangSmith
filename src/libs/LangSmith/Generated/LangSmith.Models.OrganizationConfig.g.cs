@@ -95,6 +95,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_resource_tags")]
+        public bool? ShowUpdatedResourceTags { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
         public bool? KvDatasetMessageSupport { get; set; } = false;
 

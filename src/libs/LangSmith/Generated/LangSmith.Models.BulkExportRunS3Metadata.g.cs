@@ -30,6 +30,12 @@ namespace LangSmith
         public required global::System.DateTime EndTime { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
+        public global::LangSmith.BulkExportRunProgress? Result { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

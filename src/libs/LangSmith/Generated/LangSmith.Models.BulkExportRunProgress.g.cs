@@ -4,71 +4,37 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Create class for Dataset.
+    /// 
     /// </summary>
-    public sealed partial class DatasetCreate
+    public sealed partial class BulkExportRunProgress
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("rows_written")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required int RowsWritten { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("exported_files")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> ExportedFiles { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime? CreatedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("export_path")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ExportPath { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
-        public object? InputsSchemaDefinition { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
-        public object? OutputsSchemaDefinition { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("externally_managed")]
-        public bool? ExternallyManaged { get; set; } = false;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inputs_filters")]
-        public global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? InputsFilters { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid? Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        public object? Extra { get; set; }
-
-        /// <summary>
-        /// Enum for dataset data types.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter))]
-        public global::LangSmith.DataType? DataType { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("latest_cursor")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string? LatestCursor { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -107,14 +73,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.DatasetCreate? FromJson(
+        public static global::LangSmith.BulkExportRunProgress? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.DatasetCreate),
-                jsonSerializerContext) as global::LangSmith.DatasetCreate;
+                typeof(global::LangSmith.BulkExportRunProgress),
+                jsonSerializerContext) as global::LangSmith.BulkExportRunProgress;
         }
 
         /// <summary>
@@ -124,11 +90,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.DatasetCreate? FromJson(
+        public static global::LangSmith.BulkExportRunProgress? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.DatasetCreate>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.BulkExportRunProgress>(
                 json,
                 jsonSerializerOptions);
         }

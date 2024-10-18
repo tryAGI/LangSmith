@@ -55,6 +55,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.MissingMissing1NullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter),
             typeof(global::LangSmith.JsonConverters.PaymentPlanTierNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.DatasetInputFilterTypeJsonConverter),
+            typeof(global::LangSmith.JsonConverters.DatasetInputFilterTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ExampleListOrderJsonConverter),
             typeof(global::LangSmith.JsonConverters.ExampleListOrderNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ExampleSelectJsonConverter),
