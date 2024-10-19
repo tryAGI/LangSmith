@@ -20,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.BulkExportRunS3Metadata Metadata { get; set; }
+        public required global::LangSmith.BulkExportRunMetadata Metadata { get; set; }
 
         /// <summary>
         /// 
