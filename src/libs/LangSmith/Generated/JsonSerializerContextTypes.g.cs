@@ -230,7 +230,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BulkExportRunS3Metadata? Type53 { get; set; }
+        public global::LangSmith.BulkExportRunMetadata? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>

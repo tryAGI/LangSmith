@@ -10992,7 +10992,7 @@ components:
           type: string
           format: uuid
         metadata:
-          $ref: '#/components/schemas/BulkExportRunS3Metadata'
+          $ref: '#/components/schemas/BulkExportRunMetadata'
         id:
           title: Id
           type: string
@@ -11020,6 +11020,27 @@ components:
           type: string
           format: date-time
           nullable: true
+    BulkExportRunMetadata:
+      title: BulkExportRunMetadata
+      required:
+        - prefix
+        - start_time
+        - end_time
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+        result:
+          $ref: '#/components/schemas/BulkExportRunProgress'
     BulkExportRunProgress:
       title: BulkExportRunProgress
       required:
@@ -11044,27 +11065,6 @@ components:
           title: Latest Cursor
           type: string
           nullable: true
-    BulkExportRunS3Metadata:
-      title: BulkExportRunS3Metadata
-      required:
-        - prefix
-        - start_time
-        - end_time
-      type: object
-      properties:
-        prefix:
-          title: Prefix
-          type: string
-        start_time:
-          title: Start Time
-          type: string
-          format: date-time
-        end_time:
-          title: End Time
-          type: string
-          format: date-time
-        result:
-          $ref: '#/components/schemas/BulkExportRunProgress'
     BulkExportRunStatus:
       title: BulkExportRunStatus
       enum:
