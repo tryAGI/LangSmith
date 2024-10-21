@@ -6,31 +6,8 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BulkExportDestinationS3Config
+    public sealed partial class DeleteTagApiV1ReposOwnerRepoTagsTagNameDeleteResponse
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_url")]
-        public string? EndpointUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public string? Prefix { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bucket_name")]
-        public string? BucketName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("region")]
-        public string? Region { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,14 +46,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.BulkExportDestinationS3Config? FromJson(
+        public static global::LangSmith.DeleteTagApiV1ReposOwnerRepoTagsTagNameDeleteResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.BulkExportDestinationS3Config),
-                jsonSerializerContext) as global::LangSmith.BulkExportDestinationS3Config;
+                typeof(global::LangSmith.DeleteTagApiV1ReposOwnerRepoTagsTagNameDeleteResponse),
+                jsonSerializerContext) as global::LangSmith.DeleteTagApiV1ReposOwnerRepoTagsTagNameDeleteResponse;
         }
 
         /// <summary>
@@ -86,11 +63,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.BulkExportDestinationS3Config? FromJson(
+        public static global::LangSmith.DeleteTagApiV1ReposOwnerRepoTagsTagNameDeleteResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.BulkExportDestinationS3Config>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.DeleteTagApiV1ReposOwnerRepoTagsTagNameDeleteResponse>(
                 json,
                 jsonSerializerOptions);
         }
