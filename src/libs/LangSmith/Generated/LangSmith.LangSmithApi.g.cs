@@ -256,6 +256,14 @@ namespace LangSmith
         };
 
         /// <summary>
+        /// 
+        /// </summary>
+        public TagsClient Tags => new TagsClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Creates a new instance of the LangSmithApi.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

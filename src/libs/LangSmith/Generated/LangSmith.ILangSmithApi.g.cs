@@ -160,5 +160,10 @@ namespace LangSmith
         /// </summary>
         public CommentsClient Comments { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagsClient Tags { get; }
+
     }
 }

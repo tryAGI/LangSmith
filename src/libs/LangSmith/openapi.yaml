@@ -10035,6 +10035,185 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/repos/{owner}/{repo}/tags':
+    get:
+      tags:
+        - tags
+      summary: Get Tags
+      operationId: get_tags_api_v1_repos__owner___repo__tags_get
+      parameters:
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Tags Api V1 Repos  Owner   Repo  Tags Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/RepoTag'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - tags
+      summary: Create Tag
+      operationId: create_tag_api_v1_repos__owner___repo__tags_post
+      parameters:
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepoTagRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepoTag'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/repos/{owner}/{repo}/tags/{tag_name}':
+    get:
+      tags:
+        - tags
+      summary: Get Tag
+      operationId: get_tag_api_v1_repos__owner___repo__tags__tag_name__get
+      parameters:
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+        - name: tag_name
+          in: path
+          required: true
+          schema:
+            title: Tag Name
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepoTag'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - tags
+      summary: Update Tag
+      operationId: update_tag_api_v1_repos__owner___repo__tags__tag_name__patch
+      parameters:
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+        - name: tag_name
+          in: path
+          required: true
+          schema:
+            title: Tag Name
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepoUpdateTagRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepoTag'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - tags
+      summary: Delete Tag
+      operationId: delete_tag_api_v1_repos__owner___repo__tags__tag_name__delete
+      parameters:
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+        - name: tag_name
+          in: path
+          required: true
+          schema:
+            title: Tag Name
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
 components:
   schemas:
     APIFeedbackSource:
@@ -10924,14 +11103,13 @@ components:
           $ref: '#/components/schemas/BulkExportDestinationS3Credentials'
     BulkExportDestinationS3Config:
       title: BulkExportDestinationS3Config
-      required:
-        - endpoint_url
       type: object
       properties:
         endpoint_url:
           title: Endpoint Url
           maxLength: 2048
           type: string
+          nullable: true
         prefix:
           title: Prefix
           maxLength: 2048
@@ -15318,6 +15496,67 @@ components:
           type: string
           format: uuid
       description: Response model for example runs
+    RepoTag:
+      title: RepoTag
+      required:
+        - id
+        - repo_id
+        - commit_id
+        - tag_name
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        repo_id:
+          title: Repo Id
+          type: string
+          format: uuid
+        commit_id:
+          title: Commit Id
+          type: string
+          format: uuid
+        tag_name:
+          title: Tag Name
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+      description: Fields for a prompt tag
+    RepoTagRequest:
+      title: RepoTagRequest
+      required:
+        - tag_name
+        - commit_id
+      type: object
+      properties:
+        tag_name:
+          title: Tag Name
+          type: string
+        commit_id:
+          title: Commit Id
+          type: string
+          format: uuid
+      description: Fields to create a prompt tag
+    RepoUpdateTagRequest:
+      title: RepoUpdateTagRequest
+      required:
+        - commit_id
+      type: object
+      properties:
+        commit_id:
+          title: Commit Id
+          type: string
+          format: uuid
+      description: Fields to update a prompt tag
     RepoWithLookups:
       title: RepoWithLookups
       required:
