@@ -4,33 +4,51 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    /// Fields for a prompt tag
     /// </summary>
-    public sealed partial class BulkExportDestinationS3Config
+    public sealed partial class RepoTag
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_url")]
-        public string? EndpointUrl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public string? Prefix { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("repo_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid RepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bucket_name")]
-        public string? BucketName { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid CommitId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("region")]
-        public string? Region { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string TagName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,14 +87,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.BulkExportDestinationS3Config? FromJson(
+        public static global::LangSmith.RepoTag? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.BulkExportDestinationS3Config),
-                jsonSerializerContext) as global::LangSmith.BulkExportDestinationS3Config;
+                typeof(global::LangSmith.RepoTag),
+                jsonSerializerContext) as global::LangSmith.RepoTag;
         }
 
         /// <summary>
@@ -86,11 +104,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.BulkExportDestinationS3Config? FromJson(
+        public static global::LangSmith.RepoTag? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.BulkExportDestinationS3Config>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.RepoTag>(
                 json,
                 jsonSerializerOptions);
         }
