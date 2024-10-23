@@ -9,12 +9,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
+        /// <param name="owner"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> UpdateTagAsync(
             string repo,
             string tagName,
+            string owner,
             global::LangSmith.RepoUpdateTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -23,12 +25,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
+        /// <param name="owner"></param>
         /// <param name="commitId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> UpdateTagAsync(
             string repo,
             string tagName,
+            string owner,
             global::System.Guid commitId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

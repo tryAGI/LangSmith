@@ -7,11 +7,13 @@ namespace LangSmith
     {
         partial void PrepareGetTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string repo);
+            ref string repo,
+            ref string owner);
         partial void PrepareGetTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string repo);
+            string repo,
+            string owner);
         partial void ProcessGetTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -25,17 +27,20 @@ namespace LangSmith
         /// Get Tags
         /// </summary>
         /// <param name="repo"></param>
+        /// <param name="owner"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RepoTag>> GetTagsAsync(
             string repo,
+            string owner,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetTagsArguments(
                 httpClient: HttpClient,
-                repo: ref repo);
+                repo: ref repo,
+                owner: ref owner);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/repos/{owner}/{repo}/tags",
@@ -67,7 +72,8 @@ namespace LangSmith
             PrepareGetTagsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                repo: repo);
+                repo: repo,
+                owner: owner);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

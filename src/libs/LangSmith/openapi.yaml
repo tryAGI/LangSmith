@@ -10048,6 +10048,11 @@ paths:
           schema:
             title: Repo
             type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -10079,6 +10084,11 @@ paths:
           required: true
           schema:
             title: Repo
+            type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
             type: string
       requestBody:
         content:
@@ -10122,6 +10132,11 @@ paths:
           schema:
             title: Tag Name
             type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -10156,6 +10171,11 @@ paths:
           required: true
           schema:
             title: Tag Name
+            type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
             type: string
       requestBody:
         content:
@@ -10197,6 +10217,11 @@ paths:
           required: true
           schema:
             title: Tag Name
+            type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
             type: string
       responses:
         '200':

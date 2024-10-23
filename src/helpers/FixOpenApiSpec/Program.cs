@@ -19,6 +19,26 @@ if (OpenApi31Support.IsOpenApi31(yamlOrJson))
 
 var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
 
+var ownerParameter = new OpenApiParameter
+{
+    Name = "owner",
+    In = ParameterLocation.Path,
+    Required = true,
+    Schema = new OpenApiSchema
+    {
+        Type = "string"
+    },
+};
+
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+}
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags/{tag_name}"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+}
+
 openApiDocument.Servers.Add(new OpenApiServer { Url = "https://api.smith.langchain.com" });
 
 openApiDocument.SecurityRequirements = new List<OpenApiSecurityRequirement>

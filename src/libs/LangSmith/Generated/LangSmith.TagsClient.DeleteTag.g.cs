@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareDeleteTagArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string repo,
-            ref string tagName);
+            ref string tagName,
+            ref string owner);
         partial void PrepareDeleteTagRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string repo,
-            string tagName);
+            string tagName,
+            string owner);
         partial void ProcessDeleteTagResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,11 +30,13 @@ namespace LangSmith
         /// </summary>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
+        /// <param name="owner"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteTagAsync(
             string repo,
             string tagName,
+            string owner,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -40,7 +44,8 @@ namespace LangSmith
             PrepareDeleteTagArguments(
                 httpClient: HttpClient,
                 repo: ref repo,
-                tagName: ref tagName);
+                tagName: ref tagName,
+                owner: ref owner);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/repos/{owner}/{repo}/tags/{tagName}",
@@ -73,7 +78,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 repo: repo,
-                tagName: tagName);
+                tagName: tagName,
+                owner: owner);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
