@@ -32,6 +32,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("commit_hash")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CommitHash { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TagName { get; set; }
