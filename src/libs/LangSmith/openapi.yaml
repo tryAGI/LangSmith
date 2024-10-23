@@ -15502,6 +15502,7 @@ components:
         - id
         - repo_id
         - commit_id
+        - commit_hash
         - tag_name
         - created_at
         - updated_at
@@ -15519,6 +15520,9 @@ components:
           title: Commit Id
           type: string
           format: uuid
+        commit_hash:
+          title: Commit Hash
+          type: string
         tag_name:
           title: Tag Name
           type: string
