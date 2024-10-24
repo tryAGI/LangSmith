@@ -76,11 +76,11 @@ namespace LangSmith
             string? nameContains = default,
             string? datasetVersion = default,
             global::LangSmith.SessionSortableColumns? sortBy = default,
-            bool? sortByDesc = true,
+            bool? sortByDesc = default,
             string? sortByFeedbackKey = default,
-            int? offset = 0,
-            int? limit = 100,
-            bool? facets = false,
+            int? offset = default,
+            int? limit = default,
+            bool? facets = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

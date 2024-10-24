@@ -142,7 +142,7 @@ namespace LangSmith
             object? inputs = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
             global::System.Guid? id = default,
-            bool? useSourceRunIo = false,
+            bool? useSourceRunIo = default,
             global::System.DateTime? createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

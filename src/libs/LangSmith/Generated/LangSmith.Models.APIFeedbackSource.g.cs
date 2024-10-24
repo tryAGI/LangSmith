@@ -12,7 +12,7 @@ namespace LangSmith
         /// Default Value: api
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "api";
+        public string? Type { get; set; }
 
         /// <summary>
         /// 

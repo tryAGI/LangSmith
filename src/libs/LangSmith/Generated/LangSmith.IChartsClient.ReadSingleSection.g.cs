@@ -35,7 +35,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
             global::System.DateTime startTime,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default);

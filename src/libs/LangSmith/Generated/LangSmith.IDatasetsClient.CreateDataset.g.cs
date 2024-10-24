@@ -41,7 +41,7 @@ namespace LangSmith
             global::System.DateTime? createdAt = default,
             object? inputsSchemaDefinition = default,
             object? outputsSchemaDefinition = default,
-            bool? externallyManaged = false,
+            bool? externallyManaged = default,
             global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? inputsFilters = default,
             global::System.Guid? id = default,
             object? extra = default,

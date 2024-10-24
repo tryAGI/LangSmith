@@ -27,7 +27,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
             global::LangSmith.TraceTier defaultTraceTier,
             global::System.Guid? tenantId = default,
-            bool? applyToAllProjects = false,
+            bool? applyToAllProjects = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

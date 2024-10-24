@@ -38,7 +38,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> ReadTracerSessionAsync(
             global::System.Guid sessionId,
-            bool? includeStats = false,
+            bool? includeStats = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

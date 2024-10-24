@@ -12,7 +12,7 @@ namespace LangSmith
         /// Default Value: UTC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
-        public string? Timezone { get; set; } = "UTC";
+        public string? Timezone { get; set; }
 
         /// <summary>
         /// 
