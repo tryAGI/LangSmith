@@ -127,7 +127,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackConfigSchema> CreateFeedbackConfigEndpointAsync(
             string feedbackKey,
             global::LangSmith.FeedbackConfig feedbackConfig,
-            bool? isLowerScoreBetter = false,
+            bool? isLowerScoreBetter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.CreateFeedbackConfigSchema

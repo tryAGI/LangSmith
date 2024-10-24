@@ -70,7 +70,7 @@ namespace LangSmith
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repetitions")]
-        public int? Repetitions { get; set; } = 1;
+        public int? Repetitions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

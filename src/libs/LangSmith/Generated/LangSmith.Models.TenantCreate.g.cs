@@ -37,7 +37,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
-        public bool? IsPersonal { get; set; } = false;
+        public bool? IsPersonal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

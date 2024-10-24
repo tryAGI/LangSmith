@@ -139,8 +139,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.SearchDatasetResponse> SearchAsync(
             global::System.Guid datasetId,
             object inputs,
-            int? limit = 5,
-            bool? debug = false,
+            int? limit = default,
+            bool? debug = default,
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -26,7 +26,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_lower_score_better")]
-        public bool? IsLowerScoreBetter { get; set; } = false;
+        public bool? IsLowerScoreBetter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

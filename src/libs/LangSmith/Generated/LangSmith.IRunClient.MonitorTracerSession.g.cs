@@ -33,7 +33,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.MonitorResponse> MonitorTracerSessionAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MonitorGroupSpec> groups,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::LangSmith.TimedeltaInput? interval = default,
             global::LangSmith.TimedeltaInput? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default);

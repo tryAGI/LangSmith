@@ -46,7 +46,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; } = "base";
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_source_run_io")]
-        public bool? UseSourceRunIo { get; set; } = false;
+        public bool? UseSourceRunIo { get; set; }
 
         /// <summary>
         /// 

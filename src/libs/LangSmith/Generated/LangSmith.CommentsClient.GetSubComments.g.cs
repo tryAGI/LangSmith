@@ -47,8 +47,8 @@ namespace LangSmith
             string owner,
             string repo,
             global::System.Guid parentCommentId,
-            int? limit = 20,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

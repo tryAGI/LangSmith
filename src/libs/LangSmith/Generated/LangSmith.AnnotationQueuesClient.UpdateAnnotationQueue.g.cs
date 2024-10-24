@@ -139,8 +139,8 @@ namespace LangSmith
             string? name = default,
             string? description = default,
             global::System.Guid? defaultDataset = default,
-            int? numReviewersPerItem = 1,
-            bool? enableReservations = true,
+            int? numReviewersPerItem = default,
+            bool? enableReservations = default,
             int? reservationMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

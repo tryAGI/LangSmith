@@ -48,8 +48,8 @@ namespace LangSmith
             global::System.Guid datasetId,
             string? search = default,
             global::System.Guid? example = default,
-            int? limit = 100,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

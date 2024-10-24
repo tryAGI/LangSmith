@@ -141,7 +141,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.SingleCustomChartResponse> ReadSingleChartAsync(
             global::System.Guid chartId,
             global::System.DateTime startTime,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
             int? afterIndex = default,

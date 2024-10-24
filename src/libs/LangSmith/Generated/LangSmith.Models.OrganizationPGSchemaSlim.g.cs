@@ -64,7 +64,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
-        public bool? SsoOnly { get; set; } = false;
+        public bool? SsoOnly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

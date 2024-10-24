@@ -43,7 +43,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("externally_managed")]
-        public bool? ExternallyManaged { get; set; } = false;
+        public bool? ExternallyManaged { get; set; }
 
         /// <summary>
         /// 

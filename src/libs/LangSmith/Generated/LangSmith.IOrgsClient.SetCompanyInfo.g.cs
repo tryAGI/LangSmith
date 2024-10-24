@@ -33,7 +33,7 @@ namespace LangSmith
             global::LangSmith.StripeBusinessBillingInfo? companyInfo = default,
             global::LangSmith.StripeTaxId? taxId = default,
             string? invoiceEmail = default,
-            bool? isBusiness = false,
+            bool? isBusiness = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

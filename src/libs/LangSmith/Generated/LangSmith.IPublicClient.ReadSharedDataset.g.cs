@@ -25,10 +25,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetPublicSchema> ReadSharedDatasetAsync(
             global::System.Guid shareToken,
-            int? offset = 0,
-            int? limit = 100,
+            int? offset = default,
+            int? limit = default,
             global::LangSmith.SortByDatasetColumn? sortBy = default,
-            bool? sortByDesc = true,
+            bool? sortByDesc = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

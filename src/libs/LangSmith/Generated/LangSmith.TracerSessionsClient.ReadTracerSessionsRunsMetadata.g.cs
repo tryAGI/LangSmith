@@ -48,8 +48,8 @@ namespace LangSmith
             global::System.Guid sessionId,
             global::System.Collections.Generic.IList<string>? metadataKeys = default,
             global::System.DateTime? startTime = default,
-            int? k = 10,
-            bool? rootRunsOnly = false,
+            int? k = default,
+            bool? rootRunsOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

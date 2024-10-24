@@ -12,25 +12,25 @@ namespace LangSmith
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_identities")]
-        public int? MaxIdentities { get; set; } = 5;
+        public int? MaxIdentities { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_workspaces")]
-        public int? MaxWorkspaces { get; set; } = 1;
+        public int? MaxWorkspaces { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_rbac")]
-        public bool? CanUseRbac { get; set; } = false;
+        public bool? CanUseRbac { get; set; }
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_add_seats")]
-        public bool? CanAddSeats { get; set; } = true;
+        public bool? CanAddSeats { get; set; }
 
         /// <summary>
         /// 
@@ -54,55 +54,55 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_serve_datasets")]
-        public bool? CanServeDatasets { get; set; } = false;
+        public bool? CanServeDatasets { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_langgraph_cloud")]
-        public bool? CanUseLanggraphCloud { get; set; } = false;
+        public bool? CanUseLanggraphCloud { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_langgraph_cloud_deployments")]
-        public int? MaxLanggraphCloudDeployments { get; set; } = 1;
+        public int? MaxLanggraphCloudDeployments { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_saml_sso")]
-        public bool? CanUseSamlSso { get; set; } = false;
+        public bool? CanUseSamlSso { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_bulk_export")]
-        public bool? CanUseBulkExport { get; set; } = false;
+        public bool? CanUseBulkExport { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_python_playground_service")]
-        public bool? UsePythonPlaygroundService { get; set; } = false;
+        public bool? UsePythonPlaygroundService { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_sidenav")]
-        public bool? ShowUpdatedSidenav { get; set; } = false;
+        public bool? ShowUpdatedSidenav { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_resource_tags")]
-        public bool? ShowUpdatedResourceTags { get; set; } = false;
+        public bool? ShowUpdatedResourceTags { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
-        public bool? KvDatasetMessageSupport { get; set; } = false;
+        public bool? KvDatasetMessageSupport { get; set; }
 
         /// <summary>
         /// 

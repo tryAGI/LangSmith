@@ -16,7 +16,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetShareSchema> ShareDatasetAsync(
             global::System.Guid datasetId,
-            bool? shareProjects = false,
+            bool? shareProjects = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

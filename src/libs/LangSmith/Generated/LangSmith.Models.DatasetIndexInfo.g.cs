@@ -19,7 +19,7 @@ namespace LangSmith
         /// Default Value: latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
-        public string? Tag { get; set; } = "latest";
+        public string? Tag { get; set; }
 
         /// <summary>
         /// 

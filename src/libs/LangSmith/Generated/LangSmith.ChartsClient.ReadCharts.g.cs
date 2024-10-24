@@ -133,7 +133,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsResponse> ReadChartsAsync(
             global::System.DateTime startTime,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
             int? afterIndex = default,

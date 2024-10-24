@@ -26,9 +26,9 @@ namespace LangSmith
             string owner,
             string repo,
             string commit,
-            bool? getExamples = false,
-            bool? isView = false,
-            bool? includeModel = false,
+            bool? getExamples = default,
+            bool? isView = default,
+            bool? includeModel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

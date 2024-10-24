@@ -21,8 +21,8 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.ListCommitsResponse> ListCommitsAsync(
             string owner,
             string repo,
-            int? limit = 20,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

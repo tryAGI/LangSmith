@@ -73,7 +73,7 @@ namespace LangSmith
             bool? isRoot = default,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             string? cursor = default,
-            int? limit = 100,
+            int? limit = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
             global::LangSmith.RunDateOrder? order = default,
             global::System.Threading.CancellationToken cancellationToken = default);

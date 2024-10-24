@@ -30,8 +30,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListTagsResponse> ListRepoTagsAsync(
-            int? limit = 20,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             string? tenantHandle = default,
             global::System.Guid? tenantId = default,
             string? query = default,
@@ -41,7 +41,7 @@ namespace LangSmith
             global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = false,
+            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

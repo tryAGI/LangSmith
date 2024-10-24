@@ -63,7 +63,7 @@ namespace LangSmith
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_order")]
-        public int? ExecutionOrder { get; set; } = 1;
+        public int? ExecutionOrder { get; set; }
 
         /// <summary>
         /// 
@@ -193,19 +193,19 @@ namespace LangSmith
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
-        public int? TotalTokens { get; set; } = 0;
+        public int? TotalTokens { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
-        public int? PromptTokens { get; set; } = 0;
+        public int? PromptTokens { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
-        public int? CompletionTokens { get; set; } = 0;
+        public int? CompletionTokens { get; set; }
 
         /// <summary>
         /// 
@@ -292,7 +292,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_upgrade")]
-        public bool? TraceUpgrade { get; set; } = false;
+        public bool? TraceUpgrade { get; set; }
 
         /// <summary>
         /// 

@@ -82,9 +82,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
-            bool? withLatestManifest = false,
-            int? limit = 20,
-            int? offset = 0,
+            bool? withLatestManifest = default,
+            int? limit = default,
+            int? offset = default,
             string? tenantHandle = default,
             global::System.Guid? tenantId = default,
             string? query = default,
@@ -94,7 +94,7 @@ namespace LangSmith
             global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = false,
+            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
