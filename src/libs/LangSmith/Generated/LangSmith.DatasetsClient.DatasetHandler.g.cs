@@ -126,6 +126,7 @@ namespace LangSmith
         /// </param>
         /// <param name="projectName"></param>
         /// <param name="datasetId"></param>
+        /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
@@ -141,6 +142,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
             string? projectName = default,
+            global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -155,6 +157,7 @@ namespace LangSmith
                 Options = options,
                 ProjectName = projectName,
                 DatasetId = datasetId,
+                DatasetSplits = datasetSplits,
                 Repetitions = repetitions,
             };
 
