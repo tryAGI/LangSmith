@@ -8986,16 +8986,6 @@ paths:
           content:
             application/json:
               schema: { }
-  /api/v1/health:
-    get:
-      summary: Health
-      operationId: health_api_v1_health_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
   /api/v1/repos:
     get:
       tags:
@@ -15182,6 +15172,12 @@ components:
           title: Dataset Id
           type: string
           format: uuid
+        dataset_splits:
+          title: Dataset Splits
+          type: array
+          items:
+            type: string
+          nullable: true
         repetitions:
           title: Repetitions
           maximum: 10.0

@@ -67,6 +67,12 @@ namespace LangSmith
         public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_splits")]
+        public global::System.Collections.Generic.IList<string>? DatasetSplits { get; set; }
+
+        /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repetitions")]
