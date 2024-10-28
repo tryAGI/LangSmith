@@ -3,47 +3,45 @@
 
 namespace LangSmith
 {
-    public partial class FeedbackClient
+    public partial class PromptsClient
     {
-        partial void PrepareEagerlyCreateFeedbackArguments(
+        partial void PrepareCanvasArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.FeedbackCreateSchema request);
-        partial void PrepareEagerlyCreateFeedbackRequest(
+            global::LangSmith.PlaygroundOptimizePromptRequestSchema request);
+        partial void PrepareCanvasRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.FeedbackCreateSchema request);
-        partial void ProcessEagerlyCreateFeedbackResponse(
+            global::LangSmith.PlaygroundOptimizePromptRequestSchema request);
+        partial void ProcessCanvasResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessEagerlyCreateFeedbackResponseContent(
+        partial void ProcessCanvasResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Eagerly Create Feedback<br/>
-        /// Create a new feedback.<br/>
-        /// This method is invoked under the assumption that the run<br/>
-        /// is already visible in the app, thus already present in DB
+        /// Canvas<br/>
+        /// Improve prompt based on instruction.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> EagerlyCreateFeedbackAsync(
-            global::LangSmith.FeedbackCreateSchema request,
+        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
+            global::LangSmith.PlaygroundOptimizePromptRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareEagerlyCreateFeedbackArguments(
+            PrepareCanvasArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/feedback/eager",
+                path: "/api/v1/prompts/canvas",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,7 +73,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareEagerlyCreateFeedbackRequest(
+            PrepareCanvasRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -88,7 +86,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessEagerlyCreateFeedbackResponse(
+            ProcessCanvasResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -98,7 +96,7 @@ namespace LangSmith
                 client: HttpClient,
                 response: __response,
                 content: ref __content);
-            ProcessEagerlyCreateFeedbackResponseContent(
+            ProcessCanvasResponseContent(
                 httpClient: HttpClient,
                 httpResponseMessage: __response,
                 content: ref __content);
@@ -112,72 +110,38 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, __ex);
             }
 
-            return
-                global::LangSmith.FeedbackSchema.FromJson(__content, JsonSerializerContext) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
-        /// Eagerly Create Feedback<br/>
-        /// Create a new feedback.<br/>
-        /// This method is invoked under the assumption that the run<br/>
-        /// is already visible in the app, thus already present in DB
+        /// Canvas<br/>
+        /// Improve prompt based on instruction.
         /// </summary>
-        /// <param name="createdAt"></param>
-        /// <param name="modifiedAt"></param>
-        /// <param name="key"></param>
-        /// <param name="score"></param>
-        /// <param name="value"></param>
-        /// <param name="comment"></param>
-        /// <param name="correction"></param>
-        /// <param name="feedbackGroupId"></param>
-        /// <param name="comparativeExperimentId"></param>
-        /// <param name="runId"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="traceId"></param>
-        /// <param name="id"></param>
-        /// <param name="feedbackSource"></param>
-        /// <param name="feedbackConfig"></param>
+        /// <param name="prompt"></param>
+        /// <param name="highlightStart"></param>
+        /// <param name="highlightEnd"></param>
+        /// <param name="improvementInstruction"></param>
+        /// <param name="templateFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> EagerlyCreateFeedbackAsync(
-            string key,
-            global::System.DateTime? createdAt = default,
-            global::System.DateTime? modifiedAt = default,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
-            string? comment = default,
-            global::LangSmith.AnyOf<object, string>? correction = default,
-            global::System.Guid? feedbackGroupId = default,
-            global::System.Guid? comparativeExperimentId = default,
-            global::System.Guid? runId = default,
-            global::System.Guid? sessionId = default,
-            global::System.Guid? traceId = default,
-            global::System.Guid? id = default,
-            global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? feedbackSource = default,
-            global::LangSmith.FeedbackConfig? feedbackConfig = default,
+        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
+            string prompt,
+            string improvementInstruction,
+            global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormat templateFormat,
+            int? highlightStart = default,
+            int? highlightEnd = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.FeedbackCreateSchema
+            var __request = new global::LangSmith.PlaygroundOptimizePromptRequestSchema
             {
-                CreatedAt = createdAt,
-                ModifiedAt = modifiedAt,
-                Key = key,
-                Score = score,
-                Value = value,
-                Comment = comment,
-                Correction = correction,
-                FeedbackGroupId = feedbackGroupId,
-                ComparativeExperimentId = comparativeExperimentId,
-                RunId = runId,
-                SessionId = sessionId,
-                TraceId = traceId,
-                Id = id,
-                FeedbackSource = feedbackSource,
-                FeedbackConfig = feedbackConfig,
+                Prompt = prompt,
+                HighlightStart = highlightStart,
+                HighlightEnd = highlightEnd,
+                ImprovementInstruction = improvementInstruction,
+                TemplateFormat = templateFormat,
             };
 
-            return await EagerlyCreateFeedbackAsync(
+            return await CanvasAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

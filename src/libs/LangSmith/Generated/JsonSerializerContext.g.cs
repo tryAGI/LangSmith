@@ -75,6 +75,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.OrganizationDashboardTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.PagerdutySeverityJsonConverter),
             typeof(global::LangSmith.JsonConverters.PagerdutySeverityNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.PlaygroundOptimizePromptRequestSchemaTemplateFormatJsonConverter),
+            typeof(global::LangSmith.JsonConverters.PlaygroundOptimizePromptRequestSchemaTemplateFormatNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ResourceTypeJsonConverter),
