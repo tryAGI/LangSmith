@@ -4,46 +4,46 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    /// Default Value: success
     /// </summary>
-    public enum PlaygroundOptimizePromptRequestSchemaTemplateFormat
+    public enum ToolMessageChunkStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        FString,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        Mustache,
+        Error,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class PlaygroundOptimizePromptRequestSchemaTemplateFormatExtensions
+    public static class ToolMessageChunkStatusExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this PlaygroundOptimizePromptRequestSchemaTemplateFormat value)
+        public static string ToValueString(this ToolMessageChunkStatus value)
         {
             return value switch
             {
-                PlaygroundOptimizePromptRequestSchemaTemplateFormat.FString => "f-string",
-                PlaygroundOptimizePromptRequestSchemaTemplateFormat.Mustache => "mustache",
+                ToolMessageChunkStatus.Success => "success",
+                ToolMessageChunkStatus.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PlaygroundOptimizePromptRequestSchemaTemplateFormat? ToEnum(string value)
+        public static ToolMessageChunkStatus? ToEnum(string value)
         {
             return value switch
             {
-                "f-string" => PlaygroundOptimizePromptRequestSchemaTemplateFormat.FString,
-                "mustache" => PlaygroundOptimizePromptRequestSchemaTemplateFormat.Mustache,
+                "success" => ToolMessageChunkStatus.Success,
+                "error" => ToolMessageChunkStatus.Error,
                 _ => null,
             };
         }

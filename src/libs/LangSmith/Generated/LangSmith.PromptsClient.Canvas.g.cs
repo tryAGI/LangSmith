@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareCanvasArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.PlaygroundOptimizePromptRequestSchema request);
+            global::LangSmith.PlayGroundGraph request);
         partial void PrepareCanvasRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.PlaygroundOptimizePromptRequestSchema request);
+            global::LangSmith.PlayGroundGraph request);
         partial void ProcessCanvasResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -22,14 +22,13 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Canvas<br/>
-        /// Improve prompt based on instruction.
+        /// Canvas
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> CanvasAsync(
-            global::LangSmith.PlaygroundOptimizePromptRequestSchema request,
+            global::LangSmith.PlayGroundGraph request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -114,31 +113,36 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Canvas<br/>
-        /// Improve prompt based on instruction.
+        /// Canvas
         /// </summary>
-        /// <param name="prompt"></param>
-        /// <param name="highlightStart"></param>
-        /// <param name="highlightEnd"></param>
-        /// <param name="improvementInstruction"></param>
-        /// <param name="templateFormat"></param>
+        /// <param name="messages"></param>
+        /// <param name="highlighted"></param>
+        /// <param name="artifact"></param>
+        /// <param name="next"></param>
+        /// <param name="artifactLength"></param>
+        /// <param name="readingLevel"></param>
+        /// <param name="lastNodeName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> CanvasAsync(
-            string prompt,
-            string improvementInstruction,
-            global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormat templateFormat,
-            int? highlightStart = default,
-            int? highlightEnd = default,
+            global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
+            global::LangSmith.Artifact artifact,
+            global::LangSmith.Highlight? highlighted = default,
+            string? next = default,
+            global::LangSmith.PlayGroundGraphArtifactLength? artifactLength = default,
+            global::LangSmith.PlayGroundGraphReadingLevel? readingLevel = default,
+            string? lastNodeName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.PlaygroundOptimizePromptRequestSchema
+            var __request = new global::LangSmith.PlayGroundGraph
             {
-                Prompt = prompt,
-                HighlightStart = highlightStart,
-                HighlightEnd = highlightEnd,
-                ImprovementInstruction = improvementInstruction,
-                TemplateFormat = templateFormat,
+                Messages = messages,
+                Highlighted = highlighted,
+                Artifact = artifact,
+                Next = next,
+                ArtifactLength = artifactLength,
+                ReadingLevel = readingLevel,
+                LastNodeName = lastNodeName,
             };
 
             return await CanvasAsync(

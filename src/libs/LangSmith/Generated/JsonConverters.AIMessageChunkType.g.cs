@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PlaygroundOptimizePromptRequestSchemaTemplateFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormat?>
+    public sealed class AIMessageChunkTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AIMessageChunkType>
     {
         /// <inheritdoc />
-        public override global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormat? Read(
+        public override global::LangSmith.AIMessageChunkType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormatExtensions.ToEnum(stringValue);
+                        return global::LangSmith.AIMessageChunkTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormat)numValue;
+                    return (global::LangSmith.AIMessageChunkType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormat? value,
+            global::LangSmith.AIMessageChunkType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::LangSmith.PlaygroundOptimizePromptRequestSchemaTemplateFormatExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::LangSmith.AIMessageChunkTypeExtensions.ToValueString(value));
         }
     }
 }
