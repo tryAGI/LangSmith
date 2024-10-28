@@ -7377,6 +7377,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/prompts/canvas:
+    post:
+      tags:
+        - prompts
+      summary: Canvas
+      description: Improve prompt based on instruction.
+      operationId: canvas_api_v1_prompts_canvas_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlaygroundOptimizePromptRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/workspaces:
     get:
       tags:
@@ -13334,6 +13363,11 @@ components:
           type: string
           format: uuid
           nullable: true
+        trace_id:
+          title: Trace Id
+          type: string
+          format: uuid
+          nullable: true
         id:
           title: Id
           type: string
@@ -14794,6 +14828,10 @@ components:
           title: Kv Dataset Message Support
           type: boolean
           default: false
+        show_playground_prompt_canvas:
+          title: Show Playground Prompt Canvas
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -15129,6 +15167,34 @@ components:
           type: string
         access_scope:
           $ref: '#/components/schemas/AccessScope'
+    PlaygroundOptimizePromptRequestSchema:
+      title: PlaygroundOptimizePromptRequestSchema
+      required:
+        - prompt
+        - improvement_instruction
+        - template_format
+      type: object
+      properties:
+        prompt:
+          title: Prompt
+          type: string
+        highlight_start:
+          title: Highlight Start
+          type: integer
+          nullable: true
+        highlight_end:
+          title: Highlight End
+          type: integer
+          nullable: true
+        improvement_instruction:
+          title: Improvement Instruction
+          type: string
+        template_format:
+          title: Template Format
+          enum:
+            - f-string
+            - mustache
+          type: string
     PlaygroundRunOverDatasetRequestSchema:
       title: PlaygroundRunOverDatasetRequestSchema
       required:

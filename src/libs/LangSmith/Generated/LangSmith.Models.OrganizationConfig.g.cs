@@ -105,6 +105,12 @@ namespace LangSmith
         public bool? KvDatasetMessageSupport { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_playground_prompt_canvas")]
+        public bool? ShowPlaygroundPromptCanvas { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
