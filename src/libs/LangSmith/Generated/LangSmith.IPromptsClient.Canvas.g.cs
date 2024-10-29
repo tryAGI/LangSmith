@@ -10,8 +10,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CanvasAsync(
-            global::LangSmith.PlayGroundGraph request,
+        global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
+            global::LangSmith.PlaygroundPromptCanvasPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -20,20 +20,18 @@ namespace LangSmith
         /// <param name="messages"></param>
         /// <param name="highlighted"></param>
         /// <param name="artifact"></param>
-        /// <param name="next"></param>
         /// <param name="artifactLength"></param>
         /// <param name="readingLevel"></param>
-        /// <param name="lastNodeName"></param>
+        /// <param name="templateFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CanvasAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
-            global::LangSmith.Artifact artifact,
+            global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
             global::LangSmith.Highlight? highlighted = default,
-            string? next = default,
-            global::LangSmith.PlayGroundGraphArtifactLength? artifactLength = default,
-            global::LangSmith.PlayGroundGraphReadingLevel? readingLevel = default,
-            string? lastNodeName = default,
+            global::LangSmith.Artifact? artifact = default,
+            global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength = default,
+            global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

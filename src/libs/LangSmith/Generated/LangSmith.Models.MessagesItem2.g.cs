@@ -8,12 +8,12 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct MessagesItem : global::System.IEquatable<MessagesItem>
+    public readonly partial struct MessagesItem2 : global::System.IEquatable<MessagesItem2>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PlaygroundPromptCanvasPayloadMessageDiscriminatorType? Type { get; }
+        public global::LangSmith.PlaygroundPromptCanvasResponseMessageDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Message from an AI.<br/>
@@ -23,9 +23,9 @@ namespace LangSmith
         /// (e.g., tool calls, usage metadata) added by the LangChain framework.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LangSmith.AIMessageInput? Ai { get; init; }
+        public global::LangSmith.AIMessageOutput? Ai { get; init; }
 #else
-        public global::LangSmith.AIMessageInput? Ai { get; }
+        public global::LangSmith.AIMessageOutput? Ai { get; }
 #endif
 
         /// <summary>
@@ -39,17 +39,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.AIMessageInput value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.AIMessageOutput value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.AIMessageInput?(MessagesItem @this) => @this.Ai;
+        public static implicit operator global::LangSmith.AIMessageOutput?(MessagesItem2 @this) => @this.Ai;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.AIMessageInput? value)
+        public MessagesItem2(global::LangSmith.AIMessageOutput? value)
         {
             Ai = value;
         }
@@ -89,17 +89,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.HumanMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.HumanMessage value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.HumanMessage?(MessagesItem @this) => @this.Human;
+        public static implicit operator global::LangSmith.HumanMessage?(MessagesItem2 @this) => @this.Human;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.HumanMessage? value)
+        public MessagesItem2(global::LangSmith.HumanMessage? value)
         {
             Human = value;
         }
@@ -124,17 +124,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.ChatMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.ChatMessage value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.ChatMessage?(MessagesItem @this) => @this.Chat;
+        public static implicit operator global::LangSmith.ChatMessage?(MessagesItem2 @this) => @this.Chat;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.ChatMessage? value)
+        public MessagesItem2(global::LangSmith.ChatMessage? value)
         {
             Chat = value;
         }
@@ -174,17 +174,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.SystemMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.SystemMessage value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.SystemMessage?(MessagesItem @this) => @this.System;
+        public static implicit operator global::LangSmith.SystemMessage?(MessagesItem2 @this) => @this.System;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.SystemMessage? value)
+        public MessagesItem2(global::LangSmith.SystemMessage? value)
         {
             System = value;
         }
@@ -214,17 +214,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.FunctionMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.FunctionMessage value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.FunctionMessage?(MessagesItem @this) => @this.Function;
+        public static implicit operator global::LangSmith.FunctionMessage?(MessagesItem2 @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.FunctionMessage? value)
+        public MessagesItem2(global::LangSmith.FunctionMessage? value)
         {
             Function = value;
         }
@@ -273,17 +273,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.ToolMessage value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.ToolMessage value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.ToolMessage?(MessagesItem @this) => @this.Tool;
+        public static implicit operator global::LangSmith.ToolMessage?(MessagesItem2 @this) => @this.Tool;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.ToolMessage? value)
+        public MessagesItem2(global::LangSmith.ToolMessage? value)
         {
             Tool = value;
         }
@@ -292,9 +292,9 @@ namespace LangSmith
         /// Message chunk from an AI.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LangSmith.AIMessageChunkInput? AIMessageChunk { get; init; }
+        public global::LangSmith.AIMessageChunkOutput? AIMessageChunk { get; init; }
 #else
-        public global::LangSmith.AIMessageChunkInput? AIMessageChunk { get; }
+        public global::LangSmith.AIMessageChunkOutput? AIMessageChunk { get; }
 #endif
 
         /// <summary>
@@ -308,17 +308,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.AIMessageChunkInput value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.AIMessageChunkOutput value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.AIMessageChunkInput?(MessagesItem @this) => @this.AIMessageChunk;
+        public static implicit operator global::LangSmith.AIMessageChunkOutput?(MessagesItem2 @this) => @this.AIMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.AIMessageChunkInput? value)
+        public MessagesItem2(global::LangSmith.AIMessageChunkOutput? value)
         {
             AIMessageChunk = value;
         }
@@ -343,17 +343,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.HumanMessageChunk value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.HumanMessageChunk value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.HumanMessageChunk?(MessagesItem @this) => @this.HumanMessageChunk;
+        public static implicit operator global::LangSmith.HumanMessageChunk?(MessagesItem2 @this) => @this.HumanMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.HumanMessageChunk? value)
+        public MessagesItem2(global::LangSmith.HumanMessageChunk? value)
         {
             HumanMessageChunk = value;
         }
@@ -378,17 +378,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.ChatMessageChunk value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.ChatMessageChunk value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.ChatMessageChunk?(MessagesItem @this) => @this.ChatMessageChunk;
+        public static implicit operator global::LangSmith.ChatMessageChunk?(MessagesItem2 @this) => @this.ChatMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.ChatMessageChunk? value)
+        public MessagesItem2(global::LangSmith.ChatMessageChunk? value)
         {
             ChatMessageChunk = value;
         }
@@ -413,17 +413,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.SystemMessageChunk value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.SystemMessageChunk value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.SystemMessageChunk?(MessagesItem @this) => @this.SystemMessageChunk;
+        public static implicit operator global::LangSmith.SystemMessageChunk?(MessagesItem2 @this) => @this.SystemMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.SystemMessageChunk? value)
+        public MessagesItem2(global::LangSmith.SystemMessageChunk? value)
         {
             SystemMessageChunk = value;
         }
@@ -448,17 +448,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.FunctionMessageChunk value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.FunctionMessageChunk value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.FunctionMessageChunk?(MessagesItem @this) => @this.FunctionMessageChunk;
+        public static implicit operator global::LangSmith.FunctionMessageChunk?(MessagesItem2 @this) => @this.FunctionMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.FunctionMessageChunk? value)
+        public MessagesItem2(global::LangSmith.FunctionMessageChunk? value)
         {
             FunctionMessageChunk = value;
         }
@@ -483,17 +483,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.ToolMessageChunk value) => new MessagesItem(value);
+        public static implicit operator MessagesItem2(global::LangSmith.ToolMessageChunk value) => new MessagesItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.ToolMessageChunk?(MessagesItem @this) => @this.ToolMessageChunk;
+        public static implicit operator global::LangSmith.ToolMessageChunk?(MessagesItem2 @this) => @this.ToolMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.ToolMessageChunk? value)
+        public MessagesItem2(global::LangSmith.ToolMessageChunk? value)
         {
             ToolMessageChunk = value;
         }
@@ -501,15 +501,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(
-            global::LangSmith.PlaygroundPromptCanvasPayloadMessageDiscriminatorType? type,
-            global::LangSmith.AIMessageInput? ai,
+        public MessagesItem2(
+            global::LangSmith.PlaygroundPromptCanvasResponseMessageDiscriminatorType? type,
+            global::LangSmith.AIMessageOutput? ai,
             global::LangSmith.HumanMessage? human,
             global::LangSmith.ChatMessage? chat,
             global::LangSmith.SystemMessage? system,
             global::LangSmith.FunctionMessage? function,
             global::LangSmith.ToolMessage? tool,
-            global::LangSmith.AIMessageChunkInput? aIMessageChunk,
+            global::LangSmith.AIMessageChunkOutput? aIMessageChunk,
             global::LangSmith.HumanMessageChunk? humanMessageChunk,
             global::LangSmith.ChatMessageChunk? chatMessageChunk,
             global::LangSmith.SystemMessageChunk? systemMessageChunk,
@@ -563,13 +563,13 @@ namespace LangSmith
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LangSmith.AIMessageInput?, TResult>? ai = null,
+            global::System.Func<global::LangSmith.AIMessageOutput?, TResult>? ai = null,
             global::System.Func<global::LangSmith.HumanMessage?, TResult>? human = null,
             global::System.Func<global::LangSmith.ChatMessage?, TResult>? chat = null,
             global::System.Func<global::LangSmith.SystemMessage?, TResult>? system = null,
             global::System.Func<global::LangSmith.FunctionMessage?, TResult>? function = null,
             global::System.Func<global::LangSmith.ToolMessage?, TResult>? tool = null,
-            global::System.Func<global::LangSmith.AIMessageChunkInput?, TResult>? aIMessageChunk = null,
+            global::System.Func<global::LangSmith.AIMessageChunkOutput?, TResult>? aIMessageChunk = null,
             global::System.Func<global::LangSmith.HumanMessageChunk?, TResult>? humanMessageChunk = null,
             global::System.Func<global::LangSmith.ChatMessageChunk?, TResult>? chatMessageChunk = null,
             global::System.Func<global::LangSmith.SystemMessageChunk?, TResult>? systemMessageChunk = null,
@@ -638,13 +638,13 @@ namespace LangSmith
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LangSmith.AIMessageInput?>? ai = null,
+            global::System.Action<global::LangSmith.AIMessageOutput?>? ai = null,
             global::System.Action<global::LangSmith.HumanMessage?>? human = null,
             global::System.Action<global::LangSmith.ChatMessage?>? chat = null,
             global::System.Action<global::LangSmith.SystemMessage?>? system = null,
             global::System.Action<global::LangSmith.FunctionMessage?>? function = null,
             global::System.Action<global::LangSmith.ToolMessage?>? tool = null,
-            global::System.Action<global::LangSmith.AIMessageChunkInput?>? aIMessageChunk = null,
+            global::System.Action<global::LangSmith.AIMessageChunkOutput?>? aIMessageChunk = null,
             global::System.Action<global::LangSmith.HumanMessageChunk?>? humanMessageChunk = null,
             global::System.Action<global::LangSmith.ChatMessageChunk?>? chatMessageChunk = null,
             global::System.Action<global::LangSmith.SystemMessageChunk?>? systemMessageChunk = null,
@@ -715,7 +715,7 @@ namespace LangSmith
             var fields = new object?[]
             {
                 Ai,
-                typeof(global::LangSmith.AIMessageInput),
+                typeof(global::LangSmith.AIMessageOutput),
                 Human,
                 typeof(global::LangSmith.HumanMessage),
                 Chat,
@@ -727,7 +727,7 @@ namespace LangSmith
                 Tool,
                 typeof(global::LangSmith.ToolMessage),
                 AIMessageChunk,
-                typeof(global::LangSmith.AIMessageChunkInput),
+                typeof(global::LangSmith.AIMessageChunkOutput),
                 HumanMessageChunk,
                 typeof(global::LangSmith.HumanMessageChunk),
                 ChatMessageChunk,
@@ -750,16 +750,16 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(MessagesItem other)
+        public bool Equals(MessagesItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageInput?>.Default.Equals(Ai, other.Ai) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageOutput?>.Default.Equals(Ai, other.Ai) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.HumanMessage?>.Default.Equals(Human, other.Human) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ChatMessage?>.Default.Equals(Chat, other.Chat) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.SystemMessage?>.Default.Equals(System, other.System) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.FunctionMessage?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ToolMessage?>.Default.Equals(Tool, other.Tool) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageChunkInput?>.Default.Equals(AIMessageChunk, other.AIMessageChunk) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageChunkOutput?>.Default.Equals(AIMessageChunk, other.AIMessageChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.HumanMessageChunk?>.Default.Equals(HumanMessageChunk, other.HumanMessageChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ChatMessageChunk?>.Default.Equals(ChatMessageChunk, other.ChatMessageChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.SystemMessageChunk?>.Default.Equals(SystemMessageChunk, other.SystemMessageChunk) &&
@@ -771,15 +771,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(MessagesItem obj1, MessagesItem obj2)
+        public static bool operator ==(MessagesItem2 obj1, MessagesItem2 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<MessagesItem>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<MessagesItem2>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(MessagesItem obj1, MessagesItem obj2)
+        public static bool operator !=(MessagesItem2 obj1, MessagesItem2 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -789,7 +789,7 @@ namespace LangSmith
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is MessagesItem o && Equals(o);
+            return obj is MessagesItem2 o && Equals(o);
         }
 
 
@@ -823,14 +823,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.MessagesItem? FromJson(
+        public static global::LangSmith.MessagesItem2? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.MessagesItem),
-                jsonSerializerContext) as global::LangSmith.MessagesItem?;
+                typeof(global::LangSmith.MessagesItem2),
+                jsonSerializerContext) as global::LangSmith.MessagesItem2?;
         }
 
         /// <summary>
@@ -840,11 +840,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.MessagesItem? FromJson(
+        public static global::LangSmith.MessagesItem2? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.MessagesItem>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.MessagesItem2>(
                 json,
                 jsonSerializerOptions);
         }

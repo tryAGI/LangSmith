@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareCanvasArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.PlayGroundGraph request);
+            global::LangSmith.PlaygroundPromptCanvasPayload request);
         partial void PrepareCanvasRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.PlayGroundGraph request);
+            global::LangSmith.PlaygroundPromptCanvasPayload request);
         partial void ProcessCanvasResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -27,8 +27,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
-            global::LangSmith.PlayGroundGraph request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
+            global::LangSmith.PlaygroundPromptCanvasPayload request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -109,7 +109,9 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, __ex);
             }
 
-            return __content;
+            return
+                global::LangSmith.PlaygroundPromptCanvasResponse.FromJson(__content, JsonSerializerContext) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -118,31 +120,28 @@ namespace LangSmith
         /// <param name="messages"></param>
         /// <param name="highlighted"></param>
         /// <param name="artifact"></param>
-        /// <param name="next"></param>
         /// <param name="artifactLength"></param>
         /// <param name="readingLevel"></param>
-        /// <param name="lastNodeName"></param>
+        /// <param name="templateFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
-            global::LangSmith.Artifact artifact,
+            global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
             global::LangSmith.Highlight? highlighted = default,
-            string? next = default,
-            global::LangSmith.PlayGroundGraphArtifactLength? artifactLength = default,
-            global::LangSmith.PlayGroundGraphReadingLevel? readingLevel = default,
-            string? lastNodeName = default,
+            global::LangSmith.Artifact? artifact = default,
+            global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength = default,
+            global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.PlayGroundGraph
+            var __request = new global::LangSmith.PlaygroundPromptCanvasPayload
             {
                 Messages = messages,
                 Highlighted = highlighted,
                 Artifact = artifact,
-                Next = next,
                 ArtifactLength = artifactLength,
                 ReadingLevel = readingLevel,
-                LastNodeName = lastNodeName,
+                TemplateFormat = templateFormat,
             };
 
             return await CanvasAsync(
