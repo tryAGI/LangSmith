@@ -57,6 +57,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("application_time")]
+        public global::System.DateTime? ApplicationTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_annotation_queue")]
         public global::LangSmith.RuleLogActionResponse? AddToAnnotationQueue { get; set; }
 

@@ -3874,6 +3874,38 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/runs/rules/{rule_id}/last_applied':
+    get:
+      tags:
+        - run
+      summary: Get Last Applied Rule
+      description: Get the last applied rule.
+      operationId: get_last_applied_rule_api_v1_runs_rules__rule_id__last_applied_get
+      parameters:
+        - name: rule_id
+          in: path
+          required: true
+          schema:
+            title: Rule Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RuleLogSchema'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/runs/rules/{rule_id}/trigger':
     post:
       tags:
@@ -12975,6 +13007,12 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/ExampleUpdate'
           nullable: true
+        inputs_filters:
+          title: Inputs Filters
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetInputFilter'
+          nullable: true
       description: Update class for Dataset.
     DatasetVersion:
       title: DatasetVersion
@@ -16564,6 +16602,11 @@ components:
           title: End Time
           type: string
           format: date-time
+        application_time:
+          title: Application Time
+          type: string
+          format: date-time
+          nullable: true
         add_to_annotation_queue:
           $ref: '#/components/schemas/RuleLogActionResponse'
         add_to_dataset:

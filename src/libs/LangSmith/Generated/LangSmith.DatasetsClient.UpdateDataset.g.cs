@@ -131,6 +131,7 @@ namespace LangSmith
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
+        /// <param name="inputsFilters"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetAsync(
@@ -140,6 +141,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? inputsSchemaDefinition = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? outputsSchemaDefinition = default,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples = default,
+            global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? inputsFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.DatasetUpdate
@@ -149,6 +151,7 @@ namespace LangSmith
                 InputsSchemaDefinition = inputsSchemaDefinition,
                 OutputsSchemaDefinition = outputsSchemaDefinition,
                 PatchExamples = patchExamples,
+                InputsFilters = inputsFilters,
             };
 
             return await UpdateDatasetAsync(
