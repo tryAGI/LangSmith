@@ -42,6 +42,12 @@ namespace LangSmith
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("overwrite")]
+        public bool? Overwrite { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
