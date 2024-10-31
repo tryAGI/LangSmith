@@ -12726,11 +12726,11 @@ components:
           type: boolean
           default: false
           nullable: true
-        inputs_filters:
-          title: Inputs Filters
+        transformations:
+          title: Transformations
           type: array
           items:
-            $ref: '#/components/schemas/DatasetInputFilter'
+            $ref: '#/components/schemas/DatasetTransformation'
           nullable: true
         data_type:
           $ref: '#/components/schemas/DataType'
@@ -12788,11 +12788,11 @@ components:
           type: boolean
           default: false
           nullable: true
-        inputs_filters:
-          title: Inputs Filters
+        transformations:
+          title: Transformations
           type: array
           items:
-            $ref: '#/components/schemas/DatasetInputFilter'
+            $ref: '#/components/schemas/DatasetTransformation'
           nullable: true
         id:
           title: Id
@@ -12864,26 +12864,6 @@ components:
           default: latest
           nullable: true
       description: Dataset schema for serving.
-    DatasetInputFilter:
-      title: DatasetInputFilter
-      required:
-        - path
-        - filter_type
-      type: object
-      properties:
-        path:
-          title: Path
-          type: array
-          items:
-            type: string
-        filter_type:
-          $ref: '#/components/schemas/DatasetInputFilterType'
-    DatasetInputFilterType:
-      title: DatasetInputFilterType
-      enum:
-        - remove_system_messages
-      type: string
-      description: Enum for dataset data types.
     DatasetPublicSchema:
       title: DatasetPublicSchema
       required:
@@ -12916,11 +12896,11 @@ components:
           type: boolean
           default: false
           nullable: true
-        inputs_filters:
-          title: Inputs Filters
+        transformations:
+          title: Transformations
           type: array
           items:
-            $ref: '#/components/schemas/DatasetInputFilter'
+            $ref: '#/components/schemas/DatasetTransformation'
           nullable: true
         data_type:
           $ref: '#/components/schemas/DataType'
@@ -12964,11 +12944,11 @@ components:
           type: boolean
           default: false
           nullable: true
-        inputs_filters:
-          title: Inputs Filters
+        transformations:
+          title: Transformations
           type: array
           items:
-            $ref: '#/components/schemas/DatasetInputFilter'
+            $ref: '#/components/schemas/DatasetTransformation'
           nullable: true
         data_type:
           $ref: '#/components/schemas/DataType'
@@ -12995,6 +12975,26 @@ components:
           title: Share Token
           type: string
           format: uuid
+    DatasetTransformation:
+      title: DatasetTransformation
+      required:
+        - path
+        - transformation_type
+      type: object
+      properties:
+        path:
+          title: Path
+          type: array
+          items:
+            type: string
+        transformation_type:
+          $ref: '#/components/schemas/DatasetTransformationType'
+    DatasetTransformationType:
+      title: DatasetTransformationType
+      enum:
+        - remove_system_messages
+      type: string
+      description: Enum for dataset data types.
     DatasetUpdate:
       title: DatasetUpdate
       type: object
@@ -13037,11 +13037,11 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/ExampleUpdate'
           nullable: true
-        inputs_filters:
-          title: Inputs Filters
+        transformations:
+          title: Transformations
           type: array
           items:
-            $ref: '#/components/schemas/DatasetInputFilter'
+            $ref: '#/components/schemas/DatasetTransformation'
           nullable: true
       description: Update class for Dataset.
     DatasetVersion:
@@ -18100,6 +18100,7 @@ components:
         - s3_urls
         - error_or_signed_url
         - events_or_signed_url
+        - extra_or_signed_url
         - parent_run_id
         - manifest_id
         - manifest_s3_id

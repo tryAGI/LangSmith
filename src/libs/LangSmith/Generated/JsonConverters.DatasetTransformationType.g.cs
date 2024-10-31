@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class DatasetInputFilterTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.DatasetInputFilterType>
+    public sealed class DatasetTransformationTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.DatasetTransformationType>
     {
         /// <inheritdoc />
-        public override global::LangSmith.DatasetInputFilterType Read(
+        public override global::LangSmith.DatasetTransformationType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.DatasetInputFilterTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::LangSmith.DatasetTransformationTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.DatasetInputFilterType)numValue;
+                    return (global::LangSmith.DatasetTransformationType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,12 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.DatasetInputFilterType value,
+            global::LangSmith.DatasetTransformationType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::LangSmith.DatasetInputFilterTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::LangSmith.DatasetTransformationTypeExtensions.ToValueString(value));
         }
     }
 }

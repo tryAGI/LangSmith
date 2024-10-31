@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inputs_filters")]
-        public global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? InputsFilters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
+        public global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? Transformations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

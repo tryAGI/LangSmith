@@ -127,7 +127,7 @@ namespace LangSmith
         /// <param name="externallyManaged">
         /// Default Value: false
         /// </param>
-        /// <param name="inputsFilters"></param>
+        /// <param name="transformations"></param>
         /// <param name="id"></param>
         /// <param name="extra"></param>
         /// <param name="dataType">
@@ -142,7 +142,7 @@ namespace LangSmith
             object? inputsSchemaDefinition = default,
             object? outputsSchemaDefinition = default,
             bool? externallyManaged = default,
-            global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? inputsFilters = default,
+            global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? transformations = default,
             global::System.Guid? id = default,
             object? extra = default,
             global::LangSmith.DataType? dataType = default,
@@ -156,7 +156,7 @@ namespace LangSmith
                 InputsSchemaDefinition = inputsSchemaDefinition,
                 OutputsSchemaDefinition = outputsSchemaDefinition,
                 ExternallyManaged = externallyManaged,
-                InputsFilters = inputsFilters,
+                Transformations = transformations,
                 Id = id,
                 Extra = extra,
                 DataType = dataType,
