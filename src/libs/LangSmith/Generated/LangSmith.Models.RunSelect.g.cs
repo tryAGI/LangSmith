@@ -91,6 +91,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ExtraOrSignedUrl,
+        /// <summary>
+        /// 
+        /// </summary>
         ParentRunId,
         /// <summary>
         /// 
@@ -234,6 +238,7 @@ namespace LangSmith
                 RunSelect.S3Urls => "s3_urls",
                 RunSelect.ErrorOrSignedUrl => "error_or_signed_url",
                 RunSelect.EventsOrSignedUrl => "events_or_signed_url",
+                RunSelect.ExtraOrSignedUrl => "extra_or_signed_url",
                 RunSelect.ParentRunId => "parent_run_id",
                 RunSelect.ManifestId => "manifest_id",
                 RunSelect.ManifestS3Id => "manifest_s3_id",
@@ -292,6 +297,7 @@ namespace LangSmith
                 "s3_urls" => RunSelect.S3Urls,
                 "error_or_signed_url" => RunSelect.ErrorOrSignedUrl,
                 "events_or_signed_url" => RunSelect.EventsOrSignedUrl,
+                "extra_or_signed_url" => RunSelect.ExtraOrSignedUrl,
                 "parent_run_id" => RunSelect.ParentRunId,
                 "manifest_id" => RunSelect.ManifestId,
                 "manifest_s3_id" => RunSelect.ManifestS3Id,

@@ -646,15 +646,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.DatasetInputFilter>? Type157 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetInputFilter? Type158 { get; set; }
+        public global::LangSmith.DatasetTransformation? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DatasetInputFilterType? Type159 { get; set; }
+        public global::LangSmith.DatasetTransformationType? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
