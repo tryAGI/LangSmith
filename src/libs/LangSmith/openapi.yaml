@@ -2376,6 +2376,36 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/examples/validate:
+    post:
+      tags:
+        - examples
+      summary: Validate Example
+      description: Validate an example.
+      operationId: validate_example_api_v1_examples_validate_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExampleCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExampleValidationResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/datasets/{dataset_id}':
     get:
       tags:
@@ -13299,6 +13329,10 @@ components:
                 type: string
             - type: string
           nullable: true
+        overwrite:
+          title: Overwrite
+          type: boolean
+          default: false
       description: Update class for Example.
     ExampleUpdateWithID:
       title: ExampleUpdateWithID
@@ -13331,11 +13365,69 @@ components:
                 type: string
             - type: string
           nullable: true
+        overwrite:
+          title: Overwrite
+          type: boolean
+          default: false
         id:
           title: Id
           type: string
           format: uuid
       description: Bulk update class for Example (includes example id).
+    ExampleValidationResult:
+      title: ExampleValidationResult
+      type: object
+      properties:
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+          nullable: true
+        inputs:
+          title: Inputs
+          type: object
+          nullable: true
+        outputs:
+          title: Outputs
+          type: object
+          nullable: true
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+          nullable: true
+        metadata:
+          title: Metadata
+          type: object
+          nullable: true
+        source_run_id:
+          title: Source Run Id
+          type: string
+          format: uuid
+          nullable: true
+        split:
+          title: Split
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: string
+          default: base
+          nullable: true
+        id:
+          title: Id
+          type: string
+          format: uuid
+          nullable: true
+        use_source_run_io:
+          title: Use Source Run Io
+          type: boolean
+          default: false
+        overwrite:
+          title: Overwrite
+          type: boolean
+          default: false
+      description: 'Validation result for Example, combining fields from Create/Base/Update schemas.'
     ExampleWithRuns:
       title: ExampleWithRuns
       required:

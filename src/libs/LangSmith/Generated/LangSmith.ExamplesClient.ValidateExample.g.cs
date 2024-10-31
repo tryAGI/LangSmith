@@ -5,52 +5,47 @@ namespace LangSmith
 {
     public partial class ExamplesClient
     {
-        partial void PrepareUpdateExampleArguments(
+        partial void PrepareValidateExampleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid exampleId,
-            global::LangSmith.ExampleUpdate request);
-        partial void PrepareUpdateExampleRequest(
+            global::LangSmith.ExampleCreate request);
+        partial void PrepareValidateExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid exampleId,
-            global::LangSmith.ExampleUpdate request);
-        partial void ProcessUpdateExampleResponse(
+            global::LangSmith.ExampleCreate request);
+        partial void ProcessValidateExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateExampleResponseContent(
+        partial void ProcessValidateExampleResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Update Example<br/>
-        /// Update a specific example.
+        /// Validate Example<br/>
+        /// Validate an example.
         /// </summary>
-        /// <param name="exampleId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
-            global::System.Guid exampleId,
-            global::LangSmith.ExampleUpdate request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ExampleValidationResult> ValidateExampleAsync(
+            global::LangSmith.ExampleCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateExampleArguments(
+            PrepareValidateExampleArguments(
                 httpClient: HttpClient,
-                exampleId: ref exampleId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/examples/{exampleId}",
+                path: "/api/v1/examples/validate",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: new global::System.Net.Http.HttpMethod("PATCH"),
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var __authorization in Authorizations)
@@ -78,10 +73,9 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareUpdateExampleRequest(
+            PrepareValidateExampleRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                exampleId: exampleId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -92,7 +86,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessUpdateExampleResponse(
+            ProcessValidateExampleResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -102,7 +96,7 @@ namespace LangSmith
                 client: HttpClient,
                 response: __response,
                 content: ref __content);
-            ProcessUpdateExampleResponseContent(
+            ProcessValidateExampleResponseContent(
                 httpClient: HttpClient,
                 httpResponseMessage: __response,
                 content: ref __content);
@@ -116,46 +110,56 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, __ex);
             }
 
-            return __content;
+            return
+                global::LangSmith.ExampleValidationResult.FromJson(__content, JsonSerializerContext) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Update Example<br/>
-        /// Update a specific example.
+        /// Validate Example<br/>
+        /// Validate an example.
         /// </summary>
-        /// <param name="exampleId"></param>
-        /// <param name="datasetId"></param>
-        /// <param name="inputs"></param>
         /// <param name="outputs"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="sourceRunId"></param>
         /// <param name="metadata"></param>
-        /// <param name="split"></param>
-        /// <param name="overwrite">
+        /// <param name="inputs"></param>
+        /// <param name="split">
+        /// Default Value: base
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="useSourceRunIo">
         /// Default Value: false
         /// </param>
+        /// <param name="createdAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
-            global::System.Guid exampleId,
-            global::System.Guid? datasetId = default,
-            object? inputs = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ExampleValidationResult> ValidateExampleAsync(
+            global::System.Guid datasetId,
             object? outputs = default,
+            global::System.Guid? sourceRunId = default,
             object? metadata = default,
+            object? inputs = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
-            bool? overwrite = default,
+            global::System.Guid? id = default,
+            bool? useSourceRunIo = default,
+            global::System.DateTime? createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.ExampleUpdate
+            var __request = new global::LangSmith.ExampleCreate
             {
-                DatasetId = datasetId,
-                Inputs = inputs,
                 Outputs = outputs,
+                DatasetId = datasetId,
+                SourceRunId = sourceRunId,
                 Metadata = metadata,
+                Inputs = inputs,
                 Split = split,
-                Overwrite = overwrite,
+                Id = id,
+                UseSourceRunIo = useSourceRunIo,
+                CreatedAt = createdAt,
             };
 
-            return await UpdateExampleAsync(
-                exampleId: exampleId,
+            return await ValidateExampleAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

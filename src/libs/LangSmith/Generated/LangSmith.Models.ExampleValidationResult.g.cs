@@ -6,9 +6,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Update class for Example.
+    /// Validation result for Example, combining fields from Create/Base/Update schemas.
     /// </summary>
-    public sealed partial class ExampleUpdate
+    public sealed partial class ExampleValidationResult
     {
         /// <summary>
         /// 
@@ -31,15 +31,39 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_run_id")]
+        public global::System.Guid? SourceRunId { get; set; }
+
+        /// <summary>
+        /// Default Value: base
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public global::System.Guid? Id { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_source_run_io")]
+        public bool? UseSourceRunIo { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -84,14 +108,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.ExampleUpdate? FromJson(
+        public static global::LangSmith.ExampleValidationResult? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.ExampleUpdate),
-                jsonSerializerContext) as global::LangSmith.ExampleUpdate;
+                typeof(global::LangSmith.ExampleValidationResult),
+                jsonSerializerContext) as global::LangSmith.ExampleValidationResult;
         }
 
         /// <summary>
@@ -101,11 +125,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.ExampleUpdate? FromJson(
+        public static global::LangSmith.ExampleValidationResult? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.ExampleUpdate>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.ExampleValidationResult>(
                 json,
                 jsonSerializerOptions);
         }
