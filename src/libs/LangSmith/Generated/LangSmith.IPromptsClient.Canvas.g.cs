@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
+        global::System.Threading.Tasks.Task<string> CanvasAsync(
             global::LangSmith.PlaygroundPromptCanvasPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -25,7 +25,7 @@ namespace LangSmith
         /// <param name="templateFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
+        global::System.Threading.Tasks.Task<string> CanvasAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
             global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
             global::LangSmith.Highlight? highlighted = default,

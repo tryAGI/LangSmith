@@ -7481,8 +7481,7 @@ paths:
           description: Successful Response
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/PlaygroundPromptCanvasResponse'
+              schema: { }
         '422':
           description: Validation Error
           content:
@@ -10347,7 +10346,7 @@ paths:
         - BearerAuth: [ ]
 components:
   schemas:
-    AIMessage-Input:
+    AIMessage:
       title: AIMessage
       required:
         - content
@@ -10399,116 +10398,7 @@ components:
         usage_metadata:
           $ref: '#/components/schemas/UsageMetadata'
       description: "Message from an AI.\n\nAIMessage is returned from a chat model as a response to a prompt.\n\nThis message represents the output of the model and consists of both\nthe raw output as returned by the model together standardized fields\n(e.g., tool calls, usage metadata) added by the LangChain framework."
-    AIMessage-Output:
-      title: AIMessage
-      required:
-        - content
-      type: object
-      properties:
-        content:
-          title: Content
-          anyOf:
-            - type: string
-            - type: array
-              items:
-                anyOf:
-                  - type: string
-                  - type: object
-        additional_kwargs:
-          title: Additional Kwargs
-          type: object
-        response_metadata:
-          title: Response Metadata
-          type: object
-        type:
-          title: Type
-          enum:
-            - ai
-          type: string
-          default: ai
-        name:
-          title: Name
-          type: string
-          nullable: true
-        id:
-          title: Id
-          type: string
-          nullable: true
-        example:
-          title: Example
-          type: boolean
-          default: false
-        tool_calls:
-          title: Tool Calls
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolCall'
-        invalid_tool_calls:
-          title: Invalid Tool Calls
-          type: array
-          items:
-            $ref: '#/components/schemas/InvalidToolCall'
-        usage_metadata:
-          $ref: '#/components/schemas/UsageMetadata'
-      description: "Message from an AI.\n\nAIMessage is returned from a chat model as a response to a prompt.\n\nThis message represents the output of the model and consists of both\nthe raw output as returned by the model together standardized fields\n(e.g., tool calls, usage metadata) added by the LangChain framework."
-    AIMessageChunk-Input:
-      title: AIMessageChunk
-      required:
-        - content
-      type: object
-      properties:
-        content:
-          title: Content
-          anyOf:
-            - type: string
-            - type: array
-              items:
-                anyOf:
-                  - type: string
-                  - type: object
-        additional_kwargs:
-          title: Additional Kwargs
-          type: object
-        response_metadata:
-          title: Response Metadata
-          type: object
-        type:
-          title: Type
-          enum:
-            - AIMessageChunk
-          type: string
-          default: AIMessageChunk
-        name:
-          title: Name
-          type: string
-          nullable: true
-        id:
-          title: Id
-          type: string
-          nullable: true
-        example:
-          title: Example
-          type: boolean
-          default: false
-        tool_calls:
-          title: Tool Calls
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolCall'
-        invalid_tool_calls:
-          title: Invalid Tool Calls
-          type: array
-          items:
-            $ref: '#/components/schemas/InvalidToolCall'
-        usage_metadata:
-          $ref: '#/components/schemas/UsageMetadata'
-        tool_call_chunks:
-          title: Tool Call Chunks
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolCallChunk'
-      description: Message chunk from an AI.
-    AIMessageChunk-Output:
+    AIMessageChunk:
       title: AIMessageChunk
       required:
         - content
@@ -15885,13 +15775,13 @@ components:
           type: array
           items:
             oneOf:
-              - $ref: '#/components/schemas/AIMessage-Input'
+              - $ref: '#/components/schemas/AIMessage'
               - $ref: '#/components/schemas/HumanMessage'
               - $ref: '#/components/schemas/ChatMessage'
               - $ref: '#/components/schemas/SystemMessage'
               - $ref: '#/components/schemas/FunctionMessage'
               - $ref: '#/components/schemas/ToolMessage'
-              - $ref: '#/components/schemas/AIMessageChunk-Input'
+              - $ref: '#/components/schemas/AIMessageChunk'
               - $ref: '#/components/schemas/HumanMessageChunk'
               - $ref: '#/components/schemas/ChatMessageChunk'
               - $ref: '#/components/schemas/SystemMessageChunk'
@@ -15925,59 +15815,6 @@ components:
             - f-string
             - mustache
           type: string
-    PlaygroundPromptCanvasResponse:
-      title: PlaygroundPromptCanvasResponse
-      required:
-        - messages
-      type: object
-      properties:
-        messages:
-          title: Messages
-          type: array
-          items:
-            oneOf:
-              - $ref: '#/components/schemas/AIMessage-Output'
-              - $ref: '#/components/schemas/HumanMessage'
-              - $ref: '#/components/schemas/ChatMessage'
-              - $ref: '#/components/schemas/SystemMessage'
-              - $ref: '#/components/schemas/FunctionMessage'
-              - $ref: '#/components/schemas/ToolMessage'
-              - $ref: '#/components/schemas/AIMessageChunk-Output'
-              - $ref: '#/components/schemas/HumanMessageChunk'
-              - $ref: '#/components/schemas/ChatMessageChunk'
-              - $ref: '#/components/schemas/SystemMessageChunk'
-              - $ref: '#/components/schemas/FunctionMessageChunk'
-              - $ref: '#/components/schemas/ToolMessageChunk'
-        highlighted:
-          $ref: '#/components/schemas/Highlight'
-        artifact:
-          $ref: '#/components/schemas/Artifact'
-        next:
-          title: Next
-          type: string
-          nullable: true
-        artifact_length:
-          title: Artifact Length
-          enum:
-            - shortest
-            - short
-            - long
-            - longest
-          type: string
-          nullable: true
-        reading_level:
-          title: Reading Level
-          enum:
-            - child
-            - teenager
-            - college
-            - phd
-          type: string
-          nullable: true
-        last_node_name:
-          title: Last Node Name
-          type: string
-          nullable: true
     PlaygroundRunOverDatasetRequestSchema:
       title: PlaygroundRunOverDatasetRequestSchema
       required:

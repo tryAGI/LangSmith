@@ -21,11 +21,11 @@ namespace LangSmith.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.PlaygroundPromptCanvasPayloadMessageDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::LangSmith.AIMessageInput? ai = default;
+            global::LangSmith.AIMessage? ai = default;
             if (discriminator?.Type == global::LangSmith.PlaygroundPromptCanvasPayloadMessageDiscriminatorType.Ai)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessageInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessageInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AIMessageInput)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AIMessage)}");
                 ai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.HumanMessage? human = default;
@@ -63,11 +63,11 @@ namespace LangSmith.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.ToolMessage)}");
                 tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::LangSmith.AIMessageChunkInput? aIMessageChunk = default;
+            global::LangSmith.AIMessageChunk? aIMessageChunk = default;
             if (discriminator?.Type == global::LangSmith.PlaygroundPromptCanvasPayloadMessageDiscriminatorType.AIMessageChunk)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessageChunkInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessageChunkInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AIMessageChunkInput)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessageChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessageChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AIMessageChunk)}");
                 aIMessageChunk = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.HumanMessageChunk? humanMessageChunk = default;
@@ -136,8 +136,8 @@ namespace LangSmith.JsonConverters
 
             if (value.IsAi)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessageInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessageInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.AIMessageInput).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.AIMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ai, typeInfo);
             }
             else if (value.IsHuman)
@@ -172,8 +172,8 @@ namespace LangSmith.JsonConverters
             }
             else if (value.IsAIMessageChunk)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessageChunkInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessageChunkInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.AIMessageChunkInput).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AIMessageChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AIMessageChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.AIMessageChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AIMessageChunk, typeInfo);
             }
             else if (value.IsHumanMessageChunk)

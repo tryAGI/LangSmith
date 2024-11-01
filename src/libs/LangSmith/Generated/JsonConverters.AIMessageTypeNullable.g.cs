@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AIMessageChunkOutputTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AIMessageChunkOutputType>
+    public sealed class AIMessageTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AIMessageType?>
     {
         /// <inheritdoc />
-        public override global::LangSmith.AIMessageChunkOutputType Read(
+        public override global::LangSmith.AIMessageType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.AIMessageChunkOutputTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::LangSmith.AIMessageTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.AIMessageChunkOutputType)numValue;
+                    return (global::LangSmith.AIMessageType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,19 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.AIMessageChunkOutputType value,
+            global::LangSmith.AIMessageType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::LangSmith.AIMessageChunkOutputTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::LangSmith.AIMessageTypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }
