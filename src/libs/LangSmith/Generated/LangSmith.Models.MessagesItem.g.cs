@@ -23,9 +23,9 @@ namespace LangSmith
         /// (e.g., tool calls, usage metadata) added by the LangChain framework.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LangSmith.AIMessageInput? Ai { get; init; }
+        public global::LangSmith.AIMessage? Ai { get; init; }
 #else
-        public global::LangSmith.AIMessageInput? Ai { get; }
+        public global::LangSmith.AIMessage? Ai { get; }
 #endif
 
         /// <summary>
@@ -39,17 +39,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.AIMessageInput value) => new MessagesItem(value);
+        public static implicit operator MessagesItem(global::LangSmith.AIMessage value) => new MessagesItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.AIMessageInput?(MessagesItem @this) => @this.Ai;
+        public static implicit operator global::LangSmith.AIMessage?(MessagesItem @this) => @this.Ai;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.AIMessageInput? value)
+        public MessagesItem(global::LangSmith.AIMessage? value)
         {
             Ai = value;
         }
@@ -292,9 +292,9 @@ namespace LangSmith
         /// Message chunk from an AI.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LangSmith.AIMessageChunkInput? AIMessageChunk { get; init; }
+        public global::LangSmith.AIMessageChunk? AIMessageChunk { get; init; }
 #else
-        public global::LangSmith.AIMessageChunkInput? AIMessageChunk { get; }
+        public global::LangSmith.AIMessageChunk? AIMessageChunk { get; }
 #endif
 
         /// <summary>
@@ -308,17 +308,17 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem(global::LangSmith.AIMessageChunkInput value) => new MessagesItem(value);
+        public static implicit operator MessagesItem(global::LangSmith.AIMessageChunk value) => new MessagesItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::LangSmith.AIMessageChunkInput?(MessagesItem @this) => @this.AIMessageChunk;
+        public static implicit operator global::LangSmith.AIMessageChunk?(MessagesItem @this) => @this.AIMessageChunk;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesItem(global::LangSmith.AIMessageChunkInput? value)
+        public MessagesItem(global::LangSmith.AIMessageChunk? value)
         {
             AIMessageChunk = value;
         }
@@ -503,13 +503,13 @@ namespace LangSmith
         /// </summary>
         public MessagesItem(
             global::LangSmith.PlaygroundPromptCanvasPayloadMessageDiscriminatorType? type,
-            global::LangSmith.AIMessageInput? ai,
+            global::LangSmith.AIMessage? ai,
             global::LangSmith.HumanMessage? human,
             global::LangSmith.ChatMessage? chat,
             global::LangSmith.SystemMessage? system,
             global::LangSmith.FunctionMessage? function,
             global::LangSmith.ToolMessage? tool,
-            global::LangSmith.AIMessageChunkInput? aIMessageChunk,
+            global::LangSmith.AIMessageChunk? aIMessageChunk,
             global::LangSmith.HumanMessageChunk? humanMessageChunk,
             global::LangSmith.ChatMessageChunk? chatMessageChunk,
             global::LangSmith.SystemMessageChunk? systemMessageChunk,
@@ -563,13 +563,13 @@ namespace LangSmith
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LangSmith.AIMessageInput?, TResult>? ai = null,
+            global::System.Func<global::LangSmith.AIMessage?, TResult>? ai = null,
             global::System.Func<global::LangSmith.HumanMessage?, TResult>? human = null,
             global::System.Func<global::LangSmith.ChatMessage?, TResult>? chat = null,
             global::System.Func<global::LangSmith.SystemMessage?, TResult>? system = null,
             global::System.Func<global::LangSmith.FunctionMessage?, TResult>? function = null,
             global::System.Func<global::LangSmith.ToolMessage?, TResult>? tool = null,
-            global::System.Func<global::LangSmith.AIMessageChunkInput?, TResult>? aIMessageChunk = null,
+            global::System.Func<global::LangSmith.AIMessageChunk?, TResult>? aIMessageChunk = null,
             global::System.Func<global::LangSmith.HumanMessageChunk?, TResult>? humanMessageChunk = null,
             global::System.Func<global::LangSmith.ChatMessageChunk?, TResult>? chatMessageChunk = null,
             global::System.Func<global::LangSmith.SystemMessageChunk?, TResult>? systemMessageChunk = null,
@@ -638,13 +638,13 @@ namespace LangSmith
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LangSmith.AIMessageInput?>? ai = null,
+            global::System.Action<global::LangSmith.AIMessage?>? ai = null,
             global::System.Action<global::LangSmith.HumanMessage?>? human = null,
             global::System.Action<global::LangSmith.ChatMessage?>? chat = null,
             global::System.Action<global::LangSmith.SystemMessage?>? system = null,
             global::System.Action<global::LangSmith.FunctionMessage?>? function = null,
             global::System.Action<global::LangSmith.ToolMessage?>? tool = null,
-            global::System.Action<global::LangSmith.AIMessageChunkInput?>? aIMessageChunk = null,
+            global::System.Action<global::LangSmith.AIMessageChunk?>? aIMessageChunk = null,
             global::System.Action<global::LangSmith.HumanMessageChunk?>? humanMessageChunk = null,
             global::System.Action<global::LangSmith.ChatMessageChunk?>? chatMessageChunk = null,
             global::System.Action<global::LangSmith.SystemMessageChunk?>? systemMessageChunk = null,
@@ -715,7 +715,7 @@ namespace LangSmith
             var fields = new object?[]
             {
                 Ai,
-                typeof(global::LangSmith.AIMessageInput),
+                typeof(global::LangSmith.AIMessage),
                 Human,
                 typeof(global::LangSmith.HumanMessage),
                 Chat,
@@ -727,7 +727,7 @@ namespace LangSmith
                 Tool,
                 typeof(global::LangSmith.ToolMessage),
                 AIMessageChunk,
-                typeof(global::LangSmith.AIMessageChunkInput),
+                typeof(global::LangSmith.AIMessageChunk),
                 HumanMessageChunk,
                 typeof(global::LangSmith.HumanMessageChunk),
                 ChatMessageChunk,
@@ -753,13 +753,13 @@ namespace LangSmith
         public bool Equals(MessagesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageInput?>.Default.Equals(Ai, other.Ai) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessage?>.Default.Equals(Ai, other.Ai) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.HumanMessage?>.Default.Equals(Human, other.Human) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ChatMessage?>.Default.Equals(Chat, other.Chat) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.SystemMessage?>.Default.Equals(System, other.System) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.FunctionMessage?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ToolMessage?>.Default.Equals(Tool, other.Tool) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageChunkInput?>.Default.Equals(AIMessageChunk, other.AIMessageChunk) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AIMessageChunk?>.Default.Equals(AIMessageChunk, other.AIMessageChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.HumanMessageChunk?>.Default.Equals(HumanMessageChunk, other.HumanMessageChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ChatMessageChunk?>.Default.Equals(ChatMessageChunk, other.ChatMessageChunk) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.SystemMessageChunk?>.Default.Equals(SystemMessageChunk, other.SystemMessageChunk) &&

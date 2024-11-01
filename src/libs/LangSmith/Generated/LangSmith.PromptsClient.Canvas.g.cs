@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
+        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
             global::LangSmith.PlaygroundPromptCanvasPayload request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, __ex);
             }
 
-            return
-                global::LangSmith.PlaygroundPromptCanvasResponse.FromJson(__content, JsonSerializerContext) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -125,7 +123,7 @@ namespace LangSmith
         /// <param name="templateFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundPromptCanvasResponse> CanvasAsync(
+        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
             global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
             global::LangSmith.Highlight? highlighted = default,

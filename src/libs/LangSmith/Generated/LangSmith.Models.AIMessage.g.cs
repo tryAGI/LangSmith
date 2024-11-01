@@ -6,9 +6,13 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Message chunk from an AI.
+    /// Message from an AI.<br/>
+    /// AIMessage is returned from a chat model as a response to a prompt.<br/>
+    /// This message represents the output of the model and consists of both<br/>
+    /// the raw output as returned by the model together standardized fields<br/>
+    /// (e.g., tool calls, usage metadata) added by the LangChain framework.
     /// </summary>
-    public sealed partial class AIMessageChunkOutput
+    public sealed partial class AIMessage
     {
         /// <summary>
         /// 
@@ -31,11 +35,11 @@ namespace LangSmith
         public object? ResponseMetadata { get; set; }
 
         /// <summary>
-        /// Default Value: AIMessageChunk
+        /// Default Value: ai
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AIMessageChunkOutputTypeJsonConverter))]
-        public global::LangSmith.AIMessageChunkOutputType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AIMessageTypeJsonConverter))]
+        public global::LangSmith.AIMessageType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -93,12 +97,6 @@ namespace LangSmith
         public global::LangSmith.UsageMetadata? UsageMetadata { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_chunks")]
-        public global::System.Collections.Generic.IList<global::LangSmith.ToolCallChunk>? ToolCallChunks { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -135,14 +133,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.AIMessageChunkOutput? FromJson(
+        public static global::LangSmith.AIMessage? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.AIMessageChunkOutput),
-                jsonSerializerContext) as global::LangSmith.AIMessageChunkOutput;
+                typeof(global::LangSmith.AIMessage),
+                jsonSerializerContext) as global::LangSmith.AIMessage;
         }
 
         /// <summary>
@@ -152,11 +150,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.AIMessageChunkOutput? FromJson(
+        public static global::LangSmith.AIMessage? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.AIMessageChunkOutput>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.AIMessage>(
                 json,
                 jsonSerializerOptions);
         }

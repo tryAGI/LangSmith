@@ -6,52 +6,8 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class PlaygroundPromptCanvasResponse
+    public sealed partial class AIMessageAdditionalKwargs
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.MessagesItem2> Messages { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("highlighted")]
-        public global::LangSmith.Highlight? Highlighted { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("artifact")]
-        public global::LangSmith.Artifact? Artifact { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("next")]
-        public string? Next { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("artifact_length")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasResponseArtifactLengthJsonConverter))]
-        public global::LangSmith.PlaygroundPromptCanvasResponseArtifactLength? ArtifactLength { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reading_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasResponseReadingLevelJsonConverter))]
-        public global::LangSmith.PlaygroundPromptCanvasResponseReadingLevel? ReadingLevel { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("last_node_name")]
-        public string? LastNodeName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,14 +46,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.PlaygroundPromptCanvasResponse? FromJson(
+        public static global::LangSmith.AIMessageAdditionalKwargs? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.PlaygroundPromptCanvasResponse),
-                jsonSerializerContext) as global::LangSmith.PlaygroundPromptCanvasResponse;
+                typeof(global::LangSmith.AIMessageAdditionalKwargs),
+                jsonSerializerContext) as global::LangSmith.AIMessageAdditionalKwargs;
         }
 
         /// <summary>
@@ -107,11 +63,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.PlaygroundPromptCanvasResponse? FromJson(
+        public static global::LangSmith.AIMessageAdditionalKwargs? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.PlaygroundPromptCanvasResponse>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.AIMessageAdditionalKwargs>(
                 json,
                 jsonSerializerOptions);
         }
