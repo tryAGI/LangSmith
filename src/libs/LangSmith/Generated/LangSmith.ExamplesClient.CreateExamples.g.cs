@@ -6,12 +6,10 @@ namespace LangSmith
     public partial class ExamplesClient
     {
         partial void PrepareCreateExamplesArguments(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleBulkCreate> request);
+            global::System.Net.Http.HttpClient httpClient);
         partial void PrepareCreateExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleBulkCreate> request);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
         partial void ProcessCreateExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -25,20 +23,15 @@ namespace LangSmith
         /// Create Examples<br/>
         /// Create a new example.
         /// </summary>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> CreateExamplesAsync(
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleBulkCreate> request,
+        public async global::System.Threading.Tasks.Task<string> CreateExamplesAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateExamplesArguments(
-                httpClient: HttpClient,
-                request: request);
+                httpClient: HttpClient);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/examples/bulk",
@@ -63,20 +56,13 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
             PrepareCreateExamplesRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
+                httpRequestMessage: __httpRequest);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -110,9 +96,7 @@ namespace LangSmith
                 throw new global::System.InvalidOperationException(__content, __ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.Example>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.Example> ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

@@ -20,7 +20,8 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformation_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeJsonConverter))]
-        public global::LangSmith.DatasetTransformationType TransformationType { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.DatasetTransformationType TransformationType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

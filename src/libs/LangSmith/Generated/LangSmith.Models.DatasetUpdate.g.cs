@@ -48,7 +48,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
-        public global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? Transformations { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? Transformations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

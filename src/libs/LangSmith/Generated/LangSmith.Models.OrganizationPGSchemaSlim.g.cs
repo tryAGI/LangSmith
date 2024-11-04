@@ -67,6 +67,12 @@ namespace LangSmith
         public bool? SsoOnly { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
+        public bool? PublicSharingDisabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
