@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Update organization schema. only support display_name for now.
+    /// Update organization schema.
     /// </summary>
     public sealed partial class OrganizationUpdate
     {
@@ -13,6 +13,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
+        public bool? PublicSharingDisabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unshare_all")]
+        public bool? UnshareAll { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

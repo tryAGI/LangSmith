@@ -2213,12 +2213,6 @@ paths:
       summary: Create Example
       description: Create a new example.
       operationId: create_example_api_v1_examples_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ExampleCreate'
-        required: true
       responses:
         '200':
           description: Successful Response
@@ -2226,12 +2220,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Example'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -2275,31 +2263,12 @@ paths:
       summary: Create Examples
       description: Create a new example.
       operationId: create_examples_api_v1_examples_bulk_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              title: Examples
-              type: array
-              items:
-                $ref: '#/components/schemas/ExampleBulkCreate'
-        required: true
       responses:
         '200':
           description: Successful Response
           content:
             application/json:
-              schema:
-                title: Response Create Examples Api V1 Examples Bulk Post
-                type: array
-                items:
-                  $ref: '#/components/schemas/Example'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+              schema: { }
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -2383,12 +2352,6 @@ paths:
       summary: Validate Example
       description: Validate an example.
       operationId: validate_example_api_v1_examples_validate_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ExampleCreate'
-        required: true
       responses:
         '200':
           description: Successful Response
@@ -2396,12 +2359,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExampleValidationResult'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -12883,6 +12840,10 @@ components:
       title: DatasetTransformationType
       enum:
         - remove_system_messages
+        - convert_to_openai_chat_input
+        - convert_to_openai_chat_output
+        - convert_to_openai_message
+        - convert_to_openai_tool
       type: string
       description: Enum for dataset data types.
     DatasetUpdate:
@@ -12929,9 +12890,13 @@ components:
           nullable: true
         transformations:
           title: Transformations
-          type: array
-          items:
-            $ref: '#/components/schemas/DatasetTransformation'
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/DatasetTransformation'
+            - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
           nullable: true
       description: Update class for Dataset.
     DatasetVersion:
@@ -13043,107 +13008,6 @@ components:
           format: date-time
           nullable: true
       description: Example schema.
-    ExampleBulkCreate:
-      title: ExampleBulkCreate
-      required:
-        - dataset_id
-      type: object
-      properties:
-        outputs:
-          title: Outputs
-          type: object
-          nullable: true
-        dataset_id:
-          title: Dataset Id
-          type: string
-          format: uuid
-        source_run_id:
-          title: Source Run Id
-          type: string
-          format: uuid
-          nullable: true
-        metadata:
-          title: Metadata
-          type: object
-          nullable: true
-        inputs:
-          title: Inputs
-          type: object
-          nullable: true
-        split:
-          title: Split
-          anyOf:
-            - type: array
-              items:
-                type: string
-            - type: string
-          default: base
-          nullable: true
-        id:
-          title: Id
-          type: string
-          format: uuid
-          nullable: true
-        use_source_run_io:
-          title: Use Source Run Io
-          type: boolean
-          default: false
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-          nullable: true
-      description: Example class with optional created_at field to prevent multiple versions when bulk creating examples.
-    ExampleCreate:
-      title: ExampleCreate
-      required:
-        - dataset_id
-      type: object
-      properties:
-        outputs:
-          title: Outputs
-          type: object
-          nullable: true
-        dataset_id:
-          title: Dataset Id
-          type: string
-          format: uuid
-        source_run_id:
-          title: Source Run Id
-          type: string
-          format: uuid
-          nullable: true
-        metadata:
-          title: Metadata
-          type: object
-          nullable: true
-        inputs:
-          title: Inputs
-          type: object
-          nullable: true
-        split:
-          title: Split
-          anyOf:
-            - type: array
-              items:
-                type: string
-            - type: string
-          default: base
-          nullable: true
-        id:
-          title: Id
-          type: string
-          format: uuid
-          nullable: true
-        use_source_run_io:
-          title: Use Source Run Io
-          type: boolean
-          default: false
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-      description: Create class for Example.
     ExampleListOrder:
       title: ExampleListOrder
       enum:
@@ -14311,16 +14175,24 @@ components:
     Highlight:
       title: Highlight
       required:
-        - start_char_index
-        - end_char_index
+        - prompt_chunk_start_index
+        - prompt_chunk_end_index
+        - prompt_chunk
+        - highlight_text
       type: object
       properties:
-        start_char_index:
-          title: Start Char Index
+        prompt_chunk_start_index:
+          title: Prompt Chunk Start Index
           type: integer
-        end_char_index:
-          title: End Char Index
+        prompt_chunk_end_index:
+          title: Prompt Chunk End Index
           type: integer
+        prompt_chunk:
+          title: Prompt Chunk
+          type: string
+        highlight_text:
+          title: Highlight Text
+          type: string
     HumanMessage:
       title: HumanMessage
       required:
@@ -15377,6 +15249,10 @@ components:
           title: Premier Plan Approval Date
           type: string
           nullable: true
+        can_disable_public_sharing:
+          title: Can Disable Public Sharing
+          type: boolean
+          default: false
         can_serve_datasets:
           title: Can Serve Datasets
           type: boolean
@@ -15526,6 +15402,10 @@ components:
           title: Sso Login Slug
           type: string
           nullable: true
+        public_sharing_disabled:
+          title: Public Sharing Disabled
+          type: boolean
+          default: false
       description: Information about an organization.
     OrganizationMembers:
       title: OrganizationMembers
@@ -15595,6 +15475,10 @@ components:
           title: Sso Only
           type: boolean
           default: false
+        public_sharing_disabled:
+          title: Public Sharing Disabled
+          type: boolean
+          default: false
       description: Schema for an organization in postgres for list views.
     OrganizationUpdate:
       title: OrganizationUpdate
@@ -15602,9 +15486,18 @@ components:
       properties:
         display_name:
           title: Display Name
+          minLength: 1
+          pattern: '^[a-zA-Z0-9\-_ ]+$'
           type: string
+        public_sharing_disabled:
+          title: Public Sharing Disabled
+          type: boolean
           nullable: true
-      description: Update organization schema. only support display_name for now.
+        unshare_all:
+          title: Unshare All
+          type: boolean
+          nullable: true
+      description: Update organization schema.
     OutputTokenDetails:
       title: OutputTokenDetails
       type: object

@@ -141,7 +141,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? inputsSchemaDefinition = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? outputsSchemaDefinition = default,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples = default,
-            global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? transformations = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.DatasetUpdate

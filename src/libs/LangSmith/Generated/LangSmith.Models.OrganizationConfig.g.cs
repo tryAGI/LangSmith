@@ -53,6 +53,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_disable_public_sharing")]
+        public bool? CanDisablePublicSharing { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_serve_datasets")]
         public bool? CanServeDatasets { get; set; }
 
