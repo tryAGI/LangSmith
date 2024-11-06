@@ -11038,6 +11038,7 @@ components:
             - session_id
             - serialized
             - reference_example_id
+            - reference_dataset_id
             - total_tokens
             - prompt_tokens
             - completion_tokens
@@ -15293,6 +15294,10 @@ components:
           title: Show Playground Prompt Canvas
           type: boolean
           default: false
+        allow_custom_iframes:
+          title: Allow Custom Iframes
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -17414,6 +17419,11 @@ components:
           title: Trace Upgrade
           type: boolean
           default: false
+        reference_dataset_id:
+          title: Reference Dataset Id
+          type: string
+          format: uuid
+          nullable: true
       description: Run schema.
     RunSchemaComparisonView:
       title: RunSchemaComparisonView
@@ -17787,6 +17797,11 @@ components:
           title: Trace Upgrade
           type: boolean
           default: false
+        reference_dataset_id:
+          title: Reference Dataset Id
+          type: string
+          format: uuid
+          nullable: true
         queue_run_id:
           title: Queue Run Id
           type: string
@@ -17837,6 +17852,7 @@ components:
         - session_id
         - serialized
         - reference_example_id
+        - reference_dataset_id
         - total_tokens
         - prompt_tokens
         - completion_tokens

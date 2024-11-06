@@ -295,6 +295,12 @@ namespace LangSmith
         public bool? TraceUpgrade { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
+        public global::System.Guid? ReferenceDatasetId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

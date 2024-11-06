@@ -117,6 +117,12 @@ namespace LangSmith
         public bool? ShowPlaygroundPromptCanvas { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_custom_iframes")]
+        public bool? AllowCustomIframes { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]

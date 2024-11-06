@@ -297,6 +297,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
+        public global::System.Guid? ReferenceDatasetId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queue_run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid QueueRunId { get; set; }
