@@ -119,6 +119,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ReferenceDatasetId,
+        /// <summary>
+        /// 
+        /// </summary>
         TotalTokens,
         /// <summary>
         /// 
@@ -245,6 +249,7 @@ namespace LangSmith
                 RunSelect.SessionId => "session_id",
                 RunSelect.Serialized => "serialized",
                 RunSelect.ReferenceExampleId => "reference_example_id",
+                RunSelect.ReferenceDatasetId => "reference_dataset_id",
                 RunSelect.TotalTokens => "total_tokens",
                 RunSelect.PromptTokens => "prompt_tokens",
                 RunSelect.CompletionTokens => "completion_tokens",
@@ -304,6 +309,7 @@ namespace LangSmith
                 "session_id" => RunSelect.SessionId,
                 "serialized" => RunSelect.Serialized,
                 "reference_example_id" => RunSelect.ReferenceExampleId,
+                "reference_dataset_id" => RunSelect.ReferenceDatasetId,
                 "total_tokens" => RunSelect.TotalTokens,
                 "prompt_tokens" => RunSelect.PromptTokens,
                 "completion_tokens" => RunSelect.CompletionTokens,
