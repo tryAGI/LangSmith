@@ -15,19 +15,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ConvertToOpenaiChatInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        ConvertToOpenaiChatOutput,
-        /// <summary>
-        /// 
-        /// </summary>
         ConvertToOpenaiMessage,
         /// <summary>
         /// 
         /// </summary>
         ConvertToOpenaiTool,
+        /// <summary>
+        /// 
+        /// </summary>
+        RemoveExtraFields,
     }
 
     /// <summary>
@@ -43,10 +39,9 @@ namespace LangSmith
             return value switch
             {
                 DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
-                DatasetTransformationType.ConvertToOpenaiChatInput => "convert_to_openai_chat_input",
-                DatasetTransformationType.ConvertToOpenaiChatOutput => "convert_to_openai_chat_output",
                 DatasetTransformationType.ConvertToOpenaiMessage => "convert_to_openai_message",
                 DatasetTransformationType.ConvertToOpenaiTool => "convert_to_openai_tool",
+                DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +53,9 @@ namespace LangSmith
             return value switch
             {
                 "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
-                "convert_to_openai_chat_input" => DatasetTransformationType.ConvertToOpenaiChatInput,
-                "convert_to_openai_chat_output" => DatasetTransformationType.ConvertToOpenaiChatOutput,
                 "convert_to_openai_message" => DatasetTransformationType.ConvertToOpenaiMessage,
                 "convert_to_openai_tool" => DatasetTransformationType.ConvertToOpenaiTool,
+                "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
                 _ => null,
             };
         }

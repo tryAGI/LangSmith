@@ -5213,6 +5213,7 @@ paths:
               - metadata
               - inputs
               - outputs
+              - attachment_urls
         - name: filter
           in: query
           schema:
@@ -12841,10 +12842,9 @@ components:
       title: DatasetTransformationType
       enum:
         - remove_system_messages
-        - convert_to_openai_chat_input
-        - convert_to_openai_chat_output
         - convert_to_openai_message
         - convert_to_openai_tool
+        - remove_extra_fields
       type: string
       description: Enum for dataset data types.
     DatasetUpdate:
@@ -13008,6 +13008,10 @@ components:
           type: string
           format: date-time
           nullable: true
+        attachment_urls:
+          title: Attachment Urls
+          type: object
+          nullable: true
       description: Example schema.
     ExampleListOrder:
       title: ExampleListOrder
@@ -13054,6 +13058,7 @@ components:
         - metadata
         - inputs
         - outputs
+        - attachment_urls
       type: string
     ExampleUpdate:
       title: ExampleUpdate
@@ -13229,6 +13234,10 @@ components:
           type: string
           format: date-time
           nullable: true
+        attachment_urls:
+          title: Attachment Urls
+          type: object
+          nullable: true
         runs:
           title: Runs
           type: array
@@ -13280,6 +13289,10 @@ components:
           title: Modified At
           type: string
           format: date-time
+          nullable: true
+        attachment_urls:
+          title: Attachment Urls
+          type: object
           nullable: true
         runs:
           title: Runs
@@ -15955,6 +15968,10 @@ components:
           title: Modified At
           type: string
           format: date-time
+          nullable: true
+        attachment_urls:
+          title: Attachment Urls
+          type: object
           nullable: true
         runs:
           title: Runs

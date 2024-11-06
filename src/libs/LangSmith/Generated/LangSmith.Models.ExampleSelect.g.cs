@@ -44,6 +44,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Outputs,
+        /// <summary>
+        /// 
+        /// </summary>
+        AttachmentUrls,
     }
 
     /// <summary>
@@ -67,6 +71,7 @@ namespace LangSmith
                 ExampleSelect.Metadata => "metadata",
                 ExampleSelect.Inputs => "inputs",
                 ExampleSelect.Outputs => "outputs",
+                ExampleSelect.AttachmentUrls => "attachment_urls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -86,6 +91,7 @@ namespace LangSmith
                 "metadata" => ExampleSelect.Metadata,
                 "inputs" => ExampleSelect.Inputs,
                 "outputs" => ExampleSelect.Outputs,
+                "attachment_urls" => ExampleSelect.AttachmentUrls,
                 _ => null,
             };
         }
