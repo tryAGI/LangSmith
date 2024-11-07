@@ -15777,7 +15777,7 @@ components:
           nullable: true
         repetitions:
           title: Repetitions
-          maximum: 10.0
+          maximum: 30.0
           minimum: 1.0
           type: integer
           default: 1
