@@ -7426,8 +7426,8 @@ paths:
     post:
       tags:
         - prompts
-      summary: Canvas
-      operationId: canvas_api_v1_prompts_canvas_post
+      summary: Prompt Canvas
+      operationId: prompt_canvas_api_v1_prompts_canvas_post
       requestBody:
         content:
           application/json:
@@ -11036,6 +11036,7 @@ components:
             - parent_run_id
             - manifest_id
             - manifest_s3_id
+            - manifest
             - session_id
             - serialized
             - reference_example_id
@@ -12844,6 +12845,7 @@ components:
         - remove_system_messages
         - convert_to_openai_message
         - convert_to_openai_tool
+        - extract_tools_from_run
         - remove_extra_fields
       type: string
       description: Enum for dataset data types.
@@ -17866,6 +17868,7 @@ components:
         - parent_run_id
         - manifest_id
         - manifest_s3_id
+        - manifest
         - session_id
         - serialized
         - reference_example_id

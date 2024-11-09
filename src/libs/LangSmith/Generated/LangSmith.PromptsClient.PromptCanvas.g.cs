@@ -5,29 +5,29 @@ namespace LangSmith
 {
     public partial class PromptsClient
     {
-        partial void PrepareCanvasArguments(
+        partial void PreparePromptCanvasArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.PlaygroundPromptCanvasPayload request);
-        partial void PrepareCanvasRequest(
+        partial void PreparePromptCanvasRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::LangSmith.PlaygroundPromptCanvasPayload request);
-        partial void ProcessCanvasResponse(
+        partial void ProcessPromptCanvasResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCanvasResponseContent(
+        partial void ProcessPromptCanvasResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Canvas
+        /// Prompt Canvas
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
+        public async global::System.Threading.Tasks.Task<string> PromptCanvasAsync(
             global::LangSmith.PlaygroundPromptCanvasPayload request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -35,7 +35,7 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCanvasArguments(
+            PreparePromptCanvasArguments(
                 httpClient: HttpClient,
                 request: request);
 
@@ -72,7 +72,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCanvasRequest(
+            PreparePromptCanvasRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -85,7 +85,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCanvasResponse(
+            ProcessPromptCanvasResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -95,7 +95,7 @@ namespace LangSmith
                 client: HttpClient,
                 response: __response,
                 content: ref __content);
-            ProcessCanvasResponseContent(
+            ProcessPromptCanvasResponseContent(
                 httpClient: HttpClient,
                 httpResponseMessage: __response,
                 content: ref __content);
@@ -113,7 +113,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Canvas
+        /// Prompt Canvas
         /// </summary>
         /// <param name="messages"></param>
         /// <param name="highlighted"></param>
@@ -123,7 +123,7 @@ namespace LangSmith
         /// <param name="templateFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CanvasAsync(
+        public async global::System.Threading.Tasks.Task<string> PromptCanvasAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
             global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
             global::LangSmith.Highlight? highlighted = default,
@@ -142,7 +142,7 @@ namespace LangSmith
                 TemplateFormat = templateFormat,
             };
 
-            return await CanvasAsync(
+            return await PromptCanvasAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
