@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class CanvasApiV1PromptsCanvasPostResponse
+    public sealed partial class PromptCanvasApiV1PromptsCanvasPostResponse
     {
 
         /// <summary>
@@ -46,14 +46,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.CanvasApiV1PromptsCanvasPostResponse? FromJson(
+        public static global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.CanvasApiV1PromptsCanvasPostResponse),
-                jsonSerializerContext) as global::LangSmith.CanvasApiV1PromptsCanvasPostResponse;
+                typeof(global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse),
+                jsonSerializerContext) as global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse;
         }
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.CanvasApiV1PromptsCanvasPostResponse? FromJson(
+        public static global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.CanvasApiV1PromptsCanvasPostResponse>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -75,14 +75,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.CanvasApiV1PromptsCanvasPostResponse?> FromJsonStream(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse?> FromJsonStream(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.CanvasApiV1PromptsCanvasPostResponse),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.CanvasApiV1PromptsCanvasPostResponse;
+                typeof(global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse;
         }
 
         /// <summary>
@@ -92,11 +92,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.CanvasApiV1PromptsCanvasPostResponse?> FromJsonStream(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse?> FromJsonStream(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.CanvasApiV1PromptsCanvasPostResponse?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.PromptCanvasApiV1PromptsCanvasPostResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

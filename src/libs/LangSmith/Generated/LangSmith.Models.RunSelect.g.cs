@@ -107,6 +107,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Manifest,
+        /// <summary>
+        /// 
+        /// </summary>
         SessionId,
         /// <summary>
         /// 
@@ -246,6 +250,7 @@ namespace LangSmith
                 RunSelect.ParentRunId => "parent_run_id",
                 RunSelect.ManifestId => "manifest_id",
                 RunSelect.ManifestS3Id => "manifest_s3_id",
+                RunSelect.Manifest => "manifest",
                 RunSelect.SessionId => "session_id",
                 RunSelect.Serialized => "serialized",
                 RunSelect.ReferenceExampleId => "reference_example_id",
@@ -306,6 +311,7 @@ namespace LangSmith
                 "parent_run_id" => RunSelect.ParentRunId,
                 "manifest_id" => RunSelect.ManifestId,
                 "manifest_s3_id" => RunSelect.ManifestS3Id,
+                "manifest" => RunSelect.Manifest,
                 "session_id" => RunSelect.SessionId,
                 "serialized" => RunSelect.Serialized,
                 "reference_example_id" => RunSelect.ReferenceExampleId,
