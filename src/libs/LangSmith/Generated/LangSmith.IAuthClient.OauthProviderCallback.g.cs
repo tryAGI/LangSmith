@@ -9,7 +9,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> OauthProviderCallbackAsync(
             global::LangSmith.OAuthProvider provider,
             global::System.Threading.CancellationToken cancellationToken = default);

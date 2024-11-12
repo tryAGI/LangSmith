@@ -96,91 +96,58 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RuleLogSchema" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="ruleId"></param>
+        /// <param name="runId"></param>
+        /// <param name="runName"></param>
+        /// <param name="runType"></param>
+        /// <param name="runSessionId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="applicationTime"></param>
+        /// <param name="addToAnnotationQueue"></param>
+        /// <param name="addToDataset"></param>
+        /// <param name="evaluators"></param>
+        /// <param name="alerts"></param>
+        /// <param name="webhooks"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RuleLogSchema(
+            global::System.Guid ruleId,
+            global::System.Guid runId,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
+            string? runName,
+            string? runType,
+            global::System.Guid? runSessionId,
+            global::System.DateTime? applicationTime,
+            global::LangSmith.RuleLogActionResponse? addToAnnotationQueue,
+            global::LangSmith.RuleLogActionResponse? addToDataset,
+            global::LangSmith.RuleLogActionResponse? evaluators,
+            global::LangSmith.RuleLogActionResponse? alerts,
+            global::LangSmith.RuleLogActionResponse? webhooks)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.RuleId = ruleId;
+            this.RunId = runId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.RunName = runName;
+            this.RunType = runType;
+            this.RunSessionId = runSessionId;
+            this.ApplicationTime = applicationTime;
+            this.AddToAnnotationQueue = addToAnnotationQueue;
+            this.AddToDataset = addToDataset;
+            this.Evaluators = evaluators;
+            this.Alerts = alerts;
+            this.Webhooks = webhooks;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RuleLogSchema" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RuleLogSchema()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.RuleLogSchema? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.RuleLogSchema),
-                jsonSerializerContext) as global::LangSmith.RuleLogSchema;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.RuleLogSchema? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.RuleLogSchema>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.RuleLogSchema?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.RuleLogSchema),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.RuleLogSchema;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.RuleLogSchema?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.RuleLogSchema?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

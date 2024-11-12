@@ -25,7 +25,7 @@ namespace LangSmith
         /// Enum for feedback levels.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadSharedFeedbacksAsync(
             global::System.Guid shareToken,
             global::System.Collections.Generic.IList<global::System.Guid>? run = default,

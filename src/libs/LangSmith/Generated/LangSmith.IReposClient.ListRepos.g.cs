@@ -33,7 +33,7 @@ namespace LangSmith
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
             bool? withLatestManifest = default,
             int? limit = default,

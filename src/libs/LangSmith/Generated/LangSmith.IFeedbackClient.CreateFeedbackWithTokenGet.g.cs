@@ -14,7 +14,7 @@ namespace LangSmith
         /// <param name="comment"></param>
         /// <param name="correction"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,

@@ -166,91 +166,90 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RepoWithLookups" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="repoHandle"></param>
+        /// <param name="description"></param>
+        /// <param name="readme"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="isPublic"></param>
+        /// <param name="isArchived"></param>
+        /// <param name="tags"></param>
+        /// <param name="originalRepoId"></param>
+        /// <param name="upstreamRepoId"></param>
+        /// <param name="owner"></param>
+        /// <param name="fullName"></param>
+        /// <param name="numLikes"></param>
+        /// <param name="numDownloads"></param>
+        /// <param name="numViews"></param>
+        /// <param name="likedByAuthUser"></param>
+        /// <param name="lastCommitHash"></param>
+        /// <param name="numCommits"></param>
+        /// <param name="originalRepoFullName"></param>
+        /// <param name="upstreamRepoFullName"></param>
+        /// <param name="latestCommitManifest">
+        /// Response model for get_commit_manifest.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepoWithLookups(
+            string repoHandle,
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            bool isPublic,
+            bool isArchived,
+            global::System.Collections.Generic.IList<string> tags,
+            string? owner,
+            string fullName,
+            int numLikes,
+            int numDownloads,
+            int numViews,
+            int numCommits,
+            string? description,
+            string? readme,
+            global::System.Guid? originalRepoId,
+            global::System.Guid? upstreamRepoId,
+            bool? likedByAuthUser,
+            string? lastCommitHash,
+            string? originalRepoFullName,
+            string? upstreamRepoFullName,
+            global::LangSmith.CommitManifestResponse? latestCommitManifest)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.IsPublic = isPublic;
+            this.IsArchived = isArchived;
+            this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.NumLikes = numLikes;
+            this.NumDownloads = numDownloads;
+            this.NumViews = numViews;
+            this.NumCommits = numCommits;
+            this.Description = description;
+            this.Readme = readme;
+            this.OriginalRepoId = originalRepoId;
+            this.UpstreamRepoId = upstreamRepoId;
+            this.LikedByAuthUser = likedByAuthUser;
+            this.LastCommitHash = lastCommitHash;
+            this.OriginalRepoFullName = originalRepoFullName;
+            this.UpstreamRepoFullName = upstreamRepoFullName;
+            this.LatestCommitManifest = latestCommitManifest;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RepoWithLookups" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RepoWithLookups()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.RepoWithLookups? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.RepoWithLookups),
-                jsonSerializerContext) as global::LangSmith.RepoWithLookups;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.RepoWithLookups? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.RepoWithLookups>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.RepoWithLookups?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.RepoWithLookups),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.RepoWithLookups;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.RepoWithLookups?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.RepoWithLookups?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

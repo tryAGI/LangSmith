@@ -137,91 +137,89 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="BodyParamsForRunSchema" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id"></param>
+        /// <param name="trace"></param>
+        /// <param name="parentRun"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
+        /// <param name="session"></param>
+        /// <param name="referenceExample"></param>
+        /// <param name="executionOrder"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="error"></param>
+        /// <param name="query"></param>
+        /// <param name="filter"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
+        /// <param name="isRoot"></param>
+        /// <param name="dataSourceType">
+        /// Enum for run data source types.
+        /// </param>
+        /// <param name="cursor"></param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="select">
+        /// Default Value: [id, name, run_type, start_time, end_time, status, error, extra, events, inputs, outputs, parent_run_id, manifest_id, manifest_s3_id, manifest, session_id, serialized, reference_example_id, reference_dataset_id, total_tokens, prompt_tokens, completion_tokens, total_cost, prompt_cost, completion_cost, price_model_id, first_token_time, trace_id, dotted_order, last_queued_at, feedback_stats, parent_run_ids, tags, in_dataset, app_path, share_token, trace_tier, trace_first_received_at, ttl_seconds, trace_upgrade]
+        /// </param>
+        /// <param name="order">
+        /// Enum for run start date order.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyParamsForRunSchema(
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::System.Guid? trace,
+            global::System.Guid? parentRun,
+            global::LangSmith.RunTypeEnum? runType,
+            global::System.Collections.Generic.IList<global::System.Guid>? session,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceExample,
+            int? executionOrder,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            bool? error,
+            string? query,
+            string? filter,
+            string? traceFilter,
+            string? treeFilter,
+            bool? isRoot,
+            global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType,
+            string? cursor,
+            int? limit,
+            global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select,
+            global::LangSmith.RunDateOrder? order)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id;
+            this.Trace = trace;
+            this.ParentRun = parentRun;
+            this.RunType = runType;
+            this.Session = session;
+            this.ReferenceExample = referenceExample;
+            this.ExecutionOrder = executionOrder;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Error = error;
+            this.Query = query;
+            this.Filter = filter;
+            this.TraceFilter = traceFilter;
+            this.TreeFilter = treeFilter;
+            this.IsRoot = isRoot;
+            this.DataSourceType = dataSourceType;
+            this.Cursor = cursor;
+            this.Limit = limit;
+            this.Select = select;
+            this.Order = order;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="BodyParamsForRunSchema" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public BodyParamsForRunSchema()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.BodyParamsForRunSchema? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.BodyParamsForRunSchema),
-                jsonSerializerContext) as global::LangSmith.BodyParamsForRunSchema;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.BodyParamsForRunSchema? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.BodyParamsForRunSchema>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.BodyParamsForRunSchema?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.BodyParamsForRunSchema),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.BodyParamsForRunSchema;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.BodyParamsForRunSchema?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.BodyParamsForRunSchema?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
