@@ -15681,6 +15681,7 @@ components:
       required:
         - messages
         - template_format
+        - secrets
       type: object
       properties:
         messages:
@@ -15722,12 +15723,21 @@ components:
             - phd
           type: string
           nullable: true
+        custom_action:
+          title: Custom Action
+          type: string
+          nullable: true
         template_format:
           title: Template Format
           enum:
             - f-string
             - mustache
           type: string
+        secrets:
+          title: Secrets
+          type: object
+          additionalProperties:
+            type: string
     PlaygroundRunOverDatasetRequestSchema:
       title: PlaygroundRunOverDatasetRequestSchema
       required:
