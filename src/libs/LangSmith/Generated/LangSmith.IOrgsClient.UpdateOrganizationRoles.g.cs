@@ -10,7 +10,7 @@ namespace LangSmith
         /// <param name="roleId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Role> UpdateOrganizationRolesAsync(
             global::System.Guid roleId,
             global::LangSmith.UpdateRoleRequest request,

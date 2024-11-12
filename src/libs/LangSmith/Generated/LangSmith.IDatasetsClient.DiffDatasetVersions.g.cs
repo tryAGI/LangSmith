@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="fromVersion"></param>
         /// <param name="toVersion"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetDiffInfo> DiffDatasetVersionsAsync(
             global::System.Guid datasetId,
             global::LangSmith.AnyOf<global::System.DateTime?, string> fromVersion,

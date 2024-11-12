@@ -28,7 +28,7 @@ namespace LangSmith
         /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListTagsResponse> ListRepoTagsAsync(
             int? limit = default,
             int? offset = default,

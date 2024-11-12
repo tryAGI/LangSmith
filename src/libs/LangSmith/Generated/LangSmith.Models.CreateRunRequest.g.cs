@@ -141,91 +141,79 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateRunRequest" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="name"></param>
+        /// <param name="inputs"></param>
+        /// <param name="runType"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="error"></param>
+        /// <param name="serialized"></param>
+        /// <param name="outputs"></param>
+        /// <param name="parentRunId"></param>
+        /// <param name="events"></param>
+        /// <param name="tags"></param>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        /// <param name="referenceExampleId"></param>
+        /// <param name="inputAttachments"></param>
+        /// <param name="outputAttachments"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateRunRequest(
+            string name,
+            global::LangSmith.CreateRunRequestRunType runType,
+            object? inputs,
+            global::LangSmith.OneOf<string, double?>? startTime,
+            global::LangSmith.OneOf<string, double?>? endTime,
+            object? extra,
+            string? error,
+            object? serialized,
+            object? outputs,
+            global::System.Guid? parentRunId,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Guid? traceId,
+            string? dottedOrder,
+            global::System.Guid? id,
+            global::System.Guid? sessionId,
+            string? sessionName,
+            global::System.Guid? referenceExampleId,
+            object? inputAttachments,
+            object? outputAttachments)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunType = runType;
+            this.Inputs = inputs;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Error = error;
+            this.Serialized = serialized;
+            this.Outputs = outputs;
+            this.ParentRunId = parentRunId;
+            this.Events = events;
+            this.Tags = tags;
+            this.TraceId = traceId;
+            this.DottedOrder = dottedOrder;
+            this.Id = id;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
+            this.ReferenceExampleId = referenceExampleId;
+            this.InputAttachments = inputAttachments;
+            this.OutputAttachments = outputAttachments;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateRunRequest" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateRunRequest()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.CreateRunRequest? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.CreateRunRequest),
-                jsonSerializerContext) as global::LangSmith.CreateRunRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.CreateRunRequest? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.CreateRunRequest>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.CreateRunRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.CreateRunRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.CreateRunRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.CreateRunRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.CreateRunRequest?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

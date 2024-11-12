@@ -12,7 +12,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> EagerlyCreateFeedbackAsync(
             global::LangSmith.FeedbackCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);

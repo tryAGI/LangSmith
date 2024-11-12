@@ -189,91 +189,111 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RunRulesSchema" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="isEnabled">
+        /// Default Value: true
+        /// </param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="datasetName"></param>
+        /// <param name="displayName"></param>
+        /// <param name="samplingRate"></param>
+        /// <param name="filter"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
+        /// <param name="addToAnnotationQueueId"></param>
+        /// <param name="addToAnnotationQueueName"></param>
+        /// <param name="addToDatasetId"></param>
+        /// <param name="addToDatasetName"></param>
+        /// <param name="addToDatasetPreferCorrection">
+        /// Default Value: false
+        /// </param>
+        /// <param name="correctionsDatasetId"></param>
+        /// <param name="useCorrectionsDataset">
+        /// Default Value: false
+        /// </param>
+        /// <param name="numFewShotExamples"></param>
+        /// <param name="evaluators"></param>
+        /// <param name="codeEvaluators"></param>
+        /// <param name="alerts"></param>
+        /// <param name="webhooks"></param>
+        /// <param name="extendOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="backfillFrom"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunRulesSchema(
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            string displayName,
+            double samplingRate,
+            global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            bool? isEnabled,
+            global::System.Guid? sessionId,
+            string? sessionName,
+            global::System.Guid? datasetId,
+            string? datasetName,
+            string? filter,
+            string? traceFilter,
+            string? treeFilter,
+            global::System.Guid? addToAnnotationQueueId,
+            string? addToAnnotationQueueName,
+            global::System.Guid? addToDatasetId,
+            string? addToDatasetName,
+            bool? addToDatasetPreferCorrection,
+            global::System.Guid? correctionsDatasetId,
+            bool? useCorrectionsDataset,
+            int? numFewShotExamples,
+            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators,
+            global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
+            global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
+            bool? extendOnly,
+            global::System.DateTime? backfillFrom)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.SamplingRate = samplingRate;
+            this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.IsEnabled = isEnabled;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
+            this.DatasetId = datasetId;
+            this.DatasetName = datasetName;
+            this.Filter = filter;
+            this.TraceFilter = traceFilter;
+            this.TreeFilter = treeFilter;
+            this.AddToAnnotationQueueId = addToAnnotationQueueId;
+            this.AddToAnnotationQueueName = addToAnnotationQueueName;
+            this.AddToDatasetId = addToDatasetId;
+            this.AddToDatasetName = addToDatasetName;
+            this.AddToDatasetPreferCorrection = addToDatasetPreferCorrection;
+            this.CorrectionsDatasetId = correctionsDatasetId;
+            this.UseCorrectionsDataset = useCorrectionsDataset;
+            this.NumFewShotExamples = numFewShotExamples;
+            this.Evaluators = evaluators;
+            this.CodeEvaluators = codeEvaluators;
+            this.Alerts = alerts;
+            this.ExtendOnly = extendOnly;
+            this.BackfillFrom = backfillFrom;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RunRulesSchema" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RunRulesSchema()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.RunRulesSchema? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.RunRulesSchema),
-                jsonSerializerContext) as global::LangSmith.RunRulesSchema;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.RunRulesSchema? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.RunRulesSchema>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.RunRulesSchema?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.RunRulesSchema),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.RunRulesSchema;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.RunRulesSchema?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.RunRulesSchema?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

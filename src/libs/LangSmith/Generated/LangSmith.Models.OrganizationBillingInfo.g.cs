@@ -98,91 +98,70 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="OrganizationBillingInfo" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
+        /// <param name="config">
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// </param>
+        /// <param name="connectedToStripe"></param>
+        /// <param name="connectedToMetronome"></param>
+        /// <param name="isPersonal"></param>
+        /// <param name="tier"></param>
+        /// <param name="paymentMethod">
+        /// Stripe customer billing info.
+        /// </param>
+        /// <param name="endOfBillingPeriod"></param>
+        /// <param name="currentPlan">
+        /// Customer visible plan information.
+        /// </param>
+        /// <param name="upcomingPlan">
+        /// Customer visible plan information.
+        /// </param>
+        /// <param name="reachedMaxWorkspaces">
+        /// Default Value: false
+        /// </param>
+        /// <param name="disabled">
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrganizationBillingInfo(
+            string displayName,
+            global::LangSmith.OrganizationConfig config,
+            bool connectedToStripe,
+            bool connectedToMetronome,
+            bool isPersonal,
+            global::System.Guid? id,
+            global::LangSmith.PaymentPlanTier? tier,
+            global::LangSmith.StripePaymentMethodInfo? paymentMethod,
+            global::System.DateTime? endOfBillingPeriod,
+            global::LangSmith.CustomerVisiblePlanInfo? currentPlan,
+            global::LangSmith.CustomerVisiblePlanInfo? upcomingPlan,
+            bool? reachedMaxWorkspaces,
+            bool? disabled)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.ConnectedToStripe = connectedToStripe;
+            this.ConnectedToMetronome = connectedToMetronome;
+            this.IsPersonal = isPersonal;
+            this.Id = id;
+            this.Tier = tier;
+            this.PaymentMethod = paymentMethod;
+            this.EndOfBillingPeriod = endOfBillingPeriod;
+            this.CurrentPlan = currentPlan;
+            this.UpcomingPlan = upcomingPlan;
+            this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
+            this.Disabled = disabled;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="OrganizationBillingInfo" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public OrganizationBillingInfo()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.OrganizationBillingInfo? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.OrganizationBillingInfo),
-                jsonSerializerContext) as global::LangSmith.OrganizationBillingInfo;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.OrganizationBillingInfo? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.OrganizationBillingInfo>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.OrganizationBillingInfo?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.OrganizationBillingInfo),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.OrganizationBillingInfo;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.OrganizationBillingInfo?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.OrganizationBillingInfo?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -14,7 +14,7 @@ namespace LangSmith
         /// Enum for acceptable color schemes of dashboards.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.OrganizationDashboardSchema> GetDashboardAsync(
             global::LangSmith.OrganizationDashboardType type,
             global::LangSmith.OrganizationDashboardColorScheme colorScheme,

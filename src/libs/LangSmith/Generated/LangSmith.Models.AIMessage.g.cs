@@ -102,91 +102,74 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="AIMessage" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="content"></param>
+        /// <param name="additionalKwargs"></param>
+        /// <param name="responseMetadata"></param>
+        /// <param name="type">
+        /// Default Value: ai
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="example">
+        /// Default Value: false
+        /// </param>
+        /// <param name="toolCalls"></param>
+        /// <param name="invalidToolCalls"></param>
+        /// <param name="usageMetadata">
+        /// Usage metadata for a message, such as token counts.<br/>
+        /// This is a standard representation of token usage that is consistent across models.<br/>
+        /// Example:<br/>
+        ///     .. code-block:: python<br/>
+        ///         {<br/>
+        ///             "input_tokens": 350,<br/>
+        ///             "output_tokens": 240,<br/>
+        ///             "total_tokens": 590,<br/>
+        ///             "input_token_details": {<br/>
+        ///                 "audio": 10,<br/>
+        ///                 "cache_creation": 200,<br/>
+        ///                 "cache_read": 100,<br/>
+        ///             },<br/>
+        ///             "output_token_details": {<br/>
+        ///                 "audio": 10,<br/>
+        ///                 "reasoning": 200,<br/>
+        ///             }<br/>
+        ///         }<br/>
+        /// .. versionchanged:: 0.3.9<br/>
+        ///     Added ``input_token_details`` and ``output_token_details``.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AIMessage(
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> content,
+            object? additionalKwargs,
+            object? responseMetadata,
+            global::LangSmith.AIMessageType? type,
+            string? name,
+            string? id,
+            bool? example,
+            global::System.Collections.Generic.IList<global::LangSmith.ToolCall>? toolCalls,
+            global::System.Collections.Generic.IList<global::LangSmith.InvalidToolCall>? invalidToolCalls,
+            global::LangSmith.UsageMetadata? usageMetadata)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Content = content;
+            this.AdditionalKwargs = additionalKwargs;
+            this.ResponseMetadata = responseMetadata;
+            this.Type = type;
+            this.Name = name;
+            this.Id = id;
+            this.Example = example;
+            this.ToolCalls = toolCalls;
+            this.InvalidToolCalls = invalidToolCalls;
+            this.UsageMetadata = usageMetadata;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="AIMessage" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public AIMessage()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.AIMessage? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.AIMessage),
-                jsonSerializerContext) as global::LangSmith.AIMessage;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.AIMessage? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.AIMessage>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.AIMessage?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.AIMessage),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.AIMessage;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.AIMessage?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.AIMessage?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -191,91 +191,106 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="TracerSession" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="defaultDatasetId"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="traceTier"></param>
+        /// <param name="id"></param>
+        /// <param name="runCount"></param>
+        /// <param name="latencyP50"></param>
+        /// <param name="latencyP99"></param>
+        /// <param name="firstTokenP50"></param>
+        /// <param name="firstTokenP99"></param>
+        /// <param name="totalTokens"></param>
+        /// <param name="promptTokens"></param>
+        /// <param name="completionTokens"></param>
+        /// <param name="totalCost"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="lastRunStartTime"></param>
+        /// <param name="lastRunStartTimeLive"></param>
+        /// <param name="feedbackStats"></param>
+        /// <param name="sessionFeedbackStats"></param>
+        /// <param name="runFacets"></param>
+        /// <param name="errorRate"></param>
+        /// <param name="streamingRate"></param>
+        /// <param name="testRunNumber"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TracerSession(
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            object? extra,
+            string? name,
+            string? description,
+            global::System.Guid? defaultDatasetId,
+            global::System.Guid? referenceDatasetId,
+            global::LangSmith.TraceTier? traceTier,
+            int? runCount,
+            double? latencyP50,
+            double? latencyP99,
+            double? firstTokenP50,
+            double? firstTokenP99,
+            int? totalTokens,
+            int? promptTokens,
+            int? completionTokens,
+            string? totalCost,
+            string? promptCost,
+            string? completionCost,
+            global::System.DateTime? lastRunStartTime,
+            global::System.DateTime? lastRunStartTimeLive,
+            object? feedbackStats,
+            object? sessionFeedbackStats,
+            global::System.Collections.Generic.IList<object>? runFacets,
+            double? errorRate,
+            double? streamingRate,
+            int? testRunNumber)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Name = name;
+            this.Description = description;
+            this.DefaultDatasetId = defaultDatasetId;
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.TraceTier = traceTier;
+            this.RunCount = runCount;
+            this.LatencyP50 = latencyP50;
+            this.LatencyP99 = latencyP99;
+            this.FirstTokenP50 = firstTokenP50;
+            this.FirstTokenP99 = firstTokenP99;
+            this.TotalTokens = totalTokens;
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.TotalCost = totalCost;
+            this.PromptCost = promptCost;
+            this.CompletionCost = completionCost;
+            this.LastRunStartTime = lastRunStartTime;
+            this.LastRunStartTimeLive = lastRunStartTimeLive;
+            this.FeedbackStats = feedbackStats;
+            this.SessionFeedbackStats = sessionFeedbackStats;
+            this.RunFacets = runFacets;
+            this.ErrorRate = errorRate;
+            this.StreamingRate = streamingRate;
+            this.TestRunNumber = testRunNumber;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="TracerSession" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public TracerSession()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.TracerSession? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.TracerSession),
-                jsonSerializerContext) as global::LangSmith.TracerSession;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.TracerSession? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TracerSession>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.TracerSession?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.TracerSession),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.TracerSession;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.TracerSession?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.TracerSession?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

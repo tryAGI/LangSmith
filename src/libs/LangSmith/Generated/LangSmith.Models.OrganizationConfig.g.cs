@@ -134,91 +134,111 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="maxIdentities">
+        /// Default Value: 5
+        /// </param>
+        /// <param name="maxWorkspaces">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="canUseRbac">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canAddSeats">
+        /// Default Value: true
+        /// </param>
+        /// <param name="startupPlanApprovalDate"></param>
+        /// <param name="partnerPlanApprovalDate"></param>
+        /// <param name="premierPlanApprovalDate"></param>
+        /// <param name="canDisablePublicSharing">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canServeDatasets">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canUseLanggraphCloud">
+        /// Default Value: false
+        /// </param>
+        /// <param name="maxLanggraphCloudDeployments">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="canUseSamlSso">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canUseBulkExport">
+        /// Default Value: false
+        /// </param>
+        /// <param name="usePythonPlaygroundService">
+        /// Default Value: false
+        /// </param>
+        /// <param name="showUpdatedSidenav">
+        /// Default Value: false
+        /// </param>
+        /// <param name="showUpdatedResourceTags">
+        /// Default Value: false
+        /// </param>
+        /// <param name="kvDatasetMessageSupport">
+        /// Default Value: false
+        /// </param>
+        /// <param name="showPlaygroundPromptCanvas">
+        /// Default Value: false
+        /// </param>
+        /// <param name="allowCustomIframes">
+        /// Default Value: false
+        /// </param>
+        /// <param name="flags"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrganizationConfig(
+            int? maxIdentities,
+            int? maxWorkspaces,
+            bool? canUseRbac,
+            bool? canAddSeats,
+            string? startupPlanApprovalDate,
+            string? partnerPlanApprovalDate,
+            string? premierPlanApprovalDate,
+            bool? canDisablePublicSharing,
+            bool? canServeDatasets,
+            bool? canUseLanggraphCloud,
+            int? maxLanggraphCloudDeployments,
+            bool? canUseSamlSso,
+            bool? canUseBulkExport,
+            bool? usePythonPlaygroundService,
+            bool? showUpdatedSidenav,
+            bool? showUpdatedResourceTags,
+            bool? kvDatasetMessageSupport,
+            bool? showPlaygroundPromptCanvas,
+            bool? allowCustomIframes,
+            global::System.Collections.Generic.Dictionary<string, bool>? flags)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.MaxIdentities = maxIdentities;
+            this.MaxWorkspaces = maxWorkspaces;
+            this.CanUseRbac = canUseRbac;
+            this.CanAddSeats = canAddSeats;
+            this.StartupPlanApprovalDate = startupPlanApprovalDate;
+            this.PartnerPlanApprovalDate = partnerPlanApprovalDate;
+            this.PremierPlanApprovalDate = premierPlanApprovalDate;
+            this.CanDisablePublicSharing = canDisablePublicSharing;
+            this.CanServeDatasets = canServeDatasets;
+            this.CanUseLanggraphCloud = canUseLanggraphCloud;
+            this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
+            this.CanUseSamlSso = canUseSamlSso;
+            this.CanUseBulkExport = canUseBulkExport;
+            this.UsePythonPlaygroundService = usePythonPlaygroundService;
+            this.ShowUpdatedSidenav = showUpdatedSidenav;
+            this.ShowUpdatedResourceTags = showUpdatedResourceTags;
+            this.KvDatasetMessageSupport = kvDatasetMessageSupport;
+            this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
+            this.AllowCustomIframes = allowCustomIframes;
+            this.Flags = flags;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public OrganizationConfig()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::LangSmith.OrganizationConfig? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::LangSmith.OrganizationConfig),
-                jsonSerializerContext) as global::LangSmith.OrganizationConfig;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::LangSmith.OrganizationConfig? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.OrganizationConfig>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.OrganizationConfig?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::LangSmith.OrganizationConfig),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.OrganizationConfig;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.OrganizationConfig?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.OrganizationConfig?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -10,7 +10,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="playgroundSettingsId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DeletePlaygroundSettingsAsync(
             string playgroundSettingsId,
             global::System.Threading.CancellationToken cancellationToken = default);
