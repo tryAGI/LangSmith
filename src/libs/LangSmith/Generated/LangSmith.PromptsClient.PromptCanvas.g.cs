@@ -120,16 +120,20 @@ namespace LangSmith
         /// <param name="artifact"></param>
         /// <param name="artifactLength"></param>
         /// <param name="readingLevel"></param>
+        /// <param name="customAction"></param>
         /// <param name="templateFormat"></param>
+        /// <param name="secrets"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> PromptCanvasAsync(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
             global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
+            global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.Highlight? highlighted = default,
             global::LangSmith.Artifact? artifact = default,
             global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength = default,
             global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel = default,
+            string? customAction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.PlaygroundPromptCanvasPayload
@@ -139,7 +143,9 @@ namespace LangSmith
                 Artifact = artifact,
                 ArtifactLength = artifactLength,
                 ReadingLevel = readingLevel,
+                CustomAction = customAction,
                 TemplateFormat = templateFormat,
+                Secrets = secrets,
             };
 
             return await PromptCanvasAsync(
