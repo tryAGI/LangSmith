@@ -199,12 +199,10 @@ namespace LangSmith
                     };
                 }
 
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__responseStream, typeof(int?), JsonSerializerContext).ConfigureAwait(false) as int?;
+                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    __responseValue ??
+                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(int?), JsonSerializerContext).ConfigureAwait(false) as int? ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
