@@ -14,7 +14,7 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.AnyOf<global::System.DateTime?, string> AsOf { get; set; }
 

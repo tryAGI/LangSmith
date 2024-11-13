@@ -28,7 +28,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverterFactory3))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.AnyOf<int?, double?, object>? Value { get; set; }
 

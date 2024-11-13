@@ -34,7 +34,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.OneOfJsonConverter<string, double?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.OneOf<string, double?> EndTime { get; set; }
 
