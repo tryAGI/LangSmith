@@ -123,6 +123,12 @@ namespace LangSmith
         public bool? AllowCustomIframes { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_langgraph_pricing")]
+        public bool? EnableLanggraphPricing { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
@@ -188,6 +194,9 @@ namespace LangSmith
         /// <param name="allowCustomIframes">
         /// Default Value: false
         /// </param>
+        /// <param name="enableLanggraphPricing">
+        /// Default Value: false
+        /// </param>
         /// <param name="flags"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
@@ -210,6 +219,7 @@ namespace LangSmith
             bool? kvDatasetMessageSupport,
             bool? showPlaygroundPromptCanvas,
             bool? allowCustomIframes,
+            bool? enableLanggraphPricing,
             global::System.Collections.Generic.Dictionary<string, bool>? flags)
         {
             this.MaxIdentities = maxIdentities;
@@ -231,6 +241,7 @@ namespace LangSmith
             this.KvDatasetMessageSupport = kvDatasetMessageSupport;
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.AllowCustomIframes = allowCustomIframes;
+            this.EnableLanggraphPricing = enableLanggraphPricing;
             this.Flags = flags;
         }
 

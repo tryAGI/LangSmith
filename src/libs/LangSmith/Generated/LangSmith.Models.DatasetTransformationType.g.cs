@@ -23,11 +23,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ExtractToolsFromRun,
+        RemoveExtraFields,
         /// <summary>
         /// 
         /// </summary>
-        RemoveExtraFields,
+        ExtractToolsFromRun,
     }
 
     /// <summary>
@@ -45,8 +45,8 @@ namespace LangSmith
                 DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 DatasetTransformationType.ConvertToOpenaiMessage => "convert_to_openai_message",
                 DatasetTransformationType.ConvertToOpenaiTool => "convert_to_openai_tool",
-                DatasetTransformationType.ExtractToolsFromRun => "extract_tools_from_run",
                 DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
+                DatasetTransformationType.ExtractToolsFromRun => "extract_tools_from_run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,8 +60,8 @@ namespace LangSmith
                 "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 "convert_to_openai_message" => DatasetTransformationType.ConvertToOpenaiMessage,
                 "convert_to_openai_tool" => DatasetTransformationType.ConvertToOpenaiTool,
-                "extract_tools_from_run" => DatasetTransformationType.ExtractToolsFromRun,
                 "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
+                "extract_tools_from_run" => DatasetTransformationType.ExtractToolsFromRun,
                 _ => null,
             };
         }

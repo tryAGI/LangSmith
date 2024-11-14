@@ -1531,6 +1531,93 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/stripe_checkout_session:
+    post:
+      tags:
+        - orgs
+      summary: Create Stripe Checkout Sessions Endpoint
+      description: Kick off a Stripe checkout session flow.
+      operationId: create_stripe_checkout_sessions_endpoint_api_v1_orgs_current_stripe_checkout_session_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StripeCheckoutSessionsCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/orgs/current/confirm_checkout_session_completion:
+    post:
+      tags:
+        - orgs
+      summary: Confirm Checkout Session Completion Endpoint
+      description: Complete a Stripe checkout session flow.
+      operationId: confirm_checkout_session_completion_endpoint_api_v1_orgs_current_confirm_checkout_session_completion_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StripeCheckoutSessionsConfirm'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/orgs/current/stripe_account_links:
+    post:
+      tags:
+        - orgs
+      summary: Create Stripe Account Links Endpoint
+      description: Kick off a Stripe account link flow.
+      operationId: create_stripe_account_links_endpoint_api_v1_orgs_current_stripe_account_links_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StripeAccountLinksCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/login:
     post:
       tags:
@@ -7047,6 +7134,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InfoGetResponse'
+  /api/v1/info/health:
+    get:
+      tags:
+        - info
+      summary: Get Health Info
+      description: Get health information about the current deployment of LangSmith.
+      operationId: get_health_info_api_v1_info_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthInfoGetResponse'
   /api/v1/feedback-configs:
     get:
       tags:
@@ -11514,6 +11615,7 @@ components:
         - startup
         - partner
         - premier
+        - free
       type: string
       description: Enum for payment plans that the user can change to. Developer plans are permanent and enterprise plans will be changed manually.
     ChangePaymentPlanSchema:
@@ -12845,8 +12947,8 @@ components:
         - remove_system_messages
         - convert_to_openai_message
         - convert_to_openai_tool
-        - extract_tools_from_run
         - remove_extra_fields
+        - extract_tools_from_run
       type: string
       description: Enum for dataset data types.
     DatasetUpdate:
@@ -14188,6 +14290,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
+    HealthInfoGetResponse:
+      title: HealthInfoGetResponse
+      required:
+        - clickhouse_disk_free_pct
+      type: object
+      properties:
+        clickhouse_disk_free_pct:
+          title: Clickhouse Disk Free Pct
+          type: number
+      description: The LangSmith server info.
     Highlight:
       title: Highlight
       required:
@@ -14296,6 +14408,7 @@ components:
         - organization_id
         - created_at
         - user_id
+        - ls_user_id
         - read_only
       type: object
       properties:
@@ -14324,7 +14437,6 @@ components:
           title: Ls User Id
           type: string
           format: uuid
-          nullable: true
         read_only:
           title: Read Only
           type: boolean
@@ -14621,6 +14733,7 @@ components:
         - organization_id
         - created_at
         - user_id
+        - ls_user_id
         - read_only
       type: object
       properties:
@@ -14649,7 +14762,6 @@ components:
           title: Ls User Id
           type: string
           format: uuid
-          nullable: true
         read_only:
           title: Read Only
           type: boolean
@@ -14676,6 +14788,11 @@ components:
           title: Avatar Url
           type: string
           nullable: true
+        linked_login_methods:
+          title: Linked Login Methods
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderUserSlim'
     MetadataKeyValue:
       title: MetadataKeyValue
       required:
@@ -14990,6 +15107,7 @@ components:
         - organization_id
         - created_at
         - user_id
+        - ls_user_id
         - read_only
       type: object
       properties:
@@ -15018,7 +15136,6 @@ components:
           title: Ls User Id
           type: string
           format: uuid
-          nullable: true
         read_only:
           title: Read Only
           type: boolean
@@ -15045,6 +15162,11 @@ components:
           title: Avatar Url
           type: string
           nullable: true
+        linked_login_methods:
+          title: Linked Login Methods
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderUserSlim'
         tenant_ids:
           title: Tenant Ids
           type: array
@@ -15181,6 +15303,12 @@ components:
           type: array
           items:
             type: string
+        marketplace_payouts_enabled:
+          title: Marketplace Payouts Enabled
+          type: boolean
+          default: false
+        wallet:
+          $ref: '#/components/schemas/Wallet'
       description: Information about an organization.
     OrganizationBillingInfo:
       title: OrganizationBillingInfo
@@ -15313,6 +15441,10 @@ components:
           title: Allow Custom Iframes
           type: boolean
           default: false
+        enable_langgraph_pricing:
+          title: Enable Langgraph Pricing
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -15426,6 +15558,12 @@ components:
           title: Public Sharing Disabled
           type: boolean
           default: false
+        marketplace_payouts_enabled:
+          title: Marketplace Payouts Enabled
+          type: boolean
+          default: false
+        wallet:
+          $ref: '#/components/schemas/Wallet'
       description: Information about an organization.
     OrganizationMembers:
       title: OrganizationMembers
@@ -18553,6 +18691,15 @@ components:
         - auto_eval
       type: string
       description: Enum for feedback source types.
+    StripeAccountLinksCreate:
+      title: StripeAccountLinksCreate
+      required:
+        - success_path
+      type: object
+      properties:
+        success_path:
+          title: Success Path
+          type: string
     StripeBusinessBillingInfo:
       title: StripeBusinessBillingInfo
       required:
@@ -18597,6 +18744,28 @@ components:
           title: Is Business
           type: boolean
           default: false
+    StripeCheckoutSessionsConfirm:
+      title: StripeCheckoutSessionsConfirm
+      required:
+        - stripe_session_id
+      type: object
+      properties:
+        stripe_session_id:
+          title: Stripe Session Id
+          type: string
+    StripeCheckoutSessionsCreate:
+      title: StripeCheckoutSessionsCreate
+      required:
+        - amount_cents
+        - success_path
+      type: object
+      properties:
+        amount_cents:
+          title: Amount Cents
+          type: integer
+        success_path:
+          title: Success Path
+          type: string
     StripeCustomerAddress:
       title: StripeCustomerAddress
       required:
@@ -20099,6 +20268,19 @@ components:
         type:
           title: Error Type
           type: string
+    Wallet:
+      title: Wallet
+      required:
+        - credit_balance_micros
+        - inflight_balance_micros
+      type: object
+      properties:
+        credit_balance_micros:
+          title: Credit Balance Micros
+          type: integer
+        inflight_balance_micros:
+          title: Inflight Balance Micros
+          type: integer
     WorkspaceCreate:
       title: WorkspaceCreate
       required:

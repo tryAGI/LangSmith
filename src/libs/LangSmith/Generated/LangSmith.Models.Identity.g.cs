@@ -46,7 +46,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
-        public global::System.Guid? LsUserId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -99,9 +100,9 @@ namespace LangSmith
             global::System.Guid organizationId,
             global::System.DateTime createdAt,
             global::System.Guid userId,
+            global::System.Guid lsUserId,
             bool readOnly,
             global::System.Guid? tenantId,
-            global::System.Guid? lsUserId,
             global::System.Guid? roleId,
             string? roleName,
             global::LangSmith.AccessScope? accessScope)
@@ -110,9 +111,9 @@ namespace LangSmith
             this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.UserId = userId;
+            this.LsUserId = lsUserId;
             this.ReadOnly = readOnly;
             this.TenantId = tenantId;
-            this.LsUserId = lsUserId;
             this.RoleId = roleId;
             this.RoleName = roleName;
             this.AccessScope = accessScope;
