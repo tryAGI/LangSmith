@@ -46,7 +46,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
-        public global::System.Guid? LsUserId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -93,6 +94,12 @@ namespace LangSmith
         public string? AvatarUrl { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("linked_login_methods")]
+        public global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? LinkedLoginMethods { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -114,35 +121,38 @@ namespace LangSmith
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
+        /// <param name="linkedLoginMethods"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public MemberIdentity(
             global::System.Guid id,
             global::System.Guid organizationId,
             global::System.DateTime createdAt,
             global::System.Guid userId,
+            global::System.Guid lsUserId,
             bool readOnly,
             global::System.Guid? tenantId,
-            global::System.Guid? lsUserId,
             global::System.Guid? roleId,
             string? roleName,
             global::LangSmith.AccessScope? accessScope,
             string? email,
             string? fullName,
-            string? avatarUrl)
+            string? avatarUrl,
+            global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? linkedLoginMethods)
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.UserId = userId;
+            this.LsUserId = lsUserId;
             this.ReadOnly = readOnly;
             this.TenantId = tenantId;
-            this.LsUserId = lsUserId;
             this.RoleId = roleId;
             this.RoleName = roleName;
             this.AccessScope = accessScope;
             this.Email = email;
             this.FullName = fullName;
             this.AvatarUrl = avatarUrl;
+            this.LinkedLoginMethods = linkedLoginMethods;
         }
 
         /// <summary>

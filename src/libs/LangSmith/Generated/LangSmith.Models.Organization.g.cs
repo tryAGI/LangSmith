@@ -99,6 +99,18 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
+        public bool? MarketplacePayoutsEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wallet")]
+        public global::LangSmith.Wallet? Wallet { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -131,6 +143,10 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="permissions"></param>
+        /// <param name="marketplacePayoutsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="wallet"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Organization(
             global::LangSmith.OrganizationConfig config,
@@ -146,7 +162,9 @@ namespace LangSmith
             global::LangSmith.CustomerVisiblePlanInfo? currentPlan,
             global::LangSmith.CustomerVisiblePlanInfo? upcomingPlan,
             bool? reachedMaxWorkspaces,
-            global::System.Collections.Generic.IList<string>? permissions)
+            global::System.Collections.Generic.IList<string>? permissions,
+            bool? marketplacePayoutsEnabled,
+            global::LangSmith.Wallet? wallet)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ConnectedToStripe = connectedToStripe;
@@ -162,6 +180,8 @@ namespace LangSmith
             this.UpcomingPlan = upcomingPlan;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;
+            this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
+            this.Wallet = wallet;
         }
 
         /// <summary>
