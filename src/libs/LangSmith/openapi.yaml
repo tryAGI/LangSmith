@@ -15432,7 +15432,7 @@ components:
         kv_dataset_message_support:
           title: Kv Dataset Message Support
           type: boolean
-          default: false
+          default: true
         show_playground_prompt_canvas:
           title: Show Playground Prompt Canvas
           type: boolean
