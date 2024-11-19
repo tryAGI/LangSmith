@@ -105,7 +105,7 @@ namespace LangSmith
         public bool? ShowUpdatedResourceTags { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
         public bool? KvDatasetMessageSupport { get; set; }
@@ -186,7 +186,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="kvDatasetMessageSupport">
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="showPlaygroundPromptCanvas">
         /// Default Value: false
