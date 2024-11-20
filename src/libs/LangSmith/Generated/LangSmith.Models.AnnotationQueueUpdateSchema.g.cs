@@ -45,6 +45,18 @@ namespace LangSmith
         public int? ReservationMinutes { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rubric_items")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? RubricItems { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rubric_instructions")]
+        public string? RubricInstructions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,6 +75,8 @@ namespace LangSmith
         /// Default Value: true
         /// </param>
         /// <param name="reservationMinutes"></param>
+        /// <param name="rubricItems"></param>
+        /// <param name="rubricInstructions"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public AnnotationQueueUpdateSchema(
             string? name,
@@ -70,7 +84,9 @@ namespace LangSmith
             global::System.Guid? defaultDataset,
             int? numReviewersPerItem,
             bool? enableReservations,
-            int? reservationMinutes)
+            int? reservationMinutes,
+            global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
+            string? rubricInstructions)
         {
             this.Name = name;
             this.Description = description;
@@ -78,6 +94,8 @@ namespace LangSmith
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.RubricItems = rubricItems;
+            this.RubricInstructions = rubricInstructions;
         }
 
         /// <summary>
