@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// AnnotationQueue schema.
+    /// AnnotationQueue schema with rubric.
     /// </summary>
-    public sealed partial class AnnotationQueueCreateSchema
+    public sealed partial class AnnotationQueueSchemaWithRubric
     {
         /// <summary>
         /// 
@@ -61,7 +61,15 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -82,7 +90,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AnnotationQueueCreateSchema" /> class.
+        /// Initializes a new instance of the <see cref="AnnotationQueueSchemaWithRubric" /> class.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
@@ -99,11 +107,14 @@ namespace LangSmith
         /// Default Value: 1
         /// </param>
         /// <param name="id"></param>
+        /// <param name="tenantId"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public AnnotationQueueCreateSchema(
+        public AnnotationQueueSchemaWithRubric(
             string name,
+            global::System.Guid id,
+            global::System.Guid tenantId,
             string? description,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
@@ -111,11 +122,12 @@ namespace LangSmith
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
-            global::System.Guid? id,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Id = id;
+            this.TenantId = tenantId;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -123,15 +135,14 @@ namespace LangSmith
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
-            this.Id = id;
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AnnotationQueueCreateSchema" /> class.
+        /// Initializes a new instance of the <see cref="AnnotationQueueSchemaWithRubric" /> class.
         /// </summary>
-        public AnnotationQueueCreateSchema()
+        public AnnotationQueueSchemaWithRubric()
         {
         }
     }

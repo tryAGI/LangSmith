@@ -6030,6 +6030,36 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+    get:
+      tags:
+        - annotation-queues
+      summary: Get Annotation Queue
+      operationId: get_annotation_queue_api_v1_annotation_queues__queue_id__get
+      parameters:
+        - name: queue_id
+          in: path
+          required: true
+          schema:
+            title: Queue Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnnotationQueueSchemaWithRubric'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/annotation-queues/{queue_id}/runs':
     post:
       tags:
@@ -10670,7 +10700,42 @@ components:
           title: Id
           type: string
           format: uuid
+        rubric_items:
+          title: Rubric Items
+          type: array
+          items:
+            $ref: '#/components/schemas/AnnotationQueueRubricItemSchema'
+          nullable: true
+        rubric_instructions:
+          title: Rubric Instructions
+          type: string
+          nullable: true
       description: AnnotationQueue schema.
+    AnnotationQueueRubricItemSchema:
+      title: AnnotationQueueRubricItemSchema
+      required:
+        - feedback_key
+      type: object
+      properties:
+        feedback_key:
+          title: Feedback Key
+          type: string
+        description:
+          title: Description
+          type: string
+          nullable: true
+        value_descriptions:
+          title: Value Descriptions
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        score_descriptions:
+          title: Score Descriptions
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
     AnnotationQueueRunSchema:
       title: AnnotationQueueRunSchema
       required:
@@ -10766,6 +10831,68 @@ components:
           type: string
           format: uuid
       description: AnnotationQueue schema.
+    AnnotationQueueSchemaWithRubric:
+      title: AnnotationQueueSchemaWithRubric
+      required:
+        - name
+        - id
+        - tenant_id
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+          nullable: true
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        default_dataset:
+          title: Default Dataset
+          type: string
+          format: uuid
+          nullable: true
+        num_reviewers_per_item:
+          title: Num Reviewers Per Item
+          type: integer
+          default: 1
+          nullable: true
+        enable_reservations:
+          title: Enable Reservations
+          type: boolean
+          default: true
+          nullable: true
+        reservation_minutes:
+          title: Reservation Minutes
+          type: integer
+          default: 1
+          nullable: true
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tenant_id:
+          title: Tenant Id
+          type: string
+          format: uuid
+        rubric_items:
+          title: Rubric Items
+          type: array
+          items:
+            $ref: '#/components/schemas/AnnotationQueueRubricItemSchema'
+          nullable: true
+        rubric_instructions:
+          title: Rubric Instructions
+          type: string
+          nullable: true
+      description: AnnotationQueue schema with rubric.
     AnnotationQueueSchemaWithSize:
       title: AnnotationQueueSchemaWithSize
       required:
@@ -10861,6 +10988,16 @@ components:
         reservation_minutes:
           title: Reservation Minutes
           type: integer
+          nullable: true
+        rubric_items:
+          title: Rubric Items
+          type: array
+          items:
+            $ref: '#/components/schemas/AnnotationQueueRubricItemSchema'
+          nullable: true
+        rubric_instructions:
+          title: Rubric Instructions
+          type: string
           nullable: true
       description: AnnotationQueue update schema.
     AppFeedbackSource:
