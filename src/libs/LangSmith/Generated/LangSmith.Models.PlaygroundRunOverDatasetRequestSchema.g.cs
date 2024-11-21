@@ -62,6 +62,24 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
+        public string? RepoHandle { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
+        public string? Owner { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
+        public string? Commit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
@@ -97,6 +115,9 @@ namespace LangSmith
         /// Configuration for a Runnable.
         /// </param>
         /// <param name="projectName"></param>
+        /// <param name="repoHandle"></param>
+        /// <param name="owner"></param>
+        /// <param name="commit"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -113,6 +134,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<object>? tools,
             string? toolChoice,
             string? projectName,
+            string? repoHandle,
+            string? owner,
+            string? commit,
             global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions)
         {
@@ -125,6 +149,9 @@ namespace LangSmith
             this.Tools = tools;
             this.ToolChoice = toolChoice;
             this.ProjectName = projectName;
+            this.RepoHandle = repoHandle;
+            this.Owner = owner;
+            this.Commit = commit;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
         }

@@ -16052,6 +16052,18 @@ components:
           title: Project Name
           type: string
           nullable: true
+        repo_handle:
+          title: Repo Handle
+          type: string
+          nullable: true
+        owner:
+          title: Owner
+          type: string
+          nullable: true
+        commit:
+          title: Commit
+          type: string
+          nullable: true
         dataset_id:
           title: Dataset Id
           type: string

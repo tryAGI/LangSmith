@@ -190,6 +190,9 @@ namespace LangSmith
         /// Configuration for a Runnable.
         /// </param>
         /// <param name="projectName"></param>
+        /// <param name="repoHandle"></param>
+        /// <param name="owner"></param>
+        /// <param name="commit"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -207,6 +210,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
             string? projectName = default,
+            string? repoHandle = default,
+            string? owner = default,
+            string? commit = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -221,6 +227,9 @@ namespace LangSmith
                 ToolChoice = toolChoice,
                 Options = options,
                 ProjectName = projectName,
+                RepoHandle = repoHandle,
+                Owner = owner,
+                Commit = commit,
                 DatasetId = datasetId,
                 DatasetSplits = datasetSplits,
                 Repetitions = repetitions,
