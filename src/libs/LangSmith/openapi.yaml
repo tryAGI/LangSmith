@@ -18166,6 +18166,7 @@ components:
         - error_or_signed_url
         - events_or_signed_url
         - extra_or_signed_url
+        - serialized_or_signed_url
         - parent_run_id
         - manifest_id
         - manifest_s3_id
