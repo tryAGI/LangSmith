@@ -30,8 +30,8 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("preview_only")]
-        public bool? PreviewOnly { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("preview")]
+        public bool? Preview { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -57,7 +57,7 @@ namespace LangSmith
         /// <param name="sessionIds"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
-        /// <param name="previewOnly">
+        /// <param name="preview">
         /// Default Value: false
         /// </param>
         /// <param name="offset">
@@ -71,14 +71,14 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Guid? comparativeExperimentId,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
-            bool? previewOnly,
+            bool? preview,
             int? offset,
             int? limit)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
             this.ComparativeExperimentId = comparativeExperimentId;
             this.Filters = filters;
-            this.PreviewOnly = previewOnly;
+            this.Preview = preview;
             this.Offset = offset;
             this.Limit = limit;
         }

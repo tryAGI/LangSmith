@@ -25,7 +25,7 @@ namespace LangSmith
         /// <param name="sessionIds"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
-        /// <param name="previewOnly">
+        /// <param name="preview">
         /// Default Value: false
         /// </param>
         /// <param name="offset">
@@ -41,7 +41,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Guid? comparativeExperimentId = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
-            bool? previewOnly = default,
+            bool? preview = default,
             int? offset = default,
             int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
