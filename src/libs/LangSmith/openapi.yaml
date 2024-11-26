@@ -6672,6 +6672,12 @@ paths:
             title: Skip Create
             type: boolean
             default: false
+        - name: include_deleted
+          in: query
+          schema:
+            title: Include Deleted
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -7588,6 +7594,13 @@ paths:
       summary: List Workspaces
       description: Get all workspaces visible to this auth in the current org. Does not create a new workspace/org.
       operationId: list_workspaces_api_v1_workspaces_get
+      parameters:
+        - name: include_deleted
+          in: query
+          schema:
+            title: Include Deleted
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -7598,6 +7611,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TenantForUser'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - ApiKey: [ ]
         - OrganizationId: [ ]
@@ -19542,6 +19561,7 @@ components:
         - created_at
         - display_name
         - is_personal
+        - is_deleted
       type: object
       properties:
         id:
@@ -19562,6 +19582,9 @@ components:
           type: string
         is_personal:
           title: Is Personal
+          type: boolean
+        is_deleted:
+          title: Is Deleted
           type: boolean
         tenant_handle:
           title: Tenant Handle
@@ -20497,6 +20520,7 @@ components:
         - created_at
         - display_name
         - is_personal
+        - is_deleted
       type: object
       properties:
         id:
@@ -20517,6 +20541,9 @@ components:
           type: string
         is_personal:
           title: Is Personal
+          type: boolean
+        is_deleted:
+          title: Is Deleted
           type: boolean
         tenant_handle:
           title: Tenant Handle
