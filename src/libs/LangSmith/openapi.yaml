@@ -9199,6 +9199,416 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/org-charts/section:
+    get:
+      tags:
+        - charts
+      summary: Org Read Sections
+      description: Get all sections for the tenant.
+      operationId: org_read_sections_api_v1_org_charts_section_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 100
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+        - name: title_contains
+          in: query
+          schema:
+            title: Title Contains
+            type: string
+            nullable: true
+        - name: ids
+          in: query
+          schema:
+            title: Ids
+            type: array
+            items:
+              type: string
+              format: uuid
+            nullable: true
+        - name: sort_by
+          in: query
+          schema:
+            title: Sort By
+            type: string
+            default: created_at
+            nullable: true
+        - name: sort_by_desc
+          in: query
+          schema:
+            title: Sort By Desc
+            type: boolean
+            default: true
+            nullable: true
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            type: array
+            items:
+              type: string
+              format: uuid
+            nullable: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Org Read Sections Api V1 Org Charts Section Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - charts
+      summary: Org Create Section
+      description: Create a new section.
+      operationId: org_create_section_api_v1_org_charts_section_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/org-charts:
+    post:
+      tags:
+        - charts
+      summary: Org Read Charts
+      description: Get all charts for the tenant.
+      operationId: org_read_charts_api_v1_org_charts_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/org-charts/preview:
+    post:
+      tags:
+        - charts
+      summary: Org Read Chart Preview
+      description: Get a preview for a chart without actually creating it.
+      operationId: org_read_chart_preview_api_v1_org_charts_preview_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartPreviewRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleCustomChartResponseBase'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/org-charts/create:
+    post:
+      tags:
+        - charts
+      summary: Org Create Chart
+      description: Create a new chart.
+      operationId: org_create_chart_api_v1_org_charts_create_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/org-charts/{chart_id}':
+    post:
+      tags:
+        - charts
+      summary: Org Read Single Chart
+      description: Get a single chart by ID.
+      operationId: org_read_single_chart_api_v1_org_charts__chart_id__post
+      parameters:
+        - name: chart_id
+          in: path
+          required: true
+          schema:
+            title: Chart Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleCustomChartResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - charts
+      summary: Org Update Chart
+      description: Update a chart.
+      operationId: org_update_chart_api_v1_org_charts__chart_id__patch
+      parameters:
+        - name: chart_id
+          in: path
+          required: true
+          schema:
+            title: Chart Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - charts
+      summary: Org Delete Chart
+      description: Delete a chart.
+      operationId: org_delete_chart_api_v1_org_charts__chart_id__delete
+      parameters:
+        - name: chart_id
+          in: path
+          required: true
+          schema:
+            title: Chart Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/org-charts/section/{section_id}':
+    post:
+      tags:
+        - charts
+      summary: Org Read Single Section
+      description: Get a single section by ID.
+      operationId: org_read_single_section_api_v1_org_charts_section__section_id__post
+      parameters:
+        - name: section_id
+          in: path
+          required: true
+          schema:
+            title: Section Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsRequestBase'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - charts
+      summary: Org Update Section
+      description: Update a section.
+      operationId: org_update_section_api_v1_org_charts_section__section_id__patch
+      parameters:
+        - name: section_id
+          in: path
+          required: true
+          schema:
+            title: Section Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - charts
+      summary: Org Delete Section
+      description: Delete a section.
+      operationId: org_delete_section_api_v1_org_charts_section__section_id__delete
+      parameters:
+        - name: section_id
+          in: path
+          required: true
+          schema:
+            title: Section Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/ok:
     get:
       summary: Ok
@@ -12355,7 +12765,7 @@ components:
         - error_rate
         - streaming_rate
       type: string
-      description: Metrics you can chart.
+      description: Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
     CustomChartPreviewRequest:
       title: CustomChartPreviewRequest
       required:
@@ -12467,7 +12877,6 @@ components:
           nullable: true
         session:
           title: Session
-          minItems: 1
           type: array
           items:
             type: string

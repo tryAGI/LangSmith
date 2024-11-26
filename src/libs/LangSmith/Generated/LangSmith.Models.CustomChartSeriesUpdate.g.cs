@@ -22,7 +22,7 @@ namespace LangSmith
         public global::LangSmith.CustomChartSeriesFilters? Filters { get; set; }
 
         /// <summary>
-        /// Metrics you can chart.
+        /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metric")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CustomChartMetricJsonConverter))]
@@ -53,7 +53,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="filters"></param>
         /// <param name="metric">
-        /// Metrics you can chart.
+        /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="id"></param>
