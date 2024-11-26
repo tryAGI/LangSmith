@@ -6,10 +6,12 @@ namespace LangSmith
     public partial class WorkspacesClient
     {
         partial void PrepareListWorkspacesArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref bool? includeDeleted);
         partial void PrepareListWorkspacesRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool? includeDeleted);
         partial void ProcessListWorkspacesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,19 +25,27 @@ namespace LangSmith
         /// List Workspaces<br/>
         /// Get all workspaces visible to this auth in the current org. Does not create a new workspace/org.
         /// </summary>
+        /// <param name="includeDeleted">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>> ListWorkspacesAsync(
+            bool? includeDeleted = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListWorkspacesArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                includeDeleted: ref includeDeleted);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/workspaces",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("include_deleted", includeDeleted?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -62,7 +72,8 @@ namespace LangSmith
                 request: __httpRequest);
             PrepareListWorkspacesRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                includeDeleted: includeDeleted);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -75,6 +86,34 @@ namespace LangSmith
             ProcessListWorkspacesResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Validation Error
+            if ((int)__response.StatusCode == 422)
+            {
+                string? __content_422 = null;
+                global::LangSmith.HTTPValidationError? __value_422 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                }
+                else
+                {
+                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = await global::LangSmith.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                }
+
+                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {

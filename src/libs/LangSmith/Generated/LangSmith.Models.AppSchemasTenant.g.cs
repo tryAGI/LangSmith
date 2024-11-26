@@ -45,6 +45,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_deleted")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
         public string? TenantHandle { get; set; }
 
@@ -62,6 +69,7 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="isDeleted"></param>
         /// <param name="tenantHandle"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public AppSchemasTenant(
@@ -69,6 +77,7 @@ namespace LangSmith
             global::System.DateTime createdAt,
             string displayName,
             bool isPersonal,
+            bool isDeleted,
             global::System.Guid? organizationId,
             string? tenantHandle)
         {
@@ -76,6 +85,7 @@ namespace LangSmith
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
+            this.IsDeleted = isDeleted;
             this.OrganizationId = organizationId;
             this.TenantHandle = tenantHandle;
         }
