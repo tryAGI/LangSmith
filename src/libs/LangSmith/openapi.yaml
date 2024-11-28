@@ -16010,6 +16010,10 @@ components:
           title: Enable Langgraph Pricing
           type: boolean
           default: false
+        enable_custom_experiment_names:
+          title: Enable Custom Experiment Names
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -16447,6 +16451,7 @@ components:
         - manifest
         - secrets
         - options
+        - project_name
         - dataset_id
       type: object
       properties:
@@ -16479,7 +16484,6 @@ components:
         project_name:
           title: Project Name
           type: string
-          nullable: true
         repo_handle:
           title: Repo Handle
           type: string
