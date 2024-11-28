@@ -129,6 +129,12 @@ namespace LangSmith
         public bool? EnableLanggraphPricing { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_custom_experiment_names")]
+        public bool? EnableCustomExperimentNames { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
@@ -197,6 +203,9 @@ namespace LangSmith
         /// <param name="enableLanggraphPricing">
         /// Default Value: false
         /// </param>
+        /// <param name="enableCustomExperimentNames">
+        /// Default Value: false
+        /// </param>
         /// <param name="flags"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
@@ -220,6 +229,7 @@ namespace LangSmith
             bool? showPlaygroundPromptCanvas,
             bool? allowCustomIframes,
             bool? enableLanggraphPricing,
+            bool? enableCustomExperimentNames,
             global::System.Collections.Generic.Dictionary<string, bool>? flags)
         {
             this.MaxIdentities = maxIdentities;
@@ -242,6 +252,7 @@ namespace LangSmith
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.AllowCustomIframes = allowCustomIframes;
             this.EnableLanggraphPricing = enableLanggraphPricing;
+            this.EnableCustomExperimentNames = enableCustomExperimentNames;
             this.Flags = flags;
         }
 

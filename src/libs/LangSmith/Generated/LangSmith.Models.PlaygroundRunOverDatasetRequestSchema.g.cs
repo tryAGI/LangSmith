@@ -57,7 +57,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_name")]
-        public string? ProjectName { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ProjectName { get; set; }
 
         /// <summary>
         /// 
@@ -128,12 +129,12 @@ namespace LangSmith
             object manifest,
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.RunnableConfig options,
+            string projectName,
             global::System.Guid datasetId,
             string? runId,
             string? repoId,
             global::System.Collections.Generic.IList<object>? tools,
             string? toolChoice,
-            string? projectName,
             string? repoHandle,
             string? owner,
             string? commit,
@@ -143,12 +144,12 @@ namespace LangSmith
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.Secrets = secrets ?? throw new global::System.ArgumentNullException(nameof(secrets));
             this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            this.ProjectName = projectName ?? throw new global::System.ArgumentNullException(nameof(projectName));
             this.DatasetId = datasetId;
             this.RunId = runId;
             this.RepoId = repoId;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
-            this.ProjectName = projectName;
             this.RepoHandle = repoHandle;
             this.Owner = owner;
             this.Commit = commit;
