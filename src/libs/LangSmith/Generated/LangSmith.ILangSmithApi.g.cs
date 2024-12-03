@@ -186,5 +186,10 @@ namespace LangSmith
         /// </summary>
         public TagsClient Tags { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public OptimizationJobsClient OptimizationJobs { get; }
+
     }
 }
