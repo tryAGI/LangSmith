@@ -5,31 +5,29 @@ namespace LangSmith
     public partial interface IReposClient
     {
         /// <summary>
-        /// Optimize Prompt<br/>
+        /// Optimize Prompt Job<br/>
         /// Optimize prompt
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
-            global::LangSmith.OptimizePromptRequest request,
+        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+            global::LangSmith.OptimizePromptJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Optimize Prompt<br/>
+        /// Optimize Prompt Job<br/>
         /// Optimize prompt
         /// </summary>
-        /// <param name="prompt"></param>
-        /// <param name="metaprompt"></param>
-        /// <param name="examples"></param>
-        /// <param name="overallFeedback"></param>
+        /// <param name="algorithm"></param>
+        /// <param name="config"></param>
+        /// <param name="promptName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
-            string prompt,
-            object metaprompt,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
-            string? overallFeedback,
+        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+            global::LangSmith.EPromptOptimizationAlgorithm algorithm,
+            global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config,
+            string promptName,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
