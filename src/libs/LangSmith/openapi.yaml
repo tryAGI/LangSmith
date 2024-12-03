@@ -3058,6 +3058,46 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/datasets/{dataset_id}/jsonl':
+    get:
+      tags:
+        - datasets
+      summary: Download Dataset Jsonl
+      description: Download a dataset as CSV format.
+      operationId: download_dataset_jsonl_api_v1_datasets__dataset_id__jsonl_get
+      parameters:
+        - name: dataset_id
+          in: path
+          required: true
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+        - name: as_of
+          in: query
+          description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
+          schema:
+            title: As Of
+            type: string
+            description: 'Only modifications made on or before this time are included. If None, the latest version of the dataset is used.'
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/datasets/{dataset_id}/runs':
     post:
       tags:
@@ -5415,6 +5455,38 @@ paths:
             application/json:
               schema:
                 title: Response Read Shared Dataset Tracer Sessions Api V1 Public  Share Token  Datasets Sessions Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TracerSession'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/public/datasets/sessions-bulk:
+    get:
+      tags:
+        - public
+      summary: Read Shared Dataset Tracer Sessions Bulk
+      description: Get sessions from multiple datasets using share tokens.
+      operationId: read_shared_dataset_tracer_sessions_bulk_api_v1_public_datasets_sessions_bulk_get
+      parameters:
+        - name: share_tokens
+          in: query
+          required: true
+          schema:
+            title: Share Tokens
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Read Shared Dataset Tracer Sessions Bulk Api V1 Public Datasets Sessions Bulk Get
                 type: array
                 items:
                   $ref: '#/components/schemas/TracerSession'
