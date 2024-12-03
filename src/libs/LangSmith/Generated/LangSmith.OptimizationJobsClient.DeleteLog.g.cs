@@ -3,49 +3,47 @@
 
 namespace LangSmith
 {
-    public partial class ReposClient
+    public partial class OptimizationJobsClient
     {
-        partial void PrepareOptimizePromptArguments(
+        partial void PrepareDeleteLogArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.OptimizePromptRequest request);
-        partial void PrepareOptimizePromptRequest(
+            ref global::System.Guid logId);
+        partial void PrepareDeleteLogRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.OptimizePromptRequest request);
-        partial void ProcessOptimizePromptResponse(
+            global::System.Guid logId);
+        partial void ProcessDeleteLogResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessOptimizePromptResponseContent(
+        partial void ProcessDeleteLogResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Optimize Prompt<br/>
-        /// Optimize prompt
+        /// Delete Log<br/>
+        /// Delete a prompt optimization job log.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="logId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
-            global::LangSmith.OptimizePromptRequest request,
+        public async global::System.Threading.Tasks.Task<string> DeleteLogAsync(
+            global::System.Guid logId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareOptimizePromptArguments(
+            PrepareDeleteLogArguments(
                 httpClient: HttpClient,
-                request: request);
+                logId: ref logId);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/repos/optimize",
+                path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs/{logId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -67,20 +65,14 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareOptimizePromptRequest(
+            PrepareDeleteLogRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                logId: logId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -90,7 +82,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessOptimizePromptResponse(
+            ProcessDeleteLogResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -130,7 +122,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessOptimizePromptResponseContent(
+                ProcessDeleteLogResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -154,9 +146,7 @@ namespace LangSmith
                     };
                 }
 
-                return
-                    global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                return __content;
             }
             else
             {
@@ -178,42 +168,10 @@ namespace LangSmith
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                return
-                    await global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+                return __content;
             }
-        }
-
-        /// <summary>
-        /// Optimize Prompt<br/>
-        /// Optimize prompt
-        /// </summary>
-        /// <param name="prompt"></param>
-        /// <param name="metaprompt"></param>
-        /// <param name="examples"></param>
-        /// <param name="overallFeedback"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
-            string prompt,
-            object metaprompt,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
-            string? overallFeedback,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.OptimizePromptRequest
-            {
-                Prompt = prompt,
-                Metaprompt = metaprompt,
-                Examples = examples,
-                OverallFeedback = overallFeedback,
-            };
-
-            return await OptimizePromptAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
