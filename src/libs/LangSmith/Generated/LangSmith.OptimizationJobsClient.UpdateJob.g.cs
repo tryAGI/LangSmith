@@ -3,49 +3,54 @@
 
 namespace LangSmith
 {
-    public partial class ReposClient
+    public partial class OptimizationJobsClient
     {
-        partial void PrepareOptimizePromptArguments(
+        partial void PrepareUpdateJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.OptimizePromptRequest request);
-        partial void PrepareOptimizePromptRequest(
+            ref global::System.Guid jobId,
+            global::LangSmith.PromptOptimizationJobUpdate request);
+        partial void PrepareUpdateJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.OptimizePromptRequest request);
-        partial void ProcessOptimizePromptResponse(
+            global::System.Guid jobId,
+            global::LangSmith.PromptOptimizationJobUpdate request);
+        partial void ProcessUpdateJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessOptimizePromptResponseContent(
+        partial void ProcessUpdateJobResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Optimize Prompt<br/>
-        /// Optimize prompt
+        /// Update Job<br/>
+        /// Replace an existing prompt optimization job with a new, modified job.
         /// </summary>
+        /// <param name="jobId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
-            global::LangSmith.OptimizePromptRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJob> UpdateJobAsync(
+            global::System.Guid jobId,
+            global::LangSmith.PromptOptimizationJobUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareOptimizePromptArguments(
+            PrepareUpdateJobArguments(
                 httpClient: HttpClient,
+                jobId: ref jobId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/repos/optimize",
+                path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -77,9 +82,10 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareOptimizePromptRequest(
+            PrepareUpdateJobRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                jobId: jobId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -90,7 +96,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessOptimizePromptResponse(
+            ProcessUpdateJobResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -130,7 +136,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessOptimizePromptResponseContent(
+                ProcessUpdateJobResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -155,7 +161,7 @@ namespace LangSmith
                 }
 
                 return
-                    global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::LangSmith.PromptOptimizationJob.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -181,37 +187,34 @@ namespace LangSmith
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::LangSmith.PromptOptimizationJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
-        /// Optimize Prompt<br/>
-        /// Optimize prompt
+        /// Update Job<br/>
+        /// Replace an existing prompt optimization job with a new, modified job.
         /// </summary>
-        /// <param name="prompt"></param>
-        /// <param name="metaprompt"></param>
-        /// <param name="examples"></param>
-        /// <param name="overallFeedback"></param>
+        /// <param name="jobId"></param>
+        /// <param name="status"></param>
+        /// <param name="result"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
-            string prompt,
-            object metaprompt,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleRunWithFeedback> examples,
-            string? overallFeedback,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJob> UpdateJobAsync(
+            global::System.Guid jobId,
+            global::LangSmith.EPromptOptimizationJobStatus? status = default,
+            global::LangSmith.PromptOptimizationResult? result = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.OptimizePromptRequest
+            var __request = new global::LangSmith.PromptOptimizationJobUpdate
             {
-                Prompt = prompt,
-                Metaprompt = metaprompt,
-                Examples = examples,
-                OverallFeedback = overallFeedback,
+                Status = status,
+                Result = result,
             };
 
-            return await OptimizePromptAsync(
+            return await UpdateJobAsync(
+                jobId: jobId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

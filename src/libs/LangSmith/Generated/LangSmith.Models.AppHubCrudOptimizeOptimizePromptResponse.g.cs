@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// Response from optimizing a prompt.
     /// </summary>
-    public sealed partial class OptimizePromptResponse
+    public sealed partial class AppHubCrudOptimizeOptimizePromptResponse
     {
         /// <summary>
         /// 
@@ -29,12 +29,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OptimizePromptResponse" /> class.
+        /// Initializes a new instance of the <see cref="AppHubCrudOptimizeOptimizePromptResponse" /> class.
         /// </summary>
         /// <param name="prompt"></param>
         /// <param name="error"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public OptimizePromptResponse(
+        public AppHubCrudOptimizeOptimizePromptResponse(
             string prompt,
             string? error)
         {
@@ -43,9 +43,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OptimizePromptResponse" /> class.
+        /// Initializes a new instance of the <see cref="AppHubCrudOptimizeOptimizePromptResponse" /> class.
         /// </summary>
-        public OptimizePromptResponse()
+        public AppHubCrudOptimizeOptimizePromptResponse()
         {
         }
     }
