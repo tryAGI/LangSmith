@@ -36,6 +36,12 @@ namespace LangSmith
         public string? FeedbackKey { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,17 +56,20 @@ namespace LangSmith
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </param>
         /// <param name="feedbackKey"></param>
+        /// <param name="workspaceId"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CustomChartSeriesCreate(
             string name,
             global::LangSmith.CustomChartMetric metric,
             global::LangSmith.CustomChartSeriesFilters? filters,
-            string? feedbackKey)
+            string? feedbackKey,
+            global::System.Guid? workspaceId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>

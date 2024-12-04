@@ -15,6 +15,18 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
+        public object? Settings { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -24,11 +36,17 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PlaygroundSettingsUpdateRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="settings"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PlaygroundSettingsUpdateRequest(
-            string? name)
+            string? name,
+            string? description,
+            object? settings)
         {
             this.Name = name;
+            this.Description = description;
+            this.Settings = settings;
         }
 
         /// <summary>
