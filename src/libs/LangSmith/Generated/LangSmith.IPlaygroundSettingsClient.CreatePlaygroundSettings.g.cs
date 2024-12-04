@@ -19,13 +19,15 @@ namespace LangSmith
         /// Create Playground Settings<br/>
         /// Create playground settings.
         /// </summary>
-        /// <param name="settings"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="settings"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> CreatePlaygroundSettingsAsync(
             object settings,
             string? name = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

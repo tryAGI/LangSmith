@@ -43,6 +43,12 @@ namespace LangSmith
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,19 +62,22 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PlaygroundSettingsResponse(
             global::System.Guid id,
             object settings,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? name)
+            string? name,
+            string? description)
         {
             this.Id = id;
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Name = name;
+            this.Description = description;
         }
 
         /// <summary>
