@@ -11,15 +11,21 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Settings { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Settings { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,15 +36,18 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaygroundSettingsCreateRequest" /> class.
         /// </summary>
-        /// <param name="settings"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="settings"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PlaygroundSettingsCreateRequest(
             object settings,
-            string? name)
+            string? name,
+            string? description)
         {
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Name = name;
+            this.Description = description;
         }
 
         /// <summary>
