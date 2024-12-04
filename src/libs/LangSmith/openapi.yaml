@@ -224,6 +224,12 @@ paths:
             title: Filter
             type: string
             nullable: true
+        - name: include_stats
+          in: query
+          schema:
+            title: Include Stats
+            type: boolean
+            default: true
         - name: accept
           in: header
           schema:
@@ -13242,6 +13248,11 @@ components:
           title: Feedback Key
           type: string
           nullable: true
+        workspace_id:
+          title: Workspace Id
+          type: string
+          format: uuid
+          nullable: true
         id:
           title: Id
           type: string
@@ -13263,6 +13274,11 @@ components:
         feedback_key:
           title: Feedback Key
           type: string
+          nullable: true
+        workspace_id:
+          title: Workspace Id
+          type: string
+          format: uuid
           nullable: true
     CustomChartSeriesFilters:
       title: CustomChartSeriesFilters
@@ -13304,6 +13320,11 @@ components:
         feedback_key:
           title: Feedback Key
           type: string
+          nullable: true
+        workspace_id:
+          title: Workspace Id
+          type: string
+          format: uuid
           nullable: true
         id:
           title: Id
@@ -16469,6 +16490,14 @@ components:
           title: Enable Custom Experiment Names
           type: boolean
           default: false
+        enable_org_usage_charts:
+          title: Enable Org Usage Charts
+          type: boolean
+          default: false
+        enable_select_all_traces:
+          title: Enable Select All Traces
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -16973,13 +17002,17 @@ components:
         - settings
       type: object
       properties:
-        settings:
-          title: Settings
-          type: object
         name:
           title: Name
           type: string
           nullable: true
+        description:
+          title: Description
+          type: string
+          nullable: true
+        settings:
+          title: Settings
+          type: object
     PlaygroundSettingsResponse:
       title: PlaygroundSettingsResponse
       required:
@@ -17008,6 +17041,10 @@ components:
           title: Updated At
           type: string
           format: date-time
+        description:
+          title: Description
+          type: string
+          nullable: true
     PlaygroundSettingsUpdateRequest:
       title: PlaygroundSettingsUpdateRequest
       type: object
@@ -17015,6 +17052,14 @@ components:
         name:
           title: Name
           type: string
+          nullable: true
+        description:
+          title: Description
+          type: string
+          nullable: true
+        settings:
+          title: Settings
+          type: object
           nullable: true
     PromptOptimizationJob:
       title: PromptOptimizationJob
