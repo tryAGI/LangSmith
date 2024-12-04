@@ -135,6 +135,18 @@ namespace LangSmith
         public bool? EnableCustomExperimentNames { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_org_usage_charts")]
+        public bool? EnableOrgUsageCharts { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_select_all_traces")]
+        public bool? EnableSelectAllTraces { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
@@ -206,6 +218,12 @@ namespace LangSmith
         /// <param name="enableCustomExperimentNames">
         /// Default Value: false
         /// </param>
+        /// <param name="enableOrgUsageCharts">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableSelectAllTraces">
+        /// Default Value: false
+        /// </param>
         /// <param name="flags"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
@@ -230,6 +248,8 @@ namespace LangSmith
             bool? allowCustomIframes,
             bool? enableLanggraphPricing,
             bool? enableCustomExperimentNames,
+            bool? enableOrgUsageCharts,
+            bool? enableSelectAllTraces,
             global::System.Collections.Generic.Dictionary<string, bool>? flags)
         {
             this.MaxIdentities = maxIdentities;
@@ -253,6 +273,8 @@ namespace LangSmith
             this.AllowCustomIframes = allowCustomIframes;
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableCustomExperimentNames = enableCustomExperimentNames;
+            this.EnableOrgUsageCharts = enableOrgUsageCharts;
+            this.EnableSelectAllTraces = enableSelectAllTraces;
             this.Flags = flags;
         }
 
