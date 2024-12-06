@@ -147,6 +147,12 @@ namespace LangSmith
         public bool? EnableSelectAllTraces { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_exact_search_for_prompts")]
+        public bool? UseExactSearchForPrompts { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
@@ -224,6 +230,9 @@ namespace LangSmith
         /// <param name="enableSelectAllTraces">
         /// Default Value: false
         /// </param>
+        /// <param name="useExactSearchForPrompts">
+        /// Default Value: false
+        /// </param>
         /// <param name="flags"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
@@ -250,6 +259,7 @@ namespace LangSmith
             bool? enableCustomExperimentNames,
             bool? enableOrgUsageCharts,
             bool? enableSelectAllTraces,
+            bool? useExactSearchForPrompts,
             global::System.Collections.Generic.Dictionary<string, bool>? flags)
         {
             this.MaxIdentities = maxIdentities;
@@ -275,6 +285,7 @@ namespace LangSmith
             this.EnableCustomExperimentNames = enableCustomExperimentNames;
             this.EnableOrgUsageCharts = enableOrgUsageCharts;
             this.EnableSelectAllTraces = enableSelectAllTraces;
+            this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.Flags = flags;
         }
 

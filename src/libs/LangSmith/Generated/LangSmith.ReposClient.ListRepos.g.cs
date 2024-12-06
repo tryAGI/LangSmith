@@ -19,7 +19,6 @@ namespace LangSmith
             ref global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
-            ref bool? matchPrefix,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref string? sortField,
             ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
@@ -38,7 +37,6 @@ namespace LangSmith
             global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
-            bool? matchPrefix,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             string? sortField,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
@@ -73,9 +71,6 @@ namespace LangSmith
         /// <param name="isPublic"></param>
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
-        /// <param name="matchPrefix">
-        /// Default Value: false
-        /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
@@ -94,7 +89,6 @@ namespace LangSmith
             global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
@@ -116,7 +110,6 @@ namespace LangSmith
                 isPublic: ref isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
-                matchPrefix: ref matchPrefix,
                 tagValueId: tagValueId,
                 sortField: ref sortField,
                 sortDirection: ref sortDirection);
@@ -137,7 +130,6 @@ namespace LangSmith
                 .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("match_prefix", matchPrefix?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("sort_field", sortField) 
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
@@ -185,7 +177,6 @@ namespace LangSmith
                 isPublic: isPublic,
                 upstreamRepoOwner: upstreamRepoOwner,
                 upstreamRepoHandle: upstreamRepoHandle,
-                matchPrefix: matchPrefix,
                 tagValueId: tagValueId,
                 sortField: sortField,
                 sortDirection: sortDirection);

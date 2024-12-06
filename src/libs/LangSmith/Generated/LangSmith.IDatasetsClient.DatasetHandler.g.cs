@@ -30,6 +30,7 @@ namespace LangSmith
         /// <param name="repoHandle"></param>
         /// <param name="owner"></param>
         /// <param name="commit"></param>
+        /// <param name="evaluatorRules"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -50,6 +51,7 @@ namespace LangSmith
             string? repoHandle = default,
             string? owner = default,
             string? commit = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

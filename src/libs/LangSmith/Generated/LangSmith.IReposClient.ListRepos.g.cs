@@ -26,9 +26,6 @@ namespace LangSmith
         /// <param name="isPublic"></param>
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
-        /// <param name="matchPrefix">
-        /// Default Value: false
-        /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
@@ -47,7 +44,6 @@ namespace LangSmith
             global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,

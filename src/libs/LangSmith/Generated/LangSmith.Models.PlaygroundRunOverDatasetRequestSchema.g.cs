@@ -81,6 +81,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_rules")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? EvaluatorRules { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
@@ -119,6 +125,7 @@ namespace LangSmith
         /// <param name="repoHandle"></param>
         /// <param name="owner"></param>
         /// <param name="commit"></param>
+        /// <param name="evaluatorRules"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -138,6 +145,7 @@ namespace LangSmith
             string? repoHandle,
             string? owner,
             string? commit,
+            global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
             global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions)
         {
@@ -153,6 +161,7 @@ namespace LangSmith
             this.RepoHandle = repoHandle;
             this.Owner = owner;
             this.Commit = commit;
+            this.EvaluatorRules = evaluatorRules;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
         }
