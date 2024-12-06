@@ -1061,6 +1061,90 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/members/active:
+    get:
+      tags:
+        - orgs
+      summary: Get Current Active Org Members
+      operationId: get_current_active_org_members_api_v1_orgs_current_members_active_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 500
+            minimum: 1
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Current Active Org Members Api V1 Orgs Current Members Active Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrgMemberIdentity'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/orgs/current/members/pending:
+    get:
+      tags:
+        - orgs
+      summary: Get Current Pending Org Members
+      operationId: get_current_pending_org_members_api_v1_orgs_current_members_pending_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 500
+            minimum: 1
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Current Pending Org Members Api V1 Orgs Current Members Pending Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrgPendingIdentity'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/orgs/current/members/batch:
     post:
       tags:
@@ -7920,6 +8004,90 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/workspaces/current/members/active:
+    get:
+      tags:
+        - workspaces
+      summary: Get Current Active Workspace Members
+      operationId: get_current_active_workspace_members_api_v1_workspaces_current_members_active_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 500
+            minimum: 1
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Current Active Workspace Members Api V1 Workspaces Current Members Active Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/MemberIdentity'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/workspaces/current/members/pending:
+    get:
+      tags:
+        - workspaces
+      summary: Get Current Pending Workspace Members
+      operationId: get_current_pending_workspace_members_api_v1_workspaces_current_members_pending_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 500
+            minimum: 1
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Current Pending Workspace Members Api V1 Workspaces Current Members Pending Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/PendingIdentity'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/workspaces/current/members/batch:
     post:
       tags:
@@ -9790,13 +9958,6 @@ paths:
             title: Upstream Repo Handle
             type: string
             nullable: true
-        - name: match_prefix
-          in: query
-          schema:
-            title: Match Prefix
-            type: boolean
-            default: false
-            nullable: true
         - name: tag_value_id
           in: query
           schema:
@@ -10113,13 +10274,6 @@ paths:
           schema:
             title: Upstream Repo Handle
             type: string
-            nullable: true
-        - name: match_prefix
-          in: query
-          schema:
-            title: Match Prefix
-            type: boolean
-            default: false
             nullable: true
         - name: tag_value_id
           in: query
@@ -16498,6 +16652,10 @@ components:
           title: Enable Select All Traces
           type: boolean
           default: false
+        use_exact_search_for_prompts:
+          title: Use Exact Search For Prompts
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -16979,6 +17137,13 @@ components:
         commit:
           title: Commit
           type: string
+          nullable: true
+        evaluator_rules:
+          title: Evaluator Rules
+          type: array
+          items:
+            type: string
+            format: uuid
           nullable: true
         dataset_id:
           title: Dataset Id

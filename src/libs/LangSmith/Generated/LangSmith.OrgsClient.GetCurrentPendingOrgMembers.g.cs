@@ -3,48 +3,59 @@
 
 namespace LangSmith
 {
-    public partial class DatasetsClient
+    public partial class OrgsClient
     {
-        partial void PrepareDatasetHandlerArguments(
+        partial void PrepareGetCurrentPendingOrgMembersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
-        partial void PrepareDatasetHandlerRequest(
+            ref int? limit,
+            ref int? offset);
+        partial void PrepareGetCurrentPendingOrgMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
-        partial void ProcessDatasetHandlerResponse(
+            int? limit,
+            int? offset);
+        partial void ProcessGetCurrentPendingOrgMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDatasetHandlerResponseContent(
+        partial void ProcessGetCurrentPendingOrgMembersResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Dataset Handler
+        /// Get Current Pending Org Members
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>> GetCurrentPendingOrgMembersAsync(
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareDatasetHandlerArguments(
+            PrepareGetCurrentPendingOrgMembersArguments(
                 httpClient: HttpClient,
-                request: request);
+                limit: ref limit,
+                offset: ref offset);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/datasets/playground_experiment/batch",
+                path: "/api/v1/orgs/current/members/pending",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -66,20 +77,15 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareDatasetHandlerRequest(
+            PrepareGetCurrentPendingOrgMembersRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                limit: limit,
+                offset: offset);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -89,7 +95,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessDatasetHandlerResponse(
+            ProcessGetCurrentPendingOrgMembersResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -129,7 +135,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessDatasetHandlerResponseContent(
+                ProcessGetCurrentPendingOrgMembersResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -153,7 +159,9 @@ namespace LangSmith
                     };
                 }
 
-                return __content;
+                return
+                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity> ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -175,76 +183,12 @@ namespace LangSmith
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
-                return __content;
+                return
+                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity> ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
-        }
-
-        /// <summary>
-        /// Dataset Handler
-        /// </summary>
-        /// <param name="manifest"></param>
-        /// <param name="secrets"></param>
-        /// <param name="runId"></param>
-        /// <param name="repoId"></param>
-        /// <param name="tools"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="options">
-        /// Configuration for a Runnable.
-        /// </param>
-        /// <param name="projectName"></param>
-        /// <param name="repoHandle"></param>
-        /// <param name="owner"></param>
-        /// <param name="commit"></param>
-        /// <param name="evaluatorRules"></param>
-        /// <param name="datasetId"></param>
-        /// <param name="datasetSplits"></param>
-        /// <param name="repetitions">
-        /// Default Value: 1
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
-            object manifest,
-            global::System.Collections.Generic.Dictionary<string, string> secrets,
-            global::LangSmith.RunnableConfig options,
-            string projectName,
-            global::System.Guid datasetId,
-            string? runId = default,
-            string? repoId = default,
-            global::System.Collections.Generic.IList<object>? tools = default,
-            string? toolChoice = default,
-            string? repoHandle = default,
-            string? owner = default,
-            string? commit = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules = default,
-            global::System.Collections.Generic.IList<string>? datasetSplits = default,
-            int? repetitions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.PlaygroundRunOverDatasetRequestSchema
-            {
-                Manifest = manifest,
-                Secrets = secrets,
-                RunId = runId,
-                RepoId = repoId,
-                Tools = tools,
-                ToolChoice = toolChoice,
-                Options = options,
-                ProjectName = projectName,
-                RepoHandle = repoHandle,
-                Owner = owner,
-                Commit = commit,
-                EvaluatorRules = evaluatorRules,
-                DatasetId = datasetId,
-                DatasetSplits = datasetSplits,
-                Repetitions = repetitions,
-            };
-
-            return await DatasetHandlerAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
