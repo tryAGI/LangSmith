@@ -25,6 +25,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
+        /// <param name="attachmentsOperations"></param>
         /// <param name="metadata"></param>
         /// <param name="split"></param>
         /// <param name="overwrite">
@@ -37,6 +38,7 @@ namespace LangSmith
             global::System.Guid? datasetId = default,
             object? inputs = default,
             object? outputs = default,
+            global::LangSmith.AttachmentsOperations? attachmentsOperations = default,
             object? metadata = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
             bool? overwrite = default,
