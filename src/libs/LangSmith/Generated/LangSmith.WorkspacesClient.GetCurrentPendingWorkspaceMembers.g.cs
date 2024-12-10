@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareGetCurrentPendingWorkspaceMembersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
-            ref int? offset);
+            ref int? offset,
+            global::System.Collections.Generic.IList<string>? emails);
         partial void PrepareGetCurrentPendingWorkspaceMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
-            int? offset);
+            int? offset,
+            global::System.Collections.Generic.IList<string>? emails);
         partial void ProcessGetCurrentPendingWorkspaceMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,11 +34,13 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
+        /// <param name="emails"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.PendingIdentity>> GetCurrentPendingWorkspaceMembersAsync(
             int? limit = default,
             int? offset = default,
+            global::System.Collections.Generic.IList<string>? emails = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -44,7 +48,8 @@ namespace LangSmith
             PrepareGetCurrentPendingWorkspaceMembersArguments(
                 httpClient: HttpClient,
                 limit: ref limit,
-                offset: ref offset);
+                offset: ref offset,
+                emails: emails);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/workspaces/current/members/pending",
@@ -52,6 +57,7 @@ namespace LangSmith
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -85,7 +91,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 limit: limit,
-                offset: offset);
+                offset: offset,
+                emails: emails);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

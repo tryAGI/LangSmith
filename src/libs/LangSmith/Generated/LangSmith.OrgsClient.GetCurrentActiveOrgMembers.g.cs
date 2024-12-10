@@ -8,12 +8,18 @@ namespace LangSmith
         partial void PrepareGetCurrentActiveOrgMembersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
-            ref int? offset);
+            ref int? offset,
+            global::System.Collections.Generic.IList<string>? emails,
+            global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds);
         partial void PrepareGetCurrentActiveOrgMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
-            int? offset);
+            int? offset,
+            global::System.Collections.Generic.IList<string>? emails,
+            global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds);
         partial void ProcessGetCurrentActiveOrgMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,11 +38,17 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
+        /// <param name="emails"></param>
+        /// <param name="lsUserIds"></param>
+        /// <param name="userIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.OrgMemberIdentity>> GetCurrentActiveOrgMembersAsync(
             int? limit = default,
             int? offset = default,
+            global::System.Collections.Generic.IList<string>? emails = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -44,7 +56,10 @@ namespace LangSmith
             PrepareGetCurrentActiveOrgMembersArguments(
                 httpClient: HttpClient,
                 limit: ref limit,
-                offset: ref offset);
+                offset: ref offset,
+                emails: emails,
+                lsUserIds: lsUserIds,
+                userIds: userIds);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/orgs/current/members/active",
@@ -52,6 +67,9 @@ namespace LangSmith
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
+                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -85,7 +103,10 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 limit: limit,
-                offset: offset);
+                offset: offset,
+                emails: emails,
+                lsUserIds: lsUserIds,
+                userIds: userIds);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

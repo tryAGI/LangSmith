@@ -102,6 +102,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_name")]
+        public string? OrgRoleName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? TenantIds { get; set; }
 
@@ -128,6 +140,8 @@ namespace LangSmith
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="linkedLoginMethods"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         /// <param name="tenantIds"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrgMemberIdentity(
@@ -145,6 +159,8 @@ namespace LangSmith
             string? fullName,
             string? avatarUrl,
             global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? linkedLoginMethods,
+            global::System.Guid? orgRoleId,
+            string? orgRoleName,
             global::System.Collections.Generic.IList<global::System.Guid>? tenantIds)
         {
             this.Id = id;
@@ -161,6 +177,8 @@ namespace LangSmith
             this.FullName = fullName;
             this.AvatarUrl = avatarUrl;
             this.LinkedLoginMethods = linkedLoginMethods;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
             this.TenantIds = tenantIds;
         }
 

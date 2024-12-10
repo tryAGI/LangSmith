@@ -100,6 +100,18 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? LinkedLoginMethods { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_name")]
+        public string? OrgRoleName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -122,6 +134,8 @@ namespace LangSmith
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="linkedLoginMethods"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public MemberIdentity(
             global::System.Guid id,
@@ -137,7 +151,9 @@ namespace LangSmith
             string? email,
             string? fullName,
             string? avatarUrl,
-            global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? linkedLoginMethods)
+            global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? linkedLoginMethods,
+            global::System.Guid? orgRoleId,
+            string? orgRoleName)
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -153,6 +169,8 @@ namespace LangSmith
             this.FullName = fullName;
             this.AvatarUrl = avatarUrl;
             this.LinkedLoginMethods = linkedLoginMethods;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
         }
 
         /// <summary>

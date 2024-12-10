@@ -184,6 +184,13 @@ namespace LangSmith
         public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int EvaluatorVersion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -228,6 +235,7 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
+        /// <param name="evaluatorVersion"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunRulesSchema(
             global::System.Guid id,
@@ -237,6 +245,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            int evaluatorVersion,
             bool? isEnabled,
             global::System.Guid? sessionId,
             string? sessionName,
@@ -266,6 +275,7 @@ namespace LangSmith
             this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.EvaluatorVersion = evaluatorVersion;
             this.IsEnabled = isEnabled;
             this.SessionId = sessionId;
             this.SessionName = sessionName;

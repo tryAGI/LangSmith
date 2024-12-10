@@ -7,11 +7,13 @@ namespace LangSmith
     {
         partial void PrepareReadFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid feedbackId);
+            ref global::System.Guid feedbackId,
+            ref bool? includeUserNames);
         partial void PrepareReadFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid feedbackId);
+            global::System.Guid feedbackId,
+            bool? includeUserNames);
         partial void ProcessReadFeedbackResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,21 +28,27 @@ namespace LangSmith
         /// Get a specific feedback.
         /// </summary>
         /// <param name="feedbackId"></param>
+        /// <param name="includeUserNames"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> ReadFeedbackAsync(
             global::System.Guid feedbackId,
+            bool? includeUserNames = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareReadFeedbackArguments(
                 httpClient: HttpClient,
-                feedbackId: ref feedbackId);
+                feedbackId: ref feedbackId,
+                includeUserNames: ref includeUserNames);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/feedback/{feedbackId}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("include_user_names", includeUserNames?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -72,7 +80,8 @@ namespace LangSmith
             PrepareReadFeedbackRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                feedbackId: feedbackId);
+                feedbackId: feedbackId,
+                includeUserNames: includeUserNames);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

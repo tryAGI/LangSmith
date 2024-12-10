@@ -190,6 +190,7 @@ namespace LangSmith
         /// <param name="repoId"></param>
         /// <param name="tools"></param>
         /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
         /// <param name="options">
         /// Configuration for a Runnable.
         /// </param>
@@ -215,6 +216,7 @@ namespace LangSmith
             string? repoId = default,
             global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
+            bool? parallelToolCalls = default,
             string? repoHandle = default,
             string? owner = default,
             string? commit = default,
@@ -231,6 +233,7 @@ namespace LangSmith
                 RepoId = repoId,
                 Tools = tools,
                 ToolChoice = toolChoice,
+                ParallelToolCalls = parallelToolCalls,
                 Options = options,
                 ProjectName = projectName,
                 RepoHandle = repoHandle,
