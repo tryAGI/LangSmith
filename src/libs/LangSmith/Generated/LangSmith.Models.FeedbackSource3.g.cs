@@ -27,6 +27,12 @@ namespace LangSmith
         public global::System.Guid? UserId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_name")]
+        public string? UserName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,15 +44,18 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="metadata"></param>
         /// <param name="userId"></param>
+        /// <param name="userName"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FeedbackSource3(
             string? type,
             object? metadata,
-            global::System.Guid? userId)
+            global::System.Guid? userId,
+            string? userName)
         {
             this.Type = type;
             this.Metadata = metadata;
             this.UserId = userId;
+            this.UserName = userName;
         }
 
         /// <summary>

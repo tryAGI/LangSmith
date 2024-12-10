@@ -97,6 +97,18 @@ namespace LangSmith
         public string? RoleName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_name")]
+        public string? OrgRoleName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -121,6 +133,8 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="roleName"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PendingIdentity(
             string email,
@@ -136,7 +150,9 @@ namespace LangSmith
             global::System.Guid? userId,
             global::System.Guid? tenantId,
             global::System.Guid? organizationId,
-            string? roleName)
+            string? roleName,
+            global::System.Guid? orgRoleId,
+            string? orgRoleName)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Id = id;
@@ -152,6 +168,8 @@ namespace LangSmith
             this.TenantId = tenantId;
             this.OrganizationId = organizationId;
             this.RoleName = roleName;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
         }
 
         /// <summary>

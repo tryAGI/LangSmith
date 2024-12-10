@@ -47,6 +47,12 @@ namespace LangSmith
         public string? ToolChoice { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
+
+        /// <summary>
         /// Configuration for a Runnable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
@@ -118,6 +124,7 @@ namespace LangSmith
         /// <param name="repoId"></param>
         /// <param name="tools"></param>
         /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
         /// <param name="options">
         /// Configuration for a Runnable.
         /// </param>
@@ -142,6 +149,7 @@ namespace LangSmith
             string? repoId,
             global::System.Collections.Generic.IList<object>? tools,
             string? toolChoice,
+            bool? parallelToolCalls,
             string? repoHandle,
             string? owner,
             string? commit,
@@ -158,6 +166,7 @@ namespace LangSmith
             this.RepoId = repoId;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
             this.RepoHandle = repoHandle;
             this.Owner = owner;
             this.Commit = commit;

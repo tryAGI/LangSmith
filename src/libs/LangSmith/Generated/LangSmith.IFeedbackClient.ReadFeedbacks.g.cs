@@ -26,6 +26,7 @@ namespace LangSmith
         /// </param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
+        /// <param name="includeUserNames"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadFeedbacksAsync(
@@ -41,6 +42,7 @@ namespace LangSmith
             global::LangSmith.FeedbackLevel? level = default,
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
+            bool? includeUserNames = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
