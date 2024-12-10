@@ -31,6 +31,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachments_operations")]
+        public global::LangSmith.AttachmentsOperations? AttachmentsOperations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
@@ -59,6 +65,7 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
+        /// <param name="attachmentsOperations"></param>
         /// <param name="metadata"></param>
         /// <param name="split"></param>
         /// <param name="overwrite">
@@ -69,6 +76,7 @@ namespace LangSmith
             global::System.Guid? datasetId,
             object? inputs,
             object? outputs,
+            global::LangSmith.AttachmentsOperations? attachmentsOperations,
             object? metadata,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
             bool? overwrite)
@@ -76,6 +84,7 @@ namespace LangSmith
             this.DatasetId = datasetId;
             this.Inputs = inputs;
             this.Outputs = outputs;
+            this.AttachmentsOperations = attachmentsOperations;
             this.Metadata = metadata;
             this.Split = split;
             this.Overwrite = overwrite;

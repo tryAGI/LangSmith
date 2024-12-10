@@ -12111,6 +12111,22 @@ components:
         content:
           title: Content
           type: string
+    AttachmentsOperations:
+      title: AttachmentsOperations
+      type: object
+      properties:
+        rename:
+          title: Rename
+          type: object
+          additionalProperties:
+            type: string
+          description: Mapping of old attachment names to new names
+        retain:
+          title: Retain
+          type: array
+          items:
+            type: string
+          description: List of attachment names to keep
     AuthProvider:
       title: AuthProvider
       enum:
@@ -14444,6 +14460,8 @@ components:
           title: Outputs
           type: object
           nullable: true
+        attachments_operations:
+          $ref: '#/components/schemas/AttachmentsOperations'
         metadata:
           title: Metadata
           type: object
@@ -14480,6 +14498,8 @@ components:
           title: Outputs
           type: object
           nullable: true
+        attachments_operations:
+          $ref: '#/components/schemas/AttachmentsOperations'
         metadata:
           title: Metadata
           type: object
