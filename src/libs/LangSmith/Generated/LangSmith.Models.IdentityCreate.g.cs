@@ -12,8 +12,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_identity_id")]
+        public global::System.Guid? OrgIdentityId { get; set; }
 
         /// <summary>
         /// 
@@ -37,15 +42,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="IdentityCreate" /> class.
         /// </summary>
         /// <param name="userId"></param>
+        /// <param name="orgIdentityId"></param>
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public IdentityCreate(
-            global::System.Guid userId,
+            global::System.Guid? userId,
+            global::System.Guid? orgIdentityId,
             bool? readOnly,
             global::System.Guid? roleId)
         {
             this.UserId = userId;
+            this.OrgIdentityId = orgIdentityId;
             this.ReadOnly = readOnly;
             this.RoleId = roleId;
         }
