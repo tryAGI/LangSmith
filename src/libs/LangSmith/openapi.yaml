@@ -15754,14 +15754,18 @@ components:
       description: Identity annotation queue run status create schema.
     IdentityCreate:
       title: IdentityCreate
-      required:
-        - user_id
       type: object
       properties:
         user_id:
           title: User Id
           type: string
           format: uuid
+          nullable: true
+        org_identity_id:
+          title: Org Identity Id
+          type: string
+          format: uuid
+          nullable: true
         read_only:
           title: Read Only
           type: boolean
