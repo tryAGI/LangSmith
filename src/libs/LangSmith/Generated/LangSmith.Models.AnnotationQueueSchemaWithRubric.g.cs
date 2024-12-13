@@ -74,6 +74,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_rule_id")]
+        public global::System.Guid? SourceRuleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rubric_items")]
         public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? RubricItems { get; set; }
 
@@ -108,6 +114,7 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="sourceRuleId"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -122,6 +129,7 @@ namespace LangSmith
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
+            global::System.Guid? sourceRuleId,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions)
         {
@@ -135,6 +143,7 @@ namespace LangSmith
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.SourceRuleId = sourceRuleId;
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;
         }
