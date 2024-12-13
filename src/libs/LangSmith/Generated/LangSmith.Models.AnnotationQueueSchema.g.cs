@@ -72,6 +72,12 @@ namespace LangSmith
         public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_rule_id")]
+        public global::System.Guid? SourceRuleId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -96,6 +102,7 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="sourceRuleId"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public AnnotationQueueSchema(
             string name,
@@ -107,7 +114,8 @@ namespace LangSmith
             global::System.Guid? defaultDataset,
             int? numReviewersPerItem,
             bool? enableReservations,
-            int? reservationMinutes)
+            int? reservationMinutes,
+            global::System.Guid? sourceRuleId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
@@ -119,6 +127,7 @@ namespace LangSmith
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.SourceRuleId = sourceRuleId;
         }
 
         /// <summary>

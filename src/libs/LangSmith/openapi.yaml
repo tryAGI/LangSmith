@@ -3927,6 +3927,15 @@ paths:
             title: Name Contains
             type: string
             nullable: true
+        - name: id
+          in: query
+          schema:
+            title: Id
+            type: array
+            items:
+              type: string
+              format: uuid
+            nullable: true
       responses:
         '200':
           description: Successful Response
@@ -6159,6 +6168,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AnnotationQueueSchema'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/annotation-queues/populate:
+    post:
+      tags:
+        - annotation-queues
+      summary: Populate Annotation Queue
+      description: Populate annotation queue with runs from an experiment.
+      operationId: populate_annotation_queue_api_v1_annotation_queues_populate_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PopulateAnnotationQueueSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
         '422':
           description: Validation Error
           content:
@@ -11776,6 +11814,13 @@ components:
           title: Rubric Instructions
           type: string
           nullable: true
+        session_ids:
+          title: Session Ids
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
       description: AnnotationQueue schema.
     AnnotationQueueRubricItemSchema:
       title: AnnotationQueueRubricItemSchema
@@ -11896,6 +11941,11 @@ components:
           title: Tenant Id
           type: string
           format: uuid
+        source_rule_id:
+          title: Source Rule Id
+          type: string
+          format: uuid
+          nullable: true
       description: AnnotationQueue schema.
     AnnotationQueueSchemaWithRubric:
       title: AnnotationQueueSchemaWithRubric
@@ -11948,6 +11998,11 @@ components:
           title: Tenant Id
           type: string
           format: uuid
+        source_rule_id:
+          title: Source Rule Id
+          type: string
+          format: uuid
+          nullable: true
         rubric_items:
           title: Rubric Items
           type: array
@@ -12011,6 +12066,11 @@ components:
           title: Tenant Id
           type: string
           format: uuid
+        source_rule_id:
+          title: Source Rule Id
+          type: string
+          format: uuid
+          nullable: true
         total_runs:
           title: Total Runs
           type: integer
@@ -16783,6 +16843,18 @@ components:
           title: Use Exact Search For Prompts
           type: boolean
           default: false
+        langgraph_deploy_own_cloud_enabled:
+          title: Langgraph Deploy Own Cloud Enabled
+          type: boolean
+          default: false
+        prompt_optimization:
+          title: Prompt Optimization
+          type: boolean
+          default: false
+        enable_k8s_vanilla_platform:
+          title: Enable K8S Vanilla Platform
+          type: boolean
+          default: false
         flags:
           title: Flags
           type: object
@@ -17366,6 +17438,23 @@ components:
           title: Settings
           type: object
           nullable: true
+    PopulateAnnotationQueueSchema:
+      title: PopulateAnnotationQueueSchema
+      required:
+        - queue_id
+        - session_ids
+      type: object
+      properties:
+        queue_id:
+          title: Queue Id
+          type: string
+          format: uuid
+        session_ids:
+          title: Session Ids
+          type: array
+          items:
+            type: string
+            format: uuid
     PromptOptimizationJob:
       title: PromptOptimizationJob
       required:
@@ -18788,6 +18877,10 @@ components:
           title: Extend Only
           type: boolean
           default: false
+        transient:
+          title: Transient
+          type: boolean
+          default: false
         add_to_annotation_queue_id:
           title: Add To Annotation Queue Id
           type: string
@@ -18980,6 +19073,10 @@ components:
           type: string
           format: date-time
           nullable: true
+        transient:
+          title: Transient
+          type: boolean
+          default: false
         evaluator_version:
           title: Evaluator Version
           type: integer

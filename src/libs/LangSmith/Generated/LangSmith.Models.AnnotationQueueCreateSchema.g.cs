@@ -76,6 +76,12 @@ namespace LangSmith
         public string? RubricInstructions { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? SessionIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +107,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
+        /// <param name="sessionIds"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public AnnotationQueueCreateSchema(
             string name,
@@ -113,7 +120,8 @@ namespace LangSmith
             int? reservationMinutes,
             global::System.Guid? id,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
-            string? rubricInstructions)
+            string? rubricInstructions,
+            global::System.Collections.Generic.IList<global::System.Guid>? sessionIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
@@ -126,6 +134,7 @@ namespace LangSmith
             this.Id = id;
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;
+            this.SessionIds = sessionIds;
         }
 
         /// <summary>

@@ -3,45 +3,45 @@
 
 namespace LangSmith
 {
-    public partial class RunClient
+    public partial class AnnotationQueuesClient
     {
-        partial void PrepareCreateRuleArguments(
+        partial void PreparePopulateAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.RunRulesCreateSchema request);
-        partial void PrepareCreateRuleRequest(
+            global::LangSmith.PopulateAnnotationQueueSchema request);
+        partial void PreparePopulateAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.RunRulesCreateSchema request);
-        partial void ProcessCreateRuleResponse(
+            global::LangSmith.PopulateAnnotationQueueSchema request);
+        partial void ProcessPopulateAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateRuleResponseContent(
+        partial void ProcessPopulateAnnotationQueueResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Rule<br/>
-        /// Create a new run rule.
+        /// Populate Annotation Queue<br/>
+        /// Populate annotation queue with runs from an experiment.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> CreateRuleAsync(
-            global::LangSmith.RunRulesCreateSchema request,
+        public async global::System.Threading.Tasks.Task<string> PopulateAnnotationQueueAsync(
+            global::LangSmith.PopulateAnnotationQueueSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateRuleArguments(
+            PreparePopulateAnnotationQueueArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/runs/rules",
+                path: "/api/v1/annotation-queues/populate",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -77,7 +77,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateRuleRequest(
+            PreparePopulateAnnotationQueueRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -90,7 +90,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateRuleResponse(
+            ProcessPopulateAnnotationQueueResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -130,7 +130,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateRuleResponseContent(
+                ProcessPopulateAnnotationQueueResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -154,9 +154,7 @@ namespace LangSmith
                     };
                 }
 
-                return
-                    global::LangSmith.RunRulesSchema.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                return __content;
             }
             else
             {
@@ -178,98 +176,32 @@ namespace LangSmith
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                return
-                    await global::LangSmith.RunRulesSchema.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+                return __content;
             }
         }
 
         /// <summary>
-        /// Create Rule<br/>
-        /// Create a new run rule.
+        /// Populate Annotation Queue<br/>
+        /// Populate annotation queue with runs from an experiment.
         /// </summary>
-        /// <param name="displayName"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="isEnabled">
-        /// Default Value: true
-        /// </param>
-        /// <param name="datasetId"></param>
-        /// <param name="samplingRate"></param>
-        /// <param name="filter"></param>
-        /// <param name="traceFilter"></param>
-        /// <param name="treeFilter"></param>
-        /// <param name="backfillFrom"></param>
-        /// <param name="useCorrectionsDataset">
-        /// Default Value: false
-        /// </param>
-        /// <param name="numFewShotExamples"></param>
-        /// <param name="extendOnly">
-        /// Default Value: false
-        /// </param>
-        /// <param name="transient">
-        /// Default Value: false
-        /// </param>
-        /// <param name="addToAnnotationQueueId"></param>
-        /// <param name="addToDatasetId"></param>
-        /// <param name="addToDatasetPreferCorrection">
-        /// Default Value: false
-        /// </param>
-        /// <param name="evaluators"></param>
-        /// <param name="codeEvaluators"></param>
-        /// <param name="alerts"></param>
-        /// <param name="webhooks"></param>
+        /// <param name="queueId"></param>
+        /// <param name="sessionIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> CreateRuleAsync(
-            string displayName,
-            double samplingRate,
-            global::System.Guid? sessionId = default,
-            bool? isEnabled = default,
-            global::System.Guid? datasetId = default,
-            string? filter = default,
-            string? traceFilter = default,
-            string? treeFilter = default,
-            global::System.DateTime? backfillFrom = default,
-            bool? useCorrectionsDataset = default,
-            int? numFewShotExamples = default,
-            bool? extendOnly = default,
-            bool? transient = default,
-            global::System.Guid? addToAnnotationQueueId = default,
-            global::System.Guid? addToDatasetId = default,
-            bool? addToDatasetPreferCorrection = default,
-            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators = default,
-            global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators = default,
-            global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
-            global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
+        public async global::System.Threading.Tasks.Task<string> PopulateAnnotationQueueAsync(
+            global::System.Guid queueId,
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.RunRulesCreateSchema
+            var __request = new global::LangSmith.PopulateAnnotationQueueSchema
             {
-                DisplayName = displayName,
-                SessionId = sessionId,
-                IsEnabled = isEnabled,
-                DatasetId = datasetId,
-                SamplingRate = samplingRate,
-                Filter = filter,
-                TraceFilter = traceFilter,
-                TreeFilter = treeFilter,
-                BackfillFrom = backfillFrom,
-                UseCorrectionsDataset = useCorrectionsDataset,
-                NumFewShotExamples = numFewShotExamples,
-                ExtendOnly = extendOnly,
-                Transient = transient,
-                AddToAnnotationQueueId = addToAnnotationQueueId,
-                AddToDatasetId = addToDatasetId,
-                AddToDatasetPreferCorrection = addToDatasetPreferCorrection,
-                Evaluators = evaluators,
-                CodeEvaluators = codeEvaluators,
-                Alerts = alerts,
-                Webhooks = webhooks,
+                QueueId = queueId,
+                SessionIds = sessionIds,
             };
 
-            return await CreateRuleAsync(
+            return await PopulateAnnotationQueueAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

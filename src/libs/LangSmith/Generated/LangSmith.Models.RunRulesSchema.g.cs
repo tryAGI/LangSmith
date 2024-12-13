@@ -184,6 +184,12 @@ namespace LangSmith
         public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transient")]
+        public bool? Transient { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_version")]
@@ -235,6 +241,9 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
+        /// <param name="transient">
+        /// Default Value: false
+        /// </param>
         /// <param name="evaluatorVersion"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunRulesSchema(
@@ -266,7 +275,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             bool? extendOnly,
-            global::System.DateTime? backfillFrom)
+            global::System.DateTime? backfillFrom,
+            bool? transient)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -297,6 +307,7 @@ namespace LangSmith
             this.Alerts = alerts;
             this.ExtendOnly = extendOnly;
             this.BackfillFrom = backfillFrom;
+            this.Transient = transient;
         }
 
         /// <summary>

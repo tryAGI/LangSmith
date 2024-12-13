@@ -37,6 +37,9 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="transient">
+        /// Default Value: false
+        /// </param>
         /// <param name="addToAnnotationQueueId"></param>
         /// <param name="addToDatasetId"></param>
         /// <param name="addToDatasetPreferCorrection">
@@ -61,6 +64,7 @@ namespace LangSmith
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
             bool? extendOnly = default,
+            bool? transient = default,
             global::System.Guid? addToAnnotationQueueId = default,
             global::System.Guid? addToDatasetId = default,
             bool? addToDatasetPreferCorrection = default,

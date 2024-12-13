@@ -34,6 +34,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
+        /// <param name="sessionIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSchema> CreateAnnotationQueueAsync(
@@ -48,6 +49,7 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? sessionIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -153,6 +153,24 @@ namespace LangSmith
         public bool? UseExactSearchForPrompts { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_deploy_own_cloud_enabled")]
+        public bool? LanggraphDeployOwnCloudEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization")]
+        public bool? PromptOptimization { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_k8s_vanilla_platform")]
+        public bool? EnableK8sVanillaPlatform { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
@@ -233,6 +251,15 @@ namespace LangSmith
         /// <param name="useExactSearchForPrompts">
         /// Default Value: false
         /// </param>
+        /// <param name="langgraphDeployOwnCloudEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="promptOptimization">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableK8sVanillaPlatform">
+        /// Default Value: false
+        /// </param>
         /// <param name="flags"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
@@ -260,6 +287,9 @@ namespace LangSmith
             bool? enableOrgUsageCharts,
             bool? enableSelectAllTraces,
             bool? useExactSearchForPrompts,
+            bool? langgraphDeployOwnCloudEnabled,
+            bool? promptOptimization,
+            bool? enableK8sVanillaPlatform,
             global::System.Collections.Generic.Dictionary<string, bool>? flags)
         {
             this.MaxIdentities = maxIdentities;
@@ -286,6 +316,9 @@ namespace LangSmith
             this.EnableOrgUsageCharts = enableOrgUsageCharts;
             this.EnableSelectAllTraces = enableSelectAllTraces;
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
+            this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
+            this.PromptOptimization = promptOptimization;
+            this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.Flags = flags;
         }
 
