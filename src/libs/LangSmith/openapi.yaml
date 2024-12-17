@@ -6130,6 +6130,13 @@ paths:
               type: string
               format: uuid
             nullable: true
+        - name: dataset_id
+          in: query
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+            nullable: true
       responses:
         '200':
           description: Successful Response
@@ -16425,28 +16432,6 @@ components:
           type: string
           nullable: true
       description: Request to optimize a prompt.
-    OrgFeatureFlags:
-      title: OrgFeatureFlags
-      enum:
-        - hosted_langserve_enabled
-        - payment_enabled
-        - run_rules_enabled
-        - conversation_view_enabled
-        - usage_reporting_enabled
-        - show_upgrade_billing_ui
-        - rbac_enabled
-        - pat_enabled
-        - show_ttl_ui
-        - allow_backfill_rules
-        - playground_comparative
-        - show_dataset_schemas
-        - compare_trace_enabled
-        - resource_tags
-        - langgraph_deploy_own_cloud_enabled
-        - arbitrary_code_execution_enabled
-        - prompt_optimization
-      type: string
-      description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
       title: OrgIdentityPatch
       type: object
@@ -16855,29 +16840,6 @@ components:
           title: Enable K8S Vanilla Platform
           type: boolean
           default: false
-        flags:
-          title: Flags
-          type: object
-          additionalProperties:
-            type: boolean
-          default:
-            hosted_langserve_enabled: false
-            payment_enabled: false
-            run_rules_enabled: false
-            conversation_view_enabled: false
-            usage_reporting_enabled: false
-            show_upgrade_billing_ui: false
-            rbac_enabled: false
-            pat_enabled: false
-            show_ttl_ui: false
-            allow_backfill_rules: false
-            playground_comparative: false
-            show_dataset_schemas: false
-            compare_trace_enabled: false
-            resource_tags: false
-            langgraph_deploy_own_cloud_enabled: false
-            arbitrary_code_execution_enabled: false
-            prompt_optimization: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
