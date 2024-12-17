@@ -95,8 +95,6 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.HumanMessageChunkTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.OAuthProviderJsonConverter),
             typeof(global::LangSmith.JsonConverters.OAuthProviderNullableJsonConverter),
-            typeof(global::LangSmith.JsonConverters.OrgFeatureFlagsJsonConverter),
-            typeof(global::LangSmith.JsonConverters.OrgFeatureFlagsNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeJsonConverter),
             typeof(global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.OrganizationDashboardTypeJsonConverter),
