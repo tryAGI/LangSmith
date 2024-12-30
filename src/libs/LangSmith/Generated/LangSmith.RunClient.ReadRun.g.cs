@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareReadRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid runId,
-            ref bool? excludeS3StoredAttributes);
+            ref bool? excludeS3StoredAttributes,
+            ref bool? excludeSerialized);
         partial void PrepareReadRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid runId,
-            bool? excludeS3StoredAttributes);
+            bool? excludeS3StoredAttributes,
+            bool? excludeSerialized);
         partial void ProcessReadRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,11 +33,15 @@ namespace LangSmith
         /// <param name="excludeS3StoredAttributes">
         /// Default Value: false
         /// </param>
+        /// <param name="excludeSerialized">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunSchema> ReadRunAsync(
             global::System.Guid runId,
             bool? excludeS3StoredAttributes = default,
+            bool? excludeSerialized = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -43,13 +49,15 @@ namespace LangSmith
             PrepareReadRunArguments(
                 httpClient: HttpClient,
                 runId: ref runId,
-                excludeS3StoredAttributes: ref excludeS3StoredAttributes);
+                excludeS3StoredAttributes: ref excludeS3StoredAttributes,
+                excludeSerialized: ref excludeSerialized);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
+                .AddOptionalParameter("exclude_serialized", excludeSerialized?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -83,7 +91,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 runId: runId,
-                excludeS3StoredAttributes: excludeS3StoredAttributes);
+                excludeS3StoredAttributes: excludeS3StoredAttributes,
+                excludeSerialized: excludeSerialized);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
