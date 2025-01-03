@@ -210,6 +210,7 @@ namespace LangSmith
         /// <param name="dataSourceType">
         /// Enum for run data source types.
         /// </param>
+        /// <param name="skipPagination"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
@@ -229,6 +230,7 @@ namespace LangSmith
             string? treeFilter = default,
             bool? isRoot = default,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
+            bool? skipPagination = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.FilterQueryParamsForRunSchema
@@ -249,6 +251,7 @@ namespace LangSmith
                 TreeFilter = treeFilter,
                 IsRoot = isRoot,
                 DataSourceType = dataSourceType,
+                SkipPagination = skipPagination,
             };
 
             return await StatsRunsAsync(

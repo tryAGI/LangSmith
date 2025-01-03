@@ -12399,6 +12399,10 @@ components:
           nullable: true
         data_source_type:
           $ref: '#/components/schemas/RunsFilterDataSourceTypeEnum'
+        skip_pagination:
+          title: Skip Pagination
+          type: boolean
+          nullable: true
         cursor:
           title: Cursor
           type: string
@@ -15422,6 +15426,10 @@ components:
           nullable: true
         data_source_type:
           $ref: '#/components/schemas/RunsFilterDataSourceTypeEnum'
+        skip_pagination:
+          title: Skip Pagination
+          type: boolean
+          nullable: true
       description: Query params for run endpoints.
     FilterView:
       title: FilterView
