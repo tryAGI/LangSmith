@@ -171,6 +171,12 @@ namespace LangSmith
         public bool? EnableK8sVanillaPlatform { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_experiment_page_v2")]
+        public bool? EnableExperimentPageV2 { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -254,6 +260,9 @@ namespace LangSmith
         /// <param name="enableK8sVanillaPlatform">
         /// Default Value: false
         /// </param>
+        /// <param name="enableExperimentPageV2">
+        /// Default Value: false
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
             int? maxIdentities,
@@ -282,7 +291,8 @@ namespace LangSmith
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
             bool? promptOptimization,
-            bool? enableK8sVanillaPlatform)
+            bool? enableK8sVanillaPlatform,
+            bool? enableExperimentPageV2)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -311,6 +321,7 @@ namespace LangSmith
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.PromptOptimization = promptOptimization;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
+            this.EnableExperimentPageV2 = enableExperimentPageV2;
         }
 
         /// <summary>

@@ -16854,6 +16854,10 @@ components:
           title: Enable K8S Vanilla Platform
           type: boolean
           default: false
+        enable_experiment_page_v2:
+          title: Enable Experiment Page V2
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
