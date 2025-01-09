@@ -6359,6 +6359,54 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+    get:
+      tags:
+        - annotation-queues
+      summary: Get Runs From Annotation Queue
+      operationId: get_runs_from_annotation_queue_api_v1_annotation_queues__queue_id__runs_get
+      parameters:
+        - name: queue_id
+          in: path
+          required: true
+          schema:
+            title: Queue Id
+            type: string
+            format: uuid
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 100
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Runs From Annotation Queue Api V1 Annotation Queues  Queue Id  Runs Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/RunSchemaWithAnnotationQueueInfo'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/annotation-queues/{queue_id}/run/{index}':
     get:
       tags:
