@@ -16898,6 +16898,10 @@ components:
           title: Prompt Optimization
           type: boolean
           default: false
+        prompt_optimization_jobs_enabled:
+          title: Prompt Optimization Jobs Enabled
+          type: boolean
+          default: false
         enable_k8s_vanilla_platform:
           title: Enable K8S Vanilla Platform
           type: boolean

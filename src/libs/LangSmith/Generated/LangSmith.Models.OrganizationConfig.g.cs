@@ -167,6 +167,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization_jobs_enabled")]
+        public bool? PromptOptimizationJobsEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_k8s_vanilla_platform")]
         public bool? EnableK8sVanillaPlatform { get; set; }
 
@@ -257,6 +263,9 @@ namespace LangSmith
         /// <param name="promptOptimization">
         /// Default Value: false
         /// </param>
+        /// <param name="promptOptimizationJobsEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="enableK8sVanillaPlatform">
         /// Default Value: false
         /// </param>
@@ -291,6 +300,7 @@ namespace LangSmith
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
             bool? promptOptimization,
+            bool? promptOptimizationJobsEnabled,
             bool? enableK8sVanillaPlatform,
             bool? enableExperimentPageV2)
         {
@@ -320,6 +330,7 @@ namespace LangSmith
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.PromptOptimization = promptOptimization;
+            this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.EnableExperimentPageV2 = enableExperimentPageV2;
         }
