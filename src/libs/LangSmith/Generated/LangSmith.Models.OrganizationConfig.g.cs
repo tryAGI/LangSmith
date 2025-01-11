@@ -131,6 +131,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_thread_view_playground")]
+        public bool? EnableThreadViewPlayground { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_custom_experiment_names")]
         public bool? EnableCustomExperimentNames { get; set; }
 
@@ -245,6 +251,9 @@ namespace LangSmith
         /// <param name="enableLanggraphPricing">
         /// Default Value: false
         /// </param>
+        /// <param name="enableThreadViewPlayground">
+        /// Default Value: false
+        /// </param>
         /// <param name="enableCustomExperimentNames">
         /// Default Value: false
         /// </param>
@@ -294,6 +303,7 @@ namespace LangSmith
             bool? showPlaygroundPromptCanvas,
             bool? allowCustomIframes,
             bool? enableLanggraphPricing,
+            bool? enableThreadViewPlayground,
             bool? enableCustomExperimentNames,
             bool? enableOrgUsageCharts,
             bool? enableSelectAllTraces,
@@ -324,6 +334,7 @@ namespace LangSmith
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.AllowCustomIframes = allowCustomIframes;
             this.EnableLanggraphPricing = enableLanggraphPricing;
+            this.EnableThreadViewPlayground = enableThreadViewPlayground;
             this.EnableCustomExperimentNames = enableCustomExperimentNames;
             this.EnableOrgUsageCharts = enableOrgUsageCharts;
             this.EnableSelectAllTraces = enableSelectAllTraces;

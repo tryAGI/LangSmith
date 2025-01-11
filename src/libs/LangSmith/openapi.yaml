@@ -16874,6 +16874,10 @@ components:
           title: Enable Langgraph Pricing
           type: boolean
           default: false
+        enable_thread_view_playground:
+          title: Enable Thread View Playground
+          type: boolean
+          default: false
         enable_custom_experiment_names:
           title: Enable Custom Experiment Names
           type: boolean
