@@ -17393,6 +17393,10 @@ components:
             type: string
             format: uuid
           nullable: true
+        requests_per_second:
+          title: Requests Per Second
+          type: integer
+          nullable: true
         dataset_id:
           title: Dataset Id
           type: string
@@ -17409,6 +17413,14 @@ components:
           minimum: 1.0
           type: integer
           default: 1
+    PlaygroundSavedOptions:
+      title: PlaygroundSavedOptions
+      type: object
+      properties:
+        requests_per_second:
+          title: Requests Per Second
+          type: integer
+          nullable: true
     PlaygroundSettingsCreateRequest:
       title: PlaygroundSettingsCreateRequest
       required:
@@ -17426,6 +17438,8 @@ components:
         settings:
           title: Settings
           type: object
+        options:
+          $ref: '#/components/schemas/PlaygroundSavedOptions'
     PlaygroundSettingsResponse:
       title: PlaygroundSettingsResponse
       required:
@@ -17442,6 +17456,8 @@ components:
         settings:
           title: Settings
           type: object
+        options:
+          $ref: '#/components/schemas/PlaygroundSavedOptions'
         name:
           title: Name
           type: string
@@ -17474,6 +17490,8 @@ components:
           title: Settings
           type: object
           nullable: true
+        options:
+          $ref: '#/components/schemas/PlaygroundSavedOptions'
     PopulateAnnotationQueueSchema:
       title: PopulateAnnotationQueueSchema
       required:

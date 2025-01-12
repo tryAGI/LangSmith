@@ -25,6 +25,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("options")]
+        public global::LangSmith.PlaygroundSavedOptions? Options { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -59,6 +65,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="settings"></param>
+        /// <param name="options"></param>
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
@@ -69,6 +76,7 @@ namespace LangSmith
             object settings,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            global::LangSmith.PlaygroundSavedOptions? options,
             string? name,
             string? description)
         {
@@ -76,6 +84,7 @@ namespace LangSmith
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Options = options;
             this.Name = name;
             this.Description = description;
         }

@@ -27,6 +27,12 @@ namespace LangSmith
         public object? Settings { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("options")]
+        public global::LangSmith.PlaygroundSavedOptions? Options { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,15 +44,18 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="settings"></param>
+        /// <param name="options"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PlaygroundSettingsUpdateRequest(
             string? name,
             string? description,
-            object? settings)
+            object? settings,
+            global::LangSmith.PlaygroundSavedOptions? options)
         {
             this.Name = name;
             this.Description = description;
             this.Settings = settings;
+            this.Options = options;
         }
 
         /// <summary>
