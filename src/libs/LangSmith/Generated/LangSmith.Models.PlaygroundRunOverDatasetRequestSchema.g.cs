@@ -93,6 +93,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("requests_per_second")]
+        public int? RequestsPerSecond { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
@@ -133,6 +139,7 @@ namespace LangSmith
         /// <param name="owner"></param>
         /// <param name="commit"></param>
         /// <param name="evaluatorRules"></param>
+        /// <param name="requestsPerSecond"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -154,6 +161,7 @@ namespace LangSmith
             string? owner,
             string? commit,
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
+            int? requestsPerSecond,
             global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions)
         {
@@ -171,6 +179,7 @@ namespace LangSmith
             this.Owner = owner;
             this.Commit = commit;
             this.EvaluatorRules = evaluatorRules;
+            this.RequestsPerSecond = requestsPerSecond;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
         }
