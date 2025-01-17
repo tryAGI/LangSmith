@@ -7,12 +7,10 @@ namespace LangSmith
     {
         partial void PrepareCreateFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? error,
             global::LangSmith.FeedbackCreateSchema request);
         partial void PrepareCreateFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? error,
             global::LangSmith.FeedbackCreateSchema request);
         partial void ProcessCreateFeedbackResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,13 +25,11 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
-        /// <param name="error"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             global::LangSmith.FeedbackCreateSchema request,
-            bool? error = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,15 +38,11 @@ namespace LangSmith
                 client: HttpClient);
             PrepareCreateFeedbackArguments(
                 httpClient: HttpClient,
-                error: ref error,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("error", error?.ToString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -88,7 +80,6 @@ namespace LangSmith
             PrepareCreateFeedbackRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                error: error,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -199,7 +190,6 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
-        /// <param name="error"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="key"></param>
@@ -215,11 +205,11 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="error"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> CreateFeedbackAsync(
             string key,
-            bool? error = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? modifiedAt = default,
             global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
@@ -234,6 +224,7 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
+            bool? error = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.FeedbackCreateSchema
@@ -253,10 +244,10 @@ namespace LangSmith
                 Id = id,
                 FeedbackSource = feedbackSource,
                 FeedbackConfig = feedbackConfig,
+                Error = error,
             };
 
             return await CreateFeedbackAsync(
-                error: error,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

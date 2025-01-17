@@ -209,6 +209,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="error"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> EagerlyCreateFeedbackAsync(
@@ -227,6 +228,7 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
+            bool? error = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.FeedbackCreateSchema
@@ -246,6 +248,7 @@ namespace LangSmith
                 Id = id,
                 FeedbackSource = feedbackSource,
                 FeedbackConfig = feedbackConfig,
+                Error = error,
             };
 
             return await EagerlyCreateFeedbackAsync(

@@ -106,6 +106,12 @@ namespace LangSmith
         public global::LangSmith.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public bool? Error { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -129,6 +135,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="error"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FeedbackCreateSchema(
             string key,
@@ -145,7 +152,8 @@ namespace LangSmith
             global::System.Guid? traceId,
             global::System.Guid? id,
             global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? feedbackSource,
-            global::LangSmith.FeedbackConfig? feedbackConfig)
+            global::LangSmith.FeedbackConfig? feedbackConfig,
+            bool? error)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.CreatedAt = createdAt;
@@ -162,6 +170,7 @@ namespace LangSmith
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;
+            this.Error = error;
         }
 
         /// <summary>

@@ -28,6 +28,12 @@ namespace LangSmith
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sort_params")]
+        public global::LangSmith.SortParamsForRunsComparisonView? SortParams { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview")]
@@ -57,6 +63,7 @@ namespace LangSmith
         /// <param name="sessionIds"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
+        /// <param name="sortParams"></param>
         /// <param name="preview">
         /// Default Value: false
         /// </param>
@@ -71,6 +78,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Guid? comparativeExperimentId,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
+            global::LangSmith.SortParamsForRunsComparisonView? sortParams,
             bool? preview,
             int? offset,
             int? limit)
@@ -78,6 +86,7 @@ namespace LangSmith
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
             this.ComparativeExperimentId = comparativeExperimentId;
             this.Filters = filters;
+            this.SortParams = sortParams;
             this.Preview = preview;
             this.Offset = offset;
             this.Limit = limit;
