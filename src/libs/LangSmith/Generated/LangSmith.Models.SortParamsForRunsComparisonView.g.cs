@@ -1,0 +1,54 @@
+
+#nullable enable
+
+namespace LangSmith
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SortParamsForRunsComparisonView
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sort_by")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string SortBy { get; set; }
+
+        /// <summary>
+        /// Default Value: DESC
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sort_order")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter))]
+        public global::LangSmith.SortParamsForRunsComparisonViewSortOrder? SortOrder { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortParamsForRunsComparisonView" /> class.
+        /// </summary>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: DESC
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SortParamsForRunsComparisonView(
+            string sortBy,
+            global::LangSmith.SortParamsForRunsComparisonViewSortOrder? sortOrder)
+        {
+            this.SortBy = sortBy ?? throw new global::System.ArgumentNullException(nameof(sortBy));
+            this.SortOrder = sortOrder;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortParamsForRunsComparisonView" /> class.
+        /// </summary>
+        public SortParamsForRunsComparisonView()
+        {
+        }
+    }
+}

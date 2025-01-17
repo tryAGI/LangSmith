@@ -25,6 +25,7 @@ namespace LangSmith
         /// <param name="sessionIds"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
+        /// <param name="sortParams"></param>
         /// <param name="preview">
         /// Default Value: false
         /// </param>
@@ -41,6 +42,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Guid? comparativeExperimentId = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
+            global::LangSmith.SortParamsForRunsComparisonView? sortParams = default,
             bool? preview = default,
             int? offset = default,
             int? limit = default,
