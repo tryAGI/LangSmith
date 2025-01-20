@@ -9,9 +9,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MSTest" Version="3.7.0" />
+    <PackageReference Include="MSTest" Version="3.7.1" />
     <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="FluentAssertions" Version="7.0.0" />
+    <PackageReference Include="FluentAssertions" Version="8.0.0" />
     <PackageReference Include="Testcontainers" Version="4.1.0" />
     <PackageReference Include="tryAGI.OpenAI" Version="3.9.2" />
   </ItemGroup>
