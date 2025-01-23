@@ -39,6 +39,13 @@ namespace LangSmith
         public string? TreeFilterString { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter))]
+        public global::LangSmith.FilterViewType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,19 +59,22 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
+        /// <param name="type"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FilterViewUpdate(
             string? filterString,
             string? displayName,
             string? description,
             string? traceFilterString,
-            string? treeFilterString)
+            string? treeFilterString,
+            global::LangSmith.FilterViewType? type)
         {
             this.FilterString = filterString;
             this.DisplayName = displayName;
             this.Description = description;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
+            this.Type = type;
         }
 
         /// <summary>

@@ -399,6 +399,10 @@ paths:
             title: Session Id
             type: string
             format: uuid
+        - name: type
+          in: query
+          schema:
+            $ref: '#/components/schemas/FilterViewType'
       responses:
         '200':
           description: Successful Response
@@ -1807,6 +1811,30 @@ paths:
         - auth
       summary: Oauth Provider Auth
       operationId: oauth_provider_auth_api_v1_oauth__provider__get
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/OAuthProvider'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/oauth/{provider}/current-user':
+    get:
+      tags:
+        - auth
+      summary: Oauth Provider Current User
+      operationId: oauth_provider_current_user_api_v1_oauth__provider__current_user_get
       parameters:
         - name: provider
           in: path
@@ -15504,6 +15532,8 @@ components:
           title: Description
           type: string
           nullable: true
+        type:
+          $ref: '#/components/schemas/FilterViewType'
         id:
           title: Id
           type: string
@@ -15546,6 +15576,14 @@ components:
           title: Description
           type: string
           nullable: true
+        type:
+          $ref: '#/components/schemas/FilterViewType'
+    FilterViewType:
+      title: FilterViewType
+      enum:
+        - runs
+        - threads
+      type: string
     FilterViewUpdate:
       title: FilterViewUpdate
       type: object
@@ -15570,6 +15608,8 @@ components:
           title: Tree Filter String
           type: string
           nullable: true
+        type:
+          $ref: '#/components/schemas/FilterViewType'
     ForkRepoRequest:
       title: ForkRepoRequest
       required:

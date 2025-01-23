@@ -3,52 +3,43 @@
 
 namespace LangSmith
 {
-    public partial class TracerSessionsClient
+    public partial class AuthClient
     {
-        partial void PrepareReadFilterViewsArguments(
+        partial void PrepareOauthProviderCurrentUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid sessionId,
-            ref global::LangSmith.FilterViewType? type);
-        partial void PrepareReadFilterViewsRequest(
+            ref global::LangSmith.OAuthProvider provider);
+        partial void PrepareOauthProviderCurrentUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid sessionId,
-            global::LangSmith.FilterViewType? type);
-        partial void ProcessReadFilterViewsResponse(
+            global::LangSmith.OAuthProvider provider);
+        partial void ProcessOauthProviderCurrentUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessReadFilterViewsResponseContent(
+        partial void ProcessOauthProviderCurrentUserResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Read Filter Views<br/>
-        /// Get all filter views for a session.
+        /// Oauth Provider Current User
         /// </summary>
-        /// <param name="sessionId"></param>
-        /// <param name="type"></param>
+        /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FilterView>> ReadFilterViewsAsync(
-            global::System.Guid sessionId,
-            global::LangSmith.FilterViewType? type = default,
+        public async global::System.Threading.Tasks.Task<string> OauthProviderCurrentUserAsync(
+            global::LangSmith.OAuthProvider provider,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareReadFilterViewsArguments(
+            PrepareOauthProviderCurrentUserArguments(
                 httpClient: HttpClient,
-                sessionId: ref sessionId,
-                type: ref type);
+                provider: ref provider);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/views",
+                path: $"/api/v1/oauth/{provider}/current-user",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -77,11 +68,10 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareReadFilterViewsRequest(
+            PrepareOauthProviderCurrentUserRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                sessionId: sessionId,
-                type: type);
+                provider: provider);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -91,7 +81,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessReadFilterViewsResponse(
+            ProcessOauthProviderCurrentUserResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -131,7 +121,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessReadFilterViewsResponseContent(
+                ProcessOauthProviderCurrentUserResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -155,9 +145,7 @@ namespace LangSmith
                     };
                 }
 
-                return
-                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.FilterView>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.FilterView> ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                return __content;
             }
             else
             {
@@ -179,11 +167,9 @@ namespace LangSmith
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.FilterView>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.FilterView> ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+                return __content;
             }
         }
     }
