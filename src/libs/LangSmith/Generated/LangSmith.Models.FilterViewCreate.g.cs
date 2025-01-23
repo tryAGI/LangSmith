@@ -40,6 +40,13 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter))]
+        public global::LangSmith.FilterViewType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,19 +60,22 @@ namespace LangSmith
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
+        /// <param name="type"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FilterViewCreate(
             string displayName,
             string? filterString,
             string? traceFilterString,
             string? treeFilterString,
-            string? description)
+            string? description,
+            global::LangSmith.FilterViewType? type)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.FilterString = filterString;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
             this.Description = description;
+            this.Type = type;
         }
 
         /// <summary>

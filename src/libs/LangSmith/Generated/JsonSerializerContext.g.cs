@@ -85,6 +85,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.TraceTierNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.FeedbackLevelJsonConverter),
             typeof(global::LangSmith.JsonConverters.FeedbackLevelNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter),
+            typeof(global::LangSmith.JsonConverters.FilterViewTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.FunctionMessageTypeJsonConverter),
             typeof(global::LangSmith.JsonConverters.FunctionMessageTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.FunctionMessageChunkTypeJsonConverter),
