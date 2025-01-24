@@ -6578,6 +6578,42 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/annotation-queues/{queue_id}/runs/delete':
+    post:
+      tags:
+        - annotation-queues
+      summary: Delete Runs From Annotation Queue
+      operationId: delete_runs_from_annotation_queue_api_v1_annotation_queues__queue_id__runs_delete_post
+      parameters:
+        - name: queue_id
+          in: path
+          required: true
+          schema:
+            title: Queue Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnotationQueueBulkDeleteRunsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/annotation-queues/{queue_id}/total_size':
     get:
       tags:
@@ -11841,6 +11877,28 @@ components:
         sso_only:
           title: Sso Only
           type: boolean
+    AnnotationQueueBulkDeleteRunsRequest:
+      title: AnnotationQueueBulkDeleteRunsRequest
+      type: object
+      properties:
+        delete_all:
+          title: Delete All
+          type: boolean
+          default: false
+        run_ids:
+          title: Run Ids
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        exclude_run_ids:
+          title: Exclude Run Ids
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
     AnnotationQueueCreateSchema:
       title: AnnotationQueueCreateSchema
       required:
@@ -16949,6 +17007,10 @@ components:
           default: false
         enable_experiment_page_v2:
           title: Enable Experiment Page V2
+          type: boolean
+          default: false
+        demo_lgp_new_graph_enabled:
+          title: Demo Lgp New Graph Enabled
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
