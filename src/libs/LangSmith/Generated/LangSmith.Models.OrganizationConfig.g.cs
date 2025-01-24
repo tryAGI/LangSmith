@@ -189,6 +189,12 @@ namespace LangSmith
         public bool? EnableExperimentPageV2 { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("demo_lgp_new_graph_enabled")]
+        public bool? DemoLgpNewGraphEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -281,6 +287,9 @@ namespace LangSmith
         /// <param name="enableExperimentPageV2">
         /// Default Value: false
         /// </param>
+        /// <param name="demoLgpNewGraphEnabled">
+        /// Default Value: false
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OrganizationConfig(
             int? maxIdentities,
@@ -312,7 +321,8 @@ namespace LangSmith
             bool? promptOptimization,
             bool? promptOptimizationJobsEnabled,
             bool? enableK8sVanillaPlatform,
-            bool? enableExperimentPageV2)
+            bool? enableExperimentPageV2,
+            bool? demoLgpNewGraphEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -344,6 +354,7 @@ namespace LangSmith
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.EnableExperimentPageV2 = enableExperimentPageV2;
+            this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
         }
 
         /// <summary>
