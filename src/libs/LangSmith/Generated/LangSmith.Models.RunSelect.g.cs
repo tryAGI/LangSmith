@@ -216,6 +216,10 @@ namespace LangSmith
         /// 
         /// </summary>
         TraceUpgrade,
+        /// <summary>
+        /// 
+        /// </summary>
+        ThreadId,
     }
 
     /// <summary>
@@ -282,6 +286,7 @@ namespace LangSmith
                 RunSelect.TraceFirstReceivedAt => "trace_first_received_at",
                 RunSelect.TtlSeconds => "ttl_seconds",
                 RunSelect.TraceUpgrade => "trace_upgrade",
+                RunSelect.ThreadId => "thread_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -344,6 +349,7 @@ namespace LangSmith
                 "trace_first_received_at" => RunSelect.TraceFirstReceivedAt,
                 "ttl_seconds" => RunSelect.TtlSeconds,
                 "trace_upgrade" => RunSelect.TraceUpgrade,
+                "thread_id" => RunSelect.ThreadId,
                 _ => null,
             };
         }

@@ -301,6 +301,12 @@ namespace LangSmith
         public global::System.Guid? ReferenceDatasetId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
+        public string? ThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -368,6 +374,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="referenceDatasetId"></param>
+        /// <param name="threadId"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunSchema(
             string name,
@@ -416,7 +423,8 @@ namespace LangSmith
             global::System.DateTime? traceFirstReceivedAt,
             int? ttlSeconds,
             bool? traceUpgrade,
-            global::System.Guid? referenceDatasetId)
+            global::System.Guid? referenceDatasetId,
+            string? threadId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;
@@ -465,6 +473,7 @@ namespace LangSmith
             this.TtlSeconds = ttlSeconds;
             this.TraceUpgrade = traceUpgrade;
             this.ReferenceDatasetId = referenceDatasetId;
+            this.ThreadId = threadId;
         }
 
         /// <summary>

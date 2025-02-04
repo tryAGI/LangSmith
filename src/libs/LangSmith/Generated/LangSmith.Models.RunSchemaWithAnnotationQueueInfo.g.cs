@@ -303,6 +303,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
+        public string? ThreadId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queue_run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid QueueRunId { get; set; }
@@ -393,6 +399,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="referenceDatasetId"></param>
+        /// <param name="threadId"></param>
         /// <param name="queueRunId"></param>
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
@@ -447,6 +454,7 @@ namespace LangSmith
             int? ttlSeconds,
             bool? traceUpgrade,
             global::System.Guid? referenceDatasetId,
+            string? threadId,
             global::System.DateTime? lastReviewedTime,
             global::System.DateTime? addedAt,
             global::System.DateTime? effectiveAddedAt)
@@ -499,6 +507,7 @@ namespace LangSmith
             this.TtlSeconds = ttlSeconds;
             this.TraceUpgrade = traceUpgrade;
             this.ReferenceDatasetId = referenceDatasetId;
+            this.ThreadId = threadId;
             this.LastReviewedTime = lastReviewedTime;
             this.AddedAt = addedAt;
             this.EffectiveAddedAt = effectiveAddedAt;

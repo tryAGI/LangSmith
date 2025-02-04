@@ -12586,6 +12586,7 @@ components:
             - trace_first_received_at
             - ttl_seconds
             - trace_upgrade
+            - thread_id
         order:
           $ref: '#/components/schemas/RunDateOrder'
       description: Query params for run endpoints.
@@ -19471,6 +19472,10 @@ components:
           type: string
           format: uuid
           nullable: true
+        thread_id:
+          title: Thread Id
+          type: string
+          nullable: true
       description: Run schema.
     RunSchemaComparisonView:
       title: RunSchemaComparisonView
@@ -19849,6 +19854,10 @@ components:
           type: string
           format: uuid
           nullable: true
+        thread_id:
+          title: Thread Id
+          type: string
+          nullable: true
         queue_run_id:
           title: Queue Run Id
           type: string
@@ -19924,6 +19933,7 @@ components:
         - trace_first_received_at
         - ttl_seconds
         - trace_upgrade
+        - thread_id
       type: string
       description: Enum for available run columns.
     RunShareSchema:
