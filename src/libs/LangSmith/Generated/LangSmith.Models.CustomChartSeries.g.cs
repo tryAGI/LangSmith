@@ -65,7 +65,9 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartSeries(
             string name,
             global::LangSmith.CustomChartMetric metric,

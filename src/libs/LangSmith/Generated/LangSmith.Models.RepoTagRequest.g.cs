@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="tagName"></param>
         /// <param name="commitId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepoTagRequest(
             string tagName,
             global::System.Guid commitId)

@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="bucketInfo"></param>
         /// <param name="chart"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartPreviewRequest(
             global::LangSmith.CustomChartsRequestBase bucketInfo,
             global::LangSmith.CustomChartCreatePreview chart)

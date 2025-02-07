@@ -71,7 +71,9 @@ namespace LangSmith
         /// <param name="isPersonal"></param>
         /// <param name="isDeleted"></param>
         /// <param name="tenantHandle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppSchemasTenant(
             global::System.Guid id,
             global::System.DateTime createdAt,

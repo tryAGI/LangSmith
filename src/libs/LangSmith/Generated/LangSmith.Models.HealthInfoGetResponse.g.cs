@@ -25,7 +25,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="HealthInfoGetResponse" /> class.
         /// </summary>
         /// <param name="clickhouseDiskFreePct"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HealthInfoGetResponse(
             double clickhouseDiskFreePct)
         {

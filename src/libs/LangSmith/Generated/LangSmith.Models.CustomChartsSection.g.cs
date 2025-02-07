@@ -55,7 +55,9 @@ namespace LangSmith
         /// <param name="index"></param>
         /// <param name="id"></param>
         /// <param name="charts"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartsSection(
             string title,
             global::System.Guid id,

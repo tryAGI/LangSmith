@@ -73,7 +73,9 @@ namespace LangSmith
         /// <param name="annotationQueueCount"></param>
         /// <param name="deploymentCount"></param>
         /// <param name="dashboardsCount"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantStats(
             global::System.Guid tenantId,
             int datasetCount,

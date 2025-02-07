@@ -46,7 +46,9 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="valueDescriptions"></param>
         /// <param name="scoreDescriptions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueRubricItemSchema(
             string feedbackKey,
             string? description,

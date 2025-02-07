@@ -81,7 +81,9 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="credentialsKeys"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportDestination(
             string displayName,
             global::LangSmith.BulkExportDestinationS3Config config,

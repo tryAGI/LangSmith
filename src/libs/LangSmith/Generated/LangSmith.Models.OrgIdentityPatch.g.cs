@@ -38,7 +38,9 @@ namespace LangSmith
         /// <param name="password"></param>
         /// <param name="fullName"></param>
         /// <param name="roleId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgIdentityPatch(
             string? password,
             string? fullName,

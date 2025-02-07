@@ -66,7 +66,9 @@ namespace LangSmith
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
         /// <param name="transformations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetUpdate(
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? name,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,

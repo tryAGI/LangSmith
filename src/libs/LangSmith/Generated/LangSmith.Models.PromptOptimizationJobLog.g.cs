@@ -65,7 +65,9 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="jobId"></param>
         /// <param name="createdAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptOptimizationJobLog(
             global::LangSmith.EPromptOptimizationJobLogType logType,
             string message,

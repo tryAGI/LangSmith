@@ -43,7 +43,9 @@ namespace LangSmith
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartsSectionUpdate(
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,

@@ -41,7 +41,9 @@ namespace LangSmith
         /// <param name="messages"></param>
         /// <param name="templateFormat"></param>
         /// <param name="inputs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InvokePromptPayload(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
             string templateFormat,

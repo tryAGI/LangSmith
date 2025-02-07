@@ -74,7 +74,9 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="role"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessageChunk(
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> content,
             string role,

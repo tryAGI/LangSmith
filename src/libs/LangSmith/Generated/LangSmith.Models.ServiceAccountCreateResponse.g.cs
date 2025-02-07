@@ -73,7 +73,9 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="defaultWorkspaceId"></param>
         /// <param name="organizationIdentityId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ServiceAccountCreateResponse(
             global::System.Guid id,
             global::System.DateTime createdAt,

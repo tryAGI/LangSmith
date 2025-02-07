@@ -63,7 +63,9 @@ namespace LangSmith
         /// <param name="state"></param>
         /// <param name="postalCode"></param>
         /// <param name="country"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeCustomerAddress(
             string line1,
             string city,

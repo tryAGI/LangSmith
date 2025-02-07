@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="amountCents"></param>
         /// <param name="successPath"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeCheckoutSessionsCreate(
             int amountCents,
             string successPath)

@@ -290,7 +290,9 @@ namespace LangSmith
         /// <param name="demoLgpNewGraphEnabled">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationConfig(
             int? maxIdentities,
             int? maxWorkspaces,

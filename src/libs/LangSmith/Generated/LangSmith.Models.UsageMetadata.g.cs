@@ -112,7 +112,9 @@ namespace LangSmith
         ///         }<br/>
         /// .. versionadded:: 0.3.9
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageMetadata(
             int inputTokens,
             int outputTokens,

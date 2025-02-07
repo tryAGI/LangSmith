@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="improvedExamples"></param>
         /// <param name="regressedExamples"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackDelta(
             global::System.Collections.Generic.IList<global::System.Guid> improvedExamples,
             global::System.Collections.Generic.IList<global::System.Guid> regressedExamples)

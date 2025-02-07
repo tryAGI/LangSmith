@@ -194,7 +194,9 @@ namespace LangSmith
         /// <param name="latestCommitManifest">
         /// Response model for get_commit_manifest.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepoWithLookups(
             string repoHandle,
             global::System.Guid id,

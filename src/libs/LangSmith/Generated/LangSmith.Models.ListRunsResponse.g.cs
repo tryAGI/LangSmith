@@ -40,7 +40,9 @@ namespace LangSmith
         /// <param name="runs"></param>
         /// <param name="cursors"></param>
         /// <param name="parsedQuery"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListRunsResponse(
             global::System.Collections.Generic.IList<global::LangSmith.RunSchema> runs,
             global::System.Collections.Generic.Dictionary<string, string?> cursors,

@@ -45,7 +45,9 @@ namespace LangSmith
         /// <param name="prefix"></param>
         /// <param name="bucketName"></param>
         /// <param name="region"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportDestinationS3Config(
             string? endpointUrl,
             string? prefix,

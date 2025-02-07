@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="creditBalanceMicros"></param>
         /// <param name="inflightBalanceMicros"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Wallet(
             int creditBalanceMicros,
             int inflightBalanceMicros)

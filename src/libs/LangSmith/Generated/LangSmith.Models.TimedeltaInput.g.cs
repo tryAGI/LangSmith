@@ -44,7 +44,9 @@ namespace LangSmith
         /// <param name="hours">
         /// Default Value: 0
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TimedeltaInput(
             int? days,
             int? minutes,

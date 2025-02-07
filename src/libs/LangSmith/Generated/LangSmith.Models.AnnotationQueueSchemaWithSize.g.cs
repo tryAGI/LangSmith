@@ -111,7 +111,9 @@ namespace LangSmith
         /// <param name="tenantId"></param>
         /// <param name="sourceRuleId"></param>
         /// <param name="totalRuns"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueSchemaWithSize(
             string name,
             global::System.Guid id,

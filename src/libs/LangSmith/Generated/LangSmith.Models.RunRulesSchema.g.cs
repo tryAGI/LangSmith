@@ -245,7 +245,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="evaluatorVersion"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunRulesSchema(
             global::System.Guid id,
             global::System.Guid tenantId,

@@ -142,7 +142,9 @@ namespace LangSmith
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilterQueryParamsForRunSchema(
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? trace,

@@ -41,7 +41,9 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="contents"></param>
         /// <param name="currentContentIndex"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Artifact(
             string id,
             global::System.Collections.Generic.IList<global::LangSmith.ArtifactContent> contents,

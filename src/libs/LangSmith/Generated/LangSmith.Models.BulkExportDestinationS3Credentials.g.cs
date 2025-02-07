@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="accessKeyId"></param>
         /// <param name="secretAccessKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportDestinationS3Credentials(
             string accessKeyId,
             string secretAccessKey)

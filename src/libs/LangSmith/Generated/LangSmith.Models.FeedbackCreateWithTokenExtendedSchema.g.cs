@@ -57,7 +57,9 @@ namespace LangSmith
         /// <param name="comment"></param>
         /// <param name="correction"></param>
         /// <param name="metadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackCreateWithTokenExtendedSchema(
             global::LangSmith.AnyOf<double?, int?, bool?>? score,
             global::LangSmith.AnyOf<double?, int?, bool?, string>? value,

@@ -115,7 +115,9 @@ namespace LangSmith
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="extra"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackCreateCoreSchema(
             string key,
             global::System.DateTime? createdAt,

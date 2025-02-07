@@ -41,7 +41,9 @@ namespace LangSmith
         /// <param name="timestamp"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptOptimizationResult(
             global::System.DateTime timestamp,
             double x,

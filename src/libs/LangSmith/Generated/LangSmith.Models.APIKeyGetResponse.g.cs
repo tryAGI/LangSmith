@@ -64,7 +64,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="lastUsedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public APIKeyGetResponse(
             global::System.Guid id,
             string shortKey,

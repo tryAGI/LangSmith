@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="outcome"></param>
         /// <param name="payload"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RuleLogActionResponse(
             global::LangSmith.RuleLogActionOutcome outcome,
             object? payload)

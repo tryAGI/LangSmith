@@ -49,7 +49,9 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </param>
         /// <param name="examples"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyCloneDatasetApiV1DatasetsClonePost(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,

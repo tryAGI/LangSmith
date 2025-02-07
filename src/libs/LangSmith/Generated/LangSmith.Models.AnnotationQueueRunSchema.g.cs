@@ -55,7 +55,9 @@ namespace LangSmith
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueRunSchema(
             global::System.Guid runId,
             global::System.Guid queueId,

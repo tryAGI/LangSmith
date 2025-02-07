@@ -123,7 +123,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="wallet"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationInfo(
             global::LangSmith.OrganizationConfig config,
             bool isPersonal,

@@ -44,7 +44,9 @@ namespace LangSmith
         /// <param name="seriesId"></param>
         /// <param name="timestamp"></param>
         /// <param name="value"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartsDataPoint(
             string seriesId,
             global::System.DateTime timestamp,

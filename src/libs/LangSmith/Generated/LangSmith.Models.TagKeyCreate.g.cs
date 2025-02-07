@@ -32,7 +32,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="key"></param>
         /// <param name="description"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagKeyCreate(
             string key,
             string? description)

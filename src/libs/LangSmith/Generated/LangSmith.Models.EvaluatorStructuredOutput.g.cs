@@ -60,7 +60,9 @@ namespace LangSmith
         /// <param name="schema"></param>
         /// <param name="variableMapping"></param>
         /// <param name="model"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EvaluatorStructuredOutput(
             object model,
             string? hubRef,

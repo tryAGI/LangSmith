@@ -72,7 +72,9 @@ namespace LangSmith
         /// </param>
         /// <param name="outputKeys"></param>
         /// <param name="description"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyUploadCsvDatasetApiV1DatasetsUploadPost(
             byte[] file,
             string filename,

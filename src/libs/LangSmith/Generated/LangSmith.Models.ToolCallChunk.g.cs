@@ -68,7 +68,9 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="index"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolCallChunk(
             string? name,
             string? args,

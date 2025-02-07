@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="runId"></param>
         /// <param name="shareToken"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunShareSchema(
             global::System.Guid runId,
             global::System.Guid shareToken)

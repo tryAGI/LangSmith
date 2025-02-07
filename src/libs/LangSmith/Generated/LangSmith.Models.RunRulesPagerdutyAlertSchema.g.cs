@@ -52,7 +52,9 @@ namespace LangSmith
         /// <param name="severity">
         /// Enum for severity.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunRulesPagerdutyAlertSchema(
             string routingKey,
             global::LangSmith.RunRulesAlertType? type,

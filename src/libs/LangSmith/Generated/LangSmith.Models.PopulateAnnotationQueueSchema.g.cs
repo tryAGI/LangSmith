@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="sessionIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PopulateAnnotationQueueSchema(
             global::System.Guid queueId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds)

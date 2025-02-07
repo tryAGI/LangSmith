@@ -32,7 +32,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="series"></param>
         /// <param name="commonFilters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartCreatePreview(
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries> series,
             global::LangSmith.CustomChartSeriesFilters? commonFilters)

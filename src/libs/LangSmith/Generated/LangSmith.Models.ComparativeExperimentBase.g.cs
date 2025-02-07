@@ -78,7 +78,9 @@ namespace LangSmith
         /// <param name="modifiedAt"></param>
         /// <param name="referenceDatasetId"></param>
         /// <param name="extra"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ComparativeExperimentBase(
             global::System.Guid id,
             global::System.Guid tenantId,

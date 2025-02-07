@@ -90,7 +90,9 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportRun(
             global::System.Guid bulkExportId,
             global::LangSmith.BulkExportRunMetadata metadata,

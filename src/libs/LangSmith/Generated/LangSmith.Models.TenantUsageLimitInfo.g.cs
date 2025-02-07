@@ -40,7 +40,9 @@ namespace LangSmith
         /// <param name="inRejectSet"></param>
         /// <param name="usageLimitType"></param>
         /// <param name="tenantLimit"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantUsageLimitInfo(
             bool inRejectSet,
             global::LangSmith.TenantUsageLimitType? usageLimitType,

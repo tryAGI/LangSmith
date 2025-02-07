@@ -45,7 +45,9 @@ namespace LangSmith
         /// <param name="orgIdentityId"></param>
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IdentityCreate(
             global::System.Guid? userId,
             global::System.Guid? orgIdentityId,

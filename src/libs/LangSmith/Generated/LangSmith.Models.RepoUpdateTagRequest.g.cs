@@ -25,7 +25,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RepoUpdateTagRequest" /> class.
         /// </summary>
         /// <param name="commitId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepoUpdateTagRequest(
             global::System.Guid commitId)
         {
