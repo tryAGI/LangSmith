@@ -25,7 +25,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="StripeAccountLinksCreate" /> class.
         /// </summary>
         /// <param name="successPath"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeAccountLinksCreate(
             string successPath)
         {

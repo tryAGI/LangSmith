@@ -48,7 +48,9 @@ namespace LangSmith
         /// Batch ingest config.
         /// </param>
         /// <param name="instanceFlags"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InfoGetResponse(
             string version,
             global::System.DateTime? licenseExpirationTime,

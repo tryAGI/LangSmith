@@ -65,7 +65,9 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="organizationId"></param>
         /// <param name="defaultWorkspaceId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ServiceAccountDeleteResponse(
             global::System.Guid id,
             global::System.DateTime createdAt,

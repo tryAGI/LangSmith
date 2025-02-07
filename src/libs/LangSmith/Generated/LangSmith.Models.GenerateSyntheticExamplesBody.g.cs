@@ -32,7 +32,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="exampleIds"></param>
         /// <param name="numExamples"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateSyntheticExamplesBody(
             int numExamples,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds)

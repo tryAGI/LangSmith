@@ -71,7 +71,9 @@ namespace LangSmith
         /// <param name="sizeLimitBytes">
         /// Default Value: 20971520
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchIngestConfig(
             bool? useMultipartEndpoint,
             int? scaleUpQsizeTrigger,

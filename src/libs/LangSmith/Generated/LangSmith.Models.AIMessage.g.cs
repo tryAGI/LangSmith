@@ -140,7 +140,9 @@ namespace LangSmith
         /// .. versionchanged:: 0.3.9<br/>
         ///     Added ``input_token_details`` and ``output_token_details``.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AIMessage(
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> content,
             object? additionalKwargs,

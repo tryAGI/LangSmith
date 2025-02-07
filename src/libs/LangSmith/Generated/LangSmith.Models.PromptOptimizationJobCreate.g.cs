@@ -37,7 +37,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="algorithm"></param>
         /// <param name="config"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptOptimizationJobCreate(
             global::LangSmith.EPromptOptimizationAlgorithm algorithm,
             global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config)

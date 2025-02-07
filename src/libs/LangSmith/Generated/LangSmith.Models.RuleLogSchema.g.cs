@@ -112,7 +112,9 @@ namespace LangSmith
         /// <param name="evaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RuleLogSchema(
             global::System.Guid ruleId,
             global::System.Guid runId,

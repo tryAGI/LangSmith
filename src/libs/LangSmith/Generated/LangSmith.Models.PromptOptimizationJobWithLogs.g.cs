@@ -101,7 +101,9 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="logs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptOptimizationJobWithLogs(
             global::System.Guid id,
             global::System.Guid repoId,

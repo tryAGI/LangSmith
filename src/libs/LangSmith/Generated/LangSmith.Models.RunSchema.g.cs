@@ -375,7 +375,9 @@ namespace LangSmith
         /// </param>
         /// <param name="referenceDatasetId"></param>
         /// <param name="threadId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunSchema(
             string name,
             global::LangSmith.RunTypeEnum runType,

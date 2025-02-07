@@ -31,7 +31,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="post"></param>
         /// <param name="patch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchIngestRunsRequest(
             global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPostItem>? post,
             global::System.Collections.Generic.IList<global::LangSmith.BatchIngestRunsRequestPatchItem>? patch)

@@ -25,7 +25,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ListTagsResponse" /> class.
         /// </summary>
         /// <param name="tags"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListTagsResponse(
             global::System.Collections.Generic.IList<global::LangSmith.TagCount> tags)
         {

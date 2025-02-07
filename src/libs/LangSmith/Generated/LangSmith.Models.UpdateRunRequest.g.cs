@@ -118,7 +118,9 @@ namespace LangSmith
         /// <param name="outputAttachments"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateRunRequest(
             global::System.Guid? traceId,
             string? dottedOrder,

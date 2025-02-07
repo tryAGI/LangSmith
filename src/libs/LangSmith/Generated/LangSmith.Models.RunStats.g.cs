@@ -137,7 +137,9 @@ namespace LangSmith
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStats(
             int runCount,
             double? latencyP50,

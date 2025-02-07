@@ -45,7 +45,9 @@ namespace LangSmith
         /// <param name="metadata"></param>
         /// <param name="userId"></param>
         /// <param name="userName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackSource3(
             string? type,
             object? metadata,

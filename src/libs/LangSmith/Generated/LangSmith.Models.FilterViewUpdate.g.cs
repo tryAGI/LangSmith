@@ -60,7 +60,9 @@ namespace LangSmith
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilterViewUpdate(
             string? filterString,
             string? displayName,

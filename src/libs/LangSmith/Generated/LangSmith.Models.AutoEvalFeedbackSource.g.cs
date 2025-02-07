@@ -33,7 +33,9 @@ namespace LangSmith
         /// Default Value: auto_eval
         /// </param>
         /// <param name="metadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AutoEvalFeedbackSource(
             string? type,
             object? metadata)

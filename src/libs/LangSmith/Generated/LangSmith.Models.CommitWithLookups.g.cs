@@ -103,7 +103,9 @@ namespace LangSmith
         /// <param name="numDownloads"></param>
         /// <param name="numViews"></param>
         /// <param name="parentCommitHash"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CommitWithLookups(
             global::System.Guid id,
             object manifest,

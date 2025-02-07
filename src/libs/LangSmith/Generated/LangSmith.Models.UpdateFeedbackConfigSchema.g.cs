@@ -39,7 +39,9 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="isLowerScoreBetter"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateFeedbackConfigSchema(
             string feedbackKey,
             global::LangSmith.FeedbackConfig? feedbackConfig,

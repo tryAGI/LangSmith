@@ -38,7 +38,9 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="publicSharingDisabled"></param>
         /// <param name="unshareAll"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationUpdate(
             string? displayName,
             bool? publicSharingDisabled,

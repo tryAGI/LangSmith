@@ -79,7 +79,9 @@ namespace LangSmith
         /// <param name="customAction"></param>
         /// <param name="templateFormat"></param>
         /// <param name="secrets"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PlaygroundPromptCanvasPayload(
             global::System.Collections.Generic.IList<global::LangSmith.MessagesItem> messages,
             global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,

@@ -41,7 +41,9 @@ namespace LangSmith
         /// <param name="examplesModified"></param>
         /// <param name="examplesAdded"></param>
         /// <param name="examplesRemoved"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetDiffInfo(
             global::System.Collections.Generic.IList<global::System.Guid> examplesModified,
             global::System.Collections.Generic.IList<global::System.Guid> examplesAdded,

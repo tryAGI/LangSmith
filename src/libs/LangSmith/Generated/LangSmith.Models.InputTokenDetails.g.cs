@@ -47,7 +47,9 @@ namespace LangSmith
         /// <param name="audio"></param>
         /// <param name="cacheCreation"></param>
         /// <param name="cacheRead"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InputTokenDetails(
             int? audio,
             int? cacheCreation,

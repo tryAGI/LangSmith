@@ -40,7 +40,9 @@ namespace LangSmith
         /// </param>
         /// <param name="runIds"></param>
         /// <param name="excludeRunIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueBulkDeleteRunsRequest(
             bool? deleteAll,
             global::System.Collections.Generic.IList<global::System.Guid>? runIds,

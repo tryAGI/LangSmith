@@ -25,7 +25,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="AppSchemasOptimizePromptResponse" /> class.
         /// </summary>
         /// <param name="optimizationJobId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppSchemasOptimizePromptResponse(
             global::System.Guid optimizationJobId)
         {

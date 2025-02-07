@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="repos"></param>
         /// <param name="total"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListReposResponse(
             global::System.Collections.Generic.IList<global::LangSmith.RepoWithLookups> repos,
             int total)

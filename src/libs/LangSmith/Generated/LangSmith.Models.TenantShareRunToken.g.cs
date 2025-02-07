@@ -77,7 +77,9 @@ namespace LangSmith
         /// <param name="runType"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantShareRunToken(
             string shareToken,
             global::System.DateTime createdAt,

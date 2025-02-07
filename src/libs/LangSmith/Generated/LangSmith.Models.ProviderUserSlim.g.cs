@@ -92,7 +92,9 @@ namespace LangSmith
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="emailConfirmedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProviderUserSlim(
             global::System.Guid id,
             global::System.Guid lsUserId,

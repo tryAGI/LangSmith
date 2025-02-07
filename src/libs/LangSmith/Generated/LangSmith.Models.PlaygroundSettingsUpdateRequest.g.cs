@@ -45,7 +45,9 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="settings"></param>
         /// <param name="options"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PlaygroundSettingsUpdateRequest(
             string? name,
             string? description,

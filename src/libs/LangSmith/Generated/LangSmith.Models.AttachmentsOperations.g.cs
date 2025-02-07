@@ -35,7 +35,9 @@ namespace LangSmith
         /// <param name="retain">
         /// List of attachment names to keep
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AttachmentsOperations(
             global::System.Collections.Generic.Dictionary<string, string>? rename,
             global::System.Collections.Generic.IList<string>? retain)

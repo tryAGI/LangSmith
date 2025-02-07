@@ -95,7 +95,9 @@ namespace LangSmith
         /// <param name="publicSharingDisabled">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationPGSchemaSlim(
             global::System.Guid id,
             string displayName,

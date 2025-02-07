@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="shareToken"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetShareSchema(
             global::System.Guid datasetId,
             global::System.Guid shareToken)

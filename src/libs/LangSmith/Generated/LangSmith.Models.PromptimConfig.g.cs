@@ -89,7 +89,9 @@ namespace LangSmith
         /// <param name="evaluators"></param>
         /// <param name="numEpochs"></param>
         /// <param name="autoCommit"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptimConfig(
             int messageIndex,
             string taskDescription,

@@ -49,7 +49,9 @@ namespace LangSmith
         /// <param name="url"></param>
         /// <param name="expiresAt"></param>
         /// <param name="feedbackKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackIngestTokenSchema(
             global::System.Guid id,
             string url,

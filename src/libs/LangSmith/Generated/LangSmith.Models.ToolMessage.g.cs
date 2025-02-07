@@ -115,7 +115,9 @@ namespace LangSmith
         /// <param name="status">
         /// Default Value: success
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolMessage(
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> content,
             string toolCallId,

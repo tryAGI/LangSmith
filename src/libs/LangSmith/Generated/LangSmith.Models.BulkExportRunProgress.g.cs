@@ -49,7 +49,9 @@ namespace LangSmith
         /// <param name="exportedFiles"></param>
         /// <param name="exportPath"></param>
         /// <param name="latestCursor"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportRunProgress(
             int rowsWritten,
             global::System.Collections.Generic.IList<string> exportedFiles,

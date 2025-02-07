@@ -57,7 +57,9 @@ namespace LangSmith
         /// <param name="output"></param>
         /// <param name="feedback"></param>
         /// <param name="runId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExampleRunWithFeedback(
             string input,
             string referenceOutput,

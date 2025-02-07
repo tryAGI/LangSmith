@@ -32,7 +32,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="url"></param>
         /// <param name="headers"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunRulesWebhookSchema(
             string url,
             global::System.Collections.Generic.Dictionary<string, string>? headers)

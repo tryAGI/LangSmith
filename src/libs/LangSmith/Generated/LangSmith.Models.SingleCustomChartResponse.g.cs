@@ -89,7 +89,9 @@ namespace LangSmith
         /// </param>
         /// <param name="series"></param>
         /// <param name="commonFilters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SingleCustomChartResponse(
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartsDataPoint> data,
             global::System.Guid id,

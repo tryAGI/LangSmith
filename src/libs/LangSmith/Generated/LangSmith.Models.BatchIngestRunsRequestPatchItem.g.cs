@@ -115,7 +115,9 @@ namespace LangSmith
         /// <param name="inputAttachments"></param>
         /// <param name="outputAttachments"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchIngestRunsRequestPatchItem(
             global::System.Guid traceId,
             string dottedOrder,

@@ -99,7 +99,9 @@ namespace LangSmith
         /// <param name="modifiedAt"></param>
         /// <param name="attachmentUrls"></param>
         /// <param name="runs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExampleWithRuns(
             global::System.Guid datasetId,
             object inputs,

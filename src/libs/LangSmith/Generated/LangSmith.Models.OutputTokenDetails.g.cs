@@ -39,7 +39,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="audio"></param>
         /// <param name="reasoning"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OutputTokenDetails(
             int? audio,
             int? reasoning)

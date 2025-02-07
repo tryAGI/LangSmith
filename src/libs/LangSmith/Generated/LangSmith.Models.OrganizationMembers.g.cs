@@ -41,7 +41,9 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="members"></param>
         /// <param name="pending"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationMembers(
             global::System.Guid organizationId,
             global::System.Collections.Generic.IList<global::LangSmith.OrgMemberIdentity> members,

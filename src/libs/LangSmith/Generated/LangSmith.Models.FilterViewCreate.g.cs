@@ -61,7 +61,9 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilterViewCreate(
             string displayName,
             string? filterString,

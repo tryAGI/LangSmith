@@ -142,7 +142,9 @@ namespace LangSmith
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
         /// <param name="tenantIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgPendingIdentity(
             string email,
             global::System.Guid id,

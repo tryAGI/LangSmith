@@ -78,7 +78,9 @@ namespace LangSmith
         /// <param name="chartSpec"></param>
         /// <param name="clickTarget"></param>
         /// <param name="toggleableMarks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MonitorBlock(
             string title,
             string section,

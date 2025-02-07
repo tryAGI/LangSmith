@@ -35,7 +35,9 @@ namespace LangSmith
         /// <param name="sortOrder">
         /// Default Value: DESC
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SortParamsForRunsComparisonView(
             string sortBy,
             global::LangSmith.SortParamsForRunsComparisonViewSortOrder? sortOrder)

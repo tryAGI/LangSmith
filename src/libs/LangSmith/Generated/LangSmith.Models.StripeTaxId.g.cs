@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="value"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeTaxId(
             string value,
             string type)

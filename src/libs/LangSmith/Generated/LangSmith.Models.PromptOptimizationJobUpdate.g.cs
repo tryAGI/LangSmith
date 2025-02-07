@@ -32,7 +32,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="status"></param>
         /// <param name="result"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptOptimizationJobUpdate(
             global::LangSmith.EPromptOptimizationJobStatus? status,
             global::LangSmith.PromptOptimizationResult? result)

@@ -41,7 +41,9 @@ namespace LangSmith
         /// <param name="tenantId"></param>
         /// <param name="members"></param>
         /// <param name="pending"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantMembers(
             global::System.Guid tenantId,
             global::System.Collections.Generic.IList<global::LangSmith.MemberIdentity> members,

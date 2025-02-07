@@ -40,7 +40,9 @@ namespace LangSmith
         /// <param name="commitHash"></param>
         /// <param name="manifest"></param>
         /// <param name="examples"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CommitManifestResponse(
             string commitHash,
             object manifest,

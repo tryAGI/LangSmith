@@ -32,7 +32,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="query"></param>
         /// <param name="feedbackKeys"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestBodyForRunsGenerateQuery(
             string query,
             global::System.Collections.Generic.IList<global::LangSmith.RunsGenerateQueryFeedbackKeys>? feedbackKeys)

@@ -33,7 +33,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="index"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ArtifactContent(
             int index,
             string content)

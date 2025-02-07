@@ -117,7 +117,9 @@ namespace LangSmith
         /// <param name="sourceRuleId"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueSchemaWithRubric(
             string name,
             global::System.Guid id,

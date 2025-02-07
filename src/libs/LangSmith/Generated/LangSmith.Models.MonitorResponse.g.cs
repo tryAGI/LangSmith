@@ -25,7 +25,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="MonitorResponse" /> class.
         /// </summary>
         /// <param name="blocks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MonitorResponse(
             global::System.Collections.Generic.IList<global::LangSmith.MonitorBlock> blocks)
         {

@@ -39,7 +39,9 @@ namespace LangSmith
         /// <param name="session"></param>
         /// <param name="tag"></param>
         /// <param name="metadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MonitorGroupSpec(
             global::System.Guid session,
             string? tag,

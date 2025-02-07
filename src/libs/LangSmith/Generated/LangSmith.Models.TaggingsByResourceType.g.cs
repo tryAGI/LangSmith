@@ -66,7 +66,9 @@ namespace LangSmith
         /// <param name="experiments"></param>
         /// <param name="datasets"></param>
         /// <param name="dashboards"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TaggingsByResourceType(
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? prompts,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? projects,

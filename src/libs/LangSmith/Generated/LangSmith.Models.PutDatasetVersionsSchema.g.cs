@@ -38,7 +38,9 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </param>
         /// <param name="tag"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PutDatasetVersionsSchema(
             global::LangSmith.AnyOf<global::System.DateTime?, string> asOf,
             string tag)

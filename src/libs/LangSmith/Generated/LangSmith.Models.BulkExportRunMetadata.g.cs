@@ -48,7 +48,9 @@ namespace LangSmith
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="result"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportRunMetadata(
             string prefix,
             global::System.DateTime startTime,
