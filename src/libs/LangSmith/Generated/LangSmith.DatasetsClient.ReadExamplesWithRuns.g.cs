@@ -8,11 +8,13 @@ namespace LangSmith
         partial void PrepareReadExamplesWithRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
+            ref string? format,
             global::LangSmith.QueryExampleSchemaWithRuns request);
         partial void PrepareReadExamplesWithRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
+            string? format,
             global::LangSmith.QueryExampleSchemaWithRuns request);
         partial void ProcessReadExamplesWithRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -28,12 +30,16 @@ namespace LangSmith
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.
         /// </summary>
         /// <param name="datasetId"></param>
+        /// <param name="format">
+        /// Response format, e.g., 'csv'
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::LangSmith.QueryExampleSchemaWithRuns request,
+            string? format = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -43,11 +49,15 @@ namespace LangSmith
             PrepareReadExamplesWithRunsArguments(
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
+                format: ref format,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/runs",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("format", format) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -86,6 +96,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 datasetId: datasetId,
+                format: format,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -205,7 +216,11 @@ namespace LangSmith
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.
         /// </summary>
         /// <param name="datasetId"></param>
+        /// <param name="format">
+        /// Response format, e.g., 'csv'
+        /// </param>
         /// <param name="sessionIds"></param>
+        /// <param name="requestFormat"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
         /// <param name="sortParams"></param>
@@ -223,6 +238,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            string? format = default,
+            global::LangSmith.QueryExampleSchemaWithRunsFormat? requestFormat = default,
             global::System.Guid? comparativeExperimentId = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams = default,
@@ -234,6 +251,7 @@ namespace LangSmith
             var __request = new global::LangSmith.QueryExampleSchemaWithRuns
             {
                 SessionIds = sessionIds,
+                Format = requestFormat,
                 ComparativeExperimentId = comparativeExperimentId,
                 Filters = filters,
                 SortParams = sortParams,
@@ -244,6 +262,7 @@ namespace LangSmith
 
             return await ReadExamplesWithRunsAsync(
                 datasetId: datasetId,
+                format: format,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
