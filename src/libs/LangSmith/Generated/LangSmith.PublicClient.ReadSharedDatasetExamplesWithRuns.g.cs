@@ -206,6 +206,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="shareToken"></param>
         /// <param name="sessionIds"></param>
+        /// <param name="format"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
         /// <param name="sortParams"></param>
@@ -223,6 +224,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadSharedDatasetExamplesWithRunsAsync(
             global::System.Guid shareToken,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            global::LangSmith.QueryExampleSchemaWithRunsFormat? format = default,
             global::System.Guid? comparativeExperimentId = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams = default,
@@ -234,6 +236,7 @@ namespace LangSmith
             var __request = new global::LangSmith.QueryExampleSchemaWithRuns
             {
                 SessionIds = sessionIds,
+                Format = format,
                 ComparativeExperimentId = comparativeExperimentId,
                 Filters = filters,
                 SortParams = sortParams,

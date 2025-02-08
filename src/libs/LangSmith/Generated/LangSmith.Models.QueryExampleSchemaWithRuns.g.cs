@@ -18,6 +18,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.QueryExampleSchemaWithRunsFormatJsonConverter))]
+        public global::LangSmith.QueryExampleSchemaWithRunsFormat? Format { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         public global::System.Guid? ComparativeExperimentId { get; set; }
 
@@ -61,6 +68,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
         /// </summary>
         /// <param name="sessionIds"></param>
+        /// <param name="format"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="filters"></param>
         /// <param name="sortParams"></param>
@@ -78,6 +86,7 @@ namespace LangSmith
 #endif
         public QueryExampleSchemaWithRuns(
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            global::LangSmith.QueryExampleSchemaWithRunsFormat? format,
             global::System.Guid? comparativeExperimentId,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams,
@@ -86,6 +95,7 @@ namespace LangSmith
             int? limit)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
+            this.Format = format;
             this.ComparativeExperimentId = comparativeExperimentId;
             this.Filters = filters;
             this.SortParams = sortParams;

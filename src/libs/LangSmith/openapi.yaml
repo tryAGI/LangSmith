@@ -3261,6 +3261,14 @@ paths:
             title: Dataset Id
             type: string
             format: uuid
+        - name: format
+          in: query
+          description: 'Response format, e.g., ''csv'''
+          schema:
+            title: Format
+            type: string
+            description: 'Response format, e.g., ''csv'''
+            nullable: true
       requestBody:
         content:
           application/json:
@@ -3281,6 +3289,7 @@ paths:
                   - type: array
                     items:
                       $ref: '#/components/schemas/ExampleWithRunsCH'
+                nullable: true
         '422':
           description: Validation Error
           content:
@@ -18021,6 +18030,12 @@ components:
           items:
             type: string
             format: uuid
+        format:
+          title: Format
+          enum:
+            - csv
+          type: string
+          nullable: true
         comparative_experiment_id:
           title: Comparative Experiment Id
           type: string
@@ -18047,7 +18062,6 @@ components:
           default: 0
         limit:
           title: Limit
-          maximum: 100.0
           minimum: 1.0
           type: integer
           default: 20
