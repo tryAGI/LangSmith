@@ -185,12 +185,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_experiment_page_v2")]
-        public bool? EnableExperimentPageV2 { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("demo_lgp_new_graph_enabled")]
         public bool? DemoLgpNewGraphEnabled { get; set; }
 
@@ -284,9 +278,6 @@ namespace LangSmith
         /// <param name="enableK8sVanillaPlatform">
         /// Default Value: false
         /// </param>
-        /// <param name="enableExperimentPageV2">
-        /// Default Value: false
-        /// </param>
         /// <param name="demoLgpNewGraphEnabled">
         /// Default Value: false
         /// </param>
@@ -323,7 +314,6 @@ namespace LangSmith
             bool? promptOptimization,
             bool? promptOptimizationJobsEnabled,
             bool? enableK8sVanillaPlatform,
-            bool? enableExperimentPageV2,
             bool? demoLgpNewGraphEnabled)
         {
             this.MaxIdentities = maxIdentities;
@@ -355,7 +345,6 @@ namespace LangSmith
             this.PromptOptimization = promptOptimization;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
-            this.EnableExperimentPageV2 = enableExperimentPageV2;
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
         }
 

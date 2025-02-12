@@ -14,12 +14,16 @@ namespace LangSmith
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
+        /// <param name="archived"></param>
+        /// <param name="includeStats"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>> GetRunsFromAnnotationQueueAsync(
             global::System.Guid queueId,
             int? offset = default,
             int? limit = default,
+            bool? archived = default,
+            bool? includeStats = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
