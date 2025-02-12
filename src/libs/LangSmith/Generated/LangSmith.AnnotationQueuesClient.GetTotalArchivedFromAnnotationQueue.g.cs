@@ -5,70 +5,54 @@ namespace LangSmith
 {
     public partial class AnnotationQueuesClient
     {
-        partial void PrepareGetRunsFromAnnotationQueueArguments(
+        partial void PrepareGetTotalArchivedFromAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid queueId,
-            ref int? offset,
-            ref int? limit,
-            ref bool? archived,
-            ref bool? includeStats);
-        partial void PrepareGetRunsFromAnnotationQueueRequest(
+            ref global::System.DateTime? startTime,
+            ref global::System.DateTime? endTime);
+        partial void PrepareGetTotalArchivedFromAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid queueId,
-            int? offset,
-            int? limit,
-            bool? archived,
-            bool? includeStats);
-        partial void ProcessGetRunsFromAnnotationQueueResponse(
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime);
+        partial void ProcessGetTotalArchivedFromAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetRunsFromAnnotationQueueResponseContent(
+        partial void ProcessGetTotalArchivedFromAnnotationQueueResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Runs From Annotation Queue
+        /// Get Total Archived From Annotation Queue
         /// </summary>
         /// <param name="queueId"></param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 100
-        /// </param>
-        /// <param name="archived"></param>
-        /// <param name="includeStats"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>> GetRunsFromAnnotationQueueAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSizeSchema> GetTotalArchivedFromAnnotationQueueAsync(
             global::System.Guid queueId,
-            int? offset = default,
-            int? limit = default,
-            bool? archived = default,
-            bool? includeStats = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetRunsFromAnnotationQueueArguments(
+            PrepareGetTotalArchivedFromAnnotationQueueArguments(
                 httpClient: HttpClient,
                 queueId: ref queueId,
-                offset: ref offset,
-                limit: ref limit,
-                archived: ref archived,
-                includeStats: ref includeStats);
+                startTime: ref startTime,
+                endTime: ref endTime);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/annotation-queues/{queueId}/runs",
+                path: $"/api/v1/annotation-queues/{queueId}/total_archived",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("archived", archived?.ToString()) 
-                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -98,14 +82,12 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGetRunsFromAnnotationQueueRequest(
+            PrepareGetTotalArchivedFromAnnotationQueueRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 queueId: queueId,
-                offset: offset,
-                limit: limit,
-                archived: archived,
-                includeStats: includeStats);
+                startTime: startTime,
+                endTime: endTime);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -115,7 +97,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGetRunsFromAnnotationQueueResponse(
+            ProcessGetTotalArchivedFromAnnotationQueueResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -159,7 +141,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGetRunsFromAnnotationQueueResponseContent(
+                ProcessGetTotalArchivedFromAnnotationQueueResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -184,7 +166,7 @@ namespace LangSmith
                 }
 
                 return
-                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo> ??
+                    global::LangSmith.AnnotationQueueSizeSchema.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -214,7 +196,7 @@ namespace LangSmith
                 ).ConfigureAwait(false);
 
                 return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo> ??
+                    await global::LangSmith.AnnotationQueueSizeSchema.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
