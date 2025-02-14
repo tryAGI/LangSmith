@@ -2598,6 +2598,27 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/examples/validate/bulk:
+    post:
+      tags:
+        - examples
+      summary: Validate Examples
+      description: Validate an example.
+      operationId: validate_examples_api_v1_examples_validate_bulk_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Validate Examples Api V1 Examples Validate Bulk Post
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExampleValidationResult'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/datasets/{dataset_id}':
     get:
       tags:
