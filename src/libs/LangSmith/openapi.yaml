@@ -3321,6 +3321,44 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/datasets/{dataset_id}/group/runs':
+    post:
+      tags:
+        - datasets
+      summary: Read Examples With Runs Grouped
+      description: 'Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.'
+      operationId: read_examples_with_runs_grouped_api_v1_datasets__dataset_id__group_runs_post
+      parameters:
+        - name: dataset_id
+          in: path
+          required: true
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryGroupedExamplesWithRuns'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupedExamplesWithRunsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/datasets/{dataset_id}/runs/delta':
     post:
       tags:
@@ -15015,6 +15053,83 @@ components:
           items:
             $ref: '#/components/schemas/RunSchemaComparisonView'
       description: Example schema with list of runs.
+    ExampleWithRunsGroup:
+      title: ExampleWithRunsGroup
+      required:
+        - filter
+        - group_key
+        - examples
+      type: object
+      properties:
+        filter:
+          title: Filter
+          type: string
+        count:
+          title: Count
+          type: integer
+          nullable: true
+        total_tokens:
+          title: Total Tokens
+          type: integer
+          nullable: true
+        total_cost:
+          title: Total Cost
+          type: string
+          nullable: true
+        min_start_time:
+          title: Min Start Time
+          type: string
+          format: date-time
+          nullable: true
+        max_start_time:
+          title: Max Start Time
+          type: string
+          format: date-time
+          nullable: true
+        latency_p50:
+          title: Latency P50
+          type: number
+          nullable: true
+        latency_p99:
+          title: Latency P99
+          type: number
+          nullable: true
+        feedback_stats:
+          title: Feedback Stats
+          type: object
+          nullable: true
+        group_key:
+          title: Group Key
+        examples:
+          title: Examples
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/ExampleWithRuns'
+            - type: array
+              items:
+                $ref: '#/components/schemas/ExampleWithRunsCH'
+        prompt_tokens:
+          title: Prompt Tokens
+          type: integer
+          nullable: true
+        completion_tokens:
+          title: Completion Tokens
+          type: integer
+          nullable: true
+        prompt_cost:
+          title: Prompt Cost
+          type: string
+          nullable: true
+        completion_cost:
+          title: Completion Cost
+          type: string
+          nullable: true
+        error_rate:
+          title: Error Rate
+          type: number
+          nullable: true
+      description: Group of examples with runs.
     ExperimentResultRow:
       title: ExperimentResultRow
       required:
@@ -15931,6 +16046,24 @@ components:
       properties:
         repo:
           $ref: '#/components/schemas/RepoWithLookups'
+    GroupExampleRunsByField:
+      title: GroupExampleRunsByField
+      enum:
+        - run_metadata
+        - example_metadata
+      type: string
+    GroupedExamplesWithRunsResponse:
+      title: GroupedExamplesWithRunsResponse
+      required:
+        - groups
+      type: object
+      properties:
+        groups:
+          title: Groups
+          type: array
+          items:
+            $ref: '#/components/schemas/ExampleWithRunsGroup'
+      description: Grouped examples with runs.
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -18155,6 +18288,21 @@ components:
           items:
             type: string
             format: uuid
+        offset:
+          title: Offset
+          minimum: 0.0
+          type: integer
+          default: 0
+        limit:
+          title: Limit
+          maximum: 100.0
+          minimum: 1.0
+          type: integer
+          default: 10
+        preview:
+          title: Preview
+          type: boolean
+          default: false
         format:
           title: Format
           enum:
@@ -18166,6 +18314,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        sort_params:
+          $ref: '#/components/schemas/SortParamsForRunsComparisonView'
         filters:
           title: Filters
           type: object
@@ -18174,22 +18324,6 @@ components:
             items:
               type: string
           nullable: true
-        sort_params:
-          $ref: '#/components/schemas/SortParamsForRunsComparisonView'
-        preview:
-          title: Preview
-          type: boolean
-          default: false
-        offset:
-          title: Offset
-          minimum: 0.0
-          type: integer
-          default: 0
-        limit:
-          title: Limit
-          minimum: 1.0
-          type: integer
-          default: 20
     QueryFeedbackDelta:
       title: QueryFeedbackDelta
       required:
@@ -18235,6 +18369,46 @@ components:
           type: string
           format: uuid
           nullable: true
+    QueryGroupedExamplesWithRuns:
+      title: QueryGroupedExamplesWithRuns
+      required:
+        - session_ids
+        - group_by
+        - metadata_key
+      type: object
+      properties:
+        session_ids:
+          title: Session Ids
+          type: array
+          items:
+            type: string
+            format: uuid
+        offset:
+          title: Offset
+          minimum: 0.0
+          type: integer
+          default: 0
+        limit:
+          title: Limit
+          maximum: 100.0
+          minimum: 1.0
+          type: integer
+          default: 10
+        preview:
+          title: Preview
+          type: boolean
+          default: false
+        group_by:
+          $ref: '#/components/schemas/GroupExampleRunsByField'
+        metadata_key:
+          title: Metadata Key
+          type: string
+        per_group_limit:
+          title: Per Group Limit
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          default: 5
     QueryParamsForPublicRunSchema:
       title: QueryParamsForPublicRunSchema
       type: object
