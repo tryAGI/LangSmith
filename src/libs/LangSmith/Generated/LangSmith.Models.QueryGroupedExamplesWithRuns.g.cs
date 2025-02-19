@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class QueryExampleSchemaWithRuns
+    public sealed partial class QueryGroupedExamplesWithRuns
     {
         /// <summary>
         /// 
@@ -36,27 +36,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.QueryExampleSchemaWithRunsFormatJsonConverter))]
-        public global::LangSmith.QueryExampleSchemaWithRunsFormat? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.GroupExampleRunsByFieldJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.GroupExampleRunsByField GroupBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
-        public global::System.Guid? ComparativeExperimentId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_key")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string MetadataKey { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: 5
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_params")]
-        public global::LangSmith.SortParamsForRunsComparisonView? SortParams { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("per_group_limit")]
+        public int? PerGroupLimit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,7 +61,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
+        /// Initializes a new instance of the <see cref="QueryGroupedExamplesWithRuns" /> class.
         /// </summary>
         /// <param name="sessionIds"></param>
         /// <param name="offset">
@@ -77,37 +73,36 @@ namespace LangSmith
         /// <param name="preview">
         /// Default Value: false
         /// </param>
-        /// <param name="format"></param>
-        /// <param name="comparativeExperimentId"></param>
-        /// <param name="sortParams"></param>
-        /// <param name="filters"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="metadataKey"></param>
+        /// <param name="perGroupLimit">
+        /// Default Value: 5
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public QueryExampleSchemaWithRuns(
+        public QueryGroupedExamplesWithRuns(
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            global::LangSmith.GroupExampleRunsByField groupBy,
+            string metadataKey,
             int? offset,
             int? limit,
             bool? preview,
-            global::LangSmith.QueryExampleSchemaWithRunsFormat? format,
-            global::System.Guid? comparativeExperimentId,
-            global::LangSmith.SortParamsForRunsComparisonView? sortParams,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)
+            int? perGroupLimit)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
+            this.GroupBy = groupBy;
+            this.MetadataKey = metadataKey ?? throw new global::System.ArgumentNullException(nameof(metadataKey));
             this.Offset = offset;
             this.Limit = limit;
             this.Preview = preview;
-            this.Format = format;
-            this.ComparativeExperimentId = comparativeExperimentId;
-            this.SortParams = sortParams;
-            this.Filters = filters;
+            this.PerGroupLimit = perGroupLimit;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
+        /// Initializes a new instance of the <see cref="QueryGroupedExamplesWithRuns" /> class.
         /// </summary>
-        public QueryExampleSchemaWithRuns()
+        public QueryGroupedExamplesWithRuns()
         {
         }
     }
