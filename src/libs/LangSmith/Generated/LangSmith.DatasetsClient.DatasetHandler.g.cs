@@ -208,6 +208,9 @@ namespace LangSmith
         /// <param name="commit"></param>
         /// <param name="evaluatorRules"></param>
         /// <param name="requestsPerSecond"></param>
+        /// <param name="useWorkspaceSecrets">
+        /// Default Value: false
+        /// </param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -231,6 +234,7 @@ namespace LangSmith
             string? commit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules = default,
             int? requestsPerSecond = default,
+            bool? useWorkspaceSecrets = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -251,6 +255,7 @@ namespace LangSmith
                 Commit = commit,
                 EvaluatorRules = evaluatorRules,
                 RequestsPerSecond = requestsPerSecond,
+                UseWorkspaceSecrets = useWorkspaceSecrets,
                 DatasetId = datasetId,
                 DatasetSplits = datasetSplits,
                 Repetitions = repetitions,

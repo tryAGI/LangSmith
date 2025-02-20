@@ -17764,6 +17764,10 @@ components:
           title: Requests Per Second
           type: integer
           nullable: true
+        use_workspace_secrets:
+          title: Use Workspace Secrets
+          type: boolean
+          default: false
         dataset_id:
           title: Dataset Id
           type: string
