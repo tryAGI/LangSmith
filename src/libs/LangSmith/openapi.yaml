@@ -4321,6 +4321,20 @@ paths:
             title: Run Id
             type: string
             format: uuid
+        - name: session_id
+          in: query
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+            nullable: true
+        - name: start_time
+          in: query
+          schema:
+            title: Start Time
+            type: string
+            format: date-time
+            nullable: true
         - name: exclude_s3_stored_attributes
           in: query
           schema:
@@ -12750,6 +12764,10 @@ components:
             - thread_id
         order:
           $ref: '#/components/schemas/RunDateOrder'
+        skip_prev_cursor:
+          title: Skip Prev Cursor
+          type: boolean
+          default: false
       description: Query params for run endpoints.
     Body_clone_dataset_api_v1_datasets_clone_post:
       title: Body_clone_dataset_api_v1_datasets_clone_post
@@ -18299,7 +18317,6 @@ components:
           default: 0
         limit:
           title: Limit
-          maximum: 100.0
           minimum: 1.0
           type: integer
           default: 10
@@ -18394,7 +18411,6 @@ components:
           default: 0
         limit:
           title: Limit
-          maximum: 100.0
           minimum: 1.0
           type: integer
           default: 10
