@@ -48,9 +48,6 @@ namespace LangSmith
         /// <param name="order">
         /// Enum for run start date order.
         /// </param>
-        /// <param name="skipPrevCursor">
-        /// Default Value: false
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListRunsResponse> QueryRunsAsync(
@@ -75,7 +72,6 @@ namespace LangSmith
             int? limit = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
             global::LangSmith.RunDateOrder? order = default,
-            bool? skipPrevCursor = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

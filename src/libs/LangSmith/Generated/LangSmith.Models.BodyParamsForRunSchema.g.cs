@@ -138,12 +138,6 @@ namespace LangSmith
         public global::LangSmith.RunDateOrder? Order { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("skip_prev_cursor")]
-        public bool? SkipPrevCursor { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -183,9 +177,6 @@ namespace LangSmith
         /// <param name="order">
         /// Enum for run start date order.
         /// </param>
-        /// <param name="skipPrevCursor">
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -210,8 +201,7 @@ namespace LangSmith
             string? cursor,
             int? limit,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select,
-            global::LangSmith.RunDateOrder? order,
-            bool? skipPrevCursor)
+            global::LangSmith.RunDateOrder? order)
         {
             this.Id = id;
             this.Trace = trace;
@@ -234,7 +224,6 @@ namespace LangSmith
             this.Limit = limit;
             this.Select = select;
             this.Order = order;
-            this.SkipPrevCursor = skipPrevCursor;
         }
 
         /// <summary>

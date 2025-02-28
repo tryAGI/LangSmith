@@ -9,8 +9,6 @@ namespace LangSmith
         /// Get a specific run.
         /// </summary>
         /// <param name="runId"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="startTime"></param>
         /// <param name="excludeS3StoredAttributes">
         /// Default Value: false
         /// </param>
@@ -21,8 +19,6 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunSchema> ReadRunAsync(
             global::System.Guid runId,
-            global::System.Guid? sessionId = default,
-            global::System.DateTime? startTime = default,
             bool? excludeS3StoredAttributes = default,
             bool? excludeSerialized = default,
             global::System.Threading.CancellationToken cancellationToken = default);
