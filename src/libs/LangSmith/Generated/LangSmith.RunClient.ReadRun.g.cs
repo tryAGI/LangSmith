@@ -8,12 +8,16 @@ namespace LangSmith
         partial void PrepareReadRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid runId,
+            ref global::System.Guid? sessionId,
+            ref global::System.DateTime? startTime,
             ref bool? excludeS3StoredAttributes,
             ref bool? excludeSerialized);
         partial void PrepareReadRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid runId,
+            global::System.Guid? sessionId,
+            global::System.DateTime? startTime,
             bool? excludeS3StoredAttributes,
             bool? excludeSerialized);
         partial void ProcessReadRunResponse(
@@ -30,6 +34,8 @@ namespace LangSmith
         /// Get a specific run.
         /// </summary>
         /// <param name="runId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
         /// <param name="excludeS3StoredAttributes">
         /// Default Value: false
         /// </param>
@@ -40,6 +46,8 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunSchema> ReadRunAsync(
             global::System.Guid runId,
+            global::System.Guid? sessionId = default,
+            global::System.DateTime? startTime = default,
             bool? excludeS3StoredAttributes = default,
             bool? excludeSerialized = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -49,6 +57,8 @@ namespace LangSmith
             PrepareReadRunArguments(
                 httpClient: HttpClient,
                 runId: ref runId,
+                sessionId: ref sessionId,
+                startTime: ref startTime,
                 excludeS3StoredAttributes: ref excludeS3StoredAttributes,
                 excludeSerialized: ref excludeSerialized);
 
@@ -56,6 +66,8 @@ namespace LangSmith
                 path: $"/api/v1/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
+                .AddOptionalParameter("session_id", sessionId?.ToString()) 
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
                 .AddOptionalParameter("exclude_serialized", excludeSerialized?.ToString()) 
                 ; 
@@ -91,6 +103,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 runId: runId,
+                sessionId: sessionId,
+                startTime: startTime,
                 excludeS3StoredAttributes: excludeS3StoredAttributes,
                 excludeSerialized: excludeSerialized);
 
