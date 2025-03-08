@@ -17263,10 +17263,6 @@ components:
           title: Enable Thread View Playground
           type: boolean
           default: false
-        enable_custom_experiment_names:
-          title: Enable Custom Experiment Names
-          type: boolean
-          default: false
         enable_org_usage_charts:
           title: Enable Org Usage Charts
           type: boolean
@@ -17297,6 +17293,14 @@ components:
           default: false
         demo_lgp_new_graph_enabled:
           title: Demo Lgp New Graph Enabled
+          type: boolean
+          default: false
+        datadog_rum_session_sample_rate:
+          title: Datadog Rum Session Sample Rate
+          type: integer
+          default: 20
+        langgraph_remote_reconciler_enabled:
+          title: Langgraph Remote Reconciler Enabled
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
