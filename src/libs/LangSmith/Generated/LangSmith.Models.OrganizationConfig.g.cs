@@ -137,12 +137,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_custom_experiment_names")]
-        public bool? EnableCustomExperimentNames { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_org_usage_charts")]
         public bool? EnableOrgUsageCharts { get; set; }
 
@@ -187,6 +181,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("demo_lgp_new_graph_enabled")]
         public bool? DemoLgpNewGraphEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: 20
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("datadog_rum_session_sample_rate")]
+        public int? DatadogRumSessionSampleRate { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_remote_reconciler_enabled")]
+        public bool? LanggraphRemoteReconcilerEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -254,9 +260,6 @@ namespace LangSmith
         /// <param name="enableThreadViewPlayground">
         /// Default Value: false
         /// </param>
-        /// <param name="enableCustomExperimentNames">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableOrgUsageCharts">
         /// Default Value: false
         /// </param>
@@ -279,6 +282,12 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="demoLgpNewGraphEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="datadogRumSessionSampleRate">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="langgraphRemoteReconcilerEnabled">
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
@@ -306,7 +315,6 @@ namespace LangSmith
             bool? allowCustomIframes,
             bool? enableLanggraphPricing,
             bool? enableThreadViewPlayground,
-            bool? enableCustomExperimentNames,
             bool? enableOrgUsageCharts,
             bool? enableSelectAllTraces,
             bool? useExactSearchForPrompts,
@@ -314,7 +322,9 @@ namespace LangSmith
             bool? promptOptimization,
             bool? promptOptimizationJobsEnabled,
             bool? enableK8sVanillaPlatform,
-            bool? demoLgpNewGraphEnabled)
+            bool? demoLgpNewGraphEnabled,
+            int? datadogRumSessionSampleRate,
+            bool? langgraphRemoteReconcilerEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -337,7 +347,6 @@ namespace LangSmith
             this.AllowCustomIframes = allowCustomIframes;
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
-            this.EnableCustomExperimentNames = enableCustomExperimentNames;
             this.EnableOrgUsageCharts = enableOrgUsageCharts;
             this.EnableSelectAllTraces = enableSelectAllTraces;
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
@@ -346,6 +355,8 @@ namespace LangSmith
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
+            this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
+            this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
         }
 
         /// <summary>
