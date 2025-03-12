@@ -9,7 +9,8 @@ namespace LangSmith
     public sealed partial class CreateRepoCommitResponse
     {
         /// <summary>
-        /// All database fields for commits, plus helpful computed fields.
+        /// All database fields for commits, plus helpful computed fields and user info<br/>
+        /// for private prompts.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +26,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CreateRepoCommitResponse" /> class.
         /// </summary>
         /// <param name="commit">
-        /// All database fields for commits, plus helpful computed fields.
+        /// All database fields for commits, plus helpful computed fields and user info<br/>
+        /// for private prompts.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
