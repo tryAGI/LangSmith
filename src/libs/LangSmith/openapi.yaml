@@ -13451,7 +13451,11 @@ components:
           title: Parent Commit Hash
           type: string
           nullable: true
-      description: 'All database fields for commits, plus helpful computed fields.'
+        full_name:
+          title: Full Name
+          type: string
+          nullable: true
+      description: "All database fields for commits, plus helpful computed fields and user info\nfor private prompts."
     ComparativeExperiment:
       title: ComparativeExperiment
       required:
