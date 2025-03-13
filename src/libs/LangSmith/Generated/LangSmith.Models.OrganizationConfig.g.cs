@@ -195,6 +195,12 @@ namespace LangSmith
         public bool? LanggraphRemoteReconcilerEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_evaluator_crud_pane")]
+        public bool? ShowUpdatedEvaluatorCrudPane { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -290,6 +296,9 @@ namespace LangSmith
         /// <param name="langgraphRemoteReconcilerEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="showUpdatedEvaluatorCrudPane">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -324,7 +333,8 @@ namespace LangSmith
             bool? enableK8sVanillaPlatform,
             bool? demoLgpNewGraphEnabled,
             int? datadogRumSessionSampleRate,
-            bool? langgraphRemoteReconcilerEnabled)
+            bool? langgraphRemoteReconcilerEnabled,
+            bool? showUpdatedEvaluatorCrudPane)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -357,6 +367,7 @@ namespace LangSmith
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
+            this.ShowUpdatedEvaluatorCrudPane = showUpdatedEvaluatorCrudPane;
         }
 
         /// <summary>

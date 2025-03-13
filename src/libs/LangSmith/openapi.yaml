@@ -17307,6 +17307,10 @@ components:
           title: Langgraph Remote Reconciler Enabled
           type: boolean
           default: false
+        show_updated_evaluator_crud_pane:
+          title: Show Updated Evaluator Crud Pane
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
