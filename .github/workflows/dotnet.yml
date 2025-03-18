@@ -8,7 +8,7 @@ on:
 
 permissions:
   contents: write
-  
+
 jobs:
   publish:
     name: Publish

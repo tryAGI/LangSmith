@@ -19,21 +19,21 @@ jobs:
         uses: dependabot/fetch-metadata@0fb21704c18a42ce5aa8d720ea4b912f5e6babef
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-          
+
       - name: Show sender
         run: echo ${{ github.event.pull_request.sender }}
-          
+
       - name: Show triggering_actor
         run: echo ${{ github.triggering_actor }}
-          
+
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Enable auto-merge
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}

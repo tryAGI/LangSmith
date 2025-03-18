@@ -9,6 +9,8 @@ on:
       - 'examples/**'
       - 'src/helpers/GenerateDocs/**'
       - '.github/workflows/mkdocs.yml'
+      - 'src/tests/IntegrationTests/**'
+      - 'README.md'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -28,7 +30,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -36,7 +38,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9.0.x
-        
+
       - name: Generate docs
         run: dotnet run --project src/helpers/GenerateDocs/GenerateDocs.csproj .
 
@@ -46,7 +48,7 @@ jobs:
           source myenv/bin/activate
           pip install mkdocs-material
           mkdocs build -d ./_site
-          
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
