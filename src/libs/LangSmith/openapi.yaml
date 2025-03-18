@@ -8222,6 +8222,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+    delete:
+      tags:
+        - workspaces
+      summary: Delete Workspace
+      operationId: delete_workspace_api_v1_workspaces__workspace_id__delete
+      parameters:
+        - name: workspace_id
+          in: path
+          required: true
+          schema:
+            title: Workspace Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/workspaces/pending:
     get:
       tags:
@@ -17309,6 +17338,10 @@ components:
           default: false
         show_updated_evaluator_crud_pane:
           title: Show Updated Evaluator Crud Pane
+          type: boolean
+          default: false
+        new_dataset_in_playground_enabled:
+          title: New Dataset In Playground Enabled
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
