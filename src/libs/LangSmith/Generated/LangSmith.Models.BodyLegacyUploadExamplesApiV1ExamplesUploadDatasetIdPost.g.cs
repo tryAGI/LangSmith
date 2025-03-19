@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost
+    public sealed partial class BodyLegacyUploadExamplesApiV1ExamplesUploadDatasetIdPost
     {
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyLegacyUploadExamplesApiV1ExamplesUploadDatasetIdPost" /> class.
         /// </summary>
         /// <param name="file"></param>
         /// <param name="filename"></param>
@@ -51,7 +51,7 @@ namespace LangSmith
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost(
+        public BodyLegacyUploadExamplesApiV1ExamplesUploadDatasetIdPost(
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
@@ -64,9 +64,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyLegacyUploadExamplesApiV1ExamplesUploadDatasetIdPost" /> class.
         /// </summary>
-        public BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost()
+        public BodyLegacyUploadExamplesApiV1ExamplesUploadDatasetIdPost()
         {
         }
     }

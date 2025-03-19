@@ -7,29 +7,25 @@ namespace LangSmith
     {
         partial void PrepareUpdateExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID> request);
+            global::LangSmith.Request2 request);
         partial void PrepareUpdateExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID> request);
+            global::LangSmith.Request2 request);
         partial void ProcessUpdateExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateExamplesResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Update Examples<br/>
-        /// Update examples in bulk.
+        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateExamplesAsync(
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID> request,
+        public async global::System.Threading.Tasks.Task UpdateExamplesAsync(
+            global::LangSmith.Request2 request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -41,7 +37,7 @@ namespace LangSmith
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/examples/bulk",
+                path: "/datasets/{dataset_id}/examples",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -67,11 +63,39 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>()),
+                name: "{example_id}",
+                fileName: request.x_exampleId_name ?? string.Empty);
+            if (request.x_exampleId_Inputs != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Inputs ?? global::System.Array.Empty<byte>()),
+                    name: "{example_id}.inputs",
+                    fileName: request.x_exampleId_Inputsname ?? string.Empty);
+            } 
+            if (request.x_exampleId_Outputs != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Outputs ?? global::System.Array.Empty<byte>()),
+                    name: "{example_id}.outputs",
+                    fileName: request.x_exampleId_Outputsname ?? string.Empty);
+            } 
+            if (request.x_exampleId_AttachmentsOperations != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_AttachmentsOperations ?? global::System.Array.Empty<byte>()),
+                    name: "{example_id}.attachments_operations",
+                    fileName: request.x_exampleId_AttachmentsOperationsname ?? string.Empty);
+            } 
+            if (request.x_exampleId_Attachment_name_ != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Attachment_name_ ?? global::System.Array.Empty<byte>()),
+                    name: "{example_id}.attachment.{name}",
+                    fileName: request.x_exampleId_Attachment_name_name ?? string.Empty);
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
@@ -93,101 +117,92 @@ namespace LangSmith
             ProcessUpdateExamplesResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Validation Error
-            if ((int)__response.StatusCode == 422)
+            try
             {
-                string? __content_422 = null;
-                global::LangSmith.HTTPValidationError? __value_422 = null;
-                if (ReadResponseAsString)
-                {
-                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
-                }
-                else
-                {
-                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = await global::LangSmith.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
-                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                __response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {
+                throw new global::LangSmith.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_422,
-                    ResponseObject = __value_422,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
                         h => h.Value),
                 };
             }
+        }
 
-            if (ReadResponseAsString)
+        /// <summary>
+        /// Update Examples<br/>
+        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
+        /// </summary>
+        /// <param name="x_exampleId_">
+        /// The Example update info as JSON. Can have fields 'metadata', 'split'
+        /// </param>
+        /// <param name="x_exampleId_name">
+        /// The Example update info as JSON. Can have fields 'metadata', 'split'
+        /// </param>
+        /// <param name="x_exampleId_Inputs">
+        /// The updated Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Inputsname">
+        /// The updated Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputs">
+        /// The updated Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputsname">
+        /// The updated Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_AttachmentsOperations">
+        /// JSON describing attachment operations (retain, rename)
+        /// </param>
+        /// <param name="x_exampleId_AttachmentsOperationsname">
+        /// JSON describing attachment operations (retain, rename)
+        /// </param>
+        /// <param name="x_exampleId_Attachment_name_">
+        /// New file attachment named {name}
+        /// </param>
+        /// <param name="x_exampleId_Attachment_name_name">
+        /// New file attachment named {name}
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task UpdateExamplesAsync(
+            byte[] x_exampleId_,
+            string x_exampleId_name,
+            byte[]? x_exampleId_Inputs = default,
+            string? x_exampleId_Inputsname = default,
+            byte[]? x_exampleId_Outputs = default,
+            string? x_exampleId_Outputsname = default,
+            byte[]? x_exampleId_AttachmentsOperations = default,
+            string? x_exampleId_AttachmentsOperationsname = default,
+            byte[]? x_exampleId_Attachment_name_ = default,
+            string? x_exampleId_Attachment_name_name = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.Request2
             {
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
+                x_exampleId_ = x_exampleId_,
+                x_exampleId_name = x_exampleId_name,
+                x_exampleId_Inputs = x_exampleId_Inputs,
+                x_exampleId_Inputsname = x_exampleId_Inputsname,
+                x_exampleId_Outputs = x_exampleId_Outputs,
+                x_exampleId_Outputsname = x_exampleId_Outputsname,
+                x_exampleId_AttachmentsOperations = x_exampleId_AttachmentsOperations,
+                x_exampleId_AttachmentsOperationsname = x_exampleId_AttachmentsOperationsname,
+                x_exampleId_Attachment_name_ = x_exampleId_Attachment_name_,
+                x_exampleId_Attachment_name_name = x_exampleId_Attachment_name_name,
+            };
 
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessUpdateExamplesResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::LangSmith.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
-
-                return __content;
-            }
-            else
-            {
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::LangSmith.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
-
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return __content;
-            }
+            await UpdateExamplesAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost
+    public sealed partial class LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost? FromJson(
+        public static global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost),
-                jsonSerializerContext) as global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost;
+                typeof(global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse),
+                jsonSerializerContext) as global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost? FromJson(
+        public static global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost;
+                typeof(global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

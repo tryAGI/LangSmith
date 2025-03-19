@@ -2511,9 +2511,9 @@ paths:
     patch:
       tags:
         - examples
-      summary: Update Examples
+      summary: Legacy Update Examples
       description: Update examples in bulk.
-      operationId: update_examples_api_v1_examples_bulk_patch
+      operationId: legacy_update_examples_api_v1_examples_bulk_patch
       requestBody:
         content:
           application/json:
@@ -2535,6 +2535,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -2543,9 +2544,9 @@ paths:
     post:
       tags:
         - examples
-      summary: Upload Examples
+      summary: Legacy Upload Examples
       description: Create a new example.
-      operationId: upload_examples_api_v1_examples_upload__dataset_id__post
+      operationId: legacy_upload_examples_api_v1_examples_upload__dataset_id__post
       parameters:
         - name: dataset_id
           in: path
@@ -2558,7 +2559,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Body_upload_examples_api_v1_examples_upload__dataset_id__post'
+              $ref: '#/components/schemas/Body_legacy_upload_examples_api_v1_examples_upload__dataset_id__post'
         required: true
       responses:
         '200':
@@ -2566,7 +2567,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Upload Examples Api V1 Examples Upload  Dataset Id  Post
+                title: Response Legacy Upload Examples Api V1 Examples Upload  Dataset Id  Post
                 type: array
                 items:
                   $ref: '#/components/schemas/Example'
@@ -2576,6 +2577,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -11896,6 +11898,128 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/datasets/{dataset_id}/examples':
+    post:
+      tags:
+        - examples
+      summary: Upload Examples
+      description: "This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.\nEach form part contains either JSON-encoded data or binary attachment files associated with an example."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - '{example_id}'
+                - '{example_id}.inputs'
+              type: object
+              properties:
+                '{example_id}':
+                  type: string
+                  description: 'The Example info as JSON. Can have fields ''metadata'', ''split'', ''use_source_run_io'', ''source_run_id'', ''created_at'', ''modified_at'''
+                  format: binary
+                '{example_id}.inputs':
+                  type: string
+                  description: The Example inputs as JSON
+                  format: binary
+                '{example_id}.outputs':
+                  type: string
+                  description: THe Example outputs as JSON
+                  format: binary
+                '{example_id}.attachments.{name}':
+                  type: string
+                  description: 'File attachment named {name}'
+                  format: binary
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json: { }
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
+    patch:
+      tags:
+        - examples
+      summary: Update Examples
+      description: "This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.\nEach form part contains either JSON-encoded data or binary attachment files to update an example."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - '{example_id}'
+              type: object
+              properties:
+                '{example_id}':
+                  type: string
+                  description: 'The Example update info as JSON. Can have fields ''metadata'', ''split'''
+                  format: binary
+                '{example_id}.inputs':
+                  type: string
+                  description: The updated Example inputs as JSON
+                  format: binary
+                '{example_id}.outputs':
+                  type: string
+                  description: The updated Example outputs as JSON
+                  format: binary
+                '{example_id}.attachments_operations':
+                  type: string
+                  description: 'JSON describing attachment operations (retain, rename)'
+                  format: binary
+                '{example_id}.attachment.{name}':
+                  type: string
+                  description: 'New file attachment named {name}'
+                  format: binary
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json: { }
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not Found
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
 components:
   schemas:
     AIMessage:
@@ -12875,6 +12999,27 @@ components:
         code:
           title: Code
           type: string
+    Body_legacy_upload_examples_api_v1_examples_upload__dataset_id__post:
+      title: Body_legacy_upload_examples_api_v1_examples_upload__dataset_id__post
+      required:
+        - file
+        - input_keys
+      type: object
+      properties:
+        file:
+          title: File
+          type: string
+          format: binary
+        input_keys:
+          title: Input Keys
+          type: array
+          items:
+            type: string
+        output_keys:
+          title: Output Keys
+          type: array
+          items:
+            type: string
     Body_update_dataset_splits_api_v1_datasets__dataset_id__splits_put:
       title: Body_update_dataset_splits_api_v1_datasets__dataset_id__splits_put
       required:
@@ -12926,27 +13071,6 @@ components:
           title: Description
           type: string
           nullable: true
-    Body_upload_examples_api_v1_examples_upload__dataset_id__post:
-      title: Body_upload_examples_api_v1_examples_upload__dataset_id__post
-      required:
-        - file
-        - input_keys
-      type: object
-      properties:
-        file:
-          title: File
-          type: string
-          format: binary
-        input_keys:
-          title: Input Keys
-          type: array
-          items:
-            type: string
-        output_keys:
-          title: Output Keys
-          type: array
-          items:
-            type: string
     BulkExport:
       title: BulkExport
       required:
