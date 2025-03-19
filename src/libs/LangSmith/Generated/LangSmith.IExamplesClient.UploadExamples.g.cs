@@ -6,34 +6,56 @@ namespace LangSmith
     {
         /// <summary>
         /// Upload Examples<br/>
-        /// Create a new example.
+        /// This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files associated with an example.
         /// </summary>
-        /// <param name="datasetId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> UploadExamplesAsync(
-            global::System.Guid datasetId,
-            global::LangSmith.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost request,
+        global::System.Threading.Tasks.Task UploadExamplesAsync(
+            global::LangSmith.Request request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Upload Examples<br/>
-        /// Create a new example.
+        /// This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files associated with an example.
         /// </summary>
-        /// <param name="datasetId"></param>
-        /// <param name="file"></param>
-        /// <param name="filename"></param>
-        /// <param name="inputKeys"></param>
-        /// <param name="outputKeys"></param>
+        /// <param name="x_exampleId_">
+        /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
+        /// </param>
+        /// <param name="x_exampleId_name">
+        /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
+        /// </param>
+        /// <param name="x_exampleId_Inputs">
+        /// The Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Inputsname">
+        /// The Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputs">
+        /// THe Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputsname">
+        /// THe Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Attachments_name_">
+        /// File attachment named {name}
+        /// </param>
+        /// <param name="x_exampleId_Attachments_name_name">
+        /// File attachment named {name}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> UploadExamplesAsync(
-            global::System.Guid datasetId,
-            byte[] file,
-            string filename,
-            global::System.Collections.Generic.IList<string> inputKeys,
-            global::System.Collections.Generic.IList<string>? outputKeys = default,
+        global::System.Threading.Tasks.Task UploadExamplesAsync(
+            byte[] x_exampleId_,
+            string x_exampleId_name,
+            byte[] x_exampleId_Inputs,
+            string x_exampleId_Inputsname,
+            byte[]? x_exampleId_Outputs = default,
+            string? x_exampleId_Outputsname = default,
+            byte[]? x_exampleId_Attachments_name_ = default,
+            string? x_exampleId_Attachments_name_name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

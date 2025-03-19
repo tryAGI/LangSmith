@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class UpdateExamplesApiV1ExamplesBulkPatchResponse
+    public sealed partial class LegacyUpdateExamplesApiV1ExamplesBulkPatchResponse
     {
 
         /// <summary>
