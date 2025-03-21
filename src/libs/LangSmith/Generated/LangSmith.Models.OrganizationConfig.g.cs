@@ -207,6 +207,12 @@ namespace LangSmith
         public bool? NewDatasetInPlaygroundEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_poc_enabled")]
+        public bool? LangsmithAlertsPocEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -308,6 +314,9 @@ namespace LangSmith
         /// <param name="newDatasetInPlaygroundEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="langsmithAlertsPocEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -344,7 +353,8 @@ namespace LangSmith
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
             bool? showUpdatedEvaluatorCrudPane,
-            bool? newDatasetInPlaygroundEnabled)
+            bool? newDatasetInPlaygroundEnabled,
+            bool? langsmithAlertsPocEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -379,6 +389,7 @@ namespace LangSmith
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
             this.ShowUpdatedEvaluatorCrudPane = showUpdatedEvaluatorCrudPane;
             this.NewDatasetInPlaygroundEnabled = newDatasetInPlaygroundEnabled;
+            this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
         }
 
         /// <summary>

@@ -17518,6 +17518,10 @@ components:
           title: New Dataset In Playground Enabled
           type: boolean
           default: false
+        langsmith_alerts_poc_enabled:
+          title: Langsmith Alerts Poc Enabled
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
