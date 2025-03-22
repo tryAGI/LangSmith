@@ -8224,6 +8224,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+    delete:
+      tags:
+        - workspaces
+      summary: Delete Workspace
+      operationId: delete_workspace_api_v1_workspaces__workspace_id__delete
+      parameters:
+        - name: workspace_id
+          in: path
+          required: true
+          schema:
+            title: Workspace Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/workspaces/pending:
     get:
       tags:
