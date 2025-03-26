@@ -7737,6 +7737,12 @@ paths:
             items:
               type: string
             nullable: true
+        - name: read_after_write
+          in: query
+          schema:
+            title: Read After Write
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -17510,16 +17516,16 @@ components:
           title: Langgraph Remote Reconciler Enabled
           type: boolean
           default: false
-        show_updated_evaluator_crud_pane:
-          title: Show Updated Evaluator Crud Pane
-          type: boolean
-          default: false
         new_dataset_in_playground_enabled:
           title: New Dataset In Playground Enabled
           type: boolean
           default: false
         langsmith_alerts_poc_enabled:
           title: Langsmith Alerts Poc Enabled
+          type: boolean
+          default: false
+        tenant_skip_topk_facets:
+          title: Tenant Skip Topk Facets
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.

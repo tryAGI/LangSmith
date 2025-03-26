@@ -197,12 +197,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_evaluator_crud_pane")]
-        public bool? ShowUpdatedEvaluatorCrudPane { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_dataset_in_playground_enabled")]
         public bool? NewDatasetInPlaygroundEnabled { get; set; }
 
@@ -211,6 +205,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_poc_enabled")]
         public bool? LangsmithAlertsPocEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenant_skip_topk_facets")]
+        public bool? TenantSkipTopkFacets { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -308,13 +308,13 @@ namespace LangSmith
         /// <param name="langgraphRemoteReconcilerEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="showUpdatedEvaluatorCrudPane">
-        /// Default Value: false
-        /// </param>
         /// <param name="newDatasetInPlaygroundEnabled">
         /// Default Value: false
         /// </param>
         /// <param name="langsmithAlertsPocEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="tenantSkipTopkFacets">
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
@@ -352,9 +352,9 @@ namespace LangSmith
             bool? demoLgpNewGraphEnabled,
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
-            bool? showUpdatedEvaluatorCrudPane,
             bool? newDatasetInPlaygroundEnabled,
-            bool? langsmithAlertsPocEnabled)
+            bool? langsmithAlertsPocEnabled,
+            bool? tenantSkipTopkFacets)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -387,9 +387,9 @@ namespace LangSmith
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
-            this.ShowUpdatedEvaluatorCrudPane = showUpdatedEvaluatorCrudPane;
             this.NewDatasetInPlaygroundEnabled = newDatasetInPlaygroundEnabled;
             this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
+            this.TenantSkipTopkFacets = tenantSkipTopkFacets;
         }
 
         /// <summary>
