@@ -16840,7 +16840,7 @@ components:
       type: object
       properties:
         __missing__:
-          title: '  Missing  '
+          title: Missing
           enum:
             - __missing__
           type: string
