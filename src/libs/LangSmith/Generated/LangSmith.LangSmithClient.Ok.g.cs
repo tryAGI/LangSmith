@@ -3,7 +3,7 @@
 
 namespace LangSmith
 {
-    public partial class LangSmithApi
+    public partial class LangSmithClient
     {
         partial void PrepareOkArguments(
             global::System.Net.Http.HttpClient httpClient);

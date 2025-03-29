@@ -5,9 +5,9 @@ namespace LangSmith.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
-    private static LangSmithApi GetAuthorizedClient()
+    private static LangSmithClient GetAuthorizedClient()
     {
-        return new LangSmithApi(
+        return new LangSmithClient(
             Environment.GetEnvironmentVariable("LANGSMITH_API_KEY") ??
             throw new AssertInconclusiveException("LANGSMITH_API_KEY is required"));
     }

@@ -3,7 +3,7 @@
 
 namespace LangSmith
 {
-    public partial interface ILangSmithApi
+    public partial interface ILangSmithClient
     {
         /// <summary>
         /// Authorize using ApiKey authentication.

@@ -31,11 +31,11 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Tests.*.cs", Sea
 
     code = code
             .Replace(
-                "using var api = GetAuthorizedApi();",
-                "using var api = new LangSmithApi(\"API_KEY\");")
+                "using var client = GetAuthorizedClient();",
+                "using var client = new LangSmithClient(\"API_KEY\");")
             .Replace(
-                "using var openAiApi = GetAuthorizedOpenAiApi();",
-                "using var openAiApi = new OpenAiApi(\"API_KEY\");")
+                "using var openAiClient = GetAuthorizedOpenAiClient();",
+                "using var openAiClient = new OpenAiClient(\"API_KEY\");")
         ;
     
     var newPath = Path.Combine(newDir, $"{Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.')}.md");

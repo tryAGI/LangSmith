@@ -3,7 +3,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class LangSmithApi
+    public sealed partial class LangSmithClient
     {
         /// <inheritdoc/>
         public void AuthorizeUsingApiKeyInHeader(
