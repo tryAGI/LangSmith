@@ -16,10 +16,10 @@
 ### Initializing
 
 ```csharp
-using var api = new LangSmithApi();
-using var openAiApi = new OpenAiApi();
+using var client = new LangSmithClient();
+using var openAiClient = new OpenAiClient();
 
-api.JsonSerializerContext = new SpecialJsonSerializerContext(OpenAI.SourceGenerationContext.Default);
+client.JsonSerializerContext = new SpecialJsonSerializerContext(tryAGI.OpenAI.SourceGenerationContext.Default);
 
 // This can be a user input to your app
 var question = "Can you summarize this morning's meetings?";
@@ -35,7 +35,7 @@ var messages = new[]
 
 // Create parent run
 var parentRunId = Guid.NewGuid();
-await api.Run.CreateRunAsync(
+await client.Run.CreateRunAsync(
     name: "Chat Pipeline",
     runType: CreateRunRequestRunType.Chain,
     id: parentRunId,
@@ -46,7 +46,7 @@ await api.Run.CreateRunAsync(
 
 // Create child run
 var childRunId = Guid.NewGuid();
-await api.Run.CreateRunAsync(
+await client.Run.CreateRunAsync(
     name: "OpenAI Call",
     runType: CreateRunRequestRunType.Llm,
     id: childRunId,
@@ -57,19 +57,19 @@ await api.Run.CreateRunAsync(
     });
 
 // Generate a completion
-var chatCompletion = await openAiApi.Chat.CreateChatCompletionAsync(
+var chatCompletion = await openAiClient.Chat.CreateChatCompletionAsync(
     model: CreateChatCompletionRequestModel.Gpt35Turbo,
     messages: messages);
 
 // End runs
-await api.Run.UpdateRunAsync(
+await client.Run.UpdateRunAsync(
     runId: childRunId,
     outputs: new Dictionary<string, object>
     {
         ["chatCompletion"] = chatCompletion,
     },
     endTime: DateTime.UtcNow.ToString("O"));
-await api.Run.UpdateRunAsync(
+await client.Run.UpdateRunAsync(
     runId: parentRunId,
     outputs: new Dictionary<string, object>
     {
