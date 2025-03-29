@@ -8,11 +8,13 @@ namespace LangSmith
         partial void PrepareCreateJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string repo,
+            ref string owner,
             global::LangSmith.PromptOptimizationJobCreate request);
         partial void PrepareCreateJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string repo,
+            string owner,
             global::LangSmith.PromptOptimizationJobCreate request);
         partial void ProcessCreateJobResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -28,11 +30,13 @@ namespace LangSmith
         /// Create a new prompt optimization job.
         /// </summary>
         /// <param name="repo"></param>
+        /// <param name="owner"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJob> CreateJobAsync(
             string repo,
+            string owner,
             global::LangSmith.PromptOptimizationJobCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -43,6 +47,7 @@ namespace LangSmith
             PrepareCreateJobArguments(
                 httpClient: HttpClient,
                 repo: ref repo,
+                owner: ref owner,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
@@ -86,6 +91,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 repo: repo,
+                owner: owner,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -205,12 +211,14 @@ namespace LangSmith
         /// Create a new prompt optimization job.
         /// </summary>
         /// <param name="repo"></param>
+        /// <param name="owner"></param>
         /// <param name="algorithm"></param>
         /// <param name="config"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJob> CreateJobAsync(
             string repo,
+            string owner,
             global::LangSmith.EPromptOptimizationAlgorithm algorithm,
             global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -223,6 +231,7 @@ namespace LangSmith
 
             return await CreateJobAsync(
                 repo: repo,
+                owner: owner,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

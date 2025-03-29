@@ -1,7 +1,4 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Text.Json.Serialization.Metadata;
-using OpenAI;
+using tryAGI.OpenAI;
 
 namespace LangSmith.IntegrationTests;
 
@@ -11,10 +8,10 @@ public partial class Tests
     [TestMethod]
     public async Task Trace()
     {
-        using var api = GetAuthorizedApi();
-        using var openAiApi = GetAuthorizedOpenAiApi();
+        using var client = GetAuthorizedClient();
+        using var openAiClient = GetAuthorizedOpenAiClient();
         
-        api.JsonSerializerContext = new SpecialJsonSerializerContext(OpenAI.SourceGenerationContext.Default);
+        client.JsonSerializerContext = new SpecialJsonSerializerContext(tryAGI.OpenAI.SourceGenerationContext.Default);
         
         // This can be a user input to your app
         var question = "Can you summarize this morning's meetings?";
@@ -30,7 +27,7 @@ public partial class Tests
 
         // Create parent run
         var parentRunId = Guid.NewGuid();
-        await api.Run.CreateRunAsync(
+        await client.Run.CreateRunAsync(
             name: "Chat Pipeline",
             runType: CreateRunRequestRunType.Chain,
             id: parentRunId,
@@ -41,7 +38,7 @@ public partial class Tests
         
         // Create child run
         var childRunId = Guid.NewGuid();
-        await api.Run.CreateRunAsync(
+        await client.Run.CreateRunAsync(
             name: "OpenAI Call",
             runType: CreateRunRequestRunType.Llm,
             id: childRunId,
@@ -52,19 +49,19 @@ public partial class Tests
             });
 
         // Generate a completion
-        var chatCompletion = await openAiApi.Chat.CreateChatCompletionAsync(
+        var chatCompletion = await openAiClient.Chat.CreateChatCompletionAsync(
             model: CreateChatCompletionRequestModel.Gpt35Turbo,
             messages: messages);
 
         // End runs
-        await api.Run.UpdateRunAsync(
+        await client.Run.UpdateRunAsync(
             runId: childRunId,
             outputs: new Dictionary<string, object>
             {
                 ["chatCompletion"] = chatCompletion,
             },
             endTime: DateTime.UtcNow.ToString("O"));
-        await api.Run.UpdateRunAsync(
+        await client.Run.UpdateRunAsync(
             runId: parentRunId,
             outputs: new Dictionary<string, object>
             {

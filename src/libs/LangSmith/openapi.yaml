@@ -11615,6 +11615,11 @@ paths:
           schema:
             title: Repo
             type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -11647,6 +11652,11 @@ paths:
           required: true
           schema:
             title: Repo
+            type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
             type: string
       requestBody:
         content:
@@ -11686,6 +11696,16 @@ paths:
             title: Job Id
             type: string
             format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -11717,6 +11737,16 @@ paths:
             title: Job Id
             type: string
             format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -11754,6 +11784,16 @@ paths:
             title: Job Id
             type: string
             format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -11785,6 +11825,16 @@ paths:
             title: Job Id
             type: string
             format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -11819,6 +11869,16 @@ paths:
             title: Job Id
             type: string
             format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -11857,6 +11917,22 @@ paths:
             title: Log Id
             type: string
             format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
       responses:
         '200':
           description: Successful Response
@@ -11886,6 +11962,22 @@ paths:
           required: true
           schema:
             title: Log Id
+            type: string
+            format: uuid
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: job_id
+          in: path
+          required: true
+          schema:
             type: string
             format: uuid
       responses:

@@ -7,11 +7,17 @@ namespace LangSmith
     {
         partial void PrepareGetLogArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid logId);
+            ref global::System.Guid logId,
+            ref string owner,
+            ref string repo,
+            ref global::System.Guid jobId);
         partial void PrepareGetLogRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid logId);
+            global::System.Guid logId,
+            string owner,
+            string repo,
+            global::System.Guid jobId);
         partial void ProcessGetLogResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,20 +32,29 @@ namespace LangSmith
         /// Get a specific prompt optimization job log.
         /// </summary>
         /// <param name="logId"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJobLog> GetLogAsync(
             global::System.Guid logId,
+            string owner,
+            string repo,
+            global::System.Guid jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetLogArguments(
                 httpClient: HttpClient,
-                logId: ref logId);
+                logId: ref logId,
+                owner: ref owner,
+                repo: ref repo,
+                jobId: ref jobId);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs/{logId}",
+                path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs/{logId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -72,7 +87,10 @@ namespace LangSmith
             PrepareGetLogRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                logId: logId);
+                logId: logId,
+                owner: owner,
+                repo: repo,
+                jobId: jobId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

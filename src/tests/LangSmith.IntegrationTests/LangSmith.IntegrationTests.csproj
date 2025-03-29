@@ -11,7 +11,7 @@
     </PackageReference>
     <PackageReference Include="MSTest" Version="3.8.3" />
     <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="FluentAssertions" Version="8.2.0" />
+    <PackageReference Include="AwesomeAssertions" Version="8.0.2" />
     <PackageReference Include="Testcontainers" Version="4.3.0" />
     <PackageReference Include="tryAGI.OpenAI" Version="4.2.0" />
   </ItemGroup>

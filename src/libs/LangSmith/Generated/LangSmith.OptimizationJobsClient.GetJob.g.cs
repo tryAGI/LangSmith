@@ -7,11 +7,15 @@ namespace LangSmith
     {
         partial void PrepareGetJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid jobId);
+            ref global::System.Guid jobId,
+            ref string owner,
+            ref string repo);
         partial void PrepareGetJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid jobId);
+            global::System.Guid jobId,
+            string owner,
+            string repo);
         partial void ProcessGetJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,17 +30,23 @@ namespace LangSmith
         /// Get a specific optimization job.
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJobWithLogs> GetJobAsync(
             global::System.Guid jobId,
+            string owner,
+            string repo,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetJobArguments(
                 httpClient: HttpClient,
-                jobId: ref jobId);
+                jobId: ref jobId,
+                owner: ref owner,
+                repo: ref repo);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}",
@@ -72,7 +82,9 @@ namespace LangSmith
             PrepareGetJobRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                jobId: jobId);
+                jobId: jobId,
+                owner: owner,
+                repo: repo);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

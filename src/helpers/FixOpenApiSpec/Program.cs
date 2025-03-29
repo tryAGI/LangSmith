@@ -29,6 +29,27 @@ var ownerParameter = new OpenApiParameter
         Type = "string"
     },
 };
+var repoParameter = new OpenApiParameter
+{
+    Name = "repo",
+    In = ParameterLocation.Path,
+    Required = true,
+    Schema = new OpenApiSchema
+    {
+        Type = "string"
+    },
+};
+var jobIdParameter = new OpenApiParameter
+{
+    Name = "job_id",
+    In = ParameterLocation.Path,
+    Required = true,
+    Schema = new OpenApiSchema
+    {
+        Type = "string",
+        Format = "uuid"
+    },
+};
 
 foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"].Operations)
 {
@@ -37,6 +58,26 @@ foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{rep
 foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags/{tag_name}"].Operations)
 {
     operation.Parameters.Add(ownerParameter);
+}
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+}
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+    operation.Parameters.Add(repoParameter);
+}
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+    operation.Parameters.Add(repoParameter);
+}
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs/{log_id}"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+    operation.Parameters.Add(repoParameter);
+    operation.Parameters.Add(jobIdParameter);
 }
 
 openApiDocument.Servers.Add(new OpenApiServer { Url = "https://api.smith.langchain.com" });

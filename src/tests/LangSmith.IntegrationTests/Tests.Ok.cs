@@ -5,7 +5,7 @@ public partial class Tests
     [TestMethod]
     public async Task Ok()
     {
-        using var api = GetAuthorizedApi();
-        var response = await api.OkAsync();
+        using var client = GetAuthorizedClient();
+        var response = await client.OkAsync();
     }
 }

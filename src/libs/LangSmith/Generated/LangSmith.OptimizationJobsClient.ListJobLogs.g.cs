@@ -7,11 +7,15 @@ namespace LangSmith
     {
         partial void PrepareListJobLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid jobId);
+            ref global::System.Guid jobId,
+            ref string owner,
+            ref string repo);
         partial void PrepareListJobLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid jobId);
+            global::System.Guid jobId,
+            string owner,
+            string repo);
         partial void ProcessListJobLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,17 +30,23 @@ namespace LangSmith
         /// List all logs for a specific prompt optimization job.
         /// </summary>
         /// <param name="jobId"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.PromptOptimizationJobLog>> ListJobLogsAsync(
             global::System.Guid jobId,
+            string owner,
+            string repo,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListJobLogsArguments(
                 httpClient: HttpClient,
-                jobId: ref jobId);
+                jobId: ref jobId,
+                owner: ref owner,
+                repo: ref repo);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs",
@@ -72,7 +82,9 @@ namespace LangSmith
             PrepareListJobLogsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                jobId: jobId);
+                jobId: jobId,
+                owner: owner,
+                repo: repo);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

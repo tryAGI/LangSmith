@@ -1,20 +1,20 @@
-using OpenAI;
+using tryAGI.OpenAI;
 
 namespace LangSmith.IntegrationTests;
 
 [TestClass]
 public partial class Tests
 {
-    public static LangSmithApi GetAuthorizedApi()
+    private static LangSmithApi GetAuthorizedClient()
     {
         return new LangSmithApi(
             Environment.GetEnvironmentVariable("LANGSMITH_API_KEY") ??
             throw new AssertInconclusiveException("LANGSMITH_API_KEY is required"));
     }
     
-    public static OpenAiApi GetAuthorizedOpenAiApi()
+    private static OpenAiClient GetAuthorizedOpenAiClient()
     {
-        return new OpenAiApi(
+        return new OpenAiClient(
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new AssertInconclusiveException("OPENAI_API_KEY is required"));
     }
