@@ -14079,6 +14079,7 @@ components:
         - run_count
         - latency_p50
         - latency_p99
+        - latency_avg
         - first_token_p50
         - first_token_p99
         - total_tokens

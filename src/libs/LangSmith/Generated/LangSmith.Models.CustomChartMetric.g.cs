@@ -23,6 +23,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        LatencyAvg,
+        /// <summary>
+        /// 
+        /// </summary>
         FirstTokenP50,
         /// <summary>
         /// 
@@ -93,6 +97,7 @@ namespace LangSmith
                 CustomChartMetric.RunCount => "run_count",
                 CustomChartMetric.LatencyP50 => "latency_p50",
                 CustomChartMetric.LatencyP99 => "latency_p99",
+                CustomChartMetric.LatencyAvg => "latency_avg",
                 CustomChartMetric.FirstTokenP50 => "first_token_p50",
                 CustomChartMetric.FirstTokenP99 => "first_token_p99",
                 CustomChartMetric.TotalTokens => "total_tokens",
@@ -120,6 +125,7 @@ namespace LangSmith
                 "run_count" => CustomChartMetric.RunCount,
                 "latency_p50" => CustomChartMetric.LatencyP50,
                 "latency_p99" => CustomChartMetric.LatencyP99,
+                "latency_avg" => CustomChartMetric.LatencyAvg,
                 "first_token_p50" => CustomChartMetric.FirstTokenP50,
                 "first_token_p99" => CustomChartMetric.FirstTokenP99,
                 "total_tokens" => CustomChartMetric.TotalTokens,
