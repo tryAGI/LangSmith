@@ -17609,10 +17609,6 @@ components:
           title: Langgraph Remote Reconciler Enabled
           type: boolean
           default: false
-        new_dataset_in_playground_enabled:
-          title: New Dataset In Playground Enabled
-          type: boolean
-          default: false
         langsmith_alerts_poc_enabled:
           title: Langsmith Alerts Poc Enabled
           type: boolean

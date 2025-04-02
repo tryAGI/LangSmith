@@ -197,12 +197,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("new_dataset_in_playground_enabled")]
-        public bool? NewDatasetInPlaygroundEnabled { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_poc_enabled")]
         public bool? LangsmithAlertsPocEnabled { get; set; }
 
@@ -308,9 +302,6 @@ namespace LangSmith
         /// <param name="langgraphRemoteReconcilerEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="newDatasetInPlaygroundEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="langsmithAlertsPocEnabled">
         /// Default Value: false
         /// </param>
@@ -352,7 +343,6 @@ namespace LangSmith
             bool? demoLgpNewGraphEnabled,
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
-            bool? newDatasetInPlaygroundEnabled,
             bool? langsmithAlertsPocEnabled,
             bool? tenantSkipTopkFacets)
         {
@@ -387,7 +377,6 @@ namespace LangSmith
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
-            this.NewDatasetInPlaygroundEnabled = newDatasetInPlaygroundEnabled;
             this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
         }
