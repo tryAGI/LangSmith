@@ -25,6 +25,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_cursors")]
+        public global::System.Collections.Generic.Dictionary<string, object?>? SearchCursors { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parsed_query")]
         public string? ParsedQuery { get; set; }
 
@@ -39,6 +45,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="runs"></param>
         /// <param name="cursors"></param>
+        /// <param name="searchCursors"></param>
         /// <param name="parsedQuery"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,10 +53,12 @@ namespace LangSmith
         public ListRunsResponse(
             global::System.Collections.Generic.IList<global::LangSmith.RunSchema> runs,
             global::System.Collections.Generic.Dictionary<string, string?> cursors,
+            global::System.Collections.Generic.Dictionary<string, object?>? searchCursors,
             string? parsedQuery)
         {
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
             this.Cursors = cursors ?? throw new global::System.ArgumentNullException(nameof(cursors));
+            this.SearchCursors = searchCursors;
             this.ParsedQuery = parsedQuery;
         }
 

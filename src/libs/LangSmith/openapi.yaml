@@ -4524,6 +4524,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/runs/search:
+    post:
+      tags:
+        - run
+      summary: Search Runs
+      operationId: search_runs_api_v1_runs_search_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRunsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/runs/generate-query:
     post:
       tags:
@@ -16809,6 +16838,13 @@ components:
           additionalProperties:
             type: string
             nullable: true
+        search_cursors:
+          title: Search Cursors
+          type: object
+          additionalProperties:
+            type: 'null'
+            nullable: true
+          nullable: true
         parsed_query:
           title: Parsed Query
           type: string
@@ -20529,6 +20565,151 @@ components:
           format: date-time
           nullable: true
       description: Run schema with annotation queue info.
+    RunSearchRequest:
+      title: RunSearchRequest
+      required:
+        - session_id
+      type: object
+      properties:
+        session_id:
+          title: Session Id
+          minItems: 1
+          type: array
+          items:
+            type: string
+            format: uuid
+        query:
+          title: Query
+          type: string
+          nullable: true
+        inputs_text:
+          title: Inputs Text
+          type: string
+          nullable: true
+        outputs_text:
+          title: Outputs Text
+          type: string
+          nullable: true
+        error:
+          title: Error
+          type: string
+          nullable: true
+        inputs:
+          title: Inputs
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        outputs:
+          title: Outputs
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        extra:
+          title: Extra
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        is_root:
+          title: Is Root
+          type: boolean
+          nullable: true
+        name:
+          title: Name
+          type: string
+          nullable: true
+        run_type:
+          title: Run Type
+          type: string
+          nullable: true
+        parent_run_id:
+          title: Parent Run Id
+          type: string
+          format: uuid
+          nullable: true
+        tags:
+          title: Tags
+          type: array
+          items:
+            type: string
+          nullable: true
+        status:
+          title: Status
+          type: string
+          nullable: true
+        trace_id:
+          title: Trace Id
+          type: string
+          format: uuid
+          nullable: true
+        thread_id:
+          title: Thread Id
+          type: string
+          format: uuid
+          nullable: true
+        cursor:
+          $ref: '#/components/schemas/RunsSearchCursor'
+        limit:
+          title: Limit
+          maximum: 100.0
+          minimum: 1.0
+          type: integer
+          default: 100
+        select:
+          title: Select
+          type: array
+          items:
+            $ref: '#/components/schemas/RunSelect'
+          default:
+            - id
+            - name
+            - run_type
+            - start_time
+            - end_time
+            - status
+            - error
+            - extra
+            - events
+            - inputs
+            - outputs
+            - parent_run_id
+            - manifest_id
+            - manifest_s3_id
+            - manifest
+            - session_id
+            - serialized
+            - reference_example_id
+            - reference_dataset_id
+            - total_tokens
+            - prompt_tokens
+            - completion_tokens
+            - total_cost
+            - prompt_cost
+            - completion_cost
+            - price_model_id
+            - first_token_time
+            - trace_id
+            - dotted_order
+            - last_queued_at
+            - feedback_stats
+            - parent_run_ids
+            - tags
+            - in_dataset
+            - app_path
+            - share_token
+            - trace_tier
+            - trace_first_received_at
+            - ttl_seconds
+            - trace_upgrade
+            - thread_id
+        order:
+          title: Order
+          enum:
+            - desc
+          type: string
+          default: desc
     RunSelect:
       title: RunSelect
       enum:
@@ -20746,6 +20927,26 @@ components:
         - results_size
         - valid_filter
       type: string
+    RunsSearchCursor:
+      title: RunsSearchCursor
+      required:
+        - start_time
+        - id
+        - direction
+      type: object
+      properties:
+        start_time:
+          title: Start Time
+          type: string
+        id:
+          title: Id
+          type: string
+        direction:
+          title: Direction
+          enum:
+            - gt
+            - lt
+          type: string
     SSOConfirmEmailRequest:
       title: SSOConfirmEmailRequest
       required:
