@@ -18136,8 +18136,8 @@ components:
           title: Requests Per Second
           type: integer
           nullable: true
-        use_workspace_secrets:
-          title: Use Workspace Secrets
+        use_or_fallback_to_workspace_secrets:
+          title: Use Or Fallback To Workspace Secrets
           type: boolean
           default: false
         dataset_id:
