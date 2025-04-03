@@ -99,8 +99,8 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("use_or_fallback_to_workspace_secrets")]
-        public bool? UseOrFallbackToWorkspaceSecrets { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_workspace_secrets")]
+        public bool? UseWorkspaceSecrets { get; set; }
 
         /// <summary>
         /// 
@@ -146,7 +146,7 @@ namespace LangSmith
         /// <param name="commit"></param>
         /// <param name="evaluatorRules"></param>
         /// <param name="requestsPerSecond"></param>
-        /// <param name="useOrFallbackToWorkspaceSecrets">
+        /// <param name="useWorkspaceSecrets">
         /// Default Value: false
         /// </param>
         /// <param name="datasetId"></param>
@@ -173,7 +173,7 @@ namespace LangSmith
             string? commit,
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
             int? requestsPerSecond,
-            bool? useOrFallbackToWorkspaceSecrets,
+            bool? useWorkspaceSecrets,
             global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions)
         {
@@ -192,7 +192,7 @@ namespace LangSmith
             this.Commit = commit;
             this.EvaluatorRules = evaluatorRules;
             this.RequestsPerSecond = requestsPerSecond;
-            this.UseOrFallbackToWorkspaceSecrets = useOrFallbackToWorkspaceSecrets;
+            this.UseWorkspaceSecrets = useWorkspaceSecrets;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
         }
