@@ -18136,8 +18136,8 @@ components:
           title: Requests Per Second
           type: integer
           nullable: true
-        use_workspace_secrets:
-          title: Use Workspace Secrets
+        use_or_fallback_to_workspace_secrets:
+          title: Use Or Fallback To Workspace Secrets
           type: boolean
           default: false
         dataset_id:
@@ -19762,6 +19762,10 @@ components:
           items:
             $ref: '#/components/schemas/RunRulesWebhookSchema'
           nullable: true
+        evaluator_version:
+          title: Evaluator Version
+          type: integer
+          nullable: true
     RunRulesPagerdutyAlertSchema:
       title: RunRulesPagerdutyAlertSchema
       required:
@@ -20647,7 +20651,6 @@ components:
         thread_id:
           title: Thread Id
           type: string
-          format: uuid
           nullable: true
         cursor:
           $ref: '#/components/schemas/RunsSearchCursor'
