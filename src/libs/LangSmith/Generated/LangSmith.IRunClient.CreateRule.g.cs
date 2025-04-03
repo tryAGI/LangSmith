@@ -49,6 +49,7 @@ namespace LangSmith
         /// <param name="codeEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
+        /// <param name="evaluatorVersion"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> CreateRuleAsync(
@@ -72,6 +73,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
+            int? evaluatorVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

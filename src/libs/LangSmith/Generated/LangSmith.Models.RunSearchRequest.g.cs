@@ -103,7 +103,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
-        public global::System.Guid? ThreadId { get; set; }
+        public string? ThreadId { get; set; }
 
         /// <summary>
         /// 
@@ -184,7 +184,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tags,
             string? status,
             global::System.Guid? traceId,
-            global::System.Guid? threadId,
+            string? threadId,
             global::LangSmith.RunsSearchCursor? cursor,
             int? limit,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select,

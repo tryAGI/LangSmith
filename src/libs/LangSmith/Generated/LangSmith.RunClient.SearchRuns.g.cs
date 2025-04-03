@@ -240,7 +240,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tags = default,
             string? status = default,
             global::System.Guid? traceId = default,
-            global::System.Guid? threadId = default,
+            string? threadId = default,
             global::LangSmith.RunsSearchCursor? cursor = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
