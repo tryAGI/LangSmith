@@ -207,6 +207,12 @@ namespace LangSmith
         public bool? TenantSkipTopkFacets { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_legacy_poc_enabled")]
+        public bool? LangsmithAlertsLegacyPocEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -308,6 +314,9 @@ namespace LangSmith
         /// <param name="tenantSkipTopkFacets">
         /// Default Value: false
         /// </param>
+        /// <param name="langsmithAlertsLegacyPocEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -344,7 +353,8 @@ namespace LangSmith
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
             bool? langsmithAlertsPocEnabled,
-            bool? tenantSkipTopkFacets)
+            bool? tenantSkipTopkFacets,
+            bool? langsmithAlertsLegacyPocEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -379,6 +389,7 @@ namespace LangSmith
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
             this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
+            this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
         }
 
         /// <summary>
