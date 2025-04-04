@@ -17653,6 +17653,10 @@ components:
           title: Tenant Skip Topk Facets
           type: boolean
           default: false
+        langsmith_alerts_legacy_poc_enabled:
+          title: Langsmith Alerts Legacy Poc Enabled
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
