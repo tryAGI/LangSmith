@@ -209,6 +209,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lgp_templates_enabled")]
+        public bool? LgpTemplatesEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_legacy_poc_enabled")]
         public bool? LangsmithAlertsLegacyPocEnabled { get; set; }
 
@@ -314,6 +320,9 @@ namespace LangSmith
         /// <param name="tenantSkipTopkFacets">
         /// Default Value: false
         /// </param>
+        /// <param name="lgpTemplatesEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="langsmithAlertsLegacyPocEnabled">
         /// Default Value: false
         /// </param>
@@ -354,6 +363,7 @@ namespace LangSmith
             bool? langgraphRemoteReconcilerEnabled,
             bool? langsmithAlertsPocEnabled,
             bool? tenantSkipTopkFacets,
+            bool? lgpTemplatesEnabled,
             bool? langsmithAlertsLegacyPocEnabled)
         {
             this.MaxIdentities = maxIdentities;
@@ -389,6 +399,7 @@ namespace LangSmith
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
             this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
+            this.LgpTemplatesEnabled = lgpTemplatesEnabled;
             this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
         }
 
