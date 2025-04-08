@@ -115,6 +115,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_filter")]
+        public string? SearchFilter { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         public string? Cursor { get; set; }
 
@@ -173,6 +179,7 @@ namespace LangSmith
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -207,6 +214,7 @@ namespace LangSmith
             bool? isRoot,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType,
             bool? skipPagination,
+            string? searchFilter,
             string? cursor,
             int? limit,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select,
@@ -230,6 +238,7 @@ namespace LangSmith
             this.IsRoot = isRoot;
             this.DataSourceType = dataSourceType;
             this.SkipPagination = skipPagination;
+            this.SearchFilter = searchFilter;
             this.Cursor = cursor;
             this.Limit = limit;
             this.Select = select;

@@ -40,6 +40,7 @@ namespace LangSmith
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
@@ -60,6 +61,7 @@ namespace LangSmith
             bool? isRoot = default,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

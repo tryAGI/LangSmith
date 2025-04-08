@@ -113,6 +113,12 @@ namespace LangSmith
         public bool? SkipPagination { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_filter")]
+        public string? SearchFilter { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -142,6 +148,7 @@ namespace LangSmith
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -162,7 +169,8 @@ namespace LangSmith
             string? treeFilter,
             bool? isRoot,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType,
-            bool? skipPagination)
+            bool? skipPagination,
+            string? searchFilter)
         {
             this.Id = id;
             this.Trace = trace;
@@ -181,6 +189,7 @@ namespace LangSmith
             this.IsRoot = isRoot;
             this.DataSourceType = dataSourceType;
             this.SkipPagination = skipPagination;
+            this.SearchFilter = searchFilter;
         }
 
         /// <summary>

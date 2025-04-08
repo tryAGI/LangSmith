@@ -43,6 +43,7 @@ namespace LangSmith
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -77,6 +78,7 @@ namespace LangSmith
             bool? isRoot = default,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
             string? cursor = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
