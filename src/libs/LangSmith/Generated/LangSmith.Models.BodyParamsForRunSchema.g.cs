@@ -119,6 +119,12 @@ namespace LangSmith
         public string? SearchFilter { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_experimental_search")]
+        public bool? UseExperimentalSearch { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
@@ -180,6 +186,9 @@ namespace LangSmith
         /// </param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -215,6 +224,7 @@ namespace LangSmith
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType,
             bool? skipPagination,
             string? searchFilter,
+            bool? useExperimentalSearch,
             string? cursor,
             int? limit,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select,
@@ -239,6 +249,7 @@ namespace LangSmith
             this.DataSourceType = dataSourceType;
             this.SkipPagination = skipPagination;
             this.SearchFilter = searchFilter;
+            this.UseExperimentalSearch = useExperimentalSearch;
             this.Cursor = cursor;
             this.Limit = limit;
             this.Select = select;

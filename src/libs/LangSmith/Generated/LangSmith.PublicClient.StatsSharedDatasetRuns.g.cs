@@ -227,6 +227,9 @@ namespace LangSmith
         /// </param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsSharedDatasetRunsAsync(
@@ -249,6 +252,7 @@ namespace LangSmith
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
             string? searchFilter = default,
+            bool? useExperimentalSearch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.FilterQueryParamsForRunSchema
@@ -271,6 +275,7 @@ namespace LangSmith
                 DataSourceType = dataSourceType,
                 SkipPagination = skipPagination,
                 SearchFilter = searchFilter,
+                UseExperimentalSearch = useExperimentalSearch,
             };
 
             return await StatsSharedDatasetRunsAsync(

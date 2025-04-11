@@ -10778,36 +10778,6 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  /api/v1/repos/optimize:
-    post:
-      tags:
-        - repos
-      summary: Optimize Prompt
-      description: Optimize prompt
-      operationId: optimize_prompt_api_v1_repos_optimize_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OptimizePromptRequest'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/app__hub__crud__optimize__OptimizePromptResponse'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
   /api/v1/repos/optimize-job:
     post:
       tags:
@@ -10827,7 +10797,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/app__schemas__OptimizePromptResponse'
+                $ref: '#/components/schemas/OptimizePromptResponse'
         '422':
           description: Validation Error
           content:
@@ -12997,6 +12967,10 @@ components:
           title: Search Filter
           type: string
           nullable: true
+        use_experimental_search:
+          title: Use Experimental Search
+          type: boolean
+          default: false
         cursor:
           title: Cursor
           type: string
@@ -15084,32 +15058,6 @@ components:
         - random
         - recently_created
       type: string
-    ExampleRunWithFeedback:
-      title: ExampleRunWithFeedback
-      required:
-        - input
-        - reference_output
-        - output
-        - feedback
-        - run_id
-      type: object
-      properties:
-        input:
-          title: Input
-          type: string
-        reference_output:
-          title: Reference Output
-          type: string
-        output:
-          title: Output
-          type: string
-        feedback:
-          title: Feedback
-          type: string
-        run_id:
-          title: Run Id
-          type: string
-      description: An example run with feedback.
     ExampleSelect:
       title: ExampleSelect
       enum:
@@ -16134,6 +16082,10 @@ components:
           title: Search Filter
           type: string
           nullable: true
+        use_experimental_search:
+          title: Use Experimental Search
+          type: boolean
+          default: false
       description: Query params for run endpoints.
     FilterView:
       title: FilterView
@@ -17175,31 +17127,17 @@ components:
           title: Prompt Name
           type: string
       description: Request to optimize a prompt.
-    OptimizePromptRequest:
-      title: OptimizePromptRequest
+    OptimizePromptResponse:
+      title: OptimizePromptResponse
       required:
-        - prompt
-        - metaprompt
-        - examples
-        - overall_feedback
+        - optimization_job_id
       type: object
       properties:
-        prompt:
-          title: Prompt
+        optimization_job_id:
+          title: Optimization Job Id
           type: string
-        metaprompt:
-          title: Metaprompt
-          type: object
-        examples:
-          title: Examples
-          type: array
-          items:
-            $ref: '#/components/schemas/ExampleRunWithFeedback'
-        overall_feedback:
-          title: Overall Feedback
-          type: string
-          nullable: true
-      description: Request to optimize a prompt.
+          format: uuid
+      description: Response from optimizing a prompt.
     OrgIdentityPatch:
       title: OrgIdentityPatch
       type: object
@@ -17598,10 +17536,6 @@ components:
           default: false
         langgraph_deploy_own_cloud_enabled:
           title: Langgraph Deploy Own Cloud Enabled
-          type: boolean
-          default: false
-        prompt_optimization:
-          title: Prompt Optimization
           type: boolean
           default: false
         prompt_optimization_jobs_enabled:
@@ -22902,21 +22836,6 @@ components:
           pattern: '^[a-zA-Z0-9\-_ ''@()]+$'
           type: string
       description: Patch model for the workspace.
-    app__hub__crud__optimize__OptimizePromptResponse:
-      title: OptimizePromptResponse
-      required:
-        - prompt
-        - error
-      type: object
-      properties:
-        prompt:
-          title: Prompt
-          type: string
-        error:
-          title: Error
-          type: string
-          nullable: true
-      description: Response from optimizing a prompt.
     app__hub__crud__tenants__Tenant:
       title: Tenant
       required:
@@ -22940,17 +22859,6 @@ components:
           title: Tenant Handle
           type: string
           nullable: true
-    app__schemas__OptimizePromptResponse:
-      title: OptimizePromptResponse
-      required:
-        - optimization_job_id
-      type: object
-      properties:
-        optimization_job_id:
-          title: Optimization Job Id
-          type: string
-          format: uuid
-      description: Response from optimizing a prompt.
     app__schemas__Tenant:
       title: Tenant
       required:
