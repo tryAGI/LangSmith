@@ -119,6 +119,12 @@ namespace LangSmith
         public string? SearchFilter { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_experimental_search")]
+        public bool? UseExperimentalSearch { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -149,6 +155,9 @@ namespace LangSmith
         /// </param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -170,7 +179,8 @@ namespace LangSmith
             bool? isRoot,
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType,
             bool? skipPagination,
-            string? searchFilter)
+            string? searchFilter,
+            bool? useExperimentalSearch)
         {
             this.Id = id;
             this.Trace = trace;
@@ -190,6 +200,7 @@ namespace LangSmith
             this.DataSourceType = dataSourceType;
             this.SkipPagination = skipPagination;
             this.SearchFilter = searchFilter;
+            this.UseExperimentalSearch = useExperimentalSearch;
         }
 
         /// <summary>

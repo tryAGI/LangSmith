@@ -218,6 +218,9 @@ namespace LangSmith
         /// </param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -252,6 +255,7 @@ namespace LangSmith
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
             string? searchFilter = default,
+            bool? useExperimentalSearch = default,
             string? cursor = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
@@ -279,6 +283,7 @@ namespace LangSmith
                 DataSourceType = dataSourceType,
                 SkipPagination = skipPagination,
                 SearchFilter = searchFilter,
+                UseExperimentalSearch = useExperimentalSearch,
                 Cursor = cursor,
                 Limit = limit,
                 Select = select,

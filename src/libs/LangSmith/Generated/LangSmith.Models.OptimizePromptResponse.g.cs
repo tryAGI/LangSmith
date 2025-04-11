@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// Response from optimizing a prompt.
     /// </summary>
-    public sealed partial class AppSchemasOptimizePromptResponse
+    public sealed partial class OptimizePromptResponse
     {
         /// <summary>
         /// 
@@ -22,22 +22,22 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppSchemasOptimizePromptResponse" /> class.
+        /// Initializes a new instance of the <see cref="OptimizePromptResponse" /> class.
         /// </summary>
         /// <param name="optimizationJobId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AppSchemasOptimizePromptResponse(
+        public OptimizePromptResponse(
             global::System.Guid optimizationJobId)
         {
             this.OptimizationJobId = optimizationJobId;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppSchemasOptimizePromptResponse" /> class.
+        /// Initializes a new instance of the <see cref="OptimizePromptResponse" /> class.
         /// </summary>
-        public AppSchemasOptimizePromptResponse()
+        public OptimizePromptResponse()
         {
         }
     }

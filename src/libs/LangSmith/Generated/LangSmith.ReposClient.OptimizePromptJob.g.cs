@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptJobAsync(
             global::LangSmith.OptimizePromptJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -159,7 +159,7 @@ namespace LangSmith
                 }
 
                 return
-                    global::LangSmith.AppSchemasOptimizePromptResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::LangSmith.OptimizePromptResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -189,7 +189,7 @@ namespace LangSmith
                 ).ConfigureAwait(false);
 
                 return
-                    await global::LangSmith.AppSchemasOptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::LangSmith.OptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -203,7 +203,7 @@ namespace LangSmith
         /// <param name="promptName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptJobAsync(
             global::LangSmith.EPromptOptimizationAlgorithm algorithm,
             global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config,
             string promptName,

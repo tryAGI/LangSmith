@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptJobAsync(
             global::LangSmith.OptimizePromptJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -24,7 +24,7 @@ namespace LangSmith
         /// <param name="promptName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.OptimizePromptResponse> OptimizePromptJobAsync(
             global::LangSmith.EPromptOptimizationAlgorithm algorithm,
             global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config,
             string promptName,

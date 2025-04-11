@@ -161,12 +161,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization")]
-        public bool? PromptOptimization { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization_jobs_enabled")]
         public bool? PromptOptimizationJobsEnabled { get; set; }
 
@@ -296,9 +290,6 @@ namespace LangSmith
         /// <param name="langgraphDeployOwnCloudEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="promptOptimization">
-        /// Default Value: false
-        /// </param>
         /// <param name="promptOptimizationJobsEnabled">
         /// Default Value: false
         /// </param>
@@ -355,7 +346,6 @@ namespace LangSmith
             bool? enableSelectAllTraces,
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
-            bool? promptOptimization,
             bool? promptOptimizationJobsEnabled,
             bool? enableK8sVanillaPlatform,
             bool? demoLgpNewGraphEnabled,
@@ -391,7 +381,6 @@ namespace LangSmith
             this.EnableSelectAllTraces = enableSelectAllTraces;
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
-            this.PromptOptimization = promptOptimization;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
