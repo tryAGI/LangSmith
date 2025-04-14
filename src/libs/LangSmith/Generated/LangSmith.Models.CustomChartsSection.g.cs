@@ -37,6 +37,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public global::System.Guid? SessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("charts")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartResponse> Charts { get; set; }
@@ -54,6 +60,7 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="index"></param>
         /// <param name="id"></param>
+        /// <param name="sessionId"></param>
         /// <param name="charts"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,13 +70,15 @@ namespace LangSmith
             global::System.Guid id,
             global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartResponse> charts,
             string? description,
-            int? index)
+            int? index,
+            global::System.Guid? sessionId)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Id = id;
             this.Charts = charts ?? throw new global::System.ArgumentNullException(nameof(charts));
             this.Description = description;
             this.Index = index;
+            this.SessionId = sessionId;
         }
 
         /// <summary>
