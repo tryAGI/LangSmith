@@ -213,6 +213,12 @@ namespace LangSmith
         public bool? LangsmithAlertsLegacyPocEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_experimental_search_enabled")]
+        public bool? LangsmithExperimentalSearchEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -317,6 +323,9 @@ namespace LangSmith
         /// <param name="langsmithAlertsLegacyPocEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="langsmithExperimentalSearchEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -354,7 +363,8 @@ namespace LangSmith
             bool? langsmithAlertsPocEnabled,
             bool? tenantSkipTopkFacets,
             bool? lgpTemplatesEnabled,
-            bool? langsmithAlertsLegacyPocEnabled)
+            bool? langsmithAlertsLegacyPocEnabled,
+            bool? langsmithExperimentalSearchEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -390,6 +400,7 @@ namespace LangSmith
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
             this.LgpTemplatesEnabled = lgpTemplatesEnabled;
             this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
+            this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
         }
 
         /// <summary>

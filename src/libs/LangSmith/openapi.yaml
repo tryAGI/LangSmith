@@ -4633,6 +4633,7 @@ paths:
           content:
             application/json:
               schema: { }
+      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -4656,6 +4657,7 @@ paths:
           content:
             application/json:
               schema: { }
+      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -4673,6 +4675,7 @@ paths:
           content:
             application/json:
               schema: { }
+      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -14414,6 +14417,11 @@ components:
           title: Id
           type: string
           format: uuid
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+          nullable: true
         charts:
           title: Charts
           type: array
@@ -14462,6 +14470,11 @@ components:
           title: Id
           type: string
           format: uuid
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+          nullable: true
         chart_count:
           title: Chart Count
           type: integer
@@ -17572,6 +17585,10 @@ components:
           default: false
         langsmith_alerts_legacy_poc_enabled:
           title: Langsmith Alerts Legacy Poc Enabled
+          type: boolean
+          default: false
+        langsmith_experimental_search_enabled:
+          title: Langsmith Experimental Search Enabled
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
