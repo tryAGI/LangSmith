@@ -17494,7 +17494,7 @@ components:
         max_langgraph_cloud_deployments:
           title: Max Langgraph Cloud Deployments
           type: integer
-          default: 1
+          default: 3
         can_use_saml_sso:
           title: Can Use Saml Sso
           type: boolean

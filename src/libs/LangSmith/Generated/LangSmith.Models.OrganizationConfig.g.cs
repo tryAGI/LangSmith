@@ -69,7 +69,7 @@ namespace LangSmith
         public bool? CanUseLanggraphCloud { get; set; }
 
         /// <summary>
-        /// Default Value: 1
+        /// Default Value: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_langgraph_cloud_deployments")]
         public int? MaxLanggraphCloudDeployments { get; set; }
@@ -252,7 +252,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="maxLanggraphCloudDeployments">
-        /// Default Value: 1
+        /// Default Value: 3
         /// </param>
         /// <param name="canUseSamlSso">
         /// Default Value: false
