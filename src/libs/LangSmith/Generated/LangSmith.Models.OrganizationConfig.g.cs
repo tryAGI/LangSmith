@@ -215,6 +215,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_prebuilt_dashboards")]
+        public bool? EnablePrebuiltDashboards { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_experimental_search_enabled")]
         public bool? LangsmithExperimentalSearchEnabled { get; set; }
 
@@ -323,6 +329,9 @@ namespace LangSmith
         /// <param name="langsmithAlertsLegacyPocEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="enablePrebuiltDashboards">
+        /// Default Value: false
+        /// </param>
         /// <param name="langsmithExperimentalSearchEnabled">
         /// Default Value: false
         /// </param>
@@ -364,6 +373,7 @@ namespace LangSmith
             bool? tenantSkipTopkFacets,
             bool? lgpTemplatesEnabled,
             bool? langsmithAlertsLegacyPocEnabled,
+            bool? enablePrebuiltDashboards,
             bool? langsmithExperimentalSearchEnabled)
         {
             this.MaxIdentities = maxIdentities;
@@ -400,6 +410,7 @@ namespace LangSmith
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
             this.LgpTemplatesEnabled = lgpTemplatesEnabled;
             this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
+            this.EnablePrebuiltDashboards = enablePrebuiltDashboards;
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
         }
 

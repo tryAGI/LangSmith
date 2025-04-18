@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -19,8 +21,9 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
 
         /// <summary>
         /// 
@@ -94,7 +97,7 @@ namespace LangSmith
 #endif
         public SingleCustomChartResponse(
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartsDataPoint> data,
-            global::System.Guid id,
+            global::LangSmith.AnyOf<global::System.Guid?, string> id,
             string title,
             int index,
             global::LangSmith.CustomChartType chartType,

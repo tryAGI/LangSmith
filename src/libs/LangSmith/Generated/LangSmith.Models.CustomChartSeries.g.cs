@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -45,8 +47,9 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +74,7 @@ namespace LangSmith
         public CustomChartSeries(
             string name,
             global::LangSmith.CustomChartMetric metric,
-            global::System.Guid id,
+            global::LangSmith.AnyOf<global::System.Guid?, string> id,
             global::LangSmith.CustomChartSeriesFilters? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId)
