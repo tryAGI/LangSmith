@@ -14155,8 +14155,10 @@ components:
           nullable: true
         id:
           title: Id
-          type: string
-          format: uuid
+          anyOf:
+            - type: string
+              format: uuid
+            - type: string
     CustomChartSeriesCreate:
       title: CustomChartSeriesCreate
       required:
@@ -14415,8 +14417,10 @@ components:
           nullable: true
         id:
           title: Id
-          type: string
-          format: uuid
+          anyOf:
+            - type: string
+              format: uuid
+            - type: string
         session_id:
           title: Session Id
           type: string
@@ -14427,6 +14431,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SingleCustomChartResponse'
+        sub_sections:
+          title: Sub Sections
+          type: array
+          items:
+            $ref: '#/components/schemas/SingleCustomChartSubSectionResponse'
+          nullable: true
     CustomChartsSectionCreate:
       title: CustomChartsSectionCreate
       required:
@@ -17585,6 +17595,10 @@ components:
           default: false
         langsmith_alerts_legacy_poc_enabled:
           title: Langsmith Alerts Legacy Poc Enabled
+          type: boolean
+          default: false
+        enable_prebuilt_dashboards:
+          title: Enable Prebuilt Dashboards
           type: boolean
           default: false
         langsmith_experimental_search_enabled:
@@ -21149,8 +21163,10 @@ components:
             $ref: '#/components/schemas/CustomChartsDataPoint'
         id:
           title: Id
-          type: string
-          format: uuid
+          anyOf:
+            - type: string
+              format: uuid
+            - type: string
         title:
           title: Title
           type: string
@@ -21185,6 +21201,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomChartsDataPoint'
+    SingleCustomChartSubSectionResponse:
+      title: SingleCustomChartSubSectionResponse
+      required:
+        - title
+        - index
+        - id
+        - charts
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+          nullable: true
+        index:
+          title: Index
+          type: integer
+        id:
+          title: Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: string
+        charts:
+          title: Charts
+          type: array
+          items:
+            $ref: '#/components/schemas/SingleCustomChartResponse'
     SortByComparativeExperimentColumn:
       title: SortByComparativeExperimentColumn
       enum:
