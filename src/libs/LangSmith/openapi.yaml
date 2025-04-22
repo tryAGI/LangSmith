@@ -17584,7 +17584,7 @@ components:
         langsmith_alerts_poc_enabled:
           title: Langsmith Alerts Poc Enabled
           type: boolean
-          default: false
+          default: true
         tenant_skip_topk_facets:
           title: Tenant Skip Topk Facets
           type: boolean
