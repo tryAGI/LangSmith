@@ -11,8 +11,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
-            global::LangSmith.FilterQueryParamsForRunSchema request,
+        global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
+            global::LangSmith.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -44,9 +44,12 @@ namespace LangSmith
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? trace = default,
             global::System.Guid? parentRun = default,
@@ -66,6 +69,7 @@ namespace LangSmith
             bool? skipPagination = default,
             string? searchFilter = default,
             bool? useExperimentalSearch = default,
+            global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class FilterQueryParamsForRunSchema
+    public sealed partial class StatsRunsApiV1RunsStatsPostResponse2
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.FilterQueryParamsForRunSchema? FromJson(
+        public static global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.FilterQueryParamsForRunSchema),
-                jsonSerializerContext) as global::LangSmith.FilterQueryParamsForRunSchema;
+                typeof(global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2),
+                jsonSerializerContext) as global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.FilterQueryParamsForRunSchema? FromJson(
+        public static global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.FilterQueryParamsForRunSchema>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.FilterQueryParamsForRunSchema?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.FilterQueryParamsForRunSchema),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.FilterQueryParamsForRunSchema;
+                typeof(global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.FilterQueryParamsForRunSchema?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.FilterQueryParamsForRunSchema?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.StatsRunsApiV1RunsStatsPostResponse2?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

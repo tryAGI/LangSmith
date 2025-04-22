@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareStatsRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.FilterQueryParamsForRunSchema request);
+            global::LangSmith.RunStatsQueryParams request);
         partial void PrepareStatsRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.FilterQueryParamsForRunSchema request);
+            global::LangSmith.RunStatsQueryParams request);
         partial void ProcessStatsRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,8 +28,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
-            global::LangSmith.FilterQueryParamsForRunSchema request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
+            global::LangSmith.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -159,7 +159,7 @@ namespace LangSmith
                 }
 
                 return
-                    global::LangSmith.RunStats.FromJson(__content, JsonSerializerContext) ??
+                    global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -189,7 +189,7 @@ namespace LangSmith
                 ).ConfigureAwait(false);
 
                 return
-                    await global::LangSmith.RunStats.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -223,9 +223,12 @@ namespace LangSmith
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? trace = default,
             global::System.Guid? parentRun = default,
@@ -245,9 +248,10 @@ namespace LangSmith
             bool? skipPagination = default,
             string? searchFilter = default,
             bool? useExperimentalSearch = default,
+            global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.FilterQueryParamsForRunSchema
+            var __request = new global::LangSmith.RunStatsQueryParams
             {
                 Id = id,
                 Trace = trace,
@@ -268,6 +272,7 @@ namespace LangSmith
                 SkipPagination = skipPagination,
                 SearchFilter = searchFilter,
                 UseExperimentalSearch = useExperimentalSearch,
+                GroupBy = groupBy,
             };
 
             return await StatsRunsAsync(

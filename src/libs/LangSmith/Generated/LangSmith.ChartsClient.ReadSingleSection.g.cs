@@ -8,12 +8,12 @@ namespace LangSmith
         partial void PrepareReadSingleSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sectionId,
-            global::LangSmith.CustomChartsRequestBase request);
+            global::LangSmith.CustomChartsSectionRequest request);
         partial void PrepareReadSingleSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sectionId,
-            global::LangSmith.CustomChartsRequestBase request);
+            global::LangSmith.CustomChartsSectionRequest request);
         partial void ProcessReadSingleSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::LangSmith.CustomChartsRequestBase request,
+            global::LangSmith.CustomChartsSectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -213,6 +213,9 @@ namespace LangSmith
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
@@ -221,14 +224,16 @@ namespace LangSmith
             string? timezone = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
+            global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.CustomChartsRequestBase
+            var __request = new global::LangSmith.CustomChartsSectionRequest
             {
                 Timezone = timezone,
                 StartTime = startTime,
                 EndTime = endTime,
                 Stride = stride,
+                GroupBy = groupBy,
             };
 
             return await ReadSingleSectionAsync(

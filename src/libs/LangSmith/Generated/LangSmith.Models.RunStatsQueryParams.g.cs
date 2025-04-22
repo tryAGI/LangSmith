@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Query params for run endpoints.
+    /// Query params for run stats.
     /// </summary>
-    public sealed partial class FilterQueryParamsForRunSchema
+    public sealed partial class RunStatsQueryParams
     {
         /// <summary>
         /// 
@@ -125,13 +125,19 @@ namespace LangSmith
         public bool? UseExperimentalSearch { get; set; }
 
         /// <summary>
+        /// Group by param for run stats.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public global::LangSmith.RunStatsGroupBy? GroupBy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilterQueryParamsForRunSchema" /> class.
+        /// Initializes a new instance of the <see cref="RunStatsQueryParams" /> class.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="trace"></param>
@@ -158,10 +164,13 @@ namespace LangSmith
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public FilterQueryParamsForRunSchema(
+        public RunStatsQueryParams(
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? trace,
             global::System.Guid? parentRun,
@@ -180,7 +189,8 @@ namespace LangSmith
             global::LangSmith.RunsFilterDataSourceTypeEnum? dataSourceType,
             bool? skipPagination,
             string? searchFilter,
-            bool? useExperimentalSearch)
+            bool? useExperimentalSearch,
+            global::LangSmith.RunStatsGroupBy? groupBy)
         {
             this.Id = id;
             this.Trace = trace;
@@ -201,12 +211,13 @@ namespace LangSmith
             this.SkipPagination = skipPagination;
             this.SearchFilter = searchFilter;
             this.UseExperimentalSearch = useExperimentalSearch;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilterQueryParamsForRunSchema" /> class.
+        /// Initializes a new instance of the <see cref="RunStatsQueryParams" /> class.
         /// </summary>
-        public FilterQueryParamsForRunSchema()
+        public RunStatsQueryParams()
         {
         }
     }
