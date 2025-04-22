@@ -189,7 +189,7 @@ namespace LangSmith
         public bool? LanggraphRemoteReconcilerEnabled { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_poc_enabled")]
         public bool? LangsmithAlertsPocEnabled { get; set; }
@@ -318,7 +318,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="langsmithAlertsPocEnabled">
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="tenantSkipTopkFacets">
         /// Default Value: false
