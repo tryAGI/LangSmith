@@ -33,6 +33,12 @@ namespace LangSmith
         public required global::LangSmith.AnyOf<int?, double?, object>? Value { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group")]
+        public string? Group { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,17 +50,20 @@ namespace LangSmith
         /// <param name="seriesId"></param>
         /// <param name="timestamp"></param>
         /// <param name="value"></param>
+        /// <param name="group"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartsDataPoint(
             string seriesId,
             global::System.DateTime timestamp,
-            global::LangSmith.AnyOf<int?, double?, object>? value)
+            global::LangSmith.AnyOf<int?, double?, object>? value,
+            string? group)
         {
             this.SeriesId = seriesId ?? throw new global::System.ArgumentNullException(nameof(seriesId));
             this.Timestamp = timestamp;
             this.Value = value;
+            this.Group = group;
         }
 
         /// <summary>

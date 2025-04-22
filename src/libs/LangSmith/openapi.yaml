@@ -4565,7 +4565,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilterQueryParamsForRunSchema'
+              $ref: '#/components/schemas/RunStatsQueryParams'
         required: true
       responses:
         '200':
@@ -4573,7 +4573,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RunStats'
+                title: Response Stats Runs Api V1 Runs Stats Post
+                anyOf:
+                  - $ref: '#/components/schemas/RunStats'
+                  - type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/RunStats'
         '422':
           description: Validation Error
           content:
@@ -5913,7 +5918,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilterQueryParamsForRunSchema'
+              $ref: '#/components/schemas/RunStatsQueryParams'
         required: true
       responses:
         '200':
@@ -9839,7 +9844,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CustomChartsRequestBase'
+              $ref: '#/components/schemas/CustomChartsSectionRequest'
         required: true
       responses:
         '200':
@@ -14153,6 +14158,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        group_by:
+          $ref: '#/components/schemas/RunStatsGroupBy'
         id:
           title: Id
           anyOf:
@@ -14182,6 +14189,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        group_by:
+          $ref: '#/components/schemas/RunStatsGroupBy'
     CustomChartSeriesFilters:
       title: CustomChartSeriesFilters
       type: object
@@ -14228,6 +14237,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        group_by:
+          $ref: '#/components/schemas/RunStatsGroupBy'
         id:
           title: Id
           type: string
@@ -14329,6 +14340,10 @@ components:
             - type: integer
             - type: number
             - type: object
+          nullable: true
+        group:
+          title: Group
+          type: string
           nullable: true
     CustomChartsRequest:
       title: CustomChartsRequest
@@ -14456,6 +14471,29 @@ components:
           minimum: 0.0
           type: integer
           nullable: true
+    CustomChartsSectionRequest:
+      title: CustomChartsSectionRequest
+      required:
+        - start_time
+      type: object
+      properties:
+        timezone:
+          title: Timezone
+          type: string
+          default: UTC
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+          nullable: true
+        stride:
+          $ref: '#/components/schemas/TimedeltaInput'
+        group_by:
+          $ref: '#/components/schemas/RunStatsGroupBy'
     CustomChartsSectionResponse:
       title: CustomChartsSectionResponse
       required:
@@ -16018,98 +16056,6 @@ components:
         feedback_config:
           $ref: '#/components/schemas/FeedbackConfig'
       description: Schema used for updating feedback
-    FilterQueryParamsForRunSchema:
-      title: FilterQueryParamsForRunSchema
-      type: object
-      properties:
-        id:
-          title: Id
-          type: array
-          items:
-            type: string
-            format: uuid
-          nullable: true
-        trace:
-          title: Trace
-          type: string
-          format: uuid
-          nullable: true
-        parent_run:
-          title: Parent Run
-          type: string
-          format: uuid
-          nullable: true
-        run_type:
-          $ref: '#/components/schemas/RunTypeEnum'
-        session:
-          title: Session
-          type: array
-          items:
-            type: string
-            format: uuid
-          nullable: true
-        reference_example:
-          title: Reference Example
-          type: array
-          items:
-            type: string
-            format: uuid
-          nullable: true
-        execution_order:
-          title: Execution Order
-          maximum: 1.0
-          minimum: 1.0
-          type: integer
-          nullable: true
-        start_time:
-          title: Start Time
-          type: string
-          format: date-time
-          nullable: true
-        end_time:
-          title: End Time
-          type: string
-          format: date-time
-          nullable: true
-        error:
-          title: Error
-          type: boolean
-          nullable: true
-        query:
-          title: Query
-          type: string
-          nullable: true
-        filter:
-          title: Filter
-          type: string
-          nullable: true
-        trace_filter:
-          title: Trace Filter
-          type: string
-          nullable: true
-        tree_filter:
-          title: Tree Filter
-          type: string
-          nullable: true
-        is_root:
-          title: Is Root
-          type: boolean
-          nullable: true
-        data_source_type:
-          $ref: '#/components/schemas/RunsFilterDataSourceTypeEnum'
-        skip_pagination:
-          title: Skip Pagination
-          type: boolean
-          nullable: true
-        search_filter:
-          title: Search Filter
-          type: string
-          nullable: true
-        use_experimental_search:
-          title: Use Experimental Search
-          type: boolean
-          default: false
-      description: Query params for run endpoints.
     FilterView:
       title: FilterView
       required:
@@ -20670,6 +20616,119 @@ components:
           title: Completion Cost
           type: string
           nullable: true
+    RunStatsGroupBy:
+      title: RunStatsGroupBy
+      required:
+        - attribute
+      type: object
+      properties:
+        attribute:
+          title: Attribute
+          enum:
+            - name
+            - run_type
+            - tag
+            - metadata
+          type: string
+        path:
+          title: Path
+          type: string
+          nullable: true
+      description: Group by param for run stats.
+    RunStatsQueryParams:
+      title: RunStatsQueryParams
+      type: object
+      properties:
+        id:
+          title: Id
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        trace:
+          title: Trace
+          type: string
+          format: uuid
+          nullable: true
+        parent_run:
+          title: Parent Run
+          type: string
+          format: uuid
+          nullable: true
+        run_type:
+          $ref: '#/components/schemas/RunTypeEnum'
+        session:
+          title: Session
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        reference_example:
+          title: Reference Example
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        execution_order:
+          title: Execution Order
+          maximum: 1.0
+          minimum: 1.0
+          type: integer
+          nullable: true
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+          nullable: true
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+          nullable: true
+        error:
+          title: Error
+          type: boolean
+          nullable: true
+        query:
+          title: Query
+          type: string
+          nullable: true
+        filter:
+          title: Filter
+          type: string
+          nullable: true
+        trace_filter:
+          title: Trace Filter
+          type: string
+          nullable: true
+        tree_filter:
+          title: Tree Filter
+          type: string
+          nullable: true
+        is_root:
+          title: Is Root
+          type: boolean
+          nullable: true
+        data_source_type:
+          $ref: '#/components/schemas/RunsFilterDataSourceTypeEnum'
+        skip_pagination:
+          title: Skip Pagination
+          type: boolean
+          nullable: true
+        search_filter:
+          title: Search Filter
+          type: string
+          nullable: true
+        use_experimental_search:
+          title: Use Experimental Search
+          type: boolean
+          default: false
+        group_by:
+          $ref: '#/components/schemas/RunStatsGroupBy'
+      description: Query params for run stats.
     RunTypeEnum:
       title: RunTypeEnum
       enum:

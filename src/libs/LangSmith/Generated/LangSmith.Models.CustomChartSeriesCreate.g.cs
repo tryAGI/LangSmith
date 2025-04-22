@@ -42,6 +42,12 @@ namespace LangSmith
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
+        /// Group by param for run stats.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public global::LangSmith.RunStatsGroupBy? GroupBy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,6 +63,9 @@ namespace LangSmith
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,13 +74,15 @@ namespace LangSmith
             global::LangSmith.CustomChartMetric metric,
             global::LangSmith.CustomChartSeriesFilters? filters,
             string? feedbackKey,
-            global::System.Guid? workspaceId)
+            global::System.Guid? workspaceId,
+            global::LangSmith.RunStatsGroupBy? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
             this.WorkspaceId = workspaceId;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

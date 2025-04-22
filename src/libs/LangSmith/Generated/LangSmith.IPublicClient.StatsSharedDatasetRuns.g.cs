@@ -14,7 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsSharedDatasetRunsAsync(
             global::System.Guid shareToken,
-            global::LangSmith.FilterQueryParamsForRunSchema request,
+            global::LangSmith.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -47,6 +47,9 @@ namespace LangSmith
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsSharedDatasetRunsAsync(
@@ -70,6 +73,7 @@ namespace LangSmith
             bool? skipPagination = default,
             string? searchFilter = default,
             bool? useExperimentalSearch = default,
+            global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
