@@ -51,6 +51,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        TokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
         Feedback,
         /// <summary>
         /// 
@@ -80,6 +84,14 @@ namespace LangSmith
         /// 
         /// </summary>
         StreamingRate,
+        /// <summary>
+        /// 
+        /// </summary>
+        CostP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        CostP99,
     }
 
     /// <summary>
@@ -104,6 +116,7 @@ namespace LangSmith
                 CustomChartMetric.PromptTokens => "prompt_tokens",
                 CustomChartMetric.CompletionTokens => "completion_tokens",
                 CustomChartMetric.MedianTokens => "median_tokens",
+                CustomChartMetric.TokensP99 => "tokens_p99",
                 CustomChartMetric.Feedback => "feedback",
                 CustomChartMetric.FeedbackScoreAvg => "feedback_score_avg",
                 CustomChartMetric.FeedbackValues => "feedback_values",
@@ -112,6 +125,8 @@ namespace LangSmith
                 CustomChartMetric.CompletionCost => "completion_cost",
                 CustomChartMetric.ErrorRate => "error_rate",
                 CustomChartMetric.StreamingRate => "streaming_rate",
+                CustomChartMetric.CostP50 => "cost_p50",
+                CustomChartMetric.CostP99 => "cost_p99",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -132,6 +147,7 @@ namespace LangSmith
                 "prompt_tokens" => CustomChartMetric.PromptTokens,
                 "completion_tokens" => CustomChartMetric.CompletionTokens,
                 "median_tokens" => CustomChartMetric.MedianTokens,
+                "tokens_p99" => CustomChartMetric.TokensP99,
                 "feedback" => CustomChartMetric.Feedback,
                 "feedback_score_avg" => CustomChartMetric.FeedbackScoreAvg,
                 "feedback_values" => CustomChartMetric.FeedbackValues,
@@ -140,6 +156,8 @@ namespace LangSmith
                 "completion_cost" => CustomChartMetric.CompletionCost,
                 "error_rate" => CustomChartMetric.ErrorRate,
                 "streaming_rate" => CustomChartMetric.StreamingRate,
+                "cost_p50" => CustomChartMetric.CostP50,
+                "cost_p99" => CustomChartMetric.CostP99,
                 _ => null,
             };
         }
