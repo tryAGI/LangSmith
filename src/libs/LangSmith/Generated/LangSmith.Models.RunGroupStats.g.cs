@@ -66,6 +66,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokens_p99")]
+        public int? TokensP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_run_start_time")]
         public global::System.DateTime? LastRunStartTime { get; set; }
 
@@ -114,6 +120,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost_p50")]
+        public string? CostP50 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost_p99")]
+        public string? CostP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int GroupCount { get; set; }
@@ -136,6 +154,7 @@ namespace LangSmith
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
         /// <param name="medianTokens"></param>
+        /// <param name="tokensP99"></param>
         /// <param name="lastRunStartTime"></param>
         /// <param name="feedbackStats"></param>
         /// <param name="runFacets"></param>
@@ -144,6 +163,8 @@ namespace LangSmith
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
+        /// <param name="costP50"></param>
+        /// <param name="costP99"></param>
         /// <param name="groupCount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -159,6 +180,7 @@ namespace LangSmith
             int? promptTokens,
             int? completionTokens,
             int? medianTokens,
+            int? tokensP99,
             global::System.DateTime? lastRunStartTime,
             object? feedbackStats,
             global::System.Collections.Generic.IList<object>? runFacets,
@@ -166,7 +188,9 @@ namespace LangSmith
             double? streamingRate,
             string? totalCost,
             string? promptCost,
-            string? completionCost)
+            string? completionCost,
+            string? costP50,
+            string? costP99)
         {
             this.RunCount = runCount;
             this.GroupCount = groupCount;
@@ -178,6 +202,7 @@ namespace LangSmith
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.MedianTokens = medianTokens;
+            this.TokensP99 = tokensP99;
             this.LastRunStartTime = lastRunStartTime;
             this.FeedbackStats = feedbackStats;
             this.RunFacets = runFacets;
@@ -186,6 +211,8 @@ namespace LangSmith
             this.TotalCost = totalCost;
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
+            this.CostP50 = costP50;
+            this.CostP99 = costP99;
         }
 
         /// <summary>
