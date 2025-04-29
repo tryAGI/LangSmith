@@ -4751,6 +4751,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/runs/delete:
+    post:
+      tags:
+        - run
+      summary: Delete Runs
+      description: Delete specific runs.
+      operationId: delete_runs_api_v1_runs_delete_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Body_delete_runs_api_v1_runs_delete_post'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/feedback/{feedback_id}':
     get:
       tags:
@@ -13069,6 +13098,23 @@ components:
           items:
             type: string
             format: uuid
+    Body_delete_runs_api_v1_runs_delete_post:
+      title: Body_delete_runs_api_v1_runs_delete_post
+      required:
+        - session_id
+        - trace_ids
+      type: object
+      properties:
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+        trace_ids:
+          title: Trace Ids
+          type: array
+          items:
+            type: string
+            format: uuid
     Body_execute_api_v1_ace_execute_post:
       title: Body_execute_api_v1_ace_execute_post
       required:
@@ -14161,14 +14207,14 @@ components:
           type: string
           format: uuid
           nullable: true
-        group_by:
-          $ref: '#/components/schemas/RunStatsGroupBy'
         id:
           title: Id
           anyOf:
             - type: string
               format: uuid
             - type: string
+        group_by:
+          $ref: '#/components/schemas/RunStatsGroupBySeriesResponse'
     CustomChartSeriesCreate:
       title: CustomChartSeriesCreate
       required:
@@ -20662,6 +20708,32 @@ components:
           type: string
           nullable: true
       description: Group by param for run stats.
+    RunStatsGroupBySeriesResponse:
+      title: RunStatsGroupBySeriesResponse
+      required:
+        - attribute
+      type: object
+      properties:
+        attribute:
+          title: Attribute
+          enum:
+            - name
+            - run_type
+            - tag
+            - metadata
+          type: string
+        path:
+          title: Path
+          type: string
+          nullable: true
+        set_by:
+          title: Set By
+          enum:
+            - section
+            - series
+          type: string
+          nullable: true
+      description: Include additional information about where the group_by param was set.
     RunStatsQueryParams:
       title: RunStatsQueryParams
       type: object
