@@ -44,18 +44,18 @@ namespace LangSmith
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
-        /// Group by param for run stats.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        public global::LangSmith.RunStatsGroupBy? GroupBy { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
+
+        /// <summary>
+        /// Include additional information about where the group_by param was set.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public global::LangSmith.RunStatsGroupBySeriesResponse? GroupBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,10 +73,10 @@ namespace LangSmith
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
         /// <param name="id"></param>
+        /// <param name="groupBy">
+        /// Include additional information about where the group_by param was set.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -87,7 +87,7 @@ namespace LangSmith
             global::LangSmith.CustomChartSeriesFilters? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
-            global::LangSmith.RunStatsGroupBy? groupBy)
+            global::LangSmith.RunStatsGroupBySeriesResponse? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
