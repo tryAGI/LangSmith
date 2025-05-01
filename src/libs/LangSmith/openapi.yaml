@@ -5,6 +5,44 @@ info:
 servers:
   - url: https://api.smith.langchain.com
 paths:
+  '/api/v1/sessions/{session_id}/dashboard':
+    post:
+      tags:
+        - tracer-sessions
+      summary: Get Tracing Project Prebuilt Dashboard
+      description: Get a prebuilt dashboard for a tracing project.
+      operationId: get_tracing_project_prebuilt_dashboard_api_v1_sessions__session_id__dashboard_post
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/sessions/{session_id}':
     get:
       tags:
