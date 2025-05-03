@@ -26,27 +26,27 @@ public partial class Tests
         };
 
         // Create parent run
-        var parentRunId = Guid.NewGuid();
-        await client.Run.CreateRunAsync(
-            name: "Chat Pipeline",
-            runType: CreateRunRequestRunType.Chain,
-            id: parentRunId,
-            inputs: new Dictionary<string, object>
-            {
-                ["question"] = question,
-            });
-        
-        // Create child run
-        var childRunId = Guid.NewGuid();
-        await client.Run.CreateRunAsync(
-            name: "OpenAI Call",
-            runType: CreateRunRequestRunType.Llm,
-            id: childRunId,
-            parentRunId: parentRunId,
-            inputs: new Dictionary<string, object>
-            {
-                ["messages"] = messages,
-            });
+        // var parentRunId = Guid.NewGuid();
+        // await client.Run.CreateRunAsync(
+        //     name: "Chat Pipeline",
+        //     runType: CreateRunRequestRunType.Chain,
+        //     id: parentRunId,
+        //     inputs: new Dictionary<string, object>
+        //     {
+        //         ["question"] = question,
+        //     });
+        //
+        // // Create child run
+        // var childRunId = Guid.NewGuid();
+        // await client.Run.CreateRunAsync(
+        //     name: "OpenAI Call",
+        //     runType: CreateRunRequestRunType.Llm,
+        //     id: childRunId,
+        //     parentRunId: parentRunId,
+        //     inputs: new Dictionary<string, object>
+        //     {
+        //         ["messages"] = messages,
+        //     });
 
         // Generate a completion
         var chatCompletion = await openAiClient.Chat.CreateChatCompletionAsync(
@@ -54,19 +54,19 @@ public partial class Tests
             messages: messages);
 
         // End runs
-        await client.Run.UpdateRunAsync(
-            runId: childRunId,
-            outputs: new Dictionary<string, object>
-            {
-                ["chatCompletion"] = chatCompletion,
-            },
-            endTime: DateTime.UtcNow.ToString("O"));
-        await client.Run.UpdateRunAsync(
-            runId: parentRunId,
-            outputs: new Dictionary<string, object>
-            {
-                ["answer"] = chatCompletion.Choices[0].Message.Content ?? string.Empty,
-            },
-            endTime: DateTime.UtcNow.ToString("O"));
+        // await client.Run.UpdateRunAsync(
+        //     runId: childRunId,
+        //     outputs: new Dictionary<string, object>
+        //     {
+        //         ["chatCompletion"] = chatCompletion,
+        //     },
+        //     endTime: DateTime.UtcNow.ToString("O"));
+        // await client.Run.UpdateRunAsync(
+        //     runId: parentRunId,
+        //     outputs: new Dictionary<string, object>
+        //     {
+        //         ["answer"] = chatCompletion.Choices[0].Message.Content ?? string.Empty,
+        //     },
+        //     endTime: DateTime.UtcNow.ToString("O"));
     }
 }
