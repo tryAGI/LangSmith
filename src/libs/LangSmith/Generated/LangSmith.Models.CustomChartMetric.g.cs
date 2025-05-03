@@ -51,7 +51,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CompletionTokensP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokensP50,
+        /// <summary>
+        /// 
+        /// </summary>
         TokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionTokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokensP99,
         /// <summary>
         /// 
         /// </summary>
@@ -116,7 +132,11 @@ namespace LangSmith
                 CustomChartMetric.PromptTokens => "prompt_tokens",
                 CustomChartMetric.CompletionTokens => "completion_tokens",
                 CustomChartMetric.MedianTokens => "median_tokens",
+                CustomChartMetric.CompletionTokensP50 => "completion_tokens_p50",
+                CustomChartMetric.PromptTokensP50 => "prompt_tokens_p50",
                 CustomChartMetric.TokensP99 => "tokens_p99",
+                CustomChartMetric.CompletionTokensP99 => "completion_tokens_p99",
+                CustomChartMetric.PromptTokensP99 => "prompt_tokens_p99",
                 CustomChartMetric.Feedback => "feedback",
                 CustomChartMetric.FeedbackScoreAvg => "feedback_score_avg",
                 CustomChartMetric.FeedbackValues => "feedback_values",
@@ -147,7 +167,11 @@ namespace LangSmith
                 "prompt_tokens" => CustomChartMetric.PromptTokens,
                 "completion_tokens" => CustomChartMetric.CompletionTokens,
                 "median_tokens" => CustomChartMetric.MedianTokens,
+                "completion_tokens_p50" => CustomChartMetric.CompletionTokensP50,
+                "prompt_tokens_p50" => CustomChartMetric.PromptTokensP50,
                 "tokens_p99" => CustomChartMetric.TokensP99,
+                "completion_tokens_p99" => CustomChartMetric.CompletionTokensP99,
+                "prompt_tokens_p99" => CustomChartMetric.PromptTokensP99,
                 "feedback" => CustomChartMetric.Feedback,
                 "feedback_score_avg" => CustomChartMetric.FeedbackScoreAvg,
                 "feedback_values" => CustomChartMetric.FeedbackValues,

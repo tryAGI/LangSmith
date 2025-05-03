@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class PatchCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdPatchResponse
+    public sealed partial class SyncIndexApiV1DatasetsDatasetIdIndexSyncPostResponse
     {
 
         /// <summary>
