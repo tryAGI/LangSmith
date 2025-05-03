@@ -3894,6 +3894,37 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/datasets/{dataset_id}/index/sync':
+    post:
+      tags:
+        - datasets
+      summary: Sync Index
+      description: Sync an index for a dataset.
+      operationId: sync_index_api_v1_datasets__dataset_id__index_sync_post
+      parameters:
+        - name: dataset_id
+          in: path
+          required: true
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/datasets/{dataset_id}/search':
     post:
       tags:
@@ -7334,439 +7365,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
       security:
-        - BearerAuth: [ ]
-  /api/v1/tenants/pending:
-    get:
-      tags:
-        - tenant
-      summary: List Pending Tenant Invites
-      description: 'Deprecated: replaced by /workspaces/pending'
-      operationId: list_pending_tenant_invites_api_v1_tenants_pending_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                title: Response List Pending Tenant Invites Api V1 Tenants Pending Get
-                type: array
-                items:
-                  $ref: '#/components/schemas/app__schemas__Tenant'
-      deprecated: true
-      security:
-        - BearerAuth: [ ]
-  '/api/v1/tenants/pending/{id}':
-    delete:
-      tags:
-        - tenant
-      summary: Delete Pending Tenant Invite
-      description: 'Deprecated: replaced by /workspaces/pending/{id}'
-      operationId: delete_pending_tenant_invite_api_v1_tenants_pending__id__delete
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            title: Id
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - BearerAuth: [ ]
-  '/api/v1/tenants/pending/{tenant_id}/claim':
-    post:
-      tags:
-        - tenant
-      summary: Claim Pending Tenant Invite
-      description: 'Deprecated: replaced by /orgs/pending/{organization_id}/claim'
-      operationId: claim_pending_tenant_invite_api_v1_tenants_pending__tenant_id__claim_post
-      parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            title: Tenant Id
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - BearerAuth: [ ]
-  /api/v1/tenants/current/stats:
-    get:
-      tags:
-        - tenant
-      summary: Get Current Tenant Stats
-      description: 'Deprecated: replaced by /workspaces/current/stats'
-      operationId: get_current_tenant_stats_api_v1_tenants_current_stats_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TenantStats'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/tenants/stats:
-    get:
-      tags:
-        - tenant
-      summary: Get Current Tenant Stats
-      description: 'Deprecated: replaced by /workspaces/current/stats'
-      operationId: get_current_tenant_stats_api_v1_tenants_stats_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TenantStats'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/tenants/current/members:
-    get:
-      tags:
-        - tenant
-      summary: Get Current Tenant Members
-      description: 'Deprecated: replaced by /workspaces/current/members'
-      operationId: get_current_tenant_members_api_v1_tenants_current_members_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TenantMembers'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-    post:
-      tags:
-        - tenant
-      summary: Add Member To Current Tenant
-      description: 'Deprecated: replaced by /workspaces/current/members'
-      operationId: add_member_to_current_tenant_api_v1_tenants_current_members_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PendingIdentityCreate'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PendingIdentity'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/tenants/current/roles:
-    get:
-      tags:
-        - tenant
-      summary: List Organization Roles
-      description: 'Deprecated: replaced by /orgs/current/roles'
-      operationId: list_organization_roles_api_v1_tenants_current_roles_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                title: Response List Organization Roles Api V1 Tenants Current Roles Get
-                type: array
-                items:
-                  $ref: '#/components/schemas/Role'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/tenants/current/shared:
-    get:
-      tags:
-        - tenant
-      summary: Get Shared Tokens
-      description: 'Deprecated: replaced by /workspaces/current/shared'
-      operationId: get_shared_tokens_api_v1_tenants_current_shared_get
-      parameters:
-        - name: limit
-          in: query
-          schema:
-            title: Limit
-            maximum: 100
-            minimum: 1
-            type: integer
-            default: 50
-        - name: offset
-          in: query
-          schema:
-            title: Offset
-            minimum: 0
-            type: integer
-            default: 0
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TenantShareTokensResponse'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-    delete:
-      tags:
-        - tenant
-      summary: Bulk Unshare Entities
-      description: 'Deprecated: replaced by /workspaces/current/shared'
-      operationId: bulk_unshare_entities_api_v1_tenants_current_shared_delete
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TenantBulkUnshareRequest'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  '/api/v1/tenants/current/members/{identity_id}':
-    delete:
-      tags:
-        - tenant
-      summary: Delete Current Tenant Member
-      description: 'Deprecated: replaced by /workspaces/current/members/{identity_id}'
-      operationId: delete_current_tenant_member_api_v1_tenants_current_members__identity_id__delete
-      parameters:
-        - name: identity_id
-          in: path
-          required: true
-          schema:
-            title: Identity Id
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-    patch:
-      tags:
-        - tenant
-      summary: Patch Current Tenant Member
-      description: 'Deprecated: replaced by /workspaces/current/members/{identity_id}'
-      operationId: patch_current_tenant_member_api_v1_tenants_current_members__identity_id__patch
-      parameters:
-        - name: identity_id
-          in: path
-          required: true
-          schema:
-            title: Identity Id
-            type: string
-            format: uuid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/IdentityPatch'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  '/api/v1/tenants/current/members/{identity_id}/pending':
-    delete:
-      tags:
-        - tenant
-      summary: Delete Current Tenant Pending Member
-      description: 'Deprecated: replaced by /workspaces/current/members/{identity_id}/pending'
-      operationId: delete_current_tenant_pending_member_api_v1_tenants_current_members__identity_id__pending_delete
-      parameters:
-        - name: identity_id
-          in: path
-          required: true
-          schema:
-            title: Identity Id
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/tenants/current/usage_limits:
-    get:
-      tags:
-        - tenant
-      summary: Get Current Tenant Usage Limits Info
-      description: 'Deprecated: replaced by /workspaces/current/usage_limits'
-      operationId: get_current_tenant_usage_limits_info_api_v1_tenants_current_usage_limits_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TenantUsageLimitInfo'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/tenants/current/secrets:
-    get:
-      tags:
-        - tenant
-      summary: List Current Tenant Secrets
-      description: 'Deprecated: replaced by /workspaces/current/secrets'
-      operationId: list_current_tenant_secrets_api_v1_tenants_current_secrets_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                title: Response List Current Tenant Secrets Api V1 Tenants Current Secrets Get
-                type: array
-                items:
-                  $ref: '#/components/schemas/SecretKey'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-    post:
-      tags:
-        - tenant
-      summary: Upsert Current Tenant Secrets
-      description: 'Deprecated: replaced by /workspaces/current/secrets'
-      operationId: upsert_current_tenant_secrets_api_v1_tenants_current_secrets_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              title: Secrets
-              type: array
-              items:
-                $ref: '#/components/schemas/SecretUpsert'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
         - BearerAuth: [ ]
   /api/v1/info:
     get:
@@ -14156,7 +13754,11 @@ components:
         - prompt_tokens
         - completion_tokens
         - median_tokens
+        - completion_tokens_p50
+        - prompt_tokens_p50
         - tokens_p99
+        - completion_tokens_p99
+        - prompt_tokens_p99
         - feedback
         - feedback_score_avg
         - feedback_values
@@ -19245,8 +18847,24 @@ components:
           title: Median Tokens
           type: integer
           nullable: true
+        completion_tokens_p50:
+          title: Completion Tokens P50
+          type: integer
+          nullable: true
+        prompt_tokens_p50:
+          title: Prompt Tokens P50
+          type: integer
+          nullable: true
         tokens_p99:
           title: Tokens P99
+          type: integer
+          nullable: true
+        completion_tokens_p99:
+          title: Completion Tokens P99
+          type: integer
+          nullable: true
+        prompt_tokens_p99:
+          title: Prompt Tokens P99
           type: integer
           nullable: true
         last_run_start_time:
@@ -20680,8 +20298,24 @@ components:
           title: Median Tokens
           type: integer
           nullable: true
+        completion_tokens_p50:
+          title: Completion Tokens P50
+          type: integer
+          nullable: true
+        prompt_tokens_p50:
+          title: Prompt Tokens P50
+          type: integer
+          nullable: true
         tokens_p99:
           title: Tokens P99
+          type: integer
+          nullable: true
+        completion_tokens_p99:
+          title: Completion Tokens P99
+          type: integer
+          nullable: true
+        prompt_tokens_p99:
+          title: Prompt Tokens P99
           type: integer
           nullable: true
         last_run_start_time:

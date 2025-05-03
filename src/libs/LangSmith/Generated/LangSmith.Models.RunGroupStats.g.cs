@@ -66,8 +66,32 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_p50")]
+        public int? CompletionTokensP50 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_p50")]
+        public int? PromptTokensP50 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens_p99")]
         public int? TokensP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_p99")]
+        public int? CompletionTokensP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_p99")]
+        public int? PromptTokensP99 { get; set; }
 
         /// <summary>
         /// 
@@ -154,7 +178,11 @@ namespace LangSmith
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
         /// <param name="medianTokens"></param>
+        /// <param name="completionTokensP50"></param>
+        /// <param name="promptTokensP50"></param>
         /// <param name="tokensP99"></param>
+        /// <param name="completionTokensP99"></param>
+        /// <param name="promptTokensP99"></param>
         /// <param name="lastRunStartTime"></param>
         /// <param name="feedbackStats"></param>
         /// <param name="runFacets"></param>
@@ -180,7 +208,11 @@ namespace LangSmith
             int? promptTokens,
             int? completionTokens,
             int? medianTokens,
+            int? completionTokensP50,
+            int? promptTokensP50,
             int? tokensP99,
+            int? completionTokensP99,
+            int? promptTokensP99,
             global::System.DateTime? lastRunStartTime,
             object? feedbackStats,
             global::System.Collections.Generic.IList<object>? runFacets,
@@ -202,7 +234,11 @@ namespace LangSmith
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.MedianTokens = medianTokens;
+            this.CompletionTokensP50 = completionTokensP50;
+            this.PromptTokensP50 = promptTokensP50;
             this.TokensP99 = tokensP99;
+            this.CompletionTokensP99 = completionTokensP99;
+            this.PromptTokensP99 = promptTokensP99;
             this.LastRunStartTime = lastRunStartTime;
             this.FeedbackStats = feedbackStats;
             this.RunFacets = runFacets;
