@@ -213,6 +213,9 @@ namespace LangSmith
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
         /// <param name="groupBy">
         /// Group by param for run stats.
         /// </param>
@@ -220,10 +223,11 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::System.DateTime startTime,
             string? timezone = default,
+            global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
+            bool? omitData = default,
             global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -233,6 +237,7 @@ namespace LangSmith
                 StartTime = startTime,
                 EndTime = endTime,
                 Stride = stride,
+                OmitData = omitData,
                 GroupBy = groupBy,
             };
 

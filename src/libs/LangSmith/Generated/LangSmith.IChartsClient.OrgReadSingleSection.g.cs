@@ -30,14 +30,18 @@ namespace LangSmith
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> OrgReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::System.DateTime startTime,
             string? timezone = default,
+            global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
+            bool? omitData = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

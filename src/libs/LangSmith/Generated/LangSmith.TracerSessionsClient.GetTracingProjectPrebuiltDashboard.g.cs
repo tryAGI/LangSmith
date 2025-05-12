@@ -8,11 +8,13 @@ namespace LangSmith
         partial void PrepareGetTracingProjectPrebuiltDashboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
+            ref string? accept,
             global::LangSmith.CustomChartsSectionRequest request);
         partial void PrepareGetTracingProjectPrebuiltDashboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
+            string? accept,
             global::LangSmith.CustomChartsSectionRequest request);
         partial void ProcessGetTracingProjectPrebuiltDashboardResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -28,12 +30,14 @@ namespace LangSmith
         /// Get a prebuilt dashboard for a tracing project.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="accept"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> GetTracingProjectPrebuiltDashboardAsync(
             global::System.Guid sessionId,
             global::LangSmith.CustomChartsSectionRequest request,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -43,6 +47,7 @@ namespace LangSmith
             PrepareGetTracingProjectPrebuiltDashboardArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
+                accept: ref accept,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
@@ -72,6 +77,12 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
+            }
+
             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -86,6 +97,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
+                accept: accept,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -205,6 +217,7 @@ namespace LangSmith
         /// Get a prebuilt dashboard for a tracing project.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="accept"></param>
         /// <param name="timezone">
         /// Default Value: UTC
         /// </param>
@@ -213,6 +226,9 @@ namespace LangSmith
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
         /// <param name="groupBy">
         /// Group by param for run stats.
         /// </param>
@@ -220,10 +236,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> GetTracingProjectPrebuiltDashboardAsync(
             global::System.Guid sessionId,
-            global::System.DateTime startTime,
+            string? accept = default,
             string? timezone = default,
+            global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::LangSmith.TimedeltaInput? stride = default,
+            bool? omitData = default,
             global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -233,11 +251,13 @@ namespace LangSmith
                 StartTime = startTime,
                 EndTime = endTime,
                 Stride = stride,
+                OmitData = omitData,
                 GroupBy = groupBy,
             };
 
             return await GetTracingProjectPrebuiltDashboardAsync(
                 sessionId: sessionId,
+                accept: accept,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

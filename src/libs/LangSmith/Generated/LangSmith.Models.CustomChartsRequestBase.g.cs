@@ -18,8 +18,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
@@ -32,6 +31,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::LangSmith.TimedeltaInput? Stride { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("omit_data")]
+        public bool? OmitData { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,19 +55,24 @@ namespace LangSmith
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartsRequestBase(
-            global::System.DateTime startTime,
             string? timezone,
+            global::System.DateTime? startTime,
             global::System.DateTime? endTime,
-            global::LangSmith.TimedeltaInput? stride)
+            global::LangSmith.TimedeltaInput? stride,
+            bool? omitData)
         {
-            this.StartTime = startTime;
             this.Timezone = timezone;
+            this.StartTime = startTime;
             this.EndTime = endTime;
             this.Stride = stride;
+            this.OmitData = omitData;
         }
 
         /// <summary>

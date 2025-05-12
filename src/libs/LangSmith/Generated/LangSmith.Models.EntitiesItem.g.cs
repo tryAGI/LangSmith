@@ -34,7 +34,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EntitiesItem(global::LangSmith.TenantShareRunToken value) => new EntitiesItem(value);
+        public static implicit operator EntitiesItem(global::LangSmith.TenantShareRunToken value) => new EntitiesItem((global::LangSmith.TenantShareRunToken?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EntitiesItem(global::LangSmith.TenantShareDatasetToken value) => new EntitiesItem(value);
+        public static implicit operator EntitiesItem(global::LangSmith.TenantShareDatasetToken value) => new EntitiesItem((global::LangSmith.TenantShareDatasetToken?)value);
 
         /// <summary>
         /// 

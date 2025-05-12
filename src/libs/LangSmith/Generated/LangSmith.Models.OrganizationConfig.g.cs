@@ -75,6 +75,12 @@ namespace LangSmith
         public int? MaxLanggraphCloudDeployments { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_free_langgraph_cloud_deployments")]
+        public int? MaxFreeLanggraphCloudDeployments { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_saml_sso")]
@@ -225,6 +231,12 @@ namespace LangSmith
         public bool? LangsmithExperimentalSearchEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_platform_ga_enabled")]
+        public bool? LanggraphPlatformGaEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -259,6 +271,9 @@ namespace LangSmith
         /// </param>
         /// <param name="maxLanggraphCloudDeployments">
         /// Default Value: 3
+        /// </param>
+        /// <param name="maxFreeLanggraphCloudDeployments">
+        /// Default Value: 0
         /// </param>
         /// <param name="canUseSamlSso">
         /// Default Value: false
@@ -335,6 +350,9 @@ namespace LangSmith
         /// <param name="langsmithExperimentalSearchEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="langgraphPlatformGaEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -350,6 +368,7 @@ namespace LangSmith
             bool? canServeDatasets,
             bool? canUseLanggraphCloud,
             int? maxLanggraphCloudDeployments,
+            int? maxFreeLanggraphCloudDeployments,
             bool? canUseSamlSso,
             bool? canUseBulkExport,
             bool? usePythonPlaygroundService,
@@ -374,7 +393,8 @@ namespace LangSmith
             bool? lgpTemplatesEnabled,
             bool? langsmithAlertsLegacyPocEnabled,
             bool? enablePrebuiltDashboards,
-            bool? langsmithExperimentalSearchEnabled)
+            bool? langsmithExperimentalSearchEnabled,
+            bool? langgraphPlatformGaEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -387,6 +407,7 @@ namespace LangSmith
             this.CanServeDatasets = canServeDatasets;
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
+            this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
             this.CanUseSamlSso = canUseSamlSso;
             this.CanUseBulkExport = canUseBulkExport;
             this.UsePythonPlaygroundService = usePythonPlaygroundService;
@@ -412,6 +433,7 @@ namespace LangSmith
             this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
             this.EnablePrebuiltDashboards = enablePrebuiltDashboards;
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
+            this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
         }
 
         /// <summary>

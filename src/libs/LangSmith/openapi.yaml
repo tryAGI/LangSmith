@@ -20,6 +20,12 @@ paths:
             title: Session Id
             type: string
             format: uuid
+        - name: accept
+          in: header
+          schema:
+            title: Accept
+            type: string
+            nullable: true
       requestBody:
         content:
           application/json:
@@ -1662,6 +1668,53 @@ paths:
               schema:
                 title: Response Update Allowed Login Methods Api V1 Orgs Current Login Methods Patch
                 type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/orgs/current/billing/usage:
+    get:
+      tags:
+        - orgs
+      summary: Get Org Usage
+      operationId: get_org_usage_api_v1_orgs_current_billing_usage_get
+      parameters:
+        - name: starting_on
+          in: query
+          required: true
+          schema:
+            title: Starting On
+            type: string
+            format: date-time
+        - name: ending_before
+          in: query
+          required: true
+          schema:
+            title: Ending Before
+            type: string
+            format: date-time
+        - name: on_current_plan
+          in: query
+          schema:
+            title: On Current Plan
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Org Usage Api V1 Orgs Current Billing Usage Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrgUsage'
         '422':
           description: Validation Error
           content:
@@ -11058,6 +11111,11 @@ paths:
           required: true
           schema:
             type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful Response
@@ -11089,6 +11147,11 @@ paths:
           required: true
           schema:
             title: Repo
+            type: string
+        - name: owner
+          in: path
+          required: true
+          schema:
             type: string
         - name: owner
           in: path
@@ -11759,6 +11822,204 @@ paths:
             application/json: { }
         '422':
           description: Unprocessable Entity
+          content:
+            application/json: { }
+  /runs:
+    post:
+      tags:
+        - runs
+      summary: Create a Run
+      description: Queues a single run for ingestion. The request body must be a JSON-encoded run object that follows the Run schema.
+      responses:
+        '202':
+          description: Run created
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
+        '429':
+          description: Too Many Requests
+          content:
+            application/json: { }
+  /runs/batch:
+    post:
+      tags:
+        - runs
+      summary: Ingest Runs (Batch JSON)
+      description: "Ingests a batch of runs in a single JSON payload. The payload must have `post` and/or `patch` arrays containing run objects. \\\nPrefer this endpoint over single‑run ingestion when submitting hundreds of runs, but `/runs/multipart` offers better handling for very large fields and attachments."
+      responses:
+        '202':
+          description: Runs batch ingested
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
+        '429':
+          description: Too Many Requests
+          content:
+            application/json: { }
+  /runs/multipart:
+    post:
+      tags:
+        - runs
+      summary: Ingest Runs (Multipart)
+      description: "Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.  \\\n**Part‑name pattern**: `<event>.<run_id>[.<field>]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.  \\\n* `post|patch.<run_id>` – JSON run payload.  \\\n* `post|patch.<run_id>.<field>` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).  \\\n* `feedback.<run_id>` – JSON feedback payload (must include `trace_id`).  \\\n* `attachment.<run_id>.<filename>` – arbitrary binary attachment stored in S3.  \\\n**Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.  \\\n**Best performance** for high‑volume ingestion."
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                'post.{run_id}':
+                  type: string
+                  description: Run to create (JSON)
+                  format: binary
+                'patch.{run_id}':
+                  type: string
+                  description: Run to update (JSON)
+                  format: binary
+                'post.{run_id}.inputs':
+                  type: string
+                  description: Large inputs object (JSON) stored out‑of‑band
+                  format: binary
+                'patch.{run_id}.outputs':
+                  type: string
+                  description: Large outputs object (JSON) stored out‑of‑band
+                  format: binary
+                'feedback.{run_id}':
+                  type: string
+                  description: Feedback object (JSON) – must include trace_id
+                  format: binary
+                'attachment.{run_id}.{filename}':
+                  type: file
+                  description: 'Binary attachment linked to run {run_id}'
+                  format: binary
+        required: true
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
+        '429':
+          description: Too Many Requests
+          content:
+            application/json: { }
+  '/runs/{run_id}':
+    patch:
+      tags:
+        - runs
+      summary: Update a Run
+      description: Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
+      parameters:
+        - name: run_id
+          in: path
+          description: Run ID
+          required: true
+        - name: run
+          description: Run update
+          required: true
+      responses:
+        '202':
+          description: Run updated
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not Found
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
+        '429':
+          description: Too Many Requests
           content:
             application/json: { }
 components:
@@ -14036,8 +14297,6 @@ components:
           nullable: true
     CustomChartsRequest:
       title: CustomChartsRequest
-      required:
-        - start_time
       type: object
       properties:
         timezone:
@@ -14048,6 +14307,7 @@ components:
           title: Start Time
           type: string
           format: date-time
+          nullable: true
         end_time:
           title: End Time
           type: string
@@ -14055,6 +14315,10 @@ components:
           nullable: true
         stride:
           $ref: '#/components/schemas/TimedeltaInput'
+        omit_data:
+          title: Omit Data
+          type: boolean
+          default: false
         after_index:
           title: After Index
           type: integer
@@ -14068,8 +14332,6 @@ components:
           nullable: true
     CustomChartsRequestBase:
       title: CustomChartsRequestBase
-      required:
-        - start_time
       type: object
       properties:
         timezone:
@@ -14080,6 +14342,7 @@ components:
           title: Start Time
           type: string
           format: date-time
+          nullable: true
         end_time:
           title: End Time
           type: string
@@ -14087,6 +14350,10 @@ components:
           nullable: true
         stride:
           $ref: '#/components/schemas/TimedeltaInput'
+        omit_data:
+          title: Omit Data
+          type: boolean
+          default: false
     CustomChartsResponse:
       title: CustomChartsResponse
       required:
@@ -14162,8 +14429,6 @@ components:
           nullable: true
     CustomChartsSectionRequest:
       title: CustomChartsSectionRequest
-      required:
-        - start_time
       type: object
       properties:
         timezone:
@@ -14174,6 +14439,7 @@ components:
           title: Start Time
           type: string
           format: date-time
+          nullable: true
         end_time:
           title: End Time
           type: string
@@ -14181,6 +14447,10 @@ components:
           nullable: true
         stride:
           $ref: '#/components/schemas/TimedeltaInput'
+        omit_data:
+          title: Omit Data
+          type: boolean
+          default: false
         group_by:
           $ref: '#/components/schemas/RunStatsGroupBy'
     CustomChartsSectionResponse:
@@ -16979,6 +17249,43 @@ components:
           items:
             type: string
             format: uuid
+    OrgUsage:
+      title: OrgUsage
+      required:
+        - customer_id
+        - billable_metric_id
+        - billable_metric_name
+        - start_timestamp
+        - end_timestamp
+        - value
+        - groups
+      type: object
+      properties:
+        customer_id:
+          title: Customer Id
+          type: string
+        billable_metric_id:
+          title: Billable Metric Id
+          type: string
+        billable_metric_name:
+          title: Billable Metric Name
+          type: string
+        start_timestamp:
+          title: Start Timestamp
+          type: string
+        end_timestamp:
+          title: End Timestamp
+          type: string
+        value:
+          title: Value
+          type: number
+          nullable: true
+        groups:
+          title: Groups
+          type: object
+          additionalProperties:
+            type: number
+          nullable: true
     Organization:
       title: Organization
       required:
@@ -17140,6 +17447,10 @@ components:
           title: Max Langgraph Cloud Deployments
           type: integer
           default: 3
+        max_free_langgraph_cloud_deployments:
+          title: Max Free Langgraph Cloud Deployments
+          type: integer
+          default: 0
         can_use_saml_sso:
           title: Can Use Saml Sso
           type: boolean
@@ -17238,6 +17549,10 @@ components:
           default: false
         langsmith_experimental_search_enabled:
           title: Langsmith Experimental Search Enabled
+          type: boolean
+          default: false
+        langgraph_platform_ga_enabled:
+          title: Langgraph Platform Ga Enabled
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.

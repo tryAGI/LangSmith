@@ -3,6 +3,7 @@ using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
+using Microsoft.OpenApi.Validations;
 
 var path = args[0];
 var yamlOrJson = await File.ReadAllTextAsync(path);
@@ -17,7 +18,10 @@ if (OpenApi31Support.IsOpenApi31(yamlOrJson))
     yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
 }
 
-var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
+var openApiDocument = new OpenApiStringReader(new OpenApiReaderSettings
+{
+    RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
+}).Read(yamlOrJson, out var diagnostics);
 
 var ownerParameter = new OpenApiParameter
 {
@@ -50,6 +54,20 @@ var jobIdParameter = new OpenApiParameter
         Format = "uuid"
     },
 };
+
+foreach (var (_, operation) in openApiDocument.Paths["/runs"].Operations)
+{
+    operation.Parameters.Clear();
+}
+foreach (var (_, operation) in openApiDocument.Paths["/runs/batch"].Operations)
+{
+    operation.Parameters.Clear();
+}
+
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"].Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+}
 
 foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"].Operations)
 {
@@ -102,7 +120,10 @@ openApiDocument.SecurityRequirements = new List<OpenApiSecurityRequirement>
 };
 
 yamlOrJson = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader().Read(yamlOrJson, out diagnostics);
+_ = new OpenApiStringReader(new OpenApiReaderSettings
+{
+    RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
+}).Read(yamlOrJson, out diagnostics);
 
 if (diagnostics.Errors.Count > 0)
 {

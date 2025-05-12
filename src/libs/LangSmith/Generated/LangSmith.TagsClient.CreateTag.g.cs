@@ -8,13 +8,15 @@ namespace LangSmith
         partial void PrepareCreateTagArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string repo,
-            ref string owner,
+            ref string owner1,
+            ref string owner2,
             global::LangSmith.RepoTagRequest request);
         partial void PrepareCreateTagRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string repo,
-            string owner,
+            string owner1,
+            string owner2,
             global::LangSmith.RepoTagRequest request);
         partial void ProcessCreateTagResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -29,13 +31,15 @@ namespace LangSmith
         /// Create Tag
         /// </summary>
         /// <param name="repo"></param>
-        /// <param name="owner"></param>
+        /// <param name="owner1"></param>
+        /// <param name="owner2"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
             string repo,
-            string owner,
+            string owner1,
+            string owner2,
             global::LangSmith.RepoTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -46,11 +50,12 @@ namespace LangSmith
             PrepareCreateTagArguments(
                 httpClient: HttpClient,
                 repo: ref repo,
-                owner: ref owner,
+                owner1: ref owner1,
+                owner2: ref owner2,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/repos/{owner}/{repo}/tags",
+                path: $"/api/v1/repos/{owner1}/{repo}/tags",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -90,7 +95,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 repo: repo,
-                owner: owner,
+                owner1: owner1,
+                owner2: owner2,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -209,14 +215,16 @@ namespace LangSmith
         /// Create Tag
         /// </summary>
         /// <param name="repo"></param>
-        /// <param name="owner"></param>
+        /// <param name="owner1"></param>
+        /// <param name="owner2"></param>
         /// <param name="tagName"></param>
         /// <param name="commitId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
             string repo,
-            string owner,
+            string owner1,
+            string owner2,
             string tagName,
             global::System.Guid commitId,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -229,7 +237,8 @@ namespace LangSmith
 
             return await CreateTagAsync(
                 repo: repo,
-                owner: owner,
+                owner1: owner1,
+                owner2: owner2,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
