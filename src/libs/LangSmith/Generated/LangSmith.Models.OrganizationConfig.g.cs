@@ -237,6 +237,12 @@ namespace LangSmith
         public bool? LanggraphPlatformGaEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_align_evaluators")]
+        public bool? EnableAlignEvaluators { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -353,6 +359,9 @@ namespace LangSmith
         /// <param name="langgraphPlatformGaEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="enableAlignEvaluators">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -394,7 +403,8 @@ namespace LangSmith
             bool? langsmithAlertsLegacyPocEnabled,
             bool? enablePrebuiltDashboards,
             bool? langsmithExperimentalSearchEnabled,
-            bool? langgraphPlatformGaEnabled)
+            bool? langgraphPlatformGaEnabled,
+            bool? enableAlignEvaluators)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -434,6 +444,7 @@ namespace LangSmith
             this.EnablePrebuiltDashboards = enablePrebuiltDashboards;
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
             this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
+            this.EnableAlignEvaluators = enableAlignEvaluators;
         }
 
         /// <summary>

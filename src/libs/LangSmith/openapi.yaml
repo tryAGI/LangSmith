@@ -17555,6 +17555,10 @@ components:
           title: Langgraph Platform Ga Enabled
           type: boolean
           default: false
+        enable_align_evaluators:
+          title: Enable Align Evaluators
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
