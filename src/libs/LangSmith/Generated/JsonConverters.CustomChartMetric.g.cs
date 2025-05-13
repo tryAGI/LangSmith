@@ -28,6 +28,10 @@ namespace LangSmith.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::LangSmith.CustomChartMetric)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::LangSmith.CustomChartMetric);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

@@ -28,6 +28,10 @@ namespace LangSmith.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::LangSmith.RunsGenerateQueryFeedbackKeys)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::LangSmith.RunsGenerateQueryFeedbackKeys?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

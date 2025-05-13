@@ -28,6 +28,10 @@ namespace LangSmith.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::LangSmith.EPromptOptimizationJobLogType)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::LangSmith.EPromptOptimizationJobLogType);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
