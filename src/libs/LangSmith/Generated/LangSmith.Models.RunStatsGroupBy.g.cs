@@ -23,6 +23,12 @@ namespace LangSmith
         public string? Path { get; set; }
 
         /// <summary>
+        /// Default Value: 5
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_groups")]
+        public int? MaxGroups { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,15 +39,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="attribute"></param>
         /// <param name="path"></param>
+        /// <param name="maxGroups">
+        /// Default Value: 5
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStatsGroupBy(
             global::LangSmith.RunStatsGroupByAttribute attribute,
-            string? path)
+            string? path,
+            int? maxGroups)
         {
             this.Attribute = attribute;
             this.Path = path;
+            this.MaxGroups = maxGroups;
         }
 
         /// <summary>

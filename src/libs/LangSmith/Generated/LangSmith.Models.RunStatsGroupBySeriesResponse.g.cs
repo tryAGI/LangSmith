@@ -23,6 +23,12 @@ namespace LangSmith
         public string? Path { get; set; }
 
         /// <summary>
+        /// Default Value: 5
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_groups")]
+        public int? MaxGroups { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("set_by")]
@@ -40,6 +46,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="attribute"></param>
         /// <param name="path"></param>
+        /// <param name="maxGroups">
+        /// Default Value: 5
+        /// </param>
         /// <param name="setBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,10 +56,12 @@ namespace LangSmith
         public RunStatsGroupBySeriesResponse(
             global::LangSmith.RunStatsGroupBySeriesResponseAttribute attribute,
             string? path,
+            int? maxGroups,
             global::LangSmith.RunStatsGroupBySeriesResponseSetBy? setBy)
         {
             this.Attribute = attribute;
             this.Path = path;
+            this.MaxGroups = maxGroups;
             this.SetBy = setBy;
         }
 
