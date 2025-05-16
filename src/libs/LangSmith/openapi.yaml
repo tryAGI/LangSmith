@@ -20698,6 +20698,10 @@ components:
           title: Path
           type: string
           nullable: true
+        max_groups:
+          title: Max Groups
+          type: integer
+          default: 5
       description: Group by param for run stats.
     RunStatsGroupBySeriesResponse:
       title: RunStatsGroupBySeriesResponse
@@ -20717,6 +20721,10 @@ components:
           title: Path
           type: string
           nullable: true
+        max_groups:
+          title: Max Groups
+          type: integer
+          default: 5
         set_by:
           title: Set By
           enum:
