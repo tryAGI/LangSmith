@@ -3,41 +3,38 @@
 
 namespace LangSmith
 {
-    public partial class ExamplesClient
+    public partial class AlertRulesClient
     {
-        partial void PrepareUpdateExamplesArguments(
+        partial void PrepareUpdateAnAlertRuleArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareUpdateAnAlertRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.Request3 request);
-        partial void PrepareUpdateExamplesRequest(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.Request3 request);
-        partial void ProcessUpdateExamplesResponse(
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessUpdateAnAlertRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessUpdateAnAlertRuleResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Update Examples<br/>
-        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
-        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
+        /// Update an alert rule<br/>
+        /// Updates an alert rule.
         /// </summary>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task UpdateExamplesAsync(
-            global::LangSmith.Request3 request,
+        public async global::System.Threading.Tasks.Task<string> UpdateAnAlertRuleAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateExamplesArguments(
-                httpClient: HttpClient,
-                request: request);
+            PrepareUpdateAnAlertRuleArguments(
+                httpClient: HttpClient);
 
             var __pathBuilder = new PathBuilder(
-                path: "/v1/platform/datasets/{dataset_id}/examples",
+                path: "/v1/platform/alerts/{session_id}/{alert_rule_id}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -63,48 +60,13 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>()),
-                name: "{example_id}",
-                fileName: request.x_exampleId_name ?? string.Empty);
-            if (request.x_exampleId_Inputs != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Inputs ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.inputs",
-                    fileName: request.x_exampleId_Inputsname ?? string.Empty);
-            } 
-            if (request.x_exampleId_Outputs != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Outputs ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.outputs",
-                    fileName: request.x_exampleId_Outputsname ?? string.Empty);
-            } 
-            if (request.x_exampleId_AttachmentsOperations != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_AttachmentsOperations ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.attachments_operations",
-                    fileName: request.x_exampleId_AttachmentsOperationsname ?? string.Empty);
-            } 
-            if (request.x_exampleId_Attachment_name_ != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Attachment_name_ ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.attachment.{name}",
-                    fileName: request.x_exampleId_Attachment_name_name ?? string.Empty);
-            }
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareUpdateExamplesRequest(
+            PrepareUpdateAnAlertRuleRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
+                httpRequestMessage: __httpRequest);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -114,10 +76,10 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessUpdateExamplesResponse(
+            ProcessUpdateAnAlertRuleResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request
+            // Bad request
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -165,7 +127,7 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
-            // Not Found
+            // Not found
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -189,48 +151,48 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
-            // Conflict
-            if ((int)__response.StatusCode == 409)
+            // Internal server error
+            if ((int)__response.StatusCode == 500)
             {
-                string? __content_409 = null;
+                string? __content_500 = null;
                 if (ReadResponseAsString)
                 {
-                    __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
                 }
                 else
                 {
-                    var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
                 }
 
                 throw new global::LangSmith.ApiException(
-                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_409,
+                    ResponseBody = __content_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
                         h => h.Value),
                 };
             }
-            // Unprocessable Entity
-            if ((int)__response.StatusCode == 422)
+            // Service unavailable
+            if ((int)__response.StatusCode == 503)
             {
-                string? __content_422 = null;
+                string? __content_503 = null;
                 if (ReadResponseAsString)
                 {
-                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
                 }
                 else
                 {
-                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
                 }
 
                 throw new global::LangSmith.ApiException(
-                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_422,
+                    ResponseBody = __content_503,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -249,6 +211,10 @@ namespace LangSmith
                 ProcessResponseContent(
                     client: HttpClient,
                     response: __response,
+                    content: ref __content);
+                ProcessUpdateAnAlertRuleResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
                     content: ref __content);
 
                 try
@@ -270,6 +236,7 @@ namespace LangSmith
                     };
                 }
 
+                return __content;
             }
             else
             {
@@ -291,82 +258,14 @@ namespace LangSmith
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync(
+                var __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
+                return __content;
             }
-        }
-
-        /// <summary>
-        /// Update Examples<br/>
-        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
-        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
-        /// </summary>
-        /// <param name="x_exampleId_">
-        /// The Example update info as JSON. Can have fields 'metadata', 'split'
-        /// </param>
-        /// <param name="x_exampleId_name">
-        /// The Example update info as JSON. Can have fields 'metadata', 'split'
-        /// </param>
-        /// <param name="x_exampleId_Inputs">
-        /// The updated Example inputs as JSON
-        /// </param>
-        /// <param name="x_exampleId_Inputsname">
-        /// The updated Example inputs as JSON
-        /// </param>
-        /// <param name="x_exampleId_Outputs">
-        /// The updated Example outputs as JSON
-        /// </param>
-        /// <param name="x_exampleId_Outputsname">
-        /// The updated Example outputs as JSON
-        /// </param>
-        /// <param name="x_exampleId_AttachmentsOperations">
-        /// JSON describing attachment operations (retain, rename)
-        /// </param>
-        /// <param name="x_exampleId_AttachmentsOperationsname">
-        /// JSON describing attachment operations (retain, rename)
-        /// </param>
-        /// <param name="x_exampleId_Attachment_name_">
-        /// New file attachment named {name}
-        /// </param>
-        /// <param name="x_exampleId_Attachment_name_name">
-        /// New file attachment named {name}
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UpdateExamplesAsync(
-            byte[] x_exampleId_,
-            string x_exampleId_name,
-            byte[]? x_exampleId_Inputs = default,
-            string? x_exampleId_Inputsname = default,
-            byte[]? x_exampleId_Outputs = default,
-            string? x_exampleId_Outputsname = default,
-            byte[]? x_exampleId_AttachmentsOperations = default,
-            string? x_exampleId_AttachmentsOperationsname = default,
-            byte[]? x_exampleId_Attachment_name_ = default,
-            string? x_exampleId_Attachment_name_name = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.Request3
-            {
-                x_exampleId_ = x_exampleId_,
-                x_exampleId_name = x_exampleId_name,
-                x_exampleId_Inputs = x_exampleId_Inputs,
-                x_exampleId_Inputsname = x_exampleId_Inputsname,
-                x_exampleId_Outputs = x_exampleId_Outputs,
-                x_exampleId_Outputsname = x_exampleId_Outputsname,
-                x_exampleId_AttachmentsOperations = x_exampleId_AttachmentsOperations,
-                x_exampleId_AttachmentsOperationsname = x_exampleId_AttachmentsOperationsname,
-                x_exampleId_Attachment_name_ = x_exampleId_Attachment_name_,
-                x_exampleId_Attachment_name_name = x_exampleId_Attachment_name_name,
-            };
-
-            await UpdateExamplesAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

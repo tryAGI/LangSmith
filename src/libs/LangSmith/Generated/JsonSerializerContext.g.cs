@@ -284,6 +284,9 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response3>),
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response6>),
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response10>),
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response13>),
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response16>),
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response19>),
             typeof(global::LangSmith.JsonConverters.UnixTimestampJsonConverter),
         })]
 

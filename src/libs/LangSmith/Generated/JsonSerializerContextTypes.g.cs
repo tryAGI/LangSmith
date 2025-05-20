@@ -2339,5 +2339,29 @@ namespace LangSmith
         /// 
         /// </summary>
         public global::LangSmith.Response10? Type578 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.AllOf<string, global::LangSmith.Response13>? Type579 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.Response13? Type580 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.AllOf<string, global::LangSmith.Response16>? Type581 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.Response16? Type582 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.AllOf<string, global::LangSmith.Response19>? Type583 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.Response19? Type584 { get; set; }
     }
 }
