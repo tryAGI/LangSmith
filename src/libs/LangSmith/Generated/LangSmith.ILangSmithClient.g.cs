@@ -196,5 +196,10 @@ namespace LangSmith
         /// </summary>
         public RunsClient Runs { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public AlertRulesClient AlertRules { get; }
+
     }
 }

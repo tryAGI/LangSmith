@@ -11702,128 +11702,6 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  '/datasets/{dataset_id}/examples':
-    post:
-      tags:
-        - examples
-      summary: Upload Examples
-      description: "This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.\nEach form part contains either JSON-encoded data or binary attachment files associated with an example."
-      parameters:
-        - name: dataset_id
-          in: path
-          description: Dataset ID
-          required: true
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              required:
-                - '{example_id}'
-                - '{example_id}.inputs'
-              type: object
-              properties:
-                '{example_id}':
-                  type: string
-                  description: 'The Example info as JSON. Can have fields ''metadata'', ''split'', ''use_source_run_io'', ''source_run_id'', ''created_at'', ''modified_at'''
-                  format: binary
-                '{example_id}.inputs':
-                  type: string
-                  description: The Example inputs as JSON
-                  format: binary
-                '{example_id}.outputs':
-                  type: string
-                  description: THe Example outputs as JSON
-                  format: binary
-                '{example_id}.attachments.{name}':
-                  type: string
-                  description: 'File attachment named {name}'
-                  format: binary
-        required: true
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json: { }
-        '400':
-          description: Bad Request
-          content:
-            application/json: { }
-        '403':
-          description: Forbidden
-          content:
-            application/json: { }
-        '409':
-          description: Conflict
-          content:
-            application/json: { }
-        '422':
-          description: Unprocessable Entity
-          content:
-            application/json: { }
-    patch:
-      tags:
-        - examples
-      summary: Update Examples
-      description: "This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.\nEach form part contains either JSON-encoded data or binary attachment files to update an example."
-      parameters:
-        - name: dataset_id
-          in: path
-          description: Dataset ID
-          required: true
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              required:
-                - '{example_id}'
-              type: object
-              properties:
-                '{example_id}':
-                  type: string
-                  description: 'The Example update info as JSON. Can have fields ''metadata'', ''split'''
-                  format: binary
-                '{example_id}.inputs':
-                  type: string
-                  description: The updated Example inputs as JSON
-                  format: binary
-                '{example_id}.outputs':
-                  type: string
-                  description: The updated Example outputs as JSON
-                  format: binary
-                '{example_id}.attachments_operations':
-                  type: string
-                  description: 'JSON describing attachment operations (retain, rename)'
-                  format: binary
-                '{example_id}.attachment.{name}':
-                  type: string
-                  description: 'New file attachment named {name}'
-                  format: binary
-        required: true
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json: { }
-        '400':
-          description: Bad Request
-          content:
-            application/json: { }
-        '403':
-          description: Forbidden
-          content:
-            application/json: { }
-        '404':
-          description: Not Found
-          content:
-            application/json: { }
-        '409':
-          description: Conflict
-          content:
-            application/json: { }
-        '422':
-          description: Unprocessable Entity
-          content:
-            application/json: { }
   /runs:
     post:
       tags:
@@ -12020,6 +11898,391 @@ paths:
             application/json: { }
         '429':
           description: Too Many Requests
+          content:
+            application/json: { }
+  '/v1/platform/alerts/{session_id}':
+    post:
+      tags:
+        - alert_rules
+      summary: Create an alert rule
+      description: Creates a new alert rule. The request body must be a JSON-encoded alert rule object that follows the CreateAlertRuleRequest schema.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: LangSmith API Key
+          required: true
+        - name: X-Tenant-ID
+          in: header
+          description: TenantId
+          required: true
+        - name: session_id
+          in: path
+          description: Session ID
+          required: true
+        - name: request
+          description: Alert rule request
+          required: true
+      responses:
+        '201':
+          description: Alert rule created
+          content:
+            application/json: { }
+        '400':
+          description: Bad request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '429':
+          description: Alert Rule Limit Reached
+          content:
+            application/json: { }
+        '500':
+          description: Internal server error
+          content:
+            application/json: { }
+        '503':
+          description: Service unavailable
+          content:
+            application/json: { }
+  '/v1/platform/alerts/{session_id}/test':
+    post:
+      tags:
+        - alert_rules
+      summary: Test an alert action to determine if configuration is valid
+      description: Tests an alert action which will fire a notification to all configured recipients if the configuration is valid.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: LangSmith API Key
+          required: true
+        - name: X-Tenant-ID
+          in: header
+          description: TenantId
+          required: true
+        - name: session_id
+          in: path
+          description: Session ID
+          required: true
+        - name: alert_rule_id
+          in: path
+          description: Alert rule ID
+          required: true
+      responses:
+        '200':
+          description: Alert action fired successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '500':
+          description: Internal server error
+          content:
+            application/json: { }
+        '503':
+          description: Service unavailable
+          content:
+            application/json: { }
+  '/v1/platform/alerts/{session_id}/{alert_rule_id}':
+    get:
+      tags:
+        - alert_rules
+      summary: Get an alert rule
+      description: Gets an alert rule.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: LangSmith API Key
+          required: true
+        - name: X-Tenant-ID
+          in: header
+          description: TenantId
+          required: true
+        - name: session_id
+          in: path
+          description: Session ID
+          required: true
+        - name: alert_rule_id
+          in: path
+          description: Alert rule ID
+          required: true
+      responses:
+        '200':
+          description: Alert rule
+          content:
+            application/json: { }
+        '400':
+          description: Bad request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Internal server error
+          content:
+            application/json: { }
+        '503':
+          description: Service unavailable
+          content:
+            application/json: { }
+    delete:
+      tags:
+        - alert_rules
+      summary: Delete an alert rule
+      description: Deletes an alert rule
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: LangSmith API Key
+          required: true
+        - name: X-Tenant-ID
+          in: header
+          description: TenantId
+          required: true
+        - name: session_id
+          in: path
+          description: Session ID
+          required: true
+        - name: alert_rule_id
+          in: path
+          description: Alert rule ID
+          required: true
+      responses:
+        '200':
+          description: Alert rule deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Internal server error
+          content:
+            application/json: { }
+        '503':
+          description: Service unavailable
+          content:
+            application/json: { }
+    patch:
+      tags:
+        - alert_rules
+      summary: Update an alert rule
+      description: Updates an alert rule.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: LangSmith API Key
+          required: true
+        - name: X-Tenant-ID
+          in: header
+          description: TenantId
+          required: true
+        - name: session_id
+          in: path
+          description: Session ID
+          required: true
+        - name: alert_rule_id
+          in: path
+          description: Alert rule ID
+          required: true
+        - name: request
+          description: Alert rule request
+          required: true
+      responses:
+        '200':
+          description: Alert rule updated
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Internal server error
+          content:
+            application/json: { }
+        '503':
+          description: Service unavailable
+          content:
+            application/json: { }
+  '/v1/platform/datasets/{dataset_id}/examples':
+    post:
+      tags:
+        - examples
+      summary: Upload Examples
+      description: "This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.\nEach form part contains either JSON-encoded data or binary attachment files associated with an example."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - '{example_id}'
+                - '{example_id}.inputs'
+              type: object
+              properties:
+                '{example_id}':
+                  type: string
+                  description: 'The Example info as JSON. Can have fields ''metadata'', ''split'', ''use_source_run_io'', ''source_run_id'', ''created_at'', ''modified_at'''
+                  format: binary
+                '{example_id}.inputs':
+                  type: string
+                  description: The Example inputs as JSON
+                  format: binary
+                '{example_id}.outputs':
+                  type: string
+                  description: THe Example outputs as JSON
+                  format: binary
+                '{example_id}.attachments.{name}':
+                  type: string
+                  description: 'File attachment named {name}'
+                  format: binary
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json: { }
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json: { }
+    patch:
+      tags:
+        - examples
+      summary: Update Examples
+      description: "This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.\nEach form part contains either JSON-encoded data or binary attachment files to update an example."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - '{example_id}'
+              type: object
+              properties:
+                '{example_id}':
+                  type: string
+                  description: 'The Example update info as JSON. Can have fields ''metadata'', ''split'''
+                  format: binary
+                '{example_id}.inputs':
+                  type: string
+                  description: The updated Example inputs as JSON
+                  format: binary
+                '{example_id}.outputs':
+                  type: string
+                  description: The updated Example outputs as JSON
+                  format: binary
+                '{example_id}.attachments_operations':
+                  type: string
+                  description: 'JSON describing attachment operations (retain, rename)'
+                  format: binary
+                '{example_id}.attachment.{name}':
+                  type: string
+                  description: 'New file attachment named {name}'
+                  format: binary
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json: { }
+        '400':
+          description: Bad Request
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not Found
+          content:
+            application/json: { }
+        '409':
+          description: Conflict
+          content:
+            application/json: { }
+        '422':
+          description: Unprocessable Entity
           content:
             application/json: { }
 components:

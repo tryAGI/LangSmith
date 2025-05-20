@@ -9,56 +9,70 @@ namespace LangSmith
     public sealed partial class Request
     {
         /// <summary>
-        /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
+        /// Run to create (JSON)
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] x_exampleId_ { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("post.{run_id}")]
+        public byte[]? Post_runId_ { get; set; }
 
         /// <summary>
-        /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
+        /// Run to create (JSON)
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string x_exampleId_name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("post.{run_id}name")]
+        public string? Post_runId_name { get; set; }
 
         /// <summary>
-        /// The Example inputs as JSON
+        /// Run to update (JSON)
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.inputs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] x_exampleId_Inputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("patch.{run_id}")]
+        public byte[]? Patch_runId_ { get; set; }
 
         /// <summary>
-        /// The Example inputs as JSON
+        /// Run to update (JSON)
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.inputsname")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string x_exampleId_Inputsname { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("patch.{run_id}name")]
+        public string? Patch_runId_name { get; set; }
 
         /// <summary>
-        /// THe Example outputs as JSON
+        /// Large inputs object (JSON) stored out‑of‑band
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.outputs")]
-        public byte[]? x_exampleId_Outputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("post.{run_id}.inputs")]
+        public byte[]? Post_runId_Inputs { get; set; }
 
         /// <summary>
-        /// THe Example outputs as JSON
+        /// Large inputs object (JSON) stored out‑of‑band
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.outputsname")]
-        public string? x_exampleId_Outputsname { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("post.{run_id}.inputsname")]
+        public string? Post_runId_Inputsname { get; set; }
 
         /// <summary>
-        /// File attachment named {name}
+        /// Large outputs object (JSON) stored out‑of‑band
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.attachments.{name}")]
-        public byte[]? x_exampleId_Attachments_name_ { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("patch.{run_id}.outputs")]
+        public byte[]? Patch_runId_Outputs { get; set; }
 
         /// <summary>
-        /// File attachment named {name}
+        /// Large outputs object (JSON) stored out‑of‑band
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.attachments.{name}name")]
-        public string? x_exampleId_Attachments_name_name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("patch.{run_id}.outputsname")]
+        public string? Patch_runId_Outputsname { get; set; }
+
+        /// <summary>
+        /// Feedback object (JSON) – must include trace_id
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback.{run_id}")]
+        public byte[]? Feedback_runId_ { get; set; }
+
+        /// <summary>
+        /// Feedback object (JSON) – must include trace_id
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback.{run_id}name")]
+        public string? Feedback_runId_name { get; set; }
+
+        /// <summary>
+        /// Binary attachment linked to run {run_id}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachment.{run_id}.{filename}")]
+        public byte[]? Attachment_runId__filename_ { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,51 +83,66 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="Request" /> class.
         /// </summary>
-        /// <param name="x_exampleId_">
-        /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
+        /// <param name="post_runId_">
+        /// Run to create (JSON)
         /// </param>
-        /// <param name="x_exampleId_name">
-        /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
+        /// <param name="post_runId_name">
+        /// Run to create (JSON)
         /// </param>
-        /// <param name="x_exampleId_Inputs">
-        /// The Example inputs as JSON
+        /// <param name="patch_runId_">
+        /// Run to update (JSON)
         /// </param>
-        /// <param name="x_exampleId_Inputsname">
-        /// The Example inputs as JSON
+        /// <param name="patch_runId_name">
+        /// Run to update (JSON)
         /// </param>
-        /// <param name="x_exampleId_Outputs">
-        /// THe Example outputs as JSON
+        /// <param name="post_runId_Inputs">
+        /// Large inputs object (JSON) stored out‑of‑band
         /// </param>
-        /// <param name="x_exampleId_Outputsname">
-        /// THe Example outputs as JSON
+        /// <param name="post_runId_Inputsname">
+        /// Large inputs object (JSON) stored out‑of‑band
         /// </param>
-        /// <param name="x_exampleId_Attachments_name_">
-        /// File attachment named {name}
+        /// <param name="patch_runId_Outputs">
+        /// Large outputs object (JSON) stored out‑of‑band
         /// </param>
-        /// <param name="x_exampleId_Attachments_name_name">
-        /// File attachment named {name}
+        /// <param name="patch_runId_Outputsname">
+        /// Large outputs object (JSON) stored out‑of‑band
+        /// </param>
+        /// <param name="feedback_runId_">
+        /// Feedback object (JSON) – must include trace_id
+        /// </param>
+        /// <param name="feedback_runId_name">
+        /// Feedback object (JSON) – must include trace_id
+        /// </param>
+        /// <param name="attachment_runId__filename_">
+        /// Binary attachment linked to run {run_id}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Request(
-            byte[] x_exampleId_,
-            string x_exampleId_name,
-            byte[] x_exampleId_Inputs,
-            string x_exampleId_Inputsname,
-            byte[]? x_exampleId_Outputs,
-            string? x_exampleId_Outputsname,
-            byte[]? x_exampleId_Attachments_name_,
-            string? x_exampleId_Attachments_name_name)
+            byte[]? post_runId_,
+            string? post_runId_name,
+            byte[]? patch_runId_,
+            string? patch_runId_name,
+            byte[]? post_runId_Inputs,
+            string? post_runId_Inputsname,
+            byte[]? patch_runId_Outputs,
+            string? patch_runId_Outputsname,
+            byte[]? feedback_runId_,
+            string? feedback_runId_name,
+            byte[]? attachment_runId__filename_)
         {
-            this.x_exampleId_ = x_exampleId_ ?? throw new global::System.ArgumentNullException(nameof(x_exampleId_));
-            this.x_exampleId_name = x_exampleId_name ?? throw new global::System.ArgumentNullException(nameof(x_exampleId_name));
-            this.x_exampleId_Inputs = x_exampleId_Inputs ?? throw new global::System.ArgumentNullException(nameof(x_exampleId_Inputs));
-            this.x_exampleId_Inputsname = x_exampleId_Inputsname ?? throw new global::System.ArgumentNullException(nameof(x_exampleId_Inputsname));
-            this.x_exampleId_Outputs = x_exampleId_Outputs;
-            this.x_exampleId_Outputsname = x_exampleId_Outputsname;
-            this.x_exampleId_Attachments_name_ = x_exampleId_Attachments_name_;
-            this.x_exampleId_Attachments_name_name = x_exampleId_Attachments_name_name;
+            this.Post_runId_ = post_runId_;
+            this.Post_runId_name = post_runId_name;
+            this.Patch_runId_ = patch_runId_;
+            this.Patch_runId_name = patch_runId_name;
+            this.Post_runId_Inputs = post_runId_Inputs;
+            this.Post_runId_Inputsname = post_runId_Inputsname;
+            this.Patch_runId_Outputs = patch_runId_Outputs;
+            this.Patch_runId_Outputsname = patch_runId_Outputsname;
+            this.Feedback_runId_ = feedback_runId_;
+            this.Feedback_runId_name = feedback_runId_name;
+            this.Attachment_runId__filename_ = attachment_runId__filename_;
         }
 
         /// <summary>

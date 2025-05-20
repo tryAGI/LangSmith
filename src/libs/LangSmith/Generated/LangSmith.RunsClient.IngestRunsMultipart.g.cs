@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareIngestRunsMultipartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.Request3 request);
+            global::LangSmith.Request request);
         partial void PrepareIngestRunsMultipartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.Request3 request);
+            global::LangSmith.Request request);
         partial void ProcessIngestRunsMultipartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> IngestRunsMultipartAsync(
-            global::LangSmith.Request3 request,
+            global::LangSmith.Request request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -390,7 +390,7 @@ namespace LangSmith
             byte[]? attachment_runId__filename_ = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.Request3
+            var __request = new global::LangSmith.Request
             {
                 Post_runId_ = post_runId_,
                 Post_runId_name = post_runId_name,

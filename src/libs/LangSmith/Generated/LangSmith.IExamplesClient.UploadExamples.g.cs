@@ -13,7 +13,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task UploadExamplesAsync(
-            global::LangSmith.Request request,
+            global::LangSmith.Request2 request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
