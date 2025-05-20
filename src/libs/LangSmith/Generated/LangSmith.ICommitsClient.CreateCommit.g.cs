@@ -28,6 +28,7 @@ namespace LangSmith
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
         /// <param name="exampleRunIds"></param>
+        /// <param name="ignoreWebhookIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoCommitResponse> CreateCommitAsync(
@@ -36,6 +37,7 @@ namespace LangSmith
             object manifest,
             string? parentCommit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? ignoreWebhookIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

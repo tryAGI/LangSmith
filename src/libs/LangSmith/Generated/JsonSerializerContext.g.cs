@@ -83,6 +83,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusJsonConverter),
             typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerJsonConverter),
+            typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ExampleListOrderJsonConverter),
             typeof(global::LangSmith.JsonConverters.ExampleListOrderNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ExampleSelectJsonConverter),

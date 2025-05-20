@@ -134,6 +134,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public PromptWebhooksClient PromptWebhooks { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public WorkspacesClient Workspaces { get; }
 
         /// <summary>

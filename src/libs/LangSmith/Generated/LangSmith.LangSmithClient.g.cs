@@ -210,6 +210,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public PromptWebhooksClient PromptWebhooks => new PromptWebhooksClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

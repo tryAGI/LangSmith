@@ -28,6 +28,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? ExampleRunIds { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ignore_webhook_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? IgnoreWebhookIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,17 +45,20 @@ namespace LangSmith
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
         /// <param name="exampleRunIds"></param>
+        /// <param name="ignoreWebhookIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateRepoCommitRequest(
             object manifest,
             string? parentCommit,
-            global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds)
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? ignoreWebhookIds)
         {
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.ParentCommit = parentCommit;
             this.ExampleRunIds = exampleRunIds;
+            this.IgnoreWebhookIds = ignoreWebhookIds;
         }
 
         /// <summary>
