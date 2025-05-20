@@ -3,55 +3,45 @@
 
 namespace LangSmith
 {
-    public partial class CommitsClient
+    public partial class PromptWebhooksClient
     {
-        partial void PrepareCreateCommitArguments(
+        partial void PrepareTestPromptWebhookArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string owner,
-            ref string repo,
-            global::LangSmith.CreateRepoCommitRequest request);
-        partial void PrepareCreateCommitRequest(
+            global::LangSmith.PromptWebhookTest request);
+        partial void PrepareTestPromptWebhookRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string owner,
-            string repo,
-            global::LangSmith.CreateRepoCommitRequest request);
-        partial void ProcessCreateCommitResponse(
+            global::LangSmith.PromptWebhookTest request);
+        partial void ProcessTestPromptWebhookResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateCommitResponseContent(
+        partial void ProcessTestPromptWebhookResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Commit<br/>
-        /// Upload a repo.
+        /// Test Prompt Webhook<br/>
+        /// Test a specific prompt webhook.
         /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoCommitResponse> CreateCommitAsync(
-            string owner,
-            string repo,
-            global::LangSmith.CreateRepoCommitRequest request,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> TestPromptWebhookAsync(
+            global::LangSmith.PromptWebhookTest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateCommitArguments(
+            PrepareTestPromptWebhookArguments(
                 httpClient: HttpClient,
-                owner: ref owner,
-                repo: ref repo,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/commits/{owner}/{repo}",
+                path: "/api/v1/prompt-webhooks/test",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -87,11 +77,9 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateCommitRequest(
+            PrepareTestPromptWebhookRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                owner: owner,
-                repo: repo,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -102,7 +90,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateCommitResponse(
+            ProcessTestPromptWebhookResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -146,7 +134,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateCommitResponseContent(
+                ProcessTestPromptWebhookResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -171,7 +159,7 @@ namespace LangSmith
                 }
 
                 return
-                    global::LangSmith.CreateRepoCommitResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string> ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -201,43 +189,33 @@ namespace LangSmith
                 ).ConfigureAwait(false);
 
                 return
-                    await global::LangSmith.CreateRepoCommitResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.Dictionary<string, string> ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
-        /// Create Commit<br/>
-        /// Upload a repo.
+        /// Test Prompt Webhook<br/>
+        /// Test a specific prompt webhook.
         /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
-        /// <param name="manifest"></param>
-        /// <param name="parentCommit"></param>
-        /// <param name="exampleRunIds"></param>
-        /// <param name="ignoreWebhookIds"></param>
+        /// <param name="webhook">
+        /// Base schema for prompt webhooks.
+        /// </param>
+        /// <param name="payload"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoCommitResponse> CreateCommitAsync(
-            string owner,
-            string repo,
-            object manifest,
-            string? parentCommit = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? ignoreWebhookIds = default,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> TestPromptWebhookAsync(
+            global::LangSmith.PromptWebhookBase webhook,
+            global::LangSmith.PromptWebhookPayload payload,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.CreateRepoCommitRequest
+            var __request = new global::LangSmith.PromptWebhookTest
             {
-                Manifest = manifest,
-                ParentCommit = parentCommit,
-                ExampleRunIds = exampleRunIds,
-                IgnoreWebhookIds = ignoreWebhookIds,
+                Webhook = webhook,
+                Payload = payload,
             };
 
-            return await CreateCommitAsync(
-                owner: owner,
-                repo: repo,
+            return await TestPromptWebhookAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

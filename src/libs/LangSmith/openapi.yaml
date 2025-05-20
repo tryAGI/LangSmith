@@ -7856,6 +7856,188 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/prompt-webhooks:
+    get:
+      tags:
+        - prompt-webhooks
+      summary: List Prompt Webhooks
+      description: List all prompt webhooks for the current tenant.
+      operationId: list_prompt_webhooks_api_v1_prompt_webhooks_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Prompt Webhooks Api V1 Prompt Webhooks Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/PromptWebhook'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - prompt-webhooks
+      summary: Create Prompt Webhook
+      description: Create a new prompt webhook.
+      operationId: create_prompt_webhook_api_v1_prompt_webhooks_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptWebhookCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptWebhook'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/prompt-webhooks/{webhook_id}':
+    get:
+      tags:
+        - prompt-webhooks
+      summary: Get Prompt Webhook
+      description: Get a specific prompt webhook.
+      operationId: get_prompt_webhook_api_v1_prompt_webhooks__webhook_id__get
+      parameters:
+        - name: webhook_id
+          in: path
+          required: true
+          schema:
+            title: Webhook Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptWebhook'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - prompt-webhooks
+      summary: Update Prompt Webhook
+      description: Update a specific prompt webhook.
+      operationId: update_prompt_webhook_api_v1_prompt_webhooks__webhook_id__patch
+      parameters:
+        - name: webhook_id
+          in: path
+          required: true
+          schema:
+            title: Webhook Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptWebhookUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptWebhook'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - prompt-webhooks
+      summary: Delete Prompt Webhook
+      description: Delete a specific prompt webhook.
+      operationId: delete_prompt_webhook_api_v1_prompt_webhooks__webhook_id__delete
+      parameters:
+        - name: webhook_id
+          in: path
+          required: true
+          schema:
+            title: Webhook Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/prompt-webhooks/test:
+    post:
+      tags:
+        - prompt-webhooks
+      summary: Test Prompt Webhook
+      description: Test a specific prompt webhook.
+      operationId: test_prompt_webhook_api_v1_prompt_webhooks_test_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptWebhookTest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Test Prompt Webhook Api V1 Prompt Webhooks Test Post
+                type: object
+                additionalProperties:
+                  type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/workspaces:
     get:
       tags:
@@ -14150,6 +14332,13 @@ components:
             type: string
             format: uuid
           nullable: true
+        ignore_webhook_ids:
+          title: Ignore Webhook Ids
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
     CreateRepoCommitResponse:
       title: CreateRepoCommitResponse
       required:
@@ -15238,6 +15427,12 @@ components:
         - successful
         - failed
       type: string
+    EPromptWebhookTrigger:
+      title: EPromptWebhookTrigger
+      enum:
+        - commit
+      type: string
+      description: Valid trigger types for prompt webhooks.
     EvaluatorStructuredOutput:
       title: EvaluatorStructuredOutput
       required:
@@ -18608,6 +18803,208 @@ components:
         y:
           title: Y
           type: number
+    PromptWebhook:
+      title: PromptWebhook
+      required:
+        - url
+        - id
+        - tenant_id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        url:
+          title: Url
+          minLength: 1
+          type: string
+          format: uri
+        headers:
+          title: Headers
+          type: object
+          nullable: true
+        include_prompts:
+          title: Include Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        exclude_prompts:
+          title: Exclude Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        triggers:
+          title: Triggers
+          type: array
+          items:
+            $ref: '#/components/schemas/EPromptWebhookTrigger'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tenant_id:
+          title: Tenant Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+      description: Schema for a prompt webhook.
+    PromptWebhookBase:
+      title: PromptWebhookBase
+      required:
+        - url
+      type: object
+      properties:
+        url:
+          title: Url
+          minLength: 1
+          type: string
+          format: uri
+        headers:
+          title: Headers
+          type: object
+          nullable: true
+        include_prompts:
+          title: Include Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        exclude_prompts:
+          title: Exclude Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        triggers:
+          title: Triggers
+          type: array
+          items:
+            $ref: '#/components/schemas/EPromptWebhookTrigger'
+      description: Base schema for prompt webhooks.
+    PromptWebhookCreate:
+      title: PromptWebhookCreate
+      required:
+        - url
+      type: object
+      properties:
+        url:
+          title: Url
+          minLength: 1
+          type: string
+          format: uri
+        headers:
+          title: Headers
+          type: object
+          nullable: true
+        include_prompts:
+          title: Include Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        exclude_prompts:
+          title: Exclude Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        triggers:
+          title: Triggers
+          type: array
+          items:
+            $ref: '#/components/schemas/EPromptWebhookTrigger'
+        id:
+          title: Id
+          type: string
+          format: uuid
+          nullable: true
+      description: Schema for creating a prompt webhook.
+    PromptWebhookPayload:
+      title: PromptWebhookPayload
+      required:
+        - prompt_id
+        - manifest
+        - commit_hash
+        - created_at
+        - created_by
+      type: object
+      properties:
+        prompt_id:
+          title: Prompt Id
+          type: string
+        manifest:
+          title: Manifest
+          type: object
+        commit_hash:
+          title: Commit Hash
+          type: string
+        created_at:
+          title: Created At
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    PromptWebhookTest:
+      title: PromptWebhookTest
+      required:
+        - webhook
+        - payload
+      type: object
+      properties:
+        webhook:
+          $ref: '#/components/schemas/PromptWebhookBase'
+        payload:
+          $ref: '#/components/schemas/PromptWebhookPayload'
+      description: Schema for testing a prompt webhook.
+    PromptWebhookUpdate:
+      title: PromptWebhookUpdate
+      type: object
+      properties:
+        include_prompts:
+          title: Include Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        exclude_prompts:
+          title: Exclude Prompts
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        url:
+          title: Url
+          minLength: 1
+          type: string
+          format: uri
+          nullable: true
+        headers:
+          title: Headers
+          type: object
+          nullable: true
+        triggers:
+          title: Triggers
+          type: array
+          items:
+            $ref: '#/components/schemas/EPromptWebhookTrigger'
+          nullable: true
+      description: Schema for updating a prompt webhook.
     PromptimConfig:
       title: PromptimConfig
       required:
