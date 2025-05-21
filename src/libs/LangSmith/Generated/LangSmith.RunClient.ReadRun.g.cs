@@ -11,7 +11,8 @@ namespace LangSmith
             ref global::System.Guid? sessionId,
             ref global::System.DateTime? startTime,
             ref bool? excludeS3StoredAttributes,
-            ref bool? excludeSerialized);
+            ref bool? excludeSerialized,
+            ref bool? excludeChildRunIds);
         partial void PrepareReadRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +20,8 @@ namespace LangSmith
             global::System.Guid? sessionId,
             global::System.DateTime? startTime,
             bool? excludeS3StoredAttributes,
-            bool? excludeSerialized);
+            bool? excludeSerialized,
+            bool? excludeChildRunIds);
         partial void ProcessReadRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,6 +44,9 @@ namespace LangSmith
         /// <param name="excludeSerialized">
         /// Default Value: false
         /// </param>
+        /// <param name="excludeChildRunIds">
+        /// Default Value: true
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunSchema> ReadRunAsync(
@@ -50,6 +55,7 @@ namespace LangSmith
             global::System.DateTime? startTime = default,
             bool? excludeS3StoredAttributes = default,
             bool? excludeSerialized = default,
+            bool? excludeChildRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -60,7 +66,8 @@ namespace LangSmith
                 sessionId: ref sessionId,
                 startTime: ref startTime,
                 excludeS3StoredAttributes: ref excludeS3StoredAttributes,
-                excludeSerialized: ref excludeSerialized);
+                excludeSerialized: ref excludeSerialized,
+                excludeChildRunIds: ref excludeChildRunIds);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/runs/{runId}",
@@ -70,6 +77,7 @@ namespace LangSmith
                 .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
                 .AddOptionalParameter("exclude_serialized", excludeSerialized?.ToString()) 
+                .AddOptionalParameter("exclude_child_run_ids", excludeChildRunIds?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -106,7 +114,8 @@ namespace LangSmith
                 sessionId: sessionId,
                 startTime: startTime,
                 excludeS3StoredAttributes: excludeS3StoredAttributes,
-                excludeSerialized: excludeSerialized);
+                excludeSerialized: excludeSerialized,
+                excludeChildRunIds: excludeChildRunIds);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
