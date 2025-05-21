@@ -4471,6 +4471,12 @@ paths:
             title: Exclude Serialized
             type: boolean
             default: false
+        - name: exclude_child_run_ids
+          in: query
+          schema:
+            title: Exclude Child Run Ids
+            type: boolean
+            default: true
       responses:
         '200':
           description: Successful Response
