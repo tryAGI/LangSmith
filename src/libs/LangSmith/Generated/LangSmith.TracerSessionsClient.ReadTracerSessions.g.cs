@@ -23,6 +23,7 @@ namespace LangSmith
             ref bool? facets,
             ref string? filter,
             ref bool? includeStats,
+            ref bool? useApproxStats,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,6 +44,7 @@ namespace LangSmith
             bool? facets,
             string? filter,
             bool? includeStats,
+            bool? useApproxStats,
             string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -83,6 +85,9 @@ namespace LangSmith
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
+        /// <param name="useApproxStats">
+        /// Default Value: false
+        /// </param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -103,6 +108,7 @@ namespace LangSmith
             bool? facets = default,
             string? filter = default,
             bool? includeStats = default,
+            bool? useApproxStats = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -126,6 +132,7 @@ namespace LangSmith
                 facets: ref facets,
                 filter: ref filter,
                 includeStats: ref includeStats,
+                useApproxStats: ref useApproxStats,
                 accept: ref accept);
 
             var __pathBuilder = new PathBuilder(
@@ -148,6 +155,7 @@ namespace LangSmith
                 .AddOptionalParameter("facets", facets?.ToString()) 
                 .AddOptionalParameter("filter", filter) 
                 .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+                .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -202,6 +210,7 @@ namespace LangSmith
                 facets: facets,
                 filter: filter,
                 includeStats: includeStats,
+                useApproxStats: useApproxStats,
                 accept: accept);
 
             using var __response = await HttpClient.SendAsync(

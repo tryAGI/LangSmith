@@ -3,77 +3,49 @@
 
 namespace LangSmith
 {
-    public partial class RunClient
+    public partial class ChartsClient
     {
-        partial void PrepareReadRunArguments(
+        partial void PrepareCloneSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid runId,
-            ref global::System.Guid? sessionId,
-            ref global::System.DateTime? startTime,
-            ref bool? excludeS3StoredAttributes,
-            ref bool? excludeSerialized);
-        partial void PrepareReadRunRequest(
+            global::LangSmith.CustomChartsSectionsCloneRequest request);
+        partial void PrepareCloneSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid runId,
-            global::System.Guid? sessionId,
-            global::System.DateTime? startTime,
-            bool? excludeS3StoredAttributes,
-            bool? excludeSerialized);
-        partial void ProcessReadRunResponse(
+            global::LangSmith.CustomChartsSectionsCloneRequest request);
+        partial void ProcessCloneSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessReadRunResponseContent(
+        partial void ProcessCloneSectionResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Read Run<br/>
-        /// Get a specific run.
+        /// Clone Section<br/>
+        /// Clone a dashboard.
         /// </summary>
-        /// <param name="runId"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="startTime"></param>
-        /// <param name="excludeS3StoredAttributes">
-        /// Default Value: false
-        /// </param>
-        /// <param name="excludeSerialized">
-        /// Default Value: false
-        /// </param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RunSchema> ReadRunAsync(
-            global::System.Guid runId,
-            global::System.Guid? sessionId = default,
-            global::System.DateTime? startTime = default,
-            bool? excludeS3StoredAttributes = default,
-            bool? excludeSerialized = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> CloneSectionAsync(
+            global::LangSmith.CustomChartsSectionsCloneRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareReadRunArguments(
+            PrepareCloneSectionArguments(
                 httpClient: HttpClient,
-                runId: ref runId,
-                sessionId: ref sessionId,
-                startTime: ref startTime,
-                excludeS3StoredAttributes: ref excludeS3StoredAttributes,
-                excludeSerialized: ref excludeSerialized);
+                request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/api/v1/runs/{runId}",
+                path: "/api/v1/charts/section/clone",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("session_id", sessionId?.ToString()) 
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
-                .AddOptionalParameter("exclude_serialized", excludeSerialized?.ToString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -95,18 +67,20 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareReadRunRequest(
+            PrepareCloneSectionRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                runId: runId,
-                sessionId: sessionId,
-                startTime: startTime,
-                excludeS3StoredAttributes: excludeS3StoredAttributes,
-                excludeSerialized: excludeSerialized);
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -116,7 +90,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessReadRunResponse(
+            ProcessCloneSectionResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -160,7 +134,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessReadRunResponseContent(
+                ProcessCloneSectionResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -185,7 +159,7 @@ namespace LangSmith
                 }
 
                 return
-                    global::LangSmith.RunSchema.FromJson(__content, JsonSerializerContext) ??
+                    global::LangSmith.CustomChartsSectionResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -215,9 +189,33 @@ namespace LangSmith
                 ).ConfigureAwait(false);
 
                 return
-                    await global::LangSmith.RunSchema.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::LangSmith.CustomChartsSectionResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
+        }
+
+        /// <summary>
+        /// Clone Section<br/>
+        /// Clone a dashboard.
+        /// </summary>
+        /// <param name="sectionId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> CloneSectionAsync(
+            global::System.Guid? sectionId = default,
+            global::System.Guid? sessionId = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.CustomChartsSectionsCloneRequest
+            {
+                SectionId = sectionId,
+                SessionId = sessionId,
+            };
+
+            return await CloneSectionAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
