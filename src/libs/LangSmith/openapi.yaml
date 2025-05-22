@@ -18071,6 +18071,10 @@ components:
           title: Enable Run Playground Evals Immediately
           type: boolean
           default: false
+        enable_monthly_usage_charts:
+          title: Enable Monthly Usage Charts
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate

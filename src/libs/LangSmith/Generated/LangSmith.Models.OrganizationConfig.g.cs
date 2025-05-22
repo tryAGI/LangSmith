@@ -249,6 +249,12 @@ namespace LangSmith
         public bool? EnableRunPlaygroundEvalsImmediately { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_monthly_usage_charts")]
+        public bool? EnableMonthlyUsageCharts { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -371,6 +377,9 @@ namespace LangSmith
         /// <param name="enableRunPlaygroundEvalsImmediately">
         /// Default Value: false
         /// </param>
+        /// <param name="enableMonthlyUsageCharts">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -414,7 +423,8 @@ namespace LangSmith
             bool? langsmithExperimentalSearchEnabled,
             bool? langgraphPlatformGaEnabled,
             bool? enableAlignEvaluators,
-            bool? enableRunPlaygroundEvalsImmediately)
+            bool? enableRunPlaygroundEvalsImmediately,
+            bool? enableMonthlyUsageCharts)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -456,6 +466,7 @@ namespace LangSmith
             this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.EnableRunPlaygroundEvalsImmediately = enableRunPlaygroundEvalsImmediately;
+            this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
         }
 
         /// <summary>
