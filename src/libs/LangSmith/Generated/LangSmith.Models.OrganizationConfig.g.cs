@@ -243,6 +243,12 @@ namespace LangSmith
         public bool? EnableAlignEvaluators { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_run_playground_evals_immediately")]
+        public bool? EnableRunPlaygroundEvalsImmediately { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -362,6 +368,9 @@ namespace LangSmith
         /// <param name="enableAlignEvaluators">
         /// Default Value: false
         /// </param>
+        /// <param name="enableRunPlaygroundEvalsImmediately">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -404,7 +413,8 @@ namespace LangSmith
             bool? enablePrebuiltDashboards,
             bool? langsmithExperimentalSearchEnabled,
             bool? langgraphPlatformGaEnabled,
-            bool? enableAlignEvaluators)
+            bool? enableAlignEvaluators,
+            bool? enableRunPlaygroundEvalsImmediately)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -445,6 +455,7 @@ namespace LangSmith
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
             this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
+            this.EnableRunPlaygroundEvalsImmediately = enableRunPlaygroundEvalsImmediately;
         }
 
         /// <summary>

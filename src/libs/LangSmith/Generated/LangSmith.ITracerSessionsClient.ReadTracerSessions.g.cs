@@ -34,6 +34,9 @@ namespace LangSmith
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
+        /// <param name="useApproxStats">
+        /// Default Value: false
+        /// </param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -54,6 +57,7 @@ namespace LangSmith
             bool? facets = default,
             string? filter = default,
             bool? includeStats = default,
+            bool? useApproxStats = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -274,6 +274,12 @@ paths:
             title: Include Stats
             type: boolean
             default: true
+        - name: use_approx_stats
+          in: query
+          schema:
+            title: Use Approx Stats
+            type: boolean
+            default: false
         - name: accept
           in: header
           schema:
@@ -4471,12 +4477,6 @@ paths:
             title: Exclude Serialized
             type: boolean
             default: false
-        - name: exclude_child_run_ids
-          in: query
-          schema:
-            title: Exclude Child Run Ids
-            type: boolean
-            default: true
       responses:
         '200':
           description: Successful Response
@@ -9425,6 +9425,36 @@ paths:
       security:
         - ApiKey: [ ]
         - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/charts/section/clone:
+    post:
+      tags:
+        - charts
+      summary: Clone Section
+      description: Clone a dashboard.
+      operationId: clone_section_api_v1_charts_section_clone_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionsCloneRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
         - BearerAuth: [ ]
   /api/v1/charts/section:
     get:
@@ -14982,6 +15012,20 @@ components:
             - $ref: '#/components/schemas/Missing'
           default:
             __missing__: __missing__
+    CustomChartsSectionsCloneRequest:
+      title: CustomChartsSectionsCloneRequest
+      type: object
+      properties:
+        section_id:
+          title: Section Id
+          type: string
+          format: uuid
+          nullable: true
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+          nullable: true
     CustomerVisiblePlanInfo:
       title: CustomerVisiblePlanInfo
       required:
@@ -18021,6 +18065,10 @@ components:
           default: false
         enable_align_evaluators:
           title: Enable Align Evaluators
+          type: boolean
+          default: false
+        enable_run_playground_evals_immediately:
+          title: Enable Run Playground Evals Immediately
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
