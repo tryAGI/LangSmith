@@ -14368,13 +14368,15 @@ components:
             type: string
             format: uuid
           nullable: true
-        ignore_webhook_ids:
-          title: Ignore Webhook Ids
-          type: array
-          items:
-            type: string
-            format: uuid
-          nullable: true
+        skip_webhooks:
+          title: Skip Webhooks
+          anyOf:
+            - type: boolean
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: false
     CreateRepoCommitResponse:
       title: CreateRepoCommitResponse
       required:
@@ -18067,6 +18069,10 @@ components:
           title: Enable Align Evaluators
           type: boolean
           default: false
+        max_prompt_webhooks:
+          title: Max Prompt Webhooks
+          type: integer
+          default: 1
         enable_run_playground_evals_immediately:
           title: Enable Run Playground Evals Immediately
           type: boolean
@@ -18995,6 +19001,7 @@ components:
       title: PromptWebhookPayload
       required:
         - prompt_id
+        - prompt_name
         - manifest
         - commit_hash
         - created_at
@@ -19003,6 +19010,9 @@ components:
       properties:
         prompt_id:
           title: Prompt Id
+          type: string
+        prompt_name:
+          title: Prompt Name
           type: string
         manifest:
           title: Manifest

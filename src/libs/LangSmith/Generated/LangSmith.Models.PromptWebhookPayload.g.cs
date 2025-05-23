@@ -18,6 +18,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string PromptName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Manifest { get; set; }
@@ -53,6 +60,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PromptWebhookPayload" /> class.
         /// </summary>
         /// <param name="promptId"></param>
+        /// <param name="promptName"></param>
         /// <param name="manifest"></param>
         /// <param name="commitHash"></param>
         /// <param name="createdAt"></param>
@@ -62,12 +70,14 @@ namespace LangSmith
 #endif
         public PromptWebhookPayload(
             string promptId,
+            string promptName,
             object manifest,
             string commitHash,
             string createdAt,
             string createdBy)
         {
             this.PromptId = promptId ?? throw new global::System.ArgumentNullException(nameof(promptId));
+            this.PromptName = promptName ?? throw new global::System.ArgumentNullException(nameof(promptName));
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
