@@ -243,6 +243,12 @@ namespace LangSmith
         public bool? EnableAlignEvaluators { get; set; }
 
         /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_webhooks")]
+        public int? MaxPromptWebhooks { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_run_playground_evals_immediately")]
@@ -374,6 +380,9 @@ namespace LangSmith
         /// <param name="enableAlignEvaluators">
         /// Default Value: false
         /// </param>
+        /// <param name="maxPromptWebhooks">
+        /// Default Value: 1
+        /// </param>
         /// <param name="enableRunPlaygroundEvalsImmediately">
         /// Default Value: false
         /// </param>
@@ -423,6 +432,7 @@ namespace LangSmith
             bool? langsmithExperimentalSearchEnabled,
             bool? langgraphPlatformGaEnabled,
             bool? enableAlignEvaluators,
+            int? maxPromptWebhooks,
             bool? enableRunPlaygroundEvalsImmediately,
             bool? enableMonthlyUsageCharts)
         {
@@ -465,6 +475,7 @@ namespace LangSmith
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
             this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
+            this.MaxPromptWebhooks = maxPromptWebhooks;
             this.EnableRunPlaygroundEvalsImmediately = enableRunPlaygroundEvalsImmediately;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
         }
