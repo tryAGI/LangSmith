@@ -18073,10 +18073,11 @@ components:
           title: Max Prompt Webhooks
           type: integer
           default: 1
-        enable_run_playground_evals_immediately:
-          title: Enable Run Playground Evals Immediately
-          type: boolean
-          default: false
+        playground_evaluator_strategy:
+          title: Playground Evaluator Strategy
+          type: string
+          default: cron
+          nullable: true
         enable_monthly_usage_charts:
           title: Enable Monthly Usage Charts
           type: boolean
