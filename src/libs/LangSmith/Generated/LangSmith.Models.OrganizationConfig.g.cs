@@ -249,10 +249,10 @@ namespace LangSmith
         public int? MaxPromptWebhooks { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// Default Value: cron
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_run_playground_evals_immediately")]
-        public bool? EnableRunPlaygroundEvalsImmediately { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("playground_evaluator_strategy")]
+        public string? PlaygroundEvaluatorStrategy { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -383,8 +383,8 @@ namespace LangSmith
         /// <param name="maxPromptWebhooks">
         /// Default Value: 1
         /// </param>
-        /// <param name="enableRunPlaygroundEvalsImmediately">
-        /// Default Value: false
+        /// <param name="playgroundEvaluatorStrategy">
+        /// Default Value: cron
         /// </param>
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false
@@ -433,7 +433,7 @@ namespace LangSmith
             bool? langgraphPlatformGaEnabled,
             bool? enableAlignEvaluators,
             int? maxPromptWebhooks,
-            bool? enableRunPlaygroundEvalsImmediately,
+            string? playgroundEvaluatorStrategy,
             bool? enableMonthlyUsageCharts)
         {
             this.MaxIdentities = maxIdentities;
@@ -476,7 +476,7 @@ namespace LangSmith
             this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.MaxPromptWebhooks = maxPromptWebhooks;
-            this.EnableRunPlaygroundEvalsImmediately = enableRunPlaygroundEvalsImmediately;
+            this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
         }
 
