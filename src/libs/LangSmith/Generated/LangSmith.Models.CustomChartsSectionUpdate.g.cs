@@ -29,7 +29,8 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? Index { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.AnyOf<int?, global::LangSmith.Missing> Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,13 +48,13 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartsSectionUpdate(
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing> index,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index)
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description)
         {
+            this.Index = index;
             this.Title = title;
             this.Description = description;
-            this.Index = index;
         }
 
         /// <summary>
