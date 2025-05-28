@@ -14872,8 +14872,6 @@ components:
           nullable: true
         index:
           title: Index
-          maximum: 100.0
-          minimum: 0.0
           type: integer
           nullable: true
         id:
@@ -14913,8 +14911,6 @@ components:
           nullable: true
         index:
           title: Index
-          maximum: 100.0
-          minimum: 0.0
           type: integer
           nullable: true
     CustomChartsSectionRequest:
@@ -14959,19 +14955,12 @@ components:
           nullable: true
         index:
           title: Index
-          maximum: 100.0
-          minimum: 0.0
           type: integer
           nullable: true
         id:
           title: Id
           type: string
           format: uuid
-        session_id:
-          title: Session Id
-          type: string
-          format: uuid
-          nullable: true
         chart_count:
           title: Chart Count
           type: integer
@@ -14988,6 +14977,8 @@ components:
           nullable: true
     CustomChartsSectionUpdate:
       title: CustomChartsSectionUpdate
+      required:
+        - index
       type: object
       properties:
         title:
@@ -15007,13 +14998,9 @@ components:
           nullable: true
         index:
           title: Index
-          maximum: 100
-          minimum: 0
           anyOf:
             - type: integer
             - $ref: '#/components/schemas/Missing'
-          default:
-            __missing__: __missing__
     CustomChartsSectionsCloneRequest:
       title: CustomChartsSectionsCloneRequest
       type: object

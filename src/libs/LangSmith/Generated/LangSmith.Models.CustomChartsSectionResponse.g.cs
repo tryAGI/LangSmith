@@ -37,12 +37,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public global::System.Guid? SessionId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_count")]
         public int? ChartCount { get; set; }
 
@@ -71,7 +65,6 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="index"></param>
         /// <param name="id"></param>
-        /// <param name="sessionId"></param>
         /// <param name="chartCount"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -83,7 +76,6 @@ namespace LangSmith
             global::System.Guid id,
             string? description,
             int? index,
-            global::System.Guid? sessionId,
             int? chartCount,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt)
@@ -92,7 +84,6 @@ namespace LangSmith
             this.Id = id;
             this.Description = description;
             this.Index = index;
-            this.SessionId = sessionId;
             this.ChartCount = chartCount;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;

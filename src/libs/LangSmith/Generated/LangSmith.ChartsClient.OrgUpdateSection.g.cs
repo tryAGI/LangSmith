@@ -212,9 +212,9 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> OrgUpdateSectionAsync(
             global::System.Guid sectionId,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing> index,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description = default,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.CustomChartsSectionUpdate
