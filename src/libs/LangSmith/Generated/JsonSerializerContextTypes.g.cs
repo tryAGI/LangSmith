@@ -290,23 +290,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyLegacyUploadExamplesApiV1ExamplesUploadDatasetIdPost? Type66 { get; set; }
+        public global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type67 { get; set; }
+        public global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut? Type68 { get; set; }
+        public byte[]? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost? Type69 { get; set; }
+        public global::LangSmith.DataType? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DataType? Type70 { get; set; }
+        public global::LangSmith.BodyUploadExamplesFromCsvApiV1ExamplesUploadDatasetIdPost? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
