@@ -249,7 +249,7 @@ namespace LangSmith
         public int? MaxPromptWebhooks { get; set; }
 
         /// <summary>
-        /// Default Value: cron
+        /// Default Value: sync
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("playground_evaluator_strategy")]
         public string? PlaygroundEvaluatorStrategy { get; set; }
@@ -390,7 +390,7 @@ namespace LangSmith
         /// Default Value: 1
         /// </param>
         /// <param name="playgroundEvaluatorStrategy">
-        /// Default Value: cron
+        /// Default Value: sync
         /// </param>
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false

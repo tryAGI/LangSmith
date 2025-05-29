@@ -18061,7 +18061,7 @@ components:
         playground_evaluator_strategy:
           title: Playground Evaluator Strategy
           type: string
-          default: cron
+          default: sync
           nullable: true
         enable_monthly_usage_charts:
           title: Enable Monthly Usage Charts
