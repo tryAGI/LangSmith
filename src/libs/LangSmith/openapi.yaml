@@ -2609,7 +2609,7 @@ paths:
       tags:
         - examples
       summary: Legacy Update Examples
-      description: Update examples in bulk.
+      description: 'Legacy update examples in bulk. For update involving attachments, use PATCH /v1/platform/datasets/{dataset_id}/examples instead.'
       operationId: legacy_update_examples_api_v1_examples_bulk_patch
       requestBody:
         content:
@@ -2632,7 +2632,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -2641,9 +2640,9 @@ paths:
     post:
       tags:
         - examples
-      summary: Legacy Upload Examples
-      description: Create a new example.
-      operationId: legacy_upload_examples_api_v1_examples_upload__dataset_id__post
+      summary: Upload Examples From Csv
+      description: "Upload examples from a CSV file.\n\nNote: For non-csv upload, please use\nthe POST /v1/platform/datasets/{dataset_id}/examples endpoint which provides more efficient upload."
+      operationId: upload_examples_from_csv_api_v1_examples_upload__dataset_id__post
       parameters:
         - name: dataset_id
           in: path
@@ -2656,7 +2655,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Body_legacy_upload_examples_api_v1_examples_upload__dataset_id__post'
+              $ref: '#/components/schemas/Body_upload_examples_from_csv_api_v1_examples_upload__dataset_id__post'
         required: true
       responses:
         '200':
@@ -2664,7 +2663,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Legacy Upload Examples Api V1 Examples Upload  Dataset Id  Post
+                title: Response Upload Examples From Csv Api V1 Examples Upload  Dataset Id  Post
                 type: array
                 items:
                   $ref: '#/components/schemas/Example'
@@ -2674,7 +2673,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -13507,27 +13505,6 @@ components:
         code:
           title: Code
           type: string
-    Body_legacy_upload_examples_api_v1_examples_upload__dataset_id__post:
-      title: Body_legacy_upload_examples_api_v1_examples_upload__dataset_id__post
-      required:
-        - file
-        - input_keys
-      type: object
-      properties:
-        file:
-          title: File
-          type: string
-          format: binary
-        input_keys:
-          title: Input Keys
-          type: array
-          items:
-            type: string
-        output_keys:
-          title: Output Keys
-          type: array
-          items:
-            type: string
     Body_update_dataset_splits_api_v1_datasets__dataset_id__splits_put:
       title: Body_update_dataset_splits_api_v1_datasets__dataset_id__splits_put
       required:
@@ -13579,6 +13556,27 @@ components:
           title: Description
           type: string
           nullable: true
+    Body_upload_examples_from_csv_api_v1_examples_upload__dataset_id__post:
+      title: Body_upload_examples_from_csv_api_v1_examples_upload__dataset_id__post
+      required:
+        - file
+        - input_keys
+      type: object
+      properties:
+        file:
+          title: File
+          type: string
+          format: binary
+        input_keys:
+          title: Input Keys
+          type: array
+          items:
+            type: string
+        output_keys:
+          title: Output Keys
+          type: array
+          items:
+            type: string
     BulkExport:
       title: BulkExport
       required:
@@ -18067,6 +18065,10 @@ components:
           nullable: true
         enable_monthly_usage_charts:
           title: Enable Monthly Usage Charts
+          type: boolean
+          default: false
+        enable_new_filter_bar:
+          title: Enable New Filter Bar
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
