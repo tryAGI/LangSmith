@@ -4506,12 +4506,6 @@ paths:
             title: Run Id
             type: string
             format: uuid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UpdateRunRequest'
-        required: true
       responses:
         '200':
           description: Successful Response
@@ -4741,72 +4735,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/runs:
-    post:
-      tags:
-        - run
-      summary: Create Run
-      description: Create a new run.
-      operationId: create_run_api_v1_runs_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateRunRequest'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/runs/batch:
-    post:
-      tags:
-        - run
-      summary: Batch Ingest Runs
-      description: Batch ingest runs.
-      operationId: batch_ingest_runs_api_v1_runs_batch_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BatchIngestRunsRequest'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-      deprecated: true
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
-  /api/v1/runs/multipart:
-    post:
-      tags:
-        - run
-      summary: Multipart Ingest Runs
-      description: Batch ingest runs.
-      operationId: multipart_ingest_runs_api_v1_runs_multipart_post
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
-      deprecated: true
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -11918,12 +11846,76 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /feedback/batch:
+    post:
+      tags:
+        - feedback
+      summary: Ingest Feedback (Batch JSON)
+      description: Ingests a batch of feedback objects in a single JSON array payload.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/feedback.FeedbackCreateSchema'
+        required: true
+      responses:
+        '202':
+          description: Feedback batch ingested
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  allOf:
+                    - type: string
+                    - type: object
+                      properties:
+                        message:
+                          type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
   /runs:
     post:
       tags:
         - runs
       summary: Create a Run
       description: Queues a single run for ingestion. The request body must be a JSON-encoded run object that follows the Run schema.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/runs.Run'
+        required: true
       responses:
         '202':
           description: Run created
@@ -11941,29 +11933,54 @@ paths:
         '400':
           description: Bad Request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '409':
           description: Conflict
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '422':
           description: Unprocessable Entity
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '429':
           description: Too Many Requests
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
   /runs/batch:
     post:
       tags:
         - runs
       summary: Ingest Runs (Batch JSON)
-      description: "Ingests a batch of runs in a single JSON payload. The payload must have `post` and/or `patch` arrays containing run objects. \\\nPrefer this endpoint over single‑run ingestion when submitting hundreds of runs, but `/runs/multipart` offers better handling for very large fields and attachments."
+      description: "Ingests a batch of runs in a single JSON payload. The payload must have `post` and/or `patch` arrays containing run objects.\nPrefer this endpoint over single‑run ingestion when submitting hundreds of runs, but `/runs/multipart` offers better handling for very large fields and attachments."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patch:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/runs.Run'
+                post:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/runs.Run'
+        required: true
       responses:
         '202':
           description: Runs batch ingested
@@ -11981,29 +11998,39 @@ paths:
         '400':
           description: Bad Request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '409':
           description: Conflict
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '422':
           description: Unprocessable Entity
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '429':
           description: Too Many Requests
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
   /runs/multipart:
     post:
       tags:
         - runs
       summary: Ingest Runs (Multipart)
-      description: "Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.  \\\n**Part‑name pattern**: `<event>.<run_id>[.<field>]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.  \\\n* `post|patch.<run_id>` – JSON run payload.  \\\n* `post|patch.<run_id>.<field>` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).  \\\n* `feedback.<run_id>` – JSON feedback payload (must include `trace_id`).  \\\n* `attachment.<run_id>.<filename>` – arbitrary binary attachment stored in S3.  \\\n**Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.  \\\n**Best performance** for high‑volume ingestion."
+      description: "Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.\n**Part‑name pattern**: `<event>.<run_id>[.<field>]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.\n* `post|patch.<run_id>` – JSON run payload.\n* `post|patch.<run_id>.<field>` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).\n* `feedback.<run_id>` – JSON feedback payload (must include `trace_id`).\n* `attachment.<run_id>.<filename>` – arbitrary binary attachment stored in S3.\n**Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.\n**Best performance** for high‑volume ingestion."
       requestBody:
         content:
           multipart/form-data:
@@ -12047,23 +12074,33 @@ paths:
         '400':
           description: Bad Request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '409':
           description: Conflict
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '422':
           description: Unprocessable Entity
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '429':
           description: Too Many Requests
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
   '/runs/{run_id}':
     patch:
       tags:
@@ -12075,9 +12112,12 @@ paths:
           in: path
           description: Run ID
           required: true
-        - name: run
-          description: Run update
-          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/runs.Run'
+        required: true
       responses:
         '202':
           description: Run updated
@@ -12095,27 +12135,39 @@ paths:
         '400':
           description: Bad Request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '404':
           description: Not Found
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '409':
           description: Conflict
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '422':
           description: Unprocessable Entity
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
         '429':
           description: Too Many Requests
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/runs.ErrorResponse'
   '/v1/platform/alerts/{session_id}':
     post:
       tags:
@@ -12135,34 +12187,49 @@ paths:
           in: path
           description: Session ID
           required: true
-        - name: request
-          description: Alert rule request
-          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/alerts.CreateAlertRuleRequest'
+        required: true
       responses:
         '201':
           description: Alert rule created
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.AlertRuleResponse'
         '400':
           description: Bad request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '429':
           description: Alert Rule Limit Reached
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '500':
           description: Internal server error
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '503':
           description: Service unavailable
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
   '/v1/platform/alerts/{session_id}/test':
     post:
       tags:
@@ -12203,19 +12270,27 @@ paths:
         '400':
           description: Bad request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '500':
           description: Internal server error
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '503':
           description: Service unavailable
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
   '/v1/platform/alerts/{session_id}/{alert_rule_id}':
     get:
       tags:
@@ -12243,27 +12318,39 @@ paths:
         '200':
           description: Alert rule
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.AlertRuleResponse'
         '400':
           description: Bad request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '404':
           description: Not found
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '500':
           description: Internal server error
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '503':
           description: Service unavailable
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
     delete:
       tags:
         - alert_rules
@@ -12303,23 +12390,33 @@ paths:
         '400':
           description: Bad request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '404':
           description: Not found
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '500':
           description: Internal server error
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '503':
           description: Service unavailable
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
     patch:
       tags:
         - alert_rules
@@ -12342,9 +12439,12 @@ paths:
           in: path
           description: Alert rule ID
           required: true
-        - name: request
-          description: Alert rule request
-          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/alerts.UpdateAlertRuleRequest'
+        required: true
       responses:
         '200':
           description: Alert rule updated
@@ -12362,23 +12462,33 @@ paths:
         '400':
           description: Bad request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '404':
           description: Not found
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '500':
           description: Internal server error
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
         '503':
           description: Service unavailable
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alerts.ErrorResponse'
   '/v1/platform/datasets/{dataset_id}/examples':
     post:
       tags:
@@ -12420,23 +12530,33 @@ paths:
         '201':
           description: Created
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ExamplesCreatedResponse'
         '400':
           description: Bad Request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '409':
           description: Conflict
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '422':
           description: Unprocessable Entity
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
     patch:
       tags:
         - examples
@@ -12480,27 +12600,39 @@ paths:
         '201':
           description: Created
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ExamplesUpdatedResponse'
         '400':
           description: Bad Request
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '403':
           description: Forbidden
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '404':
           description: Not Found
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '409':
           description: Conflict
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
         '422':
           description: Unprocessable Entity
           content:
-            application/json: { }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
 components:
   schemas:
     AIMessage:
@@ -17381,6 +17513,22 @@ components:
           anyOf:
             - type: number
             - type: string
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          additionalProperties:
+            anyOf:
+              - type: number
+              - type: string
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          additionalProperties:
+            anyOf:
+              - type: number
+              - type: string
+          nullable: true
         provider:
           title: Provider
           type: string
@@ -17427,6 +17575,22 @@ components:
           anyOf:
             - type: number
             - type: string
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          additionalProperties:
+            anyOf:
+              - type: number
+              - type: string
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          additionalProperties:
+            anyOf:
+              - type: number
+              - type: string
+          nullable: true
         provider:
           title: Provider
           type: string
@@ -18044,10 +18208,6 @@ components:
           default: false
         langsmith_experimental_search_enabled:
           title: Langsmith Experimental Search Enabled
-          type: boolean
-          default: false
-        langgraph_platform_ga_enabled:
-          title: Langgraph Platform Ga Enabled
           type: boolean
           default: false
         enable_align_evaluators:
@@ -20106,6 +20266,18 @@ components:
           title: Completion Tokens
           type: integer
           default: 0
+        prompt_token_details:
+          title: Prompt Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
+        completion_token_details:
+          title: Completion Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
         total_cost:
           title: Total Cost
           type: string
@@ -20117,6 +20289,18 @@ components:
         completion_cost:
           title: Completion Cost
           type: string
+          nullable: true
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          additionalProperties:
+            type: string
           nullable: true
         price_model_id:
           title: Price Model Id
@@ -20288,6 +20472,18 @@ components:
           title: Completion Tokens
           type: integer
           default: 0
+        prompt_token_details:
+          title: Prompt Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
+        completion_token_details:
+          title: Completion Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
         total_cost:
           title: Total Cost
           type: string
@@ -20299,6 +20495,18 @@ components:
         completion_cost:
           title: Completion Cost
           type: string
+          nullable: true
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          additionalProperties:
+            type: string
           nullable: true
         price_model_id:
           title: Price Model Id
@@ -20752,6 +20960,18 @@ components:
           title: Completion Tokens
           type: integer
           default: 0
+        prompt_token_details:
+          title: Prompt Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
+        completion_token_details:
+          title: Completion Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
         total_cost:
           title: Total Cost
           type: string
@@ -20763,6 +20983,18 @@ components:
         completion_cost:
           title: Completion Cost
           type: string
+          nullable: true
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          additionalProperties:
+            type: string
           nullable: true
         price_model_id:
           title: Price Model Id
@@ -21134,6 +21366,18 @@ components:
           title: Completion Tokens
           type: integer
           default: 0
+        prompt_token_details:
+          title: Prompt Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
+        completion_token_details:
+          title: Completion Token Details
+          type: object
+          additionalProperties:
+            type: integer
+          nullable: true
         total_cost:
           title: Total Cost
           type: string
@@ -21145,6 +21389,18 @@ components:
         completion_cost:
           title: Completion Cost
           type: string
+          nullable: true
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          additionalProperties:
+            type: string
           nullable: true
         price_model_id:
           title: Price Model Id
@@ -23834,17 +24090,346 @@ components:
           type: string
           nullable: true
       description: Tenant schema.
-    CreateRunRequest:
+    alerts.AlertAction:
       required:
-        - name
-        - run_type
+        - config
+        - target
       type: object
       properties:
+        alert_rule_id:
+          type: string
+        config:
+          type: object
+        created_at:
+          type: string
+        id:
+          type: string
+        target:
+          enum:
+            - pagerduty
+            - webhook
+          type: string
+        updated_at:
+          type: string
+    alerts.AlertActionBase:
+      required:
+        - config
+        - target
+      type: object
+      properties:
+        alert_rule_id:
+          type: string
+        config:
+          type: object
+        id:
+          type: string
+        target:
+          enum:
+            - pagerduty
+            - webhook
+          type: string
+    alerts.AlertRule:
+      required:
+        - aggregation
+        - attribute
+        - description
+        - name
+        - operator
+        - type
+        - window_minutes
+      type: object
+      properties:
+        aggregation:
+          enum:
+            - avg
+            - sum
+            - pct
+          type: string
+        attribute:
+          enum:
+            - latency
+            - error_count
+            - feedback_score
+            - run_latency
+            - run_count
+          type: string
+        created_at:
+          type: string
+        denominator_filter:
+          type: string
+        description:
+          type: string
+        filter:
+          type: string
+        id:
+          type: string
         name:
           type: string
+        operator:
+          enum:
+            - gte
+            - lte
+          type: string
+        threshold:
+          type: number
+        threshold_multiplier:
+          type: number
+        threshold_window_minutes:
+          maximum: 60
+          type: integer
+        type:
+          enum:
+            - threshold
+            - change
+          type: string
+        updated_at:
+          type: string
+        window_minutes:
+          maximum: 15
+          type: integer
+          description: max 15 minutes for alert rule
+    alerts.AlertRuleBase:
+      required:
+        - aggregation
+        - attribute
+        - description
+        - name
+        - operator
+        - type
+        - window_minutes
+      type: object
+      properties:
+        aggregation:
+          enum:
+            - avg
+            - sum
+            - pct
+          type: string
+        attribute:
+          enum:
+            - latency
+            - error_count
+            - feedback_score
+            - run_latency
+            - run_count
+          type: string
+        denominator_filter:
+          type: string
+        description:
+          type: string
+        filter:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        operator:
+          enum:
+            - gte
+            - lte
+          type: string
+        threshold:
+          type: number
+        threshold_multiplier:
+          type: number
+        threshold_window_minutes:
+          maximum: 60
+          type: integer
+        type:
+          enum:
+            - threshold
+            - change
+          type: string
+        window_minutes:
+          maximum: 15
+          type: integer
+          description: max 15 minutes for alert rule
+    alerts.AlertRuleResponse:
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/alerts.AlertAction'
+        rule:
+          $ref: '#/components/schemas/alerts.AlertRule'
+    alerts.CreateAlertRuleRequest:
+      required:
+        - actions
+        - rule
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/alerts.AlertActionBase'
+        rule:
+          $ref: '#/components/schemas/alerts.AlertRuleBase'
+    alerts.ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: 'Invalid request: missing required fields'
+    alerts.UpdateAlertRuleRequest:
+      required:
+        - actions
+        - rule
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/alerts.AlertActionBase'
+        rule:
+          $ref: '#/components/schemas/alerts.AlertRuleBase'
+    examples.ErrorResponse:
+      type: object
+      properties:
+        details:
+          type: string
+          description: Optional error details as JSON string
+          example: '{"field":"dataset_id","reason":"required"}'
+        error:
+          type: string
+          description: Error message
+          example: 'Invalid request: missing required fields'
+    examples.ExamplesCreatedResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 1
+        example_ids:
+          type: array
+          items:
+            type: string
+          example:
+            - '["123e4567-e89b-12d3-a456-426614174000"]'
+    examples.ExamplesUpdatedResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 1
+        example_ids:
+          type: array
+          items:
+            type: string
+          example:
+            - '["123e4567-e89b-12d3-a456-426614174000"]'
+    feedback.FeedbackCategory:
+      type: object
+      properties:
+        label:
+          minLength: 1
+          type: string
+        value:
+          type: number
+    feedback.FeedbackConfig:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/feedback.FeedbackCategory'
+        max:
+          type: number
+        min:
+          type: number
+        type:
+          $ref: '#/components/schemas/feedback.FeedbackType'
+    feedback.FeedbackCreateSchema:
+      type: object
+      properties:
+        comment:
+          type: string
+        comparative_experiment_id:
+          type: string
+        correction: { }
+        created_at:
+          type: string
+        error:
+          type: boolean
+        feedback_config:
+          $ref: '#/components/schemas/feedback.FeedbackConfig'
+        feedback_group_id:
+          type: string
+        feedback_source:
+          $ref: '#/components/schemas/feedback.FeedbackSource'
+        id:
+          type: string
+        key:
+          type: string
+        modified_at:
+          type: string
+        run_id:
+          type: string
+        score: { }
+        session_id:
+          type: string
+        trace_id:
+          type: string
+        value: { }
+    feedback.FeedbackSource:
+      type: object
+      properties:
+        metadata:
+          type: object
+        type:
+          type: string
+    feedback.FeedbackType:
+      enum:
+        - continuous
+        - categorical
+        - freeform
+      type: string
+      x-enum-varnames:
+        - FeedbackTypeContinuous
+        - FeedbackTypeCategorical
+        - FeedbackTypeFreeform
+    runs.ErrorResponse:
+      type: object
+      properties:
+        details:
+          type: string
+          description: Optional error details as JSON string
+          example: '{"field":"dataset_id","reason":"required"}'
+        error:
+          type: string
+          description: Error message
+          example: 'Invalid request: missing required fields'
+    runs.Run:
+      type: object
+      properties:
+        dotted_order:
+          type: string
+        end_time:
+          type: string
+        error:
+          type: string
+        events:
+          type: array
+          items:
+            type: object
+        extra:
+          type: object
+        id:
+          type: string
+        input_attachments:
+          type: object
         inputs:
           type: object
-          nullable: true
+        name:
+          type: string
+        output_attachments:
+          type: object
+        outputs:
+          type: object
+        parent_run_id:
+          type: string
+        reference_example_id:
+          type: string
         run_type:
           enum:
             - tool
@@ -23855,268 +24440,22 @@ components:
             - prompt
             - parser
           type: string
-        start_time:
-          oneOf:
-            - type: string
-            - type: number
-          nullable: true
-        end_time:
-          oneOf:
-            - type: string
-            - type: number
-          nullable: true
-        extra:
-          type: object
-          nullable: true
-        error:
-          type: string
-          nullable: true
         serialized:
           type: object
-          nullable: true
-        outputs:
-          type: object
-          nullable: true
-        parent_run_id:
+        session_id:
           type: string
-          format: uuid
-          nullable: true
-        events:
-          type: array
-          items:
-            type: object
-          nullable: true
+        session_name:
+          type: string
+        start_time:
+          type: string
+        status:
+          type: string
         tags:
           type: array
           items:
             type: string
-          nullable: true
         trace_id:
           type: string
-          format: uuid
-          nullable: true
-        dotted_order:
-          type: string
-          nullable: true
-        id:
-          type: string
-          format: uuid
-          nullable: true
-        session_id:
-          type: string
-          format: uuid
-          nullable: true
-        session_name:
-          type: string
-          nullable: true
-        reference_example_id:
-          type: string
-          format: uuid
-          nullable: true
-        input_attachments:
-          type: object
-          nullable: true
-        output_attachments:
-          type: object
-          nullable: true
-    BatchIngestRunsRequest:
-      type: object
-      properties:
-        post:
-          type: array
-          items:
-            required:
-              - id
-              - trace_id
-              - dotted_order
-              - start_time
-              - name
-              - run_type
-            type: object
-            properties:
-              name:
-                type: string
-              inputs:
-                type: object
-              run_type:
-                enum:
-                  - tool
-                  - chain
-                  - llm
-                  - retriever
-                  - embedding
-                  - prompt
-                  - parser
-                type: string
-              start_time:
-                oneOf:
-                  - type: string
-                  - type: number
-              end_time:
-                oneOf:
-                  - type: string
-                  - type: number
-                nullable: true
-              extra:
-                type: object
-                nullable: true
-              error:
-                type: string
-                nullable: true
-              serialized:
-                type: object
-                nullable: true
-              outputs:
-                type: object
-                nullable: true
-              parent_run_id:
-                type: string
-                format: uuid
-                nullable: true
-              events:
-                type: array
-                items:
-                  type: object
-                nullable: true
-              tags:
-                type: array
-                items:
-                  type: string
-                nullable: true
-              trace_id:
-                type: string
-                format: uuid
-              dotted_order:
-                type: string
-              id:
-                type: string
-                format: uuid
-              session_id:
-                type: string
-                format: uuid
-                nullable: true
-              session_name:
-                type: string
-                nullable: true
-              reference_example_id:
-                type: string
-                format: uuid
-                nullable: true
-              input_attachments:
-                type: object
-                nullable: true
-              output_attachments:
-                type: object
-                nullable: true
-        patch:
-          type: array
-          items:
-            required:
-              - id
-              - trace_id
-              - dotted_order
-              - end_time
-            type: object
-            properties:
-              trace_id:
-                type: string
-                format: uuid
-              dotted_order:
-                type: string
-              parent_run_id:
-                type: string
-                format: uuid
-                nullable: true
-              end_time:
-                oneOf:
-                  - type: string
-                  - type: number
-              error:
-                type: string
-                nullable: true
-              inputs:
-                type: object
-                nullable: true
-              outputs:
-                type: object
-                nullable: true
-              events:
-                type: array
-                items:
-                  type: object
-                nullable: true
-              tags:
-                type: array
-                items:
-                  type: string
-                nullable: true
-              extra:
-                type: object
-                nullable: true
-              input_attachments:
-                type: object
-                nullable: true
-              output_attachments:
-                type: object
-                nullable: true
-              id:
-                type: string
-                format: uuid
-      description: Schema for a batch of runs to be ingested.
-    UpdateRunRequest:
-      type: object
-      properties:
-        trace_id:
-          type: string
-          format: uuid
-          nullable: true
-        dotted_order:
-          type: string
-          nullable: true
-        parent_run_id:
-          type: string
-          format: uuid
-          nullable: true
-        end_time:
-          oneOf:
-            - type: string
-            - type: number
-          nullable: true
-        error:
-          type: string
-          nullable: true
-        inputs:
-          type: object
-          nullable: true
-        outputs:
-          type: object
-          nullable: true
-        events:
-          type: array
-          items:
-            type: object
-          nullable: true
-        tags:
-          type: array
-          items:
-            type: string
-          nullable: true
-        extra:
-          type: object
-          nullable: true
-        input_attachments:
-          type: object
-          nullable: true
-        output_attachments:
-          type: object
-          nullable: true
-        session_id:
-          type: string
-          format: uuid
-          nullable: true
-        session_name:
-          type: string
-          nullable: true
   securitySchemes:
     ApiKey:
       type: apiKey

@@ -233,12 +233,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_platform_ga_enabled")]
-        public bool? LanggraphPlatformGaEnabled { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_align_evaluators")]
         public bool? EnableAlignEvaluators { get; set; }
 
@@ -380,9 +374,6 @@ namespace LangSmith
         /// <param name="langsmithExperimentalSearchEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="langgraphPlatformGaEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableAlignEvaluators">
         /// Default Value: false
         /// </param>
@@ -439,7 +430,6 @@ namespace LangSmith
             bool? langsmithAlertsLegacyPocEnabled,
             bool? enablePrebuiltDashboards,
             bool? langsmithExperimentalSearchEnabled,
-            bool? langgraphPlatformGaEnabled,
             bool? enableAlignEvaluators,
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
@@ -483,7 +473,6 @@ namespace LangSmith
             this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
             this.EnablePrebuiltDashboards = enablePrebuiltDashboards;
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
-            this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;

@@ -83,20 +83,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::LangSmith.AlertsErrorResponse? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = global::LangSmith.AlertsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
+                    ResponseObject = __value_400,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -107,20 +111,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::LangSmith.AlertsErrorResponse? __value_403 = null;
                 if (ReadResponseAsString)
                 {
                     __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::LangSmith.AlertsErrorResponse.FromJson(__content_403, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
+                    ResponseObject = __value_403,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -131,20 +139,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
+                global::LangSmith.AlertsErrorResponse? __value_500 = null;
                 if (ReadResponseAsString)
                 {
                     __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = global::LangSmith.AlertsErrorResponse.FromJson(__content_500, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
+                    ResponseObject = __value_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -155,20 +167,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 503)
             {
                 string? __content_503 = null;
+                global::LangSmith.AlertsErrorResponse? __value_503 = null;
                 if (ReadResponseAsString)
                 {
                     __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = global::LangSmith.AlertsErrorResponse.FromJson(__content_503, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_503, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,
+                    ResponseObject = __value_503,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,

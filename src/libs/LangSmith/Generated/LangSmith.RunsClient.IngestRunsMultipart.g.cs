@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareIngestRunsMultipartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.Request request);
+            global::LangSmith.Request2 request);
         partial void PrepareIngestRunsMultipartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.Request request);
+            global::LangSmith.Request2 request);
         partial void ProcessIngestRunsMultipartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,20 +23,20 @@ namespace LangSmith
 
         /// <summary>
         /// Ingest Runs (Multipart)<br/>
-        /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.  \<br/>
-        /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.  \<br/>
-        /// * `post|patch.&lt;run_id&gt;` – JSON run payload.  \<br/>
-        /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).  \<br/>
-        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).  \<br/>
-        /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.  \<br/>
-        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.  \<br/>
+        /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.<br/>
+        /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.<br/>
+        /// * `post|patch.&lt;run_id&gt;` – JSON run payload.<br/>
+        /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
+        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
+        /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
+        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> IngestRunsMultipartAsync(
-            global::LangSmith.Request request,
+            global::LangSmith.Request2 request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -141,20 +141,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::LangSmith.RunsErrorResponse? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = global::LangSmith.RunsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
+                    ResponseObject = __value_400,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -165,20 +169,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::LangSmith.RunsErrorResponse? __value_403 = null;
                 if (ReadResponseAsString)
                 {
                     __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::LangSmith.RunsErrorResponse.FromJson(__content_403, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
+                    ResponseObject = __value_403,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -189,20 +197,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 409)
             {
                 string? __content_409 = null;
+                global::LangSmith.RunsErrorResponse? __value_409 = null;
                 if (ReadResponseAsString)
                 {
                     __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = global::LangSmith.RunsErrorResponse.FromJson(__content_409, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_409, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_409,
+                    ResponseObject = __value_409,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -213,20 +225,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::LangSmith.RunsErrorResponse? __value_422 = null;
                 if (ReadResponseAsString)
                 {
                     __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = global::LangSmith.RunsErrorResponse.FromJson(__content_422, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
+                    ResponseObject = __value_422,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -237,20 +253,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 429)
             {
                 string? __content_429 = null;
+                global::LangSmith.RunsErrorResponse? __value_429 = null;
                 if (ReadResponseAsString)
                 {
                     __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = global::LangSmith.RunsErrorResponse.FromJson(__content_429, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_429, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_429,
+                    ResponseObject = __value_429,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -332,13 +352,13 @@ namespace LangSmith
 
         /// <summary>
         /// Ingest Runs (Multipart)<br/>
-        /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.  \<br/>
-        /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.  \<br/>
-        /// * `post|patch.&lt;run_id&gt;` – JSON run payload.  \<br/>
-        /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).  \<br/>
-        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).  \<br/>
-        /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.  \<br/>
-        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.  \<br/>
+        /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.<br/>
+        /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.<br/>
+        /// * `post|patch.&lt;run_id&gt;` – JSON run payload.<br/>
+        /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
+        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
+        /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
+        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
         /// <param name="post_runId_">
@@ -390,7 +410,7 @@ namespace LangSmith
             byte[]? attachment_runId__filename_ = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.Request
+            var __request = new global::LangSmith.Request2
             {
                 Post_runId_ = post_runId_,
                 Post_runId_name = post_runId_name,

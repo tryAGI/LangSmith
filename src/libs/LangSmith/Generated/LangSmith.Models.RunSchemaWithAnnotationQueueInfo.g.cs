@@ -210,6 +210,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_token_details")]
+        public global::System.Collections.Generic.Dictionary<string, int>? PromptTokenDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_token_details")]
+        public global::System.Collections.Generic.Dictionary<string, int>? CompletionTokenDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
         public string? TotalCost { get; set; }
 
@@ -224,6 +236,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
         public string? CompletionCost { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost_details")]
+        public global::System.Collections.Generic.Dictionary<string, string>? PromptCostDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost_details")]
+        public global::System.Collections.Generic.Dictionary<string, string>? CompletionCostDetails { get; set; }
 
         /// <summary>
         /// 
@@ -382,9 +406,13 @@ namespace LangSmith
         /// <param name="completionTokens">
         /// Default Value: 0
         /// </param>
+        /// <param name="promptTokenDetails"></param>
+        /// <param name="completionTokenDetails"></param>
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
+        /// <param name="promptCostDetails"></param>
+        /// <param name="completionCostDetails"></param>
         /// <param name="priceModelId"></param>
         /// <param name="firstTokenTime"></param>
         /// <param name="sessionId"></param>
@@ -443,9 +471,13 @@ namespace LangSmith
             int? totalTokens,
             int? promptTokens,
             int? completionTokens,
+            global::System.Collections.Generic.Dictionary<string, int>? promptTokenDetails,
+            global::System.Collections.Generic.Dictionary<string, int>? completionTokenDetails,
             string? totalCost,
             string? promptCost,
             string? completionCost,
+            global::System.Collections.Generic.Dictionary<string, string>? promptCostDetails,
+            global::System.Collections.Generic.Dictionary<string, string>? completionCostDetails,
             global::System.Guid? priceModelId,
             global::System.DateTime? firstTokenTime,
             global::System.DateTime? lastQueuedAt,
@@ -496,9 +528,13 @@ namespace LangSmith
             this.TotalTokens = totalTokens;
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
+            this.PromptTokenDetails = promptTokenDetails;
+            this.CompletionTokenDetails = completionTokenDetails;
             this.TotalCost = totalCost;
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
+            this.PromptCostDetails = promptCostDetails;
+            this.CompletionCostDetails = completionCostDetails;
             this.PriceModelId = priceModelId;
             this.FirstTokenTime = firstTokenTime;
             this.LastQueuedAt = lastQueuedAt;
