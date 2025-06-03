@@ -25,6 +25,8 @@ namespace LangSmith
         /// <param name="matchPattern"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
+        /// <param name="promptCostDetails"></param>
+        /// <param name="completionCostDetails"></param>
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -35,6 +37,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<double?, string> completionCost,
             global::System.DateTime? startTime = default,
             global::System.Collections.Generic.IList<string>? matchPath = default,
+            object? promptCostDetails = default,
+            object? completionCostDetails = default,
             string? provider = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

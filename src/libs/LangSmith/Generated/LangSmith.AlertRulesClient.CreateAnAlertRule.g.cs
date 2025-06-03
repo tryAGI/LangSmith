@@ -6,27 +6,39 @@ namespace LangSmith
     public partial class AlertRulesClient
     {
         partial void PrepareCreateAnAlertRuleArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            global::LangSmith.AlertsCreateAlertRuleRequest request);
         partial void PrepareCreateAnAlertRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.AlertsCreateAlertRuleRequest request);
         partial void ProcessCreateAnAlertRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCreateAnAlertRuleResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
 
         /// <summary>
         /// Create an alert rule<br/>
         /// Creates a new alert rule. The request body must be a JSON-encoded alert rule object that follows the CreateAlertRuleRequest schema.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task CreateAnAlertRuleAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AlertsAlertRuleResponse> CreateAnAlertRuleAsync(
+            global::LangSmith.AlertsCreateAlertRuleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateAnAlertRuleArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/v1/platform/alerts/{session_id}",
@@ -55,13 +67,20 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
             PrepareCreateAnAlertRuleRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -78,20 +97,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::LangSmith.AlertsErrorResponse? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = global::LangSmith.AlertsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
+                    ResponseObject = __value_400,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -102,20 +125,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::LangSmith.AlertsErrorResponse? __value_403 = null;
                 if (ReadResponseAsString)
                 {
                     __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::LangSmith.AlertsErrorResponse.FromJson(__content_403, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
+                    ResponseObject = __value_403,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -126,20 +153,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 429)
             {
                 string? __content_429 = null;
+                global::LangSmith.AlertsErrorResponse? __value_429 = null;
                 if (ReadResponseAsString)
                 {
                     __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = global::LangSmith.AlertsErrorResponse.FromJson(__content_429, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_429, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_429,
+                    ResponseObject = __value_429,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -150,20 +181,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
+                global::LangSmith.AlertsErrorResponse? __value_500 = null;
                 if (ReadResponseAsString)
                 {
                     __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = global::LangSmith.AlertsErrorResponse.FromJson(__content_500, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
+                    ResponseObject = __value_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -174,20 +209,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 503)
             {
                 string? __content_503 = null;
+                global::LangSmith.AlertsErrorResponse? __value_503 = null;
                 if (ReadResponseAsString)
                 {
                     __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = global::LangSmith.AlertsErrorResponse.FromJson(__content_503, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = await global::LangSmith.AlertsErrorResponse.FromJsonStreamAsync(__contentStream_503, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.AlertsErrorResponse>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,
+                    ResponseObject = __value_503,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -206,6 +245,10 @@ namespace LangSmith
                 ProcessResponseContent(
                     client: HttpClient,
                     response: __response,
+                    content: ref __content);
+                ProcessCreateAnAlertRuleResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
                     content: ref __content);
 
                 try
@@ -227,6 +270,9 @@ namespace LangSmith
                     };
                 }
 
+                return
+                    global::LangSmith.AlertsAlertRuleResponse.FromJson(__content, JsonSerializerContext) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -254,7 +300,34 @@ namespace LangSmith
 #endif
                 ).ConfigureAwait(false);
 
+                return
+                    await global::LangSmith.AlertsAlertRuleResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
+        }
+
+        /// <summary>
+        /// Create an alert rule<br/>
+        /// Creates a new alert rule. The request body must be a JSON-encoded alert rule object that follows the CreateAlertRuleRequest schema.
+        /// </summary>
+        /// <param name="actions"></param>
+        /// <param name="rule"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AlertsAlertRuleResponse> CreateAnAlertRuleAsync(
+            global::System.Collections.Generic.IList<global::LangSmith.AlertsAlertActionBase> actions,
+            global::LangSmith.AlertsAlertRuleBase rule,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.AlertsCreateAlertRuleRequest
+            {
+                Actions = actions,
+                Rule = rule,
+            };
+
+            return await CreateAnAlertRuleAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

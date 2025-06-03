@@ -12,8 +12,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task UpdateExamplesAsync(
-            global::LangSmith.Request3 request,
+        global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
+            global::LangSmith.Request4 request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task UpdateExamplesAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
             byte[] x_exampleId_,
             string x_exampleId_name,
             byte[]? x_exampleId_Inputs = default,

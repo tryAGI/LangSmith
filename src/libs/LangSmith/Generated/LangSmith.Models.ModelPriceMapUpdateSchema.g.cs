@@ -55,6 +55,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost_details")]
+        public object? PromptCostDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost_details")]
+        public object? CompletionCostDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public string? Provider { get; set; }
 
@@ -75,6 +87,8 @@ namespace LangSmith
         /// <param name="matchPattern"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
+        /// <param name="promptCostDetails"></param>
+        /// <param name="completionCostDetails"></param>
         /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,6 +100,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<double?, string> completionCost,
             global::System.DateTime? startTime,
             global::System.Collections.Generic.IList<string>? matchPath,
+            object? promptCostDetails,
+            object? completionCostDetails,
             string? provider)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -94,6 +110,8 @@ namespace LangSmith
             this.CompletionCost = completionCost;
             this.StartTime = startTime;
             this.MatchPath = matchPath;
+            this.PromptCostDetails = promptCostDetails;
+            this.CompletionCostDetails = completionCostDetails;
             this.Provider = provider;
         }
 

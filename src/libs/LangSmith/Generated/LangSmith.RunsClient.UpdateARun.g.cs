@@ -6,10 +6,12 @@ namespace LangSmith
     public partial class RunsClient
     {
         partial void PrepareUpdateARunArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            global::LangSmith.RunsRun request);
         partial void PrepareUpdateARunRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.RunsRun request);
         partial void ProcessUpdateARunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,15 +25,20 @@ namespace LangSmith
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateARunAsync(
+            global::LangSmith.RunsRun request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PrepareUpdateARunArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/runs/{run_id}",
@@ -60,13 +67,20 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
             PrepareUpdateARunRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -83,20 +97,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::LangSmith.RunsErrorResponse? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = global::LangSmith.RunsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
+                    ResponseObject = __value_400,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -107,20 +125,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::LangSmith.RunsErrorResponse? __value_403 = null;
                 if (ReadResponseAsString)
                 {
                     __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::LangSmith.RunsErrorResponse.FromJson(__content_403, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
+                    ResponseObject = __value_403,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -131,20 +153,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
+                global::LangSmith.RunsErrorResponse? __value_404 = null;
                 if (ReadResponseAsString)
                 {
                     __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_404 = global::LangSmith.RunsErrorResponse.FromJson(__content_404, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_404 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_404, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
+                    ResponseObject = __value_404,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -155,20 +181,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 409)
             {
                 string? __content_409 = null;
+                global::LangSmith.RunsErrorResponse? __value_409 = null;
                 if (ReadResponseAsString)
                 {
                     __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = global::LangSmith.RunsErrorResponse.FromJson(__content_409, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_409, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_409,
+                    ResponseObject = __value_409,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -179,20 +209,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::LangSmith.RunsErrorResponse? __value_422 = null;
                 if (ReadResponseAsString)
                 {
                     __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = global::LangSmith.RunsErrorResponse.FromJson(__content_422, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
+                    ResponseObject = __value_422,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -203,20 +237,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 429)
             {
                 string? __content_429 = null;
+                global::LangSmith.RunsErrorResponse? __value_429 = null;
                 if (ReadResponseAsString)
                 {
                     __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = global::LangSmith.RunsErrorResponse.FromJson(__content_429, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = await global::LangSmith.RunsErrorResponse.FromJsonStreamAsync(__contentStream_429, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_429,
+                    ResponseObject = __value_429,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -290,6 +328,87 @@ namespace LangSmith
 
                 return __content;
             }
+        }
+
+        /// <summary>
+        /// Update a Run<br/>
+        /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
+        /// </summary>
+        /// <param name="dottedOrder"></param>
+        /// <param name="endTime"></param>
+        /// <param name="error"></param>
+        /// <param name="events"></param>
+        /// <param name="extra"></param>
+        /// <param name="id"></param>
+        /// <param name="inputAttachments"></param>
+        /// <param name="inputs"></param>
+        /// <param name="name"></param>
+        /// <param name="outputAttachments"></param>
+        /// <param name="outputs"></param>
+        /// <param name="parentRunId"></param>
+        /// <param name="referenceExampleId"></param>
+        /// <param name="runType"></param>
+        /// <param name="serialized"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        /// <param name="startTime"></param>
+        /// <param name="status"></param>
+        /// <param name="tags"></param>
+        /// <param name="traceId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<string> UpdateARunAsync(
+            string? dottedOrder = default,
+            string? endTime = default,
+            string? error = default,
+            global::System.Collections.Generic.IList<object>? events = default,
+            object? extra = default,
+            string? id = default,
+            object? inputAttachments = default,
+            object? inputs = default,
+            string? name = default,
+            object? outputAttachments = default,
+            object? outputs = default,
+            string? parentRunId = default,
+            string? referenceExampleId = default,
+            global::LangSmith.RunsRunRunType? runType = default,
+            object? serialized = default,
+            string? sessionId = default,
+            string? sessionName = default,
+            string? startTime = default,
+            string? status = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            string? traceId = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.RunsRun
+            {
+                DottedOrder = dottedOrder,
+                EndTime = endTime,
+                Error = error,
+                Events = events,
+                Extra = extra,
+                Id = id,
+                InputAttachments = inputAttachments,
+                Inputs = inputs,
+                Name = name,
+                OutputAttachments = outputAttachments,
+                Outputs = outputs,
+                ParentRunId = parentRunId,
+                ReferenceExampleId = referenceExampleId,
+                RunType = runType,
+                Serialized = serialized,
+                SessionId = sessionId,
+                SessionName = sessionName,
+                StartTime = startTime,
+                Status = status,
+                Tags = tags,
+                TraceId = traceId,
+            };
+
+            return await UpdateARunAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

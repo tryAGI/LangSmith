@@ -7,14 +7,19 @@ namespace LangSmith
     {
         partial void PrepareUploadExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.Request2 request);
+            global::LangSmith.Request3 request);
         partial void PrepareUploadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.Request2 request);
+            global::LangSmith.Request3 request);
         partial void ProcessUploadExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessUploadExamplesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
 
         /// <summary>
         /// Upload Examples<br/>
@@ -24,8 +29,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task UploadExamplesAsync(
-            global::LangSmith.Request2 request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesCreatedResponse> UploadExamplesAsync(
+            global::LangSmith.Request3 request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -111,20 +116,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::LangSmith.ExamplesErrorResponse? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = await global::LangSmith.ExamplesErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.ExamplesErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
+                    ResponseObject = __value_400,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -135,20 +144,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::LangSmith.ExamplesErrorResponse? __value_403 = null;
                 if (ReadResponseAsString)
                 {
                     __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_403, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::LangSmith.ExamplesErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.ExamplesErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
+                    ResponseObject = __value_403,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -159,20 +172,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 409)
             {
                 string? __content_409 = null;
+                global::LangSmith.ExamplesErrorResponse? __value_409 = null;
                 if (ReadResponseAsString)
                 {
                     __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_409, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = await global::LangSmith.ExamplesErrorResponse.FromJsonStreamAsync(__contentStream_409, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.ExamplesErrorResponse>(
                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_409,
+                    ResponseObject = __value_409,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -183,20 +200,24 @@ namespace LangSmith
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::LangSmith.ExamplesErrorResponse? __value_422 = null;
                 if (ReadResponseAsString)
                 {
                     __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_422, JsonSerializerContext);
                 }
                 else
                 {
                     var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = await global::LangSmith.ExamplesErrorResponse.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
                 }
 
-                throw new global::LangSmith.ApiException(
+                throw new global::LangSmith.ApiException<global::LangSmith.ExamplesErrorResponse>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
+                    ResponseObject = __value_422,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -215,6 +236,10 @@ namespace LangSmith
                 ProcessResponseContent(
                     client: HttpClient,
                     response: __response,
+                    content: ref __content);
+                ProcessUploadExamplesResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
                     content: ref __content);
 
                 try
@@ -236,6 +261,9 @@ namespace LangSmith
                     };
                 }
 
+                return
+                    global::LangSmith.ExamplesExamplesCreatedResponse.FromJson(__content, JsonSerializerContext) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -263,6 +291,9 @@ namespace LangSmith
 #endif
                 ).ConfigureAwait(false);
 
+                return
+                    await global::LangSmith.ExamplesExamplesCreatedResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
@@ -297,7 +328,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UploadExamplesAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesCreatedResponse> UploadExamplesAsync(
             byte[] x_exampleId_,
             string x_exampleId_name,
             byte[] x_exampleId_Inputs,
@@ -308,7 +339,7 @@ namespace LangSmith
             string? x_exampleId_Attachments_name_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.Request2
+            var __request = new global::LangSmith.Request3
             {
                 x_exampleId_ = x_exampleId_,
                 x_exampleId_name = x_exampleId_name,
@@ -320,7 +351,7 @@ namespace LangSmith
                 x_exampleId_Attachments_name_name = x_exampleId_Attachments_name_name,
             };
 
-            await UploadExamplesAsync(
+            return await UploadExamplesAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
