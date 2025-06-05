@@ -37,7 +37,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 provider: ref provider);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/oauth/{provider}/callback",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

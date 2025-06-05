@@ -56,7 +56,7 @@ namespace LangSmith
                 limit: ref limit,
                 offset: ref offset);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/comments/{owner}/{repo}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

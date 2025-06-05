@@ -97,7 +97,7 @@ namespace LangSmith
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 tagValueId: tagValueId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/repos/tags",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

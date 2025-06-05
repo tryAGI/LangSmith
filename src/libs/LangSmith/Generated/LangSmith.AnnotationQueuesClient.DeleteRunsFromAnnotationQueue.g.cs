@@ -44,7 +44,7 @@ namespace LangSmith
                 queueId: ref queueId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/runs/delete",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

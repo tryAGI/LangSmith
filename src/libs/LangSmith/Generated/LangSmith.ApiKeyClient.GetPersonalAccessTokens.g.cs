@@ -33,7 +33,7 @@ namespace LangSmith
             PrepareGetPersonalAccessTokensArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/api-key/current",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

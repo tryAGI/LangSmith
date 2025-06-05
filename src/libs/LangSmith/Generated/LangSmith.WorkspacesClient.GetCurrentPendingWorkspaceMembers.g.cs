@@ -51,7 +51,7 @@ namespace LangSmith
                 offset: ref offset,
                 emails: emails);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/members/pending",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

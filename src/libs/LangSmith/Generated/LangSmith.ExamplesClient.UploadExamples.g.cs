@@ -41,7 +41,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v1/platform/datasets/{dataset_id}/examples",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -33,7 +33,7 @@ namespace LangSmith
             PrepareGetAnAlertRuleArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v1/platform/alerts/{session_id}/{alert_rule_id}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

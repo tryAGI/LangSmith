@@ -32,7 +32,7 @@ namespace LangSmith
             PrepareLoginArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/login",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

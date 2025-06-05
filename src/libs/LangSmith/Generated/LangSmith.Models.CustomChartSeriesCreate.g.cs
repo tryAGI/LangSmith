@@ -42,6 +42,13 @@ namespace LangSmith
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
+        /// LGP Metrics you can chart.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project_metric")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter))]
+        public global::LangSmith.HostProjectChartMetric? ProjectMetric { get; set; }
+
+        /// <summary>
         /// Group by param for run stats.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
@@ -63,6 +70,9 @@ namespace LangSmith
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
+        /// <param name="projectMetric">
+        /// LGP Metrics you can chart.
+        /// </param>
         /// <param name="groupBy">
         /// Group by param for run stats.
         /// </param>
@@ -75,6 +85,7 @@ namespace LangSmith
             global::LangSmith.CustomChartSeriesFilters? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
+            global::LangSmith.HostProjectChartMetric? projectMetric,
             global::LangSmith.RunStatsGroupBy? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -82,6 +93,7 @@ namespace LangSmith
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
             this.WorkspaceId = workspaceId;
+            this.ProjectMetric = projectMetric;
             this.GroupBy = groupBy;
         }
 

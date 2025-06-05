@@ -44,7 +44,7 @@ namespace LangSmith
                 workspaceId: ref workspaceId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/workspaces/{workspaceId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

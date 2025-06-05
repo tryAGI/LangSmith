@@ -62,7 +62,7 @@ namespace LangSmith
                 excludeS3StoredAttributes: ref excludeS3StoredAttributes,
                 excludeSerialized: ref excludeSerialized);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

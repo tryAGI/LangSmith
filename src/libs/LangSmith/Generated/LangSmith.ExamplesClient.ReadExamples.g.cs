@@ -102,7 +102,7 @@ namespace LangSmith
                 select: select,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/examples",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

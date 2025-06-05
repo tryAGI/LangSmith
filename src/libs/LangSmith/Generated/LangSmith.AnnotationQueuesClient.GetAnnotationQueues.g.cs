@@ -71,7 +71,7 @@ namespace LangSmith
                 tagValueId: tagValueId,
                 datasetId: ref datasetId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/annotation-queues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

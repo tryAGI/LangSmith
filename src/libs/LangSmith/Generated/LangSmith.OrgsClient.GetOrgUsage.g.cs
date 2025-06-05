@@ -49,7 +49,7 @@ namespace LangSmith
                 endingBefore: ref endingBefore,
                 onCurrentPlan: ref onCurrentPlan);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/billing/usage",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

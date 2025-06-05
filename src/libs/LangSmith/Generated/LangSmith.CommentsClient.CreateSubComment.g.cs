@@ -54,7 +54,7 @@ namespace LangSmith
                 parentCommentId: ref parentCommentId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

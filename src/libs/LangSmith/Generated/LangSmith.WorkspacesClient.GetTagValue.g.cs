@@ -42,7 +42,7 @@ namespace LangSmith
                 tagKeyId: ref tagKeyId,
                 tagValueId: ref tagValueId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values/{tagValueId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

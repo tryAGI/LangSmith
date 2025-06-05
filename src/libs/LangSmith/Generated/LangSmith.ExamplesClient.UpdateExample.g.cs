@@ -45,7 +45,7 @@ namespace LangSmith
                 exampleId: ref exampleId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/examples/{exampleId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

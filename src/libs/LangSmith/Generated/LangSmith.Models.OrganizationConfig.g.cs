@@ -221,12 +221,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_prebuilt_dashboards")]
-        public bool? EnablePrebuiltDashboards { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_experimental_search_enabled")]
         public bool? LangsmithExperimentalSearchEnabled { get; set; }
 
@@ -253,12 +247,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_monthly_usage_charts")]
         public bool? EnableMonthlyUsageCharts { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_new_filter_bar")]
-        public bool? EnableNewFilterBar { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -368,9 +356,6 @@ namespace LangSmith
         /// <param name="langsmithAlertsLegacyPocEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="enablePrebuiltDashboards">
-        /// Default Value: false
-        /// </param>
         /// <param name="langsmithExperimentalSearchEnabled">
         /// Default Value: false
         /// </param>
@@ -384,9 +369,6 @@ namespace LangSmith
         /// Default Value: sync
         /// </param>
         /// <param name="enableMonthlyUsageCharts">
-        /// Default Value: false
-        /// </param>
-        /// <param name="enableNewFilterBar">
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
@@ -428,13 +410,11 @@ namespace LangSmith
             bool? tenantSkipTopkFacets,
             bool? lgpTemplatesEnabled,
             bool? langsmithAlertsLegacyPocEnabled,
-            bool? enablePrebuiltDashboards,
             bool? langsmithExperimentalSearchEnabled,
             bool? enableAlignEvaluators,
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
-            bool? enableMonthlyUsageCharts,
-            bool? enableNewFilterBar)
+            bool? enableMonthlyUsageCharts)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -471,13 +451,11 @@ namespace LangSmith
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
             this.LgpTemplatesEnabled = lgpTemplatesEnabled;
             this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
-            this.EnablePrebuiltDashboards = enablePrebuiltDashboards;
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
-            this.EnableNewFilterBar = enableNewFilterBar;
         }
 
         /// <summary>

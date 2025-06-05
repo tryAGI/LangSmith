@@ -33,7 +33,7 @@ namespace LangSmith
             PrepareTestAnAlertActionToDetermineIfConfigurationIsValidArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v1/platform/alerts/{session_id}/test",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
