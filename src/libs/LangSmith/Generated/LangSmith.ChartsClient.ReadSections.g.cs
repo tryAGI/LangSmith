@@ -76,7 +76,7 @@ namespace LangSmith
                 sortByDesc: ref sortByDesc,
                 tagValueId: tagValueId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/charts/section",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

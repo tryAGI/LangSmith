@@ -37,7 +37,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 queueId: ref queueId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/total_size",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

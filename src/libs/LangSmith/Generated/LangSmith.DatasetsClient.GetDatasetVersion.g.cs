@@ -48,7 +48,7 @@ namespace LangSmith
                 asOf: ref asOf,
                 tag: ref tag);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/version",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

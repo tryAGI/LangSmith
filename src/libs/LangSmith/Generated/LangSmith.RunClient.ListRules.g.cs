@@ -58,7 +58,7 @@ namespace LangSmith
                 nameContains: ref nameContains,
                 id: id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/runs/rules",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

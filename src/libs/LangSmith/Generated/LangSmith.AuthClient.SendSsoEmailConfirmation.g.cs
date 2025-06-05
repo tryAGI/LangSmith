@@ -40,7 +40,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/sso/email-verification/send",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

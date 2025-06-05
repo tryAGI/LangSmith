@@ -61,7 +61,7 @@ namespace LangSmith
                 metadata: ref metadata,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/examples/count",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

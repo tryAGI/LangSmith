@@ -4709,36 +4709,6 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  /api/v1/runs/monitor:
-    post:
-      tags:
-        - run
-      summary: Monitor Tracer Session
-      description: Get monitoring data for a specific session.
-      operationId: monitor_tracer_session_api_v1_runs_monitor_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MonitorRequest'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MonitorResponse'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-        - ApiKey: [ ]
-        - TenantId: [ ]
-        - BearerAuth: [ ]
   /api/v1/runs/group:
     post:
       tags:
@@ -14728,6 +14698,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        project_metric:
+          $ref: '#/components/schemas/HostProjectChartMetric'
         id:
           title: Id
           anyOf:
@@ -14759,6 +14731,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        project_metric:
+          $ref: '#/components/schemas/HostProjectChartMetric'
         group_by:
           $ref: '#/components/schemas/RunStatsGroupBy'
     CustomChartSeriesFilters:
@@ -14807,6 +14781,8 @@ components:
           type: string
           format: uuid
           nullable: true
+        project_metric:
+          $ref: '#/components/schemas/HostProjectChartMetric'
         group_by:
           $ref: '#/components/schemas/RunStatsGroupBy'
         id:
@@ -16930,6 +16906,13 @@ components:
         highlight_text:
           title: Highlight Text
           type: string
+    HostProjectChartMetric:
+      title: HostProjectChartMetric
+      enum:
+        - memory_usage
+        - cpu_usage
+      type: string
+      description: LGP Metrics you can chart.
     HumanMessage:
       title: HumanMessage
       required:
@@ -17435,19 +17418,6 @@ components:
           title: Org Role Name
           type: string
           nullable: true
-    MetadataKeyValue:
-      title: MetadataKeyValue
-      required:
-        - key
-        - value
-      type: object
-      properties:
-        key:
-          title: Key
-          type: string
-        value:
-          title: Value
-          type: string
     Missing:
       title: Missing
       required:
@@ -17596,100 +17566,6 @@ components:
           type: string
           nullable: true
       description: Model price map update schema.
-    MonitorBlock:
-      title: MonitorBlock
-      required:
-        - title
-        - section
-        - columns
-        - rows
-        - chart_spec
-      type: object
-      properties:
-        title:
-          title: Title
-          type: string
-        section:
-          title: Section
-          type: string
-        columns:
-          title: Columns
-          type: array
-          items:
-            type: string
-        subtitle:
-          title: Subtitle
-          type: string
-          nullable: true
-        rows:
-          title: Rows
-          type: array
-          items:
-            type: array
-            items: { }
-        chart_spec:
-          title: Chart Spec
-          type: object
-        click_target:
-          title: Click Target
-          type: string
-          nullable: true
-        toggleable_marks:
-          title: Toggleable Marks
-          type: object
-          additionalProperties:
-            type: array
-            items:
-              type: integer
-          nullable: true
-    MonitorGroupSpec:
-      title: MonitorGroupSpec
-      required:
-        - session
-      type: object
-      properties:
-        session:
-          title: Session
-          type: string
-          format: uuid
-        tag:
-          title: Tag
-          type: string
-          nullable: true
-        metadata:
-          $ref: '#/components/schemas/MetadataKeyValue'
-    MonitorRequest:
-      title: MonitorRequest
-      required:
-        - groups
-      type: object
-      properties:
-        timezone:
-          title: Timezone
-          type: string
-          default: UTC
-        groups:
-          title: Groups
-          maxItems: 5
-          minItems: 1
-          type: array
-          items:
-            $ref: '#/components/schemas/MonitorGroupSpec'
-        interval:
-          $ref: '#/components/schemas/TimedeltaInput'
-        stride:
-          $ref: '#/components/schemas/TimedeltaInput'
-    MonitorResponse:
-      title: MonitorResponse
-      required:
-        - blocks
-      type: object
-      properties:
-        blocks:
-          title: Blocks
-          type: array
-          items:
-            $ref: '#/components/schemas/MonitorBlock'
     OAuthProvider:
       title: OAuthProvider
       enum:
@@ -18202,10 +18078,6 @@ components:
           title: Langsmith Alerts Legacy Poc Enabled
           type: boolean
           default: false
-        enable_prebuilt_dashboards:
-          title: Enable Prebuilt Dashboards
-          type: boolean
-          default: false
         langsmith_experimental_search_enabled:
           title: Langsmith Experimental Search Enabled
           type: boolean
@@ -18225,10 +18097,6 @@ components:
           nullable: true
         enable_monthly_usage_charts:
           title: Enable Monthly Usage Charts
-          type: boolean
-          default: false
-        enable_new_filter_bar:
-          title: Enable New Filter Bar
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.

@@ -76,7 +76,7 @@ namespace LangSmith
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/comparative",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

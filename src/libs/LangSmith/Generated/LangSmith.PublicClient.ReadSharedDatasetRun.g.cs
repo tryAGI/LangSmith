@@ -50,7 +50,7 @@ namespace LangSmith
                 shareToken: ref shareToken,
                 excludeS3StoredAttributes: ref excludeS3StoredAttributes);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

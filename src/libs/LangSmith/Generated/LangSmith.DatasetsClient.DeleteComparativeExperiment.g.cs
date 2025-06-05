@@ -38,7 +38,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 comparativeExperimentId: ref comparativeExperimentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/comparative/{comparativeExperimentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

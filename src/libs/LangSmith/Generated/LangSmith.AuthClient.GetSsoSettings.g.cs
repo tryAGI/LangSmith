@@ -38,7 +38,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 ssoLoginSlug: ref ssoLoginSlug);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/sso/settings/{ssoLoginSlug}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

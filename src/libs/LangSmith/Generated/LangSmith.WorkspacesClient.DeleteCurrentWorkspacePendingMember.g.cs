@@ -37,7 +37,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 identityId: ref identityId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/workspaces/current/members/{identityId}/pending",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

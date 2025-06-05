@@ -52,7 +52,7 @@ namespace LangSmith
                 format: ref format,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

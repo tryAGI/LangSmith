@@ -33,7 +33,7 @@ namespace LangSmith
             PrepareGetCurrentSsoSettingsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/sso-settings",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

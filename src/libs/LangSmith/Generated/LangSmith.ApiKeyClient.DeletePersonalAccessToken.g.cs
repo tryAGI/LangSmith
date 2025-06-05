@@ -38,7 +38,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 patId: ref patId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/api-key/current/{patId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

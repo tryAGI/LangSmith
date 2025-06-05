@@ -40,7 +40,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 includeDeleted: ref includeDeleted);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

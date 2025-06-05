@@ -45,7 +45,7 @@ namespace LangSmith
                 bulkExportId: ref bulkExportId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/bulk-exports/{bulkExportId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

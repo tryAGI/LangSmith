@@ -65,6 +65,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.CustomChartTypeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.CustomChartMetricJsonConverter),
             typeof(global::LangSmith.JsonConverters.CustomChartMetricNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter),
+            typeof(global::LangSmith.JsonConverters.HostProjectChartMetricNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter),

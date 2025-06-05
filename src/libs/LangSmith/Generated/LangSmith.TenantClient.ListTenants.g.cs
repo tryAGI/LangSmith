@@ -47,7 +47,7 @@ namespace LangSmith
                 skipCreate: ref skipCreate,
                 includeDeleted: ref includeDeleted);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/tenants",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

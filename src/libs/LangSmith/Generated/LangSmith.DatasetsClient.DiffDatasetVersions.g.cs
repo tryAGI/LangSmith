@@ -48,7 +48,7 @@ namespace LangSmith
                 fromVersion: ref fromVersion,
                 toVersion: ref toVersion);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/versions/diff",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -45,7 +45,7 @@ namespace LangSmith
                 token: ref token,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/feedback/tokens/{token}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -69,7 +69,7 @@ namespace LangSmith
                 isView: ref isView,
                 includeModel: ref includeModel);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/commits/{owner}/{repo}/{commit}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
