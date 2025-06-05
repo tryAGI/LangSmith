@@ -4114,6 +4114,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/datasets/studio_experiment:
+    post:
+      tags:
+        - datasets
+      summary: Studio Experiment
+      operationId: studio_experiment_api_v1_datasets_studio_experiment_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudioRunOverDatasetRequestSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Studio Experiment Api V1 Datasets Studio Experiment Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/runs/rules:
     get:
       tags:
@@ -18099,6 +18128,10 @@ components:
           title: Enable Monthly Usage Charts
           type: boolean
           default: false
+        enable_studio_experiments:
+          title: Enable Studio Experiments
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
@@ -22452,6 +22485,27 @@ components:
           title: Type
           type: string
       description: Stripe tax ID.
+    StudioRunOverDatasetRequestSchema:
+      title: StudioRunOverDatasetRequestSchema
+      required:
+        - project_name
+        - dataset_id
+      type: object
+      properties:
+        project_name:
+          title: Project Name
+          type: string
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+        evaluator_rules:
+          title: Evaluator Rules
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
     SystemMessage:
       title: SystemMessage
       required:
