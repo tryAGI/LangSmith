@@ -249,6 +249,12 @@ namespace LangSmith
         public bool? EnableMonthlyUsageCharts { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_studio_experiments")]
+        public bool? EnableStudioExperiments { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -371,6 +377,9 @@ namespace LangSmith
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false
         /// </param>
+        /// <param name="enableStudioExperiments">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -414,7 +423,8 @@ namespace LangSmith
             bool? enableAlignEvaluators,
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
-            bool? enableMonthlyUsageCharts)
+            bool? enableMonthlyUsageCharts,
+            bool? enableStudioExperiments)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -456,6 +466,7 @@ namespace LangSmith
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
+            this.EnableStudioExperiments = enableStudioExperiments;
         }
 
         /// <summary>
