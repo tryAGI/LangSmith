@@ -16577,6 +16577,16 @@ components:
           title: Id
           type: string
           format: uuid
+        trace_id:
+          title: Trace Id
+          type: string
+          format: uuid
+          nullable: true
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+          nullable: true
         feedback_source:
           $ref: '#/components/schemas/FeedbackSource'
         extra:
