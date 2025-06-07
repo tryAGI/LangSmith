@@ -88,6 +88,18 @@ namespace LangSmith
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
+        public global::System.Guid? TraceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
         /// The feedback source loaded from the database.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
@@ -120,6 +132,8 @@ namespace LangSmith
         /// <param name="runId"></param>
         /// <param name="sessionId"></param>
         /// <param name="id"></param>
+        /// <param name="traceId"></param>
+        /// <param name="startTime"></param>
         /// <param name="feedbackSource">
         /// The feedback source loaded from the database.
         /// </param>
@@ -140,6 +154,8 @@ namespace LangSmith
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
             global::System.Guid? sessionId,
+            global::System.Guid? traceId,
+            global::System.DateTime? startTime,
             global::LangSmith.FeedbackSource3? feedbackSource,
             object? extra)
         {
@@ -155,6 +171,8 @@ namespace LangSmith
             this.ComparativeExperimentId = comparativeExperimentId;
             this.RunId = runId;
             this.SessionId = sessionId;
+            this.TraceId = traceId;
+            this.StartTime = startTime;
             this.FeedbackSource = feedbackSource;
             this.Extra = extra;
         }
