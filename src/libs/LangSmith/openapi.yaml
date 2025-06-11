@@ -18142,6 +18142,10 @@ components:
           title: Enable Studio Experiments
           type: boolean
           default: false
+        enable_lgp_metrics_charts:
+          title: Enable Lgp Metrics Charts
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
