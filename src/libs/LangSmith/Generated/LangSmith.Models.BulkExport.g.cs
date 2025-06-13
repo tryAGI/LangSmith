@@ -39,6 +39,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
+        public string? Filter { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportFormatJsonConverter))]
         public global::LangSmith.BulkExportFormat? Format { get; set; }
@@ -106,6 +112,7 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="filter"></param>
         /// <param name="format"></param>
         /// <param name="compression"></param>
         /// <param name="id"></param>
@@ -128,6 +135,7 @@ namespace LangSmith
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.DateTime? finishedAt,
+            string? filter,
             global::LangSmith.BulkExportFormat? format,
             global::LangSmith.BulkExportCompression? compression)
         {
@@ -141,6 +149,7 @@ namespace LangSmith
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.FinishedAt = finishedAt;
+            this.Filter = filter;
             this.Format = format;
             this.Compression = compression;
         }

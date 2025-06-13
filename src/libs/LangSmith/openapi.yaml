@@ -13739,6 +13739,10 @@ components:
           title: End Time
           type: string
           format: date-time
+        filter:
+          title: Filter
+          type: string
+          nullable: true
         format:
           $ref: '#/components/schemas/BulkExportFormat'
         compression:
@@ -13798,6 +13802,10 @@ components:
           title: End Time
           type: string
           format: date-time
+        filter:
+          title: Filter
+          type: string
+          nullable: true
         format:
           $ref: '#/components/schemas/BulkExportFormat'
         compression:
@@ -15112,8 +15120,6 @@ components:
           nullable: true
     CustomChartsSectionUpdate:
       title: CustomChartsSectionUpdate
-      required:
-        - index
       type: object
       properties:
         title:
@@ -15136,6 +15142,8 @@ components:
           anyOf:
             - type: integer
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
     CustomChartsSectionsCloneRequest:
       title: CustomChartsSectionsCloneRequest
       type: object
@@ -16950,6 +16958,7 @@ components:
       enum:
         - memory_usage
         - cpu_usage
+        - restart_count
       type: string
       description: LGP Metrics you can chart.
     HumanMessage:
