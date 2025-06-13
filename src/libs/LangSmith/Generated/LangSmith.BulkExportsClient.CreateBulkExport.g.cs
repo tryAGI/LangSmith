@@ -202,6 +202,7 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="filter"></param>
         /// <param name="format"></param>
         /// <param name="compression"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -211,6 +212,7 @@ namespace LangSmith
             global::System.Guid sessionId,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
+            string? filter = default,
             global::LangSmith.BulkExportFormat? format = default,
             global::LangSmith.BulkExportCompression? compression = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -221,6 +223,7 @@ namespace LangSmith
                 SessionId = sessionId,
                 StartTime = startTime,
                 EndTime = endTime,
+                Filter = filter,
                 Format = format,
                 Compression = compression,
             };
