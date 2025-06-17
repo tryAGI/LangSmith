@@ -4809,14 +4809,13 @@ paths:
       tags:
         - run
       summary: Delete Runs
-      description: Delete specific runs.
+      description: Delete specific runs by trace IDs or metadata key-value pairs.
       operationId: delete_runs_api_v1_runs_delete_post
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Body_delete_runs_api_v1_runs_delete_post'
-        required: true
       responses:
         '200':
           description: Successful Response
@@ -6655,6 +6654,7 @@ paths:
       tags:
         - annotation-queues
       summary: Get Run From Annotation Queue
+      description: Get a run from an annotation queue
       operationId: get_run_from_annotation_queue_api_v1_annotation_queues__queue_id__run__index__get
       parameters:
         - name: queue_id
@@ -6670,6 +6670,12 @@ paths:
           schema:
             title: Index
             type: integer
+        - name: include_extra
+          in: query
+          schema:
+            title: Include Extra
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -13607,21 +13613,26 @@ components:
             format: uuid
     Body_delete_runs_api_v1_runs_delete_post:
       title: Body_delete_runs_api_v1_runs_delete_post
-      required:
-        - session_id
-        - trace_ids
       type: object
       properties:
         session_id:
           title: Session Id
           type: string
           format: uuid
+          nullable: true
         trace_ids:
           title: Trace Ids
           type: array
           items:
             type: string
             format: uuid
+          nullable: true
+        metadata:
+          title: Metadata
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
     Body_execute_api_v1_ace_execute_post:
       title: Body_execute_api_v1_ace_execute_post
       required:

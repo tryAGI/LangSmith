@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareGetRunFromAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid queueId,
-            ref int index);
+            ref int index,
+            ref bool? includeExtra);
         partial void PrepareGetRunFromAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid queueId,
-            int index);
+            int index,
+            bool? includeExtra);
         partial void ProcessGetRunFromAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -24,15 +26,20 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Get Run From Annotation Queue
+        /// Get Run From Annotation Queue<br/>
+        /// Get a run from an annotation queue
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="index"></param>
+        /// <param name="includeExtra">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunSchemaWithAnnotationQueueInfo> GetRunFromAnnotationQueueAsync(
             global::System.Guid queueId,
             int index,
+            bool? includeExtra = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -40,11 +47,15 @@ namespace LangSmith
             PrepareGetRunFromAnnotationQueueArguments(
                 httpClient: HttpClient,
                 queueId: ref queueId,
-                index: ref index);
+                index: ref index,
+                includeExtra: ref includeExtra);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/run/{index}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("include_extra", includeExtra?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -77,7 +88,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 queueId: queueId,
-                index: index);
+                index: index,
+                includeExtra: includeExtra);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
