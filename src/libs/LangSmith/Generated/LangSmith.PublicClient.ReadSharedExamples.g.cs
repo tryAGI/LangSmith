@@ -91,6 +91,7 @@ namespace LangSmith
                 .AddOptionalParameter("metadata", metadata) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();
