@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete Examples<br/>
-        /// Delete a specific set of examples.
+        /// Soft delete examples. Only deletes the examples in the 'latest' version of the dataset.
         /// </summary>
         /// <param name="exampleIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

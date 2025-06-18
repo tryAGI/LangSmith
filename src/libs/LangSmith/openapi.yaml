@@ -2388,7 +2388,7 @@ paths:
       tags:
         - examples
       summary: Delete Example
-      description: Delete a specific example.
+      description: Soft delete an example. Only deletes the example in the 'latest' version of the dataset.
       operationId: delete_example_api_v1_examples__example_id__delete
       parameters:
         - name: example_id
@@ -2560,7 +2560,7 @@ paths:
       tags:
         - examples
       summary: Delete Examples
-      description: Delete a specific set of examples.
+      description: Soft delete examples. Only deletes the examples in the 'latest' version of the dataset.
       operationId: delete_examples_api_v1_examples_delete
       parameters:
         - name: example_ids
@@ -12494,6 +12494,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/alerts.ErrorResponse'
+  /v1/platform/datasets/examples/delete:
+    post:
+      tags:
+        - examples
+      summary: Hard Delete Examples
+      description: "This endpoint hard deletes *all* versions of a dataset example(s).\nDeletion is performed by setting inputs, outputs, and metadata to null and deleting attachment files while keeping the example ID, dataset ID, and creation timestamp.\nIMPORTANT: attachment files can take up to 7 days to be deleted. inputs, outputs and metadata are nullified immediately."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/examples.DeleteExamplesRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ExamplesDeletedResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/examples.ErrorResponse'
   '/v1/platform/datasets/{dataset_id}/examples':
     post:
       tags:
@@ -16969,6 +17012,7 @@ components:
       enum:
         - memory_usage
         - cpu_usage
+        - disk_usage
         - restart_count
       type: string
       description: LGP Metrics you can chart.
@@ -18156,10 +18200,6 @@ components:
           nullable: true
         enable_monthly_usage_charts:
           title: Enable Monthly Usage Charts
-          type: boolean
-          default: false
-        enable_studio_experiments:
-          title: Enable Studio Experiments
           type: boolean
           default: false
         enable_lgp_metrics_charts:
@@ -24239,6 +24279,22 @@ components:
             $ref: '#/components/schemas/alerts.AlertActionBase'
         rule:
           $ref: '#/components/schemas/alerts.AlertRuleBase'
+    examples.DeleteExamplesRequest:
+      required:
+        - example_ids
+        - hard_delete
+      type: object
+      properties:
+        example_ids:
+          maxItems: 1000
+          minItems: 1
+          type: array
+          items:
+            type: string
+          description: ExampleIDs is a list of UUIDs identifying the examples to delete.
+        hard_delete:
+          type: boolean
+          description: "HardDelete indicates whether to perform a hard delete.\nCurrently only True is supported."
     examples.ErrorResponse:
       type: object
       properties:
@@ -24251,6 +24307,18 @@ components:
           description: Error message
           example: 'Invalid request: missing required fields'
     examples.ExamplesCreatedResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 1
+        example_ids:
+          type: array
+          items:
+            type: string
+          example:
+            - '["123e4567-e89b-12d3-a456-426614174000"]'
+    examples.ExamplesDeletedResponse:
       type: object
       properties:
         count:
