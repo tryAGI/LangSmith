@@ -251,12 +251,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_studio_experiments")]
-        public bool? EnableStudioExperiments { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_lgp_metrics_charts")]
         public bool? EnableLgpMetricsCharts { get; set; }
 
@@ -383,9 +377,6 @@ namespace LangSmith
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false
         /// </param>
-        /// <param name="enableStudioExperiments">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableLgpMetricsCharts">
         /// Default Value: false
         /// </param>
@@ -433,7 +424,6 @@ namespace LangSmith
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
             bool? enableMonthlyUsageCharts,
-            bool? enableStudioExperiments,
             bool? enableLgpMetricsCharts)
         {
             this.MaxIdentities = maxIdentities;
@@ -476,7 +466,6 @@ namespace LangSmith
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
-            this.EnableStudioExperiments = enableStudioExperiments;
             this.EnableLgpMetricsCharts = enableLgpMetricsCharts;
         }
 
