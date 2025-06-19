@@ -24342,6 +24342,61 @@ components:
             type: string
           example:
             - '["123e4567-e89b-12d3-a456-426614174000"]'
+    experiment_view_overrides.ColumnOverride:
+      required:
+        - column
+      type: object
+      properties:
+        color_gradient:
+          type: array
+          items:
+            type: array
+            items: { }
+        color_map:
+          type: object
+        column:
+          type: string
+        hide:
+          type: boolean
+        precision:
+          maximum: 6
+          minimum: 1
+          type: integer
+    experiment_view_overrides.ExperimentViewOverride:
+      type: object
+      properties:
+        column_overrides:
+          type: array
+          items:
+            $ref: '#/components/schemas/experiment_view_overrides.ColumnOverride'
+        created_at:
+          type: string
+        dataset_id:
+          type: string
+        id:
+          type: string
+        modified_at:
+          type: string
+    experiment_view_overrides.ExperimentViewOverridePatchRequest:
+      required:
+        - column_overrides
+      type: object
+      properties:
+        column_overrides:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/experiment_view_overrides.ColumnOverride'
+    experiment_view_overrides.ExperimentViewOverridePostRequest:
+      required:
+        - column_overrides
+      type: object
+      properties:
+        column_overrides:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/experiment_view_overrides.ColumnOverride'
     feedback.FeedbackCategory:
       type: object
       properties:
