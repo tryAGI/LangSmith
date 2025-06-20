@@ -15671,8 +15671,6 @@ components:
       description: Valid trigger types for prompt webhooks.
     EvaluatorStructuredOutput:
       title: EvaluatorStructuredOutput
-      required:
-        - model
       type: object
       properties:
         hub_ref:
@@ -15706,6 +15704,7 @@ components:
         model:
           title: Model
           type: object
+          nullable: true
       description: Evaluator structured output schema.
     EvaluatorTopLevel:
       title: EvaluatorTopLevel
@@ -17014,6 +17013,7 @@ components:
         - cpu_usage
         - disk_usage
         - restart_count
+        - replica_count
       type: string
       description: LGP Metrics you can chart.
     HumanMessage:
@@ -18206,6 +18206,10 @@ components:
           title: Enable Lgp Metrics Charts
           type: boolean
           default: false
+        new_rule_evaluator_creation_version:
+          title: New Rule Evaluator Creation Version
+          type: integer
+          default: 2
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
@@ -20762,6 +20766,11 @@ components:
         evaluator_version:
           title: Evaluator Version
           type: integer
+        evaluator_id:
+          title: Evaluator Id
+          type: string
+          format: uuid
+          nullable: true
       description: Run rules schema.
     RunRulesWebhookSchema:
       title: RunRulesWebhookSchema

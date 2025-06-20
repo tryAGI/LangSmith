@@ -24,6 +24,10 @@ namespace LangSmith
         /// 
         /// </summary>
         RestartCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReplicaCount,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace LangSmith
                 HostProjectChartMetric.CpuUsage => "cpu_usage",
                 HostProjectChartMetric.DiskUsage => "disk_usage",
                 HostProjectChartMetric.RestartCount => "restart_count",
+                HostProjectChartMetric.ReplicaCount => "replica_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace LangSmith
                 "cpu_usage" => HostProjectChartMetric.CpuUsage,
                 "disk_usage" => HostProjectChartMetric.DiskUsage,
                 "restart_count" => HostProjectChartMetric.RestartCount,
+                "replica_count" => HostProjectChartMetric.ReplicaCount,
                 _ => null,
             };
         }

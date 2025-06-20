@@ -197,6 +197,12 @@ namespace LangSmith
         public required int EvaluatorVersion { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_id")]
+        public global::System.Guid? EvaluatorId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -245,6 +251,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="evaluatorVersion"></param>
+        /// <param name="evaluatorId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -278,7 +285,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             bool? extendOnly,
             global::System.DateTime? backfillFrom,
-            bool? transient)
+            bool? transient,
+            global::System.Guid? evaluatorId)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -310,6 +318,7 @@ namespace LangSmith
             this.ExtendOnly = extendOnly;
             this.BackfillFrom = backfillFrom;
             this.Transient = transient;
+            this.EvaluatorId = evaluatorId;
         }
 
         /// <summary>
