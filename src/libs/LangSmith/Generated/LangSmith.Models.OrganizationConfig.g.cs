@@ -255,6 +255,12 @@ namespace LangSmith
         public bool? EnableLgpMetricsCharts { get; set; }
 
         /// <summary>
+        /// Default Value: 2
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("new_rule_evaluator_creation_version")]
+        public int? NewRuleEvaluatorCreationVersion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -380,6 +386,9 @@ namespace LangSmith
         /// <param name="enableLgpMetricsCharts">
         /// Default Value: false
         /// </param>
+        /// <param name="newRuleEvaluatorCreationVersion">
+        /// Default Value: 2
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -424,7 +433,8 @@ namespace LangSmith
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
             bool? enableMonthlyUsageCharts,
-            bool? enableLgpMetricsCharts)
+            bool? enableLgpMetricsCharts,
+            int? newRuleEvaluatorCreationVersion)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -467,6 +477,7 @@ namespace LangSmith
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.EnableLgpMetricsCharts = enableLgpMetricsCharts;
+            this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
         }
 
         /// <summary>

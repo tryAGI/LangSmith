@@ -42,8 +42,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Model { get; set; }
+        public object? Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,19 +63,19 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvaluatorStructuredOutput(
-            object model,
             string? hubRef,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? prompt,
             string? templateFormat,
             object? schema,
-            global::System.Collections.Generic.Dictionary<string, string>? variableMapping)
+            global::System.Collections.Generic.Dictionary<string, string>? variableMapping,
+            object? model)
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.HubRef = hubRef;
             this.Prompt = prompt;
             this.TemplateFormat = templateFormat;
             this.Schema = schema;
             this.VariableMapping = variableMapping;
+            this.Model = model;
         }
 
         /// <summary>
