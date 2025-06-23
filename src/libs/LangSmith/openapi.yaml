@@ -18210,6 +18210,10 @@ components:
           title: New Rule Evaluator Creation Version
           type: integer
           default: 2
+        enable_tracing_project_redesign:
+          title: Enable Tracing Project Redesign
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
