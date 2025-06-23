@@ -261,6 +261,12 @@ namespace LangSmith
         public int? NewRuleEvaluatorCreationVersion { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_tracing_project_redesign")]
+        public bool? EnableTracingProjectRedesign { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -389,6 +395,9 @@ namespace LangSmith
         /// <param name="newRuleEvaluatorCreationVersion">
         /// Default Value: 2
         /// </param>
+        /// <param name="enableTracingProjectRedesign">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -434,7 +443,8 @@ namespace LangSmith
             string? playgroundEvaluatorStrategy,
             bool? enableMonthlyUsageCharts,
             bool? enableLgpMetricsCharts,
-            int? newRuleEvaluatorCreationVersion)
+            int? newRuleEvaluatorCreationVersion,
+            bool? enableTracingProjectRedesign)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -478,6 +488,7 @@ namespace LangSmith
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.EnableLgpMetricsCharts = enableLgpMetricsCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
+            this.EnableTracingProjectRedesign = enableTracingProjectRedesign;
         }
 
         /// <summary>
