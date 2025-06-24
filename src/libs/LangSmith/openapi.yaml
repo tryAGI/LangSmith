@@ -21844,6 +21844,7 @@ components:
       enum:
         - current
         - historical
+        - lite
       type: string
       description: Enum for run data source types.
     RunsGenerateQueryFeedbackKeys:
