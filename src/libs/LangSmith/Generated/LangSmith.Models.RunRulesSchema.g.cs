@@ -203,6 +203,12 @@ namespace LangSmith
         public global::System.Guid? EvaluatorId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("alignment_annotation_queue_id")]
+        public global::System.Guid? AlignmentAnnotationQueueId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -252,6 +258,7 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluatorVersion"></param>
         /// <param name="evaluatorId"></param>
+        /// <param name="alignmentAnnotationQueueId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -286,7 +293,8 @@ namespace LangSmith
             bool? extendOnly,
             global::System.DateTime? backfillFrom,
             bool? transient,
-            global::System.Guid? evaluatorId)
+            global::System.Guid? evaluatorId,
+            global::System.Guid? alignmentAnnotationQueueId)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -319,6 +327,7 @@ namespace LangSmith
             this.BackfillFrom = backfillFrom;
             this.Transient = transient;
             this.EvaluatorId = evaluatorId;
+            this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
         }
 
         /// <summary>
