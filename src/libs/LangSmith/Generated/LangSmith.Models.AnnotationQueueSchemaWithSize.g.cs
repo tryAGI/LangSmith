@@ -80,6 +80,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_rule_id")]
+        public global::System.Guid? RunRuleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalRuns { get; set; }
@@ -110,6 +116,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="sourceRuleId"></param>
+        /// <param name="runRuleId"></param>
         /// <param name="totalRuns"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -126,7 +133,8 @@ namespace LangSmith
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
-            global::System.Guid? sourceRuleId)
+            global::System.Guid? sourceRuleId,
+            global::System.Guid? runRuleId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
@@ -140,6 +148,7 @@ namespace LangSmith
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
             this.SourceRuleId = sourceRuleId;
+            this.RunRuleId = runRuleId;
         }
 
         /// <summary>

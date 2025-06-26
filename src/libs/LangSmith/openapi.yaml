@@ -13112,6 +13112,11 @@ components:
           type: string
           format: uuid
           nullable: true
+        run_rule_id:
+          title: Run Rule Id
+          type: string
+          format: uuid
+          nullable: true
       description: AnnotationQueue schema.
     AnnotationQueueSchemaWithRubric:
       title: AnnotationQueueSchemaWithRubric
@@ -13166,6 +13171,11 @@ components:
           format: uuid
         source_rule_id:
           title: Source Rule Id
+          type: string
+          format: uuid
+          nullable: true
+        run_rule_id:
+          title: Run Rule Id
           type: string
           format: uuid
           nullable: true
@@ -13234,6 +13244,11 @@ components:
           format: uuid
         source_rule_id:
           title: Source Rule Id
+          type: string
+          format: uuid
+          nullable: true
+        run_rule_id:
+          title: Run Rule Id
           type: string
           format: uuid
           nullable: true
@@ -20772,6 +20787,11 @@ components:
           type: integer
         evaluator_id:
           title: Evaluator Id
+          type: string
+          format: uuid
+          nullable: true
+        alignment_annotation_queue_id:
+          title: Alignment Annotation Queue Id
           type: string
           format: uuid
           nullable: true
