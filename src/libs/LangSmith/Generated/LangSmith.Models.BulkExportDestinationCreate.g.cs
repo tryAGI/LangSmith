@@ -33,8 +33,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credentials")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.BulkExportDestinationS3Credentials Credentials { get; set; }
+        public global::LangSmith.BulkExportDestinationS3Credentials? Credentials { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,13 +54,13 @@ namespace LangSmith
         public BulkExportDestinationCreate(
             string displayName,
             global::LangSmith.BulkExportDestinationS3Config config,
-            global::LangSmith.BulkExportDestinationS3Credentials credentials,
-            global::LangSmith.BulkExportDestinationType? destinationType)
+            global::LangSmith.BulkExportDestinationType? destinationType,
+            global::LangSmith.BulkExportDestinationS3Credentials? credentials)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.Credentials = credentials ?? throw new global::System.ArgumentNullException(nameof(credentials));
             this.DestinationType = destinationType;
+            this.Credentials = credentials;
         }
 
         /// <summary>
