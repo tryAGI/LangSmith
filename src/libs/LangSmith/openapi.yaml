@@ -13926,7 +13926,6 @@ components:
       required:
         - display_name
         - config
-        - credentials
       type: object
       properties:
         destination_type:
@@ -13982,6 +13981,11 @@ components:
           maxLength: 2048
           minLength: 1
           type: string
+        session_token:
+          title: Session Token
+          maxLength: 2048
+          type: string
+          nullable: true
     BulkExportDestinationType:
       title: BulkExportDestinationType
       enum:
@@ -17029,6 +17033,8 @@ components:
         - disk_usage
         - restart_count
         - replica_count
+        - worker_count
+        - lg_run_count
       type: string
       description: LGP Metrics you can chart.
     HumanMessage:

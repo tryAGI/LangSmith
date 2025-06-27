@@ -23,6 +23,12 @@ namespace LangSmith
         public required string SecretAccessKey { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_token")]
+        public string? SessionToken { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,15 +39,18 @@ namespace LangSmith
         /// </summary>
         /// <param name="accessKeyId"></param>
         /// <param name="secretAccessKey"></param>
+        /// <param name="sessionToken"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BulkExportDestinationS3Credentials(
             string accessKeyId,
-            string secretAccessKey)
+            string secretAccessKey,
+            string? sessionToken)
         {
             this.AccessKeyId = accessKeyId ?? throw new global::System.ArgumentNullException(nameof(accessKeyId));
             this.SecretAccessKey = secretAccessKey ?? throw new global::System.ArgumentNullException(nameof(secretAccessKey));
+            this.SessionToken = sessionToken;
         }
 
         /// <summary>

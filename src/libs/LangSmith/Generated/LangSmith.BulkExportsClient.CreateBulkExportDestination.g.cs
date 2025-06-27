@@ -216,8 +216,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.BulkExportDestination> CreateBulkExportDestinationAsync(
             string displayName,
             global::LangSmith.BulkExportDestinationS3Config config,
-            global::LangSmith.BulkExportDestinationS3Credentials credentials,
             global::LangSmith.BulkExportDestinationType? destinationType = default,
+            global::LangSmith.BulkExportDestinationS3Credentials? credentials = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BulkExportDestinationCreate
