@@ -213,17 +213,20 @@ namespace LangSmith
         /// <param name="readOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="expiresAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GeneratePersonalAccessTokenAsync(
             string? description = default,
             bool? readOnly = default,
+            global::System.DateTime? expiresAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.APIKeyCreateRequest
             {
                 Description = description,
                 ReadOnly = readOnly,
+                ExpiresAt = expiresAt,
             };
 
             return await GeneratePersonalAccessTokenAsync(

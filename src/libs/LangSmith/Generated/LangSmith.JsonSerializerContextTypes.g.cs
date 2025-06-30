@@ -126,11 +126,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.APIKeyCreateResponse? Type25 { get; set; }
+        public global::System.DateTime? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type26 { get; set; }
+        public global::LangSmith.APIKeyCreateResponse? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
