@@ -48,6 +48,12 @@ namespace LangSmith
         public global::System.DateTime? LastUsedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +70,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="lastUsedAt"></param>
+        /// <param name="expiresAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,7 +80,8 @@ namespace LangSmith
             string description,
             global::System.DateTime? createdAt,
             bool? readOnly,
-            global::System.DateTime? lastUsedAt)
+            global::System.DateTime? lastUsedAt,
+            global::System.DateTime? expiresAt)
         {
             this.Id = id;
             this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
@@ -81,6 +89,7 @@ namespace LangSmith
             this.CreatedAt = createdAt;
             this.ReadOnly = readOnly;
             this.LastUsedAt = lastUsedAt;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>

@@ -4,7 +4,8 @@
 namespace LangSmith
 {
     /// <summary>
-    /// API key POST schema.
+    /// API key POST schema.<br/>
+    /// expires_at: Optional datetime when the API key will expire.
     /// </summary>
     public sealed partial class APIKeyCreateRequest
     {
@@ -21,6 +22,12 @@ namespace LangSmith
         public bool? ReadOnly { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,15 +42,18 @@ namespace LangSmith
         /// <param name="readOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="expiresAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public APIKeyCreateRequest(
             string? description,
-            bool? readOnly)
+            bool? readOnly,
+            global::System.DateTime? expiresAt)
         {
             this.Description = description;
             this.ReadOnly = readOnly;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>
