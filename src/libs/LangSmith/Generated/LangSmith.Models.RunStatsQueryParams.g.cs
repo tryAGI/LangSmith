@@ -131,6 +131,12 @@ namespace LangSmith
         public global::LangSmith.RunStatsGroupBy? GroupBy { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
+        public global::System.Collections.Generic.IList<string>? Groups { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -167,6 +173,7 @@ namespace LangSmith
         /// <param name="groupBy">
         /// Group by param for run stats.
         /// </param>
+        /// <param name="groups"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -190,7 +197,8 @@ namespace LangSmith
             bool? skipPagination,
             string? searchFilter,
             bool? useExperimentalSearch,
-            global::LangSmith.RunStatsGroupBy? groupBy)
+            global::LangSmith.RunStatsGroupBy? groupBy,
+            global::System.Collections.Generic.IList<string>? groups)
         {
             this.Id = id;
             this.Trace = trace;
@@ -212,6 +220,7 @@ namespace LangSmith
             this.SearchFilter = searchFilter;
             this.UseExperimentalSearch = useExperimentalSearch;
             this.GroupBy = groupBy;
+            this.Groups = groups;
         }
 
         /// <summary>
