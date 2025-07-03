@@ -267,6 +267,12 @@ namespace LangSmith
         public bool? EnableTracingProjectRedesign { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_scoped_service_accounts_enabled")]
+        public bool? OrgScopedServiceAccountsEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -398,6 +404,9 @@ namespace LangSmith
         /// <param name="enableTracingProjectRedesign">
         /// Default Value: false
         /// </param>
+        /// <param name="orgScopedServiceAccountsEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -444,7 +453,8 @@ namespace LangSmith
             bool? enableMonthlyUsageCharts,
             bool? enableLgpMetricsCharts,
             int? newRuleEvaluatorCreationVersion,
-            bool? enableTracingProjectRedesign)
+            bool? enableTracingProjectRedesign,
+            bool? orgScopedServiceAccountsEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -489,6 +499,7 @@ namespace LangSmith
             this.EnableLgpMetricsCharts = enableLgpMetricsCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.EnableTracingProjectRedesign = enableTracingProjectRedesign;
+            this.OrgScopedServiceAccountsEnabled = orgScopedServiceAccountsEnabled;
         }
 
         /// <summary>
