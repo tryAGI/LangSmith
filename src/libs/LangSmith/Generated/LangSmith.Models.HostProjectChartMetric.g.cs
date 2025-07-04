@@ -36,6 +36,14 @@ namespace LangSmith
         /// 
         /// </summary>
         LgRunCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        ResponsesPerSecond,
+        /// <summary>
+        /// 
+        /// </summary>
+        ErrorResponsesPerSecond,
     }
 
     /// <summary>
@@ -57,6 +65,8 @@ namespace LangSmith
                 HostProjectChartMetric.ReplicaCount => "replica_count",
                 HostProjectChartMetric.WorkerCount => "worker_count",
                 HostProjectChartMetric.LgRunCount => "lg_run_count",
+                HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
+                HostProjectChartMetric.ErrorResponsesPerSecond => "error_responses_per_second",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +84,8 @@ namespace LangSmith
                 "replica_count" => HostProjectChartMetric.ReplicaCount,
                 "worker_count" => HostProjectChartMetric.WorkerCount,
                 "lg_run_count" => HostProjectChartMetric.LgRunCount,
+                "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,
+                "error_responses_per_second" => HostProjectChartMetric.ErrorResponsesPerSecond,
                 _ => null,
             };
         }
