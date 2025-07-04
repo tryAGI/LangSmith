@@ -13,7 +13,8 @@ namespace LangSmith
     ///             "cache_creation": 200,<br/>
     ///             "cache_read": 100,<br/>
     ///         }<br/>
-    /// .. versionadded:: 0.3.9
+    /// .. versionadded:: 0.3.9<br/>
+    /// May also hold extra provider-specific keys.
     /// </summary>
     public sealed partial class InputTokenDetails
     {

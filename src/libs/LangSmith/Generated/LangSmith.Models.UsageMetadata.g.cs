@@ -58,7 +58,8 @@ namespace LangSmith
         ///             "cache_creation": 200,<br/>
         ///             "cache_read": 100,<br/>
         ///         }<br/>
-        /// .. versionadded:: 0.3.9
+        /// .. versionadded:: 0.3.9<br/>
+        /// May also hold extra provider-specific keys.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_token_details")]
         public global::LangSmith.InputTokenDetails? InputTokenDetails { get; set; }
@@ -99,7 +100,8 @@ namespace LangSmith
         ///             "cache_creation": 200,<br/>
         ///             "cache_read": 100,<br/>
         ///         }<br/>
-        /// .. versionadded:: 0.3.9
+        /// .. versionadded:: 0.3.9<br/>
+        /// May also hold extra provider-specific keys.
         /// </param>
         /// <param name="outputTokenDetails">
         /// Breakdown of output token counts.<br/>
