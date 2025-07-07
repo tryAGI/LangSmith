@@ -17052,6 +17052,7 @@ components:
         - lg_run_count
         - responses_per_second
         - error_responses_per_second
+        - p95_latency
       type: string
       description: LGP Metrics you can chart.
     HumanMessage:

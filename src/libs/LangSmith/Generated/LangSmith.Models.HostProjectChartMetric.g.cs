@@ -44,6 +44,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ErrorResponsesPerSecond,
+        /// <summary>
+        /// 
+        /// </summary>
+        P95Latency,
     }
 
     /// <summary>
@@ -67,6 +71,7 @@ namespace LangSmith
                 HostProjectChartMetric.LgRunCount => "lg_run_count",
                 HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
                 HostProjectChartMetric.ErrorResponsesPerSecond => "error_responses_per_second",
+                HostProjectChartMetric.P95Latency => "p95_latency",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -86,6 +91,7 @@ namespace LangSmith
                 "lg_run_count" => HostProjectChartMetric.LgRunCount,
                 "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,
                 "error_responses_per_second" => HostProjectChartMetric.ErrorResponsesPerSecond,
+                "p95_latency" => HostProjectChartMetric.P95Latency,
                 _ => null,
             };
         }
