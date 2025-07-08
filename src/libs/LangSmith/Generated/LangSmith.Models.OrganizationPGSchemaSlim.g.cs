@@ -67,6 +67,12 @@ namespace LangSmith
         public bool? SsoOnly { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
+        public bool? JitProvisioningEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
@@ -92,6 +98,9 @@ namespace LangSmith
         /// <param name="ssoOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="jitProvisioningEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="publicSharingDisabled">
         /// Default Value: false
         /// </param>
@@ -108,6 +117,7 @@ namespace LangSmith
             global::System.DateTime? modifiedAt,
             string? ssoLoginSlug,
             bool? ssoOnly,
+            bool? jitProvisioningEnabled,
             bool? publicSharingDisabled)
         {
             this.Id = id;
@@ -119,6 +129,7 @@ namespace LangSmith
             this.ModifiedAt = modifiedAt;
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
+            this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.PublicSharingDisabled = publicSharingDisabled;
         }
 

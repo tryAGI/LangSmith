@@ -66,6 +66,12 @@ namespace LangSmith
         public bool? SsoOnly { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
+        public bool? JitProvisioningEnabled { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]
@@ -115,6 +121,9 @@ namespace LangSmith
         /// <param name="ssoOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="jitProvisioningEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="ssoLoginSlug"></param>
         /// <param name="publicSharingDisabled">
         /// Default Value: false
@@ -136,6 +145,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? permissions,
             bool? disabled,
             bool? ssoOnly,
+            bool? jitProvisioningEnabled,
             string? ssoLoginSlug,
             bool? publicSharingDisabled,
             bool? marketplacePayoutsEnabled,
@@ -150,6 +160,7 @@ namespace LangSmith
             this.Permissions = permissions;
             this.Disabled = disabled;
             this.SsoOnly = ssoOnly;
+            this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.SsoLoginSlug = ssoLoginSlug;
             this.PublicSharingDisabled = publicSharingDisabled;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
