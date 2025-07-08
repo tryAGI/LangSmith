@@ -18339,6 +18339,10 @@ components:
           title: Sso Only
           type: boolean
           default: false
+        jit_provisioning_enabled:
+          title: Jit Provisioning Enabled
+          type: boolean
+          default: true
         sso_login_slug:
           title: Sso Login Slug
           type: string
@@ -18422,6 +18426,10 @@ components:
           title: Sso Only
           type: boolean
           default: false
+        jit_provisioning_enabled:
+          title: Jit Provisioning Enabled
+          type: boolean
+          default: true
         public_sharing_disabled:
           title: Public Sharing Disabled
           type: boolean
@@ -18442,6 +18450,10 @@ components:
           nullable: true
         unshare_all:
           title: Unshare All
+          type: boolean
+          nullable: true
+        jit_provisioning_enabled:
+          title: Jit Provisioning Enabled
           type: boolean
           nullable: true
       description: Update organization schema.

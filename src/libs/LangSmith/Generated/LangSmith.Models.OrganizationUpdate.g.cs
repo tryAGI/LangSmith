@@ -27,6 +27,12 @@ namespace LangSmith
         public bool? UnshareAll { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
+        public bool? JitProvisioningEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,17 +44,20 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="publicSharingDisabled"></param>
         /// <param name="unshareAll"></param>
+        /// <param name="jitProvisioningEnabled"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationUpdate(
             string? displayName,
             bool? publicSharingDisabled,
-            bool? unshareAll)
+            bool? unshareAll,
+            bool? jitProvisioningEnabled)
         {
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;
             this.UnshareAll = unshareAll;
+            this.JitProvisioningEnabled = jitProvisioningEnabled;
         }
 
         /// <summary>
