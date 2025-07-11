@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareDatasetHandlerArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
+            global::LangSmith.PlaygroundRunOverDatasetBatchRequestSchema request);
         partial void PrepareDatasetHandlerRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
+            global::LangSmith.PlaygroundRunOverDatasetBatchRequestSchema request);
         partial void ProcessDatasetHandlerResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
+            global::LangSmith.PlaygroundRunOverDatasetBatchRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -225,6 +225,7 @@ namespace LangSmith
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
+        /// <param name="batchSize"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
@@ -246,9 +247,10 @@ namespace LangSmith
             bool? useOrFallbackToWorkspaceSecrets = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
+            int? batchSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.PlaygroundRunOverDatasetRequestSchema
+            var __request = new global::LangSmith.PlaygroundRunOverDatasetBatchRequestSchema
             {
                 Manifest = manifest,
                 Secrets = secrets,
@@ -268,6 +270,7 @@ namespace LangSmith
                 DatasetId = datasetId,
                 DatasetSplits = datasetSplits,
                 Repetitions = repetitions,
+                BatchSize = batchSize,
             };
 
             return await DatasetHandlerAsync(

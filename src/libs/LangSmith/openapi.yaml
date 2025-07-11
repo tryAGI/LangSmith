@@ -4067,7 +4067,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PlaygroundRunOverDatasetRequestSchema'
+              $ref: '#/components/schemas/PlaygroundRunOverDatasetBatchRequestSchema'
         required: true
       responses:
         '200':
@@ -11851,6 +11851,307 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/datasets/{dataset_id}/experiment-view-overrides':
+    get:
+      tags:
+        - experiment-view-overrides
+      summary: Get experiment view override configuration for a dataset
+      description: "Retrieves the experiment view override configuration for a specific dataset.\nThis endpoint returns column display overrides including color gradients,\nprecision settings, and column visibility configurations that customize how\nexperiment results are displayed in the UI.\n\nThe response includes all column overrides with their display settings:\n- Column identifiers (must start with inputs, outputs, reference_outputs, feedback, metrics, attachments, or metadata)\n- Color gradients for numeric data visualization\n- Precision settings for numeric columns (1-6 decimal places)\n- Hide flags to control column visibility"
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+          example: '"550e8400-e29b-41d4-a716-446655440000"'
+      responses:
+        '200':
+          description: Successfully retrieved experiment view override configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/experiment_view_overrides.ExperimentViewOverride'
+        '400':
+          description: 'Invalid dataset ID format" example({"error":"invalid dataset ID format"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '401':
+          description: 'Unauthorized access" example({"error":"Unauthorized"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: 'Experiment view override not found" example({"error":"experiment view override not found"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: 'Internal server error" example({"error":"internal server error"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+    post:
+      tags:
+        - experiment-view-overrides
+      summary: Create new experiment view override configuration for a dataset
+      description: "Creates a new experiment view override configuration for a dataset with column display settings.\nThis endpoint allows you to customize how experiment results are displayed by configuring\ncolumn-specific overrides including colors, precision, and visibility.\n\nThe request must include a 'column_overrides' array with at least one override configuration.\nEach column override can specify:\n- column: Required field name (must start with inputs, outputs, reference_outputs, feedback, metrics, attachments, or metadata)\n- color_gradient: Optional array of [number, color] tuples for numeric data visualization\n- precision: Optional number (1-6) for decimal places in numeric columns\n- hide: Optional boolean to control column visibility\n\nExample request body:\n{\n\"column_overrides\": [\n{\n\"column\": \"outputs.accuracy\",\n\"color_gradient\": [[0.0, \"#ff0000\"], [0.5, \"#ffff00\"], [1.0, \"#00ff00\"]],\n\"precision\": 3\n},\n{\n\"column\": \"inputs.model_type\",\n\"hide\": false\n}\n]\n}\n\nThis operation fails if an override already exists for the dataset (use PATCH to update)."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+          example: '"550e8400-e29b-41d4-a716-446655440000"'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/experiment_view_overrides.ExperimentViewOverridePostRequest'
+        required: true
+      responses:
+        '201':
+          description: Successfully created experiment view override
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/experiment_view_overrides.ExperimentViewOverride'
+        '400':
+          description: 'Invalid request data" example({"error":"column_overrides field is required"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '401':
+          description: 'Unauthorized access" example({"error":"Unauthorized"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: 'Dataset not found" example({"error":"dataset not found or not accessible"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '409':
+          description: 'Override already exists" example({"error":"experiment view override already exists"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '422':
+          description: 'Validation error" example({"error":"column name at index 0 must start with one of: inputs, outputs, reference_outputs, feedback, metrics, attachments, metadata"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: 'Internal server error" example({"error":"internal server error"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+  '/datasets/{dataset_id}/experiment-view-overrides/{id}':
+    get:
+      tags:
+        - experiment-view-overrides
+      summary: Get experiment view override configuration by specific ID
+      description: "Retrieves a specific experiment view override configuration using both dataset ID and override ID.\nThis endpoint provides more precise access to experiment view overrides when you have\nthe specific override ID, useful for direct links or cached references.\n\nThe response includes the same column override information as the dataset-level endpoint:\n- Column identifiers with validation prefixes\n- Color gradient settings for numeric data visualization\n- Numeric precision configurations\n- Column visibility controls\n\nBoth the dataset and override must exist and be accessible by the authenticated user."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+          example: '"550e8400-e29b-41d4-a716-446655440000"'
+        - name: id
+          in: path
+          description: Experiment view override ID
+          required: true
+          example: '"123e4567-e89b-12d3-a456-426614174000"'
+      responses:
+        '200':
+          description: Successfully retrieved experiment view override configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/experiment_view_overrides.ExperimentViewOverride'
+        '400':
+          description: 'Invalid ID format" example({"error":"invalid experiment view override ID format"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '401':
+          description: 'Unauthorized access" example({"error":"Unauthorized"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: 'Override not found" example({"error":"experiment view override not found"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: 'Internal server error" example({"error":"internal server error"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+    delete:
+      tags:
+        - experiment-view-overrides
+      summary: Delete experiment view override configuration
+      description: "Permanently deletes an experiment view override configuration for a dataset.\nThis operation removes all column override settings including color gradients,\nprecision configurations, and visibility settings.\n\nAfter deletion, the experiment view will revert to default column display settings.\nThis action cannot be undone - you will need to recreate the override configuration\nif you want to restore custom column settings.\n\nBoth the dataset and override must exist and be accessible by the authenticated user.\nThe operation will fail if the override doesn't exist or if the user doesn't have\nappropriate permissions for the dataset."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+          example: '"550e8400-e29b-41d4-a716-446655440000"'
+        - name: id
+          in: path
+          description: Experiment view override ID
+          required: true
+          example: '"123e4567-e89b-12d3-a456-426614174000"'
+      responses:
+        '204':
+          description: Successfully deleted experiment view override (no content returned)
+          content:
+            application/json: { }
+        '400':
+          description: 'Invalid ID format" example({"error":"invalid experiment view override ID format"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '401':
+          description: 'Unauthorized access" example({"error":"Unauthorized"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: 'Override not found" example({"error":"experiment view override not found"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: 'Internal server error" example({"error":"internal server error"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+    patch:
+      tags:
+        - experiment-view-overrides
+      summary: Update existing experiment view override configuration
+      description: "Updates an existing experiment view override configuration by completely replacing\nthe column overrides for the specified dataset and override ID.\n\nThis endpoint performs a complete replacement of the column overrides configuration.\nAll existing column overrides will be replaced with the new configuration provided\nin the request body. To add or modify individual columns, include the complete\ndesired configuration in the request.\n\nThe request format is identical to the create endpoint:\n- column_overrides: Required array with at least one override configuration\n- Each override can specify color gradients, precision, and visibility\n\nExample request body:\n{\n\"column_overrides\": [\n{\n\"column\": \"metrics.f1_score\",\n\"color_gradient\": [[0.0, \"#ff4444\"], [0.8, \"#44ff44\"]],\n\"precision\": 4\n},\n{\n\"column\": \"feedback.rating\",\n\"hide\": false\n}\n]\n}\n\nBoth the dataset and override must exist and be accessible by the authenticated user."
+      parameters:
+        - name: dataset_id
+          in: path
+          description: Dataset ID
+          required: true
+          example: '"550e8400-e29b-41d4-a716-446655440000"'
+        - name: id
+          in: path
+          description: Experiment view override ID
+          required: true
+          example: '"123e4567-e89b-12d3-a456-426614174000"'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/experiment_view_overrides.ExperimentViewOverridePatchRequest'
+        required: true
+      responses:
+        '200':
+          description: Successfully updated experiment view override
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/experiment_view_overrides.ExperimentViewOverride'
+        '400':
+          description: 'Invalid request data" example({"error":"invalid experiment view override ID format"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '401':
+          description: 'Unauthorized access" example({"error":"Unauthorized"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: 'Override not found" example({"error":"experiment view override not found"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '422':
+          description: 'Validation error" example({"error":"''precision'' must be between 1 and 6 for column at index 0"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: 'Internal server error" example({"error":"internal server error"})'
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
   /feedback/batch:
     post:
       tags:
@@ -18686,6 +18987,98 @@ components:
           type: object
           additionalProperties:
             type: string
+    PlaygroundRunOverDatasetBatchRequestSchema:
+      title: PlaygroundRunOverDatasetBatchRequestSchema
+      required:
+        - manifest
+        - secrets
+        - options
+        - project_name
+        - dataset_id
+      type: object
+      properties:
+        manifest:
+          title: Manifest
+        secrets:
+          title: Secrets
+          type: object
+          additionalProperties:
+            type: string
+        run_id:
+          title: Run Id
+          type: string
+          nullable: true
+        repo_id:
+          title: Repo Id
+          type: string
+          nullable: true
+        tools:
+          title: Tools
+          type: array
+          items: { }
+          nullable: true
+        tool_choice:
+          title: Tool Choice
+          type: string
+          nullable: true
+        parallel_tool_calls:
+          title: Parallel Tool Calls
+          type: boolean
+          nullable: true
+        options:
+          $ref: '#/components/schemas/RunnableConfig'
+        project_name:
+          title: Project Name
+          type: string
+        repo_handle:
+          title: Repo Handle
+          type: string
+          nullable: true
+        owner:
+          title: Owner
+          type: string
+          nullable: true
+        commit:
+          title: Commit
+          type: string
+          nullable: true
+        evaluator_rules:
+          title: Evaluator Rules
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        requests_per_second:
+          title: Requests Per Second
+          type: integer
+          nullable: true
+        use_or_fallback_to_workspace_secrets:
+          title: Use Or Fallback To Workspace Secrets
+          type: boolean
+          default: false
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+        dataset_splits:
+          title: Dataset Splits
+          type: array
+          items:
+            type: string
+          nullable: true
+        repetitions:
+          title: Repetitions
+          maximum: 30.0
+          minimum: 1.0
+          type: integer
+          default: 1
+        batch_size:
+          title: Batch Size
+          maximum: 100.0
+          minimum: 1.0
+          type: integer
+          nullable: true
     PlaygroundRunOverDatasetRequestSchema:
       title: PlaygroundRunOverDatasetRequestSchema
       required:
@@ -24429,6 +24822,7 @@ components:
       type: object
       properties:
         color_gradient:
+          maxItems: 20
           type: array
           items:
             type: array
@@ -24436,6 +24830,7 @@ components:
         color_map:
           type: object
         column:
+          maxLength: 200
           type: string
         hide:
           type: boolean
@@ -24464,6 +24859,7 @@ components:
       type: object
       properties:
         column_overrides:
+          maxItems: 50
           minItems: 1
           type: array
           items:
@@ -24474,6 +24870,7 @@ components:
       type: object
       properties:
         column_overrides:
+          maxItems: 50
           minItems: 1
           type: array
           items:

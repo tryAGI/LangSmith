@@ -199,6 +199,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public ExperimentViewOverridesClient ExperimentViewOverrides { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RunsClient Runs { get; }
 
         /// <summary>
