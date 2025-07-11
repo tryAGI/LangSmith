@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Response3
+    public sealed partial class PlaygroundRunOverDatasetBatchRequestSchemaTool
     {
 
         /// <summary>

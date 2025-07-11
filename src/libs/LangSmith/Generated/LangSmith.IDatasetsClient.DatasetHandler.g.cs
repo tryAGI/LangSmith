@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
-            global::LangSmith.PlaygroundRunOverDatasetRequestSchema request,
+            global::LangSmith.PlaygroundRunOverDatasetBatchRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -41,6 +41,7 @@ namespace LangSmith
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
+        /// <param name="batchSize"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> DatasetHandlerAsync(
@@ -62,6 +63,7 @@ namespace LangSmith
             bool? useOrFallbackToWorkspaceSecrets = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
+            int? batchSize = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
