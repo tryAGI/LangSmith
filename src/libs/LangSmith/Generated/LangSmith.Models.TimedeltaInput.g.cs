@@ -17,14 +17,14 @@ namespace LangSmith
         /// <summary>
         /// Default Value: 0
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("minutes")]
-        public int? Minutes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("hours")]
+        public int? Hours { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("hours")]
-        public int? Hours { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("minutes")]
+        public int? Minutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,10 +38,10 @@ namespace LangSmith
         /// <param name="days">
         /// Default Value: 0
         /// </param>
-        /// <param name="minutes">
+        /// <param name="hours">
         /// Default Value: 0
         /// </param>
-        /// <param name="hours">
+        /// <param name="minutes">
         /// Default Value: 0
         /// </param>
 #if NET7_0_OR_GREATER
@@ -49,12 +49,12 @@ namespace LangSmith
 #endif
         public TimedeltaInput(
             int? days,
-            int? minutes,
-            int? hours)
+            int? hours,
+            int? minutes)
         {
             this.Days = days;
-            this.Minutes = minutes;
             this.Hours = hours;
+            this.Minutes = minutes;
         }
 
         /// <summary>
