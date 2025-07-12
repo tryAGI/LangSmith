@@ -23800,12 +23800,12 @@ components:
           title: Days
           type: integer
           default: 0
-        minutes:
-          title: Minutes
-          type: integer
-          default: 0
         hours:
           title: Hours
+          type: integer
+          default: 0
+        minutes:
+          title: Minutes
           type: integer
           default: 0
       description: Timedelta input.
