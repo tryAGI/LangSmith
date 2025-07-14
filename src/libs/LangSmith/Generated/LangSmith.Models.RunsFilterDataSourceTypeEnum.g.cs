@@ -20,6 +20,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Lite,
+        /// <summary>
+        /// 
+        /// </summary>
+        RootLite,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace LangSmith
                 RunsFilterDataSourceTypeEnum.Current => "current",
                 RunsFilterDataSourceTypeEnum.Historical => "historical",
                 RunsFilterDataSourceTypeEnum.Lite => "lite",
+                RunsFilterDataSourceTypeEnum.RootLite => "root_lite",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace LangSmith
                 "current" => RunsFilterDataSourceTypeEnum.Current,
                 "historical" => RunsFilterDataSourceTypeEnum.Historical,
                 "lite" => RunsFilterDataSourceTypeEnum.Lite,
+                "root_lite" => RunsFilterDataSourceTypeEnum.RootLite,
                 _ => null,
             };
         }

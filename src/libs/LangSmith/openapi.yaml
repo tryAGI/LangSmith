@@ -15547,6 +15547,20 @@ components:
           type: string
           format: uuid
           nullable: true
+    CustomerInfo:
+      title: CustomerInfo
+      required:
+        - customer_id
+        - customer_name
+      type: object
+      properties:
+        customer_id:
+          title: Customer Id
+          type: string
+        customer_name:
+          title: Customer Name
+          type: string
+      description: Customer info.
     CustomerVisiblePlanInfo:
       title: CustomerVisiblePlanInfo
       required:
@@ -17556,6 +17570,8 @@ components:
         instance_flags:
           title: Instance Flags
           type: object
+        customer_info:
+          $ref: '#/components/schemas/CustomerInfo'
       description: The LangSmith server info.
     InputTokenDetails:
       title: InputTokenDetails
@@ -22305,6 +22321,7 @@ components:
         - current
         - historical
         - lite
+        - root_lite
       type: string
       description: Enum for run data source types.
     RunsGenerateQueryFeedbackKeys:

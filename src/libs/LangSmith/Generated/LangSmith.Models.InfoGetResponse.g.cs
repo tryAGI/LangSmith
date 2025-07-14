@@ -34,6 +34,12 @@ namespace LangSmith
         public object? InstanceFlags { get; set; }
 
         /// <summary>
+        /// Customer info.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("customer_info")]
+        public global::LangSmith.CustomerInfo? CustomerInfo { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,6 +54,9 @@ namespace LangSmith
         /// Batch ingest config.
         /// </param>
         /// <param name="instanceFlags"></param>
+        /// <param name="customerInfo">
+        /// Customer info.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,12 +64,14 @@ namespace LangSmith
             string version,
             global::System.DateTime? licenseExpirationTime,
             global::LangSmith.BatchIngestConfig? batchIngestConfig,
-            object? instanceFlags)
+            object? instanceFlags,
+            global::LangSmith.CustomerInfo? customerInfo)
         {
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.LicenseExpirationTime = licenseExpirationTime;
             this.BatchIngestConfig = batchIngestConfig;
             this.InstanceFlags = instanceFlags;
+            this.CustomerInfo = customerInfo;
         }
 
         /// <summary>
