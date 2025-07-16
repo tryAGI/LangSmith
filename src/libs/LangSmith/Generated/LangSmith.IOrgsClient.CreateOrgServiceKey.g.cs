@@ -2,22 +2,22 @@
 
 namespace LangSmith
 {
-    public partial interface IApiKeyClient
+    public partial interface IOrgsClient
     {
         /// <summary>
-        /// Generate Api Key<br/>
-        /// Generate an api key for the user
+        /// Create Org Service Key<br/>
+        /// Create org-scoped service key. If workspaces is None, key is org-wide.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgServiceKeyAsync(
             global::LangSmith.APIKeyCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Generate Api Key<br/>
-        /// Generate an api key for the user
+        /// Create Org Service Key<br/>
+        /// Create org-scoped service key. If workspaces is None, key is org-wide.
         /// </summary>
         /// <param name="description">
         /// Default Value: Default API key
@@ -29,7 +29,7 @@ namespace LangSmith
         /// <param name="workspaces"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgServiceKeyAsync(
             string? description = default,
             bool? readOnly = default,
             global::System.DateTime? expiresAt = default,

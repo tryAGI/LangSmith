@@ -83,7 +83,7 @@ namespace LangSmith
         /// </param>
         /// <param name="filter"></param>
         /// <param name="includeStats">
-        /// Default Value: true
+        /// Default Value: false
         /// </param>
         /// <param name="useApproxStats">
         /// Default Value: false
