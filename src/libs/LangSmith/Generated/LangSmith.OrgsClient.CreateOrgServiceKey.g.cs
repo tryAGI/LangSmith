@@ -3,32 +3,32 @@
 
 namespace LangSmith
 {
-    public partial class ApiKeyClient
+    public partial class OrgsClient
     {
-        partial void PrepareGenerateApiKeyArguments(
+        partial void PrepareCreateOrgServiceKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.APIKeyCreateRequest request);
-        partial void PrepareGenerateApiKeyRequest(
+        partial void PrepareCreateOrgServiceKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::LangSmith.APIKeyCreateRequest request);
-        partial void ProcessGenerateApiKeyResponse(
+        partial void ProcessCreateOrgServiceKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGenerateApiKeyResponseContent(
+        partial void ProcessCreateOrgServiceKeyResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate Api Key<br/>
-        /// Generate an api key for the user
+        /// Create Org Service Key<br/>
+        /// Create org-scoped service key. If workspaces is None, key is org-wide.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgServiceKeyAsync(
             global::LangSmith.APIKeyCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -36,12 +36,12 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareGenerateApiKeyArguments(
+            PrepareCreateOrgServiceKeyArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/api/v1/api-key",
+                path: "/api/v1/orgs/current/service-keys",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -77,7 +77,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGenerateApiKeyRequest(
+            PrepareCreateOrgServiceKeyRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -90,7 +90,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGenerateApiKeyResponse(
+            ProcessCreateOrgServiceKeyResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -143,7 +143,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGenerateApiKeyResponseContent(
+                ProcessCreateOrgServiceKeyResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -204,8 +204,8 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Generate Api Key<br/>
-        /// Generate an api key for the user
+        /// Create Org Service Key<br/>
+        /// Create org-scoped service key. If workspaces is None, key is org-wide.
         /// </summary>
         /// <param name="description">
         /// Default Value: Default API key
@@ -217,7 +217,7 @@ namespace LangSmith
         /// <param name="workspaces"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgServiceKeyAsync(
             string? description = default,
             bool? readOnly = default,
             global::System.DateTime? expiresAt = default,
@@ -232,7 +232,7 @@ namespace LangSmith
                 Workspaces = workspaces,
             };
 
-            return await GenerateApiKeyAsync(
+            return await CreateOrgServiceKeyAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

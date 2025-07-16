@@ -273,7 +273,7 @@ paths:
           schema:
             title: Include Stats
             type: boolean
-            default: true
+            default: false
         - name: use_approx_stats
           in: query
           schema:
@@ -1829,6 +1829,86 @@ paths:
           content:
             application/json:
               schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/orgs/current/service-keys:
+    get:
+      tags:
+        - orgs
+      summary: List Org Service Keys
+      operationId: list_org_service_keys_api_v1_orgs_current_service_keys_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Org Service Keys Api V1 Orgs Current Service Keys Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/APIKeyGetResponse'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - orgs
+      summary: Create Org Service Key
+      description: 'Create org-scoped service key. If workspaces is None, key is org-wide.'
+      operationId: create_org_service_key_api_v1_orgs_current_service_keys_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIKeyCreateRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyCreateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/orgs/current/service-keys/{api_key_id}':
+    delete:
+      tags:
+        - orgs
+      summary: Delete Org Service Key
+      operationId: delete_org_service_key_api_v1_orgs_current_service_keys__api_key_id__delete
+      parameters:
+        - name: api_key_id
+          in: path
+          required: true
+          schema:
+            title: Api Key Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyGetResponse'
         '422':
           description: Validation Error
           content:
@@ -13123,7 +13203,14 @@ components:
           type: string
           format: date-time
           nullable: true
-      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire."
+        workspaces:
+          title: Workspaces
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged)."
     APIKeyCreateResponse:
       title: APIKeyCreateResponse
       required:
@@ -18574,6 +18661,10 @@ components:
           title: Org Scoped Service Accounts Enabled
           type: boolean
           default: false
+        enable_lgp_listeners_page:
+          title: Enable Lgp Listeners Page
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
@@ -22620,6 +22711,11 @@ components:
         name:
           title: Name
           type: string
+        workspaces:
+          title: Workspaces
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceAccountWorkspaceAssignment'
     ServiceAccountCreateResponse:
       title: ServiceAccountCreateResponse
       required:
@@ -22692,6 +22788,21 @@ components:
           format: uuid
         default_workspace_id:
           title: Default Workspace Id
+          type: string
+          format: uuid
+          nullable: true
+    ServiceAccountWorkspaceAssignment:
+      title: ServiceAccountWorkspaceAssignment
+      required:
+        - workspace_id
+      type: object
+      properties:
+        workspace_id:
+          title: Workspace Id
+          type: string
+          format: uuid
+        role_id:
+          title: Role Id
           type: string
           format: uuid
           nullable: true

@@ -3,49 +3,41 @@
 
 namespace LangSmith
 {
-    public partial class ApiKeyClient
+    public partial class OrgsClient
     {
-        partial void PrepareGenerateApiKeyArguments(
+        partial void PrepareListOrgServiceKeysArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListOrgServiceKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.APIKeyCreateRequest request);
-        partial void PrepareGenerateApiKeyRequest(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.APIKeyCreateRequest request);
-        partial void ProcessGenerateApiKeyResponse(
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListOrgServiceKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGenerateApiKeyResponseContent(
+        partial void ProcessListOrgServiceKeysResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate Api Key<br/>
-        /// Generate an api key for the user
+        /// List Org Service Keys
         /// </summary>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
-            global::LangSmith.APIKeyCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>> ListOrgServiceKeysAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareGenerateApiKeyArguments(
-                httpClient: HttpClient,
-                request: request);
+            PrepareListOrgServiceKeysArguments(
+                httpClient: HttpClient);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/api/v1/api-key",
+                path: "/api/v1/orgs/current/service-keys",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -67,20 +59,13 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGenerateApiKeyRequest(
+            PrepareListOrgServiceKeysRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
+                httpRequestMessage: __httpRequest);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -90,46 +75,9 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGenerateApiKeyResponse(
+            ProcessListOrgServiceKeysResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Validation Error
-            if ((int)__response.StatusCode == 422)
-            {
-                string? __content_422 = null;
-                global::System.Exception? __exception_422 = null;
-                global::LangSmith.HTTPValidationError? __value_422 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = await global::LangSmith.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_422 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
-                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_422,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_422,
-                    ResponseObject = __value_422,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
 
             if (ReadResponseAsString)
             {
@@ -143,7 +91,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGenerateApiKeyResponseContent(
+                ProcessListOrgServiceKeysResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -153,7 +101,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.APIKeyCreateResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse> ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -184,7 +132,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.APIKeyCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse> ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -201,40 +149,6 @@ namespace LangSmith
                     };
                 }
             }
-        }
-
-        /// <summary>
-        /// Generate Api Key<br/>
-        /// Generate an api key for the user
-        /// </summary>
-        /// <param name="description">
-        /// Default Value: Default API key
-        /// </param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
-        /// <param name="expiresAt"></param>
-        /// <param name="workspaces"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
-            string? description = default,
-            bool? readOnly = default,
-            global::System.DateTime? expiresAt = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? workspaces = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.APIKeyCreateRequest
-            {
-                Description = description,
-                ReadOnly = readOnly,
-                ExpiresAt = expiresAt,
-                Workspaces = workspaces,
-            };
-
-            return await GenerateApiKeyAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

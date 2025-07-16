@@ -16,6 +16,12 @@ namespace LangSmith
         public required string Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspaces")]
+        public global::System.Collections.Generic.IList<global::LangSmith.ServiceAccountWorkspaceAssignment>? Workspaces { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -25,13 +31,16 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ServiceAccountCreateRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="workspaces"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ServiceAccountCreateRequest(
-            string name)
+            string name,
+            global::System.Collections.Generic.IList<global::LangSmith.ServiceAccountWorkspaceAssignment>? workspaces)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Workspaces = workspaces;
         }
 
         /// <summary>
