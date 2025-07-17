@@ -4,14 +4,11 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Enum for dataset data types.
+    /// Enum for dataset transformation types.<br/>
+    /// Ordering determines the order in which transformations are applied if there are multiple transformations on the same path.
     /// </summary>
     public enum DatasetTransformationType
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        RemoveSystemMessages,
         /// <summary>
         /// 
         /// </summary>
@@ -20,6 +17,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ConvertToOpenaiTool,
+        /// <summary>
+        /// 
+        /// </summary>
+        RemoveSystemMessages,
         /// <summary>
         /// 
         /// </summary>
@@ -42,9 +43,9 @@ namespace LangSmith
         {
             return value switch
             {
-                DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 DatasetTransformationType.ConvertToOpenaiMessage => "convert_to_openai_message",
                 DatasetTransformationType.ConvertToOpenaiTool => "convert_to_openai_tool",
+                DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
                 DatasetTransformationType.ExtractToolsFromRun => "extract_tools_from_run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -57,9 +58,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 "convert_to_openai_message" => DatasetTransformationType.ConvertToOpenaiMessage,
                 "convert_to_openai_tool" => DatasetTransformationType.ConvertToOpenaiTool,
+                "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
                 "extract_tools_from_run" => DatasetTransformationType.ExtractToolsFromRun,
                 _ => null,

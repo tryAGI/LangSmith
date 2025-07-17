@@ -20,6 +20,10 @@ namespace LangSmith
         /// 
         /// </summary>
         RecentlyCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        Id,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace LangSmith
                 ExampleListOrder.Recent => "recent",
                 ExampleListOrder.Random => "random",
                 ExampleListOrder.RecentlyCreated => "recently_created",
+                ExampleListOrder.Id => "id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace LangSmith
                 "recent" => ExampleListOrder.Recent,
                 "random" => ExampleListOrder.Random,
                 "recently_created" => ExampleListOrder.RecentlyCreated,
+                "id" => ExampleListOrder.Id,
                 _ => null,
             };
         }
