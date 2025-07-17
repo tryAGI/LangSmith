@@ -14186,7 +14186,6 @@ components:
         - bulk_export_destination_id
         - session_id
         - start_time
-        - end_time
         - id
         - tenant_id
         - status
@@ -14211,6 +14210,7 @@ components:
           title: End Time
           type: string
           format: date-time
+          nullable: true
         filter:
           title: Filter
           type: string
@@ -14219,6 +14219,10 @@ components:
           $ref: '#/components/schemas/BulkExportFormat'
         compression:
           $ref: '#/components/schemas/BulkExportCompression'
+        interval_hours:
+          title: Interval Hours
+          type: integer
+          nullable: true
         id:
           title: Id
           type: string
@@ -14242,6 +14246,11 @@ components:
           type: string
           format: date-time
           nullable: true
+        source_bulk_export_id:
+          title: Source Bulk Export Id
+          type: string
+          format: uuid
+          nullable: true
     BulkExportCompression:
       title: BulkExportCompression
       enum:
@@ -14255,7 +14264,6 @@ components:
         - bulk_export_destination_id
         - session_id
         - start_time
-        - end_time
       type: object
       properties:
         bulk_export_destination_id:
@@ -14274,6 +14282,7 @@ components:
           title: End Time
           type: string
           format: date-time
+          nullable: true
         filter:
           title: Filter
           type: string
@@ -14282,6 +14291,10 @@ components:
           $ref: '#/components/schemas/BulkExportFormat'
         compression:
           $ref: '#/components/schemas/BulkExportCompression'
+        interval_hours:
+          title: Interval Hours
+          type: integer
+          nullable: true
     BulkExportDestination:
       title: BulkExportDestination
       required:
@@ -14505,6 +14518,7 @@ components:
         - Cancelled
         - Completed
         - Created
+        - IntervalScheduled
         - Failed
         - TimedOut
         - Running
@@ -21164,6 +21178,10 @@ components:
           title: Evaluator Version
           type: integer
           nullable: true
+        create_alignment_queue:
+          title: Create Alignment Queue
+          type: boolean
+          default: false
     RunRulesPagerdutyAlertSchema:
       title: RunRulesPagerdutyAlertSchema
       required:

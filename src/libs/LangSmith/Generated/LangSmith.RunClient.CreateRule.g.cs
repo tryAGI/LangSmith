@@ -238,6 +238,9 @@ namespace LangSmith
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
         /// <param name="evaluatorVersion"></param>
+        /// <param name="createAlignmentQueue">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> CreateRuleAsync(
@@ -262,6 +265,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
             int? evaluatorVersion = default,
+            bool? createAlignmentQueue = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.RunRulesCreateSchema
@@ -287,6 +291,7 @@ namespace LangSmith
                 Alerts = alerts,
                 Webhooks = webhooks,
                 EvaluatorVersion = evaluatorVersion,
+                CreateAlignmentQueue = createAlignmentQueue,
             };
 
             return await CreateRuleAsync(

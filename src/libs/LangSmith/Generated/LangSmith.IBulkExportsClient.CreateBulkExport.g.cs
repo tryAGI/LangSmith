@@ -26,16 +26,18 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="format"></param>
         /// <param name="compression"></param>
+        /// <param name="intervalHours"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.BulkExport> CreateBulkExportAsync(
             global::System.Guid bulkExportDestinationId,
             global::System.Guid sessionId,
             global::System.DateTime startTime,
-            global::System.DateTime endTime,
+            global::System.DateTime? endTime = default,
             string? filter = default,
             global::LangSmith.BulkExportFormat? format = default,
             global::LangSmith.BulkExportCompression? compression = default,
+            int? intervalHours = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
