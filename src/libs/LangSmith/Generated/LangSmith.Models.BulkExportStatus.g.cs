@@ -23,6 +23,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        IntervalScheduled,
+        /// <summary>
+        /// 
+        /// </summary>
         Failed,
         /// <summary>
         /// 
@@ -49,6 +53,7 @@ namespace LangSmith
                 BulkExportStatus.Cancelled => "Cancelled",
                 BulkExportStatus.Completed => "Completed",
                 BulkExportStatus.Created => "Created",
+                BulkExportStatus.IntervalScheduled => "IntervalScheduled",
                 BulkExportStatus.Failed => "Failed",
                 BulkExportStatus.TimedOut => "TimedOut",
                 BulkExportStatus.Running => "Running",
@@ -65,6 +70,7 @@ namespace LangSmith
                 "Cancelled" => BulkExportStatus.Cancelled,
                 "Completed" => BulkExportStatus.Completed,
                 "Created" => BulkExportStatus.Created,
+                "IntervalScheduled" => BulkExportStatus.IntervalScheduled,
                 "Failed" => BulkExportStatus.Failed,
                 "TimedOut" => BulkExportStatus.TimedOut,
                 "Running" => BulkExportStatus.Running,

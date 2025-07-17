@@ -33,8 +33,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -57,6 +56,12 @@ namespace LangSmith
         public global::LangSmith.BulkExportCompression? Compression { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("interval_hours")]
+        public int? IntervalHours { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +77,7 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="format"></param>
         /// <param name="compression"></param>
+        /// <param name="intervalHours"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,10 +85,11 @@ namespace LangSmith
             global::System.Guid bulkExportDestinationId,
             global::System.Guid sessionId,
             global::System.DateTime startTime,
-            global::System.DateTime endTime,
+            global::System.DateTime? endTime,
             string? filter,
             global::LangSmith.BulkExportFormat? format,
-            global::LangSmith.BulkExportCompression? compression)
+            global::LangSmith.BulkExportCompression? compression,
+            int? intervalHours)
         {
             this.BulkExportDestinationId = bulkExportDestinationId;
             this.SessionId = sessionId;
@@ -91,6 +98,7 @@ namespace LangSmith
             this.Filter = filter;
             this.Format = format;
             this.Compression = compression;
+            this.IntervalHours = intervalHours;
         }
 
         /// <summary>

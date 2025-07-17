@@ -33,8 +33,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -55,6 +54,12 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("compression")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter))]
         public global::LangSmith.BulkExportCompression? Compression { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("interval_hours")]
+        public int? IntervalHours { get; set; }
 
         /// <summary>
         /// 
@@ -100,6 +105,12 @@ namespace LangSmith
         public required global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_bulk_export_id")]
+        public global::System.Guid? SourceBulkExportId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -115,12 +126,14 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="format"></param>
         /// <param name="compression"></param>
+        /// <param name="intervalHours"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="status"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
+        /// <param name="sourceBulkExportId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -128,30 +141,34 @@ namespace LangSmith
             global::System.Guid bulkExportDestinationId,
             global::System.Guid sessionId,
             global::System.DateTime startTime,
-            global::System.DateTime endTime,
             global::System.Guid id,
             global::System.Guid tenantId,
             global::LangSmith.BulkExportStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.DateTime? finishedAt,
+            global::System.DateTime? endTime,
             string? filter,
             global::LangSmith.BulkExportFormat? format,
-            global::LangSmith.BulkExportCompression? compression)
+            global::LangSmith.BulkExportCompression? compression,
+            int? intervalHours,
+            global::System.Guid? sourceBulkExportId)
         {
             this.BulkExportDestinationId = bulkExportDestinationId;
             this.SessionId = sessionId;
             this.StartTime = startTime;
-            this.EndTime = endTime;
             this.Id = id;
             this.TenantId = tenantId;
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.FinishedAt = finishedAt;
+            this.EndTime = endTime;
             this.Filter = filter;
             this.Format = format;
             this.Compression = compression;
+            this.IntervalHours = intervalHours;
+            this.SourceBulkExportId = sourceBulkExportId;
         }
 
         /// <summary>
