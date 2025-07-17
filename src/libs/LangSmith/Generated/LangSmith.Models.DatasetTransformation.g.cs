@@ -16,7 +16,8 @@ namespace LangSmith
         public required global::System.Collections.Generic.IList<string> Path { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Enum for dataset transformation types.<br/>
+        /// Ordering determines the order in which transformations are applied if there are multiple transformations on the same path.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformation_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeJsonConverter))]
@@ -34,7 +35,8 @@ namespace LangSmith
         /// </summary>
         /// <param name="path"></param>
         /// <param name="transformationType">
-        /// Enum for dataset data types.
+        /// Enum for dataset transformation types.<br/>
+        /// Ordering determines the order in which transformations are applied if there are multiple transformations on the same path.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

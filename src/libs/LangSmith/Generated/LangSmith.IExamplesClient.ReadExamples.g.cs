@@ -28,6 +28,7 @@ namespace LangSmith
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
         /// </param>
+        /// <param name="descending"></param>
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -43,6 +44,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order = default,
             double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            bool? descending = default,
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

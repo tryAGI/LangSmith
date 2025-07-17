@@ -2593,6 +2593,12 @@ paths:
               - metadata
               - inputs
               - outputs
+        - name: descending
+          in: query
+          schema:
+            title: Descending
+            type: boolean
+            nullable: true
         - name: filter
           in: query
           schema:
@@ -15990,13 +15996,13 @@ components:
     DatasetTransformationType:
       title: DatasetTransformationType
       enum:
-        - remove_system_messages
         - convert_to_openai_message
         - convert_to_openai_tool
+        - remove_system_messages
         - remove_extra_fields
         - extract_tools_from_run
       type: string
-      description: Enum for dataset data types.
+      description: "Enum for dataset transformation types.\nOrdering determines the order in which transformations are applied if there are multiple transformations on the same path."
     DatasetUpdate:
       title: DatasetUpdate
       type: object
@@ -16220,6 +16226,7 @@ components:
         - recent
         - random
         - recently_created
+        - id
       type: string
     ExampleSelect:
       title: ExampleSelect

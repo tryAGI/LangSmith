@@ -18,6 +18,7 @@ namespace LangSmith
             ref global::LangSmith.ExampleListOrder? order,
             ref double? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
+            ref bool? descending,
             ref string? filter);
         partial void PrepareReadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,6 +34,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order,
             double? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
+            bool? descending,
             string? filter);
         partial void ProcessReadExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -67,6 +69,7 @@ namespace LangSmith
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
         /// </param>
+        /// <param name="descending"></param>
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -82,6 +85,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order = default,
             double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            bool? descending = default,
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,6 +104,7 @@ namespace LangSmith
                 order: ref order,
                 randomSeed: ref randomSeed,
                 select: select,
+                descending: ref descending,
                 filter: ref filter);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -117,6 +122,7 @@ namespace LangSmith
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("random_seed", randomSeed?.ToString()) 
                 .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("descending", descending?.ToString()) 
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -161,6 +167,7 @@ namespace LangSmith
                 order: order,
                 randomSeed: randomSeed,
                 select: select,
+                descending: descending,
                 filter: filter);
 
             using var __response = await HttpClient.SendAsync(
