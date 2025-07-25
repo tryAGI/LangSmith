@@ -16202,6 +16202,8 @@ components:
       title: EPromptWebhookTrigger
       enum:
         - commit
+        - tag:create
+        - tag:update
       type: string
       description: Valid trigger types for prompt webhooks.
     EvaluatorStructuredOutput:
@@ -19790,6 +19792,7 @@ components:
         - commit_hash
         - created_at
         - created_by
+        - event
       type: object
       properties:
         prompt_id:
@@ -19810,6 +19813,12 @@ components:
         created_by:
           title: Created By
           type: string
+        event:
+          $ref: '#/components/schemas/EPromptWebhookTrigger'
+        tag_name:
+          title: Tag Name
+          type: string
+          nullable: true
     PromptWebhookTest:
       title: PromptWebhookTest
       required:
@@ -20295,6 +20304,15 @@ components:
           title: Commit Id
           type: string
           format: uuid
+        skip_webhooks:
+          title: Skip Webhooks
+          anyOf:
+            - type: boolean
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: false
       description: Fields to create a prompt tag
     RepoUpdateTagRequest:
       title: RepoUpdateTagRequest
@@ -20306,6 +20324,15 @@ components:
           title: Commit Id
           type: string
           format: uuid
+        skip_webhooks:
+          title: Skip Webhooks
+          anyOf:
+            - type: boolean
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: false
       description: Fields to update a prompt tag
     RepoWithLookups:
       title: RepoWithLookups

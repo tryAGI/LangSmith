@@ -227,6 +227,9 @@ namespace LangSmith
         /// <param name="tagName"></param>
         /// <param name="owner"></param>
         /// <param name="commitId"></param>
+        /// <param name="skipWebhooks">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> UpdateTagAsync(
@@ -234,11 +237,13 @@ namespace LangSmith
             string tagName,
             string owner,
             global::System.Guid commitId,
+            global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.RepoUpdateTagRequest
             {
                 CommitId = commitId,
+                SkipWebhooks = skipWebhooks,
             };
 
             return await UpdateTagAsync(

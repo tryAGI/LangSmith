@@ -51,6 +51,20 @@ namespace LangSmith
         public required string CreatedBy { get; set; }
 
         /// <summary>
+        /// Valid trigger types for prompt webhooks.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.EPromptWebhookTrigger Event { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_name")]
+        public string? TagName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +79,10 @@ namespace LangSmith
         /// <param name="commitHash"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdBy"></param>
+        /// <param name="event">
+        /// Valid trigger types for prompt webhooks.
+        /// </param>
+        /// <param name="tagName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,7 +92,9 @@ namespace LangSmith
             object manifest,
             string commitHash,
             string createdAt,
-            string createdBy)
+            string createdBy,
+            global::LangSmith.EPromptWebhookTrigger @event,
+            string? tagName)
         {
             this.PromptId = promptId ?? throw new global::System.ArgumentNullException(nameof(promptId));
             this.PromptName = promptName ?? throw new global::System.ArgumentNullException(nameof(promptName));
@@ -82,6 +102,8 @@ namespace LangSmith
             this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
+            this.Event = @event;
+            this.TagName = tagName;
         }
 
         /// <summary>

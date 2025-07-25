@@ -12,6 +12,14 @@ namespace LangSmith
         /// 
         /// </summary>
         Commit,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tag_create,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tag_update,
     }
 
     /// <summary>
@@ -27,6 +35,8 @@ namespace LangSmith
             return value switch
             {
                 EPromptWebhookTrigger.Commit => "commit",
+                EPromptWebhookTrigger.Tag_create => "tag:create",
+                EPromptWebhookTrigger.Tag_update => "tag:update",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +48,8 @@ namespace LangSmith
             return value switch
             {
                 "commit" => EPromptWebhookTrigger.Commit,
+                "tag:create" => EPromptWebhookTrigger.Tag_create,
+                "tag:update" => EPromptWebhookTrigger.Tag_update,
                 _ => null,
             };
         }

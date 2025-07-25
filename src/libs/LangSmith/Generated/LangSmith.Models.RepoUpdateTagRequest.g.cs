@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -16,6 +18,13 @@ namespace LangSmith
         public required global::System.Guid CommitId { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skip_webhooks")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>))]
+        public global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? SkipWebhooks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -25,13 +34,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RepoUpdateTagRequest" /> class.
         /// </summary>
         /// <param name="commitId"></param>
+        /// <param name="skipWebhooks">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RepoUpdateTagRequest(
-            global::System.Guid commitId)
+            global::System.Guid commitId,
+            global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks)
         {
             this.CommitId = commitId;
+            this.SkipWebhooks = skipWebhooks;
         }
 
         /// <summary>

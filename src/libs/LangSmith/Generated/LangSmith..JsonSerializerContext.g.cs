@@ -287,6 +287,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
