@@ -263,12 +263,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_tracing_project_redesign")]
-        public bool? EnableTracingProjectRedesign { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_scoped_service_accounts_enabled")]
         public bool? OrgScopedServiceAccountsEnabled { get; set; }
 
@@ -407,9 +401,6 @@ namespace LangSmith
         /// <param name="newRuleEvaluatorCreationVersion">
         /// Default Value: 2
         /// </param>
-        /// <param name="enableTracingProjectRedesign">
-        /// Default Value: false
-        /// </param>
         /// <param name="orgScopedServiceAccountsEnabled">
         /// Default Value: false
         /// </param>
@@ -462,7 +453,6 @@ namespace LangSmith
             bool? enableMonthlyUsageCharts,
             bool? enableLgpMetricsCharts,
             int? newRuleEvaluatorCreationVersion,
-            bool? enableTracingProjectRedesign,
             bool? orgScopedServiceAccountsEnabled,
             bool? enableLgpListenersPage)
         {
@@ -508,7 +498,6 @@ namespace LangSmith
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.EnableLgpMetricsCharts = enableLgpMetricsCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
-            this.EnableTracingProjectRedesign = enableTracingProjectRedesign;
             this.OrgScopedServiceAccountsEnabled = orgScopedServiceAccountsEnabled;
             this.EnableLgpListenersPage = enableLgpListenersPage;
         }

@@ -1919,6 +1919,85 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/personal-access-tokens:
+    get:
+      tags:
+        - orgs
+      summary: List Org Personal Access Tokens
+      operationId: list_org_personal_access_tokens_api_v1_orgs_current_personal_access_tokens_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Org Personal Access Tokens Api V1 Orgs Current Personal Access Tokens Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/APIKeyGetResponse'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - orgs
+      summary: Create Org Personal Access Token
+      operationId: create_org_personal_access_token_api_v1_orgs_current_personal_access_tokens_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIKeyCreateRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyCreateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/orgs/current/personal-access-tokens/{pat_id}':
+    delete:
+      tags:
+        - orgs
+      summary: Delete Org Personal Access Token
+      operationId: delete_org_personal_access_token_api_v1_orgs_current_personal_access_tokens__pat_id__delete
+      parameters:
+        - name: pat_id
+          in: path
+          required: true
+          schema:
+            title: Pat Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyGetResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/login:
     post:
       tags:
@@ -18674,10 +18753,6 @@ components:
           title: New Rule Evaluator Creation Version
           type: integer
           default: 2
-        enable_tracing_project_redesign:
-          title: Enable Tracing Project Redesign
-          type: boolean
-          default: false
         org_scoped_service_accounts_enabled:
           title: Org Scoped Service Accounts Enabled
           type: boolean
