@@ -273,6 +273,12 @@ namespace LangSmith
         public bool? EnableLgpListenersPage { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_grace_period_warning_banner")]
+        public bool? ShowGracePeriodWarningBanner { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -407,6 +413,9 @@ namespace LangSmith
         /// <param name="enableLgpListenersPage">
         /// Default Value: false
         /// </param>
+        /// <param name="showGracePeriodWarningBanner">
+        /// Default Value: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -454,7 +463,8 @@ namespace LangSmith
             bool? enableLgpMetricsCharts,
             int? newRuleEvaluatorCreationVersion,
             bool? orgScopedServiceAccountsEnabled,
-            bool? enableLgpListenersPage)
+            bool? enableLgpListenersPage,
+            bool? showGracePeriodWarningBanner)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -500,6 +510,7 @@ namespace LangSmith
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.OrgScopedServiceAccountsEnabled = orgScopedServiceAccountsEnabled;
             this.EnableLgpListenersPage = enableLgpListenersPage;
+            this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
         }
 
         /// <summary>
