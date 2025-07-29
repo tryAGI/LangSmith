@@ -105,6 +105,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("runner_context")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunnerContextEnumJsonConverter))]
+        public global::LangSmith.RunnerContextEnum? RunnerContext { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
@@ -155,6 +162,7 @@ namespace LangSmith
         /// <param name="useOrFallbackToWorkspaceSecrets">
         /// Default Value: false
         /// </param>
+        /// <param name="runnerContext"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -181,6 +189,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
             int? requestsPerSecond,
             bool? useOrFallbackToWorkspaceSecrets,
+            global::LangSmith.RunnerContextEnum? runnerContext,
             global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions,
             int? batchSize)
@@ -201,6 +210,7 @@ namespace LangSmith
             this.EvaluatorRules = evaluatorRules;
             this.RequestsPerSecond = requestsPerSecond;
             this.UseOrFallbackToWorkspaceSecrets = useOrFallbackToWorkspaceSecrets;
+            this.RunnerContext = runnerContext;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
             this.BatchSize = batchSize;

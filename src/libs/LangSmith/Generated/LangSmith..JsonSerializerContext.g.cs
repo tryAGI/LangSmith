@@ -135,6 +135,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevelNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter),
             typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.RunnerContextEnumJsonConverter),
+            typeof(global::LangSmith.JsonConverters.RunnerContextEnumNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.QueryExampleSchemaWithRunsFormatJsonConverter),
             typeof(global::LangSmith.JsonConverters.QueryExampleSchemaWithRunsFormatNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter),

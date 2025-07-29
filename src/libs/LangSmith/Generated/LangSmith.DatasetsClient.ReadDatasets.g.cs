@@ -16,7 +16,8 @@ namespace LangSmith
             ref int? limit,
             ref global::LangSmith.SortByDatasetColumn? sortBy,
             ref bool? sortByDesc,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            ref bool? excludeCorrectionsDatasets);
         partial void PrepareReadDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -29,7 +30,8 @@ namespace LangSmith
             int? limit,
             global::LangSmith.SortByDatasetColumn? sortBy,
             bool? sortByDesc,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            bool? excludeCorrectionsDatasets);
         partial void ProcessReadDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,6 +63,9 @@ namespace LangSmith
         /// Default Value: true
         /// </param>
         /// <param name="tagValueId"></param>
+        /// <param name="excludeCorrectionsDatasets">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsAsync(
@@ -74,6 +79,7 @@ namespace LangSmith
             global::LangSmith.SortByDatasetColumn? sortBy = default,
             bool? sortByDesc = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            bool? excludeCorrectionsDatasets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -89,7 +95,8 @@ namespace LangSmith
                 limit: ref limit,
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc,
-                tagValueId: tagValueId);
+                tagValueId: tagValueId,
+                excludeCorrectionsDatasets: ref excludeCorrectionsDatasets);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/datasets",
@@ -105,6 +112,7 @@ namespace LangSmith
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -146,7 +154,8 @@ namespace LangSmith
                 limit: limit,
                 sortBy: sortBy,
                 sortByDesc: sortByDesc,
-                tagValueId: tagValueId);
+                tagValueId: tagValueId,
+                excludeCorrectionsDatasets: excludeCorrectionsDatasets);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

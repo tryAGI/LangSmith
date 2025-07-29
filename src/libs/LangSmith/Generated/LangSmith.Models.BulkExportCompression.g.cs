@@ -20,6 +20,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Snappy,
+        /// <summary>
+        /// 
+        /// </summary>
+        Zstandard,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace LangSmith
                 BulkExportCompression.None => "none",
                 BulkExportCompression.Gzip => "gzip",
                 BulkExportCompression.Snappy => "snappy",
+                BulkExportCompression.Zstandard => "zstandard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace LangSmith
                 "none" => BulkExportCompression.None,
                 "gzip" => BulkExportCompression.Gzip,
                 "snappy" => BulkExportCompression.Snappy,
+                "zstandard" => BulkExportCompression.Zstandard,
                 _ => null,
             };
         }

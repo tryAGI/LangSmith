@@ -220,6 +220,7 @@ namespace LangSmith
         /// <param name="useOrFallbackToWorkspaceSecrets">
         /// Default Value: false
         /// </param>
+        /// <param name="runnerContext"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
@@ -245,6 +246,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules = default,
             int? requestsPerSecond = default,
             bool? useOrFallbackToWorkspaceSecrets = default,
+            global::LangSmith.RunnerContextEnum? runnerContext = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
             int? batchSize = default,
@@ -267,6 +269,7 @@ namespace LangSmith
                 EvaluatorRules = evaluatorRules,
                 RequestsPerSecond = requestsPerSecond,
                 UseOrFallbackToWorkspaceSecrets = useOrFallbackToWorkspaceSecrets,
+                RunnerContext = runnerContext,
                 DatasetId = datasetId,
                 DatasetSplits = datasetSplits,
                 Repetitions = repetitions,
