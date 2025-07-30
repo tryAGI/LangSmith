@@ -149,6 +149,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.RunGroupByNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter),
             typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.RunStatsSelectJsonConverter),
+            typeof(global::LangSmith.JsonConverters.RunStatsSelectNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.SessionSortableColumnsJsonConverter),
             typeof(global::LangSmith.JsonConverters.SessionSortableColumnsNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.SortByComparativeExperimentColumnJsonConverter),

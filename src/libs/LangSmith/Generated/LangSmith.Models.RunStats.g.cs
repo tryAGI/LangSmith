@@ -12,8 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_count")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RunCount { get; set; }
+        public int? RunCount { get; set; }
 
         /// <summary>
         /// 
@@ -190,7 +189,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStats(
-            int runCount,
+            int? runCount,
             double? latencyP50,
             double? latencyP99,
             double? firstTokenP50,
