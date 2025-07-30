@@ -51,6 +51,7 @@ namespace LangSmith
         /// Group by param for run stats.
         /// </param>
         /// <param name="groups"></param>
+        /// <param name="select"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunStats> StatsSharedDatasetRunsAsync(
@@ -76,6 +77,7 @@ namespace LangSmith
             bool? useExperimentalSearch = default,
             global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Collections.Generic.IList<string>? groups = default,
+            global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? select = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

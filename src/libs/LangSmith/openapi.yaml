@@ -20681,13 +20681,13 @@ components:
     RunGroupStats:
       title: RunGroupStats
       required:
-        - run_count
         - group_count
       type: object
       properties:
         run_count:
           title: Run Count
           type: integer
+          nullable: true
         latency_p50:
           title: Latency P50
           type: number
@@ -22242,13 +22242,12 @@ components:
           format: uuid
     RunStats:
       title: RunStats
-      required:
-        - run_count
       type: object
       properties:
         run_count:
           title: Run Count
           type: integer
+          nullable: true
         latency_p50:
           title: Latency P50
           type: number
@@ -22497,7 +22496,46 @@ components:
             type: string
             nullable: true
           nullable: true
+        select:
+          title: Select
+          type: array
+          items:
+            $ref: '#/components/schemas/RunStatsSelect'
+          nullable: true
       description: Query params for run stats.
+    RunStatsSelect:
+      title: RunStatsSelect
+      enum:
+        - run_count
+        - latency_p50
+        - latency_p99
+        - latency_avg
+        - first_token_p50
+        - first_token_p99
+        - total_tokens
+        - prompt_tokens
+        - completion_tokens
+        - median_tokens
+        - completion_tokens_p50
+        - prompt_tokens_p50
+        - tokens_p99
+        - completion_tokens_p99
+        - prompt_tokens_p99
+        - last_run_start_time
+        - feedback_stats
+        - run_facets
+        - error_rate
+        - streaming_rate
+        - total_cost
+        - prompt_cost
+        - completion_cost
+        - cost_p50
+        - cost_p99
+        - session_feedback_stats
+        - all_run_stats
+        - all_token_stats
+      type: string
+      description: Metrics you can select from run stats endpoint.
     RunTypeEnum:
       title: RunTypeEnum
       enum:
