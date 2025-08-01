@@ -45,7 +45,7 @@ namespace LangSmith
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            string? sortField = default,
+            global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
