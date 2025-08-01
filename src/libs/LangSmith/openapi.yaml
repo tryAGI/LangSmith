@@ -13345,6 +13345,12 @@ components:
           type: string
           format: date-time
           nullable: true
+        workspace_names:
+          title: Workspace Names
+          type: array
+          items:
+            type: string
+          nullable: true
         key:
           title: Key
           type: string
@@ -13385,6 +13391,12 @@ components:
           title: Expires At
           type: string
           format: date-time
+          nullable: true
+        workspace_names:
+          title: Workspace Names
+          type: array
+          items:
+            type: string
           nullable: true
       description: API key GET schema.
     AccessScope:

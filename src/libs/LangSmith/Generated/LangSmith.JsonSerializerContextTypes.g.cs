@@ -142,87 +142,87 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.APIKeyGetResponse? Type29 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AccessScope? Type30 { get; set; }
+        public global::LangSmith.APIKeyGetResponse? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllowedLoginMethodsUpdate? Type31 { get; set; }
+        public global::LangSmith.AccessScope? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueBulkDeleteRunsRequest? Type32 { get; set; }
+        public global::LangSmith.AllowedLoginMethodsUpdate? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueCreateSchema? Type33 { get; set; }
+        public global::LangSmith.AnnotationQueueBulkDeleteRunsRequest? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? Type34 { get; set; }
+        public global::LangSmith.AnnotationQueueCreateSchema? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueRubricItemSchema? Type35 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type36 { get; set; }
+        public global::LangSmith.AnnotationQueueRubricItemSchema? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueRunSchema? Type37 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueRunUpdateSchema? Type38 { get; set; }
+        public global::LangSmith.AnnotationQueueRunSchema? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSchema? Type39 { get; set; }
+        public global::LangSmith.AnnotationQueueRunUpdateSchema? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSchemaWithRubric? Type40 { get; set; }
+        public global::LangSmith.AnnotationQueueSchema? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSchemaWithSize? Type41 { get; set; }
+        public global::LangSmith.AnnotationQueueSchemaWithRubric? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueSizeSchema? Type42 { get; set; }
+        public global::LangSmith.AnnotationQueueSchemaWithSize? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AnnotationQueueUpdateSchema? Type43 { get; set; }
+        public global::LangSmith.AnnotationQueueSizeSchema? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AppFeedbackSource? Type44 { get; set; }
+        public global::LangSmith.AnnotationQueueUpdateSchema? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Artifact? Type45 { get; set; }
+        public global::LangSmith.AppFeedbackSource? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.ArtifactContent>? Type46 { get; set; }
+        public global::LangSmith.Artifact? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.ArtifactContent? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.ArtifactContent>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AttachmentsOperations? Type48 { get; set; }
+        public global::LangSmith.ArtifactContent? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type49 { get; set; }
+        public global::LangSmith.AttachmentsOperations? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
