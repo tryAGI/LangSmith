@@ -13301,7 +13301,12 @@ components:
             type: string
             format: uuid
           nullable: true
-      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged)."
+        role_id:
+          title: Role Id
+          type: string
+          format: uuid
+          nullable: true
+      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged).\nrole_id: Optional UUID of the role to assign to API key.\n    If not provided, uses default role based on read_only flag:\n    - WORKSPACE_ADMIN if read_only is False\n    - WORKSPACE_READER if read_only is True"
     APIKeyCreateResponse:
       title: APIKeyCreateResponse
       required:
