@@ -199,6 +199,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchivedNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsPublicJsonConverter),
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsPublicNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortFieldJsonConverter),
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortFieldNullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortDirectionVariant1JsonConverter),
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortDirectionVariant1NullableJsonConverter),
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortDirectionVariant2JsonConverter),

@@ -20,7 +20,7 @@ namespace LangSmith
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            ref string? sortField,
+            ref global::LangSmith.ListReposApiV1ReposGetSortField? sortField,
             ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,7 +38,7 @@ namespace LangSmith
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            string? sortField,
+            global::LangSmith.ListReposApiV1ReposGetSortField? sortField,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
         partial void ProcessListReposResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -90,7 +90,7 @@ namespace LangSmith
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            string? sortField = default,
+            global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -131,7 +131,7 @@ namespace LangSmith
                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("sort_field", sortField) 
+                .AddOptionalParameter("sort_field", sortField?.ToValueString()) 
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -33,6 +33,12 @@ namespace LangSmith
         public string? Region { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("s3_additional_kwargs")]
+        public object? S3AdditionalKwargs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,6 +51,7 @@ namespace LangSmith
         /// <param name="prefix"></param>
         /// <param name="bucketName"></param>
         /// <param name="region"></param>
+        /// <param name="s3AdditionalKwargs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,12 +59,14 @@ namespace LangSmith
             string? endpointUrl,
             string? prefix,
             string? bucketName,
-            string? region)
+            string? region,
+            object? s3AdditionalKwargs)
         {
             this.EndpointUrl = endpointUrl;
             this.Prefix = prefix;
             this.BucketName = bucketName;
             this.Region = region;
+            this.S3AdditionalKwargs = s3AdditionalKwargs;
         }
 
         /// <summary>

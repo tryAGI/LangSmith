@@ -10494,6 +10494,12 @@ paths:
           in: query
           schema:
             title: Sort Field
+            enum:
+              - num_likes
+              - num_downloads
+              - num_views
+              - updated_at
+              - relevance
             type: string
             nullable: true
         - name: sort_direction
@@ -14488,6 +14494,10 @@ components:
           title: Region
           minLength: 1
           type: string
+          nullable: true
+        s3_additional_kwargs:
+          title: S3 Additional Kwargs
+          type: object
           nullable: true
     BulkExportDestinationS3Credentials:
       title: BulkExportDestinationS3Credentials
