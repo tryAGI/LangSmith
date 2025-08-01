@@ -56,6 +56,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_names")]
+        public global::System.Collections.Generic.IList<string>? WorkspaceNames { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
@@ -78,6 +84,7 @@ namespace LangSmith
         /// </param>
         /// <param name="lastUsedAt"></param>
         /// <param name="expiresAt"></param>
+        /// <param name="workspaceNames"></param>
         /// <param name="key"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -90,7 +97,8 @@ namespace LangSmith
             global::System.DateTime? createdAt,
             bool? readOnly,
             global::System.DateTime? lastUsedAt,
-            global::System.DateTime? expiresAt)
+            global::System.DateTime? expiresAt,
+            global::System.Collections.Generic.IList<string>? workspaceNames)
         {
             this.Id = id;
             this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
@@ -100,6 +108,7 @@ namespace LangSmith
             this.ReadOnly = readOnly;
             this.LastUsedAt = lastUsedAt;
             this.ExpiresAt = expiresAt;
+            this.WorkspaceNames = workspaceNames;
         }
 
         /// <summary>
