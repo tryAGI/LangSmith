@@ -18768,6 +18768,10 @@ components:
           title: Enable Align Evaluators
           type: boolean
           default: false
+        enable_run_tree_streaming:
+          title: Enable Run Tree Streaming
+          type: boolean
+          default: false
         max_prompt_webhooks:
           title: Max Prompt Webhooks
           type: integer
