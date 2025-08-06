@@ -248,6 +248,9 @@ namespace LangSmith
         /// <param name="createAlignmentQueue">
         /// Default Value: false
         /// </param>
+        /// <param name="includeExtendedStats">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> UpdateRuleAsync(
@@ -274,6 +277,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
+            bool? includeExtendedStats = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.RunRulesCreateSchema
@@ -300,6 +304,7 @@ namespace LangSmith
                 Webhooks = webhooks,
                 EvaluatorVersion = evaluatorVersion,
                 CreateAlignmentQueue = createAlignmentQueue,
+                IncludeExtendedStats = includeExtendedStats,
             };
 
             return await UpdateRuleAsync(

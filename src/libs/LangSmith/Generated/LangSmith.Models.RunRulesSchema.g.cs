@@ -164,6 +164,12 @@ namespace LangSmith
         public bool? ExtendOnly { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_extended_stats")]
+        public bool? IncludeExtendedStats { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -250,6 +256,9 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="includeExtendedStats">
+        /// Default Value: false
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
@@ -291,6 +300,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             bool? extendOnly,
+            bool? includeExtendedStats,
             global::System.DateTime? backfillFrom,
             bool? transient,
             global::System.Guid? evaluatorId,
@@ -324,6 +334,7 @@ namespace LangSmith
             this.CodeEvaluators = codeEvaluators;
             this.Alerts = alerts;
             this.ExtendOnly = extendOnly;
+            this.IncludeExtendedStats = includeExtendedStats;
             this.BackfillFrom = backfillFrom;
             this.Transient = transient;
             this.EvaluatorId = evaluatorId;

@@ -143,6 +143,12 @@ namespace LangSmith
         public bool? CreateAlignmentQueue { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_extended_stats")]
+        public bool? IncludeExtendedStats { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -185,6 +191,9 @@ namespace LangSmith
         /// <param name="createAlignmentQueue">
         /// Default Value: false
         /// </param>
+        /// <param name="includeExtendedStats">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -210,7 +219,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             int? evaluatorVersion,
-            bool? createAlignmentQueue)
+            bool? createAlignmentQueue,
+            bool? includeExtendedStats)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SamplingRate = samplingRate;
@@ -234,6 +244,7 @@ namespace LangSmith
             this.Webhooks = webhooks;
             this.EvaluatorVersion = evaluatorVersion;
             this.CreateAlignmentQueue = createAlignmentQueue;
+            this.IncludeExtendedStats = includeExtendedStats;
         }
 
         /// <summary>
