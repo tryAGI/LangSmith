@@ -139,7 +139,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        PromptTokenDetails,
+        /// <summary>
+        /// 
+        /// </summary>
         CompletionTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionTokenDetails,
         /// <summary>
         /// 
         /// </summary>
@@ -151,7 +159,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        PromptCostDetails,
+        /// <summary>
+        /// 
+        /// </summary>
         CompletionCost,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionCostDetails,
         /// <summary>
         /// 
         /// </summary>
@@ -266,10 +282,14 @@ namespace LangSmith
                 RunSelect.ReferenceDatasetId => "reference_dataset_id",
                 RunSelect.TotalTokens => "total_tokens",
                 RunSelect.PromptTokens => "prompt_tokens",
+                RunSelect.PromptTokenDetails => "prompt_token_details",
                 RunSelect.CompletionTokens => "completion_tokens",
+                RunSelect.CompletionTokenDetails => "completion_token_details",
                 RunSelect.TotalCost => "total_cost",
                 RunSelect.PromptCost => "prompt_cost",
+                RunSelect.PromptCostDetails => "prompt_cost_details",
                 RunSelect.CompletionCost => "completion_cost",
+                RunSelect.CompletionCostDetails => "completion_cost_details",
                 RunSelect.PriceModelId => "price_model_id",
                 RunSelect.FirstTokenTime => "first_token_time",
                 RunSelect.TraceId => "trace_id",
@@ -329,10 +349,14 @@ namespace LangSmith
                 "reference_dataset_id" => RunSelect.ReferenceDatasetId,
                 "total_tokens" => RunSelect.TotalTokens,
                 "prompt_tokens" => RunSelect.PromptTokens,
+                "prompt_token_details" => RunSelect.PromptTokenDetails,
                 "completion_tokens" => RunSelect.CompletionTokens,
+                "completion_token_details" => RunSelect.CompletionTokenDetails,
                 "total_cost" => RunSelect.TotalCost,
                 "prompt_cost" => RunSelect.PromptCost,
+                "prompt_cost_details" => RunSelect.PromptCostDetails,
                 "completion_cost" => RunSelect.CompletionCost,
+                "completion_cost_details" => RunSelect.CompletionCostDetails,
                 "price_model_id" => RunSelect.PriceModelId,
                 "first_token_time" => RunSelect.FirstTokenTime,
                 "trace_id" => RunSelect.TraceId,

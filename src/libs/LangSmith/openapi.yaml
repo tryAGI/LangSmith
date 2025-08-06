@@ -14133,10 +14133,14 @@ components:
             - reference_dataset_id
             - total_tokens
             - prompt_tokens
+            - prompt_token_details
             - completion_tokens
+            - completion_token_details
             - total_cost
             - prompt_cost
+            - prompt_cost_details
             - completion_cost
+            - completion_cost_details
             - price_model_id
             - first_token_time
             - trace_id
@@ -18805,6 +18809,10 @@ components:
           title: Show Grace Period Warning Banner
           type: boolean
           default: true
+        enable_include_extended_stats:
+          title: Enable Include Extended Stats
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
@@ -21337,6 +21345,10 @@ components:
           title: Create Alignment Queue
           type: boolean
           default: false
+        include_extended_stats:
+          title: Include Extended Stats
+          type: boolean
+          default: false
     RunRulesPagerdutyAlertSchema:
       title: RunRulesPagerdutyAlertSchema
       required:
@@ -21476,6 +21488,10 @@ components:
           nullable: true
         extend_only:
           title: Extend Only
+          type: boolean
+          default: false
+        include_extended_stats:
+          title: Include Extended Stats
           type: boolean
           default: false
         created_at:
@@ -22233,10 +22249,14 @@ components:
         - reference_dataset_id
         - total_tokens
         - prompt_tokens
+        - prompt_token_details
         - completion_tokens
+        - completion_token_details
         - total_cost
         - prompt_cost
+        - prompt_cost_details
         - completion_cost
+        - completion_cost_details
         - price_model_id
         - first_token_time
         - trace_id
@@ -22630,6 +22650,7 @@ components:
         - historical
         - lite
         - root_lite
+        - runs_feedbacks_rmt_wide
       type: string
       description: Enum for run data source types.
     RunsGenerateQueryFeedbackKeys:
