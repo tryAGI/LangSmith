@@ -149,12 +149,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_select_all_traces")]
-        public bool? EnableSelectAllTraces { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_exact_search_for_prompts")]
         public bool? UseExactSearchForPrompts { get; set; }
 
@@ -291,6 +285,12 @@ namespace LangSmith
         public bool? EnableIncludeExtendedStats { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_studio_embedded_traces")]
+        public bool? EnableStudioEmbeddedTraces { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -362,9 +362,6 @@ namespace LangSmith
         /// <param name="enableOrgUsageCharts">
         /// Default Value: false
         /// </param>
-        /// <param name="enableSelectAllTraces">
-        /// Default Value: false
-        /// </param>
         /// <param name="useExactSearchForPrompts">
         /// Default Value: false
         /// </param>
@@ -434,6 +431,9 @@ namespace LangSmith
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="enableStudioEmbeddedTraces">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -461,7 +461,6 @@ namespace LangSmith
             bool? enableLanggraphPricing,
             bool? enableThreadViewPlayground,
             bool? enableOrgUsageCharts,
-            bool? enableSelectAllTraces,
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
             bool? promptOptimizationJobsEnabled,
@@ -484,7 +483,8 @@ namespace LangSmith
             bool? orgScopedServiceAccountsEnabled,
             bool? enableLgpListenersPage,
             bool? showGracePeriodWarningBanner,
-            bool? enableIncludeExtendedStats)
+            bool? enableIncludeExtendedStats,
+            bool? enableStudioEmbeddedTraces)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -509,7 +509,6 @@ namespace LangSmith
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
             this.EnableOrgUsageCharts = enableOrgUsageCharts;
-            this.EnableSelectAllTraces = enableSelectAllTraces;
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
@@ -533,6 +532,7 @@ namespace LangSmith
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
+            this.EnableStudioEmbeddedTraces = enableStudioEmbeddedTraces;
         }
 
         /// <summary>
