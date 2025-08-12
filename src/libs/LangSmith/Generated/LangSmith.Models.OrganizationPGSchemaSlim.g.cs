@@ -37,6 +37,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by_ls_user_id")]
+        public global::System.Guid? CreatedByLsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         public global::System.DateTime? ModifiedAt { get; set; }
 
@@ -91,6 +97,7 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdByUserId"></param>
+        /// <param name="createdByLsUserId"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="isPersonal"></param>
         /// <param name="disabled"></param>
@@ -114,6 +121,7 @@ namespace LangSmith
             bool disabled,
             global::System.DateTime? createdAt,
             global::System.Guid? createdByUserId,
+            global::System.Guid? createdByLsUserId,
             global::System.DateTime? modifiedAt,
             string? ssoLoginSlug,
             bool? ssoOnly,
@@ -126,6 +134,7 @@ namespace LangSmith
             this.Disabled = disabled;
             this.CreatedAt = createdAt;
             this.CreatedByUserId = createdByUserId;
+            this.CreatedByLsUserId = createdByLsUserId;
             this.ModifiedAt = modifiedAt;
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;

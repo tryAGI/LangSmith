@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
+        public global::System.Guid? LsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_name")]
         public string? UserName { get; set; }
 
@@ -44,6 +50,7 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="metadata"></param>
         /// <param name="userId"></param>
+        /// <param name="lsUserId"></param>
         /// <param name="userName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,11 +59,13 @@ namespace LangSmith
             string? type,
             object? metadata,
             global::System.Guid? userId,
+            global::System.Guid? lsUserId,
             string? userName)
         {
             this.Type = type;
             this.Metadata = metadata;
             this.UserId = userId;
+            this.LsUserId = lsUserId;
             this.UserName = userName;
         }
 

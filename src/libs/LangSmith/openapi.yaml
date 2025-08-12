@@ -1154,12 +1154,14 @@ paths:
               format: uuid
         - name: user_ids
           in: query
+          deprecated: true
           schema:
             title: User Ids
             type: array
             items:
               type: string
               format: uuid
+            deprecated: true
       responses:
         '200':
           description: Successful Response
@@ -8469,12 +8471,14 @@ paths:
               format: uuid
         - name: user_ids
           in: query
+          deprecated: true
           schema:
             title: User Ids
             type: array
             items:
               type: string
               format: uuid
+            deprecated: true
       responses:
         '200':
           description: Successful Response
@@ -17248,6 +17252,11 @@ components:
           type: string
           format: uuid
           nullable: true
+        ls_user_id:
+          title: Ls User Id
+          type: string
+          format: uuid
+          nullable: true
         user_name:
           title: User Name
           type: string
@@ -17750,8 +17759,14 @@ components:
           type: string
           format: uuid
           nullable: true
+          deprecated: true
         org_identity_id:
           title: Org Identity Id
+          type: string
+          format: uuid
+          nullable: true
+        ls_user_id:
+          title: Ls User Id
           type: string
           format: uuid
           nullable: true
@@ -18960,6 +18975,11 @@ components:
           nullable: true
         created_by_user_id:
           title: Created By User Id
+          type: string
+          format: uuid
+          nullable: true
+        created_by_ls_user_id:
+          title: Created By Ls User Id
           type: string
           format: uuid
           nullable: true
