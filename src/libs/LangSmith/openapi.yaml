@@ -630,6 +630,318 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/sessions/{session_id}/insights':
+    get:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Get Insights Jobs'
+      description: Get all clusters for a session.
+      operationId: _Beta__Get_Insights_Jobs_api_v1_sessions__session_id__insights_get
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 100
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRunClusteringJobsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Create Insights Job'
+      description: Create a clustering job.
+      operationId: _Beta__Create_Insights_Job_api_v1_sessions__session_id__insights_post
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRunClusteringJobRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRunClusteringJobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/sessions/{session_id}/insights/{job_id}':
+    get:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Get Insights Job'
+      description: Get a specific cluster job for a session.
+      operationId: _Beta__Get_Insights_Job_api_v1_sessions__session_id__insights__job_id__get
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            title: Job Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRunClusteringJobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Update Insights Job'
+      description: Update a session cluster job.
+      operationId: _Beta__Update_Insights_Job_api_v1_sessions__session_id__insights__job_id__patch
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            title: Job Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRunClusteringJobRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRunClusteringJobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Delete Insights Job'
+      description: Delete a session cluster job.
+      operationId: _Beta__Delete_Insights_Job_api_v1_sessions__session_id__insights__job_id__delete
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            title: Job Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteRunClusteringJobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/sessions/{session_id}/insights/{job_id}/clusters/{cluster_id}':
+    get:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Get Run Cluster From Insights Job'
+      description: Get a specific cluster for a session.
+      operationId: _Beta__Get_Run_Cluster_from_Insights_Job_api_v1_sessions__session_id__insights__job_id__clusters__cluster_id__get
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            title: Job Id
+            type: string
+            format: uuid
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRunClusterResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/sessions/{session_id}/insights/{job_id}/runs':
+    get:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Get Runs From Insights Job'
+      description: 'Get all runs for a cluster job, optionally filtered by cluster.'
+      operationId: _Beta__Get_Runs_from_Insights_Job_api_v1_sessions__session_id__insights__job_id__runs_get
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            title: Job Id
+            type: string
+            format: uuid
+        - name: cluster_id
+          in: query
+          schema:
+            title: Cluster Id
+            type: string
+            format: uuid
+            nullable: true
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 100
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchClusteringJobRunsResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/orgs:
     get:
       tags:
@@ -15194,6 +15506,74 @@ components:
           type: array
           items:
             type: string
+    CreateRunClusteringJobRequest:
+      title: CreateRunClusteringJobRequest
+      type: object
+      properties:
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+          nullable: true
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+          nullable: true
+        last_n_hours:
+          title: Last N Hours
+          type: integer
+          nullable: true
+        hierarchy:
+          title: Hierarchy
+          type: array
+          items:
+            type: integer
+          nullable: true
+        partitions:
+          title: Partitions
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        sample:
+          title: Sample
+          anyOf:
+            - type: number
+            - type: integer
+          nullable: true
+        summary_prompt:
+          title: Summary Prompt
+          type: string
+          nullable: true
+        filter:
+          title: Filter
+          type: string
+          nullable: true
+        name:
+          title: Name
+          type: string
+          nullable: true
+      description: Request to create a run clustering job.
+    CreateRunClusteringJobResponse:
+      title: CreateRunClusteringJobResponse
+      required:
+        - id
+        - name
+        - status
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        name:
+          title: Name
+          type: string
+        status:
+          title: Status
+          type: string
+      description: Response to creating a run clustering job.
     CustomChartCreate:
       title: CustomChartCreate
       required:
@@ -16194,6 +16574,21 @@ components:
           type: string
           format: date-time
       description: Dataset version schema.
+    DeleteRunClusteringJobResponse:
+      title: DeleteRunClusteringJobResponse
+      required:
+        - id
+        - message
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        message:
+          title: Message
+          type: string
+      description: Response to delete a session cluster job.
     DemoConfig:
       title: DemoConfig
       required:
@@ -17303,6 +17698,22 @@ components:
         feedback_config:
           $ref: '#/components/schemas/FeedbackConfig'
       description: Schema used for updating feedback
+    FetchClusteringJobRunsResult:
+      title: FetchClusteringJobRunsResult
+      required:
+        - runs
+        - offset
+      type: object
+      properties:
+        runs:
+          title: Runs
+          type: array
+          items:
+            type: object
+        offset:
+          title: Offset
+          type: integer
+          nullable: true
     FilterView:
       title: FilterView
       required:
@@ -17533,6 +17944,95 @@ components:
       properties:
         repo:
           $ref: '#/components/schemas/RepoWithLookups'
+    GetRunClusterResponse:
+      title: GetRunClusterResponse
+      required:
+        - id
+        - num_children
+        - level
+        - name
+        - description
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        parent_id:
+          title: Parent Id
+          type: string
+          format: uuid
+          nullable: true
+        num_children:
+          title: Num Children
+          type: integer
+        level:
+          title: Level
+          type: integer
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+      description: Response to get a specific cluster from a specific cluster job.
+    GetRunClusteringJobResponse:
+      title: GetRunClusteringJobResponse
+      required:
+        - id
+        - name
+        - status
+        - clusters
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        name:
+          title: Name
+          type: string
+        status:
+          title: Status
+          type: string
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+          nullable: true
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+          nullable: true
+        metadata:
+          title: Metadata
+          type: object
+          nullable: true
+        shape:
+          title: Shape
+          type: array
+          items:
+            type: integer
+          nullable: true
+        clusters:
+          title: Clusters
+          type: array
+          items:
+            $ref: '#/components/schemas/RunCluster'
+      description: Response to get a specific cluster job for a session.
+    GetRunClusteringJobsResponse:
+      title: GetRunClusteringJobsResponse
+      required:
+        - clustering_jobs
+      type: object
+      properties:
+        clustering_jobs:
+          title: Clustering Jobs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunClusteringJobPydantic'
+      description: Response to get all cluster jobs for a session.
     GroupExampleRunsByField:
       title: GroupExampleRunsByField
       enum:
@@ -18820,6 +19320,10 @@ components:
           title: Show Grace Period Warning Banner
           type: boolean
           default: true
+        clio_enabled:
+          title: Clio Enabled
+          type: boolean
+          default: false
         enable_include_extended_stats:
           title: Enable Include Extended Stats
           type: boolean
@@ -20687,6 +21191,81 @@ components:
         webhooks:
           $ref: '#/components/schemas/RuleLogActionResponse'
       description: Run rules log schema.
+    RunCluster:
+      title: RunCluster
+      required:
+        - id
+        - level
+        - name
+        - description
+        - num_runs
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        parent_id:
+          title: Parent Id
+          type: string
+          format: uuid
+          nullable: true
+        level:
+          title: Level
+          type: integer
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+        parent_name:
+          title: Parent Name
+          type: string
+          nullable: true
+        num_runs:
+          title: Num Runs
+          type: integer
+      description: A single cluster of runs.
+    RunClusteringJobPydantic:
+      title: RunClusteringJobPydantic
+      required:
+        - id
+        - name
+        - status
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        name:
+          title: Name
+          type: string
+        status:
+          title: Status
+          type: string
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+          nullable: true
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+          nullable: true
+        metadata:
+          title: Metadata
+          type: object
+          nullable: true
+        shape:
+          title: Shape
+          type: array
+          items:
+            type: integer
+          nullable: true
+      description: Session cluster job
     RunDateOrder:
       title: RunDateOrder
       enum:
@@ -24683,6 +25262,30 @@ components:
           type: array
           items:
             type: string
+    UpdateRunClusteringJobRequest:
+      title: UpdateRunClusteringJobRequest
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+      description: Request to update a session cluster job.
+    UpdateRunClusteringJobResponse:
+      title: UpdateRunClusteringJobResponse
+      required:
+        - name
+        - status
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        status:
+          title: Status
+          type: string
+      description: Response to update a session cluster job.
     UpsertTTLSettingsRequest:
       title: UpsertTTLSettingsRequest
       required:

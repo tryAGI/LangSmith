@@ -281,6 +281,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("clio_enabled")]
+        public bool? ClioEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_include_extended_stats")]
         public bool? EnableIncludeExtendedStats { get; set; }
 
@@ -428,6 +434,9 @@ namespace LangSmith
         /// <param name="showGracePeriodWarningBanner">
         /// Default Value: true
         /// </param>
+        /// <param name="clioEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
@@ -483,6 +492,7 @@ namespace LangSmith
             bool? orgScopedServiceAccountsEnabled,
             bool? enableLgpListenersPage,
             bool? showGracePeriodWarningBanner,
+            bool? clioEnabled,
             bool? enableIncludeExtendedStats,
             bool? enableStudioEmbeddedTraces)
         {
@@ -531,6 +541,7 @@ namespace LangSmith
             this.OrgScopedServiceAccountsEnabled = orgScopedServiceAccountsEnabled;
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
+            this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
             this.EnableStudioEmbeddedTraces = enableStudioEmbeddedTraces;
         }

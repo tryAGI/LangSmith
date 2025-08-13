@@ -219,6 +219,7 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>),
