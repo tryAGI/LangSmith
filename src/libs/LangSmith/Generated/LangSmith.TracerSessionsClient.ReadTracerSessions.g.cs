@@ -24,6 +24,7 @@ namespace LangSmith
             ref string? filter,
             ref bool? includeStats,
             ref bool? useApproxStats,
+            ref global::System.DateTime? statsStartTime,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,6 +46,7 @@ namespace LangSmith
             string? filter,
             bool? includeStats,
             bool? useApproxStats,
+            global::System.DateTime? statsStartTime,
             string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -88,6 +90,7 @@ namespace LangSmith
         /// <param name="useApproxStats">
         /// Default Value: false
         /// </param>
+        /// <param name="statsStartTime"></param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -109,6 +112,7 @@ namespace LangSmith
             string? filter = default,
             bool? includeStats = default,
             bool? useApproxStats = default,
+            global::System.DateTime? statsStartTime = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -133,6 +137,7 @@ namespace LangSmith
                 filter: ref filter,
                 includeStats: ref includeStats,
                 useApproxStats: ref useApproxStats,
+                statsStartTime: ref statsStartTime,
                 accept: ref accept);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -156,6 +161,7 @@ namespace LangSmith
                 .AddOptionalParameter("filter", filter) 
                 .AddOptionalParameter("include_stats", includeStats?.ToString()) 
                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString()) 
+                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -211,6 +217,7 @@ namespace LangSmith
                 filter: filter,
                 includeStats: includeStats,
                 useApproxStats: useApproxStats,
+                statsStartTime: statsStartTime,
                 accept: accept);
 
             using var __response = await HttpClient.SendAsync(

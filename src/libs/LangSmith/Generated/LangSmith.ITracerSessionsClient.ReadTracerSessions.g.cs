@@ -37,6 +37,7 @@ namespace LangSmith
         /// <param name="useApproxStats">
         /// Default Value: false
         /// </param>
+        /// <param name="statsStartTime"></param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -58,6 +59,7 @@ namespace LangSmith
             string? filter = default,
             bool? includeStats = default,
             bool? useApproxStats = default,
+            global::System.DateTime? statsStartTime = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
