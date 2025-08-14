@@ -70,6 +70,13 @@ paths:
             title: Include Stats
             type: boolean
             default: false
+        - name: stats_start_time
+          in: query
+          schema:
+            title: Stats Start Time
+            type: string
+            format: date-time
+            nullable: true
         - name: accept
           in: header
           schema:
@@ -280,6 +287,13 @@ paths:
             title: Use Approx Stats
             type: boolean
             default: false
+        - name: stats_start_time
+          in: query
+          schema:
+            title: Stats Start Time
+            type: string
+            format: date-time
+            nullable: true
         - name: accept
           in: header
           schema:

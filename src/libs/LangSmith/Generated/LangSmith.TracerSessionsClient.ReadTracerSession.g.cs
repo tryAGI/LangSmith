@@ -9,12 +9,14 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
             ref bool? includeStats,
+            ref global::System.DateTime? statsStartTime,
             ref string? accept);
         partial void PrepareReadTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
             bool? includeStats,
+            global::System.DateTime? statsStartTime,
             string? accept);
         partial void ProcessReadTracerSessionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,12 +35,14 @@ namespace LangSmith
         /// <param name="includeStats">
         /// Default Value: false
         /// </param>
+        /// <param name="statsStartTime"></param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> ReadTracerSessionAsync(
             global::System.Guid sessionId,
             bool? includeStats = default,
+            global::System.DateTime? statsStartTime = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -48,6 +52,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 includeStats: ref includeStats,
+                statsStartTime: ref statsStartTime,
                 accept: ref accept);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -55,6 +60,7 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -95,6 +101,7 @@ namespace LangSmith
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
                 includeStats: includeStats,
+                statsStartTime: statsStartTime,
                 accept: accept);
 
             using var __response = await HttpClient.SendAsync(
