@@ -19342,10 +19342,6 @@ components:
           title: Enable Include Extended Stats
           type: boolean
           default: false
-        enable_studio_embedded_traces:
-          title: Enable Studio Embedded Traces
-          type: boolean
-          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate

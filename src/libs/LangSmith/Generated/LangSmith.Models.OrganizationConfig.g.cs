@@ -291,12 +291,6 @@ namespace LangSmith
         public bool? EnableIncludeExtendedStats { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_studio_embedded_traces")]
-        public bool? EnableStudioEmbeddedTraces { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -440,9 +434,6 @@ namespace LangSmith
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="enableStudioEmbeddedTraces">
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -493,8 +484,7 @@ namespace LangSmith
             bool? enableLgpListenersPage,
             bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
-            bool? enableIncludeExtendedStats,
-            bool? enableStudioEmbeddedTraces)
+            bool? enableIncludeExtendedStats)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -543,7 +533,6 @@ namespace LangSmith
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
-            this.EnableStudioEmbeddedTraces = enableStudioEmbeddedTraces;
         }
 
         /// <summary>
