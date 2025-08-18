@@ -19193,6 +19193,10 @@ components:
           title: Can Use Langgraph Cloud
           type: boolean
           default: false
+        can_use_agent_auth:
+          title: Can Use Agent Auth
+          type: boolean
+          default: false
         max_langgraph_cloud_deployments:
           title: Max Langgraph Cloud Deployments
           type: integer

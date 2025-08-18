@@ -69,6 +69,12 @@ namespace LangSmith
         public bool? CanUseLanggraphCloud { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_agent_auth")]
+        public bool? CanUseAgentAuth { get; set; }
+
+        /// <summary>
         /// Default Value: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_langgraph_cloud_deployments")]
@@ -323,6 +329,9 @@ namespace LangSmith
         /// <param name="canUseLanggraphCloud">
         /// Default Value: false
         /// </param>
+        /// <param name="canUseAgentAuth">
+        /// Default Value: false
+        /// </param>
         /// <param name="maxLanggraphCloudDeployments">
         /// Default Value: 3
         /// </param>
@@ -448,6 +457,7 @@ namespace LangSmith
             bool? canDisablePublicSharing,
             bool? canServeDatasets,
             bool? canUseLanggraphCloud,
+            bool? canUseAgentAuth,
             int? maxLanggraphCloudDeployments,
             int? maxFreeLanggraphCloudDeployments,
             bool? canUseSamlSso,
@@ -496,6 +506,7 @@ namespace LangSmith
             this.CanDisablePublicSharing = canDisablePublicSharing;
             this.CanServeDatasets = canServeDatasets;
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
+            this.CanUseAgentAuth = canUseAgentAuth;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
             this.CanUseSamlSso = canUseSamlSso;
