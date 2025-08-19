@@ -297,6 +297,12 @@ namespace LangSmith
         public bool? EnableIncludeExtendedStats { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_lgp_revision_queuing")]
+        public bool? EnableLgpRevisionQueuing { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -443,6 +449,9 @@ namespace LangSmith
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="enableLgpRevisionQueuing">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -494,7 +503,8 @@ namespace LangSmith
             bool? enableLgpListenersPage,
             bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
-            bool? enableIncludeExtendedStats)
+            bool? enableIncludeExtendedStats,
+            bool? enableLgpRevisionQueuing)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -544,6 +554,7 @@ namespace LangSmith
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
+            this.EnableLgpRevisionQueuing = enableLgpRevisionQueuing;
         }
 
         /// <summary>

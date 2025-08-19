@@ -19346,6 +19346,10 @@ components:
           title: Enable Include Extended Stats
           type: boolean
           default: false
+        enable_lgp_revision_queuing:
+          title: Enable Lgp Revision Queuing
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
