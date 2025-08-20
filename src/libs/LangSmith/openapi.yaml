@@ -12843,7 +12843,7 @@ paths:
       tags:
         - runs
       summary: Ingest Runs (Multipart)
-      description: "Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.\n**Part‑name pattern**: `<event>.<run_id>[.<field>]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.\n* `post|patch.<run_id>` – JSON run payload.\n* `post|patch.<run_id>.<field>` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).\n* `feedback.<run_id>` – JSON feedback payload (must include `trace_id`).\n* `attachment.<run_id>.<filename>` – arbitrary binary attachment stored in S3.\n**Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.\n**Best performance** for high‑volume ingestion."
+      description: "Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.\n**Part‑name pattern**: `<event>.<run_id>[.<field>]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.\n* `post|patch.<run_id>` – JSON run payload.\n* `post|patch.<run_id>.<field>` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).\n* `feedback.<run_id>` – JSON feedback payload (must include `trace_id`).\n* `attachment.<run_id>.<filename>` – arbitrary binary attachment stored in S3.\n**Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.\n**Best performance** for high‑volume ingestion."
       requestBody:
         content:
           multipart/form-data:
@@ -20554,11 +20554,35 @@ components:
           title: Full Name
           type: string
           nullable: true
+        first_name:
+          title: First Name
+          type: string
+          nullable: true
+        last_name:
+          title: Last Name
+          type: string
+          nullable: true
+        username:
+          title: Username
+          type: string
+          nullable: true
+        is_disabled:
+          title: Is Disabled
+          type: boolean
+          nullable: true
+        provisioning_method:
+          $ref: '#/components/schemas/ProvisioningMethod'
         email_confirmed_at:
           title: Email Confirmed At
           type: string
           format: date-time
           nullable: true
+    ProvisioningMethod:
+      title: ProvisioningMethod
+      enum:
+        - scim
+        - saml:jit
+      type: string
     PublicComparativeExperiment:
       title: PublicComparativeExperiment
       required:

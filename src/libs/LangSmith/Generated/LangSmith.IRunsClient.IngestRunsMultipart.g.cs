@@ -12,7 +12,7 @@ namespace LangSmith
         /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
         /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
         /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
-        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.<br/>
+        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
         /// <param name="request"></param>
@@ -30,7 +30,7 @@ namespace LangSmith
         /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
         /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
         /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
-        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: zstd`.<br/>
+        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
         /// <param name="post_runId_">
