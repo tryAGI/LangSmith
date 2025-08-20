@@ -70,6 +70,37 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("first_name")]
+        public string? FirstName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_name")]
+        public string? LastName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("username")]
+        public string? Username { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_disabled")]
+        public bool? IsDisabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provisioning_method")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ProvisioningMethodJsonConverter))]
+        public global::LangSmith.ProvisioningMethod? ProvisioningMethod { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email_confirmed_at")]
         public global::System.DateTime? EmailConfirmedAt { get; set; }
 
@@ -91,6 +122,11 @@ namespace LangSmith
         /// <param name="updatedAt"></param>
         /// <param name="email"></param>
         /// <param name="fullName"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="username"></param>
+        /// <param name="isDisabled"></param>
+        /// <param name="provisioningMethod"></param>
         /// <param name="emailConfirmedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -105,6 +141,11 @@ namespace LangSmith
             global::System.Guid? providerUserId,
             string? email,
             string? fullName,
+            string? firstName,
+            string? lastName,
+            string? username,
+            bool? isDisabled,
+            global::LangSmith.ProvisioningMethod? provisioningMethod,
             global::System.DateTime? emailConfirmedAt)
         {
             this.Id = id;
@@ -116,6 +157,11 @@ namespace LangSmith
             this.ProviderUserId = providerUserId;
             this.Email = email;
             this.FullName = fullName;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Username = username;
+            this.IsDisabled = isDisabled;
+            this.ProvisioningMethod = provisioningMethod;
             this.EmailConfirmedAt = emailConfirmedAt;
         }
 
