@@ -148,6 +148,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_min_start_time")]
+        public global::System.DateTime? TraceMinStartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_max_start_time")]
+        public global::System.DateTime? TraceMaxStartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -365,6 +377,8 @@ namespace LangSmith
         /// <param name="s3Urls"></param>
         /// <param name="traceId"></param>
         /// <param name="dottedOrder"></param>
+        /// <param name="traceMinStartTime"></param>
+        /// <param name="traceMaxStartTime"></param>
         /// <param name="id"></param>
         /// <param name="status"></param>
         /// <param name="childRunIds"></param>
@@ -433,6 +447,8 @@ namespace LangSmith
             object? inputsS3Urls,
             object? outputsS3Urls,
             object? s3Urls,
+            global::System.DateTime? traceMinStartTime,
+            global::System.DateTime? traceMaxStartTime,
             global::System.Collections.Generic.IList<global::System.Guid>? childRunIds,
             global::System.Collections.Generic.IList<global::System.Guid>? directChildRunIds,
             global::System.Collections.Generic.IList<global::System.Guid>? parentRunIds,
@@ -486,6 +502,8 @@ namespace LangSmith
             this.InputsS3Urls = inputsS3Urls;
             this.OutputsS3Urls = outputsS3Urls;
             this.S3Urls = s3Urls;
+            this.TraceMinStartTime = traceMinStartTime;
+            this.TraceMaxStartTime = traceMaxStartTime;
             this.ChildRunIds = childRunIds;
             this.DirectChildRunIds = directChildRunIds;
             this.ParentRunIds = parentRunIds;

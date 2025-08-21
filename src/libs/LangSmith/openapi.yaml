@@ -13642,7 +13642,12 @@ components:
           type: string
           format: uuid
           nullable: true
-      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged).\nrole_id: Optional UUID of the role to assign to API key.\n    If not provided, uses default role based on read_only flag:\n    - WORKSPACE_ADMIN if read_only is False\n    - WORKSPACE_READER if read_only is True"
+        org_role_id:
+          title: Org Role Id
+          type: string
+          format: uuid
+          nullable: true
+      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged).\nrole_id: Optional UUID of the role to assign to API key.\n    If not provided, uses default role based on read_only flag:\n    - WORKSPACE_ADMIN if read_only is False\n    - WORKSPACE_READER if read_only is True\norg_role_id: UUID of a org role for org-scoped keys\n    If not provided, defaults to ORG_USER"
     APIKeyCreateResponse:
       title: APIKeyCreateResponse
       required:
@@ -21571,6 +21576,16 @@ components:
         dotted_order:
           title: Dotted Order
           type: string
+        trace_min_start_time:
+          title: Trace Min Start Time
+          type: string
+          format: date-time
+          nullable: true
+        trace_max_start_time:
+          title: Trace Max Start Time
+          type: string
+          format: date-time
+          nullable: true
         id:
           title: Id
           type: string
@@ -21777,6 +21792,16 @@ components:
         dotted_order:
           title: Dotted Order
           type: string
+        trace_min_start_time:
+          title: Trace Min Start Time
+          type: string
+          format: date-time
+          nullable: true
+        trace_max_start_time:
+          title: Trace Max Start Time
+          type: string
+          format: date-time
+          nullable: true
         id:
           title: Id
           type: string
@@ -22287,6 +22312,16 @@ components:
         dotted_order:
           title: Dotted Order
           type: string
+        trace_min_start_time:
+          title: Trace Min Start Time
+          type: string
+          format: date-time
+          nullable: true
+        trace_max_start_time:
+          title: Trace Max Start Time
+          type: string
+          format: date-time
+          nullable: true
         id:
           title: Id
           type: string
@@ -22535,6 +22570,16 @@ components:
           title: Dotted Order
           type: string
           nullable: true
+        trace_min_start_time:
+          title: Trace Min Start Time
+          type: string
+          format: date-time
+          nullable: true
+        trace_max_start_time:
+          title: Trace Max Start Time
+          type: string
+          format: date-time
+          nullable: true
         id:
           title: Id
           type: string
@@ -22693,6 +22738,16 @@ components:
         dotted_order:
           title: Dotted Order
           type: string
+        trace_min_start_time:
+          title: Trace Min Start Time
+          type: string
+          format: date-time
+          nullable: true
+        trace_max_start_time:
+          title: Trace Max Start Time
+          type: string
+          format: date-time
+          nullable: true
         id:
           title: Id
           type: string
@@ -22915,6 +22970,7 @@ components:
         - ttl_seconds
         - trace_upgrade
         - thread_id
+        - trace_min_max_start_time
       type: string
       description: Enum for available run columns.
     RunShareSchema:
