@@ -147,6 +147,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_min_start_time")]
+        public global::System.DateTime? TraceMinStartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_max_start_time")]
+        public global::System.DateTime? TraceMaxStartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -254,6 +266,8 @@ namespace LangSmith
         /// <param name="s3Urls"></param>
         /// <param name="traceId"></param>
         /// <param name="dottedOrder"></param>
+        /// <param name="traceMinStartTime"></param>
+        /// <param name="traceMaxStartTime"></param>
         /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="referenceExampleId"></param>
@@ -295,6 +309,8 @@ namespace LangSmith
             object? outputsS3Urls,
             object? s3Urls,
             string? dottedOrder,
+            global::System.DateTime? traceMinStartTime,
+            global::System.DateTime? traceMaxStartTime,
             global::System.Guid? referenceExampleId,
             int? totalTokens,
             int? promptTokens,
@@ -330,6 +346,8 @@ namespace LangSmith
             this.OutputsS3Urls = outputsS3Urls;
             this.S3Urls = s3Urls;
             this.DottedOrder = dottedOrder;
+            this.TraceMinStartTime = traceMinStartTime;
+            this.TraceMaxStartTime = traceMaxStartTime;
             this.ReferenceExampleId = referenceExampleId;
             this.TotalTokens = totalTokens;
             this.PromptTokens = promptTokens;

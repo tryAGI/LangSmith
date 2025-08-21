@@ -236,6 +236,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ThreadId,
+        /// <summary>
+        /// 
+        /// </summary>
+        TraceMinMaxStartTime,
     }
 
     /// <summary>
@@ -307,6 +311,7 @@ namespace LangSmith
                 RunSelect.TtlSeconds => "ttl_seconds",
                 RunSelect.TraceUpgrade => "trace_upgrade",
                 RunSelect.ThreadId => "thread_id",
+                RunSelect.TraceMinMaxStartTime => "trace_min_max_start_time",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -374,6 +379,7 @@ namespace LangSmith
                 "ttl_seconds" => RunSelect.TtlSeconds,
                 "trace_upgrade" => RunSelect.TraceUpgrade,
                 "thread_id" => RunSelect.ThreadId,
+                "trace_min_max_start_time" => RunSelect.TraceMinMaxStartTime,
                 _ => null,
             };
         }

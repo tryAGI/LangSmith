@@ -214,6 +214,7 @@ namespace LangSmith
         /// <param name="expiresAt"></param>
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
+        /// <param name="orgRoleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgPersonalAccessTokenAsync(
@@ -222,6 +223,7 @@ namespace LangSmith
             global::System.DateTime? expiresAt = default,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces = default,
             global::System.Guid? roleId = default,
+            global::System.Guid? orgRoleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.APIKeyCreateRequest
@@ -231,6 +233,7 @@ namespace LangSmith
                 ExpiresAt = expiresAt,
                 Workspaces = workspaces,
                 RoleId = roleId,
+                OrgRoleId = orgRoleId,
             };
 
             return await CreateOrgPersonalAccessTokenAsync(

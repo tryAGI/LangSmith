@@ -10,7 +10,9 @@ namespace LangSmith
     /// role_id: Optional UUID of the role to assign to API key.<br/>
     ///     If not provided, uses default role based on read_only flag:<br/>
     ///     - WORKSPACE_ADMIN if read_only is False<br/>
-    ///     - WORKSPACE_READER if read_only is True
+    ///     - WORKSPACE_READER if read_only is True<br/>
+    /// org_role_id: UUID of a org role for org-scoped keys<br/>
+    ///     If not provided, defaults to ORG_USER
     /// </summary>
     public sealed partial class APIKeyCreateRequest
     {
@@ -45,6 +47,12 @@ namespace LangSmith
         public global::System.Guid? RoleId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,6 +70,7 @@ namespace LangSmith
         /// <param name="expiresAt"></param>
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
+        /// <param name="orgRoleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,13 +79,15 @@ namespace LangSmith
             bool? readOnly,
             global::System.DateTime? expiresAt,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces,
-            global::System.Guid? roleId)
+            global::System.Guid? roleId,
+            global::System.Guid? orgRoleId)
         {
             this.Description = description;
             this.ReadOnly = readOnly;
             this.ExpiresAt = expiresAt;
             this.Workspaces = workspaces;
             this.RoleId = roleId;
+            this.OrgRoleId = orgRoleId;
         }
 
         /// <summary>
