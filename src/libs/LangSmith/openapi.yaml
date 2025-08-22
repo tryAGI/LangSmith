@@ -19355,6 +19355,10 @@ components:
           title: Enable Lgp Revision Queuing
           type: boolean
           default: false
+        enable_markdown_in_studio:
+          title: Enable Markdown In Studio
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
