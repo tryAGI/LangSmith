@@ -173,12 +173,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_k8s_vanilla_platform")]
-        public bool? EnableK8sVanillaPlatform { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("demo_lgp_new_graph_enabled")]
         public bool? DemoLgpNewGraphEnabled { get; set; }
 
@@ -299,8 +293,8 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_markdown_in_studio")]
-        public bool? EnableMarkdownInStudio { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_formulas_enabled")]
+        public bool? FeedbackFormulasEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -386,9 +380,6 @@ namespace LangSmith
         /// <param name="promptOptimizationJobsEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="enableK8sVanillaPlatform">
-        /// Default Value: false
-        /// </param>
         /// <param name="demoLgpNewGraphEnabled">
         /// Default Value: false
         /// </param>
@@ -449,7 +440,7 @@ namespace LangSmith
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="enableMarkdownInStudio">
+        /// <param name="feedbackFormulasEnabled">
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
@@ -483,7 +474,6 @@ namespace LangSmith
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
             bool? promptOptimizationJobsEnabled,
-            bool? enableK8sVanillaPlatform,
             bool? demoLgpNewGraphEnabled,
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
@@ -504,7 +494,7 @@ namespace LangSmith
             bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
             bool? enableIncludeExtendedStats,
-            bool? enableMarkdownInStudio)
+            bool? feedbackFormulasEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -533,7 +523,6 @@ namespace LangSmith
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
-            this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
@@ -554,7 +543,7 @@ namespace LangSmith
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
-            this.EnableMarkdownInStudio = enableMarkdownInStudio;
+            this.FeedbackFormulasEnabled = feedbackFormulasEnabled;
         }
 
         /// <summary>
