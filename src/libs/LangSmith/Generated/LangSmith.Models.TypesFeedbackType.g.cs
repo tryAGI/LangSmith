@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public enum FeedbackFeedbackType
+    public enum TypesFeedbackType
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace LangSmith
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class FeedbackFeedbackTypeExtensions
+    public static class TypesFeedbackTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this FeedbackFeedbackType value)
+        public static string ToValueString(this TypesFeedbackType value)
         {
             return value switch
             {
-                FeedbackFeedbackType.Continuous => "continuous",
-                FeedbackFeedbackType.Categorical => "categorical",
-                FeedbackFeedbackType.Freeform => "freeform",
+                TypesFeedbackType.Continuous => "continuous",
+                TypesFeedbackType.Categorical => "categorical",
+                TypesFeedbackType.Freeform => "freeform",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FeedbackFeedbackType? ToEnum(string value)
+        public static TypesFeedbackType? ToEnum(string value)
         {
             return value switch
             {
-                "continuous" => FeedbackFeedbackType.Continuous,
-                "categorical" => FeedbackFeedbackType.Categorical,
-                "freeform" => FeedbackFeedbackType.Freeform,
+                "continuous" => TypesFeedbackType.Continuous,
+                "categorical" => TypesFeedbackType.Categorical,
+                "freeform" => TypesFeedbackType.Freeform,
                 _ => null,
             };
         }

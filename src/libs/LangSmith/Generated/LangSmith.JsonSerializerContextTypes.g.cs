@@ -2226,23 +2226,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackFeedbackCategory? Type550 { get; set; }
+        public global::LangSmith.FeedbackFeedbackCreateSchema? Type550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackFeedbackConfig? Type551 { get; set; }
+        public global::LangSmith.TypesFeedbackConfig? Type551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackFeedbackCategory>? Type552 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TypesFeedbackCategory>? Type552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackFeedbackType? Type553 { get; set; }
+        public global::LangSmith.TypesFeedbackCategory? Type553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackFeedbackCreateSchema? Type554 { get; set; }
+        public global::LangSmith.TypesFeedbackType? Type554 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class FeedbackFeedbackTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.FeedbackFeedbackType?>
+    public sealed class TypesFeedbackTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.TypesFeedbackType>
     {
         /// <inheritdoc />
-        public override global::LangSmith.FeedbackFeedbackType? Read(
+        public override global::LangSmith.TypesFeedbackType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.FeedbackFeedbackTypeExtensions.ToEnum(stringValue);
+                        return global::LangSmith.TypesFeedbackTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.FeedbackFeedbackType)numValue;
+                    return (global::LangSmith.TypesFeedbackType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::LangSmith.FeedbackFeedbackType?);
+                    return default(global::LangSmith.TypesFeedbackType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.FeedbackFeedbackType? value,
+            global::LangSmith.TypesFeedbackType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::LangSmith.FeedbackFeedbackTypeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::LangSmith.TypesFeedbackTypeExtensions.ToValueString(value));
         }
     }
 }

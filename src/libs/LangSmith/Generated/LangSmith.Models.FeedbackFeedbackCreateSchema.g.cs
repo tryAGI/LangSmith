@@ -42,7 +42,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
-        public global::LangSmith.FeedbackFeedbackConfig? FeedbackConfig { get; set; }
+        public global::LangSmith.TypesFeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
         /// 
@@ -138,7 +138,7 @@ namespace LangSmith
             object? correction,
             string? createdAt,
             bool? error,
-            global::LangSmith.FeedbackFeedbackConfig? feedbackConfig,
+            global::LangSmith.TypesFeedbackConfig? feedbackConfig,
             string? feedbackGroupId,
             global::LangSmith.FeedbackFeedbackSource? feedbackSource,
             string? id,

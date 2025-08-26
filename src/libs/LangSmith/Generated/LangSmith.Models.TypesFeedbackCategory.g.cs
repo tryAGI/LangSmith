@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class FeedbackFeedbackCategory
+    public sealed partial class TypesFeedbackCategory
     {
         /// <summary>
         /// 
@@ -27,14 +27,14 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FeedbackFeedbackCategory" /> class.
+        /// Initializes a new instance of the <see cref="TypesFeedbackCategory" /> class.
         /// </summary>
         /// <param name="label"></param>
         /// <param name="value"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public FeedbackFeedbackCategory(
+        public TypesFeedbackCategory(
             string? label,
             double? value)
         {
@@ -43,9 +43,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FeedbackFeedbackCategory" /> class.
+        /// Initializes a new instance of the <see cref="TypesFeedbackCategory" /> class.
         /// </summary>
-        public FeedbackFeedbackCategory()
+        public TypesFeedbackCategory()
         {
         }
     }
