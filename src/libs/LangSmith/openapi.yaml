@@ -19351,10 +19351,6 @@ components:
           title: Enable Include Extended Stats
           type: boolean
           default: false
-        enable_lgp_revision_queuing:
-          title: Enable Lgp Revision Queuing
-          type: boolean
-          default: false
         enable_markdown_in_studio:
           title: Enable Markdown In Studio
           type: boolean
@@ -25966,27 +25962,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/experiment_view_overrides.ColumnOverride'
-    feedback.FeedbackCategory:
-      type: object
-      properties:
-        label:
-          minLength: 1
-          type: string
-        value:
-          type: number
-    feedback.FeedbackConfig:
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/feedback.FeedbackCategory'
-        max:
-          type: number
-        min:
-          type: number
-        type:
-          $ref: '#/components/schemas/feedback.FeedbackType'
     feedback.FeedbackCreateSchema:
       type: object
       properties:
@@ -26000,7 +25975,7 @@ components:
         error:
           type: boolean
         feedback_config:
-          $ref: '#/components/schemas/feedback.FeedbackConfig'
+          $ref: '#/components/schemas/types.FeedbackConfig'
         feedback_group_id:
           type: string
         feedback_source:
@@ -26026,16 +26001,6 @@ components:
           type: object
         type:
           type: string
-    feedback.FeedbackType:
-      enum:
-        - continuous
-        - categorical
-        - freeform
-      type: string
-      x-enum-varnames:
-        - FeedbackTypeContinuous
-        - FeedbackTypeCategorical
-        - FeedbackTypeFreeform
     runs.ErrorResponse:
       type: object
       properties:
@@ -26104,6 +26069,37 @@ components:
             type: string
         trace_id:
           type: string
+    types.FeedbackCategory:
+      type: object
+      properties:
+        label:
+          minLength: 1
+          type: string
+        value:
+          type: number
+    types.FeedbackConfig:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.FeedbackCategory'
+        max:
+          type: number
+        min:
+          type: number
+        type:
+          $ref: '#/components/schemas/types.FeedbackType'
+    types.FeedbackType:
+      enum:
+        - continuous
+        - categorical
+        - freeform
+      type: string
+      x-enum-varnames:
+        - FeedbackTypeContinuous
+        - FeedbackTypeCategorical
+        - FeedbackTypeFreeform
   securitySchemes:
     ApiKey:
       type: apiKey

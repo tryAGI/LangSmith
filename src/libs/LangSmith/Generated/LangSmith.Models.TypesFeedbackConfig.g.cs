@@ -6,13 +6,13 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class FeedbackFeedbackConfig
+    public sealed partial class TypesFeedbackConfig
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("categories")]
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackFeedbackCategory>? Categories { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.TypesFeedbackCategory>? Categories { get; set; }
 
         /// <summary>
         /// 
@@ -30,8 +30,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackFeedbackTypeJsonConverter))]
-        public global::LangSmith.FeedbackFeedbackType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TypesFeedbackTypeJsonConverter))]
+        public global::LangSmith.TypesFeedbackType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FeedbackFeedbackConfig" /> class.
+        /// Initializes a new instance of the <see cref="TypesFeedbackConfig" /> class.
         /// </summary>
         /// <param name="categories"></param>
         /// <param name="max"></param>
@@ -49,11 +49,11 @@ namespace LangSmith
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public FeedbackFeedbackConfig(
-            global::System.Collections.Generic.IList<global::LangSmith.FeedbackFeedbackCategory>? categories,
+        public TypesFeedbackConfig(
+            global::System.Collections.Generic.IList<global::LangSmith.TypesFeedbackCategory>? categories,
             double? max,
             double? min,
-            global::LangSmith.FeedbackFeedbackType? type)
+            global::LangSmith.TypesFeedbackType? type)
         {
             this.Categories = categories;
             this.Max = max;
@@ -62,9 +62,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FeedbackFeedbackConfig" /> class.
+        /// Initializes a new instance of the <see cref="TypesFeedbackConfig" /> class.
         /// </summary>
-        public FeedbackFeedbackConfig()
+        public TypesFeedbackConfig()
         {
         }
     }

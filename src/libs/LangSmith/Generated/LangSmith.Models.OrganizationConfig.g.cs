@@ -299,12 +299,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_lgp_revision_queuing")]
-        public bool? EnableLgpRevisionQueuing { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_markdown_in_studio")]
         public bool? EnableMarkdownInStudio { get; set; }
 
@@ -455,9 +449,6 @@ namespace LangSmith
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="enableLgpRevisionQueuing">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableMarkdownInStudio">
         /// Default Value: false
         /// </param>
@@ -513,7 +504,6 @@ namespace LangSmith
             bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
             bool? enableIncludeExtendedStats,
-            bool? enableLgpRevisionQueuing,
             bool? enableMarkdownInStudio)
         {
             this.MaxIdentities = maxIdentities;
@@ -564,7 +554,6 @@ namespace LangSmith
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
-            this.EnableLgpRevisionQueuing = enableLgpRevisionQueuing;
             this.EnableMarkdownInStudio = enableMarkdownInStudio;
         }
 
