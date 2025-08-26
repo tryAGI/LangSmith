@@ -5331,6 +5331,183 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/feedback/formulas:
+    post:
+      tags:
+        - feedback
+      summary: Create Feedback Formula Ep
+      operationId: create_feedback_formula_ep_api_v1_feedback_formulas_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackFormulaCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeedbackFormula'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    get:
+      tags:
+        - feedback
+      summary: List Feedback Formula Ep
+      operationId: list_feedback_formula_ep_api_v1_feedback_formulas_get
+      parameters:
+        - name: dataset_id
+          in: query
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+            nullable: true
+        - name: session_id
+          in: query
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+            nullable: true
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Feedback Formula Ep Api V1 Feedback Formulas Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/FeedbackFormula'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/feedback/formulas/{feedback_formula_id}':
+    get:
+      tags:
+        - feedback
+      summary: Get Feedback Formula Ep
+      operationId: get_feedback_formula_ep_api_v1_feedback_formulas__feedback_formula_id__get
+      parameters:
+        - name: feedback_formula_id
+          in: path
+          required: true
+          schema:
+            title: Feedback Formula Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeedbackFormula'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    put:
+      tags:
+        - feedback
+      summary: Update Feedback Formula Ep
+      operationId: update_feedback_formula_ep_api_v1_feedback_formulas__feedback_formula_id__put
+      parameters:
+        - name: feedback_formula_id
+          in: path
+          required: true
+          schema:
+            title: Feedback Formula Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackFormulaUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeedbackFormula'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - feedback
+      summary: Delete Feedback Formula Endpoint
+      operationId: delete_feedback_formula_endpoint_api_v1_feedback_formulas__feedback_formula_id__delete
+      parameters:
+        - name: feedback_formula_id
+          in: path
+          required: true
+          schema:
+            title: Feedback Formula Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/feedback/{feedback_id}':
     get:
       tags:
@@ -17509,6 +17686,133 @@ components:
             type: string
             format: uuid
       description: Feedback key with number of improvements and regressions.
+    FeedbackFormula:
+      title: FeedbackFormula
+      required:
+        - feedback_key
+        - aggregation_type
+        - formula_parts
+        - id
+        - created_at
+        - modified_at
+      type: object
+      properties:
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+          nullable: true
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+          nullable: true
+        feedback_key:
+          title: Feedback Key
+          type: string
+        aggregation_type:
+          title: Aggregation Type
+          enum:
+            - sum
+            - avg
+          type: string
+        formula_parts:
+          title: Formula Parts
+          maxItems: 50
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedbackFormulaWeightedVariable'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        modified_at:
+          title: Modified At
+          type: string
+          format: date-time
+    FeedbackFormulaCreate:
+      title: FeedbackFormulaCreate
+      required:
+        - feedback_key
+        - aggregation_type
+        - formula_parts
+      type: object
+      properties:
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+          nullable: true
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+          nullable: true
+        feedback_key:
+          title: Feedback Key
+          type: string
+        aggregation_type:
+          title: Aggregation Type
+          enum:
+            - sum
+            - avg
+          type: string
+        formula_parts:
+          title: Formula Parts
+          maxItems: 50
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedbackFormulaWeightedVariable'
+    FeedbackFormulaUpdate:
+      title: FeedbackFormulaUpdate
+      required:
+        - feedback_key
+        - aggregation_type
+        - formula_parts
+      type: object
+      properties:
+        feedback_key:
+          title: Feedback Key
+          type: string
+        aggregation_type:
+          title: Aggregation Type
+          enum:
+            - sum
+            - avg
+          type: string
+        formula_parts:
+          title: Formula Parts
+          maxItems: 50
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedbackFormulaWeightedVariable'
+    FeedbackFormulaWeightedVariable:
+      title: FeedbackFormulaWeightedVariable
+      required:
+        - part_type
+        - weight
+        - key
+      type: object
+      properties:
+        part_type:
+          title: Part Type
+          enum:
+            - weighted_key
+          type: string
+        weight:
+          title: Weight
+          type: number
+        key:
+          title: Key
+          minLength: 1
+          type: string
     FeedbackIngestTokenCreateSchema:
       title: FeedbackIngestTokenCreateSchema
       required:
@@ -19266,10 +19570,6 @@ components:
           title: Prompt Optimization Jobs Enabled
           type: boolean
           default: false
-        enable_k8s_vanilla_platform:
-          title: Enable K8S Vanilla Platform
-          type: boolean
-          default: false
         demo_lgp_new_graph_enabled:
           title: Demo Lgp New Graph Enabled
           type: boolean
@@ -19351,8 +19651,8 @@ components:
           title: Enable Include Extended Stats
           type: boolean
           default: false
-        enable_markdown_in_studio:
-          title: Enable Markdown In Studio
+        feedback_formulas_enabled:
+          title: Feedback Formulas Enabled
           type: boolean
           default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
