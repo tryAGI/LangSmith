@@ -297,6 +297,12 @@ namespace LangSmith
         public bool? FeedbackFormulasEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_markdown_in_tracing")]
+        public bool? EnableMarkdownInTracing { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -443,6 +449,9 @@ namespace LangSmith
         /// <param name="feedbackFormulasEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="enableMarkdownInTracing">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -494,7 +503,8 @@ namespace LangSmith
             bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
             bool? enableIncludeExtendedStats,
-            bool? feedbackFormulasEnabled)
+            bool? feedbackFormulasEnabled,
+            bool? enableMarkdownInTracing)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -544,6 +554,7 @@ namespace LangSmith
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
             this.FeedbackFormulasEnabled = feedbackFormulasEnabled;
+            this.EnableMarkdownInTracing = enableMarkdownInTracing;
         }
 
         /// <summary>
