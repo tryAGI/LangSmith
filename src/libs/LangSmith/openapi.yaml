@@ -19655,6 +19655,10 @@ components:
           title: Feedback Formulas Enabled
           type: boolean
           default: false
+        enable_markdown_in_tracing:
+          title: Enable Markdown In Tracing
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
