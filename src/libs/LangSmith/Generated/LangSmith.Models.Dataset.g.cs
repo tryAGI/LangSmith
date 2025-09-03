@@ -100,6 +100,12 @@ namespace LangSmith
         public global::System.DateTime? LastSessionStartTime { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -126,6 +132,7 @@ namespace LangSmith
         /// <param name="sessionCount"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="lastSessionStartTime"></param>
+        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -143,7 +150,8 @@ namespace LangSmith
             bool? externallyManaged,
             global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? transformations,
             global::LangSmith.DataType? dataType,
-            global::System.DateTime? lastSessionStartTime)
+            global::System.DateTime? lastSessionStartTime,
+            object? metadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
@@ -159,6 +167,7 @@ namespace LangSmith
             this.Transformations = transformations;
             this.DataType = dataType;
             this.LastSessionStartTime = lastSessionStartTime;
+            this.Metadata = metadata;
         }
 
         /// <summary>

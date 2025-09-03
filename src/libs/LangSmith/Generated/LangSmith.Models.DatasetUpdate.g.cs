@@ -52,6 +52,13 @@ namespace LangSmith
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? Transformations { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +73,7 @@ namespace LangSmith
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
         /// <param name="transformations"></param>
+        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,7 +83,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? inputsSchemaDefinition,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? outputsSchemaDefinition,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations)
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata)
         {
             this.Name = name;
             this.Description = description;
@@ -83,6 +92,7 @@ namespace LangSmith
             this.OutputsSchemaDefinition = outputsSchemaDefinition;
             this.PatchExamples = patchExamples;
             this.Transformations = transformations;
+            this.Metadata = metadata;
         }
 
         /// <summary>

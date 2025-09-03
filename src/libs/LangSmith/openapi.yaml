@@ -16458,6 +16458,10 @@ components:
           type: string
           format: date-time
           nullable: true
+        metadata:
+          title: Metadata
+          type: object
+          nullable: true
       description: Dataset schema.
     DatasetCreate:
       title: DatasetCreate
@@ -16748,6 +16752,14 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/DatasetTransformation'
+            - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
+          nullable: true
+        metadata:
+          title: Metadata
+          anyOf:
+            - type: object
             - $ref: '#/components/schemas/Missing'
           default:
             __missing__: __missing__
