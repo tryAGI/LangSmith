@@ -13824,7 +13824,12 @@ components:
           type: string
           format: uuid
           nullable: true
-      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged).\nrole_id: Optional UUID of the role to assign to API key.\n    If not provided, uses default role based on read_only flag:\n    - WORKSPACE_ADMIN if read_only is False\n    - WORKSPACE_READER if read_only is True\norg_role_id: UUID of a org role for org-scoped keys\n    If not provided, defaults to ORG_USER"
+        default_workspace_id:
+          title: Default Workspace Id
+          type: string
+          format: uuid
+          nullable: true
+      description: "API key POST schema.\n\nexpires_at: Optional datetime when the API key will expire.\nworkspaces: List of workspace UUIDs this key can access (feature-flagged).\nrole_id: Optional UUID of the role to assign to API key.\n    If not provided, uses default role based on read_only flag:\n    - WORKSPACE_ADMIN if read_only is False\n    - WORKSPACE_READER if read_only is True\norg_role_id: UUID of a org role for org-scoped keys\n    If not provided, defaults to ORG_USER\ndefault_workspace_id: UUID of the default workspace for PATs.\n    If not provided, uses the current logic (first available workspace)."
     APIKeyCreateResponse:
       title: APIKeyCreateResponse
       required:
@@ -19643,10 +19648,6 @@ components:
           title: Enable Lgp Listeners Page
           type: boolean
           default: false
-        show_grace_period_warning_banner:
-          title: Show Grace Period Warning Banner
-          type: boolean
-          default: true
         clio_enabled:
           title: Clio Enabled
           type: boolean
