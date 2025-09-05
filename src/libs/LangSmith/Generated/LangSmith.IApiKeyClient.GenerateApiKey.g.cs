@@ -29,6 +29,7 @@ namespace LangSmith
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
         /// <param name="orgRoleId"></param>
+        /// <param name="defaultWorkspaceId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
@@ -38,6 +39,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces = default,
             global::System.Guid? roleId = default,
             global::System.Guid? orgRoleId = default,
+            global::System.Guid? defaultWorkspaceId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

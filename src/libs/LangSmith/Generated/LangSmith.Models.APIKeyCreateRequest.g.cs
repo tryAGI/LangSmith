@@ -12,7 +12,9 @@ namespace LangSmith
     ///     - WORKSPACE_ADMIN if read_only is False<br/>
     ///     - WORKSPACE_READER if read_only is True<br/>
     /// org_role_id: UUID of a org role for org-scoped keys<br/>
-    ///     If not provided, defaults to ORG_USER
+    ///     If not provided, defaults to ORG_USER<br/>
+    /// default_workspace_id: UUID of the default workspace for PATs.<br/>
+    ///     If not provided, uses the current logic (first available workspace).
     /// </summary>
     public sealed partial class APIKeyCreateRequest
     {
@@ -53,6 +55,12 @@ namespace LangSmith
         public global::System.Guid? OrgRoleId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_id")]
+        public global::System.Guid? DefaultWorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +79,7 @@ namespace LangSmith
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
         /// <param name="orgRoleId"></param>
+        /// <param name="defaultWorkspaceId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +89,8 @@ namespace LangSmith
             global::System.DateTime? expiresAt,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces,
             global::System.Guid? roleId,
-            global::System.Guid? orgRoleId)
+            global::System.Guid? orgRoleId,
+            global::System.Guid? defaultWorkspaceId)
         {
             this.Description = description;
             this.ReadOnly = readOnly;
@@ -88,6 +98,7 @@ namespace LangSmith
             this.Workspaces = workspaces;
             this.RoleId = roleId;
             this.OrgRoleId = orgRoleId;
+            this.DefaultWorkspaceId = defaultWorkspaceId;
         }
 
         /// <summary>

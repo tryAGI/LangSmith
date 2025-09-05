@@ -261,12 +261,6 @@ namespace LangSmith
         public bool? EnableLgpListenersPage { get; set; }
 
         /// <summary>
-        /// Default Value: true
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("show_grace_period_warning_banner")]
-        public bool? ShowGracePeriodWarningBanner { get; set; }
-
-        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clio_enabled")]
@@ -419,9 +413,6 @@ namespace LangSmith
         /// <param name="enableLgpListenersPage">
         /// Default Value: false
         /// </param>
-        /// <param name="showGracePeriodWarningBanner">
-        /// Default Value: true
-        /// </param>
         /// <param name="clioEnabled">
         /// Default Value: false
         /// </param>
@@ -480,7 +471,6 @@ namespace LangSmith
             bool? enableMonthlyUsageCharts,
             int? newRuleEvaluatorCreationVersion,
             bool? enableLgpListenersPage,
-            bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
             bool? enableIncludeExtendedStats,
             bool? feedbackFormulasEnabled,
@@ -528,7 +518,6 @@ namespace LangSmith
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.EnableLgpListenersPage = enableLgpListenersPage;
-            this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
             this.FeedbackFormulasEnabled = feedbackFormulasEnabled;

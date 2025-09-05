@@ -217,6 +217,7 @@ namespace LangSmith
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
         /// <param name="orgRoleId"></param>
+        /// <param name="defaultWorkspaceId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GeneratePersonalAccessTokenAsync(
@@ -226,6 +227,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces = default,
             global::System.Guid? roleId = default,
             global::System.Guid? orgRoleId = default,
+            global::System.Guid? defaultWorkspaceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.APIKeyCreateRequest
@@ -236,6 +238,7 @@ namespace LangSmith
                 Workspaces = workspaces,
                 RoleId = roleId,
                 OrgRoleId = orgRoleId,
+                DefaultWorkspaceId = defaultWorkspaceId,
             };
 
             return await GeneratePersonalAccessTokenAsync(
