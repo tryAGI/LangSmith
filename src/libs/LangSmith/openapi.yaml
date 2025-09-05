@@ -19635,18 +19635,10 @@ components:
           title: Enable Monthly Usage Charts
           type: boolean
           default: false
-        enable_lgp_metrics_charts:
-          title: Enable Lgp Metrics Charts
-          type: boolean
-          default: false
         new_rule_evaluator_creation_version:
           title: New Rule Evaluator Creation Version
           type: integer
           default: 2
-        org_scoped_service_accounts_enabled:
-          title: Org Scoped Service Accounts Enabled
-          type: boolean
-          default: false
         enable_lgp_listeners_page:
           title: Enable Lgp Listeners Page
           type: boolean
@@ -19908,6 +19900,7 @@ components:
         - free
         - enterprise_legacy
         - startup
+        - startup_v0
         - partner
         - premier
       type: string

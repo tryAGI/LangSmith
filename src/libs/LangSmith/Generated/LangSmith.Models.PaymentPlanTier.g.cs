@@ -47,6 +47,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        StartupV0,
+        /// <summary>
+        /// 
+        /// </summary>
         Partner,
         /// <summary>
         /// 
@@ -75,6 +79,7 @@ namespace LangSmith
                 PaymentPlanTier.Free => "free",
                 PaymentPlanTier.EnterpriseLegacy => "enterprise_legacy",
                 PaymentPlanTier.Startup => "startup",
+                PaymentPlanTier.StartupV0 => "startup_v0",
                 PaymentPlanTier.Partner => "partner",
                 PaymentPlanTier.Premier => "premier",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -96,6 +101,7 @@ namespace LangSmith
                 "free" => PaymentPlanTier.Free,
                 "enterprise_legacy" => PaymentPlanTier.EnterpriseLegacy,
                 "startup" => PaymentPlanTier.Startup,
+                "startup_v0" => PaymentPlanTier.StartupV0,
                 "partner" => PaymentPlanTier.Partner,
                 "premier" => PaymentPlanTier.Premier,
                 _ => null,

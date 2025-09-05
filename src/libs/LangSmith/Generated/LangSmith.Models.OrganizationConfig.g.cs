@@ -249,22 +249,10 @@ namespace LangSmith
         public bool? EnableMonthlyUsageCharts { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_lgp_metrics_charts")]
-        public bool? EnableLgpMetricsCharts { get; set; }
-
-        /// <summary>
         /// Default Value: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_rule_evaluator_creation_version")]
         public int? NewRuleEvaluatorCreationVersion { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("org_scoped_service_accounts_enabled")]
-        public bool? OrgScopedServiceAccountsEnabled { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -425,14 +413,8 @@ namespace LangSmith
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false
         /// </param>
-        /// <param name="enableLgpMetricsCharts">
-        /// Default Value: false
-        /// </param>
         /// <param name="newRuleEvaluatorCreationVersion">
         /// Default Value: 2
-        /// </param>
-        /// <param name="orgScopedServiceAccountsEnabled">
-        /// Default Value: false
         /// </param>
         /// <param name="enableLgpListenersPage">
         /// Default Value: false
@@ -496,9 +478,7 @@ namespace LangSmith
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
             bool? enableMonthlyUsageCharts,
-            bool? enableLgpMetricsCharts,
             int? newRuleEvaluatorCreationVersion,
-            bool? orgScopedServiceAccountsEnabled,
             bool? enableLgpListenersPage,
             bool? showGracePeriodWarningBanner,
             bool? clioEnabled,
@@ -546,9 +526,7 @@ namespace LangSmith
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
-            this.EnableLgpMetricsCharts = enableLgpMetricsCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
-            this.OrgScopedServiceAccountsEnabled = orgScopedServiceAccountsEnabled;
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.ShowGracePeriodWarningBanner = showGracePeriodWarningBanner;
             this.ClioEnabled = clioEnabled;
