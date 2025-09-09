@@ -56,13 +56,6 @@ namespace LangSmith
         public required int NumRuns { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stats")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Stats { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,7 +71,6 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="parentName"></param>
         /// <param name="numRuns"></param>
-        /// <param name="stats"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,7 +80,6 @@ namespace LangSmith
             string name,
             string description,
             int numRuns,
-            object? stats,
             global::System.Guid? parentId,
             string? parentName)
         {
@@ -97,7 +88,6 @@ namespace LangSmith
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.NumRuns = numRuns;
-            this.Stats = stats ?? throw new global::System.ArgumentNullException(nameof(stats));
             this.ParentId = parentId;
             this.ParentName = parentName;
         }

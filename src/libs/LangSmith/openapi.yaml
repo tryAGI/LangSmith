@@ -21556,7 +21556,6 @@ components:
         - name
         - description
         - num_runs
-        - stats
       type: object
       properties:
         id:
@@ -21584,10 +21583,6 @@ components:
         num_runs:
           title: Num Runs
           type: integer
-        stats:
-          title: Stats
-          type: object
-          nullable: true
       description: A single cluster of runs.
     RunClusteringJobPydantic:
       title: RunClusteringJobPydantic
