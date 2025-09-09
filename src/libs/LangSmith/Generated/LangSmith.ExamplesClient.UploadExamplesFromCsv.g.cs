@@ -90,6 +90,12 @@ namespace LangSmith
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
                     name: "output_keys");
+            } 
+            if (request.MetadataKeys != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.MetadataKeys, x => x))}]"),
+                    name: "metadata_keys");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -234,6 +240,7 @@ namespace LangSmith
         /// <param name="filename"></param>
         /// <param name="inputKeys"></param>
         /// <param name="outputKeys"></param>
+        /// <param name="metadataKeys"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> UploadExamplesFromCsvAsync(
@@ -242,6 +249,7 @@ namespace LangSmith
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BodyUploadExamplesFromCsvApiV1ExamplesUploadDatasetIdPost
@@ -250,6 +258,7 @@ namespace LangSmith
                 Filename = filename,
                 InputKeys = inputKeys,
                 OutputKeys = outputKeys,
+                MetadataKeys = metadataKeys,
             };
 
             return await UploadExamplesFromCsvAsync(

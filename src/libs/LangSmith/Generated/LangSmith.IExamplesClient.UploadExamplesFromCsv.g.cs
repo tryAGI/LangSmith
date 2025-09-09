@@ -30,6 +30,7 @@ namespace LangSmith
         /// <param name="filename"></param>
         /// <param name="inputKeys"></param>
         /// <param name="outputKeys"></param>
+        /// <param name="metadataKeys"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> UploadExamplesFromCsvAsync(
@@ -38,6 +39,7 @@ namespace LangSmith
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -14790,6 +14790,11 @@ components:
           type: array
           items:
             type: string
+        metadata_keys:
+          title: Metadata Keys
+          type: array
+          items:
+            type: string
         description:
           title: Description
           type: string
@@ -14812,6 +14817,11 @@ components:
             type: string
         output_keys:
           title: Output Keys
+          type: array
+          items:
+            type: string
+        metadata_keys:
+          title: Metadata Keys
           type: array
           items:
             type: string
@@ -15181,6 +15191,7 @@ components:
         - developer
         - plus
         - startup
+        - startup_v0
         - partner
         - premier
         - free
@@ -21556,6 +21567,7 @@ components:
         - name
         - description
         - num_runs
+        - stats
       type: object
       properties:
         id:
@@ -21583,6 +21595,10 @@ components:
         num_runs:
           title: Num Runs
           type: integer
+        stats:
+          title: Stats
+          type: object
+          nullable: true
       description: A single cluster of runs.
     RunClusteringJobPydantic:
       title: RunClusteringJobPydantic

@@ -27,6 +27,7 @@ namespace LangSmith
         /// Enum for dataset data types.
         /// </param>
         /// <param name="outputKeys"></param>
+        /// <param name="metadataKeys"></param>
         /// <param name="description"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -37,6 +38,7 @@ namespace LangSmith
             string? name = default,
             global::LangSmith.DataType? dataType = default,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
             string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
