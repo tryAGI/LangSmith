@@ -51,6 +51,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_keys")]
+        public global::System.Collections.Generic.IList<string>? MetadataKeys { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -71,6 +77,7 @@ namespace LangSmith
         /// Enum for dataset data types.
         /// </param>
         /// <param name="outputKeys"></param>
+        /// <param name="metadataKeys"></param>
         /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,6 +89,7 @@ namespace LangSmith
             string? name,
             global::LangSmith.DataType? dataType,
             global::System.Collections.Generic.IList<string>? outputKeys,
+            global::System.Collections.Generic.IList<string>? metadataKeys,
             string? description)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
@@ -90,6 +98,7 @@ namespace LangSmith
             this.Name = name;
             this.DataType = dataType;
             this.OutputKeys = outputKeys;
+            this.MetadataKeys = metadataKeys;
             this.Description = description;
         }
 

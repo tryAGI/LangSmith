@@ -93,6 +93,12 @@ namespace LangSmith
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
                     name: "output_keys");
             } 
+            if (request.MetadataKeys != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.MetadataKeys, x => x))}]"),
+                    name: "metadata_keys");
+            } 
             if (request.Description != default)
             {
                 __httpRequestContent.Add(
@@ -242,6 +248,7 @@ namespace LangSmith
         /// Enum for dataset data types.
         /// </param>
         /// <param name="outputKeys"></param>
+        /// <param name="metadataKeys"></param>
         /// <param name="description"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -252,6 +259,7 @@ namespace LangSmith
             string? name = default,
             global::LangSmith.DataType? dataType = default,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
             string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -263,6 +271,7 @@ namespace LangSmith
                 Name = name,
                 DataType = dataType,
                 OutputKeys = outputKeys,
+                MetadataKeys = metadataKeys,
                 Description = description,
             };
 

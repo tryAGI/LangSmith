@@ -36,6 +36,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? OutputKeys { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_keys")]
+        public global::System.Collections.Generic.IList<string>? MetadataKeys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,6 +54,7 @@ namespace LangSmith
         /// <param name="filename"></param>
         /// <param name="inputKeys"></param>
         /// <param name="outputKeys"></param>
+        /// <param name="metadataKeys"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,12 +62,14 @@ namespace LangSmith
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
-            global::System.Collections.Generic.IList<string>? outputKeys)
+            global::System.Collections.Generic.IList<string>? outputKeys,
+            global::System.Collections.Generic.IList<string>? metadataKeys)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.InputKeys = inputKeys ?? throw new global::System.ArgumentNullException(nameof(inputKeys));
             this.OutputKeys = outputKeys;
+            this.MetadataKeys = metadataKeys;
         }
 
         /// <summary>

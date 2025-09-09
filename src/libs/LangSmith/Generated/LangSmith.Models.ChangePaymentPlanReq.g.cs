@@ -27,6 +27,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        StartupV0,
+        /// <summary>
+        /// 
+        /// </summary>
         Partner,
         /// <summary>
         /// 
@@ -54,6 +58,7 @@ namespace LangSmith
                 ChangePaymentPlanReq.Developer => "developer",
                 ChangePaymentPlanReq.Plus => "plus",
                 ChangePaymentPlanReq.Startup => "startup",
+                ChangePaymentPlanReq.StartupV0 => "startup_v0",
                 ChangePaymentPlanReq.Partner => "partner",
                 ChangePaymentPlanReq.Premier => "premier",
                 ChangePaymentPlanReq.Free => "free",
@@ -71,6 +76,7 @@ namespace LangSmith
                 "developer" => ChangePaymentPlanReq.Developer,
                 "plus" => ChangePaymentPlanReq.Plus,
                 "startup" => ChangePaymentPlanReq.Startup,
+                "startup_v0" => ChangePaymentPlanReq.StartupV0,
                 "partner" => ChangePaymentPlanReq.Partner,
                 "premier" => ChangePaymentPlanReq.Premier,
                 "free" => ChangePaymentPlanReq.Free,
