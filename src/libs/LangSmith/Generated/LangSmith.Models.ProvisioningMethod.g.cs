@@ -16,6 +16,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Saml_jit,
+        /// <summary>
+        /// 
+        /// </summary>
+        Bootstrap,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace LangSmith
             {
                 ProvisioningMethod.Scim => "scim",
                 ProvisioningMethod.Saml_jit => "saml:jit",
+                ProvisioningMethod.Bootstrap => "bootstrap",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace LangSmith
             {
                 "scim" => ProvisioningMethod.Scim,
                 "saml:jit" => ProvisioningMethod.Saml_jit,
+                "bootstrap" => ProvisioningMethod.Bootstrap,
                 _ => null,
             };
         }

@@ -111,6 +111,12 @@ namespace LangSmith
         public global::LangSmith.Wallet? Wallet { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
+        public bool? DefaultSsoProvision { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -147,6 +153,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="wallet"></param>
+        /// <param name="defaultSsoProvision">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -166,7 +175,8 @@ namespace LangSmith
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
             bool? marketplacePayoutsEnabled,
-            global::LangSmith.Wallet? wallet)
+            global::LangSmith.Wallet? wallet,
+            bool? defaultSsoProvision)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ConnectedToStripe = connectedToStripe;
@@ -184,6 +194,7 @@ namespace LangSmith
             this.Permissions = permissions;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
             this.Wallet = wallet;
+            this.DefaultSsoProvision = defaultSsoProvision;
         }
 
         /// <summary>

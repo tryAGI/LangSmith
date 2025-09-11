@@ -93,6 +93,12 @@ namespace LangSmith
         public bool? Disabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
+        public bool? DefaultSsoProvision { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -126,6 +132,9 @@ namespace LangSmith
         /// <param name="disabled">
         /// Default Value: false
         /// </param>
+        /// <param name="defaultSsoProvision">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -142,7 +151,8 @@ namespace LangSmith
             global::LangSmith.CustomerVisiblePlanInfo? currentPlan,
             global::LangSmith.CustomerVisiblePlanInfo? upcomingPlan,
             bool? reachedMaxWorkspaces,
-            bool? disabled)
+            bool? disabled,
+            bool? defaultSsoProvision)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
@@ -157,6 +167,7 @@ namespace LangSmith
             this.UpcomingPlan = upcomingPlan;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Disabled = disabled;
+            this.DefaultSsoProvision = defaultSsoProvision;
         }
 
         /// <summary>
