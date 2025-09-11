@@ -31,6 +31,7 @@ namespace LangSmith
         /// <param name="summaryPrompt"></param>
         /// <param name="filter"></param>
         /// <param name="name"></param>
+        /// <param name="attributeSchemas"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> [Beta]CreateInsightsJobAsync(
@@ -44,6 +45,7 @@ namespace LangSmith
             string? summaryPrompt = default,
             string? filter = default,
             string? name = default,
+            object? attributeSchemas = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

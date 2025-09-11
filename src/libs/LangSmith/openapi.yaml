@@ -15766,6 +15766,10 @@ components:
           title: Name
           type: string
           nullable: true
+        attribute_schemas:
+          title: Attribute Schemas
+          type: object
+          nullable: true
       description: Request to create a run clustering job.
     CreateRunClusteringJobResponse:
       title: CreateRunClusteringJobResponse

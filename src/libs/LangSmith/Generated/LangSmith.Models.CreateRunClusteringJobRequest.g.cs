@@ -66,6 +66,12 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attribute_schemas")]
+        public object? AttributeSchemas { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,6 +89,7 @@ namespace LangSmith
         /// <param name="summaryPrompt"></param>
         /// <param name="filter"></param>
         /// <param name="name"></param>
+        /// <param name="attributeSchemas"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,7 +102,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<double?, int?>? sample,
             string? summaryPrompt,
             string? filter,
-            string? name)
+            string? name,
+            object? attributeSchemas)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -106,6 +114,7 @@ namespace LangSmith
             this.SummaryPrompt = summaryPrompt;
             this.Filter = filter;
             this.Name = name;
+            this.AttributeSchemas = attributeSchemas;
         }
 
         /// <summary>
