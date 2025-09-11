@@ -2326,6 +2326,25 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/set-default-sso-provision:
+    post:
+      tags:
+        - orgs
+      summary: Set Default Sso Provision
+      description: Set the current organization as the default for SSO provisioning in self-hosted environments.
+      operationId: set_default_sso_provision_api_v1_orgs_current_set_default_sso_provision_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Set Default Sso Provision Api V1 Orgs Current Set Default Sso Provision Post
+                type: object
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /api/v1/login:
     post:
       tags:
@@ -19438,6 +19457,10 @@ components:
           default: false
         wallet:
           $ref: '#/components/schemas/Wallet'
+        default_sso_provision:
+          title: Default Sso Provision
+          type: boolean
+          default: false
       description: Information about an organization.
     OrganizationBillingInfo:
       title: OrganizationBillingInfo
@@ -19487,6 +19510,10 @@ components:
           default: false
         disabled:
           title: Disabled
+          type: boolean
+          default: false
+        default_sso_provision:
+          title: Default Sso Provision
           type: boolean
           default: false
       description: Information about an organization's billing configuration.
@@ -19779,6 +19806,10 @@ components:
           default: false
         wallet:
           $ref: '#/components/schemas/Wallet'
+        default_sso_provision:
+          title: Default Sso Provision
+          type: boolean
+          default: false
       description: Information about an organization.
     OrganizationMembers:
       title: OrganizationMembers
@@ -19859,6 +19890,10 @@ components:
           default: true
         public_sharing_disabled:
           title: Public Sharing Disabled
+          type: boolean
+          default: false
+        default_sso_provision:
+          title: Default Sso Provision
           type: boolean
           default: false
       description: Schema for an organization in postgres for list views.
@@ -20912,6 +20947,7 @@ components:
       enum:
         - scim
         - saml:jit
+        - bootstrap
       type: string
     PublicComparativeExperiment:
       title: PublicComparativeExperiment

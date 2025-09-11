@@ -85,6 +85,12 @@ namespace LangSmith
         public bool? PublicSharingDisabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
+        public bool? DefaultSsoProvision { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -111,6 +117,9 @@ namespace LangSmith
         /// <param name="publicSharingDisabled">
         /// Default Value: false
         /// </param>
+        /// <param name="defaultSsoProvision">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -126,7 +135,8 @@ namespace LangSmith
             string? ssoLoginSlug,
             bool? ssoOnly,
             bool? jitProvisioningEnabled,
-            bool? publicSharingDisabled)
+            bool? publicSharingDisabled,
+            bool? defaultSsoProvision)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -140,6 +150,7 @@ namespace LangSmith
             this.SsoOnly = ssoOnly;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.PublicSharingDisabled = publicSharingDisabled;
+            this.DefaultSsoProvision = defaultSsoProvision;
         }
 
         /// <summary>
