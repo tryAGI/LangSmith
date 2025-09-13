@@ -56,6 +56,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clusters")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::LangSmith.RunCluster> Clusters { get; set; }
@@ -76,6 +82,7 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="metadata"></param>
         /// <param name="shape"></param>
+        /// <param name="error"></param>
         /// <param name="clusters"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,7 +95,8 @@ namespace LangSmith
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             object? metadata,
-            global::System.Collections.Generic.IList<int>? shape)
+            global::System.Collections.Generic.IList<int>? shape,
+            string? error)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -98,6 +106,7 @@ namespace LangSmith
             this.EndTime = endTime;
             this.Metadata = metadata;
             this.Shape = shape;
+            this.Error = error;
         }
 
         /// <summary>

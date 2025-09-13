@@ -1,6 +1,7 @@
 openapi: 3.0.4
 info:
   title: LangSmith
+  description: "The LangSmith API is used to programmatically create and manage LangSmith resources.\n\n## Host\nhttps://api.smith.langchain.com\n\n## Authentication\nTo authenticate with the LangSmith API, set the `X-Api-Key` header\nto a valid [LangSmith API key](https://docs.langchain.com/langsmith/create-account-api-key#create-an-api-key).\n\n"
   version: 0.1.0
 servers:
   - url: https://api.smith.langchain.com
@@ -718,6 +719,164 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateRunClusteringJobResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/sessions/{session_id}/insights/configs':
+    get:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Get Insights Job Configs'
+      description: Get all clustering job configs for a session.
+      operationId: _Beta__Get_Insights_Job_Configs_api_v1_sessions__session_id__insights_configs_get
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: include_prebuilts
+          in: query
+          schema:
+            title: Include Prebuilts
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClusteringJobConfigsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Create Insights Job Config'
+      description: Save a clustering job config.
+      operationId: _Beta__Create_Insights_Job_Config_api_v1_sessions__session_id__insights_configs_post
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateClusteringJobConfigRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateClusteringJobConfigResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/sessions/{session_id}/insights/configs/{config_id}':
+    patch:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Update Insights Job Config'
+      description: Update a clustering job config.
+      operationId: _Beta__Update_Insights_Job_Config_api_v1_sessions__session_id__insights_configs__config_id__patch
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: config_id
+          in: path
+          required: true
+          schema:
+            title: Config Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateClusteringJobConfigRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateClusteringJobConfigResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - tracer-sessions
+      summary: '[Beta] Delete Insights Job Config'
+      description: Delete a clustering job config.
+      operationId: _Beta__Delete_Insights_Job_Config_api_v1_sessions__session_id__insights_configs__config_id__delete
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            title: Session Id
+            type: string
+            format: uuid
+        - name: config_id
+          in: path
+          required: true
+          schema:
+            title: Config Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteClusteringJobConfigResponse'
         '422':
           description: Validation Error
           content:
@@ -7902,6 +8061,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BulkExportDestination'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/bulk-exports/runs:
+    get:
+      tags:
+        - bulk-exports
+      summary: Get Bulk Export Runs Filtered
+      description: Get all bulk export runs for exports that were created from a scheduled bulk export
+      operationId: get_bulk_export_runs_filtered_api_v1_bulk_exports_runs_get
+      parameters:
+        - name: source_bulk_export_id
+          in: query
+          required: true
+          schema:
+            title: Source Bulk Export Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Bulk Export Runs Filtered Api V1 Bulk Exports Runs Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/BulkExportRun'
         '422':
           description: Validation Error
           content:
@@ -15305,6 +15499,28 @@ components:
           title: Role
           type: string
       description: Chat Message chunk.
+    ClusteringJobConfigResponse:
+      title: ClusteringJobConfigResponse
+      required:
+        - name
+        - config
+        - prebuilt
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+          nullable: true
+        name:
+          title: Name
+          type: string
+        config:
+          $ref: '#/components/schemas/SavedRunClusteringJobRequest'
+        prebuilt:
+          title: Prebuilt
+          type: boolean
+      description: Full clustering job config with all details.
     CodeEvaluatorTopLevel:
       title: CodeEvaluatorTopLevel
       required:
@@ -15595,6 +15811,38 @@ components:
         - system
         - user
       type: string
+    CreateClusteringJobConfigRequest:
+      title: CreateClusteringJobConfigRequest
+      required:
+        - name
+        - config
+      type: object
+      properties:
+        name:
+          title: Name
+          maxLength: 255
+          type: string
+        config:
+          $ref: '#/components/schemas/CreateRunClusteringJobRequest'
+      description: Request to create a clustering job config.
+    CreateClusteringJobConfigResponse:
+      title: CreateClusteringJobConfigResponse
+      required:
+        - id
+        - name
+        - config
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        name:
+          title: Name
+          type: string
+        config:
+          $ref: '#/components/schemas/SavedRunClusteringJobRequest'
+      description: Response to create a clustering job config.
     CreateCommentRequest:
       title: CreateCommentRequest
       required:
@@ -15808,6 +16056,10 @@ components:
         status:
           title: Status
           type: string
+        error:
+          title: Error
+          type: string
+          nullable: true
       description: Response to creating a run clustering job.
     CustomChartCreate:
       title: CustomChartCreate
@@ -16821,6 +17073,21 @@ components:
           type: string
           format: date-time
       description: Dataset version schema.
+    DeleteClusteringJobConfigResponse:
+      title: DeleteClusteringJobConfigResponse
+      required:
+        - id
+        - message
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        message:
+          title: Message
+          type: string
+      description: Response to delete a clustering job config.
     DeleteRunClusteringJobResponse:
       title: DeleteRunClusteringJobResponse
       required:
@@ -18310,6 +18577,18 @@ components:
         num_examples:
           title: Num Examples
           type: integer
+    GetClusteringJobConfigsResponse:
+      title: GetClusteringJobConfigsResponse
+      required:
+        - configs
+      type: object
+      properties:
+        configs:
+          title: Configs
+          type: array
+          items:
+            $ref: '#/components/schemas/ClusteringJobConfigResponse'
+      description: Response to get clustering job configs.
     GetRepoResponse:
       title: GetRepoResponse
       required:
@@ -18388,6 +18667,10 @@ components:
           type: array
           items:
             type: integer
+          nullable: true
+        error:
+          title: Error
+          type: string
           nullable: true
         clusters:
           title: Clusters
@@ -21678,6 +21961,10 @@ components:
           items:
             type: integer
           nullable: true
+        error:
+          title: Error
+          type: string
+          nullable: true
       description: Session cluster job
     RunDateOrder:
       title: RunDateOrder
@@ -23886,6 +24173,52 @@ components:
           title: Metadata Xml
           type: string
           nullable: true
+    SavedRunClusteringJobRequest:
+      title: SavedRunClusteringJobRequest
+      required:
+        - last_n_hours
+        - hierarchy
+        - partitions
+        - sample
+        - summary_prompt
+        - filter
+        - attribute_schemas
+      type: object
+      properties:
+        last_n_hours:
+          title: Last N Hours
+          type: integer
+        hierarchy:
+          title: Hierarchy
+          type: array
+          items:
+            type: integer
+          nullable: true
+        partitions:
+          title: Partitions
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+        sample:
+          title: Sample
+          anyOf:
+            - type: number
+            - type: integer
+          nullable: true
+        summary_prompt:
+          title: Summary Prompt
+          type: string
+          nullable: true
+        filter:
+          title: Filter
+          type: string
+          nullable: true
+        attribute_schemas:
+          title: Attribute Schemas
+          type: object
+          nullable: true
+      description: Request to create a run clustering job.
     SearchDatasetRequest:
       title: SearchDatasetRequest
       required:
@@ -25665,6 +25998,18 @@ components:
           type: string
           format: uuid
           nullable: true
+    UpdateClusteringJobConfigRequest:
+      title: UpdateClusteringJobConfigRequest
+      type: object
+      properties:
+        name:
+          title: Name
+          maxLength: 255
+          type: string
+          nullable: true
+        config:
+          $ref: '#/components/schemas/CreateRunClusteringJobRequest'
+      description: Request to update a clustering job config.
     UpdateFeedbackConfigSchema:
       title: UpdateFeedbackConfigSchema
       required:
