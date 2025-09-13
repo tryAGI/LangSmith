@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Response to creating a run clustering job.
+    /// Response to create a clustering job config.
     /// </summary>
-    public sealed partial class CreateRunClusteringJobResponse
+    public sealed partial class CreateClusteringJobConfigResponse
     {
         /// <summary>
         /// 
@@ -23,17 +23,11 @@ namespace LangSmith
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Request to create a run clustering job.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
+        public required global::LangSmith.SavedRunClusteringJobRequest Config { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,31 +36,30 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateRunClusteringJobResponse" /> class.
+        /// Initializes a new instance of the <see cref="CreateClusteringJobConfigResponse" /> class.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="status"></param>
-        /// <param name="error"></param>
+        /// <param name="config">
+        /// Request to create a run clustering job.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CreateRunClusteringJobResponse(
+        public CreateClusteringJobConfigResponse(
             global::System.Guid id,
             string name,
-            string status,
-            string? error)
+            global::LangSmith.SavedRunClusteringJobRequest config)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.Error = error;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateRunClusteringJobResponse" /> class.
+        /// Initializes a new instance of the <see cref="CreateClusteringJobConfigResponse" /> class.
         /// </summary>
-        public CreateRunClusteringJobResponse()
+        public CreateClusteringJobConfigResponse()
         {
         }
     }

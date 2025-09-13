@@ -54,6 +54,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<int>? Shape { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -69,6 +75,7 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="metadata"></param>
         /// <param name="shape"></param>
+        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,7 +86,8 @@ namespace LangSmith
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             object? metadata,
-            global::System.Collections.Generic.IList<int>? shape)
+            global::System.Collections.Generic.IList<int>? shape,
+            string? error)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -88,6 +96,7 @@ namespace LangSmith
             this.EndTime = endTime;
             this.Metadata = metadata;
             this.Shape = shape;
+            this.Error = error;
         }
 
         /// <summary>

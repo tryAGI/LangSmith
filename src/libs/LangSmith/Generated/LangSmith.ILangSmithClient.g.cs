@@ -4,6 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
+    /// The LangSmith API is used to programmatically create and manage LangSmith resources.<br/>
+    /// ## Host<br/>
+    /// https://api.smith.langchain.com<br/>
+    /// ## Authentication<br/>
+    /// To authenticate with the LangSmith API, set the `X-Api-Key` header<br/>
+    /// to a valid [LangSmith API key](https://docs.langchain.com/langsmith/create-account-api-key#create-an-api-key).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
