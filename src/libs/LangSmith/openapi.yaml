@@ -19989,6 +19989,10 @@ components:
           title: Enable Markdown In Tracing
           type: boolean
           default: false
+        enable_pricing_redesign:
+          title: Enable Pricing Redesign
+          type: boolean
+          default: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationCreate:
       title: OrganizationCreate
