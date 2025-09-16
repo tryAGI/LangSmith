@@ -285,6 +285,12 @@ namespace LangSmith
         public bool? EnableMarkdownInTracing { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_pricing_redesign")]
+        public bool? EnablePricingRedesign { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -425,6 +431,9 @@ namespace LangSmith
         /// <param name="enableMarkdownInTracing">
         /// Default Value: false
         /// </param>
+        /// <param name="enablePricingRedesign">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -474,7 +483,8 @@ namespace LangSmith
             bool? clioEnabled,
             bool? enableIncludeExtendedStats,
             bool? feedbackFormulasEnabled,
-            bool? enableMarkdownInTracing)
+            bool? enableMarkdownInTracing,
+            bool? enablePricingRedesign)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -522,6 +532,7 @@ namespace LangSmith
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
             this.FeedbackFormulasEnabled = feedbackFormulasEnabled;
             this.EnableMarkdownInTracing = enableMarkdownInTracing;
+            this.EnablePricingRedesign = enablePricingRedesign;
         }
 
         /// <summary>
