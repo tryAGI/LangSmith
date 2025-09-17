@@ -13,6 +13,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_n_hours")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int LastNHours { get; set; }
@@ -69,6 +76,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SavedRunClusteringJobRequest" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="lastNHours"></param>
         /// <param name="hierarchy"></param>
         /// <param name="partitions"></param>
@@ -80,6 +88,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SavedRunClusteringJobRequest(
+            string name,
             int lastNHours,
             global::System.Collections.Generic.IList<int>? hierarchy,
             global::System.Collections.Generic.Dictionary<string, string>? partitions,
@@ -88,6 +97,7 @@ namespace LangSmith
             string? filter,
             object? attributeSchemas)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.LastNHours = lastNHours;
             this.Hierarchy = hierarchy ?? throw new global::System.ArgumentNullException(nameof(hierarchy));
             this.Partitions = partitions ?? throw new global::System.ArgumentNullException(nameof(partitions));
