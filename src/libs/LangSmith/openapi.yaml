@@ -24180,6 +24180,7 @@ components:
     SavedRunClusteringJobRequest:
       title: SavedRunClusteringJobRequest
       required:
+        - name
         - last_n_hours
         - hierarchy
         - partitions
@@ -24189,6 +24190,9 @@ components:
         - attribute_schemas
       type: object
       properties:
+        name:
+          title: Name
+          type: string
         last_n_hours:
           title: Last N Hours
           type: integer
