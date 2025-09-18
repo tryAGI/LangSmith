@@ -25,6 +25,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
+        public global::LangSmith.PaymentPlanTier? Tier { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
@@ -101,6 +108,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="displayName"></param>
+        /// <param name="tier"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdByUserId"></param>
         /// <param name="createdByLsUserId"></param>
@@ -128,6 +136,7 @@ namespace LangSmith
             string displayName,
             bool isPersonal,
             bool disabled,
+            global::LangSmith.PaymentPlanTier? tier,
             global::System.DateTime? createdAt,
             global::System.Guid? createdByUserId,
             global::System.Guid? createdByLsUserId,
@@ -142,6 +151,7 @@ namespace LangSmith
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
             this.Disabled = disabled;
+            this.Tier = tier;
             this.CreatedAt = createdAt;
             this.CreatedByUserId = createdByUserId;
             this.CreatedByLsUserId = createdByLsUserId;
