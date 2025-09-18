@@ -7,11 +7,13 @@ namespace LangSmith
     {
         partial void PrepareListOrganizationsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? skipCreate);
+            ref bool? skipCreate,
+            ref bool? includeTier);
         partial void PrepareListOrganizationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? skipCreate);
+            bool? skipCreate,
+            bool? includeTier);
         partial void ProcessListOrganizationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,23 +30,29 @@ namespace LangSmith
         /// <param name="skipCreate">
         /// Default Value: false
         /// </param>
+        /// <param name="includeTier">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.OrganizationPGSchemaSlim>> ListOrganizationsAsync(
             bool? skipCreate = default,
+            bool? includeTier = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListOrganizationsArguments(
                 httpClient: HttpClient,
-                skipCreate: ref skipCreate);
+                skipCreate: ref skipCreate,
+                includeTier: ref includeTier);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("skip_create", skipCreate?.ToString()) 
+                .AddOptionalParameter("include_tier", includeTier?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -77,7 +85,8 @@ namespace LangSmith
             PrepareListOrganizationsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                skipCreate: skipCreate);
+                skipCreate: skipCreate,
+                includeTier: includeTier);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

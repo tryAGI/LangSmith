@@ -1129,6 +1129,12 @@ paths:
             title: Skip Create
             type: boolean
             default: false
+        - name: include_tier
+          in: query
+          schema:
+            title: Include Tier
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -19844,10 +19850,6 @@ components:
           title: Can Use Langgraph Cloud
           type: boolean
           default: false
-        can_use_agent_auth:
-          title: Can Use Agent Auth
-          type: boolean
-          default: false
         max_langgraph_cloud_deployments:
           title: Max Langgraph Cloud Deployments
           type: integer
@@ -20137,6 +20139,8 @@ components:
         display_name:
           title: Display Name
           type: string
+        tier:
+          $ref: '#/components/schemas/PaymentPlanTier'
         created_at:
           title: Created At
           type: string
