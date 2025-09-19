@@ -61,6 +61,24 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
+        public string? InputsSchemaDefinition { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
+        public string? OutputsSchemaDefinition { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
+        public string? Transformations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -79,6 +97,9 @@ namespace LangSmith
         /// <param name="outputKeys"></param>
         /// <param name="metadataKeys"></param>
         /// <param name="description"></param>
+        /// <param name="inputsSchemaDefinition"></param>
+        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="transformations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +111,10 @@ namespace LangSmith
             global::LangSmith.DataType? dataType,
             global::System.Collections.Generic.IList<string>? outputKeys,
             global::System.Collections.Generic.IList<string>? metadataKeys,
-            string? description)
+            string? description,
+            string? inputsSchemaDefinition,
+            string? outputsSchemaDefinition,
+            string? transformations)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
@@ -100,6 +124,9 @@ namespace LangSmith
             this.OutputKeys = outputKeys;
             this.MetadataKeys = metadataKeys;
             this.Description = description;
+            this.InputsSchemaDefinition = inputsSchemaDefinition;
+            this.OutputsSchemaDefinition = outputsSchemaDefinition;
+            this.Transformations = transformations;
         }
 
         /// <summary>
