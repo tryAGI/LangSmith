@@ -20,6 +20,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_n_hours")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int LastNHours { get; set; }
@@ -77,6 +83,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SavedRunClusteringJobRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="lastNHours"></param>
         /// <param name="hierarchy"></param>
         /// <param name="partitions"></param>
@@ -95,7 +102,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<double?, int?>? sample,
             string? summaryPrompt,
             string? filter,
-            object? attributeSchemas)
+            object? attributeSchemas,
+            string? description)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.LastNHours = lastNHours;
@@ -105,6 +113,7 @@ namespace LangSmith
             this.SummaryPrompt = summaryPrompt ?? throw new global::System.ArgumentNullException(nameof(summaryPrompt));
             this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
             this.AttributeSchemas = attributeSchemas ?? throw new global::System.ArgumentNullException(nameof(attributeSchemas));
+            this.Description = description;
         }
 
         /// <summary>

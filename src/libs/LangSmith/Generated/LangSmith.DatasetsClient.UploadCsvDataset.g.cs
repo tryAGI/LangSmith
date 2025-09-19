@@ -104,6 +104,24 @@ namespace LangSmith
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Description}"),
                     name: "description");
+            } 
+            if (request.InputsSchemaDefinition != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.InputsSchemaDefinition}"),
+                    name: "inputs_schema_definition");
+            } 
+            if (request.OutputsSchemaDefinition != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.OutputsSchemaDefinition}"),
+                    name: "outputs_schema_definition");
+            } 
+            if (request.Transformations != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Transformations}"),
+                    name: "transformations");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -250,6 +268,9 @@ namespace LangSmith
         /// <param name="outputKeys"></param>
         /// <param name="metadataKeys"></param>
         /// <param name="description"></param>
+        /// <param name="inputsSchemaDefinition"></param>
+        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="transformations"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Dataset> UploadCsvDatasetAsync(
@@ -261,6 +282,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? outputKeys = default,
             global::System.Collections.Generic.IList<string>? metadataKeys = default,
             string? description = default,
+            string? inputsSchemaDefinition = default,
+            string? outputsSchemaDefinition = default,
+            string? transformations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost
@@ -273,6 +297,9 @@ namespace LangSmith
                 OutputKeys = outputKeys,
                 MetadataKeys = metadataKeys,
                 Description = description,
+                InputsSchemaDefinition = inputsSchemaDefinition,
+                OutputsSchemaDefinition = outputsSchemaDefinition,
+                Transformations = transformations,
             };
 
             return await UploadCsvDatasetAsync(

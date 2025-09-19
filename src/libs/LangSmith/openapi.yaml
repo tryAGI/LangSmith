@@ -15018,6 +15018,18 @@ components:
           title: Description
           type: string
           nullable: true
+        inputs_schema_definition:
+          title: Inputs Schema Definition
+          type: string
+          nullable: true
+        outputs_schema_definition:
+          title: Outputs Schema Definition
+          type: string
+          nullable: true
+        transformations:
+          title: Transformations
+          type: string
+          nullable: true
     Body_upload_examples_from_csv_api_v1_examples_upload__dataset_id__post:
       title: Body_upload_examples_from_csv_api_v1_examples_upload__dataset_id__post
       required:
@@ -24236,6 +24248,9 @@ components:
       properties:
         name:
           title: Name
+          type: string
+        description:
+          title: Description
           type: string
         last_n_hours:
           title: Last N Hours
