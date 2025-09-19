@@ -153,6 +153,30 @@ namespace LangSmith
         public string? CostP99 { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_token_details")]
+        public object? PromptTokenDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_token_details")]
+        public object? CompletionTokenDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost_details")]
+        public object? PromptCostDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost_details")]
+        public object? CompletionCostDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -185,6 +209,10 @@ namespace LangSmith
         /// <param name="completionCost"></param>
         /// <param name="costP50"></param>
         /// <param name="costP99"></param>
+        /// <param name="promptTokenDetails"></param>
+        /// <param name="completionTokenDetails"></param>
+        /// <param name="promptCostDetails"></param>
+        /// <param name="completionCostDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -212,7 +240,11 @@ namespace LangSmith
             string? promptCost,
             string? completionCost,
             string? costP50,
-            string? costP99)
+            string? costP99,
+            object? promptTokenDetails,
+            object? completionTokenDetails,
+            object? promptCostDetails,
+            object? completionCostDetails)
         {
             this.RunCount = runCount;
             this.LatencyP50 = latencyP50;
@@ -238,6 +270,10 @@ namespace LangSmith
             this.CompletionCost = completionCost;
             this.CostP50 = costP50;
             this.CostP99 = costP99;
+            this.PromptTokenDetails = promptTokenDetails;
+            this.CompletionTokenDetails = completionTokenDetails;
+            this.PromptCostDetails = promptCostDetails;
+            this.CompletionCostDetails = completionCostDetails;
         }
 
         /// <summary>
