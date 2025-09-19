@@ -19954,6 +19954,10 @@ components:
           title: Enable Run Tree Streaming
           type: boolean
           default: false
+        enable_threads_improvements:
+          title: Enable Threads Improvements
+          type: boolean
+          default: false
         max_prompt_webhooks:
           title: Max Prompt Webhooks
           type: integer
@@ -22129,6 +22133,22 @@ components:
           title: Cost P99
           type: string
           nullable: true
+        prompt_token_details:
+          title: Prompt Token Details
+          type: object
+          nullable: true
+        completion_token_details:
+          title: Completion Token Details
+          type: object
+          nullable: true
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          nullable: true
         group_count:
           title: Group Count
           type: integer
@@ -23752,6 +23772,22 @@ components:
           title: Cost P99
           type: string
           nullable: true
+        prompt_token_details:
+          title: Prompt Token Details
+          type: object
+          nullable: true
+        completion_token_details:
+          title: Completion Token Details
+          type: object
+          nullable: true
+        prompt_cost_details:
+          title: Prompt Cost Details
+          type: object
+          nullable: true
+        completion_cost_details:
+          title: Completion Cost Details
+          type: object
+          nullable: true
     RunStatsGroupBy:
       title: RunStatsGroupBy
       required:
@@ -23943,6 +23979,10 @@ components:
         - session_feedback_stats
         - all_run_stats
         - all_token_stats
+        - prompt_token_details
+        - completion_token_details
+        - prompt_cost_details
+        - completion_cost_details
       type: string
       description: Metrics you can select from run stats endpoint.
     RunTypeEnum:

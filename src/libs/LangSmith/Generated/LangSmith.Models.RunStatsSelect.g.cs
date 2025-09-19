@@ -120,6 +120,22 @@ namespace LangSmith
         /// 
         /// </summary>
         AllTokenStats,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokenDetails,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionTokenDetails,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptCostDetails,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionCostDetails,
     }
 
     /// <summary>
@@ -162,6 +178,10 @@ namespace LangSmith
                 RunStatsSelect.SessionFeedbackStats => "session_feedback_stats",
                 RunStatsSelect.AllRunStats => "all_run_stats",
                 RunStatsSelect.AllTokenStats => "all_token_stats",
+                RunStatsSelect.PromptTokenDetails => "prompt_token_details",
+                RunStatsSelect.CompletionTokenDetails => "completion_token_details",
+                RunStatsSelect.PromptCostDetails => "prompt_cost_details",
+                RunStatsSelect.CompletionCostDetails => "completion_cost_details",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -200,6 +220,10 @@ namespace LangSmith
                 "session_feedback_stats" => RunStatsSelect.SessionFeedbackStats,
                 "all_run_stats" => RunStatsSelect.AllRunStats,
                 "all_token_stats" => RunStatsSelect.AllTokenStats,
+                "prompt_token_details" => RunStatsSelect.PromptTokenDetails,
+                "completion_token_details" => RunStatsSelect.CompletionTokenDetails,
+                "prompt_cost_details" => RunStatsSelect.PromptCostDetails,
+                "completion_cost_details" => RunStatsSelect.CompletionCostDetails,
                 _ => null,
             };
         }

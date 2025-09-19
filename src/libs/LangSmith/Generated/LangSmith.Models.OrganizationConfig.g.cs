@@ -225,6 +225,12 @@ namespace LangSmith
         public bool? EnableRunTreeStreaming { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_threads_improvements")]
+        public bool? EnableThreadsImprovements { get; set; }
+
+        /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_webhooks")]
@@ -395,6 +401,9 @@ namespace LangSmith
         /// <param name="enableRunTreeStreaming">
         /// Default Value: false
         /// </param>
+        /// <param name="enableThreadsImprovements">
+        /// Default Value: false
+        /// </param>
         /// <param name="maxPromptWebhooks">
         /// Default Value: 1
         /// </param>
@@ -465,6 +474,7 @@ namespace LangSmith
             bool? langsmithExperimentalSearchEnabled,
             bool? enableAlignEvaluators,
             bool? enableRunTreeStreaming,
+            bool? enableThreadsImprovements,
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
             bool? enableMonthlyUsageCharts,
@@ -512,6 +522,7 @@ namespace LangSmith
             this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.EnableRunTreeStreaming = enableRunTreeStreaming;
+            this.EnableThreadsImprovements = enableThreadsImprovements;
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
