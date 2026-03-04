@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareReadExampleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid exampleId,
-            ref global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf);
+            ref global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
+            ref global::System.Guid? dataset);
         partial void PrepareReadExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid exampleId,
-            global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf);
+            global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.Guid? dataset);
         partial void ProcessReadExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,11 +34,13 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.<br/>
         /// Default Value: latest
         /// </param>
+        /// <param name="dataset"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Example> ReadExampleAsync(
             global::System.Guid exampleId,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::System.Guid? dataset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -44,13 +48,15 @@ namespace LangSmith
             PrepareReadExampleArguments(
                 httpClient: HttpClient,
                 exampleId: ref exampleId,
-                asOf: ref asOf);
+                asOf: ref asOf,
+                dataset: ref dataset);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/examples/{exampleId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
+            __pathBuilder
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("dataset", dataset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -84,7 +90,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 exampleId: exampleId,
-                asOf: asOf);
+                asOf: asOf,
+                dataset: dataset);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

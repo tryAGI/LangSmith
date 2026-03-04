@@ -28,6 +28,10 @@ namespace LangSmith
         /// 
         /// </summary>
         SessionCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModifiedAt,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace LangSmith
                 SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
                 SortByDatasetColumn.ExampleCount => "example_count",
                 SortByDatasetColumn.SessionCount => "session_count",
+                SortByDatasetColumn.ModifiedAt => "modified_at",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace LangSmith
                 "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
                 "example_count" => SortByDatasetColumn.ExampleCount,
                 "session_count" => SortByDatasetColumn.SessionCount,
+                "modified_at" => SortByDatasetColumn.ModifiedAt,
                 _ => null,
             };
         }

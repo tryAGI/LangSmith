@@ -49,8 +49,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid ReferenceDatasetId { get; set; }
+        public global::System.Guid? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 
@@ -80,21 +79,21 @@ namespace LangSmith
 #endif
         public ComparativeExperimentCreate(
             global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
-            global::System.Guid referenceDatasetId,
             global::System.Guid? id,
             string? name,
             string? description,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
+            global::System.Guid? referenceDatasetId,
             object? extra)
         {
             this.ExperimentIds = experimentIds ?? throw new global::System.ArgumentNullException(nameof(experimentIds));
-            this.ReferenceDatasetId = referenceDatasetId;
             this.Id = id;
             this.Name = name;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
+            this.ReferenceDatasetId = referenceDatasetId;
             this.Extra = extra;
         }
 

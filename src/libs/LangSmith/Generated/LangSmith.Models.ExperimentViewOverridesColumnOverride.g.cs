@@ -30,6 +30,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_colors")]
+        public bool? DisableColors { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hide")]
         public bool? Hide { get; set; }
 
@@ -51,6 +57,7 @@ namespace LangSmith
         /// <param name="colorGradient"></param>
         /// <param name="colorMap"></param>
         /// <param name="column"></param>
+        /// <param name="disableColors"></param>
         /// <param name="hide"></param>
         /// <param name="precision"></param>
 #if NET7_0_OR_GREATER
@@ -60,12 +67,14 @@ namespace LangSmith
             string column,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>? colorGradient,
             object? colorMap,
+            bool? disableColors,
             bool? hide,
             int? precision)
         {
             this.Column = column ?? throw new global::System.ArgumentNullException(nameof(column));
             this.ColorGradient = colorGradient;
             this.ColorMap = colorMap;
+            this.DisableColors = disableColors;
             this.Hide = hide;
             this.Precision = precision;
         }

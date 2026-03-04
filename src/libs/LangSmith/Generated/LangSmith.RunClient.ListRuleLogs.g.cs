@@ -11,7 +11,8 @@ namespace LangSmith
             ref int? limit,
             ref int? offset,
             ref global::System.DateTime? startTime,
-            ref global::System.DateTime? endTime);
+            ref global::System.DateTime? endTime,
+            ref global::System.Guid? sessionId);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +20,8 @@ namespace LangSmith
             int? limit,
             int? offset,
             global::System.DateTime? startTime,
-            global::System.DateTime? endTime);
+            global::System.DateTime? endTime,
+            global::System.Guid? sessionId);
         partial void ProcessListRuleLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,13 +37,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="ruleId"></param>
         /// <param name="limit">
-        /// Default Value: 720
+        /// Default Value: 150
         /// </param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="sessionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>> ListRuleLogsAsync(
@@ -50,6 +53,7 @@ namespace LangSmith
             int? offset = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
+            global::System.Guid? sessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -60,16 +64,18 @@ namespace LangSmith
                 limit: ref limit,
                 offset: ref offset,
                 startTime: ref startTime,
-                endTime: ref endTime);
+                endTime: ref endTime,
+                sessionId: ref sessionId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/logs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("session_id", sessionId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -106,7 +112,8 @@ namespace LangSmith
                 limit: limit,
                 offset: offset,
                 startTime: startTime,
-                endTime: endTime);
+                endTime: endTime,
+                sessionId: sessionId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -50,8 +50,8 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/shared",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

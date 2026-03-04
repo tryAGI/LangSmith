@@ -34,6 +34,12 @@ namespace LangSmith
         public global::System.Collections.Generic.Dictionary<string, string>? ScoreDescriptions { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_required")]
+        public bool? IsRequired { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +52,7 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="valueDescriptions"></param>
         /// <param name="scoreDescriptions"></param>
+        /// <param name="isRequired"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,12 +60,14 @@ namespace LangSmith
             string feedbackKey,
             string? description,
             global::System.Collections.Generic.Dictionary<string, string>? valueDescriptions,
-            global::System.Collections.Generic.Dictionary<string, string>? scoreDescriptions)
+            global::System.Collections.Generic.Dictionary<string, string>? scoreDescriptions,
+            bool? isRequired)
         {
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.Description = description;
             this.ValueDescriptions = valueDescriptions;
             this.ScoreDescriptions = scoreDescriptions;
+            this.IsRequired = isRequired;
         }
 
         /// <summary>

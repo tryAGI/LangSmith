@@ -36,6 +36,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Feedback,
+        /// <summary>
+        /// 
+        /// </summary>
+        RunsCount,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace LangSmith
                 SessionSortableColumns.LatencyP99 => "latency_p99",
                 SessionSortableColumns.ErrorRate => "error_rate",
                 SessionSortableColumns.Feedback => "feedback",
+                SessionSortableColumns.RunsCount => "runs_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace LangSmith
                 "latency_p99" => SessionSortableColumns.LatencyP99,
                 "error_rate" => SessionSortableColumns.ErrorRate,
                 "feedback" => SessionSortableColumns.Feedback,
+                "runs_count" => SessionSortableColumns.RunsCount,
                 _ => null,
             };
         }

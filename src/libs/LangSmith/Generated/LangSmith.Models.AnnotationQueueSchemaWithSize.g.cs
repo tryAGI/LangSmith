@@ -11,13 +11,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -32,12 +25,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset")]
-        public global::System.Guid? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -56,6 +43,13 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reservation_minutes")]
         public int? ReservationMinutes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -86,6 +80,26 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset")]
+        public global::System.Guid? DefaultDataset { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("queue_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.AnnotationQueueSchemaWithSizeQueueType QueueType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalRuns { get; set; }
@@ -99,11 +113,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="AnnotationQueueSchemaWithSize" /> class.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="defaultDataset"></param>
         /// <param name="numReviewersPerItem">
         /// Default Value: 1
         /// </param>
@@ -113,10 +125,14 @@ namespace LangSmith
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
+        /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="sourceRuleId"></param>
         /// <param name="runRuleId"></param>
+        /// <param name="defaultDataset"></param>
+        /// <param name="queueType"></param>
+        /// <param name="metadata"></param>
         /// <param name="totalRuns"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -125,30 +141,34 @@ namespace LangSmith
             string name,
             global::System.Guid id,
             global::System.Guid tenantId,
+            global::LangSmith.AnnotationQueueSchemaWithSizeQueueType queueType,
             int totalRuns,
             string? description,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
-            global::System.Guid? defaultDataset,
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
             global::System.Guid? sourceRuleId,
-            global::System.Guid? runRuleId)
+            global::System.Guid? runRuleId,
+            global::System.Guid? defaultDataset,
+            object? metadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
             this.TenantId = tenantId;
+            this.QueueType = queueType;
             this.TotalRuns = totalRuns;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.DefaultDataset = defaultDataset;
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
             this.SourceRuleId = sourceRuleId;
             this.RunRuleId = runRuleId;
+            this.DefaultDataset = defaultDataset;
+            this.Metadata = metadata;
         }
 
         /// <summary>

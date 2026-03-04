@@ -32,10 +32,13 @@ namespace LangSmith
         /// <param name="preview">
         /// Default Value: false
         /// </param>
-        /// <param name="format"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="sortParams"></param>
         /// <param name="filters"></param>
+        /// <param name="stream">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exampleIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadSharedDatasetExamplesWithRunsAsync(
@@ -44,10 +47,11 @@ namespace LangSmith
             int? offset = default,
             int? limit = default,
             bool? preview = default,
-            global::LangSmith.QueryExampleSchemaWithRunsFormat? format = default,
             global::System.Guid? comparativeExperimentId = default,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
+            bool? stream = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

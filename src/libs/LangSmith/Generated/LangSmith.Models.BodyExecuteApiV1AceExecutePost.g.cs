@@ -23,6 +23,13 @@ namespace LangSmith
         public required string Code { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Language { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,15 +40,18 @@ namespace LangSmith
         /// </summary>
         /// <param name="args"></param>
         /// <param name="code"></param>
+        /// <param name="language"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyExecuteApiV1AceExecutePost(
             global::System.Collections.Generic.IList<object> args,
-            string code)
+            string code,
+            string language)
         {
             this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
         }
 
         /// <summary>

@@ -8,12 +8,12 @@ namespace LangSmith
         partial void PrepareAddRunsToAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid queueId,
-            global::System.Collections.Generic.IList<global::System.Guid> request);
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request);
         partial void PrepareAddRunsToAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid queueId,
-            global::System.Collections.Generic.IList<global::System.Guid> request);
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request);
         partial void ProcessAddRunsToAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,11 +32,9 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunSchema>> AddRunsToAnnotationQueueAsync(
             global::System.Guid queueId,
-            global::System.Collections.Generic.IList<global::System.Guid> request,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareAddRunsToAnnotationQueueArguments(
@@ -71,7 +69,7 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -206,6 +204,26 @@ namespace LangSmith
                     };
                 }
             }
+        }
+
+        /// <summary>
+        /// Add Runs To Annotation Queue
+        /// </summary>
+        /// <param name="queueId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunSchema>> AddRunsToAnnotationQueueAsync(
+            global::System.Guid queueId,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>>
+            {
+            };
+
+            return await AddRunsToAnnotationQueueAsync(
+                queueId: queueId,
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

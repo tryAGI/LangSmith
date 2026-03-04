@@ -37,6 +37,16 @@ namespace LangSmith
         public required string? LatestCursor { get; set; }
 
         /// <summary>
+        /// Tracks a file upload that is in progress or needs to be verified.<br/>
+        /// This allows us to handle cases where:<br/>
+        /// 1. File upload succeeds but progress update fails<br/>
+        /// 2. Job crashes during upload<br/>
+        /// 3. Need to verify uploaded files before advancing cursor
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pending_upload")]
+        public global::LangSmith.PendingUpload? PendingUpload { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +59,13 @@ namespace LangSmith
         /// <param name="exportedFiles"></param>
         /// <param name="exportPath"></param>
         /// <param name="latestCursor"></param>
+        /// <param name="pendingUpload">
+        /// Tracks a file upload that is in progress or needs to be verified.<br/>
+        /// This allows us to handle cases where:<br/>
+        /// 1. File upload succeeds but progress update fails<br/>
+        /// 2. Job crashes during upload<br/>
+        /// 3. Need to verify uploaded files before advancing cursor
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,12 +73,14 @@ namespace LangSmith
             int rowsWritten,
             global::System.Collections.Generic.IList<string> exportedFiles,
             string exportPath,
-            string? latestCursor)
+            string? latestCursor,
+            global::LangSmith.PendingUpload? pendingUpload)
         {
             this.RowsWritten = rowsWritten;
             this.ExportedFiles = exportedFiles ?? throw new global::System.ArgumentNullException(nameof(exportedFiles));
             this.ExportPath = exportPath ?? throw new global::System.ArgumentNullException(nameof(exportPath));
             this.LatestCursor = latestCursor ?? throw new global::System.ArgumentNullException(nameof(latestCursor));
+            this.PendingUpload = pendingUpload;
         }
 
         /// <summary>

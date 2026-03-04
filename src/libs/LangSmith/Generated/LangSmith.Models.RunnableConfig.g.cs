@@ -6,7 +6,21 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Configuration for a Runnable.
+    /// Configuration for a `Runnable`.<br/>
+    /// !!! note Custom values<br/>
+    ///     The `TypedDict` has `total=False` set intentionally to:<br/>
+    ///     - Allow partial configs to be created and merged together via `merge_configs`<br/>
+    ///     - Support config propagation from parent to child runnables via<br/>
+    ///         `var_child_runnable_config` (a `ContextVar` that automatically passes<br/>
+    ///         config down the call stack without explicit parameter passing), where<br/>
+    ///         configs are merged rather than replaced<br/>
+    ///     !!! example<br/>
+    ///         ```python<br/>
+    ///         # Parent sets tags<br/>
+    ///         chain.invoke(input, config={"tags": ["parent"]})<br/>
+    ///         # Child automatically inherits and can add:<br/>
+    ///         # ensure_config({"tags": ["child"]}) -&gt; {"tags": ["parent", "child"]}<br/>
+    ///         ```
     /// </summary>
     public sealed partial class RunnableConfig
     {

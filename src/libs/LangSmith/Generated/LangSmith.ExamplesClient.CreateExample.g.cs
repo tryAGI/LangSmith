@@ -6,10 +6,12 @@ namespace LangSmith
     public partial class ExamplesClient
     {
         partial void PrepareCreateExampleArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            global::LangSmith.CreateExampleApiV1ExamplesPostRequest request);
         partial void PrepareCreateExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.CreateExampleApiV1ExamplesPostRequest request);
         partial void ProcessCreateExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,15 +25,20 @@ namespace LangSmith
         /// Create Example<br/>
         /// Create a new example.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Example> CreateExampleAsync(
+            global::LangSmith.CreateExampleApiV1ExamplesPostRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateExampleArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/examples",
@@ -60,13 +67,20 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
             PrepareCreateExampleRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -150,6 +164,64 @@ namespace LangSmith
                     };
                 }
             }
+        }
+
+        /// <summary>
+        /// Create Example<br/>
+        /// Create a new example.
+        /// </summary>
+        /// <param name="outputs"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="sourceRunId"></param>
+        /// <param name="metadata"></param>
+        /// <param name="inputs"></param>
+        /// <param name="split">
+        /// Default Value: base
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="useSourceRunIo">
+        /// Default Value: false
+        /// </param>
+        /// <param name="useSourceRunAttachments"></param>
+        /// <param name="useLegacyMessageFormat">
+        /// Use Legacy Message Format for LLM runs<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.Example> CreateExampleAsync(
+            global::System.Guid datasetId,
+            object? outputs = default,
+            global::System.Guid? sourceRunId = default,
+            object? metadata = default,
+            object? inputs = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
+            global::System.Guid? id = default,
+            bool? useSourceRunIo = default,
+            global::System.Collections.Generic.IList<string>? useSourceRunAttachments = default,
+            bool? useLegacyMessageFormat = default,
+            string? createdAt = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.CreateExampleApiV1ExamplesPostRequest
+            {
+                Outputs = outputs,
+                DatasetId = datasetId,
+                SourceRunId = sourceRunId,
+                Metadata = metadata,
+                Inputs = inputs,
+                Split = split,
+                Id = id,
+                UseSourceRunIo = useSourceRunIo,
+                UseSourceRunAttachments = useSourceRunAttachments,
+                UseLegacyMessageFormat = useLegacyMessageFormat,
+                CreatedAt = createdAt,
+            };
+
+            return await CreateExampleAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -24,6 +24,9 @@ namespace LangSmith
         /// <param name="readme"></param>
         /// <param name="isPublic"></param>
         /// <param name="tags"></param>
+        /// <param name="repoType">
+        /// Default Value: prompt
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> CreateRepoAsync(
@@ -32,6 +35,7 @@ namespace LangSmith
             string? description = default,
             string? readme = default,
             global::System.Collections.Generic.IList<string>? tags = default,
+            global::LangSmith.CreateRepoRequestRepoType? repoType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

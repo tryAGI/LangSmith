@@ -45,6 +45,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AuditLogsClient AuditLogs { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TracerSessionsClient TracerSessions { get; }
 
         /// <summary>
@@ -76,6 +81,11 @@ namespace LangSmith
         /// 
         /// </summary>
         public RunClient Run { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ExperimentsClient Experiments { get; }
 
         /// <summary>
         /// 
@@ -120,6 +130,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public MetricsClient Metrics { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ModelPriceMapClient ModelPriceMap { get; }
 
         /// <summary>
@@ -155,12 +170,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public MeClient Me { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ServiceAccountsClient ServiceAccounts { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public ChartsClient Charts { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public McpClient Mcp { get; }
 
         /// <summary>
         /// 
@@ -175,17 +200,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public SettingsClient Settings { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EventsClient Events { get; }
 
         /// <summary>
         /// 
@@ -205,6 +220,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public CommitsClient Commits { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ExperimentViewOverridesClient ExperimentViewOverrides { get; }
 
         /// <summary>
@@ -216,6 +236,21 @@ namespace LangSmith
         /// 
         /// </summary>
         public AlertRulesClient AlertRules { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AccessPoliciesClient AccessPolicies { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SCIMTokensClient SCIMTokens { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ThreadsClient Threads { get; }
 
     }
 }

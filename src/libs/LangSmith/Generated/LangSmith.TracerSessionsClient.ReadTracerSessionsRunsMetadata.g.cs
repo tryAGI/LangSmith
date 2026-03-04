@@ -65,10 +65,10 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/metadata",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("metadata_keys", metadataKeys, delimiter: ",", explode: true) 
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("k", k?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("metadata_keys", metadataKeys, delimiter: ",", explode: true)
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("k", k?.ToString())
                 .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

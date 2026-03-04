@@ -16,10 +16,11 @@ namespace LangSmith
             ref bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
             ref global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived,
-            ref global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic,
+            ref global::LangSmith.TrueFalseLiteral? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            ref global::LangSmith.ListReposApiV1ReposGetRepoType? repoType,
             ref global::LangSmith.ListReposApiV1ReposGetSortField? sortField,
             ref global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
         partial void PrepareListReposRequest(
@@ -34,10 +35,11 @@ namespace LangSmith
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
             global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived,
-            global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic,
+            global::LangSmith.TrueFalseLiteral? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            global::LangSmith.ListReposApiV1ReposGetRepoType? repoType,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
         partial void ProcessListReposResponse(
@@ -72,6 +74,7 @@ namespace LangSmith
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="repoType"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -86,10 +89,11 @@ namespace LangSmith
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived = default,
-            global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic = default,
+            global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::LangSmith.ListReposApiV1ReposGetRepoType? repoType = default,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -111,27 +115,29 @@ namespace LangSmith
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 tagValueId: tagValueId,
+                repoType: ref repoType,
                 sortField: ref sortField,
                 sortDirection: ref sortDirection);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/repos",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("tenant_handle", tenantHandle) 
-                .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
-                .AddOptionalParameter("query", query) 
-                .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
-                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true) 
-                .AddOptionalParameter("is_archived", isArchived?.ToValueString()) 
-                .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
-                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
-                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("sort_field", sortField?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("tenant_handle", tenantHandle)
+                .AddOptionalParameter("tenant_id", tenantId?.ToString())
+                .AddOptionalParameter("query", query)
+                .AddOptionalParameter("has_commits", hasCommits?.ToString())
+                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
+                .AddOptionalParameter("is_archived", isArchived?.ToValueString())
+                .AddOptionalParameter("is_public", isPublic?.ToValueString())
+                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
+                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("repo_type", repoType?.ToValueString())
+                .AddOptionalParameter("sort_field", sortField?.ToValueString())
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -178,6 +184,7 @@ namespace LangSmith
                 upstreamRepoOwner: upstreamRepoOwner,
                 upstreamRepoHandle: upstreamRepoHandle,
                 tagValueId: tagValueId,
+                repoType: repoType,
                 sortField: sortField,
                 sortDirection: sortDirection);
 

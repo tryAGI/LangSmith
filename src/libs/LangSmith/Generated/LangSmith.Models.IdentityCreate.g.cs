@@ -31,6 +31,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -50,7 +51,6 @@ namespace LangSmith
         /// </summary>
         /// <param name="orgIdentityId"></param>
         /// <param name="lsUserId"></param>
-        /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,12 +58,10 @@ namespace LangSmith
         public IdentityCreate(
             global::System.Guid? orgIdentityId,
             global::System.Guid? lsUserId,
-            bool? readOnly,
             global::System.Guid? roleId)
         {
             this.OrgIdentityId = orgIdentityId;
             this.LsUserId = lsUserId;
-            this.ReadOnly = readOnly;
             this.RoleId = roleId;
         }
 

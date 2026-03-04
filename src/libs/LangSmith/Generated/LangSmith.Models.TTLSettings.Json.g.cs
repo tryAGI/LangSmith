@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class TTLSettings
+    public sealed partial class TtlSettings
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.TTLSettings? FromJson(
+        public static global::LangSmith.TtlSettings? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.TTLSettings),
-                jsonSerializerContext) as global::LangSmith.TTLSettings;
+                typeof(global::LangSmith.TtlSettings),
+                jsonSerializerContext) as global::LangSmith.TtlSettings;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.TTLSettings? FromJson(
+        public static global::LangSmith.TtlSettings? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TTLSettings>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TtlSettings>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.TTLSettings?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.TtlSettings?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.TTLSettings),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.TTLSettings;
+                typeof(global::LangSmith.TtlSettings),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.TtlSettings;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.TTLSettings?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.TtlSettings?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.TTLSettings?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.TtlSettings?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

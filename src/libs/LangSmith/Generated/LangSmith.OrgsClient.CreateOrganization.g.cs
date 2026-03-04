@@ -207,17 +207,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="securityContact"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.OrganizationPGSchemaSlim> CreateOrganizationAsync(
             string displayName,
             bool isPersonal,
+            string? securityContact = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.OrganizationCreate
             {
                 DisplayName = displayName,
                 IsPersonal = isPersonal,
+                SecurityContact = securityContact,
             };
 
             return await CreateOrganizationAsync(

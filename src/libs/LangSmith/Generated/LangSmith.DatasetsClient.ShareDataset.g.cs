@@ -48,7 +48,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/share",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("share_projects", shareProjects?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

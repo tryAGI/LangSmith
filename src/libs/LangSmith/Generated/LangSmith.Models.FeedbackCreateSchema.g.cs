@@ -89,6 +89,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
@@ -96,8 +102,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>))]
-        public global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? FeedbackSource { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackSource2JsonConverter))]
+        public global::LangSmith.FeedbackSource2? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
@@ -132,6 +138,7 @@ namespace LangSmith
         /// <param name="runId"></param>
         /// <param name="sessionId"></param>
         /// <param name="traceId"></param>
+        /// <param name="startTime"></param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
@@ -152,8 +159,9 @@ namespace LangSmith
             global::System.Guid? runId,
             global::System.Guid? sessionId,
             global::System.Guid? traceId,
+            global::System.DateTime? startTime,
             global::System.Guid? id,
-            global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? feedbackSource,
+            global::LangSmith.FeedbackSource2? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
             bool? error)
         {
@@ -169,6 +177,7 @@ namespace LangSmith
             this.RunId = runId;
             this.SessionId = sessionId;
             this.TraceId = traceId;
+            this.StartTime = startTime;
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;

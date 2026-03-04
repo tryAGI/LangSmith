@@ -40,7 +40,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/stats",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

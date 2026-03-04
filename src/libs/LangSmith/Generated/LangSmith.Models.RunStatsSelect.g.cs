@@ -79,6 +79,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ThreadFeedbackStats,
+        /// <summary>
+        /// 
+        /// </summary>
         RunFacets,
         /// <summary>
         /// 
@@ -167,6 +171,7 @@ namespace LangSmith
                 RunStatsSelect.PromptTokensP99 => "prompt_tokens_p99",
                 RunStatsSelect.LastRunStartTime => "last_run_start_time",
                 RunStatsSelect.FeedbackStats => "feedback_stats",
+                RunStatsSelect.ThreadFeedbackStats => "thread_feedback_stats",
                 RunStatsSelect.RunFacets => "run_facets",
                 RunStatsSelect.ErrorRate => "error_rate",
                 RunStatsSelect.StreamingRate => "streaming_rate",
@@ -209,6 +214,7 @@ namespace LangSmith
                 "prompt_tokens_p99" => RunStatsSelect.PromptTokensP99,
                 "last_run_start_time" => RunStatsSelect.LastRunStartTime,
                 "feedback_stats" => RunStatsSelect.FeedbackStats,
+                "thread_feedback_stats" => RunStatsSelect.ThreadFeedbackStats,
                 "run_facets" => RunStatsSelect.RunFacets,
                 "error_rate" => RunStatsSelect.ErrorRate,
                 "streaming_rate" => RunStatsSelect.StreamingRate,

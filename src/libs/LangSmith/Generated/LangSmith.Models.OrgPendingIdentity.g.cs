@@ -19,6 +19,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -124,9 +125,6 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OrgPendingIdentity" /> class.
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="roleId"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="workspaceRoleId"></param>
@@ -149,7 +147,6 @@ namespace LangSmith
             string email,
             global::System.Guid id,
             global::System.DateTime createdAt,
-            bool? readOnly,
             global::System.Guid? roleId,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds,
             global::System.Guid? workspaceRoleId,
@@ -167,7 +164,6 @@ namespace LangSmith
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Id = id;
             this.CreatedAt = createdAt;
-            this.ReadOnly = readOnly;
             this.RoleId = roleId;
             this.WorkspaceIds = workspaceIds;
             this.WorkspaceRoleId = workspaceRoleId;

@@ -26,6 +26,12 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="settings"></param>
         /// <param name="options"></param>
+        /// <param name="availableInPlayground"></param>
+        /// <param name="availableInEvaluators"></param>
+        /// <param name="availableInAgentBuilder"></param>
+        /// <param name="availableInPolly"></param>
+        /// <param name="availableInInsightsHeavy"></param>
+        /// <param name="availableInInsightsLight"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
@@ -34,6 +40,12 @@ namespace LangSmith
             string? description = default,
             object? settings = default,
             global::LangSmith.PlaygroundSavedOptions? options = default,
+            bool? availableInPlayground = default,
+            bool? availableInEvaluators = default,
+            bool? availableInAgentBuilder = default,
+            bool? availableInPolly = default,
+            bool? availableInInsightsHeavy = default,
+            bool? availableInInsightsLight = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

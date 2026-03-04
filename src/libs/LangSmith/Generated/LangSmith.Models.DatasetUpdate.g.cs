@@ -11,28 +11,28 @@ namespace LangSmith
     public sealed partial class DatasetUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
@@ -45,18 +45,25 @@ namespace LangSmith
         public global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? PatchExamples { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? Transformations { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? Metadata { get; set; }
+
+        /// <summary>
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("baseline_experiment_id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? BaselineExperimentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,13 +74,28 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetUpdate" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="inputsSchemaDefinition"></param>
-        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="name">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="inputsSchemaDefinition">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="outputsSchemaDefinition">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="patchExamples"></param>
-        /// <param name="transformations"></param>
-        /// <param name="metadata"></param>
+        /// <param name="transformations">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="metadata">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="baselineExperimentId">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,7 +106,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? outputsSchemaDefinition,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata)
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata,
+            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? baselineExperimentId)
         {
             this.Name = name;
             this.Description = description;
@@ -93,6 +116,7 @@ namespace LangSmith
             this.PatchExamples = patchExamples;
             this.Transformations = transformations;
             this.Metadata = metadata;
+            this.BaselineExperimentId = baselineExperimentId;
         }
 
         /// <summary>

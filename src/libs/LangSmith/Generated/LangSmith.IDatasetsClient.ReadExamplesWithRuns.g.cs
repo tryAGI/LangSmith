@@ -17,8 +17,8 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
-            global::LangSmith.QueryExampleSchemaWithRuns request,
-            string? format = default,
+            global::LangSmith.QueryExampleSchemaWithRunsRequest request,
+            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -33,29 +33,31 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
-        /// <param name="limit">
-        /// Default Value: 10
-        /// </param>
+        /// <param name="limit"></param>
         /// <param name="preview">
         /// Default Value: false
         /// </param>
-        /// <param name="requestFormat"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="sortParams"></param>
         /// <param name="filters"></param>
+        /// <param name="stream">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exampleIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            string? format = default,
+            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
             int? offset = default,
             int? limit = default,
             bool? preview = default,
-            global::LangSmith.QueryExampleSchemaWithRunsFormat? requestFormat = default,
             global::System.Guid? comparativeExperimentId = default,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
+            bool? stream = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

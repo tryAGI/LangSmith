@@ -41,6 +41,13 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
+        /// Default Value: prompt
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repo_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeJsonConverter))]
+        public global::LangSmith.CreateRepoRequestRepoType? RepoType { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +61,9 @@ namespace LangSmith
         /// <param name="readme"></param>
         /// <param name="isPublic"></param>
         /// <param name="tags"></param>
+        /// <param name="repoType">
+        /// Default Value: prompt
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,13 +72,15 @@ namespace LangSmith
             bool isPublic,
             string? description,
             string? readme,
-            global::System.Collections.Generic.IList<string>? tags)
+            global::System.Collections.Generic.IList<string>? tags,
+            global::LangSmith.CreateRepoRequestRepoType? repoType)
         {
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
             this.IsPublic = isPublic;
             this.Description = description;
             this.Readme = readme;
             this.Tags = tags;
+            this.RepoType = repoType;
         }
 
         /// <summary>

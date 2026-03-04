@@ -4,16 +4,17 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Represents a request to call a tool.<br/>
+    /// Represents an AI's request to call a tool.<br/>
     /// Example:<br/>
-    ///     .. code-block:: python<br/>
-    ///         {<br/>
-    ///             "name": "foo",<br/>
-    ///             "args": {"a": 1},<br/>
-    ///             "id": "123"<br/>
-    ///         }<br/>
-    ///     This represents a request to call the tool named "foo" with arguments {"a": 1}<br/>
-    ///     and an identifier of "123".
+    ///     ```python<br/>
+    ///     {"name": "foo", "args": {"a": 1}, "id": "123"}<br/>
+    ///     ```<br/>
+    ///     This represents a request to call the tool named `'foo'` with arguments<br/>
+    ///     `{"a": 1}` and an identifier of `'123'`.<br/>
+    /// !!! note "Factory function"<br/>
+    ///     `tool_call` may also be used as a factory to create a `ToolCall`. Benefits<br/>
+    ///     include:<br/>
+    ///     * Required arguments strictly validated at creation time
     /// </summary>
     public sealed partial class ToolCall
     {

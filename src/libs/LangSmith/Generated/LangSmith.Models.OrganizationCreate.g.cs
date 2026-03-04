@@ -23,6 +23,12 @@ namespace LangSmith
         public required bool IsPersonal { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
+        public string? SecurityContact { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,15 +39,18 @@ namespace LangSmith
         /// </summary>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="securityContact"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationCreate(
             string displayName,
-            bool isPersonal)
+            bool isPersonal,
+            string? securityContact)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
+            this.SecurityContact = securityContact;
         }
 
         /// <summary>

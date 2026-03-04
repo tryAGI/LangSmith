@@ -50,12 +50,6 @@ namespace LangSmith
         public string? Id { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("example")]
-        public bool? Example { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,9 +66,6 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="id"></param>
-        /// <param name="example">
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,8 +75,7 @@ namespace LangSmith
             object? responseMetadata,
             global::LangSmith.HumanMessageChunkType? type,
             string? name,
-            string? id,
-            bool? example)
+            string? id)
         {
             this.Content = content;
             this.AdditionalKwargs = additionalKwargs;
@@ -93,7 +83,6 @@ namespace LangSmith
             this.Type = type;
             this.Name = name;
             this.Id = id;
-            this.Example = example;
         }
 
         /// <summary>

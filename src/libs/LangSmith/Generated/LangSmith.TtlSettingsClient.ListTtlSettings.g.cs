@@ -21,11 +21,11 @@ namespace LangSmith
 
         /// <summary>
         /// List Ttl Settings<br/>
-        /// List out the configured TTL settings for a given tenant.
+        /// List out the configured Ttl settings for a given tenant.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>> ListTtlSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TtlSettings>> ListTtlSettingsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -102,7 +102,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.TTLSettings> ??
+                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TtlSettings>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.TtlSettings> ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -133,7 +133,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.TTLSettings> ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TtlSettings>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.TtlSettings> ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

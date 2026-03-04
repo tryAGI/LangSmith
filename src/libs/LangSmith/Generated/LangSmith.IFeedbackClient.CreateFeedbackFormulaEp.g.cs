@@ -5,7 +5,8 @@ namespace LangSmith
     public partial interface IFeedbackClient
     {
         /// <summary>
-        /// Create Feedback Formula Ep
+        /// Create Feedback Formula Ep<br/>
+        /// Create a new feedback formula
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -15,7 +16,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create Feedback Formula Ep
+        /// Create Feedback Formula Ep<br/>
+        /// Create a new feedback formula
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="sessionId"></param>

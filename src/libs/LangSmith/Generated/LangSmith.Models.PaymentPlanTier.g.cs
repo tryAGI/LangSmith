@@ -19,7 +19,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Developer012026,
+        /// <summary>
+        /// 
+        /// </summary>
         Plus,
+        /// <summary>
+        /// 
+        /// </summary>
+        Plus012026,
         /// <summary>
         /// 
         /// </summary>
@@ -72,7 +80,9 @@ namespace LangSmith
             {
                 PaymentPlanTier.NoPlan => "no_plan",
                 PaymentPlanTier.Developer => "developer",
+                PaymentPlanTier.Developer012026 => "developer_01_2026",
                 PaymentPlanTier.Plus => "plus",
+                PaymentPlanTier.Plus012026 => "plus_01_2026",
                 PaymentPlanTier.Enterprise => "enterprise",
                 PaymentPlanTier.DeveloperLegacy => "developer_legacy",
                 PaymentPlanTier.PlusLegacy => "plus_legacy",
@@ -94,7 +104,9 @@ namespace LangSmith
             {
                 "no_plan" => PaymentPlanTier.NoPlan,
                 "developer" => PaymentPlanTier.Developer,
+                "developer_01_2026" => PaymentPlanTier.Developer012026,
                 "plus" => PaymentPlanTier.Plus,
+                "plus_01_2026" => PaymentPlanTier.Plus012026,
                 "enterprise" => PaymentPlanTier.Enterprise,
                 "developer_legacy" => PaymentPlanTier.DeveloperLegacy,
                 "plus_legacy" => PaymentPlanTier.PlusLegacy,

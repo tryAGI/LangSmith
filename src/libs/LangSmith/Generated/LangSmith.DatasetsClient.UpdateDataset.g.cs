@@ -214,13 +214,28 @@ namespace LangSmith
         /// Update a specific dataset.
         /// </summary>
         /// <param name="datasetId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="inputsSchemaDefinition"></param>
-        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="name">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="inputsSchemaDefinition">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="outputsSchemaDefinition">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="patchExamples"></param>
-        /// <param name="transformations"></param>
-        /// <param name="metadata"></param>
+        /// <param name="transformations">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="metadata">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="baselineExperimentId">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetAsync(
@@ -232,6 +247,7 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,
+            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? baselineExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.DatasetUpdate
@@ -243,6 +259,7 @@ namespace LangSmith
                 PatchExamples = patchExamples,
                 Transformations = transformations,
                 Metadata = metadata,
+                BaselineExperimentId = baselineExperimentId,
             };
 
             return await UpdateDatasetAsync(

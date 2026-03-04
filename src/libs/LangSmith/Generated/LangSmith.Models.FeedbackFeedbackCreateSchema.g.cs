@@ -95,6 +95,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public string? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
         public string? TraceId { get; set; }
 
@@ -127,6 +133,7 @@ namespace LangSmith
         /// <param name="runId"></param>
         /// <param name="score"></param>
         /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
         /// <param name="traceId"></param>
         /// <param name="value"></param>
 #if NET7_0_OR_GREATER
@@ -147,6 +154,7 @@ namespace LangSmith
             string? runId,
             object? score,
             string? sessionId,
+            string? startTime,
             string? traceId,
             object? value)
         {
@@ -164,6 +172,7 @@ namespace LangSmith
             this.RunId = runId;
             this.Score = score;
             this.SessionId = sessionId;
+            this.StartTime = startTime;
             this.TraceId = traceId;
             this.Value = value;
         }

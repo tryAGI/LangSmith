@@ -104,16 +104,16 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("dataset_version", datasetVersion) 
-                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("dataset_version", datasetVersion)
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("facets", facets?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

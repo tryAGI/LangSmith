@@ -76,8 +76,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_count")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ExampleCount { get; set; }
+        public int? ExampleCount { get; set; }
 
         /// <summary>
         /// 
@@ -104,6 +103,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("baseline_experiment_id")]
+        public global::System.Guid? BaselineExperimentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -133,6 +138,7 @@ namespace LangSmith
         /// <param name="modifiedAt"></param>
         /// <param name="lastSessionStartTime"></param>
         /// <param name="metadata"></param>
+        /// <param name="baselineExperimentId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -140,7 +146,6 @@ namespace LangSmith
             string name,
             global::System.Guid id,
             global::System.Guid tenantId,
-            int exampleCount,
             int sessionCount,
             global::System.DateTime modifiedAt,
             string? description,
@@ -150,13 +155,14 @@ namespace LangSmith
             bool? externallyManaged,
             global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? transformations,
             global::LangSmith.DataType? dataType,
+            int? exampleCount,
             global::System.DateTime? lastSessionStartTime,
-            object? metadata)
+            object? metadata,
+            global::System.Guid? baselineExperimentId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
             this.TenantId = tenantId;
-            this.ExampleCount = exampleCount;
             this.SessionCount = sessionCount;
             this.ModifiedAt = modifiedAt;
             this.Description = description;
@@ -166,8 +172,10 @@ namespace LangSmith
             this.ExternallyManaged = externallyManaged;
             this.Transformations = transformations;
             this.DataType = dataType;
+            this.ExampleCount = exampleCount;
             this.LastSessionStartTime = lastSessionStartTime;
             this.Metadata = metadata;
+            this.BaselineExperimentId = baselineExperimentId;
         }
 
         /// <summary>

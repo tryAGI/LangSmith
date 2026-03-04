@@ -27,7 +27,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.BulkExport> CancelBulkExportAsync(
             global::System.Guid bulkExportId,
-            global::LangSmith.BulkExportUpdateStatus status = default,
+            global::LangSmith.BulkExportUpdatableStatus? status = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

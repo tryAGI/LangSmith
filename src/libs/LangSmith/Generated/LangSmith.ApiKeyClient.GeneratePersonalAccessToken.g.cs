@@ -23,7 +23,7 @@ namespace LangSmith
 
         /// <summary>
         /// Generate Personal Access Token<br/>
-        /// Generate a Personal Access Token the user
+        /// DEPRECATED: Use /orgs/current/personal-access-tokens instead
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -205,13 +205,10 @@ namespace LangSmith
 
         /// <summary>
         /// Generate Personal Access Token<br/>
-        /// Generate a Personal Access Token the user
+        /// DEPRECATED: Use /orgs/current/personal-access-tokens instead
         /// </summary>
         /// <param name="description">
         /// Default Value: Default API key
-        /// </param>
-        /// <param name="readOnly">
-        /// Default Value: false
         /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="workspaces"></param>
@@ -222,7 +219,6 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GeneratePersonalAccessTokenAsync(
             string? description = default,
-            bool? readOnly = default,
             global::System.DateTime? expiresAt = default,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces = default,
             global::System.Guid? roleId = default,
@@ -233,7 +229,6 @@ namespace LangSmith
             var __request = new global::LangSmith.APIKeyCreateRequest
             {
                 Description = description,
-                ReadOnly = readOnly,
                 ExpiresAt = expiresAt,
                 Workspaces = workspaces,
                 RoleId = roleId,

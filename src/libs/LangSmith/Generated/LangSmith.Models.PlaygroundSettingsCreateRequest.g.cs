@@ -34,6 +34,13 @@ namespace LangSmith
         public global::LangSmith.PlaygroundSavedOptions? Options { get; set; }
 
         /// <summary>
+        /// Default Value: complex
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeJsonConverter))]
+        public global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? SettingsType { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +53,9 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="settings"></param>
         /// <param name="options"></param>
+        /// <param name="settingsType">
+        /// Default Value: complex
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,12 +63,14 @@ namespace LangSmith
             object settings,
             string? name,
             string? description,
-            global::LangSmith.PlaygroundSavedOptions? options)
+            global::LangSmith.PlaygroundSavedOptions? options,
+            global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? settingsType)
         {
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Name = name;
             this.Description = description;
             this.Options = options;
+            this.SettingsType = settingsType;
         }
 
         /// <summary>

@@ -229,6 +229,7 @@ namespace LangSmith
         /// <param name="perGroupLimit">
         /// Default Value: 5
         /// </param>
+        /// <param name="filters"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.GroupedExamplesWithRunsResponse> ReadExamplesWithRunsGroupedAsync(
@@ -240,6 +241,7 @@ namespace LangSmith
             int? limit = default,
             bool? preview = default,
             int? perGroupLimit = default,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.QueryGroupedExamplesWithRuns
@@ -251,6 +253,7 @@ namespace LangSmith
                 GroupBy = groupBy,
                 MetadataKey = metadataKey,
                 PerGroupLimit = perGroupLimit,
+                Filters = filters,
             };
 
             return await ReadExamplesWithRunsGroupedAsync(

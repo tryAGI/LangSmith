@@ -32,6 +32,9 @@ namespace LangSmith
         /// <param name="reservationMinutes"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
+        /// <param name="metadata">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
@@ -39,11 +42,12 @@ namespace LangSmith
             string? name = default,
             string? description = default,
             global::System.Guid? defaultDataset = default,
-            int? numReviewersPerItem = default,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem = default,
             bool? enableReservations = default,
             int? reservationMinutes = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -74,13 +74,13 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/examples/count",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("metadata", metadata) 
-                .AddOptionalParameter("full_text_contains", fullTextContains, delimiter: ",", explode: true) 
-                .AddOptionalParameter("splits", splits, delimiter: ",", explode: true) 
-                .AddOptionalParameter("dataset", dataset?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("metadata", metadata)
+                .AddOptionalParameter("full_text_contains", fullTextContains, delimiter: ",", explode: true)
+                .AddOptionalParameter("splits", splits, delimiter: ",", explode: true)
+                .AddOptionalParameter("dataset", dataset?.ToString())
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

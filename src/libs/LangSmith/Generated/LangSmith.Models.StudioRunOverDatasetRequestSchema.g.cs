@@ -29,6 +29,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? EvaluatorRules { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -40,17 +46,20 @@ namespace LangSmith
         /// <param name="projectName"></param>
         /// <param name="datasetId"></param>
         /// <param name="evaluatorRules"></param>
+        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StudioRunOverDatasetRequestSchema(
             string projectName,
             global::System.Guid datasetId,
-            global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules)
+            global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
+            object? metadata)
         {
             this.ProjectName = projectName ?? throw new global::System.ArgumentNullException(nameof(projectName));
             this.DatasetId = datasetId;
             this.EvaluatorRules = evaluatorRules;
+            this.Metadata = metadata;
         }
 
         /// <summary>

@@ -7,9 +7,9 @@ namespace LangSmith
     {
         partial void PrepareReadFeedbacksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<global::System.Guid>? run,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run,
             global::System.Collections.Generic.IList<string>? key,
-            global::System.Collections.Generic.IList<global::System.Guid>? session,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source,
             ref int? limit,
             ref int? offset,
@@ -19,13 +19,14 @@ namespace LangSmith
             ref global::LangSmith.FeedbackLevel? level,
             ref global::System.DateTime? maxCreatedAt,
             ref global::System.DateTime? minCreatedAt,
-            ref bool? includeUserNames);
+            ref bool? includeUserNames,
+            ref global::System.Guid? comparativeExperimentId);
         partial void PrepareReadFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<global::System.Guid>? run,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run,
             global::System.Collections.Generic.IList<string>? key,
-            global::System.Collections.Generic.IList<global::System.Guid>? session,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source,
             int? limit,
             int? offset,
@@ -35,7 +36,8 @@ namespace LangSmith
             global::LangSmith.FeedbackLevel? level,
             global::System.DateTime? maxCreatedAt,
             global::System.DateTime? minCreatedAt,
-            bool? includeUserNames);
+            bool? includeUserNames,
+            global::System.Guid? comparativeExperimentId);
         partial void ProcessReadFeedbacksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,12 +70,13 @@ namespace LangSmith
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="includeUserNames"></param>
+        /// <param name="comparativeExperimentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadFeedbacksAsync(
-            global::System.Collections.Generic.IList<global::System.Guid>? run = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run = default,
             global::System.Collections.Generic.IList<string>? key = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? session = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session = default,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source = default,
             int? limit = default,
             int? offset = default,
@@ -84,15 +87,16 @@ namespace LangSmith
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
             bool? includeUserNames = default,
+            global::System.Guid? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareReadFeedbacksArguments(
                 httpClient: HttpClient,
-                run: run,
+                run: ref run,
                 key: key,
-                session: session,
+                session: ref session,
                 source: source,
                 limit: ref limit,
                 offset: ref offset,
@@ -102,25 +106,27 @@ namespace LangSmith
                 level: ref level,
                 maxCreatedAt: ref maxCreatedAt,
                 minCreatedAt: ref minCreatedAt,
-                includeUserNames: ref includeUserNames);
+                includeUserNames: ref includeUserNames,
+                comparativeExperimentId: ref comparativeExperimentId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
-                .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("has_comment", hasComment?.ToString()) 
-                .AddOptionalParameter("has_score", hasScore?.ToString()) 
-                .AddOptionalParameter("level", level?.ToValueString()) 
-                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("include_user_names", includeUserNames?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("run", run?.ToString() ?? string.Empty)
+                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
+                .AddOptionalParameter("session", session?.ToString() ?? string.Empty)
+                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("has_comment", hasComment?.ToString())
+                .AddOptionalParameter("has_score", hasScore?.ToString())
+                .AddOptionalParameter("level", level?.ToValueString())
+                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("include_user_names", includeUserNames?.ToString())
+                .AddOptionalParameter("comparative_experiment_id", comparativeExperimentId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -165,7 +171,8 @@ namespace LangSmith
                 level: level,
                 maxCreatedAt: maxCreatedAt,
                 minCreatedAt: minCreatedAt,
-                includeUserNames: includeUserNames);
+                includeUserNames: includeUserNames,
+                comparativeExperimentId: comparativeExperimentId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

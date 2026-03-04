@@ -22,9 +22,6 @@ namespace LangSmith
         /// <param name="description">
         /// Default Value: Default API key
         /// </param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
@@ -34,7 +31,6 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> GenerateApiKeyAsync(
             string? description = default,
-            bool? readOnly = default,
             global::System.DateTime? expiresAt = default,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces = default,
             global::System.Guid? roleId = default,

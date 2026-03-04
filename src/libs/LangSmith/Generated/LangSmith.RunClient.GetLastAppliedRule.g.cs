@@ -7,11 +7,13 @@ namespace LangSmith
     {
         partial void PrepareGetLastAppliedRuleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid ruleId);
+            ref global::System.Guid ruleId,
+            ref bool? backfill);
         partial void PrepareGetLastAppliedRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid ruleId);
+            global::System.Guid ruleId,
+            bool? backfill);
         partial void ProcessGetLastAppliedRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,21 +28,29 @@ namespace LangSmith
         /// Get the last applied rule.
         /// </summary>
         /// <param name="ruleId"></param>
+        /// <param name="backfill">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RuleLogSchema> GetLastAppliedRuleAsync(
             global::System.Guid ruleId,
+            bool? backfill = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetLastAppliedRuleArguments(
                 httpClient: HttpClient,
-                ruleId: ref ruleId);
+                ruleId: ref ruleId,
+                backfill: ref backfill);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/last_applied",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("backfill", backfill?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -72,7 +82,8 @@ namespace LangSmith
             PrepareGetLastAppliedRuleRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                ruleId: ruleId);
+                ruleId: ruleId,
+                backfill: backfill);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

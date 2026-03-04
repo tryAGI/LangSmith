@@ -28,6 +28,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -72,9 +73,6 @@ namespace LangSmith
         /// <param name="description">
         /// Default Value: Default API key
         /// </param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="workspaces"></param>
         /// <param name="roleId"></param>
@@ -85,7 +83,6 @@ namespace LangSmith
 #endif
         public APIKeyCreateRequest(
             string? description,
-            bool? readOnly,
             global::System.DateTime? expiresAt,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaces,
             global::System.Guid? roleId,
@@ -93,7 +90,6 @@ namespace LangSmith
             global::System.Guid? defaultWorkspaceId)
         {
             this.Description = description;
-            this.ReadOnly = readOnly;
             this.ExpiresAt = expiresAt;
             this.Workspaces = workspaces;
             this.RoleId = roleId;

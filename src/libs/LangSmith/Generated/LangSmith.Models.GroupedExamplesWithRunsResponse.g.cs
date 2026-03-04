@@ -4,7 +4,14 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Grouped examples with runs.
+    /// Response for grouped comparison view of dataset examples.<br/>
+    /// Returns dataset examples grouped by a run metadata value (e.g., model='gpt-4').<br/>
+    /// Optional filters are applied to all runs before grouping.<br/>
+    /// Shows:<br/>
+    /// - Which examples were executed with each metadata value<br/>
+    /// - Per-session aggregate statistics for runs on those examples<br/>
+    /// - The actual example data with their associated runs<br/>
+    /// Used for comparing how different sessions performed on the same set of examples.
     /// </summary>
     public sealed partial class GroupedExamplesWithRunsResponse
     {
@@ -13,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsGroup> Groups { get; set; }
+        public required global::System.Collections.Generic.IList<global::LangSmith.ExampleGroupWithSessions> Groups { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +36,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GroupedExamplesWithRunsResponse(
-            global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsGroup> groups)
+            global::System.Collections.Generic.IList<global::LangSmith.ExampleGroupWithSessions> groups)
         {
             this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
         }

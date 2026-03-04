@@ -276,6 +276,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
+        public global::System.Collections.Generic.IList<object>? Messages { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid SessionId { get; set; }
@@ -429,6 +435,7 @@ namespace LangSmith
         /// <param name="completionCostDetails"></param>
         /// <param name="priceModelId"></param>
         /// <param name="firstTokenTime"></param>
+        /// <param name="messages"></param>
         /// <param name="sessionId"></param>
         /// <param name="appPath"></param>
         /// <param name="lastQueuedAt"></param>
@@ -496,6 +503,7 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? completionCostDetails,
             global::System.Guid? priceModelId,
             global::System.DateTime? firstTokenTime,
+            global::System.Collections.Generic.IList<object>? messages,
             global::System.DateTime? lastQueuedAt,
             bool? inDataset,
             global::System.Guid? shareToken,
@@ -555,6 +563,7 @@ namespace LangSmith
             this.CompletionCostDetails = completionCostDetails;
             this.PriceModelId = priceModelId;
             this.FirstTokenTime = firstTokenTime;
+            this.Messages = messages;
             this.LastQueuedAt = lastQueuedAt;
             this.InDataset = inDataset;
             this.ShareToken = shareToken;

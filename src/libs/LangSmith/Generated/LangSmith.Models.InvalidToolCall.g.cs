@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -10,6 +12,20 @@ namespace LangSmith
     /// </summary>
     public sealed partial class InvalidToolCall
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.InvalidToolCallTypeJsonConverter))]
+        public global::LangSmith.InvalidToolCallType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string? Id { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -27,13 +43,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Error { get; set; }
@@ -41,9 +50,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.InvalidToolCallTypeJsonConverter))]
-        public global::LangSmith.InvalidToolCallType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::LangSmith.AnyOf<int?, string>? Index { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extras")]
+        public object? Extras { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,26 +69,32 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidToolCall" /> class.
         /// </summary>
+        /// <param name="type"></param>
+        /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="args"></param>
-        /// <param name="id"></param>
         /// <param name="error"></param>
-        /// <param name="type"></param>
+        /// <param name="index"></param>
+        /// <param name="extras"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InvalidToolCall(
+            string? id,
             string? name,
             string? args,
-            string? id,
             string? error,
-            global::LangSmith.InvalidToolCallType? type)
+            global::LangSmith.InvalidToolCallType type,
+            global::LangSmith.AnyOf<int?, string>? index,
+            object? extras)
         {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Type = type;
+            this.Index = index;
+            this.Extras = extras;
         }
 
         /// <summary>

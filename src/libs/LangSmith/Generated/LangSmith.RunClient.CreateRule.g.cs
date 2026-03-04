@@ -244,6 +244,7 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="groupBy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> CreateRuleAsync(
@@ -270,6 +271,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
+            global::LangSmith.RunRulesCreateSchemaGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.RunRulesCreateSchema
@@ -297,6 +299,7 @@ namespace LangSmith
                 EvaluatorVersion = evaluatorVersion,
                 CreateAlignmentQueue = createAlignmentQueue,
                 IncludeExtendedStats = includeExtendedStats,
+                GroupBy = groupBy,
             };
 
             return await CreateRuleAsync(

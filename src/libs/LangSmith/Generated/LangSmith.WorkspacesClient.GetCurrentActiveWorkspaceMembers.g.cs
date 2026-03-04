@@ -12,16 +12,24 @@ namespace LangSmith
             ref int? limit,
             ref int? offset,
             global::System.Collections.Generic.IList<string>? emails,
+            ref string? q,
+            ref bool? sortByDesc,
             global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
-            global::System.Collections.Generic.IList<global::System.Guid>? userIds);
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds,
+            ref bool? isDisabled,
+            ref global::LangSmith.MemberSortField? sortBy);
         partial void PrepareGetCurrentActiveWorkspaceMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
             int? offset,
             global::System.Collections.Generic.IList<string>? emails,
+            string? q,
+            bool? sortByDesc,
             global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
-            global::System.Collections.Generic.IList<global::System.Guid>? userIds);
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds,
+            bool? isDisabled,
+            global::LangSmith.MemberSortField? sortBy);
         partial void ProcessGetCurrentActiveWorkspaceMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,16 +49,31 @@ namespace LangSmith
         /// Default Value: 0
         /// </param>
         /// <param name="emails"></param>
+        /// <param name="q">
+        /// Search query for email
+        /// </param>
+        /// <param name="sortByDesc">
+        /// Sort in descending order<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="lsUserIds"></param>
         /// <param name="userIds"></param>
+        /// <param name="isDisabled"></param>
+        /// <param name="sortBy">
+        /// Sort fields for members list endpoints.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.MemberIdentity>> GetCurrentActiveWorkspaceMembersAsync(
             int? limit = default,
             int? offset = default,
             global::System.Collections.Generic.IList<string>? emails = default,
+            string? q = default,
+            bool? sortByDesc = default,
             global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds = default,
             global::System.Collections.Generic.IList<global::System.Guid>? userIds = default,
+            bool? isDisabled = default,
+            global::LangSmith.MemberSortField? sortBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -60,18 +83,26 @@ namespace LangSmith
                 limit: ref limit,
                 offset: ref offset,
                 emails: emails,
+                q: ref q,
+                sortByDesc: ref sortByDesc,
                 lsUserIds: lsUserIds,
-                userIds: userIds);
+                userIds: userIds,
+                isDisabled: ref isDisabled,
+                sortBy: ref sortBy);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/members/active",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
-                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true)
+                .AddOptionalParameter("q", q)
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("is_disabled", isDisabled?.ToString())
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -107,8 +138,12 @@ namespace LangSmith
                 limit: limit,
                 offset: offset,
                 emails: emails,
+                q: q,
+                sortByDesc: sortByDesc,
                 lsUserIds: lsUserIds,
-                userIds: userIds);
+                userIds: userIds,
+                isDisabled: isDisabled,
+                sortBy: sortBy);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

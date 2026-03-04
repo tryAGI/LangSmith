@@ -209,7 +209,21 @@ namespace LangSmith
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls"></param>
         /// <param name="options">
-        /// Configuration for a Runnable.
+        /// Configuration for a `Runnable`.<br/>
+        /// !!! note Custom values<br/>
+        ///     The `TypedDict` has `total=False` set intentionally to:<br/>
+        ///     - Allow partial configs to be created and merged together via `merge_configs`<br/>
+        ///     - Support config propagation from parent to child runnables via<br/>
+        ///         `var_child_runnable_config` (a `ContextVar` that automatically passes<br/>
+        ///         config down the call stack without explicit parameter passing), where<br/>
+        ///         configs are merged rather than replaced<br/>
+        ///     !!! example<br/>
+        ///         ```python<br/>
+        ///         # Parent sets tags<br/>
+        ///         chain.invoke(input, config={"tags": ["parent"]})<br/>
+        ///         # Child automatically inherits and can add:<br/>
+        ///         # ensure_config({"tags": ["child"]}) -&gt; {"tags": ["parent", "child"]}<br/>
+        ///         ```
         /// </param>
         /// <param name="projectName"></param>
         /// <param name="repoHandle"></param>
@@ -226,6 +240,7 @@ namespace LangSmith
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
+        /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> StreamDatasetHandlerAsync(
@@ -248,6 +263,7 @@ namespace LangSmith
             global::LangSmith.RunnerContextEnum? runnerContext = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.PlaygroundRunOverDatasetRequestSchema
@@ -271,6 +287,7 @@ namespace LangSmith
                 DatasetId = datasetId,
                 DatasetSplits = datasetSplits,
                 Repetitions = repetitions,
+                Metadata = metadata,
             };
 
             return await StreamDatasetHandlerAsync(

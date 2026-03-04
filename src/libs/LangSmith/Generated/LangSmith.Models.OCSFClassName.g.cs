@@ -1,0 +1,45 @@
+
+#nullable enable
+
+namespace LangSmith
+{
+    /// <summary>
+    /// OCSF class names.
+    /// </summary>
+    public enum OCSFClassName
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        APIActivity,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class OCSFClassNameExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this OCSFClassName value)
+        {
+            return value switch
+            {
+                OCSFClassName.APIActivity => "API Activity",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static OCSFClassName? ToEnum(string value)
+        {
+            return value switch
+            {
+                "API Activity" => OCSFClassName.APIActivity,
+                _ => null,
+            };
+        }
+    }
+}

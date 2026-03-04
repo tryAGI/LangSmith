@@ -59,6 +59,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -95,9 +96,6 @@ namespace LangSmith
         /// <param name="isPersonal"></param>
         /// <param name="isDeleted"></param>
         /// <param name="tenantHandle"></param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
         /// <param name="permissions"></param>
@@ -112,7 +110,6 @@ namespace LangSmith
             bool isDeleted,
             global::System.Guid? organizationId,
             string? tenantHandle,
-            bool? readOnly,
             global::System.Guid? roleId,
             string? roleName,
             global::System.Collections.Generic.IList<string>? permissions)
@@ -124,7 +121,6 @@ namespace LangSmith
             this.IsDeleted = isDeleted;
             this.OrganizationId = organizationId;
             this.TenantHandle = tenantHandle;
-            this.ReadOnly = readOnly;
             this.RoleId = roleId;
             this.RoleName = roleName;
             this.Permissions = permissions;

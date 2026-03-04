@@ -46,7 +46,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/views",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("type", type?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

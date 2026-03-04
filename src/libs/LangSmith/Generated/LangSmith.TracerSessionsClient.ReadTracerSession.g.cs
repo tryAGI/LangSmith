@@ -58,8 +58,8 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("include_stats", includeStats?.ToString())
                 .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();

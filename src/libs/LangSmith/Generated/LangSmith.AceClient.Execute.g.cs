@@ -205,17 +205,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="args"></param>
         /// <param name="code"></param>
+        /// <param name="language"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ExecuteAsync(
             global::System.Collections.Generic.IList<object> args,
             string code,
+            string language,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BodyExecuteApiV1AceExecutePost
             {
                 Args = args,
                 Code = code,
+                Language = language,
             };
 
             return await ExecuteAsync(

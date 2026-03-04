@@ -7,10 +7,10 @@ namespace LangSmith
 {
     /// <summary>
     /// Message for passing the result of executing a tool back to a model.<br/>
-    /// FunctionMessage are an older version of the ToolMessage schema, and<br/>
-    /// do not contain the tool_call_id field.<br/>
-    /// The tool_call_id field is used to associate the tool call request with the<br/>
-    /// tool call response. This is useful in situations where a chat model is able<br/>
+    /// `FunctionMessage` are an older version of the `ToolMessage` schema, and<br/>
+    /// do not contain the `tool_call_id` field.<br/>
+    /// The `tool_call_id` field is used to associate the tool call request with the<br/>
+    /// tool call response. Useful in situations where a chat model is able<br/>
     /// to request multiple tool calls in parallel.
     /// </summary>
     public sealed partial class FunctionMessage

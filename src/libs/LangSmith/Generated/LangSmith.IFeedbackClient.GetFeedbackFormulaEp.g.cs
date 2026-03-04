@@ -5,7 +5,8 @@ namespace LangSmith
     public partial interface IFeedbackClient
     {
         /// <summary>
-        /// Get Feedback Formula Ep
+        /// Get Feedback Formula Ep<br/>
+        /// Get a feedback formula by id
         /// </summary>
         /// <param name="feedbackFormulaId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

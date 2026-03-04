@@ -7,15 +7,13 @@ namespace LangSmith
     {
         partial void PrepareListCommitsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string owner,
-            ref string repo,
+            ref bool? includeStats,
             ref int? limit,
             ref int? offset);
         partial void PrepareListCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string owner,
-            string repo,
+            bool? includeStats,
             int? limit,
             int? offset);
         partial void ProcessListCommitsResponse(
@@ -28,11 +26,15 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// List Commits<br/>
-        /// Get all commits.
+        /// List commits<br/>
+        /// Lists all commits for a repository with pagination support.<br/>
+        /// This endpoint supports both authenticated and unauthenticated access.<br/>
+        /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
+        /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
+        /// <param name="includeStats">
+        /// Default Value: true
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -41,9 +43,8 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ListCommitsResponse> ListCommitsAsync(
-            string owner,
-            string repo,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsListCommitsResponse> ListCommitsAsync(
+            bool? includeStats = default,
             int? limit = default,
             int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -52,16 +53,16 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListCommitsArguments(
                 httpClient: HttpClient,
-                owner: ref owner,
-                repo: ref repo,
+                includeStats: ref includeStats,
                 limit: ref limit,
                 offset: ref offset);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/commits/{owner}/{repo}",
+                path: "/commits/{owner}/{repo}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("include_stats", includeStats?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -95,8 +96,7 @@ namespace LangSmith
             PrepareListCommitsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                owner: owner,
-                repo: repo,
+                includeStats: includeStats,
                 limit: limit,
                 offset: offset);
 
@@ -111,37 +111,111 @@ namespace LangSmith
             ProcessListCommitsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Validation Error
-            if ((int)__response.StatusCode == 422)
+            // Bad Request
+            if ((int)__response.StatusCode == 400)
             {
-                string? __content_422 = null;
-                global::System.Exception? __exception_422 = null;
-                global::LangSmith.HTTPValidationError? __value_422 = null;
+                string? __content_400 = null;
+                global::System.Exception? __exception_400 = null;
+                global::LangSmith.CommitsErrorResponse? __value_400 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
-                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = global::LangSmith.CommitsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
-                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = await global::LangSmith.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = await global::LangSmith.CommitsErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
                     }
                 }
                 catch (global::System.Exception __ex)
                 {
-                    __exception_422 = __ex;
+                    __exception_400 = __ex;
                 }
 
-                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
-                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_422,
+                throw new global::LangSmith.ApiException<global::LangSmith.CommitsErrorResponse>(
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_400,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_422,
-                    ResponseObject = __value_422,
+                    ResponseBody = __content_400,
+                    ResponseObject = __value_400,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Not Found
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                global::LangSmith.CommitsErrorResponse? __value_404 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::LangSmith.CommitsErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = await global::LangSmith.CommitsErrorResponse.FromJsonStreamAsync(__contentStream_404, JsonSerializerContext).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_404 = __ex;
+                }
+
+                throw new global::LangSmith.ApiException<global::LangSmith.CommitsErrorResponse>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Internal Server Error
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::System.Exception? __exception_500 = null;
+                global::LangSmith.CommitsErrorResponse? __value_500 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = global::LangSmith.CommitsErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = await global::LangSmith.CommitsErrorResponse.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_500 = __ex;
+                }
+
+                throw new global::LangSmith.ApiException<global::LangSmith.CommitsErrorResponse>(
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_500,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseObject = __value_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -171,7 +245,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.ListCommitsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.CommitsListCommitsResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -202,7 +276,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.ListCommitsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.CommitsListCommitsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

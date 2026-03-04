@@ -112,6 +112,12 @@ namespace LangSmith
         public object? Extra { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_thread_id")]
+        public string? FeedbackThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -138,6 +144,7 @@ namespace LangSmith
         /// The feedback source loaded from the database.
         /// </param>
         /// <param name="extra"></param>
+        /// <param name="feedbackThreadId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -157,7 +164,8 @@ namespace LangSmith
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
             global::LangSmith.FeedbackSource3? feedbackSource,
-            object? extra)
+            object? extra,
+            string? feedbackThreadId)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Id = id;
@@ -175,6 +183,7 @@ namespace LangSmith
             this.StartTime = startTime;
             this.FeedbackSource = feedbackSource;
             this.Extra = extra;
+            this.FeedbackThreadId = feedbackThreadId;
         }
 
         /// <summary>

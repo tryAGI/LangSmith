@@ -43,7 +43,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

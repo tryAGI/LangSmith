@@ -17,11 +17,9 @@ namespace LangSmith
         /// <summary>
         /// Create Annotation Queue
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="defaultDataset"></param>
         /// <param name="numReviewersPerItem">
         /// Default Value: 1
         /// </param>
@@ -31,10 +29,13 @@ namespace LangSmith
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
+        /// <param name="name"></param>
         /// <param name="id"></param>
+        /// <param name="defaultDataset"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
         /// <param name="sessionIds"></param>
+        /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSchema> CreateAnnotationQueueAsync(
@@ -42,14 +43,15 @@ namespace LangSmith
             string? description = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? updatedAt = default,
-            global::System.Guid? defaultDataset = default,
             int? numReviewersPerItem = default,
             bool? enableReservations = default,
             int? reservationMinutes = default,
             global::System.Guid? id = default,
+            global::System.Guid? defaultDataset = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
             global::System.Collections.Generic.IList<global::System.Guid>? sessionIds = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

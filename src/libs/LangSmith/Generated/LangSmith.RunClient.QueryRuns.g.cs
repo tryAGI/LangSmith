@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareQueryRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.BodyParamsForRunSchema request);
+            global::LangSmith.BodyParamsForRunsQuerySchema request);
         partial void PrepareQueryRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.BodyParamsForRunSchema request);
+            global::LangSmith.BodyParamsForRunsQuerySchema request);
         partial void ProcessQueryRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListRunsResponse> QueryRunsAsync(
-            global::LangSmith.BodyParamsForRunSchema request,
+            global::LangSmith.BodyParamsForRunsQuerySchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -272,7 +272,7 @@ namespace LangSmith
             bool? skipPrevCursor = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.BodyParamsForRunSchema
+            var __request = new global::LangSmith.BodyParamsForRunsQuerySchema
             {
                 Id = id,
                 Trace = trace,

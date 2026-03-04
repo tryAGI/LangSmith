@@ -27,6 +27,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        TracesDeletedPerHour,
+        /// <summary>
+        /// 
+        /// </summary>
         UserDefinedMonthlyTraces,
         /// <summary>
         /// 
@@ -54,6 +58,7 @@ namespace LangSmith
                 TenantUsageLimitType.EventsIngestedPerHour => "events_ingested_per_hour",
                 TenantUsageLimitType.TotalUniqueTraces => "total_unique_traces",
                 TenantUsageLimitType.EventsIngestedPerMinute => "events_ingested_per_minute",
+                TenantUsageLimitType.TracesDeletedPerHour => "traces_deleted_per_hour",
                 TenantUsageLimitType.UserDefinedMonthlyTraces => "user_defined_monthly_traces",
                 TenantUsageLimitType.UserDefinedMonthlyLonglivedTraces => "user_defined_monthly_longlived_traces",
                 TenantUsageLimitType.UserDefinedUnknown => "user_defined_unknown",
@@ -71,6 +76,7 @@ namespace LangSmith
                 "events_ingested_per_hour" => TenantUsageLimitType.EventsIngestedPerHour,
                 "total_unique_traces" => TenantUsageLimitType.TotalUniqueTraces,
                 "events_ingested_per_minute" => TenantUsageLimitType.EventsIngestedPerMinute,
+                "traces_deleted_per_hour" => TenantUsageLimitType.TracesDeletedPerHour,
                 "user_defined_monthly_traces" => TenantUsageLimitType.UserDefinedMonthlyTraces,
                 "user_defined_monthly_longlived_traces" => TenantUsageLimitType.UserDefinedMonthlyLonglivedTraces,
                 "user_defined_unknown" => TenantUsageLimitType.UserDefinedUnknown,

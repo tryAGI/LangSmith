@@ -215,6 +215,13 @@ namespace LangSmith
         public global::System.Guid? AlignmentAnnotationQueueId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRulesSchemaGroupByJsonConverter))]
+        public global::LangSmith.RunRulesSchemaGroupBy? GroupBy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -268,6 +275,7 @@ namespace LangSmith
         /// <param name="evaluatorVersion"></param>
         /// <param name="evaluatorId"></param>
         /// <param name="alignmentAnnotationQueueId"></param>
+        /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -304,7 +312,8 @@ namespace LangSmith
             global::System.DateTime? backfillFrom,
             bool? transient,
             global::System.Guid? evaluatorId,
-            global::System.Guid? alignmentAnnotationQueueId)
+            global::System.Guid? alignmentAnnotationQueueId,
+            global::LangSmith.RunRulesSchemaGroupBy? groupBy)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -339,6 +348,7 @@ namespace LangSmith
             this.Transient = transient;
             this.EvaluatorId = evaluatorId;
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

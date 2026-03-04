@@ -8,12 +8,12 @@ namespace LangSmith
         partial void PrepareUpdateRuleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid ruleId,
-            global::LangSmith.RunRulesCreateSchema request);
+            global::LangSmith.RunRulesUpdateSchema request);
         partial void PrepareUpdateRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid ruleId,
-            global::LangSmith.RunRulesCreateSchema request);
+            global::LangSmith.RunRulesUpdateSchema request);
         partial void ProcessUpdateRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> UpdateRuleAsync(
             global::System.Guid ruleId,
-            global::LangSmith.RunRulesCreateSchema request,
+            global::LangSmith.RunRulesUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -280,7 +280,7 @@ namespace LangSmith
             bool? includeExtendedStats = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.RunRulesCreateSchema
+            var __request = new global::LangSmith.RunRulesUpdateSchema
             {
                 DisplayName = displayName,
                 SessionId = sessionId,

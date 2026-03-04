@@ -12,6 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -30,17 +31,14 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="IdentityPatch" /> class.
         /// </summary>
-        /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public IdentityPatch(
-            global::System.Guid roleId,
-            bool? readOnly)
+            global::System.Guid roleId)
         {
             this.RoleId = roleId;
-            this.ReadOnly = readOnly;
         }
 
         /// <summary>

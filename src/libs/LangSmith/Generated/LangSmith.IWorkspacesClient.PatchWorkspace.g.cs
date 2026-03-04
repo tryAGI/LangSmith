@@ -5,7 +5,8 @@ namespace LangSmith
     public partial interface IWorkspacesClient
     {
         /// <summary>
-        /// Patch Workspace
+        /// Patch Workspace<br/>
+        /// Update a workspace.
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="request"></param>
@@ -17,7 +18,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Patch Workspace
+        /// Patch Workspace<br/>
+        /// Update a workspace.
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="displayName"></param>

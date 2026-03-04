@@ -41,7 +41,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/public/datasets/sessions-bulk",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("share_tokens", shareTokens, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -86,6 +86,12 @@ namespace LangSmith
         public bool? JitProvisioningEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("invites_enabled")]
+        public bool? InvitesEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
@@ -94,8 +100,50 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pat_creation_disabled")]
+        public bool? PatCreationDisabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_admin_can_invite_to_org")]
+        public bool? WorkspaceAdminCanInviteToOrg { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
         public bool? DefaultSsoProvision { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_api_key_expiry_days")]
+        public int? MaxApiKeyExpiryDays { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
+        public string? SecurityContact { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_pat_expiry_days")]
+        public int? MaxPatExpiryDays { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_service_key_expiry_days")]
+        public int? MaxServiceKeyExpiryDays { get; set; }
+
+        /// <summary>
+        /// Default Value: :
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
+        public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -122,11 +170,27 @@ namespace LangSmith
         /// <param name="jitProvisioningEnabled">
         /// Default Value: true
         /// </param>
+        /// <param name="invitesEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="publicSharingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="patCreationDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
         /// <param name="defaultSsoProvision">
         /// Default Value: false
+        /// </param>
+        /// <param name="maxApiKeyExpiryDays"></param>
+        /// <param name="securityContact"></param>
+        /// <param name="maxPatExpiryDays"></param>
+        /// <param name="maxServiceKeyExpiryDays"></param>
+        /// <param name="scimGroupNameSeparator">
+        /// Default Value: :
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -144,8 +208,16 @@ namespace LangSmith
             string? ssoLoginSlug,
             bool? ssoOnly,
             bool? jitProvisioningEnabled,
+            bool? invitesEnabled,
             bool? publicSharingDisabled,
-            bool? defaultSsoProvision)
+            bool? patCreationDisabled,
+            bool? workspaceAdminCanInviteToOrg,
+            bool? defaultSsoProvision,
+            int? maxApiKeyExpiryDays,
+            string? securityContact,
+            int? maxPatExpiryDays,
+            int? maxServiceKeyExpiryDays,
+            string? scimGroupNameSeparator)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -159,8 +231,16 @@ namespace LangSmith
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
+            this.InvitesEnabled = invitesEnabled;
             this.PublicSharingDisabled = publicSharingDisabled;
+            this.PatCreationDisabled = patCreationDisabled;
+            this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
             this.DefaultSsoProvision = defaultSsoProvision;
+            this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
+            this.SecurityContact = securityContact;
+            this.MaxPatExpiryDays = maxPatExpiryDays;
+            this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
+            this.ScimGroupNameSeparator = scimGroupNameSeparator;
         }
 
         /// <summary>

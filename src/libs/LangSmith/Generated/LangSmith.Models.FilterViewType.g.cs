@@ -16,6 +16,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Threads,
+        /// <summary>
+        /// 
+        /// </summary>
+        SingleRun,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace LangSmith
             {
                 FilterViewType.Runs => "runs",
                 FilterViewType.Threads => "threads",
+                FilterViewType.SingleRun => "single_run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace LangSmith
             {
                 "runs" => FilterViewType.Runs,
                 "threads" => FilterViewType.Threads,
+                "single_run" => FilterViewType.SingleRun,
                 _ => null,
             };
         }

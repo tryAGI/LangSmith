@@ -39,6 +39,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -72,9 +73,6 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="shortKey"></param>
         /// <param name="description"></param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="lastUsedAt"></param>
         /// <param name="expiresAt"></param>
         /// <param name="workspaceNames"></param>
@@ -86,7 +84,6 @@ namespace LangSmith
             string shortKey,
             string description,
             global::System.DateTime? createdAt,
-            bool? readOnly,
             global::System.DateTime? lastUsedAt,
             global::System.DateTime? expiresAt,
             global::System.Collections.Generic.IList<string>? workspaceNames)
@@ -95,7 +92,6 @@ namespace LangSmith
             this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.CreatedAt = createdAt;
-            this.ReadOnly = readOnly;
             this.LastUsedAt = lastUsedAt;
             this.ExpiresAt = expiresAt;
             this.WorkspaceNames = workspaceNames;

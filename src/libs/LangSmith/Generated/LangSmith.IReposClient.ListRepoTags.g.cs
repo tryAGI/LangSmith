@@ -24,6 +24,7 @@ namespace LangSmith
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="repoType"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListTagsResponse> ListRepoTagsAsync(
@@ -35,10 +36,11 @@ namespace LangSmith
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
+            global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

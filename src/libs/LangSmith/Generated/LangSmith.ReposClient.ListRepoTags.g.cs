@@ -15,10 +15,11 @@ namespace LangSmith
             ref bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
             ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived,
-            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic,
+            ref global::LangSmith.TrueFalseLiteral? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType);
         partial void PrepareListRepoTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -30,10 +31,11 @@ namespace LangSmith
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
             global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic,
+            global::LangSmith.TrueFalseLiteral? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType);
         partial void ProcessListRepoTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,6 +65,7 @@ namespace LangSmith
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="repoType"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListTagsResponse> ListRepoTagsAsync(
@@ -74,10 +77,11 @@ namespace LangSmith
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
+            global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,24 +99,26 @@ namespace LangSmith
                 isPublic: ref isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
-                tagValueId: tagValueId);
+                tagValueId: tagValueId,
+                repoType: ref repoType);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/repos/tags",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("tenant_handle", tenantHandle) 
-                .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
-                .AddOptionalParameter("query", query) 
-                .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
-                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true) 
-                .AddOptionalParameter("is_archived", isArchived?.ToValueString()) 
-                .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
-                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
-                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("tenant_handle", tenantHandle)
+                .AddOptionalParameter("tenant_id", tenantId?.ToString())
+                .AddOptionalParameter("query", query)
+                .AddOptionalParameter("has_commits", hasCommits?.ToString())
+                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
+                .AddOptionalParameter("is_archived", isArchived?.ToValueString())
+                .AddOptionalParameter("is_public", isPublic?.ToValueString())
+                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
+                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("repo_type", repoType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -156,7 +162,8 @@ namespace LangSmith
                 isPublic: isPublic,
                 upstreamRepoOwner: upstreamRepoOwner,
                 upstreamRepoHandle: upstreamRepoHandle,
-                tagValueId: tagValueId);
+                tagValueId: tagValueId,
+                repoType: repoType);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// TTL settings model.
+    /// Ttl settings model.
     /// </summary>
-    public sealed partial class TTLSettings
+    public sealed partial class TtlSettings
     {
         /// <summary>
         /// 
@@ -65,13 +65,19 @@ namespace LangSmith
         public required global::LangSmith.ConfiguredBy ConfiguredBy { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("longlived_ttl_days")]
+        public int? LonglivedTtlDays { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TTLSettings" /> class.
+        /// Initializes a new instance of the <see cref="TtlSettings" /> class.
         /// </summary>
         /// <param name="tenantId"></param>
         /// <param name="defaultTraceTier"></param>
@@ -83,10 +89,11 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="configuredBy"></param>
+        /// <param name="longlivedTtlDays"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public TTLSettings(
+        public TtlSettings(
             global::LangSmith.TraceTier defaultTraceTier,
             global::System.Guid id,
             global::System.Guid organizationId,
@@ -94,7 +101,8 @@ namespace LangSmith
             global::System.DateTime updatedAt,
             global::LangSmith.ConfiguredBy configuredBy,
             global::System.Guid? tenantId,
-            bool? applyToAllProjects)
+            bool? applyToAllProjects,
+            int? longlivedTtlDays)
         {
             this.DefaultTraceTier = defaultTraceTier;
             this.Id = id;
@@ -104,12 +112,13 @@ namespace LangSmith
             this.ConfiguredBy = configuredBy;
             this.TenantId = tenantId;
             this.ApplyToAllProjects = applyToAllProjects;
+            this.LonglivedTtlDays = longlivedTtlDays;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TTLSettings" /> class.
+        /// Initializes a new instance of the <see cref="TtlSettings" /> class.
         /// </summary>
-        public TTLSettings()
+        public TtlSettings()
         {
         }
     }

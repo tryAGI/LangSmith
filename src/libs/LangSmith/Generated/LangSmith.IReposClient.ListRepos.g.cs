@@ -27,6 +27,7 @@ namespace LangSmith
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="repoType"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -41,10 +42,11 @@ namespace LangSmith
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived = default,
-            global::LangSmith.ListReposApiV1ReposGetIsPublic? isPublic = default,
+            global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::LangSmith.ListReposApiV1ReposGetRepoType? repoType = default,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
             global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default);

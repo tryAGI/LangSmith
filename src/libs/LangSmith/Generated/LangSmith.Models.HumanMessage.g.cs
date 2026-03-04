@@ -6,22 +6,19 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Message from a human.<br/>
-    /// HumanMessages are messages that are passed in from a human to the model.<br/>
+    /// Message from the user.<br/>
+    /// A `HumanMessage` is a message that is passed in from a user to the model.<br/>
     /// Example:<br/>
-    ///     .. code-block:: python<br/>
-    ///         from langchain_core.messages import HumanMessage, SystemMessage<br/>
-    ///         messages = [<br/>
-    ///             SystemMessage(<br/>
-    ///                 content="You are a helpful assistant! Your name is Bob."<br/>
-    ///             ),<br/>
-    ///             HumanMessage(<br/>
-    ///                 content="What is your name?"<br/>
-    ///             )<br/>
-    ///         ]<br/>
-    ///         # Instantiate a chat model and invoke it with the messages<br/>
-    ///         model = ...<br/>
-    ///         print(model.invoke(messages))
+    ///     ```python<br/>
+    ///     from langchain_core.messages import HumanMessage, SystemMessage<br/>
+    ///     messages = [<br/>
+    ///         SystemMessage(content="You are a helpful assistant! Your name is Bob."),<br/>
+    ///         HumanMessage(content="What is your name?"),<br/>
+    ///     ]<br/>
+    ///     # Instantiate a chat model and invoke it with the messages<br/>
+    ///     model = ...<br/>
+    ///     print(model.invoke(messages))<br/>
+    ///     ```
     /// </summary>
     public sealed partial class HumanMessage
     {
@@ -65,12 +62,6 @@ namespace LangSmith
         public string? Id { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("example")]
-        public bool? Example { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -87,9 +78,6 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="id"></param>
-        /// <param name="example">
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,8 +87,7 @@ namespace LangSmith
             object? responseMetadata,
             global::LangSmith.HumanMessageType? type,
             string? name,
-            string? id,
-            bool? example)
+            string? id)
         {
             this.Content = content;
             this.AdditionalKwargs = additionalKwargs;
@@ -108,7 +95,6 @@ namespace LangSmith
             this.Type = type;
             this.Name = name;
             this.Id = id;
-            this.Example = example;
         }
 
         /// <summary>

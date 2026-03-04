@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -30,7 +32,8 @@ namespace LangSmith
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_reviewers_per_item")]
-        public int? NumReviewersPerItem { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? NumReviewersPerItem { get; set; }
 
         /// <summary>
         /// Default Value: true
@@ -57,6 +60,13 @@ namespace LangSmith
         public string? RubricInstructions { get; set; }
 
         /// <summary>
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -77,6 +87,9 @@ namespace LangSmith
         /// <param name="reservationMinutes"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
+        /// <param name="metadata">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,11 +97,12 @@ namespace LangSmith
             string? name,
             string? description,
             global::System.Guid? defaultDataset,
-            int? numReviewersPerItem,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
-            string? rubricInstructions)
+            string? rubricInstructions,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata)
         {
             this.Name = name;
             this.Description = description;
@@ -98,6 +112,7 @@ namespace LangSmith
             this.ReservationMinutes = reservationMinutes;
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;
+            this.Metadata = metadata;
         }
 
         /// <summary>

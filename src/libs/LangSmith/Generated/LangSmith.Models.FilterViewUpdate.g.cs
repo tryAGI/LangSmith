@@ -46,6 +46,24 @@ namespace LangSmith
         public global::LangSmith.FilterViewType? Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        public global::System.DateTime? EndTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public string? Duration { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,6 +78,9 @@ namespace LangSmith
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
         /// <param name="type"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="duration"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -69,7 +90,10 @@ namespace LangSmith
             string? description,
             string? traceFilterString,
             string? treeFilterString,
-            global::LangSmith.FilterViewType? type)
+            global::LangSmith.FilterViewType? type,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            string? duration)
         {
             this.FilterString = filterString;
             this.DisplayName = displayName;
@@ -77,6 +101,9 @@ namespace LangSmith
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
             this.Type = type;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Duration = duration;
         }
 
         /// <summary>

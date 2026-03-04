@@ -50,8 +50,8 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("skip_create", skipCreate?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("skip_create", skipCreate?.ToString())
                 .AddOptionalParameter("include_tier", includeTier?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

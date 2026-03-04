@@ -11,7 +11,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> CloneDatasetAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
             global::LangSmith.BodyCloneDatasetApiV1DatasetsClonePost request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -25,13 +25,15 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </param>
         /// <param name="examples"></param>
+        /// <param name="split"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> CloneDatasetAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
             object? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

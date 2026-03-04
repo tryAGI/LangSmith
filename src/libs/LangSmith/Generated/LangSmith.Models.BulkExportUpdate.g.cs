@@ -12,8 +12,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportUpdateStatusJsonConverter))]
-        public global::LangSmith.BulkExportUpdateStatus Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportUpdatableStatusJsonConverter))]
+        public global::LangSmith.BulkExportUpdatableStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BulkExportUpdate(
-            global::LangSmith.BulkExportUpdateStatus status)
+            global::LangSmith.BulkExportUpdatableStatus? status)
         {
             this.Status = status;
         }

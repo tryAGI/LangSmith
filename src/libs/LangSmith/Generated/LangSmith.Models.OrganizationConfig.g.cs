@@ -9,6 +9,12 @@ namespace LangSmith
     public sealed partial class OrganizationConfig
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("plan_tier")]
+        public string? PlanTier { get; set; }
+
+        /// <summary>
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_identities")]
@@ -25,6 +31,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_rbac")]
         public bool? CanUseRbac { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_abac")]
+        public bool? CanUseAbac { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_audit_logs")]
+        public bool? CanUseAuditLogs { get; set; }
 
         /// <summary>
         /// Default Value: true
@@ -59,12 +77,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("can_serve_datasets")]
-        public bool? CanServeDatasets { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_langgraph_cloud")]
         public bool? CanUseLanggraphCloud { get; set; }
 
@@ -81,6 +93,36 @@ namespace LangSmith
         public int? MaxFreeLanggraphCloudDeployments { get; set; }
 
         /// <summary>
+        /// Default Value: 100
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandboxes")]
+        public int? MaxSandboxes { get; set; }
+
+        /// <summary>
+        /// Default Value: 100
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_volumes")]
+        public int? MaxSandboxVolumes { get; set; }
+
+        /// <summary>
+        /// Default Value: 200
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_cpu")]
+        public string? MaxSandboxCpu { get; set; }
+
+        /// <summary>
+        /// Default Value: 400Gi
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_memory")]
+        public string? MaxSandboxMemory { get; set; }
+
+        /// <summary>
+        /// Default Value: 1Ti
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_storage")]
+        public string? MaxSandboxStorage { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_saml_sso")]
@@ -91,12 +133,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_bulk_export")]
         public bool? CanUseBulkExport { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("use_python_playground_service")]
-        public bool? UsePythonPlaygroundService { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -183,6 +219,12 @@ namespace LangSmith
         public bool? LanggraphRemoteReconcilerEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_enterprise_enabled")]
+        public bool? LanggraphEnterpriseEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_poc_enabled")]
@@ -203,18 +245,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_legacy_poc_enabled")]
-        public bool? LangsmithAlertsLegacyPocEnabled { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_experimental_search_enabled")]
-        public bool? LangsmithExperimentalSearchEnabled { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_align_evaluators")]
         public bool? EnableAlignEvaluators { get; set; }
 
@@ -223,6 +253,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_run_tree_streaming")]
         public bool? EnableRunTreeStreaming { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_querying_v2_endpoints")]
+        public bool? EnableQueryingV2Endpoints { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -245,11 +281,17 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_set_api_key_max_expiry")]
+        public bool? CanSetApiKeyMaxExpiry { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_monthly_usage_charts")]
         public bool? EnableMonthlyUsageCharts { get; set; }
 
         /// <summary>
-        /// Default Value: 2
+        /// Default Value: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_rule_evaluator_creation_version")]
         public int? NewRuleEvaluatorCreationVersion { get; set; }
@@ -275,12 +317,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_formulas_enabled")]
-        public bool? FeedbackFormulasEnabled { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_markdown_in_tracing")]
         public bool? EnableMarkdownInTracing { get; set; }
 
@@ -291,6 +327,60 @@ namespace LangSmith
         public bool? EnablePricingRedesign { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arbitrary_cost_tracking_enabled")]
+        public bool? ArbitraryCostTrackingEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_deployment_distributed_runtime_enabled")]
+        public bool? LangsmithDeploymentDistributedRuntimeEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pairwise_annotation_queues_enabled")]
+        public bool? PairwiseAnnotationQueuesEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_builder_enabled")]
+        public bool? AgentBuilderEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: 1000
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_agent_builder_assistants")]
+        public int? MaxAgentBuilderAssistants { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_granular_usage_reporting")]
+        public bool? EnableGranularUsageReporting { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_burndown_vs_commit_view")]
+        public bool? EnableBurndownVsCommitView { get; set; }
+
+        /// <summary>
+        /// Default Value: -1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_agent_builder_runs")]
+        public int? MaxAgentBuilderRuns { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_deployment_dr_enabled_dev")]
+        public bool? LangsmithDeploymentDrEnabledDev { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -299,6 +389,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
         /// </summary>
+        /// <param name="planTier"></param>
         /// <param name="maxIdentities">
         /// Default Value: 5
         /// </param>
@@ -306,6 +397,12 @@ namespace LangSmith
         /// Default Value: 1
         /// </param>
         /// <param name="canUseRbac">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canUseAbac">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canUseAuditLogs">
         /// Default Value: false
         /// </param>
         /// <param name="canAddSeats">
@@ -317,9 +414,6 @@ namespace LangSmith
         /// <param name="canDisablePublicSharing">
         /// Default Value: false
         /// </param>
-        /// <param name="canServeDatasets">
-        /// Default Value: false
-        /// </param>
         /// <param name="canUseLanggraphCloud">
         /// Default Value: false
         /// </param>
@@ -329,13 +423,25 @@ namespace LangSmith
         /// <param name="maxFreeLanggraphCloudDeployments">
         /// Default Value: 0
         /// </param>
+        /// <param name="maxSandboxes">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="maxSandboxVolumes">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="maxSandboxCpu">
+        /// Default Value: 200
+        /// </param>
+        /// <param name="maxSandboxMemory">
+        /// Default Value: 400Gi
+        /// </param>
+        /// <param name="maxSandboxStorage">
+        /// Default Value: 1Ti
+        /// </param>
         /// <param name="canUseSamlSso">
         /// Default Value: false
         /// </param>
         /// <param name="canUseBulkExport">
-        /// Default Value: false
-        /// </param>
-        /// <param name="usePythonPlaygroundService">
         /// Default Value: false
         /// </param>
         /// <param name="showUpdatedSidenav">
@@ -380,6 +486,9 @@ namespace LangSmith
         /// <param name="langgraphRemoteReconcilerEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="langgraphEnterpriseEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="langsmithAlertsPocEnabled">
         /// Default Value: true
         /// </param>
@@ -389,16 +498,13 @@ namespace LangSmith
         /// <param name="lgpTemplatesEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="langsmithAlertsLegacyPocEnabled">
-        /// Default Value: false
-        /// </param>
-        /// <param name="langsmithExperimentalSearchEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableAlignEvaluators">
         /// Default Value: false
         /// </param>
         /// <param name="enableRunTreeStreaming">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableQueryingV2Endpoints">
         /// Default Value: false
         /// </param>
         /// <param name="enableThreadsImprovements">
@@ -410,11 +516,14 @@ namespace LangSmith
         /// <param name="playgroundEvaluatorStrategy">
         /// Default Value: sync
         /// </param>
+        /// <param name="canSetApiKeyMaxExpiry">
+        /// Default Value: false
+        /// </param>
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false
         /// </param>
         /// <param name="newRuleEvaluatorCreationVersion">
-        /// Default Value: 2
+        /// Default Value: 3
         /// </param>
         /// <param name="enableLgpListenersPage">
         /// Default Value: false
@@ -425,34 +534,64 @@ namespace LangSmith
         /// <param name="enableIncludeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="feedbackFormulasEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableMarkdownInTracing">
         /// Default Value: false
         /// </param>
         /// <param name="enablePricingRedesign">
         /// Default Value: false
         /// </param>
+        /// <param name="arbitraryCostTrackingEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="langsmithDeploymentDistributedRuntimeEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="pairwiseAnnotationQueuesEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="agentBuilderEnabled">
+        /// Default Value: true
+        /// </param>
+        /// <param name="maxAgentBuilderAssistants">
+        /// Default Value: 1000
+        /// </param>
+        /// <param name="enableGranularUsageReporting">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableBurndownVsCommitView">
+        /// Default Value: false
+        /// </param>
+        /// <param name="maxAgentBuilderRuns">
+        /// Default Value: -1
+        /// </param>
+        /// <param name="langsmithDeploymentDrEnabledDev">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationConfig(
+            string? planTier,
             int? maxIdentities,
             int? maxWorkspaces,
             bool? canUseRbac,
+            bool? canUseAbac,
+            bool? canUseAuditLogs,
             bool? canAddSeats,
             string? startupPlanApprovalDate,
             string? partnerPlanApprovalDate,
             string? premierPlanApprovalDate,
             bool? canDisablePublicSharing,
-            bool? canServeDatasets,
             bool? canUseLanggraphCloud,
             int? maxLanggraphCloudDeployments,
             int? maxFreeLanggraphCloudDeployments,
+            int? maxSandboxes,
+            int? maxSandboxVolumes,
+            string? maxSandboxCpu,
+            string? maxSandboxMemory,
+            string? maxSandboxStorage,
             bool? canUseSamlSso,
             bool? canUseBulkExport,
-            bool? usePythonPlaygroundService,
             bool? showUpdatedSidenav,
             bool? showUpdatedResourceTags,
             bool? kvDatasetMessageSupport,
@@ -467,40 +606,55 @@ namespace LangSmith
             bool? demoLgpNewGraphEnabled,
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
+            bool? langgraphEnterpriseEnabled,
             bool? langsmithAlertsPocEnabled,
             bool? tenantSkipTopkFacets,
             bool? lgpTemplatesEnabled,
-            bool? langsmithAlertsLegacyPocEnabled,
-            bool? langsmithExperimentalSearchEnabled,
             bool? enableAlignEvaluators,
             bool? enableRunTreeStreaming,
+            bool? enableQueryingV2Endpoints,
             bool? enableThreadsImprovements,
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
+            bool? canSetApiKeyMaxExpiry,
             bool? enableMonthlyUsageCharts,
             int? newRuleEvaluatorCreationVersion,
             bool? enableLgpListenersPage,
             bool? clioEnabled,
             bool? enableIncludeExtendedStats,
-            bool? feedbackFormulasEnabled,
             bool? enableMarkdownInTracing,
-            bool? enablePricingRedesign)
+            bool? enablePricingRedesign,
+            bool? arbitraryCostTrackingEnabled,
+            bool? langsmithDeploymentDistributedRuntimeEnabled,
+            bool? pairwiseAnnotationQueuesEnabled,
+            bool? agentBuilderEnabled,
+            int? maxAgentBuilderAssistants,
+            bool? enableGranularUsageReporting,
+            bool? enableBurndownVsCommitView,
+            int? maxAgentBuilderRuns,
+            bool? langsmithDeploymentDrEnabledDev)
         {
+            this.PlanTier = planTier;
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
             this.CanUseRbac = canUseRbac;
+            this.CanUseAbac = canUseAbac;
+            this.CanUseAuditLogs = canUseAuditLogs;
             this.CanAddSeats = canAddSeats;
             this.StartupPlanApprovalDate = startupPlanApprovalDate;
             this.PartnerPlanApprovalDate = partnerPlanApprovalDate;
             this.PremierPlanApprovalDate = premierPlanApprovalDate;
             this.CanDisablePublicSharing = canDisablePublicSharing;
-            this.CanServeDatasets = canServeDatasets;
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
+            this.MaxSandboxes = maxSandboxes;
+            this.MaxSandboxVolumes = maxSandboxVolumes;
+            this.MaxSandboxCpu = maxSandboxCpu;
+            this.MaxSandboxMemory = maxSandboxMemory;
+            this.MaxSandboxStorage = maxSandboxStorage;
             this.CanUseSamlSso = canUseSamlSso;
             this.CanUseBulkExport = canUseBulkExport;
-            this.UsePythonPlaygroundService = usePythonPlaygroundService;
             this.ShowUpdatedSidenav = showUpdatedSidenav;
             this.ShowUpdatedResourceTags = showUpdatedResourceTags;
             this.KvDatasetMessageSupport = kvDatasetMessageSupport;
@@ -515,24 +669,33 @@ namespace LangSmith
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
+            this.LanggraphEnterpriseEnabled = langgraphEnterpriseEnabled;
             this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
             this.LgpTemplatesEnabled = lgpTemplatesEnabled;
-            this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
-            this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.EnableRunTreeStreaming = enableRunTreeStreaming;
+            this.EnableQueryingV2Endpoints = enableQueryingV2Endpoints;
             this.EnableThreadsImprovements = enableThreadsImprovements;
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
+            this.CanSetApiKeyMaxExpiry = canSetApiKeyMaxExpiry;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.ClioEnabled = clioEnabled;
             this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
-            this.FeedbackFormulasEnabled = feedbackFormulasEnabled;
             this.EnableMarkdownInTracing = enableMarkdownInTracing;
             this.EnablePricingRedesign = enablePricingRedesign;
+            this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
+            this.LangsmithDeploymentDistributedRuntimeEnabled = langsmithDeploymentDistributedRuntimeEnabled;
+            this.PairwiseAnnotationQueuesEnabled = pairwiseAnnotationQueuesEnabled;
+            this.AgentBuilderEnabled = agentBuilderEnabled;
+            this.MaxAgentBuilderAssistants = maxAgentBuilderAssistants;
+            this.EnableGranularUsageReporting = enableGranularUsageReporting;
+            this.EnableBurndownVsCommitView = enableBurndownVsCommitView;
+            this.MaxAgentBuilderRuns = maxAgentBuilderRuns;
+            this.LangsmithDeploymentDrEnabledDev = langsmithDeploymentDrEnabledDev;
         }
 
         /// <summary>

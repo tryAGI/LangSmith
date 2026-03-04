@@ -48,7 +48,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/splits",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();

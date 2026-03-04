@@ -28,7 +28,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> CloneDatasetAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
             global::LangSmith.BodyCloneDatasetApiV1DatasetsClonePost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -153,7 +153,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.Example>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.Example> ??
+                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<object>), JsonSerializerContext) as global::System.Collections.Generic.IList<object> ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -184,7 +184,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.Example>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.Example> ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<object>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<object> ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -213,13 +213,15 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </param>
         /// <param name="examples"></param>
+        /// <param name="split"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> CloneDatasetAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
             object? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BodyCloneDatasetApiV1DatasetsClonePost
@@ -228,6 +230,7 @@ namespace LangSmith
                 SourceDatasetId = sourceDatasetId,
                 AsOf = asOf,
                 Examples = examples,
+                Split = split,
             };
 
             return await CloneDatasetAsync(

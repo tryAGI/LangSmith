@@ -143,24 +143,24 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("reference_free", referenceFree?.ToString()) 
-                .AddOptionalParameter("reference_dataset", referenceDataset, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("dataset_version", datasetVersion) 
-                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("metadata", metadata) 
-                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("facets", facets?.ToString()) 
-                .AddOptionalParameter("filter", filter) 
-                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
-                .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("reference_free", referenceFree?.ToString())
+                .AddOptionalParameter("reference_dataset", referenceDataset, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("dataset_version", datasetVersion)
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("metadata", metadata)
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("facets", facets?.ToString())
+                .AddOptionalParameter("filter", filter)
+                .AddOptionalParameter("include_stats", includeStats?.ToString())
+                .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString())
                 .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -7,14 +7,15 @@ namespace LangSmith
     /// Breakdown of input token counts.<br/>
     /// Does *not* need to sum to full input token count. Does *not* need to have all keys.<br/>
     /// Example:<br/>
-    ///     .. code-block:: python<br/>
-    ///         {<br/>
-    ///             "audio": 10,<br/>
-    ///             "cache_creation": 200,<br/>
-    ///             "cache_read": 100,<br/>
-    ///         }<br/>
-    /// .. versionadded:: 0.3.9<br/>
-    /// May also hold extra provider-specific keys.
+    ///     ```python<br/>
+    ///     {<br/>
+    ///         "audio": 10,<br/>
+    ///         "cache_creation": 200,<br/>
+    ///         "cache_read": 100,<br/>
+    ///     }<br/>
+    ///     ```<br/>
+    /// May also hold extra provider-specific keys.<br/>
+    /// !!! version-added "Added in `langchain-core` 0.3.9"
     /// </summary>
     public sealed partial class InputTokenDetails
     {

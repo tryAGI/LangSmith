@@ -12,7 +12,8 @@ namespace LangSmith
         /// Default Value: model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ModelFeedbackSourceTypeJsonConverter))]
+        public global::LangSmith.ModelFeedbackSourceType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +38,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelFeedbackSource(
-            string? type,
+            global::LangSmith.ModelFeedbackSourceType? type,
             object? metadata)
         {
             this.Type = type;

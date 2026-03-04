@@ -208,19 +208,16 @@ namespace LangSmith
         /// Patch Current Workspace Member
         /// </summary>
         /// <param name="identityId"></param>
-        /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> PatchCurrentWorkspaceMemberAsync(
             global::System.Guid identityId,
             global::System.Guid roleId,
-            bool? readOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.IdentityPatch
             {
-                ReadOnly = readOnly,
                 RoleId = roleId,
             };
 

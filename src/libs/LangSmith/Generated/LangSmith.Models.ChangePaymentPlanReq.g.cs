@@ -19,7 +19,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Developer012026,
+        /// <summary>
+        /// 
+        /// </summary>
         Plus,
+        /// <summary>
+        /// 
+        /// </summary>
+        Plus012026,
         /// <summary>
         /// 
         /// </summary>
@@ -56,7 +64,9 @@ namespace LangSmith
             {
                 ChangePaymentPlanReq.Disabled => "disabled",
                 ChangePaymentPlanReq.Developer => "developer",
+                ChangePaymentPlanReq.Developer012026 => "developer_01_2026",
                 ChangePaymentPlanReq.Plus => "plus",
+                ChangePaymentPlanReq.Plus012026 => "plus_01_2026",
                 ChangePaymentPlanReq.Startup => "startup",
                 ChangePaymentPlanReq.StartupV0 => "startup_v0",
                 ChangePaymentPlanReq.Partner => "partner",
@@ -74,7 +84,9 @@ namespace LangSmith
             {
                 "disabled" => ChangePaymentPlanReq.Disabled,
                 "developer" => ChangePaymentPlanReq.Developer,
+                "developer_01_2026" => ChangePaymentPlanReq.Developer012026,
                 "plus" => ChangePaymentPlanReq.Plus,
+                "plus_01_2026" => ChangePaymentPlanReq.Plus012026,
                 "startup" => ChangePaymentPlanReq.Startup,
                 "startup_v0" => ChangePaymentPlanReq.StartupV0,
                 "partner" => ChangePaymentPlanReq.Partner,

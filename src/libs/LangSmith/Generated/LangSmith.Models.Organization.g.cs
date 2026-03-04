@@ -105,16 +105,22 @@ namespace LangSmith
         public bool? MarketplacePayoutsEnabled { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("wallet")]
-        public global::LangSmith.Wallet? Wallet { get; set; }
-
-        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
         public bool? DefaultSsoProvision { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
+        public string? SecurityContact { get; set; }
+
+        /// <summary>
+        /// Default Value: :
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
+        public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -152,9 +158,12 @@ namespace LangSmith
         /// <param name="marketplacePayoutsEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="wallet"></param>
         /// <param name="defaultSsoProvision">
         /// Default Value: false
+        /// </param>
+        /// <param name="securityContact"></param>
+        /// <param name="scimGroupNameSeparator">
+        /// Default Value: :
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -175,8 +184,9 @@ namespace LangSmith
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
             bool? marketplacePayoutsEnabled,
-            global::LangSmith.Wallet? wallet,
-            bool? defaultSsoProvision)
+            bool? defaultSsoProvision,
+            string? securityContact,
+            string? scimGroupNameSeparator)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ConnectedToStripe = connectedToStripe;
@@ -193,8 +203,9 @@ namespace LangSmith
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
-            this.Wallet = wallet;
             this.DefaultSsoProvision = defaultSsoProvision;
+            this.SecurityContact = securityContact;
+            this.ScimGroupNameSeparator = scimGroupNameSeparator;
         }
 
         /// <summary>

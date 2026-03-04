@@ -96,16 +96,16 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/feedbacks",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
-                .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("has_comment", hasComment?.ToString()) 
-                .AddOptionalParameter("has_score", hasScore?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
+                .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("has_comment", hasComment?.ToString())
+                .AddOptionalParameter("has_score", hasScore?.ToString())
                 .AddOptionalParameter("level", level?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

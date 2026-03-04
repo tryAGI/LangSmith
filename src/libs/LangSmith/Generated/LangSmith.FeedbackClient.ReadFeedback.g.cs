@@ -46,7 +46,7 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/feedback/{feedbackId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("include_user_names", includeUserNames?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

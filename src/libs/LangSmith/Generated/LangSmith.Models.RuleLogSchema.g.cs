@@ -91,6 +91,12 @@ namespace LangSmith
         public global::LangSmith.RuleLogActionResponse? Webhooks { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
+        public string? ThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -112,6 +118,7 @@ namespace LangSmith
         /// <param name="evaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
+        /// <param name="threadId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -128,7 +135,8 @@ namespace LangSmith
             global::LangSmith.RuleLogActionResponse? addToDataset,
             global::LangSmith.RuleLogActionResponse? evaluators,
             global::LangSmith.RuleLogActionResponse? alerts,
-            global::LangSmith.RuleLogActionResponse? webhooks)
+            global::LangSmith.RuleLogActionResponse? webhooks,
+            string? threadId)
         {
             this.RuleId = ruleId;
             this.RunId = runId;
@@ -143,6 +151,7 @@ namespace LangSmith
             this.Evaluators = evaluators;
             this.Alerts = alerts;
             this.Webhooks = webhooks;
+            this.ThreadId = threadId;
         }
 
         /// <summary>

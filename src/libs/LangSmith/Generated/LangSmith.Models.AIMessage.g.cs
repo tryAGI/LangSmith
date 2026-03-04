@@ -7,9 +7,9 @@ namespace LangSmith
 {
     /// <summary>
     /// Message from an AI.<br/>
-    /// AIMessage is returned from a chat model as a response to a prompt.<br/>
+    /// An `AIMessage` is returned from a chat model as a response to a prompt.<br/>
     /// This message represents the output of the model and consists of both<br/>
-    /// the raw output as returned by the model together standardized fields<br/>
+    /// the raw output as returned by the model and standardized fields<br/>
     /// (e.g., tool calls, usage metadata) added by the LangChain framework.
     /// </summary>
     public sealed partial class AIMessage
@@ -54,12 +54,6 @@ namespace LangSmith
         public string? Id { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("example")]
-        public bool? Example { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
@@ -75,23 +69,28 @@ namespace LangSmith
         /// Usage metadata for a message, such as token counts.<br/>
         /// This is a standard representation of token usage that is consistent across models.<br/>
         /// Example:<br/>
-        ///     .. code-block:: python<br/>
-        ///         {<br/>
-        ///             "input_tokens": 350,<br/>
-        ///             "output_tokens": 240,<br/>
-        ///             "total_tokens": 590,<br/>
-        ///             "input_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "cache_creation": 200,<br/>
-        ///                 "cache_read": 100,<br/>
-        ///             },<br/>
-        ///             "output_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "reasoning": 200,<br/>
-        ///             }<br/>
-        ///         }<br/>
-        /// .. versionchanged:: 0.3.9<br/>
-        ///     Added ``input_token_details`` and ``output_token_details``.
+        ///     ```python<br/>
+        ///     {<br/>
+        ///         "input_tokens": 350,<br/>
+        ///         "output_tokens": 240,<br/>
+        ///         "total_tokens": 590,<br/>
+        ///         "input_token_details": {<br/>
+        ///             "audio": 10,<br/>
+        ///             "cache_creation": 200,<br/>
+        ///             "cache_read": 100,<br/>
+        ///         },<br/>
+        ///         "output_token_details": {<br/>
+        ///             "audio": 10,<br/>
+        ///             "reasoning": 200,<br/>
+        ///         },<br/>
+        ///     }<br/>
+        ///     ```<br/>
+        /// !!! warning "Behavior changed in `langchain-core` 0.3.9"<br/>
+        ///     Added `input_token_details` and `output_token_details`.<br/>
+        /// !!! note "LangSmith SDK"<br/>
+        ///     The LangSmith SDK also has a `UsageMetadata` class. While the two share fields,<br/>
+        ///     LangSmith's `UsageMetadata` has additional fields to capture cost information<br/>
+        ///     used by the LangSmith platform.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_metadata")]
         public global::LangSmith.UsageMetadata? UsageMetadata { get; set; }
@@ -113,32 +112,34 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="id"></param>
-        /// <param name="example">
-        /// Default Value: false
-        /// </param>
         /// <param name="toolCalls"></param>
         /// <param name="invalidToolCalls"></param>
         /// <param name="usageMetadata">
         /// Usage metadata for a message, such as token counts.<br/>
         /// This is a standard representation of token usage that is consistent across models.<br/>
         /// Example:<br/>
-        ///     .. code-block:: python<br/>
-        ///         {<br/>
-        ///             "input_tokens": 350,<br/>
-        ///             "output_tokens": 240,<br/>
-        ///             "total_tokens": 590,<br/>
-        ///             "input_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "cache_creation": 200,<br/>
-        ///                 "cache_read": 100,<br/>
-        ///             },<br/>
-        ///             "output_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "reasoning": 200,<br/>
-        ///             }<br/>
-        ///         }<br/>
-        /// .. versionchanged:: 0.3.9<br/>
-        ///     Added ``input_token_details`` and ``output_token_details``.
+        ///     ```python<br/>
+        ///     {<br/>
+        ///         "input_tokens": 350,<br/>
+        ///         "output_tokens": 240,<br/>
+        ///         "total_tokens": 590,<br/>
+        ///         "input_token_details": {<br/>
+        ///             "audio": 10,<br/>
+        ///             "cache_creation": 200,<br/>
+        ///             "cache_read": 100,<br/>
+        ///         },<br/>
+        ///         "output_token_details": {<br/>
+        ///             "audio": 10,<br/>
+        ///             "reasoning": 200,<br/>
+        ///         },<br/>
+        ///     }<br/>
+        ///     ```<br/>
+        /// !!! warning "Behavior changed in `langchain-core` 0.3.9"<br/>
+        ///     Added `input_token_details` and `output_token_details`.<br/>
+        /// !!! note "LangSmith SDK"<br/>
+        ///     The LangSmith SDK also has a `UsageMetadata` class. While the two share fields,<br/>
+        ///     LangSmith's `UsageMetadata` has additional fields to capture cost information<br/>
+        ///     used by the LangSmith platform.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -150,7 +151,6 @@ namespace LangSmith
             global::LangSmith.AIMessageType? type,
             string? name,
             string? id,
-            bool? example,
             global::System.Collections.Generic.IList<global::LangSmith.ToolCall>? toolCalls,
             global::System.Collections.Generic.IList<global::LangSmith.InvalidToolCall>? invalidToolCalls,
             global::LangSmith.UsageMetadata? usageMetadata)
@@ -161,7 +161,6 @@ namespace LangSmith
             this.Type = type;
             this.Name = name;
             this.Id = id;
-            this.Example = example;
             this.ToolCalls = toolCalls;
             this.InvalidToolCalls = invalidToolCalls;
             this.UsageMetadata = usageMetadata;

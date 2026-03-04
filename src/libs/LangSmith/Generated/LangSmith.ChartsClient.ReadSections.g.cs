@@ -79,13 +79,13 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/charts/section",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("title_contains", titleContains) 
-                .AddOptionalParameter("ids", ids, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("sort_by", sortBy) 
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("title_contains", titleContains)
+                .AddOptionalParameter("ids", ids, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("sort_by", sortBy)
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

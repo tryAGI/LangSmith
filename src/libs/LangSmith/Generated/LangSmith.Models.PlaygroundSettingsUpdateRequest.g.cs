@@ -33,6 +33,42 @@ namespace LangSmith
         public global::LangSmith.PlaygroundSavedOptions? Options { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_playground")]
+        public bool? AvailableInPlayground { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_evaluators")]
+        public bool? AvailableInEvaluators { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_agent_builder")]
+        public bool? AvailableInAgentBuilder { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_polly")]
+        public bool? AvailableInPolly { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_insights_heavy")]
+        public bool? AvailableInInsightsHeavy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_insights_light")]
+        public bool? AvailableInInsightsLight { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,6 +81,12 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="settings"></param>
         /// <param name="options"></param>
+        /// <param name="availableInPlayground"></param>
+        /// <param name="availableInEvaluators"></param>
+        /// <param name="availableInAgentBuilder"></param>
+        /// <param name="availableInPolly"></param>
+        /// <param name="availableInInsightsHeavy"></param>
+        /// <param name="availableInInsightsLight"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,12 +94,24 @@ namespace LangSmith
             string? name,
             string? description,
             object? settings,
-            global::LangSmith.PlaygroundSavedOptions? options)
+            global::LangSmith.PlaygroundSavedOptions? options,
+            bool? availableInPlayground,
+            bool? availableInEvaluators,
+            bool? availableInAgentBuilder,
+            bool? availableInPolly,
+            bool? availableInInsightsHeavy,
+            bool? availableInInsightsLight)
         {
             this.Name = name;
             this.Description = description;
             this.Settings = settings;
             this.Options = options;
+            this.AvailableInPlayground = availableInPlayground;
+            this.AvailableInEvaluators = availableInEvaluators;
+            this.AvailableInAgentBuilder = availableInAgentBuilder;
+            this.AvailableInPolly = availableInPolly;
+            this.AvailableInInsightsHeavy = availableInInsightsHeavy;
+            this.AvailableInInsightsLight = availableInInsightsLight;
         }
 
         /// <summary>

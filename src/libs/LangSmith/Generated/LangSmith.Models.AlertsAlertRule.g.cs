@@ -73,6 +73,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public string? SessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
+        public string? SessionName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
@@ -127,6 +139,8 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="operator"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
         /// <param name="threshold"></param>
         /// <param name="thresholdMultiplier"></param>
         /// <param name="thresholdWindowMinutes"></param>
@@ -150,6 +164,8 @@ namespace LangSmith
             string? denominatorFilter,
             string? filter,
             string? id,
+            string? sessionId,
+            string? sessionName,
             double? threshold,
             double? thresholdMultiplier,
             int? thresholdWindowMinutes,
@@ -166,6 +182,8 @@ namespace LangSmith
             this.DenominatorFilter = denominatorFilter;
             this.Filter = filter;
             this.Id = id;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
             this.Threshold = threshold;
             this.ThresholdMultiplier = thresholdMultiplier;
             this.ThresholdWindowMinutes = thresholdWindowMinutes;

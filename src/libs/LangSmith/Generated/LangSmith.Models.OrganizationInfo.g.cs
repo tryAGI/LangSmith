@@ -62,6 +62,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("member_disabled")]
+        public bool? MemberDisabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
         public bool? SsoOnly { get; set; }
 
@@ -70,6 +76,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
         public bool? JitProvisioningEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("invites_enabled")]
+        public bool? InvitesEnabled { get; set; }
 
         /// <summary>
         /// 
@@ -86,20 +98,56 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
-        public bool? MarketplacePayoutsEnabled { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("pat_creation_disabled")]
+        public bool? PatCreationDisabled { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("wallet")]
-        public global::LangSmith.Wallet? Wallet { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_admin_can_invite_to_org")]
+        public bool? WorkspaceAdminCanInviteToOrg { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
+        public bool? MarketplacePayoutsEnabled { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
         public bool? DefaultSsoProvision { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_api_key_expiry_days")]
+        public int? MaxApiKeyExpiryDays { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
+        public string? SecurityContact { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_pat_expiry_days")]
+        public int? MaxPatExpiryDays { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_service_key_expiry_days")]
+        public int? MaxServiceKeyExpiryDays { get; set; }
+
+        /// <summary>
+        /// Default Value: :
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
+        public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -124,22 +172,40 @@ namespace LangSmith
         /// <param name="disabled">
         /// Default Value: false
         /// </param>
+        /// <param name="memberDisabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="ssoOnly">
         /// Default Value: false
         /// </param>
         /// <param name="jitProvisioningEnabled">
         /// Default Value: true
         /// </param>
+        /// <param name="invitesEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="ssoLoginSlug"></param>
         /// <param name="publicSharingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="patCreationDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
         /// <param name="marketplacePayoutsEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="wallet"></param>
         /// <param name="defaultSsoProvision">
         /// Default Value: false
+        /// </param>
+        /// <param name="maxApiKeyExpiryDays"></param>
+        /// <param name="securityContact"></param>
+        /// <param name="maxPatExpiryDays"></param>
+        /// <param name="maxServiceKeyExpiryDays"></param>
+        /// <param name="scimGroupNameSeparator">
+        /// Default Value: :
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -153,13 +219,21 @@ namespace LangSmith
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
             bool? disabled,
+            bool? memberDisabled,
             bool? ssoOnly,
             bool? jitProvisioningEnabled,
+            bool? invitesEnabled,
             string? ssoLoginSlug,
             bool? publicSharingDisabled,
+            bool? patCreationDisabled,
+            bool? workspaceAdminCanInviteToOrg,
             bool? marketplacePayoutsEnabled,
-            global::LangSmith.Wallet? wallet,
-            bool? defaultSsoProvision)
+            bool? defaultSsoProvision,
+            int? maxApiKeyExpiryDays,
+            string? securityContact,
+            int? maxPatExpiryDays,
+            int? maxServiceKeyExpiryDays,
+            string? scimGroupNameSeparator)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.IsPersonal = isPersonal;
@@ -169,13 +243,21 @@ namespace LangSmith
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;
             this.Disabled = disabled;
+            this.MemberDisabled = memberDisabled;
             this.SsoOnly = ssoOnly;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
+            this.InvitesEnabled = invitesEnabled;
             this.SsoLoginSlug = ssoLoginSlug;
             this.PublicSharingDisabled = publicSharingDisabled;
+            this.PatCreationDisabled = patCreationDisabled;
+            this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
-            this.Wallet = wallet;
             this.DefaultSsoProvision = defaultSsoProvision;
+            this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
+            this.SecurityContact = securityContact;
+            this.MaxPatExpiryDays = maxPatExpiryDays;
+            this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
+            this.ScimGroupNameSeparator = scimGroupNameSeparator;
         }
 
         /// <summary>

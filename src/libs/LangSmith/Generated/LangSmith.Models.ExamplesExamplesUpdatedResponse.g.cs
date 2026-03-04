@@ -9,6 +9,13 @@ namespace LangSmith
     public sealed partial class ExamplesExamplesUpdatedResponse
     {
         /// <summary>
+        /// Example: 2024-01-21T10:00:00.123456Z
+        /// </summary>
+        /// <example>2024-01-21T10:00:00.123456Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
+        public string? AsOf { get; set; }
+
+        /// <summary>
         /// Example: 1
         /// </summary>
         /// <example>1</example>
@@ -31,6 +38,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ExamplesExamplesUpdatedResponse" /> class.
         /// </summary>
+        /// <param name="asOf">
+        /// Example: 2024-01-21T10:00:00.123456Z
+        /// </param>
         /// <param name="count">
         /// Example: 1
         /// </param>
@@ -41,9 +51,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExamplesExamplesUpdatedResponse(
+            string? asOf,
             int? count,
             global::System.Collections.Generic.IList<string>? exampleIds)
         {
+            this.AsOf = asOf;
             this.Count = count;
             this.ExampleIds = exampleIds;
         }

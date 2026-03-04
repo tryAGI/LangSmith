@@ -71,6 +71,18 @@ namespace LangSmith
         public required global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        public global::System.DateTime? EndTime { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -90,6 +102,8 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,7 +116,9 @@ namespace LangSmith
             global::System.DateTime updatedAt,
             global::System.DateTime? finishedAt,
             int? retryNumber,
-            object? errors)
+            object? errors,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime)
         {
             this.BulkExportId = bulkExportId;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
@@ -113,6 +129,8 @@ namespace LangSmith
             this.FinishedAt = finishedAt;
             this.RetryNumber = retryNumber;
             this.Errors = errors;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
         }
 
         /// <summary>

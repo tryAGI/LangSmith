@@ -34,6 +34,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::LangSmith.TenantShareDatasetToken? Dataset { get; init; }
+#else
+        public global::LangSmith.TenantShareDatasetToken? Dataset { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
+#endif
+        public bool IsDataset => Dataset != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EntitiesItem(global::LangSmith.TenantShareRunToken value) => new EntitiesItem((global::LangSmith.TenantShareRunToken?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace LangSmith
         {
             Run = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LangSmith.TenantShareDatasetToken? Dataset { get; init; }
-#else
-        public global::LangSmith.TenantShareDatasetToken? Dataset { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
-#endif
-        public bool IsDataset => Dataset != null;
 
         /// <summary>
         /// 

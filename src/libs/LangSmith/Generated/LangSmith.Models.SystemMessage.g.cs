@@ -10,18 +10,15 @@ namespace LangSmith
     /// The system message is usually passed in as the first of a sequence<br/>
     /// of input messages.<br/>
     /// Example:<br/>
-    ///     .. code-block:: python<br/>
-    ///         from langchain_core.messages import HumanMessage, SystemMessage<br/>
-    ///         messages = [<br/>
-    ///             SystemMessage(<br/>
-    ///                 content="You are a helpful assistant! Your name is Bob."<br/>
-    ///             ),<br/>
-    ///             HumanMessage(<br/>
-    ///                 content="What is your name?"<br/>
-    ///             )<br/>
-    ///         ]<br/>
-    ///         # Define a chat model and invoke it with the messages<br/>
-    ///         print(model.invoke(messages))
+    ///     ```python<br/>
+    ///     from langchain_core.messages import HumanMessage, SystemMessage<br/>
+    ///     messages = [<br/>
+    ///         SystemMessage(content="You are a helpful assistant! Your name is Bob."),<br/>
+    ///         HumanMessage(content="What is your name?"),<br/>
+    ///     ]<br/>
+    ///     # Define a chat model and invoke it with the messages<br/>
+    ///     print(model.invoke(messages))<br/>
+    ///     ```
     /// </summary>
     public sealed partial class SystemMessage
     {

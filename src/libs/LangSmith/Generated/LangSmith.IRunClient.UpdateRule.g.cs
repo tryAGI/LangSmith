@@ -14,7 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> UpdateRuleAsync(
             global::System.Guid ruleId,
-            global::LangSmith.RunRulesCreateSchema request,
+            global::LangSmith.RunRulesUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>

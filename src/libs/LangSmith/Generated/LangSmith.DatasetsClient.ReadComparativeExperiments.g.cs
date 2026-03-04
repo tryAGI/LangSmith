@@ -84,13 +84,13 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/comparative",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

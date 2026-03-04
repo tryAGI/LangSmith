@@ -13,6 +13,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("config_id")]
+        public global::System.Guid? ConfigId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         public global::System.DateTime? StartTime { get; set; }
 
@@ -72,6 +78,37 @@ namespace LangSmith
         public object? AttributeSchemas { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_context")]
+        public global::System.Collections.Generic.Dictionary<string, string>? UserContext { get; set; }
+
+        /// <summary>
+        /// Default Value: openai
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelJsonConverter))]
+        public global::LangSmith.CreateRunClusteringJobRequestModel? Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cluster_model")]
+        public string? ClusterModel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary_model")]
+        public string? SummaryModel { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("validate_model_secrets")]
+        public bool? ValidateModelSecrets { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -80,6 +117,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRunClusteringJobRequest" /> class.
         /// </summary>
+        /// <param name="configId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="lastNHours"></param>
@@ -90,10 +128,20 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="name"></param>
         /// <param name="attributeSchemas"></param>
+        /// <param name="userContext"></param>
+        /// <param name="model">
+        /// Default Value: openai
+        /// </param>
+        /// <param name="clusterModel"></param>
+        /// <param name="summaryModel"></param>
+        /// <param name="validateModelSecrets">
+        /// Default Value: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateRunClusteringJobRequest(
+            global::System.Guid? configId,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             int? lastNHours,
@@ -103,8 +151,14 @@ namespace LangSmith
             string? summaryPrompt,
             string? filter,
             string? name,
-            object? attributeSchemas)
+            object? attributeSchemas,
+            global::System.Collections.Generic.Dictionary<string, string>? userContext,
+            global::LangSmith.CreateRunClusteringJobRequestModel? model,
+            string? clusterModel,
+            string? summaryModel,
+            bool? validateModelSecrets)
         {
+            this.ConfigId = configId;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.LastNHours = lastNHours;
@@ -115,6 +169,11 @@ namespace LangSmith
             this.Filter = filter;
             this.Name = name;
             this.AttributeSchemas = attributeSchemas;
+            this.UserContext = userContext;
+            this.Model = model;
+            this.ClusterModel = clusterModel;
+            this.SummaryModel = summaryModel;
+            this.ValidateModelSecrets = validateModelSecrets;
         }
 
         /// <summary>

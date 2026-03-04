@@ -12,8 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool SsoOnly { get; set; }
+        public bool? SsoOnly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +28,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AllowedLoginMethodsUpdate(
-            bool ssoOnly)
+            bool? ssoOnly)
         {
             this.SsoOnly = ssoOnly;
         }

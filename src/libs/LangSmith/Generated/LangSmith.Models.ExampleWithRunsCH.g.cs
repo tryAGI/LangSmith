@@ -4,7 +4,10 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Example schema with list of runs.
+    /// Example schema with list of runs from ClickHouse.<br/>
+    /// For non-grouped endpoint (/datasets/{dataset_id}/runs): runs from single session.<br/>
+    /// For grouped endpoint (/datasets/{dataset_id}/group/runs): flat array of runs from<br/>
+    /// all sessions, where each run has a session_id field for frontend to determine column placement.
     /// </summary>
     public sealed partial class ExampleWithRunsCH
     {

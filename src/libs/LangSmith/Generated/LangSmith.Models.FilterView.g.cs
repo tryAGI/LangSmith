@@ -49,6 +49,24 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        public global::System.DateTime? EndTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public string? Duration { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -88,6 +106,9 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="type"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="duration"></param>
         /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="createdAt"></param>
@@ -105,6 +126,9 @@ namespace LangSmith
             string? treeFilterString,
             string? description,
             global::LangSmith.FilterViewType? type,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            string? duration,
             global::System.Guid? sessionId)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -116,6 +140,9 @@ namespace LangSmith
             this.TreeFilterString = treeFilterString;
             this.Description = description;
             this.Type = type;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Duration = duration;
             this.SessionId = sessionId;
         }
 

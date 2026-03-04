@@ -22,7 +22,8 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Delete Feedback Formula Endpoint
+        /// Delete Feedback Formula Endpoint<br/>
+        /// Delete a feedback formula by id
         /// </summary>
         /// <param name="feedbackFormulaId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

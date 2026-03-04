@@ -10,13 +10,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="ruleId"></param>
         /// <param name="limit">
-        /// Default Value: 720
+        /// Default Value: 150
         /// </param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="sessionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>> ListRuleLogsAsync(
@@ -25,6 +26,7 @@ namespace LangSmith
             int? offset = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
+            global::System.Guid? sessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

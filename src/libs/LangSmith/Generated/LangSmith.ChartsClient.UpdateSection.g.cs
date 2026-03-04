@@ -214,9 +214,15 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
+        /// <param name="title">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="index">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(

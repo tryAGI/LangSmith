@@ -91,6 +91,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("commit_tags")]
+        public global::System.Collections.Generic.IList<string>? CommitTags { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repo_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.RepoWithLookupsRepoType RepoType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Owner { get; set; }
@@ -145,6 +159,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
+        public string? CreatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_full_name")]
         public string? OriginalRepoFullName { get; set; }
 
@@ -181,6 +201,8 @@ namespace LangSmith
         /// <param name="tags"></param>
         /// <param name="originalRepoId"></param>
         /// <param name="upstreamRepoId"></param>
+        /// <param name="commitTags"></param>
+        /// <param name="repoType"></param>
         /// <param name="owner"></param>
         /// <param name="fullName"></param>
         /// <param name="numLikes"></param>
@@ -189,6 +211,7 @@ namespace LangSmith
         /// <param name="likedByAuthUser"></param>
         /// <param name="lastCommitHash"></param>
         /// <param name="numCommits"></param>
+        /// <param name="createdBy"></param>
         /// <param name="originalRepoFullName"></param>
         /// <param name="upstreamRepoFullName"></param>
         /// <param name="latestCommitManifest">
@@ -206,6 +229,7 @@ namespace LangSmith
             bool isPublic,
             bool isArchived,
             global::System.Collections.Generic.IList<string> tags,
+            global::LangSmith.RepoWithLookupsRepoType repoType,
             string? owner,
             string fullName,
             int numLikes,
@@ -216,8 +240,10 @@ namespace LangSmith
             string? readme,
             global::System.Guid? originalRepoId,
             global::System.Guid? upstreamRepoId,
+            global::System.Collections.Generic.IList<string>? commitTags,
             bool? likedByAuthUser,
             string? lastCommitHash,
+            string? createdBy,
             string? originalRepoFullName,
             string? upstreamRepoFullName,
             global::LangSmith.CommitManifestResponse? latestCommitManifest)
@@ -230,6 +256,7 @@ namespace LangSmith
             this.IsPublic = isPublic;
             this.IsArchived = isArchived;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.RepoType = repoType;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
             this.NumLikes = numLikes;
@@ -240,8 +267,10 @@ namespace LangSmith
             this.Readme = readme;
             this.OriginalRepoId = originalRepoId;
             this.UpstreamRepoId = upstreamRepoId;
+            this.CommitTags = commitTags;
             this.LikedByAuthUser = likedByAuthUser;
             this.LastCommitHash = lastCommitHash;
+            this.CreatedBy = createdBy;
             this.OriginalRepoFullName = originalRepoFullName;
             this.UpstreamRepoFullName = upstreamRepoFullName;
             this.LatestCommitManifest = latestCommitManifest;

@@ -55,6 +55,12 @@ namespace LangSmith
         public int? PerGroupLimit { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,6 +84,7 @@ namespace LangSmith
         /// <param name="perGroupLimit">
         /// Default Value: 5
         /// </param>
+        /// <param name="filters"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,7 +95,8 @@ namespace LangSmith
             int? offset,
             int? limit,
             bool? preview,
-            int? perGroupLimit)
+            int? perGroupLimit,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
             this.GroupBy = groupBy;
@@ -97,6 +105,7 @@ namespace LangSmith
             this.Limit = limit;
             this.Preview = preview;
             this.PerGroupLimit = perGroupLimit;
+            this.Filters = filters;
         }
 
         /// <summary>

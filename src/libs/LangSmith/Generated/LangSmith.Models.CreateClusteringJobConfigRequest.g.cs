@@ -16,11 +16,23 @@ namespace LangSmith
         public required string Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Request to create a run clustering job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.CreateRunClusteringJobRequest Config { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("schedule_cron")]
+        public string? ScheduleCron { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,18 +44,24 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CreateClusteringJobConfigRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="config">
         /// Request to create a run clustering job.
         /// </param>
+        /// <param name="scheduleCron"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateClusteringJobConfigRequest(
             string name,
-            global::LangSmith.CreateRunClusteringJobRequest config)
+            global::LangSmith.CreateRunClusteringJobRequest config,
+            string? description,
+            string? scheduleCron)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Description = description;
+            this.ScheduleCron = scheduleCron;
         }
 
         /// <summary>

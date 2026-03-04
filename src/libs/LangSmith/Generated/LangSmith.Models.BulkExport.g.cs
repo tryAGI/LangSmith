@@ -49,6 +49,13 @@ namespace LangSmith
         public global::LangSmith.BulkExportFormat? Format { get; set; }
 
         /// <summary>
+        /// Enum for bulk export format versions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("format_version")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionJsonConverter))]
+        public global::LangSmith.BulkExportFormatVersion? FormatVersion { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compression")]
@@ -60,6 +67,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval_hours")]
         public int? IntervalHours { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("export_fields")]
+        public global::System.Collections.Generic.IList<string>? ExportFields { get; set; }
 
         /// <summary>
         /// 
@@ -125,8 +138,12 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
         /// <param name="format"></param>
+        /// <param name="formatVersion">
+        /// Enum for bulk export format versions.
+        /// </param>
         /// <param name="compression"></param>
         /// <param name="intervalHours"></param>
+        /// <param name="exportFields"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="status"></param>
@@ -150,8 +167,10 @@ namespace LangSmith
             global::System.DateTime? endTime,
             string? filter,
             global::LangSmith.BulkExportFormat? format,
+            global::LangSmith.BulkExportFormatVersion? formatVersion,
             global::LangSmith.BulkExportCompression? compression,
             int? intervalHours,
+            global::System.Collections.Generic.IList<string>? exportFields,
             global::System.Guid? sourceBulkExportId)
         {
             this.BulkExportDestinationId = bulkExportDestinationId;
@@ -166,8 +185,10 @@ namespace LangSmith
             this.EndTime = endTime;
             this.Filter = filter;
             this.Format = format;
+            this.FormatVersion = formatVersion;
             this.Compression = compression;
             this.IntervalHours = intervalHours;
+            this.ExportFields = exportFields;
             this.SourceBulkExportId = sourceBulkExportId;
         }
 

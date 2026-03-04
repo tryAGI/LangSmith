@@ -24,7 +24,8 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Update Feedback Formula Ep
+        /// Update Feedback Formula Ep<br/>
+        /// Update a feedback formula
         /// </summary>
         /// <param name="feedbackFormulaId"></param>
         /// <param name="request"></param>
@@ -209,7 +210,8 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Update Feedback Formula Ep
+        /// Update Feedback Formula Ep<br/>
+        /// Update a feedback formula
         /// </summary>
         /// <param name="feedbackFormulaId"></param>
         /// <param name="feedbackKey"></param>

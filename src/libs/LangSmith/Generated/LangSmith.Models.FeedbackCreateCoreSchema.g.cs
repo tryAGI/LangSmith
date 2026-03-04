@@ -78,8 +78,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>))]
-        public global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? FeedbackSource { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackSourceJsonConverter))]
+        public global::LangSmith.FeedbackSource? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
@@ -129,7 +129,7 @@ namespace LangSmith
             global::System.Guid? feedbackGroupId,
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? id,
-            global::LangSmith.AnyOf<global::LangSmith.AppFeedbackSource, global::LangSmith.APIFeedbackSource, global::LangSmith.ModelFeedbackSource, global::LangSmith.AutoEvalFeedbackSource>? feedbackSource,
+            global::LangSmith.FeedbackSource? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
             object? extra)
         {

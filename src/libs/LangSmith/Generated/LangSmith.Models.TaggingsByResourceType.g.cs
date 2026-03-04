@@ -11,20 +11,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompts")]
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Prompts { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("alerts")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Alerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Projects { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("dashboards")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Dashboards { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queues")]
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Queues { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("datasets")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Datasets { get; set; }
 
         /// <summary>
         /// 
@@ -41,14 +41,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("datasets")]
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Datasets { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Projects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("dashboards")]
-        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Dashboards { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompts")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Prompts { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("queues")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Queues { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,32 +65,35 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="TaggingsByResourceType" /> class.
         /// </summary>
-        /// <param name="prompts"></param>
-        /// <param name="projects"></param>
-        /// <param name="queues"></param>
+        /// <param name="alerts"></param>
+        /// <param name="dashboards"></param>
+        /// <param name="datasets"></param>
         /// <param name="deployments"></param>
         /// <param name="experiments"></param>
-        /// <param name="datasets"></param>
-        /// <param name="dashboards"></param>
+        /// <param name="projects"></param>
+        /// <param name="prompts"></param>
+        /// <param name="queues"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TaggingsByResourceType(
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? prompts,
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? projects,
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? queues,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? alerts,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? dashboards,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? datasets,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? deployments,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? experiments,
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? datasets,
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? dashboards)
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? projects,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? prompts,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? queues)
         {
-            this.Prompts = prompts;
-            this.Projects = projects;
-            this.Queues = queues;
+            this.Alerts = alerts;
+            this.Dashboards = dashboards;
+            this.Datasets = datasets;
             this.Deployments = deployments;
             this.Experiments = experiments;
-            this.Datasets = datasets;
-            this.Dashboards = dashboards;
+            this.Projects = projects;
+            this.Prompts = prompts;
+            this.Queues = queues;
         }
 
         /// <summary>

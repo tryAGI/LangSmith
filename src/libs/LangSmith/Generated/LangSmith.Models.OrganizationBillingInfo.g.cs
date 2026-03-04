@@ -99,6 +99,12 @@ namespace LangSmith
         public bool? DefaultSsoProvision { get; set; }
 
         /// <summary>
+        /// Info about an org's automated startup-to-Plus plan transition.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("plus_plan_transition")]
+        public global::LangSmith.PlusPlanTransitionInfo? PlusPlanTransition { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -135,6 +141,9 @@ namespace LangSmith
         /// <param name="defaultSsoProvision">
         /// Default Value: false
         /// </param>
+        /// <param name="plusPlanTransition">
+        /// Info about an org's automated startup-to-Plus plan transition.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -152,7 +161,8 @@ namespace LangSmith
             global::LangSmith.CustomerVisiblePlanInfo? upcomingPlan,
             bool? reachedMaxWorkspaces,
             bool? disabled,
-            bool? defaultSsoProvision)
+            bool? defaultSsoProvision,
+            global::LangSmith.PlusPlanTransitionInfo? plusPlanTransition)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
@@ -168,6 +178,7 @@ namespace LangSmith
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Disabled = disabled;
             this.DefaultSsoProvision = defaultSsoProvision;
+            this.PlusPlanTransition = plusPlanTransition;
         }
 
         /// <summary>

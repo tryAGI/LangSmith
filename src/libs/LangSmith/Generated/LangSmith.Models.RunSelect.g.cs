@@ -240,6 +240,14 @@ namespace LangSmith
         /// 
         /// </summary>
         TraceMinMaxStartTime,
+        /// <summary>
+        /// 
+        /// </summary>
+        Messages,
+        /// <summary>
+        /// 
+        /// </summary>
+        InsertedAt,
     }
 
     /// <summary>
@@ -312,6 +320,8 @@ namespace LangSmith
                 RunSelect.TraceUpgrade => "trace_upgrade",
                 RunSelect.ThreadId => "thread_id",
                 RunSelect.TraceMinMaxStartTime => "trace_min_max_start_time",
+                RunSelect.Messages => "messages",
+                RunSelect.InsertedAt => "inserted_at",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -380,6 +390,8 @@ namespace LangSmith
                 "trace_upgrade" => RunSelect.TraceUpgrade,
                 "thread_id" => RunSelect.ThreadId,
                 "trace_min_max_start_time" => RunSelect.TraceMinMaxStartTime,
+                "messages" => RunSelect.Messages,
+                "inserted_at" => RunSelect.InsertedAt,
                 _ => null,
             };
         }

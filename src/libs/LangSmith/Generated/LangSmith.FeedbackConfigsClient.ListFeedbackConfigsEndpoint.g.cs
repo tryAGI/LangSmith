@@ -8,11 +8,19 @@ namespace LangSmith
         partial void PrepareListFeedbackConfigsEndpointArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? key,
+            ref string? nameContains,
+            ref int? offset,
+            ref int? limit,
+            ref bool? sortByDesc,
             ref bool? readAfterWrite);
         partial void PrepareListFeedbackConfigsEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<string>? key,
+            string? nameContains,
+            int? offset,
+            int? limit,
+            bool? sortByDesc,
             bool? readAfterWrite);
         partial void ProcessListFeedbackConfigsEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,6 +35,14 @@ namespace LangSmith
         /// List Feedback Configs Endpoint
         /// </summary>
         /// <param name="key"></param>
+        /// <param name="nameContains"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit"></param>
+        /// <param name="sortByDesc">
+        /// Default Value: true
+        /// </param>
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
@@ -34,6 +50,10 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackConfigSchema>> ListFeedbackConfigsEndpointAsync(
             global::System.Collections.Generic.IList<string>? key = default,
+            string? nameContains = default,
+            int? offset = default,
+            int? limit = default,
+            bool? sortByDesc = default,
             bool? readAfterWrite = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -42,13 +62,21 @@ namespace LangSmith
             PrepareListFeedbackConfigsEndpointArguments(
                 httpClient: HttpClient,
                 key: key,
+                nameContains: ref nameContains,
+                offset: ref offset,
+                limit: ref limit,
+                sortByDesc: ref sortByDesc,
                 readAfterWrite: ref readAfterWrite);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/feedback-configs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
                 .AddOptionalParameter("read_after_write", readAfterWrite?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -83,6 +111,10 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 key: key,
+                nameContains: nameContains,
+                offset: offset,
+                limit: limit,
+                sortByDesc: sortByDesc,
                 readAfterWrite: readAfterWrite);
 
             using var __response = await HttpClient.SendAsync(

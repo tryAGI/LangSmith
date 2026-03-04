@@ -49,8 +49,8 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/dashboard",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("type", type.ToValueString()) 
+            __pathBuilder
+                .AddRequiredParameter("type", type.ToValueString())
                 .AddRequiredParameter("color_scheme", colorScheme.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -206,9 +206,6 @@ namespace LangSmith
         /// Add Member To Current Org
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="roleId"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="workspaceRoleId"></param>
@@ -218,7 +215,6 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
-            bool? readOnly = default,
             global::System.Guid? roleId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds = default,
             global::System.Guid? workspaceRoleId = default,
@@ -229,7 +225,6 @@ namespace LangSmith
             var __request = new global::LangSmith.PendingIdentityCreate
             {
                 Email = email,
-                ReadOnly = readOnly,
                 RoleId = roleId,
                 WorkspaceIds = workspaceIds,
                 WorkspaceRoleId = workspaceRoleId,

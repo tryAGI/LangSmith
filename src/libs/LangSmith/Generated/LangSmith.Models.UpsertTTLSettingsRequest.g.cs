@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Base TTL settings model.
+    /// Base Ttl settings model.
     /// </summary>
-    public sealed partial class UpsertTTLSettingsRequest
+    public sealed partial class UpsertTtlSettingsRequest
     {
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpsertTTLSettingsRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpsertTtlSettingsRequest" /> class.
         /// </summary>
         /// <param name="tenantId"></param>
         /// <param name="defaultTraceTier"></param>
@@ -45,7 +45,7 @@ namespace LangSmith
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UpsertTTLSettingsRequest(
+        public UpsertTtlSettingsRequest(
             global::LangSmith.TraceTier defaultTraceTier,
             global::System.Guid? tenantId,
             bool? applyToAllProjects)
@@ -56,9 +56,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpsertTTLSettingsRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpsertTtlSettingsRequest" /> class.
         /// </summary>
-        public UpsertTTLSettingsRequest()
+        public UpsertTtlSettingsRequest()
         {
         }
     }

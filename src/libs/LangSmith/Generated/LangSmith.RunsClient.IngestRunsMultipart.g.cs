@@ -113,8 +113,9 @@ namespace LangSmith
             if (request.Attachment_runId__filename_ != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Attachment_runId__filename_}"),
-                    name: "attachment.{run_id}.{filename}");
+                    content: new global::System.Net.Http.ByteArrayContent(request.Attachment_runId__filename_ ?? global::System.Array.Empty<byte>()),
+                    name: "attachment.{run_id}.{filename}",
+                    fileName: request.Attachment_runId__filename_name ?? string.Empty);
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -439,6 +440,9 @@ namespace LangSmith
         /// <param name="attachment_runId__filename_">
         /// Binary attachment linked to run {run_id}
         /// </param>
+        /// <param name="attachment_runId__filename_name">
+        /// Binary attachment linked to run {run_id}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> IngestRunsMultipartAsync(
@@ -453,6 +457,7 @@ namespace LangSmith
             byte[]? feedback_runId_ = default,
             string? feedback_runId_name = default,
             byte[]? attachment_runId__filename_ = default,
+            string? attachment_runId__filename_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.Request2
@@ -468,6 +473,7 @@ namespace LangSmith
                 Feedback_runId_ = feedback_runId_,
                 Feedback_runId_name = feedback_runId_name,
                 Attachment_runId__filename_ = attachment_runId__filename_,
+                Attachment_runId__filename_name = attachment_runId__filename_name,
             };
 
             return await IngestRunsMultipartAsync(

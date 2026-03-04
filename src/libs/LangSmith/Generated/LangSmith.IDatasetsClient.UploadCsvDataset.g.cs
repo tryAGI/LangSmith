@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Upload Csv Dataset<br/>
-        /// Create a new dataset from a CSV file.
+        /// Create a new dataset from a CSV or JSONL file.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -17,7 +17,7 @@ namespace LangSmith
 
         /// <summary>
         /// Upload Csv Dataset<br/>
-        /// Create a new dataset from a CSV file.
+        /// Create a new dataset from a CSV or JSONL file.
         /// </summary>
         /// <param name="file"></param>
         /// <param name="filename"></param>
@@ -32,6 +32,9 @@ namespace LangSmith
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="transformations"></param>
+        /// <param name="inputKeyMappings"></param>
+        /// <param name="outputKeyMappings"></param>
+        /// <param name="metadataKeyMappings"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Dataset> UploadCsvDatasetAsync(
@@ -46,6 +49,9 @@ namespace LangSmith
             string? inputsSchemaDefinition = default,
             string? outputsSchemaDefinition = default,
             string? transformations = default,
+            string? inputKeyMappings = default,
+            string? outputKeyMappings = default,
+            string? metadataKeyMappings = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

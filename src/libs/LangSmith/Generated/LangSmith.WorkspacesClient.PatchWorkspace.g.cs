@@ -24,7 +24,8 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Patch Workspace
+        /// Patch Workspace<br/>
+        /// Update a workspace.
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="request"></param>
@@ -209,7 +210,8 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Patch Workspace
+        /// Patch Workspace<br/>
+        /// Update a workspace.
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="displayName"></param>

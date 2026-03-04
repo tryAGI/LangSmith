@@ -13,7 +13,8 @@ namespace LangSmith
             ref int? offset,
             ref int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            ref global::System.Guid? datasetId);
+            ref global::System.Guid? datasetId,
+            ref global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType? queueType);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,7 +24,8 @@ namespace LangSmith
             int? offset,
             int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::System.Guid? datasetId);
+            global::System.Guid? datasetId,
+            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType? queueType);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,6 +49,7 @@ namespace LangSmith
         /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="datasetId"></param>
+        /// <param name="queueType"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesAsync(
@@ -57,6 +60,7 @@ namespace LangSmith
             int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Guid? datasetId = default,
+            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType? queueType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -69,19 +73,21 @@ namespace LangSmith
                 offset: ref offset,
                 limit: ref limit,
                 tagValueId: tagValueId,
-                datasetId: ref datasetId);
+                datasetId: ref datasetId,
+                queueType: ref queueType);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/annotation-queues",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("ids", ids, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("ids", ids, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("dataset_id", datasetId?.ToString())
+                .AddOptionalParameter("queue_type", queueType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -120,7 +126,8 @@ namespace LangSmith
                 offset: offset,
                 limit: limit,
                 tagValueId: tagValueId,
-                datasetId: datasetId);
+                datasetId: datasetId,
+                queueType: queueType);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

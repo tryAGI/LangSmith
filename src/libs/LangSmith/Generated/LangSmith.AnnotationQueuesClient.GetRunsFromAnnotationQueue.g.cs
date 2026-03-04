@@ -64,10 +64,10 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("archived", archived?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("archived", archived?.ToString())
                 .AddOptionalParameter("include_stats", includeStats?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -53,7 +53,21 @@ namespace LangSmith
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Configuration for a Runnable.
+        /// Configuration for a `Runnable`.<br/>
+        /// !!! note Custom values<br/>
+        ///     The `TypedDict` has `total=False` set intentionally to:<br/>
+        ///     - Allow partial configs to be created and merged together via `merge_configs`<br/>
+        ///     - Support config propagation from parent to child runnables via<br/>
+        ///         `var_child_runnable_config` (a `ContextVar` that automatically passes<br/>
+        ///         config down the call stack without explicit parameter passing), where<br/>
+        ///         configs are merged rather than replaced<br/>
+        ///     !!! example<br/>
+        ///         ```python<br/>
+        ///         # Parent sets tags<br/>
+        ///         chain.invoke(input, config={"tags": ["parent"]})<br/>
+        ///         # Child automatically inherits and can add:<br/>
+        ///         # ensure_config({"tags": ["child"]}) -&gt; {"tags": ["parent", "child"]}<br/>
+        ///         ```
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -129,6 +143,12 @@ namespace LangSmith
         public int? Repetitions { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -145,7 +165,21 @@ namespace LangSmith
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls"></param>
         /// <param name="options">
-        /// Configuration for a Runnable.
+        /// Configuration for a `Runnable`.<br/>
+        /// !!! note Custom values<br/>
+        ///     The `TypedDict` has `total=False` set intentionally to:<br/>
+        ///     - Allow partial configs to be created and merged together via `merge_configs`<br/>
+        ///     - Support config propagation from parent to child runnables via<br/>
+        ///         `var_child_runnable_config` (a `ContextVar` that automatically passes<br/>
+        ///         config down the call stack without explicit parameter passing), where<br/>
+        ///         configs are merged rather than replaced<br/>
+        ///     !!! example<br/>
+        ///         ```python<br/>
+        ///         # Parent sets tags<br/>
+        ///         chain.invoke(input, config={"tags": ["parent"]})<br/>
+        ///         # Child automatically inherits and can add:<br/>
+        ///         # ensure_config({"tags": ["child"]}) -&gt; {"tags": ["parent", "child"]}<br/>
+        ///         ```
         /// </param>
         /// <param name="projectName"></param>
         /// <param name="repoHandle"></param>
@@ -162,6 +196,7 @@ namespace LangSmith
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
+        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -184,7 +219,8 @@ namespace LangSmith
             bool? useOrFallbackToWorkspaceSecrets,
             global::LangSmith.RunnerContextEnum? runnerContext,
             global::System.Collections.Generic.IList<string>? datasetSplits,
-            int? repetitions)
+            int? repetitions,
+            object? metadata)
         {
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.Secrets = secrets ?? throw new global::System.ArgumentNullException(nameof(secrets));
@@ -205,6 +241,7 @@ namespace LangSmith
             this.RunnerContext = runnerContext;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
+            this.Metadata = metadata;
         }
 
         /// <summary>

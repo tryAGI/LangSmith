@@ -51,8 +51,8 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/versions/diff",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("from_version", fromVersion.ToString() ?? string.Empty) 
+            __pathBuilder
+                .AddRequiredParameter("from_version", fromVersion.ToString() ?? string.Empty)
                 .AddRequiredParameter("to_version", toVersion.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();

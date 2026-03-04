@@ -31,12 +31,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ComparativeExperimentBase> CreateComparativeExperimentAsync(
             global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
-            global::System.Guid referenceDatasetId,
             global::System.Guid? id = default,
             string? name = default,
             string? description = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? modifiedAt = default,
+            global::System.Guid? referenceDatasetId = default,
             object? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

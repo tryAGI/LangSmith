@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -35,6 +37,13 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? Examples { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("split")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? Split { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +58,7 @@ namespace LangSmith
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </param>
         /// <param name="examples"></param>
+        /// <param name="split"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,12 +66,14 @@ namespace LangSmith
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
             object? asOf,
-            global::System.Collections.Generic.IList<global::System.Guid>? examples)
+            global::System.Collections.Generic.IList<global::System.Guid>? examples,
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split)
         {
             this.TargetDatasetId = targetDatasetId;
             this.SourceDatasetId = sourceDatasetId;
             this.AsOf = asOf;
             this.Examples = examples;
+            this.Split = split;
         }
 
         /// <summary>

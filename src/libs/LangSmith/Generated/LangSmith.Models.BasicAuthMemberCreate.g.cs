@@ -31,6 +31,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -75,7 +76,6 @@ namespace LangSmith
         /// <param name="userId"></param>
         /// <param name="lsUserId"></param>
         /// <param name="email"></param>
-        /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
@@ -88,7 +88,6 @@ namespace LangSmith
             string email,
             global::System.Guid? userId,
             global::System.Guid? lsUserId,
-            bool? readOnly,
             global::System.Guid? roleId,
             string? password,
             string? fullName,
@@ -98,7 +97,6 @@ namespace LangSmith
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.UserId = userId;
             this.LsUserId = lsUserId;
-            this.ReadOnly = readOnly;
             this.RoleId = roleId;
             this.Password = password;
             this.FullName = fullName;

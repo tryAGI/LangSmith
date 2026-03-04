@@ -9,13 +9,19 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
             ref int? offset,
-            global::System.Collections.Generic.IList<string>? emails);
+            global::System.Collections.Generic.IList<string>? emails,
+            ref string? q,
+            ref bool? sortByDesc,
+            ref global::LangSmith.MemberSortField? sortBy);
         partial void PrepareGetCurrentPendingOrgMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
             int? offset,
-            global::System.Collections.Generic.IList<string>? emails);
+            global::System.Collections.Generic.IList<string>? emails,
+            string? q,
+            bool? sortByDesc,
+            global::LangSmith.MemberSortField? sortBy);
         partial void ProcessGetCurrentPendingOrgMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,12 +41,25 @@ namespace LangSmith
         /// Default Value: 0
         /// </param>
         /// <param name="emails"></param>
+        /// <param name="q">
+        /// Search query for email
+        /// </param>
+        /// <param name="sortByDesc">
+        /// Sort in descending order<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="sortBy">
+        /// Sort fields for members list endpoints.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>> GetCurrentPendingOrgMembersAsync(
             int? limit = default,
             int? offset = default,
             global::System.Collections.Generic.IList<string>? emails = default,
+            string? q = default,
+            bool? sortByDesc = default,
+            global::LangSmith.MemberSortField? sortBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -49,15 +68,21 @@ namespace LangSmith
                 httpClient: HttpClient,
                 limit: ref limit,
                 offset: ref offset,
-                emails: emails);
+                emails: emails,
+                q: ref q,
+                sortByDesc: ref sortByDesc,
+                sortBy: ref sortBy);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/members/pending",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true)
+                .AddOptionalParameter("q", q)
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -92,7 +117,10 @@ namespace LangSmith
                 httpRequestMessage: __httpRequest,
                 limit: limit,
                 offset: offset,
-                emails: emails);
+                emails: emails,
+                q: q,
+                sortByDesc: sortByDesc,
+                sortBy: sortBy);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

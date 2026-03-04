@@ -19,6 +19,7 @@ namespace LangSmith
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ReadOnly { get; set; }
 
         /// <summary>
@@ -61,9 +62,6 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PendingIdentityCreate" /> class.
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="readOnly">
-        /// Default Value: false
-        /// </param>
         /// <param name="roleId"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="workspaceRoleId"></param>
@@ -74,7 +72,6 @@ namespace LangSmith
 #endif
         public PendingIdentityCreate(
             string email,
-            bool? readOnly,
             global::System.Guid? roleId,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds,
             global::System.Guid? workspaceRoleId,
@@ -82,7 +79,6 @@ namespace LangSmith
             string? fullName)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.ReadOnly = readOnly;
             this.RoleId = roleId;
             this.WorkspaceIds = workspaceIds;
             this.WorkspaceRoleId = workspaceRoleId;

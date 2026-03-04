@@ -36,13 +36,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.QueryExampleSchemaWithRunsFormatJsonConverter))]
-        public global::LangSmith.QueryExampleSchemaWithRunsFormat? Format { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         public global::System.Guid? ComparativeExperimentId { get; set; }
 
@@ -57,6 +50,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
+        public bool? Stream { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? ExampleIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,10 +82,13 @@ namespace LangSmith
         /// <param name="preview">
         /// Default Value: false
         /// </param>
-        /// <param name="format"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="sortParams"></param>
         /// <param name="filters"></param>
+        /// <param name="stream">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exampleIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,19 +97,21 @@ namespace LangSmith
             int? offset,
             int? limit,
             bool? preview,
-            global::LangSmith.QueryExampleSchemaWithRunsFormat? format,
             global::System.Guid? comparativeExperimentId,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
+            bool? stream,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
             this.Offset = offset;
             this.Limit = limit;
             this.Preview = preview;
-            this.Format = format;
             this.ComparativeExperimentId = comparativeExperimentId;
             this.SortParams = sortParams;
             this.Filters = filters;
+            this.Stream = stream;
+            this.ExampleIds = exampleIds;
         }
 
         /// <summary>

@@ -227,6 +227,9 @@ namespace LangSmith
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
         /// <param name="type"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="duration"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FilterView> UpdateFilterViewAsync(
@@ -238,6 +241,9 @@ namespace LangSmith
             string? traceFilterString = default,
             string? treeFilterString = default,
             global::LangSmith.FilterViewType? type = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
+            string? duration = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.FilterViewUpdate
@@ -248,6 +254,9 @@ namespace LangSmith
                 TraceFilterString = traceFilterString,
                 TreeFilterString = treeFilterString,
                 Type = type,
+                StartTime = startTime,
+                EndTime = endTime,
+                Duration = duration,
             };
 
             return await UpdateFilterViewAsync(

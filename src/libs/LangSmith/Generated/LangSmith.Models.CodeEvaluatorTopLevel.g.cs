@@ -16,6 +16,13 @@ namespace LangSmith
         public required string Code { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CodeEvaluatorLanguageJsonConverter))]
+        public global::LangSmith.CodeEvaluatorLanguage? Language { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -25,13 +32,16 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CodeEvaluatorTopLevel" /> class.
         /// </summary>
         /// <param name="code"></param>
+        /// <param name="language"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeEvaluatorTopLevel(
-            string code)
+            string code,
+            global::LangSmith.CodeEvaluatorLanguage? language)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Language = language;
         }
 
         /// <summary>

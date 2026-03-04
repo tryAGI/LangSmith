@@ -39,6 +39,13 @@ namespace LangSmith
         public object? S3AdditionalKwargs { get; set; }
 
         /// <summary>
+        /// Whether to prepend the bucket name to the S3 file path. Defaults to True. Set to False to skip prepending the bucket name if bucket name is already in the endpoint URL.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_bucket_in_prefix")]
+        public bool? IncludeBucketInPrefix { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,6 +59,10 @@ namespace LangSmith
         /// <param name="bucketName"></param>
         /// <param name="region"></param>
         /// <param name="s3AdditionalKwargs"></param>
+        /// <param name="includeBucketInPrefix">
+        /// Whether to prepend the bucket name to the S3 file path. Defaults to True. Set to False to skip prepending the bucket name if bucket name is already in the endpoint URL.<br/>
+        /// Default Value: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,13 +71,15 @@ namespace LangSmith
             string? prefix,
             string? bucketName,
             string? region,
-            object? s3AdditionalKwargs)
+            object? s3AdditionalKwargs,
+            bool? includeBucketInPrefix)
         {
             this.EndpointUrl = endpointUrl;
             this.Prefix = prefix;
             this.BucketName = bucketName;
             this.Region = region;
             this.S3AdditionalKwargs = s3AdditionalKwargs;
+            this.IncludeBucketInPrefix = includeBucketInPrefix;
         }
 
         /// <summary>

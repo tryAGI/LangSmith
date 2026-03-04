@@ -61,11 +61,11 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/runs/rules",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
-                .AddOptionalParameter("session_id", sessionId?.ToString()) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("name_contains", nameContains) 
+            __pathBuilder
+                .AddOptionalParameter("dataset_id", datasetId?.ToString())
+                .AddOptionalParameter("session_id", sessionId?.ToString())
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

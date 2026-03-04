@@ -11,21 +11,21 @@ namespace LangSmith
     public sealed partial class CustomChartsSectionUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Title { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
@@ -40,9 +40,15 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomChartsSectionUpdate" /> class.
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
+        /// <param name="title">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="index">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

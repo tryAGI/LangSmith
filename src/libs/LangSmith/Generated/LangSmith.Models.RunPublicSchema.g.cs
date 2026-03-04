@@ -274,6 +274,12 @@ namespace LangSmith
         public global::System.DateTime? FirstTokenTime { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
+        public global::System.Collections.Generic.IList<object>? Messages { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -335,6 +341,7 @@ namespace LangSmith
         /// <param name="completionCostDetails"></param>
         /// <param name="priceModelId"></param>
         /// <param name="firstTokenTime"></param>
+        /// <param name="messages"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -381,7 +388,8 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? promptCostDetails,
             global::System.Collections.Generic.Dictionary<string, string>? completionCostDetails,
             global::System.Guid? priceModelId,
-            global::System.DateTime? firstTokenTime)
+            global::System.DateTime? firstTokenTime,
+            global::System.Collections.Generic.IList<object>? messages)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;
@@ -426,6 +434,7 @@ namespace LangSmith
             this.CompletionCostDetails = completionCostDetails;
             this.PriceModelId = priceModelId;
             this.FirstTokenTime = firstTokenTime;
+            this.Messages = messages;
         }
 
         /// <summary>

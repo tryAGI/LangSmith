@@ -28,7 +28,8 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// List Feedback Formula Ep
+        /// List Feedback Formula Ep<br/>
+        /// List feedback formulas for a given dataset or tracing project
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="sessionId"></param>
@@ -59,10 +60,10 @@ namespace LangSmith
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/feedback/formulas",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
-                .AddOptionalParameter("session_id", sessionId?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("dataset_id", datasetId?.ToString())
+                .AddOptionalParameter("session_id", sessionId?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

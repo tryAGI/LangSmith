@@ -22,14 +22,30 @@ namespace LangSmith
         /// Update a chart.
         /// </summary>
         /// <param name="chartId"></param>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
-        /// <param name="chartType"></param>
-        /// <param name="series"></param>
-        /// <param name="sectionId"></param>
-        /// <param name="metadata"></param>
-        /// <param name="commonFilters"></param>
+        /// <param name="title">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="index">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="chartType">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="series">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="sectionId">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="metadata">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="commonFilters">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(

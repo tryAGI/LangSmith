@@ -232,6 +232,12 @@ namespace LangSmith
         public string? AppPath { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedbacks")]
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? Feedbacks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -280,6 +286,7 @@ namespace LangSmith
         /// <param name="status"></param>
         /// <param name="feedbackStats"></param>
         /// <param name="appPath"></param>
+        /// <param name="feedbacks"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -319,7 +326,8 @@ namespace LangSmith
             string? promptCost,
             string? completionCost,
             global::System.Collections.Generic.Dictionary<string, object>? feedbackStats,
-            string? appPath)
+            string? appPath,
+            global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? feedbacks)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;
@@ -357,6 +365,7 @@ namespace LangSmith
             this.CompletionCost = completionCost;
             this.FeedbackStats = feedbackStats;
             this.AppPath = appPath;
+            this.Feedbacks = feedbacks;
         }
 
         /// <summary>

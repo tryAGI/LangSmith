@@ -55,6 +55,61 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
+        /// Default Value: complex
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeJsonConverter))]
+        public global::LangSmith.PlaygroundSettingsResponseSettingsType? SettingsType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by_ls_user_id")]
+        public global::System.Guid? CreatedByLsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_by_ls_user_id")]
+        public global::System.Guid? UpdatedByLsUserId { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_playground")]
+        public bool? AvailableInPlayground { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_evaluators")]
+        public bool? AvailableInEvaluators { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_agent_builder")]
+        public bool? AvailableInAgentBuilder { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_polly")]
+        public bool? AvailableInPolly { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_insights_heavy")]
+        public bool? AvailableInInsightsHeavy { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_insights_light")]
+        public bool? AvailableInInsightsLight { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +125,29 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="description"></param>
+        /// <param name="settingsType">
+        /// Default Value: complex
+        /// </param>
+        /// <param name="createdByLsUserId"></param>
+        /// <param name="updatedByLsUserId"></param>
+        /// <param name="availableInPlayground">
+        /// Default Value: true
+        /// </param>
+        /// <param name="availableInEvaluators">
+        /// Default Value: true
+        /// </param>
+        /// <param name="availableInAgentBuilder">
+        /// Default Value: false
+        /// </param>
+        /// <param name="availableInPolly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="availableInInsightsHeavy">
+        /// Default Value: false
+        /// </param>
+        /// <param name="availableInInsightsLight">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +158,16 @@ namespace LangSmith
             global::System.DateTime updatedAt,
             global::LangSmith.PlaygroundSavedOptions? options,
             string? name,
-            string? description)
+            string? description,
+            global::LangSmith.PlaygroundSettingsResponseSettingsType? settingsType,
+            global::System.Guid? createdByLsUserId,
+            global::System.Guid? updatedByLsUserId,
+            bool? availableInPlayground,
+            bool? availableInEvaluators,
+            bool? availableInAgentBuilder,
+            bool? availableInPolly,
+            bool? availableInInsightsHeavy,
+            bool? availableInInsightsLight)
         {
             this.Id = id;
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
@@ -89,6 +176,15 @@ namespace LangSmith
             this.Options = options;
             this.Name = name;
             this.Description = description;
+            this.SettingsType = settingsType;
+            this.CreatedByLsUserId = createdByLsUserId;
+            this.UpdatedByLsUserId = updatedByLsUserId;
+            this.AvailableInPlayground = availableInPlayground;
+            this.AvailableInEvaluators = availableInEvaluators;
+            this.AvailableInAgentBuilder = availableInAgentBuilder;
+            this.AvailableInPolly = availableInPolly;
+            this.AvailableInInsightsHeavy = availableInInsightsHeavy;
+            this.AvailableInInsightsLight = availableInInsightsLight;
         }
 
         /// <summary>

@@ -79,6 +79,24 @@ namespace LangSmith
         public string? Transformations { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_key_mappings")]
+        public string? InputKeyMappings { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_key_mappings")]
+        public string? OutputKeyMappings { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_key_mappings")]
+        public string? MetadataKeyMappings { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -100,6 +118,9 @@ namespace LangSmith
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="transformations"></param>
+        /// <param name="inputKeyMappings"></param>
+        /// <param name="outputKeyMappings"></param>
+        /// <param name="metadataKeyMappings"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,7 +135,10 @@ namespace LangSmith
             string? description,
             string? inputsSchemaDefinition,
             string? outputsSchemaDefinition,
-            string? transformations)
+            string? transformations,
+            string? inputKeyMappings,
+            string? outputKeyMappings,
+            string? metadataKeyMappings)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
@@ -127,6 +151,9 @@ namespace LangSmith
             this.InputsSchemaDefinition = inputsSchemaDefinition;
             this.OutputsSchemaDefinition = outputsSchemaDefinition;
             this.Transformations = transformations;
+            this.InputKeyMappings = inputKeyMappings;
+            this.OutputKeyMappings = outputKeyMappings;
+            this.MetadataKeyMappings = metadataKeyMappings;
         }
 
         /// <summary>

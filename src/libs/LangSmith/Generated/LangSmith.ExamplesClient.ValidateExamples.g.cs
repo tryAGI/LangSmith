@@ -21,7 +21,7 @@ namespace LangSmith
 
         /// <summary>
         /// Validate Examples<br/>
-        /// Validate an example.
+        /// Validate examples in bulk.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

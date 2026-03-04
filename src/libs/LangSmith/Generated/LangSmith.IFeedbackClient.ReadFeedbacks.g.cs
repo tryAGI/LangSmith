@@ -27,12 +27,13 @@ namespace LangSmith
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="includeUserNames"></param>
+        /// <param name="comparativeExperimentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadFeedbacksAsync(
-            global::System.Collections.Generic.IList<global::System.Guid>? run = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run = default,
             global::System.Collections.Generic.IList<string>? key = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? session = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session = default,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source = default,
             int? limit = default,
             int? offset = default,
@@ -43,6 +44,7 @@ namespace LangSmith
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
             bool? includeUserNames = default,
+            global::System.Guid? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

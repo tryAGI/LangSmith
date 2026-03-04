@@ -23,7 +23,7 @@ namespace LangSmith
 
         /// <summary>
         /// Upload Csv Dataset<br/>
-        /// Create a new dataset from a CSV file.
+        /// Create a new dataset from a CSV or JSONL file.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -122,6 +122,24 @@ namespace LangSmith
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Transformations}"),
                     name: "transformations");
+            } 
+            if (request.InputKeyMappings != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.InputKeyMappings}"),
+                    name: "input_key_mappings");
+            } 
+            if (request.OutputKeyMappings != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.OutputKeyMappings}"),
+                    name: "output_key_mappings");
+            } 
+            if (request.MetadataKeyMappings != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.MetadataKeyMappings}"),
+                    name: "metadata_key_mappings");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -256,7 +274,7 @@ namespace LangSmith
 
         /// <summary>
         /// Upload Csv Dataset<br/>
-        /// Create a new dataset from a CSV file.
+        /// Create a new dataset from a CSV or JSONL file.
         /// </summary>
         /// <param name="file"></param>
         /// <param name="filename"></param>
@@ -271,6 +289,9 @@ namespace LangSmith
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="transformations"></param>
+        /// <param name="inputKeyMappings"></param>
+        /// <param name="outputKeyMappings"></param>
+        /// <param name="metadataKeyMappings"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.Dataset> UploadCsvDatasetAsync(
@@ -285,6 +306,9 @@ namespace LangSmith
             string? inputsSchemaDefinition = default,
             string? outputsSchemaDefinition = default,
             string? transformations = default,
+            string? inputKeyMappings = default,
+            string? outputKeyMappings = default,
+            string? metadataKeyMappings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost
@@ -300,6 +324,9 @@ namespace LangSmith
                 InputsSchemaDefinition = inputsSchemaDefinition,
                 OutputsSchemaDefinition = outputsSchemaDefinition,
                 Transformations = transformations,
+                InputKeyMappings = inputKeyMappings,
+                OutputKeyMappings = outputKeyMappings,
+                MetadataKeyMappings = metadataKeyMappings,
             };
 
             return await UploadCsvDatasetAsync(

@@ -4,18 +4,19 @@
 namespace LangSmith
 {
     /// <summary>
-    /// A chunk of a tool call (e.g., as part of a stream).<br/>
-    /// When merging ToolCallChunks (e.g., via AIMessageChunk.__add__),<br/>
-    /// all string attributes are concatenated. Chunks are only merged if their<br/>
-    /// values of `index` are equal and not None.<br/>
+    /// A chunk of a tool call (yielded when streaming).<br/>
+    /// When merging `ToolCallChunk` objects (e.g., via `AIMessageChunk.__add__`), all<br/>
+    /// string attributes are concatenated. Chunks are only merged if their values of<br/>
+    /// `index` are equal and not `None`.<br/>
     /// Example:<br/>
-    /// .. code-block:: python<br/>
-    ///     left_chunks = [ToolCallChunk(name="foo", args='{"a":', index=0)]<br/>
-    ///     right_chunks = [ToolCallChunk(name=None, args='1}', index=0)]<br/>
-    ///     (<br/>
-    ///         AIMessageChunk(content="", tool_call_chunks=left_chunks)<br/>
-    ///         + AIMessageChunk(content="", tool_call_chunks=right_chunks)<br/>
-    ///     ).tool_call_chunks == [ToolCallChunk(name='foo', args='{"a":1}', index=0)]
+    /// ```python<br/>
+    /// left_chunks = [ToolCallChunk(name="foo", args='{"a":', index=0)]<br/>
+    /// right_chunks = [ToolCallChunk(name=None, args="1}", index=0)]<br/>
+    /// (<br/>
+    ///     AIMessageChunk(content="", tool_call_chunks=left_chunks)<br/>
+    ///     + AIMessageChunk(content="", tool_call_chunks=right_chunks)<br/>
+    /// ).tool_call_chunks == [ToolCallChunk(name="foo", args='{"a":1}', index=0)]<br/>
+    /// ```
     /// </summary>
     public sealed partial class ToolCallChunk
     {

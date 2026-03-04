@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareUpsertTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.UpsertTTLSettingsRequest request);
+            global::LangSmith.UpsertTtlSettingsRequest request);
         partial void PrepareUpsertTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.UpsertTTLSettingsRequest request);
+            global::LangSmith.UpsertTtlSettingsRequest request);
         partial void ProcessUpsertTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -27,8 +27,8 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
-            global::LangSmith.UpsertTTLSettingsRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TtlSettings> UpsertTtlSettingsAsync(
+            global::LangSmith.UpsertTtlSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -152,7 +152,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.TTLSettings.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.TtlSettings.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -183,7 +183,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.TTLSettings.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.TtlSettings.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -212,13 +212,13 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TtlSettings> UpsertTtlSettingsAsync(
             global::LangSmith.TraceTier defaultTraceTier,
             global::System.Guid? tenantId = default,
             bool? applyToAllProjects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.UpsertTTLSettingsRequest
+            var __request = new global::LangSmith.UpsertTtlSettingsRequest
             {
                 TenantId = tenantId,
                 DefaultTraceTier = defaultTraceTier,

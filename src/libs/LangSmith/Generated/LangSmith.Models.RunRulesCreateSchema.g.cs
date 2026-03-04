@@ -149,6 +149,13 @@ namespace LangSmith
         public bool? IncludeExtendedStats { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRulesCreateSchemaGroupByJsonConverter))]
+        public global::LangSmith.RunRulesCreateSchemaGroupBy? GroupBy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -194,6 +201,7 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -220,7 +228,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             int? evaluatorVersion,
             bool? createAlignmentQueue,
-            bool? includeExtendedStats)
+            bool? includeExtendedStats,
+            global::LangSmith.RunRulesCreateSchemaGroupBy? groupBy)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SamplingRate = samplingRate;
@@ -245,6 +254,7 @@ namespace LangSmith
             this.EvaluatorVersion = evaluatorVersion;
             this.CreateAlignmentQueue = createAlignmentQueue;
             this.IncludeExtendedStats = includeExtendedStats;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

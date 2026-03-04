@@ -47,6 +47,24 @@ namespace LangSmith
         public global::LangSmith.FilterViewType? Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        public global::System.DateTime? EndTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public string? Duration { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,6 +79,9 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="type"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="duration"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,7 +91,10 @@ namespace LangSmith
             string? traceFilterString,
             string? treeFilterString,
             string? description,
-            global::LangSmith.FilterViewType? type)
+            global::LangSmith.FilterViewType? type,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            string? duration)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.FilterString = filterString;
@@ -78,6 +102,9 @@ namespace LangSmith
             this.TreeFilterString = treeFilterString;
             this.Description = description;
             this.Type = type;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Duration = duration;
         }
 
         /// <summary>
