@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptWebhook> UpdatePromptWebhookAsync(
             global::System.Guid webhookId,
+
             global::LangSmith.PromptWebhookUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

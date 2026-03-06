@@ -5,12 +5,12 @@ namespace LangSmith
     public partial interface ITtlSettingsClient
     {
         /// <summary>
-        /// Get workspace Ttl settings<br/>
-        /// Get the longlived trace Ttl settings for a workspace
+        /// Get workspace TTL settings<br/>
+        /// Get the longlived trace TTL settings for a workspace
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TtlSettingsTtlSettingsResponse> GetWorkspaceTtlSettingsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.TtlSettingsTTLSettingsResponse> GetWorkspaceTtlSettingsAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

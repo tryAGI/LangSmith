@@ -10,8 +10,9 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TtlSettings> UpsertTtlSettingsAsync(
-            global::LangSmith.UpsertTtlSettingsRequest request,
+        global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
+
+            global::LangSmith.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -24,7 +25,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TtlSettings> UpsertTtlSettingsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
             global::LangSmith.TraceTier defaultTraceTier,
             global::System.Guid? tenantId = default,
             bool? applyToAllProjects = default,

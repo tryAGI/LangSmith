@@ -33,6 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> UpdateTracerSessionAsync(
             global::System.Guid sessionId,
+
             global::LangSmith.TracerSessionUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -11,31 +11,31 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        GET,
+        Get,
         /// <summary>
         /// 
         /// </summary>
-        POST,
+        Post,
         /// <summary>
         /// 
         /// </summary>
-        PUT,
+        Put,
         /// <summary>
         /// 
         /// </summary>
-        DELETE,
+        Delete,
         /// <summary>
         /// 
         /// </summary>
-        PATCH,
+        Patch,
         /// <summary>
         /// 
         /// </summary>
-        HEAD,
+        Head,
         /// <summary>
         /// 
         /// </summary>
-        OPTIONS,
+        Options,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace LangSmith
         {
             return value switch
             {
-                ProxyRequestMethod.GET => "GET",
-                ProxyRequestMethod.POST => "POST",
-                ProxyRequestMethod.PUT => "PUT",
-                ProxyRequestMethod.DELETE => "DELETE",
-                ProxyRequestMethod.PATCH => "PATCH",
-                ProxyRequestMethod.HEAD => "HEAD",
-                ProxyRequestMethod.OPTIONS => "OPTIONS",
+                ProxyRequestMethod.Get => "GET",
+                ProxyRequestMethod.Post => "POST",
+                ProxyRequestMethod.Put => "PUT",
+                ProxyRequestMethod.Delete => "DELETE",
+                ProxyRequestMethod.Patch => "PATCH",
+                ProxyRequestMethod.Head => "HEAD",
+                ProxyRequestMethod.Options => "OPTIONS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace LangSmith
         {
             return value switch
             {
-                "GET" => ProxyRequestMethod.GET,
-                "POST" => ProxyRequestMethod.POST,
-                "PUT" => ProxyRequestMethod.PUT,
-                "DELETE" => ProxyRequestMethod.DELETE,
-                "PATCH" => ProxyRequestMethod.PATCH,
-                "HEAD" => ProxyRequestMethod.HEAD,
-                "OPTIONS" => ProxyRequestMethod.OPTIONS,
+                "GET" => ProxyRequestMethod.Get,
+                "POST" => ProxyRequestMethod.Post,
+                "PUT" => ProxyRequestMethod.Put,
+                "DELETE" => ProxyRequestMethod.Delete,
+                "PATCH" => ProxyRequestMethod.Patch,
+                "HEAD" => ProxyRequestMethod.Head,
+                "OPTIONS" => ProxyRequestMethod.Options,
                 _ => null,
             };
         }

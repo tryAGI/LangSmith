@@ -15,6 +15,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.TagValue> UpdateTagValueAsync(
             global::System.Guid tagKeyId,
             global::System.Guid tagValueId,
+
             global::LangSmith.TagValueUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

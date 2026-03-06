@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
             string playgroundSettingsId,
+
             global::LangSmith.PlaygroundSettingsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

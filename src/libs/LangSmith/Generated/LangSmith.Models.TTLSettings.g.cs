@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Ttl settings model.
+    /// TTL settings model.
     /// </summary>
-    public sealed partial class TtlSettings
+    public sealed partial class TTLSettings
     {
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TtlSettings" /> class.
+        /// Initializes a new instance of the <see cref="TTLSettings" /> class.
         /// </summary>
         /// <param name="tenantId"></param>
         /// <param name="defaultTraceTier"></param>
@@ -93,7 +93,7 @@ namespace LangSmith
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public TtlSettings(
+        public TTLSettings(
             global::LangSmith.TraceTier defaultTraceTier,
             global::System.Guid id,
             global::System.Guid organizationId,
@@ -116,9 +116,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TtlSettings" /> class.
+        /// Initializes a new instance of the <see cref="TTLSettings" /> class.
         /// </summary>
-        public TtlSettings()
+        public TTLSettings()
         {
         }
     }

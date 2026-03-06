@@ -33,6 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SessionFeedbackDelta> ReadSharedDeltaAsync(
             global::System.Guid shareToken,
+
             global::LangSmith.QueryFeedbackDelta request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

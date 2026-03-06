@@ -33,6 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetAsync(
             global::System.Guid datasetId,
+
             global::LangSmith.DatasetUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

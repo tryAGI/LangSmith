@@ -32,6 +32,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TagKey> UpdateTagKeyAsync(
             global::System.Guid tagKeyId,
+
             global::LangSmith.TagKeyUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

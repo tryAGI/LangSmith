@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        APIActivity,
+        ApiActivity,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace LangSmith
         {
             return value switch
             {
-                OCSFClassName.APIActivity => "API Activity",
+                OCSFClassName.ApiActivity => "API Activity",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace LangSmith
         {
             return value switch
             {
-                "API Activity" => OCSFClassName.APIActivity,
+                "API Activity" => OCSFClassName.ApiActivity,
                 _ => null,
             };
         }

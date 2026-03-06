@@ -33,6 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
+
             global::LangSmith.CustomChartsSectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

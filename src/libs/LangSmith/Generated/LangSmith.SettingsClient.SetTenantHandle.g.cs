@@ -29,6 +29,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudTenantsTenant> SetTenantHandleAsync(
+
             global::LangSmith.SetTenantHandleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

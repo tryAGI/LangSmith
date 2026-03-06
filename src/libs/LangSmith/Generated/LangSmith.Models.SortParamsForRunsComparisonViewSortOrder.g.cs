@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ASC,
+        Asc,
         /// <summary>
         /// 
         /// </summary>
-        DESC,
+        Desc,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                SortParamsForRunsComparisonViewSortOrder.ASC => "ASC",
-                SortParamsForRunsComparisonViewSortOrder.DESC => "DESC",
+                SortParamsForRunsComparisonViewSortOrder.Asc => "ASC",
+                SortParamsForRunsComparisonViewSortOrder.Desc => "DESC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "ASC" => SortParamsForRunsComparisonViewSortOrder.ASC,
-                "DESC" => SortParamsForRunsComparisonViewSortOrder.DESC,
+                "ASC" => SortParamsForRunsComparisonViewSortOrder.Asc,
+                "DESC" => SortParamsForRunsComparisonViewSortOrder.Desc,
                 _ => null,
             };
         }

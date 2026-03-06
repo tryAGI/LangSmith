@@ -36,6 +36,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> GetTracingProjectPrebuiltDashboardAsync(
             global::System.Guid sessionId,
+
             global::LangSmith.CustomChartsSectionRequest request,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)

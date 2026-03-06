@@ -13,6 +13,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Role> UpdateOrganizationRolesAsync(
             global::System.Guid roleId,
+
             global::LangSmith.UpdateRoleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

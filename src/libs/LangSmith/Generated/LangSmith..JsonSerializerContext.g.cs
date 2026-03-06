@@ -402,7 +402,6 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>),
-            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>),
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>),
@@ -410,9 +409,9 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response29>),
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response32>),
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response36>),
-            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response39>),
-            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response42>),
             typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response45>),
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response48>),
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.Response51>),
             typeof(global::LangSmith.JsonConverters.UnixTimestampJsonConverter),
         })]
 

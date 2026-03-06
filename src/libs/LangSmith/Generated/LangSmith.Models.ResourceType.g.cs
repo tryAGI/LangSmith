@@ -23,6 +23,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Evaluator,
+        /// <summary>
+        /// 
+        /// </summary>
         Experiment,
         /// <summary>
         /// 
@@ -53,6 +57,7 @@ namespace LangSmith
                 ResourceType.Dashboard => "dashboard",
                 ResourceType.Dataset => "dataset",
                 ResourceType.Deployment => "deployment",
+                ResourceType.Evaluator => "evaluator",
                 ResourceType.Experiment => "experiment",
                 ResourceType.Project => "project",
                 ResourceType.Prompt => "prompt",
@@ -70,6 +75,7 @@ namespace LangSmith
                 "dashboard" => ResourceType.Dashboard,
                 "dataset" => ResourceType.Dataset,
                 "deployment" => ResourceType.Deployment,
+                "evaluator" => ResourceType.Evaluator,
                 "experiment" => ResourceType.Experiment,
                 "project" => ResourceType.Project,
                 "prompt" => ResourceType.Prompt,

@@ -13,6 +13,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.TagValue> CreateTagValueAsync(
             global::System.Guid tagKeyId,
+
             global::LangSmith.TagValueCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -9,13 +9,17 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string sessionId,
             ref string? filter,
-            ref string? select);
+            ref string? select,
+            ref int? limit,
+            ref string? cursor);
         partial void PrepareQueryThreadTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string sessionId,
             string? filter,
-            string? select);
+            string? select,
+            int? limit,
+            string? cursor);
         partial void ProcessQueryThreadTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,12 +38,16 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="filter"></param>
         /// <param name="select"></param>
+        /// <param name="limit"></param>
+        /// <param name="cursor"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> QueryThreadTracesAsync(
             string sessionId,
             string? filter = default,
             string? select = default,
+            int? limit = default,
+            string? cursor = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -48,7 +56,9 @@ namespace LangSmith
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 filter: ref filter,
-                select: ref select);
+                select: ref select,
+                limit: ref limit,
+                cursor: ref cursor);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v2/threads/{thread_id}/traces",
@@ -56,7 +66,9 @@ namespace LangSmith
             __pathBuilder
                 .AddRequiredParameter("session_id", sessionId)
                 .AddOptionalParameter("filter", filter)
-                .AddOptionalParameter("select", select) 
+                .AddOptionalParameter("select", select)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("cursor", cursor) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -91,7 +103,9 @@ namespace LangSmith
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
                 filter: filter,
-                select: select);
+                select: select,
+                limit: limit,
+                cursor: cursor);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

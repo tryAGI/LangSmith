@@ -16,6 +16,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> UpdateRepoAsync(
             string owner,
             string repo,
+
             global::LangSmith.UpdateRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
