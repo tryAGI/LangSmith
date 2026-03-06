@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
+
             global::LangSmith.CustomChartsSectionUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

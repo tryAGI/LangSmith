@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ResponseBodyForRunsGenerateQuery> GenerateQueryForSharedDatasetRunsAsync(
             global::System.Guid shareToken,
+
             global::LangSmith.RequestBodyForRunsGenerateQuery request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareGetCurrentWorkspaceEncryptedSecretsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::LangSmith.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetService service,
-            global::System.Collections.Generic.IList<string>? keyNames);
+            global::System.Collections.Generic.IList<string>? keyNames,
+            ref bool? expandIamRole);
         partial void PrepareGetCurrentWorkspaceEncryptedSecretsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::LangSmith.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetService service,
-            global::System.Collections.Generic.IList<string>? keyNames);
+            global::System.Collections.Generic.IList<string>? keyNames,
+            bool? expandIamRole);
         partial void ProcessGetCurrentWorkspaceEncryptedSecretsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,11 +35,16 @@ namespace LangSmith
         /// <param name="keyNames">
         /// Optional list of workspace secret keys to return
         /// </param>
+        /// <param name="expandIamRole">
+        /// If true, expand AWS_IAM_ROLE_ARN into temporary credentials via STS<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.InternalSecretsResponse> GetCurrentWorkspaceEncryptedSecretsAsync(
             global::LangSmith.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetService service,
             global::System.Collections.Generic.IList<string>? keyNames = default,
+            bool? expandIamRole = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -45,14 +52,16 @@ namespace LangSmith
             PrepareGetCurrentWorkspaceEncryptedSecretsArguments(
                 httpClient: HttpClient,
                 service: ref service,
-                keyNames: keyNames);
+                keyNames: keyNames,
+                expandIamRole: ref expandIamRole);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/secrets/encrypted",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("service", service.ToValueString())
-                .AddOptionalParameter("key_names", keyNames, delimiter: ",", explode: true) 
+                .AddOptionalParameter("key_names", keyNames, delimiter: ",", explode: true)
+                .AddOptionalParameter("expand_iam_role", expandIamRole?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -86,7 +95,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 service: service,
-                keyNames: keyNames);
+                keyNames: keyNames,
+                expandIamRole: expandIamRole);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

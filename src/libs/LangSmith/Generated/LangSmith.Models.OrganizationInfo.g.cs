@@ -4,7 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Information about an organization.
+    /// Information about an organization.<br/>
+    /// IMPORTANT: Keep in sync with Go OrganizationInfo in smith-go/orgs/handler.go<br/>
+    /// while both implementations are in use (weighted routing rollout).
     /// </summary>
     public sealed partial class OrganizationInfo
     {

@@ -42,6 +42,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> ReadDeltaStreamAsync(
             global::System.Guid datasetId,
+
             global::LangSmith.QueryFeedbackDeltaBatch request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

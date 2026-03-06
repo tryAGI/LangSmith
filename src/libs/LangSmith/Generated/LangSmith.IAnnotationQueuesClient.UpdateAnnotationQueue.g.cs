@@ -13,6 +13,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
+
             global::LangSmith.AnnotationQueueUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

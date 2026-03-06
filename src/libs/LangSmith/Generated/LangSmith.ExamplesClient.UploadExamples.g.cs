@@ -30,6 +30,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesCreatedResponse> UploadExamplesAsync(
+
             global::LangSmith.Request3 request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -69,27 +70,49 @@ namespace LangSmith
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentx_exampleId_ = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>()),
-                name: "{example_id}",
-                fileName: request.x_exampleId_name ?? string.Empty);
+                content: __contentx_exampleId_,
+                name: "\"{example_id}\"",
+                fileName: request.x_exampleId_name != null ? $"\"{request.x_exampleId_name}\"" : string.Empty);
+            if (__contentx_exampleId_.Headers.ContentDisposition != null)
+            {
+                __contentx_exampleId_.Headers.ContentDisposition.FileNameStar = null;
+            }
+            var __contentx_exampleId_Inputs = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Inputs ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Inputs ?? global::System.Array.Empty<byte>()),
-                name: "{example_id}.inputs",
-                fileName: request.x_exampleId_Inputsname ?? string.Empty);
+                content: __contentx_exampleId_Inputs,
+                name: "\"{example_id}.inputs\"",
+                fileName: request.x_exampleId_Inputsname != null ? $"\"{request.x_exampleId_Inputsname}\"" : string.Empty);
+            if (__contentx_exampleId_Inputs.Headers.ContentDisposition != null)
+            {
+                __contentx_exampleId_Inputs.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.x_exampleId_Outputs != default)
             {
+
+                var __contentx_exampleId_Outputs = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Outputs ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Outputs ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.outputs",
-                    fileName: request.x_exampleId_Outputsname ?? string.Empty);
+                    content: __contentx_exampleId_Outputs,
+                    name: "\"{example_id}.outputs\"",
+                    fileName: request.x_exampleId_Outputsname != null ? $"\"{request.x_exampleId_Outputsname}\"" : string.Empty);
+                if (__contentx_exampleId_Outputs.Headers.ContentDisposition != null)
+                {
+                    __contentx_exampleId_Outputs.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.x_exampleId_Attachments_name_ != default)
             {
+
+                var __contentx_exampleId_Attachments_name_ = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Attachments_name_ ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Attachments_name_ ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.attachments.{name}",
-                    fileName: request.x_exampleId_Attachments_name_name ?? string.Empty);
+                    content: __contentx_exampleId_Attachments_name_,
+                    name: "\"{example_id}.attachments.{name}\"",
+                    fileName: request.x_exampleId_Attachments_name_name != null ? $"\"{request.x_exampleId_Attachments_name_name}\"" : string.Empty);
+                if (__contentx_exampleId_Attachments_name_.Headers.ContentDisposition != null)
+                {
+                    __contentx_exampleId_Attachments_name_.Headers.ContentDisposition.FileNameStar = null;
+                }
             }
             __httpRequest.Content = __httpRequestContent;
 

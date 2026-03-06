@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareUpdateWorkspaceTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.TtlSettingsUpdateTtlSettingsRequest request);
+            global::LangSmith.TtlSettingsUpdateTTLSettingsRequest request);
         partial void PrepareUpdateWorkspaceTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.TtlSettingsUpdateTtlSettingsRequest request);
+            global::LangSmith.TtlSettingsUpdateTTLSettingsRequest request);
         partial void ProcessUpdateWorkspaceTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -22,14 +22,15 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Update workspace Ttl settings<br/>
-        /// Update the longlived trace Ttl for a workspace.
+        /// Update workspace TTL settings<br/>
+        /// Update the longlived trace TTL for a workspace.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TtlSettingsTtlSettingsResponse> UpdateWorkspaceTtlSettingsAsync(
-            global::LangSmith.TtlSettingsUpdateTtlSettingsRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TtlSettingsTTLSettingsResponse> UpdateWorkspaceTtlSettingsAsync(
+
+            global::LangSmith.TtlSettingsUpdateTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -227,7 +228,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.TtlSettingsTtlSettingsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.TtlSettingsTTLSettingsResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -258,7 +259,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.TtlSettingsTtlSettingsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.TtlSettingsTTLSettingsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -278,17 +279,17 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Update workspace Ttl settings<br/>
-        /// Update the longlived trace Ttl for a workspace.
+        /// Update workspace TTL settings<br/>
+        /// Update the longlived trace TTL for a workspace.
         /// </summary>
         /// <param name="longlivedTtlDays"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TtlSettingsTtlSettingsResponse> UpdateWorkspaceTtlSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TtlSettingsTTLSettingsResponse> UpdateWorkspaceTtlSettingsAsync(
             int? longlivedTtlDays = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.TtlSettingsUpdateTtlSettingsRequest
+            var __request = new global::LangSmith.TtlSettingsUpdateTTLSettingsRequest
             {
                 LonglivedTtlDays = longlivedTtlDays,
             };

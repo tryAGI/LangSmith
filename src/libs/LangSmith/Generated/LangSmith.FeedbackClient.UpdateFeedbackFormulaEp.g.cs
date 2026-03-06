@@ -33,6 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackFormula> UpdateFeedbackFormulaEpAsync(
             global::System.Guid feedbackFormulaId,
+
             global::LangSmith.FeedbackFormulaUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

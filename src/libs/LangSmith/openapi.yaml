@@ -4573,15 +4573,10 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Read Examples With Runs Api V1 Datasets  Dataset Id  Runs Post
-                anyOf:
-                  - title: ExamplesWithRuns
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/ExampleWithRuns'
-                  - type: array
-                    items:
-                      $ref: '#/components/schemas/ExampleWithRunsCH'
+                title: ExamplesWithRuns
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExampleWithRunsCH'
                 nullable: true
         '422':
           description: Validation Error
@@ -10472,6 +10467,14 @@ paths:
               type: string
             description: Optional list of workspace secret keys to return
             nullable: true
+        - name: expand_iam_role
+          in: query
+          description: 'If true, expand AWS_IAM_ROLE_ARN into temporary credentials via STS'
+          schema:
+            title: Expand Iam Role
+            type: boolean
+            description: 'If true, expand AWS_IAM_ROLE_ARN into temporary credentials via STS'
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -14694,6 +14697,93 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /v1/agent-builder/integrations:
+    get:
+      tags:
+        - integrations
+      summary: Get Agent Builder integrations settings
+      description: 'Returns default policy, integration overrides, and known integrations for the current workspace.'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/integrations.AgentBuilderIntegrationsPayload'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    put:
+      tags:
+        - integrations
+      summary: Update Agent Builder integrations settings
+      description: Replaces default policy and integration overrides for the current workspace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/integrations.AgentBuilderIntegrationsUpdatePayload'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/integrations.AgentBuilderIntegrationsPayload'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/v1/platform/alerts/{session_id}':
     post:
       tags:
@@ -15428,6 +15518,47 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /v1/platform/orgs/current/info:
+    get:
+      tags:
+        - Organizations
+      summary: Get current organization info
+      description: Returns organization info for the authenticated user's current organization.
+      responses:
+        '200':
+          description: Organization info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/orgs.OrganizationInfo'
+        '400':
+          description: Invalid organization ID
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   /v1/platform/orgs/current/scim/tokens:
     get:
       tags:
@@ -15673,6 +15804,507 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /v2/sandboxes/boxes:
+    get:
+      tags:
+        - sandboxes
+      summary: List sandbox claims
+      description: 'List sandbox claims for the authenticated tenant, with optional name filtering and pagination.'
+      parameters:
+        - name: limit
+          in: query
+          description: Maximum number of results
+          schema:
+            title: Limit
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          description: Pagination offset
+          schema:
+            title: Offset
+            type: integer
+            default: 0
+        - name: name_contains
+          in: query
+          description: Filter by name substring
+          schema:
+            title: Name Contains
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ClaimListResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - sandboxes
+      summary: Create a sandbox claim
+      description: Create a new sandbox from a template. Optionally blocks until ready or timeout.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/sandboxes.CreateClaimPayload'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ClaimResponse'
+        '400':
+          description: Template not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '408':
+          description: Sandbox did not become ready in time
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '409':
+          description: Name already exists or volume conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '422':
+          description: Validation error or creation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '429':
+          description: Quota exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/v2/sandboxes/boxes/{name}':
+    get:
+      tags:
+        - sandboxes
+      summary: Get a sandbox claim
+      description: Retrieve a sandbox claim by name. Stale provisioning claims are auto-failed.
+      parameters:
+        - name: name
+          in: path
+          description: Sandbox claim display name
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ClaimResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - sandboxes
+      summary: Delete a sandbox claim
+      description: Delete a sandbox claim by name. Deletes both the K8s CRD and the DB record.
+      parameters:
+        - name: name
+          in: path
+          description: Sandbox claim display name
+          required: true
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - sandboxes
+      summary: Update a sandbox claim
+      description: Update a sandbox claim's display name. The name must be unique within the tenant.
+      parameters:
+        - name: name
+          in: path
+          description: Current sandbox claim display name
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/sandboxes.UpdateClaimPayload'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ClaimResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '409':
+          description: Name already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/v2/sandboxes/boxes/{name}/status':
+    get:
+      tags:
+        - sandboxes
+      summary: Get sandbox claim status
+      description: Retrieve the lightweight status of a sandbox claim for polling.
+      parameters:
+        - name: name
+          in: path
+          description: Sandbox claim display name
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ClaimStatusResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /v2/sandboxes/pools:
+    get:
+      tags:
+        - sandboxes
+      summary: List warm pools
+      description: List all warm pools for the current workspace
+      parameters:
+        - name: limit
+          in: query
+          description: Max results
+          schema:
+            title: Limit
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          description: Pagination offset
+          schema:
+            title: Offset
+            type: integer
+            default: 0
+        - name: name_contains
+          in: query
+          description: Filter by name substring
+          schema:
+            title: Name Contains
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.PoolListResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - sandboxes
+      summary: Create a warm pool
+      description: Create a new warm pool from a template with a specified replica count
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/sandboxes.CreatePoolPayload'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.PoolResponse'
+        '400':
+          description: Template not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '409':
+          description: Name already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '429':
+          description: Quota exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/v2/sandboxes/pools/{name}':
+    get:
+      tags:
+        - sandboxes
+      summary: Get a warm pool
+      description: Get a warm pool by name
+      parameters:
+        - name: name
+          in: path
+          description: Pool name
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.PoolResponse'
+        '404':
+          description: Pool not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - sandboxes
+      summary: Delete a warm pool
+      description: Delete a warm pool by name
+      parameters:
+        - name: name
+          in: path
+          description: Pool name
+          required: true
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Pool not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - sandboxes
+      summary: Update a warm pool
+      description: Update a warm pool's name or replica count
+      parameters:
+        - name: name
+          in: path
+          description: Current pool name
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/sandboxes.UpdatePoolPayload'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.PoolResponse'
+        '404':
+          description: Pool not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '409':
+          description: Name already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '429':
+          description: Quota exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /v2/sandboxes/usage:
+    get:
+      tags:
+        - sandboxes
+      summary: Get sandbox resource usage
+      description: Get current sandbox resource usage and quota limits for the workspace
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.UsageResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sandboxes.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /v2/threads/query:
     post:
       tags:
@@ -15749,6 +16381,18 @@ paths:
           description: Select attributes (repeated)
           schema:
             title: Select
+            type: string
+        - name: limit
+          in: query
+          description: Maximum number of traces to return
+          schema:
+            title: Limit
+            type: integer
+        - name: cursor
+          in: query
+          description: Pagination cursor from previous response
+          schema:
+            title: Cursor
             type: string
       responses:
         '200':
@@ -19783,7 +20427,7 @@ components:
           title: Error Rate
           type: number
           nullable: true
-      description: "Group of examples with a specific metadata value across multiple sessions.\n\nExtends RunGroupBase with:\n- group_key: metadata value that defines this group\n- sessions: per-session stats for runs matching this metadata value\n- examples: shared examples across all sessions (intersection logic)\n            with flat array of runs (each run has session_id field for frontend to determine column)\n- example_count: unique example count (pagination-aware, same across all sessions due to intersection)\n\nInherited from RunGroupBase:\n- filter: metadata filter for this group (e.g., \"and(eq(is_root, true), and(eq(metadata_key, 'model'), eq(metadata_value, 'gpt-4')))\")\n- count: total run count across all sessions (includes duplicate runs)\n- total_tokens, total_cost: aggregate across sessions\n- min_start_time, max_start_time: time range across sessions\n- latency_p50, latency_p99: aggregate latency stats across sessions\n- feedback_stats: weighted average feedback across sessions\n\nAdditional aggregate stats (from ExampleWithRunsGroup):\n- prompt_tokens, completion_tokens: separate token counts\n- prompt_cost, completion_cost: separate costs\n- error_rate: average error rate"
+      description: "Group of examples with a specific metadata value across multiple sessions.\n\nExtends RunGroupBase with:\n- group_key: metadata value that defines this group\n- sessions: per-session stats for runs matching this metadata value\n- examples: shared examples across all sessions (intersection logic)\n            with flat array of runs (each run has session_id field for frontend to determine column)\n- example_count: unique example count (pagination-aware, same across all sessions due to intersection)\n\nInherited from RunGroupBase:\n- filter: metadata filter for this group (e.g., \"and(eq(is_root, true), and(eq(metadata_key, 'model'), eq(metadata_value, 'gpt-4')))\")\n- count: total run count across all sessions (includes duplicate runs)\n- total_tokens, total_cost: aggregate across sessions\n- min_start_time, max_start_time: time range across sessions\n- latency_p50, latency_p99: aggregate latency stats across sessions\n- feedback_stats: weighted average feedback across sessions\n\nAdditional aggregate stats:\n- prompt_tokens, completion_tokens: separate token counts\n- prompt_cost, completion_cost: separate costs\n- error_rate: average error rate"
     ExampleListOrder:
       title: ExampleListOrder
       enum:
@@ -19938,62 +20582,6 @@ components:
           type: boolean
           default: false
       description: 'Validation result for Example, combining fields from Create/Base/Update schemas.'
-    ExampleWithRuns:
-      title: ExampleWithRuns
-      required:
-        - dataset_id
-        - inputs
-        - id
-        - name
-        - runs
-      type: object
-      properties:
-        outputs:
-          title: Outputs
-          type: object
-          nullable: true
-        dataset_id:
-          title: Dataset Id
-          type: string
-          format: uuid
-        source_run_id:
-          title: Source Run Id
-          type: string
-          format: uuid
-          nullable: true
-        metadata:
-          title: Metadata
-          type: object
-          nullable: true
-        inputs:
-          title: Inputs
-          type: object
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        id:
-          title: Id
-          type: string
-          format: uuid
-        name:
-          title: Name
-          type: string
-        modified_at:
-          title: Modified At
-          type: string
-          format: date-time
-          nullable: true
-        attachment_urls:
-          title: Attachment Urls
-          type: object
-          nullable: true
-        runs:
-          title: Runs
-          type: array
-          items:
-            $ref: '#/components/schemas/RunSchema'
-      description: Example schema with list of runs.
     ExampleWithRunsCH:
       title: ExampleWithRunsCH
       required:
@@ -23461,7 +24049,7 @@ components:
           title: Scim Group Name Separator
           type: string
           default: ':'
-      description: Information about an organization.
+      description: "Information about an organization.\n\nIMPORTANT: Keep in sync with Go OrganizationInfo in smith-go/orgs/handler.go\nwhile both implementations are in use (weighted routing rollout)."
     OrganizationMembers:
       title: OrganizationMembers
       required:
@@ -25488,6 +26076,7 @@ components:
         - dashboard
         - dataset
         - deployment
+        - evaluator
         - experiment
         - project
         - prompt
@@ -26447,6 +27036,11 @@ components:
           items:
             $ref: '#/components/schemas/CodeEvaluatorTopLevel'
           nullable: true
+        evaluator_id:
+          title: Evaluator Id
+          type: string
+          format: uuid
+          nullable: true
         alerts:
           title: Alerts
           type: array
@@ -26745,6 +27339,11 @@ components:
           items:
             $ref: '#/components/schemas/CodeEvaluatorTopLevel'
           nullable: true
+        evaluator_id:
+          title: Evaluator Id
+          type: string
+          format: uuid
+          nullable: true
         alerts:
           title: Alerts
           type: array
@@ -26854,6 +27453,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CodeEvaluatorTopLevel'
+          nullable: true
+        evaluator_id:
+          title: Evaluator Id
+          type: string
+          format: uuid
           nullable: true
         alerts:
           title: Alerts
@@ -30738,6 +31342,191 @@ components:
             $ref: '#/components/schemas/alerts.AlertActionBase'
         rule:
           $ref: '#/components/schemas/alerts.AlertRuleBase'
+    authn.OrganizationConfig:
+      type: object
+      properties:
+        agent_builder_enabled:
+          type: boolean
+          description: AgentBuilderEnabled indicates whether Agent Builder is enabled for the organization.
+        allow_custom_iframes:
+          type: boolean
+          description: AllowCustomIframes indicates whether to allow custom iframes for trace rendering.
+        arbitrary_cost_tracking_enabled:
+          type: boolean
+          description: ArbitraryCostTrackingEnabled indicates whether arbitrary cost tracking flows are enabled
+        can_add_seats:
+          type: boolean
+          description: CanAddSeats indicates whether this org can invite new users based on their plan.
+        can_disable_public_sharing:
+          type: boolean
+          description: 'CanDisablePublicSharing indicates whether this org can disable public sharing of resources like traces, datasets, and prompts.'
+        can_set_api_key_max_expiry:
+          type: boolean
+          description: CanSetApiKeyMaxExpiry indicates whether the org can set a maximum expiry duration for API keys (enterprise-only).
+        can_use_abac:
+          type: boolean
+          description: CanUseAbac indicates whether this org can use attribute-based access control policies.
+        can_use_audit_logs:
+          type: boolean
+          description: CanUseAuditLogs indicates whether this org can use audit logging functionality.
+        can_use_bulk_export:
+          type: boolean
+          description: CanUseBulkExport indicates whether this org can create bulk exports.
+        can_use_langgraph_cloud:
+          type: boolean
+          description: CanUseLanggraphCloud indicates whether this org can use LangGraph Platform.
+        can_use_rbac:
+          type: boolean
+          description: CanUseRbac indicates whether this org can create new users using roles based on their plan.
+        can_use_saml_sso:
+          type: boolean
+          description: CanUseSamlSso indicates whether this org can configure SAML SSO.
+        clio_enabled:
+          type: boolean
+          description: CLIOEnabled indicates whether CLIO is enabled for this org.
+        datadog_rum_session_sample_rate:
+          type: integer
+          description: DatadogRumSessionSampleRate indicates the sampling rate for datadog RUM sessions.
+        demo_lgp_new_graph_enabled:
+          type: boolean
+          description: DemoLgpNewGraphEnabled indicates whether this org can use the demo page for creating new graphs.
+        enable_align_evaluators:
+          type: boolean
+          description: EnableAlignEvaluators indicates whether to enable the align evaluators flow for this org.
+        enable_burndown_vs_commit_view:
+          type: boolean
+          description: EnableBurndownVsCommitView indicates whether the org can view contract usage (burndown vs commitment).
+        enable_granular_usage_reporting:
+          type: boolean
+          description: EnableGranularUsageReporting indicates whether the org can use granular usage reporting.
+        enable_include_extended_stats:
+          type: boolean
+          description: EnableIncludeExtendedStats indicates whether the include extended stats checkbox should be shown in evaluator forms
+        enable_langgraph_pricing:
+          type: boolean
+          description: EnableLanggraphPricing indicates whether to show Agent marketplace in Langgraph tab.
+        enable_lgp_listeners_page:
+          type: boolean
+          description: EnableLgpListenersPage indicates whether the lgp listeners page should be shown
+        enable_markdown_in_tracing:
+          type: boolean
+          description: EnableMarkdownInTracing indicates whether markdown is enabled in tracing
+        enable_monthly_usage_charts:
+          type: boolean
+          description: EnableMonthlyUsageCharts indicates whether to show monthly organization usage charts backed by Metronome for self hosted customers
+        enable_org_usage_charts:
+          type: boolean
+          description: EnableOrgUsageCharts indicates whether to show organization usage charts backed by ClickHouse queries instead of Metronome.
+        enable_pricing_redesign:
+          type: boolean
+          description: EnablePricingRedesign indicates whether the pricing redesign is enabled
+        enable_querying_v2_endpoints:
+          type: boolean
+          description: EnableQueryingV2Endpoints indicates whether to enable the querying v2 endpoints for this org.
+        enable_run_tree_streaming:
+          type: boolean
+          description: EnableRunTreeStreaming indicates whether to enable the run tree streaming feature for this org.
+        enable_thread_view_playground:
+          type: boolean
+          description: EnableThreadViewPlayground indicates whether to allow opening top-level thread view runs in the playground.
+        enable_threads_improvements:
+          type: boolean
+          description: EnableThreadsImprovements indicates whether to enable the threads improvements feature for this org.
+        kv_dataset_message_support:
+          type: boolean
+          description: KvDatasetMessageSupport indicates whether to use the new messages experience for KV datasets.
+        langgraph_deploy_own_cloud_enabled:
+          type: boolean
+          description: LangGraphDeployOwnCloudEnabled indicates whether the org can deploy LangGraph cloud to their own cloud.
+        langgraph_enterprise_enabled:
+          type: boolean
+          description: LangGraphEnterpriseEnabled indicates whether the org has access to LangGraph Enterprise features.
+        langgraph_remote_reconciler_enabled:
+          type: boolean
+          description: LangGraphRemoteReconcilerEnabled indicates whether an org's LangGraph deployments are reconciled via a remote reconciler instance.
+        langsmith_alerts_poc_enabled:
+          type: boolean
+          description: LangsmithAlertsPocEnabled indicates whether to enable the legacy alerts POC for this org.
+        langsmith_deployment_distributed_runtime_enabled:
+          type: boolean
+          description: LangSmithDeploymentDistributedRuntimeEnabled indicates whether distributed runtime is enabled for the organization.
+        langsmith_deployment_dr_enabled_dev:
+          type: boolean
+        lgp_templates_enabled:
+          type: boolean
+          description: LgpTemplatesEnabled indicates whether to enable LGP templates for this org.
+        max_agent_builder_assistants:
+          type: integer
+          description: MaxAgentBuilderAssistants is the maximum number of Agent Builder assistants allowed for this org.
+        max_agent_builder_runs:
+          type: integer
+          description: "MaxAgentBuilderRuns is the maximum number of Agent Builder runs per month.\nDefault is -1 (unlimited). Set to a positive value for a specific limit."
+        max_free_langgraph_cloud_deployments:
+          type: integer
+          description: MaxFreeLanggraphCloudDeployments is the maximum number of free LangGraph Platform deployments allowed for this org.
+        max_identities:
+          type: integer
+          description: MaxIdentities is the maximum number of identities allowed in this org.
+        max_langgraph_cloud_deployments:
+          type: integer
+          description: MaxLanggraphCloudDeployments is the maximum number of LangGraph Platform deployments allowed for this org.
+        max_prompt_webhooks:
+          type: integer
+          description: MaxPromptWebhooks is the maximum number of prompt webhooks allowed for this org.
+        max_sandbox_cpu:
+          type: string
+          description: 'MaxSandboxCpu is the total CPU cores allowed for sandboxes (e.g., "4", "8").'
+        max_sandbox_memory:
+          type: string
+          description: 'MaxSandboxMemory is the total memory allowed for sandboxes (e.g., "8Gi", "16Gi").'
+        max_sandbox_storage:
+          type: string
+          description: 'MaxSandboxStorage is the total volume storage allowed for sandboxes (e.g., "10Gi", "50Gi").'
+        max_sandbox_volumes:
+          type: integer
+          description: MaxSandboxVolumes is the maximum number of sandbox volumes allowed for this org.
+        max_sandboxes:
+          type: integer
+          description: MaxSandboxes is the maximum number of sandbox claims allowed for this org.
+        max_workspaces:
+          type: integer
+          description: MaxWorkspaces is the maximum number of workspaces allowed in this org. -1 means no limit.
+        new_rule_evaluator_creation_version:
+          type: integer
+          description: New Evaluator Version
+        pairwise_annotation_queues_enabled:
+          type: boolean
+          description: PairwiseAnnotationQueuesEnabled indicates whether pairwise annotation queues are enabled for this org.
+        plan_tier:
+          type: string
+          description: "PlanTier is the organization's payment plan tier (e.g., \"free\", \"developer\", \"plus\", \"enterprise\").\nPopulated from Metronome's __tier custom field during auth verification."
+        playground_evaluator_strategy:
+          type: string
+          description: "PlaygroundEvaluatorStrategy indicates the method of running evaluators in the playground\noptions are \"cron\", \"background\", or \"sync\""
+        premier_plan_approval_date:
+          type: string
+          description: PremierPlanApprovalDate is the date when the org was approved for the premier plan in YYYY-MM-DD format.
+        prompt_optimization_jobs_enabled:
+          type: boolean
+          description: PromptOptimizationJobsEnabled indicates whether the org can use the prompt optimization jobs feature.
+        show_playground_prompt_canvas:
+          type: boolean
+          description: ShowPlaygroundPromptCanvas indicates whether to show the playground prompt canvas.
+        show_updated_resource_tags:
+          type: boolean
+          description: ShowUpdatedResourceTags indicates whether to show updated resource tags to users in this org.
+        show_updated_sidenav:
+          type: boolean
+          description: ShowUpdatedSidenav indicates whether to show updated side nav to users in this org.
+        startup_plan_approval_date:
+          type: string
+          description: StartupPlanApprovalDate is the date when the org was approved for the startup plan in YYYY-MM-DD format.
+        tenant_skip_topk_facets:
+          type: boolean
+          description: TenantSkipTopkFacets indicates whether the tenant should skip topk facets in run stats.
+        use_exact_search_for_prompts:
+          type: boolean
+          description: UseExactSearchForPrompts indicates whether to use exact search for prompts.
     authn.PublicAuthInfo:
       type: object
       properties:
@@ -30980,6 +31769,10 @@ components:
             $ref: '#/components/schemas/commits.ExampleRun'
         manifest:
           type: object
+        model_config:
+          type: object
+        model_provider:
+          type: string
     commits.CommitWithLookups:
       type: object
       properties:
@@ -31253,6 +32046,100 @@ components:
           type: string
         user_id:
           type: string
+    integrations.AgentBuilderIntegrationsPayload:
+      type: object
+      properties:
+        integration_catalog:
+          type: array
+          items:
+            $ref: '#/components/schemas/integrations.IntegrationCatalogEntry'
+        integration_overrides:
+          type: array
+          items:
+            $ref: '#/components/schemas/integrations.IntegrationOverride'
+        integrations_enabled_by_default:
+          type: boolean
+    integrations.AgentBuilderIntegrationsUpdatePayload:
+      type: object
+      properties:
+        integration_overrides:
+          type: array
+          items:
+            $ref: '#/components/schemas/integrations.IntegrationOverrideUpdate'
+        integrations_enabled_by_default:
+          type: boolean
+    integrations.IntegrationCatalogEntry:
+      type: object
+      properties:
+        display_name:
+          type: string
+        key:
+          type: string
+    integrations.IntegrationOverride:
+      type: object
+      properties:
+        integration_key:
+          type: string
+        is_enabled:
+          type: boolean
+    integrations.IntegrationOverrideUpdate:
+      type: object
+      properties:
+        integration_key:
+          type: string
+        is_enabled:
+          type: boolean
+    orgs.OrganizationInfo:
+      type: object
+      properties:
+        config:
+          $ref: '#/components/schemas/authn.OrganizationConfig'
+        default_sso_provision:
+          type: boolean
+        disabled:
+          type: boolean
+        display_name:
+          type: string
+        id:
+          type: string
+        invites_enabled:
+          type: boolean
+        is_personal:
+          type: boolean
+        jit_provisioning_enabled:
+          type: boolean
+        marketplace_payouts_enabled:
+          type: boolean
+        max_api_key_expiry_days:
+          type: integer
+        max_pat_expiry_days:
+          type: integer
+        max_service_key_expiry_days:
+          type: integer
+        member_disabled:
+          type: boolean
+        pat_creation_disabled:
+          type: boolean
+        permissions:
+          type: array
+          items:
+            type: string
+        public_sharing_disabled:
+          type: boolean
+        reached_max_workspaces:
+          type: boolean
+        scim_group_name_separator:
+          type: string
+        security_contact:
+          type: string
+        sso_login_slug:
+          type: string
+        sso_only:
+          type: boolean
+        tier:
+          type: string
+        workspace_admin_can_invite_to_org:
+          type: boolean
     runs.ErrorResponse:
       type: object
       properties:
@@ -31321,6 +32208,151 @@ components:
             type: string
         trace_id:
           type: string
+    sandboxes.ClaimListResponse:
+      type: object
+      properties:
+        offset:
+          type: integer
+        sandboxes:
+          type: array
+          items:
+            $ref: '#/components/schemas/sandboxes.ClaimResponse'
+    sandboxes.ClaimResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        dataplane_url:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        status_message:
+          type: string
+        template_name:
+          type: string
+        updated_at:
+          type: string
+    sandboxes.ClaimStatusResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        status_message:
+          type: string
+    sandboxes.CreateClaimPayload:
+      required:
+        - template_name
+      type: object
+      properties:
+        name:
+          type: string
+        template_name:
+          type: string
+        timeout:
+          type: integer
+        wait_for_ready:
+          type: boolean
+    sandboxes.CreatePoolPayload:
+      required:
+        - name
+        - replicas
+        - template_name
+      type: object
+      properties:
+        name:
+          type: string
+        replicas:
+          minimum: 1
+          type: integer
+        template_name:
+          type: string
+        timeout:
+          type: integer
+        wait_for_ready:
+          type: boolean
+    sandboxes.ErrorResponse:
+      type: object
+      properties:
+        detail:
+          type: object
+          properties:
+            error:
+              type: string
+            message:
+              type: string
+    sandboxes.PoolListResponse:
+      type: object
+      properties:
+        offset:
+          type: integer
+        pools:
+          type: array
+          items:
+            $ref: '#/components/schemas/sandboxes.PoolResponse'
+    sandboxes.PoolResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        replicas:
+          type: integer
+        template_name:
+          type: string
+        updated_at:
+          type: string
+    sandboxes.UpdateClaimPayload:
+      type: object
+      properties:
+        name:
+          type: string
+    sandboxes.UpdatePoolPayload:
+      type: object
+      properties:
+        name:
+          type: string
+        replicas:
+          type: integer
+    sandboxes.UsageResponse:
+      type: object
+      properties:
+        cpu_limit_millicores:
+          type: integer
+        cpu_used_millicores:
+          type: integer
+        memory_limit_bytes:
+          type: integer
+        memory_used_bytes:
+          type: integer
+        pools_count:
+          type: integer
+        registries_count:
+          type: integer
+        sandbox_direct_count:
+          type: integer
+        sandbox_pool_replicas_count:
+          type: integer
+        sandboxes_limit:
+          type: integer
+        sandboxes_used:
+          type: integer
+        storage_limit_bytes:
+          type: integer
+        storage_used_bytes:
+          type: integer
+        templates_count:
+          type: integer
+        volumes_limit:
+          type: integer
+        volumes_used:
+          type: integer
     scim.CreateScimTokenPayload:
       type: object
       properties:

@@ -235,6 +235,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public IntegrationsClient Integrations { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AlertRulesClient AlertRules { get; }
 
         /// <summary>
@@ -245,12 +250,27 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SCIMTokensClient SCIMTokens { get; }
+        public OrganizationsClient Organizations { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ScimTokensClient ScimTokens { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SandboxesClient Sandboxes { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public ThreadsClient Threads { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TtlSettingsClient TtlSettings { get; }
 
     }
 }

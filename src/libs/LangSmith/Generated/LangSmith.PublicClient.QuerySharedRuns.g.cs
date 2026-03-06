@@ -33,6 +33,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListPublicRunsResponse> QuerySharedRunsAsync(
             global::System.Guid shareToken,
+
             global::LangSmith.QueryParamsForPublicRunSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

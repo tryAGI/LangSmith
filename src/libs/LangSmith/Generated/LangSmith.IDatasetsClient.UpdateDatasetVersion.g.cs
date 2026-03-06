@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetVersion> UpdateDatasetVersionAsync(
             global::System.Guid datasetId,
+
             global::LangSmith.PutDatasetVersionsSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

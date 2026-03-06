@@ -35,6 +35,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Example>> UploadExamplesFromCsvAsync(
             global::System.Guid datasetId,
+
             global::LangSmith.BodyUploadExamplesFromCsvApiV1ExamplesUploadDatasetIdPost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -77,25 +78,32 @@ namespace LangSmith
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{datasetId}"),
-                name: "dataset_id");
+                name: "\"dataset_id\"");
+            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                name: "file",
-                fileName: request.Filename ?? string.Empty);
+                content: __contentFile,
+                name: "\"file\"",
+                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+            if (__contentFile.Headers.ContentDisposition != null)
+            {
+                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.InputKeys, x => x))}]"),
-                name: "input_keys");
+                name: "\"input_keys\"");
             if (request.OutputKeys != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
-                    name: "output_keys");
+                    name: "\"output_keys\"");
             } 
             if (request.MetadataKeys != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.MetadataKeys, x => x))}]"),
-                    name: "metadata_keys");
+                    name: "\"metadata_keys\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

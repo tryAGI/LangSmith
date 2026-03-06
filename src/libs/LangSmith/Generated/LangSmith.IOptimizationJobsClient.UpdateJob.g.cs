@@ -18,6 +18,7 @@ namespace LangSmith
             global::System.Guid jobId,
             string owner,
             string repo,
+
             global::LangSmith.PromptOptimizationJobUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

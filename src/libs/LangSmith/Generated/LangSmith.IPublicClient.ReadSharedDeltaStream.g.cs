@@ -23,6 +23,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ReadSharedDeltaStreamAsync(
             global::System.Guid shareToken,
+
             global::LangSmith.QueryFeedbackDeltaBatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

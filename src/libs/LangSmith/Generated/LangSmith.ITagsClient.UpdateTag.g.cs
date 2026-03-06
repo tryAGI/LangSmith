@@ -17,6 +17,7 @@ namespace LangSmith
             string repo,
             string tagName,
             string owner,
+
             global::LangSmith.RepoUpdateTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

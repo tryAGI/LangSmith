@@ -36,8 +36,9 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
+
             global::LangSmith.QueryExampleSchemaWithRunsRequest request,
             global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -170,7 +171,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>.FromJson(__content, JsonSerializerContext) ??
+                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH> ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -201,7 +202,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH> ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -245,7 +246,7 @@ namespace LangSmith
         /// <param name="exampleIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,

@@ -32,6 +32,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> PatchCurrentWorkspaceMemberAsync(
             global::System.Guid identityId,
+
             global::LangSmith.IdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

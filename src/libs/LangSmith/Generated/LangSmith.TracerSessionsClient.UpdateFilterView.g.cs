@@ -37,6 +37,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.FilterView> UpdateFilterViewAsync(
             global::System.Guid sessionId,
             global::System.Guid viewId,
+
             global::LangSmith.FilterViewUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

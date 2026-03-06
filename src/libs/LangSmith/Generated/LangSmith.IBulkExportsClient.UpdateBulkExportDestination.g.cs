@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.BulkExportDestination> UpdateBulkExportDestinationAsync(
             global::System.Guid destinationId,
+
             global::LangSmith.BulkExportDestinationUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

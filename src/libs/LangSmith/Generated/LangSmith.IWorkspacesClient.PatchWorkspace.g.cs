@@ -14,6 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> PatchWorkspaceAsync(
             global::System.Guid workspaceId,
+
             global::LangSmith.WorkspacePatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

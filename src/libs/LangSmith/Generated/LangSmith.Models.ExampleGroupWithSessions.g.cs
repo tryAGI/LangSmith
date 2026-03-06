@@ -20,7 +20,7 @@ namespace LangSmith
     /// - min_start_time, max_start_time: time range across sessions<br/>
     /// - latency_p50, latency_p99: aggregate latency stats across sessions<br/>
     /// - feedback_stats: weighted average feedback across sessions<br/>
-    /// Additional aggregate stats (from ExampleWithRunsGroup):<br/>
+    /// Additional aggregate stats:<br/>
     /// - prompt_tokens, completion_tokens: separate token counts<br/>
     /// - prompt_cost, completion_cost: separate costs<br/>
     /// - error_rate: average error rate

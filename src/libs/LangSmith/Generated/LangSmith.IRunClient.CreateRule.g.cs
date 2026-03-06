@@ -12,6 +12,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunRulesSchema> CreateRuleAsync(
+
             global::LangSmith.RunRulesCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -47,6 +48,7 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
+        /// <param name="evaluatorId"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
         /// <param name="evaluatorVersion"></param>
@@ -78,6 +80,7 @@ namespace LangSmith
             bool? addToDatasetPreferCorrection = default,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators = default,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators = default,
+            global::System.Guid? evaluatorId = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
             int? evaluatorVersion = default,
