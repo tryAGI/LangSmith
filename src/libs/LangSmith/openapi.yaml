@@ -23878,10 +23878,6 @@ components:
           title: Langsmith Deployment Distributed Runtime Enabled
           type: boolean
           default: false
-        pairwise_annotation_queues_enabled:
-          title: Pairwise Annotation Queues Enabled
-          type: boolean
-          default: false
         agent_builder_enabled:
           title: Agent Builder Enabled
           type: boolean
@@ -31494,9 +31490,6 @@ components:
         new_rule_evaluator_creation_version:
           type: integer
           description: New Evaluator Version
-        pairwise_annotation_queues_enabled:
-          type: boolean
-          description: PairwiseAnnotationQueuesEnabled indicates whether pairwise annotation queues are enabled for this org.
         plan_tier:
           type: string
           description: "PlanTier is the organization's payment plan tier (e.g., \"free\", \"developer\", \"plus\", \"enterprise\").\nPopulated from Metronome's __tier custom field during auth verification."
