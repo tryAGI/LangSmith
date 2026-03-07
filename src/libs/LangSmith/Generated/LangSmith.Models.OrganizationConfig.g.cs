@@ -339,12 +339,6 @@ namespace LangSmith
         public bool? LangsmithDeploymentDistributedRuntimeEnabled { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pairwise_annotation_queues_enabled")]
-        public bool? PairwiseAnnotationQueuesEnabled { get; set; }
-
-        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_builder_enabled")]
@@ -546,9 +540,6 @@ namespace LangSmith
         /// <param name="langsmithDeploymentDistributedRuntimeEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="pairwiseAnnotationQueuesEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="agentBuilderEnabled">
         /// Default Value: true
         /// </param>
@@ -626,7 +617,6 @@ namespace LangSmith
             bool? enablePricingRedesign,
             bool? arbitraryCostTrackingEnabled,
             bool? langsmithDeploymentDistributedRuntimeEnabled,
-            bool? pairwiseAnnotationQueuesEnabled,
             bool? agentBuilderEnabled,
             int? maxAgentBuilderAssistants,
             bool? enableGranularUsageReporting,
@@ -689,7 +679,6 @@ namespace LangSmith
             this.EnablePricingRedesign = enablePricingRedesign;
             this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
             this.LangsmithDeploymentDistributedRuntimeEnabled = langsmithDeploymentDistributedRuntimeEnabled;
-            this.PairwiseAnnotationQueuesEnabled = pairwiseAnnotationQueuesEnabled;
             this.AgentBuilderEnabled = agentBuilderEnabled;
             this.MaxAgentBuilderAssistants = maxAgentBuilderAssistants;
             this.EnableGranularUsageReporting = enableGranularUsageReporting;

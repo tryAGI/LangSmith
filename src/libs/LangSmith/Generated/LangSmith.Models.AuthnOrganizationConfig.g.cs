@@ -310,12 +310,6 @@ namespace LangSmith
         public int? NewRuleEvaluatorCreationVersion { get; set; }
 
         /// <summary>
-        /// PairwiseAnnotationQueuesEnabled indicates whether pairwise annotation queues are enabled for this org.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pairwise_annotation_queues_enabled")]
-        public bool? PairwiseAnnotationQueuesEnabled { get; set; }
-
-        /// <summary>
         /// PlanTier is the organization's payment plan tier (e.g., "free", "developer", "plus", "enterprise").<br/>
         /// Populated from Metronome's __tier custom field during auth verification.
         /// </summary>
@@ -535,9 +529,6 @@ namespace LangSmith
         /// <param name="newRuleEvaluatorCreationVersion">
         /// New Evaluator Version
         /// </param>
-        /// <param name="pairwiseAnnotationQueuesEnabled">
-        /// PairwiseAnnotationQueuesEnabled indicates whether pairwise annotation queues are enabled for this org.
-        /// </param>
         /// <param name="planTier">
         /// PlanTier is the organization's payment plan tier (e.g., "free", "developer", "plus", "enterprise").<br/>
         /// Populated from Metronome's __tier custom field during auth verification.
@@ -624,7 +615,6 @@ namespace LangSmith
             int? maxSandboxes,
             int? maxWorkspaces,
             int? newRuleEvaluatorCreationVersion,
-            bool? pairwiseAnnotationQueuesEnabled,
             string? planTier,
             string? playgroundEvaluatorStrategy,
             string? premierPlanApprovalDate,
@@ -686,7 +676,6 @@ namespace LangSmith
             this.MaxSandboxes = maxSandboxes;
             this.MaxWorkspaces = maxWorkspaces;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
-            this.PairwiseAnnotationQueuesEnabled = pairwiseAnnotationQueuesEnabled;
             this.PlanTier = planTier;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.PremierPlanApprovalDate = premierPlanApprovalDate;
