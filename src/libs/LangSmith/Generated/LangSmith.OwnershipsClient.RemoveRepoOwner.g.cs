@@ -3,70 +3,61 @@
 
 namespace LangSmith
 {
-    public partial class TagsClient
+    public partial class OwnershipsClient
     {
-        partial void PrepareCreateTagArguments(
+        partial void PrepareRemoveRepoOwnerArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string owner1,
+            ref string owner,
             ref string repo,
-            ref string owner2,
-            ref string owner3,
-            global::LangSmith.RepoTagRequest request);
-        partial void PrepareCreateTagRequest(
+            global::LangSmith.RemoveRepoOwnerRequest request);
+        partial void PrepareRemoveRepoOwnerRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string owner1,
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
-            global::LangSmith.RepoTagRequest request);
-        partial void ProcessCreateTagResponse(
+            global::LangSmith.RemoveRepoOwnerRequest request);
+        partial void ProcessRemoveRepoOwnerResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTagResponseContent(
+        partial void ProcessRemoveRepoOwnerResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Tag<br/>
-        /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
+        /// Remove Repo Owner<br/>
+        /// Remove an owner from a repo.<br/>
+        /// Requires being an existing owner of the repo.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+        public async global::System.Threading.Tasks.Task<string> RemoveRepoOwnerAsync(
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
 
-            global::LangSmith.RepoTagRequest request,
+            global::LangSmith.RemoveRepoOwnerRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateTagArguments(
+            PrepareRemoveRepoOwnerArguments(
                 httpClient: HttpClient,
-                owner1: ref owner1,
+                owner: ref owner,
                 repo: ref repo,
-                owner2: ref owner2,
-                owner3: ref owner3,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/repos/{owner1}/{repo}/tags",
+                path: $"/api/v1/repos/{owner}/{repo}/owners",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -98,13 +89,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateTagRequest(
+            PrepareRemoveRepoOwnerRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                owner1: owner1,
+                owner: owner,
                 repo: repo,
-                owner2: owner2,
-                owner3: owner3,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -115,7 +104,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateTagResponse(
+            ProcessRemoveRepoOwnerResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -168,7 +157,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateTagResponseContent(
+                ProcessRemoveRepoOwnerResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -177,9 +166,7 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::LangSmith.RepoTag.FromJson(__content, JsonSerializerContext) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -202,15 +189,13 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    using var __content = await __response.Content.ReadAsStreamAsync(
+                    var __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::LangSmith.RepoTag.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -229,42 +214,29 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Create Tag<br/>
-        /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
+        /// Remove Repo Owner<br/>
+        /// Remove an owner from a repo.<br/>
+        /// Requires being an existing owner of the repo.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
-        /// <param name="tagName"></param>
-        /// <param name="commitId"></param>
-        /// <param name="skipWebhooks">
-        /// Default Value: false
-        /// </param>
+        /// <param name="identityId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+        public async global::System.Threading.Tasks.Task<string> RemoveRepoOwnerAsync(
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
-            string tagName,
-            global::System.Guid commitId,
-            global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks = default,
+            global::System.Guid identityId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.RepoTagRequest
+            var __request = new global::LangSmith.RemoveRepoOwnerRequest
             {
-                TagName = tagName,
-                CommitId = commitId,
-                SkipWebhooks = skipWebhooks,
+                IdentityId = identityId,
             };
 
-            return await CreateTagAsync(
-                owner1: owner1,
+            return await RemoveRepoOwnerAsync(
+                owner: owner,
                 repo: repo,
-                owner2: owner2,
-                owner3: owner3,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

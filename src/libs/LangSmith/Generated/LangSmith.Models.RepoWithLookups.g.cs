@@ -70,6 +70,12 @@ namespace LangSmith
         public required bool IsArchived { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restricted_mode")]
+        public bool? RestrictedMode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
@@ -198,6 +204,9 @@ namespace LangSmith
         /// <param name="updatedAt"></param>
         /// <param name="isPublic"></param>
         /// <param name="isArchived"></param>
+        /// <param name="restrictedMode">
+        /// Default Value: false
+        /// </param>
         /// <param name="tags"></param>
         /// <param name="originalRepoId"></param>
         /// <param name="upstreamRepoId"></param>
@@ -238,6 +247,7 @@ namespace LangSmith
             int numCommits,
             string? description,
             string? readme,
+            bool? restrictedMode,
             global::System.Guid? originalRepoId,
             global::System.Guid? upstreamRepoId,
             global::System.Collections.Generic.IList<string>? commitTags,
@@ -265,6 +275,7 @@ namespace LangSmith
             this.NumCommits = numCommits;
             this.Description = description;
             this.Readme = readme;
+            this.RestrictedMode = restrictedMode;
             this.OriginalRepoId = originalRepoId;
             this.UpstreamRepoId = upstreamRepoId;
             this.CommitTags = commitTags;

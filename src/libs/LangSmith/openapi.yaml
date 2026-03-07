@@ -13266,8 +13266,15 @@ paths:
       tags:
         - tags
       summary: Create Tag
+      description: 'Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.'
       operationId: create_tag_api_v1_repos__owner___repo__tags_post
       parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            title: Owner
+            type: string
         - name: repo
           in: path
           required: true
@@ -13352,8 +13359,15 @@ paths:
       tags:
         - tags
       summary: Update Tag
+      description: 'Update a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.'
       operationId: update_tag_api_v1_repos__owner___repo__tags__tag_name__patch
       parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            title: Owner
+            type: string
         - name: repo
           in: path
           required: true
@@ -13398,8 +13412,15 @@ paths:
       tags:
         - tags
       summary: Delete Tag
+      description: 'Delete a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.'
       operationId: delete_tag_api_v1_repos__owner___repo__tags__tag_name__delete
       parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            title: Owner
+            type: string
         - name: repo
           in: path
           required: true
@@ -13417,6 +13438,126 @@ paths:
           required: true
           schema:
             type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/repos/{owner}/{repo}/owners':
+    get:
+      tags:
+        - ownerships
+      summary: List Repo Owners
+      description: "List all owners of a repo.\n\nRequires read permission on the repo."
+      operationId: list_repo_owners_api_v1_repos__owner___repo__owners_get
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            title: Owner
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRepoOwnersResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - ownerships
+      summary: Add Repo Owner
+      description: "Add an owner to a repo.\n\nRequires being an existing owner of the repo."
+      operationId: add_repo_owner_api_v1_repos__owner___repo__owners_post
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            title: Owner
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddRepoOwnerRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepoOwner'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - ownerships
+      summary: Remove Repo Owner
+      description: "Remove an owner from a repo.\n\nRequires being an existing owner of the repo."
+      operationId: remove_repo_owner_api_v1_repos__owner___repo__owners_delete
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            title: Owner
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            title: Repo
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemoveRepoOwnerRequest'
+        required: true
       responses:
         '200':
           description: Successful Response
@@ -16781,6 +16922,16 @@ components:
         - organization
         - workspace
       type: string
+    AddRepoOwnerRequest:
+      title: AddRepoOwnerRequest
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          title: Email
+          type: string
+      description: Request to add a repo owner.
     AllowedLoginMethodsUpdate:
       title: AllowedLoginMethodsUpdate
       type: object
@@ -22681,6 +22832,18 @@ components:
           title: Parsed Query
           type: string
           nullable: true
+    ListRepoOwnersResponse:
+      title: ListRepoOwnersResponse
+      required:
+        - owners
+      type: object
+      properties:
+        owners:
+          title: Owners
+          type: array
+          items:
+            $ref: '#/components/schemas/RepoOwner'
+      description: Response for listing repo owners.
     ListReposResponse:
       title: ListReposResponse
       required:
@@ -25798,6 +25961,17 @@ components:
           title: Scheduled
           type: integer
       description: Short summary of queue counts.
+    RemoveRepoOwnerRequest:
+      title: RemoveRepoOwnerRequest
+      required:
+        - identity_id
+      type: object
+      properties:
+        identity_id:
+          title: Identity Id
+          type: string
+          format: uuid
+      description: Request to remove a repo owner.
     RepoExampleResponse:
       title: RepoExampleResponse
       required:
@@ -25827,6 +26001,38 @@ components:
           type: string
           format: uuid
       description: Response model for example runs
+    RepoOwner:
+      title: RepoOwner
+      required:
+        - identity_id
+        - ls_user_id
+        - email
+        - full_name
+        - created_at
+      type: object
+      properties:
+        identity_id:
+          title: Identity Id
+          type: string
+          format: uuid
+          nullable: true
+        ls_user_id:
+          title: Ls User Id
+          type: string
+          format: uuid
+        email:
+          title: Email
+          type: string
+          nullable: true
+        full_name:
+          title: Full Name
+          type: string
+          nullable: true
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+      description: "A repo owner with user details.\n\nNote: identity_id and email may be None when returned to users\noutside the repo's tenant (PII protection)."
     RepoTag:
       title: RepoTag
       required:
@@ -25963,6 +26169,10 @@ components:
         is_archived:
           title: Is Archived
           type: boolean
+        restricted_mode:
+          title: Restricted Mode
+          type: boolean
+          default: false
         tags:
           title: Tags
           type: array
@@ -30789,6 +30999,10 @@ components:
           nullable: true
         is_archived:
           title: Is Archived
+          type: boolean
+          nullable: true
+        restricted_mode:
+          title: Restricted Mode
           type: boolean
           nullable: true
       description: Fields to update a repo

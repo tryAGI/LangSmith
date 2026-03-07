@@ -215,6 +215,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public OwnershipsClient Ownerships { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OptimizationJobsClient OptimizationJobs { get; }
 
         /// <summary>
