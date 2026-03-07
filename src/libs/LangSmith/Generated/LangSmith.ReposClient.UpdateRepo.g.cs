@@ -227,6 +227,7 @@ namespace LangSmith
         /// <param name="tags"></param>
         /// <param name="isPublic"></param>
         /// <param name="isArchived"></param>
+        /// <param name="restrictedMode"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> UpdateRepoAsync(
@@ -237,6 +238,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tags = default,
             bool? isPublic = default,
             bool? isArchived = default,
+            bool? restrictedMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.UpdateRepoRequest
@@ -246,6 +248,7 @@ namespace LangSmith
                 Tags = tags,
                 IsPublic = isPublic,
                 IsArchived = isArchived,
+                RestrictedMode = restrictedMode,
             };
 
             return await UpdateRepoAsync(

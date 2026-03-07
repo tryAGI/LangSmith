@@ -3,70 +3,53 @@
 
 namespace LangSmith
 {
-    public partial class TagsClient
+    public partial class OwnershipsClient
     {
-        partial void PrepareCreateTagArguments(
+        partial void PrepareListRepoOwnersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string owner1,
-            ref string repo,
-            ref string owner2,
-            ref string owner3,
-            global::LangSmith.RepoTagRequest request);
-        partial void PrepareCreateTagRequest(
+            ref string owner,
+            ref string repo);
+        partial void PrepareListRepoOwnersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string owner1,
-            string repo,
-            string owner2,
-            string owner3,
-            global::LangSmith.RepoTagRequest request);
-        partial void ProcessCreateTagResponse(
+            string owner,
+            string repo);
+        partial void ProcessListRepoOwnersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTagResponseContent(
+        partial void ProcessListRepoOwnersResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Tag<br/>
-        /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
+        /// List Repo Owners<br/>
+        /// List all owners of a repo.<br/>
+        /// Requires read permission on the repo.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ListRepoOwnersResponse> ListRepoOwnersAsync(
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
-
-            global::LangSmith.RepoTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateTagArguments(
+            PrepareListRepoOwnersArguments(
                 httpClient: HttpClient,
-                owner1: ref owner1,
-                repo: ref repo,
-                owner2: ref owner2,
-                owner3: ref owner3,
-                request: request);
+                owner: ref owner,
+                repo: ref repo);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/repos/{owner1}/{repo}/tags",
+                path: $"/api/v1/repos/{owner}/{repo}/owners",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -88,24 +71,15 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateTagRequest(
+            PrepareListRepoOwnersRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                owner1: owner1,
-                repo: repo,
-                owner2: owner2,
-                owner3: owner3,
-                request: request);
+                owner: owner,
+                repo: repo);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -115,7 +89,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateTagResponse(
+            ProcessListRepoOwnersResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -168,7 +142,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateTagResponseContent(
+                ProcessListRepoOwnersResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -178,7 +152,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.RepoTag.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.ListRepoOwnersResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -209,7 +183,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.RepoTag.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.ListRepoOwnersResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -226,47 +200,6 @@ namespace LangSmith
                     };
                 }
             }
-        }
-
-        /// <summary>
-        /// Create Tag<br/>
-        /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
-        /// </summary>
-        /// <param name="owner1"></param>
-        /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
-        /// <param name="tagName"></param>
-        /// <param name="commitId"></param>
-        /// <param name="skipWebhooks">
-        /// Default Value: false
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
-            string repo,
-            string owner2,
-            string owner3,
-            string tagName,
-            global::System.Guid commitId,
-            global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.RepoTagRequest
-            {
-                TagName = tagName,
-                CommitId = commitId,
-                SkipWebhooks = skipWebhooks,
-            };
-
-            return await CreateTagAsync(
-                owner1: owner1,
-                repo: repo,
-                owner2: owner2,
-                owner3: owner3,
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

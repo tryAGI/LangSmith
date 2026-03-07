@@ -39,6 +39,12 @@ namespace LangSmith
         public bool? IsArchived { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restricted_mode")]
+        public bool? RestrictedMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,6 +58,7 @@ namespace LangSmith
         /// <param name="tags"></param>
         /// <param name="isPublic"></param>
         /// <param name="isArchived"></param>
+        /// <param name="restrictedMode"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,13 +67,15 @@ namespace LangSmith
             string? readme,
             global::System.Collections.Generic.IList<string>? tags,
             bool? isPublic,
-            bool? isArchived)
+            bool? isArchived,
+            bool? restrictedMode)
         {
             this.Description = description;
             this.Readme = readme;
             this.Tags = tags;
             this.IsPublic = isPublic;
             this.IsArchived = isArchived;
+            this.RestrictedMode = restrictedMode;
         }
 
         /// <summary>

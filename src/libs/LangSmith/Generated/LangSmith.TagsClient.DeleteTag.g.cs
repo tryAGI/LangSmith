@@ -7,15 +7,17 @@ namespace LangSmith
     {
         partial void PrepareDeleteTagArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string owner1,
             ref string repo,
             ref string tagName,
-            ref string owner);
+            ref string owner2);
         partial void PrepareDeleteTagRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner1,
             string repo,
             string tagName,
-            string owner);
+            string owner2);
         partial void ProcessDeleteTagResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,29 +28,33 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Delete Tag
+        /// Delete Tag<br/>
+        /// Delete a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
         /// </summary>
+        /// <param name="owner1"></param>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
-        /// <param name="owner"></param>
+        /// <param name="owner2"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteTagAsync(
+            string owner1,
             string repo,
             string tagName,
-            string owner,
+            string owner2,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteTagArguments(
                 httpClient: HttpClient,
+                owner1: ref owner1,
                 repo: ref repo,
                 tagName: ref tagName,
-                owner: ref owner);
+                owner2: ref owner2);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/repos/{owner}/{repo}/tags/{tagName}",
+                path: $"/api/v1/repos/{owner1}/{repo}/tags/{tagName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -81,9 +87,10 @@ namespace LangSmith
             PrepareDeleteTagRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                owner1: owner1,
                 repo: repo,
                 tagName: tagName,
-                owner: owner);
+                owner2: owner2);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
