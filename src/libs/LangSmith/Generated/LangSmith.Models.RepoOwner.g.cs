@@ -69,7 +69,7 @@ namespace LangSmith
             string? fullName,
             global::System.DateTime createdAt)
         {
-            this.IdentityId = identityId;
+            this.IdentityId = identityId ?? throw new global::System.ArgumentNullException(nameof(identityId));
             this.LsUserId = lsUserId;
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));

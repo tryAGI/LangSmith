@@ -5,7 +5,7 @@ namespace LangSmith
     public partial interface ITracerSessionsClient
     {
         /// <summary>
-        /// Beta Get Insights Jobs<br/>
+        /// [Beta] Get Insights Jobs<br/>
         /// Get all clusters for a session.
         /// </summary>
         /// <param name="sessionId"></param>
@@ -19,7 +19,7 @@ namespace LangSmith
         /// <param name="legacy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusteringJobsResponse> BetaGetInsightsJobsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusteringJobsResponse> [Beta]GetInsightsJobsAsync(
             global::System.Guid sessionId,
             int? limit = default,
             int? offset = default,

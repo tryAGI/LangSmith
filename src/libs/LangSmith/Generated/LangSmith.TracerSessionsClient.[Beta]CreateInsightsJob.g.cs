@@ -5,55 +5,53 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareBetaGetInsightsJobConfigsArguments(
+        partial void Prepare[Beta]CreateInsightsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref bool? includePrebuilts);
-        partial void PrepareBetaGetInsightsJobConfigsRequest(
+            global::LangSmith.CreateRunClusteringJobRequest request);
+        partial void Prepare[Beta]CreateInsightsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            bool? includePrebuilts);
-        partial void ProcessBetaGetInsightsJobConfigsResponse(
+            global::LangSmith.CreateRunClusteringJobRequest request);
+        partial void Process[Beta]CreateInsightsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBetaGetInsightsJobConfigsResponseContent(
+        partial void Process[Beta]CreateInsightsJobResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Beta Get Insights Job Configs<br/>
-        /// Get all insights job configs for a session.
+        /// [Beta] Create Insights Job<br/>
+        /// Create an insights job.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="includePrebuilts">
-        /// Default Value: false
-        /// </param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GetClusteringJobConfigsResponse> BetaGetInsightsJobConfigsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> [Beta]CreateInsightsJobAsync(
             global::System.Guid sessionId,
-            bool? includePrebuilts = default,
+
+            global::LangSmith.CreateRunClusteringJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareBetaGetInsightsJobConfigsArguments(
+            Prepare[Beta]CreateInsightsJobArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                includePrebuilts: ref includePrebuilts);
+                request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/configs",
+                path: $"/api/v1/sessions/{sessionId}/insights",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder
-                .AddOptionalParameter("include_prebuilts", includePrebuilts?.ToString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -75,15 +73,21 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareBetaGetInsightsJobConfigsRequest(
+            Prepare[Beta]CreateInsightsJobRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                includePrebuilts: includePrebuilts);
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -93,7 +97,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessBetaGetInsightsJobConfigsResponse(
+            Process[Beta]CreateInsightsJobResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -146,7 +150,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessBetaGetInsightsJobConfigsResponseContent(
+                Process[Beta]CreateInsightsJobResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -156,7 +160,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.GetClusteringJobConfigsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.CreateRunClusteringJobResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -187,7 +191,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.GetClusteringJobConfigsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.CreateRunClusteringJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -204,6 +208,79 @@ namespace LangSmith
                     };
                 }
             }
+        }
+
+        /// <summary>
+        /// [Beta] Create Insights Job<br/>
+        /// Create an insights job.
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="configId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="lastNHours"></param>
+        /// <param name="hierarchy"></param>
+        /// <param name="partitions"></param>
+        /// <param name="sample"></param>
+        /// <param name="summaryPrompt"></param>
+        /// <param name="filter"></param>
+        /// <param name="name"></param>
+        /// <param name="attributeSchemas"></param>
+        /// <param name="userContext"></param>
+        /// <param name="model">
+        /// Default Value: openai
+        /// </param>
+        /// <param name="clusterModel"></param>
+        /// <param name="summaryModel"></param>
+        /// <param name="validateModelSecrets">
+        /// Default Value: true
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> [Beta]CreateInsightsJobAsync(
+            global::System.Guid sessionId,
+            global::System.Guid? configId = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
+            int? lastNHours = default,
+            global::System.Collections.Generic.IList<int>? hierarchy = default,
+            global::System.Collections.Generic.Dictionary<string, string>? partitions = default,
+            global::LangSmith.AnyOf<double?, int?, object>? sample = default,
+            string? summaryPrompt = default,
+            string? filter = default,
+            string? name = default,
+            object? attributeSchemas = default,
+            global::System.Collections.Generic.Dictionary<string, string>? userContext = default,
+            global::LangSmith.CreateRunClusteringJobRequestModel? model = default,
+            string? clusterModel = default,
+            string? summaryModel = default,
+            bool? validateModelSecrets = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.CreateRunClusteringJobRequest
+            {
+                ConfigId = configId,
+                StartTime = startTime,
+                EndTime = endTime,
+                LastNHours = lastNHours,
+                Hierarchy = hierarchy,
+                Partitions = partitions,
+                Sample = sample,
+                SummaryPrompt = summaryPrompt,
+                Filter = filter,
+                Name = name,
+                AttributeSchemas = attributeSchemas,
+                UserContext = userContext,
+                Model = model,
+                ClusterModel = clusterModel,
+                SummaryModel = summaryModel,
+                ValidateModelSecrets = validateModelSecrets,
+            };
+
+            return await [Beta]CreateInsightsJobAsync(
+                sessionId: sessionId,
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

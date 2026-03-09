@@ -11,10 +11,6 @@ namespace LangSmith
         /// <param name="owner1"></param>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
-<<<<<<< HEAD
-=======
-        /// <param name="owner1"></param>
->>>>>>> e312672 (feat: Updated)
         /// <param name="owner2"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -22,10 +18,6 @@ namespace LangSmith
             string owner1,
             string repo,
             string tagName,
-<<<<<<< HEAD
-=======
-            string owner1,
->>>>>>> e312672 (feat: Updated)
             string owner2,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

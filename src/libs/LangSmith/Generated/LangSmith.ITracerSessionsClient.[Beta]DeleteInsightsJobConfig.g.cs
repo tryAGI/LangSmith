@@ -5,18 +5,16 @@ namespace LangSmith
     public partial interface ITracerSessionsClient
     {
         /// <summary>
-        /// Beta Get Run Cluster From Insights Job<br/>
-        /// Get a specific cluster for a session.
+        /// [Beta] Delete Insights Job Config<br/>
+        /// Delete an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="jobId"></param>
-        /// <param name="clusterId"></param>
+        /// <param name="configId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusterResponse> BetaGetRunClusterFromInsightsJobAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.DeleteClusteringJobConfigResponse> [Beta]DeleteInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            global::System.Guid clusterId,
+            global::System.Guid configId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
