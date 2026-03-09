@@ -213,11 +213,16 @@ namespace LangSmith
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
-        /// <param name="format"></param>
-        /// <param name="formatVersion">
-        /// Enum for bulk export format versions.
+        /// <param name="format">
+        /// Default Value: Parquet
         /// </param>
-        /// <param name="compression"></param>
+        /// <param name="formatVersion">
+        /// Enum for bulk export format versions.<br/>
+        /// Default Value: v1
+        /// </param>
+        /// <param name="compression">
+        /// Default Value: gzip
+        /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

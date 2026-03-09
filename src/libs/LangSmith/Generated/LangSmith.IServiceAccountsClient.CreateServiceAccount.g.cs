@@ -21,7 +21,9 @@ namespace LangSmith
         /// Create a service account
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="workspaces"></param>
+        /// <param name="workspaces">
+        /// Default Value: []
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ServiceAccountCreateResponse> CreateServiceAccountAsync(

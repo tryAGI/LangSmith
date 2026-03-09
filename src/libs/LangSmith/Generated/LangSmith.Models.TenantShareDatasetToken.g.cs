@@ -11,9 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"dataset"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TenantShareDatasetTokenTypeJsonConverter))]
-        public global::LangSmith.TenantShareDatasetTokenType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "dataset";
 
         /// <summary>
         /// 
@@ -60,16 +61,16 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TenantShareDatasetToken(
+            string type,
             string shareToken,
             global::System.DateTime createdAt,
             global::System.Guid datasetId,
-            global::LangSmith.TenantShareDatasetTokenType type,
             string? datasetName)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.DatasetId = datasetId;
-            this.Type = type;
             this.DatasetName = datasetName;
         }
 

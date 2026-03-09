@@ -9,13 +9,13 @@ namespace LangSmith
     public sealed partial class StripeBusinessInfoOutput
     {
         /// <summary>
-        /// Stripe customer billing information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company_info")]
         public global::LangSmith.StripeBusinessBillingInfo? CompanyInfo { get; set; }
 
         /// <summary>
-        /// Stripe tax ID.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tax_id")]
         public global::LangSmith.StripeTaxId? TaxId { get; set; }
@@ -41,12 +41,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="StripeBusinessInfoOutput" /> class.
         /// </summary>
-        /// <param name="companyInfo">
-        /// Stripe customer billing information.
-        /// </param>
-        /// <param name="taxId">
-        /// Stripe tax ID.
-        /// </param>
+        /// <param name="companyInfo"></param>
+        /// <param name="taxId"></param>
         /// <param name="invoiceEmail"></param>
         /// <param name="isBusiness">
         /// Default Value: false

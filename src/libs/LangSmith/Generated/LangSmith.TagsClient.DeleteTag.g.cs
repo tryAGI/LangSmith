@@ -10,6 +10,10 @@ namespace LangSmith
             ref string owner1,
             ref string repo,
             ref string tagName,
+<<<<<<< HEAD
+=======
+            ref string owner1,
+>>>>>>> e312672 (feat: Updated)
             ref string owner2);
         partial void PrepareDeleteTagRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -17,6 +21,10 @@ namespace LangSmith
             string owner1,
             string repo,
             string tagName,
+<<<<<<< HEAD
+=======
+            string owner1,
+>>>>>>> e312672 (feat: Updated)
             string owner2);
         partial void ProcessDeleteTagResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -34,6 +42,10 @@ namespace LangSmith
         /// <param name="owner1"></param>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
+<<<<<<< HEAD
+=======
+        /// <param name="owner1"></param>
+>>>>>>> e312672 (feat: Updated)
         /// <param name="owner2"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -41,6 +53,10 @@ namespace LangSmith
             string owner1,
             string repo,
             string tagName,
+<<<<<<< HEAD
+=======
+            string owner1,
+>>>>>>> e312672 (feat: Updated)
             string owner2,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -51,6 +67,10 @@ namespace LangSmith
                 owner1: ref owner1,
                 repo: ref repo,
                 tagName: ref tagName,
+<<<<<<< HEAD
+=======
+                owner1: ref owner1,
+>>>>>>> e312672 (feat: Updated)
                 owner2: ref owner2);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -90,6 +110,10 @@ namespace LangSmith
                 owner1: owner1,
                 repo: repo,
                 tagName: tagName,
+<<<<<<< HEAD
+=======
+                owner1: owner1,
+>>>>>>> e312672 (feat: Updated)
                 owner2: owner2);
 
             using var __response = await HttpClient.SendAsync(

@@ -10,7 +10,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? key,
             ref string? nameContains,
             ref int? offset,
-            ref int? limit,
+            int? limit,
             ref bool? sortByDesc,
             ref bool? readAfterWrite);
         partial void PrepareListFeedbackConfigsEndpointRequest(
@@ -64,7 +64,7 @@ namespace LangSmith
                 key: key,
                 nameContains: ref nameContains,
                 offset: ref offset,
-                limit: ref limit,
+                limit: limit,
                 sortByDesc: ref sortByDesc,
                 readAfterWrite: ref readAfterWrite);
 
@@ -72,7 +72,7 @@ namespace LangSmith
                 path: "/api/v1/feedback-configs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
+                .AddOptionalParameter("key", key?.ToString())
                 .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())

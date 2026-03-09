@@ -40,7 +40,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
@@ -50,7 +49,7 @@ namespace LangSmith
         public bool? ReachedMaxWorkspaces { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
@@ -170,7 +169,9 @@ namespace LangSmith
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
         /// </param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">
+        /// Default Value: []
+        /// </param>
         /// <param name="disabled">
         /// Default Value: false
         /// </param>

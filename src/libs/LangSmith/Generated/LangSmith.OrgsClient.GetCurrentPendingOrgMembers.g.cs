@@ -40,7 +40,9 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
-        /// <param name="emails"></param>
+        /// <param name="emails">
+        /// Default Value: []
+        /// </param>
         /// <param name="q">
         /// Search query for email
         /// </param>
@@ -49,7 +51,8 @@ namespace LangSmith
         /// Default Value: true
         /// </param>
         /// <param name="sortBy">
-        /// Sort fields for members list endpoints.
+        /// Field to sort by<br/>
+        /// Default Value: created_at
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

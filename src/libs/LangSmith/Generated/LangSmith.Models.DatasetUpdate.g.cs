@@ -14,29 +14,29 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? Name { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? InputsSchemaDefinition { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? OutputsSchemaDefinition { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
@@ -48,22 +48,22 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? Transformations { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>? Transformations { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("baseline_experiment_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? BaselineExperimentId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing, object>? BaselineExperimentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,14 +100,14 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DatasetUpdate(
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? name,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? inputsSchemaDefinition,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? outputsSchemaDefinition,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? name,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? inputsSchemaDefinition,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? outputsSchemaDefinition,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata,
-            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? baselineExperimentId)
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>? transformations,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata,
+            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing, object>? baselineExperimentId)
         {
             this.Name = name;
             this.Description = description;

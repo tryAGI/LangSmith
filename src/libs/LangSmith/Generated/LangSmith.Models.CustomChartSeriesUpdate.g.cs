@@ -19,7 +19,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::LangSmith.CustomChartSeriesFilters? Filters { get; set; }
+        public global::LangSmith.CustomChartSeriesFilters2? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
@@ -42,14 +42,13 @@ namespace LangSmith
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
-        /// LGP Metrics you can chart.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_metric")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter))]
         public global::LangSmith.HostProjectChartMetric? ProjectMetric { get; set; }
 
         /// <summary>
-        /// Group by param for run stats.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public global::LangSmith.RunStatsGroupBy? GroupBy { get; set; }
@@ -76,12 +75,8 @@ namespace LangSmith
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
-        /// <param name="projectMetric">
-        /// LGP Metrics you can chart.
-        /// </param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
+        /// <param name="projectMetric"></param>
+        /// <param name="groupBy"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -89,7 +84,7 @@ namespace LangSmith
         public CustomChartSeriesUpdate(
             string name,
             global::LangSmith.CustomChartMetric metric,
-            global::LangSmith.CustomChartSeriesFilters? filters,
+            global::LangSmith.CustomChartSeriesFilters2? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
             global::LangSmith.HostProjectChartMetric? projectMetric,

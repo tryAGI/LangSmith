@@ -7,26 +7,26 @@ namespace LangSmith
     {
         partial void PrepareReadFeedbacksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run,
             global::System.Collections.Generic.IList<string>? key,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source,
             ref int? limit,
             ref int? offset,
             global::System.Collections.Generic.IList<global::System.Guid>? user,
-            ref bool? hasComment,
-            ref bool? hasScore,
-            ref global::LangSmith.FeedbackLevel? level,
-            ref global::System.DateTime? maxCreatedAt,
-            ref global::System.DateTime? minCreatedAt,
-            ref bool? includeUserNames,
-            ref global::System.Guid? comparativeExperimentId);
+            bool? hasComment,
+            bool? hasScore,
+            global::LangSmith.FeedbackLevel? level,
+            global::System.DateTime? maxCreatedAt,
+            global::System.DateTime? minCreatedAt,
+            bool? includeUserNames,
+            global::System.Guid? comparativeExperimentId);
         partial void PrepareReadFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run,
             global::System.Collections.Generic.IList<string>? key,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source,
             int? limit,
             int? offset,
@@ -64,9 +64,7 @@ namespace LangSmith
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level">
-        /// Enum for feedback levels.
-        /// </param>
+        /// <param name="level"></param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="includeUserNames"></param>
@@ -74,9 +72,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadFeedbacksAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run = default,
             global::System.Collections.Generic.IList<string>? key = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session = default,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source = default,
             int? limit = default,
             int? offset = default,
@@ -101,30 +99,30 @@ namespace LangSmith
                 limit: ref limit,
                 offset: ref offset,
                 user: user,
-                hasComment: ref hasComment,
-                hasScore: ref hasScore,
-                level: ref level,
-                maxCreatedAt: ref maxCreatedAt,
-                minCreatedAt: ref minCreatedAt,
-                includeUserNames: ref includeUserNames,
-                comparativeExperimentId: ref comparativeExperimentId);
+                hasComment: hasComment,
+                hasScore: hasScore,
+                level: level,
+                maxCreatedAt: maxCreatedAt,
+                minCreatedAt: minCreatedAt,
+                includeUserNames: includeUserNames,
+                comparativeExperimentId: comparativeExperimentId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("run", run?.ToString() ?? string.Empty)
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
+                .AddOptionalParameter("key", key?.ToString())
                 .AddOptionalParameter("session", session?.ToString() ?? string.Empty)
-                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("source", source?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
-                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("user", user?.ToString())
                 .AddOptionalParameter("has_comment", hasComment?.ToString())
                 .AddOptionalParameter("has_score", hasScore?.ToString())
-                .AddOptionalParameter("level", level?.ToValueString())
-                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("level", level?.ToString())
+                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString())
+                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString())
                 .AddOptionalParameter("include_user_names", includeUserNames?.ToString())
                 .AddOptionalParameter("comparative_experiment_id", comparativeExperimentId?.ToString()) 
                 ; 

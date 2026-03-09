@@ -1,9 +1,6 @@
-using AutoSDK.Helpers;
+using AutoSDK.Extensions;
+using AutoSDK.Models;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Validations;
 
 var path = args[0];
 var yamlOrJson = await File.ReadAllTextAsync(path);
@@ -13,15 +10,7 @@ yamlOrJson = yamlOrJson.Replace("\"Tenant ID\"", "\"TenantId\"");
 yamlOrJson = yamlOrJson.Replace("\"Bearer Auth\"", "\"BearerAuth\"");
 yamlOrJson = yamlOrJson.Replace("\"Organization ID\"", "\"OrganizationId\"");
 
-if (OpenApi31Support.IsOpenApi31(yamlOrJson))
-{
-    yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
-}
-
-var openApiDocument = new OpenApiStringReader(new OpenApiReaderSettings
-{
-    RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
-}).Read(yamlOrJson, out var diagnostics);
+var openApiDocument = yamlOrJson.GetOpenApiDocument(Settings.Default);
 
 var ownerParameter = new OpenApiParameter
 {
@@ -30,7 +19,7 @@ var ownerParameter = new OpenApiParameter
     Required = true,
     Schema = new OpenApiSchema
     {
-        Type = "string"
+        Type = JsonSchemaType.String,
     },
 };
 var repoParameter = new OpenApiParameter
@@ -40,7 +29,7 @@ var repoParameter = new OpenApiParameter
     Required = true,
     Schema = new OpenApiSchema
     {
-        Type = "string"
+        Type = JsonSchemaType.String,
     },
 };
 var jobIdParameter = new OpenApiParameter
@@ -50,89 +39,68 @@ var jobIdParameter = new OpenApiParameter
     Required = true,
     Schema = new OpenApiSchema
     {
-        Type = "string",
-        Format = "uuid"
+        Type = JsonSchemaType.String,
+        Format = "uuid",
     },
 };
 
-foreach (var (_, operation) in openApiDocument.Paths["/runs"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths!["/runs"]!.Operations)
 {
     operation.Parameters.Clear();
 }
-foreach (var (_, operation) in openApiDocument.Paths["/runs/batch"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/runs/batch"]!.Operations)
 {
     operation.Parameters.Clear();
 }
 
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"]!.Operations)
 {
     operation.Parameters.Add(ownerParameter);
 }
 
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags"]!.Operations)
 {
     operation.Parameters.Add(ownerParameter);
 }
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags/{tag_name}"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/tags/{tag_name}"]!.Operations)
 {
     operation.Parameters.Add(ownerParameter);
 }
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs"]!.Operations)
 {
     operation.Parameters.Add(ownerParameter);
 }
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}"].Operations)
-{
-    operation.Parameters.Add(ownerParameter);
-    operation.Parameters.Add(repoParameter);
-}
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}"]!.Operations)
 {
     operation.Parameters.Add(ownerParameter);
     operation.Parameters.Add(repoParameter);
 }
-foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs/{log_id}"].Operations)
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs"]!.Operations)
+{
+    operation.Parameters.Add(ownerParameter);
+    operation.Parameters.Add(repoParameter);
+}
+foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{repo}/optimization-jobs/{job_id}/logs/{log_id}"]!.Operations)
 {
     operation.Parameters.Add(ownerParameter);
     operation.Parameters.Add(repoParameter);
     operation.Parameters.Add(jobIdParameter);
 }
 
-openApiDocument.Servers.Add(new OpenApiServer { Url = "https://api.smith.langchain.com" });
+openApiDocument.Servers?.Clear();
+openApiDocument.Servers?.Add(new OpenApiServer { Url = "https://api.smith.langchain.com" });
 
-openApiDocument.SecurityRequirements = new List<OpenApiSecurityRequirement>
-{
-    // X-API-Key in header
+openApiDocument.Security =
+[
     new OpenApiSecurityRequirement
     {
         {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "ApiKey"
-                }
-            },
+            new OpenApiSecuritySchemeReference("ApiKey", openApiDocument),
             new List<string>()
         }
     }
-};
+];
 
-yamlOrJson = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader(new OpenApiReaderSettings
-{
-    RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
-}).Read(yamlOrJson, out diagnostics);
-
-if (diagnostics.Errors.Count > 0)
-{
-    foreach (var error in diagnostics.Errors)
-    {
-        Console.WriteLine(error.Message);
-    }
-    // Return Exit code 1
-    Environment.Exit(1);
-}
+yamlOrJson = await openApiDocument.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_2);
 
 await File.WriteAllTextAsync(path, yamlOrJson);

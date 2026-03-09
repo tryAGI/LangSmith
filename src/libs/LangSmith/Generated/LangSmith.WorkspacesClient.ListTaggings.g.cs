@@ -7,7 +7,7 @@ namespace LangSmith
     {
         partial void PrepareListTaggingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid? tagValueId);
+            global::System.Guid? tagValueId);
         partial void PrepareListTaggingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -35,7 +35,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListTaggingsArguments(
                 httpClient: HttpClient,
-                tagValueId: ref tagValueId);
+                tagValueId: tagValueId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/taggings",

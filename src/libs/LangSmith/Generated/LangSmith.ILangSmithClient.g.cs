@@ -272,10 +272,5 @@ namespace LangSmith
         /// </summary>
         public ThreadsClient Threads { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public TtlSettingsClient TtlSettings { get; }
-
     }
 }

@@ -34,8 +34,8 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.Highlight? highlighted = default,
             global::LangSmith.Artifact? artifact = default,
-            global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength = default,
-            global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel = default,
+            global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength = default,
+            global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel = default,
             string? customAction = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

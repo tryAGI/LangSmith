@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class BulkExportUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: Cancelled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportUpdatableStatusJsonConverter))]
@@ -24,7 +24,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkExportUpdate" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Default Value: Cancelled
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

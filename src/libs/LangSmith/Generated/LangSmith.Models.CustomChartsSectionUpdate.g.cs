@@ -21,8 +21,8 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
@@ -54,7 +54,7 @@ namespace LangSmith
 #endif
         public CustomChartsSectionUpdate(
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index)
         {
             this.Title = title;

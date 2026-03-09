@@ -12,7 +12,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusJsonConverter))]
         public global::LangSmith.EPromptOptimizationJobStatus? Status { get; set; }
 
         /// <summary>

@@ -70,7 +70,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        public global::LangSmith.CustomChartSeriesFilters? CommonFilters { get; set; }
+        public global::LangSmith.CustomChartSeriesFilters2? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -104,7 +104,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries> series,
             string? description,
             object? metadata,
-            global::LangSmith.CustomChartSeriesFilters? commonFilters)
+            global::LangSmith.CustomChartSeriesFilters2? commonFilters)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Id = id;

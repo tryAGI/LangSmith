@@ -158,8 +158,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRulesCreateSchemaGroupByJsonConverter))]
-        public global::LangSmith.RunRulesCreateSchemaGroupBy? GroupBy { get; set; }
+        public string? GroupBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -237,7 +236,7 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
-            global::LangSmith.RunRulesCreateSchemaGroupBy? groupBy)
+            string? groupBy)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SamplingRate = samplingRate;

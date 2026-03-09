@@ -19,7 +19,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_limit_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeJsonConverter))]
         public global::LangSmith.TenantUsageLimitType? UsageLimitType { get; set; }
 
         /// <summary>

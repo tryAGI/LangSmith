@@ -117,10 +117,9 @@ namespace LangSmith
         public bool? UseOrFallbackToWorkspaceSecrets { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: langsmith_ui
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_context")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunnerContextEnumJsonConverter))]
         public global::LangSmith.RunnerContextEnum? RunnerContext { get; set; }
 
         /// <summary>
@@ -196,7 +195,9 @@ namespace LangSmith
         /// <param name="useOrFallbackToWorkspaceSecrets">
         /// Default Value: false
         /// </param>
-        /// <param name="runnerContext"></param>
+        /// <param name="runnerContext">
+        /// Default Value: langsmith_ui
+        /// </param>
         /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">

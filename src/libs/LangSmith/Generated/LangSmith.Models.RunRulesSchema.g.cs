@@ -218,8 +218,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRulesSchemaGroupByJsonConverter))]
-        public global::LangSmith.RunRulesSchemaGroupBy? GroupBy { get; set; }
+        public string? GroupBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -313,7 +312,7 @@ namespace LangSmith
             bool? transient,
             global::System.Guid? evaluatorId,
             global::System.Guid? alignmentAnnotationQueueId,
-            global::LangSmith.RunRulesSchemaGroupBy? groupBy)
+            string? groupBy)
         {
             this.Id = id;
             this.TenantId = tenantId;

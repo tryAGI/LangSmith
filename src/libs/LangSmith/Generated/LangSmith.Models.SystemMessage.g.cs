@@ -46,8 +46,7 @@ namespace LangSmith
         /// Default Value: system
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SystemMessageTypeJsonConverter))]
-        public global::LangSmith.SystemMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +84,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> content,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.SystemMessageType? type,
+            string? type,
             string? name,
             string? id)
         {

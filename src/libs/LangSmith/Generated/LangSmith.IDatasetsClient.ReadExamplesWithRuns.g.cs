@@ -19,7 +19,7 @@ namespace LangSmith
             global::System.Guid datasetId,
 
             global::LangSmith.QueryExampleSchemaWithRunsRequest request,
-            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
+            string? format = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
+            string? format = default,
             int? offset = default,
             int? limit = default,
             bool? preview = default,

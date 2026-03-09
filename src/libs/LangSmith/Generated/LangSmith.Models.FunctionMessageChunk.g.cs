@@ -34,8 +34,7 @@ namespace LangSmith
         /// Default Value: FunctionMessageChunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FunctionMessageChunkTypeJsonConverter))]
-        public global::LangSmith.FunctionMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +74,7 @@ namespace LangSmith
             string name,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.FunctionMessageChunkType? type,
+            string? type,
             string? id)
         {
             this.Content = content;

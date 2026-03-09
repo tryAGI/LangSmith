@@ -15,9 +15,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"invalid_tool_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.InvalidToolCallTypeJsonConverter))]
-        public global::LangSmith.InvalidToolCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "invalid_tool_call";
 
         /// <summary>
         /// 
@@ -80,19 +81,19 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InvalidToolCall(
+            string type,
             string? id,
             string? name,
             string? args,
             string? error,
-            global::LangSmith.InvalidToolCallType type,
             global::LangSmith.AnyOf<int?, string>? index,
             object? extras)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Type = type;
             this.Index = index;
             this.Extras = extras;
         }

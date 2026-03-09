@@ -12,8 +12,7 @@ namespace LangSmith
         /// Default Value: auto_eval
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AutoEvalFeedbackSourceTypeJsonConverter))]
-        public global::LangSmith.AutoEvalFeedbackSourceType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -38,7 +37,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AutoEvalFeedbackSource(
-            global::LangSmith.AutoEvalFeedbackSourceType? type,
+            string? type,
             object? metadata)
         {
             this.Type = type;

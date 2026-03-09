@@ -11,9 +11,9 @@ namespace LangSmith
             ref int? limit,
             ref string? cursor,
             ref bool? backfill,
-            ref global::System.DateTime? startTime,
-            ref global::System.DateTime? endTime,
-            ref global::System.Guid? sessionId);
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            global::System.Guid? sessionId);
         partial void PrepareListRuleLogsV2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -70,9 +70,9 @@ namespace LangSmith
                 limit: ref limit,
                 cursor: ref cursor,
                 backfill: ref backfill,
-                startTime: ref startTime,
-                endTime: ref endTime,
-                sessionId: ref sessionId);
+                startTime: startTime,
+                endTime: endTime,
+                sessionId: sessionId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/logs/v2",
@@ -81,8 +81,8 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("backfill", backfill?.ToString())
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("start_time", startTime?.ToString())
+                .AddOptionalParameter("end_time", endTime?.ToString())
                 .AddOptionalParameter("session_id", sessionId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -7,8 +7,8 @@ namespace LangSmith
     {
         partial void PrepareListFeedbackFormulaEpArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid? datasetId,
-            ref global::System.Guid? sessionId,
+            global::System.Guid? datasetId,
+            global::System.Guid? sessionId,
             ref int? limit,
             ref int? offset);
         partial void PrepareListFeedbackFormulaEpRequest(
@@ -52,8 +52,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListFeedbackFormulaEpArguments(
                 httpClient: HttpClient,
-                datasetId: ref datasetId,
-                sessionId: ref sessionId,
+                datasetId: datasetId,
+                sessionId: sessionId,
                 limit: ref limit,
                 offset: ref offset);
 

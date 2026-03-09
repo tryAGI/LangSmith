@@ -9,49 +9,49 @@ namespace LangSmith
     public sealed partial class TaggingsByResourceType
     {
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alerts")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Alerts { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dashboards")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Dashboards { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasets")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Datasets { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployments")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Deployments { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiments")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Experiments { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Projects { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompts")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Prompts { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queues")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Queues { get; set; }
@@ -65,14 +65,30 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="TaggingsByResourceType" /> class.
         /// </summary>
-        /// <param name="alerts"></param>
-        /// <param name="dashboards"></param>
-        /// <param name="datasets"></param>
-        /// <param name="deployments"></param>
-        /// <param name="experiments"></param>
-        /// <param name="projects"></param>
-        /// <param name="prompts"></param>
-        /// <param name="queues"></param>
+        /// <param name="alerts">
+        /// Default Value: []
+        /// </param>
+        /// <param name="dashboards">
+        /// Default Value: []
+        /// </param>
+        /// <param name="datasets">
+        /// Default Value: []
+        /// </param>
+        /// <param name="deployments">
+        /// Default Value: []
+        /// </param>
+        /// <param name="experiments">
+        /// Default Value: []
+        /// </param>
+        /// <param name="projects">
+        /// Default Value: []
+        /// </param>
+        /// <param name="prompts">
+        /// Default Value: []
+        /// </param>
+        /// <param name="queues">
+        /// Default Value: []
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

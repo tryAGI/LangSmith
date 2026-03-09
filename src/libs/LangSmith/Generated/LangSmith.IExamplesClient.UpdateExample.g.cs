@@ -41,7 +41,7 @@ namespace LangSmith
             object? outputs = default,
             global::LangSmith.AttachmentsOperations? attachmentsOperations = default,
             object? metadata = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             bool? overwrite = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

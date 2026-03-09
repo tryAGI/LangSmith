@@ -12,13 +12,13 @@ namespace LangSmith
             ref string? metadata,
             global::System.Collections.Generic.IList<string>? fullTextContains,
             global::System.Collections.Generic.IList<string>? splits,
-            ref global::System.Guid? dataset,
+            global::System.Guid? dataset,
             ref int? offset,
             ref int? limit,
             ref global::LangSmith.ExampleListOrder? order,
-            ref double? randomSeed,
+            double? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
-            ref bool? descending,
+            bool? descending,
             ref string? filter);
         partial void PrepareReadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -64,7 +64,9 @@ namespace LangSmith
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
-        /// <param name="order"></param>
+        /// <param name="order">
+        /// Default Value: recent
+        /// </param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
@@ -98,24 +100,24 @@ namespace LangSmith
                 metadata: ref metadata,
                 fullTextContains: fullTextContains,
                 splits: splits,
-                dataset: ref dataset,
+                dataset: dataset,
                 offset: ref offset,
                 limit: ref limit,
                 order: ref order,
-                randomSeed: ref randomSeed,
+                randomSeed: randomSeed,
                 select: select,
-                descending: ref descending,
+                descending: descending,
                 filter: ref filter);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/examples",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("id", id?.ToString())
                 .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
                 .AddOptionalParameter("metadata", metadata)
-                .AddOptionalParameter("full_text_contains", fullTextContains, delimiter: ",", explode: true)
-                .AddOptionalParameter("splits", splits, delimiter: ",", explode: true)
+                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString())
+                .AddOptionalParameter("splits", splits?.ToString())
                 .AddOptionalParameter("dataset", dataset?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())

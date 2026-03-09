@@ -241,14 +241,14 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetAsync(
             global::System.Guid datasetId,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? name = default,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description = default,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? inputsSchemaDefinition = default,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? outputsSchemaDefinition = default,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? name = default,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? inputsSchemaDefinition = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? outputsSchemaDefinition = default,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? patchExamples = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing>? transformations = default,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,
-            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? baselineExperimentId = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>? transformations = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
+            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing, object>? baselineExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.DatasetUpdate

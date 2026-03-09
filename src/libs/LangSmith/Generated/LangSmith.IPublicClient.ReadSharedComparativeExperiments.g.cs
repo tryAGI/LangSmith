@@ -18,7 +18,8 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Enum for available comparative experiment columns to sort by.
+        /// Enum for available comparative experiment columns to sort by.<br/>
+        /// Default Value: created_at
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true

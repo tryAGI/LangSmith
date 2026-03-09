@@ -80,7 +80,7 @@ namespace LangSmith
         public required global::System.Collections.Generic.IList<global::LangSmith.RunCluster> Clusters { get; set; }
 
         /// <summary>
-        /// High level summary of an insights job that pulls out patterns and specific traces.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("report")]
         public global::LangSmith.InsightsSummary? Report { get; set; }
@@ -105,9 +105,7 @@ namespace LangSmith
         /// <param name="error"></param>
         /// <param name="configId"></param>
         /// <param name="clusters"></param>
-        /// <param name="report">
-        /// High level summary of an insights job that pulls out patterns and specific traces.
-        /// </param>
+        /// <param name="report"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

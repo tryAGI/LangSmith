@@ -16,10 +16,9 @@ namespace LangSmith
         public required string Code { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: python
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CodeEvaluatorLanguageJsonConverter))]
         public global::LangSmith.CodeEvaluatorLanguage? Language { get; set; }
 
         /// <summary>
@@ -32,7 +31,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CodeEvaluatorTopLevel" /> class.
         /// </summary>
         /// <param name="code"></param>
-        /// <param name="language"></param>
+        /// <param name="language">
+        /// Default Value: python
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

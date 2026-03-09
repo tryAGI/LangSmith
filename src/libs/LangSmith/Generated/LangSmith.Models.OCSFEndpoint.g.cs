@@ -50,7 +50,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? intermediateIps)
         {
             this.Ip = ip ?? throw new global::System.ArgumentNullException(nameof(ip));
-            this.Port = port;
+            this.Port = port ?? throw new global::System.ArgumentNullException(nameof(port));
             this.IntermediateIps = intermediateIps ?? throw new global::System.ArgumentNullException(nameof(intermediateIps));
         }
 

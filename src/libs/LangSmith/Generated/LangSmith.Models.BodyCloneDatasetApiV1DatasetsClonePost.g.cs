@@ -25,13 +25,13 @@ namespace LangSmith
         public required global::System.Guid SourceDatasetId { get; set; }
 
         /// <summary>
-        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
-        public object? AsOf { get; set; }
+        public global::LangSmith.AnyOf<global::System.DateTime?, string>? AsOf { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         public global::System.Collections.Generic.IList<global::System.Guid>? Examples { get; set; }
@@ -40,8 +40,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
-        public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? Split { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
+        public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Split { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,10 +54,10 @@ namespace LangSmith
         /// </summary>
         /// <param name="targetDatasetId"></param>
         /// <param name="sourceDatasetId"></param>
-        /// <param name="asOf">
-        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
+        /// <param name="asOf"></param>
+        /// <param name="examples">
+        /// Default Value: []
         /// </param>
-        /// <param name="examples"></param>
         /// <param name="split"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,9 +65,9 @@ namespace LangSmith
         public BodyCloneDatasetApiV1DatasetsClonePost(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
-            object? asOf,
+            global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.Collections.Generic.IList<global::System.Guid>? examples,
-            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split)
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split)
         {
             this.TargetDatasetId = targetDatasetId;
             this.SourceDatasetId = sourceDatasetId;

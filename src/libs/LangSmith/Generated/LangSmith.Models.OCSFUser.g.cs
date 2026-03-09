@@ -40,8 +40,8 @@ namespace LangSmith
             global::System.Guid? uid,
             global::System.Guid? credentialUid)
         {
-            this.Uid = uid;
-            this.CredentialUid = credentialUid;
+            this.Uid = uid ?? throw new global::System.ArgumentNullException(nameof(uid));
+            this.CredentialUid = credentialUid ?? throw new global::System.ArgumentNullException(nameof(credentialUid));
         }
 
         /// <summary>

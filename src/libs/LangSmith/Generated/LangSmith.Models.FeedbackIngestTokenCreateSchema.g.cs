@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class FeedbackIngestTokenCreateSchema
     {
         /// <summary>
-        /// Timedelta input.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_in")]
         public global::LangSmith.TimedeltaInput? ExpiresIn { get; set; }
@@ -49,9 +49,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackIngestTokenCreateSchema" /> class.
         /// </summary>
-        /// <param name="expiresIn">
-        /// Timedelta input.
-        /// </param>
+        /// <param name="expiresIn"></param>
         /// <param name="expiresAt"></param>
         /// <param name="runId"></param>
         /// <param name="feedbackKey"></param>

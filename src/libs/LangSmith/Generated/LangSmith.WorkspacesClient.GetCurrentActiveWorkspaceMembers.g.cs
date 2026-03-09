@@ -16,7 +16,7 @@ namespace LangSmith
             ref bool? sortByDesc,
             global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
             global::System.Collections.Generic.IList<global::System.Guid>? userIds,
-            ref bool? isDisabled,
+            bool? isDisabled,
             ref global::LangSmith.MemberSortField? sortBy);
         partial void PrepareGetCurrentActiveWorkspaceMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -48,7 +48,9 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
-        /// <param name="emails"></param>
+        /// <param name="emails">
+        /// Default Value: []
+        /// </param>
         /// <param name="q">
         /// Search query for email
         /// </param>
@@ -56,11 +58,14 @@ namespace LangSmith
         /// Sort in descending order<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="lsUserIds"></param>
+        /// <param name="lsUserIds">
+        /// Default Value: []
+        /// </param>
         /// <param name="userIds"></param>
         /// <param name="isDisabled"></param>
         /// <param name="sortBy">
-        /// Sort fields for members list endpoints.
+        /// Field to sort by<br/>
+        /// Default Value: created_at
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -87,7 +92,7 @@ namespace LangSmith
                 sortByDesc: ref sortByDesc,
                 lsUserIds: lsUserIds,
                 userIds: userIds,
-                isDisabled: ref isDisabled,
+                isDisabled: isDisabled,
                 sortBy: ref sortBy);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(

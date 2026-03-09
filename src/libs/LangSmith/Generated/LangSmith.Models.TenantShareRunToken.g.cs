@@ -11,9 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"run"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TenantShareRunTokenTypeJsonConverter))]
-        public global::LangSmith.TenantShareRunTokenType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "run";
 
         /// <summary>
         /// 
@@ -81,19 +82,19 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TenantShareRunToken(
+            string type,
             string shareToken,
             global::System.DateTime createdAt,
             global::System.Guid runId,
-            global::LangSmith.TenantShareRunTokenType type,
             string? runName,
             string? runType,
             global::System.Guid? sessionId,
             string? sessionName)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.RunId = runId;
-            this.Type = type;
             this.RunName = runName;
             this.RunType = runType;
             this.SessionId = sessionId;

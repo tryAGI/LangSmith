@@ -29,7 +29,7 @@ namespace LangSmith
             int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Guid? datasetId = default,
-            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType? queueType = default,
+            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

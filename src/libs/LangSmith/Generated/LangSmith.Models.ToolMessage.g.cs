@@ -62,8 +62,7 @@ namespace LangSmith
         /// Default Value: tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ToolMessageTypeJsonConverter))]
-        public global::LangSmith.ToolMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -127,7 +126,7 @@ namespace LangSmith
             string toolCallId,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.ToolMessageType? type,
+            string? type,
             string? name,
             string? id,
             object? artifact,

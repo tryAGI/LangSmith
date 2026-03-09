@@ -40,7 +40,7 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: runs
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter))]
@@ -105,7 +105,9 @@ namespace LangSmith
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Default Value: runs
+        /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="duration"></param>

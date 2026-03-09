@@ -32,7 +32,9 @@ namespace LangSmith
         /// <param name="useSourceRunIo">
         /// Default Value: false
         /// </param>
-        /// <param name="useSourceRunAttachments"></param>
+        /// <param name="useSourceRunAttachments">
+        /// Default Value: []
+        /// </param>
         /// <param name="useLegacyMessageFormat">
         /// Use Legacy Message Format for LLM runs<br/>
         /// Default Value: false
@@ -46,7 +48,7 @@ namespace LangSmith
             global::System.Guid? sourceRunId = default,
             object? metadata = default,
             object? inputs = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::System.Guid? id = default,
             bool? useSourceRunIo = default,
             global::System.Collections.Generic.IList<string>? useSourceRunAttachments = default,

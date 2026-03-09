@@ -1,0 +1,65 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+C# SDK for the [LangSmith](https://smith.langchain.com/) LLM observability and evaluation platform (by LangChain), auto-generated from the LangSmith OpenAPI specification using [AutoSDK](https://github.com/tryAGI/AutoSDK). Published as a NuGet package under the `tryAGI` organization.
+
+## Build Commands
+
+```bash
+# Build the solution
+dotnet build LangSmith.sln
+
+# Build for release (also produces NuGet package)
+dotnet build LangSmith.sln -c Release
+
+# Run integration tests (requires LANGSMITH_API_KEY and OPENAI_API_KEY env vars)
+dotnet test src/tests/LangSmith.IntegrationTests/LangSmith.IntegrationTests.csproj
+
+# Regenerate SDK from OpenAPI spec
+cd src/libs/LangSmith && ./generate.sh
+```
+
+## Architecture
+
+### Code Generation Pipeline
+
+The SDK code in `Generated/` is **auto-generated** — do not manually edit files in `src/libs/LangSmith/Generated/`.
+
+1. `src/libs/LangSmith/openapi.yaml` — the LangSmith OpenAPI spec (fetched from `https://api.smith.langchain.com/openapi.json`)
+2. `src/helpers/FixOpenApiSpec/` — converts OpenAPI 3.1 → 3.0 format for compatibility
+3. `src/libs/LangSmith/generate.sh` — orchestrates: download spec → fix spec → run AutoSDK CLI → output to `Generated/`
+4. CI auto-updates the spec every 3 hours and creates PRs if changes are detected
+
+### Hand-Written Extensions
+
+This file is **not** auto-generated and can be edited manually:
+
+- `src/libs/LangSmith/SpecialJsonSerializerContext.cs` — Custom JSON serializer context for combining LangSmith and OpenAI serialization
+
+### Project Layout
+
+| Project | Purpose |
+|---------|---------|
+| `src/libs/LangSmith/` | Main SDK library (`LangSmithClient`) |
+| `src/tests/LangSmith.IntegrationTests/` | Integration tests against real LangSmith API |
+| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
+| `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
+| `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
+
+### Build Configuration
+
+- **Target:** `net10.0` (single target)
+- **Language:** C# 13 preview with nullable reference types
+- **Signing:** Strong-named assemblies via `src/key.snk`
+- **Versioning:** Semantic versioning from git tags (`v` prefix) via MinVer
+- **Analysis:** All .NET analyzers enabled, AOT/trimming compatibility enforced
+- **Testing:** MSTest + FluentAssertions
+
+### CI/CD
+
+- Uses shared workflows from `HavenDV/workflows` repo
+- Dependabot updates NuGet packages weekly (auto-merged)
+- Documentation deployed to GitHub Pages via MkDocs Material

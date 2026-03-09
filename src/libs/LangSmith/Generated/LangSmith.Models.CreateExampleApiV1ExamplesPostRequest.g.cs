@@ -45,8 +45,8 @@ namespace LangSmith
         /// Default Value: base
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace LangSmith
         public bool? UseSourceRunIo { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_source_run_attachments")]
         public global::System.Collections.Generic.IList<string>? UseSourceRunAttachments { get; set; }
@@ -100,7 +100,9 @@ namespace LangSmith
         /// <param name="useSourceRunIo">
         /// Default Value: false
         /// </param>
-        /// <param name="useSourceRunAttachments"></param>
+        /// <param name="useSourceRunAttachments">
+        /// Default Value: []
+        /// </param>
         /// <param name="useLegacyMessageFormat">
         /// Use Legacy Message Format for LLM runs<br/>
         /// Default Value: false
@@ -115,7 +117,7 @@ namespace LangSmith
             global::System.Guid? sourceRunId,
             object? metadata,
             object? inputs,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
             global::System.Guid? id,
             bool? useSourceRunIo,
             global::System.Collections.Generic.IList<string>? useSourceRunAttachments,

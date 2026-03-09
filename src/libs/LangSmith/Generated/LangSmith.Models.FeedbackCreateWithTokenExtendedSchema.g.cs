@@ -14,15 +14,15 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?>))]
-        public global::LangSmith.AnyOf<double?, int?, bool?>? Score { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
+        public global::LangSmith.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string>))]
-        public global::LangSmith.AnyOf<double?, int?, bool?, string>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>))]
+        public global::LangSmith.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -34,8 +34,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string>))]
-        public global::LangSmith.AnyOf<object, string>? Correction { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>))]
+        public global::LangSmith.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
@@ -61,10 +61,10 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FeedbackCreateWithTokenExtendedSchema(
-            global::LangSmith.AnyOf<double?, int?, bool?>? score,
-            global::LangSmith.AnyOf<double?, int?, bool?, string>? value,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
             string? comment,
-            global::LangSmith.AnyOf<object, string>? correction,
+            global::LangSmith.AnyOf<object, string, object>? correction,
             object? metadata)
         {
             this.Score = score;

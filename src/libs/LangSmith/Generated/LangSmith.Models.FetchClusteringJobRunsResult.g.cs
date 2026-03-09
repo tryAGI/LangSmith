@@ -41,7 +41,7 @@ namespace LangSmith
             int? offset)
         {
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
-            this.Offset = offset;
+            this.Offset = offset ?? throw new global::System.ArgumentNullException(nameof(offset));
         }
 
         /// <summary>

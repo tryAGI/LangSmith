@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public readonly partial struct FeedbackSource
+    public sealed partial class FeedbackSource
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -41,7 +41,7 @@ namespace LangSmith
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::LangSmith.FeedbackSource),
-                jsonSerializerContext) as global::LangSmith.FeedbackSource?;
+                jsonSerializerContext) as global::LangSmith.FeedbackSource;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace LangSmith
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::LangSmith.FeedbackSource),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.FeedbackSource?;
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.FeedbackSource;
         }
 
         /// <summary>

@@ -33,15 +33,15 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?>))]
-        public global::LangSmith.AnyOf<double?, int?, bool?>? Score { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
+        public global::LangSmith.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>))]
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>))]
+        public global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -53,8 +53,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string>))]
-        public global::LangSmith.AnyOf<object, string>? Correction { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>))]
+        public global::LangSmith.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
@@ -100,10 +100,10 @@ namespace LangSmith
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// The feedback source loaded from the database.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        public global::LangSmith.FeedbackSource3? FeedbackSource { get; set; }
+        public global::LangSmith.FeedbackSource? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
@@ -140,9 +140,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
-        /// <param name="feedbackSource">
-        /// The feedback source loaded from the database.
-        /// </param>
+        /// <param name="feedbackSource"></param>
         /// <param name="extra"></param>
         /// <param name="feedbackThreadId"></param>
 #if NET7_0_OR_GREATER
@@ -153,17 +151,17 @@ namespace LangSmith
             global::System.Guid id,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? value,
             string? comment,
-            global::LangSmith.AnyOf<object, string>? correction,
+            global::LangSmith.AnyOf<object, string, object>? correction,
             global::System.Guid? feedbackGroupId,
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
             global::System.Guid? sessionId,
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
-            global::LangSmith.FeedbackSource3? feedbackSource,
+            global::LangSmith.FeedbackSource? feedbackSource,
             object? extra,
             string? feedbackThreadId)
         {

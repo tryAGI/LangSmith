@@ -17,8 +17,8 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default);

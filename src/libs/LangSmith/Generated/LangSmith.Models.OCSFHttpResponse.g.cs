@@ -31,7 +31,7 @@ namespace LangSmith
         public OCSFHttpResponse(
             int? code)
         {
-            this.Code = code;
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
         }
 
         /// <summary>

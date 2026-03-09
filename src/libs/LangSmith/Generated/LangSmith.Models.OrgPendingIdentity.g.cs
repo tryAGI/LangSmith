@@ -53,7 +53,7 @@ namespace LangSmith
         public string? FullName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter))]
@@ -110,7 +110,7 @@ namespace LangSmith
         public string? OrgRoleName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? TenantIds { get; set; }
@@ -130,7 +130,9 @@ namespace LangSmith
         /// <param name="workspaceRoleId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
-        /// <param name="accessScope"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="id"></param>
         /// <param name="userId"></param>
         /// <param name="tenantId"></param>
@@ -139,7 +141,9 @@ namespace LangSmith
         /// <param name="roleName"></param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
-        /// <param name="tenantIds"></param>
+        /// <param name="tenantIds">
+        /// Default Value: []
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

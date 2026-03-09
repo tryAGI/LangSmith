@@ -23,7 +23,9 @@ namespace LangSmith
         /// Cancel a bulk export by ID
         /// </summary>
         /// <param name="bulkExportId"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Default Value: Cancelled
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.BulkExport> CancelBulkExportAsync(

@@ -26,7 +26,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>

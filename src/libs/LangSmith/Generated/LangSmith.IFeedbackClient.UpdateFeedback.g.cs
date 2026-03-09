@@ -32,10 +32,10 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> UpdateFeedbackAsync(
             global::System.Guid feedbackId,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? value = default,
             string? comment = default,
-            global::LangSmith.AnyOf<object, string>? correction = default,
+            global::LangSmith.AnyOf<object, string, object>? correction = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

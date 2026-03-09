@@ -41,14 +41,14 @@ namespace LangSmith
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived? isArchived = default,
+            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived = default,
             global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            global::LangSmith.ListReposApiV1ReposGetRepoType? repoType = default,
-            global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
-            global::LangSmith.AnyOf<global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant1?, global::LangSmith.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
+            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
+            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
+            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

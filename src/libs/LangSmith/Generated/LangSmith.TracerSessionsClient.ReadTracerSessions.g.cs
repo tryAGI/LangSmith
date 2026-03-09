@@ -7,7 +7,7 @@ namespace LangSmith
     {
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? referenceFree,
+            bool? referenceFree,
             global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             ref string? name,
@@ -24,7 +24,7 @@ namespace LangSmith
             ref string? filter,
             ref bool? includeStats,
             ref bool? useApproxStats,
-            ref global::System.DateTime? statsStartTime,
+            global::System.DateTime? statsStartTime,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -67,7 +67,9 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy"></param>
+        /// <param name="sortBy">
+        /// Default Value: start_time
+        /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -120,7 +122,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareReadTracerSessionsArguments(
                 httpClient: HttpClient,
-                referenceFree: ref referenceFree,
+                referenceFree: referenceFree,
                 referenceDataset: referenceDataset,
                 id: id,
                 name: ref name,
@@ -137,7 +139,7 @@ namespace LangSmith
                 filter: ref filter,
                 includeStats: ref includeStats,
                 useApproxStats: ref useApproxStats,
-                statsStartTime: ref statsStartTime,
+                statsStartTime: statsStartTime,
                 accept: ref accept);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -145,8 +147,8 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("reference_free", referenceFree?.ToString())
-                .AddOptionalParameter("reference_dataset", referenceDataset, selector: static x => x.ToString(), delimiter: ",", explode: true)
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("reference_dataset", referenceDataset?.ToString())
+                .AddOptionalParameter("id", id?.ToString())
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("dataset_version", datasetVersion)
@@ -156,12 +158,12 @@ namespace LangSmith
                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                 .AddOptionalParameter("facets", facets?.ToString())
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("include_stats", includeStats?.ToString())
                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString())
-                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

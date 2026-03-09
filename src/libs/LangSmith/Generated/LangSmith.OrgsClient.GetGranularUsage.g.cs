@@ -37,7 +37,8 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="groupBy">
-        /// Dimensions for grouping granular usage data.
+        /// Dimensions for grouping granular usage data.<br/>
+        /// Default Value: workspace
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

@@ -32,8 +32,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("set_by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetByJsonConverter))]
-        public global::LangSmith.RunStatsGroupBySeriesResponseSetBy? SetBy { get; set; }
+        public global::LangSmith.RunStatsGroupBySeriesResponseSetBy2? SetBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,7 +56,7 @@ namespace LangSmith
             global::LangSmith.RunStatsGroupBySeriesResponseAttribute attribute,
             string? path,
             int? maxGroups,
-            global::LangSmith.RunStatsGroupBySeriesResponseSetBy? setBy)
+            global::LangSmith.RunStatsGroupBySeriesResponseSetBy2? setBy)
         {
             this.Attribute = attribute;
             this.Path = path;

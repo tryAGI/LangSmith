@@ -39,8 +39,7 @@ namespace LangSmith
         /// Default Value: function
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FunctionMessageTypeJsonConverter))]
-        public global::LangSmith.FunctionMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -80,7 +79,7 @@ namespace LangSmith
             string name,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.FunctionMessageType? type,
+            string? type,
             string? id)
         {
             this.Content = content;

@@ -52,11 +52,10 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// Stripe customer billing info.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payment_method")]
         public global::LangSmith.StripePaymentMethodInfo? PaymentMethod { get; set; }
@@ -75,13 +74,13 @@ namespace LangSmith
         public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_plan")]
         public global::LangSmith.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upcoming_plan")]
         public global::LangSmith.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
@@ -93,7 +92,7 @@ namespace LangSmith
         public bool? ReachedMaxWorkspaces { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
@@ -140,21 +139,17 @@ namespace LangSmith
         /// <param name="connectedToMetronome"></param>
         /// <param name="isPersonal"></param>
         /// <param name="tier"></param>
-        /// <param name="paymentMethod">
-        /// Stripe customer billing info.
-        /// </param>
+        /// <param name="paymentMethod"></param>
         /// <param name="hasCancelled"></param>
         /// <param name="endOfBillingPeriod"></param>
-        /// <param name="currentPlan">
-        /// Customer visible plan information.
-        /// </param>
-        /// <param name="upcomingPlan">
-        /// Customer visible plan information.
-        /// </param>
+        /// <param name="currentPlan"></param>
+        /// <param name="upcomingPlan"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
         /// </param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">
+        /// Default Value: []
+        /// </param>
         /// <param name="marketplacePayoutsEnabled">
         /// Default Value: false
         /// </param>

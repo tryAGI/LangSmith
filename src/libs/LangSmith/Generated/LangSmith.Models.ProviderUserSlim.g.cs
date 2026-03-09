@@ -19,7 +19,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AuthProviderJsonConverter))]
         public global::LangSmith.AuthProvider? Provider { get; set; }
 
         /// <summary>
@@ -95,7 +94,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provisioning_method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ProvisioningMethodJsonConverter))]
         public global::LangSmith.ProvisioningMethod? ProvisioningMethod { get; set; }
 
         /// <summary>

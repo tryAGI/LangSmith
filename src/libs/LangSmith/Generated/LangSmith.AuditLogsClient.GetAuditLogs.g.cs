@@ -9,7 +9,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
             ref string? cursor,
-            ref global::System.Guid? workspaceId,
+            global::System.Guid? workspaceId,
             ref global::System.DateTime startTime,
             ref global::System.DateTime endTime);
         partial void PrepareGetAuditLogsRequest(
@@ -70,7 +70,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 limit: ref limit,
                 cursor: ref cursor,
-                workspaceId: ref workspaceId,
+                workspaceId: workspaceId,
                 startTime: ref startTime,
                 endTime: ref endTime);
 

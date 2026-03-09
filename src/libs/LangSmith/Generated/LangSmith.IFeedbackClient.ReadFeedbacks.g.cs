@@ -21,9 +21,7 @@ namespace LangSmith
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level">
-        /// Enum for feedback levels.
-        /// </param>
+        /// <param name="level"></param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="includeUserNames"></param>
@@ -31,9 +29,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadFeedbacksAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run = default,
             global::System.Collections.Generic.IList<string>? key = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session = default,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source = default,
             int? limit = default,
             int? offset = default,

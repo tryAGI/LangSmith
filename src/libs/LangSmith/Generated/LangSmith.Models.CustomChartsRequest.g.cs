@@ -27,7 +27,8 @@ namespace LangSmith
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"hours":0,"minutes":15}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::LangSmith.TimedeltaInput? Stride { get; set; }
@@ -65,7 +66,8 @@ namespace LangSmith
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="stride">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"hours":0,"minutes":15}
         /// </param>
         /// <param name="omitData">
         /// Default Value: false

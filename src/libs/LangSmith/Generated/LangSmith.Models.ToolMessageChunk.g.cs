@@ -34,8 +34,7 @@ namespace LangSmith
         /// Default Value: ToolMessageChunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ToolMessageChunkTypeJsonConverter))]
-        public global::LangSmith.ToolMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -99,7 +98,7 @@ namespace LangSmith
             string toolCallId,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.ToolMessageChunkType? type,
+            string? type,
             string? name,
             string? id,
             object? artifact,

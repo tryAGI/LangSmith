@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class BulkExportDestination
     {
         /// <summary>
-        /// 
+        /// Default Value: s3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("destination_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportDestinationTypeJsonConverter))]
@@ -73,7 +73,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkExportDestination" /> class.
         /// </summary>
-        /// <param name="destinationType"></param>
+        /// <param name="destinationType">
+        /// Default Value: s3
+        /// </param>
         /// <param name="displayName"></param>
         /// <param name="config"></param>
         /// <param name="id"></param>

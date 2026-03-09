@@ -23,7 +23,9 @@ namespace LangSmith
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
-        /// <param name="order"></param>
+        /// <param name="order">
+        /// Default Value: recent
+        /// </param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]

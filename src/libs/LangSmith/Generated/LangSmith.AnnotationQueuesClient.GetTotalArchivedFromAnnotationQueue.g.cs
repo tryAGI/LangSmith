@@ -8,8 +8,8 @@ namespace LangSmith
         partial void PrepareGetTotalArchivedFromAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid queueId,
-            ref global::System.DateTime? startTime,
-            ref global::System.DateTime? endTime);
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime);
         partial void PrepareGetTotalArchivedFromAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -44,15 +44,15 @@ namespace LangSmith
             PrepareGetTotalArchivedFromAnnotationQueueArguments(
                 httpClient: HttpClient,
                 queueId: ref queueId,
-                startTime: ref startTime,
-                endTime: ref endTime);
+                startTime: startTime,
+                endTime: endTime);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/total_archived",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("start_time", startTime?.ToString())
+                .AddOptionalParameter("end_time", endTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

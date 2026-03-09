@@ -10,9 +10,9 @@ namespace LangSmith
             ref global::System.Guid ruleId,
             ref int? limit,
             ref int? offset,
-            ref global::System.DateTime? startTime,
-            ref global::System.DateTime? endTime,
-            ref global::System.Guid? sessionId);
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            global::System.Guid? sessionId);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -63,9 +63,9 @@ namespace LangSmith
                 ruleId: ref ruleId,
                 limit: ref limit,
                 offset: ref offset,
-                startTime: ref startTime,
-                endTime: ref endTime,
-                sessionId: ref sessionId);
+                startTime: startTime,
+                endTime: endTime,
+                sessionId: sessionId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/logs",
@@ -73,8 +73,8 @@ namespace LangSmith
             __pathBuilder
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("start_time", startTime?.ToString())
+                .AddOptionalParameter("end_time", endTime?.ToString())
                 .AddOptionalParameter("session_id", sessionId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

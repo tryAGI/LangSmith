@@ -9,7 +9,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
             ref bool? includeStats,
-            ref global::System.DateTime? statsStartTime,
+            global::System.DateTime? statsStartTime,
             ref string? accept);
         partial void PrepareReadTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -52,7 +52,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 includeStats: ref includeStats,
-                statsStartTime: ref statsStartTime,
+                statsStartTime: statsStartTime,
                 accept: ref accept);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -60,7 +60,7 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("include_stats", includeStats?.ToString())
-                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

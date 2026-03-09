@@ -35,12 +35,12 @@ namespace LangSmith
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived = default,
             global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

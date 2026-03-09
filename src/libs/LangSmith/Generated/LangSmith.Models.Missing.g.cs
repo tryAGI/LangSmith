@@ -11,9 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"__missing__"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("__missing__")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.MissingMissing1JsonConverter))]
-        public global::LangSmith.MissingMissing1 Missing1 { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Missing1 { get; set; } = "__missing__";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,9 +30,9 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Missing(
-            global::LangSmith.MissingMissing1 missing1)
+            string missing1)
         {
-            this.Missing1 = missing1;
+            this.Missing1 = missing1 ?? throw new global::System.ArgumentNullException(nameof(missing1));
         }
 
         /// <summary>

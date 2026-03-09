@@ -274,7 +274,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
-            global::LangSmith.RunRulesCreateSchemaGroupBy? groupBy = default,
+            string? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.RunRulesCreateSchema

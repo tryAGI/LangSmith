@@ -42,21 +42,22 @@ namespace LangSmith
         public string? Filter { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: Parquet
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportFormatJsonConverter))]
         public global::LangSmith.BulkExportFormat? Format { get; set; }
 
         /// <summary>
-        /// Enum for bulk export format versions.
+        /// Enum for bulk export format versions.<br/>
+        /// Default Value: v1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionJsonConverter))]
         public global::LangSmith.BulkExportFormatVersion? FormatVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: gzip
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compression")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter))]
@@ -88,11 +89,16 @@ namespace LangSmith
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
-        /// <param name="format"></param>
-        /// <param name="formatVersion">
-        /// Enum for bulk export format versions.
+        /// <param name="format">
+        /// Default Value: Parquet
         /// </param>
-        /// <param name="compression"></param>
+        /// <param name="formatVersion">
+        /// Enum for bulk export format versions.<br/>
+        /// Default Value: v1
+        /// </param>
+        /// <param name="compression">
+        /// Default Value: gzip
+        /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
 #if NET7_0_OR_GREATER

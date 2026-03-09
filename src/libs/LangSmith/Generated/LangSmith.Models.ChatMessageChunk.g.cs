@@ -34,8 +34,7 @@ namespace LangSmith
         /// Default Value: ChatMessageChunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ChatMessageChunkTypeJsonConverter))]
-        public global::LangSmith.ChatMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -82,7 +81,7 @@ namespace LangSmith
             string role,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.ChatMessageChunkType? type,
+            string? type,
             string? name,
             string? id)
         {

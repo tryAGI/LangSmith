@@ -21,7 +21,7 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
-        /// Request to create a run clustering job.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         public global::LangSmith.CreateRunClusteringJobRequest? Config { get; set; }
@@ -43,9 +43,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        /// <param name="config">
-        /// Request to create a run clustering job.
-        /// </param>
+        /// <param name="config"></param>
         /// <param name="scheduleCron"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

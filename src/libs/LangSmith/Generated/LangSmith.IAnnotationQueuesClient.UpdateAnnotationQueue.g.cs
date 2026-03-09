@@ -43,12 +43,12 @@ namespace LangSmith
             string? name = default,
             string? description = default,
             global::System.Guid? defaultDataset = default,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem = default,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing, object>? numReviewersPerItem = default,
             bool? enableReservations = default,
             int? reservationMinutes = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

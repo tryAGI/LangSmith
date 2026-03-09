@@ -36,20 +36,21 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter))]
         public global::LangSmith.DataType? DataType { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_keys")]
         public global::System.Collections.Generic.IList<string>? OutputKeys { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_keys")]
         public global::System.Collections.Generic.IList<string>? MetadataKeys { get; set; }
@@ -110,10 +111,15 @@ namespace LangSmith
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </param>
-        /// <param name="outputKeys"></param>
-        /// <param name="metadataKeys"></param>
+        /// <param name="outputKeys">
+        /// Default Value: []
+        /// </param>
+        /// <param name="metadataKeys">
+        /// Default Value: []
+        /// </param>
         /// <param name="description"></param>
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>

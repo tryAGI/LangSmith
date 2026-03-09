@@ -33,15 +33,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifact_length")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLengthJsonConverter))]
-        public global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength? ArtifactLength { get; set; }
+        public global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength2? ArtifactLength { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reading_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevelJsonConverter))]
-        public global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel? ReadingLevel { get; set; }
+        public global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel2? ReadingLevel { get; set; }
 
         /// <summary>
         /// 
@@ -90,8 +88,8 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.Highlight? highlighted,
             global::LangSmith.Artifact? artifact,
-            global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength,
-            global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel,
+            global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength,
+            global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel,
             string? customAction)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

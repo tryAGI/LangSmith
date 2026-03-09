@@ -1,333 +1,79 @@
-#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    /// The feedback source loaded from the database.
     /// </summary>
-    public readonly partial struct FeedbackSource : global::System.IEquatable<FeedbackSource>
+    public sealed partial class FeedbackSource
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceDiscriminatorType? Type { get; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
 
         /// <summary>
-        /// Feedback from the LangChainPlus App.
+        /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LangSmith.AppFeedbackSource? App { get; init; }
-#else
-        public global::LangSmith.AppFeedbackSource? App { get; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
+        public global::System.Guid? UserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
+        public global::System.Guid? LsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_name")]
+        public string? UserName { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackSource" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="metadata"></param>
+        /// <param name="userId"></param>
+        /// <param name="lsUserId"></param>
+        /// <param name="userName"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(App))]
-#endif
-        public bool IsApp => App != null;
-
-        /// <summary>
-        /// API feedback source.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LangSmith.APIFeedbackSource? Api { get; init; }
-#else
-        public global::LangSmith.APIFeedbackSource? Api { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Api))]
-#endif
-        public bool IsApi => Api != null;
-
-        /// <summary>
-        /// Model feedback source.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LangSmith.ModelFeedbackSource? Model { get; init; }
-#else
-        public global::LangSmith.ModelFeedbackSource? Model { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Model))]
-#endif
-        public bool IsModel => Model != null;
-
-        /// <summary>
-        /// Auto eval feedback source.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::LangSmith.AutoEvalFeedbackSource? AutoEval { get; init; }
-#else
-        public global::LangSmith.AutoEvalFeedbackSource? AutoEval { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoEval))]
-#endif
-        public bool IsAutoEval => AutoEval != null;
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator FeedbackSource(global::LangSmith.AppFeedbackSource value) => new FeedbackSource((global::LangSmith.AppFeedbackSource?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::LangSmith.AppFeedbackSource?(FeedbackSource @this) => @this.App;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FeedbackSource(global::LangSmith.AppFeedbackSource? value)
-        {
-            App = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator FeedbackSource(global::LangSmith.APIFeedbackSource value) => new FeedbackSource((global::LangSmith.APIFeedbackSource?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::LangSmith.APIFeedbackSource?(FeedbackSource @this) => @this.Api;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FeedbackSource(global::LangSmith.APIFeedbackSource? value)
-        {
-            Api = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator FeedbackSource(global::LangSmith.ModelFeedbackSource value) => new FeedbackSource((global::LangSmith.ModelFeedbackSource?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::LangSmith.ModelFeedbackSource?(FeedbackSource @this) => @this.Model;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FeedbackSource(global::LangSmith.ModelFeedbackSource? value)
-        {
-            Model = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator FeedbackSource(global::LangSmith.AutoEvalFeedbackSource value) => new FeedbackSource((global::LangSmith.AutoEvalFeedbackSource?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::LangSmith.AutoEvalFeedbackSource?(FeedbackSource @this) => @this.AutoEval;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FeedbackSource(global::LangSmith.AutoEvalFeedbackSource? value)
-        {
-            AutoEval = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public FeedbackSource(
-            global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceDiscriminatorType? type,
-            global::LangSmith.AppFeedbackSource? app,
-            global::LangSmith.APIFeedbackSource? api,
-            global::LangSmith.ModelFeedbackSource? model,
-            global::LangSmith.AutoEvalFeedbackSource? autoEval
-            )
+            string? type,
+            object? metadata,
+            global::System.Guid? userId,
+            global::System.Guid? lsUserId,
+            string? userName)
         {
-            Type = type;
-
-            App = app;
-            Api = api;
-            Model = model;
-            AutoEval = autoEval;
+            this.Type = type;
+            this.Metadata = metadata;
+            this.UserId = userId;
+            this.LsUserId = lsUserId;
+            this.UserName = userName;
         }
 
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="FeedbackSource" /> class.
         /// </summary>
-        public object? Object =>
-            AutoEval as object ??
-            Model as object ??
-            Api as object ??
-            App as object 
-            ;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override string? ToString() =>
-            App?.ToString() ??
-            Api?.ToString() ??
-            Model?.ToString() ??
-            AutoEval?.ToString() 
-            ;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool Validate()
+        public FeedbackSource()
         {
-            return IsApp && !IsApi && !IsModel && !IsAutoEval || !IsApp && IsApi && !IsModel && !IsAutoEval || !IsApp && !IsApi && IsModel && !IsAutoEval || !IsApp && !IsApi && !IsModel && IsAutoEval;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TResult? Match<TResult>(
-            global::System.Func<global::LangSmith.AppFeedbackSource?, TResult>? app = null,
-            global::System.Func<global::LangSmith.APIFeedbackSource?, TResult>? api = null,
-            global::System.Func<global::LangSmith.ModelFeedbackSource?, TResult>? model = null,
-            global::System.Func<global::LangSmith.AutoEvalFeedbackSource?, TResult>? autoEval = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (IsApp && app != null)
-            {
-                return app(App!);
-            }
-            else if (IsApi && api != null)
-            {
-                return api(Api!);
-            }
-            else if (IsModel && model != null)
-            {
-                return model(Model!);
-            }
-            else if (IsAutoEval && autoEval != null)
-            {
-                return autoEval(AutoEval!);
-            }
-
-            return default(TResult);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Match(
-            global::System.Action<global::LangSmith.AppFeedbackSource?>? app = null,
-            global::System.Action<global::LangSmith.APIFeedbackSource?>? api = null,
-            global::System.Action<global::LangSmith.ModelFeedbackSource?>? model = null,
-            global::System.Action<global::LangSmith.AutoEvalFeedbackSource?>? autoEval = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (IsApp)
-            {
-                app?.Invoke(App!);
-            }
-            else if (IsApi)
-            {
-                api?.Invoke(Api!);
-            }
-            else if (IsModel)
-            {
-                model?.Invoke(Model!);
-            }
-            else if (IsAutoEval)
-            {
-                autoEval?.Invoke(AutoEval!);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override int GetHashCode()
-        {
-            var fields = new object?[]
-            {
-                App,
-                typeof(global::LangSmith.AppFeedbackSource),
-                Api,
-                typeof(global::LangSmith.APIFeedbackSource),
-                Model,
-                typeof(global::LangSmith.ModelFeedbackSource),
-                AutoEval,
-                typeof(global::LangSmith.AutoEvalFeedbackSource),
-            };
-            const int offset = unchecked((int)2166136261);
-            const int prime = 16777619;
-            static int HashCodeAggregator(int hashCode, object? value) => value == null
-                ? (hashCode ^ 0) * prime
-                : (hashCode ^ value.GetHashCode()) * prime;
-
-            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool Equals(FeedbackSource other)
-        {
-            return
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AppFeedbackSource?>.Default.Equals(App, other.App) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.APIFeedbackSource?>.Default.Equals(Api, other.Api) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.ModelFeedbackSource?>.Default.Equals(Model, other.Model) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AutoEvalFeedbackSource?>.Default.Equals(AutoEval, other.AutoEval) 
-                ;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool operator ==(FeedbackSource obj1, FeedbackSource obj2)
-        {
-            return global::System.Collections.Generic.EqualityComparer<FeedbackSource>.Default.Equals(obj1, obj2);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool operator !=(FeedbackSource obj1, FeedbackSource obj2)
-        {
-            return !(obj1 == obj2);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override bool Equals(object? obj)
-        {
-            return obj is FeedbackSource o && Equals(o);
         }
     }
 }

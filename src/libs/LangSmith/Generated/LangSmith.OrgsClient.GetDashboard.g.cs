@@ -8,12 +8,12 @@ namespace LangSmith
         partial void PrepareGetDashboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::LangSmith.OrganizationDashboardType type,
-            ref global::LangSmith.OrganizationDashboardColorScheme colorScheme);
+            global::LangSmith.OrganizationDashboardColorScheme? colorScheme);
         partial void PrepareGetDashboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::LangSmith.OrganizationDashboardType type,
-            global::LangSmith.OrganizationDashboardColorScheme colorScheme);
+            global::LangSmith.OrganizationDashboardColorScheme? colorScheme);
         partial void ProcessGetDashboardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,14 +29,12 @@ namespace LangSmith
         /// <param name="type">
         /// Enum for acceptable types of dashboards.
         /// </param>
-        /// <param name="colorScheme">
-        /// Enum for acceptable color schemes of dashboards.
-        /// </param>
+        /// <param name="colorScheme"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.OrganizationDashboardSchema> GetDashboardAsync(
             global::LangSmith.OrganizationDashboardType type,
-            global::LangSmith.OrganizationDashboardColorScheme colorScheme,
+            global::LangSmith.OrganizationDashboardColorScheme? colorScheme,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -44,14 +42,14 @@ namespace LangSmith
             PrepareGetDashboardArguments(
                 httpClient: HttpClient,
                 type: ref type,
-                colorScheme: ref colorScheme);
+                colorScheme: colorScheme);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/dashboard",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("type", type.ToValueString())
-                .AddRequiredParameter("color_scheme", colorScheme.ToValueString()) 
+                .AddOptionalParameter("color_scheme", colorScheme.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

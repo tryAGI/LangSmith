@@ -8,7 +8,7 @@ namespace LangSmith
         partial void PrepareReadDatasetsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
             ref string? name,
             ref string? nameContains,
             ref string? metadata,
@@ -22,7 +22,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
             string? name,
             string? nameContains,
             string? metadata,
@@ -57,7 +57,8 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Enum for available dataset columns to sort by.
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -70,7 +71,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> ReadDatasetsStreamAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -102,7 +103,7 @@ namespace LangSmith
                 path: "/api/v1/datasets/stream",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("id", id?.ToString())
                 .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty)
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("name_contains", nameContains)
@@ -111,7 +112,7 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                 .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

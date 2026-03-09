@@ -42,9 +42,9 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<double?, int?>? Sample { get; set; }
+        public required global::LangSmith.AnyOf<double?, int?, object> Sample { get; set; }
 
         /// <summary>
         /// 
@@ -122,7 +122,7 @@ namespace LangSmith
             int lastNHours,
             global::System.Collections.Generic.IList<int>? hierarchy,
             global::System.Collections.Generic.Dictionary<string, string>? partitions,
-            global::LangSmith.AnyOf<double?, int?>? sample,
+            global::LangSmith.AnyOf<double?, int?, object> sample,
             string? summaryPrompt,
             string? filter,
             object? attributeSchemas,

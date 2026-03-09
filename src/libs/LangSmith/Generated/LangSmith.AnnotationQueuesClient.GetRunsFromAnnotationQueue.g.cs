@@ -10,8 +10,8 @@ namespace LangSmith
             ref global::System.Guid queueId,
             ref int? offset,
             ref int? limit,
-            ref bool? archived,
-            ref bool? includeStats);
+            bool? archived,
+            bool? includeStats);
         partial void PrepareGetRunsFromAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -58,8 +58,8 @@ namespace LangSmith
                 queueId: ref queueId,
                 offset: ref offset,
                 limit: ref limit,
-                archived: ref archived,
-                includeStats: ref includeStats);
+                archived: archived,
+                includeStats: includeStats);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/runs",

@@ -22,7 +22,8 @@ namespace LangSmith
         public global::System.DateTime? LicenseExpirationTime { get; set; }
 
         /// <summary>
-        /// Batch ingest config.
+        /// Batch ingest config.<br/>
+        /// Default Value: {"use_multipart_endpoint":true,"scale_up_qsize_trigger":1000,"scale_up_nthreads_limit":16,"scale_down_nempty_trigger":4,"size_limit":100,"size_limit_bytes":20971520}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_ingest_config")]
         public global::LangSmith.BatchIngestConfig? BatchIngestConfig { get; set; }
@@ -34,7 +35,7 @@ namespace LangSmith
         public object? InstanceFlags { get; set; }
 
         /// <summary>
-        /// Customer info.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customer_info")]
         public global::LangSmith.CustomerInfo? CustomerInfo { get; set; }
@@ -51,12 +52,11 @@ namespace LangSmith
         /// <param name="version"></param>
         /// <param name="licenseExpirationTime"></param>
         /// <param name="batchIngestConfig">
-        /// Batch ingest config.
+        /// Batch ingest config.<br/>
+        /// Default Value: {"use_multipart_endpoint":true,"scale_up_qsize_trigger":1000,"scale_up_nthreads_limit":16,"scale_down_nempty_trigger":4,"size_limit":100,"size_limit_bytes":20971520}
         /// </param>
         /// <param name="instanceFlags"></param>
-        /// <param name="customerInfo">
-        /// Customer info.
-        /// </param>
+        /// <param name="customerInfo"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

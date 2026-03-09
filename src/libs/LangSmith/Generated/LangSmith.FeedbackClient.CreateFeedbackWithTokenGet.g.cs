@@ -8,16 +8,16 @@ namespace LangSmith
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
-            ref global::LangSmith.AnyOf<double?, int?, bool?>? score,
-            ref global::LangSmith.AnyOf<double?, int?, bool?, string>? value,
+            ref global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            ref global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
             ref string? comment,
             ref string? correction);
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score,
-            global::LangSmith.AnyOf<double?, int?, bool?, string>? value,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
             string? comment,
             string? correction);
         partial void ProcessCreateFeedbackWithTokenGetResponse(
@@ -42,8 +42,8 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default)

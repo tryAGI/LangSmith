@@ -33,15 +33,15 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?>))]
-        public global::LangSmith.AnyOf<double?, int?, bool?>? Score { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
+        public global::LangSmith.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>))]
-        public global::LangSmith.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>))]
+        public global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -53,8 +53,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string>))]
-        public global::LangSmith.AnyOf<object, string>? Correction { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>))]
+        public global::LangSmith.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
@@ -102,8 +102,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackSource2JsonConverter))]
-        public global::LangSmith.FeedbackSource2? FeedbackSource { get; set; }
+        public global::LangSmith.FeedbackSourceVariant12? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
@@ -150,10 +149,10 @@ namespace LangSmith
             string key,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
-            global::LangSmith.AnyOf<double?, int?, bool?>? score,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? value,
             string? comment,
-            global::LangSmith.AnyOf<object, string>? correction,
+            global::LangSmith.AnyOf<object, string, object>? correction,
             global::System.Guid? feedbackGroupId,
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
@@ -161,7 +160,7 @@ namespace LangSmith
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
             global::System.Guid? id,
-            global::LangSmith.FeedbackSource2? feedbackSource,
+            global::LangSmith.FeedbackSourceVariant12? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
             bool? error)
         {

@@ -9,13 +9,15 @@ namespace LangSmith
         /// </summary>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
-        /// <param name="owner"></param>
+        /// <param name="owner1"></param>
+        /// <param name="owner2"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> GetTagAsync(
             string repo,
             string tagName,
-            string owner,
+            string owner1,
+            string owner2,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

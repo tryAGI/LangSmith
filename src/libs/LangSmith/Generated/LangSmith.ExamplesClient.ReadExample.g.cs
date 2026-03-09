@@ -9,7 +9,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid exampleId,
             ref global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
-            ref global::System.Guid? dataset);
+            global::System.Guid? dataset);
         partial void PrepareReadExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -49,7 +49,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 exampleId: ref exampleId,
                 asOf: ref asOf,
-                dataset: ref dataset);
+                dataset: dataset);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/examples/{exampleId}",

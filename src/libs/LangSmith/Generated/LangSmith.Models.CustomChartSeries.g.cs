@@ -21,7 +21,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::LangSmith.CustomChartSeriesFilters? Filters { get; set; }
+        public global::LangSmith.CustomChartSeriesFilters2? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
@@ -44,10 +44,9 @@ namespace LangSmith
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
-        /// LGP Metrics you can chart.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_metric")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter))]
         public global::LangSmith.HostProjectChartMetric? ProjectMetric { get; set; }
 
         /// <summary>
@@ -59,7 +58,7 @@ namespace LangSmith
         public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
 
         /// <summary>
-        /// Include additional information about where the group_by param was set.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public global::LangSmith.RunStatsGroupBySeriesResponse? GroupBy { get; set; }
@@ -80,13 +79,9 @@ namespace LangSmith
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
-        /// <param name="projectMetric">
-        /// LGP Metrics you can chart.
-        /// </param>
+        /// <param name="projectMetric"></param>
         /// <param name="id"></param>
-        /// <param name="groupBy">
-        /// Include additional information about where the group_by param was set.
-        /// </param>
+        /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,7 +89,7 @@ namespace LangSmith
             string name,
             global::LangSmith.CustomChartMetric metric,
             global::LangSmith.AnyOf<global::System.Guid?, string> id,
-            global::LangSmith.CustomChartSeriesFilters? filters,
+            global::LangSmith.CustomChartSeriesFilters2? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
             global::LangSmith.HostProjectChartMetric? projectMetric,

@@ -22,19 +22,19 @@ namespace LangSmith
         /// </summary>
         /// <param name="targetDatasetId"></param>
         /// <param name="sourceDatasetId"></param>
-        /// <param name="asOf">
-        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
+        /// <param name="asOf"></param>
+        /// <param name="examples">
+        /// Default Value: []
         /// </param>
-        /// <param name="examples"></param>
         /// <param name="split"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
-            object? asOf = default,
+            global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
-            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split = default,
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

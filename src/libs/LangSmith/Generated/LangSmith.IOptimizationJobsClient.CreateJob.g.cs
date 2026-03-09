@@ -9,13 +9,15 @@ namespace LangSmith
         /// Create a new prompt optimization job.
         /// </summary>
         /// <param name="repo"></param>
-        /// <param name="owner"></param>
+        /// <param name="owner1"></param>
+        /// <param name="owner2"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJob> CreateJobAsync(
             string repo,
-            string owner,
+            string owner1,
+            string owner2,
 
             global::LangSmith.PromptOptimizationJobCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -25,14 +27,16 @@ namespace LangSmith
         /// Create a new prompt optimization job.
         /// </summary>
         /// <param name="repo"></param>
-        /// <param name="owner"></param>
+        /// <param name="owner1"></param>
+        /// <param name="owner2"></param>
         /// <param name="algorithm"></param>
         /// <param name="config"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJob> CreateJobAsync(
             string repo,
-            string owner,
+            string owner1,
+            string owner2,
             global::LangSmith.EPromptOptimizationAlgorithm algorithm,
             global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -298,10 +298,15 @@ namespace LangSmith
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </param>
-        /// <param name="outputKeys"></param>
-        /// <param name="metadataKeys"></param>
+        /// <param name="outputKeys">
+        /// Default Value: []
+        /// </param>
+        /// <param name="metadataKeys">
+        /// Default Value: []
+        /// </param>
         /// <param name="description"></param>
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>

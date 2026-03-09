@@ -81,7 +81,7 @@ namespace LangSmith
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OrganizationId = organizationId;
-            this.DefaultWorkspaceId = defaultWorkspaceId;
+            this.DefaultWorkspaceId = defaultWorkspaceId ?? throw new global::System.ArgumentNullException(nameof(defaultWorkspaceId));
         }
 
         /// <summary>

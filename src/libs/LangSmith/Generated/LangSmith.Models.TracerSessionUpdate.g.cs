@@ -42,7 +42,6 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TraceTierJsonConverter))]
         public global::LangSmith.TraceTier? TraceTier { get; set; }
 
         /// <summary>

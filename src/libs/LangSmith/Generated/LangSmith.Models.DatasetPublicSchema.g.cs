@@ -54,10 +54,9 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? Transformations { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter))]
         public global::LangSmith.DataType? DataType { get; set; }
 
         /// <summary>
@@ -93,7 +92,7 @@ namespace LangSmith
         /// </param>
         /// <param name="transformations"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </param>
         /// <param name="id"></param>
         /// <param name="exampleCount"></param>

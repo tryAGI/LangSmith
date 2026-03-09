@@ -32,8 +32,8 @@ namespace LangSmith
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_reviewers_per_item")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? NumReviewersPerItem { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing, object>? NumReviewersPerItem { get; set; }
 
         /// <summary>
         /// Default Value: true
@@ -63,8 +63,8 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,12 +97,12 @@ namespace LangSmith
             string? name,
             string? description,
             global::System.Guid? defaultDataset,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing, object>? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata)
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata)
         {
             this.Name = name;
             this.Description = description;

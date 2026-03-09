@@ -290,7 +290,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
-            global::LangSmith.RunRulesValidateSchemaGroupBy? groupBy = default,
+            string? groupBy = default,
             object? testInputs = default,
             object? testOutputs = default,
             object? testReferenceOutputs = default,

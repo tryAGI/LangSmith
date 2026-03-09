@@ -9,7 +9,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
             global::System.Collections.Generic.IList<string>? metadataKeys,
-            ref global::System.DateTime? startTime,
+            global::System.DateTime? startTime,
             ref int? k,
             ref bool? rootRunsOnly);
         partial void PrepareReadTracerSessionsRunsMetadataRequest(
@@ -58,7 +58,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 metadataKeys: metadataKeys,
-                startTime: ref startTime,
+                startTime: startTime,
                 k: ref k,
                 rootRunsOnly: ref rootRunsOnly);
 
@@ -66,8 +66,8 @@ namespace LangSmith
                 path: $"/api/v1/sessions/{sessionId}/metadata",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("metadata_keys", metadataKeys, delimiter: ",", explode: true)
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("metadata_keys", metadataKeys?.ToString())
+                .AddOptionalParameter("start_time", startTime?.ToString())
                 .AddOptionalParameter("k", k?.ToString())
                 .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString()) 
                 ; 

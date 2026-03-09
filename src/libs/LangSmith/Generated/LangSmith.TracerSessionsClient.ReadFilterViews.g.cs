@@ -8,7 +8,7 @@ namespace LangSmith
         partial void PrepareReadFilterViewsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::LangSmith.FilterViewType? type);
+            global::LangSmith.FilterViewType? type);
         partial void PrepareReadFilterViewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -41,13 +41,13 @@ namespace LangSmith
             PrepareReadFilterViewsArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                type: ref type);
+                type: type);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/views",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("type", type?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

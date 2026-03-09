@@ -9,10 +9,9 @@ namespace LangSmith
     public sealed partial class RunRulesPagerdutyAlertSchema
     {
         /// <summary>
-        /// Enum for alert types.
+        /// Default Value: pagerduty
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter))]
         public global::LangSmith.RunRulesAlertType? Type { get; set; }
 
         /// <summary>
@@ -29,10 +28,9 @@ namespace LangSmith
         public string? Summary { get; set; }
 
         /// <summary>
-        /// Enum for severity.
+        /// Default Value: warning
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PagerdutySeverityJsonConverter))]
         public global::LangSmith.PagerdutySeverity? Severity { get; set; }
 
         /// <summary>
@@ -45,12 +43,12 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunRulesPagerdutyAlertSchema" /> class.
         /// </summary>
         /// <param name="type">
-        /// Enum for alert types.
+        /// Default Value: pagerduty
         /// </param>
         /// <param name="routingKey"></param>
         /// <param name="summary"></param>
         /// <param name="severity">
-        /// Enum for severity.
+        /// Default Value: warning
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

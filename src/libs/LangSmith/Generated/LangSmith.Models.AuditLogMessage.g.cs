@@ -169,19 +169,19 @@ namespace LangSmith
             this.Id = id;
             this.OperationName = operationName ?? throw new global::System.ArgumentNullException(nameof(operationName));
             this.ResourceIds = resourceIds ?? throw new global::System.ArgumentNullException(nameof(resourceIds));
-            this.OperationSucceeded = operationSucceeded;
+            this.OperationSucceeded = operationSucceeded ?? throw new global::System.ArgumentNullException(nameof(operationSucceeded));
             this.RequestTime = requestTime;
             this.RequestMethod = requestMethod ?? throw new global::System.ArgumentNullException(nameof(requestMethod));
             this.RequestPath = requestPath ?? throw new global::System.ArgumentNullException(nameof(requestPath));
             this.ClientHost = clientHost ?? throw new global::System.ArgumentNullException(nameof(clientHost));
-            this.ClientPort = clientPort;
+            this.ClientPort = clientPort ?? throw new global::System.ArgumentNullException(nameof(clientPort));
             this.XForwardedFor = xForwardedFor ?? throw new global::System.ArgumentNullException(nameof(xForwardedFor));
-            this.ApiKeyId = apiKeyId;
-            this.UserId = userId;
-            this.LsUserId = lsUserId;
-            this.OrganizationId = organizationId;
-            this.WorkspaceId = workspaceId;
-            this.ResponseStatusCode = responseStatusCode;
+            this.ApiKeyId = apiKeyId ?? throw new global::System.ArgumentNullException(nameof(apiKeyId));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.LsUserId = lsUserId ?? throw new global::System.ArgumentNullException(nameof(lsUserId));
+            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
+            this.ResponseStatusCode = responseStatusCode ?? throw new global::System.ArgumentNullException(nameof(responseStatusCode));
         }
 
         /// <summary>

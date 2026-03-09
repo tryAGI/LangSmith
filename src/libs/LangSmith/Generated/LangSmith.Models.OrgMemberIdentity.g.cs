@@ -69,7 +69,7 @@ namespace LangSmith
         public string? RoleName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter))]
@@ -94,7 +94,7 @@ namespace LangSmith
         public string? AvatarUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("linked_login_methods")]
         public global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? LinkedLoginMethods { get; set; }
@@ -124,7 +124,7 @@ namespace LangSmith
         public string? OrgRoleName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? TenantIds { get; set; }
@@ -147,18 +147,24 @@ namespace LangSmith
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
-        /// <param name="accessScope"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
-        /// <param name="linkedLoginMethods"></param>
+        /// <param name="linkedLoginMethods">
+        /// Default Value: []
+        /// </param>
         /// <param name="displayName"></param>
         /// <param name="isDisabled">
         /// Default Value: false
         /// </param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
-        /// <param name="tenantIds"></param>
+        /// <param name="tenantIds">
+        /// Default Value: []
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

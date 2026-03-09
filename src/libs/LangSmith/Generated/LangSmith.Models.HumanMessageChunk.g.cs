@@ -34,8 +34,7 @@ namespace LangSmith
         /// Default Value: HumanMessageChunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.HumanMessageChunkTypeJsonConverter))]
-        public global::LangSmith.HumanMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +72,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> content,
             object? additionalKwargs,
             object? responseMetadata,
-            global::LangSmith.HumanMessageChunkType? type,
+            string? type,
             string? name,
             string? id)
         {

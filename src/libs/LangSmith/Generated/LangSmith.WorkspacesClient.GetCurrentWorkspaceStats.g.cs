@@ -41,7 +41,7 @@ namespace LangSmith
                 path: "/api/v1/workspaces/current/stats",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

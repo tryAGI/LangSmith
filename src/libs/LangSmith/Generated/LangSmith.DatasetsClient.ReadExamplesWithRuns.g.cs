@@ -8,13 +8,13 @@ namespace LangSmith
         partial void PrepareReadExamplesWithRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format,
+            ref string? format,
             global::LangSmith.QueryExampleSchemaWithRunsRequest request);
         partial void PrepareReadExamplesWithRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format,
+            string? format,
             global::LangSmith.QueryExampleSchemaWithRunsRequest request);
         partial void ProcessReadExamplesWithRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace LangSmith
             global::System.Guid datasetId,
 
             global::LangSmith.QueryExampleSchemaWithRunsRequest request,
-            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
+            string? format = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -57,7 +57,7 @@ namespace LangSmith
                 path: $"/api/v1/datasets/{datasetId}/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("format", format?.ToValueString()) 
+                .AddOptionalParameter("format", format) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -249,7 +249,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
             global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::LangSmith.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostFormat? format = default,
+            string? format = default,
             int? offset = default,
             int? limit = default,
             bool? preview = default,

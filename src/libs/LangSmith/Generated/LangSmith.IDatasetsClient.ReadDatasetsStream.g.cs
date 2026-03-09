@@ -20,7 +20,8 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Enum for available dataset columns to sort by.
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -33,7 +34,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ReadDatasetsStreamAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,

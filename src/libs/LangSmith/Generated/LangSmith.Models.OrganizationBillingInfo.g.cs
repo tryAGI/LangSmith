@@ -53,11 +53,10 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// Stripe customer billing info.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payment_method")]
         public global::LangSmith.StripePaymentMethodInfo? PaymentMethod { get; set; }
@@ -69,13 +68,13 @@ namespace LangSmith
         public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_plan")]
         public global::LangSmith.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upcoming_plan")]
         public global::LangSmith.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
@@ -99,7 +98,7 @@ namespace LangSmith
         public bool? DefaultSsoProvision { get; set; }
 
         /// <summary>
-        /// Info about an org's automated startup-to-Plus plan transition.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plus_plan_transition")]
         public global::LangSmith.PlusPlanTransitionInfo? PlusPlanTransition { get; set; }
@@ -122,16 +121,10 @@ namespace LangSmith
         /// <param name="connectedToMetronome"></param>
         /// <param name="isPersonal"></param>
         /// <param name="tier"></param>
-        /// <param name="paymentMethod">
-        /// Stripe customer billing info.
-        /// </param>
+        /// <param name="paymentMethod"></param>
         /// <param name="endOfBillingPeriod"></param>
-        /// <param name="currentPlan">
-        /// Customer visible plan information.
-        /// </param>
-        /// <param name="upcomingPlan">
-        /// Customer visible plan information.
-        /// </param>
+        /// <param name="currentPlan"></param>
+        /// <param name="upcomingPlan"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
         /// </param>
@@ -141,9 +134,7 @@ namespace LangSmith
         /// <param name="defaultSsoProvision">
         /// Default Value: false
         /// </param>
-        /// <param name="plusPlanTransition">
-        /// Info about an org's automated startup-to-Plus plan transition.
-        /// </param>
+        /// <param name="plusPlanTransition"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

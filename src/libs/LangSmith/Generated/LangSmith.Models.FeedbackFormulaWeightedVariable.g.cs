@@ -11,9 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"weighted_key"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("part_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackFormulaWeightedVariablePartTypeJsonConverter))]
-        public global::LangSmith.FeedbackFormulaWeightedVariablePartType PartType { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string PartType { get; set; } = "weighted_key";
 
         /// <summary>
         /// 
@@ -45,13 +46,13 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FeedbackFormulaWeightedVariable(
+            string partType,
             double weight,
-            string key,
-            global::LangSmith.FeedbackFormulaWeightedVariablePartType partType)
+            string key)
         {
+            this.PartType = partType ?? throw new global::System.ArgumentNullException(nameof(partType));
             this.Weight = weight;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.PartType = partType;
         }
 
         /// <summary>

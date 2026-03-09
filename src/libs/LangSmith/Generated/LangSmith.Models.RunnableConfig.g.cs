@@ -40,8 +40,8 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object>))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object>? Callbacks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object, object>))]
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object, object>? Callbacks { get; set; }
 
         /// <summary>
         /// 
@@ -96,7 +96,7 @@ namespace LangSmith
         public RunnableConfig(
             global::System.Collections.Generic.IList<string>? tags,
             object? metadata,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object>? callbacks,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<object>, object, object>? callbacks,
             string? runName,
             int? maxConcurrency,
             int? recursionLimit,

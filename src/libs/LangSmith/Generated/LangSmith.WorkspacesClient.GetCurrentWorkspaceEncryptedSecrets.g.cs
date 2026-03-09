@@ -60,7 +60,7 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("service", service.ToValueString())
-                .AddOptionalParameter("key_names", keyNames, delimiter: ",", explode: true)
+                .AddOptionalParameter("key_names", keyNames?.ToString())
                 .AddOptionalParameter("expand_iam_role", expandIamRole?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

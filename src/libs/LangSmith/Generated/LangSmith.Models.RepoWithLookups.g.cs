@@ -95,7 +95,7 @@ namespace LangSmith
         public global::System.Guid? UpstreamRepoId { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_tags")]
         public global::System.Collections.Generic.IList<string>? CommitTags { get; set; }
@@ -181,7 +181,7 @@ namespace LangSmith
         public string? UpstreamRepoFullName { get; set; }
 
         /// <summary>
-        /// Response model for get_commit_manifest.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_commit_manifest")]
         public global::LangSmith.CommitManifestResponse? LatestCommitManifest { get; set; }
@@ -210,7 +210,9 @@ namespace LangSmith
         /// <param name="tags"></param>
         /// <param name="originalRepoId"></param>
         /// <param name="upstreamRepoId"></param>
-        /// <param name="commitTags"></param>
+        /// <param name="commitTags">
+        /// Default Value: []
+        /// </param>
         /// <param name="repoType"></param>
         /// <param name="owner"></param>
         /// <param name="fullName"></param>
@@ -223,9 +225,7 @@ namespace LangSmith
         /// <param name="createdBy"></param>
         /// <param name="originalRepoFullName"></param>
         /// <param name="upstreamRepoFullName"></param>
-        /// <param name="latestCommitManifest">
-        /// Response model for get_commit_manifest.
-        /// </param>
+        /// <param name="latestCommitManifest"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
