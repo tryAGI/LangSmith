@@ -5,58 +5,53 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareBetaUpdateInsightsJobConfigArguments(
+        partial void Prepare[Beta]CreateInsightsJobConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::System.Guid configId,
-            global::LangSmith.UpdateClusteringJobConfigRequest request);
-        partial void PrepareBetaUpdateInsightsJobConfigRequest(
+            global::LangSmith.CreateClusteringJobConfigRequest request);
+        partial void Prepare[Beta]CreateInsightsJobConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::System.Guid configId,
-            global::LangSmith.UpdateClusteringJobConfigRequest request);
-        partial void ProcessBetaUpdateInsightsJobConfigResponse(
+            global::LangSmith.CreateClusteringJobConfigRequest request);
+        partial void Process[Beta]CreateInsightsJobConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBetaUpdateInsightsJobConfigResponseContent(
+        partial void Process[Beta]CreateInsightsJobConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Beta Update Insights Job Config<br/>
-        /// Update an insights job config.
+        /// [Beta] Create Insights Job Config<br/>
+        /// Save an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="configId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> BetaUpdateInsightsJobConfigAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> [Beta]CreateInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            global::System.Guid configId,
 
-            global::LangSmith.UpdateClusteringJobConfigRequest request,
+            global::LangSmith.CreateClusteringJobConfigRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareBetaUpdateInsightsJobConfigArguments(
+            Prepare[Beta]CreateInsightsJobConfigArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                configId: ref configId,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/configs/{configId}",
+                path: $"/api/v1/sessions/{sessionId}/insights/configs",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: new global::System.Net.Http.HttpMethod("PATCH"),
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -88,11 +83,10 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareBetaUpdateInsightsJobConfigRequest(
+            Prepare[Beta]CreateInsightsJobConfigRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                configId: configId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -103,7 +97,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessBetaUpdateInsightsJobConfigResponse(
+            Process[Beta]CreateInsightsJobConfigResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -156,7 +150,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessBetaUpdateInsightsJobConfigResponseContent(
+                Process[Beta]CreateInsightsJobConfigResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -217,27 +211,27 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Beta Update Insights Job Config<br/>
-        /// Update an insights job config.
+        /// [Beta] Create Insights Job Config<br/>
+        /// Save an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="configId"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        /// <param name="config"></param>
+        /// <param name="config">
+        /// Request to create a run clustering job.
+        /// </param>
         /// <param name="scheduleCron"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> BetaUpdateInsightsJobConfigAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> [Beta]CreateInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            global::System.Guid configId,
-            string? name = default,
+            string name,
+            global::LangSmith.CreateRunClusteringJobRequest config,
             string? description = default,
-            global::LangSmith.CreateRunClusteringJobRequest? config = default,
             string? scheduleCron = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.UpdateClusteringJobConfigRequest
+            var __request = new global::LangSmith.CreateClusteringJobConfigRequest
             {
                 Name = name,
                 Description = description,
@@ -245,9 +239,8 @@ namespace LangSmith
                 ScheduleCron = scheduleCron,
             };
 
-            return await BetaUpdateInsightsJobConfigAsync(
+            return await [Beta]CreateInsightsJobConfigAsync(
                 sessionId: sessionId,
-                configId: configId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

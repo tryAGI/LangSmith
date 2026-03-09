@@ -10,10 +10,6 @@ namespace LangSmith
             ref string owner1,
             ref string repo,
             ref string tagName,
-<<<<<<< HEAD
-=======
-            ref string owner1,
->>>>>>> e312672 (feat: Updated)
             ref string owner2,
             global::LangSmith.RepoUpdateTagRequest request);
         partial void PrepareUpdateTagRequest(
@@ -22,10 +18,6 @@ namespace LangSmith
             string owner1,
             string repo,
             string tagName,
-<<<<<<< HEAD
-=======
-            string owner1,
->>>>>>> e312672 (feat: Updated)
             string owner2,
             global::LangSmith.RepoUpdateTagRequest request);
         partial void ProcessUpdateTagResponse(
@@ -44,10 +36,6 @@ namespace LangSmith
         /// <param name="owner1"></param>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
-<<<<<<< HEAD
-=======
-        /// <param name="owner1"></param>
->>>>>>> e312672 (feat: Updated)
         /// <param name="owner2"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -56,10 +44,6 @@ namespace LangSmith
             string owner1,
             string repo,
             string tagName,
-<<<<<<< HEAD
-=======
-            string owner1,
->>>>>>> e312672 (feat: Updated)
             string owner2,
 
             global::LangSmith.RepoUpdateTagRequest request,
@@ -74,10 +58,6 @@ namespace LangSmith
                 owner1: ref owner1,
                 repo: ref repo,
                 tagName: ref tagName,
-<<<<<<< HEAD
-=======
-                owner1: ref owner1,
->>>>>>> e312672 (feat: Updated)
                 owner2: ref owner2,
                 request: request);
 
@@ -124,10 +104,6 @@ namespace LangSmith
                 owner1: owner1,
                 repo: repo,
                 tagName: tagName,
-<<<<<<< HEAD
-=======
-                owner1: owner1,
->>>>>>> e312672 (feat: Updated)
                 owner2: owner2,
                 request: request);
 
@@ -259,10 +235,6 @@ namespace LangSmith
         /// <param name="owner1"></param>
         /// <param name="repo"></param>
         /// <param name="tagName"></param>
-<<<<<<< HEAD
-=======
-        /// <param name="owner1"></param>
->>>>>>> e312672 (feat: Updated)
         /// <param name="owner2"></param>
         /// <param name="commitId"></param>
         /// <param name="skipWebhooks">
@@ -274,10 +246,6 @@ namespace LangSmith
             string owner1,
             string repo,
             string tagName,
-<<<<<<< HEAD
-=======
-            string owner1,
->>>>>>> e312672 (feat: Updated)
             string owner2,
             global::System.Guid commitId,
             global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks = default,
@@ -293,10 +261,6 @@ namespace LangSmith
                 owner1: owner1,
                 repo: repo,
                 tagName: tagName,
-<<<<<<< HEAD
-=======
-                owner1: owner1,
->>>>>>> e312672 (feat: Updated)
                 owner2: owner2,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -5,58 +5,50 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareBetaUpdateInsightsJobArguments(
+        partial void Prepare[Beta]DeleteInsightsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::System.Guid jobId,
-            global::LangSmith.UpdateRunClusteringJobRequest request);
-        partial void PrepareBetaUpdateInsightsJobRequest(
+            ref global::System.Guid jobId);
+        partial void Prepare[Beta]DeleteInsightsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            global::LangSmith.UpdateRunClusteringJobRequest request);
-        partial void ProcessBetaUpdateInsightsJobResponse(
+            global::System.Guid jobId);
+        partial void Process[Beta]DeleteInsightsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBetaUpdateInsightsJobResponseContent(
+        partial void Process[Beta]DeleteInsightsJobResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Beta Update Insights Job<br/>
-        /// Update a session cluster job.
+        /// [Beta] Delete Insights Job<br/>
+        /// Delete a session cluster job.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunClusteringJobResponse> BetaUpdateInsightsJobAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteRunClusteringJobResponse> [Beta]DeleteInsightsJobAsync(
             global::System.Guid sessionId,
             global::System.Guid jobId,
-
-            global::LangSmith.UpdateRunClusteringJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareBetaUpdateInsightsJobArguments(
+            Prepare[Beta]DeleteInsightsJobArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                jobId: ref jobId,
-                request: request);
+                jobId: ref jobId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/insights/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: new global::System.Net.Http.HttpMethod("PATCH"),
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -78,22 +70,15 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareBetaUpdateInsightsJobRequest(
+            Prepare[Beta]DeleteInsightsJobRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                jobId: jobId,
-                request: request);
+                jobId: jobId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -103,7 +88,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessBetaUpdateInsightsJobResponse(
+            Process[Beta]DeleteInsightsJobResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -156,7 +141,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessBetaUpdateInsightsJobResponseContent(
+                Process[Beta]DeleteInsightsJobResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -166,7 +151,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.UpdateRunClusteringJobResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.DeleteRunClusteringJobResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -197,7 +182,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.UpdateRunClusteringJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.DeleteRunClusteringJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -214,33 +199,6 @@ namespace LangSmith
                     };
                 }
             }
-        }
-
-        /// <summary>
-        /// Beta Update Insights Job<br/>
-        /// Update a session cluster job.
-        /// </summary>
-        /// <param name="sessionId"></param>
-        /// <param name="jobId"></param>
-        /// <param name="name"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunClusteringJobResponse> BetaUpdateInsightsJobAsync(
-            global::System.Guid sessionId,
-            global::System.Guid jobId,
-            string name,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.UpdateRunClusteringJobRequest
-            {
-                Name = name,
-            };
-
-            return await BetaUpdateInsightsJobAsync(
-                sessionId: sessionId,
-                jobId: jobId,
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

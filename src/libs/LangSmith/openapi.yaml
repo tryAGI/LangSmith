@@ -13539,12 +13539,6 @@ paths:
             type: string
         - name: owner
           in: path
-          description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
           required: true
           schema:
             type: string
@@ -13650,12 +13644,6 @@ paths:
             type: string
         - name: owner
           in: path
-          description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
           required: true
           schema:
             type: string
@@ -13706,12 +13694,6 @@ paths:
           required: true
           schema:
             title: Tag Name
-            type: string
-        - name: owner
-          in: path
-          description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
             type: string
         - name: owner
           in: path
@@ -23821,9 +23803,9 @@ components:
               - type: 'null'
         parsed_query:
           title: Parsed Query
-<<<<<<< HEAD
-          type: string
-          nullable: true
+          anyOf:
+            - type: string
+            - type: 'null'
     ListRepoOwnersResponse:
       title: ListRepoOwnersResponse
       required:
@@ -23836,11 +23818,6 @@ components:
           items:
             $ref: '#/components/schemas/RepoOwner'
       description: Response for listing repo owners.
-=======
-          anyOf:
-            - type: string
-            - type: 'null'
->>>>>>> e312672 (feat: Updated)
     ListReposResponse:
       title: ListReposResponse
       required:
@@ -27293,21 +27270,24 @@ components:
       properties:
         identity_id:
           title: Identity Id
-          type: string
-          format: uuid
-          nullable: true
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
         ls_user_id:
           title: Ls User Id
           type: string
           format: uuid
         email:
           title: Email
-          type: string
-          nullable: true
+          anyOf:
+            - type: string
+            - type: 'null'
         full_name:
           title: Full Name
-          type: string
-          nullable: true
+          anyOf:
+            - type: string
+            - type: 'null'
         created_at:
           title: Created At
           type: string
@@ -32831,18 +32811,14 @@ components:
             - type: 'null'
         is_archived:
           title: Is Archived
-<<<<<<< HEAD
-          type: boolean
-          nullable: true
-        restricted_mode:
-          title: Restricted Mode
-          type: boolean
-          nullable: true
-=======
           anyOf:
             - type: boolean
             - type: 'null'
->>>>>>> e312672 (feat: Updated)
+        restricted_mode:
+          title: Restricted Mode
+          anyOf:
+            - type: boolean
+            - type: 'null'
       description: Fields to update a repo
     UpdateRoleRequest:
       title: UpdateRoleRequest
