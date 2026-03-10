@@ -10,10 +10,10 @@ C# SDK for the [LangSmith](https://smith.langchain.com/) LLM observability and e
 
 ```bash
 # Build the solution
-dotnet build LangSmith.sln
+dotnet build LangSmith.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build LangSmith.sln -c Release
+dotnet build LangSmith.slnx -c Release
 
 # Run integration tests (requires LANGSMITH_API_KEY and OPENAI_API_KEY env vars)
 dotnet test src/tests/LangSmith.IntegrationTests/LangSmith.IntegrationTests.csproj
