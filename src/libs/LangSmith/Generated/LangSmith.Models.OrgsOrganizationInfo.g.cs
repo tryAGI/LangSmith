@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_export_usage_backfill")]
+        public bool? CanExportUsageBackfill { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         public global::LangSmith.AuthnOrganizationConfig? Config { get; set; }
 
@@ -155,6 +161,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrgsOrganizationInfo" /> class.
         /// </summary>
+        /// <param name="canExportUsageBackfill"></param>
         /// <param name="config"></param>
         /// <param name="defaultSsoProvision"></param>
         /// <param name="disabled"></param>
@@ -182,6 +189,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrgsOrganizationInfo(
+            bool? canExportUsageBackfill,
             global::LangSmith.AuthnOrganizationConfig? config,
             bool? defaultSsoProvision,
             bool? disabled,
@@ -206,6 +214,7 @@ namespace LangSmith
             string? tier,
             bool? workspaceAdminCanInviteToOrg)
         {
+            this.CanExportUsageBackfill = canExportUsageBackfill;
             this.Config = config;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.Disabled = disabled;

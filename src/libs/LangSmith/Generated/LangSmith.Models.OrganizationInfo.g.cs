@@ -151,6 +151,12 @@ namespace LangSmith
         public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_export_usage_backfill")]
+        public bool? CanExportUsageBackfill { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -210,6 +216,9 @@ namespace LangSmith
         /// <param name="scimGroupNameSeparator">
         /// Default Value: :
         /// </param>
+        /// <param name="canExportUsageBackfill">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -236,7 +245,8 @@ namespace LangSmith
             string? securityContact,
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
-            string? scimGroupNameSeparator)
+            string? scimGroupNameSeparator,
+            bool? canExportUsageBackfill)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.IsPersonal = isPersonal;
@@ -261,6 +271,7 @@ namespace LangSmith
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
+            this.CanExportUsageBackfill = canExportUsageBackfill;
         }
 
         /// <summary>
