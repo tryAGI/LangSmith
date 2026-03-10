@@ -17,36 +17,31 @@ namespace LangSmith
         /// </summary>
         /// <default>"invalid_tool_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "invalid_tool_call";
+        public string Type { get; set; } = "invalid_tool_call";
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("args")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Args { get; set; }
+        public string? Args { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -81,19 +76,19 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InvalidToolCall(
-            string type,
             string? id,
             string? name,
             string? args,
             string? error,
             global::LangSmith.AnyOf<int?, string>? index,
-            object? extras)
+            object? extras,
+            string type = "invalid_tool_call")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Type = type;
+            this.Id = id;
+            this.Name = name;
+            this.Args = args;
+            this.Error = error;
             this.Index = index;
             this.Extras = extras;
         }

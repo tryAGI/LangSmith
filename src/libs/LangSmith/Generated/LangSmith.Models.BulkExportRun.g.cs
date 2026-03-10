@@ -67,8 +67,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? FinishedAt { get; set; }
+        public global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
         /// 
@@ -114,9 +113,9 @@ namespace LangSmith
             global::LangSmith.BulkExportRunStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? finishedAt,
             int? retryNumber,
             object? errors,
+            global::System.DateTime? finishedAt,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime)
         {
@@ -126,9 +125,9 @@ namespace LangSmith
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.FinishedAt = finishedAt ?? throw new global::System.ArgumentNullException(nameof(finishedAt));
             this.RetryNumber = retryNumber;
             this.Errors = errors;
+            this.FinishedAt = finishedAt;
             this.StartTime = startTime;
             this.EndTime = endTime;
         }

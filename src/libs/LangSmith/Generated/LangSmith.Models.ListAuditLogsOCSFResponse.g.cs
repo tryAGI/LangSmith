@@ -12,8 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Cursor { get; set; }
+        public string? Cursor { get; set; }
 
         /// <summary>
         /// 
@@ -37,11 +36,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListAuditLogsOCSFResponse(
-            string? cursor,
-            global::System.Collections.Generic.IList<global::LangSmith.OCSFApiActivity> items)
+            global::System.Collections.Generic.IList<global::LangSmith.OCSFApiActivity> items,
+            string? cursor)
         {
-            this.Cursor = cursor ?? throw new global::System.ArgumentNullException(nameof(cursor));
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
+            this.Cursor = cursor;
         }
 
         /// <summary>

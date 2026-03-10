@@ -12,22 +12,19 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Ip { get; set; }
+        public string? Ip { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("port")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Port { get; set; }
+        public int? Port { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intermediate_ips")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string>? IntermediateIps { get; set; }
+        public global::System.Collections.Generic.IList<string>? IntermediateIps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,9 +46,9 @@ namespace LangSmith
             int? port,
             global::System.Collections.Generic.IList<string>? intermediateIps)
         {
-            this.Ip = ip ?? throw new global::System.ArgumentNullException(nameof(ip));
-            this.Port = port ?? throw new global::System.ArgumentNullException(nameof(port));
-            this.IntermediateIps = intermediateIps ?? throw new global::System.ArgumentNullException(nameof(intermediateIps));
+            this.Ip = ip;
+            this.Port = port;
+            this.IntermediateIps = intermediateIps;
         }
 
         /// <summary>

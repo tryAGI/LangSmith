@@ -19,8 +19,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +40,7 @@ namespace LangSmith
             int? offset)
         {
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
-            this.Offset = offset ?? throw new global::System.ArgumentNullException(nameof(offset));
+            this.Offset = offset;
         }
 
         /// <summary>

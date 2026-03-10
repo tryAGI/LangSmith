@@ -115,8 +115,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? FinishedAt { get; set; }
+        public global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
         /// 
@@ -169,7 +168,6 @@ namespace LangSmith
             global::LangSmith.BulkExportStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? finishedAt,
             global::System.DateTime? endTime,
             string? filter,
             global::LangSmith.BulkExportFormat? format,
@@ -177,6 +175,7 @@ namespace LangSmith
             global::LangSmith.BulkExportCompression? compression,
             int? intervalHours,
             global::System.Collections.Generic.IList<string>? exportFields,
+            global::System.DateTime? finishedAt,
             global::System.Guid? sourceBulkExportId)
         {
             this.BulkExportDestinationId = bulkExportDestinationId;
@@ -187,7 +186,6 @@ namespace LangSmith
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.FinishedAt = finishedAt ?? throw new global::System.ArgumentNullException(nameof(finishedAt));
             this.EndTime = endTime;
             this.Filter = filter;
             this.Format = format;
@@ -195,6 +193,7 @@ namespace LangSmith
             this.Compression = compression;
             this.IntervalHours = intervalHours;
             this.ExportFields = exportFields;
+            this.FinishedAt = finishedAt;
             this.SourceBulkExportId = sourceBulkExportId;
         }
 

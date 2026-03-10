@@ -26,15 +26,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_ids")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid>? ResourceIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? ResourceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation_succeeded")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? OperationSucceeded { get; set; }
+        public bool? OperationSucceeded { get; set; }
 
         /// <summary>
         /// 
@@ -61,64 +59,55 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_host")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ClientHost { get; set; }
+        public string? ClientHost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_port")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? ClientPort { get; set; }
+        public int? ClientPort { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x_forwarded_for")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? XForwardedFor { get; set; }
+        public string? XForwardedFor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? ApiKeyId { get; set; }
+        public global::System.Guid? ApiKeyId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? LsUserId { get; set; }
+        public global::System.Guid? LsUserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? OrganizationId { get; set; }
+        public global::System.Guid? OrganizationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? WorkspaceId { get; set; }
+        public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_status_code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? ResponseStatusCode { get; set; }
+        public int? ResponseStatusCode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -151,11 +140,11 @@ namespace LangSmith
         public AuditLogMessage(
             global::System.Guid id,
             string operationName,
-            global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
-            bool? operationSucceeded,
             global::System.DateTime requestTime,
             string requestMethod,
             string requestPath,
+            global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
+            bool? operationSucceeded,
             string? clientHost,
             int? clientPort,
             string? xForwardedFor,
@@ -168,20 +157,20 @@ namespace LangSmith
         {
             this.Id = id;
             this.OperationName = operationName ?? throw new global::System.ArgumentNullException(nameof(operationName));
-            this.ResourceIds = resourceIds ?? throw new global::System.ArgumentNullException(nameof(resourceIds));
-            this.OperationSucceeded = operationSucceeded ?? throw new global::System.ArgumentNullException(nameof(operationSucceeded));
             this.RequestTime = requestTime;
             this.RequestMethod = requestMethod ?? throw new global::System.ArgumentNullException(nameof(requestMethod));
             this.RequestPath = requestPath ?? throw new global::System.ArgumentNullException(nameof(requestPath));
-            this.ClientHost = clientHost ?? throw new global::System.ArgumentNullException(nameof(clientHost));
-            this.ClientPort = clientPort ?? throw new global::System.ArgumentNullException(nameof(clientPort));
-            this.XForwardedFor = xForwardedFor ?? throw new global::System.ArgumentNullException(nameof(xForwardedFor));
-            this.ApiKeyId = apiKeyId ?? throw new global::System.ArgumentNullException(nameof(apiKeyId));
-            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
-            this.LsUserId = lsUserId ?? throw new global::System.ArgumentNullException(nameof(lsUserId));
-            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
-            this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
-            this.ResponseStatusCode = responseStatusCode ?? throw new global::System.ArgumentNullException(nameof(responseStatusCode));
+            this.ResourceIds = resourceIds;
+            this.OperationSucceeded = operationSucceeded;
+            this.ClientHost = clientHost;
+            this.ClientPort = clientPort;
+            this.XForwardedFor = xForwardedFor;
+            this.ApiKeyId = apiKeyId;
+            this.UserId = userId;
+            this.LsUserId = lsUserId;
+            this.OrganizationId = organizationId;
+            this.WorkspaceId = workspaceId;
+            this.ResponseStatusCode = responseStatusCode;
         }
 
         /// <summary>

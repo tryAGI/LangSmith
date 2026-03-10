@@ -16,8 +16,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_cursor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TargetCursor { get; set; }
+        public string? TargetCursor { get; set; }
 
         /// <summary>
         /// 
@@ -49,13 +48,13 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PendingUpload(
-            string? targetCursor,
             string filePath,
-            int rowsCount)
+            int rowsCount,
+            string? targetCursor)
         {
-            this.TargetCursor = targetCursor ?? throw new global::System.ArgumentNullException(nameof(targetCursor));
             this.FilePath = filePath ?? throw new global::System.ArgumentNullException(nameof(filePath));
             this.RowsCount = rowsCount;
+            this.TargetCursor = targetCursor;
         }
 
         /// <summary>

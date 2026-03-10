@@ -60,8 +60,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("series")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>? Series { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>? Series { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -91,18 +90,18 @@ namespace LangSmith
             int index,
             global::LangSmith.CustomChartType chartType,
             global::System.Guid sectionId,
-            global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>? series,
             string? description,
-            object? metadata)
+            object? metadata,
+            global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries>? series)
         {
             this.Id = id;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Index = index;
             this.ChartType = chartType;
             this.SectionId = sectionId;
-            this.Series = series ?? throw new global::System.ArgumentNullException(nameof(series));
             this.Description = description;
             this.Metadata = metadata;
+            this.Series = series;
         }
 
         /// <summary>

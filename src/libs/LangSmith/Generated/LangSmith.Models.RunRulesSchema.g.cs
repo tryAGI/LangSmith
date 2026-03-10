@@ -154,8 +154,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? Webhooks { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? Webhooks { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -283,7 +282,6 @@ namespace LangSmith
             global::System.Guid tenantId,
             string displayName,
             double samplingRate,
-            global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             int evaluatorVersion,
@@ -306,6 +304,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
+            global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             bool? extendOnly,
             bool? includeExtendedStats,
             global::System.DateTime? backfillFrom,
@@ -318,7 +317,6 @@ namespace LangSmith
             this.TenantId = tenantId;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SamplingRate = samplingRate;
-            this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.EvaluatorVersion = evaluatorVersion;
@@ -341,6 +339,7 @@ namespace LangSmith
             this.Evaluators = evaluators;
             this.CodeEvaluators = codeEvaluators;
             this.Alerts = alerts;
+            this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;
             this.IncludeExtendedStats = includeExtendedStats;
             this.BackfillFrom = backfillFrom;
