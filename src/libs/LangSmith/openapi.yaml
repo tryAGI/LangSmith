@@ -25291,6 +25291,10 @@ components:
           title: Scim Group Name Separator
           type: string
           default: ':'
+        can_export_usage_backfill:
+          title: Can Export Usage Backfill
+          type: boolean
+          default: false
       description: "Information about an organization.\n\nIMPORTANT: Keep in sync with Go OrganizationInfo in smith-go/orgs/handler.go\nwhile both implementations are in use (weighted routing rollout)."
     OrganizationMembers:
       title: OrganizationMembers
@@ -34137,6 +34141,8 @@ components:
     orgs.OrganizationInfo:
       type: object
       properties:
+        can_export_usage_backfill:
+          type: boolean
         config:
           $ref: '#/components/schemas/authn.OrganizationConfig'
         default_sso_provision:
