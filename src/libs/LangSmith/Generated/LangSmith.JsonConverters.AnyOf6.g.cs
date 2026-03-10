@@ -87,12 +87,17 @@ namespace LangSmith.JsonConverters
             {
             }
 
-            var result = new global::LangSmith.AnyOf<T1, T2, T3, T4, T5, T6>(
+            var __value = new global::LangSmith.AnyOf<T1, T2, T3, T4, T5, T6>(
                 value1,
+
                 value2,
+
                 value3,
+
                 value4,
+
                 value5,
+
                 value6
                 );
 
@@ -133,7 +138,7 @@ namespace LangSmith.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -50,15 +50,18 @@ namespace LangSmith.JsonConverters
                 autoEval = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::LangSmith.FeedbackSourceVariant12(
+            var __value = new global::LangSmith.FeedbackSourceVariant12(
                 discriminator?.Type,
                 app,
+
                 api,
+
                 model,
+
                 autoEval
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
