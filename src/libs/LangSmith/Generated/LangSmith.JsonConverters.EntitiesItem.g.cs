@@ -36,13 +36,14 @@ namespace LangSmith.JsonConverters
                 dataset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::LangSmith.EntitiesItem(
+            var __value = new global::LangSmith.EntitiesItem(
                 discriminator?.Type,
                 run,
+
                 dataset
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
