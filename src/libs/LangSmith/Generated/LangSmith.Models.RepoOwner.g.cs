@@ -14,8 +14,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identity_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? IdentityId { get; set; }
+        public global::System.Guid? IdentityId { get; set; }
 
         /// <summary>
         /// 
@@ -28,15 +27,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FullName { get; set; }
+        public string? FullName { get; set; }
 
         /// <summary>
         /// 
@@ -63,17 +60,17 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RepoOwner(
-            global::System.Guid? identityId,
             global::System.Guid lsUserId,
+            global::System.DateTime createdAt,
+            global::System.Guid? identityId,
             string? email,
-            string? fullName,
-            global::System.DateTime createdAt)
+            string? fullName)
         {
-            this.IdentityId = identityId ?? throw new global::System.ArgumentNullException(nameof(identityId));
             this.LsUserId = lsUserId;
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
             this.CreatedAt = createdAt;
+            this.IdentityId = identityId;
+            this.Email = email;
+            this.FullName = fullName;
         }
 
         /// <summary>

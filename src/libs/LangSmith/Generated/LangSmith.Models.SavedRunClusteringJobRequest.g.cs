@@ -14,8 +14,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -28,15 +27,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hierarchy")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int>? Hierarchy { get; set; }
+        public global::System.Collections.Generic.IList<int>? Hierarchy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partitions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Partitions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Partitions { get; set; }
 
         /// <summary>
         /// 
@@ -50,22 +47,19 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_prompt")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SummaryPrompt { get; set; }
+        public string? SummaryPrompt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Filter { get; set; }
+        public string? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute_schemas")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? AttributeSchemas { get; set; }
+        public object? AttributeSchemas { get; set; }
 
         /// <summary>
         /// 
@@ -118,28 +112,28 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SavedRunClusteringJobRequest(
-            string? name,
             int lastNHours,
+            global::LangSmith.AnyOf<double?, int?, object> sample,
+            global::LangSmith.SavedRunClusteringJobRequestModel model,
+            string? name,
             global::System.Collections.Generic.IList<int>? hierarchy,
             global::System.Collections.Generic.Dictionary<string, string>? partitions,
-            global::LangSmith.AnyOf<double?, int?, object> sample,
             string? summaryPrompt,
             string? filter,
             object? attributeSchemas,
-            global::LangSmith.SavedRunClusteringJobRequestModel model,
             global::System.Collections.Generic.Dictionary<string, string>? userContext,
             string? clusterModel,
             string? summaryModel)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.LastNHours = lastNHours;
-            this.Hierarchy = hierarchy ?? throw new global::System.ArgumentNullException(nameof(hierarchy));
-            this.Partitions = partitions ?? throw new global::System.ArgumentNullException(nameof(partitions));
             this.Sample = sample;
-            this.SummaryPrompt = summaryPrompt ?? throw new global::System.ArgumentNullException(nameof(summaryPrompt));
-            this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
-            this.AttributeSchemas = attributeSchemas ?? throw new global::System.ArgumentNullException(nameof(attributeSchemas));
             this.Model = model;
+            this.Name = name;
+            this.Hierarchy = hierarchy;
+            this.Partitions = partitions;
+            this.SummaryPrompt = summaryPrompt;
+            this.Filter = filter;
+            this.AttributeSchemas = attributeSchemas;
             this.UserContext = userContext;
             this.ClusterModel = clusterModel;
             this.SummaryModel = summaryModel;

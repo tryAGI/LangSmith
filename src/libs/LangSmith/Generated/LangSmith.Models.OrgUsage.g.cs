@@ -47,15 +47,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? Value { get; set; }
+        public double? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, double>? Groups { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Groups { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,8 +88,8 @@ namespace LangSmith
             this.BillableMetricName = billableMetricName ?? throw new global::System.ArgumentNullException(nameof(billableMetricName));
             this.StartTimestamp = startTimestamp ?? throw new global::System.ArgumentNullException(nameof(startTimestamp));
             this.EndTimestamp = endTimestamp ?? throw new global::System.ArgumentNullException(nameof(endTimestamp));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
-            this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
+            this.Value = value;
+            this.Groups = groups;
         }
 
         /// <summary>

@@ -112,8 +112,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Owner { get; set; }
+        public string? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -239,7 +238,6 @@ namespace LangSmith
             bool isArchived,
             global::System.Collections.Generic.IList<string> tags,
             global::LangSmith.RepoWithLookupsRepoType repoType,
-            string? owner,
             string fullName,
             int numLikes,
             int numDownloads,
@@ -251,6 +249,7 @@ namespace LangSmith
             global::System.Guid? originalRepoId,
             global::System.Guid? upstreamRepoId,
             global::System.Collections.Generic.IList<string>? commitTags,
+            string? owner,
             bool? likedByAuthUser,
             string? lastCommitHash,
             string? createdBy,
@@ -267,7 +266,6 @@ namespace LangSmith
             this.IsArchived = isArchived;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
             this.RepoType = repoType;
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
             this.NumLikes = numLikes;
             this.NumDownloads = numDownloads;
@@ -279,6 +277,7 @@ namespace LangSmith
             this.OriginalRepoId = originalRepoId;
             this.UpstreamRepoId = upstreamRepoId;
             this.CommitTags = commitTags;
+            this.Owner = owner;
             this.LikedByAuthUser = likedByAuthUser;
             this.LastCommitHash = lastCommitHash;
             this.CreatedBy = createdBy;

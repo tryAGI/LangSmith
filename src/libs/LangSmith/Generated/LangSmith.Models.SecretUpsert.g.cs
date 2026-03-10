@@ -19,8 +19,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +40,7 @@ namespace LangSmith
             string? value)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Value = value;
         }
 
         /// <summary>

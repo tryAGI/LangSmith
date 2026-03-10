@@ -12,15 +12,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uid")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? Uid { get; set; }
+        public global::System.Guid? Uid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credential_uid")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? CredentialUid { get; set; }
+        public global::System.Guid? CredentialUid { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +38,8 @@ namespace LangSmith
             global::System.Guid? uid,
             global::System.Guid? credentialUid)
         {
-            this.Uid = uid ?? throw new global::System.ArgumentNullException(nameof(uid));
-            this.CredentialUid = credentialUid ?? throw new global::System.ArgumentNullException(nameof(credentialUid));
+            this.Uid = uid;
+            this.CredentialUid = credentialUid;
         }
 
         /// <summary>

@@ -12,8 +12,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Code { get; set; }
+        public int? Code { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +30,7 @@ namespace LangSmith
         public OCSFHttpResponse(
             int? code)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Code = code;
         }
 
         /// <summary>

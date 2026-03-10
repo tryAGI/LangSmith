@@ -33,8 +33,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overall_feedback")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? OverallFeedback { get; set; }
+        public string? OverallFeedback { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +60,7 @@ namespace LangSmith
             this.MessageIndex = messageIndex;
             this.Metaprompt = metaprompt ?? throw new global::System.ArgumentNullException(nameof(metaprompt));
             this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
-            this.OverallFeedback = overallFeedback ?? throw new global::System.ArgumentNullException(nameof(overallFeedback));
+            this.OverallFeedback = overallFeedback;
         }
 
         /// <summary>

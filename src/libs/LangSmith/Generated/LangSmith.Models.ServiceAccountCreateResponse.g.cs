@@ -47,8 +47,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? DefaultWorkspaceId { get; set; }
+        public global::System.Guid? DefaultWorkspaceId { get; set; }
 
         /// <summary>
         /// 
@@ -82,16 +81,16 @@ namespace LangSmith
             global::System.DateTime updatedAt,
             string name,
             global::System.Guid organizationId,
-            global::System.Guid? defaultWorkspaceId,
-            global::System.Guid organizationIdentityId)
+            global::System.Guid organizationIdentityId,
+            global::System.Guid? defaultWorkspaceId)
         {
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OrganizationId = organizationId;
-            this.DefaultWorkspaceId = defaultWorkspaceId ?? throw new global::System.ArgumentNullException(nameof(defaultWorkspaceId));
             this.OrganizationIdentityId = organizationIdentityId;
+            this.DefaultWorkspaceId = defaultWorkspaceId;
         }
 
         /// <summary>

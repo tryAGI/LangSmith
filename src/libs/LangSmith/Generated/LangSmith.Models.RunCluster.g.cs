@@ -59,8 +59,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stats")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Stats { get; set; }
+        public object? Stats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -88,18 +87,18 @@ namespace LangSmith
             string name,
             string description,
             int numRuns,
-            object? stats,
             global::System.Guid? parentId,
-            string? parentName)
+            string? parentName,
+            object? stats)
         {
             this.Id = id;
             this.Level = level;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.NumRuns = numRuns;
-            this.Stats = stats ?? throw new global::System.ArgumentNullException(nameof(stats));
             this.ParentId = parentId;
             this.ParentName = parentName;
+            this.Stats = stats;
         }
 
         /// <summary>

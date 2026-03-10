@@ -26,8 +26,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Request to create a run clustering job.
@@ -64,14 +63,14 @@ namespace LangSmith
         public CreateClusteringJobConfigResponse(
             global::System.Guid id,
             string name,
-            string? description,
             global::LangSmith.SavedRunClusteringJobRequest config,
+            string? description,
             string? scheduleCron)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Description = description;
             this.ScheduleCron = scheduleCron;
         }
 
