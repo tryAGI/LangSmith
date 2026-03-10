@@ -17252,6 +17252,11 @@ components:
               items:
                 type: string
             - type: 'null'
+        default_workspace_name:
+          title: Default Workspace Name
+          anyOf:
+            - type: string
+            - type: 'null'
         key:
           title: Key
           type: string
@@ -17303,6 +17308,11 @@ components:
             - type: array
               items:
                 type: string
+            - type: 'null'
+        default_workspace_name:
+          title: Default Workspace Name
+          anyOf:
+            - type: string
             - type: 'null'
       description: API key GET schema.
     AccessScope:
@@ -27557,6 +27567,7 @@ components:
         - deployment
         - evaluator
         - experiment
+        - mcp_server
         - project
         - prompt
         - queue
