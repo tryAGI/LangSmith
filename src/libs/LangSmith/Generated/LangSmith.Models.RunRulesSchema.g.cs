@@ -189,6 +189,30 @@ namespace LangSmith
         public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("backfill_status")]
+        public string? BackfillStatus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("backfill_progress")]
+        public double? BackfillProgress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("backfill_error")]
+        public string? BackfillError { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("backfill_completed_at")]
+        public global::System.DateTime? BackfillCompletedAt { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transient")]
@@ -267,6 +291,10 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
+        /// <param name="backfillStatus"></param>
+        /// <param name="backfillProgress"></param>
+        /// <param name="backfillError"></param>
+        /// <param name="backfillCompletedAt"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -308,6 +336,10 @@ namespace LangSmith
             bool? extendOnly,
             bool? includeExtendedStats,
             global::System.DateTime? backfillFrom,
+            string? backfillStatus,
+            double? backfillProgress,
+            string? backfillError,
+            global::System.DateTime? backfillCompletedAt,
             bool? transient,
             global::System.Guid? evaluatorId,
             global::System.Guid? alignmentAnnotationQueueId,
@@ -343,6 +375,10 @@ namespace LangSmith
             this.ExtendOnly = extendOnly;
             this.IncludeExtendedStats = includeExtendedStats;
             this.BackfillFrom = backfillFrom;
+            this.BackfillStatus = backfillStatus;
+            this.BackfillProgress = backfillProgress;
+            this.BackfillError = backfillError;
+            this.BackfillCompletedAt = backfillCompletedAt;
             this.Transient = transient;
             this.EvaluatorId = evaluatorId;
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;

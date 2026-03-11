@@ -21,6 +21,12 @@ namespace LangSmith
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_annotator_detail")]
+        public bool? IncludeAnnotatorDetail { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -31,15 +37,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="includeAnnotatorDetail">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExportAnnotationQueueRunsRequest(
             global::System.DateTime? startTime,
-            global::System.DateTime? endTime)
+            global::System.DateTime? endTime,
+            bool? includeAnnotatorDetail)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.IncludeAnnotatorDetail = includeAnnotatorDetail;
         }
 
         /// <summary>

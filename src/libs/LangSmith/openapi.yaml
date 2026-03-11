@@ -5379,6 +5379,20 @@ paths:
                   type: string
                   format: uuid
               - type: 'null'
+        - name: evaluator_id
+          in: query
+          schema:
+            title: Evaluator Id
+            anyOf:
+              - type: string
+                format: uuid
+              - type: 'null'
+        - name: include_backfill_progress
+          in: query
+          schema:
+            title: Include Backfill Progress
+            type: boolean
+            default: false
       responses:
         '200':
           description: Successful Response
@@ -6214,12 +6228,41 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/runs/delete/traces:
+    post:
+      tags:
+        - run
+      summary: Delete Runs Abac
+      description: Delete specific runs by trace IDs.
+      operationId: delete_runs_abac_api_v1_runs_delete_traces_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Body_delete_runs_abac_api_v1_runs_delete_traces_post'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/runs/delete:
     post:
       tags:
         - run
       summary: Delete Runs
-      description: "Delete specific runs by trace IDs or metadata key-value pairs.\n\nNote: no ABAC check here — the metadata-based delete path is tenant-wide\nand cannot be scoped to specific projects without deeper changes."
+      description: Delete specific runs by trace IDs or metadata key-value pairs.
       operationId: delete_runs_api_v1_runs_delete_post
       requestBody:
         content:
@@ -18662,6 +18705,23 @@ components:
               items:
                 type: string
             - type: 'null'
+    Body_delete_runs_abac_api_v1_runs_delete_traces_post:
+      title: Body_delete_runs_abac_api_v1_runs_delete_traces_post
+      required:
+        - session_id
+        - trace_ids
+      type: object
+      properties:
+        session_id:
+          title: Session Id
+          type: string
+          format: uuid
+        trace_ids:
+          title: Trace Ids
+          type: array
+          items:
+            type: string
+            format: uuid
     Body_delete_runs_api_v1_runs_delete_post:
       title: Body_delete_runs_api_v1_runs_delete_post
       type: object
@@ -21724,6 +21784,10 @@ components:
             - type: string
               format: date-time
             - type: 'null'
+        include_annotator_detail:
+          title: Include Annotator Detail
+          type: boolean
+          default: false
       description: Export annotation queue runs request schema.
     FeedbackCategory:
       title: FeedbackCategory
@@ -28888,6 +28952,27 @@ components:
           format: date-time
         backfill_from:
           title: Backfill From
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+        backfill_status:
+          title: Backfill Status
+          anyOf:
+            - type: string
+            - type: 'null'
+        backfill_progress:
+          title: Backfill Progress
+          anyOf:
+            - type: number
+            - type: 'null'
+        backfill_error:
+          title: Backfill Error
+          anyOf:
+            - type: string
+            - type: 'null'
+        backfill_completed_at:
+          title: Backfill Completed At
           anyOf:
             - type: string
               format: date-time

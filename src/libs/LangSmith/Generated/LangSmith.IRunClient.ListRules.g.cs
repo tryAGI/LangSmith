@@ -13,6 +13,10 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="nameContains"></param>
         /// <param name="id"></param>
+        /// <param name="evaluatorId"></param>
+        /// <param name="includeBackfillProgress">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>> ListRulesAsync(
@@ -21,6 +25,8 @@ namespace LangSmith
             global::LangSmith.ListRulesApiV1RunsRulesGetType2? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            global::System.Guid? evaluatorId = default,
+            bool? includeBackfillProgress = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
