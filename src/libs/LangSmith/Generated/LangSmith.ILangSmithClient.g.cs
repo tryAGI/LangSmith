@@ -265,6 +265,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public ToolsClient Tools { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SandboxesClient Sandboxes { get; }
 
         /// <summary>

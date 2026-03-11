@@ -16356,6 +16356,430 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /v1/platform/tools:
+    get:
+      tags:
+        - tools
+      summary: List tools
+      description: Returns a paginated list of tools in the workspace.
+      parameters:
+        - name: limit
+          in: query
+          description: Maximum number of tools to return
+          schema:
+            title: Limit
+            type: integer
+        - name: offset
+          in: query
+          description: Number of tools to skip
+          schema:
+            title: Offset
+            type: integer
+        - name: query
+          in: query
+          description: Search query to filter tools by name or description
+          schema:
+            title: Query
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ListToolsResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - tools
+      summary: Create a tool
+      description: Creates a new tool in the workspace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tools.CreateToolPayload'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.Tool'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/v1/platform/tools/id/{id}':
+    get:
+      tags:
+        - tools
+      summary: Get a tool by ID
+      description: Returns a tool identified by its UUID.
+      parameters:
+        - name: id
+          in: path
+          description: Tool UUID
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.Tool'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - tools
+      summary: Delete a tool by ID
+      description: Deletes a tool identified by its UUID.
+      parameters:
+        - name: id
+          in: path
+          description: Tool UUID
+          required: true
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - tools
+      summary: Update a tool by ID
+      description: Updates an existing tool identified by its UUID.
+      parameters:
+        - name: id
+          in: path
+          description: Tool UUID
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tools.UpdateToolPayload'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.Tool'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/v1/platform/tools/{handle}':
+    get:
+      tags:
+        - tools
+      summary: Get a tool by handle
+      description: Returns a tool identified by its handle.
+      parameters:
+        - name: handle
+          in: path
+          description: Tool handle
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.Tool'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - tools
+      summary: Delete a tool by handle
+      description: Deletes a tool identified by its handle.
+      parameters:
+        - name: handle
+          in: path
+          description: Tool handle
+          required: true
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - tools
+      summary: Update a tool by handle
+      description: Updates an existing tool identified by its handle.
+      parameters:
+        - name: handle
+          in: path
+          description: Tool handle
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tools.UpdateToolPayload'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.Tool'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tools.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /v2/sandboxes/boxes:
     get:
       tags:
@@ -34551,6 +34975,85 @@ components:
           type: string
         session_id:
           type: string
+    tools.CreateToolPayload:
+      required:
+        - description
+        - handle
+        - name
+        - parameters
+      type: object
+      properties:
+        description:
+          type: string
+        enabled:
+          type: boolean
+        handle:
+          type: string
+        metadata:
+          type: object
+        name:
+          type: string
+        parameters:
+          type: object
+        returns:
+          type: object
+    tools.ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+    tools.ListToolsResponse:
+      type: object
+      properties:
+        next_offset:
+          type: integer
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/tools.Tool'
+        total:
+          type: integer
+    tools.Tool:
+      type: object
+      properties:
+        created_at:
+          type: string
+        description:
+          type: string
+        enabled:
+          type: boolean
+        handle:
+          type: string
+        id:
+          type: string
+        metadata:
+          type: object
+        name:
+          type: string
+        parameters:
+          type: object
+        returns:
+          type: object
+        tenant_id:
+          type: string
+        updated_at:
+          type: string
+    tools.UpdateToolPayload:
+      type: object
+      properties:
+        description:
+          type: string
+        enabled:
+          type: boolean
+        metadata:
+          type: object
+        name:
+          type: string
+        parameters:
+          type: object
+        returns:
+          type: object
     ttl_settings.TTLSettingsResponse:
       type: object
       properties:
