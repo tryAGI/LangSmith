@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RepoHandle { get; set; } = default!;
+        public required string RepoHandle { get; set; }
 
         /// <summary>
         /// 

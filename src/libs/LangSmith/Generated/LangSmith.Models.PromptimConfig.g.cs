@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int MessageIndex { get; set; } = default!;
+        public required int MessageIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TaskDescription { get; set; } = default!;
+        public required string TaskDescription { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DatasetName { get; set; } = default!;
+        public required string DatasetName { get; set; }
 
         /// <summary>
         /// 
@@ -52,21 +52,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluators")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::System.Guid> Evaluators { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::System.Guid> Evaluators { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_epochs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumEpochs { get; set; } = default!;
+        public required int NumEpochs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool AutoCommit { get; set; } = default!;
+        public required bool AutoCommit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

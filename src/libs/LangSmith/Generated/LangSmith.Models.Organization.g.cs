@@ -25,28 +25,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.OrganizationConfig Config { get; set; } = default!;
+        public required global::LangSmith.OrganizationConfig Config { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connected_to_stripe")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool ConnectedToStripe { get; set; } = default!;
+        public required bool ConnectedToStripe { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connected_to_metronome")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool ConnectedToMetronome { get; set; } = default!;
+        public required bool ConnectedToMetronome { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool IsPersonal { get; set; } = default!;
+        public required bool IsPersonal { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_cancelled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HasCancelled { get; set; } = default!;
+        public required bool HasCancelled { get; set; }
 
         /// <summary>
         /// 

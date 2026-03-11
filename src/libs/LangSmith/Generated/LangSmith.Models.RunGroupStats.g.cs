@@ -181,7 +181,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int GroupCount { get; set; } = default!;
+        public required int GroupCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_overrides")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.ExperimentViewOverridesColumnOverride> ColumnOverrides { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.ExperimentViewOverridesColumnOverride> ColumnOverrides { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

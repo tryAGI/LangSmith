@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bulk_export_destination_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid BulkExportDestinationId { get; set; } = default!;
+        public required global::System.Guid BulkExportDestinationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid SessionId { get; set; } = default!;
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime StartTime { get; set; } = default!;
+        public required global::System.DateTime StartTime { get; set; }
 
         /// <summary>
         /// 

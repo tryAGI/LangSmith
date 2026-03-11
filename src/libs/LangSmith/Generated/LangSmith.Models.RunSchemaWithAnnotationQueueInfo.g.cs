@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunTypeEnumJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.RunTypeEnum RunType { get; set; } = default!;
+        public required global::LangSmith.RunTypeEnum RunType { get; set; }
 
         /// <summary>
         /// 
@@ -136,14 +136,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid TraceId { get; set; } = default!;
+        public required global::System.Guid TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dotted_order")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DottedOrder { get; set; } = default!;
+        public required string DottedOrder { get; set; }
 
         /// <summary>
         /// 
@@ -162,14 +162,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Status { get; set; } = default!;
+        public required string Status { get; set; }
 
         /// <summary>
         /// 
@@ -284,14 +284,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid SessionId { get; set; } = default!;
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string AppPath { get; set; } = default!;
+        public required string AppPath { get; set; }
 
         /// <summary>
         /// 
@@ -352,7 +352,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queue_run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid QueueRunId { get; set; } = default!;
+        public required global::System.Guid QueueRunId { get; set; }
 
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("routing_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RoutingKey { get; set; } = default!;
+        public required string RoutingKey { get; set; }
 
         /// <summary>
         /// 

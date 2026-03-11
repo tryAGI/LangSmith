@@ -14,7 +14,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("aggregation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AlertsAlertRuleBaseAggregation Aggregation { get; set; } = default!;
+        public required global::LangSmith.AlertsAlertRuleBaseAggregation Aggregation { get; set; }
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AlertsAlertRuleBaseAttribute Attribute { get; set; } = default!;
+        public required global::LangSmith.AlertsAlertRuleBaseAttribute Attribute { get; set; }
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Description { get; set; } = default!;
+        public required string Description { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AlertsAlertRuleBaseOperator Operator { get; set; } = default!;
+        public required global::LangSmith.AlertsAlertRuleBaseOperator Operator { get; set; }
 
         /// <summary>
         /// 
@@ -88,14 +88,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AlertsAlertRuleBaseType Type { get; set; } = default!;
+        public required global::LangSmith.AlertsAlertRuleBaseType Type { get; set; }
 
         /// <summary>
         /// max 15 minutes for alert rule
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("window_minutes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int WindowMinutes { get; set; } = default!;
+        public required int WindowMinutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

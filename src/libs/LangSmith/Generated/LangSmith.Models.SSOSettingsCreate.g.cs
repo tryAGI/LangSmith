@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_role_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid DefaultWorkspaceRoleId { get; set; } = default!;
+        public required global::System.Guid DefaultWorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::System.Guid> DefaultWorkspaceIds { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::System.Guid> DefaultWorkspaceIds { get; set; }
 
         /// <summary>
         /// 

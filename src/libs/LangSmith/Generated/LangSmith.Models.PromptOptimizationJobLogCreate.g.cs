@@ -14,14 +14,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("log_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.EPromptOptimizationJobLogType LogType { get; set; } = default!;
+        public required global::LangSmith.EPromptOptimizationJobLogType LogType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; }
 
         /// <summary>
         /// 

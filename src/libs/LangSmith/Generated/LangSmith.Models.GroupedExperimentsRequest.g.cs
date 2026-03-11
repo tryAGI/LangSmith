@@ -49,7 +49,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_keys")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> MetadataKeys { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> MetadataKeys { get; set; }
 
         /// <summary>
         /// Default Value: 1000

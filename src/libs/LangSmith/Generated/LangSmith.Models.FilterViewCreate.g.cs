@@ -31,7 +31,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DisplayName { get; set; } = default!;
+        public required string DisplayName { get; set; }
 
         /// <summary>
         /// 

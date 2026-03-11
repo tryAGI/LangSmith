@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<byte[]> Messages { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<byte[]> Messages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template_format")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TemplateFormat { get; set; } = default!;
+        public required string TemplateFormat { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Inputs { get; set; } = default!;
+        public required object Inputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,14 +15,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TagName { get; set; } = default!;
+        public required string TagName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid CommitId { get; set; } = default!;
+        public required global::System.Guid CommitId { get; set; }
 
         /// <summary>
         /// Default Value: false

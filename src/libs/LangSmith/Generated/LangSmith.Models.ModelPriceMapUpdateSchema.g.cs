@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match_pattern")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string MatchPattern { get; set; } = default!;
+        public required string MatchPattern { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<double?, string> PromptCost { get; set; } = default!;
+        public required global::LangSmith.AnyOf<double?, string> PromptCost { get; set; }
 
         /// <summary>
         /// 
@@ -50,7 +50,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<double?, string> CompletionCost { get; set; } = default!;
+        public required global::LangSmith.AnyOf<double?, string> CompletionCost { get; set; }
 
         /// <summary>
         /// 

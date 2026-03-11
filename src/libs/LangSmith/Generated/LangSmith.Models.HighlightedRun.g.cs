@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid RunId { get; set; } = default!;
+        public required global::System.Guid RunId { get; set; }
 
         /// <summary>
         /// 
@@ -32,14 +32,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rank")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Rank { get; set; } = default!;
+        public required int Rank { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("highlight_reason")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string HighlightReason { get; set; } = default!;
+        public required string HighlightReason { get; set; }
 
         /// <summary>
         /// 

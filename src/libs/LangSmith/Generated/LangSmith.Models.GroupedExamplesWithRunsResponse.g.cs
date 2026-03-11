@@ -20,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleGroupWithSessions> Groups { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.ExampleGroupWithSessions> Groups { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

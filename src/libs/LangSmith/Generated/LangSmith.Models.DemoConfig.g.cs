@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int MessageIndex { get; set; } = default!;
+        public required int MessageIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metaprompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Metaprompt { get; set; } = default!;
+        public required object Metaprompt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<object> Examples { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<object> Examples { get; set; }
 
         /// <summary>
         /// 

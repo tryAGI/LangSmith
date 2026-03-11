@@ -20,7 +20,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("default_trace_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TraceTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.TraceTier DefaultTraceTier { get; set; } = default!;
+        public required global::LangSmith.TraceTier DefaultTraceTier { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -33,28 +33,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid OrganizationId { get; set; } = default!;
+        public required global::System.Guid OrganizationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime UpdatedAt { get; set; } = default!;
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("configured_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ConfiguredByJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.ConfiguredBy ConfiguredBy { get; set; } = default!;
+        public required global::LangSmith.ConfiguredBy ConfiguredBy { get; set; }
 
         /// <summary>
         /// 

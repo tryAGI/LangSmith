@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ThreadId { get; set; } = default!;
+        public required string ThreadId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previews")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.Dictionary<string, string> Previews { get; set; } = default!;
+        public required global::System.Collections.Generic.Dictionary<string, string> Previews { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

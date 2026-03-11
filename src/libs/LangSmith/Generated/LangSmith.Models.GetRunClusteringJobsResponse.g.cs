@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clustering_jobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.RunClusteringJobPydantic> ClusteringJobs { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.RunClusteringJobPydantic> ClusteringJobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

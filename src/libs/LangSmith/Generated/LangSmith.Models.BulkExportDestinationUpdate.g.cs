@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credentials")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.BulkExportDestinationS3Credentials Credentials { get; set; } = default!;
+        public required global::LangSmith.BulkExportDestinationS3Credentials Credentials { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

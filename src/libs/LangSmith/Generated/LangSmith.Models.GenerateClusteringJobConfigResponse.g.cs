@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string SummaryPrompt { get; set; } = default!;
+        public required string SummaryPrompt { get; set; }
 
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Config { get; set; } = default!;
+        public required object Config { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AlertsAlertActionTarget Target { get; set; } = default!;
+        public required global::LangSmith.AlertsAlertActionTarget Target { get; set; }
 
         /// <summary>
         /// 

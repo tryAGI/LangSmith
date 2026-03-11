@@ -1848,13 +1848,13 @@ paths:
             default: [ ]
         - name: q
           in: query
-          description: Search query for email
+          description: Search query for email or name
           schema:
             title: Q
             anyOf:
               - type: string
               - type: 'null'
-            description: Search query for email
+            description: Search query for email or name
         - name: sort_by_desc
           in: query
           description: Sort in descending order
@@ -1948,13 +1948,13 @@ paths:
             default: [ ]
         - name: q
           in: query
-          description: Search query for email
+          description: Search query for email or name
           schema:
             title: Q
             anyOf:
               - type: string
               - type: 'null'
-            description: Search query for email
+            description: Search query for email or name
         - name: sort_by_desc
           in: query
           description: Sort in descending order
@@ -10276,13 +10276,13 @@ paths:
             default: [ ]
         - name: q
           in: query
-          description: Search query for email
+          description: Search query for email or name
           schema:
             title: Q
             anyOf:
               - type: string
               - type: 'null'
-            description: Search query for email
+            description: Search query for email or name
         - name: sort_by_desc
           in: query
           description: Sort in descending order
@@ -10376,13 +10376,13 @@ paths:
             default: [ ]
         - name: q
           in: query
-          description: Search query for email
+          description: Search query for email or name
           schema:
             title: Q
             anyOf:
               - type: string
               - type: 'null'
-            description: Search query for email
+            description: Search query for email or name
         - name: sort_by_desc
           in: query
           description: Sort in descending order

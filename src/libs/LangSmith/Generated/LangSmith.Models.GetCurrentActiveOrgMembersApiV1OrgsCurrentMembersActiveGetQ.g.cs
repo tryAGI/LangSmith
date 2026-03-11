@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Search query for email
+    /// Search query for email or name
     /// </summary>
     public sealed partial class GetCurrentActiveOrgMembersApiV1OrgsCurrentMembersActiveGetQ
     {

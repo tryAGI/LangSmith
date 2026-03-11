@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DisplayName { get; set; } = default!;
+        public required string DisplayName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool IsPersonal { get; set; } = default!;
+        public required bool IsPersonal { get; set; }
 
         /// <summary>
         /// 

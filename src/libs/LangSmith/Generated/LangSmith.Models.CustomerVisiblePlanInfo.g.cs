@@ -14,14 +14,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.PaymentPlanTier Tier { get; set; } = default!;
+        public required global::LangSmith.PaymentPlanTier Tier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_on")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime StartedOn { get; set; } = default!;
+        public required global::System.DateTime StartedOn { get; set; }
 
         /// <summary>
         /// 

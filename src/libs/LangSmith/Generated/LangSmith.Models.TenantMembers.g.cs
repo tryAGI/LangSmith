@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid TenantId { get; set; } = default!;
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.MemberIdentity> Members { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.MemberIdentity> Members { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.PendingIdentity> Pending { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.PendingIdentity> Pending { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

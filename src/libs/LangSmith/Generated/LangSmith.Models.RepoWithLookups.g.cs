@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RepoHandle { get; set; } = default!;
+        public required string RepoHandle { get; set; }
 
         /// <summary>
         /// 
@@ -32,42 +32,42 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid TenantId { get; set; } = default!;
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime UpdatedAt { get; set; } = default!;
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_public")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool IsPublic { get; set; } = default!;
+        public required bool IsPublic { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool IsArchived { get; set; } = default!;
+        public required bool IsArchived { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -80,7 +80,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Tags { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Tags { get; set; }
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.RepoWithLookupsRepoType RepoType { get; set; } = default!;
+        public required global::LangSmith.RepoWithLookupsRepoType RepoType { get; set; }
 
         /// <summary>
         /// 
@@ -119,28 +119,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FullName { get; set; } = default!;
+        public required string FullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_likes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumLikes { get; set; } = default!;
+        public required int NumLikes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumDownloads { get; set; } = default!;
+        public required int NumDownloads { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_views")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumViews { get; set; } = default!;
+        public required int NumViews { get; set; }
 
         /// <summary>
         /// 
@@ -159,7 +159,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumCommits { get; set; } = default!;
+        public required int NumCommits { get; set; }
 
         /// <summary>
         /// 

@@ -25,7 +25,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Settings { get; set; } = default!;
+        public required object Settings { get; set; }
 
         /// <summary>
         /// 

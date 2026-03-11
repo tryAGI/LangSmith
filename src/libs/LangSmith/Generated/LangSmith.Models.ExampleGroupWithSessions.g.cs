@@ -32,7 +32,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Filter { get; set; } = default!;
+        public required string Filter { get; set; }
 
         /// <summary>
         /// 
@@ -88,28 +88,28 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("group_key")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?, double?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<string, int?, double?> GroupKey { get; set; } = default!;
+        public required global::LangSmith.AnyOf<string, int?, double?> GroupKey { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sessions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.GroupedRunsSessionStats> Sessions { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.GroupedRunsSessionStats> Sessions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH> Examples { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH> Examples { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ExampleCount { get; set; } = default!;
+        public required int ExampleCount { get; set; }
 
         /// <summary>
         /// 

@@ -49,21 +49,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid TenantId { get; set; } = default!;
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("queue_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnnotationQueueSchemaWithSizeQueueType QueueType { get; set; } = default!;
+        public required global::LangSmith.AnnotationQueueSchemaWithSizeQueueType QueueType { get; set; }
 
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TotalRuns { get; set; } = default!;
+        public required int TotalRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

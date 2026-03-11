@@ -21,7 +21,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_n_hours")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int LastNHours { get; set; } = default!;
+        public required int LastNHours { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("sample")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<double?, int?, object> Sample { get; set; } = default!;
+        public required global::LangSmith.AnyOf<double?, int?, object> Sample { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.SavedRunClusteringJobRequestModel Model { get; set; } = default!;
+        public required global::LangSmith.SavedRunClusteringJobRequestModel Model { get; set; }
 
         /// <summary>
         /// 

@@ -15,14 +15,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("series_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string SeriesId { get; set; } = default!;
+        public required string SeriesId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime Timestamp { get; set; } = default!;
+        public required global::System.DateTime Timestamp { get; set; }
 
         /// <summary>
         /// 
@@ -30,7 +30,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<int?, double?, object, object> Value { get; set; } = default!;
+        public required global::LangSmith.AnyOf<int?, double?, object, object> Value { get; set; }
 
         /// <summary>
         /// 
