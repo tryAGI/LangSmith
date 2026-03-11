@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Config { get; set; }
+        public object Config { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AlertsAlertActionBaseTarget Target { get; set; }
+        public global::LangSmith.AlertsAlertActionBaseTarget Target { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,7 +14,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RuleLogActionOutcomeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.RuleLogActionOutcome Outcome { get; set; }
+        public global::LangSmith.RuleLogActionOutcome Outcome { get; set; } = default!;
 
         /// <summary>
         /// 

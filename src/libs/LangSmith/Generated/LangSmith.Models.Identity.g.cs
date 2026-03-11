@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid OrganizationId { get; set; }
+        public global::System.Guid OrganizationId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,28 +33,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid UserId { get; set; }
+        public global::System.Guid UserId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid LsUserId { get; set; }
+        public global::System.Guid LsUserId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ReadOnly { get; set; }
+        public bool ReadOnly { get; set; } = default!;
 
         /// <summary>
         /// 

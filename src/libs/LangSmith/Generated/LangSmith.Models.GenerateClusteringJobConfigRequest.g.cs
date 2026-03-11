@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_context")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string> UserContext { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string> UserContext { get; set; } = default!;
 
         /// <summary>
         /// Default Value: openai

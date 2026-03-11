@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SortBy { get; set; }
+        public string SortBy { get; set; } = default!;
 
         /// <summary>
         /// Default Value: DESC

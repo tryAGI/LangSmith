@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid DatasetId { get; set; }
+        public global::System.Guid DatasetId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Inputs { get; set; }
+        public object Inputs { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema> Runs { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema> Runs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

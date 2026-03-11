@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optimization_job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid OptimizationJobId { get; set; }
+        public global::System.Guid OptimizationJobId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

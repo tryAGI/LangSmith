@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FeedbackKey { get; set; }
+        public string FeedbackKey { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("http_method")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HttpMethod { get; set; }
+        public string HttpMethod { get; set; } = default!;
 
         /// <summary>
         /// OCSF URL object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFUrl Url { get; set; }
+        public global::LangSmith.OCSFUrl Url { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

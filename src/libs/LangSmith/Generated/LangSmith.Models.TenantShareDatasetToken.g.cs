@@ -20,21 +20,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ShareToken { get; set; }
+        public string ShareToken { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid DatasetId { get; set; }
+        public global::System.Guid DatasetId { get; set; } = default!;
 
         /// <summary>
         /// 

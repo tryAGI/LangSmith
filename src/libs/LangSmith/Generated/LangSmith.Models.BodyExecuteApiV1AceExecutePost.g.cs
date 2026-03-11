@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("args")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Args { get; set; }
+        public global::System.Collections.Generic.IList<object> Args { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Code { get; set; }
+        public string Code { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Language { get; set; }
+        public string Language { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

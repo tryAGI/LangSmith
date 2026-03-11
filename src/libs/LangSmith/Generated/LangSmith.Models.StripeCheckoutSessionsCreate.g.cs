@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("amount_cents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AmountCents { get; set; }
+        public int AmountCents { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SuccessPath { get; set; }
+        public string SuccessPath { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

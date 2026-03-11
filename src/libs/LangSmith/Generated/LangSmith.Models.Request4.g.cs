@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] x_exampleId_ { get; set; }
+        public byte[] x_exampleId_ { get; set; } = default!;
 
         /// <summary>
         /// The Example update info as JSON. Can have fields 'metadata', 'split'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string x_exampleId_name { get; set; }
+        public string x_exampleId_name { get; set; } = default!;
 
         /// <summary>
         /// The updated Example inputs as JSON

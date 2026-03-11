@@ -16,14 +16,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
+        public global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -36,14 +36,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.SavedRunClusteringJobRequest Config { get; set; }
+        public global::LangSmith.SavedRunClusteringJobRequest Config { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prebuilt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Prebuilt { get; set; }
+        public bool Prebuilt { get; set; } = default!;
 
         /// <summary>
         /// 

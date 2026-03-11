@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Path { get; set; }
+        public global::System.Collections.Generic.IList<string> Path { get; set; } = default!;
 
         /// <summary>
         /// Enum for dataset transformation types.<br/>
@@ -22,7 +22,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("transformation_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.DatasetTransformationType TransformationType { get; set; }
+        public global::LangSmith.DatasetTransformationType TransformationType { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

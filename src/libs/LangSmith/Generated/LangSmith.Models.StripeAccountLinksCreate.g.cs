@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SuccessPath { get; set; }
+        public string SuccessPath { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid ProviderId { get; set; }
+        public global::System.Guid ProviderId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid OrganizationId { get; set; }
+        public global::System.Guid OrganizationId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string OrganizationDisplayName { get; set; }
+        public string OrganizationDisplayName { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

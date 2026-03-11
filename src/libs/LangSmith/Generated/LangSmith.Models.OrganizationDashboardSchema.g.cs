@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddable_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EmbeddableUrl { get; set; }
+        public string EmbeddableUrl { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

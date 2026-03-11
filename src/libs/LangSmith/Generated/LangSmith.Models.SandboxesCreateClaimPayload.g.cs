@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TemplateName { get; set; }
+        public string TemplateName { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFUser User { get; set; }
+        public global::LangSmith.OCSFUser User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

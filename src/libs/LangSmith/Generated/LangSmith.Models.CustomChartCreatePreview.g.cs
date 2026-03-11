@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("series")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries> Series { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries> Series { get; set; } = default!;
 
         /// <summary>
         /// 

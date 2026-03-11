@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_deltas")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::LangSmith.FeedbackDelta> FeedbackDeltas { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.FeedbackDelta> FeedbackDeltas { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

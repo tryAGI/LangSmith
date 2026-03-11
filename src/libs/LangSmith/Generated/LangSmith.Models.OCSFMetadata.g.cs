@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uid")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Uid { get; set; }
+        public global::System.Guid Uid { get; set; } = default!;
 
         /// <summary>
         /// OCSF product object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFProduct Product { get; set; }
+        public global::LangSmith.OCSFProduct Product { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

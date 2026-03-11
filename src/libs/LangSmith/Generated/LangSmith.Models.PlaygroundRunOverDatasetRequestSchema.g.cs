@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Manifest { get; set; }
+        public object Manifest { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secrets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string> Secrets { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string> Secrets { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -71,14 +71,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.RunnableConfig Options { get; set; }
+        public global::LangSmith.RunnableConfig Options { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ProjectName { get; set; }
+        public string ProjectName { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -127,7 +127,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid DatasetId { get; set; }
+        public global::System.Guid DatasetId { get; set; } = default!;
 
         /// <summary>
         /// 

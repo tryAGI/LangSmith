@@ -9,7 +9,7 @@ fi
 autosdk generate openapi.yaml \
   --namespace LangSmith \
   --clientClassName LangSmithClient \
-  --targetFramework net8.0 \
+  --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
   --methodNamingConvention Summary \

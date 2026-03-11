@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> SessionIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> SessionIds { get; set; } = default!;
 
         /// <summary>
         /// Default Value: 0
@@ -39,14 +39,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.GroupExampleRunsByFieldJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.GroupExampleRunsByField GroupBy { get; set; }
+        public global::LangSmith.GroupExampleRunsByField GroupBy { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MetadataKey { get; set; }
+        public string MetadataKey { get; set; } = default!;
 
         /// <summary>
         /// Default Value: 5

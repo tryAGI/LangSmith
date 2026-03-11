@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid CommitId { get; set; }
+        public global::System.Guid CommitId { get; set; } = default!;
 
         /// <summary>
         /// Default Value: false

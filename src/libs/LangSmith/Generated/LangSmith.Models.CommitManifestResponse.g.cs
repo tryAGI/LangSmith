@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_hash")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CommitHash { get; set; }
+        public string CommitHash { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Manifest { get; set; }
+        public object Manifest { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid RuleId { get; set; }
+        public global::System.Guid RuleId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid RunId { get; set; }
+        public global::System.Guid RunId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -45,14 +45,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime StartTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime EndTime { get; set; }
+        public global::System.DateTime EndTime { get; set; } = default!;
 
         /// <summary>
         /// 

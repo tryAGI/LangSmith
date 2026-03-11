@@ -16,7 +16,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> Content { get; set; }
+        public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>> Content { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Role { get; set; }
+        public string Role { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

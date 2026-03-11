@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reject_set")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool InRejectSet { get; set; }
+        public bool InRejectSet { get; set; } = default!;
 
         /// <summary>
         /// 

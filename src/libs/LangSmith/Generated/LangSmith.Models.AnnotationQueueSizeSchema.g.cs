@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Size { get; set; }
+        public int Size { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

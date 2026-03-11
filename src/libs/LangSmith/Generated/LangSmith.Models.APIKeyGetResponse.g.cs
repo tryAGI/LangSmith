@@ -19,21 +19,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("short_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ShortKey { get; set; }
+        public string ShortKey { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public string Description { get; set; } = default!;
 
         /// <summary>
         /// Default Value: false

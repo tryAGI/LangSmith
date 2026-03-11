@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AccessToken { get; set; }
+        public string AccessToken { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

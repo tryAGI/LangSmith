@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prefix { get; set; }
+        public string Prefix { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime StartTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime EndTime { get; set; }
+        public global::System.DateTime EndTime { get; set; } = default!;
 
         /// <summary>
         /// 

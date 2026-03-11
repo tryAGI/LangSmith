@@ -25,7 +25,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FeedbackKey { get; set; }
+        public string FeedbackKey { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,14 +33,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("aggregation_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.FeedbackFormulaCreateAggregationType AggregationType { get; set; }
+        public global::LangSmith.FeedbackFormulaCreateAggregationType AggregationType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("formula_parts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.FeedbackFormulaWeightedVariable> FormulaParts { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackFormulaWeightedVariable> FormulaParts { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

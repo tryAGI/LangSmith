@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime AsOf { get; set; }
+        public global::System.DateTime AsOf { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,7 +14,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.RunStatsGroupBySeriesResponseAttribute Attribute { get; set; }
+        public global::LangSmith.RunStatsGroupBySeriesResponseAttribute Attribute { get; set; } = default!;
 
         /// <summary>
         /// 

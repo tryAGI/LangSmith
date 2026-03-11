@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.Comment> Comments { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.Comment> Comments { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Total { get; set; }
+        public int Total { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

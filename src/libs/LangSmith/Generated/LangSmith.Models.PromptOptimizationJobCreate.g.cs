@@ -16,7 +16,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("algorithm")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.EPromptOptimizationAlgorithm Algorithm { get; set; }
+        public global::LangSmith.EPromptOptimizationAlgorithm Algorithm { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -24,7 +24,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> Config { get; set; }
+        public global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> Config { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,42 +13,42 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PromptId { get; set; }
+        public string PromptId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PromptName { get; set; }
+        public string PromptName { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Manifest { get; set; }
+        public object Manifest { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_hash")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CommitHash { get; set; }
+        public string CommitHash { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedAt { get; set; }
+        public string CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedBy { get; set; }
+        public string CreatedBy { get; set; } = default!;
 
         /// <summary>
         /// Valid trigger types for prompt webhooks.
@@ -56,7 +56,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.EPromptWebhookTrigger Event { get; set; }
+        public global::LangSmith.EPromptWebhookTrigger Event { get; set; } = default!;
 
         /// <summary>
         /// 

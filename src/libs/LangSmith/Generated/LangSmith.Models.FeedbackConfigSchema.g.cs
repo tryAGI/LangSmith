@@ -13,28 +13,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FeedbackKey { get; set; }
+        public string FeedbackKey { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.FeedbackConfig FeedbackConfig { get; set; }
+        public global::LangSmith.FeedbackConfig FeedbackConfig { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid TenantId { get; set; }
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime ModifiedAt { get; set; }
+        public global::System.DateTime ModifiedAt { get; set; } = default!;
 
         /// <summary>
         /// 

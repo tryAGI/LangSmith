@@ -23,14 +23,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FilePath { get; set; }
+        public string FilePath { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rows_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RowsCount { get; set; }
+        public int RowsCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

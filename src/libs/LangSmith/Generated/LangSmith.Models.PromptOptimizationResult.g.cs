@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime Timestamp { get; set; }
+        public global::System.DateTime Timestamp { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double X { get; set; }
+        public double X { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Y { get; set; }
+        public double Y { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

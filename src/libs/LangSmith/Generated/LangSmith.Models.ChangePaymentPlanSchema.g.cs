@@ -14,7 +14,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.ChangePaymentPlanReq Tier { get; set; }
+        public global::LangSmith.ChangePaymentPlanReq Tier { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

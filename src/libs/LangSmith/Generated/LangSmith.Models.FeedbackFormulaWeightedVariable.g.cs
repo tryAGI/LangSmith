@@ -20,14 +20,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Weight { get; set; }
+        public double Weight { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Key { get; set; }
+        public string Key { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

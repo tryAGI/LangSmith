@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queue_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid QueueId { get; set; }
+        public global::System.Guid QueueId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> SessionIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> SessionIds { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid WorkspaceId { get; set; }
+        public global::System.Guid WorkspaceId { get; set; } = default!;
 
         /// <summary>
         /// 

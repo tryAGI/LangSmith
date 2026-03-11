@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumExamples { get; set; }
+        public int NumExamples { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

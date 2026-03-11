@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rows_written")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RowsWritten { get; set; }
+        public int RowsWritten { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exported_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ExportedFiles { get; set; }
+        public global::System.Collections.Generic.IList<string> ExportedFiles { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("export_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ExportPath { get; set; }
+        public string ExportPath { get; set; } = default!;
 
         /// <summary>
         /// 

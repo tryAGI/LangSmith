@@ -13,35 +13,35 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid OrganizationId { get; set; }
+        public global::System.Guid OrganizationId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid ProviderId { get; set; }
+        public global::System.Guid ProviderId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_role_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid DefaultWorkspaceRoleId { get; set; }
+        public global::System.Guid DefaultWorkspaceRoleId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> DefaultWorkspaceIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> DefaultWorkspaceIds { get; set; } = default!;
 
         /// <summary>
         /// 

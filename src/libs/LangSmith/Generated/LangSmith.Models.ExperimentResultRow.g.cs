@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Inputs { get; set; }
+        public object Inputs { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -44,14 +44,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime StartTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime EndTime { get; set; }
+        public global::System.DateTime EndTime { get; set; } = default!;
 
         /// <summary>
         /// 

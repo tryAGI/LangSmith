@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("valid")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Valid { get; set; }
+        public bool Valid { get; set; } = default!;
 
         /// <summary>
         /// 

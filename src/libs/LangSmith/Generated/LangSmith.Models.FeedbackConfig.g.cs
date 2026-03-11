@@ -14,7 +14,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FeedbackTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.FeedbackType Type { get; set; }
+        public global::LangSmith.FeedbackType Type { get; set; } = default!;
 
         /// <summary>
         /// 

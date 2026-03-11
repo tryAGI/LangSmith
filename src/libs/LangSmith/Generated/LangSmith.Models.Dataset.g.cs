@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -62,14 +62,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid TenantId { get; set; }
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -82,14 +82,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SessionCount { get; set; }
+        public int SessionCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime ModifiedAt { get; set; }
+        public global::System.DateTime ModifiedAt { get; set; } = default!;
 
         /// <summary>
         /// 

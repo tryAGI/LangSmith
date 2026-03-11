@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples_modified")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> ExamplesModified { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> ExamplesModified { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples_added")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> ExamplesAdded { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> ExamplesAdded { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples_removed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> ExamplesRemoved { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> ExamplesRemoved { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

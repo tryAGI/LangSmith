@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_secrets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EncryptedSecrets { get; set; }
+        public string EncryptedSecrets { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

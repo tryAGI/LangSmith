@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid RunId { get; set; }
+        public global::System.Guid RunId { get; set; } = default!;
 
         /// <summary>
         /// 

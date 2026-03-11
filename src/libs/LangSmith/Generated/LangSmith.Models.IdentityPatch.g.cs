@@ -20,7 +20,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid RoleId { get; set; }
+        public global::System.Guid RoleId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

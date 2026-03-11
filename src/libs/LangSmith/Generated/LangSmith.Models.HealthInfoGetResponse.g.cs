@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clickhouse_disk_free_pct")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ClickhouseDiskFreePct { get; set; }
+        public double ClickhouseDiskFreePct { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

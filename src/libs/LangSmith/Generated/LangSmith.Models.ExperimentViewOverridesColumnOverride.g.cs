@@ -25,7 +25,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Column { get; set; }
+        public string Column { get; set; } = default!;
 
         /// <summary>
         /// 

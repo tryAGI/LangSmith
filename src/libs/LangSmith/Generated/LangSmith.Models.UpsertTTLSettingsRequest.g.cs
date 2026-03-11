@@ -20,7 +20,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("default_trace_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TraceTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.TraceTier DefaultTraceTier { get; set; }
+        public global::LangSmith.TraceTier DefaultTraceTier { get; set; } = default!;
 
         /// <summary>
         /// Default Value: false

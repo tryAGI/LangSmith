@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PromptWebhookBase Webhook { get; set; }
+        public global::LangSmith.PromptWebhookBase Webhook { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.PromptWebhookPayload Payload { get; set; }
+        public global::LangSmith.PromptWebhookPayload Payload { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,49 +13,49 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid TenantId { get; set; }
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DatasetCount { get; set; }
+        public int DatasetCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracer_session_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TracerSessionCount { get; set; }
+        public int TracerSessionCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RepoCount { get; set; }
+        public int RepoCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation_queue_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AnnotationQueueCount { get; set; }
+        public int AnnotationQueueCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployment_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DeploymentCount { get; set; }
+        public int DeploymentCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dashboards_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DashboardsCount { get; set; }
+        public int DashboardsCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

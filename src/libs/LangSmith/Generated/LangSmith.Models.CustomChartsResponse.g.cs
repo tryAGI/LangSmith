@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sections")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSection> Sections { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSection> Sections { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

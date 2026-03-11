@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DisplayName { get; set; }
+        public string DisplayName { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampling_rate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double SamplingRate { get; set; }
+        public double SamplingRate { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -25,14 +25,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid RunId { get; set; }
+        public global::System.Guid RunId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FeedbackKey { get; set; }
+        public string FeedbackKey { get; set; } = default!;
 
         /// <summary>
         /// 

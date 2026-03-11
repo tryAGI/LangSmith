@@ -14,14 +14,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.UsageLimitTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.UsageLimitType LimitType { get; set; }
+        public global::LangSmith.UsageLimitType LimitType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int LimitValue { get; set; }
+        public int LimitValue { get; set; } = default!;
 
         /// <summary>
         /// 

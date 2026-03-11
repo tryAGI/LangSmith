@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -29,7 +29,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("metric")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CustomChartMetricJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.CustomChartMetric Metric { get; set; }
+        public global::LangSmith.CustomChartMetric Metric { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
+        public global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; } = default!;
 
         /// <summary>
         /// 

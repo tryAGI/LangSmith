@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ClientSecret { get; set; }
+        public string ClientSecret { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

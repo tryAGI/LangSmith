@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid SessionId { get; set; }
+        public global::System.Guid SessionId { get; set; } = default!;
 
         /// <summary>
         /// 

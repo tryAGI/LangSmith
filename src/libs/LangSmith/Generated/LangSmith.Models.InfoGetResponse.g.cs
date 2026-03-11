@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Version { get; set; }
+        public string Version { get; set; } = default!;
 
         /// <summary>
         /// 

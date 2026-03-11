@@ -13,28 +13,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] x_exampleId_ { get; set; }
+        public byte[] x_exampleId_ { get; set; } = default!;
 
         /// <summary>
         /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string x_exampleId_name { get; set; }
+        public string x_exampleId_name { get; set; } = default!;
 
         /// <summary>
         /// The Example inputs as JSON
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] x_exampleId_Inputs { get; set; }
+        public byte[] x_exampleId_Inputs { get; set; } = default!;
 
         /// <summary>
         /// The Example inputs as JSON
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("{example_id}.inputsname")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string x_exampleId_Inputsname { get; set; }
+        public string x_exampleId_Inputsname { get; set; } = default!;
 
         /// <summary>
         /// THe Example outputs as JSON

@@ -27,14 +27,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OrganizationConfig Config { get; set; }
+        public global::LangSmith.OrganizationConfig Config { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsPersonal { get; set; }
+        public bool IsPersonal { get; set; } = default!;
 
         /// <summary>
         /// 

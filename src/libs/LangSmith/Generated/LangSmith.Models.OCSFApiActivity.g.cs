@@ -17,7 +17,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class_uid")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ClassUid { get; set; }
+        public int ClassUid { get; set; } = default!;
 
         /// <summary>
         /// OCSF class names.
@@ -31,7 +31,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category_uid")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CategoryUid { get; set; }
+        public int CategoryUid { get; set; } = default!;
 
         /// <summary>
         /// OCSF category names.
@@ -45,98 +45,98 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SeverityId { get; set; }
+        public int SeverityId { get; set; } = default!;
 
         /// <summary>
         /// OCSF type UIDs for API Activity (class_uid * 100 + activity_id).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type_uid")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TypeUid { get; set; }
+        public int TypeUid { get; set; } = default!;
 
         /// <summary>
         /// Activity types for API Activity class.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ActivityId { get; set; }
+        public int ActivityId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ActivityName { get; set; }
+        public string ActivityName { get; set; } = default!;
 
         /// <summary>
         /// Status values for OCSF events.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StatusId { get; set; }
+        public int StatusId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public string Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Time { get; set; }
+        public int Time { get; set; } = default!;
 
         /// <summary>
         /// OCSF event metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFMetadata Metadata { get; set; }
+        public global::LangSmith.OCSFMetadata Metadata { get; set; } = default!;
 
         /// <summary>
         /// OCSF API details object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFApi Api { get; set; }
+        public global::LangSmith.OCSFApi Api { get; set; } = default!;
 
         /// <summary>
         /// OCSF HTTP request object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("http_request")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFHttpRequest HttpRequest { get; set; }
+        public global::LangSmith.OCSFHttpRequest HttpRequest { get; set; } = default!;
 
         /// <summary>
         /// OCSF HTTP response object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("http_response")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFHttpResponse HttpResponse { get; set; }
+        public global::LangSmith.OCSFHttpResponse HttpResponse { get; set; } = default!;
 
         /// <summary>
         /// OCSF actor object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFActor Actor { get; set; }
+        public global::LangSmith.OCSFActor Actor { get; set; } = default!;
 
         /// <summary>
         /// OCSF network endpoint object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("src_endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFEndpoint SrcEndpoint { get; set; }
+        public global::LangSmith.OCSFEndpoint SrcEndpoint { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.OCSFResourceDetails> Resources { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.OCSFResourceDetails> Resources { get; set; } = default!;
 
         /// <summary>
         /// OCSF unmapped attribute for source-specific data.<br/>
@@ -144,7 +144,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unmapped")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.OCSFUnmapped Unmapped { get; set; }
+        public global::LangSmith.OCSFUnmapped Unmapped { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

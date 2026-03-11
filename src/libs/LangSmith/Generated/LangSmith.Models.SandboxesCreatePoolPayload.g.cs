@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("replicas")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Replicas { get; set; }
+        public int Replicas { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TemplateName { get; set; }
+        public string TemplateName { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -13,28 +13,28 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_chunk_start_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptChunkStartIndex { get; set; }
+        public int PromptChunkStartIndex { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_chunk_end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptChunkEndIndex { get; set; }
+        public int PromptChunkEndIndex { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_chunk")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PromptChunk { get; set; }
+        public string PromptChunk { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("highlight_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HighlightText { get; set; }
+        public string HighlightText { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema> Logs { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema> Logs { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

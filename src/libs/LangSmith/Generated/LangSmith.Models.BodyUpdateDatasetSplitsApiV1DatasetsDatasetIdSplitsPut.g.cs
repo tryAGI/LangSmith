@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SplitName { get; set; }
+        public string SplitName { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> Examples { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid> Examples { get; set; } = default!;
 
         /// <summary>
         /// Default Value: false

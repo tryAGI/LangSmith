@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Title { get; set; }
+        public string Title { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
+        public global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -48,7 +48,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("charts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartResponse> Charts { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartResponse> Charts { get; set; } = default!;
 
         /// <summary>
         /// 

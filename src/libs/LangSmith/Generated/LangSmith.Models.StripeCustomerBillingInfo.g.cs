@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Stripe customer address.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("address")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.StripeCustomerAddress Address { get; set; }
+        public global::LangSmith.StripeCustomerAddress Address { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

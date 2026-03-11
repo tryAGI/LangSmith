@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billing_info")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.StripeCustomerBillingInfo BillingInfo { get; set; }
+        public global::LangSmith.StripeCustomerBillingInfo BillingInfo { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("setup_intent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SetupIntent { get; set; }
+        public string SetupIntent { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

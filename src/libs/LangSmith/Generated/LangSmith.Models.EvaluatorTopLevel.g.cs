@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("structured")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.EvaluatorStructuredOutput Structured { get; set; }
+        public global::LangSmith.EvaluatorStructuredOutput Structured { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
