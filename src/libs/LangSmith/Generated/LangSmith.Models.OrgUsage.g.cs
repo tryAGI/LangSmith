@@ -13,35 +13,35 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CustomerId { get; set; } = default!;
+        public required string CustomerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable_metric_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string BillableMetricId { get; set; } = default!;
+        public required string BillableMetricId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable_metric_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string BillableMetricName { get; set; } = default!;
+        public required string BillableMetricName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string StartTimestamp { get; set; } = default!;
+        public required string StartTimestamp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EndTimestamp { get; set; } = default!;
+        public required string EndTimestamp { get; set; }
 
         /// <summary>
         /// 

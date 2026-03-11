@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -32,14 +32,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime ModifiedAt { get; set; } = default!;
+        public required global::System.DateTime ModifiedAt { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiments_info")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.SimpleExperimentInfo> ExperimentsInfo { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.SimpleExperimentInfo> ExperimentsInfo { get; set; }
 
         /// <summary>
         /// 

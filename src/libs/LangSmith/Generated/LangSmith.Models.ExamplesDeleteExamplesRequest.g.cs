@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> ExampleIds { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> ExampleIds { get; set; }
 
         /// <summary>
         /// HardDelete indicates whether to perform a hard delete.<br/>
@@ -21,7 +21,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hard_delete")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HardDelete { get; set; } = default!;
+        public required bool HardDelete { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

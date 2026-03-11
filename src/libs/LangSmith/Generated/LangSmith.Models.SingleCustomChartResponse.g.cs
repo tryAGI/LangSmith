@@ -15,7 +15,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartsDataPoint> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.CustomChartsDataPoint> Data { get; set; }
 
         /// <summary>
         /// 
@@ -23,14 +23,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; } = default!;
+        public required global::LangSmith.AnyOf<global::System.Guid?, string> Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Title { get; set; } = default!;
+        public required string Title { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// Enum for custom chart types.
@@ -57,14 +57,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CustomChartTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.CustomChartType ChartType { get; set; } = default!;
+        public required global::LangSmith.CustomChartType ChartType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("series")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries> Series { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeries> Series { get; set; }
 
         /// <summary>
         /// 

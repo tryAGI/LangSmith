@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid DatasetId { get; set; } = default!;
+        public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid ShareToken { get; set; } = default!;
+        public required global::System.Guid ShareToken { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

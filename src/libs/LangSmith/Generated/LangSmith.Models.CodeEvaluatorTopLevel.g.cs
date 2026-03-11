@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Code { get; set; } = default!;
+        public required string Code { get; set; }
 
         /// <summary>
         /// Default Value: python

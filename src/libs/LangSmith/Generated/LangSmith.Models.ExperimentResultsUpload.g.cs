@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ExperimentName { get; set; } = default!;
+        public required string ExperimentName { get; set; }
 
         /// <summary>
         /// 
@@ -50,21 +50,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow> Results { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow> Results { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime ExperimentStartTime { get; set; } = default!;
+        public required global::System.DateTime ExperimentStartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime ExperimentEndTime { get; set; } = default!;
+        public required global::System.DateTime ExperimentEndTime { get; set; }
 
         /// <summary>
         /// 

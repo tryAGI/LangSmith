@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Title { get; set; } = default!;
+        public required string Title { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// Enum for custom chart types.
@@ -41,14 +41,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CustomChartTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.CustomChartType ChartType { get; set; } = default!;
+        public required global::LangSmith.CustomChartType ChartType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("section_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid SectionId { get; set; } = default!;
+        public required global::System.Guid SectionId { get; set; }
 
         /// <summary>
         /// 

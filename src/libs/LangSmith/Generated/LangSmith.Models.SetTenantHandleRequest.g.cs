@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TenantHandle { get; set; } = default!;
+        public required string TenantHandle { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

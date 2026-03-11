@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.Dataset Dataset { get; set; } = default!;
+        public required global::LangSmith.Dataset Dataset { get; set; }
 
         /// <summary>
         /// TracerSession schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.TracerSession Experiment { get; set; } = default!;
+        public required global::LangSmith.TracerSession Experiment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

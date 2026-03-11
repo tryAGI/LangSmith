@@ -17,7 +17,7 @@ namespace LangSmith
         /// Default Value: []
         /// </param>
         /// <param name="q">
-        /// Search query for email
+        /// Search query for email or name
         /// </param>
         /// <param name="sortByDesc">
         /// Sort in descending order<br/>

@@ -16,14 +16,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<global::System.DateTime?, string> AsOf { get; set; } = default!;
+        public required global::LangSmith.AnyOf<global::System.DateTime?, string> AsOf { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Tag { get; set; } = default!;
+        public required string Tag { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

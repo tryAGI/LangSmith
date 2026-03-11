@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.RepoWithLookups Repo { get; set; } = default!;
+        public required global::LangSmith.RepoWithLookups Repo { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

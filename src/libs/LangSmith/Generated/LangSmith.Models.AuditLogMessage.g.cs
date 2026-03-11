@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string OperationName { get; set; } = default!;
+        public required string OperationName { get; set; }
 
         /// <summary>
         /// 
@@ -39,21 +39,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime RequestTime { get; set; } = default!;
+        public required global::System.DateTime RequestTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_method")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RequestMethod { get; set; } = default!;
+        public required string RequestMethod { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RequestPath { get; set; } = default!;
+        public required string RequestPath { get; set; }
 
         /// <summary>
         /// 

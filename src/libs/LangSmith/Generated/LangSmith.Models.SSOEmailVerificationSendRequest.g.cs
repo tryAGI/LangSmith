@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Email { get; set; } = default!;
+        public required string Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("saml_provider_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid SamlProviderId { get; set; } = default!;
+        public required global::System.Guid SamlProviderId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

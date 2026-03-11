@@ -20,14 +20,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DisplayName { get; set; } = default!;
+        public required string DisplayName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.BulkExportDestinationS3Config Config { get; set; } = default!;
+        public required global::LangSmith.BulkExportDestinationS3Config Config { get; set; }
 
         /// <summary>
         /// 

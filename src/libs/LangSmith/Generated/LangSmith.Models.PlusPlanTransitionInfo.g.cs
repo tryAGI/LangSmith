@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transition_date")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime TransitionDate { get; set; } = default!;
+        public required global::System.DateTime TransitionDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan_tier_before")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string PlanTierBefore { get; set; } = default!;
+        public required string PlanTierBefore { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transitioned")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Transitioned { get; set; } = default!;
+        public required bool Transitioned { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

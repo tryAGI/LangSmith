@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid RuleId { get; set; } = default!;
+        public required global::System.Guid RuleId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

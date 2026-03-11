@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Query { get; set; } = default!;
+        public required string Query { get; set; }
 
         /// <summary>
         /// 

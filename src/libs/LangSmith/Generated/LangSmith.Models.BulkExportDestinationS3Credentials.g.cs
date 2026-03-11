@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string AccessKeyId { get; set; } = default!;
+        public required string AccessKeyId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_access_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string SecretAccessKey { get; set; } = default!;
+        public required string SecretAccessKey { get; set; }
 
         /// <summary>
         /// 

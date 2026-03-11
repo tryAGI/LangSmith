@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("like")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Like { get; set; } = default!;
+        public required bool Like { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

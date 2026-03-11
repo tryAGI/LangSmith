@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::System.Guid> ExperimentIds { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::System.Guid> ExperimentIds { get; set; }
 
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.GranularUsageDimensions Dimensions { get; set; } = default!;
+        public required global::LangSmith.GranularUsageDimensions Dimensions { get; set; }
 
         /// <summary>
         /// Default Value: 0

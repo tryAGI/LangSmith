@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vendor_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string VendorName { get; set; } = default!;
+        public required string VendorName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

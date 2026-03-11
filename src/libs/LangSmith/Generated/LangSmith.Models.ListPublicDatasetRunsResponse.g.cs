@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema> Runs { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema> Runs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Cursors { get; set; } = default!;
+        public required object Cursors { get; set; }
 
         /// <summary>
         /// 

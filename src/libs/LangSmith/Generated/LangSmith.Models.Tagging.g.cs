@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid TagValueId { get; set; } = default!;
+        public required global::System.Guid TagValueId { get; set; }
 
         /// <summary>
         /// 
@@ -21,28 +21,28 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ResourceTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.ResourceType ResourceType { get; set; } = default!;
+        public required global::LangSmith.ResourceType ResourceType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid ResourceId { get; set; } = default!;
+        public required global::System.Guid ResourceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

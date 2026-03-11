@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<object> Runs { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<object> Runs { get; set; }
 
         /// <summary>
         /// 

@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ProjectName { get; set; } = default!;
+        public required string ProjectName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid DatasetId { get; set; } = default!;
+        public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
         /// 

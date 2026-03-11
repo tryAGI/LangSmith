@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Url { get; set; } = default!;
+        public required string Url { get; set; }
 
         /// <summary>
         /// 

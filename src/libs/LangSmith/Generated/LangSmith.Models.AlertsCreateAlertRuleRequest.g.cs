@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.AlertsAlertActionBase> Actions { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.AlertsAlertActionBase> Actions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AlertsAlertRuleBase Rule { get; set; } = default!;
+        public required global::LangSmith.AlertsAlertRuleBase Rule { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

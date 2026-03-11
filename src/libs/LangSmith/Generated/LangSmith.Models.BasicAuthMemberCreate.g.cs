@@ -25,7 +25,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Email { get; set; } = default!;
+        public required string Email { get; set; }
 
         /// <summary>
         /// 

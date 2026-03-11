@@ -14,14 +14,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("log_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.EPromptOptimizationJobLogType LogType { get; set; } = default!;
+        public required global::LangSmith.EPromptOptimizationJobLogType LogType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; }
 
         /// <summary>
         /// 
@@ -34,21 +34,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid JobId { get; set; } = default!;
+        public required global::System.Guid JobId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

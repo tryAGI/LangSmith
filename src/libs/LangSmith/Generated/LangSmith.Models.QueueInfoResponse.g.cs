@@ -13,21 +13,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queued")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Queued { get; set; } = default!;
+        public required int Queued { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Active { get; set; } = default!;
+        public required int Active { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Scheduled { get; set; } = default!;
+        public required int Scheduled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,14 +13,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.GranularUsageStride Stride { get; set; } = default!;
+        public required global::LangSmith.GranularUsageStride Stride { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.GranularUsageRecord> Usage { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.GranularUsageRecord> Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

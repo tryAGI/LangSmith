@@ -14,7 +14,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_audit_log")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AuditLogMessage OriginalAuditLog { get; set; } = default!;
+        public required global::LangSmith.AuditLogMessage OriginalAuditLog { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

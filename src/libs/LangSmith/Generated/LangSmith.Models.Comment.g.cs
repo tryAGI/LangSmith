@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment_on")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid CommentOn { get; set; } = default!;
+        public required global::System.Guid CommentOn { get; set; }
 
         /// <summary>
         /// 
@@ -39,21 +39,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Content { get; set; } = default!;
+        public required string Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime UpdatedAt { get; set; } = default!;
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -66,14 +66,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_sub_comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumSubComments { get; set; } = default!;
+        public required int NumSubComments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_likes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumLikes { get; set; } = default!;
+        public required int NumLikes { get; set; }
 
         /// <summary>
         /// 

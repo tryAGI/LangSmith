@@ -15,14 +15,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid RepoId { get; set; } = default!;
+        public required global::System.Guid RepoId { get; set; }
 
         /// <summary>
         /// 
@@ -30,14 +30,14 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.EPromptOptimizationJobStatus Status { get; set; } = default!;
+        public required global::LangSmith.EPromptOptimizationJobStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid TenantId { get; set; } = default!;
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("algorithm")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.EPromptOptimizationAlgorithm Algorithm { get; set; } = default!;
+        public required global::LangSmith.EPromptOptimizationAlgorithm Algorithm { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> Config { get; set; } = default!;
+        public required global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> Config { get; set; }
 
         /// <summary>
         /// 
@@ -66,21 +66,21 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime UpdatedAt { get; set; } = default!;
+        public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::LangSmith.PromptOptimizationJobLog> Logs { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::LangSmith.PromptOptimizationJobLog> Logs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

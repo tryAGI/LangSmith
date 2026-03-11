@@ -17,7 +17,7 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AuditLogOperationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::LangSmith.AuditLogOperation Operation { get; set; } = default!;
+        public required global::LangSmith.AuditLogOperation Operation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
