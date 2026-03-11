@@ -3,8 +3,6 @@ info:
   title: LangSmith
   description: "The LangSmith API is used to programmatically create and manage LangSmith resources.\n\n## Host\nhttps://api.smith.langchain.com\n\n## Authentication\nTo authenticate with the LangSmith API, set the `X-Api-Key` header\nto a valid [LangSmith API key](https://docs.langchain.com/langsmith/create-account-api-key#create-an-api-key).\n\n"
   version: 0.1.0
-servers:
-  - url: https://api.smith.langchain.com
 paths:
   /api/v1/audit-logs:
     get:
@@ -787,7 +785,7 @@ paths:
     get:
       tags:
         - tracer-sessions
-      summary: '[Beta] Get Insights Jobs'
+      summary: Beta Get Insights Jobs
       description: Get all clusters for a session.
       operationId: _Beta__Get_Insights_Jobs_api_v1_sessions__session_id__insights_get
       parameters:
@@ -848,7 +846,7 @@ paths:
     post:
       tags:
         - tracer-sessions
-      summary: '[Beta] Create Insights Job'
+      summary: Beta Create Insights Job
       description: Create an insights job.
       operationId: _Beta__Create_Insights_Job_api_v1_sessions__session_id__insights_post
       parameters:
@@ -886,7 +884,7 @@ paths:
     get:
       tags:
         - tracer-sessions
-      summary: '[Beta] Get Insights Job Configs'
+      summary: Beta Get Insights Job Configs
       description: Get all insights job configs for a session.
       operationId: _Beta__Get_Insights_Job_Configs_api_v1_sessions__session_id__insights_configs_get
       parameters:
@@ -923,7 +921,7 @@ paths:
     post:
       tags:
         - tracer-sessions
-      summary: '[Beta] Create Insights Job Config'
+      summary: Beta Create Insights Job Config
       description: Save an insights job config.
       operationId: _Beta__Create_Insights_Job_Config_api_v1_sessions__session_id__insights_configs_post
       parameters:
@@ -961,7 +959,7 @@ paths:
     post:
       tags:
         - tracer-sessions
-      summary: '[Beta] Auto-Generate Insights Job Config'
+      summary: Beta Auto-Generate Insights Job Config
       description: Auto-generate an insights job config.
       operationId: _Beta__Auto_Generate_Insights_Job_Config_api_v1_sessions__session_id__insights_configs_generate_post
       parameters:
@@ -999,7 +997,7 @@ paths:
     patch:
       tags:
         - tracer-sessions
-      summary: '[Beta] Update Insights Job Config'
+      summary: Beta Update Insights Job Config
       description: Update an insights job config.
       operationId: _Beta__Update_Insights_Job_Config_api_v1_sessions__session_id__insights_configs__config_id__patch
       parameters:
@@ -1043,7 +1041,7 @@ paths:
     delete:
       tags:
         - tracer-sessions
-      summary: '[Beta] Delete Insights Job Config'
+      summary: Beta Delete Insights Job Config
       description: Delete an insights job config.
       operationId: _Beta__Delete_Insights_Job_Config_api_v1_sessions__session_id__insights_configs__config_id__delete
       parameters:
@@ -1082,7 +1080,7 @@ paths:
     get:
       tags:
         - tracer-sessions
-      summary: '[Beta] Get Insights Job'
+      summary: Beta Get Insights Job
       description: Get a specific cluster job for a session.
       operationId: _Beta__Get_Insights_Job_api_v1_sessions__session_id__insights__job_id__get
       parameters:
@@ -1120,7 +1118,7 @@ paths:
     patch:
       tags:
         - tracer-sessions
-      summary: '[Beta] Update Insights Job'
+      summary: Beta Update Insights Job
       description: Update a session cluster job.
       operationId: _Beta__Update_Insights_Job_api_v1_sessions__session_id__insights__job_id__patch
       parameters:
@@ -1164,7 +1162,7 @@ paths:
     delete:
       tags:
         - tracer-sessions
-      summary: '[Beta] Delete Insights Job'
+      summary: Beta Delete Insights Job
       description: Delete a session cluster job.
       operationId: _Beta__Delete_Insights_Job_api_v1_sessions__session_id__insights__job_id__delete
       parameters:
@@ -1203,7 +1201,7 @@ paths:
     get:
       tags:
         - tracer-sessions
-      summary: '[Beta] Get Run Cluster From Insights Job'
+      summary: Beta Get Run Cluster From Insights Job
       description: Get a specific cluster for a session.
       operationId: _Beta__Get_Run_Cluster_from_Insights_Job_api_v1_sessions__session_id__insights__job_id__clusters__cluster_id__get
       parameters:
@@ -1249,7 +1247,7 @@ paths:
     get:
       tags:
         - tracer-sessions
-      summary: '[Beta] Get Runs From Insights Job'
+      summary: Beta Get Runs From Insights Job
       description: 'Get all runs for a cluster job, optionally filtered by cluster.'
       operationId: _Beta__Get_Runs_from_Insights_Job_api_v1_sessions__session_id__insights__job_id__runs_get
       parameters:
@@ -16986,7 +16984,7 @@ paths:
   /workspaces/current/ttl-settings:
     get:
       tags:
-        - TTL Settings
+        - Workspace TTL Settings
       summary: Get workspace TTL settings
       description: Get the longlived trace TTL settings for a workspace
       responses:
@@ -17026,7 +17024,7 @@ paths:
         - BearerAuth: [ ]
     put:
       tags:
-        - TTL Settings
+        - Workspace TTL Settings
       summary: Update workspace TTL settings
       description: Update the longlived trace TTL for a workspace.
       requestBody:
@@ -34615,5 +34613,3 @@ components:
       type: apiKey
       name: X-Tenant-Id
       in: header
-security:
-  - ApiKey: [ ]

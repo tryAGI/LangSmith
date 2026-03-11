@@ -9,6 +9,8 @@ yamlOrJson = yamlOrJson.Replace("\"API Key\"", "\"ApiKey\"");
 yamlOrJson = yamlOrJson.Replace("\"Tenant ID\"", "\"TenantId\"");
 yamlOrJson = yamlOrJson.Replace("\"Bearer Auth\"", "\"BearerAuth\"");
 yamlOrJson = yamlOrJson.Replace("\"Organization ID\"", "\"OrganizationId\"");
+yamlOrJson = yamlOrJson.Replace("[Beta]", "Beta");
+yamlOrJson = yamlOrJson.Replace("\"TTL Settings\"", "\"Workspace TTL Settings\"");
 
 var openApiDocument = yamlOrJson.GetOpenApiDocument(Settings.Default);
 
@@ -86,20 +88,6 @@ foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{rep
     operation.Parameters.Add(repoParameter);
     operation.Parameters.Add(jobIdParameter);
 }
-
-openApiDocument.Servers?.Clear();
-openApiDocument.Servers?.Add(new OpenApiServer { Url = "https://api.smith.langchain.com" });
-
-openApiDocument.Security =
-[
-    new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecuritySchemeReference("ApiKey", openApiDocument),
-            new List<string>()
-        }
-    }
-];
 
 yamlOrJson = await openApiDocument.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_2);
 

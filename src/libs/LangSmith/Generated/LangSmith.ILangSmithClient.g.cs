@@ -275,7 +275,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings { get; }
+        public WorkspaceTtlSettingsClient WorkspaceTtlSettings { get; }
 
     }
 }

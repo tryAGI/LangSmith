@@ -459,7 +459,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations)
+        public WorkspaceTtlSettingsClient WorkspaceTtlSettings => new WorkspaceTtlSettingsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

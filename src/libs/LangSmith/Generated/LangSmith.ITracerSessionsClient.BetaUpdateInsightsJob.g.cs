@@ -5,38 +5,34 @@ namespace LangSmith
     public partial interface ITracerSessionsClient
     {
         /// <summary>
-        /// [Beta] Create Insights Job Config<br/>
-        /// Save an insights job config.
+        /// Beta Update Insights Job<br/>
+        /// Update a session cluster job.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="jobId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> [Beta]CreateInsightsJobConfigAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunClusteringJobResponse> BetaUpdateInsightsJobAsync(
             global::System.Guid sessionId,
+            global::System.Guid jobId,
 
-            global::LangSmith.CreateClusteringJobConfigRequest request,
+            global::LangSmith.UpdateRunClusteringJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// [Beta] Create Insights Job Config<br/>
-        /// Save an insights job config.
+        /// Beta Update Insights Job<br/>
+        /// Update a session cluster job.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="jobId"></param>
         /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="config">
-        /// Request to create a run clustering job.
-        /// </param>
-        /// <param name="scheduleCron"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> [Beta]CreateInsightsJobConfigAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunClusteringJobResponse> BetaUpdateInsightsJobAsync(
             global::System.Guid sessionId,
+            global::System.Guid jobId,
             string name,
-            global::LangSmith.CreateRunClusteringJobRequest config,
-            string? description = default,
-            string? scheduleCron = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

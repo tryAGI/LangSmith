@@ -5,21 +5,21 @@ namespace LangSmith
     public partial interface ITracerSessionsClient
     {
         /// <summary>
-        /// [Beta] Create Insights Job<br/>
+        /// Beta Create Insights Job<br/>
         /// Create an insights job.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> [Beta]CreateInsightsJobAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> BetaCreateInsightsJobAsync(
             global::System.Guid sessionId,
 
             global::LangSmith.CreateRunClusteringJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// [Beta] Create Insights Job<br/>
+        /// Beta Create Insights Job<br/>
         /// Create an insights job.
         /// </summary>
         /// <param name="sessionId"></param>
@@ -45,7 +45,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> [Beta]CreateInsightsJobAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> BetaCreateInsightsJobAsync(
             global::System.Guid sessionId,
             global::System.Guid? configId = default,
             global::System.DateTime? startTime = default,

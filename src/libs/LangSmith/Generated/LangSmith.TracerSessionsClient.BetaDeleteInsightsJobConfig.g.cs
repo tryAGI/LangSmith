@@ -5,55 +5,50 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void Prepare[Beta]GetInsightsJobConfigsArguments(
+        partial void PrepareBetaDeleteInsightsJobConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref bool? includePrebuilts);
-        partial void Prepare[Beta]GetInsightsJobConfigsRequest(
+            ref global::System.Guid configId);
+        partial void PrepareBetaDeleteInsightsJobConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            bool? includePrebuilts);
-        partial void Process[Beta]GetInsightsJobConfigsResponse(
+            global::System.Guid configId);
+        partial void ProcessBetaDeleteInsightsJobConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void Process[Beta]GetInsightsJobConfigsResponseContent(
+        partial void ProcessBetaDeleteInsightsJobConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// [Beta] Get Insights Job Configs<br/>
-        /// Get all insights job configs for a session.
+        /// Beta Delete Insights Job Config<br/>
+        /// Delete an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="includePrebuilts">
-        /// Default Value: false
-        /// </param>
+        /// <param name="configId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GetClusteringJobConfigsResponse> [Beta]GetInsightsJobConfigsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteClusteringJobConfigResponse> BetaDeleteInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            bool? includePrebuilts = default,
+            global::System.Guid configId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            Prepare[Beta]GetInsightsJobConfigsArguments(
+            PrepareBetaDeleteInsightsJobConfigArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                includePrebuilts: ref includePrebuilts);
+                configId: ref configId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/configs",
+                path: $"/api/v1/sessions/{sessionId}/insights/configs/{configId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder
-                .AddOptionalParameter("include_prebuilts", includePrebuilts?.ToString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -79,11 +74,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            Prepare[Beta]GetInsightsJobConfigsRequest(
+            PrepareBetaDeleteInsightsJobConfigRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                includePrebuilts: includePrebuilts);
+                configId: configId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -93,7 +88,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            Process[Beta]GetInsightsJobConfigsResponse(
+            ProcessBetaDeleteInsightsJobConfigResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -146,7 +141,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                Process[Beta]GetInsightsJobConfigsResponseContent(
+                ProcessBetaDeleteInsightsJobConfigResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -156,7 +151,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.GetClusteringJobConfigsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.DeleteClusteringJobConfigResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -187,7 +182,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.GetClusteringJobConfigsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.DeleteClusteringJobConfigResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public partial interface ITtlSettingsClient
+    public partial interface IWorkspaceTtlSettingsClient
     {
         /// <summary>
         /// Update workspace TTL settings<br/>

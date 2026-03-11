@@ -5,18 +5,16 @@ namespace LangSmith
     public partial interface ITracerSessionsClient
     {
         /// <summary>
-        /// [Beta] Get Insights Job Configs<br/>
-        /// Get all insights job configs for a session.
+        /// Beta Delete Insights Job<br/>
+        /// Delete a session cluster job.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="includePrebuilts">
-        /// Default Value: false
-        /// </param>
+        /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GetClusteringJobConfigsResponse> [Beta]GetInsightsJobConfigsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.DeleteRunClusteringJobResponse> BetaDeleteInsightsJobAsync(
             global::System.Guid sessionId,
-            bool? includePrebuilts = default,
+            global::System.Guid jobId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -3,7 +3,7 @@
 
 namespace LangSmith
 {
-    public partial class TtlSettingsClient
+    public partial class WorkspaceTtlSettingsClient
     {
         partial void PrepareUpdateWorkspaceTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,

@@ -5,55 +5,50 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void Prepare[Beta]GetRunClusterFromInsightsJobArguments(
+        partial void PrepareBetaDeleteInsightsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::System.Guid jobId,
-            ref global::System.Guid clusterId);
-        partial void Prepare[Beta]GetRunClusterFromInsightsJobRequest(
+            ref global::System.Guid jobId);
+        partial void PrepareBetaDeleteInsightsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            global::System.Guid clusterId);
-        partial void Process[Beta]GetRunClusterFromInsightsJobResponse(
+            global::System.Guid jobId);
+        partial void ProcessBetaDeleteInsightsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void Process[Beta]GetRunClusterFromInsightsJobResponseContent(
+        partial void ProcessBetaDeleteInsightsJobResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// [Beta] Get Run Cluster From Insights Job<br/>
-        /// Get a specific cluster for a session.
+        /// Beta Delete Insights Job<br/>
+        /// Delete a session cluster job.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
-        /// <param name="clusterId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusterResponse> [Beta]GetRunClusterFromInsightsJobAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteRunClusteringJobResponse> BetaDeleteInsightsJobAsync(
             global::System.Guid sessionId,
             global::System.Guid jobId,
-            global::System.Guid clusterId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            Prepare[Beta]GetRunClusterFromInsightsJobArguments(
+            PrepareBetaDeleteInsightsJobArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                jobId: ref jobId,
-                clusterId: ref clusterId);
+                jobId: ref jobId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}",
+                path: $"/api/v1/sessions/{sessionId}/insights/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -79,12 +74,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            Prepare[Beta]GetRunClusterFromInsightsJobRequest(
+            PrepareBetaDeleteInsightsJobRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                jobId: jobId,
-                clusterId: clusterId);
+                jobId: jobId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -94,7 +88,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            Process[Beta]GetRunClusterFromInsightsJobResponse(
+            ProcessBetaDeleteInsightsJobResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -147,7 +141,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                Process[Beta]GetRunClusterFromInsightsJobResponseContent(
+                ProcessBetaDeleteInsightsJobResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -157,7 +151,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.GetRunClusterResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.DeleteRunClusteringJobResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -188,7 +182,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.GetRunClusterResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.DeleteRunClusteringJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

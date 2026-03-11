@@ -5,7 +5,7 @@ namespace LangSmith
     public partial interface ITracerSessionsClient
     {
         /// <summary>
-        /// [Beta] Update Insights Job Config<br/>
+        /// Beta Update Insights Job Config<br/>
         /// Update an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
@@ -13,7 +13,7 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> [Beta]UpdateInsightsJobConfigAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> BetaUpdateInsightsJobConfigAsync(
             global::System.Guid sessionId,
             global::System.Guid configId,
 
@@ -21,7 +21,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// [Beta] Update Insights Job Config<br/>
+        /// Beta Update Insights Job Config<br/>
         /// Update an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
@@ -32,7 +32,7 @@ namespace LangSmith
         /// <param name="scheduleCron"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> [Beta]UpdateInsightsJobConfigAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> BetaUpdateInsightsJobConfigAsync(
             global::System.Guid sessionId,
             global::System.Guid configId,
             string? name = default,
