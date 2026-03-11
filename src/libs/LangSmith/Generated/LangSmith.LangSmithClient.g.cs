@@ -441,6 +441,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SandboxesClient Sandboxes => new SandboxesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
