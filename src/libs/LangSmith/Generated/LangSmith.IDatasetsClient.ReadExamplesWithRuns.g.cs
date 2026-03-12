@@ -45,6 +45,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="exampleIds"></param>
+        /// <param name="includeAnnotatorDetail">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
@@ -59,6 +62,7 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             bool? stream = default,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
+            bool? includeAnnotatorDetail = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -15030,6 +15030,35 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /me/slack_id:
+    get:
+      tags:
+        - me
+      summary: Get the authenticated user's Slack ID
+      description: 'Returns the Slack user ID associated with the authenticated user, or null if not set.'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: string
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /runs:
     post:
       tags:
@@ -27539,6 +27568,10 @@ components:
                 type: string
                 format: uuid
             - type: 'null'
+        include_annotator_detail:
+          title: Include Annotator Detail
+          type: boolean
+          default: false
     QueryExampleSchemaWithRunsRequest:
       title: QueryExampleSchemaWithRunsRequest
       required:
@@ -27602,6 +27635,10 @@ components:
                 type: string
                 format: uuid
             - type: 'null'
+        include_annotator_detail:
+          title: Include Annotator Detail
+          type: boolean
+          default: false
       description: "Request DTO for querying examples with runs - used for API input.\n\nThis is separate from the internal schema to cleanly handle optional limit values.\nWhen limit is None, the internal schema will apply appropriate defaults based on\nformat and stream settings."
     QueryFeedbackDelta:
       title: QueryFeedbackDelta

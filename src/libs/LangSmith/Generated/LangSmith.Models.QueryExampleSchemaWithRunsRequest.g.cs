@@ -67,6 +67,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? ExampleIds { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_annotator_detail")]
+        public bool? IncludeAnnotatorDetail { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -90,6 +96,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="exampleIds"></param>
+        /// <param name="includeAnnotatorDetail">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,7 +111,8 @@ namespace LangSmith
             global::LangSmith.SortParamsForRunsComparisonView? sortParams,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
             bool? stream,
-            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds)
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds,
+            bool? includeAnnotatorDetail)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
             this.Offset = offset;
@@ -113,6 +123,7 @@ namespace LangSmith
             this.Filters = filters;
             this.Stream = stream;
             this.ExampleIds = exampleIds;
+            this.IncludeAnnotatorDetail = includeAnnotatorDetail;
         }
 
         /// <summary>
