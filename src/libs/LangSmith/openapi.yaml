@@ -8419,6 +8419,17 @@ paths:
             anyOf:
               - type: boolean
               - type: 'null'
+        - name: status
+          in: query
+          schema:
+            title: Status
+            anyOf:
+              - enum:
+                  - needs_my_review
+                  - needs_others_review
+                  - completed
+                type: string
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -8760,6 +8771,17 @@ paths:
             title: Queue Id
             type: string
             format: uuid
+        - name: status
+          in: query
+          schema:
+            title: Status
+            anyOf:
+              - enum:
+                  - needs_my_review
+                  - needs_others_review
+                  - completed
+                type: string
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -8803,6 +8825,45 @@ paths:
           content:
             application/json:
               schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/annotation-queues/{queue_id}/runs/resolve/{queue_run_id}':
+    get:
+      tags:
+        - annotation-queues
+      summary: Resolve Annotation Queue Run
+      description: Resolve a queue run ID to its section and run data for deep linking.
+      operationId: resolve_annotation_queue_run_api_v1_annotation_queues__queue_id__runs_resolve__queue_run_id__get
+      parameters:
+        - name: queue_id
+          in: path
+          required: true
+          schema:
+            title: Queue Id
+            type: string
+            format: uuid
+        - name: queue_run_id
+          in: path
+          required: true
+          schema:
+            title: Queue Run Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolvedAnnotationQueueRunSchema'
         '422':
           description: Validation Error
           content:
@@ -28030,6 +28091,24 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RunsGenerateQueryFeedbackKeys'
+    ResolvedAnnotationQueueRunSchema:
+      title: ResolvedAnnotationQueueRunSchema
+      required:
+        - section
+        - position
+      type: object
+      properties:
+        section:
+          title: Section
+          enum:
+            - needs_my_review
+            - needs_others_review
+            - completed
+          type: string
+        position:
+          title: Position
+          type: integer
+      description: Resolved annotation queue run position for deep linking.
     Resource:
       title: Resource
       required:

@@ -5,49 +5,47 @@ namespace LangSmith
 {
     public partial class AnnotationQueuesClient
     {
-        partial void PrepareGetSizeFromAnnotationQueueArguments(
+        partial void PrepareResolveAnnotationQueueRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid queueId,
-            global::LangSmith.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2? status);
-        partial void PrepareGetSizeFromAnnotationQueueRequest(
+            ref global::System.Guid queueRunId);
+        partial void PrepareResolveAnnotationQueueRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid queueId,
-            global::LangSmith.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2? status);
-        partial void ProcessGetSizeFromAnnotationQueueResponse(
+            global::System.Guid queueRunId);
+        partial void ProcessResolveAnnotationQueueRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetSizeFromAnnotationQueueResponseContent(
+        partial void ProcessResolveAnnotationQueueRunResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Size From Annotation Queue
+        /// Resolve Annotation Queue Run<br/>
+        /// Resolve a queue run ID to its section and run data for deep linking.
         /// </summary>
         /// <param name="queueId"></param>
-        /// <param name="status"></param>
+        /// <param name="queueRunId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnnotationQueueSizeSchema> GetSizeFromAnnotationQueueAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ResolvedAnnotationQueueRunSchema> ResolveAnnotationQueueRunAsync(
             global::System.Guid queueId,
-            global::LangSmith.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2? status = default,
+            global::System.Guid queueRunId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetSizeFromAnnotationQueueArguments(
+            PrepareResolveAnnotationQueueRunArguments(
                 httpClient: HttpClient,
                 queueId: ref queueId,
-                status: status);
+                queueRunId: ref queueRunId);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/annotation-queues/{queueId}/size",
+                path: $"/api/v1/annotation-queues/{queueId}/runs/resolve/{queueRunId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder
-                .AddOptionalParameter("status", status?.ToString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -76,11 +74,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGetSizeFromAnnotationQueueRequest(
+            PrepareResolveAnnotationQueueRunRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 queueId: queueId,
-                status: status);
+                queueRunId: queueRunId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -90,7 +88,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGetSizeFromAnnotationQueueResponse(
+            ProcessResolveAnnotationQueueRunResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -143,7 +141,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGetSizeFromAnnotationQueueResponseContent(
+                ProcessResolveAnnotationQueueRunResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -153,7 +151,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.AnnotationQueueSizeSchema.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.ResolvedAnnotationQueueRunSchema.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -184,7 +182,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.AnnotationQueueSizeSchema.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.ResolvedAnnotationQueueRunSchema.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

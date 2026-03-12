@@ -16,6 +16,7 @@ namespace LangSmith
         /// </param>
         /// <param name="archived"></param>
         /// <param name="includeStats"></param>
+        /// <param name="status"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>> GetRunsFromAnnotationQueueAsync(
@@ -24,6 +25,7 @@ namespace LangSmith
             int? limit = default,
             bool? archived = default,
             bool? includeStats = default,
+            global::LangSmith.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2? status = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

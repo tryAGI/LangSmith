@@ -11,7 +11,8 @@ namespace LangSmith
             ref int? offset,
             ref int? limit,
             bool? archived,
-            bool? includeStats);
+            bool? includeStats,
+            global::LangSmith.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2? status);
         partial void PrepareGetRunsFromAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +20,8 @@ namespace LangSmith
             int? offset,
             int? limit,
             bool? archived,
-            bool? includeStats);
+            bool? includeStats,
+            global::LangSmith.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2? status);
         partial void ProcessGetRunsFromAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,6 +43,7 @@ namespace LangSmith
         /// </param>
         /// <param name="archived"></param>
         /// <param name="includeStats"></param>
+        /// <param name="status"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>> GetRunsFromAnnotationQueueAsync(
@@ -49,6 +52,7 @@ namespace LangSmith
             int? limit = default,
             bool? archived = default,
             bool? includeStats = default,
+            global::LangSmith.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -59,7 +63,8 @@ namespace LangSmith
                 offset: ref offset,
                 limit: ref limit,
                 archived: archived,
-                includeStats: includeStats);
+                includeStats: includeStats,
+                status: status);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/runs",
@@ -68,7 +73,8 @@ namespace LangSmith
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("archived", archived?.ToString())
-                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+                .AddOptionalParameter("include_stats", includeStats?.ToString())
+                .AddOptionalParameter("status", status?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -105,7 +111,8 @@ namespace LangSmith
                 offset: offset,
                 limit: limit,
                 archived: archived,
-                includeStats: includeStats);
+                includeStats: includeStats,
+                status: status);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
