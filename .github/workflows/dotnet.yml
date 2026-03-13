@@ -12,7 +12,7 @@ permissions:
 jobs:
   publish:
     name: Publish
-    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@c5dced6
+    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
     with:
       generate-build-number: false
       conventional-commits-publish-conditions: false
