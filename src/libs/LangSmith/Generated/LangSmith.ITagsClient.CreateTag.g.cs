@@ -8,18 +8,14 @@ namespace LangSmith
         /// Create Tag<br/>
         /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
 
             global::LangSmith.RepoTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,10 +24,8 @@ namespace LangSmith
         /// Create Tag<br/>
         /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
         /// <param name="tagName"></param>
         /// <param name="commitId"></param>
         /// <param name="skipWebhooks">
@@ -40,10 +34,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
             string tagName,
             global::System.Guid commitId,
             global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks = default,

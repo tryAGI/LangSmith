@@ -13590,16 +13590,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
       responses:
         '200':
           description: Successful Response
@@ -13638,16 +13628,6 @@ paths:
           required: true
           schema:
             title: Repo
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
             type: string
       requestBody:
         content:
@@ -13697,11 +13677,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
       responses:
         '200':
           description: Successful Response
@@ -13743,11 +13718,6 @@ paths:
           required: true
           schema:
             title: Tag Name
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
             type: string
       requestBody:
         content:
@@ -13796,11 +13766,6 @@ paths:
           required: true
           schema:
             title: Tag Name
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
             type: string
       responses:
         '200':
@@ -13958,11 +13923,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
       responses:
         '200':
           description: Successful Response
@@ -13999,11 +13959,6 @@ paths:
         - name: owner
           in: path
           description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
           required: true
           schema:
             type: string
@@ -14057,16 +14012,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
-          required: true
-          schema:
-            type: string
       responses:
         '200':
           description: Successful Response
@@ -14107,16 +14052,6 @@ paths:
         - name: repo
           in: path
           description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
           required: true
           schema:
             type: string
@@ -14169,16 +14104,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
-          required: true
-          schema:
-            type: string
       responses:
         '200':
           description: Successful Response
@@ -14219,16 +14144,6 @@ paths:
         - name: repo
           in: path
           description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
           required: true
           schema:
             type: string
@@ -14275,16 +14190,6 @@ paths:
         - name: repo
           in: path
           description: This is a missing parameter that was added automatically. Please check the OpenAPI spec.
-          required: true
-          schema:
-            type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
           required: true
           schema:
             type: string
@@ -14344,22 +14249,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: job_id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
       responses:
         '200':
           description: Successful Response
@@ -14409,22 +14298,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: owner
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: repo
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: job_id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
       responses:
         '200':
           description: Successful Response

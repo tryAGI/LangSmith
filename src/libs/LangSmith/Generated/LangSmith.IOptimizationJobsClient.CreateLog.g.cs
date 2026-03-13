@@ -9,19 +9,15 @@ namespace LangSmith
         /// Create a new log entry for a prompt optimization job.
         /// </summary>
         /// <param name="jobId"></param>
-        /// <param name="owner1"></param>
-        /// <param name="repo1"></param>
-        /// <param name="owner2"></param>
-        /// <param name="repo2"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJobLog> CreateLogAsync(
             global::System.Guid jobId,
-            string owner1,
-            string repo1,
-            string owner2,
-            string repo2,
+            string owner,
+            string repo,
 
             global::LangSmith.PromptOptimizationJobLogCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -31,10 +27,8 @@ namespace LangSmith
         /// Create a new log entry for a prompt optimization job.
         /// </summary>
         /// <param name="jobId"></param>
-        /// <param name="owner1"></param>
-        /// <param name="repo1"></param>
-        /// <param name="owner2"></param>
-        /// <param name="repo2"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="logType"></param>
         /// <param name="message"></param>
         /// <param name="data"></param>
@@ -42,10 +36,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJobLog> CreateLogAsync(
             global::System.Guid jobId,
-            string owner1,
-            string repo1,
-            string owner2,
-            string repo2,
+            string owner,
+            string repo,
             global::LangSmith.EPromptOptimizationJobLogType logType,
             string message,
             object? data = default,

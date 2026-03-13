@@ -7,18 +7,14 @@ namespace LangSmith
     {
         partial void PrepareCreateTagArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string owner1,
+            ref string owner,
             ref string repo,
-            ref string owner2,
-            ref string owner3,
             global::LangSmith.RepoTagRequest request);
         partial void PrepareCreateTagRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string owner1,
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
             global::LangSmith.RepoTagRequest request);
         partial void ProcessCreateTagResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,18 +29,14 @@ namespace LangSmith
         /// Create Tag<br/>
         /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
 
             global::LangSmith.RepoTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -55,14 +47,12 @@ namespace LangSmith
                 client: HttpClient);
             PrepareCreateTagArguments(
                 httpClient: HttpClient,
-                owner1: ref owner1,
+                owner: ref owner,
                 repo: ref repo,
-                owner2: ref owner2,
-                owner3: ref owner3,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/repos/{owner1}/{repo}/tags",
+                path: $"/api/v1/repos/{owner}/{repo}/tags",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -101,10 +91,8 @@ namespace LangSmith
             PrepareCreateTagRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                owner1: owner1,
+                owner: owner,
                 repo: repo,
-                owner2: owner2,
-                owner3: owner3,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -232,10 +220,8 @@ namespace LangSmith
         /// Create Tag<br/>
         /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
         /// </summary>
-        /// <param name="owner1"></param>
+        /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="owner2"></param>
-        /// <param name="owner3"></param>
         /// <param name="tagName"></param>
         /// <param name="commitId"></param>
         /// <param name="skipWebhooks">
@@ -244,10 +230,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.RepoTag> CreateTagAsync(
-            string owner1,
+            string owner,
             string repo,
-            string owner2,
-            string owner3,
             string tagName,
             global::System.Guid commitId,
             global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>? skipWebhooks = default,
@@ -261,10 +245,8 @@ namespace LangSmith
             };
 
             return await CreateTagAsync(
-                owner1: owner1,
+                owner: owner,
                 repo: repo,
-                owner2: owner2,
-                owner3: owner3,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -8,19 +8,15 @@ namespace LangSmith
         partial void PrepareCreateLogArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid jobId,
-            ref string owner1,
-            ref string repo1,
-            ref string owner2,
-            ref string repo2,
+            ref string owner,
+            ref string repo,
             global::LangSmith.PromptOptimizationJobLogCreate request);
         partial void PrepareCreateLogRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid jobId,
-            string owner1,
-            string repo1,
-            string owner2,
-            string repo2,
+            string owner,
+            string repo,
             global::LangSmith.PromptOptimizationJobLogCreate request);
         partial void ProcessCreateLogResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,19 +32,15 @@ namespace LangSmith
         /// Create a new log entry for a prompt optimization job.
         /// </summary>
         /// <param name="jobId"></param>
-        /// <param name="owner1"></param>
-        /// <param name="repo1"></param>
-        /// <param name="owner2"></param>
-        /// <param name="repo2"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJobLog> CreateLogAsync(
             global::System.Guid jobId,
-            string owner1,
-            string repo1,
-            string owner2,
-            string repo2,
+            string owner,
+            string repo,
 
             global::LangSmith.PromptOptimizationJobLogCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -60,14 +52,12 @@ namespace LangSmith
             PrepareCreateLogArguments(
                 httpClient: HttpClient,
                 jobId: ref jobId,
-                owner1: ref owner1,
-                repo1: ref repo1,
-                owner2: ref owner2,
-                repo2: ref repo2,
+                owner: ref owner,
+                repo: ref repo,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/repos/{owner1}/{repo1}/optimization-jobs/{jobId}/logs",
+                path: $"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -107,10 +97,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 jobId: jobId,
-                owner1: owner1,
-                repo1: repo1,
-                owner2: owner2,
-                repo2: repo2,
+                owner: owner,
+                repo: repo,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -239,10 +227,8 @@ namespace LangSmith
         /// Create a new log entry for a prompt optimization job.
         /// </summary>
         /// <param name="jobId"></param>
-        /// <param name="owner1"></param>
-        /// <param name="repo1"></param>
-        /// <param name="owner2"></param>
-        /// <param name="repo2"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="logType"></param>
         /// <param name="message"></param>
         /// <param name="data"></param>
@@ -250,10 +236,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PromptOptimizationJobLog> CreateLogAsync(
             global::System.Guid jobId,
-            string owner1,
-            string repo1,
-            string owner2,
-            string repo2,
+            string owner,
+            string repo,
             global::LangSmith.EPromptOptimizationJobLogType logType,
             string message,
             object? data = default,
@@ -268,10 +252,8 @@ namespace LangSmith
 
             return await CreateLogAsync(
                 jobId: jobId,
-                owner1: owner1,
-                repo1: repo1,
-                owner2: owner2,
-                repo2: repo2,
+                owner: owner,
+                repo: repo,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

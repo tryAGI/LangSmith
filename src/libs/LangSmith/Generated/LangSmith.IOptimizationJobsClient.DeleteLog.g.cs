@@ -9,22 +9,16 @@ namespace LangSmith
         /// Delete a prompt optimization job log.
         /// </summary>
         /// <param name="logId"></param>
-        /// <param name="owner1"></param>
-        /// <param name="repo1"></param>
-        /// <param name="jobId1"></param>
-        /// <param name="owner2"></param>
-        /// <param name="repo2"></param>
-        /// <param name="jobId2"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteLogAsync(
             global::System.Guid logId,
-            string owner1,
-            string repo1,
-            string jobId1,
-            string owner2,
-            string repo2,
-            global::System.Guid jobId2,
+            string owner,
+            string repo,
+            string jobId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -1,0 +1,110 @@
+name: .NET - Build, test and publish reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      configuration:
+        required: false
+        type: string
+        default: Release
+      dotnet-version:
+        required: false
+        type: string
+        default: 10.0.x
+      enable-caching:
+        required: false
+        type: boolean
+        default: false
+      fetch-depth:
+        required: false
+        type: number
+        default: 0
+      project-path:
+        required: false
+        type: string
+        default: LangSmith.slnx
+      publish:
+        required: false
+        type: boolean
+        default: true
+      run-tests:
+        required: false
+        type: boolean
+        default: true
+      additional-test-arguments:
+        required: false
+        type: string
+        default: ""
+      conventional-commits-publish-conditions:
+        required: false
+        type: boolean
+        default: false
+      generate-build-number:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      nuget-key:
+        required: false
+
+jobs:
+  build:
+    name: Build, test and publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: ${{ inputs.fetch-depth }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+          cache: ${{ inputs.enable-caching }}
+          cache-dependency-path: |
+            **/*.csproj
+            global.json
+
+      - name: Build
+        run: dotnet build ${{ inputs.project-path }} --configuration ${{ inputs.configuration }} --nologo
+
+      - name: Test
+        if: inputs.run-tests
+        run: dotnet test ${{ inputs.project-path }} --configuration ${{ inputs.configuration }} --no-build --nologo ${{ inputs.additional-test-arguments }}
+
+      - name: Upload NuGet package artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: nuget-packages
+          path: ./**/*.nupkg
+          if-no-files-found: ignore
+
+      - name: Publish to NuGet
+        if: inputs.publish && secrets.nuget-key != ''
+        shell: bash
+        run: |
+          shopt -s globstar nullglob
+          packages=(./**/*.nupkg)
+          if [ "${#packages[@]}" -eq 0 ]; then
+            echo "No NuGet packages found to publish."
+            exit 1
+          fi
+
+          for package in "${packages[@]}"; do
+            case "$package" in
+              */EmptyFiles/*) continue ;;
+            esac
+
+            dotnet nuget push "$package" \
+              --skip-duplicate \
+              --source https://api.nuget.org/v3/index.json \
+              --api-key "${{ secrets.nuget-key }}"
+          done
