@@ -225,7 +225,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations)
+        public TtlSettings2Client TtlSettings2 => new TtlSettings2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -477,7 +477,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public WorkspaceTtlSettingsClient WorkspaceTtlSettings => new WorkspaceTtlSettingsClient(HttpClient, authorizations: Authorizations)
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

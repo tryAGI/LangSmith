@@ -3,49 +3,60 @@
 
 namespace LangSmith
 {
-    public partial class McpClient
+    public partial class TracerSessionsClient
     {
-        partial void PrepareProxyArguments(
+        partial void PrepareX_Beta_UpdateInsightsJobConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.ProxyRequest request);
-        partial void PrepareProxyRequest(
+            ref global::System.Guid sessionId,
+            ref global::System.Guid configId,
+            global::LangSmith.UpdateClusteringJobConfigRequest request);
+        partial void PrepareX_Beta_UpdateInsightsJobConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ProxyRequest request);
-        partial void ProcessProxyResponse(
+            global::System.Guid sessionId,
+            global::System.Guid configId,
+            global::LangSmith.UpdateClusteringJobConfigRequest request);
+        partial void ProcessX_Beta_UpdateInsightsJobConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessProxyResponseContent(
+        partial void ProcessX_Beta_UpdateInsightsJobConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Proxy
+        /// [Beta] Update Insights Job Config<br/>
+        /// Update an insights job config.
         /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="configId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ProxyAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> X_Beta_UpdateInsightsJobConfigAsync(
+            global::System.Guid sessionId,
+            global::System.Guid configId,
 
-            global::LangSmith.ProxyRequest request,
+            global::LangSmith.UpdateClusteringJobConfigRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareProxyArguments(
+            PrepareX_Beta_UpdateInsightsJobConfigArguments(
                 httpClient: HttpClient,
+                sessionId: ref sessionId,
+                configId: ref configId,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/api/v1/mcp/proxy",
+                path: $"/api/v1/sessions/{sessionId}/insights/configs/{configId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -77,9 +88,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareProxyRequest(
+            PrepareX_Beta_UpdateInsightsJobConfigRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                sessionId: sessionId,
+                configId: configId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -90,7 +103,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessProxyResponse(
+            ProcessX_Beta_UpdateInsightsJobConfigResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -143,7 +156,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessProxyResponseContent(
+                ProcessX_Beta_UpdateInsightsJobConfigResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -152,7 +165,9 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::LangSmith.CreateClusteringJobConfigResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -175,13 +190,15 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::LangSmith.CreateClusteringJobConfigResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -200,42 +217,37 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Proxy
+        /// [Beta] Update Insights Job Config<br/>
+        /// Update an insights job config.
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="method">
-        /// Default Value: GET
-        /// </param>
-        /// <param name="headers">
-        /// Default Value: {}
-        /// </param>
-        /// <param name="timeout">
-        /// Default Value: 120
-        /// </param>
-        /// <param name="body"></param>
-        /// <param name="oauthProviderId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="configId"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="config"></param>
+        /// <param name="scheduleCron"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ProxyAsync(
-            string url,
-            global::LangSmith.ProxyRequestMethod? method = default,
-            global::System.Collections.Generic.Dictionary<string, string>? headers = default,
-            int? timeout = default,
-            object? body = default,
-            string? oauthProviderId = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> X_Beta_UpdateInsightsJobConfigAsync(
+            global::System.Guid sessionId,
+            global::System.Guid configId,
+            string? name = default,
+            string? description = default,
+            global::LangSmith.CreateRunClusteringJobRequest? config = default,
+            string? scheduleCron = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.ProxyRequest
+            var __request = new global::LangSmith.UpdateClusteringJobConfigRequest
             {
-                Url = url,
-                Method = method,
-                Headers = headers,
-                Timeout = timeout,
-                Body = body,
-                OauthProviderId = oauthProviderId,
+                Name = name,
+                Description = description,
+                Config = config,
+                ScheduleCron = scheduleCron,
             };
 
-            return await ProxyAsync(
+            return await X_Beta_UpdateInsightsJobConfigAsync(
+                sessionId: sessionId,
+                configId: configId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-dotnet tool update --global autosdk.cli --prerelease || dotnet tool install --global autosdk.cli --prerelease
+dotnet tool update --global autosdk.cli --version 0.29.1-dev.24 || dotnet tool install --global autosdk.cli --version 0.29.1-dev.24
 rm -rf Generated
-curl -o openapi.yaml https://api.smith.langchain.com/openapi.json
-dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
-autosdk generate openapi.yaml \
+curl -fsSL -o openapi.json https://api.smith.langchain.com/openapi.json
+autosdk generate openapi.json \
   --namespace LangSmith \
   --clientClassName LangSmithClient \
   --targetFramework net10.0 \

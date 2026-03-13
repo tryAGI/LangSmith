@@ -3,38 +3,38 @@
 
 namespace LangSmith
 {
-    public partial class MeClient
+    public partial class TtlSettings2Client
     {
-        partial void PrepareGetTheAuthenticatedUsersSlackIdArguments(
+        partial void PrepareListTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetTheAuthenticatedUsersSlackIdRequest(
+        partial void PrepareListTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetTheAuthenticatedUsersSlackIdResponse(
+        partial void ProcessListTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetTheAuthenticatedUsersSlackIdResponseContent(
+        partial void ProcessListTtlSettingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get the authenticated user's Slack ID<br/>
-        /// Returns the Slack user ID associated with the authenticated user, or null if not set.
+        /// List Ttl Settings<br/>
+        /// List out the configured TTL settings for a given tenant.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> GetTheAuthenticatedUsersSlackIdAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>> ListTtlSettingsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetTheAuthenticatedUsersSlackIdArguments(
+            PrepareListTtlSettingsArguments(
                 httpClient: HttpClient);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/me/slack_id",
+                path: "/api/v1/ttl-settings",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -64,7 +64,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGetTheAuthenticatedUsersSlackIdRequest(
+            PrepareListTtlSettingsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest);
 
@@ -76,83 +76,9 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGetTheAuthenticatedUsersSlackIdResponse(
+            ProcessListTtlSettingsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Forbidden
-            if ((int)__response.StatusCode == 403)
-            {
-                string? __content_403 = null;
-                global::System.Exception? __exception_403 = null;
-                string? __value_403 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext) as string;
-                    }
-                    else
-                    {
-                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__contentStream_403, typeof(string), JsonSerializerContext).ConfigureAwait(false) as string;
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_403 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<string>(
-                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_403,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_403,
-                    ResponseObject = __value_403,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Internal Server Error
-            if ((int)__response.StatusCode == 500)
-            {
-                string? __content_500 = null;
-                global::System.Exception? __exception_500 = null;
-                string? __value_500 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(string), JsonSerializerContext) as string;
-                    }
-                    else
-                    {
-                        var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__contentStream_500, typeof(string), JsonSerializerContext).ConfigureAwait(false) as string;
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_500 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<string>(
-                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_500,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_500,
-                    ResponseObject = __value_500,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
 
             if (ReadResponseAsString)
             {
@@ -166,7 +92,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGetTheAuthenticatedUsersSlackIdResponseContent(
+                ProcessListTtlSettingsResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -175,7 +101,9 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::LangSmith.TTLSettings> ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -198,13 +126,15 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::LangSmith.TTLSettings> ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {

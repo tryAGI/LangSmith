@@ -23,7 +23,7 @@ namespace LangSmith
         public global::LangSmith.ProxyRequestMethod? Method { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
@@ -59,7 +59,9 @@ namespace LangSmith
         /// <param name="method">
         /// Default Value: GET
         /// </param>
-        /// <param name="headers"></param>
+        /// <param name="headers">
+        /// Default Value: {}
+        /// </param>
         /// <param name="timeout">
         /// Default Value: 120
         /// </param>

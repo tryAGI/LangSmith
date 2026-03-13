@@ -28,10 +28,9 @@ cd src/libs/LangSmith && ./generate.sh
 
 The SDK code in `Generated/` is **auto-generated** — do not manually edit files in `src/libs/LangSmith/Generated/`.
 
-1. `src/libs/LangSmith/openapi.yaml` — the LangSmith OpenAPI spec (fetched from `https://api.smith.langchain.com/openapi.json`)
-2. `src/helpers/FixOpenApiSpec/` — converts OpenAPI 3.1 → 3.0 format for compatibility
-3. `src/libs/LangSmith/generate.sh` — orchestrates: download spec → fix spec → run AutoSDK CLI → output to `Generated/`
-4. CI auto-updates the spec every 3 hours and creates PRs if changes are detected
+1. `src/libs/LangSmith/openapi.json` — the LangSmith OpenAPI spec snapshot fetched from `https://api.smith.langchain.com/openapi.json`
+2. `src/libs/LangSmith/generate.sh` — orchestrates: download spec → run AutoSDK CLI → output to `Generated/`
+3. CI auto-updates the spec every 3 hours and creates PRs if changes are detected
 
 ### Hand-Written Extensions
 
@@ -45,7 +44,6 @@ This file is **not** auto-generated and can be edited manually:
 |---------|---------|
 | `src/libs/LangSmith/` | Main SDK library (`LangSmithClient`) |
 | `src/tests/LangSmith.IntegrationTests/` | Integration tests against real LangSmith API |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 | `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 

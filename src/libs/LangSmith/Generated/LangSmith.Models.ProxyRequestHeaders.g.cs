@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    /// Default Value: {}
     /// </summary>
     public sealed partial class ProxyRequestHeaders
     {

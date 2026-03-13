@@ -3,49 +3,49 @@
 
 namespace LangSmith
 {
-    public partial class McpClient
+    public partial class TtlSettings2Client
     {
-        partial void PrepareProxyArguments(
+        partial void PrepareUpsertTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.ProxyRequest request);
-        partial void PrepareProxyRequest(
+            global::LangSmith.UpsertTTLSettingsRequest request);
+        partial void PrepareUpsertTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ProxyRequest request);
-        partial void ProcessProxyResponse(
+            global::LangSmith.UpsertTTLSettingsRequest request);
+        partial void ProcessUpsertTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessProxyResponseContent(
+        partial void ProcessUpsertTtlSettingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Proxy
+        /// Upsert Ttl Settings
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ProxyAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
 
-            global::LangSmith.ProxyRequest request,
+            global::LangSmith.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareProxyArguments(
+            PrepareUpsertTtlSettingsArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/api/v1/mcp/proxy",
+                path: "/api/v1/ttl-settings",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -77,7 +77,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareProxyRequest(
+            PrepareUpsertTtlSettingsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -90,7 +90,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessProxyResponse(
+            ProcessUpsertTtlSettingsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -143,7 +143,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessProxyResponseContent(
+                ProcessUpsertTtlSettingsResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -152,7 +152,9 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::LangSmith.TTLSettings.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -175,13 +177,15 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::LangSmith.TTLSettings.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -200,42 +204,29 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Proxy
+        /// Upsert Ttl Settings
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="method">
-        /// Default Value: GET
+        /// <param name="tenantId"></param>
+        /// <param name="defaultTraceTier"></param>
+        /// <param name="applyToAllProjects">
+        /// Default Value: false
         /// </param>
-        /// <param name="headers">
-        /// Default Value: {}
-        /// </param>
-        /// <param name="timeout">
-        /// Default Value: 120
-        /// </param>
-        /// <param name="body"></param>
-        /// <param name="oauthProviderId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ProxyAsync(
-            string url,
-            global::LangSmith.ProxyRequestMethod? method = default,
-            global::System.Collections.Generic.Dictionary<string, string>? headers = default,
-            int? timeout = default,
-            object? body = default,
-            string? oauthProviderId = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TTLSettings> UpsertTtlSettingsAsync(
+            global::LangSmith.TraceTier defaultTraceTier,
+            global::System.Guid? tenantId = default,
+            bool? applyToAllProjects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.ProxyRequest
+            var __request = new global::LangSmith.UpsertTTLSettingsRequest
             {
-                Url = url,
-                Method = method,
-                Headers = headers,
-                Timeout = timeout,
-                Body = body,
-                OauthProviderId = oauthProviderId,
+                TenantId = tenantId,
+                DefaultTraceTier = defaultTraceTier,
+                ApplyToAllProjects = applyToAllProjects,
             };
 
-            return await ProxyAsync(
+            return await UpsertTtlSettingsAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

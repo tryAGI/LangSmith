@@ -3,49 +3,77 @@
 
 namespace LangSmith
 {
-    public partial class McpClient
+    public partial class TracerSessionsClient
     {
-        partial void PrepareProxyArguments(
+        partial void PrepareX_Beta_GetInsightsJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.ProxyRequest request);
-        partial void PrepareProxyRequest(
+            ref global::System.Guid sessionId,
+            ref int? limit,
+            ref int? offset,
+            global::System.Guid? configId,
+            bool? legacy);
+        partial void PrepareX_Beta_GetInsightsJobsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ProxyRequest request);
-        partial void ProcessProxyResponse(
+            global::System.Guid sessionId,
+            int? limit,
+            int? offset,
+            global::System.Guid? configId,
+            bool? legacy);
+        partial void ProcessX_Beta_GetInsightsJobsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessProxyResponseContent(
+        partial void ProcessX_Beta_GetInsightsJobsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Proxy
+        /// [Beta] Get Insights Jobs<br/>
+        /// Get all clusters for a session.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="configId"></param>
+        /// <param name="legacy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ProxyAsync(
-
-            global::LangSmith.ProxyRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusteringJobsResponse> X_Beta_GetInsightsJobsAsync(
+            global::System.Guid sessionId,
+            int? limit = default,
+            int? offset = default,
+            global::System.Guid? configId = default,
+            bool? legacy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareProxyArguments(
+            PrepareX_Beta_GetInsightsJobsArguments(
                 httpClient: HttpClient,
-                request: request);
+                sessionId: ref sessionId,
+                limit: ref limit,
+                offset: ref offset,
+                configId: configId,
+                legacy: legacy);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/api/v1/mcp/proxy",
+                path: $"/api/v1/sessions/{sessionId}/insights",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("config_id", configId?.ToString())
+                .AddOptionalParameter("legacy", legacy?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -67,20 +95,18 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareProxyRequest(
+            PrepareX_Beta_GetInsightsJobsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                sessionId: sessionId,
+                limit: limit,
+                offset: offset,
+                configId: configId,
+                legacy: legacy);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -90,7 +116,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessProxyResponse(
+            ProcessX_Beta_GetInsightsJobsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -143,7 +169,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessProxyResponseContent(
+                ProcessX_Beta_GetInsightsJobsResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -152,7 +178,9 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::LangSmith.GetRunClusteringJobsResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -175,13 +203,15 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::LangSmith.GetRunClusteringJobsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -197,47 +227,6 @@ namespace LangSmith
                     };
                 }
             }
-        }
-
-        /// <summary>
-        /// Proxy
-        /// </summary>
-        /// <param name="url"></param>
-        /// <param name="method">
-        /// Default Value: GET
-        /// </param>
-        /// <param name="headers">
-        /// Default Value: {}
-        /// </param>
-        /// <param name="timeout">
-        /// Default Value: 120
-        /// </param>
-        /// <param name="body"></param>
-        /// <param name="oauthProviderId"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ProxyAsync(
-            string url,
-            global::LangSmith.ProxyRequestMethod? method = default,
-            global::System.Collections.Generic.Dictionary<string, string>? headers = default,
-            int? timeout = default,
-            object? body = default,
-            string? oauthProviderId = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.ProxyRequest
-            {
-                Url = url,
-                Method = method,
-                Headers = headers,
-                Timeout = timeout,
-                Body = body,
-                OauthProviderId = oauthProviderId,
-            };
-
-            return await ProxyAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

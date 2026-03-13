@@ -2,15 +2,15 @@
 
 namespace LangSmith
 {
-    public partial interface IMeClient
+    public partial interface ITtlSettings2Client
     {
         /// <summary>
-        /// Get the authenticated user's Slack ID<br/>
-        /// Returns the Slack user ID associated with the authenticated user, or null if not set.
+        /// List Ttl Settings<br/>
+        /// List out the configured TTL settings for a given tenant.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> GetTheAuthenticatedUsersSlackIdAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TTLSettings>> ListTtlSettingsAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
