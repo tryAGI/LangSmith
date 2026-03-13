@@ -8,7 +8,7 @@ jobs:
   test:
     name: Test
     if: github.event.pull_request.draft == false
-    uses: ./.github/workflows/dotnet_build-test-publish.yml
+    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@c5dced6
     with:
       generate-build-number: false
       conventional-commits-publish-conditions: false
