@@ -5,32 +5,32 @@ namespace LangSmith
 {
     public partial class MeClient
     {
-        partial void PrepareGetTheAuthenticatedUser'sSlackIdArguments(
+        partial void PrepareGetTheAuthenticatedUsersSlackIdArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetTheAuthenticatedUser'sSlackIdRequest(
+        partial void PrepareGetTheAuthenticatedUsersSlackIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetTheAuthenticatedUser'sSlackIdResponse(
+        partial void ProcessGetTheAuthenticatedUsersSlackIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetTheAuthenticatedUser'sSlackIdResponseContent(
+        partial void ProcessGetTheAuthenticatedUsersSlackIdResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get the authenticated user's Slack ID<br/>
+        /// Get the authenticated users Slack ID<br/>
         /// Returns the Slack user ID associated with the authenticated user, or null if not set.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> GetTheAuthenticatedUser'sSlackIdAsync(
+        public async global::System.Threading.Tasks.Task<string> GetTheAuthenticatedUsersSlackIdAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetTheAuthenticatedUser'sSlackIdArguments(
+            PrepareGetTheAuthenticatedUsersSlackIdArguments(
                 httpClient: HttpClient);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
@@ -64,7 +64,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGetTheAuthenticatedUser'sSlackIdRequest(
+            PrepareGetTheAuthenticatedUsersSlackIdRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest);
 
@@ -76,7 +76,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGetTheAuthenticatedUser'sSlackIdResponse(
+            ProcessGetTheAuthenticatedUsersSlackIdResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Forbidden
@@ -166,7 +166,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGetTheAuthenticatedUser'sSlackIdResponseContent(
+                ProcessGetTheAuthenticatedUsersSlackIdResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);

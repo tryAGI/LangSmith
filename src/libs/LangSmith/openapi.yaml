@@ -15034,7 +15034,7 @@ paths:
     get:
       tags:
         - me
-      summary: Get the authenticated user's Slack ID
+      summary: Get the authenticated users Slack ID
       description: 'Returns the Slack user ID associated with the authenticated user, or null if not set.'
       responses:
         '200':

@@ -89,6 +89,20 @@ foreach (var (_, operation) in openApiDocument.Paths["/api/v1/repos/{owner}/{rep
     operation.Parameters.Add(jobIdParameter);
 }
 
+foreach (var (_, pathItem) in openApiDocument.Paths)
+{
+    if (pathItem?.Operations is not { } operations)
+    {
+        continue;
+    }
+
+    foreach (var (_, operation) in operations)
+    {
+        // AutoSDK currently derives method names from summaries for this repo.
+        operation.Summary = operation.Summary?.Replace("'", string.Empty, StringComparison.Ordinal);
+    }
+}
+
 yamlOrJson = await openApiDocument.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_2);
 
 await File.WriteAllTextAsync(path, yamlOrJson);
