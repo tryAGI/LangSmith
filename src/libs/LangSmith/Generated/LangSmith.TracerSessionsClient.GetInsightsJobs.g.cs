@@ -5,52 +5,75 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareX_Beta_GetRunClusterFromInsightsJobArguments(
+        partial void PrepareGetInsightsJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::System.Guid jobId,
-            ref global::System.Guid clusterId);
-        partial void PrepareX_Beta_GetRunClusterFromInsightsJobRequest(
+            ref int? limit,
+            ref int? offset,
+            global::System.Guid? configId,
+            bool? legacy);
+        partial void PrepareGetInsightsJobsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            global::System.Guid clusterId);
-        partial void ProcessX_Beta_GetRunClusterFromInsightsJobResponse(
+            int? limit,
+            int? offset,
+            global::System.Guid? configId,
+            bool? legacy);
+        partial void ProcessGetInsightsJobsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessX_Beta_GetRunClusterFromInsightsJobResponseContent(
+        partial void ProcessGetInsightsJobsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// [Beta] Get Run Cluster From Insights Job<br/>
-        /// Get a specific cluster for a session.
+        /// [Beta] Get Insights Jobs<br/>
+        /// Get all clusters for a session.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="jobId"></param>
-        /// <param name="clusterId"></param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="configId"></param>
+        /// <param name="legacy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusterResponse> X_Beta_GetRunClusterFromInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusteringJobsResponse> GetInsightsJobsAsync(
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            global::System.Guid clusterId,
+            int? limit = default,
+            int? offset = default,
+            global::System.Guid? configId = default,
+            bool? legacy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareX_Beta_GetRunClusterFromInsightsJobArguments(
+            PrepareGetInsightsJobsArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                jobId: ref jobId,
-                clusterId: ref clusterId);
+                limit: ref limit,
+                offset: ref offset,
+                configId: configId,
+                legacy: legacy);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}",
+                path: $"/api/v1/sessions/{sessionId}/insights",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("config_id", configId?.ToString())
+                .AddOptionalParameter("legacy", legacy?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -79,12 +102,14 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareX_Beta_GetRunClusterFromInsightsJobRequest(
+            PrepareGetInsightsJobsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                jobId: jobId,
-                clusterId: clusterId);
+                limit: limit,
+                offset: offset,
+                configId: configId,
+                legacy: legacy);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -94,7 +119,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessX_Beta_GetRunClusterFromInsightsJobResponse(
+            ProcessGetInsightsJobsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -147,7 +172,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessX_Beta_GetRunClusterFromInsightsJobResponseContent(
+                ProcessGetInsightsJobsResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -157,7 +182,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.GetRunClusterResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.GetRunClusteringJobsResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -188,7 +213,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.GetRunClusterResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.GetRunClusteringJobsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

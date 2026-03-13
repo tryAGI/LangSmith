@@ -12,7 +12,10 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> X_Beta_AutoGenerateInsightsJobConfigAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> AutoGenerateInsightsJobConfigAsync(
             global::System.Guid sessionId,
 
             global::LangSmith.GenerateClusteringJobConfigRequest request,
@@ -31,7 +34,10 @@ namespace LangSmith
         /// <param name="summaryModel"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> X_Beta_AutoGenerateInsightsJobConfigAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> AutoGenerateInsightsJobConfigAsync(
             global::System.Guid sessionId,
             global::System.Collections.Generic.Dictionary<string, string> userContext,
             global::LangSmith.GenerateClusteringJobConfigRequestModel? model = default,
