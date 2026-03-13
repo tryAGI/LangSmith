@@ -250,6 +250,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public ForgeConfigurationsClient ForgeConfigurations { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AccessPoliciesClient AccessPolicies { get; }
 
         /// <summary>

@@ -15926,6 +15926,176 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /v1/platform/forge-configurations:
+    get:
+      tags:
+        - forge_configurations
+      summary: List forge configurations
+      description: Returns all Forge configurations for the current workspace.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/forge_configurations.ForgeConfiguration'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - forge_configurations
+      summary: Create a forge configuration
+      description: Creates a new Forge configuration for the given tracing project.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/forge_configurations.CreateForgeConfigurationRequest'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ForgeConfiguration'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/v1/platform/forge-configurations/{id}':
+    delete:
+      tags:
+        - forge_configurations
+      summary: Delete a forge configuration
+      description: Deletes a Forge configuration by ID.
+      parameters:
+        - name: id
+          in: path
+          description: Configuration ID
+          required: true
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - forge_configurations
+      summary: Update a forge configuration
+      description: Updates an existing Forge configuration.
+      parameters:
+        - name: id
+          in: path
+          description: Configuration ID
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/forge_configurations.UpdateForgeConfigurationRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ForgeConfiguration'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forge_configurations.ErrorResponse'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /v1/platform/orgs/current/access-policies:
     get:
       tags:
@@ -34717,6 +34887,52 @@ components:
         type:
           type: string
         user_id:
+          type: string
+    forge_configurations.CreateForgeConfigurationRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        git_commit_metadata_key:
+          type: string
+        schedule_cron:
+          type: string
+        tracer_session_id:
+          type: string
+    forge_configurations.ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+    forge_configurations.ForgeConfiguration:
+      type: object
+      properties:
+        created_at:
+          type: string
+        enabled:
+          type: boolean
+        git_commit_metadata_key:
+          type: string
+        id:
+          type: string
+        schedule_cron:
+          type: string
+        session_name:
+          type: string
+        tenant_id:
+          type: string
+        tracer_session_id:
+          type: string
+        updated_at:
+          type: string
+    forge_configurations.UpdateForgeConfigurationRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        git_commit_metadata_key:
+          type: string
+        schedule_cron:
           type: string
     integrations.AgentBuilderIntegrationsPayload:
       type: object
