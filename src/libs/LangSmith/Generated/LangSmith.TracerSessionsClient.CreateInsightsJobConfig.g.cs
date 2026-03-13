@@ -5,49 +5,52 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareX_Beta_AutoGenerateInsightsJobConfigArguments(
+        partial void PrepareCreateInsightsJobConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            global::LangSmith.GenerateClusteringJobConfigRequest request);
-        partial void PrepareX_Beta_AutoGenerateInsightsJobConfigRequest(
+            global::LangSmith.CreateClusteringJobConfigRequest request);
+        partial void PrepareCreateInsightsJobConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::LangSmith.GenerateClusteringJobConfigRequest request);
-        partial void ProcessX_Beta_AutoGenerateInsightsJobConfigResponse(
+            global::LangSmith.CreateClusteringJobConfigRequest request);
+        partial void ProcessCreateInsightsJobConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessX_Beta_AutoGenerateInsightsJobConfigResponseContent(
+        partial void ProcessCreateInsightsJobConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// [Beta] Auto-Generate Insights Job Config<br/>
-        /// Auto-generate an insights job config.
+        /// [Beta] Create Insights Job Config<br/>
+        /// Save an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> X_Beta_AutoGenerateInsightsJobConfigAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> CreateInsightsJobConfigAsync(
             global::System.Guid sessionId,
 
-            global::LangSmith.GenerateClusteringJobConfigRequest request,
+            global::LangSmith.CreateClusteringJobConfigRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareX_Beta_AutoGenerateInsightsJobConfigArguments(
+            PrepareCreateInsightsJobConfigArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/configs/generate",
+                path: $"/api/v1/sessions/{sessionId}/insights/configs",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -83,7 +86,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareX_Beta_AutoGenerateInsightsJobConfigRequest(
+            PrepareCreateInsightsJobConfigRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
@@ -97,7 +100,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessX_Beta_AutoGenerateInsightsJobConfigResponse(
+            ProcessCreateInsightsJobConfigResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -150,7 +153,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessX_Beta_AutoGenerateInsightsJobConfigResponseContent(
+                ProcessCreateInsightsJobConfigResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -160,7 +163,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.GenerateClusteringJobConfigResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.CreateClusteringJobConfigResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -191,7 +194,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.GenerateClusteringJobConfigResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.CreateClusteringJobConfigResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -211,35 +214,38 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// [Beta] Auto-Generate Insights Job Config<br/>
-        /// Auto-generate an insights job config.
+        /// [Beta] Create Insights Job Config<br/>
+        /// Save an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="userContext"></param>
-        /// <param name="model">
-        /// Default Value: openai
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="config">
+        /// Request to create a run clustering job.
         /// </param>
-        /// <param name="clusterModel"></param>
-        /// <param name="summaryModel"></param>
+        /// <param name="scheduleCron"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> X_Beta_AutoGenerateInsightsJobConfigAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateClusteringJobConfigResponse> CreateInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            global::System.Collections.Generic.Dictionary<string, string> userContext,
-            global::LangSmith.GenerateClusteringJobConfigRequestModel? model = default,
-            string? clusterModel = default,
-            string? summaryModel = default,
+            string name,
+            global::LangSmith.CreateRunClusteringJobRequest config,
+            string? description = default,
+            string? scheduleCron = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.GenerateClusteringJobConfigRequest
+            var __request = new global::LangSmith.CreateClusteringJobConfigRequest
             {
-                UserContext = userContext,
-                Model = model,
-                ClusterModel = clusterModel,
-                SummaryModel = summaryModel,
+                Name = name,
+                Description = description,
+                Config = config,
+                ScheduleCron = scheduleCron,
             };
 
-            return await X_Beta_AutoGenerateInsightsJobConfigAsync(
+            return await CreateInsightsJobConfigAsync(
                 sessionId: sessionId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

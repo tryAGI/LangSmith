@@ -5,58 +5,56 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareX_Beta_UpdateInsightsJobArguments(
+        partial void PrepareAutoGenerateInsightsJobConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::System.Guid jobId,
-            global::LangSmith.UpdateRunClusteringJobRequest request);
-        partial void PrepareX_Beta_UpdateInsightsJobRequest(
+            global::LangSmith.GenerateClusteringJobConfigRequest request);
+        partial void PrepareAutoGenerateInsightsJobConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            global::LangSmith.UpdateRunClusteringJobRequest request);
-        partial void ProcessX_Beta_UpdateInsightsJobResponse(
+            global::LangSmith.GenerateClusteringJobConfigRequest request);
+        partial void ProcessAutoGenerateInsightsJobConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessX_Beta_UpdateInsightsJobResponseContent(
+        partial void ProcessAutoGenerateInsightsJobConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// [Beta] Update Insights Job<br/>
-        /// Update a session cluster job.
+        /// [Beta] Auto-Generate Insights Job Config<br/>
+        /// Auto-generate an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="jobId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunClusteringJobResponse> X_Beta_UpdateInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> AutoGenerateInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            global::System.Guid jobId,
 
-            global::LangSmith.UpdateRunClusteringJobRequest request,
+            global::LangSmith.GenerateClusteringJobConfigRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareX_Beta_UpdateInsightsJobArguments(
+            PrepareAutoGenerateInsightsJobConfigArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                jobId: ref jobId,
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: $"/api/v1/sessions/{sessionId}/insights/{jobId}",
+                path: $"/api/v1/sessions/{sessionId}/insights/configs/generate",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: new global::System.Net.Http.HttpMethod("PATCH"),
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -88,11 +86,10 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareX_Beta_UpdateInsightsJobRequest(
+            PrepareAutoGenerateInsightsJobConfigRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
-                jobId: jobId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -103,7 +100,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessX_Beta_UpdateInsightsJobResponse(
+            ProcessAutoGenerateInsightsJobConfigResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -156,7 +153,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessX_Beta_UpdateInsightsJobResponseContent(
+                ProcessAutoGenerateInsightsJobConfigResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -166,7 +163,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.UpdateRunClusteringJobResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.GenerateClusteringJobConfigResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -197,7 +194,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.UpdateRunClusteringJobResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.GenerateClusteringJobConfigResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -217,28 +214,39 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// [Beta] Update Insights Job<br/>
-        /// Update a session cluster job.
+        /// [Beta] Auto-Generate Insights Job Config<br/>
+        /// Auto-generate an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="jobId"></param>
-        /// <param name="name"></param>
+        /// <param name="userContext"></param>
+        /// <param name="model">
+        /// Default Value: openai
+        /// </param>
+        /// <param name="clusterModel"></param>
+        /// <param name="summaryModel"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateRunClusteringJobResponse> X_Beta_UpdateInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.GenerateClusteringJobConfigResponse> AutoGenerateInsightsJobConfigAsync(
             global::System.Guid sessionId,
-            global::System.Guid jobId,
-            string name,
+            global::System.Collections.Generic.Dictionary<string, string> userContext,
+            global::LangSmith.GenerateClusteringJobConfigRequestModel? model = default,
+            string? clusterModel = default,
+            string? summaryModel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.UpdateRunClusteringJobRequest
+            var __request = new global::LangSmith.GenerateClusteringJobConfigRequest
             {
-                Name = name,
+                UserContext = userContext,
+                Model = model,
+                ClusterModel = clusterModel,
+                SummaryModel = summaryModel,
             };
 
-            return await X_Beta_UpdateInsightsJobAsync(
+            return await AutoGenerateInsightsJobConfigAsync(
                 sessionId: sessionId,
-                jobId: jobId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

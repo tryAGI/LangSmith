@@ -12,7 +12,10 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> X_Beta_CreateInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> CreateInsightsJobAsync(
             global::System.Guid sessionId,
 
             global::LangSmith.CreateRunClusteringJobRequest request,
@@ -45,7 +48,10 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> X_Beta_CreateInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> CreateInsightsJobAsync(
             global::System.Guid sessionId,
             global::System.Guid? configId = default,
             global::System.DateTime? startTime = default,

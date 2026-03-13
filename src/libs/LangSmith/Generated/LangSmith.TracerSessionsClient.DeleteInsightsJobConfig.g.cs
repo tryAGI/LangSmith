@@ -5,20 +5,20 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareX_Beta_DeleteInsightsJobConfigArguments(
+        partial void PrepareDeleteInsightsJobConfigArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
             ref global::System.Guid configId);
-        partial void PrepareX_Beta_DeleteInsightsJobConfigRequest(
+        partial void PrepareDeleteInsightsJobConfigRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
             global::System.Guid configId);
-        partial void ProcessX_Beta_DeleteInsightsJobConfigResponse(
+        partial void ProcessDeleteInsightsJobConfigResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessX_Beta_DeleteInsightsJobConfigResponseContent(
+        partial void ProcessDeleteInsightsJobConfigResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -31,14 +31,17 @@ namespace LangSmith
         /// <param name="configId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteClusteringJobConfigResponse> X_Beta_DeleteInsightsJobConfigAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DeleteClusteringJobConfigResponse> DeleteInsightsJobConfigAsync(
             global::System.Guid sessionId,
             global::System.Guid configId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareX_Beta_DeleteInsightsJobConfigArguments(
+            PrepareDeleteInsightsJobConfigArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 configId: ref configId);
@@ -74,7 +77,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareX_Beta_DeleteInsightsJobConfigRequest(
+            PrepareDeleteInsightsJobConfigRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
@@ -88,7 +91,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessX_Beta_DeleteInsightsJobConfigResponse(
+            ProcessDeleteInsightsJobConfigResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -141,7 +144,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessX_Beta_DeleteInsightsJobConfigResponseContent(
+                ProcessDeleteInsightsJobConfigResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);

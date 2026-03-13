@@ -13,7 +13,10 @@ namespace LangSmith
         /// <param name="clusterId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusterResponse> X_Beta_GetRunClusterFromInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::LangSmith.GetRunClusterResponse> GetRunClusterFromInsightsJobAsync(
             global::System.Guid sessionId,
             global::System.Guid jobId,
             global::System.Guid clusterId,

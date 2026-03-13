@@ -5,20 +5,20 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
-        partial void PrepareX_Beta_CreateInsightsJobArguments(
+        partial void PrepareCreateInsightsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
             global::LangSmith.CreateRunClusteringJobRequest request);
-        partial void PrepareX_Beta_CreateInsightsJobRequest(
+        partial void PrepareCreateInsightsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
             global::LangSmith.CreateRunClusteringJobRequest request);
-        partial void ProcessX_Beta_CreateInsightsJobResponse(
+        partial void ProcessCreateInsightsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessX_Beta_CreateInsightsJobResponseContent(
+        partial void ProcessCreateInsightsJobResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -31,7 +31,10 @@ namespace LangSmith
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> X_Beta_CreateInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> CreateInsightsJobAsync(
             global::System.Guid sessionId,
 
             global::LangSmith.CreateRunClusteringJobRequest request,
@@ -41,7 +44,7 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareX_Beta_CreateInsightsJobArguments(
+            PrepareCreateInsightsJobArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
                 request: request);
@@ -83,7 +86,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareX_Beta_CreateInsightsJobRequest(
+            PrepareCreateInsightsJobRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 sessionId: sessionId,
@@ -97,7 +100,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessX_Beta_CreateInsightsJobResponse(
+            ProcessCreateInsightsJobResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -150,7 +153,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessX_Beta_CreateInsightsJobResponseContent(
+                ProcessCreateInsightsJobResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -237,7 +240,10 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> X_Beta_CreateInsightsJobAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRunClusteringJobResponse> CreateInsightsJobAsync(
             global::System.Guid sessionId,
             global::System.Guid? configId = default,
             global::System.DateTime? startTime = default,
@@ -277,7 +283,7 @@ namespace LangSmith
                 ValidateModelSecrets = validateModelSecrets,
             };
 
-            return await X_Beta_CreateInsightsJobAsync(
+            return await CreateInsightsJobAsync(
                 sessionId: sessionId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
