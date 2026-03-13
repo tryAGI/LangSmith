@@ -414,6 +414,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public ForgeConfigurationsClient ForgeConfigurations => new ForgeConfigurationsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AccessPoliciesClient AccessPolicies => new AccessPoliciesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
