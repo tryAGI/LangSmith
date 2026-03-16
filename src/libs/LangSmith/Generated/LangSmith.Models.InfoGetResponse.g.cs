@@ -18,6 +18,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("git_sha")]
+        public string? GitSha { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license_expiration_time")]
         public global::System.DateTime? LicenseExpirationTime { get; set; }
 
@@ -50,6 +56,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="InfoGetResponse" /> class.
         /// </summary>
         /// <param name="version"></param>
+        /// <param name="gitSha"></param>
         /// <param name="licenseExpirationTime"></param>
         /// <param name="batchIngestConfig">
         /// Batch ingest config.<br/>
@@ -62,12 +69,14 @@ namespace LangSmith
 #endif
         public InfoGetResponse(
             string version,
+            string? gitSha,
             global::System.DateTime? licenseExpirationTime,
             global::LangSmith.BatchIngestConfig? batchIngestConfig,
             object? instanceFlags,
             global::LangSmith.CustomerInfo? customerInfo)
         {
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.GitSha = gitSha;
             this.LicenseExpirationTime = licenseExpirationTime;
             this.BatchIngestConfig = batchIngestConfig;
             this.InstanceFlags = instanceFlags;
