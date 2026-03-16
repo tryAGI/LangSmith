@@ -24,13 +24,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_limit_bytes")]
-        public int? MemoryLimitBytes { get; set; }
+        public long? MemoryLimitBytes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_used_bytes")]
-        public int? MemoryUsedBytes { get; set; }
+        public long? MemoryUsedBytes { get; set; }
 
         /// <summary>
         /// 
@@ -72,13 +72,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_limit_bytes")]
-        public int? StorageLimitBytes { get; set; }
+        public long? StorageLimitBytes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_used_bytes")]
-        public int? StorageUsedBytes { get; set; }
+        public long? StorageUsedBytes { get; set; }
 
         /// <summary>
         /// 
@@ -128,16 +128,16 @@ namespace LangSmith
         public SandboxesUsageResponse(
             int? cpuLimitMillicores,
             int? cpuUsedMillicores,
-            int? memoryLimitBytes,
-            int? memoryUsedBytes,
+            long? memoryLimitBytes,
+            long? memoryUsedBytes,
             int? poolsCount,
             int? registriesCount,
             int? sandboxDirectCount,
             int? sandboxPoolReplicasCount,
             int? sandboxesLimit,
             int? sandboxesUsed,
-            int? storageLimitBytes,
-            int? storageUsedBytes,
+            long? storageLimitBytes,
+            long? storageUsedBytes,
             int? templatesCount,
             int? volumesLimit,
             int? volumesUsed)
