@@ -15,6 +15,12 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("proxy_config")]
+        public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -24,13 +30,16 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesUpdateClaimPayload" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="proxyConfig"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesUpdateClaimPayload(
-            string? name)
+            string? name,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig)
         {
             this.Name = name;
+            this.ProxyConfig = proxyConfig;
         }
 
         /// <summary>

@@ -35,6 +35,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("proxy_config")]
+        public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
@@ -69,6 +75,7 @@ namespace LangSmith
         /// <param name="dataplaneUrl"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="proxyConfig"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
         /// <param name="templateName"></param>
@@ -81,6 +88,7 @@ namespace LangSmith
             string? dataplaneUrl,
             string? id,
             string? name,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig,
             string? status,
             string? statusMessage,
             string? templateName,
@@ -90,6 +98,7 @@ namespace LangSmith
             this.DataplaneUrl = dataplaneUrl;
             this.Id = id;
             this.Name = name;
+            this.ProxyConfig = proxyConfig;
             this.Status = status;
             this.StatusMessage = statusMessage;
             this.TemplateName = templateName;
