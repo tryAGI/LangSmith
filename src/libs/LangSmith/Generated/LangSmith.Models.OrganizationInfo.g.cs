@@ -157,6 +157,18 @@ namespace LangSmith
         public bool? CanExportUsageBackfill { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
+        public bool? LlmAuthProxyEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
+        public string? LlmAuthProxyJwtAudience { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -219,6 +231,8 @@ namespace LangSmith
         /// <param name="canExportUsageBackfill">
         /// Default Value: false
         /// </param>
+        /// <param name="llmAuthProxyEnabled"></param>
+        /// <param name="llmAuthProxyJwtAudience"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -246,7 +260,9 @@ namespace LangSmith
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
             string? scimGroupNameSeparator,
-            bool? canExportUsageBackfill)
+            bool? canExportUsageBackfill,
+            bool? llmAuthProxyEnabled,
+            string? llmAuthProxyJwtAudience)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.IsPersonal = isPersonal;
@@ -272,6 +288,8 @@ namespace LangSmith
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.CanExportUsageBackfill = canExportUsageBackfill;
+            this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
+            this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
         }
 
         /// <summary>

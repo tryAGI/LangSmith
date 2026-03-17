@@ -69,6 +69,12 @@ namespace LangSmith
         public bool? CanUseLanggraphCloud { get; set; }
 
         /// <summary>
+        /// CanUseLLMAuthProxy indicates whether the org can use the LLM auth proxy (enterprise-only).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_llm_auth_proxy")]
+        public bool? CanUseLlmAuthProxy { get; set; }
+
+        /// <summary>
         /// CanUseRbac indicates whether this org can create new users using roles based on their plan.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_rbac")]
@@ -410,6 +416,9 @@ namespace LangSmith
         /// <param name="canUseLanggraphCloud">
         /// CanUseLanggraphCloud indicates whether this org can use LangGraph Platform.
         /// </param>
+        /// <param name="canUseLlmAuthProxy">
+        /// CanUseLLMAuthProxy indicates whether the org can use the LLM auth proxy (enterprise-only).
+        /// </param>
         /// <param name="canUseRbac">
         /// CanUseRbac indicates whether this org can create new users using roles based on their plan.
         /// </param>
@@ -575,6 +584,7 @@ namespace LangSmith
             bool? canUseAuditLogs,
             bool? canUseBulkExport,
             bool? canUseLanggraphCloud,
+            bool? canUseLlmAuthProxy,
             bool? canUseRbac,
             bool? canUseSamlSso,
             bool? clioEnabled,
@@ -636,6 +646,7 @@ namespace LangSmith
             this.CanUseAuditLogs = canUseAuditLogs;
             this.CanUseBulkExport = canUseBulkExport;
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
+            this.CanUseLlmAuthProxy = canUseLlmAuthProxy;
             this.CanUseRbac = canUseRbac;
             this.CanUseSamlSso = canUseSamlSso;
             this.ClioEnabled = clioEnabled;

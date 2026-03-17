@@ -218,6 +218,8 @@ namespace LangSmith
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
         /// <param name="scimGroupNameSeparator"></param>
+        /// <param name="llmAuthProxyEnabled"></param>
+        /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.OrganizationInfo> UpdateCurrentOrganizationInfoAsync(
@@ -233,6 +235,8 @@ namespace LangSmith
             int? maxPatExpiryDays = default,
             int? maxServiceKeyExpiryDays = default,
             string? scimGroupNameSeparator = default,
+            bool? llmAuthProxyEnabled = default,
+            string? llmAuthProxyJwtAudience = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.OrganizationUpdate
@@ -249,6 +253,8 @@ namespace LangSmith
                 MaxPatExpiryDays = maxPatExpiryDays,
                 MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays,
                 ScimGroupNameSeparator = scimGroupNameSeparator,
+                LlmAuthProxyEnabled = llmAuthProxyEnabled,
+                LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience,
             };
 
             return await UpdateCurrentOrganizationInfoAsync(

@@ -287,6 +287,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_llm_auth_proxy")]
+        public bool? CanUseLlmAuthProxy { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_monthly_usage_charts")]
         public bool? EnableMonthlyUsageCharts { get; set; }
 
@@ -513,6 +519,9 @@ namespace LangSmith
         /// <param name="canSetApiKeyMaxExpiry">
         /// Default Value: false
         /// </param>
+        /// <param name="canUseLlmAuthProxy">
+        /// Default Value: false
+        /// </param>
         /// <param name="enableMonthlyUsageCharts">
         /// Default Value: false
         /// </param>
@@ -608,6 +617,7 @@ namespace LangSmith
             int? maxPromptWebhooks,
             string? playgroundEvaluatorStrategy,
             bool? canSetApiKeyMaxExpiry,
+            bool? canUseLlmAuthProxy,
             bool? enableMonthlyUsageCharts,
             int? newRuleEvaluatorCreationVersion,
             bool? enableLgpListenersPage,
@@ -670,6 +680,7 @@ namespace LangSmith
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.CanSetApiKeyMaxExpiry = canSetApiKeyMaxExpiry;
+            this.CanUseLlmAuthProxy = canUseLlmAuthProxy;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.EnableLgpListenersPage = enableLgpListenersPage;
