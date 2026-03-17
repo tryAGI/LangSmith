@@ -18,8 +18,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule> Rules { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule>? Rules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,11 +35,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesProxyConfig(
-            global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule> rules,
-            global::System.Collections.Generic.IList<string>? noProxy)
+            global::System.Collections.Generic.IList<string>? noProxy,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule>? rules)
         {
-            this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
             this.NoProxy = noProxy;
+            this.Rules = rules;
         }
 
         /// <summary>
