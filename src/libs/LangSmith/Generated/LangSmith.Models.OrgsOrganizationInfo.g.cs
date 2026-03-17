@@ -65,6 +65,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
+        public bool? LlmAuthProxyEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
+        public string? LlmAuthProxyJwtAudience { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
         public bool? MarketplacePayoutsEnabled { get; set; }
 
@@ -170,6 +182,8 @@ namespace LangSmith
         /// <param name="invitesEnabled"></param>
         /// <param name="isPersonal"></param>
         /// <param name="jitProvisioningEnabled"></param>
+        /// <param name="llmAuthProxyEnabled"></param>
+        /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="marketplacePayoutsEnabled"></param>
         /// <param name="maxApiKeyExpiryDays"></param>
         /// <param name="maxPatExpiryDays"></param>
@@ -198,6 +212,8 @@ namespace LangSmith
             bool? invitesEnabled,
             bool? isPersonal,
             bool? jitProvisioningEnabled,
+            bool? llmAuthProxyEnabled,
+            string? llmAuthProxyJwtAudience,
             bool? marketplacePayoutsEnabled,
             int? maxApiKeyExpiryDays,
             int? maxPatExpiryDays,
@@ -223,6 +239,8 @@ namespace LangSmith
             this.InvitesEnabled = invitesEnabled;
             this.IsPersonal = isPersonal;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
+            this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
+            this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
             this.MaxPatExpiryDays = maxPatExpiryDays;

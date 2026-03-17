@@ -145,6 +145,18 @@ namespace LangSmith
         public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
+        public bool? LlmAuthProxyEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
+        public string? LlmAuthProxyJwtAudience { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -191,6 +203,8 @@ namespace LangSmith
         /// <param name="scimGroupNameSeparator">
         /// Default Value: :
         /// </param>
+        /// <param name="llmAuthProxyEnabled"></param>
+        /// <param name="llmAuthProxyJwtAudience"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -216,7 +230,9 @@ namespace LangSmith
             string? securityContact,
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
-            string? scimGroupNameSeparator)
+            string? scimGroupNameSeparator,
+            bool? llmAuthProxyEnabled,
+            string? llmAuthProxyJwtAudience)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -240,6 +256,8 @@ namespace LangSmith
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
+            this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
+            this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
         }
 
         /// <summary>
