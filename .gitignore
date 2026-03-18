@@ -401,3 +401,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /.idea/
+
+# AutoSDK trimming check temp directory
+.autosdk-trim/
