@@ -44,7 +44,6 @@ This file is **not** auto-generated and can be edited manually:
 |---------|---------|
 | `src/libs/LangSmith/` | Main SDK library (`LangSmithClient`) |
 | `src/tests/LangSmith.IntegrationTests/` | Integration tests against real LangSmith API |
-| `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 
 ### Build Configuration
 
