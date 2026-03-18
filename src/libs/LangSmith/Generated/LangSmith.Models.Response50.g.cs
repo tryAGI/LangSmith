@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Response48
+    public sealed partial class Response50
     {
 
         /// <summary>
