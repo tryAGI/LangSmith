@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Response56
+    public sealed partial class BeaconSubmitUsageSnapshotPayloadMeasures
     {
 
         /// <summary>

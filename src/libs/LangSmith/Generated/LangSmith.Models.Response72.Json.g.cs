@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class Response53
+    public sealed partial class Response72
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.Response53? FromJson(
+        public static global::LangSmith.Response72? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.Response53),
-                jsonSerializerContext) as global::LangSmith.Response53;
+                typeof(global::LangSmith.Response72),
+                jsonSerializerContext) as global::LangSmith.Response72;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.Response53? FromJson(
+        public static global::LangSmith.Response72? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.Response53>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.Response72>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.Response53?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.Response72?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.Response53),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.Response53;
+                typeof(global::LangSmith.Response72),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.Response72;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.Response53?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.Response72?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.Response53?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.Response72?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
