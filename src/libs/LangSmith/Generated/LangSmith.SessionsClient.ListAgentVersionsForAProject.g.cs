@@ -34,7 +34,7 @@ namespace LangSmith
                 httpClient: HttpClient);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/sessions/{sessionID}/agent-versions",
+                path: "/v1/platform/sessions/{sessionID}/agent-versions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

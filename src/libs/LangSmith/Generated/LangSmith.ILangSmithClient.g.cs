@@ -243,11 +243,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SessionsClient Sessions { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public IntegrationsClient Integrations { get; }
 
         /// <summary>
@@ -279,6 +274,11 @@ namespace LangSmith
         /// 
         /// </summary>
         public ScimTokensClient ScimTokens { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SessionsClient Sessions { get; }
 
         /// <summary>
         /// 

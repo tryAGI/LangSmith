@@ -396,15 +396,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SessionsClient Sessions => new SessionsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public IntegrationsClient Integrations => new IntegrationsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -460,6 +451,15 @@ namespace LangSmith
         /// 
         /// </summary>
         public ScimTokensClient ScimTokens => new ScimTokensClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SessionsClient Sessions => new SessionsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
