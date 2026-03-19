@@ -78,6 +78,9 @@ await client.Run.UpdateRunAsync(
     endTime: DateTime.UtcNow.ToString("O"));
 ```
 
+<!-- EXAMPLES:START -->
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/LangSmith/issues  
