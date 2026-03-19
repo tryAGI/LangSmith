@@ -1,3 +1,9 @@
+/*
+order: 30
+title: Trace
+slug: trace
+*/
+
 using tryAGI.OpenAI;
 
 namespace LangSmith.IntegrationTests;

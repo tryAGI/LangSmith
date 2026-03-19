@@ -1,3 +1,9 @@
+/*
+order: 10
+title: Create Dataset
+slug: create-dataset
+*/
+
 namespace LangSmith.IntegrationTests;
 
 public partial class Tests
