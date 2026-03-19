@@ -111,9 +111,9 @@ namespace LangSmith
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("run", run?.ToString() ?? string.Empty)
+                .AddOptionalParameter("run", run?.ToString())
                 .AddOptionalParameter("key", key?.ToString())
-                .AddOptionalParameter("session", session?.ToString() ?? string.Empty)
+                .AddOptionalParameter("session", session?.ToString())
                 .AddOptionalParameter("source", source?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
