@@ -250,6 +250,9 @@ namespace LangSmith
         /// </param>
         /// <param name="clusterModel"></param>
         /// <param name="summaryModel"></param>
+        /// <param name="isScheduled">
+        /// Default Value: false
+        /// </param>
         /// <param name="validateModelSecrets">
         /// Default Value: true
         /// </param>
@@ -275,6 +278,7 @@ namespace LangSmith
             global::LangSmith.CreateRunClusteringJobRequestModel? model = default,
             string? clusterModel = default,
             string? summaryModel = default,
+            bool? isScheduled = default,
             bool? validateModelSecrets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -295,6 +299,7 @@ namespace LangSmith
                 Model = model,
                 ClusterModel = clusterModel,
                 SummaryModel = summaryModel,
+                IsScheduled = isScheduled,
                 ValidateModelSecrets = validateModelSecrets,
             };
 

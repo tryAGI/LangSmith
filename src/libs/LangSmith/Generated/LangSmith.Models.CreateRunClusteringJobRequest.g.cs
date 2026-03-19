@@ -103,6 +103,12 @@ namespace LangSmith
         public string? SummaryModel { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_scheduled")]
+        public bool? IsScheduled { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validate_model_secrets")]
@@ -134,6 +140,9 @@ namespace LangSmith
         /// </param>
         /// <param name="clusterModel"></param>
         /// <param name="summaryModel"></param>
+        /// <param name="isScheduled">
+        /// Default Value: false
+        /// </param>
         /// <param name="validateModelSecrets">
         /// Default Value: true
         /// </param>
@@ -156,6 +165,7 @@ namespace LangSmith
             global::LangSmith.CreateRunClusteringJobRequestModel? model,
             string? clusterModel,
             string? summaryModel,
+            bool? isScheduled,
             bool? validateModelSecrets)
         {
             this.ConfigId = configId;
@@ -173,6 +183,7 @@ namespace LangSmith
             this.Model = model;
             this.ClusterModel = clusterModel;
             this.SummaryModel = summaryModel;
+            this.IsScheduled = isScheduled;
             this.ValidateModelSecrets = validateModelSecrets;
         }
 
