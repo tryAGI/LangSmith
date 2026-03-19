@@ -12,16 +12,20 @@ public partial class Tests
 
     private static LangSmithClient GetAuthorizedClient()
     {
-        return new LangSmithClient(
-            Environment.GetEnvironmentVariable("LANGSMITH_API_KEY") ??
-            throw new AssertInconclusiveException("LANGSMITH_API_KEY is required"));
+        var apiKey =
+            Environment.GetEnvironmentVariable("LANGSMITH_API_KEY") is { Length: > 0 } apiKeyValue ? apiKeyValue :
+            throw new AssertInconclusiveException("LANGSMITH_API_KEY is required");
+
+        return new LangSmithClient(apiKey);
     }
-    
+
     private static OpenAiClient GetAuthorizedOpenAiClient()
     {
-        return new OpenAiClient(
-            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-            throw new AssertInconclusiveException("OPENAI_API_KEY is required"));
+        var apiKey =
+            Environment.GetEnvironmentVariable("OPENAI_API_KEY") is { Length: > 0 } apiKeyValue ? apiKeyValue :
+            throw new AssertInconclusiveException("OPENAI_API_KEY is required");
+
+        return new OpenAiClient(apiKey);
     }
 
     private static void LoadEnvironmentFile()
