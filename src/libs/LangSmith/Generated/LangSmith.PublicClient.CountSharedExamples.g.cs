@@ -66,7 +66,7 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("id", id?.ToString())
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("as_of", asOf?.ToString())
                 .AddOptionalParameter("metadata", metadata)
                 .AddOptionalParameter("filter", filter) 
                 ; 

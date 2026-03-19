@@ -55,7 +55,7 @@ namespace LangSmith
                 path: $"/api/v1/examples/{exampleId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("as_of", asOf?.ToString())
                 .AddOptionalParameter("dataset", dataset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
