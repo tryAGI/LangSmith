@@ -11,15 +11,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Continuous,
+        FeedbackTypeContinuous,
         /// <summary>
         /// 
         /// </summary>
-        Categorical,
+        FeedbackTypeCategorical,
         /// <summary>
         /// 
         /// </summary>
-        Freeform,
+        FeedbackTypeFreeform,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace LangSmith
         {
             return value switch
             {
-                TypesFeedbackType.Continuous => "continuous",
-                TypesFeedbackType.Categorical => "categorical",
-                TypesFeedbackType.Freeform => "freeform",
+                TypesFeedbackType.FeedbackTypeContinuous => "continuous",
+                TypesFeedbackType.FeedbackTypeCategorical => "categorical",
+                TypesFeedbackType.FeedbackTypeFreeform => "freeform",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "continuous" => TypesFeedbackType.Continuous,
-                "categorical" => TypesFeedbackType.Categorical,
-                "freeform" => TypesFeedbackType.Freeform,
+                "continuous" => TypesFeedbackType.FeedbackTypeContinuous,
+                "categorical" => TypesFeedbackType.FeedbackTypeCategorical,
+                "freeform" => TypesFeedbackType.FeedbackTypeFreeform,
                 _ => null,
             };
         }

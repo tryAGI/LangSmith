@@ -21,12 +21,14 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Eagerly Create Feedback<br/>
         /// Create a new feedback.<br/>
         /// This method is invoked under the assumption that the run<br/>
         /// is already visible in the app, thus already present in DB
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

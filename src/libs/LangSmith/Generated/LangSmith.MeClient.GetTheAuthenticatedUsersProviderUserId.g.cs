@@ -19,6 +19,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get the authenticated user's provider user ID<br/>
         /// Returns the provider user ID associated with the authenticated user for a given provider type, or null if not set. Scoped to the current tenant.

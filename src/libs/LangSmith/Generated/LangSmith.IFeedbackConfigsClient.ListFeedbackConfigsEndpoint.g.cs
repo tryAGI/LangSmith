@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IFeedbackConfigsClient
     {
+
         /// <summary>
         /// List Feedback Configs Endpoint
         /// </summary>

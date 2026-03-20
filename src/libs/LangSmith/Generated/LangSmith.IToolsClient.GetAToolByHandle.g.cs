@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Get a tool by handle<br/>
         /// Returns a tool identified by its handle.

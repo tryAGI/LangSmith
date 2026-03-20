@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IScimTokensClient
     {
+
         /// <summary>
         /// List SCIM tokens<br/>
         /// List all SCIM bearer tokens for the current organization. The full token values are not returned.

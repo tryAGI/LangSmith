@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOrganizationsClient
     {
+
         /// <summary>
         /// Get current organization info<br/>
         /// Returns organization info for the authenticated user's current organization.

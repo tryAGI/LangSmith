@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITtlSettings2Client
     {
+
         /// <summary>
         /// List Ttl Settings<br/>
         /// List out the configured TTL settings for a given tenant.

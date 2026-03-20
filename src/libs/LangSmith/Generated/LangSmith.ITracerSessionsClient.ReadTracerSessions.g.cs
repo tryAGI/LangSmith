@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// Read Tracer Sessions<br/>
         /// Get all sessions.

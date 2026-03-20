@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
+
         /// <summary>
         /// Update a warm pool<br/>
         /// Update a warm pool's name or replica count
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

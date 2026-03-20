@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// List tools<br/>
         /// Returns a paginated list of tools in the workspace.

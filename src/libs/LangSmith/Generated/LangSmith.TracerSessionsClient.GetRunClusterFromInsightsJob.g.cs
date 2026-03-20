@@ -25,6 +25,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// [Beta] Get Run Cluster From Insights Job<br/>
         /// Get a specific cluster for a session.

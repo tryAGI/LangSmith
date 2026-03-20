@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Get Company Info
         /// </summary>

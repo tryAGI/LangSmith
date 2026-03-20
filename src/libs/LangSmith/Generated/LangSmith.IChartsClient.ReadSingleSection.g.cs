@@ -4,11 +4,13 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
+
         /// <summary>
         /// Read Single Section<br/>
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

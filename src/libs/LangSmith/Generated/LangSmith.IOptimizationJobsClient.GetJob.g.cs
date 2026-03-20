@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOptimizationJobsClient
     {
+
         /// <summary>
         /// Get Job<br/>
         /// Get a specific optimization job.

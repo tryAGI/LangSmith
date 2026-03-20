@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
+
         /// <summary>
         /// Delete a warm pool<br/>
         /// Delete a warm pool by name

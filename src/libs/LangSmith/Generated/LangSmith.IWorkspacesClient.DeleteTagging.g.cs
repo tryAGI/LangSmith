@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
+
         /// <summary>
         /// Delete Tagging
         /// </summary>

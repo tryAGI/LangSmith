@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// Trigger Rule<br/>
         /// Trigger a run rule manually.

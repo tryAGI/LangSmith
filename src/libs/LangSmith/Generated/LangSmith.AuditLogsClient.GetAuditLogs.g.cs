@@ -29,6 +29,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Audit Logs<br/>
         /// Retrieve audit log records for the authenticated user's organization in OCSF format.<br/>

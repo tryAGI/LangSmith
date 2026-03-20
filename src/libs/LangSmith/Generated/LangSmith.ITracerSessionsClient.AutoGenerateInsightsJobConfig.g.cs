@@ -4,11 +4,13 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// [Beta] Auto-Generate Insights Job Config<br/>
         /// Auto-generate an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

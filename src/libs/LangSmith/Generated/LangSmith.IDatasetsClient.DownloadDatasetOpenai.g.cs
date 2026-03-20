@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Download Dataset Openai<br/>
         /// Download a dataset as OpenAI Evals Jsonl format.

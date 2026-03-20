@@ -21,6 +21,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete Feedback Formula Endpoint<br/>
         /// Delete a feedback formula by id

@@ -4,11 +4,13 @@ namespace LangSmith
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Read Shared Delta<br/>
         /// Fetch the number of regressions/improvements for each example in a dataset, between sessions[0] and sessions[1].
         /// </summary>
         /// <param name="shareToken"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

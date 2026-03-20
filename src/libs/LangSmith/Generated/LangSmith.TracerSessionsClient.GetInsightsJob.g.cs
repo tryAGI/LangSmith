@@ -23,6 +23,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// [Beta] Get Insights Job<br/>
         /// Get a specific cluster job for a session.

@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
+
         /// <summary>
         /// List Pending Workspace Invites<br/>
         /// Get all workspaces visible to this auth

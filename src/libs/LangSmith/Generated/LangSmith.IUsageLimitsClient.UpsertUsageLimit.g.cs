@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface IUsageLimitsClient
     {
+
         /// <summary>
         /// Upsert Usage Limit<br/>
         /// Create a new usage limit.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

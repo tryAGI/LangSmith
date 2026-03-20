@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IServiceAccountsClient
     {
+
         /// <summary>
         /// Get Service Accounts<br/>
         /// Get the current organization's service accounts.

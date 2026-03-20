@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// Read Run Share State<br/>
         /// Get the state of sharing of a run.

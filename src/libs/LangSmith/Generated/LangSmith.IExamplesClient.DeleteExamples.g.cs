@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IExamplesClient
     {
+
         /// <summary>
         /// Delete Examples<br/>
         /// Soft delete examples. Only deletes the examples in the 'latest' version of the dataset.

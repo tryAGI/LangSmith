@@ -4,12 +4,14 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// [Beta] Update Insights Job Config<br/>
         /// Update an insights job config.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

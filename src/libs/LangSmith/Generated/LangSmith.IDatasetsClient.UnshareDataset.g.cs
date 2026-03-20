@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Unshare Dataset<br/>
         /// Unshare a dataset.

@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IExperimentViewOverridesClient
     {
+
         /// <summary>
         /// Update existing experiment view override configuration<br/>
         /// Updates an existing experiment view override configuration by completely replacing<br/>
@@ -31,6 +32,7 @@ namespace LangSmith
         /// }<br/>
         /// Both the dataset and override must exist and be accessible by the authenticated user.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

@@ -11,199 +11,199 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        AnnotationQueues_create,
+        AnnotationQueuesCreate,
         /// <summary>
         /// 
         /// </summary>
-        AnnotationQueues_delete,
+        AnnotationQueuesDelete,
         /// <summary>
         /// 
         /// </summary>
-        AnnotationQueues_read,
+        AnnotationQueuesRead,
         /// <summary>
         /// 
         /// </summary>
-        AnnotationQueues_update,
+        AnnotationQueuesUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Charts_create,
+        ChartsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Charts_delete,
+        ChartsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Charts_read,
+        ChartsRead,
         /// <summary>
         /// 
         /// </summary>
-        Charts_update,
+        ChartsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Datasets_create,
+        DatasetsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Datasets_delete,
+        DatasetsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Datasets_read,
+        DatasetsRead,
         /// <summary>
         /// 
         /// </summary>
-        Datasets_share,
+        DatasetsShare,
         /// <summary>
         /// 
         /// </summary>
-        Datasets_update,
+        DatasetsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Deployments_create,
+        DeploymentsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Deployments_delete,
+        DeploymentsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Deployments_read,
+        DeploymentsRead,
         /// <summary>
         /// 
         /// </summary>
-        Deployments_update,
+        DeploymentsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Feedback_create,
+        FeedbackCreate,
         /// <summary>
         /// 
         /// </summary>
-        Feedback_delete,
+        FeedbackDelete,
         /// <summary>
         /// 
         /// </summary>
-        Feedback_read,
+        FeedbackRead,
         /// <summary>
         /// 
         /// </summary>
-        Feedback_update,
+        FeedbackUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Projects_create,
+        ProjectsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Projects_delete,
+        ProjectsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Projects_read,
+        ProjectsRead,
         /// <summary>
         /// 
         /// </summary>
-        Projects_update,
+        ProjectsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Prompts_create,
+        PromptsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Prompts_delete,
+        PromptsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Prompts_read,
+        PromptsRead,
         /// <summary>
         /// 
         /// </summary>
-        Prompts_update,
+        PromptsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Prompts_share,
+        PromptsShare,
         /// <summary>
         /// 
         /// </summary>
-        Rules_create,
+        RulesCreate,
         /// <summary>
         /// 
         /// </summary>
-        Rules_delete,
+        RulesDelete,
         /// <summary>
         /// 
         /// </summary>
-        Rules_read,
+        RulesRead,
         /// <summary>
         /// 
         /// </summary>
-        Rules_update,
+        RulesUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Runs_create,
+        RunsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Runs_read,
+        RunsRead,
         /// <summary>
         /// 
         /// </summary>
-        Runs_share,
+        RunsShare,
         /// <summary>
         /// 
         /// </summary>
-        Runs_delete,
+        RunsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Workspaces_manageMembers,
+        WorkspacesManageMembers,
         /// <summary>
         /// 
         /// </summary>
-        Workspaces_manageSecrets,
+        WorkspacesManageSecrets,
         /// <summary>
         /// 
         /// </summary>
-        Workspaces_manage,
+        WorkspacesManage,
         /// <summary>
         /// 
         /// </summary>
-        Workspaces_read,
+        WorkspacesRead,
         /// <summary>
         /// 
         /// </summary>
-        Alerts_create,
+        AlertsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Alerts_update,
+        AlertsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Alerts_delete,
+        AlertsDelete,
         /// <summary>
         /// 
         /// </summary>
-        Alerts_read,
+        AlertsRead,
         /// <summary>
         /// 
         /// </summary>
-        Organization_pats_create,
+        OrganizationPATsCreate,
         /// <summary>
         /// 
         /// </summary>
-        Organization_read,
+        OrganizationRead,
         /// <summary>
         /// 
         /// </summary>
-        Organization_manage,
+        OrganizationManage,
     }
 
     /// <summary>
@@ -218,55 +218,55 @@ namespace LangSmith
         {
             return value switch
             {
-                AuthzInternalPermission.AnnotationQueues_create => "annotation-queues:create",
-                AuthzInternalPermission.AnnotationQueues_delete => "annotation-queues:delete",
-                AuthzInternalPermission.AnnotationQueues_read => "annotation-queues:read",
-                AuthzInternalPermission.AnnotationQueues_update => "annotation-queues:update",
-                AuthzInternalPermission.Charts_create => "charts:create",
-                AuthzInternalPermission.Charts_delete => "charts:delete",
-                AuthzInternalPermission.Charts_read => "charts:read",
-                AuthzInternalPermission.Charts_update => "charts:update",
-                AuthzInternalPermission.Datasets_create => "datasets:create",
-                AuthzInternalPermission.Datasets_delete => "datasets:delete",
-                AuthzInternalPermission.Datasets_read => "datasets:read",
-                AuthzInternalPermission.Datasets_share => "datasets:share",
-                AuthzInternalPermission.Datasets_update => "datasets:update",
-                AuthzInternalPermission.Deployments_create => "deployments:create",
-                AuthzInternalPermission.Deployments_delete => "deployments:delete",
-                AuthzInternalPermission.Deployments_read => "deployments:read",
-                AuthzInternalPermission.Deployments_update => "deployments:update",
-                AuthzInternalPermission.Feedback_create => "feedback:create",
-                AuthzInternalPermission.Feedback_delete => "feedback:delete",
-                AuthzInternalPermission.Feedback_read => "feedback:read",
-                AuthzInternalPermission.Feedback_update => "feedback:update",
-                AuthzInternalPermission.Projects_create => "projects:create",
-                AuthzInternalPermission.Projects_delete => "projects:delete",
-                AuthzInternalPermission.Projects_read => "projects:read",
-                AuthzInternalPermission.Projects_update => "projects:update",
-                AuthzInternalPermission.Prompts_create => "prompts:create",
-                AuthzInternalPermission.Prompts_delete => "prompts:delete",
-                AuthzInternalPermission.Prompts_read => "prompts:read",
-                AuthzInternalPermission.Prompts_update => "prompts:update",
-                AuthzInternalPermission.Prompts_share => "prompts:share",
-                AuthzInternalPermission.Rules_create => "rules:create",
-                AuthzInternalPermission.Rules_delete => "rules:delete",
-                AuthzInternalPermission.Rules_read => "rules:read",
-                AuthzInternalPermission.Rules_update => "rules:update",
-                AuthzInternalPermission.Runs_create => "runs:create",
-                AuthzInternalPermission.Runs_read => "runs:read",
-                AuthzInternalPermission.Runs_share => "runs:share",
-                AuthzInternalPermission.Runs_delete => "runs:delete",
-                AuthzInternalPermission.Workspaces_manageMembers => "workspaces:manage-members",
-                AuthzInternalPermission.Workspaces_manageSecrets => "workspaces:manage-secrets",
-                AuthzInternalPermission.Workspaces_manage => "workspaces:manage",
-                AuthzInternalPermission.Workspaces_read => "workspaces:read",
-                AuthzInternalPermission.Alerts_create => "alerts:create",
-                AuthzInternalPermission.Alerts_update => "alerts:update",
-                AuthzInternalPermission.Alerts_delete => "alerts:delete",
-                AuthzInternalPermission.Alerts_read => "alerts:read",
-                AuthzInternalPermission.Organization_pats_create => "organization:pats:create",
-                AuthzInternalPermission.Organization_read => "organization:read",
-                AuthzInternalPermission.Organization_manage => "organization:manage",
+                AuthzInternalPermission.AnnotationQueuesCreate => "annotation-queues:create",
+                AuthzInternalPermission.AnnotationQueuesDelete => "annotation-queues:delete",
+                AuthzInternalPermission.AnnotationQueuesRead => "annotation-queues:read",
+                AuthzInternalPermission.AnnotationQueuesUpdate => "annotation-queues:update",
+                AuthzInternalPermission.ChartsCreate => "charts:create",
+                AuthzInternalPermission.ChartsDelete => "charts:delete",
+                AuthzInternalPermission.ChartsRead => "charts:read",
+                AuthzInternalPermission.ChartsUpdate => "charts:update",
+                AuthzInternalPermission.DatasetsCreate => "datasets:create",
+                AuthzInternalPermission.DatasetsDelete => "datasets:delete",
+                AuthzInternalPermission.DatasetsRead => "datasets:read",
+                AuthzInternalPermission.DatasetsShare => "datasets:share",
+                AuthzInternalPermission.DatasetsUpdate => "datasets:update",
+                AuthzInternalPermission.DeploymentsCreate => "deployments:create",
+                AuthzInternalPermission.DeploymentsDelete => "deployments:delete",
+                AuthzInternalPermission.DeploymentsRead => "deployments:read",
+                AuthzInternalPermission.DeploymentsUpdate => "deployments:update",
+                AuthzInternalPermission.FeedbackCreate => "feedback:create",
+                AuthzInternalPermission.FeedbackDelete => "feedback:delete",
+                AuthzInternalPermission.FeedbackRead => "feedback:read",
+                AuthzInternalPermission.FeedbackUpdate => "feedback:update",
+                AuthzInternalPermission.ProjectsCreate => "projects:create",
+                AuthzInternalPermission.ProjectsDelete => "projects:delete",
+                AuthzInternalPermission.ProjectsRead => "projects:read",
+                AuthzInternalPermission.ProjectsUpdate => "projects:update",
+                AuthzInternalPermission.PromptsCreate => "prompts:create",
+                AuthzInternalPermission.PromptsDelete => "prompts:delete",
+                AuthzInternalPermission.PromptsRead => "prompts:read",
+                AuthzInternalPermission.PromptsUpdate => "prompts:update",
+                AuthzInternalPermission.PromptsShare => "prompts:share",
+                AuthzInternalPermission.RulesCreate => "rules:create",
+                AuthzInternalPermission.RulesDelete => "rules:delete",
+                AuthzInternalPermission.RulesRead => "rules:read",
+                AuthzInternalPermission.RulesUpdate => "rules:update",
+                AuthzInternalPermission.RunsCreate => "runs:create",
+                AuthzInternalPermission.RunsRead => "runs:read",
+                AuthzInternalPermission.RunsShare => "runs:share",
+                AuthzInternalPermission.RunsDelete => "runs:delete",
+                AuthzInternalPermission.WorkspacesManageMembers => "workspaces:manage-members",
+                AuthzInternalPermission.WorkspacesManageSecrets => "workspaces:manage-secrets",
+                AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
+                AuthzInternalPermission.WorkspacesRead => "workspaces:read",
+                AuthzInternalPermission.AlertsCreate => "alerts:create",
+                AuthzInternalPermission.AlertsUpdate => "alerts:update",
+                AuthzInternalPermission.AlertsDelete => "alerts:delete",
+                AuthzInternalPermission.AlertsRead => "alerts:read",
+                AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
+                AuthzInternalPermission.OrganizationRead => "organization:read",
+                AuthzInternalPermission.OrganizationManage => "organization:manage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -277,55 +277,55 @@ namespace LangSmith
         {
             return value switch
             {
-                "annotation-queues:create" => AuthzInternalPermission.AnnotationQueues_create,
-                "annotation-queues:delete" => AuthzInternalPermission.AnnotationQueues_delete,
-                "annotation-queues:read" => AuthzInternalPermission.AnnotationQueues_read,
-                "annotation-queues:update" => AuthzInternalPermission.AnnotationQueues_update,
-                "charts:create" => AuthzInternalPermission.Charts_create,
-                "charts:delete" => AuthzInternalPermission.Charts_delete,
-                "charts:read" => AuthzInternalPermission.Charts_read,
-                "charts:update" => AuthzInternalPermission.Charts_update,
-                "datasets:create" => AuthzInternalPermission.Datasets_create,
-                "datasets:delete" => AuthzInternalPermission.Datasets_delete,
-                "datasets:read" => AuthzInternalPermission.Datasets_read,
-                "datasets:share" => AuthzInternalPermission.Datasets_share,
-                "datasets:update" => AuthzInternalPermission.Datasets_update,
-                "deployments:create" => AuthzInternalPermission.Deployments_create,
-                "deployments:delete" => AuthzInternalPermission.Deployments_delete,
-                "deployments:read" => AuthzInternalPermission.Deployments_read,
-                "deployments:update" => AuthzInternalPermission.Deployments_update,
-                "feedback:create" => AuthzInternalPermission.Feedback_create,
-                "feedback:delete" => AuthzInternalPermission.Feedback_delete,
-                "feedback:read" => AuthzInternalPermission.Feedback_read,
-                "feedback:update" => AuthzInternalPermission.Feedback_update,
-                "projects:create" => AuthzInternalPermission.Projects_create,
-                "projects:delete" => AuthzInternalPermission.Projects_delete,
-                "projects:read" => AuthzInternalPermission.Projects_read,
-                "projects:update" => AuthzInternalPermission.Projects_update,
-                "prompts:create" => AuthzInternalPermission.Prompts_create,
-                "prompts:delete" => AuthzInternalPermission.Prompts_delete,
-                "prompts:read" => AuthzInternalPermission.Prompts_read,
-                "prompts:update" => AuthzInternalPermission.Prompts_update,
-                "prompts:share" => AuthzInternalPermission.Prompts_share,
-                "rules:create" => AuthzInternalPermission.Rules_create,
-                "rules:delete" => AuthzInternalPermission.Rules_delete,
-                "rules:read" => AuthzInternalPermission.Rules_read,
-                "rules:update" => AuthzInternalPermission.Rules_update,
-                "runs:create" => AuthzInternalPermission.Runs_create,
-                "runs:read" => AuthzInternalPermission.Runs_read,
-                "runs:share" => AuthzInternalPermission.Runs_share,
-                "runs:delete" => AuthzInternalPermission.Runs_delete,
-                "workspaces:manage-members" => AuthzInternalPermission.Workspaces_manageMembers,
-                "workspaces:manage-secrets" => AuthzInternalPermission.Workspaces_manageSecrets,
-                "workspaces:manage" => AuthzInternalPermission.Workspaces_manage,
-                "workspaces:read" => AuthzInternalPermission.Workspaces_read,
-                "alerts:create" => AuthzInternalPermission.Alerts_create,
-                "alerts:update" => AuthzInternalPermission.Alerts_update,
-                "alerts:delete" => AuthzInternalPermission.Alerts_delete,
-                "alerts:read" => AuthzInternalPermission.Alerts_read,
-                "organization:pats:create" => AuthzInternalPermission.Organization_pats_create,
-                "organization:read" => AuthzInternalPermission.Organization_read,
-                "organization:manage" => AuthzInternalPermission.Organization_manage,
+                "annotation-queues:create" => AuthzInternalPermission.AnnotationQueuesCreate,
+                "annotation-queues:delete" => AuthzInternalPermission.AnnotationQueuesDelete,
+                "annotation-queues:read" => AuthzInternalPermission.AnnotationQueuesRead,
+                "annotation-queues:update" => AuthzInternalPermission.AnnotationQueuesUpdate,
+                "charts:create" => AuthzInternalPermission.ChartsCreate,
+                "charts:delete" => AuthzInternalPermission.ChartsDelete,
+                "charts:read" => AuthzInternalPermission.ChartsRead,
+                "charts:update" => AuthzInternalPermission.ChartsUpdate,
+                "datasets:create" => AuthzInternalPermission.DatasetsCreate,
+                "datasets:delete" => AuthzInternalPermission.DatasetsDelete,
+                "datasets:read" => AuthzInternalPermission.DatasetsRead,
+                "datasets:share" => AuthzInternalPermission.DatasetsShare,
+                "datasets:update" => AuthzInternalPermission.DatasetsUpdate,
+                "deployments:create" => AuthzInternalPermission.DeploymentsCreate,
+                "deployments:delete" => AuthzInternalPermission.DeploymentsDelete,
+                "deployments:read" => AuthzInternalPermission.DeploymentsRead,
+                "deployments:update" => AuthzInternalPermission.DeploymentsUpdate,
+                "feedback:create" => AuthzInternalPermission.FeedbackCreate,
+                "feedback:delete" => AuthzInternalPermission.FeedbackDelete,
+                "feedback:read" => AuthzInternalPermission.FeedbackRead,
+                "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
+                "projects:create" => AuthzInternalPermission.ProjectsCreate,
+                "projects:delete" => AuthzInternalPermission.ProjectsDelete,
+                "projects:read" => AuthzInternalPermission.ProjectsRead,
+                "projects:update" => AuthzInternalPermission.ProjectsUpdate,
+                "prompts:create" => AuthzInternalPermission.PromptsCreate,
+                "prompts:delete" => AuthzInternalPermission.PromptsDelete,
+                "prompts:read" => AuthzInternalPermission.PromptsRead,
+                "prompts:update" => AuthzInternalPermission.PromptsUpdate,
+                "prompts:share" => AuthzInternalPermission.PromptsShare,
+                "rules:create" => AuthzInternalPermission.RulesCreate,
+                "rules:delete" => AuthzInternalPermission.RulesDelete,
+                "rules:read" => AuthzInternalPermission.RulesRead,
+                "rules:update" => AuthzInternalPermission.RulesUpdate,
+                "runs:create" => AuthzInternalPermission.RunsCreate,
+                "runs:read" => AuthzInternalPermission.RunsRead,
+                "runs:share" => AuthzInternalPermission.RunsShare,
+                "runs:delete" => AuthzInternalPermission.RunsDelete,
+                "workspaces:manage-members" => AuthzInternalPermission.WorkspacesManageMembers,
+                "workspaces:manage-secrets" => AuthzInternalPermission.WorkspacesManageSecrets,
+                "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
+                "workspaces:read" => AuthzInternalPermission.WorkspacesRead,
+                "alerts:create" => AuthzInternalPermission.AlertsCreate,
+                "alerts:update" => AuthzInternalPermission.AlertsUpdate,
+                "alerts:delete" => AuthzInternalPermission.AlertsDelete,
+                "alerts:read" => AuthzInternalPermission.AlertsRead,
+                "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
+                "organization:read" => AuthzInternalPermission.OrganizationRead,
+                "organization:manage" => AuthzInternalPermission.OrganizationManage,
                 _ => null,
             };
         }

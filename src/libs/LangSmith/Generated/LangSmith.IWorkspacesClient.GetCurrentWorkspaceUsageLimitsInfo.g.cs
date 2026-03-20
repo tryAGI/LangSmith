@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
+
         /// <summary>
         /// Get Current Workspace Usage Limits Info
         /// </summary>

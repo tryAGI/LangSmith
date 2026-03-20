@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITenantClient
     {
+
         /// <summary>
         /// List Tenants<br/>
         /// Get all tenants visible to this auth

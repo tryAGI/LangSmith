@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITagsClient
     {
+
         /// <summary>
         /// Get Tag
         /// </summary>

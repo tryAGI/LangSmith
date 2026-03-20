@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOwnershipsClient
     {
+
         /// <summary>
         /// List Repo Owners<br/>
         /// List all owners of a repo.<br/>

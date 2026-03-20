@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
+
         /// <summary>
         /// Org Read Sections<br/>
         /// Get all sections for the tenant.

@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// [Beta] Get Insights Job Configs<br/>
         /// Get all insights job configs for a session.
