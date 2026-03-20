@@ -23,6 +23,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// [Beta] Delete Insights Job<br/>
         /// Delete a session cluster job.

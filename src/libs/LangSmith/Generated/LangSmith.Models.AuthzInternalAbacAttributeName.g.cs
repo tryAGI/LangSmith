@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ResourceTagKey,
+        AbacAttributeNameResourceTagKey,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace LangSmith
         {
             return value switch
             {
-                AuthzInternalAbacAttributeName.ResourceTagKey => "resource_tag_key",
+                AuthzInternalAbacAttributeName.AbacAttributeNameResourceTagKey => "resource_tag_key",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace LangSmith
         {
             return value switch
             {
-                "resource_tag_key" => AuthzInternalAbacAttributeName.ResourceTagKey,
+                "resource_tag_key" => AuthzInternalAbacAttributeName.AbacAttributeNameResourceTagKey,
                 _ => null,
             };
         }

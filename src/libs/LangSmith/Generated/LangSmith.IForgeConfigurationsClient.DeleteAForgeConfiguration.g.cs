@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IForgeConfigurationsClient
     {
+
         /// <summary>
         /// Delete a forge configuration<br/>
         /// Deletes a Forge configuration by ID.

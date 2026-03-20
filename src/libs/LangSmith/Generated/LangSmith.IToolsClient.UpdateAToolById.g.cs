@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Update a tool by ID<br/>
         /// Updates an existing tool identified by its UUID.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

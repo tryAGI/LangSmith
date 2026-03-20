@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
+
         /// <summary>
         /// Org Read Charts<br/>
         /// Get all charts for the tenant.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

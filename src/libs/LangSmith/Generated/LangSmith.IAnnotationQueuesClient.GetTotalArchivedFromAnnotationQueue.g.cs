@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IAnnotationQueuesClient
     {
+
         /// <summary>
         /// Get Total Archived From Annotation Queue
         /// </summary>

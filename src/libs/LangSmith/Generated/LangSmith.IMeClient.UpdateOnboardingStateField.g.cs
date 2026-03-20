@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IMeClient
     {
+
         /// <summary>
         /// Update Onboarding State Field<br/>
         /// Update a specific onboarding completion field for the current user.<br/>

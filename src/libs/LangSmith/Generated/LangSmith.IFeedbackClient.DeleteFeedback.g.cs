@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
+
         /// <summary>
         /// Delete Feedback<br/>
         /// Delete a feedback.

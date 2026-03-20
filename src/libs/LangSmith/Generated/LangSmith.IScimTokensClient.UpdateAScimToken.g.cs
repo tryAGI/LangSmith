@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface IScimTokensClient
     {
+
         /// <summary>
         /// Update a SCIM token<br/>
         /// Update the description of an existing SCIM token for the current organization.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

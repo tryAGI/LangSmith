@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Diff Dataset Versions<br/>
         /// Get diff between two dataset versions.

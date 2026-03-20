@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IMeClient
     {
+
         /// <summary>
         /// Get Ls User Id<br/>
         /// Get the LangSmith user ID for the current user.

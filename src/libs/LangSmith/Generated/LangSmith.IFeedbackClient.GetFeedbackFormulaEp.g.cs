@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
+
         /// <summary>
         /// Get Feedback Formula Ep<br/>
         /// Get a feedback formula by id

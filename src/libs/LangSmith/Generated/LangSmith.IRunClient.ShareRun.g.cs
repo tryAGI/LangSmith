@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// Share Run<br/>
         /// Share a run.

@@ -4,11 +4,13 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Update Current Org Member<br/>
         /// This is used for updating a user's role (all auth modes) or full_name/password (basic auth)
         /// </summary>
         /// <param name="identityId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

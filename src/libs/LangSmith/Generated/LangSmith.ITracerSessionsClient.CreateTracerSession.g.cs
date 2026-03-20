@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// Create Tracer Session<br/>
         /// Create a new session.
@@ -11,6 +12,7 @@ namespace LangSmith
         /// <param name="upsert">
         /// Default Value: false
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

@@ -19,6 +19,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get workspace TTL settings<br/>
         /// Get the longlived trace TTL settings for a workspace

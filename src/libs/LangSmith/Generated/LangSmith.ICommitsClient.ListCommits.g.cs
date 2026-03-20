@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ICommitsClient
     {
+
         /// <summary>
         /// List commits<br/>
         /// Lists all commits for a repository with pagination support.<br/>

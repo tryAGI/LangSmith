@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IThreadsClient
     {
+
         /// <summary>
         /// Query Thread Traces<br/>
         /// Retrieve all traces belonging to a specific thread within a project.<br/>

@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List Organizations<br/>
         /// Get all orgs visible to this auth

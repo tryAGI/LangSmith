@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Create a tool<br/>
         /// Creates a new tool in the workspace.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

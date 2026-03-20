@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IMcpClient
     {
+
         /// <summary>
         /// Get Tools<br/>
         /// Return MCP tools — from cache if fresh, otherwise by fetching from remote.<br/>

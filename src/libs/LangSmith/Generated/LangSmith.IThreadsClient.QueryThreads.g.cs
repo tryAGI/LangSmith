@@ -4,12 +4,14 @@ namespace LangSmith
 {
     public partial interface IThreadsClient
     {
+
         /// <summary>
         /// Query Threads<br/>
         /// Query threads within a project (session), with cursor-based pagination.<br/>
         /// Returns threads matching the given time range and optional filter,<br/>
         /// backed by the smithdb QueryThreads gRPC RPC.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

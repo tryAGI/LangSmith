@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Remove Member From Current Org<br/>
         /// Remove a user from the current organization.

@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Claim Pending Organization Invite
         /// </summary>

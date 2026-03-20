@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IPlaygroundSettingsClient
     {
+
         /// <summary>
         /// Get Playground Settings<br/>
         /// Get a single playground settings by ID.

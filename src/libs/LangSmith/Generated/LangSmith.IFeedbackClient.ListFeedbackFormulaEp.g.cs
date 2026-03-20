@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
+
         /// <summary>
         /// List Feedback Formula Ep<br/>
         /// List feedback formulas for a given dataset or tracing project

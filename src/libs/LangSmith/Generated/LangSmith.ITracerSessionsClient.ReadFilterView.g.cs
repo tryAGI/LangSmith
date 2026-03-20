@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// Read Filter View<br/>
         /// Get a specific filter view.

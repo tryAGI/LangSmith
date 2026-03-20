@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// List Rules<br/>
         /// List all run rules.

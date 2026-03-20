@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Export Granular Usage Csv<br/>
         /// Export granular usage data as CSV.<br/>

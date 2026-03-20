@@ -4,10 +4,12 @@ namespace LangSmith
 {
     public partial interface IIntegrationsClient
     {
+
         /// <summary>
         /// Update Agent Builder integrations settings<br/>
         /// Replaces default policy and integration overrides for the current workspace.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

@@ -23,6 +23,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// [Beta] Get Insights Job Configs<br/>
         /// Get all insights job configs for a session.

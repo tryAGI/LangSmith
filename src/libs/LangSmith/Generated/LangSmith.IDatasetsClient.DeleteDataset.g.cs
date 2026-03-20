@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Delete Dataset<br/>
         /// Delete a specific dataset.

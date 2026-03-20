@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete Repo<br/>
         /// Delete a repo.

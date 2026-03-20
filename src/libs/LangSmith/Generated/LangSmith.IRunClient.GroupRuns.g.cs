@@ -4,11 +4,13 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// Group Runs<br/>
         /// Get runs grouped by an expression
         /// </summary>
         /// <param name="accept"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

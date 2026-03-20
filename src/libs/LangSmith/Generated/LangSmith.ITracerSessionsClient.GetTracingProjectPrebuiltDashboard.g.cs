@@ -4,12 +4,14 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// Get Tracing Project Prebuilt Dashboard<br/>
         /// Get a prebuilt dashboard for a tracing project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="accept"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

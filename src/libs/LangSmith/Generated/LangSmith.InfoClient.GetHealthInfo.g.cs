@@ -19,6 +19,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Health Info<br/>
         /// Get health information about the current deployment of LangSmith.

@@ -4,11 +4,13 @@ namespace LangSmith
 {
     public partial interface ICommitsClient
     {
+
         /// <summary>
         /// Create a commit<br/>
         /// Creates a new commit in a repository.<br/>
         /// Requires authentication and write access to the repository.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

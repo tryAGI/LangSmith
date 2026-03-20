@@ -19,6 +19,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get an alert rule<br/>
         /// Gets an alert rule.

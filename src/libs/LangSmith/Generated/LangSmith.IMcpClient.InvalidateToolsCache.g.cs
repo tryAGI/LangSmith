@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IMcpClient
     {
+
         /// <summary>
         /// Invalidate Tools Cache<br/>
         /// Invalidate cached MCP tools for a given server URL.<br/>

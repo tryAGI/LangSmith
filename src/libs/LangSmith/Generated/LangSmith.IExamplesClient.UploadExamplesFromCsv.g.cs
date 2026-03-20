@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IExamplesClient
     {
+
         /// <summary>
         /// Upload Examples From Csv<br/>
         /// Upload examples from a CSV file.<br/>
@@ -11,6 +12,7 @@ namespace LangSmith
         /// the POST /v1/platform/datasets/{dataset_id}/examples endpoint which provides more efficient upload.
         /// </summary>
         /// <param name="datasetId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

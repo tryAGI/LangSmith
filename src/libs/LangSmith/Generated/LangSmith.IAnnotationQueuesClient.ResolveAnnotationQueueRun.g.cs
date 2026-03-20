@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IAnnotationQueuesClient
     {
+
         /// <summary>
         /// Resolve Annotation Queue Run<br/>
         /// Resolve a queue run ID to its section and run data for deep linking.

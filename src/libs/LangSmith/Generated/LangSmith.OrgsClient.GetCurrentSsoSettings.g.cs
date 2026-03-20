@@ -19,6 +19,7 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Current Sso Settings<br/>
         /// Get SSO provider settings for the current organization.

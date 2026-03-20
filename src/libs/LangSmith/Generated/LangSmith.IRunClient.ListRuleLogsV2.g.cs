@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// List Rule Logs V2<br/>
         /// List logs for a particular rule with cursor-based pagination.<br/>

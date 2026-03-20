@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IAlertRulesClient
     {
+
         /// <summary>
         /// Test an alert action to determine if configuration is valid<br/>
         /// Tests an alert action which will fire a notification to all configured recipients if the configuration is valid.

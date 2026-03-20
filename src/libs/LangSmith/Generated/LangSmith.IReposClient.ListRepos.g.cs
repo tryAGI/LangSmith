@@ -4,6 +4,7 @@ namespace LangSmith
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List Repos<br/>
         /// Get all repos.
