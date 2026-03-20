@@ -30,6 +30,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
+        public int? TtlSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_for_ready")]
         public bool? WaitForReady { get; set; }
 
@@ -45,6 +51,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="templateName"></param>
         /// <param name="timeout"></param>
+        /// <param name="ttlSeconds"></param>
         /// <param name="waitForReady"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,11 +60,13 @@ namespace LangSmith
             string templateName,
             string? name,
             int? timeout,
+            int? ttlSeconds,
             bool? waitForReady)
         {
             this.TemplateName = templateName ?? throw new global::System.ArgumentNullException(nameof(templateName));
             this.Name = name;
             this.Timeout = timeout;
+            this.TtlSeconds = ttlSeconds;
             this.WaitForReady = waitForReady;
         }
 

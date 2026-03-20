@@ -23,6 +23,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="templateName"></param>
         /// <param name="timeout"></param>
+        /// <param name="ttlSeconds"></param>
         /// <param name="waitForReady"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -30,6 +31,7 @@ namespace LangSmith
             string templateName,
             string? name = default,
             int? timeout = default,
+            int? ttlSeconds = default,
             bool? waitForReady = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

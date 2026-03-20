@@ -339,17 +339,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="ttlSeconds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
             string? name = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
+            int? ttlSeconds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.SandboxesUpdateClaimPayload
             {
                 Name = name,
                 ProxyConfig = proxyConfig,
+                TtlSeconds = ttlSeconds,
             };
 
             return await UpdateASandboxClaimAsync(

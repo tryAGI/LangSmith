@@ -21,6 +21,12 @@ namespace LangSmith
         public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
+        public int? TtlSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -31,15 +37,18 @@ namespace LangSmith
         /// </summary>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="ttlSeconds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesUpdateClaimPayload(
             string? name,
-            global::LangSmith.SandboxesProxyConfig? proxyConfig)
+            global::LangSmith.SandboxesProxyConfig? proxyConfig,
+            int? ttlSeconds)
         {
             this.Name = name;
             this.ProxyConfig = proxyConfig;
+            this.TtlSeconds = ttlSeconds;
         }
 
         /// <summary>

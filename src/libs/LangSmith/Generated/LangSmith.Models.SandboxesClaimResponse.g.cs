@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public string? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -59,6 +65,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
+        public int? TtlSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
 
@@ -73,12 +85,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="dataplaneUrl"></param>
+        /// <param name="expiresAt"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
         /// <param name="templateName"></param>
+        /// <param name="ttlSeconds"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,22 +100,26 @@ namespace LangSmith
         public SandboxesClaimResponse(
             string? createdAt,
             string? dataplaneUrl,
+            string? expiresAt,
             string? id,
             string? name,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             string? status,
             string? statusMessage,
             string? templateName,
+            int? ttlSeconds,
             string? updatedAt)
         {
             this.CreatedAt = createdAt;
             this.DataplaneUrl = dataplaneUrl;
+            this.ExpiresAt = expiresAt;
             this.Id = id;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
             this.Status = status;
             this.StatusMessage = statusMessage;
             this.TemplateName = templateName;
+            this.TtlSeconds = ttlSeconds;
             this.UpdatedAt = updatedAt;
         }
 
