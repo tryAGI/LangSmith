@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Get Tool Def Json Schema
         /// </summary>

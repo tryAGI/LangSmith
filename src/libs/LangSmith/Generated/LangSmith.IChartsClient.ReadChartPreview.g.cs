@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Read Chart Preview<br/>
         /// Get a preview for a chart without actually creating it.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.CustomChartPreviewRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Read Chart Preview<br/>
         /// Get a preview for a chart without actually creating it.

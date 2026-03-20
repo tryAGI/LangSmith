@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Remove Repo Owner<br/>
         /// Remove an owner from a repo.<br/>
@@ -33,7 +32,6 @@ namespace LangSmith
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -229,7 +227,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Remove Repo Owner<br/>
         /// Remove an owner from a repo.<br/>

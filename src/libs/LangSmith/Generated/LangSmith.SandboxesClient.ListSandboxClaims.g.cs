@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List sandbox claims<br/>
         /// List sandbox claims for the authenticated tenant, with optional name filtering and pagination.

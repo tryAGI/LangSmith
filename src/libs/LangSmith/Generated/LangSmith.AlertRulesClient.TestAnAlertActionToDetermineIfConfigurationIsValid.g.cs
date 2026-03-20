@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Test an alert action to determine if configuration is valid<br/>
         /// Tests an alert action which will fire a notification to all configured recipients if the configuration is valid.

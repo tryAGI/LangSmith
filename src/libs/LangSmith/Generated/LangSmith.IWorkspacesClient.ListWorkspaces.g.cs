@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// List Workspaces<br/>
         /// Get all workspaces visible to this auth in the current org. Does not create a new workspace/org.

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IForgeConfigurationsClient
     {
-
         /// <summary>
         /// List forge configurations<br/>
         /// Returns all Forge configurations for the current workspace.

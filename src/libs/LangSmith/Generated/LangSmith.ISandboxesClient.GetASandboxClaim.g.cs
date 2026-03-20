@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
-
         /// <summary>
         /// Get a sandbox claim<br/>
         /// Retrieve a sandbox claim by name. Stale provisioning claims are auto-failed.

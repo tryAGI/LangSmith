@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Create Org Service Key<br/>
         /// Create org-scoped service key. If workspaces is None, key is org-wide.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.APIKeyCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Org Service Key<br/>
         /// Create org-scoped service key. If workspaces is None, key is org-wide.

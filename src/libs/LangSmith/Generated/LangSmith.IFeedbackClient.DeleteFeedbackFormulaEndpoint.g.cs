@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Delete Feedback Formula Endpoint<br/>
         /// Delete a feedback formula by id

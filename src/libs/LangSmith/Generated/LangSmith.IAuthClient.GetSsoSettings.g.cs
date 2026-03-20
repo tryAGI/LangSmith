@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAuthClient
     {
-
         /// <summary>
         /// Get Sso Settings<br/>
         /// Get SSO provider settings from login slug.

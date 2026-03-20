@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Read Feedback<br/>
         /// Get a specific feedback.

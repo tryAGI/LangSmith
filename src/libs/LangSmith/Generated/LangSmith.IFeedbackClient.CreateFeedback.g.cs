@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.FeedbackCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.

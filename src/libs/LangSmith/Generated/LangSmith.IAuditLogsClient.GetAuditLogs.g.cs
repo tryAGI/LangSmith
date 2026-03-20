@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAuditLogsClient
     {
-
         /// <summary>
         /// Get Audit Logs<br/>
         /// Retrieve audit log records for the authenticated user's organization in OCSF format.<br/>

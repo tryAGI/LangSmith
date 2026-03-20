@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Read Grouped Experiments<br/>
         /// Stream grouped and aggregated experiments.
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.GroupedExperimentsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Read Grouped Experiments<br/>
         /// Stream grouped and aggregated experiments.

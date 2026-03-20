@@ -14,7 +14,6 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a SCIM token<br/>
         /// Delete a SCIM bearer token from the current organization.

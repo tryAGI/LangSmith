@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// Delete Tracer Session<br/>
         /// Delete a specific session.

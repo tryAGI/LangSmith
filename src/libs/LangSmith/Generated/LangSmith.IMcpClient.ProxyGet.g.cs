@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IMcpClient
     {
-
         /// <summary>
         /// Proxy Get
         /// </summary>

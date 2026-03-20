@@ -25,14 +25,12 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Job<br/>
         /// Create a new prompt optimization job.
         /// </summary>
         /// <param name="repo"></param>
         /// <param name="owner"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -232,7 +230,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Create Job<br/>
         /// Create a new prompt optimization job.

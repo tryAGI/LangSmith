@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Update Dataset<br/>
         /// Update a specific dataset.
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.DatasetUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update Dataset<br/>
         /// Update a specific dataset.

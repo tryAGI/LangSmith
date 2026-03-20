@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Read Shared Delta Stream<br/>
         /// Stream feedback deltas for multiple feedback keys.<br/>
@@ -19,7 +18,6 @@ namespace LangSmith
         ///     event: end
         /// </summary>
         /// <param name="shareToken"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -28,7 +26,6 @@ namespace LangSmith
 
             global::LangSmith.QueryFeedbackDeltaBatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Read Shared Delta Stream<br/>
         /// Stream feedback deltas for multiple feedback keys.<br/>

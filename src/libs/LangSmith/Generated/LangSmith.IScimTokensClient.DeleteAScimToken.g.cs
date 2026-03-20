@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IScimTokensClient
     {
-
         /// <summary>
         /// Delete a SCIM token<br/>
         /// Delete a SCIM bearer token from the current organization.

@@ -21,7 +21,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create new experiment view override configuration for a dataset<br/>
         /// Creates a new experiment view override configuration for a dataset with column display settings.<br/>
@@ -49,7 +48,6 @@ namespace LangSmith
         /// }<br/>
         /// This operation fails if an override already exists for the dataset (use PATCH to update).
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -433,7 +431,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Create new experiment view override configuration for a dataset<br/>
         /// Creates a new experiment view override configuration for a dataset with column display settings.<br/>

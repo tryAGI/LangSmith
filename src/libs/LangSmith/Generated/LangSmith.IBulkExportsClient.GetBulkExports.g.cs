@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IBulkExportsClient
     {
-
         /// <summary>
         /// Get Bulk Exports<br/>
         /// Get the current workspace's bulk exports

@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Customers And Get Stripe Setup Intent
         /// </summary>

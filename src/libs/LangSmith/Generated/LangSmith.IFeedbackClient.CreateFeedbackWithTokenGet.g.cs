@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Create Feedback With Token Get<br/>
         /// Create a new feedback with a token.

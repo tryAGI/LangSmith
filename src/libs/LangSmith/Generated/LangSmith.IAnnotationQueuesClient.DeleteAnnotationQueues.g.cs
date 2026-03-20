@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Delete Annotation Queues<br/>
         /// Delete multiple annotation queues with partial success support.<br/>

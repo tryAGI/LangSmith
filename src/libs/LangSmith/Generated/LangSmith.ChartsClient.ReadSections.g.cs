@@ -33,7 +33,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Sections<br/>
         /// Get all sections for the tenant.

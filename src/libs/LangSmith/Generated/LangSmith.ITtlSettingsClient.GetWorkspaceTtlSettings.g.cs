@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ITtlSettingsClient
     {
-
         /// <summary>
         /// Get workspace TTL settings<br/>
         /// Get the longlived trace TTL settings for a workspace

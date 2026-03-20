@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAuthClient
     {
-
         /// <summary>
         /// Get public auth info<br/>
         /// Returns public authentication information for the current workspace-level session.

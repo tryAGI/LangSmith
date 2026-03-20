@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Patch Current Workspace Member
         /// </summary>
         /// <param name="identityId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace LangSmith
 
             global::LangSmith.IdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Patch Current Workspace Member
         /// </summary>

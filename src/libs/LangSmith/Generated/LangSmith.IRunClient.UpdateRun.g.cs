@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Update Run<br/>
         /// Update a run.

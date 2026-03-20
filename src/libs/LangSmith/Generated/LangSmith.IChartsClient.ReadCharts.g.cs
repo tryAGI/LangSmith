@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Read Charts<br/>
         /// Get all charts for the tenant.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.CustomChartsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Read Charts<br/>
         /// Get all charts for the tenant.

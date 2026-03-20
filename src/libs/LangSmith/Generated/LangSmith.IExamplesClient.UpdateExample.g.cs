@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IExamplesClient
     {
-
         /// <summary>
         /// Update Example<br/>
         /// Update a specific example.
         /// </summary>
         /// <param name="exampleId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.ExampleUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update Example<br/>
         /// Update a specific example.

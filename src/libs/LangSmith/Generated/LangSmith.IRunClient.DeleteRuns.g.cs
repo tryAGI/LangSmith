@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Delete Runs<br/>
         /// Delete specific runs by trace IDs or metadata key-value pairs.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.BodyDeleteRunsApiV1RunsDeletePost request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete Runs<br/>
         /// Delete specific runs by trace IDs or metadata key-value pairs.

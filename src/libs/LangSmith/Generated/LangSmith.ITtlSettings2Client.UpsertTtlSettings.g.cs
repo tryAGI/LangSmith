@@ -4,11 +4,9 @@ namespace LangSmith
 {
     public partial interface ITtlSettings2Client
     {
-
         /// <summary>
         /// Upsert Ttl Settings
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace LangSmith
 
             global::LangSmith.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upsert Ttl Settings
         /// </summary>

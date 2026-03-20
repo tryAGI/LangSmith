@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IServiceAccountsClient
     {
-
         /// <summary>
         /// Create Service Account<br/>
         /// Create a service account
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.ServiceAccountCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Service Account<br/>
         /// Create a service account

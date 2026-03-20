@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IForgeConfigurationsClient
     {
-
         /// <summary>
         /// Update a forge configuration<br/>
         /// Updates an existing Forge configuration.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.ForgeConfigurationsUpdateForgeConfigurationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a forge configuration<br/>
         /// Updates an existing Forge configuration.

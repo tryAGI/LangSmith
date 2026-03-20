@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IExamplesClient
     {
-
         /// <summary>
         /// Validate Examples<br/>
         /// Validate examples in bulk.

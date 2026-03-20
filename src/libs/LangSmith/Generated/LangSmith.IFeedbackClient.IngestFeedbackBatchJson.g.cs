@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Ingest Feedback (Batch JSON)<br/>
         /// Ingests a batch of feedback objects in a single JSON array payload.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

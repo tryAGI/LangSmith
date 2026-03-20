@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Clone Section<br/>
         /// Clone a dashboard.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.CustomChartsSectionsCloneRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Clone Section<br/>
         /// Clone a dashboard.

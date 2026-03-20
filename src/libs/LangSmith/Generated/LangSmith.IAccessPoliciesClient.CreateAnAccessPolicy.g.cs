@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IAccessPoliciesClient
     {
-
         /// <summary>
         /// Create an access policy<br/>
         /// Creates a new access policy.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.AuthzInternalCreateAccessPolicyPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an access policy<br/>
         /// Creates a new access policy.

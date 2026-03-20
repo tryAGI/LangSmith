@@ -21,12 +21,10 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -406,7 +404,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.

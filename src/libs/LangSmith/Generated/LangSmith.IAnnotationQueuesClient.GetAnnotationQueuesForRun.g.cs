@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Get Annotation Queues For Run
         /// </summary>

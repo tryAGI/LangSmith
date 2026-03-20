@@ -21,12 +21,10 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Upload Experiment<br/>
         /// Upload an experiment that has already been run.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -220,7 +218,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Upload Experiment<br/>
         /// Upload an experiment that has already been run.

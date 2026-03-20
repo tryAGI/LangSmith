@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IToolsClient
     {
-
         /// <summary>
         /// Get a tool by ID<br/>
         /// Returns a tool identified by its UUID.

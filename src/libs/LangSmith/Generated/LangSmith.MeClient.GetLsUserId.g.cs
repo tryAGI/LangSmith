@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Ls User Id<br/>
         /// Get the LangSmith user ID for the current user.

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Download Dataset Jsonl<br/>
         /// Download a dataset as CSV format.

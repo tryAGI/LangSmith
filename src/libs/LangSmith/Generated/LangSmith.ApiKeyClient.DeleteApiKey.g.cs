@@ -21,7 +21,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete Api Key<br/>
         /// Delete an api key for the user

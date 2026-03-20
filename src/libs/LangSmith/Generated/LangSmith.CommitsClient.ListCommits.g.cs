@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List commits<br/>
         /// Lists all commits for a repository with pagination support.<br/>

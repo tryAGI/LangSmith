@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Read Shared Examples<br/>
         /// Get example by ids or the shared example if not specifed.

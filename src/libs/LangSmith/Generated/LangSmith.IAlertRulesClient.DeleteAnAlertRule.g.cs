@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAlertRulesClient
     {
-
         /// <summary>
         /// Delete an alert rule<br/>
         /// Deletes an alert rule

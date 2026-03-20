@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IMeClient
     {
-
         /// <summary>
         /// Get Onboarding State<br/>
         /// Get onboarding state for the current user.

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IExamplesClient
     {
-
         /// <summary>
         /// Read Example<br/>
         /// Get a specific example.

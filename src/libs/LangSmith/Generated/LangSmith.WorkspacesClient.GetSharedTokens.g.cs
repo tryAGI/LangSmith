@@ -23,7 +23,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Shared Tokens<br/>
         /// List all shared entities and their tokens by the workspace.

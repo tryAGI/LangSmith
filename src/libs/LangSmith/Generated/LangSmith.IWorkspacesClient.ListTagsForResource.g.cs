@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// List Tags For Resource
         /// </summary>

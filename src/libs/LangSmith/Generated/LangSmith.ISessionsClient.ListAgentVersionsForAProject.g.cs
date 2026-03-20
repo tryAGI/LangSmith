@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ISessionsClient
     {
-
         /// <summary>
         /// List agent versions for a project<br/>
         /// Returns all agent versions (commit SHAs) seen in the given tracing project, ordered by first_seen_at descending.

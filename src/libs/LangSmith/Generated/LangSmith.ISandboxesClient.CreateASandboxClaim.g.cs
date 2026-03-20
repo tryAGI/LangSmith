@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
-
         /// <summary>
         /// Create a sandbox claim<br/>
         /// Create a new sandbox from a template. Optionally blocks until ready or timeout.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.SandboxesCreateClaimPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a sandbox claim<br/>
         /// Create a new sandbox from a template. Optionally blocks until ready or timeout.

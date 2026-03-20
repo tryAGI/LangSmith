@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Org Read Single Section<br/>
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.CustomChartsRequestBase request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Org Read Single Section<br/>
         /// Get a single section by ID.

@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IPlaygroundSettingsClient
     {
-
         /// <summary>
         /// Create Playground Settings<br/>
         /// Create playground settings.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.PlaygroundSettingsCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Playground Settings<br/>
         /// Create playground settings.

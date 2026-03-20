@@ -21,7 +21,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Total Size From Annotation Queue
         /// </summary>

@@ -23,13 +23,11 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update Tracer Session<br/>
         /// Create a new session.
         /// </summary>
         /// <param name="sessionId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Update Tracer Session<br/>
         /// Create a new session.

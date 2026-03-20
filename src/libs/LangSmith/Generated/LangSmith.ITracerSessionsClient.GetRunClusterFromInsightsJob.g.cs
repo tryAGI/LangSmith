@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// [Beta] Get Run Cluster From Insights Job<br/>
         /// Get a specific cluster for a session.

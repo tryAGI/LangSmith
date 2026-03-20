@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAccessPoliciesClient
     {
-
         /// <summary>
         /// List access policies<br/>
         /// Lists all access policies for the organization.

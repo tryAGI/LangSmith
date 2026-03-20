@@ -4,11 +4,9 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Dataset Handler
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace LangSmith
 
             global::LangSmith.PlaygroundRunOverDatasetBatchRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Dataset Handler
         /// </summary>

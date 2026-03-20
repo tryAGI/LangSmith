@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Onboarding State<br/>
         /// Initialize onboarding state for the current user.

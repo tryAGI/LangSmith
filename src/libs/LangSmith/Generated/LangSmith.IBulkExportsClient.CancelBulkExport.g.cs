@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IBulkExportsClient
     {
-
         /// <summary>
         /// Cancel Bulk Export<br/>
         /// Cancel a bulk export by ID
         /// </summary>
         /// <param name="bulkExportId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.BulkExportUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Cancel Bulk Export<br/>
         /// Cancel a bulk export by ID

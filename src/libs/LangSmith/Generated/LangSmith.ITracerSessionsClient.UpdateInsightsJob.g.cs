@@ -4,14 +4,12 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// [Beta] Update Insights Job<br/>
         /// Update a session cluster job.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace LangSmith
 
             global::LangSmith.UpdateRunClusteringJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// [Beta] Update Insights Job<br/>
         /// Update a session cluster job.

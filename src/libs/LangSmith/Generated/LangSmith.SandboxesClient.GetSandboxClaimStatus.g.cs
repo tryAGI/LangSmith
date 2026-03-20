@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get sandbox claim status<br/>
         /// Retrieve the lightweight status of a sandbox claim for polling.

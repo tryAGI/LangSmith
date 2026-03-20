@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IPromptWebhooksClient
     {
-
         /// <summary>
         /// List Prompt Webhooks<br/>
         /// List all prompt webhooks for the current tenant.

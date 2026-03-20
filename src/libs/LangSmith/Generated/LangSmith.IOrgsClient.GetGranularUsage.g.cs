@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Get Granular Usage<br/>
         /// Get granular usage data with flexible grouping.<br/>

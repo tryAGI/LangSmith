@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ITagsClient
     {
-
         /// <summary>
         /// Delete Tag<br/>
         /// Delete a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.

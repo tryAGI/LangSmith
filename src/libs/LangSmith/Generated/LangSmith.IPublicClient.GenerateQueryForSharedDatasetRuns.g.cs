@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Generate Query For Shared Dataset Runs<br/>
         /// Get runs in projects run over a dataset that has been shared.
         /// </summary>
         /// <param name="shareToken"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.RequestBodyForRunsGenerateQuery request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate Query For Shared Dataset Runs<br/>
         /// Get runs in projects run over a dataset that has been shared.

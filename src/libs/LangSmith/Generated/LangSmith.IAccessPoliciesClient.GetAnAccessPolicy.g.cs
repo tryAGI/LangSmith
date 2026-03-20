@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAccessPoliciesClient
     {
-
         /// <summary>
         /// Get an access policy<br/>
         /// Gets a specific access policy by ID.

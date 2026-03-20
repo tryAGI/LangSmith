@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Share Dataset<br/>
         /// Share a dataset.

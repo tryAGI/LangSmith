@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Ttl Settings<br/>
         /// List out the configured TTL settings for a given org (org-level and tenant-level).

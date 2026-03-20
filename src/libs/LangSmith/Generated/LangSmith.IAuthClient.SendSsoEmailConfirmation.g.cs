@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IAuthClient
     {
-
         /// <summary>
         /// Send Sso Email Confirmation<br/>
         /// Send an email to confirm the email address for an SSO user.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.SSOEmailVerificationSendRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Send Sso Email Confirmation<br/>
         /// Send an email to confirm the email address for an SSO user.

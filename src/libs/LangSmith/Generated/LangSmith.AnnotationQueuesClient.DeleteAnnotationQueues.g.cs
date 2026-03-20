@@ -21,7 +21,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete Annotation Queues<br/>
         /// Delete multiple annotation queues with partial success support.<br/>

@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Dataset Version<br/>
         /// Get dataset version by as_of or exact tag.

@@ -4,13 +4,11 @@ namespace LangSmith
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Query Shared Runs<br/>
         /// Get run by ids or the shared run if not specifed.
         /// </summary>
         /// <param name="shareToken"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace LangSmith
 
             global::LangSmith.QueryParamsForPublicRunSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Query Shared Runs<br/>
         /// Get run by ids or the shared run if not specifed.

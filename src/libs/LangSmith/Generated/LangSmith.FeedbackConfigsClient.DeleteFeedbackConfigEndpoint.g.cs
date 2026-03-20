@@ -16,7 +16,6 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete Feedback Config Endpoint<br/>
         /// Soft delete a feedback config by marking it as deleted.<br/>

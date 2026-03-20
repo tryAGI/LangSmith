@@ -14,7 +14,6 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a tool by ID<br/>
         /// Deletes a tool identified by its UUID.

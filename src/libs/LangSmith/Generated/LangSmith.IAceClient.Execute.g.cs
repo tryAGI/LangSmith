@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IAceClient
     {
-
         /// <summary>
         /// Execute<br/>
         /// Execute some custom code for testing purposes.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.BodyExecuteApiV1AceExecutePost request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Execute<br/>
         /// Execute some custom code for testing purposes.
