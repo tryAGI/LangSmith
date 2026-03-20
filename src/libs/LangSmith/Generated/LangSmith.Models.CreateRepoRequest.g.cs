@@ -48,6 +48,12 @@ namespace LangSmith
         public global::LangSmith.CreateRepoRequestRepoType? RepoType { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restricted_mode")]
+        public bool? RestrictedMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +70,7 @@ namespace LangSmith
         /// <param name="repoType">
         /// Default Value: prompt
         /// </param>
+        /// <param name="restrictedMode"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,7 +80,8 @@ namespace LangSmith
             string? description,
             string? readme,
             global::System.Collections.Generic.IList<string>? tags,
-            global::LangSmith.CreateRepoRequestRepoType? repoType)
+            global::LangSmith.CreateRepoRequestRepoType? repoType,
+            bool? restrictedMode)
         {
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
             this.IsPublic = isPublic;
@@ -81,6 +89,7 @@ namespace LangSmith
             this.Readme = readme;
             this.Tags = tags;
             this.RepoType = repoType;
+            this.RestrictedMode = restrictedMode;
         }
 
         /// <summary>
