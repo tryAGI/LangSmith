@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IMetricsClient
     {
-
         /// <summary>
         /// Get Queue Metrics<br/>
         /// Return cached SAQ queue counts for the requested queue.

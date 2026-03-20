@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IExperimentViewOverridesClient
     {
-
         /// <summary>
         /// Get experiment view override configuration by specific ID<br/>
         /// Retrieves a specific experiment view override configuration using both dataset ID and override ID.<br/>

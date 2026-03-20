@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
-
         /// <summary>
         /// List warm pools<br/>
         /// List all warm pools for the current workspace

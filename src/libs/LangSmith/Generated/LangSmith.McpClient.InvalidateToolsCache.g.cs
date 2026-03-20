@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Invalidate Tools Cache<br/>
         /// Invalidate cached MCP tools for a given server URL.<br/>

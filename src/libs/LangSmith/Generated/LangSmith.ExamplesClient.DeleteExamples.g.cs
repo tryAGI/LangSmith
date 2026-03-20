@@ -21,7 +21,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete Examples<br/>
         /// Soft delete examples. Only deletes the examples in the 'latest' version of the dataset.

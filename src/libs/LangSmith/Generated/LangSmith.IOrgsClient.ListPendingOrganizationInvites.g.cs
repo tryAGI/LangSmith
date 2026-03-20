@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// List Pending Organization Invites<br/>
         /// Get all pending orgs visible to this auth

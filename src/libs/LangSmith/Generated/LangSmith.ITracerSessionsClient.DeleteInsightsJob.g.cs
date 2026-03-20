@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// [Beta] Delete Insights Job<br/>
         /// Delete a session cluster job.

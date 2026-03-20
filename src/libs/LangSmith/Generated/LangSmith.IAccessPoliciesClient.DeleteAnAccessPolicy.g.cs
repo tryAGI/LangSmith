@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAccessPoliciesClient
     {
-
         /// <summary>
         /// Delete an access policy<br/>
         /// Deletes a specific access policy by ID.

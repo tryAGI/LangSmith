@@ -33,7 +33,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Rule Logs V2<br/>
         /// List logs for a particular rule with cursor-based pagination.<br/>

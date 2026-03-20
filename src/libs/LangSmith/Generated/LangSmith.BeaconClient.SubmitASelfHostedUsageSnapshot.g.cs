@@ -16,14 +16,12 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Submit a self-hosted usage snapshot<br/>
         /// Records aggregate entity counts (workspaces, projects, datasets, active users, etc.)<br/>
         /// from a self-hosted deployment. Called daily by installs where PHONE_HOME_ENABLED<br/>
         /// and PHONE_HOME_USAGE_REPORTING_ENABLED are set. Authenticates via license key.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -321,7 +319,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Submit a self-hosted usage snapshot<br/>
         /// Records aggregate entity counts (workspaces, projects, datasets, active users, etc.)<br/>

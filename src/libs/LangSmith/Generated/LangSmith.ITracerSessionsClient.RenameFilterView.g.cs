@@ -4,14 +4,12 @@ namespace LangSmith
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// Rename Filter View<br/>
         /// Rename a filter view (display_name and description only).
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="viewId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace LangSmith
 
             global::LangSmith.FilterViewRename request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Rename Filter View<br/>
         /// Rename a filter view (display_name and description only).

@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IPromptWebhooksClient
     {
-
         /// <summary>
         /// Create Prompt Webhook<br/>
         /// Create a new prompt webhook.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.PromptWebhookCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Prompt Webhook<br/>
         /// Create a new prompt webhook.

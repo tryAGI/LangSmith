@@ -27,7 +27,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Granular Usage<br/>
         /// Get granular usage data with flexible grouping.<br/>

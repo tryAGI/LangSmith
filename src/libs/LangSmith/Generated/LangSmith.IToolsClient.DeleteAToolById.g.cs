@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IToolsClient
     {
-
         /// <summary>
         /// Delete a tool by ID<br/>
         /// Deletes a tool identified by its UUID.

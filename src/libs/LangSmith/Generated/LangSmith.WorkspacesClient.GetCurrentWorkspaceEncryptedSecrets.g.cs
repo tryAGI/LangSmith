@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Current Workspace Encrypted Secrets<br/>
         /// Get encrypted workspace secrets for use with Agent Builder and external services.

@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Set Default Sso Provision<br/>
         /// Set the current organization as the default for SSO provisioning in self-hosted environments.

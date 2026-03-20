@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
-
         /// <summary>
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.SandboxesUpdateClaimPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Org Delete Chart<br/>
         /// Delete a chart.

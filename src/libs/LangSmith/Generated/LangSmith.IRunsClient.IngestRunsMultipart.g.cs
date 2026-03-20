@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IRunsClient
     {
-
         /// <summary>
         /// Ingest Runs (Multipart)<br/>
         /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.<br/>
@@ -16,7 +15,6 @@ namespace LangSmith
         /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace LangSmith
 
             global::LangSmith.Request2 request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Ingest Runs (Multipart)<br/>
         /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.<br/>

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Delete Org Personal Access Token
         /// </summary>

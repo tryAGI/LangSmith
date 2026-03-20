@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Get Current Active Workspace Members
         /// </summary>

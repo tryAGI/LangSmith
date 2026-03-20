@@ -23,13 +23,11 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Stats Shared Dataset Runs<br/>
         /// Get run stats in projects run over a dataset that has been shared.
         /// </summary>
         /// <param name="shareToken"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Stats Shared Dataset Runs<br/>
         /// Get run stats in projects run over a dataset that has been shared.

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Get Total Size From Annotation Queue
         /// </summary>

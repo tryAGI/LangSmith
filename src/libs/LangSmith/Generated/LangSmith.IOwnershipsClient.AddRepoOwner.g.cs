@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IOwnershipsClient
     {
-
         /// <summary>
         /// Add Repo Owner<br/>
         /// Add an owner to a repo.<br/>
@@ -12,7 +11,6 @@ namespace LangSmith
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace LangSmith
 
             global::LangSmith.AddRepoOwnerRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add Repo Owner<br/>
         /// Add an owner to a repo.<br/>

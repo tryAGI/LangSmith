@@ -23,13 +23,11 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Query Shared Runs<br/>
         /// Get run by ids or the shared run if not specifed.
         /// </summary>
         /// <param name="shareToken"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Query Shared Runs<br/>
         /// Get run by ids or the shared run if not specifed.

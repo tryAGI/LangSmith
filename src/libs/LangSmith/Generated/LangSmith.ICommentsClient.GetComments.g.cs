@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ICommentsClient
     {
-
         /// <summary>
         /// Get Comments
         /// </summary>

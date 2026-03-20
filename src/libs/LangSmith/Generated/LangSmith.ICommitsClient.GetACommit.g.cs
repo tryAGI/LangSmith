@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ICommitsClient
     {
-
         /// <summary>
         /// Get a commit<br/>
         /// Retrieves a specific commit by hash, tag, or "latest" for a repository.<br/>

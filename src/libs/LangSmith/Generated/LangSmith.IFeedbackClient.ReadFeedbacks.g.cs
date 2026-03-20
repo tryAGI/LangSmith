@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Read Feedbacks<br/>
         /// List all Feedback by query params.

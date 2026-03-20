@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Delete Pending Workspace Invite
         /// </summary>

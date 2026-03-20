@@ -27,7 +27,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Log<br/>
         /// Get a specific prompt optimization job log.

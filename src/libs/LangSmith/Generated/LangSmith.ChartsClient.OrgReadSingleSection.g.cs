@@ -23,13 +23,11 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Org Read Single Section<br/>
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Org Read Single Section<br/>
         /// Get a single section by ID.

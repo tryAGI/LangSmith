@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IServiceAccountsClient
     {
-
         /// <summary>
         /// Delete Service Account<br/>
         /// Delete a service account

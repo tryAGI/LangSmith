@@ -23,7 +23,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Resolve Annotation Queue Run<br/>
         /// Resolve a queue run ID to its section and run data for deep linking.

@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IPromptWebhooksClient
     {
-
         /// <summary>
         /// Delete Prompt Webhook<br/>
         /// Delete a specific prompt webhook.

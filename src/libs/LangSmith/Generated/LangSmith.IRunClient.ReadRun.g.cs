@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Read Run<br/>
         /// Get a specific run.

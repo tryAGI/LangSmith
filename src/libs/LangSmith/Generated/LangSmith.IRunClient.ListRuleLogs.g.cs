@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// List Rule Logs<br/>
         /// List logs for a particular rule

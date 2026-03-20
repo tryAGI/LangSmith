@@ -35,7 +35,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Shared Examples<br/>
         /// Get example by ids or the shared example if not specifed.

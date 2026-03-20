@@ -21,12 +21,10 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create a SCIM token<br/>
         /// Create a new SCIM bearer token for the current organization. The full token value is only returned once upon creation.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -334,7 +332,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Create a SCIM token<br/>
         /// Create a new SCIM bearer token for the current organization. The full token value is only returned once upon creation.

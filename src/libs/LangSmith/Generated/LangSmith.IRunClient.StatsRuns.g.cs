@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Stats Runs<br/>
         /// Get all runs by query in body payload.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace LangSmith
 
             global::LangSmith.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Stats Runs<br/>
         /// Get all runs by query in body payload.

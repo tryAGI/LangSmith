@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Validate Rule<br/>
         /// Validate a rule by executing it with test data without creating a saved rule.<br/>
@@ -15,7 +14,6 @@ namespace LangSmith
         /// The evaluator execution traces are written to the database (in the "evaluators"<br/>
         /// project), which allows users to see the evaluator execution history.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace LangSmith
 
             global::LangSmith.RunRulesValidateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Validate Rule<br/>
         /// Validate a rule by executing it with test data without creating a saved rule.<br/>

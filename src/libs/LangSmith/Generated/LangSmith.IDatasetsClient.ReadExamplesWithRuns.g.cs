@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Read Examples With Runs<br/>
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.
@@ -13,7 +12,6 @@ namespace LangSmith
         /// <param name="format">
         /// Response format, e.g., 'csv'
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace LangSmith
             global::LangSmith.QueryExampleSchemaWithRunsRequest request,
             string? format = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Read Examples With Runs<br/>
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.

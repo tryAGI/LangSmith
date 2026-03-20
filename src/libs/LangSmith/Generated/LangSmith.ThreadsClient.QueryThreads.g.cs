@@ -21,14 +21,12 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Query Threads<br/>
         /// Query threads within a project (session), with cursor-based pagination.<br/>
         /// Returns threads matching the given time range and optional filter,<br/>
         /// backed by the smithdb QueryThreads gRPC RPC.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -294,7 +292,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Query Threads<br/>
         /// Query threads within a project (session), with cursor-based pagination.<br/>

@@ -4,12 +4,10 @@ namespace LangSmith
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Export Annotation Queue Archived Runs
         /// </summary>
         /// <param name="queueId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace LangSmith
 
             global::LangSmith.ExportAnnotationQueueRunsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Export Annotation Queue Archived Runs
         /// </summary>

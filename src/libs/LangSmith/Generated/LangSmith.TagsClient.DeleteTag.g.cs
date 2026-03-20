@@ -25,7 +25,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete Tag<br/>
         /// Delete a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.

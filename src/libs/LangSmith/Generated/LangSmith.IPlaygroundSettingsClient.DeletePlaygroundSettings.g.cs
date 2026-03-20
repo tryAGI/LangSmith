@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IPlaygroundSettingsClient
     {
-
         /// <summary>
         /// Delete Playground Settings<br/>
         /// Delete playground settings.

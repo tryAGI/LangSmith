@@ -23,7 +23,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Shared Run<br/>
         /// Get the shared run.

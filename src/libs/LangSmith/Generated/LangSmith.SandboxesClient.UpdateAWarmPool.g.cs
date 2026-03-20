@@ -21,12 +21,10 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a warm pool<br/>
         /// Update a warm pool's name or replica count
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -372,7 +370,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Update a warm pool<br/>
         /// Update a warm pool's name or replica count

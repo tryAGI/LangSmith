@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Get Dataset Version<br/>
         /// Get dataset version by as_of or exact tag.

@@ -29,7 +29,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Query Thread Traces<br/>
         /// Retrieve all traces belonging to a specific thread within a project.<br/>

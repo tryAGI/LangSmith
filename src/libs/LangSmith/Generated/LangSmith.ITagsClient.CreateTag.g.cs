@@ -4,14 +4,12 @@ namespace LangSmith
 {
     public partial interface ITagsClient
     {
-
         /// <summary>
         /// Create Tag<br/>
         /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace LangSmith
 
             global::LangSmith.RepoTagRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Tag<br/>
         /// Create a tag. Requires repo ownership, prompts:tag permission, or ABAC grant.

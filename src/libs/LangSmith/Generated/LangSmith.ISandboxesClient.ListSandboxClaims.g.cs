@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ISandboxesClient
     {
-
         /// <summary>
         /// List sandbox claims<br/>
         /// List sandbox claims for the authenticated tenant, with optional name filtering and pagination.

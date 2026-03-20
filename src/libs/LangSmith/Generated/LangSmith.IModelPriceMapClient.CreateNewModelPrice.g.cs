@@ -4,11 +4,9 @@ namespace LangSmith
 {
     public partial interface IModelPriceMapClient
     {
-
         /// <summary>
         /// Create New Model Price
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace LangSmith
 
             global::LangSmith.ModelPriceMapCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create New Model Price
         /// </summary>

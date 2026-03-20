@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Create Customers And Get Stripe Setup Intent
         /// </summary>

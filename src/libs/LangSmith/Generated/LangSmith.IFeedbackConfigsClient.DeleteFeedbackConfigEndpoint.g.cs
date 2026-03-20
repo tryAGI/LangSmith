@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IFeedbackConfigsClient
     {
-
         /// <summary>
         /// Delete Feedback Config Endpoint<br/>
         /// Soft delete a feedback config by marking it as deleted.<br/>

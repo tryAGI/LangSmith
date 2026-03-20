@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Get Current Workspace Encrypted Secrets<br/>
         /// Get encrypted workspace secrets for use with Agent Builder and external services.

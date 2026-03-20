@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface ILangSmithClient
     {
-
         /// <summary>
         /// Ok
         /// </summary>

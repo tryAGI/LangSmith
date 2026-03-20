@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Delete Rule<br/>
         /// Delete a run rule.

@@ -19,7 +19,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a sandbox claim<br/>
         /// Retrieve a sandbox claim by name. Stale provisioning claims are auto-failed.

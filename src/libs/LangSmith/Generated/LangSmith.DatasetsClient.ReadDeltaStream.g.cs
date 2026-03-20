@@ -23,7 +23,6 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Delta Stream<br/>
         /// Stream feedback deltas for multiple feedback keys.<br/>
@@ -38,7 +37,6 @@ namespace LangSmith
         ///     event: end
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -231,7 +229,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Read Delta Stream<br/>
         /// Stream feedback deltas for multiple feedback keys.<br/>

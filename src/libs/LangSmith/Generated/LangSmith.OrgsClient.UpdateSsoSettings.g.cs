@@ -23,13 +23,11 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update Sso Settings<br/>
         /// Update SSO provider settings defaults for the current organization.
         /// </summary>
         /// <param name="id"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Update Sso Settings<br/>
         /// Update SSO provider settings defaults for the current organization.

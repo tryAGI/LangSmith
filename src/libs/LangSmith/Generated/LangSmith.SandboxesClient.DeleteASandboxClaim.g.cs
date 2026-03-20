@@ -14,7 +14,6 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a sandbox claim<br/>
         /// Delete a sandbox claim by name. Deletes both the K8s CRD and the DB record.

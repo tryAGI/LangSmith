@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IAlertRulesClient
     {
-
         /// <summary>
         /// Get an alert rule<br/>
         /// Gets an alert rule.

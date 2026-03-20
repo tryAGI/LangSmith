@@ -21,12 +21,10 @@ namespace LangSmith
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a SCIM token<br/>
         /// Update the description of an existing SCIM token for the current organization.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -372,7 +370,6 @@ namespace LangSmith
                 }
             }
         }
-
         /// <summary>
         /// Update a SCIM token<br/>
         /// Update the description of an existing SCIM token for the current organization.

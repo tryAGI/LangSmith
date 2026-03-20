@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IInfoClient
     {
-
         /// <summary>
         /// Get Server Info<br/>
         /// Get information about the current deployment of LangSmith.

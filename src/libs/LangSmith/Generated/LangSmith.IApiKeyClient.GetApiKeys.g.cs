@@ -4,7 +4,6 @@ namespace LangSmith
 {
     public partial interface IApiKeyClient
     {
-
         /// <summary>
         /// Get Api Keys<br/>
         /// Get the current tenant's API keys
