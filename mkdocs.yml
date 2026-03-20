@@ -2,7 +2,10 @@ site_name: OpenAI .NET Documentation
 nav:
 - Overview: index.md
 # EXAMPLES:START
-
+- Examples:
+  - Create Dataset: examples/create-dataset.md
+  - Ok: examples/ok.md
+  - Trace: examples/trace.md
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
