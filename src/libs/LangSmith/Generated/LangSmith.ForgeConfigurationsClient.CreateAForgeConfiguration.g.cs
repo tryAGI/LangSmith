@@ -338,6 +338,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="enabled"></param>
         /// <param name="gitCommitMetadataKey"></param>
+        /// <param name="githubRepo"></param>
         /// <param name="scheduleCron"></param>
         /// <param name="tracerSessionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -345,6 +346,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.ForgeConfigurationsForgeConfiguration> CreateAForgeConfigurationAsync(
             bool? enabled = default,
             string? gitCommitMetadataKey = default,
+            string? githubRepo = default,
             string? scheduleCron = default,
             string? tracerSessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -353,6 +355,7 @@ namespace LangSmith
             {
                 Enabled = enabled,
                 GitCommitMetadataKey = gitCommitMetadataKey,
+                GithubRepo = githubRepo,
                 ScheduleCron = scheduleCron,
                 TracerSessionId = tracerSessionId,
             };

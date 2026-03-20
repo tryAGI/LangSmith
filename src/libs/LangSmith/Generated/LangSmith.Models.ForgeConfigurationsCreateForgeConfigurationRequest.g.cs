@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("github_repo")]
+        public string? GithubRepo { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule_cron")]
         public string? ScheduleCron { get; set; }
 
@@ -43,6 +49,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="enabled"></param>
         /// <param name="gitCommitMetadataKey"></param>
+        /// <param name="githubRepo"></param>
         /// <param name="scheduleCron"></param>
         /// <param name="tracerSessionId"></param>
 #if NET7_0_OR_GREATER
@@ -51,11 +58,13 @@ namespace LangSmith
         public ForgeConfigurationsCreateForgeConfigurationRequest(
             bool? enabled,
             string? gitCommitMetadataKey,
+            string? githubRepo,
             string? scheduleCron,
             string? tracerSessionId)
         {
             this.Enabled = enabled;
             this.GitCommitMetadataKey = gitCommitMetadataKey;
+            this.GithubRepo = githubRepo;
             this.ScheduleCron = scheduleCron;
             this.TracerSessionId = tracerSessionId;
         }

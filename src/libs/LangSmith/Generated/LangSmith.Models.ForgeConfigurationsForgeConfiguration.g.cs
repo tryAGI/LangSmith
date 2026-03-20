@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("github_repo")]
+        public string? GithubRepo { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -74,6 +80,7 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="enabled"></param>
         /// <param name="gitCommitMetadataKey"></param>
+        /// <param name="githubRepo"></param>
         /// <param name="id"></param>
         /// <param name="scheduleCron"></param>
         /// <param name="sessionName"></param>
@@ -87,6 +94,7 @@ namespace LangSmith
             string? createdAt,
             bool? enabled,
             string? gitCommitMetadataKey,
+            string? githubRepo,
             string? id,
             string? scheduleCron,
             string? sessionName,
@@ -97,6 +105,7 @@ namespace LangSmith
             this.CreatedAt = createdAt;
             this.Enabled = enabled;
             this.GitCommitMetadataKey = gitCommitMetadataKey;
+            this.GithubRepo = githubRepo;
             this.Id = id;
             this.ScheduleCron = scheduleCron;
             this.SessionName = sessionName;
