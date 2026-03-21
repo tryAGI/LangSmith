@@ -52,7 +52,7 @@ namespace LangSmith
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("upsert", upsert?.ToString()) 
+                .AddOptionalParameter("upsert", upsert?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

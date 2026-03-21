@@ -49,7 +49,7 @@ namespace LangSmith
                 path: $"/api/v1/runs/rules/{ruleId}/last_applied",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("backfill", backfill?.ToString()) 
+                .AddOptionalParameter("backfill", backfill?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

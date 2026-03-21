@@ -102,8 +102,8 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("user", user?.ToString())
-                .AddOptionalParameter("has_comment", hasComment?.ToString())
-                .AddOptionalParameter("has_score", hasScore?.ToString())
+                .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("level", level?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

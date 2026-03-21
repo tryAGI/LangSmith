@@ -59,7 +59,7 @@ namespace LangSmith
                 path: $"/api/v1/sessions/{sessionId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_stats", includeStats?.ToString())
+                .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("stats_start_time", statsStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

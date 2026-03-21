@@ -20,7 +20,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> IngestRunsMultipartAsync(
 
-            global::LangSmith.Request2 request,
+            global::LangSmith.CreateRunsMultipartRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Ingest Runs (Multipart)<br/>

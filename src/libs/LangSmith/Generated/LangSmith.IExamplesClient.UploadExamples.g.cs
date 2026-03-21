@@ -14,7 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesCreatedResponse> UploadExamplesAsync(
 
-            global::LangSmith.Request3 request,
+            global::LangSmith.CreatePlatformDatasetsExamplesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Examples<br/>

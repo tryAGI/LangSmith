@@ -56,7 +56,7 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("url", url)
-                .AddOptionalParameter("accept_stream", acceptStream?.ToString())
+                .AddOptionalParameter("accept_stream", acceptStream?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

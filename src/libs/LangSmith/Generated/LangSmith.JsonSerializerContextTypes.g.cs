@@ -2892,7 +2892,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Request? Type716 { get; set; }
+        public global::LangSmith.CreateRunsBatchRequest? Type716 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2900,15 +2900,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Request2? Type718 { get; set; }
+        public global::LangSmith.CreateRunsMultipartRequest? Type718 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Request3? Type719 { get; set; }
+        public global::LangSmith.CreatePlatformDatasetsExamplesRequest? Type719 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Request4? Type720 { get; set; }
+        public global::LangSmith.PatchPlatformDatasetsExamplesRequest? Type720 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3184,59 +3184,59 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response26>? Type789 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.CreateFeedbackBatchResponse3>? Type789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response26? Type790 { get; set; }
+        public global::LangSmith.CreateFeedbackBatchResponse3? Type790 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response29>? Type791 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.CreateRunsResponse3>? Type791 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response29? Type792 { get; set; }
+        public global::LangSmith.CreateRunsResponse3? Type792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response32>? Type793 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.CreateRunsBatchResponse3>? Type793 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response32? Type794 { get; set; }
+        public global::LangSmith.CreateRunsBatchResponse3? Type794 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response36>? Type795 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.PatchRunsResponse3>? Type795 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response36? Type796 { get; set; }
+        public global::LangSmith.PatchRunsResponse3? Type796 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response49>? Type797 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.CreatePlatformAlertsTestResponse3>? Type797 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response49? Type798 { get; set; }
+        public global::LangSmith.CreatePlatformAlertsTestResponse3? Type798 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response52>? Type799 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.DeletePlatformAlertsResponse3>? Type799 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response52? Type800 { get; set; }
+        public global::LangSmith.DeletePlatformAlertsResponse3? Type800 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.Response55>? Type801 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.PatchPlatformAlertsResponse3>? Type801 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.Response55? Type802 { get; set; }
+        public global::LangSmith.PatchPlatformAlertsResponse3? Type802 { get; set; }
         /// <summary>
         /// 
         /// </summary>

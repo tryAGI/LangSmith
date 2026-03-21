@@ -61,7 +61,7 @@ namespace LangSmith
             __pathBuilder
                 .AddRequiredParameter("service", service.ToValueString())
                 .AddOptionalParameter("key_names", keyNames?.ToString())
-                .AddOptionalParameter("expand_iam_role", expandIamRole?.ToString()) 
+                .AddOptionalParameter("expand_iam_role", expandIamRole?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

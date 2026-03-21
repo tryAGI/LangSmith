@@ -118,12 +118,12 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("user", user?.ToString())
-                .AddOptionalParameter("has_comment", hasComment?.ToString())
-                .AddOptionalParameter("has_score", hasScore?.ToString())
+                .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("level", level?.ToString())
                 .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString())
                 .AddOptionalParameter("min_created_at", minCreatedAt?.ToString())
-                .AddOptionalParameter("include_user_names", includeUserNames?.ToString())
+                .AddOptionalParameter("include_user_names", includeUserNames?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("comparative_experiment_id", comparativeExperimentId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

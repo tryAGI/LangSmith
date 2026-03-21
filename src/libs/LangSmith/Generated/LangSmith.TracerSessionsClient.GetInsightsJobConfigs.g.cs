@@ -52,7 +52,7 @@ namespace LangSmith
                 path: $"/api/v1/sessions/{sessionId}/insights/configs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_prebuilts", includePrebuilts?.ToString()) 
+                .AddOptionalParameter("include_prebuilts", includePrebuilts?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

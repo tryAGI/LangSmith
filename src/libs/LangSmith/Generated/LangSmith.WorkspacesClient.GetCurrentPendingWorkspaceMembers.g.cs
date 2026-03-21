@@ -84,7 +84,7 @@ namespace LangSmith
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("emails", emails, delimiter: ",", explode: true)
                 .AddOptionalParameter("q", q)
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

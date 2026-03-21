@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareIngestRunsBatchJsonArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.Request request);
+            global::LangSmith.CreateRunsBatchRequest request);
         partial void PrepareIngestRunsBatchJsonRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.Request request);
+            global::LangSmith.CreateRunsBatchRequest request);
         partial void ProcessIngestRunsBatchJsonResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,7 +31,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> IngestRunsBatchJsonAsync(
 
-            global::LangSmith.Request request,
+            global::LangSmith.CreateRunsBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -381,7 +381,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunsRun>? post = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.Request
+            var __request = new global::LangSmith.CreateRunsBatchRequest
             {
                 Patch = patch,
                 Post = post,

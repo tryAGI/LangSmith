@@ -14,7 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> IngestRunsBatchJsonAsync(
 
-            global::LangSmith.Request request,
+            global::LangSmith.CreateRunsBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Ingest Runs (Batch JSON)<br/>

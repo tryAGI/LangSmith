@@ -72,8 +72,8 @@ namespace LangSmith
             __pathBuilder
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
-                .AddOptionalParameter("archived", archived?.ToString())
-                .AddOptionalParameter("include_stats", includeStats?.ToString())
+                .AddOptionalParameter("archived", archived?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("status", status?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

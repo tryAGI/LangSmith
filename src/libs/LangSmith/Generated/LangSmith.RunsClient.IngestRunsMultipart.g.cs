@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareIngestRunsMultipartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.Request2 request);
+            global::LangSmith.CreateRunsMultipartRequest request);
         partial void PrepareIngestRunsMultipartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.Request2 request);
+            global::LangSmith.CreateRunsMultipartRequest request);
         partial void ProcessIngestRunsMultipartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> IngestRunsMultipartAsync(
 
-            global::LangSmith.Request2 request,
+            global::LangSmith.CreateRunsMultipartRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -515,7 +515,7 @@ namespace LangSmith
             string? attachment_runId__filename_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.Request2
+            var __request = new global::LangSmith.CreateRunsMultipartRequest
             {
                 Post_runId_ = post_runId_,
                 Post_runId_name = post_runId_name,

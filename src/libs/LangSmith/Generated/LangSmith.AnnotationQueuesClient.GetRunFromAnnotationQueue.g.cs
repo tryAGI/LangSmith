@@ -54,7 +54,7 @@ namespace LangSmith
                 path: $"/api/v1/annotation-queues/{queueId}/run/{index}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_extra", includeExtra?.ToString()) 
+                .AddOptionalParameter("include_extra", includeExtra?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

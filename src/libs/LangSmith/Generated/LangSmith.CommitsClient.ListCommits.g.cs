@@ -66,7 +66,7 @@ namespace LangSmith
                 path: "/commits/{owner}/{repo}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_stats", includeStats?.ToString())
+                .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("tag", tag) 

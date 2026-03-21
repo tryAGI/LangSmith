@@ -54,7 +54,7 @@ namespace LangSmith
                 path: $"/api/v1/public/{shareToken}/datasets/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
+                .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

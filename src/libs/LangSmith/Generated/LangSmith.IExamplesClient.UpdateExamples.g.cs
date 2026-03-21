@@ -14,7 +14,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
 
-            global::LangSmith.Request4 request,
+            global::LangSmith.PatchPlatformDatasetsExamplesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Examples<br/>
