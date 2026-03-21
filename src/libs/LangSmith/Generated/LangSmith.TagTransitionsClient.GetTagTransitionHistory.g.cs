@@ -3,73 +3,58 @@
 
 namespace LangSmith
 {
-    public partial class CommitsClient
+    public partial class TagTransitionsClient
     {
-        partial void PrepareListCommitsArguments(
+        partial void PrepareGetTagTransitionHistoryArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? includeStats,
             ref int? limit,
-            ref int? offset,
-            ref string? tag);
-        partial void PrepareListCommitsRequest(
+            ref int? offset);
+        partial void PrepareGetTagTransitionHistoryRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? includeStats,
             int? limit,
-            int? offset,
-            string? tag);
-        partial void ProcessListCommitsResponse(
+            int? offset);
+        partial void ProcessGetTagTransitionHistoryResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListCommitsResponseContent(
+        partial void ProcessGetTagTransitionHistoryResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List commits<br/>
-        /// Lists all commits for a repository with pagination support.<br/>
-        /// This endpoint supports both authenticated and unauthenticated access.<br/>
-        /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
-        /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
+        /// Get tag transition history<br/>
+        /// Returns the paginated audit log of transitions for a specific<br/>
+        /// tag in a repository. Each entry records a commit change<br/>
+        /// (from_commit → to_commit) along with who performed it.
         /// </summary>
-        /// <param name="includeStats">
-        /// Default Value: true
-        /// </param>
         /// <param name="limit">
-        /// Default Value: 20
+        /// Default Value: 50
         /// </param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
-        /// <param name="tag"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsListCommitsResponse> ListCommitsAsync(
-            bool? includeStats = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TagTransitionsTagTransitionHistoryResponse> GetTagTransitionHistoryAsync(
             int? limit = default,
             int? offset = default,
-            string? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListCommitsArguments(
+            PrepareGetTagTransitionHistoryArguments(
                 httpClient: HttpClient,
-                includeStats: ref includeStats,
                 limit: ref limit,
-                offset: ref offset,
-                tag: ref tag);
+                offset: ref offset);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/commits/{owner}/{repo}",
+                path: "/repos/{owner}/{repo}/tags/{tag_name}/history",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_stats", includeStats?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
-                .AddOptionalParameter("offset", offset?.ToString())
-                .AddOptionalParameter("tag", tag) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -99,13 +84,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareListCommitsRequest(
+            PrepareGetTagTransitionHistoryRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                includeStats: includeStats,
                 limit: limit,
-                offset: offset,
-                tag: tag);
+                offset: offset);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -115,7 +98,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessListCommitsResponse(
+            ProcessGetTagTransitionHistoryResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Bad Request
@@ -123,19 +106,19 @@ namespace LangSmith
             {
                 string? __content_400 = null;
                 global::System.Exception? __exception_400 = null;
-                global::LangSmith.CommitsErrorResponse? __value_400 = null;
+                global::LangSmith.TagTransitionsErrorResponse? __value_400 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::LangSmith.CommitsErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::LangSmith.TagTransitionsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::LangSmith.CommitsErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::LangSmith.TagTransitionsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -143,7 +126,7 @@ namespace LangSmith
                     __exception_400 = __ex;
                 }
 
-                throw new global::LangSmith.ApiException<global::LangSmith.CommitsErrorResponse>(
+                throw new global::LangSmith.ApiException<global::LangSmith.TagTransitionsErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_400,
                     statusCode: __response.StatusCode)
@@ -161,19 +144,19 @@ namespace LangSmith
             {
                 string? __content_404 = null;
                 global::System.Exception? __exception_404 = null;
-                global::LangSmith.CommitsErrorResponse? __value_404 = null;
+                global::LangSmith.TagTransitionsErrorResponse? __value_404 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::LangSmith.CommitsErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::LangSmith.TagTransitionsErrorResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::LangSmith.CommitsErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::LangSmith.TagTransitionsErrorResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -181,7 +164,7 @@ namespace LangSmith
                     __exception_404 = __ex;
                 }
 
-                throw new global::LangSmith.ApiException<global::LangSmith.CommitsErrorResponse>(
+                throw new global::LangSmith.ApiException<global::LangSmith.TagTransitionsErrorResponse>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_404,
                     statusCode: __response.StatusCode)
@@ -199,19 +182,19 @@ namespace LangSmith
             {
                 string? __content_500 = null;
                 global::System.Exception? __exception_500 = null;
-                global::LangSmith.CommitsErrorResponse? __value_500 = null;
+                global::LangSmith.TagTransitionsErrorResponse? __value_500 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::LangSmith.CommitsErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                        __value_500 = global::LangSmith.TagTransitionsErrorResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::LangSmith.CommitsErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                        __value_500 = global::LangSmith.TagTransitionsErrorResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -219,7 +202,7 @@ namespace LangSmith
                     __exception_500 = __ex;
                 }
 
-                throw new global::LangSmith.ApiException<global::LangSmith.CommitsErrorResponse>(
+                throw new global::LangSmith.ApiException<global::LangSmith.TagTransitionsErrorResponse>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_500,
                     statusCode: __response.StatusCode)
@@ -245,7 +228,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessListCommitsResponseContent(
+                ProcessGetTagTransitionHistoryResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -255,7 +238,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.CommitsListCommitsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.TagTransitionsTagTransitionHistoryResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -286,7 +269,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.CommitsListCommitsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.TagTransitionsTagTransitionHistoryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

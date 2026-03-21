@@ -48,22 +48,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AuditLogsClient AuditLogs { get; }
+        public AccessPoliciesClient AccessPolicies { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions { get; }
+        public AceClient Ace { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs { get; }
+        public AlertRulesClient AlertRules { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth { get; }
+        public AnnotationQueuesClient AnnotationQueues { get; }
 
         /// <summary>
         /// 
@@ -73,7 +73,37 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples { get; }
+        public AuditLogsClient AuditLogs { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AuthClient Auth { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BeaconClient Beacon { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BulkExportsClient BulkExports { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChartsClient Charts { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CommentsClient Comments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CommitsClient Commits { get; }
 
         /// <summary>
         /// 
@@ -83,7 +113,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run { get; }
+        public ExamplesClient Examples { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ExperimentViewOverridesClient ExperimentViewOverrides { get; }
 
         /// <summary>
         /// 
@@ -98,27 +133,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public { get; }
+        public FeedbackConfigsClient FeedbackConfigs { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AceClient Ace { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BulkExportsClient BulkExports { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TenantClient Tenant { get; }
+        public ForgeConfigurationsClient ForgeConfigurations { get; }
 
         /// <summary>
         /// 
@@ -128,7 +148,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs { get; }
+        public IntegrationsClient Integrations { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LikesClient Likes { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public McpClient Mcp { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MeClient Me { get; }
 
         /// <summary>
         /// 
@@ -143,127 +178,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TtlSettings2Client TtlSettings2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PromptsClient Prompts { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PromptWebhooksClient PromptWebhooks { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public WorkspacesClient Workspaces { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MeClient Me { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ServiceAccountsClient ServiceAccounts { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChartsClient Charts { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public McpClient Mcp { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ReposClient Repos { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public LikesClient Likes { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SettingsClient Settings { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CommentsClient Comments { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TagsClient Tags { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OwnershipsClient Ownerships { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public OptimizationJobsClient OptimizationJobs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CommitsClient Commits { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ExperimentViewOverridesClient ExperimentViewOverrides { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RunsClient Runs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public IntegrationsClient Integrations { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BeaconClient Beacon { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AlertRulesClient AlertRules { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ForgeConfigurationsClient ForgeConfigurations { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AccessPoliciesClient AccessPolicies { get; }
 
         /// <summary>
         /// 
@@ -273,17 +188,47 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ScimTokensClient ScimTokens { get; }
+        public OrgsClient Orgs { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SessionsClient Sessions { get; }
+        public OwnershipsClient Ownerships { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsClient Tools { get; }
+        public PlaygroundSettingsClient PlaygroundSettings { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PromptWebhooksClient PromptWebhooks { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PromptsClient Prompts { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PublicClient Public { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ReposClient Repos { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RunClient Run { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RunsClient Runs { get; }
 
         /// <summary>
         /// 
@@ -293,12 +238,72 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public ScimTokensClient ScimTokens { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ServiceAccountsClient ServiceAccounts { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SessionsClient Sessions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SettingsClient Settings { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagTransitionsClient TagTransitions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagsClient Tags { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ThreadsClient Threads { get; }
 
         /// <summary>
         /// 
         /// </summary>
+        public ToolsClient Tools { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TracerSessionsClient TracerSessions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TtlSettingsClient TtlSettings { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TtlSettings2Client TtlSettings2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageLimitsClient UsageLimits { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public WorkspacesClient Workspaces { get; }
 
     }
 }
