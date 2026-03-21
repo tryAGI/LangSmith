@@ -80,7 +80,7 @@ namespace LangSmith
                 .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("id", id?.ToString())
                 .AddOptionalParameter("evaluator_id", evaluatorId?.ToString())
-                .AddOptionalParameter("include_backfill_progress", includeBackfillProgress?.ToString()) 
+                .AddOptionalParameter("include_backfill_progress", includeBackfillProgress?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -80,7 +80,7 @@ namespace LangSmith
             __pathBuilder
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("cursor", cursor)
-                .AddOptionalParameter("backfill", backfill?.ToString())
+                .AddOptionalParameter("backfill", backfill?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("start_time", startTime?.ToString())
                 .AddOptionalParameter("end_time", endTime?.ToString())
                 .AddOptionalParameter("session_id", sessionId?.ToString()) 

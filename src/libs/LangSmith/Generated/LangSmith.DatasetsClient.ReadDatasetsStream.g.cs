@@ -111,9 +111,9 @@ namespace LangSmith
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
-                .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString()) 
+                .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

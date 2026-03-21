@@ -49,7 +49,7 @@ namespace LangSmith
                 path: $"/api/v1/datasets/{datasetId}/share",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("share_projects", shareProjects?.ToString()) 
+                .AddOptionalParameter("share_projects", shareProjects?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

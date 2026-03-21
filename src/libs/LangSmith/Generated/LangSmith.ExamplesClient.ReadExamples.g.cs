@@ -124,7 +124,7 @@ namespace LangSmith
                 .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("random_seed", randomSeed?.ToString())
                 .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
-                .AddOptionalParameter("descending", descending?.ToString())
+                .AddOptionalParameter("descending", descending?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();
