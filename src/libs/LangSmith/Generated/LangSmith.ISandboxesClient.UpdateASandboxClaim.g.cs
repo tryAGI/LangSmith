@@ -19,12 +19,14 @@ namespace LangSmith
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
+        /// <param name="idleTtlSeconds"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
+            int? idleTtlSeconds = default,
             string? name = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             int? ttlSeconds = default,

@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("idle_ttl_seconds")]
+        public int? IdleTtlSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -48,6 +54,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesCreateClaimPayload" /> class.
         /// </summary>
+        /// <param name="idleTtlSeconds"></param>
         /// <param name="name"></param>
         /// <param name="templateName"></param>
         /// <param name="timeout"></param>
@@ -58,12 +65,14 @@ namespace LangSmith
 #endif
         public SandboxesCreateClaimPayload(
             string templateName,
+            int? idleTtlSeconds,
             string? name,
             int? timeout,
             int? ttlSeconds,
             bool? waitForReady)
         {
             this.TemplateName = templateName ?? throw new global::System.ArgumentNullException(nameof(templateName));
+            this.IdleTtlSeconds = idleTtlSeconds;
             this.Name = name;
             this.Timeout = timeout;
             this.TtlSeconds = ttlSeconds;
