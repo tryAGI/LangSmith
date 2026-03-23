@@ -128,6 +128,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FeaturesClient Features { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FeedbackClient Feedback { get; }
 
         /// <summary>
