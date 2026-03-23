@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        NumLikes,
+        NumDownloads,
         /// <summary>
         /// 
         /// </summary>
-        NumDownloads,
+        NumLikes,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +23,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        UpdatedAt,
+        Relevance,
         /// <summary>
         /// 
         /// </summary>
-        Relevance,
+        UpdatedAt,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace LangSmith
         {
             return value switch
             {
-                ListReposApiV1ReposGetSortField2.NumLikes => "num_likes",
                 ListReposApiV1ReposGetSortField2.NumDownloads => "num_downloads",
+                ListReposApiV1ReposGetSortField2.NumLikes => "num_likes",
                 ListReposApiV1ReposGetSortField2.NumViews => "num_views",
-                ListReposApiV1ReposGetSortField2.UpdatedAt => "updated_at",
                 ListReposApiV1ReposGetSortField2.Relevance => "relevance",
+                ListReposApiV1ReposGetSortField2.UpdatedAt => "updated_at",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace LangSmith
         {
             return value switch
             {
-                "num_likes" => ListReposApiV1ReposGetSortField2.NumLikes,
                 "num_downloads" => ListReposApiV1ReposGetSortField2.NumDownloads,
+                "num_likes" => ListReposApiV1ReposGetSortField2.NumLikes,
                 "num_views" => ListReposApiV1ReposGetSortField2.NumViews,
-                "updated_at" => ListReposApiV1ReposGetSortField2.UpdatedAt,
                 "relevance" => ListReposApiV1ReposGetSortField2.Relevance,
+                "updated_at" => ListReposApiV1ReposGetSortField2.UpdatedAt,
                 _ => null,
             };
         }

@@ -11,15 +11,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         NeedsMyReview,
         /// <summary>
         /// 
         /// </summary>
         NeedsOthersReview,
-        /// <summary>
-        /// 
-        /// </summary>
-        Completed,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace LangSmith
         {
             return value switch
             {
+                GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.Completed => "completed",
                 GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.NeedsMyReview => "needs_my_review",
                 GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.NeedsOthersReview => "needs_others_review",
-                GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.Completed => "completed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace LangSmith
         {
             return value switch
             {
+                "completed" => GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.Completed,
                 "needs_my_review" => GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.NeedsMyReview,
                 "needs_others_review" => GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.NeedsOthersReview,
-                "completed" => GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2.Completed,
                 _ => null,
             };
         }

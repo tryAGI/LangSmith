@@ -15,15 +15,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Warning,
-        /// <summary>
-        /// 
-        /// </summary>
         Error,
         /// <summary>
         /// 
         /// </summary>
         Info,
+        /// <summary>
+        /// 
+        /// </summary>
+        Warning,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace LangSmith
             return value switch
             {
                 PagerdutySeverity.Critical => "critical",
-                PagerdutySeverity.Warning => "warning",
                 PagerdutySeverity.Error => "error",
                 PagerdutySeverity.Info => "info",
+                PagerdutySeverity.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace LangSmith
             return value switch
             {
                 "critical" => PagerdutySeverity.Critical,
-                "warning" => PagerdutySeverity.Warning,
                 "error" => PagerdutySeverity.Error,
                 "info" => PagerdutySeverity.Info,
+                "warning" => PagerdutySeverity.Warning,
                 _ => null,
             };
         }

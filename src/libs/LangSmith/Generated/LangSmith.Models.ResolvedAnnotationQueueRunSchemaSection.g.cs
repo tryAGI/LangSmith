@@ -11,15 +11,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         NeedsMyReview,
         /// <summary>
         /// 
         /// </summary>
         NeedsOthersReview,
-        /// <summary>
-        /// 
-        /// </summary>
-        Completed,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace LangSmith
         {
             return value switch
             {
+                ResolvedAnnotationQueueRunSchemaSection.Completed => "completed",
                 ResolvedAnnotationQueueRunSchemaSection.NeedsMyReview => "needs_my_review",
                 ResolvedAnnotationQueueRunSchemaSection.NeedsOthersReview => "needs_others_review",
-                ResolvedAnnotationQueueRunSchemaSection.Completed => "completed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace LangSmith
         {
             return value switch
             {
+                "completed" => ResolvedAnnotationQueueRunSchemaSection.Completed,
                 "needs_my_review" => ResolvedAnnotationQueueRunSchemaSection.NeedsMyReview,
                 "needs_others_review" => ResolvedAnnotationQueueRunSchemaSection.NeedsOthersReview,
-                "completed" => ResolvedAnnotationQueueRunSchemaSection.Completed,
                 _ => null,
             };
         }

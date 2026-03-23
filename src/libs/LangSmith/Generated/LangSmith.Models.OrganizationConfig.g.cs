@@ -93,7 +93,7 @@ namespace LangSmith
         public int? MaxFreeLanggraphCloudDeployments { get; set; }
 
         /// <summary>
-        /// Default Value: 100
+        /// Default Value: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_sandboxes")]
         public int? MaxSandboxes { get; set; }
@@ -424,7 +424,7 @@ namespace LangSmith
         /// Default Value: 0
         /// </param>
         /// <param name="maxSandboxes">
-        /// Default Value: 100
+        /// Default Value: 10
         /// </param>
         /// <param name="maxSandboxVolumes">
         /// Default Value: 100

@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Single,
+        Pairwise,
         /// <summary>
         /// 
         /// </summary>
-        Pairwise,
+        Single,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                AnnotationQueueSchemaQueueType.Single => "single",
                 AnnotationQueueSchemaQueueType.Pairwise => "pairwise",
+                AnnotationQueueSchemaQueueType.Single => "single",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "single" => AnnotationQueueSchemaQueueType.Single,
                 "pairwise" => AnnotationQueueSchemaQueueType.Pairwise,
+                "single" => AnnotationQueueSchemaQueueType.Single,
                 _ => null,
             };
         }

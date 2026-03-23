@@ -11,15 +11,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKey,
         /// <summary>
         /// 
         /// </summary>
         Project,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace LangSmith
         {
             return value switch
             {
-                GranularUsageGroupBy.User => "user",
                 GranularUsageGroupBy.ApiKey => "api_key",
                 GranularUsageGroupBy.Project => "project",
+                GranularUsageGroupBy.User => "user",
                 GranularUsageGroupBy.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "user" => GranularUsageGroupBy.User,
                 "api_key" => GranularUsageGroupBy.ApiKey,
                 "project" => GranularUsageGroupBy.Project,
+                "user" => GranularUsageGroupBy.User,
                 "workspace" => GranularUsageGroupBy.Workspace,
                 _ => null,
             };

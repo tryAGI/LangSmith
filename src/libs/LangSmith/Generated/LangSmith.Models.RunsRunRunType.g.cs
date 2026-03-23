@@ -11,19 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Tool,
-        /// <summary>
-        /// 
-        /// </summary>
         Chain,
-        /// <summary>
-        /// 
-        /// </summary>
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Retriever,
         /// <summary>
         /// 
         /// </summary>
@@ -31,11 +19,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Prompt,
+        Llm,
         /// <summary>
         /// 
         /// </summary>
         Parser,
+        /// <summary>
+        /// 
+        /// </summary>
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Retriever,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace LangSmith
         {
             return value switch
             {
-                RunsRunRunType.Tool => "tool",
                 RunsRunRunType.Chain => "chain",
-                RunsRunRunType.Llm => "llm",
-                RunsRunRunType.Retriever => "retriever",
                 RunsRunRunType.Embedding => "embedding",
-                RunsRunRunType.Prompt => "prompt",
+                RunsRunRunType.Llm => "llm",
                 RunsRunRunType.Parser => "parser",
+                RunsRunRunType.Prompt => "prompt",
+                RunsRunRunType.Retriever => "retriever",
+                RunsRunRunType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace LangSmith
         {
             return value switch
             {
-                "tool" => RunsRunRunType.Tool,
                 "chain" => RunsRunRunType.Chain,
-                "llm" => RunsRunRunType.Llm,
-                "retriever" => RunsRunRunType.Retriever,
                 "embedding" => RunsRunRunType.Embedding,
-                "prompt" => RunsRunRunType.Prompt,
+                "llm" => RunsRunRunType.Llm,
                 "parser" => RunsRunRunType.Parser,
+                "prompt" => RunsRunRunType.Prompt,
+                "retriever" => RunsRunRunType.Retriever,
+                "tool" => RunsRunRunType.Tool,
                 _ => null,
             };
         }

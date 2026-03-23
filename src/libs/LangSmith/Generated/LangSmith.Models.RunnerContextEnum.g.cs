@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        LangsmithUi,
+        LangsmithAlignEvals,
         /// <summary>
         /// 
         /// </summary>
-        LangsmithAlignEvals,
+        LangsmithUi,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                RunnerContextEnum.LangsmithUi => "langsmith_ui",
                 RunnerContextEnum.LangsmithAlignEvals => "langsmith_align_evals",
+                RunnerContextEnum.LangsmithUi => "langsmith_ui",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "langsmith_ui" => RunnerContextEnum.LangsmithUi,
                 "langsmith_align_evals" => RunnerContextEnum.LangsmithAlignEvals,
+                "langsmith_ui" => RunnerContextEnum.LangsmithUi,
                 _ => null,
             };
         }

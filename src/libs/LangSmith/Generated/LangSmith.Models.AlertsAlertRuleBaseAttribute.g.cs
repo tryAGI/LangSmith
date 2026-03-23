@@ -11,10 +11,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Latency,
-        /// <summary>
-        /// 
-        /// </summary>
         ErrorCount,
         /// <summary>
         /// 
@@ -23,11 +19,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        RunLatency,
+        Latency,
         /// <summary>
         /// 
         /// </summary>
         RunCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        RunLatency,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace LangSmith
         {
             return value switch
             {
-                AlertsAlertRuleBaseAttribute.Latency => "latency",
                 AlertsAlertRuleBaseAttribute.ErrorCount => "error_count",
                 AlertsAlertRuleBaseAttribute.FeedbackScore => "feedback_score",
-                AlertsAlertRuleBaseAttribute.RunLatency => "run_latency",
+                AlertsAlertRuleBaseAttribute.Latency => "latency",
                 AlertsAlertRuleBaseAttribute.RunCount => "run_count",
+                AlertsAlertRuleBaseAttribute.RunLatency => "run_latency",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace LangSmith
         {
             return value switch
             {
-                "latency" => AlertsAlertRuleBaseAttribute.Latency,
                 "error_count" => AlertsAlertRuleBaseAttribute.ErrorCount,
                 "feedback_score" => AlertsAlertRuleBaseAttribute.FeedbackScore,
-                "run_latency" => AlertsAlertRuleBaseAttribute.RunLatency,
+                "latency" => AlertsAlertRuleBaseAttribute.Latency,
                 "run_count" => AlertsAlertRuleBaseAttribute.RunCount,
+                "run_latency" => AlertsAlertRuleBaseAttribute.RunLatency,
                 _ => null,
             };
         }

@@ -15,7 +15,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        AbacOperatorNotEquals,
+        AbacOperatorEqualsIfExists,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        AbacOperatorNotEqualsIgnoreCase,
+        AbacOperatorEqualsIgnoreCaseIfExists,
         /// <summary>
         /// 
         /// </summary>
@@ -31,11 +31,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        AbacOperatorNotMatches,
+        AbacOperatorMatchesIfExists,
         /// <summary>
         /// 
         /// </summary>
-        AbacOperatorEqualsIfExists,
+        AbacOperatorNotEquals,
         /// <summary>
         /// 
         /// </summary>
@@ -43,7 +43,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        AbacOperatorEqualsIgnoreCaseIfExists,
+        AbacOperatorNotEqualsIgnoreCase,
         /// <summary>
         /// 
         /// </summary>
@@ -51,7 +51,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        AbacOperatorMatchesIfExists,
+        AbacOperatorNotMatches,
         /// <summary>
         /// 
         /// </summary>
@@ -71,16 +71,16 @@ namespace LangSmith
             return value switch
             {
                 AuthzInternalAbacOperator.AbacOperatorEquals => "equals",
-                AuthzInternalAbacOperator.AbacOperatorNotEquals => "not_equals",
-                AuthzInternalAbacOperator.AbacOperatorEqualsIgnoreCase => "equals_ignore_case",
-                AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCase => "not_equals_ignore_case",
-                AuthzInternalAbacOperator.AbacOperatorMatches => "matches",
-                AuthzInternalAbacOperator.AbacOperatorNotMatches => "not_matches",
                 AuthzInternalAbacOperator.AbacOperatorEqualsIfExists => "equals_if_exists",
-                AuthzInternalAbacOperator.AbacOperatorNotEqualsIfExists => "not_equals_if_exists",
+                AuthzInternalAbacOperator.AbacOperatorEqualsIgnoreCase => "equals_ignore_case",
                 AuthzInternalAbacOperator.AbacOperatorEqualsIgnoreCaseIfExists => "equals_ignore_case_if_exists",
-                AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCaseIfExists => "not_equals_ignore_case_if_exists",
+                AuthzInternalAbacOperator.AbacOperatorMatches => "matches",
                 AuthzInternalAbacOperator.AbacOperatorMatchesIfExists => "matches_if_exists",
+                AuthzInternalAbacOperator.AbacOperatorNotEquals => "not_equals",
+                AuthzInternalAbacOperator.AbacOperatorNotEqualsIfExists => "not_equals_if_exists",
+                AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCase => "not_equals_ignore_case",
+                AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCaseIfExists => "not_equals_ignore_case_if_exists",
+                AuthzInternalAbacOperator.AbacOperatorNotMatches => "not_matches",
                 AuthzInternalAbacOperator.AbacOperatorNotMatchesIfExists => "not_matches_if_exists",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -93,16 +93,16 @@ namespace LangSmith
             return value switch
             {
                 "equals" => AuthzInternalAbacOperator.AbacOperatorEquals,
-                "not_equals" => AuthzInternalAbacOperator.AbacOperatorNotEquals,
-                "equals_ignore_case" => AuthzInternalAbacOperator.AbacOperatorEqualsIgnoreCase,
-                "not_equals_ignore_case" => AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCase,
-                "matches" => AuthzInternalAbacOperator.AbacOperatorMatches,
-                "not_matches" => AuthzInternalAbacOperator.AbacOperatorNotMatches,
                 "equals_if_exists" => AuthzInternalAbacOperator.AbacOperatorEqualsIfExists,
-                "not_equals_if_exists" => AuthzInternalAbacOperator.AbacOperatorNotEqualsIfExists,
+                "equals_ignore_case" => AuthzInternalAbacOperator.AbacOperatorEqualsIgnoreCase,
                 "equals_ignore_case_if_exists" => AuthzInternalAbacOperator.AbacOperatorEqualsIgnoreCaseIfExists,
-                "not_equals_ignore_case_if_exists" => AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCaseIfExists,
+                "matches" => AuthzInternalAbacOperator.AbacOperatorMatches,
                 "matches_if_exists" => AuthzInternalAbacOperator.AbacOperatorMatchesIfExists,
+                "not_equals" => AuthzInternalAbacOperator.AbacOperatorNotEquals,
+                "not_equals_if_exists" => AuthzInternalAbacOperator.AbacOperatorNotEqualsIfExists,
+                "not_equals_ignore_case" => AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCase,
+                "not_equals_ignore_case_if_exists" => AuthzInternalAbacOperator.AbacOperatorNotEqualsIgnoreCaseIfExists,
+                "not_matches" => AuthzInternalAbacOperator.AbacOperatorNotMatches,
                 "not_matches_if_exists" => AuthzInternalAbacOperator.AbacOperatorNotMatchesIfExists,
                 _ => null,
             };

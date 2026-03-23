@@ -15,11 +15,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Threads,
+        SingleRun,
         /// <summary>
         /// 
         /// </summary>
-        SingleRun,
+        Threads,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace LangSmith
             return value switch
             {
                 FilterViewType.Runs => "runs",
-                FilterViewType.Threads => "threads",
                 FilterViewType.SingleRun => "single_run",
+                FilterViewType.Threads => "threads",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace LangSmith
             return value switch
             {
                 "runs" => FilterViewType.Runs,
-                "threads" => FilterViewType.Threads,
                 "single_run" => FilterViewType.SingleRun,
+                "threads" => FilterViewType.Threads,
                 _ => null,
             };
         }

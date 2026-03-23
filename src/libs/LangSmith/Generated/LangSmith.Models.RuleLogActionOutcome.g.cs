@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Success,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace LangSmith
         {
             return value switch
             {
-                RuleLogActionOutcome.Success => "success",
-                RuleLogActionOutcome.Skipped => "skipped",
                 RuleLogActionOutcome.Error => "error",
+                RuleLogActionOutcome.Skipped => "skipped",
+                RuleLogActionOutcome.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "success" => RuleLogActionOutcome.Success,
-                "skipped" => RuleLogActionOutcome.Skipped,
                 "error" => RuleLogActionOutcome.Error,
+                "skipped" => RuleLogActionOutcome.Skipped,
+                "success" => RuleLogActionOutcome.Success,
                 _ => null,
             };
         }

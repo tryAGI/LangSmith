@@ -14,131 +14,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        CreateApiKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteApiKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreatePersonalAccessToken,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeletePersonalAccessToken,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateServiceKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteServiceKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateRole,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateRole,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteRole,
-        /// <summary>
-        /// 
-        /// </summary>
-        InviteUserToOrg,
-        /// <summary>
-        /// 
-        /// </summary>
-        InviteUsersToOrgBatch,
-        /// <summary>
-        /// 
-        /// </summary>
         AddBasicAuthUsersToOrg,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateBasicAuthUser,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteOrgPendingMember,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteOrgMember,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateOrgMember,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateSsoSettings,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateSsoSettings,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteSsoSettings,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateDefaultSsoProvisionOrganization,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateLoginMethods,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateOrganizationInfo,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateBusinessInfo,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdatePaymentPlan,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdatePaymentMethod,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreatePaymentSetupIntent,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreatePaymentCheckoutSession,
-        /// <summary>
-        /// 
-        /// </summary>
-        ConfirmPaymentCheckoutSession,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreatePaymentAccountLink,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateWorkspace,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateWorkspace,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteWorkspace,
         /// <summary>
         /// 
         /// </summary>
@@ -150,59 +26,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        DeleteWorkspaceMember,
+        CancelBulkExport,
         /// <summary>
         /// 
         /// </summary>
-        UpdateWorkspaceMember,
+        CloneChartSection,
         /// <summary>
         /// 
         /// </summary>
-        DeleteWorkspacePendingMember,
+        ConfirmPaymentCheckoutSession,
         /// <summary>
         /// 
         /// </summary>
-        UpdateWorkspaceSecrets,
-        /// <summary>
-        /// 
-        /// </summary>
-        UnshareEntities,
-        /// <summary>
-        /// 
-        /// </summary>
-        SetTenantHandle,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateTagKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateTagKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteTagKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateTagValue,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateTagValue,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteTagValue,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateTagging,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteTagging,
+        CreateApiKey,
         /// <summary>
         /// 
         /// </summary>
@@ -210,15 +46,247 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        CancelBulkExport,
-        /// <summary>
-        /// 
-        /// </summary>
         CreateBulkExportDestination,
         /// <summary>
         /// 
         /// </summary>
+        CreateChart,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateChartSection,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateDeployment,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateModelPriceMap,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateOrgChart,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateOrgChartSection,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreatePaymentAccountLink,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreatePaymentCheckoutSession,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreatePaymentSetupIntent,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreatePersonalAccessToken,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateRole,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateServiceKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateSsoSettings,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateTagKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateTagValue,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateTagging,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateWorkspace,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteApiKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteChart,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteChartSection,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteDeployment,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteModelPriceMap,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteOrgChart,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteOrgChartSection,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteOrgMember,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteOrgPendingMember,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeletePersonalAccessToken,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteRole,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteServiceKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteSsoSettings,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteTagKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteTagValue,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteTagging,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteUsageLimit,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteWorkspace,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteWorkspaceMember,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteWorkspacePendingMember,
+        /// <summary>
+        /// 
+        /// </summary>
+        InviteUserToOrg,
+        /// <summary>
+        /// 
+        /// </summary>
+        InviteUsersToOrgBatch,
+        /// <summary>
+        /// 
+        /// </summary>
+        SetTenantHandle,
+        /// <summary>
+        /// 
+        /// </summary>
+        UnshareEntities,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateBasicAuthUser,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateBulkExportDestination,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateBusinessInfo,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateChart,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateChartSection,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateDefaultSsoProvisionOrganization,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateDeployment,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateLoginMethods,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateModelPriceMap,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateOrgChart,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateOrgChartSection,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateOrgMember,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateOrganizationInfo,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdatePaymentMethod,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdatePaymentPlan,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateRole,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateSsoSettings,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateTagKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateTagValue,
         /// <summary>
         /// 
         /// </summary>
@@ -230,83 +298,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        DeleteUsageLimit,
+        UpdateWorkspace,
         /// <summary>
         /// 
         /// </summary>
-        CreateModelPriceMap,
+        UpdateWorkspaceMember,
         /// <summary>
         /// 
         /// </summary>
-        UpdateModelPriceMap,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteModelPriceMap,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateChart,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateChart,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteChart,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        CloneChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateOrgChart,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateOrgChart,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteOrgChart,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateOrgChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateOrgChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteOrgChartSection,
-        /// <summary>
-        /// 
-        /// </summary>
-        CreateDeployment,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdateDeployment,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteDeployment,
+        UpdateWorkspaceSecrets,
     }
 
     /// <summary>
@@ -321,80 +321,80 @@ namespace LangSmith
         {
             return value switch
             {
-                AuditLogOperation.CreateApiKey => "create_api_key",
-                AuditLogOperation.DeleteApiKey => "delete_api_key",
-                AuditLogOperation.CreatePersonalAccessToken => "create_personal_access_token",
-                AuditLogOperation.DeletePersonalAccessToken => "delete_personal_access_token",
-                AuditLogOperation.CreateServiceKey => "create_service_key",
-                AuditLogOperation.DeleteServiceKey => "delete_service_key",
-                AuditLogOperation.CreateRole => "create_role",
-                AuditLogOperation.UpdateRole => "update_role",
-                AuditLogOperation.DeleteRole => "delete_role",
-                AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
-                AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
                 AuditLogOperation.AddBasicAuthUsersToOrg => "add_basic_auth_users_to_org",
-                AuditLogOperation.UpdateBasicAuthUser => "update_basic_auth_user",
-                AuditLogOperation.DeleteOrgPendingMember => "delete_org_pending_member",
-                AuditLogOperation.DeleteOrgMember => "delete_org_member",
-                AuditLogOperation.UpdateOrgMember => "update_org_member",
-                AuditLogOperation.CreateSsoSettings => "create_sso_settings",
-                AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
-                AuditLogOperation.DeleteSsoSettings => "delete_sso_settings",
-                AuditLogOperation.UpdateDefaultSsoProvisionOrganization => "update_default_sso_provision_organization",
-                AuditLogOperation.UpdateLoginMethods => "update_login_methods",
-                AuditLogOperation.UpdateOrganizationInfo => "update_organization_info",
-                AuditLogOperation.UpdateBusinessInfo => "update_business_info",
-                AuditLogOperation.UpdatePaymentPlan => "update_payment_plan",
-                AuditLogOperation.UpdatePaymentMethod => "update_payment_method",
-                AuditLogOperation.CreatePaymentSetupIntent => "create_payment_setup_intent",
-                AuditLogOperation.CreatePaymentCheckoutSession => "create_payment_checkout_session",
-                AuditLogOperation.ConfirmPaymentCheckoutSession => "confirm_payment_checkout_session",
-                AuditLogOperation.CreatePaymentAccountLink => "create_payment_account_link",
-                AuditLogOperation.CreateWorkspace => "create_workspace",
-                AuditLogOperation.UpdateWorkspace => "update_workspace",
-                AuditLogOperation.DeleteWorkspace => "delete_workspace",
                 AuditLogOperation.AddMemberToWorkspace => "add_member_to_workspace",
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
-                AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
-                AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
-                AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
-                AuditLogOperation.UpdateWorkspaceSecrets => "update_workspace_secrets",
-                AuditLogOperation.UnshareEntities => "unshare_entities",
-                AuditLogOperation.SetTenantHandle => "set_tenant_handle",
-                AuditLogOperation.CreateTagKey => "create_tag_key",
-                AuditLogOperation.UpdateTagKey => "update_tag_key",
-                AuditLogOperation.DeleteTagKey => "delete_tag_key",
-                AuditLogOperation.CreateTagValue => "create_tag_value",
-                AuditLogOperation.UpdateTagValue => "update_tag_value",
-                AuditLogOperation.DeleteTagValue => "delete_tag_value",
-                AuditLogOperation.CreateTagging => "create_tagging",
-                AuditLogOperation.DeleteTagging => "delete_tagging",
-                AuditLogOperation.CreateBulkExport => "create_bulk_export",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
+                AuditLogOperation.CloneChartSection => "clone_chart_section",
+                AuditLogOperation.ConfirmPaymentCheckoutSession => "confirm_payment_checkout_session",
+                AuditLogOperation.CreateApiKey => "create_api_key",
+                AuditLogOperation.CreateBulkExport => "create_bulk_export",
                 AuditLogOperation.CreateBulkExportDestination => "create_bulk_export_destination",
+                AuditLogOperation.CreateChart => "create_chart",
+                AuditLogOperation.CreateChartSection => "create_chart_section",
+                AuditLogOperation.CreateDeployment => "create_deployment",
+                AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
+                AuditLogOperation.CreateOrgChart => "create_org_chart",
+                AuditLogOperation.CreateOrgChartSection => "create_org_chart_section",
+                AuditLogOperation.CreatePaymentAccountLink => "create_payment_account_link",
+                AuditLogOperation.CreatePaymentCheckoutSession => "create_payment_checkout_session",
+                AuditLogOperation.CreatePaymentSetupIntent => "create_payment_setup_intent",
+                AuditLogOperation.CreatePersonalAccessToken => "create_personal_access_token",
+                AuditLogOperation.CreateRole => "create_role",
+                AuditLogOperation.CreateServiceKey => "create_service_key",
+                AuditLogOperation.CreateSsoSettings => "create_sso_settings",
+                AuditLogOperation.CreateTagKey => "create_tag_key",
+                AuditLogOperation.CreateTagValue => "create_tag_value",
+                AuditLogOperation.CreateTagging => "create_tagging",
+                AuditLogOperation.CreateWorkspace => "create_workspace",
+                AuditLogOperation.DeleteApiKey => "delete_api_key",
+                AuditLogOperation.DeleteChart => "delete_chart",
+                AuditLogOperation.DeleteChartSection => "delete_chart_section",
+                AuditLogOperation.DeleteDeployment => "delete_deployment",
+                AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
+                AuditLogOperation.DeleteOrgChart => "delete_org_chart",
+                AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
+                AuditLogOperation.DeleteOrgMember => "delete_org_member",
+                AuditLogOperation.DeleteOrgPendingMember => "delete_org_pending_member",
+                AuditLogOperation.DeletePersonalAccessToken => "delete_personal_access_token",
+                AuditLogOperation.DeleteRole => "delete_role",
+                AuditLogOperation.DeleteServiceKey => "delete_service_key",
+                AuditLogOperation.DeleteSsoSettings => "delete_sso_settings",
+                AuditLogOperation.DeleteTagKey => "delete_tag_key",
+                AuditLogOperation.DeleteTagValue => "delete_tag_value",
+                AuditLogOperation.DeleteTagging => "delete_tagging",
+                AuditLogOperation.DeleteUsageLimit => "delete_usage_limit",
+                AuditLogOperation.DeleteWorkspace => "delete_workspace",
+                AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
+                AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
+                AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
+                AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
+                AuditLogOperation.SetTenantHandle => "set_tenant_handle",
+                AuditLogOperation.UnshareEntities => "unshare_entities",
+                AuditLogOperation.UpdateBasicAuthUser => "update_basic_auth_user",
                 AuditLogOperation.UpdateBulkExportDestination => "update_bulk_export_destination",
+                AuditLogOperation.UpdateBusinessInfo => "update_business_info",
+                AuditLogOperation.UpdateChart => "update_chart",
+                AuditLogOperation.UpdateChartSection => "update_chart_section",
+                AuditLogOperation.UpdateDefaultSsoProvisionOrganization => "update_default_sso_provision_organization",
+                AuditLogOperation.UpdateDeployment => "update_deployment",
+                AuditLogOperation.UpdateLoginMethods => "update_login_methods",
+                AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
+                AuditLogOperation.UpdateOrgChart => "update_org_chart",
+                AuditLogOperation.UpdateOrgChartSection => "update_org_chart_section",
+                AuditLogOperation.UpdateOrgMember => "update_org_member",
+                AuditLogOperation.UpdateOrganizationInfo => "update_organization_info",
+                AuditLogOperation.UpdatePaymentMethod => "update_payment_method",
+                AuditLogOperation.UpdatePaymentPlan => "update_payment_plan",
+                AuditLogOperation.UpdateRole => "update_role",
+                AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
+                AuditLogOperation.UpdateTagKey => "update_tag_key",
+                AuditLogOperation.UpdateTagValue => "update_tag_value",
                 AuditLogOperation.UpdateTtlSettings => "update_ttl_settings",
                 AuditLogOperation.UpdateUsageLimit => "update_usage_limit",
-                AuditLogOperation.DeleteUsageLimit => "delete_usage_limit",
-                AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
-                AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
-                AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
-                AuditLogOperation.CreateChart => "create_chart",
-                AuditLogOperation.UpdateChart => "update_chart",
-                AuditLogOperation.DeleteChart => "delete_chart",
-                AuditLogOperation.CreateChartSection => "create_chart_section",
-                AuditLogOperation.UpdateChartSection => "update_chart_section",
-                AuditLogOperation.DeleteChartSection => "delete_chart_section",
-                AuditLogOperation.CloneChartSection => "clone_chart_section",
-                AuditLogOperation.CreateOrgChart => "create_org_chart",
-                AuditLogOperation.UpdateOrgChart => "update_org_chart",
-                AuditLogOperation.DeleteOrgChart => "delete_org_chart",
-                AuditLogOperation.CreateOrgChartSection => "create_org_chart_section",
-                AuditLogOperation.UpdateOrgChartSection => "update_org_chart_section",
-                AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
-                AuditLogOperation.CreateDeployment => "create_deployment",
-                AuditLogOperation.UpdateDeployment => "update_deployment",
-                AuditLogOperation.DeleteDeployment => "delete_deployment",
+                AuditLogOperation.UpdateWorkspace => "update_workspace",
+                AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
+                AuditLogOperation.UpdateWorkspaceSecrets => "update_workspace_secrets",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -405,80 +405,80 @@ namespace LangSmith
         {
             return value switch
             {
-                "create_api_key" => AuditLogOperation.CreateApiKey,
-                "delete_api_key" => AuditLogOperation.DeleteApiKey,
-                "create_personal_access_token" => AuditLogOperation.CreatePersonalAccessToken,
-                "delete_personal_access_token" => AuditLogOperation.DeletePersonalAccessToken,
-                "create_service_key" => AuditLogOperation.CreateServiceKey,
-                "delete_service_key" => AuditLogOperation.DeleteServiceKey,
-                "create_role" => AuditLogOperation.CreateRole,
-                "update_role" => AuditLogOperation.UpdateRole,
-                "delete_role" => AuditLogOperation.DeleteRole,
-                "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
-                "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
                 "add_basic_auth_users_to_org" => AuditLogOperation.AddBasicAuthUsersToOrg,
-                "update_basic_auth_user" => AuditLogOperation.UpdateBasicAuthUser,
-                "delete_org_pending_member" => AuditLogOperation.DeleteOrgPendingMember,
-                "delete_org_member" => AuditLogOperation.DeleteOrgMember,
-                "update_org_member" => AuditLogOperation.UpdateOrgMember,
-                "create_sso_settings" => AuditLogOperation.CreateSsoSettings,
-                "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
-                "delete_sso_settings" => AuditLogOperation.DeleteSsoSettings,
-                "update_default_sso_provision_organization" => AuditLogOperation.UpdateDefaultSsoProvisionOrganization,
-                "update_login_methods" => AuditLogOperation.UpdateLoginMethods,
-                "update_organization_info" => AuditLogOperation.UpdateOrganizationInfo,
-                "update_business_info" => AuditLogOperation.UpdateBusinessInfo,
-                "update_payment_plan" => AuditLogOperation.UpdatePaymentPlan,
-                "update_payment_method" => AuditLogOperation.UpdatePaymentMethod,
-                "create_payment_setup_intent" => AuditLogOperation.CreatePaymentSetupIntent,
-                "create_payment_checkout_session" => AuditLogOperation.CreatePaymentCheckoutSession,
-                "confirm_payment_checkout_session" => AuditLogOperation.ConfirmPaymentCheckoutSession,
-                "create_payment_account_link" => AuditLogOperation.CreatePaymentAccountLink,
-                "create_workspace" => AuditLogOperation.CreateWorkspace,
-                "update_workspace" => AuditLogOperation.UpdateWorkspace,
-                "delete_workspace" => AuditLogOperation.DeleteWorkspace,
                 "add_member_to_workspace" => AuditLogOperation.AddMemberToWorkspace,
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
-                "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
-                "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,
-                "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
-                "update_workspace_secrets" => AuditLogOperation.UpdateWorkspaceSecrets,
-                "unshare_entities" => AuditLogOperation.UnshareEntities,
-                "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
-                "create_tag_key" => AuditLogOperation.CreateTagKey,
-                "update_tag_key" => AuditLogOperation.UpdateTagKey,
-                "delete_tag_key" => AuditLogOperation.DeleteTagKey,
-                "create_tag_value" => AuditLogOperation.CreateTagValue,
-                "update_tag_value" => AuditLogOperation.UpdateTagValue,
-                "delete_tag_value" => AuditLogOperation.DeleteTagValue,
-                "create_tagging" => AuditLogOperation.CreateTagging,
-                "delete_tagging" => AuditLogOperation.DeleteTagging,
-                "create_bulk_export" => AuditLogOperation.CreateBulkExport,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
+                "clone_chart_section" => AuditLogOperation.CloneChartSection,
+                "confirm_payment_checkout_session" => AuditLogOperation.ConfirmPaymentCheckoutSession,
+                "create_api_key" => AuditLogOperation.CreateApiKey,
+                "create_bulk_export" => AuditLogOperation.CreateBulkExport,
                 "create_bulk_export_destination" => AuditLogOperation.CreateBulkExportDestination,
+                "create_chart" => AuditLogOperation.CreateChart,
+                "create_chart_section" => AuditLogOperation.CreateChartSection,
+                "create_deployment" => AuditLogOperation.CreateDeployment,
+                "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
+                "create_org_chart" => AuditLogOperation.CreateOrgChart,
+                "create_org_chart_section" => AuditLogOperation.CreateOrgChartSection,
+                "create_payment_account_link" => AuditLogOperation.CreatePaymentAccountLink,
+                "create_payment_checkout_session" => AuditLogOperation.CreatePaymentCheckoutSession,
+                "create_payment_setup_intent" => AuditLogOperation.CreatePaymentSetupIntent,
+                "create_personal_access_token" => AuditLogOperation.CreatePersonalAccessToken,
+                "create_role" => AuditLogOperation.CreateRole,
+                "create_service_key" => AuditLogOperation.CreateServiceKey,
+                "create_sso_settings" => AuditLogOperation.CreateSsoSettings,
+                "create_tag_key" => AuditLogOperation.CreateTagKey,
+                "create_tag_value" => AuditLogOperation.CreateTagValue,
+                "create_tagging" => AuditLogOperation.CreateTagging,
+                "create_workspace" => AuditLogOperation.CreateWorkspace,
+                "delete_api_key" => AuditLogOperation.DeleteApiKey,
+                "delete_chart" => AuditLogOperation.DeleteChart,
+                "delete_chart_section" => AuditLogOperation.DeleteChartSection,
+                "delete_deployment" => AuditLogOperation.DeleteDeployment,
+                "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
+                "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
+                "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
+                "delete_org_member" => AuditLogOperation.DeleteOrgMember,
+                "delete_org_pending_member" => AuditLogOperation.DeleteOrgPendingMember,
+                "delete_personal_access_token" => AuditLogOperation.DeletePersonalAccessToken,
+                "delete_role" => AuditLogOperation.DeleteRole,
+                "delete_service_key" => AuditLogOperation.DeleteServiceKey,
+                "delete_sso_settings" => AuditLogOperation.DeleteSsoSettings,
+                "delete_tag_key" => AuditLogOperation.DeleteTagKey,
+                "delete_tag_value" => AuditLogOperation.DeleteTagValue,
+                "delete_tagging" => AuditLogOperation.DeleteTagging,
+                "delete_usage_limit" => AuditLogOperation.DeleteUsageLimit,
+                "delete_workspace" => AuditLogOperation.DeleteWorkspace,
+                "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
+                "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
+                "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
+                "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
+                "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
+                "unshare_entities" => AuditLogOperation.UnshareEntities,
+                "update_basic_auth_user" => AuditLogOperation.UpdateBasicAuthUser,
                 "update_bulk_export_destination" => AuditLogOperation.UpdateBulkExportDestination,
+                "update_business_info" => AuditLogOperation.UpdateBusinessInfo,
+                "update_chart" => AuditLogOperation.UpdateChart,
+                "update_chart_section" => AuditLogOperation.UpdateChartSection,
+                "update_default_sso_provision_organization" => AuditLogOperation.UpdateDefaultSsoProvisionOrganization,
+                "update_deployment" => AuditLogOperation.UpdateDeployment,
+                "update_login_methods" => AuditLogOperation.UpdateLoginMethods,
+                "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
+                "update_org_chart" => AuditLogOperation.UpdateOrgChart,
+                "update_org_chart_section" => AuditLogOperation.UpdateOrgChartSection,
+                "update_org_member" => AuditLogOperation.UpdateOrgMember,
+                "update_organization_info" => AuditLogOperation.UpdateOrganizationInfo,
+                "update_payment_method" => AuditLogOperation.UpdatePaymentMethod,
+                "update_payment_plan" => AuditLogOperation.UpdatePaymentPlan,
+                "update_role" => AuditLogOperation.UpdateRole,
+                "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
+                "update_tag_key" => AuditLogOperation.UpdateTagKey,
+                "update_tag_value" => AuditLogOperation.UpdateTagValue,
                 "update_ttl_settings" => AuditLogOperation.UpdateTtlSettings,
                 "update_usage_limit" => AuditLogOperation.UpdateUsageLimit,
-                "delete_usage_limit" => AuditLogOperation.DeleteUsageLimit,
-                "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
-                "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
-                "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
-                "create_chart" => AuditLogOperation.CreateChart,
-                "update_chart" => AuditLogOperation.UpdateChart,
-                "delete_chart" => AuditLogOperation.DeleteChart,
-                "create_chart_section" => AuditLogOperation.CreateChartSection,
-                "update_chart_section" => AuditLogOperation.UpdateChartSection,
-                "delete_chart_section" => AuditLogOperation.DeleteChartSection,
-                "clone_chart_section" => AuditLogOperation.CloneChartSection,
-                "create_org_chart" => AuditLogOperation.CreateOrgChart,
-                "update_org_chart" => AuditLogOperation.UpdateOrgChart,
-                "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
-                "create_org_chart_section" => AuditLogOperation.CreateOrgChartSection,
-                "update_org_chart_section" => AuditLogOperation.UpdateOrgChartSection,
-                "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
-                "create_deployment" => AuditLogOperation.CreateDeployment,
-                "update_deployment" => AuditLogOperation.UpdateDeployment,
-                "delete_deployment" => AuditLogOperation.DeleteDeployment,
+                "update_workspace" => AuditLogOperation.UpdateWorkspace,
+                "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,
+                "update_workspace_secrets" => AuditLogOperation.UpdateWorkspaceSecrets,
                 _ => null,
             };
         }

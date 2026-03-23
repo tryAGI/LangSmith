@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Promptim,
+        Demo,
         /// <summary>
         /// 
         /// </summary>
-        Demo,
+        Promptim,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                EPromptOptimizationAlgorithm.Promptim => "promptim",
                 EPromptOptimizationAlgorithm.Demo => "demo",
+                EPromptOptimizationAlgorithm.Promptim => "promptim",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "promptim" => EPromptOptimizationAlgorithm.Promptim,
                 "demo" => EPromptOptimizationAlgorithm.Demo,
+                "promptim" => EPromptOptimizationAlgorithm.Promptim,
                 _ => null,
             };
         }

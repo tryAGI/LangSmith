@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Prompt,
+        Agent,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Agent,
+        Prompt,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace LangSmith
         {
             return value switch
             {
-                ListReposApiV1ReposGetRepoType2.Prompt => "prompt",
-                ListReposApiV1ReposGetRepoType2.File => "file",
                 ListReposApiV1ReposGetRepoType2.Agent => "agent",
+                ListReposApiV1ReposGetRepoType2.File => "file",
+                ListReposApiV1ReposGetRepoType2.Prompt => "prompt",
                 ListReposApiV1ReposGetRepoType2.Skill => "skill",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "prompt" => ListReposApiV1ReposGetRepoType2.Prompt,
-                "file" => ListReposApiV1ReposGetRepoType2.File,
                 "agent" => ListReposApiV1ReposGetRepoType2.Agent,
+                "file" => ListReposApiV1ReposGetRepoType2.File,
+                "prompt" => ListReposApiV1ReposGetRepoType2.Prompt,
                 "skill" => ListReposApiV1ReposGetRepoType2.Skill,
                 _ => null,
             };

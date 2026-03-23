@@ -11,19 +11,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Info,
-        /// <summary>
-        /// 
-        /// </summary>
-        Result,
-        /// <summary>
-        /// 
-        /// </summary>
         Error,
         /// <summary>
         /// 
         /// </summary>
+        Info,
+        /// <summary>
+        /// 
+        /// </summary>
         Link,
+        /// <summary>
+        /// 
+        /// </summary>
+        Result,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace LangSmith
         {
             return value switch
             {
-                EPromptOptimizationJobLogType.Info => "info",
-                EPromptOptimizationJobLogType.Result => "result",
                 EPromptOptimizationJobLogType.Error => "error",
+                EPromptOptimizationJobLogType.Info => "info",
                 EPromptOptimizationJobLogType.Link => "link",
+                EPromptOptimizationJobLogType.Result => "result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace LangSmith
         {
             return value switch
             {
-                "info" => EPromptOptimizationJobLogType.Info,
-                "result" => EPromptOptimizationJobLogType.Result,
                 "error" => EPromptOptimizationJobLogType.Error,
+                "info" => EPromptOptimizationJobLogType.Info,
                 "link" => EPromptOptimizationJobLogType.Link,
+                "result" => EPromptOptimizationJobLogType.Result,
                 _ => null,
             };
         }

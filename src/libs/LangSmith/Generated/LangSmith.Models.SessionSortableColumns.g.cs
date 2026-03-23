@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Name,
+        ErrorRate,
         /// <summary>
         /// 
         /// </summary>
-        StartTime,
+        Feedback,
         /// <summary>
         /// 
         /// </summary>
@@ -31,15 +31,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ErrorRate,
-        /// <summary>
-        /// 
-        /// </summary>
-        Feedback,
+        Name,
         /// <summary>
         /// 
         /// </summary>
         RunsCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        StartTime,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace LangSmith
         {
             return value switch
             {
-                SessionSortableColumns.Name => "name",
-                SessionSortableColumns.StartTime => "start_time",
+                SessionSortableColumns.ErrorRate => "error_rate",
+                SessionSortableColumns.Feedback => "feedback",
                 SessionSortableColumns.LastRunStartTime => "last_run_start_time",
                 SessionSortableColumns.LatencyP50 => "latency_p50",
                 SessionSortableColumns.LatencyP99 => "latency_p99",
-                SessionSortableColumns.ErrorRate => "error_rate",
-                SessionSortableColumns.Feedback => "feedback",
+                SessionSortableColumns.Name => "name",
                 SessionSortableColumns.RunsCount => "runs_count",
+                SessionSortableColumns.StartTime => "start_time",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace LangSmith
         {
             return value switch
             {
-                "name" => SessionSortableColumns.Name,
-                "start_time" => SessionSortableColumns.StartTime,
+                "error_rate" => SessionSortableColumns.ErrorRate,
+                "feedback" => SessionSortableColumns.Feedback,
                 "last_run_start_time" => SessionSortableColumns.LastRunStartTime,
                 "latency_p50" => SessionSortableColumns.LatencyP50,
                 "latency_p99" => SessionSortableColumns.LatencyP99,
-                "error_rate" => SessionSortableColumns.ErrorRate,
-                "feedback" => SessionSortableColumns.Feedback,
+                "name" => SessionSortableColumns.Name,
                 "runs_count" => SessionSortableColumns.RunsCount,
+                "start_time" => SessionSortableColumns.StartTime,
                 _ => null,
             };
         }

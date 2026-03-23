@@ -15,11 +15,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Sum,
+        Pct,
         /// <summary>
         /// 
         /// </summary>
-        Pct,
+        Sum,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace LangSmith
             return value switch
             {
                 AlertsAlertRuleBaseAggregation.Avg => "avg",
-                AlertsAlertRuleBaseAggregation.Sum => "sum",
                 AlertsAlertRuleBaseAggregation.Pct => "pct",
+                AlertsAlertRuleBaseAggregation.Sum => "sum",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace LangSmith
             return value switch
             {
                 "avg" => AlertsAlertRuleBaseAggregation.Avg,
-                "sum" => AlertsAlertRuleBaseAggregation.Sum,
                 "pct" => AlertsAlertRuleBaseAggregation.Pct,
+                "sum" => AlertsAlertRuleBaseAggregation.Sum,
                 _ => null,
             };
         }

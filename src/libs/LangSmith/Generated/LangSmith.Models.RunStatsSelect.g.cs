@@ -11,35 +11,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        RunCount,
+        AllRunStats,
         /// <summary>
         /// 
         /// </summary>
-        LatencyP50,
+        AllTokenStats,
         /// <summary>
         /// 
         /// </summary>
-        LatencyP99,
+        CompletionCost,
         /// <summary>
         /// 
         /// </summary>
-        LatencyAvg,
+        CompletionCostDetails,
         /// <summary>
         /// 
         /// </summary>
-        FirstTokenP50,
-        /// <summary>
-        /// 
-        /// </summary>
-        FirstTokenP99,
-        /// <summary>
-        /// 
-        /// </summary>
-        TotalTokens,
-        /// <summary>
-        /// 
-        /// </summary>
-        PromptTokens,
+        CompletionTokenDetails,
         /// <summary>
         /// 
         /// </summary>
@@ -47,63 +35,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        MedianTokens,
-        /// <summary>
-        /// 
-        /// </summary>
         CompletionTokensP50,
         /// <summary>
         /// 
         /// </summary>
-        PromptTokensP50,
-        /// <summary>
-        /// 
-        /// </summary>
-        TokensP99,
-        /// <summary>
-        /// 
-        /// </summary>
         CompletionTokensP99,
-        /// <summary>
-        /// 
-        /// </summary>
-        PromptTokensP99,
-        /// <summary>
-        /// 
-        /// </summary>
-        LastRunStartTime,
-        /// <summary>
-        /// 
-        /// </summary>
-        FeedbackStats,
-        /// <summary>
-        /// 
-        /// </summary>
-        ThreadFeedbackStats,
-        /// <summary>
-        /// 
-        /// </summary>
-        RunFacets,
-        /// <summary>
-        /// 
-        /// </summary>
-        ErrorRate,
-        /// <summary>
-        /// 
-        /// </summary>
-        StreamingRate,
-        /// <summary>
-        /// 
-        /// </summary>
-        TotalCost,
-        /// <summary>
-        /// 
-        /// </summary>
-        PromptCost,
-        /// <summary>
-        /// 
-        /// </summary>
-        CompletionCost,
         /// <summary>
         /// 
         /// </summary>
@@ -115,23 +51,43 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        SessionFeedbackStats,
+        ErrorRate,
         /// <summary>
         /// 
         /// </summary>
-        AllRunStats,
+        FeedbackStats,
         /// <summary>
         /// 
         /// </summary>
-        AllTokenStats,
+        FirstTokenP50,
         /// <summary>
         /// 
         /// </summary>
-        PromptTokenDetails,
+        FirstTokenP99,
         /// <summary>
         /// 
         /// </summary>
-        CompletionTokenDetails,
+        LastRunStartTime,
+        /// <summary>
+        /// 
+        /// </summary>
+        LatencyAvg,
+        /// <summary>
+        /// 
+        /// </summary>
+        LatencyP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        LatencyP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        MedianTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptCost,
         /// <summary>
         /// 
         /// </summary>
@@ -139,7 +95,51 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        CompletionCostDetails,
+        PromptTokenDetails,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokensP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        RunCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        RunFacets,
+        /// <summary>
+        /// 
+        /// </summary>
+        SessionFeedbackStats,
+        /// <summary>
+        /// 
+        /// </summary>
+        StreamingRate,
+        /// <summary>
+        /// 
+        /// </summary>
+        ThreadFeedbackStats,
+        /// <summary>
+        /// 
+        /// </summary>
+        TokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        TotalCost,
+        /// <summary>
+        /// 
+        /// </summary>
+        TotalTokens,
     }
 
     /// <summary>
@@ -154,39 +154,39 @@ namespace LangSmith
         {
             return value switch
             {
-                RunStatsSelect.RunCount => "run_count",
-                RunStatsSelect.LatencyP50 => "latency_p50",
-                RunStatsSelect.LatencyP99 => "latency_p99",
-                RunStatsSelect.LatencyAvg => "latency_avg",
-                RunStatsSelect.FirstTokenP50 => "first_token_p50",
-                RunStatsSelect.FirstTokenP99 => "first_token_p99",
-                RunStatsSelect.TotalTokens => "total_tokens",
-                RunStatsSelect.PromptTokens => "prompt_tokens",
-                RunStatsSelect.CompletionTokens => "completion_tokens",
-                RunStatsSelect.MedianTokens => "median_tokens",
-                RunStatsSelect.CompletionTokensP50 => "completion_tokens_p50",
-                RunStatsSelect.PromptTokensP50 => "prompt_tokens_p50",
-                RunStatsSelect.TokensP99 => "tokens_p99",
-                RunStatsSelect.CompletionTokensP99 => "completion_tokens_p99",
-                RunStatsSelect.PromptTokensP99 => "prompt_tokens_p99",
-                RunStatsSelect.LastRunStartTime => "last_run_start_time",
-                RunStatsSelect.FeedbackStats => "feedback_stats",
-                RunStatsSelect.ThreadFeedbackStats => "thread_feedback_stats",
-                RunStatsSelect.RunFacets => "run_facets",
-                RunStatsSelect.ErrorRate => "error_rate",
-                RunStatsSelect.StreamingRate => "streaming_rate",
-                RunStatsSelect.TotalCost => "total_cost",
-                RunStatsSelect.PromptCost => "prompt_cost",
-                RunStatsSelect.CompletionCost => "completion_cost",
-                RunStatsSelect.CostP50 => "cost_p50",
-                RunStatsSelect.CostP99 => "cost_p99",
-                RunStatsSelect.SessionFeedbackStats => "session_feedback_stats",
                 RunStatsSelect.AllRunStats => "all_run_stats",
                 RunStatsSelect.AllTokenStats => "all_token_stats",
-                RunStatsSelect.PromptTokenDetails => "prompt_token_details",
-                RunStatsSelect.CompletionTokenDetails => "completion_token_details",
-                RunStatsSelect.PromptCostDetails => "prompt_cost_details",
+                RunStatsSelect.CompletionCost => "completion_cost",
                 RunStatsSelect.CompletionCostDetails => "completion_cost_details",
+                RunStatsSelect.CompletionTokenDetails => "completion_token_details",
+                RunStatsSelect.CompletionTokens => "completion_tokens",
+                RunStatsSelect.CompletionTokensP50 => "completion_tokens_p50",
+                RunStatsSelect.CompletionTokensP99 => "completion_tokens_p99",
+                RunStatsSelect.CostP50 => "cost_p50",
+                RunStatsSelect.CostP99 => "cost_p99",
+                RunStatsSelect.ErrorRate => "error_rate",
+                RunStatsSelect.FeedbackStats => "feedback_stats",
+                RunStatsSelect.FirstTokenP50 => "first_token_p50",
+                RunStatsSelect.FirstTokenP99 => "first_token_p99",
+                RunStatsSelect.LastRunStartTime => "last_run_start_time",
+                RunStatsSelect.LatencyAvg => "latency_avg",
+                RunStatsSelect.LatencyP50 => "latency_p50",
+                RunStatsSelect.LatencyP99 => "latency_p99",
+                RunStatsSelect.MedianTokens => "median_tokens",
+                RunStatsSelect.PromptCost => "prompt_cost",
+                RunStatsSelect.PromptCostDetails => "prompt_cost_details",
+                RunStatsSelect.PromptTokenDetails => "prompt_token_details",
+                RunStatsSelect.PromptTokens => "prompt_tokens",
+                RunStatsSelect.PromptTokensP50 => "prompt_tokens_p50",
+                RunStatsSelect.PromptTokensP99 => "prompt_tokens_p99",
+                RunStatsSelect.RunCount => "run_count",
+                RunStatsSelect.RunFacets => "run_facets",
+                RunStatsSelect.SessionFeedbackStats => "session_feedback_stats",
+                RunStatsSelect.StreamingRate => "streaming_rate",
+                RunStatsSelect.ThreadFeedbackStats => "thread_feedback_stats",
+                RunStatsSelect.TokensP99 => "tokens_p99",
+                RunStatsSelect.TotalCost => "total_cost",
+                RunStatsSelect.TotalTokens => "total_tokens",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -197,39 +197,39 @@ namespace LangSmith
         {
             return value switch
             {
-                "run_count" => RunStatsSelect.RunCount,
-                "latency_p50" => RunStatsSelect.LatencyP50,
-                "latency_p99" => RunStatsSelect.LatencyP99,
-                "latency_avg" => RunStatsSelect.LatencyAvg,
-                "first_token_p50" => RunStatsSelect.FirstTokenP50,
-                "first_token_p99" => RunStatsSelect.FirstTokenP99,
-                "total_tokens" => RunStatsSelect.TotalTokens,
-                "prompt_tokens" => RunStatsSelect.PromptTokens,
-                "completion_tokens" => RunStatsSelect.CompletionTokens,
-                "median_tokens" => RunStatsSelect.MedianTokens,
-                "completion_tokens_p50" => RunStatsSelect.CompletionTokensP50,
-                "prompt_tokens_p50" => RunStatsSelect.PromptTokensP50,
-                "tokens_p99" => RunStatsSelect.TokensP99,
-                "completion_tokens_p99" => RunStatsSelect.CompletionTokensP99,
-                "prompt_tokens_p99" => RunStatsSelect.PromptTokensP99,
-                "last_run_start_time" => RunStatsSelect.LastRunStartTime,
-                "feedback_stats" => RunStatsSelect.FeedbackStats,
-                "thread_feedback_stats" => RunStatsSelect.ThreadFeedbackStats,
-                "run_facets" => RunStatsSelect.RunFacets,
-                "error_rate" => RunStatsSelect.ErrorRate,
-                "streaming_rate" => RunStatsSelect.StreamingRate,
-                "total_cost" => RunStatsSelect.TotalCost,
-                "prompt_cost" => RunStatsSelect.PromptCost,
-                "completion_cost" => RunStatsSelect.CompletionCost,
-                "cost_p50" => RunStatsSelect.CostP50,
-                "cost_p99" => RunStatsSelect.CostP99,
-                "session_feedback_stats" => RunStatsSelect.SessionFeedbackStats,
                 "all_run_stats" => RunStatsSelect.AllRunStats,
                 "all_token_stats" => RunStatsSelect.AllTokenStats,
-                "prompt_token_details" => RunStatsSelect.PromptTokenDetails,
-                "completion_token_details" => RunStatsSelect.CompletionTokenDetails,
-                "prompt_cost_details" => RunStatsSelect.PromptCostDetails,
+                "completion_cost" => RunStatsSelect.CompletionCost,
                 "completion_cost_details" => RunStatsSelect.CompletionCostDetails,
+                "completion_token_details" => RunStatsSelect.CompletionTokenDetails,
+                "completion_tokens" => RunStatsSelect.CompletionTokens,
+                "completion_tokens_p50" => RunStatsSelect.CompletionTokensP50,
+                "completion_tokens_p99" => RunStatsSelect.CompletionTokensP99,
+                "cost_p50" => RunStatsSelect.CostP50,
+                "cost_p99" => RunStatsSelect.CostP99,
+                "error_rate" => RunStatsSelect.ErrorRate,
+                "feedback_stats" => RunStatsSelect.FeedbackStats,
+                "first_token_p50" => RunStatsSelect.FirstTokenP50,
+                "first_token_p99" => RunStatsSelect.FirstTokenP99,
+                "last_run_start_time" => RunStatsSelect.LastRunStartTime,
+                "latency_avg" => RunStatsSelect.LatencyAvg,
+                "latency_p50" => RunStatsSelect.LatencyP50,
+                "latency_p99" => RunStatsSelect.LatencyP99,
+                "median_tokens" => RunStatsSelect.MedianTokens,
+                "prompt_cost" => RunStatsSelect.PromptCost,
+                "prompt_cost_details" => RunStatsSelect.PromptCostDetails,
+                "prompt_token_details" => RunStatsSelect.PromptTokenDetails,
+                "prompt_tokens" => RunStatsSelect.PromptTokens,
+                "prompt_tokens_p50" => RunStatsSelect.PromptTokensP50,
+                "prompt_tokens_p99" => RunStatsSelect.PromptTokensP99,
+                "run_count" => RunStatsSelect.RunCount,
+                "run_facets" => RunStatsSelect.RunFacets,
+                "session_feedback_stats" => RunStatsSelect.SessionFeedbackStats,
+                "streaming_rate" => RunStatsSelect.StreamingRate,
+                "thread_feedback_stats" => RunStatsSelect.ThreadFeedbackStats,
+                "tokens_p99" => RunStatsSelect.TokensP99,
+                "total_cost" => RunStatsSelect.TotalCost,
+                "total_tokens" => RunStatsSelect.TotalTokens,
                 _ => null,
             };
         }

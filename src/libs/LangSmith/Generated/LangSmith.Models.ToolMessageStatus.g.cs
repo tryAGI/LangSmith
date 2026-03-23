@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Success,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                ToolMessageStatus.Success => "success",
                 ToolMessageStatus.Error => "error",
+                ToolMessageStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "success" => ToolMessageStatus.Success,
                 "error" => ToolMessageStatus.Error,
+                "success" => ToolMessageStatus.Success,
                 _ => null,
             };
         }

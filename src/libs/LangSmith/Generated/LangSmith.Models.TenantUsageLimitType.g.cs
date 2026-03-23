@@ -11,15 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        PayloadSize,
-        /// <summary>
-        /// 
-        /// </summary>
         EventsIngestedPerHour,
-        /// <summary>
-        /// 
-        /// </summary>
-        TotalUniqueTraces,
         /// <summary>
         /// 
         /// </summary>
@@ -27,15 +19,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        PayloadSize,
+        /// <summary>
+        /// 
+        /// </summary>
+        TotalUniqueTraces,
+        /// <summary>
+        /// 
+        /// </summary>
         TracesDeletedPerHour,
         /// <summary>
         /// 
         /// </summary>
-        UserDefinedMonthlyTraces,
+        UserDefinedMonthlyLonglivedTraces,
         /// <summary>
         /// 
         /// </summary>
-        UserDefinedMonthlyLonglivedTraces,
+        UserDefinedMonthlyTraces,
         /// <summary>
         /// 
         /// </summary>
@@ -54,13 +54,13 @@ namespace LangSmith
         {
             return value switch
             {
-                TenantUsageLimitType.PayloadSize => "payload_size",
                 TenantUsageLimitType.EventsIngestedPerHour => "events_ingested_per_hour",
-                TenantUsageLimitType.TotalUniqueTraces => "total_unique_traces",
                 TenantUsageLimitType.EventsIngestedPerMinute => "events_ingested_per_minute",
+                TenantUsageLimitType.PayloadSize => "payload_size",
+                TenantUsageLimitType.TotalUniqueTraces => "total_unique_traces",
                 TenantUsageLimitType.TracesDeletedPerHour => "traces_deleted_per_hour",
-                TenantUsageLimitType.UserDefinedMonthlyTraces => "user_defined_monthly_traces",
                 TenantUsageLimitType.UserDefinedMonthlyLonglivedTraces => "user_defined_monthly_longlived_traces",
+                TenantUsageLimitType.UserDefinedMonthlyTraces => "user_defined_monthly_traces",
                 TenantUsageLimitType.UserDefinedUnknown => "user_defined_unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -72,13 +72,13 @@ namespace LangSmith
         {
             return value switch
             {
-                "payload_size" => TenantUsageLimitType.PayloadSize,
                 "events_ingested_per_hour" => TenantUsageLimitType.EventsIngestedPerHour,
-                "total_unique_traces" => TenantUsageLimitType.TotalUniqueTraces,
                 "events_ingested_per_minute" => TenantUsageLimitType.EventsIngestedPerMinute,
+                "payload_size" => TenantUsageLimitType.PayloadSize,
+                "total_unique_traces" => TenantUsageLimitType.TotalUniqueTraces,
                 "traces_deleted_per_hour" => TenantUsageLimitType.TracesDeletedPerHour,
-                "user_defined_monthly_traces" => TenantUsageLimitType.UserDefinedMonthlyTraces,
                 "user_defined_monthly_longlived_traces" => TenantUsageLimitType.UserDefinedMonthlyLonglivedTraces,
+                "user_defined_monthly_traces" => TenantUsageLimitType.UserDefinedMonthlyTraces,
                 "user_defined_unknown" => TenantUsageLimitType.UserDefinedUnknown,
                 _ => null,
             };

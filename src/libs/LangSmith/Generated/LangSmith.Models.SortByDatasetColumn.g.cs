@@ -11,15 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Name,
-        /// <summary>
-        /// 
-        /// </summary>
         CreatedAt,
-        /// <summary>
-        /// 
-        /// </summary>
-        LastSessionStartTime,
         /// <summary>
         /// 
         /// </summary>
@@ -27,11 +19,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        SessionCount,
+        LastSessionStartTime,
         /// <summary>
         /// 
         /// </summary>
         ModifiedAt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Name,
+        /// <summary>
+        /// 
+        /// </summary>
+        SessionCount,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace LangSmith
         {
             return value switch
             {
-                SortByDatasetColumn.Name => "name",
                 SortByDatasetColumn.CreatedAt => "created_at",
-                SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
                 SortByDatasetColumn.ExampleCount => "example_count",
-                SortByDatasetColumn.SessionCount => "session_count",
+                SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
                 SortByDatasetColumn.ModifiedAt => "modified_at",
+                SortByDatasetColumn.Name => "name",
+                SortByDatasetColumn.SessionCount => "session_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace LangSmith
         {
             return value switch
             {
-                "name" => SortByDatasetColumn.Name,
                 "created_at" => SortByDatasetColumn.CreatedAt,
-                "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
                 "example_count" => SortByDatasetColumn.ExampleCount,
-                "session_count" => SortByDatasetColumn.SessionCount,
+                "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
                 "modified_at" => SortByDatasetColumn.ModifiedAt,
+                "name" => SortByDatasetColumn.Name,
+                "session_count" => SortByDatasetColumn.SessionCount,
                 _ => null,
             };
         }

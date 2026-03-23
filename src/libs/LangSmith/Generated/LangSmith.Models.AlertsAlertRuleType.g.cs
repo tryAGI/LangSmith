@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Threshold,
+        Change,
         /// <summary>
         /// 
         /// </summary>
-        Change,
+        Threshold,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                AlertsAlertRuleType.Threshold => "threshold",
                 AlertsAlertRuleType.Change => "change",
+                AlertsAlertRuleType.Threshold => "threshold",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "threshold" => AlertsAlertRuleType.Threshold,
                 "change" => AlertsAlertRuleType.Change,
+                "threshold" => AlertsAlertRuleType.Threshold,
                 _ => null,
             };
         }

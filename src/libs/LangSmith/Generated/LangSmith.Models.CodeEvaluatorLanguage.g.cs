@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Python,
+        Javascript,
         /// <summary>
         /// 
         /// </summary>
-        Javascript,
+        Python,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                CodeEvaluatorLanguage.Python => "python",
                 CodeEvaluatorLanguage.Javascript => "javascript",
+                CodeEvaluatorLanguage.Python => "python",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "python" => CodeEvaluatorLanguage.Python,
                 "javascript" => CodeEvaluatorLanguage.Javascript,
+                "python" => CodeEvaluatorLanguage.Python,
                 _ => null,
             };
         }

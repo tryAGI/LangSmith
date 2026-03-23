@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Name,
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        CreatedAt,
+        Name,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                SortByComparativeExperimentColumn.Name => "name",
                 SortByComparativeExperimentColumn.CreatedAt => "created_at",
+                SortByComparativeExperimentColumn.Name => "name",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "name" => SortByComparativeExperimentColumn.Name,
                 "created_at" => SortByComparativeExperimentColumn.CreatedAt,
+                "name" => SortByComparativeExperimentColumn.Name,
                 _ => null,
             };
         }
