@@ -19,6 +19,7 @@ namespace LangSmith
         /// Create a sandbox claim<br/>
         /// Create a new sandbox from a template. Optionally blocks until ready or timeout.
         /// </summary>
+        /// <param name="idleTtlSeconds"></param>
         /// <param name="name"></param>
         /// <param name="templateName"></param>
         /// <param name="timeout"></param>
@@ -28,6 +29,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> CreateASandboxClaimAsync(
             string templateName,
+            int? idleTtlSeconds = default,
             string? name = default,
             int? timeout = default,
             int? ttlSeconds = default,
