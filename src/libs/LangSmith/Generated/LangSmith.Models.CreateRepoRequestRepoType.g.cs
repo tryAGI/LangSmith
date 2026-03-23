@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Prompt,
+        Agent,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Agent,
+        Prompt,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace LangSmith
         {
             return value switch
             {
-                CreateRepoRequestRepoType.Prompt => "prompt",
-                CreateRepoRequestRepoType.File => "file",
                 CreateRepoRequestRepoType.Agent => "agent",
+                CreateRepoRequestRepoType.File => "file",
+                CreateRepoRequestRepoType.Prompt => "prompt",
                 CreateRepoRequestRepoType.Skill => "skill",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "prompt" => CreateRepoRequestRepoType.Prompt,
-                "file" => CreateRepoRequestRepoType.File,
                 "agent" => CreateRepoRequestRepoType.Agent,
+                "file" => CreateRepoRequestRepoType.File,
+                "prompt" => CreateRepoRequestRepoType.Prompt,
                 "skill" => CreateRepoRequestRepoType.Skill,
                 _ => null,
             };

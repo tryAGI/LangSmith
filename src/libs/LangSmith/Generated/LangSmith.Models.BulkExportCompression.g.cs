@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Gzip,
         /// <summary>
         /// 
         /// </summary>
-        Gzip,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -38,8 +38,8 @@ namespace LangSmith
         {
             return value switch
             {
-                BulkExportCompression.None => "none",
                 BulkExportCompression.Gzip => "gzip",
+                BulkExportCompression.None => "none",
                 BulkExportCompression.Snappy => "snappy",
                 BulkExportCompression.Zstandard => "zstandard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -52,8 +52,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "none" => BulkExportCompression.None,
                 "gzip" => BulkExportCompression.Gzip,
+                "none" => BulkExportCompression.None,
                 "snappy" => BulkExportCompression.Snappy,
                 "zstandard" => BulkExportCompression.Zstandard,
                 _ => null,

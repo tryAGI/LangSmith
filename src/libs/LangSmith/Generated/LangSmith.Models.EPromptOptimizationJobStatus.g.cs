@@ -15,15 +15,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         Running,
         /// <summary>
         /// 
         /// </summary>
         Successful,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failed,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace LangSmith
             return value switch
             {
                 EPromptOptimizationJobStatus.Created => "created",
+                EPromptOptimizationJobStatus.Failed => "failed",
                 EPromptOptimizationJobStatus.Running => "running",
                 EPromptOptimizationJobStatus.Successful => "successful",
-                EPromptOptimizationJobStatus.Failed => "failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace LangSmith
             return value switch
             {
                 "created" => EPromptOptimizationJobStatus.Created,
+                "failed" => EPromptOptimizationJobStatus.Failed,
                 "running" => EPromptOptimizationJobStatus.Running,
                 "successful" => EPromptOptimizationJobStatus.Successful,
-                "failed" => EPromptOptimizationJobStatus.Failed,
                 _ => null,
             };
         }

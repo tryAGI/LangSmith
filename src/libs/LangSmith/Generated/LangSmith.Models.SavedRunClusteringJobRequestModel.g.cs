@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Openai,
+        Anthropic,
         /// <summary>
         /// 
         /// </summary>
-        Anthropic,
+        Openai,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                SavedRunClusteringJobRequestModel.Openai => "openai",
                 SavedRunClusteringJobRequestModel.Anthropic => "anthropic",
+                SavedRunClusteringJobRequestModel.Openai => "openai",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "openai" => SavedRunClusteringJobRequestModel.Openai,
                 "anthropic" => SavedRunClusteringJobRequestModel.Anthropic,
+                "openai" => SavedRunClusteringJobRequestModel.Openai,
                 _ => null,
             };
         }

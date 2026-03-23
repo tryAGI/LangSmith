@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Metadata,
+        /// <summary>
+        /// 
+        /// </summary>
         Name,
         /// <summary>
         /// 
@@ -20,10 +24,6 @@ namespace LangSmith
         /// 
         /// </summary>
         Tag,
-        /// <summary>
-        /// 
-        /// </summary>
-        Metadata,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace LangSmith
         {
             return value switch
             {
+                RunStatsGroupBySeriesResponseAttribute.Metadata => "metadata",
                 RunStatsGroupBySeriesResponseAttribute.Name => "name",
                 RunStatsGroupBySeriesResponseAttribute.RunType => "run_type",
                 RunStatsGroupBySeriesResponseAttribute.Tag => "tag",
-                RunStatsGroupBySeriesResponseAttribute.Metadata => "metadata",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace LangSmith
         {
             return value switch
             {
+                "metadata" => RunStatsGroupBySeriesResponseAttribute.Metadata,
                 "name" => RunStatsGroupBySeriesResponseAttribute.Name,
                 "run_type" => RunStatsGroupBySeriesResponseAttribute.RunType,
                 "tag" => RunStatsGroupBySeriesResponseAttribute.Tag,
-                "metadata" => RunStatsGroupBySeriesResponseAttribute.Metadata,
                 _ => null,
             };
         }

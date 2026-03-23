@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Name,
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
@@ -19,11 +19,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Role,
+        Name,
         /// <summary>
         /// 
         /// </summary>
-        CreatedAt,
+        Role,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace LangSmith
         {
             return value switch
             {
-                MemberSortField.Name => "name",
-                MemberSortField.Email => "email",
-                MemberSortField.Role => "role",
                 MemberSortField.CreatedAt => "created_at",
+                MemberSortField.Email => "email",
+                MemberSortField.Name => "name",
+                MemberSortField.Role => "role",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace LangSmith
         {
             return value switch
             {
-                "name" => MemberSortField.Name,
-                "email" => MemberSortField.Email,
-                "role" => MemberSortField.Role,
                 "created_at" => MemberSortField.CreatedAt,
+                "email" => MemberSortField.Email,
+                "name" => MemberSortField.Name,
+                "role" => MemberSortField.Role,
                 _ => null,
             };
         }

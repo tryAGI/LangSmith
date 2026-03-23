@@ -23,19 +23,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        IntervalScheduled,
-        /// <summary>
-        /// 
-        /// </summary>
         Failed,
         /// <summary>
         /// 
         /// </summary>
-        TimedOut,
+        IntervalScheduled,
         /// <summary>
         /// 
         /// </summary>
         Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimedOut,
     }
 
     /// <summary>
@@ -53,10 +53,10 @@ namespace LangSmith
                 BulkExportStatus.Cancelled => "Cancelled",
                 BulkExportStatus.Completed => "Completed",
                 BulkExportStatus.Created => "Created",
-                BulkExportStatus.IntervalScheduled => "IntervalScheduled",
                 BulkExportStatus.Failed => "Failed",
-                BulkExportStatus.TimedOut => "TimedOut",
+                BulkExportStatus.IntervalScheduled => "IntervalScheduled",
                 BulkExportStatus.Running => "Running",
+                BulkExportStatus.TimedOut => "TimedOut",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,10 +70,10 @@ namespace LangSmith
                 "Cancelled" => BulkExportStatus.Cancelled,
                 "Completed" => BulkExportStatus.Completed,
                 "Created" => BulkExportStatus.Created,
-                "IntervalScheduled" => BulkExportStatus.IntervalScheduled,
                 "Failed" => BulkExportStatus.Failed,
-                "TimedOut" => BulkExportStatus.TimedOut,
+                "IntervalScheduled" => BulkExportStatus.IntervalScheduled,
                 "Running" => BulkExportStatus.Running,
+                "TimedOut" => BulkExportStatus.TimedOut,
                 _ => null,
             };
         }

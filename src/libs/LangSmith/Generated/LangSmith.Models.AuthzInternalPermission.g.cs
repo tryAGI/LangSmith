@@ -11,6 +11,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        AlertsCreate,
+        /// <summary>
+        /// 
+        /// </summary>
+        AlertsDelete,
+        /// <summary>
+        /// 
+        /// </summary>
+        AlertsRead,
+        /// <summary>
+        /// 
+        /// </summary>
+        AlertsUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
         AnnotationQueuesCreate,
         /// <summary>
         /// 
@@ -95,6 +111,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        OrganizationManage,
+        /// <summary>
+        /// 
+        /// </summary>
+        OrganizationPATsCreate,
+        /// <summary>
+        /// 
+        /// </summary>
+        OrganizationRead,
+        /// <summary>
+        /// 
+        /// </summary>
         ProjectsCreate,
         /// <summary>
         /// 
@@ -123,11 +151,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        PromptsUpdate,
+        PromptsShare,
         /// <summary>
         /// 
         /// </summary>
-        PromptsShare,
+        PromptsUpdate,
         /// <summary>
         /// 
         /// </summary>
@@ -151,6 +179,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        RunsDelete,
+        /// <summary>
+        /// 
+        /// </summary>
         RunsRead,
         /// <summary>
         /// 
@@ -159,7 +191,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        RunsDelete,
+        WorkspacesManage,
         /// <summary>
         /// 
         /// </summary>
@@ -171,39 +203,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        WorkspacesManage,
-        /// <summary>
-        /// 
-        /// </summary>
         WorkspacesRead,
-        /// <summary>
-        /// 
-        /// </summary>
-        AlertsCreate,
-        /// <summary>
-        /// 
-        /// </summary>
-        AlertsUpdate,
-        /// <summary>
-        /// 
-        /// </summary>
-        AlertsDelete,
-        /// <summary>
-        /// 
-        /// </summary>
-        AlertsRead,
-        /// <summary>
-        /// 
-        /// </summary>
-        OrganizationPATsCreate,
-        /// <summary>
-        /// 
-        /// </summary>
-        OrganizationRead,
-        /// <summary>
-        /// 
-        /// </summary>
-        OrganizationManage,
     }
 
     /// <summary>
@@ -218,6 +218,10 @@ namespace LangSmith
         {
             return value switch
             {
+                AuthzInternalPermission.AlertsCreate => "alerts:create",
+                AuthzInternalPermission.AlertsDelete => "alerts:delete",
+                AuthzInternalPermission.AlertsRead => "alerts:read",
+                AuthzInternalPermission.AlertsUpdate => "alerts:update",
                 AuthzInternalPermission.AnnotationQueuesCreate => "annotation-queues:create",
                 AuthzInternalPermission.AnnotationQueuesDelete => "annotation-queues:delete",
                 AuthzInternalPermission.AnnotationQueuesRead => "annotation-queues:read",
@@ -239,6 +243,9 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackDelete => "feedback:delete",
                 AuthzInternalPermission.FeedbackRead => "feedback:read",
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
+                AuthzInternalPermission.OrganizationManage => "organization:manage",
+                AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
+                AuthzInternalPermission.OrganizationRead => "organization:read",
                 AuthzInternalPermission.ProjectsCreate => "projects:create",
                 AuthzInternalPermission.ProjectsDelete => "projects:delete",
                 AuthzInternalPermission.ProjectsRead => "projects:read",
@@ -246,27 +253,20 @@ namespace LangSmith
                 AuthzInternalPermission.PromptsCreate => "prompts:create",
                 AuthzInternalPermission.PromptsDelete => "prompts:delete",
                 AuthzInternalPermission.PromptsRead => "prompts:read",
-                AuthzInternalPermission.PromptsUpdate => "prompts:update",
                 AuthzInternalPermission.PromptsShare => "prompts:share",
+                AuthzInternalPermission.PromptsUpdate => "prompts:update",
                 AuthzInternalPermission.RulesCreate => "rules:create",
                 AuthzInternalPermission.RulesDelete => "rules:delete",
                 AuthzInternalPermission.RulesRead => "rules:read",
                 AuthzInternalPermission.RulesUpdate => "rules:update",
                 AuthzInternalPermission.RunsCreate => "runs:create",
+                AuthzInternalPermission.RunsDelete => "runs:delete",
                 AuthzInternalPermission.RunsRead => "runs:read",
                 AuthzInternalPermission.RunsShare => "runs:share",
-                AuthzInternalPermission.RunsDelete => "runs:delete",
+                AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
                 AuthzInternalPermission.WorkspacesManageMembers => "workspaces:manage-members",
                 AuthzInternalPermission.WorkspacesManageSecrets => "workspaces:manage-secrets",
-                AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
                 AuthzInternalPermission.WorkspacesRead => "workspaces:read",
-                AuthzInternalPermission.AlertsCreate => "alerts:create",
-                AuthzInternalPermission.AlertsUpdate => "alerts:update",
-                AuthzInternalPermission.AlertsDelete => "alerts:delete",
-                AuthzInternalPermission.AlertsRead => "alerts:read",
-                AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
-                AuthzInternalPermission.OrganizationRead => "organization:read",
-                AuthzInternalPermission.OrganizationManage => "organization:manage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -277,6 +277,10 @@ namespace LangSmith
         {
             return value switch
             {
+                "alerts:create" => AuthzInternalPermission.AlertsCreate,
+                "alerts:delete" => AuthzInternalPermission.AlertsDelete,
+                "alerts:read" => AuthzInternalPermission.AlertsRead,
+                "alerts:update" => AuthzInternalPermission.AlertsUpdate,
                 "annotation-queues:create" => AuthzInternalPermission.AnnotationQueuesCreate,
                 "annotation-queues:delete" => AuthzInternalPermission.AnnotationQueuesDelete,
                 "annotation-queues:read" => AuthzInternalPermission.AnnotationQueuesRead,
@@ -298,6 +302,9 @@ namespace LangSmith
                 "feedback:delete" => AuthzInternalPermission.FeedbackDelete,
                 "feedback:read" => AuthzInternalPermission.FeedbackRead,
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
+                "organization:manage" => AuthzInternalPermission.OrganizationManage,
+                "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
+                "organization:read" => AuthzInternalPermission.OrganizationRead,
                 "projects:create" => AuthzInternalPermission.ProjectsCreate,
                 "projects:delete" => AuthzInternalPermission.ProjectsDelete,
                 "projects:read" => AuthzInternalPermission.ProjectsRead,
@@ -305,27 +312,20 @@ namespace LangSmith
                 "prompts:create" => AuthzInternalPermission.PromptsCreate,
                 "prompts:delete" => AuthzInternalPermission.PromptsDelete,
                 "prompts:read" => AuthzInternalPermission.PromptsRead,
-                "prompts:update" => AuthzInternalPermission.PromptsUpdate,
                 "prompts:share" => AuthzInternalPermission.PromptsShare,
+                "prompts:update" => AuthzInternalPermission.PromptsUpdate,
                 "rules:create" => AuthzInternalPermission.RulesCreate,
                 "rules:delete" => AuthzInternalPermission.RulesDelete,
                 "rules:read" => AuthzInternalPermission.RulesRead,
                 "rules:update" => AuthzInternalPermission.RulesUpdate,
                 "runs:create" => AuthzInternalPermission.RunsCreate,
+                "runs:delete" => AuthzInternalPermission.RunsDelete,
                 "runs:read" => AuthzInternalPermission.RunsRead,
                 "runs:share" => AuthzInternalPermission.RunsShare,
-                "runs:delete" => AuthzInternalPermission.RunsDelete,
+                "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
                 "workspaces:manage-members" => AuthzInternalPermission.WorkspacesManageMembers,
                 "workspaces:manage-secrets" => AuthzInternalPermission.WorkspacesManageSecrets,
-                "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
                 "workspaces:read" => AuthzInternalPermission.WorkspacesRead,
-                "alerts:create" => AuthzInternalPermission.AlertsCreate,
-                "alerts:update" => AuthzInternalPermission.AlertsUpdate,
-                "alerts:delete" => AuthzInternalPermission.AlertsDelete,
-                "alerts:read" => AuthzInternalPermission.AlertsRead,
-                "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
-                "organization:read" => AuthzInternalPermission.OrganizationRead,
-                "organization:manage" => AuthzInternalPermission.OrganizationManage,
                 _ => null,
             };
         }

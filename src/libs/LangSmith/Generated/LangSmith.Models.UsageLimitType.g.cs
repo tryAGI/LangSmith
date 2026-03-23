@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        MonthlyTraces,
+        MonthlyLonglivedTraces,
         /// <summary>
         /// 
         /// </summary>
-        MonthlyLonglivedTraces,
+        MonthlyTraces,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                UsageLimitType.MonthlyTraces => "monthly_traces",
                 UsageLimitType.MonthlyLonglivedTraces => "monthly_longlived_traces",
+                UsageLimitType.MonthlyTraces => "monthly_traces",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "monthly_traces" => UsageLimitType.MonthlyTraces,
                 "monthly_longlived_traces" => UsageLimitType.MonthlyLonglivedTraces,
+                "monthly_traces" => UsageLimitType.MonthlyTraces,
                 _ => null,
             };
         }

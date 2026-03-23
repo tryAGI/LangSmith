@@ -11,15 +11,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
-        /// <summary>
-        /// 
-        /// </summary>
         Developer,
         /// <summary>
         /// 
         /// </summary>
         Developer012026,
+        /// <summary>
+        /// 
+        /// </summary>
+        Disabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        Free,
+        /// <summary>
+        /// 
+        /// </summary>
+        Partner,
         /// <summary>
         /// 
         /// </summary>
@@ -31,23 +39,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Premier,
+        /// <summary>
+        /// 
+        /// </summary>
         Startup,
         /// <summary>
         /// 
         /// </summary>
         StartupV0,
-        /// <summary>
-        /// 
-        /// </summary>
-        Partner,
-        /// <summary>
-        /// 
-        /// </summary>
-        Premier,
-        /// <summary>
-        /// 
-        /// </summary>
-        Free,
     }
 
     /// <summary>
@@ -62,16 +62,16 @@ namespace LangSmith
         {
             return value switch
             {
-                ChangePaymentPlanReq.Disabled => "disabled",
                 ChangePaymentPlanReq.Developer => "developer",
                 ChangePaymentPlanReq.Developer012026 => "developer_01_2026",
+                ChangePaymentPlanReq.Disabled => "disabled",
+                ChangePaymentPlanReq.Free => "free",
+                ChangePaymentPlanReq.Partner => "partner",
                 ChangePaymentPlanReq.Plus => "plus",
                 ChangePaymentPlanReq.Plus012026 => "plus_01_2026",
+                ChangePaymentPlanReq.Premier => "premier",
                 ChangePaymentPlanReq.Startup => "startup",
                 ChangePaymentPlanReq.StartupV0 => "startup_v0",
-                ChangePaymentPlanReq.Partner => "partner",
-                ChangePaymentPlanReq.Premier => "premier",
-                ChangePaymentPlanReq.Free => "free",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,16 +82,16 @@ namespace LangSmith
         {
             return value switch
             {
-                "disabled" => ChangePaymentPlanReq.Disabled,
                 "developer" => ChangePaymentPlanReq.Developer,
                 "developer_01_2026" => ChangePaymentPlanReq.Developer012026,
+                "disabled" => ChangePaymentPlanReq.Disabled,
+                "free" => ChangePaymentPlanReq.Free,
+                "partner" => ChangePaymentPlanReq.Partner,
                 "plus" => ChangePaymentPlanReq.Plus,
                 "plus_01_2026" => ChangePaymentPlanReq.Plus012026,
+                "premier" => ChangePaymentPlanReq.Premier,
                 "startup" => ChangePaymentPlanReq.Startup,
                 "startup_v0" => ChangePaymentPlanReq.StartupV0,
-                "partner" => ChangePaymentPlanReq.Partner,
-                "premier" => ChangePaymentPlanReq.Premier,
-                "free" => ChangePaymentPlanReq.Free,
                 _ => null,
             };
         }

@@ -15,11 +15,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        HumanAiPairs,
+        FirstHumanLastAi,
         /// <summary>
         /// 
         /// </summary>
-        FirstHumanLastAi,
+        HumanAiPairs,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace LangSmith
             return value switch
             {
                 ThreadMessagesFormatType.AllMessages => "all_messages",
-                ThreadMessagesFormatType.HumanAiPairs => "human_ai_pairs",
                 ThreadMessagesFormatType.FirstHumanLastAi => "first_human_last_ai",
+                ThreadMessagesFormatType.HumanAiPairs => "human_ai_pairs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace LangSmith
             return value switch
             {
                 "all_messages" => ThreadMessagesFormatType.AllMessages,
-                "human_ai_pairs" => ThreadMessagesFormatType.HumanAiPairs,
                 "first_human_last_ai" => ThreadMessagesFormatType.FirstHumanLastAi,
+                "human_ai_pairs" => ThreadMessagesFormatType.HumanAiPairs,
                 _ => null,
             };
         }

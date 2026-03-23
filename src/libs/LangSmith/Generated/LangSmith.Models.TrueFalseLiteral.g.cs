@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        True,
+        False,
         /// <summary>
         /// 
         /// </summary>
-        False,
+        True,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                TrueFalseLiteral.True => "true",
                 TrueFalseLiteral.False => "false",
+                TrueFalseLiteral.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "true" => TrueFalseLiteral.True,
                 "false" => TrueFalseLiteral.False,
+                "true" => TrueFalseLiteral.True,
                 _ => null,
             };
         }

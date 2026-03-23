@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Scim,
+        Bootstrap,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Bootstrap,
+        Scim,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace LangSmith
         {
             return value switch
             {
-                ProvisioningMethod.Scim => "scim",
-                ProvisioningMethod.Saml_jit => "saml:jit",
                 ProvisioningMethod.Bootstrap => "bootstrap",
+                ProvisioningMethod.Saml_jit => "saml:jit",
+                ProvisioningMethod.Scim => "scim",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace LangSmith
         {
             return value switch
             {
-                "scim" => ProvisioningMethod.Scim,
-                "saml:jit" => ProvisioningMethod.Saml_jit,
                 "bootstrap" => ProvisioningMethod.Bootstrap,
+                "saml:jit" => ProvisioningMethod.Saml_jit,
+                "scim" => ProvisioningMethod.Scim,
                 _ => null,
             };
         }

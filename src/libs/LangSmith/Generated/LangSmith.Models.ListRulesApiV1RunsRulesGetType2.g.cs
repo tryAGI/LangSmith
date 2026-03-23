@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Session,
+        Dataset,
         /// <summary>
         /// 
         /// </summary>
-        Dataset,
+        Session,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                ListRulesApiV1RunsRulesGetType2.Session => "session",
                 ListRulesApiV1RunsRulesGetType2.Dataset => "dataset",
+                ListRulesApiV1RunsRulesGetType2.Session => "session",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "session" => ListRulesApiV1RunsRulesGetType2.Session,
                 "dataset" => ListRulesApiV1RunsRulesGetType2.Dataset,
+                "session" => ListRulesApiV1RunsRulesGetType2.Session,
                 _ => null,
             };
         }

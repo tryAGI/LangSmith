@@ -11,15 +11,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Credits,
+        /// <summary>
+        /// 
+        /// </summary>
         Invoices,
         /// <summary>
         /// 
         /// </summary>
         Usage,
-        /// <summary>
-        /// 
-        /// </summary>
-        Credits,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace LangSmith
         {
             return value switch
             {
+                OrganizationDashboardType.Credits => "credits",
                 OrganizationDashboardType.Invoices => "invoices",
                 OrganizationDashboardType.Usage => "usage",
-                OrganizationDashboardType.Credits => "credits",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace LangSmith
         {
             return value switch
             {
+                "credits" => OrganizationDashboardType.Credits,
                 "invoices" => OrganizationDashboardType.Invoices,
                 "usage" => OrganizationDashboardType.Usage,
-                "credits" => OrganizationDashboardType.Credits,
                 _ => null,
             };
         }

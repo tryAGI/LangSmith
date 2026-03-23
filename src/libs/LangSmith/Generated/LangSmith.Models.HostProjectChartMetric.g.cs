@@ -11,10 +11,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        MemoryUsage,
-        /// <summary>
-        /// 
-        /// </summary>
         CpuUsage,
         /// <summary>
         /// 
@@ -23,15 +19,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        RestartCount,
-        /// <summary>
-        /// 
-        /// </summary>
-        ReplicaCount,
-        /// <summary>
-        /// 
-        /// </summary>
-        WorkerCount,
+        ErrorResponsesPerSecond,
         /// <summary>
         /// 
         /// </summary>
@@ -39,15 +27,27 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ResponsesPerSecond,
-        /// <summary>
-        /// 
-        /// </summary>
-        ErrorResponsesPerSecond,
+        MemoryUsage,
         /// <summary>
         /// 
         /// </summary>
         P95Latency,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReplicaCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        ResponsesPerSecond,
+        /// <summary>
+        /// 
+        /// </summary>
+        RestartCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkerCount,
     }
 
     /// <summary>
@@ -62,16 +62,16 @@ namespace LangSmith
         {
             return value switch
             {
-                HostProjectChartMetric.MemoryUsage => "memory_usage",
                 HostProjectChartMetric.CpuUsage => "cpu_usage",
                 HostProjectChartMetric.DiskUsage => "disk_usage",
-                HostProjectChartMetric.RestartCount => "restart_count",
-                HostProjectChartMetric.ReplicaCount => "replica_count",
-                HostProjectChartMetric.WorkerCount => "worker_count",
-                HostProjectChartMetric.LgRunCount => "lg_run_count",
-                HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
                 HostProjectChartMetric.ErrorResponsesPerSecond => "error_responses_per_second",
+                HostProjectChartMetric.LgRunCount => "lg_run_count",
+                HostProjectChartMetric.MemoryUsage => "memory_usage",
                 HostProjectChartMetric.P95Latency => "p95_latency",
+                HostProjectChartMetric.ReplicaCount => "replica_count",
+                HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
+                HostProjectChartMetric.RestartCount => "restart_count",
+                HostProjectChartMetric.WorkerCount => "worker_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,16 +82,16 @@ namespace LangSmith
         {
             return value switch
             {
-                "memory_usage" => HostProjectChartMetric.MemoryUsage,
                 "cpu_usage" => HostProjectChartMetric.CpuUsage,
                 "disk_usage" => HostProjectChartMetric.DiskUsage,
-                "restart_count" => HostProjectChartMetric.RestartCount,
-                "replica_count" => HostProjectChartMetric.ReplicaCount,
-                "worker_count" => HostProjectChartMetric.WorkerCount,
-                "lg_run_count" => HostProjectChartMetric.LgRunCount,
-                "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,
                 "error_responses_per_second" => HostProjectChartMetric.ErrorResponsesPerSecond,
+                "lg_run_count" => HostProjectChartMetric.LgRunCount,
+                "memory_usage" => HostProjectChartMetric.MemoryUsage,
                 "p95_latency" => HostProjectChartMetric.P95Latency,
+                "replica_count" => HostProjectChartMetric.ReplicaCount,
+                "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,
+                "restart_count" => HostProjectChartMetric.RestartCount,
+                "worker_count" => HostProjectChartMetric.WorkerCount,
                 _ => null,
             };
         }

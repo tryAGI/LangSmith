@@ -11,11 +11,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Sum,
+        Avg,
         /// <summary>
         /// 
         /// </summary>
-        Avg,
+        Sum,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace LangSmith
         {
             return value switch
             {
-                FeedbackFormulaAggregationType.Sum => "sum",
                 FeedbackFormulaAggregationType.Avg => "avg",
+                FeedbackFormulaAggregationType.Sum => "sum",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace LangSmith
         {
             return value switch
             {
-                "sum" => FeedbackFormulaAggregationType.Sum,
                 "avg" => FeedbackFormulaAggregationType.Avg,
+                "sum" => FeedbackFormulaAggregationType.Sum,
                 _ => null,
             };
         }

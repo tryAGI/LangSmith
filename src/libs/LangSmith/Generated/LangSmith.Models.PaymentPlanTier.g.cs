@@ -11,15 +11,35 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        NoPlan,
-        /// <summary>
-        /// 
-        /// </summary>
         Developer,
         /// <summary>
         /// 
         /// </summary>
         Developer012026,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeveloperLegacy,
+        /// <summary>
+        /// 
+        /// </summary>
+        Enterprise,
+        /// <summary>
+        /// 
+        /// </summary>
+        EnterpriseLegacy,
+        /// <summary>
+        /// 
+        /// </summary>
+        Free,
+        /// <summary>
+        /// 
+        /// </summary>
+        NoPlan,
+        /// <summary>
+        /// 
+        /// </summary>
+        Partner,
         /// <summary>
         /// 
         /// </summary>
@@ -31,23 +51,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        Enterprise,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeveloperLegacy,
-        /// <summary>
-        /// 
-        /// </summary>
         PlusLegacy,
         /// <summary>
         /// 
         /// </summary>
-        Free,
-        /// <summary>
-        /// 
-        /// </summary>
-        EnterpriseLegacy,
+        Premier,
         /// <summary>
         /// 
         /// </summary>
@@ -56,14 +64,6 @@ namespace LangSmith
         /// 
         /// </summary>
         StartupV0,
-        /// <summary>
-        /// 
-        /// </summary>
-        Partner,
-        /// <summary>
-        /// 
-        /// </summary>
-        Premier,
     }
 
     /// <summary>
@@ -78,20 +78,20 @@ namespace LangSmith
         {
             return value switch
             {
-                PaymentPlanTier.NoPlan => "no_plan",
                 PaymentPlanTier.Developer => "developer",
                 PaymentPlanTier.Developer012026 => "developer_01_2026",
+                PaymentPlanTier.DeveloperLegacy => "developer_legacy",
+                PaymentPlanTier.Enterprise => "enterprise",
+                PaymentPlanTier.EnterpriseLegacy => "enterprise_legacy",
+                PaymentPlanTier.Free => "free",
+                PaymentPlanTier.NoPlan => "no_plan",
+                PaymentPlanTier.Partner => "partner",
                 PaymentPlanTier.Plus => "plus",
                 PaymentPlanTier.Plus012026 => "plus_01_2026",
-                PaymentPlanTier.Enterprise => "enterprise",
-                PaymentPlanTier.DeveloperLegacy => "developer_legacy",
                 PaymentPlanTier.PlusLegacy => "plus_legacy",
-                PaymentPlanTier.Free => "free",
-                PaymentPlanTier.EnterpriseLegacy => "enterprise_legacy",
+                PaymentPlanTier.Premier => "premier",
                 PaymentPlanTier.Startup => "startup",
                 PaymentPlanTier.StartupV0 => "startup_v0",
-                PaymentPlanTier.Partner => "partner",
-                PaymentPlanTier.Premier => "premier",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -102,20 +102,20 @@ namespace LangSmith
         {
             return value switch
             {
-                "no_plan" => PaymentPlanTier.NoPlan,
                 "developer" => PaymentPlanTier.Developer,
                 "developer_01_2026" => PaymentPlanTier.Developer012026,
+                "developer_legacy" => PaymentPlanTier.DeveloperLegacy,
+                "enterprise" => PaymentPlanTier.Enterprise,
+                "enterprise_legacy" => PaymentPlanTier.EnterpriseLegacy,
+                "free" => PaymentPlanTier.Free,
+                "no_plan" => PaymentPlanTier.NoPlan,
+                "partner" => PaymentPlanTier.Partner,
                 "plus" => PaymentPlanTier.Plus,
                 "plus_01_2026" => PaymentPlanTier.Plus012026,
-                "enterprise" => PaymentPlanTier.Enterprise,
-                "developer_legacy" => PaymentPlanTier.DeveloperLegacy,
                 "plus_legacy" => PaymentPlanTier.PlusLegacy,
-                "free" => PaymentPlanTier.Free,
-                "enterprise_legacy" => PaymentPlanTier.EnterpriseLegacy,
+                "premier" => PaymentPlanTier.Premier,
                 "startup" => PaymentPlanTier.Startup,
                 "startup_v0" => PaymentPlanTier.StartupV0,
-                "partner" => PaymentPlanTier.Partner,
-                "premier" => PaymentPlanTier.Premier,
                 _ => null,
             };
         }
