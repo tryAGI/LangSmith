@@ -189,6 +189,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FeaturesClient Features => new FeaturesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FeedbackClient Feedback => new FeedbackClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
