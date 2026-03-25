@@ -110,6 +110,12 @@ namespace LangSmith
         public int? ResponseStatusCode { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enrichments")]
+        public object? Enrichments { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -134,6 +140,7 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="workspaceId"></param>
         /// <param name="responseStatusCode"></param>
+        /// <param name="enrichments"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -153,7 +160,8 @@ namespace LangSmith
             global::System.Guid? lsUserId,
             global::System.Guid? organizationId,
             global::System.Guid? workspaceId,
-            int? responseStatusCode)
+            int? responseStatusCode,
+            object? enrichments)
         {
             this.Id = id;
             this.OperationName = operationName ?? throw new global::System.ArgumentNullException(nameof(operationName));
@@ -171,6 +179,7 @@ namespace LangSmith
             this.OrganizationId = organizationId;
             this.WorkspaceId = workspaceId;
             this.ResponseStatusCode = responseStatusCode;
+            this.Enrichments = enrichments;
         }
 
         /// <summary>

@@ -168,6 +168,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public McpVendorsClient McpVendors { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MeClient Me { get; }
 
         /// <summary>

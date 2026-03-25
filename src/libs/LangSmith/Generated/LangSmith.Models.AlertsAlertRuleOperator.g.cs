@@ -11,7 +11,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Gt,
+        /// <summary>
+        /// 
+        /// </summary>
         Gte,
+        /// <summary>
+        /// 
+        /// </summary>
+        Lt,
         /// <summary>
         /// 
         /// </summary>
@@ -30,7 +38,9 @@ namespace LangSmith
         {
             return value switch
             {
+                AlertsAlertRuleOperator.Gt => "gt",
                 AlertsAlertRuleOperator.Gte => "gte",
+                AlertsAlertRuleOperator.Lt => "lt",
                 AlertsAlertRuleOperator.Lte => "lte",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -42,7 +52,9 @@ namespace LangSmith
         {
             return value switch
             {
+                "gt" => AlertsAlertRuleOperator.Gt,
                 "gte" => AlertsAlertRuleOperator.Gte,
+                "lt" => AlertsAlertRuleOperator.Lt,
                 "lte" => AlertsAlertRuleOperator.Lte,
                 _ => null,
             };
