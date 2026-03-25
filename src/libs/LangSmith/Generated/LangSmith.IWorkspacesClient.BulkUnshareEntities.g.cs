@@ -20,10 +20,14 @@ namespace LangSmith
         /// Bulk unshare entities by share tokens for the workspace.
         /// </summary>
         /// <param name="shareTokens"></param>
+        /// <param name="unshareAll">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> BulkUnshareEntitiesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? shareTokens = default,
+            bool? unshareAll = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

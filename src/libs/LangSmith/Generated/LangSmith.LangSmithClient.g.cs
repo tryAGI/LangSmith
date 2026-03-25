@@ -261,6 +261,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public McpVendorsClient McpVendors => new McpVendorsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MeClient Me => new MeClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

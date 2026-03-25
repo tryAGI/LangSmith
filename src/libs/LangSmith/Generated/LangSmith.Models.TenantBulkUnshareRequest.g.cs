@@ -15,6 +15,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? ShareTokens { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unshare_all")]
+        public bool? UnshareAll { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -24,13 +30,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="TenantBulkUnshareRequest" /> class.
         /// </summary>
         /// <param name="shareTokens"></param>
+        /// <param name="unshareAll">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TenantBulkUnshareRequest(
-            global::System.Collections.Generic.IList<global::System.Guid>? shareTokens)
+            global::System.Collections.Generic.IList<global::System.Guid>? shareTokens,
+            bool? unshareAll)
         {
             this.ShareTokens = shareTokens;
+            this.UnshareAll = unshareAll;
         }
 
         /// <summary>
