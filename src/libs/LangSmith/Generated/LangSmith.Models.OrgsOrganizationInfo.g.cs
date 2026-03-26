@@ -53,6 +53,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist")]
+        public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist_enabled")]
+        public bool? IpAllowlistEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         public bool? IsPersonal { get; set; }
 
@@ -180,6 +192,8 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="id"></param>
         /// <param name="invitesEnabled"></param>
+        /// <param name="ipAllowlist"></param>
+        /// <param name="ipAllowlistEnabled"></param>
         /// <param name="isPersonal"></param>
         /// <param name="jitProvisioningEnabled"></param>
         /// <param name="llmAuthProxyEnabled"></param>
@@ -210,6 +224,8 @@ namespace LangSmith
             string? displayName,
             string? id,
             bool? invitesEnabled,
+            global::System.Collections.Generic.IList<string>? ipAllowlist,
+            bool? ipAllowlistEnabled,
             bool? isPersonal,
             bool? jitProvisioningEnabled,
             bool? llmAuthProxyEnabled,
@@ -237,6 +253,8 @@ namespace LangSmith
             this.DisplayName = displayName;
             this.Id = id;
             this.InvitesEnabled = invitesEnabled;
+            this.IpAllowlist = ipAllowlist;
+            this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.IsPersonal = isPersonal;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;

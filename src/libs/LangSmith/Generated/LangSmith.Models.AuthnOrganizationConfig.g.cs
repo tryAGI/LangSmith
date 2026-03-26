@@ -189,6 +189,13 @@ namespace LangSmith
         public bool? EnableThreadsImprovements { get; set; }
 
         /// <summary>
+        /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
+        /// Set by Metronome entitlement, not admin-patchable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist_enabled")]
+        public bool? IpAllowlistEnabled { get; set; }
+
+        /// <summary>
         /// KvDatasetMessageSupport indicates whether to use the new messages experience for KV datasets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
@@ -476,6 +483,10 @@ namespace LangSmith
         /// <param name="enableThreadsImprovements">
         /// EnableThreadsImprovements indicates whether to enable the threads improvements feature for this org.
         /// </param>
+        /// <param name="ipAllowlistEnabled">
+        /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
+        /// Set by Metronome entitlement, not admin-patchable.
+        /// </param>
         /// <param name="kvDatasetMessageSupport">
         /// KvDatasetMessageSupport indicates whether to use the new messages experience for KV datasets.
         /// </param>
@@ -604,6 +615,7 @@ namespace LangSmith
             bool? enableRunTreeStreaming,
             bool? enableThreadViewPlayground,
             bool? enableThreadsImprovements,
+            bool? ipAllowlistEnabled,
             bool? kvDatasetMessageSupport,
             bool? langgraphDeployOwnCloudEnabled,
             bool? langgraphEnterpriseEnabled,
@@ -666,6 +678,7 @@ namespace LangSmith
             this.EnableRunTreeStreaming = enableRunTreeStreaming;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
             this.EnableThreadsImprovements = enableThreadsImprovements;
+            this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.KvDatasetMessageSupport = kvDatasetMessageSupport;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.LanggraphEnterpriseEnabled = langgraphEnterpriseEnabled;

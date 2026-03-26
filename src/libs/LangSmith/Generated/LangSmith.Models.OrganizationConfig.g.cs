@@ -381,6 +381,12 @@ namespace LangSmith
         public bool? LangsmithDeploymentDrEnabledDev { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist_enabled")]
+        public bool? IpAllowlistEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -567,6 +573,9 @@ namespace LangSmith
         /// <param name="langsmithDeploymentDrEnabledDev">
         /// Default Value: false
         /// </param>
+        /// <param name="ipAllowlistEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -632,7 +641,8 @@ namespace LangSmith
             bool? enableGranularUsageReporting,
             bool? enableBurndownVsCommitView,
             int? maxAgentBuilderRuns,
-            bool? langsmithDeploymentDrEnabledDev)
+            bool? langsmithDeploymentDrEnabledDev,
+            bool? ipAllowlistEnabled)
         {
             this.PlanTier = planTier;
             this.MaxIdentities = maxIdentities;
@@ -696,6 +706,7 @@ namespace LangSmith
             this.EnableBurndownVsCommitView = enableBurndownVsCommitView;
             this.MaxAgentBuilderRuns = maxAgentBuilderRuns;
             this.LangsmithDeploymentDrEnabledDev = langsmithDeploymentDrEnabledDev;
+            this.IpAllowlistEnabled = ipAllowlistEnabled;
         }
 
         /// <summary>
