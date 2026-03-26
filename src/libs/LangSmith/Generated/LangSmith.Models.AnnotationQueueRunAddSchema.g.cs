@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Schema for adding a run to an annotation queue with optional metadata.
+    /// Deprecated: use plain UUID list or AddRunToQueueByKeyRequest instead.
     /// </summary>
     public sealed partial class AnnotationQueueRunAddSchema
     {
@@ -19,30 +19,35 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_tier")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::LangSmith.TraceTier? TraceTier { get; set; }
 
         /// <summary>
@@ -55,35 +60,13 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="AnnotationQueueRunAddSchema" /> class.
         /// </summary>
         /// <param name="runId"></param>
-        /// <param name="startTime"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="traceId"></param>
-        /// <param name="parentRunId"></param>
-        /// <param name="traceTier"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnnotationQueueRunAddSchema(
-            global::System.Guid runId,
-            global::System.DateTime? startTime,
-            global::System.Guid? sessionId,
-            global::System.Guid? traceId,
-            global::System.Guid? parentRunId,
-            global::LangSmith.TraceTier? traceTier)
+            global::System.Guid runId)
         {
             this.RunId = runId;
-            this.StartTime = startTime;
-            this.SessionId = sessionId;
-            this.TraceId = traceId;
-            this.ParentRunId = parentRunId;
-            this.TraceTier = traceTier;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AnnotationQueueRunAddSchema" /> class.
-        /// </summary>
-        public AnnotationQueueRunAddSchema()
-        {
         }
     }
 }
