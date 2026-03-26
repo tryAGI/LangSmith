@@ -169,6 +169,18 @@ namespace LangSmith
         public string? LlmAuthProxyJwtAudience { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist")]
+        public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist_enabled")]
+        public bool? IpAllowlistEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -233,6 +245,10 @@ namespace LangSmith
         /// </param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
+        /// <param name="ipAllowlist"></param>
+        /// <param name="ipAllowlistEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -262,7 +278,9 @@ namespace LangSmith
             string? scimGroupNameSeparator,
             bool? canExportUsageBackfill,
             bool? llmAuthProxyEnabled,
-            string? llmAuthProxyJwtAudience)
+            string? llmAuthProxyJwtAudience,
+            global::System.Collections.Generic.IList<string>? ipAllowlist,
+            bool? ipAllowlistEnabled)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.IsPersonal = isPersonal;
@@ -290,6 +308,8 @@ namespace LangSmith
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
+            this.IpAllowlist = ipAllowlist;
+            this.IpAllowlistEnabled = ipAllowlistEnabled;
         }
 
         /// <summary>

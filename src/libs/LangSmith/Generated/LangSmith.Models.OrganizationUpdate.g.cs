@@ -93,6 +93,12 @@ namespace LangSmith
         public string? LlmAuthProxyJwtAudience { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist")]
+        public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -115,6 +121,7 @@ namespace LangSmith
         /// <param name="scimGroupNameSeparator"></param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
+        /// <param name="ipAllowlist"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -132,7 +139,8 @@ namespace LangSmith
             int? maxServiceKeyExpiryDays,
             string? scimGroupNameSeparator,
             bool? llmAuthProxyEnabled,
-            string? llmAuthProxyJwtAudience)
+            string? llmAuthProxyJwtAudience,
+            global::System.Collections.Generic.IList<string>? ipAllowlist)
         {
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;
@@ -148,6 +156,7 @@ namespace LangSmith
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
+            this.IpAllowlist = ipAllowlist;
         }
 
         /// <summary>

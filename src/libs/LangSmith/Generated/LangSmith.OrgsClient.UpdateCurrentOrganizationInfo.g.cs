@@ -234,6 +234,7 @@ namespace LangSmith
         /// <param name="scimGroupNameSeparator"></param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
+        /// <param name="ipAllowlist"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.OrganizationInfo> UpdateCurrentOrganizationInfoAsync(
@@ -251,6 +252,7 @@ namespace LangSmith
             string? scimGroupNameSeparator = default,
             bool? llmAuthProxyEnabled = default,
             string? llmAuthProxyJwtAudience = default,
+            global::System.Collections.Generic.IList<string>? ipAllowlist = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.OrganizationUpdate
@@ -269,6 +271,7 @@ namespace LangSmith
                 ScimGroupNameSeparator = scimGroupNameSeparator,
                 LlmAuthProxyEnabled = llmAuthProxyEnabled,
                 LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience,
+                IpAllowlist = ipAllowlist,
             };
 
             return await UpdateCurrentOrganizationInfoAsync(
