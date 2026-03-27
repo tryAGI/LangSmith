@@ -11,8 +11,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("connected_accounts")]
-        public global::System.Collections.Generic.IList<global::LangSmith.McpVendorsOAuthTokenSummary>? ConnectedAccounts { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("config")]
+        public global::LangSmith.McpVendorsVendorConfig? Config { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="McpVendorsGetMcpVendorResponse" /> class.
         /// </summary>
-        /// <param name="connectedAccounts"></param>
+        /// <param name="config"></param>
         /// <param name="description"></param>
         /// <param name="icon"></param>
         /// <param name="name"></param>
@@ -71,7 +71,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public McpVendorsGetMcpVendorResponse(
-            global::System.Collections.Generic.IList<global::LangSmith.McpVendorsOAuthTokenSummary>? connectedAccounts,
+            global::LangSmith.McpVendorsVendorConfig? config,
             string? description,
             string? icon,
             string? name,
@@ -79,7 +79,7 @@ namespace LangSmith
             global::LangSmith.McpVendorsMcpVendorStatus? status,
             string? vendorId)
         {
-            this.ConnectedAccounts = connectedAccounts;
+            this.Config = config;
             this.Description = description;
             this.Icon = icon;
             this.Name = name;

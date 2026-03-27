@@ -68,6 +68,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AnnotationQueues2Client AnnotationQueues2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ApiKeyClient ApiKey { get; }
 
         /// <summary>
