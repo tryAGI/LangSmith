@@ -5,12 +5,12 @@ namespace LangSmith
     public partial interface IMcpVendorsClient
     {
         /// <summary>
-        /// Get MCP vendor by ID<br/>
-        /// Returns vendor metadata from the catalog, OAuth provider id for connect flows, and the vendor's configuration state.
+        /// Get vendor settings<br/>
+        /// Returns the current vendor-specific settings (org, project, configuration state). Stub — returns mock data until persistence is implemented.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsGetMcpVendorResponse> GetMcpVendorByIdAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsVendorConfig> GetVendorSettingsAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

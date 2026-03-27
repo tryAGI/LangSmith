@@ -81,6 +81,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AnnotationQueues2Client AnnotationQueues2 => new AnnotationQueues2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
