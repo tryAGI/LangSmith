@@ -8,12 +8,14 @@ namespace LangSmith
         partial void PrepareGetACommitArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? getExamples,
+            ref string? include,
             ref bool? includeModel,
             ref bool? isView);
         partial void PrepareGetACommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? getExamples,
+            string? include,
             bool? includeModel,
             bool? isView);
         partial void ProcessGetACommitResponse(
@@ -38,6 +40,7 @@ namespace LangSmith
         /// <param name="getExamples">
         /// Default Value: false
         /// </param>
+        /// <param name="include"></param>
         /// <param name="includeModel">
         /// Default Value: false
         /// </param>
@@ -48,6 +51,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsCommitResponse> GetACommitAsync(
             bool? getExamples = default,
+            string? include = default,
             bool? includeModel = default,
             bool? isView = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -57,6 +61,7 @@ namespace LangSmith
             PrepareGetACommitArguments(
                 httpClient: HttpClient,
                 getExamples: ref getExamples,
+                include: ref include,
                 includeModel: ref includeModel,
                 isView: ref isView);
 
@@ -65,6 +70,7 @@ namespace LangSmith
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("get_examples", getExamples?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("include", include)
                 .AddOptionalParameter("include_model", includeModel?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("is_view", isView?.ToString().ToLowerInvariant()) 
                 ; 
@@ -100,6 +106,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 getExamples: getExamples,
+                include: include,
                 includeModel: includeModel,
                 isView: isView);
 

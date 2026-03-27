@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_draft")]
+        public bool? IsDraft { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         public object? Manifest { get; set; }
 
@@ -49,6 +55,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="commitHash"></param>
         /// <param name="examples"></param>
+        /// <param name="isDraft"></param>
         /// <param name="manifest"></param>
         /// <param name="modelConfig"></param>
         /// <param name="modelProvider"></param>
@@ -58,12 +65,14 @@ namespace LangSmith
         public CommitsCommitResponse(
             string? commitHash,
             global::System.Collections.Generic.IList<global::LangSmith.CommitsExampleRun>? examples,
+            bool? isDraft,
             object? manifest,
             object? modelConfig,
             string? modelProvider)
         {
             this.CommitHash = commitHash;
             this.Examples = examples;
+            this.IsDraft = isDraft;
             this.Manifest = manifest;
             this.ModelConfig = modelConfig;
             this.ModelProvider = modelProvider;
