@@ -17,6 +17,7 @@ namespace LangSmith
         /// <param name="getExamples">
         /// Default Value: false
         /// </param>
+        /// <param name="include"></param>
         /// <param name="includeModel">
         /// Default Value: false
         /// </param>
@@ -27,6 +28,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsCommitResponse> GetACommitAsync(
             bool? getExamples = default,
+            string? include = default,
             bool? includeModel = default,
             bool? isView = default,
             global::System.Threading.CancellationToken cancellationToken = default);

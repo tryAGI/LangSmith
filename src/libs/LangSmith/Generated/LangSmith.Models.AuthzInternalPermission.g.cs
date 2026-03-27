@@ -111,6 +111,26 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        McpServersCreate,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpServersDelete,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpServersInvoke,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpServersRead,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpServersUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
         OrganizationManage,
         /// <summary>
         /// 
@@ -243,6 +263,11 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackDelete => "feedback:delete",
                 AuthzInternalPermission.FeedbackRead => "feedback:read",
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
+                AuthzInternalPermission.McpServersCreate => "mcp-servers:create",
+                AuthzInternalPermission.McpServersDelete => "mcp-servers:delete",
+                AuthzInternalPermission.McpServersInvoke => "mcp-servers:invoke",
+                AuthzInternalPermission.McpServersRead => "mcp-servers:read",
+                AuthzInternalPermission.McpServersUpdate => "mcp-servers:update",
                 AuthzInternalPermission.OrganizationManage => "organization:manage",
                 AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
                 AuthzInternalPermission.OrganizationRead => "organization:read",
@@ -302,6 +327,11 @@ namespace LangSmith
                 "feedback:delete" => AuthzInternalPermission.FeedbackDelete,
                 "feedback:read" => AuthzInternalPermission.FeedbackRead,
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
+                "mcp-servers:create" => AuthzInternalPermission.McpServersCreate,
+                "mcp-servers:delete" => AuthzInternalPermission.McpServersDelete,
+                "mcp-servers:invoke" => AuthzInternalPermission.McpServersInvoke,
+                "mcp-servers:read" => AuthzInternalPermission.McpServersRead,
+                "mcp-servers:update" => AuthzInternalPermission.McpServersUpdate,
                 "organization:manage" => AuthzInternalPermission.OrganizationManage,
                 "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
                 "organization:read" => AuthzInternalPermission.OrganizationRead,

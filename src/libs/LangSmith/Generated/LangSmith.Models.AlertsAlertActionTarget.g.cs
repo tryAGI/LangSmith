@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Dynatrace,
+        /// <summary>
+        /// 
+        /// </summary>
         Pagerduty,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace LangSmith
         {
             return value switch
             {
+                AlertsAlertActionTarget.Dynatrace => "dynatrace",
                 AlertsAlertActionTarget.Pagerduty => "pagerduty",
                 AlertsAlertActionTarget.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "dynatrace" => AlertsAlertActionTarget.Dynatrace,
                 "pagerduty" => AlertsAlertActionTarget.Pagerduty,
                 "webhook" => AlertsAlertActionTarget.Webhook,
                 _ => null,
