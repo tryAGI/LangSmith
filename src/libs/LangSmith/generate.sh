@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# OpenAPI spec: https://api.smith.langchain.com/openapi.json
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl -fsSL -o openapi.json https://api.smith.langchain.com/openapi.json
