@@ -128,13 +128,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_400 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_400 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -166,13 +166,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -204,13 +204,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_404 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_404 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -242,13 +242,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_409 = global::System.Text.Json.JsonSerializer.Deserialize(__content_409, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_409 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_409, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_409 = global::System.Text.Json.JsonSerializer.Deserialize(__content_409, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_409 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_409, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -280,13 +280,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_422 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_422 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -318,13 +318,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_500 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, string>;
+                        __value_500 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
