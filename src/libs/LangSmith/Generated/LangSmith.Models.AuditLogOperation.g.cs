@@ -26,6 +26,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        AttachAccessPolicies,
+        /// <summary>
+        /// 
+        /// </summary>
         CancelBulkExport,
         /// <summary>
         /// 
@@ -39,6 +43,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ConfirmPaymentCheckoutSession,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateAccessPolicy,
         /// <summary>
         /// 
         /// </summary>
@@ -151,6 +159,10 @@ namespace LangSmith
         /// 
         /// </summary>
         CreateWorkspace,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteAccessPolicy,
         /// <summary>
         /// 
         /// </summary>
@@ -274,7 +286,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ListAccessPolicies,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadAccessPolicy,
+        /// <summary>
+        /// 
+        /// </summary>
         ReadBulkExportDestination,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadRoleAccessPolicies,
         /// <summary>
         /// 
         /// </summary>
@@ -436,10 +460,12 @@ namespace LangSmith
                 AuditLogOperation.AddBasicAuthUsersToOrg => "add_basic_auth_users_to_org",
                 AuditLogOperation.AddMemberToWorkspace => "add_member_to_workspace",
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
+                AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
                 AuditLogOperation.CloneChartSection => "clone_chart_section",
                 AuditLogOperation.CloneDataset => "clone_dataset",
                 AuditLogOperation.ConfirmPaymentCheckoutSession => "confirm_payment_checkout_session",
+                AuditLogOperation.CreateAccessPolicy => "create_access_policy",
                 AuditLogOperation.CreateApiKey => "create_api_key",
                 AuditLogOperation.CreateBulkExport => "create_bulk_export",
                 AuditLogOperation.CreateBulkExportDestination => "create_bulk_export_destination",
@@ -468,6 +494,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTagValue => "create_tag_value",
                 AuditLogOperation.CreateTagging => "create_tagging",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
+                AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
                 AuditLogOperation.DeleteApiKey => "delete_api_key",
                 AuditLogOperation.DeleteChart => "delete_chart",
                 AuditLogOperation.DeleteChartSection => "delete_chart_section",
@@ -498,7 +525,10 @@ namespace LangSmith
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
                 AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
+                AuditLogOperation.ListAccessPolicies => "list_access_policies",
+                AuditLogOperation.ReadAccessPolicy => "read_access_policy",
                 AuditLogOperation.ReadBulkExportDestination => "read_bulk_export_destination",
+                AuditLogOperation.ReadRoleAccessPolicies => "read_role_access_policies",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
                 AuditLogOperation.TestPromptWebhook => "test_prompt_webhook",
@@ -548,10 +578,12 @@ namespace LangSmith
                 "add_basic_auth_users_to_org" => AuditLogOperation.AddBasicAuthUsersToOrg,
                 "add_member_to_workspace" => AuditLogOperation.AddMemberToWorkspace,
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
+                "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
                 "clone_chart_section" => AuditLogOperation.CloneChartSection,
                 "clone_dataset" => AuditLogOperation.CloneDataset,
                 "confirm_payment_checkout_session" => AuditLogOperation.ConfirmPaymentCheckoutSession,
+                "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
                 "create_api_key" => AuditLogOperation.CreateApiKey,
                 "create_bulk_export" => AuditLogOperation.CreateBulkExport,
                 "create_bulk_export_destination" => AuditLogOperation.CreateBulkExportDestination,
@@ -580,6 +612,7 @@ namespace LangSmith
                 "create_tag_value" => AuditLogOperation.CreateTagValue,
                 "create_tagging" => AuditLogOperation.CreateTagging,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
+                "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
                 "delete_api_key" => AuditLogOperation.DeleteApiKey,
                 "delete_chart" => AuditLogOperation.DeleteChart,
                 "delete_chart_section" => AuditLogOperation.DeleteChartSection,
@@ -610,7 +643,10 @@ namespace LangSmith
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
                 "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
+                "list_access_policies" => AuditLogOperation.ListAccessPolicies,
+                "read_access_policy" => AuditLogOperation.ReadAccessPolicy,
                 "read_bulk_export_destination" => AuditLogOperation.ReadBulkExportDestination,
+                "read_role_access_policies" => AuditLogOperation.ReadRoleAccessPolicies,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
                 "test_prompt_webhook" => AuditLogOperation.TestPromptWebhook,

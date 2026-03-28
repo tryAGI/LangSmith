@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyDeleteRunsApiV1RunsDeletePostMetadata2
+    public sealed partial class McpVendorsGetMcpVendorResponseSettings
     {
 
         /// <summary>

@@ -6,19 +6,13 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class McpVendorsVendorConfig
+    public sealed partial class McpVendorsArcadeSettingsRequest
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_configured")]
-        public bool? IsConfigured { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
-        public string? OrgId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
+        public string? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -33,28 +27,25 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="McpVendorsVendorConfig" /> class.
+        /// Initializes a new instance of the <see cref="McpVendorsArcadeSettingsRequest" /> class.
         /// </summary>
-        /// <param name="isConfigured"></param>
-        /// <param name="orgId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="projectId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public McpVendorsVendorConfig(
-            bool? isConfigured,
-            string? orgId,
+        public McpVendorsArcadeSettingsRequest(
+            string? organizationId,
             string? projectId)
         {
-            this.IsConfigured = isConfigured;
-            this.OrgId = orgId;
+            this.OrganizationId = organizationId;
             this.ProjectId = projectId;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="McpVendorsVendorConfig" /> class.
+        /// Initializes a new instance of the <see cref="McpVendorsArcadeSettingsRequest" /> class.
         /// </summary>
-        public McpVendorsVendorConfig()
+        public McpVendorsArcadeSettingsRequest()
         {
         }
     }

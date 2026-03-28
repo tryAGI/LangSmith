@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("proxy_config")]
+        public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TemplateName { get; set; }
@@ -56,6 +62,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="name"></param>
+        /// <param name="proxyConfig"></param>
         /// <param name="templateName"></param>
         /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
@@ -67,6 +74,7 @@ namespace LangSmith
             string templateName,
             int? idleTtlSeconds,
             string? name,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig,
             int? timeout,
             int? ttlSeconds,
             bool? waitForReady)
@@ -74,6 +82,7 @@ namespace LangSmith
             this.TemplateName = templateName ?? throw new global::System.ArgumentNullException(nameof(templateName));
             this.IdleTtlSeconds = idleTtlSeconds;
             this.Name = name;
+            this.ProxyConfig = proxyConfig;
             this.Timeout = timeout;
             this.TtlSeconds = ttlSeconds;
             this.WaitForReady = waitForReady;

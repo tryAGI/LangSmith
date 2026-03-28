@@ -7,11 +7,11 @@ namespace LangSmith
     {
         partial void PrepareReplaceVendorSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.McpVendorsCreateVendorSettingsRequest request);
+            global::LangSmith.McpVendorsArcadeSettingsRequest request);
         partial void PrepareReplaceVendorSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.McpVendorsCreateVendorSettingsRequest request);
+            global::LangSmith.McpVendorsArcadeSettingsRequest request);
         partial void ProcessReplaceVendorSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,14 +23,14 @@ namespace LangSmith
 
         /// <summary>
         /// Replace vendor settings<br/>
-        /// Replaces vendor settings with the provided org and project. Stub — returns the submitted values until persistence is implemented.
+        /// Replaces vendor settings.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsVendorConfig> ReplaceVendorSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsArcadeSettingsResponse> ReplaceVendorSettingsAsync(
 
-            global::LangSmith.McpVendorsCreateVendorSettingsRequest request,
+            global::LangSmith.McpVendorsArcadeSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,7 +42,7 @@ namespace LangSmith
                 request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/v1/platform/mcp-vendors/{vendor_id}/settings",
+                path: "/v1/platform/mcp-vendors/{vendor_slug}/settings",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -269,7 +269,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.McpVendorsVendorConfig.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.McpVendorsArcadeSettingsResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -300,7 +300,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.McpVendorsVendorConfig.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.McpVendorsArcadeSettingsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -334,20 +334,20 @@ namespace LangSmith
         }
         /// <summary>
         /// Replace vendor settings<br/>
-        /// Replaces vendor settings with the provided org and project. Stub — returns the submitted values until persistence is implemented.
+        /// Replaces vendor settings.
         /// </summary>
-        /// <param name="orgId"></param>
+        /// <param name="organizationId"></param>
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsVendorConfig> ReplaceVendorSettingsAsync(
-            string? orgId = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsArcadeSettingsResponse> ReplaceVendorSettingsAsync(
+            string? organizationId = default,
             string? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.McpVendorsCreateVendorSettingsRequest
+            var __request = new global::LangSmith.McpVendorsArcadeSettingsRequest
             {
-                OrgId = orgId,
+                OrganizationId = organizationId,
                 ProjectId = projectId,
             };
 

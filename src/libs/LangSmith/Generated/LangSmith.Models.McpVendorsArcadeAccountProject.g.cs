@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
+        public string? OrganizationId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         public string? ProjectId { get; set; }
 
@@ -37,6 +43,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="isDefault"></param>
         /// <param name="name"></param>
+        /// <param name="organizationId"></param>
         /// <param name="projectId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,10 +51,12 @@ namespace LangSmith
         public McpVendorsArcadeAccountProject(
             bool? isDefault,
             string? name,
+            string? organizationId,
             string? projectId)
         {
             this.IsDefault = isDefault;
             this.Name = name;
+            this.OrganizationId = organizationId;
             this.ProjectId = projectId;
         }
 

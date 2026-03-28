@@ -373,6 +373,18 @@ namespace LangSmith
         public global::System.DateTime? EffectiveAddedAt { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reservation_count")]
+        public int? ReservationCount { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completed_count")]
+        public int? CompletedCount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -452,6 +464,12 @@ namespace LangSmith
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
         /// <param name="effectiveAddedAt"></param>
+        /// <param name="reservationCount">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="completedCount">
+        /// Default Value: 0
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -514,7 +532,9 @@ namespace LangSmith
             string? threadId,
             global::System.DateTime? lastReviewedTime,
             global::System.DateTime? addedAt,
-            global::System.DateTime? effectiveAddedAt)
+            global::System.DateTime? effectiveAddedAt,
+            int? reservationCount,
+            int? completedCount)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;
@@ -575,6 +595,8 @@ namespace LangSmith
             this.LastReviewedTime = lastReviewedTime;
             this.AddedAt = addedAt;
             this.EffectiveAddedAt = effectiveAddedAt;
+            this.ReservationCount = reservationCount;
+            this.CompletedCount = completedCount;
         }
 
         /// <summary>

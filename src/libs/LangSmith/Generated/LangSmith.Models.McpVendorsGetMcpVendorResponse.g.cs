@@ -11,12 +11,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        public global::LangSmith.McpVendorsVendorConfig? Config { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -41,6 +35,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
+        public object? Settings { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusJsonConverter))]
         public global::LangSmith.McpVendorsMcpVendorStatus? Status { get; set; }
@@ -60,30 +60,30 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="McpVendorsGetMcpVendorResponse" /> class.
         /// </summary>
-        /// <param name="config"></param>
         /// <param name="description"></param>
         /// <param name="icon"></param>
         /// <param name="name"></param>
         /// <param name="providerId"></param>
+        /// <param name="settings"></param>
         /// <param name="status"></param>
         /// <param name="vendorId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public McpVendorsGetMcpVendorResponse(
-            global::LangSmith.McpVendorsVendorConfig? config,
             string? description,
             string? icon,
             string? name,
             string? providerId,
+            object? settings,
             global::LangSmith.McpVendorsMcpVendorStatus? status,
             string? vendorId)
         {
-            this.Config = config;
             this.Description = description;
             this.Icon = icon;
             this.Name = name;
             this.ProviderId = providerId;
+            this.Settings = settings;
             this.Status = status;
             this.VendorId = vendorId;
         }
