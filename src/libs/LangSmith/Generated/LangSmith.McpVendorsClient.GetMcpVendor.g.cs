@@ -5,36 +5,36 @@ namespace LangSmith
 {
     public partial class McpVendorsClient
     {
-        partial void PrepareListMcpGatewaysForAVendorArguments(
+        partial void PrepareGetMcpVendorArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareListMcpGatewaysForAVendorRequest(
+        partial void PrepareGetMcpVendorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessListMcpGatewaysForAVendorResponse(
+        partial void ProcessGetMcpVendorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListMcpGatewaysForAVendorResponseContent(
+        partial void ProcessGetMcpVendorResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List MCP gateways for a vendor<br/>
-        /// Returns the MCP gateways configured in the vendor's org/project. Stub — returns mock data until the Arcade API integration is complete.
+        /// Get MCP vendor<br/>
+        /// Returns vendor metadata and current settings.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsListMcpGatewaysResponse> ListMcpGatewaysForAVendorAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsGetMcpVendorResponse> GetMcpVendorAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListMcpGatewaysForAVendorArguments(
+            PrepareGetMcpVendorArguments(
                 httpClient: HttpClient);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/v1/platform/mcp-vendors/{vendor_id}/mcp-gateways",
+                path: "/v1/platform/mcp-vendors/{vendor_slug}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -64,7 +64,7 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareListMcpGatewaysForAVendorRequest(
+            PrepareGetMcpVendorRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest);
 
@@ -76,47 +76,9 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessListMcpGatewaysForAVendorResponse(
+            ProcessGetMcpVendorResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request
-            if ((int)__response.StatusCode == 400)
-            {
-                string? __content_400 = null;
-                global::System.Exception? __exception_400 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_400 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_400 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_400 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_400,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_400,
-                    ResponseObject = __value_400,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
             // Unauthorized
             if ((int)__response.StatusCode == 401)
             {
@@ -231,44 +193,6 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
-            // Bad Gateway
-            if ((int)__response.StatusCode == 502)
-            {
-                string? __content_502 = null;
-                global::System.Exception? __exception_502 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_502 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_502 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_502 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_502, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_502 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_502 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_502, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_502 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_502,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_502,
-                    ResponseObject = __value_502,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
 
             if (ReadResponseAsString)
             {
@@ -282,7 +206,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessListMcpGatewaysForAVendorResponseContent(
+                ProcessGetMcpVendorResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -292,7 +216,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.McpVendorsListMcpGatewaysResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.McpVendorsGetMcpVendorResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -323,7 +247,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.McpVendorsListMcpGatewaysResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.McpVendorsGetMcpVendorResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

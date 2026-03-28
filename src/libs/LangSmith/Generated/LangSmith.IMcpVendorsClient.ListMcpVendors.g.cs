@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// List MCP vendors<br/>
-        /// Returns the catalog of available MCP vendors for the workspace.
+        /// Returns the catalog of available MCP vendors.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

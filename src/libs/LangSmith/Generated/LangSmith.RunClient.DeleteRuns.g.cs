@@ -23,7 +23,7 @@ namespace LangSmith
 
         /// <summary>
         /// Delete Runs<br/>
-        /// Delete specific runs by trace IDs or metadata key-value pairs.
+        /// Delete specific runs by trace IDs.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -216,24 +216,21 @@ namespace LangSmith
         }
         /// <summary>
         /// Delete Runs<br/>
-        /// Delete specific runs by trace IDs or metadata key-value pairs.
+        /// Delete specific runs by trace IDs.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="traceIds"></param>
-        /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteRunsAsync(
-            global::System.Guid? sessionId = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? traceIds = default,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::System.Guid sessionId,
+            global::System.Collections.Generic.IList<global::System.Guid> traceIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.BodyDeleteRunsApiV1RunsDeletePost
             {
                 SessionId = sessionId,
                 TraceIds = traceIds,
-                Metadata = metadata,
             };
 
             return await DeleteRunsAsync(

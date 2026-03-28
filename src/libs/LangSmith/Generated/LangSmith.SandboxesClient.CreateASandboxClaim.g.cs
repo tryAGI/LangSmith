@@ -414,6 +414,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="name"></param>
+        /// <param name="proxyConfig"></param>
         /// <param name="templateName"></param>
         /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
@@ -424,6 +425,7 @@ namespace LangSmith
             string templateName,
             int? idleTtlSeconds = default,
             string? name = default,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             int? timeout = default,
             int? ttlSeconds = default,
             bool? waitForReady = default,
@@ -433,6 +435,7 @@ namespace LangSmith
             {
                 IdleTtlSeconds = idleTtlSeconds,
                 Name = name,
+                ProxyConfig = proxyConfig,
                 TemplateName = templateName,
                 Timeout = timeout,
                 TtlSeconds = ttlSeconds,

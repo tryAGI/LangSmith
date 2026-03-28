@@ -12,19 +12,15 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public global::System.Guid? SessionId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_ids")]
-        public global::System.Collections.Generic.IList<global::System.Guid>? TraceIds { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::System.Guid> TraceIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,18 +33,15 @@ namespace LangSmith
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="traceIds"></param>
-        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyDeleteRunsApiV1RunsDeletePost(
-            global::System.Guid? sessionId,
-            global::System.Collections.Generic.IList<global::System.Guid>? traceIds,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Guid sessionId,
+            global::System.Collections.Generic.IList<global::System.Guid> traceIds)
         {
             this.SessionId = sessionId;
-            this.TraceIds = traceIds;
-            this.Metadata = metadata;
+            this.TraceIds = traceIds ?? throw new global::System.ArgumentNullException(nameof(traceIds));
         }
 
         /// <summary>

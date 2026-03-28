@@ -21,7 +21,7 @@ namespace LangSmith
 
         /// <summary>
         /// List MCP vendors<br/>
-        /// Returns the catalog of available MCP vendors for the workspace.
+        /// Returns the catalog of available MCP vendors.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -149,44 +149,6 @@ namespace LangSmith
                 {
                     ResponseBody = __content_403,
                     ResponseObject = __value_403,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Internal Server Error
-            if ((int)__response.StatusCode == 500)
-            {
-                string? __content_500 = null;
-                global::System.Exception? __exception_500 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_500 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_500 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_500 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_500,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_500,
-                    ResponseObject = __value_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,

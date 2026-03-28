@@ -5,37 +5,51 @@ namespace LangSmith
 {
     public partial class McpVendorsClient
     {
-        partial void PrepareGetVendorAccountForAnMcpVendorArguments(
-            global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetVendorAccountForAnMcpVendorRequest(
+        partial void PrepareListToolsForAVendorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetVendorAccountForAnMcpVendorResponse(
+            ref int? limit,
+            ref int? offset);
+        partial void PrepareListToolsForAVendorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? limit,
+            int? offset);
+        partial void ProcessListToolsForAVendorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetVendorAccountForAnMcpVendorResponseContent(
+        partial void ProcessListToolsForAVendorResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get vendor account for an MCP vendor<br/>
-        /// Resolves the user's OAuth access token via host-backend, then calls the vendor's account endpoint to return available orgs and projects. The user must have completed the OAuth flow for this vendor. Currently only Arcade is supported.
+        /// List tools for a vendor<br/>
+        /// Returns the tool catalog for this vendor.
         /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsArcadeAccountResponseList> GetVendorAccountForAnMcpVendorAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsListVendorToolsResponse> ListToolsForAVendorAsync(
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetVendorAccountForAnMcpVendorArguments(
-                httpClient: HttpClient);
+            PrepareListToolsForAVendorArguments(
+                httpClient: HttpClient,
+                limit: ref limit,
+                offset: ref offset);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/v1/platform/mcp-vendors/{vendor_id}/account",
+                path: "/v1/platform/mcp-vendors/{vendor_slug}/tools",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -64,9 +78,11 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGetVendorAccountForAnMcpVendorRequest(
+            PrepareListToolsForAVendorRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                limit: limit,
+                offset: offset);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -76,47 +92,9 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGetVendorAccountForAnMcpVendorResponse(
+            ProcessListToolsForAVendorResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request
-            if ((int)__response.StatusCode == 400)
-            {
-                string? __content_400 = null;
-                global::System.Exception? __exception_400 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_400 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_400 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_400 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_400,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_400,
-                    ResponseObject = __value_400,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
             // Unauthorized
             if ((int)__response.StatusCode == 401)
             {
@@ -231,120 +209,6 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
-            // Internal Server Error
-            if ((int)__response.StatusCode == 500)
-            {
-                string? __content_500 = null;
-                global::System.Exception? __exception_500 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_500 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_500 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_500 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_500,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_500,
-                    ResponseObject = __value_500,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Not Implemented
-            if ((int)__response.StatusCode == 501)
-            {
-                string? __content_501 = null;
-                global::System.Exception? __exception_501 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_501 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_501 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_501, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_501 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_501, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_501 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_501,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_501,
-                    ResponseObject = __value_501,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Bad Gateway
-            if ((int)__response.StatusCode == 502)
-            {
-                string? __content_502 = null;
-                global::System.Exception? __exception_502 = null;
-                global::LangSmith.McpVendorsErrorResponse? __value_502 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_502 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_502 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_502, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_502 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_502 = global::LangSmith.McpVendorsErrorResponse.FromJson(__content_502, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_502 = __ex;
-                }
-
-                throw new global::LangSmith.ApiException<global::LangSmith.McpVendorsErrorResponse>(
-                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_502,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_502,
-                    ResponseObject = __value_502,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
 
             if (ReadResponseAsString)
             {
@@ -358,7 +222,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGetVendorAccountForAnMcpVendorResponseContent(
+                ProcessListToolsForAVendorResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -368,7 +232,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.McpVendorsArcadeAccountResponseList.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.McpVendorsListVendorToolsResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -399,7 +263,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.McpVendorsArcadeAccountResponseList.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.McpVendorsListVendorToolsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
