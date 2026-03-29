@@ -189,12 +189,12 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationInfo" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="displayName"></param>
         /// <param name="config">
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.
         /// </param>
         /// <param name="isPersonal"></param>
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
         /// <param name="tier"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
@@ -282,10 +282,10 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             bool? ipAllowlistEnabled)
         {
-            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.IsPersonal = isPersonal;
             this.Id = id;
             this.DisplayName = displayName;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.IsPersonal = isPersonal;
             this.Tier = tier;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;

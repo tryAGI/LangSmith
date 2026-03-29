@@ -44,10 +44,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CreateClusteringJobConfigRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="config">
         /// Request to create a run clustering job.
         /// </param>
+        /// <param name="description"></param>
         /// <param name="scheduleCron"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,8 +59,8 @@ namespace LangSmith
             string? scheduleCron)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.Description = description;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ScheduleCron = scheduleCron;
         }
 

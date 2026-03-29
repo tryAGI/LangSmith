@@ -121,6 +121,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PendingIdentity" /> class.
         /// </summary>
         /// <param name="email"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
         /// <param name="roleId"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="workspaceRoleId"></param>
@@ -129,11 +131,9 @@ namespace LangSmith
         /// <param name="accessScope">
         /// Default Value: workspace
         /// </param>
-        /// <param name="id"></param>
         /// <param name="userId"></param>
         /// <param name="tenantId"></param>
         /// <param name="organizationId"></param>
-        /// <param name="createdAt"></param>
         /// <param name="roleName"></param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
@@ -158,17 +158,17 @@ namespace LangSmith
             string? orgRoleName)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.Id = id;
-            this.CreatedAt = createdAt;
             this.RoleId = roleId;
             this.WorkspaceIds = workspaceIds;
             this.WorkspaceRoleId = workspaceRoleId;
             this.Password = password;
             this.FullName = fullName;
             this.AccessScope = accessScope;
+            this.Id = id;
             this.UserId = userId;
             this.TenantId = tenantId;
             this.OrganizationId = organizationId;
+            this.CreatedAt = createdAt;
             this.RoleName = roleName;
             this.OrgRoleId = orgRoleId;
             this.OrgRoleName = orgRoleName;

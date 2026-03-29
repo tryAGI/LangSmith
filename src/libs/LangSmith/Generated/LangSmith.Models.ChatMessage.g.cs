@@ -63,6 +63,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ChatMessage" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="role"></param>
         /// <param name="additionalKwargs"></param>
         /// <param name="responseMetadata"></param>
         /// <param name="type">
@@ -70,7 +71,6 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="id"></param>
-        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,12 +84,12 @@ namespace LangSmith
             string? id)
         {
             this.Content = content;
-            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.AdditionalKwargs = additionalKwargs;
             this.ResponseMetadata = responseMetadata;
             this.Type = type;
             this.Name = name;
             this.Id = id;
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
         }
 
         /// <summary>

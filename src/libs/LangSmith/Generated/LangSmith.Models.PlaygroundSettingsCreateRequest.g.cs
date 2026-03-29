@@ -49,9 +49,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaygroundSettingsCreateRequest" /> class.
         /// </summary>
+        /// <param name="settings"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        /// <param name="settings"></param>
         /// <param name="options"></param>
         /// <param name="settingsType">
         /// Default Value: complex
@@ -66,9 +66,9 @@ namespace LangSmith
             global::LangSmith.PlaygroundSavedOptions? options,
             global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? settingsType)
         {
-            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Name = name;
             this.Description = description;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Options = options;
             this.SettingsType = settingsType;
         }

@@ -126,11 +126,11 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="operationName"></param>
-        /// <param name="resourceIds"></param>
-        /// <param name="operationSucceeded"></param>
         /// <param name="requestTime"></param>
         /// <param name="requestMethod"></param>
         /// <param name="requestPath"></param>
+        /// <param name="resourceIds"></param>
+        /// <param name="operationSucceeded"></param>
         /// <param name="clientHost"></param>
         /// <param name="clientPort"></param>
         /// <param name="xForwardedFor"></param>
@@ -165,11 +165,11 @@ namespace LangSmith
         {
             this.Id = id;
             this.OperationName = operationName ?? throw new global::System.ArgumentNullException(nameof(operationName));
+            this.ResourceIds = resourceIds;
+            this.OperationSucceeded = operationSucceeded;
             this.RequestTime = requestTime;
             this.RequestMethod = requestMethod ?? throw new global::System.ArgumentNullException(nameof(requestMethod));
             this.RequestPath = requestPath ?? throw new global::System.ArgumentNullException(nameof(requestPath));
-            this.ResourceIds = resourceIds;
-            this.OperationSucceeded = operationSucceeded;
             this.ClientHost = clientHost;
             this.ClientPort = clientPort;
             this.XForwardedFor = xForwardedFor;

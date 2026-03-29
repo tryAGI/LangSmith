@@ -66,8 +66,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ComparativeExperimentCreate" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="experimentIds"></param>
+        /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
@@ -87,8 +87,8 @@ namespace LangSmith
             global::System.Guid? referenceDatasetId,
             object? extra)
         {
-            this.ExperimentIds = experimentIds ?? throw new global::System.ArgumentNullException(nameof(experimentIds));
             this.Id = id;
+            this.ExperimentIds = experimentIds ?? throw new global::System.ArgumentNullException(nameof(experimentIds));
             this.Name = name;
             this.Description = description;
             this.CreatedAt = createdAt;

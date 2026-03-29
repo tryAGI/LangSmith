@@ -54,9 +54,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ExperimentViewOverridesColumnOverride" /> class.
         /// </summary>
+        /// <param name="column"></param>
         /// <param name="colorGradient"></param>
         /// <param name="colorMap"></param>
-        /// <param name="column"></param>
         /// <param name="disableColors"></param>
         /// <param name="hide"></param>
         /// <param name="precision"></param>
@@ -71,9 +71,9 @@ namespace LangSmith
             bool? hide,
             int? precision)
         {
-            this.Column = column ?? throw new global::System.ArgumentNullException(nameof(column));
             this.ColorGradient = colorGradient;
             this.ColorMap = colorMap;
+            this.Column = column ?? throw new global::System.ArgumentNullException(nameof(column));
             this.DisableColors = disableColors;
             this.Hide = hide;
             this.Precision = precision;

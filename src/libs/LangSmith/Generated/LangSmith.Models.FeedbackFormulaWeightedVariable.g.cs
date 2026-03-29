@@ -38,9 +38,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackFormulaWeightedVariable" /> class.
         /// </summary>
-        /// <param name="partType"></param>
         /// <param name="weight"></param>
         /// <param name="key"></param>
+        /// <param name="partType"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,9 +49,9 @@ namespace LangSmith
             string key,
             string partType = "weighted_key")
         {
+            this.PartType = partType;
             this.Weight = weight;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.PartType = partType;
         }
 
         /// <summary>

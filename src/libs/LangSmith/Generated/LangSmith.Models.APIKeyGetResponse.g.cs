@@ -77,10 +77,10 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="APIKeyGetResponse" /> class.
         /// </summary>
-        /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="shortKey"></param>
         /// <param name="description"></param>
+        /// <param name="createdAt"></param>
         /// <param name="lastUsedAt"></param>
         /// <param name="expiresAt"></param>
         /// <param name="workspaceNames"></param>
@@ -98,10 +98,10 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? workspaceNames,
             string? defaultWorkspaceName)
         {
+            this.CreatedAt = createdAt;
             this.Id = id;
             this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.CreatedAt = createdAt;
             this.LastUsedAt = lastUsedAt;
             this.ExpiresAt = expiresAt;
             this.WorkspaceNames = workspaceNames;

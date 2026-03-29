@@ -59,11 +59,11 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="GetRunClusterResponse" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="parentId"></param>
         /// <param name="numChildren"></param>
         /// <param name="level"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        /// <param name="parentId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,11 +76,11 @@ namespace LangSmith
             global::System.Guid? parentId)
         {
             this.Id = id;
+            this.ParentId = parentId;
             this.NumChildren = numChildren;
             this.Level = level;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.ParentId = parentId;
         }
 
         /// <summary>

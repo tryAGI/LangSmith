@@ -63,10 +63,10 @@ namespace LangSmith
         /// Type of usage limit.
         /// </param>
         /// <param name="limitValue"></param>
-        /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,10 +80,10 @@ namespace LangSmith
         {
             this.LimitType = limitType;
             this.LimitValue = limitValue;
+            this.Id = id;
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Id = id;
         }
 
         /// <summary>

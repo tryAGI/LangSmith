@@ -60,11 +60,11 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="config">
         /// Request to create a run clustering job.
         /// </param>
         /// <param name="prebuilt"></param>
+        /// <param name="description"></param>
         /// <param name="scheduleCron"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -79,9 +79,9 @@ namespace LangSmith
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.Prebuilt = prebuilt;
-            this.Description = description;
             this.ScheduleCron = scheduleCron;
         }
 

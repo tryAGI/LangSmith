@@ -96,6 +96,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="AnnotationQueueCreateSchema" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
@@ -108,7 +109,6 @@ namespace LangSmith
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
-        /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="defaultDataset"></param>
         /// <param name="rubricItems"></param>
@@ -133,13 +133,13 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? sessionIds,
             object? metadata)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
             this.DefaultDataset = defaultDataset;
             this.RubricItems = rubricItems;

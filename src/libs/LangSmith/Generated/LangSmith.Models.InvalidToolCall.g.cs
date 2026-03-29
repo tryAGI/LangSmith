@@ -63,13 +63,13 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidToolCall" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="args"></param>
         /// <param name="error"></param>
         /// <param name="index"></param>
         /// <param name="extras"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

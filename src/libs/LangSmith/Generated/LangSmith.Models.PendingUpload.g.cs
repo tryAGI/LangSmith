@@ -41,9 +41,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="PendingUpload" /> class.
         /// </summary>
-        /// <param name="targetCursor"></param>
         /// <param name="filePath"></param>
         /// <param name="rowsCount"></param>
+        /// <param name="targetCursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,9 +52,9 @@ namespace LangSmith
             int rowsCount,
             string? targetCursor)
         {
+            this.TargetCursor = targetCursor;
             this.FilePath = filePath ?? throw new global::System.ArgumentNullException(nameof(filePath));
             this.RowsCount = rowsCount;
-            this.TargetCursor = targetCursor;
         }
 
         /// <summary>

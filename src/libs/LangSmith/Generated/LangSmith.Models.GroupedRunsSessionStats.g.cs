@@ -222,6 +222,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupedRunsSessionStats" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="filter"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
@@ -230,7 +233,6 @@ namespace LangSmith
         /// <param name="defaultDatasetId"></param>
         /// <param name="referenceDatasetId"></param>
         /// <param name="traceTier"></param>
-        /// <param name="id"></param>
         /// <param name="runCount"></param>
         /// <param name="latencyP50"></param>
         /// <param name="latencyP99"></param>
@@ -242,7 +244,6 @@ namespace LangSmith
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
-        /// <param name="tenantId"></param>
         /// <param name="lastRunStartTime"></param>
         /// <param name="lastRunStartTimeLive"></param>
         /// <param name="feedbackStats"></param>
@@ -252,7 +253,6 @@ namespace LangSmith
         /// <param name="streamingRate"></param>
         /// <param name="testRunNumber"></param>
         /// <param name="exampleCount"></param>
-        /// <param name="filter"></param>
         /// <param name="minStartTime"></param>
         /// <param name="maxStartTime"></param>
 #if NET7_0_OR_GREATER
@@ -293,9 +293,6 @@ namespace LangSmith
             global::System.DateTime? minStartTime,
             global::System.DateTime? maxStartTime)
         {
-            this.Id = id;
-            this.TenantId = tenantId;
-            this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Extra = extra;
@@ -304,6 +301,7 @@ namespace LangSmith
             this.DefaultDatasetId = defaultDatasetId;
             this.ReferenceDatasetId = referenceDatasetId;
             this.TraceTier = traceTier;
+            this.Id = id;
             this.RunCount = runCount;
             this.LatencyP50 = latencyP50;
             this.LatencyP99 = latencyP99;
@@ -315,6 +313,7 @@ namespace LangSmith
             this.TotalCost = totalCost;
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
+            this.TenantId = tenantId;
             this.LastRunStartTime = lastRunStartTime;
             this.LastRunStartTimeLive = lastRunStartTimeLive;
             this.FeedbackStats = feedbackStats;
@@ -324,6 +323,7 @@ namespace LangSmith
             this.StreamingRate = streamingRate;
             this.TestRunNumber = testRunNumber;
             this.ExampleCount = exampleCount;
+            this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
             this.MinStartTime = minStartTime;
             this.MaxStartTime = maxStartTime;
         }

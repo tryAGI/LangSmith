@@ -44,10 +44,10 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="AlertsAlertActionBase" /> class.
         /// </summary>
-        /// <param name="alertRuleId"></param>
         /// <param name="config"></param>
-        /// <param name="id"></param>
         /// <param name="target"></param>
+        /// <param name="alertRuleId"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,10 +57,10 @@ namespace LangSmith
             string? alertRuleId,
             string? id)
         {
-            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.Target = target;
             this.AlertRuleId = alertRuleId;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.Id = id;
+            this.Target = target;
         }
 
         /// <summary>

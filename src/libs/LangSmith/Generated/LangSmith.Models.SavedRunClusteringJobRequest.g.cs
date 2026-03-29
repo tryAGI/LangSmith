@@ -94,16 +94,16 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SavedRunClusteringJobRequest" /> class.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="lastNHours"></param>
+        /// <param name="sample"></param>
+        /// <param name="model"></param>
+        /// <param name="name"></param>
         /// <param name="hierarchy"></param>
         /// <param name="partitions"></param>
-        /// <param name="sample"></param>
         /// <param name="summaryPrompt"></param>
         /// <param name="filter"></param>
         /// <param name="attributeSchemas"></param>
         /// <param name="userContext"></param>
-        /// <param name="model"></param>
         /// <param name="clusterModel"></param>
         /// <param name="summaryModel"></param>
 #if NET7_0_OR_GREATER
@@ -123,16 +123,16 @@ namespace LangSmith
             string? clusterModel,
             string? summaryModel)
         {
-            this.LastNHours = lastNHours;
-            this.Sample = sample;
-            this.Model = model;
             this.Name = name;
+            this.LastNHours = lastNHours;
             this.Hierarchy = hierarchy;
             this.Partitions = partitions;
+            this.Sample = sample;
             this.SummaryPrompt = summaryPrompt;
             this.Filter = filter;
             this.AttributeSchemas = attributeSchemas;
             this.UserContext = userContext;
+            this.Model = model;
             this.ClusterModel = clusterModel;
             this.SummaryModel = summaryModel;
         }

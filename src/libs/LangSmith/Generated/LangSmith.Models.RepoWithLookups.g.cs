@@ -195,32 +195,32 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RepoWithLookups" /> class.
         /// </summary>
         /// <param name="repoHandle"></param>
-        /// <param name="description"></param>
-        /// <param name="readme"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="isPublic"></param>
         /// <param name="isArchived"></param>
+        /// <param name="tags"></param>
+        /// <param name="repoType"></param>
+        /// <param name="fullName"></param>
+        /// <param name="numLikes"></param>
+        /// <param name="numDownloads"></param>
+        /// <param name="numViews"></param>
+        /// <param name="numCommits"></param>
+        /// <param name="description"></param>
+        /// <param name="readme"></param>
         /// <param name="restrictedMode">
         /// Default Value: false
         /// </param>
-        /// <param name="tags"></param>
         /// <param name="originalRepoId"></param>
         /// <param name="upstreamRepoId"></param>
         /// <param name="commitTags">
         /// Default Value: []
         /// </param>
-        /// <param name="repoType"></param>
         /// <param name="owner"></param>
-        /// <param name="fullName"></param>
-        /// <param name="numLikes"></param>
-        /// <param name="numDownloads"></param>
-        /// <param name="numViews"></param>
         /// <param name="likedByAuthUser"></param>
         /// <param name="lastCommitHash"></param>
-        /// <param name="numCommits"></param>
         /// <param name="createdBy"></param>
         /// <param name="originalRepoFullName"></param>
         /// <param name="upstreamRepoFullName"></param>
@@ -258,28 +258,28 @@ namespace LangSmith
             global::LangSmith.CommitManifestResponse? latestCommitManifest)
         {
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
+            this.Description = description;
+            this.Readme = readme;
             this.Id = id;
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.IsPublic = isPublic;
             this.IsArchived = isArchived;
+            this.RestrictedMode = restrictedMode;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.OriginalRepoId = originalRepoId;
+            this.UpstreamRepoId = upstreamRepoId;
+            this.CommitTags = commitTags;
             this.RepoType = repoType;
+            this.Owner = owner;
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
             this.NumLikes = numLikes;
             this.NumDownloads = numDownloads;
             this.NumViews = numViews;
-            this.NumCommits = numCommits;
-            this.Description = description;
-            this.Readme = readme;
-            this.RestrictedMode = restrictedMode;
-            this.OriginalRepoId = originalRepoId;
-            this.UpstreamRepoId = upstreamRepoId;
-            this.CommitTags = commitTags;
-            this.Owner = owner;
             this.LikedByAuthUser = likedByAuthUser;
             this.LastCommitHash = lastCommitHash;
+            this.NumCommits = numCommits;
             this.CreatedBy = createdBy;
             this.OriginalRepoFullName = originalRepoFullName;
             this.UpstreamRepoFullName = upstreamRepoFullName;

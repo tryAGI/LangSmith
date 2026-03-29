@@ -94,12 +94,12 @@ namespace LangSmith
         /// <param name="metadata"></param>
         /// <param name="id"></param>
         /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="retryNumber">
         /// Default Value: 0
         /// </param>
         /// <param name="errors"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -123,10 +123,10 @@ namespace LangSmith
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Id = id;
             this.Status = status;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.RetryNumber = retryNumber;
             this.Errors = errors;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.FinishedAt = finishedAt;
             this.StartTime = startTime;
             this.EndTime = endTime;

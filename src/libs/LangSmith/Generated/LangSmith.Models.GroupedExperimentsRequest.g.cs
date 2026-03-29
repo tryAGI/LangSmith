@@ -66,6 +66,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupedExperimentsRequest" /> class.
         /// </summary>
+        /// <param name="metadataKeys"></param>
         /// <param name="statsStartTime"></param>
         /// <param name="nameContains"></param>
         /// <param name="tagValueId"></param>
@@ -74,7 +75,6 @@ namespace LangSmith
         /// <param name="useApproxStats">
         /// Default Value: false
         /// </param>
-        /// <param name="metadataKeys"></param>
         /// <param name="experimentLimit">
         /// Default Value: 1000
         /// </param>
@@ -91,13 +91,13 @@ namespace LangSmith
             bool? useApproxStats,
             int? experimentLimit)
         {
-            this.MetadataKeys = metadataKeys ?? throw new global::System.ArgumentNullException(nameof(metadataKeys));
             this.StatsStartTime = statsStartTime;
             this.NameContains = nameContains;
             this.TagValueId = tagValueId;
             this.DatasetVersion = datasetVersion;
             this.Filter = filter;
             this.UseApproxStats = useApproxStats;
+            this.MetadataKeys = metadataKeys ?? throw new global::System.ArgumentNullException(nameof(metadataKeys));
             this.ExperimentLimit = experimentLimit;
         }
 

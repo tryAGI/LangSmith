@@ -82,14 +82,14 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ExperimentResultsUpload" /> class.
         /// </summary>
         /// <param name="experimentName"></param>
+        /// <param name="results"></param>
+        /// <param name="experimentStartTime"></param>
+        /// <param name="experimentEndTime"></param>
         /// <param name="experimentDescription"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
         /// <param name="datasetDescription"></param>
         /// <param name="summaryExperimentScores"></param>
-        /// <param name="results"></param>
-        /// <param name="experimentStartTime"></param>
-        /// <param name="experimentEndTime"></param>
         /// <param name="experimentMetadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -107,14 +107,14 @@ namespace LangSmith
             object? experimentMetadata)
         {
             this.ExperimentName = experimentName ?? throw new global::System.ArgumentNullException(nameof(experimentName));
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
-            this.ExperimentStartTime = experimentStartTime;
-            this.ExperimentEndTime = experimentEndTime;
             this.ExperimentDescription = experimentDescription;
             this.DatasetId = datasetId;
             this.DatasetName = datasetName;
             this.DatasetDescription = datasetDescription;
             this.SummaryExperimentScores = summaryExperimentScores;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.ExperimentStartTime = experimentStartTime;
+            this.ExperimentEndTime = experimentEndTime;
             this.ExperimentMetadata = experimentMetadata;
         }
 

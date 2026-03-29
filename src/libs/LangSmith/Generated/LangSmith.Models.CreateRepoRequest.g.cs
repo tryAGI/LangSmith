@@ -63,9 +63,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CreateRepoRequest" /> class.
         /// </summary>
         /// <param name="repoHandle"></param>
+        /// <param name="isPublic"></param>
         /// <param name="description"></param>
         /// <param name="readme"></param>
-        /// <param name="isPublic"></param>
         /// <param name="tags"></param>
         /// <param name="repoType">
         /// Default Value: prompt
@@ -84,9 +84,9 @@ namespace LangSmith
             bool? restrictedMode)
         {
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
-            this.IsPublic = isPublic;
             this.Description = description;
             this.Readme = readme;
+            this.IsPublic = isPublic;
             this.Tags = tags;
             this.RepoType = repoType;
             this.RestrictedMode = restrictedMode;

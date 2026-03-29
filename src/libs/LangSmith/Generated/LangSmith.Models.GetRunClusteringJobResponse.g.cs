@@ -97,14 +97,14 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="clusters"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="createdAt"></param>
         /// <param name="metadata"></param>
         /// <param name="shape"></param>
         /// <param name="error"></param>
         /// <param name="configId"></param>
-        /// <param name="clusters"></param>
         /// <param name="report"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -126,14 +126,14 @@ namespace LangSmith
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.CreatedAt = createdAt;
-            this.Clusters = clusters ?? throw new global::System.ArgumentNullException(nameof(clusters));
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.CreatedAt = createdAt;
             this.Metadata = metadata;
             this.Shape = shape;
             this.Error = error;
             this.ConfigId = configId;
+            this.Clusters = clusters ?? throw new global::System.ArgumentNullException(nameof(clusters));
             this.Report = report;
         }
 

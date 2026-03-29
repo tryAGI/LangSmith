@@ -71,12 +71,12 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunCluster" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="parentId"></param>
         /// <param name="level"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        /// <param name="parentName"></param>
         /// <param name="numRuns"></param>
+        /// <param name="parentId"></param>
+        /// <param name="parentName"></param>
         /// <param name="stats"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -92,12 +92,12 @@ namespace LangSmith
             object? stats)
         {
             this.Id = id;
+            this.ParentId = parentId;
             this.Level = level;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.NumRuns = numRuns;
-            this.ParentId = parentId;
             this.ParentName = parentName;
+            this.NumRuns = numRuns;
             this.Stats = stats;
         }
 

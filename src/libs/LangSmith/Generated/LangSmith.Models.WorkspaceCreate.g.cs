@@ -36,8 +36,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceCreate" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="displayName"></param>
+        /// <param name="id"></param>
         /// <param name="tenantHandle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace LangSmith
             global::System.Guid? id,
             string? tenantHandle)
         {
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.TenantHandle = tenantHandle;
         }
 

@@ -50,11 +50,11 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesProxyRule" /> class.
         /// </summary>
-        /// <param name="enabled"></param>
         /// <param name="injectHeaders"></param>
         /// <param name="matchHosts"></param>
-        /// <param name="matchPaths"></param>
         /// <param name="name"></param>
+        /// <param name="enabled"></param>
+        /// <param name="matchPaths"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,11 +65,11 @@ namespace LangSmith
             bool? enabled,
             global::System.Collections.Generic.IList<string>? matchPaths)
         {
+            this.Enabled = enabled;
             this.InjectHeaders = injectHeaders ?? throw new global::System.ArgumentNullException(nameof(injectHeaders));
             this.MatchHosts = matchHosts ?? throw new global::System.ArgumentNullException(nameof(matchHosts));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Enabled = enabled;
             this.MatchPaths = matchPaths;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

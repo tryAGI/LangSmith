@@ -75,9 +75,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="BasicAuthMemberCreate" /> class.
         /// </summary>
+        /// <param name="email"></param>
         /// <param name="userId"></param>
         /// <param name="lsUserId"></param>
-        /// <param name="email"></param>
         /// <param name="roleId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
@@ -96,9 +96,9 @@ namespace LangSmith
             global::System.Guid? workspaceRoleId,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds)
         {
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.UserId = userId;
             this.LsUserId = lsUserId;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.RoleId = roleId;
             this.Password = password;
             this.FullName = fullName;
