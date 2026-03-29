@@ -104,8 +104,8 @@ namespace LangSmith
                 .AddOptionalParameter("emails", emails, delimiter: ",", explode: true)
                 .AddOptionalParameter("q", q)
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
-                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
-                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                 .AddOptionalParameter("is_disabled", isDisabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 ; 

@@ -64,7 +64,7 @@ namespace LangSmith
             __pathBuilder
                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddRequiredParameter("workspace_ids", workspaceIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddRequiredParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                 .AddOptionalParameter("group_by", groupBy?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
