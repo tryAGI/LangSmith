@@ -57,10 +57,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="HighlightedRun" /> class.
         /// </summary>
         /// <param name="runId"></param>
-        /// <param name="clusterId"></param>
-        /// <param name="clusterName"></param>
         /// <param name="rank"></param>
         /// <param name="highlightReason"></param>
+        /// <param name="clusterId"></param>
+        /// <param name="clusterName"></param>
         /// <param name="summary"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,10 +74,10 @@ namespace LangSmith
             string? summary)
         {
             this.RunId = runId;
-            this.Rank = rank;
-            this.HighlightReason = highlightReason ?? throw new global::System.ArgumentNullException(nameof(highlightReason));
             this.ClusterId = clusterId;
             this.ClusterName = clusterName;
+            this.Rank = rank;
+            this.HighlightReason = highlightReason ?? throw new global::System.ArgumentNullException(nameof(highlightReason));
             this.Summary = summary;
         }
 

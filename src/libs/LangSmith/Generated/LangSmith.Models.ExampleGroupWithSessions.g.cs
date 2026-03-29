@@ -149,6 +149,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ExampleGroupWithSessions" /> class.
         /// </summary>
         /// <param name="filter"></param>
+        /// <param name="groupKey"></param>
+        /// <param name="sessions"></param>
+        /// <param name="examples"></param>
+        /// <param name="exampleCount"></param>
         /// <param name="count"></param>
         /// <param name="totalTokens"></param>
         /// <param name="totalCost"></param>
@@ -157,10 +161,6 @@ namespace LangSmith
         /// <param name="latencyP50"></param>
         /// <param name="latencyP99"></param>
         /// <param name="feedbackStats"></param>
-        /// <param name="groupKey"></param>
-        /// <param name="sessions"></param>
-        /// <param name="examples"></param>
-        /// <param name="exampleCount"></param>
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
         /// <param name="promptCost"></param>
@@ -190,10 +190,6 @@ namespace LangSmith
             double? errorRate)
         {
             this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
-            this.GroupKey = groupKey;
-            this.Sessions = sessions ?? throw new global::System.ArgumentNullException(nameof(sessions));
-            this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
-            this.ExampleCount = exampleCount;
             this.Count = count;
             this.TotalTokens = totalTokens;
             this.TotalCost = totalCost;
@@ -202,6 +198,10 @@ namespace LangSmith
             this.LatencyP50 = latencyP50;
             this.LatencyP99 = latencyP99;
             this.FeedbackStats = feedbackStats;
+            this.GroupKey = groupKey;
+            this.Sessions = sessions ?? throw new global::System.ArgumentNullException(nameof(sessions));
+            this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
+            this.ExampleCount = exampleCount;
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.PromptCost = promptCost;

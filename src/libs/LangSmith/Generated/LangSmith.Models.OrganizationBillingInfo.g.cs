@@ -112,7 +112,6 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationBillingInfo" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="displayName"></param>
         /// <param name="config">
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.
@@ -120,6 +119,7 @@ namespace LangSmith
         /// <param name="connectedToStripe"></param>
         /// <param name="connectedToMetronome"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="id"></param>
         /// <param name="tier"></param>
         /// <param name="paymentMethod"></param>
         /// <param name="endOfBillingPeriod"></param>
@@ -155,12 +155,12 @@ namespace LangSmith
             bool? defaultSsoProvision,
             global::LangSmith.PlusPlanTransitionInfo? plusPlanTransition)
         {
+            this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ConnectedToStripe = connectedToStripe;
             this.ConnectedToMetronome = connectedToMetronome;
             this.IsPersonal = isPersonal;
-            this.Id = id;
             this.Tier = tier;
             this.PaymentMethod = paymentMethod;
             this.EndOfBillingPeriod = endOfBillingPeriod;

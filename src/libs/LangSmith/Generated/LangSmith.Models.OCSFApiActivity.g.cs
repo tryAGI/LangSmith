@@ -158,14 +158,8 @@ namespace LangSmith
         /// <param name="classUid">
         /// OCSF class UIDs.
         /// </param>
-        /// <param name="className">
-        /// OCSF class names.
-        /// </param>
         /// <param name="categoryUid">
         /// OCSF category UIDs.
-        /// </param>
-        /// <param name="categoryName">
-        /// OCSF category names.
         /// </param>
         /// <param name="severityId">
         /// Severity levels for OCSF events.
@@ -205,6 +199,12 @@ namespace LangSmith
         /// OCSF unmapped attribute for source-specific data.<br/>
         /// Reference: https://schema.ocsf.io/1.7.0/classes/base_event
         /// </param>
+        /// <param name="className">
+        /// OCSF class names.
+        /// </param>
+        /// <param name="categoryName">
+        /// OCSF category names.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -230,7 +230,9 @@ namespace LangSmith
             global::LangSmith.OCSFCategoryName categoryName)
         {
             this.ClassUid = classUid;
+            this.ClassName = className;
             this.CategoryUid = categoryUid;
+            this.CategoryName = categoryName;
             this.SeverityId = severityId;
             this.TypeUid = typeUid;
             this.ActivityId = activityId;
@@ -246,8 +248,6 @@ namespace LangSmith
             this.SrcEndpoint = srcEndpoint ?? throw new global::System.ArgumentNullException(nameof(srcEndpoint));
             this.Resources = resources ?? throw new global::System.ArgumentNullException(nameof(resources));
             this.Unmapped = unmapped ?? throw new global::System.ArgumentNullException(nameof(unmapped));
-            this.ClassName = className;
-            this.CategoryName = categoryName;
         }
 
         /// <summary>

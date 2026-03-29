@@ -52,10 +52,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="TagKey" /> class.
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,10 +67,10 @@ namespace LangSmith
             string? description)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Description = description;
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description;
         }
 
         /// <summary>

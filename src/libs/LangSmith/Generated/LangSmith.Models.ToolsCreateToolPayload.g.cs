@@ -64,11 +64,11 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ToolsCreateToolPayload" /> class.
         /// </summary>
         /// <param name="description"></param>
-        /// <param name="enabled"></param>
         /// <param name="handle"></param>
-        /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="parameters"></param>
+        /// <param name="enabled"></param>
+        /// <param name="metadata"></param>
         /// <param name="returns"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -83,11 +83,11 @@ namespace LangSmith
             object? returns)
         {
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Enabled = enabled;
             this.Handle = handle ?? throw new global::System.ArgumentNullException(nameof(handle));
+            this.Metadata = metadata;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
-            this.Enabled = enabled;
-            this.Metadata = metadata;
             this.Returns = returns;
         }
 

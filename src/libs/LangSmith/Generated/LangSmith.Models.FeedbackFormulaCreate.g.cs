@@ -51,11 +51,11 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackFormulaCreate" /> class.
         /// </summary>
-        /// <param name="datasetId"></param>
-        /// <param name="sessionId"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="aggregationType"></param>
         /// <param name="formulaParts"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="sessionId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,11 +66,11 @@ namespace LangSmith
             global::System.Guid? datasetId,
             global::System.Guid? sessionId)
         {
+            this.DatasetId = datasetId;
+            this.SessionId = sessionId;
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.AggregationType = aggregationType;
             this.FormulaParts = formulaParts ?? throw new global::System.ArgumentNullException(nameof(formulaParts));
-            this.DatasetId = datasetId;
-            this.SessionId = sessionId;
         }
 
         /// <summary>

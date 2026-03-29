@@ -357,11 +357,17 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunSchema" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="inputs"></param>
-        /// <param name="inputsPreview"></param>
         /// <param name="runType">
         /// Enum for run types.
         /// </param>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="appPath"></param>
+        /// <param name="inputs"></param>
+        /// <param name="inputsPreview"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
@@ -380,12 +386,8 @@ namespace LangSmith
         /// <param name="inputsS3Urls"></param>
         /// <param name="outputsS3Urls"></param>
         /// <param name="s3Urls"></param>
-        /// <param name="traceId"></param>
-        /// <param name="dottedOrder"></param>
         /// <param name="traceMinStartTime"></param>
         /// <param name="traceMaxStartTime"></param>
-        /// <param name="id"></param>
-        /// <param name="status"></param>
         /// <param name="childRunIds"></param>
         /// <param name="directChildRunIds"></param>
         /// <param name="parentRunIds"></param>
@@ -410,8 +412,6 @@ namespace LangSmith
         /// <param name="priceModelId"></param>
         /// <param name="firstTokenTime"></param>
         /// <param name="messages"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="appPath"></param>
         /// <param name="lastQueuedAt"></param>
         /// <param name="inDataset"></param>
         /// <param name="shareToken"></param>
@@ -484,15 +484,9 @@ namespace LangSmith
             string? threadId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.RunType = runType;
-            this.TraceId = traceId;
-            this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));
-            this.Id = id;
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.SessionId = sessionId;
-            this.AppPath = appPath ?? throw new global::System.ArgumentNullException(nameof(appPath));
             this.Inputs = inputs;
             this.InputsPreview = inputsPreview;
+            this.RunType = runType;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Extra = extra;
@@ -509,8 +503,12 @@ namespace LangSmith
             this.InputsS3Urls = inputsS3Urls;
             this.OutputsS3Urls = outputsS3Urls;
             this.S3Urls = s3Urls;
+            this.TraceId = traceId;
+            this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));
             this.TraceMinStartTime = traceMinStartTime;
             this.TraceMaxStartTime = traceMaxStartTime;
+            this.Id = id;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.ChildRunIds = childRunIds;
             this.DirectChildRunIds = directChildRunIds;
             this.ParentRunIds = parentRunIds;
@@ -529,6 +527,8 @@ namespace LangSmith
             this.PriceModelId = priceModelId;
             this.FirstTokenTime = firstTokenTime;
             this.Messages = messages;
+            this.SessionId = sessionId;
+            this.AppPath = appPath ?? throw new global::System.ArgumentNullException(nameof(appPath));
             this.LastQueuedAt = lastQueuedAt;
             this.InDataset = inDataset;
             this.ShareToken = shareToken;

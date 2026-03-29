@@ -49,10 +49,10 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackIngestTokenCreateSchema" /> class.
         /// </summary>
-        /// <param name="expiresIn"></param>
-        /// <param name="expiresAt"></param>
         /// <param name="runId"></param>
         /// <param name="feedbackKey"></param>
+        /// <param name="expiresIn"></param>
+        /// <param name="expiresAt"></param>
         /// <param name="feedbackConfig"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,10 +64,10 @@ namespace LangSmith
             global::System.DateTime? expiresAt,
             global::LangSmith.FeedbackConfig? feedbackConfig)
         {
-            this.RunId = runId;
-            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.ExpiresIn = expiresIn;
             this.ExpiresAt = expiresAt;
+            this.RunId = runId;
+            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.FeedbackConfig = feedbackConfig;
         }
 

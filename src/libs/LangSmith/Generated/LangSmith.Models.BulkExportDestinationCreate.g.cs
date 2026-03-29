@@ -44,11 +44,11 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkExportDestinationCreate" /> class.
         /// </summary>
+        /// <param name="displayName"></param>
+        /// <param name="config"></param>
         /// <param name="destinationType">
         /// Default Value: s3
         /// </param>
-        /// <param name="displayName"></param>
-        /// <param name="config"></param>
         /// <param name="credentials"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,9 +59,9 @@ namespace LangSmith
             global::LangSmith.BulkExportDestinationType? destinationType,
             global::LangSmith.BulkExportDestinationS3Credentials? credentials)
         {
+            this.DestinationType = destinationType;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.DestinationType = destinationType;
             this.Credentials = credentials;
         }
 

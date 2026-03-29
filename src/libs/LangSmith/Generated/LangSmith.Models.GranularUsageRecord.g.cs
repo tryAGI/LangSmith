@@ -36,10 +36,10 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="GranularUsageRecord" /> class.
         /// </summary>
-        /// <param name="timeBucket"></param>
         /// <param name="dimensions">
         /// Dimension values for a granular usage record.
         /// </param>
+        /// <param name="timeBucket"></param>
         /// <param name="traces">
         /// Default Value: 0
         /// </param>
@@ -51,8 +51,8 @@ namespace LangSmith
             global::System.DateTime? timeBucket,
             int? traces)
         {
-            this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
             this.TimeBucket = timeBucket;
+            this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
             this.Traces = traces;
         }
 

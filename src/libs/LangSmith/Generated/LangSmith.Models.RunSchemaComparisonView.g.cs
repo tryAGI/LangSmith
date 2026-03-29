@@ -247,11 +247,15 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunSchemaComparisonView" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="inputs"></param>
-        /// <param name="inputsPreview"></param>
         /// <param name="runType">
         /// Enum for run types.
         /// </param>
+        /// <param name="traceId"></param>
+        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="status"></param>
+        /// <param name="inputs"></param>
+        /// <param name="inputsPreview"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
@@ -270,12 +274,9 @@ namespace LangSmith
         /// <param name="inputsS3Urls"></param>
         /// <param name="outputsS3Urls"></param>
         /// <param name="s3Urls"></param>
-        /// <param name="traceId"></param>
         /// <param name="dottedOrder"></param>
         /// <param name="traceMinStartTime"></param>
         /// <param name="traceMaxStartTime"></param>
-        /// <param name="id"></param>
-        /// <param name="sessionId"></param>
         /// <param name="referenceExampleId"></param>
         /// <param name="totalTokens"></param>
         /// <param name="promptTokens"></param>
@@ -283,7 +284,6 @@ namespace LangSmith
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
-        /// <param name="status"></param>
         /// <param name="feedbackStats"></param>
         /// <param name="appPath"></param>
         /// <param name="feedbacks"></param>
@@ -330,13 +330,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? feedbacks)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.RunType = runType;
-            this.TraceId = traceId;
-            this.Id = id;
-            this.SessionId = sessionId;
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Inputs = inputs;
             this.InputsPreview = inputsPreview;
+            this.RunType = runType;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Extra = extra;
@@ -353,9 +349,12 @@ namespace LangSmith
             this.InputsS3Urls = inputsS3Urls;
             this.OutputsS3Urls = outputsS3Urls;
             this.S3Urls = s3Urls;
+            this.TraceId = traceId;
             this.DottedOrder = dottedOrder;
             this.TraceMinStartTime = traceMinStartTime;
             this.TraceMaxStartTime = traceMaxStartTime;
+            this.Id = id;
+            this.SessionId = sessionId;
             this.ReferenceExampleId = referenceExampleId;
             this.TotalTokens = totalTokens;
             this.PromptTokens = promptTokens;
@@ -363,6 +362,7 @@ namespace LangSmith
             this.TotalCost = totalCost;
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.FeedbackStats = feedbackStats;
             this.AppPath = appPath;
             this.Feedbacks = feedbacks;

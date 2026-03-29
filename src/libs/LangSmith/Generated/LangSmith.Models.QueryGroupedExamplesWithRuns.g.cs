@@ -70,6 +70,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="QueryGroupedExamplesWithRuns" /> class.
         /// </summary>
         /// <param name="sessionIds"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="metadataKey"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
@@ -79,8 +81,6 @@ namespace LangSmith
         /// <param name="preview">
         /// Default Value: false
         /// </param>
-        /// <param name="groupBy"></param>
-        /// <param name="metadataKey"></param>
         /// <param name="perGroupLimit">
         /// Default Value: 5
         /// </param>
@@ -99,11 +99,11 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
-            this.GroupBy = groupBy;
-            this.MetadataKey = metadataKey ?? throw new global::System.ArgumentNullException(nameof(metadataKey));
             this.Offset = offset;
             this.Limit = limit;
             this.Preview = preview;
+            this.GroupBy = groupBy;
+            this.MetadataKey = metadataKey ?? throw new global::System.ArgumentNullException(nameof(metadataKey));
             this.PerGroupLimit = perGroupLimit;
             this.Filters = filters;
         }

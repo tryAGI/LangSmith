@@ -77,13 +77,13 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="tracingCompletedAt"></param>
         /// <param name="lgstudioCompletedAt"></param>
         /// <param name="playgroundCompletedAt"></param>
         /// <param name="evaluationCompletedAt"></param>
         /// <param name="successViewedAt"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,13 +100,13 @@ namespace LangSmith
         {
             this.Id = id;
             this.LsUserId = lsUserId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.TracingCompletedAt = tracingCompletedAt;
             this.LgstudioCompletedAt = lgstudioCompletedAt;
             this.PlaygroundCompletedAt = playgroundCompletedAt;
             this.EvaluationCompletedAt = evaluationCompletedAt;
             this.SuccessViewedAt = successViewedAt;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

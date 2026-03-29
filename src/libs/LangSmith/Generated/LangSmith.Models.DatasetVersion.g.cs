@@ -30,8 +30,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetVersion" /> class.
         /// </summary>
-        /// <param name="tags"></param>
         /// <param name="asOf"></param>
+        /// <param name="tags"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -39,8 +39,8 @@ namespace LangSmith
             global::System.DateTime asOf,
             global::System.Collections.Generic.IList<string>? tags)
         {
-            this.AsOf = asOf;
             this.Tags = tags;
+            this.AsOf = asOf;
         }
 
         /// <summary>

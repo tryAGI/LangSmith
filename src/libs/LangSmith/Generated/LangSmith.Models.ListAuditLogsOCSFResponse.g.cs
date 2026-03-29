@@ -30,8 +30,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ListAuditLogsOCSFResponse" /> class.
         /// </summary>
-        /// <param name="cursor"></param>
         /// <param name="items"></param>
+        /// <param name="cursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -39,8 +39,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.OCSFApiActivity> items,
             string? cursor)
         {
-            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.Cursor = cursor;
+            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
         }
 
         /// <summary>

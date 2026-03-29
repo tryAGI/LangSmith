@@ -254,6 +254,11 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="displayName"></param>
+        /// <param name="samplingRate"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="evaluatorVersion"></param>
         /// <param name="isEnabled">
         /// Default Value: true
         /// </param>
@@ -261,8 +266,6 @@ namespace LangSmith
         /// <param name="sessionName"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
-        /// <param name="displayName"></param>
-        /// <param name="samplingRate"></param>
         /// <param name="filter"></param>
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
@@ -288,8 +291,6 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
         /// <param name="backfillStatus"></param>
         /// <param name="backfillProgress"></param>
@@ -298,7 +299,6 @@ namespace LangSmith
         /// <param name="transient">
         /// Default Value: false
         /// </param>
-        /// <param name="evaluatorVersion"></param>
         /// <param name="evaluatorId"></param>
         /// <param name="alignmentAnnotationQueueId"></param>
         /// <param name="groupBy"></param>
@@ -347,16 +347,13 @@ namespace LangSmith
         {
             this.Id = id;
             this.TenantId = tenantId;
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.SamplingRate = samplingRate;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.EvaluatorVersion = evaluatorVersion;
             this.IsEnabled = isEnabled;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
             this.DatasetId = datasetId;
             this.DatasetName = datasetName;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.SamplingRate = samplingRate;
             this.Filter = filter;
             this.TraceFilter = traceFilter;
             this.TreeFilter = treeFilter;
@@ -374,12 +371,15 @@ namespace LangSmith
             this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;
             this.IncludeExtendedStats = includeExtendedStats;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.BackfillFrom = backfillFrom;
             this.BackfillStatus = backfillStatus;
             this.BackfillProgress = backfillProgress;
             this.BackfillError = backfillError;
             this.BackfillCompletedAt = backfillCompletedAt;
             this.Transient = transient;
+            this.EvaluatorVersion = evaluatorVersion;
             this.EvaluatorId = evaluatorId;
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
             this.GroupBy = groupBy;

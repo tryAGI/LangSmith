@@ -51,11 +51,11 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="RepoOwner" /> class.
         /// </summary>
-        /// <param name="identityId"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="identityId"></param>
         /// <param name="email"></param>
         /// <param name="fullName"></param>
-        /// <param name="createdAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,11 +66,11 @@ namespace LangSmith
             string? email,
             string? fullName)
         {
-            this.LsUserId = lsUserId;
-            this.CreatedAt = createdAt;
             this.IdentityId = identityId;
+            this.LsUserId = lsUserId;
             this.Email = email;
             this.FullName = fullName;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

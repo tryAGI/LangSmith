@@ -77,14 +77,14 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PromptWebhook" /> class.
         /// </summary>
         /// <param name="url"></param>
-        /// <param name="headers"></param>
-        /// <param name="includePrompts"></param>
-        /// <param name="excludePrompts"></param>
-        /// <param name="triggers"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="headers"></param>
+        /// <param name="includePrompts"></param>
+        /// <param name="excludePrompts"></param>
+        /// <param name="triggers"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,14 +100,14 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.EPromptWebhookTrigger>? triggers)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Id = id;
-            this.TenantId = tenantId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Headers = headers;
             this.IncludePrompts = includePrompts;
             this.ExcludePrompts = excludePrompts;
             this.Triggers = triggers;
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

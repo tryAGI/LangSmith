@@ -62,9 +62,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CustomChartsSectionResponse" /> class.
         /// </summary>
         /// <param name="title"></param>
+        /// <param name="id"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
-        /// <param name="id"></param>
         /// <param name="chartCount"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -81,9 +81,9 @@ namespace LangSmith
             global::System.DateTime? modifiedAt)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Id = id;
             this.Description = description;
             this.Index = index;
+            this.Id = id;
             this.ChartCount = chartCount;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;

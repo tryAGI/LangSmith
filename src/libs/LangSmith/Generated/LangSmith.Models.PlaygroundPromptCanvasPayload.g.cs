@@ -70,13 +70,13 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PlaygroundPromptCanvasPayload" /> class.
         /// </summary>
         /// <param name="messages"></param>
+        /// <param name="templateFormat"></param>
+        /// <param name="secrets"></param>
         /// <param name="highlighted"></param>
         /// <param name="artifact"></param>
         /// <param name="artifactLength"></param>
         /// <param name="readingLevel"></param>
         /// <param name="customAction"></param>
-        /// <param name="templateFormat"></param>
-        /// <param name="secrets"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,13 +91,13 @@ namespace LangSmith
             string? customAction)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.TemplateFormat = templateFormat;
-            this.Secrets = secrets ?? throw new global::System.ArgumentNullException(nameof(secrets));
             this.Highlighted = highlighted;
             this.Artifact = artifact;
             this.ArtifactLength = artifactLength;
             this.ReadingLevel = readingLevel;
             this.CustomAction = customAction;
+            this.TemplateFormat = templateFormat;
+            this.Secrets = secrets ?? throw new global::System.ArgumentNullException(nameof(secrets));
         }
 
         /// <summary>

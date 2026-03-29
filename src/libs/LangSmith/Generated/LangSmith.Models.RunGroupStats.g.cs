@@ -192,6 +192,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="RunGroupStats" /> class.
         /// </summary>
+        /// <param name="groupCount"></param>
         /// <param name="runCount"></param>
         /// <param name="latencyP50"></param>
         /// <param name="latencyP99"></param>
@@ -220,7 +221,6 @@ namespace LangSmith
         /// <param name="completionTokenDetails"></param>
         /// <param name="promptCostDetails"></param>
         /// <param name="completionCostDetails"></param>
-        /// <param name="groupCount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -255,7 +255,6 @@ namespace LangSmith
             object? promptCostDetails,
             object? completionCostDetails)
         {
-            this.GroupCount = groupCount;
             this.RunCount = runCount;
             this.LatencyP50 = latencyP50;
             this.LatencyP99 = latencyP99;
@@ -284,6 +283,7 @@ namespace LangSmith
             this.CompletionTokenDetails = completionTokenDetails;
             this.PromptCostDetails = promptCostDetails;
             this.CompletionCostDetails = completionCostDetails;
+            this.GroupCount = groupCount;
         }
 
         /// <summary>

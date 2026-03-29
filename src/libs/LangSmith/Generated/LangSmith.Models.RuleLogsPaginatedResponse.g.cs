@@ -38,8 +38,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RuleLogsPaginatedResponse" /> class.
         /// </summary>
         /// <param name="logs"></param>
-        /// <param name="cursor"></param>
         /// <param name="hasMore"></param>
+        /// <param name="cursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,8 +49,8 @@ namespace LangSmith
             string? cursor)
         {
             this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
-            this.HasMore = hasMore;
             this.Cursor = cursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

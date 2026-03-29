@@ -60,10 +60,10 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesCreateClaimPayload" /> class.
         /// </summary>
+        /// <param name="templateName"></param>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
-        /// <param name="templateName"></param>
         /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="waitForReady"></param>
@@ -79,10 +79,10 @@ namespace LangSmith
             int? ttlSeconds,
             bool? waitForReady)
         {
-            this.TemplateName = templateName ?? throw new global::System.ArgumentNullException(nameof(templateName));
             this.IdleTtlSeconds = idleTtlSeconds;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
+            this.TemplateName = templateName ?? throw new global::System.ArgumentNullException(nameof(templateName));
             this.Timeout = timeout;
             this.TtlSeconds = ttlSeconds;
             this.WaitForReady = waitForReady;

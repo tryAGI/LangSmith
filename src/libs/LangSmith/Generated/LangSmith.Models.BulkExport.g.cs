@@ -135,6 +135,11 @@ namespace LangSmith
         /// <param name="bulkExportDestinationId"></param>
         /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
         /// <param name="format">
@@ -149,11 +154,6 @@ namespace LangSmith
         /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
-        /// <param name="status"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
         /// <param name="sourceBulkExportId"></param>
 #if NET7_0_OR_GREATER
@@ -181,11 +181,6 @@ namespace LangSmith
             this.BulkExportDestinationId = bulkExportDestinationId;
             this.SessionId = sessionId;
             this.StartTime = startTime;
-            this.Id = id;
-            this.TenantId = tenantId;
-            this.Status = status;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.EndTime = endTime;
             this.Filter = filter;
             this.Format = format;
@@ -193,6 +188,11 @@ namespace LangSmith
             this.Compression = compression;
             this.IntervalHours = intervalHours;
             this.ExportFields = exportFields;
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.FinishedAt = finishedAt;
             this.SourceBulkExportId = sourceBulkExportId;
         }

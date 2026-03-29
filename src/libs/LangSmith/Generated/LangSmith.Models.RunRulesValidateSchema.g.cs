@@ -196,12 +196,12 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunRulesValidateSchema" /> class.
         /// </summary>
         /// <param name="displayName"></param>
+        /// <param name="samplingRate"></param>
         /// <param name="sessionId"></param>
         /// <param name="isEnabled">
         /// Default Value: true
         /// </param>
         /// <param name="datasetId"></param>
-        /// <param name="samplingRate"></param>
         /// <param name="filter"></param>
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
@@ -273,10 +273,10 @@ namespace LangSmith
             object? testAttachments)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.SamplingRate = samplingRate;
             this.SessionId = sessionId;
             this.IsEnabled = isEnabled;
             this.DatasetId = datasetId;
+            this.SamplingRate = samplingRate;
             this.Filter = filter;
             this.TraceFilter = traceFilter;
             this.TreeFilter = treeFilter;

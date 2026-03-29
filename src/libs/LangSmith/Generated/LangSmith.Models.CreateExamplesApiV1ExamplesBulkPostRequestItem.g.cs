@@ -86,8 +86,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateExamplesApiV1ExamplesBulkPostRequestItem" /> class.
         /// </summary>
-        /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
+        /// <param name="outputs"></param>
         /// <param name="sourceRunId"></param>
         /// <param name="metadata"></param>
         /// <param name="inputs"></param>
@@ -122,8 +122,8 @@ namespace LangSmith
             bool? useLegacyMessageFormat,
             string? createdAt)
         {
-            this.DatasetId = datasetId;
             this.Outputs = outputs;
+            this.DatasetId = datasetId;
             this.SourceRunId = sourceRunId;
             this.Metadata = metadata;
             this.Inputs = inputs;

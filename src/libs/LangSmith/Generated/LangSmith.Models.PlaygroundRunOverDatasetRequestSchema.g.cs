@@ -158,11 +158,6 @@ namespace LangSmith
         /// </summary>
         /// <param name="manifest"></param>
         /// <param name="secrets"></param>
-        /// <param name="runId"></param>
-        /// <param name="repoId"></param>
-        /// <param name="tools"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="parallelToolCalls"></param>
         /// <param name="options">
         /// Configuration for a `Runnable`.<br/>
         /// !!! note Custom values<br/>
@@ -181,6 +176,12 @@ namespace LangSmith
         ///         ```
         /// </param>
         /// <param name="projectName"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="runId"></param>
+        /// <param name="repoId"></param>
+        /// <param name="tools"></param>
+        /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
         /// <param name="repoHandle"></param>
         /// <param name="owner"></param>
         /// <param name="commit"></param>
@@ -192,7 +193,6 @@ namespace LangSmith
         /// <param name="runnerContext">
         /// Default Value: langsmith_ui
         /// </param>
-        /// <param name="datasetId"></param>
         /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
         /// Default Value: 1
@@ -225,14 +225,13 @@ namespace LangSmith
         {
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.Secrets = secrets ?? throw new global::System.ArgumentNullException(nameof(secrets));
-            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            this.ProjectName = projectName ?? throw new global::System.ArgumentNullException(nameof(projectName));
-            this.DatasetId = datasetId;
             this.RunId = runId;
             this.RepoId = repoId;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
             this.ParallelToolCalls = parallelToolCalls;
+            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            this.ProjectName = projectName ?? throw new global::System.ArgumentNullException(nameof(projectName));
             this.RepoHandle = repoHandle;
             this.Owner = owner;
             this.Commit = commit;
@@ -240,6 +239,7 @@ namespace LangSmith
             this.RequestsPerSecond = requestsPerSecond;
             this.UseOrFallbackToWorkspaceSecrets = useOrFallbackToWorkspaceSecrets;
             this.RunnerContext = runnerContext;
+            this.DatasetId = datasetId;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
             this.Metadata = metadata;

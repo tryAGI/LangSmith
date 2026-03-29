@@ -99,9 +99,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackCreateCoreSchema" /> class.
         /// </summary>
+        /// <param name="key"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
-        /// <param name="key"></param>
         /// <param name="score"></param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
@@ -130,9 +130,9 @@ namespace LangSmith
             global::LangSmith.FeedbackConfig? feedbackConfig,
             object? extra)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Score = score;
             this.Value = value;
             this.Comment = comment;

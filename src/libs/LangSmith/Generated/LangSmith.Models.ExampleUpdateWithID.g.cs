@@ -67,6 +67,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ExampleUpdateWithID" /> class.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
@@ -76,7 +77,6 @@ namespace LangSmith
         /// <param name="overwrite">
         /// Default Value: false
         /// </param>
-        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +90,6 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
             bool? overwrite)
         {
-            this.Id = id;
             this.DatasetId = datasetId;
             this.Inputs = inputs;
             this.Outputs = outputs;
@@ -98,6 +97,7 @@ namespace LangSmith
             this.Metadata = metadata;
             this.Split = split;
             this.Overwrite = overwrite;
+            this.Id = id;
         }
 
         /// <summary>

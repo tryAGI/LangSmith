@@ -132,23 +132,23 @@ namespace LangSmith
         /// </summary>
         /// <param name="aggregation"></param>
         /// <param name="attribute"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="denominatorFilter"></param>
         /// <param name="description"></param>
-        /// <param name="filter"></param>
-        /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="operator"></param>
+        /// <param name="type"></param>
+        /// <param name="windowMinutes">
+        /// max 15 minutes for alert rule
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="denominatorFilter"></param>
+        /// <param name="filter"></param>
+        /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
         /// <param name="threshold"></param>
         /// <param name="thresholdMultiplier"></param>
         /// <param name="thresholdWindowMinutes"></param>
-        /// <param name="type"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="windowMinutes">
-        /// max 15 minutes for alert rule
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -173,21 +173,21 @@ namespace LangSmith
         {
             this.Aggregation = aggregation;
             this.Attribute = attribute;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Operator = @operator;
-            this.Type = type;
-            this.WindowMinutes = windowMinutes;
             this.CreatedAt = createdAt;
             this.DenominatorFilter = denominatorFilter;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Filter = filter;
             this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Operator = @operator;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
             this.Threshold = threshold;
             this.ThresholdMultiplier = thresholdMultiplier;
             this.ThresholdWindowMinutes = thresholdWindowMinutes;
+            this.Type = type;
             this.UpdatedAt = updatedAt;
+            this.WindowMinutes = windowMinutes;
         }
 
         /// <summary>
