@@ -57,7 +57,7 @@ namespace LangSmith
                 path: $"/api/v1/runs/threads/{threadId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("session_id", sessionId.ToString())
+                .AddRequiredParameter("session_id", sessionId.ToString()!)
                 .AddOptionalParameter("select", select?.ToString())
                 .AddOptionalParameter("variables", variables?.ToString()) 
                 ; 

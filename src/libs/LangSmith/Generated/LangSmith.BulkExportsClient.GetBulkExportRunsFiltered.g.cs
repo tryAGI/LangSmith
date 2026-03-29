@@ -42,7 +42,7 @@ namespace LangSmith
                 path: "/api/v1/bulk-exports/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("source_bulk_export_id", sourceBulkExportId.ToString()) 
+                .AddRequiredParameter("source_bulk_export_id", sourceBulkExportId.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

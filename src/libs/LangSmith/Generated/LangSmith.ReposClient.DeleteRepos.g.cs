@@ -45,7 +45,7 @@ namespace LangSmith
                 path: "/api/v1/repos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("repo_ids", repoIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddRequiredParameter("repo_ids", repoIds, selector: static x => x.ToString()!, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

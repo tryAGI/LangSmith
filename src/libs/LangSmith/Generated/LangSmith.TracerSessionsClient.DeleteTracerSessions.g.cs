@@ -42,7 +42,7 @@ namespace LangSmith
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("session_ids", sessionIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddRequiredParameter("session_ids", sessionIds, selector: static x => x.ToString()!, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
