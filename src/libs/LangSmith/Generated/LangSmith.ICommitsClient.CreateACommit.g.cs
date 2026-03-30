@@ -21,6 +21,7 @@ namespace LangSmith
         /// Creates a new commit in a repository.<br/>
         /// Requires authentication and write access to the repository.
         /// </summary>
+        /// <param name="description"></param>
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
         /// <param name="skipWebhooks">
@@ -29,6 +30,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsCreateCommitResponse> CreateACommitAsync(
+            string? description = default,
             object? manifest = default,
             string? parentCommit = default,
             object? skipWebhooks = default,

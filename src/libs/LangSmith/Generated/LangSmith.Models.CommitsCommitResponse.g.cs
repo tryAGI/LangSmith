@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         public global::System.Collections.Generic.IList<global::LangSmith.CommitsExampleRun>? Examples { get; set; }
 
@@ -54,6 +60,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CommitsCommitResponse" /> class.
         /// </summary>
         /// <param name="commitHash"></param>
+        /// <param name="description"></param>
         /// <param name="examples"></param>
         /// <param name="isDraft"></param>
         /// <param name="manifest"></param>
@@ -64,6 +71,7 @@ namespace LangSmith
 #endif
         public CommitsCommitResponse(
             string? commitHash,
+            string? description,
             global::System.Collections.Generic.IList<global::LangSmith.CommitsExampleRun>? examples,
             bool? isDraft,
             object? manifest,
@@ -71,6 +79,7 @@ namespace LangSmith
             string? modelProvider)
         {
             this.CommitHash = commitHash;
+            this.Description = description;
             this.Examples = examples;
             this.IsDraft = isDraft;
             this.Manifest = manifest;
