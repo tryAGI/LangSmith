@@ -118,6 +118,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public EvaluatorsClient Evaluators { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ExamplesClient Examples { get; }
 
         /// <summary>

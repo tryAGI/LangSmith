@@ -171,6 +171,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public EvaluatorsClient Evaluators => new EvaluatorsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ExamplesClient Examples => new ExamplesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
