@@ -21,6 +21,12 @@ namespace LangSmith
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
+        /// Optional human-readable description for the commit
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Example run IDs associated with the commit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_run_ids")]
@@ -101,6 +107,9 @@ namespace LangSmith
         /// <param name="createdAt">
         /// When the commit was created
         /// </param>
+        /// <param name="description">
+        /// Optional human-readable description for the commit
+        /// </param>
         /// <param name="exampleRunIds">
         /// Example run IDs associated with the commit
         /// </param>
@@ -140,6 +149,7 @@ namespace LangSmith
         public CommitsCommitWithLookups(
             string? commitHash,
             global::System.DateTime? createdAt,
+            string? description,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds,
             string? fullName,
             global::System.Guid? id,
@@ -154,6 +164,7 @@ namespace LangSmith
         {
             this.CommitHash = commitHash;
             this.CreatedAt = createdAt;
+            this.Description = description;
             this.ExampleRunIds = exampleRunIds;
             this.FullName = fullName;
             this.Id = id;

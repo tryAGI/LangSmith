@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         public object? Manifest { get; set; }
 
@@ -35,6 +41,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="CommitsCreateCommitReq" /> class.
         /// </summary>
+        /// <param name="description"></param>
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
         /// <param name="skipWebhooks">
@@ -44,10 +51,12 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CommitsCreateCommitReq(
+            string? description,
             object? manifest,
             string? parentCommit,
             object? skipWebhooks)
         {
+            this.Description = description;
             this.Manifest = manifest;
             this.ParentCommit = parentCommit;
             this.SkipWebhooks = skipWebhooks;
