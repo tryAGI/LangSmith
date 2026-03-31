@@ -11,7 +11,8 @@ namespace LangSmith
             ref string? cursor,
             global::System.Guid? workspaceId,
             ref global::System.DateTime startTime,
-            ref global::System.DateTime endTime);
+            ref global::System.DateTime endTime,
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations);
         partial void PrepareGetAuditLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +20,8 @@ namespace LangSmith
             string? cursor,
             global::System.Guid? workspaceId,
             global::System.DateTime startTime,
-            global::System.DateTime endTime);
+            global::System.DateTime endTime,
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations);
         partial void ProcessGetAuditLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,6 +56,9 @@ namespace LangSmith
         /// <param name="endTime">
         /// End datetime (inclusive) in ISO 8601 format
         /// </param>
+        /// <param name="operations">
+        /// Filter by operation names. If omitted, all operations are returned.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListAuditLogsOCSFResponse> GetAuditLogsAsync(
@@ -62,6 +67,7 @@ namespace LangSmith
             int? limit = default,
             string? cursor = default,
             global::System.Guid? workspaceId = default,
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -72,7 +78,8 @@ namespace LangSmith
                 cursor: ref cursor,
                 workspaceId: workspaceId,
                 startTime: ref startTime,
-                endTime: ref endTime);
+                endTime: ref endTime,
+                operations: operations);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/audit-logs",
@@ -82,7 +89,8 @@ namespace LangSmith
                 .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("operations", operations?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -119,7 +127,8 @@ namespace LangSmith
                 cursor: cursor,
                 workspaceId: workspaceId,
                 startTime: startTime,
-                endTime: endTime);
+                endTime: endTime,
+                operations: operations);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
