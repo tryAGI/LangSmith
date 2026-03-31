@@ -32,6 +32,7 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="restrictBrowserSecrets"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.OrganizationInfo> UpdateCurrentOrganizationInfoAsync(
@@ -50,6 +51,7 @@ namespace LangSmith
             bool? llmAuthProxyEnabled = default,
             string? llmAuthProxyJwtAudience = default,
             global::System.Collections.Generic.IList<string>? ipAllowlist = default,
+            bool? restrictBrowserSecrets = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

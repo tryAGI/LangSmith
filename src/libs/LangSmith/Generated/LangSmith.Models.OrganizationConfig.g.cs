@@ -167,6 +167,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_enabled")]
+        public bool? ByocEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_langgraph_pricing")]
         public bool? EnableLanggraphPricing { get; set; }
 
@@ -289,6 +295,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_llm_auth_proxy")]
         public bool? CanUseLlmAuthProxy { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_restrict_browser_secrets")]
+        public bool? CanRestrictBrowserSecrets { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -465,6 +477,9 @@ namespace LangSmith
         /// <param name="allowCustomIframes">
         /// Default Value: false
         /// </param>
+        /// <param name="byocEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="enableLanggraphPricing">
         /// Default Value: false
         /// </param>
@@ -526,6 +541,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="canUseLlmAuthProxy">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canRestrictBrowserSecrets">
         /// Default Value: false
         /// </param>
         /// <param name="enableMonthlyUsageCharts">
@@ -606,6 +624,7 @@ namespace LangSmith
             bool? kvDatasetMessageSupport,
             bool? showPlaygroundPromptCanvas,
             bool? allowCustomIframes,
+            bool? byocEnabled,
             bool? enableLanggraphPricing,
             bool? enableThreadViewPlayground,
             bool? enableOrgUsageCharts,
@@ -627,6 +646,7 @@ namespace LangSmith
             string? playgroundEvaluatorStrategy,
             bool? canSetApiKeyMaxExpiry,
             bool? canUseLlmAuthProxy,
+            bool? canRestrictBrowserSecrets,
             bool? enableMonthlyUsageCharts,
             int? newRuleEvaluatorCreationVersion,
             bool? enableLgpListenersPage,
@@ -670,6 +690,7 @@ namespace LangSmith
             this.KvDatasetMessageSupport = kvDatasetMessageSupport;
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.AllowCustomIframes = allowCustomIframes;
+            this.ByocEnabled = byocEnabled;
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
             this.EnableOrgUsageCharts = enableOrgUsageCharts;
@@ -691,6 +712,7 @@ namespace LangSmith
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.CanSetApiKeyMaxExpiry = canSetApiKeyMaxExpiry;
             this.CanUseLlmAuthProxy = canUseLlmAuthProxy;
+            this.CanRestrictBrowserSecrets = canRestrictBrowserSecrets;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.EnableLgpListenersPage = enableLgpListenersPage;

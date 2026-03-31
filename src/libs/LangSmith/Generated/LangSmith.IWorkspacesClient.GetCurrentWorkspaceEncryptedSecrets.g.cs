@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Get Current Workspace Encrypted Secrets<br/>
-        /// Get encrypted workspace secrets for use with Agent Builder and external services.
+        /// Get encrypted workspace secrets for use with Fleet and external services.
         /// </summary>
         /// <param name="service">
         /// Service requesting encrypted secrets

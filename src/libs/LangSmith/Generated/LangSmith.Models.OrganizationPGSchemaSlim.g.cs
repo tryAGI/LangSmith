@@ -163,6 +163,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
+        public bool? RestrictBrowserSecrets { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -212,6 +218,7 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="restrictBrowserSecrets"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -240,7 +247,8 @@ namespace LangSmith
             string? scimGroupNameSeparator,
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
-            global::System.Collections.Generic.IList<string>? ipAllowlist)
+            global::System.Collections.Generic.IList<string>? ipAllowlist,
+            bool? restrictBrowserSecrets)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -267,6 +275,7 @@ namespace LangSmith
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
+            this.RestrictBrowserSecrets = restrictBrowserSecrets;
         }
 
         /// <summary>

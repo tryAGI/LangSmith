@@ -336,25 +336,34 @@ namespace LangSmith
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
+        /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
+        /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="ttlSeconds"></param>
+        /// <param name="vcpus"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
+            long? fsCapacityBytes = default,
             int? idleTtlSeconds = default,
+            long? memBytes = default,
             string? name = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             int? ttlSeconds = default,
+            int? vcpus = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.SandboxesUpdateClaimPayload
             {
+                FsCapacityBytes = fsCapacityBytes,
                 IdleTtlSeconds = idleTtlSeconds,
+                MemBytes = memBytes,
                 Name = name,
                 ProxyConfig = proxyConfig,
                 TtlSeconds = ttlSeconds,
+                Vcpus = vcpus,
             };
 
             return await UpdateASandboxClaimAsync(

@@ -27,6 +27,12 @@ namespace LangSmith
         public bool? ArbitraryCostTrackingEnabled { get; set; }
 
         /// <summary>
+        /// Indicates whether this org can provision BYOC data planes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_enabled")]
+        public bool? ByocEnabled { get; set; }
+
+        /// <summary>
         /// CanAddSeats indicates whether this org can invite new users based on their plan.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_add_seats")]
@@ -37,6 +43,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_disable_public_sharing")]
         public bool? CanDisablePublicSharing { get; set; }
+
+        /// <summary>
+        /// CanRestrictBrowserSecrets indicates whether the org can restrict browser-level secrets in the Playground (enterprise-only).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_restrict_browser_secrets")]
+        public bool? CanRestrictBrowserSecrets { get; set; }
 
         /// <summary>
         /// CanSetApiKeyMaxExpiry indicates whether the org can set a maximum expiry duration for API keys (enterprise-only).
@@ -402,11 +414,17 @@ namespace LangSmith
         /// <param name="arbitraryCostTrackingEnabled">
         /// ArbitraryCostTrackingEnabled indicates whether arbitrary cost tracking flows are enabled
         /// </param>
+        /// <param name="byocEnabled">
+        /// Indicates whether this org can provision BYOC data planes.
+        /// </param>
         /// <param name="canAddSeats">
         /// CanAddSeats indicates whether this org can invite new users based on their plan.
         /// </param>
         /// <param name="canDisablePublicSharing">
         /// CanDisablePublicSharing indicates whether this org can disable public sharing of resources like traces, datasets, and prompts.
+        /// </param>
+        /// <param name="canRestrictBrowserSecrets">
+        /// CanRestrictBrowserSecrets indicates whether the org can restrict browser-level secrets in the Playground (enterprise-only).
         /// </param>
         /// <param name="canSetApiKeyMaxExpiry">
         /// CanSetApiKeyMaxExpiry indicates whether the org can set a maximum expiry duration for API keys (enterprise-only).
@@ -588,8 +606,10 @@ namespace LangSmith
             bool? agentBuilderEnabled,
             bool? allowCustomIframes,
             bool? arbitraryCostTrackingEnabled,
+            bool? byocEnabled,
             bool? canAddSeats,
             bool? canDisablePublicSharing,
+            bool? canRestrictBrowserSecrets,
             bool? canSetApiKeyMaxExpiry,
             bool? canUseAbac,
             bool? canUseAuditLogs,
@@ -651,8 +671,10 @@ namespace LangSmith
             this.AgentBuilderEnabled = agentBuilderEnabled;
             this.AllowCustomIframes = allowCustomIframes;
             this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
+            this.ByocEnabled = byocEnabled;
             this.CanAddSeats = canAddSeats;
             this.CanDisablePublicSharing = canDisablePublicSharing;
+            this.CanRestrictBrowserSecrets = canRestrictBrowserSecrets;
             this.CanSetApiKeyMaxExpiry = canSetApiKeyMaxExpiry;
             this.CanUseAbac = canUseAbac;
             this.CanUseAuditLogs = canUseAuditLogs;
