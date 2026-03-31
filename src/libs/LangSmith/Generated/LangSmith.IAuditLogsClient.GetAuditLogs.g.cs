@@ -29,6 +29,9 @@ namespace LangSmith
         /// <param name="endTime">
         /// End datetime (inclusive) in ISO 8601 format
         /// </param>
+        /// <param name="operations">
+        /// Filter by operation names. If omitted, all operations are returned.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListAuditLogsOCSFResponse> GetAuditLogsAsync(
@@ -37,6 +40,7 @@ namespace LangSmith
             int? limit = default,
             string? cursor = default,
             global::System.Guid? workspaceId = default,
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

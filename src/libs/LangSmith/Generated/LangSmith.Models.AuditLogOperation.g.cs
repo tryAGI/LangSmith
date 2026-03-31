@@ -138,6 +138,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateScimGroup,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateScimToken,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateScimUser,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateServiceKey,
         /// <summary>
         /// 
@@ -231,6 +243,18 @@ namespace LangSmith
         /// 
         /// </summary>
         DeleteRole,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteScimGroup,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteScimToken,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteScimUser,
         /// <summary>
         /// 
         /// </summary>
@@ -410,6 +434,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UpdateScimGroup,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateScimToken,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateScimUser,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateSsoSettings,
         /// <summary>
         /// 
@@ -488,6 +524,9 @@ namespace LangSmith
                 AuditLogOperation.CreatePlaygroundExperiment => "create_playground_experiment",
                 AuditLogOperation.CreatePromptWebhook => "create_prompt_webhook",
                 AuditLogOperation.CreateRole => "create_role",
+                AuditLogOperation.CreateScimGroup => "create_scim_group",
+                AuditLogOperation.CreateScimToken => "create_scim_token",
+                AuditLogOperation.CreateScimUser => "create_scim_user",
                 AuditLogOperation.CreateServiceKey => "create_service_key",
                 AuditLogOperation.CreateSsoSettings => "create_sso_settings",
                 AuditLogOperation.CreateTagKey => "create_tag_key",
@@ -512,6 +551,9 @@ namespace LangSmith
                 AuditLogOperation.DeletePersonalAccessToken => "delete_personal_access_token",
                 AuditLogOperation.DeletePromptWebhook => "delete_prompt_webhook",
                 AuditLogOperation.DeleteRole => "delete_role",
+                AuditLogOperation.DeleteScimGroup => "delete_scim_group",
+                AuditLogOperation.DeleteScimToken => "delete_scim_token",
+                AuditLogOperation.DeleteScimUser => "delete_scim_user",
                 AuditLogOperation.DeleteServiceKey => "delete_service_key",
                 AuditLogOperation.DeleteSsoSettings => "delete_sso_settings",
                 AuditLogOperation.DeleteTagKey => "delete_tag_key",
@@ -556,6 +598,9 @@ namespace LangSmith
                 AuditLogOperation.UpdatePaymentPlan => "update_payment_plan",
                 AuditLogOperation.UpdatePromptWebhook => "update_prompt_webhook",
                 AuditLogOperation.UpdateRole => "update_role",
+                AuditLogOperation.UpdateScimGroup => "update_scim_group",
+                AuditLogOperation.UpdateScimToken => "update_scim_token",
+                AuditLogOperation.UpdateScimUser => "update_scim_user",
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
@@ -606,6 +651,9 @@ namespace LangSmith
                 "create_playground_experiment" => AuditLogOperation.CreatePlaygroundExperiment,
                 "create_prompt_webhook" => AuditLogOperation.CreatePromptWebhook,
                 "create_role" => AuditLogOperation.CreateRole,
+                "create_scim_group" => AuditLogOperation.CreateScimGroup,
+                "create_scim_token" => AuditLogOperation.CreateScimToken,
+                "create_scim_user" => AuditLogOperation.CreateScimUser,
                 "create_service_key" => AuditLogOperation.CreateServiceKey,
                 "create_sso_settings" => AuditLogOperation.CreateSsoSettings,
                 "create_tag_key" => AuditLogOperation.CreateTagKey,
@@ -630,6 +678,9 @@ namespace LangSmith
                 "delete_personal_access_token" => AuditLogOperation.DeletePersonalAccessToken,
                 "delete_prompt_webhook" => AuditLogOperation.DeletePromptWebhook,
                 "delete_role" => AuditLogOperation.DeleteRole,
+                "delete_scim_group" => AuditLogOperation.DeleteScimGroup,
+                "delete_scim_token" => AuditLogOperation.DeleteScimToken,
+                "delete_scim_user" => AuditLogOperation.DeleteScimUser,
                 "delete_service_key" => AuditLogOperation.DeleteServiceKey,
                 "delete_sso_settings" => AuditLogOperation.DeleteSsoSettings,
                 "delete_tag_key" => AuditLogOperation.DeleteTagKey,
@@ -674,6 +725,9 @@ namespace LangSmith
                 "update_payment_plan" => AuditLogOperation.UpdatePaymentPlan,
                 "update_prompt_webhook" => AuditLogOperation.UpdatePromptWebhook,
                 "update_role" => AuditLogOperation.UpdateRole,
+                "update_scim_group" => AuditLogOperation.UpdateScimGroup,
+                "update_scim_token" => AuditLogOperation.UpdateScimToken,
+                "update_scim_user" => AuditLogOperation.UpdateScimUser,
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
