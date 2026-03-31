@@ -98,6 +98,12 @@ namespace LangSmith
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_root")]
+        public bool? IsRoot { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
@@ -138,6 +144,9 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
+        /// <param name="isRoot">
+        /// Default Value: false
+        /// </param>
         /// <param name="feedbackSource"></param>
         /// <param name="extra"></param>
         /// <param name="feedbackThreadId"></param>
@@ -159,6 +168,7 @@ namespace LangSmith
             global::System.Guid? sessionId,
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
+            bool? isRoot,
             global::LangSmith.FeedbackSource? feedbackSource,
             object? extra,
             string? feedbackThreadId)
@@ -177,6 +187,7 @@ namespace LangSmith
             this.Id = id;
             this.TraceId = traceId;
             this.StartTime = startTime;
+            this.IsRoot = isRoot;
             this.FeedbackSource = feedbackSource;
             this.Extra = extra;
             this.FeedbackThreadId = feedbackThreadId;

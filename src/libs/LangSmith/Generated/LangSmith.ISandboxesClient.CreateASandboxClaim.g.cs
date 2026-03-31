@@ -19,22 +19,32 @@ namespace LangSmith
         /// Create a sandbox claim<br/>
         /// Create a new sandbox from a template. Optionally blocks until ready or timeout.
         /// </summary>
+        /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
+        /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
-        /// <param name="templateName"></param>
+        /// <param name="snapshotId"></param>
+        /// <param name="templateName">
+        /// required for Kata path
+        /// </param>
         /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
+        /// <param name="vcpus"></param>
         /// <param name="waitForReady"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> CreateASandboxClaimAsync(
-            string templateName,
+            long? fsCapacityBytes = default,
             int? idleTtlSeconds = default,
+            long? memBytes = default,
             string? name = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
+            string? snapshotId = default,
+            string? templateName = default,
             int? timeout = default,
             int? ttlSeconds = default,
+            int? vcpus = default,
             bool? waitForReady = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

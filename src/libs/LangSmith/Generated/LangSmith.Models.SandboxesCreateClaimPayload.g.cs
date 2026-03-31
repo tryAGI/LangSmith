@@ -11,8 +11,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fs_capacity_bytes")]
+        public long? FsCapacityBytes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_ttl_seconds")]
         public int? IdleTtlSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mem_bytes")]
+        public long? MemBytes { get; set; }
 
         /// <summary>
         /// 
@@ -29,9 +41,14 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("snapshot_id")]
+        public string? SnapshotId { get; set; }
+
+        /// <summary>
+        /// required for Kata path
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TemplateName { get; set; }
+        public string? TemplateName { get; set; }
 
         /// <summary>
         /// 
@@ -48,6 +65,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("vcpus")]
+        public int? Vcpus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_for_ready")]
         public bool? WaitForReady { get; set; }
 
@@ -60,31 +83,45 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesCreateClaimPayload" /> class.
         /// </summary>
-        /// <param name="templateName"></param>
+        /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
+        /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="snapshotId"></param>
+        /// <param name="templateName">
+        /// required for Kata path
+        /// </param>
         /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
+        /// <param name="vcpus"></param>
         /// <param name="waitForReady"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesCreateClaimPayload(
-            string templateName,
+            long? fsCapacityBytes,
             int? idleTtlSeconds,
+            long? memBytes,
             string? name,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
+            string? snapshotId,
+            string? templateName,
             int? timeout,
             int? ttlSeconds,
+            int? vcpus,
             bool? waitForReady)
         {
+            this.FsCapacityBytes = fsCapacityBytes;
             this.IdleTtlSeconds = idleTtlSeconds;
+            this.MemBytes = memBytes;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
-            this.TemplateName = templateName ?? throw new global::System.ArgumentNullException(nameof(templateName));
+            this.SnapshotId = snapshotId;
+            this.TemplateName = templateName;
             this.Timeout = timeout;
             this.TtlSeconds = ttlSeconds;
+            this.Vcpus = vcpus;
             this.WaitForReady = waitForReady;
         }
 

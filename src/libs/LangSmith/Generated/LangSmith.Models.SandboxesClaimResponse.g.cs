@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fs_capacity_bytes")]
+        public long? FsCapacityBytes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -41,6 +47,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mem_bytes")]
+        public long? MemBytes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -49,6 +61,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("proxy_config")]
         public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("snapshot_id")]
+        public string? SnapshotId { get; set; }
 
         /// <summary>
         /// 
@@ -81,6 +99,12 @@ namespace LangSmith
         public string? UpdatedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("vcpus")]
+        public int? Vcpus { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -92,15 +116,19 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="dataplaneUrl"></param>
         /// <param name="expiresAt"></param>
+        /// <param name="fsCapacityBytes"></param>
         /// <param name="id"></param>
         /// <param name="idleTtlSeconds"></param>
+        /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="snapshotId"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
         /// <param name="templateName"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="vcpus"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,28 +136,36 @@ namespace LangSmith
             string? createdAt,
             string? dataplaneUrl,
             string? expiresAt,
+            long? fsCapacityBytes,
             string? id,
             int? idleTtlSeconds,
+            long? memBytes,
             string? name,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
+            string? snapshotId,
             string? status,
             string? statusMessage,
             string? templateName,
             int? ttlSeconds,
-            string? updatedAt)
+            string? updatedAt,
+            int? vcpus)
         {
             this.CreatedAt = createdAt;
             this.DataplaneUrl = dataplaneUrl;
             this.ExpiresAt = expiresAt;
+            this.FsCapacityBytes = fsCapacityBytes;
             this.Id = id;
             this.IdleTtlSeconds = idleTtlSeconds;
+            this.MemBytes = memBytes;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
+            this.SnapshotId = snapshotId;
             this.Status = status;
             this.StatusMessage = statusMessage;
             this.TemplateName = templateName;
             this.TtlSeconds = ttlSeconds;
             this.UpdatedAt = updatedAt;
+            this.Vcpus = vcpus;
         }
 
         /// <summary>
