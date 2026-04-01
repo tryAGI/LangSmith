@@ -17,9 +17,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inject_headers")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string> InjectHeaders { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
+        public global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? Headers { get; set; }
 
         /// <summary>
         /// 
@@ -50,23 +49,23 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesProxyRule" /> class.
         /// </summary>
-        /// <param name="injectHeaders"></param>
         /// <param name="matchHosts"></param>
         /// <param name="name"></param>
         /// <param name="enabled"></param>
+        /// <param name="headers"></param>
         /// <param name="matchPaths"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesProxyRule(
-            global::System.Collections.Generic.Dictionary<string, string> injectHeaders,
             global::System.Collections.Generic.IList<string> matchHosts,
             string name,
             bool? enabled,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? headers,
             global::System.Collections.Generic.IList<string>? matchPaths)
         {
             this.Enabled = enabled;
-            this.InjectHeaders = injectHeaders ?? throw new global::System.ArgumentNullException(nameof(injectHeaders));
+            this.Headers = headers;
             this.MatchHosts = matchHosts ?? throw new global::System.ArgumentNullException(nameof(matchHosts));
             this.MatchPaths = matchPaths;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
