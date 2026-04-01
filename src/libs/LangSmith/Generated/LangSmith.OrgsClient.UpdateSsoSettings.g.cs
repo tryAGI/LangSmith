@@ -243,6 +243,7 @@ namespace LangSmith
             string? metadataXml = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.SSOSettingsUpdate
             {
                 DefaultWorkspaceRoleId = defaultWorkspaceRoleId,

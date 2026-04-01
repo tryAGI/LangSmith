@@ -225,6 +225,7 @@ namespace LangSmith
             string token,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.SSOConfirmEmailRequest
             {
                 Token = token,

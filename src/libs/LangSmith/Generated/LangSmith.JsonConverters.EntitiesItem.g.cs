@@ -59,13 +59,13 @@ namespace LangSmith.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareRunToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareRunToken?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.TenantShareRunToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run!, typeInfo);
             }
             else if (value.IsDataset)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareDatasetToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareDatasetToken?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.TenantShareDatasetToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset!, typeInfo);
             }
         }
     }

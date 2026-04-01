@@ -354,6 +354,7 @@ namespace LangSmith
             bool hardDelete,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.ExamplesDeleteExamplesRequest
             {
                 ExampleIds = exampleIds,

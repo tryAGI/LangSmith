@@ -260,6 +260,7 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.TracerSessionCreate
             {
                 StartTime = startTime,

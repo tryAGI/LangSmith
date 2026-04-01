@@ -478,6 +478,7 @@ namespace LangSmith
             string? x_exampleId_Attachment_name_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.PatchPlatformDatasetsExamplesRequest
             {
                 x_exampleId_ = x_exampleId_,

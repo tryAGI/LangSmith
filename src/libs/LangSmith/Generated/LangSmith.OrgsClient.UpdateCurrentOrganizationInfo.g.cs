@@ -257,6 +257,7 @@ namespace LangSmith
             bool? restrictBrowserSecrets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.OrganizationUpdate
             {
                 DisplayName = displayName,

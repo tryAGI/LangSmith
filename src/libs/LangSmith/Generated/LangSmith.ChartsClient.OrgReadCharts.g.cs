@@ -248,6 +248,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.CustomChartsRequest
             {
                 Timezone = timezone,
