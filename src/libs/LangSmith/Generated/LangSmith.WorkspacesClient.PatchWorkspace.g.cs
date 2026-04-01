@@ -237,7 +237,6 @@ namespace LangSmith
             string displayName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.WorkspacePatch
             {
                 DisplayName = displayName,

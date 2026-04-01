@@ -243,7 +243,6 @@ namespace LangSmith
             global::System.Guid identityId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.RemoveRepoOwnerRequest
             {
                 IdentityId = identityId,

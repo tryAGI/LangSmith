@@ -247,7 +247,6 @@ namespace LangSmith
             global::LangSmith.TraceTier? traceTier = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.TracerSessionUpdate
             {
                 Name = name,

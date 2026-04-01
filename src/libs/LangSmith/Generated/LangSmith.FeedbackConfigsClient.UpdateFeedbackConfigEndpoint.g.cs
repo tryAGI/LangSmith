@@ -231,7 +231,6 @@ namespace LangSmith
             bool? isLowerScoreBetter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.UpdateFeedbackConfigSchema
             {
                 FeedbackKey = feedbackKey,

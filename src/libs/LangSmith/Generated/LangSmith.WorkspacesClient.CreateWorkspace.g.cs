@@ -233,7 +233,6 @@ namespace LangSmith
             string? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.WorkspaceCreate
             {
                 Id = id,

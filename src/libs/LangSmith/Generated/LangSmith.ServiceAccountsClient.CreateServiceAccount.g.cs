@@ -233,7 +233,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ServiceAccountWorkspaceAssignment>? workspaces = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.ServiceAccountCreateRequest
             {
                 Name = name,

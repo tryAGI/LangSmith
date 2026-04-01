@@ -255,7 +255,6 @@ namespace LangSmith
             global::LangSmith.PromptOptimizationResult? result = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.PromptOptimizationJobUpdate
             {
                 Status = status,

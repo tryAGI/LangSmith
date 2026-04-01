@@ -307,7 +307,6 @@ namespace LangSmith
             bool? integrationsEnabledByDefault = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.IntegrationsAgentBuilderIntegrationsUpdatePayload
             {
                 IntegrationOverrides = integrationOverrides,

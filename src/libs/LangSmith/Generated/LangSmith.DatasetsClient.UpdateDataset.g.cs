@@ -265,7 +265,6 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing, object>? baselineExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.DatasetUpdate
             {
                 Name = name,

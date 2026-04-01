@@ -251,7 +251,6 @@ namespace LangSmith
             string? summaryModel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.GenerateClusteringJobConfigRequest
             {
                 UserContext = userContext,

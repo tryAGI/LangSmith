@@ -247,7 +247,6 @@ namespace LangSmith
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.CustomChartsSectionUpdate
             {
                 Title = title,

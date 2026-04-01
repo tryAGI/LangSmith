@@ -255,7 +255,6 @@ namespace LangSmith
             bool? restrictedMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.UpdateRepoRequest
             {
                 Description = description,

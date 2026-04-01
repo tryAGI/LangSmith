@@ -229,7 +229,6 @@ namespace LangSmith
             string tenantHandle,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.SetTenantHandleRequest
             {
                 TenantHandle = tenantHandle,

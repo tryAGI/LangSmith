@@ -245,7 +245,6 @@ namespace LangSmith
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.FeedbackUpdateSchema
             {
                 Score = score,

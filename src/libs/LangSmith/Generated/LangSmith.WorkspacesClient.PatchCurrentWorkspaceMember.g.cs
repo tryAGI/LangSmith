@@ -233,7 +233,6 @@ namespace LangSmith
             global::System.Guid roleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.IdentityPatch
             {
                 RoleId = roleId,

@@ -235,7 +235,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.GenerateSyntheticExamplesBody
             {
                 ExampleIds = exampleIds,

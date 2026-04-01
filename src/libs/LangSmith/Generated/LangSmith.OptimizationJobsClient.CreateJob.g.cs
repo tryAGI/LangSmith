@@ -247,7 +247,6 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig> config,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.PromptOptimizationJobCreate
             {
                 Algorithm = algorithm,

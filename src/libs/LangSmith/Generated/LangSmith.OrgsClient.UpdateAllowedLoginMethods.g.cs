@@ -225,7 +225,6 @@ namespace LangSmith
             bool? ssoOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.AllowedLoginMethodsUpdate
             {
                 SsoOnly = ssoOnly,

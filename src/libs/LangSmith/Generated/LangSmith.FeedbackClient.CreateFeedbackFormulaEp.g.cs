@@ -237,7 +237,6 @@ namespace LangSmith
             global::System.Guid? sessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.FeedbackFormulaCreate
             {
                 DatasetId = datasetId,
