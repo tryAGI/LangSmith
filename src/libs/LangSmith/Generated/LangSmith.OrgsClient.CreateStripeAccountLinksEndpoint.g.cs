@@ -225,6 +225,7 @@ namespace LangSmith
             string successPath,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.StripeAccountLinksCreate
             {
                 SuccessPath = successPath,

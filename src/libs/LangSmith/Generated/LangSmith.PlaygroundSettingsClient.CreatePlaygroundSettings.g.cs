@@ -239,6 +239,7 @@ namespace LangSmith
             global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? settingsType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.PlaygroundSettingsCreateRequest
             {
                 Name = name,

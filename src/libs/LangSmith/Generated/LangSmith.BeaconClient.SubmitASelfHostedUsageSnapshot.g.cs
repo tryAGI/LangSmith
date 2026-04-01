@@ -338,6 +338,7 @@ namespace LangSmith
             string? toTimestamp = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.BeaconSubmitUsageSnapshotPayload
             {
                 FromTimestamp = fromTimestamp,

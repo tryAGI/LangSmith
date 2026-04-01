@@ -261,6 +261,7 @@ namespace LangSmith
             string? duration = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.FilterViewUpdate
             {
                 FilterString = filterString,

@@ -391,6 +391,7 @@ namespace LangSmith
             object? returns = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.ToolsUpdateToolPayload
             {
                 Description = description,

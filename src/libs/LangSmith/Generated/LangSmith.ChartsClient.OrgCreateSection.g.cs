@@ -233,6 +233,7 @@ namespace LangSmith
             int? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.CustomChartsSectionCreate
             {
                 Title = title,

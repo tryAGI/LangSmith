@@ -227,6 +227,7 @@ namespace LangSmith
             string? fullName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::LangSmith.BasicAuthUserPatch
             {
                 Password = password,
