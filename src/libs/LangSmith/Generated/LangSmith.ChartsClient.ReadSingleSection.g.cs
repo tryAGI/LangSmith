@@ -254,7 +254,6 @@ namespace LangSmith
             global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.CustomChartsSectionRequest
             {
                 Timezone = timezone,

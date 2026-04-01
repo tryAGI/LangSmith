@@ -241,7 +241,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.FeedbackFormulaWeightedVariable> formulaParts,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.FeedbackFormulaUpdate
             {
                 FeedbackKey = feedbackKey,

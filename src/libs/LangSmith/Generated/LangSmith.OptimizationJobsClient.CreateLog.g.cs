@@ -257,7 +257,6 @@ namespace LangSmith
             object? data = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.PromptOptimizationJobLogCreate
             {
                 LogType = logType,

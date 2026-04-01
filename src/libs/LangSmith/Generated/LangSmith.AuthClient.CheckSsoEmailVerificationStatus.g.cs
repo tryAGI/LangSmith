@@ -231,7 +231,6 @@ namespace LangSmith
             global::System.Guid samlProviderId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.SSOEmailVerificationStatusRequest
             {
                 Email = email,

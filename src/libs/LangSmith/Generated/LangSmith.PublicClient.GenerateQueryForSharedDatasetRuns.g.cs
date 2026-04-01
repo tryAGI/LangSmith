@@ -239,7 +239,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunsGenerateQueryFeedbackKeys>? feedbackKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.RequestBodyForRunsGenerateQuery
             {
                 Query = query,

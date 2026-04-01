@@ -231,7 +231,6 @@ namespace LangSmith
             global::LangSmith.CustomChartCreatePreview chart,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.CustomChartPreviewRequest
             {
                 BucketInfo = bucketInfo,

@@ -241,7 +241,6 @@ namespace LangSmith
             global::System.Guid? defaultWorkspaceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.APIKeyCreateRequest
             {
                 Description = description,

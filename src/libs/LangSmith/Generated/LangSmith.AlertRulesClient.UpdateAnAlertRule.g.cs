@@ -379,7 +379,6 @@ namespace LangSmith
             global::LangSmith.AlertsAlertRuleBase rule,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.AlertsUpdateAlertRuleRequest
             {
                 Actions = actions,

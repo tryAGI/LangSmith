@@ -267,7 +267,6 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.CustomChartUpdate
             {
                 Title = title,

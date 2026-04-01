@@ -237,7 +237,6 @@ namespace LangSmith
             global::System.Guid ruleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::LangSmith.EvaluateExperimentRequest
             {
                 RuleId = ruleId,

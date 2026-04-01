@@ -77,6 +77,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_allowed_urls")]
+        public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
@@ -196,6 +202,7 @@ namespace LangSmith
         /// <param name="ipAllowlistEnabled"></param>
         /// <param name="isPersonal"></param>
         /// <param name="jitProvisioningEnabled"></param>
+        /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="marketplacePayoutsEnabled"></param>
@@ -228,6 +235,7 @@ namespace LangSmith
             bool? ipAllowlistEnabled,
             bool? isPersonal,
             bool? jitProvisioningEnabled,
+            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
             bool? marketplacePayoutsEnabled,
@@ -257,6 +265,7 @@ namespace LangSmith
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.IsPersonal = isPersonal;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
+            this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
