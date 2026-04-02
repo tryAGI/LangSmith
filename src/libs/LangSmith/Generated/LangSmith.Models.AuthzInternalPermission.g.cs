@@ -95,6 +95,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ExperimentsRun,
+        /// <summary>
+        /// 
+        /// </summary>
         FeedbackCreate,
         /// <summary>
         /// 
@@ -263,6 +267,7 @@ namespace LangSmith
                 AuthzInternalPermission.DeploymentsDelete => "deployments:delete",
                 AuthzInternalPermission.DeploymentsRead => "deployments:read",
                 AuthzInternalPermission.DeploymentsUpdate => "deployments:update",
+                AuthzInternalPermission.ExperimentsRun => "experiments:run",
                 AuthzInternalPermission.FeedbackCreate => "feedback:create",
                 AuthzInternalPermission.FeedbackDelete => "feedback:delete",
                 AuthzInternalPermission.FeedbackRead => "feedback:read",
@@ -328,6 +333,7 @@ namespace LangSmith
                 "deployments:delete" => AuthzInternalPermission.DeploymentsDelete,
                 "deployments:read" => AuthzInternalPermission.DeploymentsRead,
                 "deployments:update" => AuthzInternalPermission.DeploymentsUpdate,
+                "experiments:run" => AuthzInternalPermission.ExperimentsRun,
                 "feedback:create" => AuthzInternalPermission.FeedbackCreate,
                 "feedback:delete" => AuthzInternalPermission.FeedbackDelete,
                 "feedback:read" => AuthzInternalPermission.FeedbackRead,

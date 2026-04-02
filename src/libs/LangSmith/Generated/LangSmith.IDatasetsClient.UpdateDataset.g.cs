@@ -22,6 +22,19 @@ namespace LangSmith
         /// Update a specific dataset.
         /// </summary>
         /// <param name="datasetId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetSchemaForUpdate>> UpdateDatasetAsResponseAsync(
+            global::System.Guid datasetId,
+
+            global::LangSmith.DatasetUpdate request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Dataset<br/>
+        /// Update a specific dataset.
+        /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="name">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
