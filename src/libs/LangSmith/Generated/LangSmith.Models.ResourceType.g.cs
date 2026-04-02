@@ -31,6 +31,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        FleetIntegration,
+        /// <summary>
+        /// 
+        /// </summary>
         McpServer,
         /// <summary>
         /// 
@@ -63,6 +67,7 @@ namespace LangSmith
                 ResourceType.Deployment => "deployment",
                 ResourceType.Evaluator => "evaluator",
                 ResourceType.Experiment => "experiment",
+                ResourceType.FleetIntegration => "fleet_integration",
                 ResourceType.McpServer => "mcp_server",
                 ResourceType.Project => "project",
                 ResourceType.Prompt => "prompt",
@@ -82,6 +87,7 @@ namespace LangSmith
                 "deployment" => ResourceType.Deployment,
                 "evaluator" => ResourceType.Evaluator,
                 "experiment" => ResourceType.Experiment,
+                "fleet_integration" => ResourceType.FleetIntegration,
                 "mcp_server" => ResourceType.McpServer,
                 "project" => ResourceType.Project,
                 "prompt" => ResourceType.Prompt,
