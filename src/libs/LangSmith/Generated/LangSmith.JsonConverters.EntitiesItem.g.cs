@@ -12,28 +12,21 @@ namespace LangSmith.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareTokensResponseEntitieDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareTokensResponseEntitieDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.TenantShareTokensResponseEntitieDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TenantShareTokensResponseEntitieDiscriminator>(ref readerCopy, options);
 
             global::LangSmith.TenantShareRunToken? run = default;
             if (discriminator?.Type == global::LangSmith.TenantShareTokensResponseEntitieDiscriminatorType.Run)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareRunToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareRunToken> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.TenantShareRunToken)}");
-                run = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                run = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TenantShareRunToken>(ref reader, options);
             }
             global::LangSmith.TenantShareDatasetToken? dataset = default;
             if (discriminator?.Type == global::LangSmith.TenantShareTokensResponseEntitieDiscriminatorType.Dataset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareDatasetToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareDatasetToken> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.TenantShareDatasetToken)}");
-                dataset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                dataset = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.TenantShareDatasetToken>(ref reader, options);
             }
 
             var __value = new global::LangSmith.EntitiesItem(
@@ -52,20 +45,15 @@ namespace LangSmith.JsonConverters
             global::LangSmith.EntitiesItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsRun)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareRunToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareRunToken?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.TenantShareRunToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run, typeof(global::LangSmith.TenantShareRunToken), options);
             }
             else if (value.IsDataset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareDatasetToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareDatasetToken?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.TenantShareDatasetToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset, typeof(global::LangSmith.TenantShareDatasetToken), options);
             }
         }
     }

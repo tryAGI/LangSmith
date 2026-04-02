@@ -160,13 +160,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -210,7 +210,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        (global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>), JsonSerializerContext) ??
+                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -241,7 +241,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        (global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>), JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

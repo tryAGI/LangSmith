@@ -163,13 +163,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -201,13 +201,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                        __value_403 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_403, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                        __value_403 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_403, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -239,13 +239,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -277,13 +277,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_409 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                        __value_409 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_409, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_409 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                        __value_409 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_409, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -315,13 +315,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_422, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                        __value_422 = global::LangSmith.ExamplesErrorResponse.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -365,7 +365,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.ExamplesExamplesUpdatedResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::LangSmith.ExamplesExamplesUpdatedResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -396,7 +396,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.ExamplesExamplesUpdatedResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::LangSmith.ExamplesExamplesUpdatedResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

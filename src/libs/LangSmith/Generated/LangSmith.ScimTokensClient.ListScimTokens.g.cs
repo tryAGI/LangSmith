@@ -90,13 +90,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::LangSmith.ScimErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                        __value_401 = global::LangSmith.ScimErrorResponse.FromJson(__content_401, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::LangSmith.ScimErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                        __value_401 = global::LangSmith.ScimErrorResponse.FromJson(__content_401, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -128,13 +128,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::LangSmith.ScimErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                        __value_403 = global::LangSmith.ScimErrorResponse.FromJson(__content_403, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::LangSmith.ScimErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                        __value_403 = global::LangSmith.ScimErrorResponse.FromJson(__content_403, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -166,13 +166,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::LangSmith.ScimErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                        __value_500 = global::LangSmith.ScimErrorResponse.FromJson(__content_500, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::LangSmith.ScimErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                        __value_500 = global::LangSmith.ScimErrorResponse.FromJson(__content_500, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -204,13 +204,13 @@ namespace LangSmith
                     if (ReadResponseAsString)
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::LangSmith.ScimErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                        __value_503 = global::LangSmith.ScimErrorResponse.FromJson(__content_503, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_503 = global::LangSmith.ScimErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                        __value_503 = global::LangSmith.ScimErrorResponse.FromJson(__content_503, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -254,7 +254,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        (global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>), JsonSerializerContext) ??
+                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -285,7 +285,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        (global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>), JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
