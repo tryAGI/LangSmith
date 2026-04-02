@@ -45,6 +45,12 @@ namespace LangSmith
         public int? ReservationMinutes { get; set; }
 
         /// <summary>
+        /// Default Value: any
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reviewer_access_mode")]
+        public string? ReviewerAccessMode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -109,6 +115,9 @@ namespace LangSmith
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
+        /// <param name="reviewerAccessMode">
+        /// Default Value: any
+        /// </param>
         /// <param name="id"></param>
         /// <param name="defaultDataset"></param>
         /// <param name="rubricItems"></param>
@@ -126,6 +135,7 @@ namespace LangSmith
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
+            string? reviewerAccessMode,
             global::System.Guid? id,
             global::System.Guid? defaultDataset,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
@@ -139,6 +149,7 @@ namespace LangSmith
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.ReviewerAccessMode = reviewerAccessMode;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
             this.DefaultDataset = defaultDataset;

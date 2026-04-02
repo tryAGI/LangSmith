@@ -14,7 +14,8 @@ namespace LangSmith
             ref int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             global::System.Guid? datasetId,
-            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType);
+            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType,
+            ref bool? assignedToMe);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -25,7 +26,8 @@ namespace LangSmith
             int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             global::System.Guid? datasetId,
-            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType);
+            global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType,
+            bool? assignedToMe);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,6 +52,9 @@ namespace LangSmith
         /// <param name="tagValueId"></param>
         /// <param name="datasetId"></param>
         /// <param name="queueType"></param>
+        /// <param name="assignedToMe">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesAsync(
@@ -61,6 +66,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Guid? datasetId = default,
             global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType = default,
+            bool? assignedToMe = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -74,7 +80,8 @@ namespace LangSmith
                 limit: ref limit,
                 tagValueId: tagValueId,
                 datasetId: datasetId,
-                queueType: queueType);
+                queueType: queueType,
+                assignedToMe: ref assignedToMe);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/annotation-queues",
@@ -87,7 +94,8 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                 .AddOptionalParameter("dataset_id", datasetId?.ToString())
-                .AddOptionalParameter("queue_type", queueType?.ToString()) 
+                .AddOptionalParameter("queue_type", queueType?.ToString())
+                .AddOptionalParameter("assigned_to_me", assignedToMe?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -127,7 +135,8 @@ namespace LangSmith
                 limit: limit,
                 tagValueId: tagValueId,
                 datasetId: datasetId,
-                queueType: queueType);
+                queueType: queueType,
+                assignedToMe: assignedToMe);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

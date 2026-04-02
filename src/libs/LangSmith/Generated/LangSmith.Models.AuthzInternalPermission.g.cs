@@ -219,6 +219,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        WorkspacesManageModelConfigs,
+        /// <summary>
+        /// 
+        /// </summary>
         WorkspacesManageSecrets,
         /// <summary>
         /// 
@@ -290,6 +294,7 @@ namespace LangSmith
                 AuthzInternalPermission.RunsShare => "runs:share",
                 AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
                 AuthzInternalPermission.WorkspacesManageMembers => "workspaces:manage-members",
+                AuthzInternalPermission.WorkspacesManageModelConfigs => "workspaces:manage-model-configs",
                 AuthzInternalPermission.WorkspacesManageSecrets => "workspaces:manage-secrets",
                 AuthzInternalPermission.WorkspacesRead => "workspaces:read",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -354,6 +359,7 @@ namespace LangSmith
                 "runs:share" => AuthzInternalPermission.RunsShare,
                 "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
                 "workspaces:manage-members" => AuthzInternalPermission.WorkspacesManageMembers,
+                "workspaces:manage-model-configs" => AuthzInternalPermission.WorkspacesManageModelConfigs,
                 "workspaces:manage-secrets" => AuthzInternalPermission.WorkspacesManageSecrets,
                 "workspaces:read" => AuthzInternalPermission.WorkspacesRead,
                 _ => null,
