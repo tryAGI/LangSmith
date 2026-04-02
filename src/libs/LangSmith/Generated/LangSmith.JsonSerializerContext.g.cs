@@ -29,6 +29,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2NullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.AuditLogOperationJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.AuditLogOperationNullableJsonConverter),
@@ -760,6 +764,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<int?, global::LangSmith.Missing, object>), TypeInfoPropertyName = "AnyOfInt32MissingObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.Missing))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>), TypeInfoPropertyName = "AnyOfObjectMissingObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AppFeedbackSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.Artifact))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ArtifactContent>))]
