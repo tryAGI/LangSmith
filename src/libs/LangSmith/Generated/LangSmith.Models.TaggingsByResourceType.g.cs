@@ -41,6 +41,18 @@ namespace LangSmith
         /// <summary>
         /// Default Value: []
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_integrations")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? FleetIntegrations { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mcp_servers")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? McpServers { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Projects { get; set; }
 
@@ -80,6 +92,12 @@ namespace LangSmith
         /// <param name="experiments">
         /// Default Value: []
         /// </param>
+        /// <param name="fleetIntegrations">
+        /// Default Value: []
+        /// </param>
+        /// <param name="mcpServers">
+        /// Default Value: []
+        /// </param>
         /// <param name="projects">
         /// Default Value: []
         /// </param>
@@ -98,6 +116,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? datasets,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? deployments,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? experiments,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? fleetIntegrations,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? mcpServers,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? projects,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? prompts,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? queues)
@@ -107,6 +127,8 @@ namespace LangSmith
             this.Datasets = datasets;
             this.Deployments = deployments;
             this.Experiments = experiments;
+            this.FleetIntegrations = fleetIntegrations;
+            this.McpServers = mcpServers;
             this.Projects = projects;
             this.Prompts = prompts;
             this.Queues = queues;
