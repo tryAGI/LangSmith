@@ -65,6 +65,12 @@ namespace LangSmith
         public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? Metadata { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reviewer_access_mode")]
+        public global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? ReviewerAccessMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -88,6 +94,7 @@ namespace LangSmith
         /// <param name="metadata">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="reviewerAccessMode"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +107,8 @@ namespace LangSmith
             int? reservationMinutes,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata)
+            global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata,
+            global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? reviewerAccessMode)
         {
             this.Name = name;
             this.Description = description;
@@ -111,6 +119,7 @@ namespace LangSmith
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;
             this.Metadata = metadata;
+            this.ReviewerAccessMode = reviewerAccessMode;
         }
 
         /// <summary>

@@ -238,6 +238,7 @@ namespace LangSmith
         /// <param name="metadata">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="reviewerAccessMode"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
@@ -251,6 +252,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
+            global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? reviewerAccessMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.AnnotationQueueUpdateSchema
@@ -264,6 +266,7 @@ namespace LangSmith
                 RubricItems = rubricItems,
                 RubricInstructions = rubricInstructions,
                 Metadata = metadata,
+                ReviewerAccessMode = reviewerAccessMode,
             };
 
             return await UpdateAnnotationQueueAsync(
