@@ -29,6 +29,9 @@ namespace LangSmith
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
+        /// <param name="reviewerAccessMode">
+        /// Default Value: any
+        /// </param>
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="defaultDataset"></param>
@@ -46,6 +49,7 @@ namespace LangSmith
             int? numReviewersPerItem = default,
             bool? enableReservations = default,
             int? reservationMinutes = default,
+            string? reviewerAccessMode = default,
             global::System.Guid? id = default,
             global::System.Guid? defaultDataset = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,

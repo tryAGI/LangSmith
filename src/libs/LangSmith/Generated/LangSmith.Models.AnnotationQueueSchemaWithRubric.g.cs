@@ -45,6 +45,12 @@ namespace LangSmith
         public int? ReservationMinutes { get; set; }
 
         /// <summary>
+        /// Default Value: any
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reviewer_access_mode")]
+        public string? ReviewerAccessMode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -98,6 +104,12 @@ namespace LangSmith
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assigned_reviewers")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AssignedReviewerSchema>? AssignedReviewers { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rubric_items")]
@@ -134,10 +146,16 @@ namespace LangSmith
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
+        /// <param name="reviewerAccessMode">
+        /// Default Value: any
+        /// </param>
         /// <param name="sourceRuleId"></param>
         /// <param name="runRuleId"></param>
         /// <param name="defaultDataset"></param>
         /// <param name="metadata"></param>
+        /// <param name="assignedReviewers">
+        /// Default Value: []
+        /// </param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
 #if NET7_0_OR_GREATER
@@ -154,10 +172,12 @@ namespace LangSmith
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
+            string? reviewerAccessMode,
             global::System.Guid? sourceRuleId,
             global::System.Guid? runRuleId,
             global::System.Guid? defaultDataset,
             object? metadata,
+            global::System.Collections.Generic.IList<global::LangSmith.AssignedReviewerSchema>? assignedReviewers,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions)
         {
@@ -167,6 +187,7 @@ namespace LangSmith
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.ReviewerAccessMode = reviewerAccessMode;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
             this.TenantId = tenantId;
@@ -175,6 +196,7 @@ namespace LangSmith
             this.DefaultDataset = defaultDataset;
             this.QueueType = queueType;
             this.Metadata = metadata;
+            this.AssignedReviewers = assignedReviewers;
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;
         }
