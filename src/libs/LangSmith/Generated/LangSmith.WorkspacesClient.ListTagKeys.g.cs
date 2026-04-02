@@ -101,7 +101,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        (global::System.Collections.Generic.IList<global::LangSmith.TagKey>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TagKey>), JsonSerializerContext) ??
+                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::LangSmith.TagKey>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -132,7 +132,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        (global::System.Collections.Generic.IList<global::LangSmith.TagKey>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TagKey>), JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::LangSmith.TagKey>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
