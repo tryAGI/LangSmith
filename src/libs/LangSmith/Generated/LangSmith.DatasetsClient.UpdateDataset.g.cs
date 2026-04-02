@@ -37,6 +37,29 @@ namespace LangSmith
             global::LangSmith.DatasetUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await UpdateDatasetAsResponseAsync(
+                datasetId: datasetId,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update Dataset<br/>
+        /// Update a specific dataset.
+        /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetSchemaForUpdate>> UpdateDatasetAsResponseAsync(
+            global::System.Guid datasetId,
+
+            global::LangSmith.DatasetUpdate request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -160,9 +183,12 @@ namespace LangSmith
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::LangSmith.DatasetSchemaForUpdate.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::LangSmith.DatasetSchemaForUpdate.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetSchemaForUpdate>(
+                        statusCode: __response.StatusCode,
+                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -191,9 +217,12 @@ namespace LangSmith
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::LangSmith.DatasetSchemaForUpdate.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::LangSmith.DatasetSchemaForUpdate.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetSchemaForUpdate>(
+                        statusCode: __response.StatusCode,
+                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
