@@ -28,6 +28,10 @@ namespace LangSmith
         /// 
         /// </summary>
         RunLatency,
+        /// <summary>
+        /// 
+        /// </summary>
+        TotalCost,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace LangSmith
                 AlertsAlertRuleAttribute.Latency => "latency",
                 AlertsAlertRuleAttribute.RunCount => "run_count",
                 AlertsAlertRuleAttribute.RunLatency => "run_latency",
+                AlertsAlertRuleAttribute.TotalCost => "total_cost",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace LangSmith
                 "latency" => AlertsAlertRuleAttribute.Latency,
                 "run_count" => AlertsAlertRuleAttribute.RunCount,
                 "run_latency" => AlertsAlertRuleAttribute.RunLatency,
+                "total_cost" => AlertsAlertRuleAttribute.TotalCost,
                 _ => null,
             };
         }
