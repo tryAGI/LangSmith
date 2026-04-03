@@ -91,7 +91,7 @@ namespace LangSmith
         public required global::LangSmith.AlertsAlertRuleBaseType Type { get; set; }
 
         /// <summary>
-        /// max 15 minutes for alert rule
+        /// 1-60 minutes for alert rule
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("window_minutes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -113,7 +113,7 @@ namespace LangSmith
         /// <param name="operator"></param>
         /// <param name="type"></param>
         /// <param name="windowMinutes">
-        /// max 15 minutes for alert rule
+        /// 1-60 minutes for alert rule
         /// </param>
         /// <param name="denominatorFilter"></param>
         /// <param name="filter"></param>

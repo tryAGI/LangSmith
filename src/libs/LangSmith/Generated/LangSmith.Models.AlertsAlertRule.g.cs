@@ -115,7 +115,7 @@ namespace LangSmith
         public string? UpdatedAt { get; set; }
 
         /// <summary>
-        /// max 15 minutes for alert rule
+        /// 1-60 minutes for alert rule
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("window_minutes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -137,7 +137,7 @@ namespace LangSmith
         /// <param name="operator"></param>
         /// <param name="type"></param>
         /// <param name="windowMinutes">
-        /// max 15 minutes for alert rule
+        /// 1-60 minutes for alert rule
         /// </param>
         /// <param name="createdAt"></param>
         /// <param name="denominatorFilter"></param>
