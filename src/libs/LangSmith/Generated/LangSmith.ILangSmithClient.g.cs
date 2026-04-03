@@ -158,6 +158,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public HubEnvironmentsClient HubEnvironments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InfoClient Info { get; }
 
         /// <summary>
