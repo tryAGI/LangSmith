@@ -602,6 +602,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public HubEnvironmentsClient HubEnvironments => new HubEnvironmentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InfoClient Info => new InfoClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
