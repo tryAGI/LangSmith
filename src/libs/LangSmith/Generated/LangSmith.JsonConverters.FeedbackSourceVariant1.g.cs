@@ -12,31 +12,42 @@ namespace LangSmith.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LangSmith.AppFeedbackSource? app = default;
             if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.App)
             {
-                app = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.AppFeedbackSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AppFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AppFeedbackSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AppFeedbackSource)}");
+                app = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.APIFeedbackSource? api = default;
             if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.Api)
             {
-                api = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.APIFeedbackSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.APIFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.APIFeedbackSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.APIFeedbackSource)}");
+                api = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.ModelFeedbackSource? model = default;
             if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.Model)
             {
-                model = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.ModelFeedbackSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.ModelFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.ModelFeedbackSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.ModelFeedbackSource)}");
+                model = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.AutoEvalFeedbackSource? autoEval = default;
             if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.AutoEval)
             {
-                autoEval = global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.AutoEvalFeedbackSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AutoEvalFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AutoEvalFeedbackSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AutoEvalFeedbackSource)}");
+                autoEval = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::LangSmith.FeedbackSourceVariant1(
@@ -59,23 +70,32 @@ namespace LangSmith.JsonConverters
             global::LangSmith.FeedbackSourceVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsApp)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.App, typeof(global::LangSmith.AppFeedbackSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AppFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AppFeedbackSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.AppFeedbackSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.App!, typeInfo);
             }
             else if (value.IsApi)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Api, typeof(global::LangSmith.APIFeedbackSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.APIFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.APIFeedbackSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.APIFeedbackSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Api!, typeInfo);
             }
             else if (value.IsModel)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Model, typeof(global::LangSmith.ModelFeedbackSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.ModelFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.ModelFeedbackSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.ModelFeedbackSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Model!, typeInfo);
             }
             else if (value.IsAutoEval)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoEval, typeof(global::LangSmith.AutoEvalFeedbackSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AutoEvalFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AutoEvalFeedbackSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.AutoEvalFeedbackSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoEval!, typeInfo);
             }
         }
     }
