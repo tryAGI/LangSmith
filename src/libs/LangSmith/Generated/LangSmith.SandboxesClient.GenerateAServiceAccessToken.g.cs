@@ -5,92 +5,48 @@ namespace LangSmith
 {
     public partial class SandboxesClient
     {
-        partial void PrepareListSandboxClaimsArguments(
+        partial void PrepareGenerateAServiceAccessTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? limit,
-            ref int? offset,
-            ref string? nameContains,
-            ref string? status,
-            ref string? templateName,
-            ref string? sortBy,
-            ref string? sortDirection);
-        partial void PrepareListSandboxClaimsRequest(
+            global::LangSmith.SandboxesServiceURLPayload request);
+        partial void PrepareGenerateAServiceAccessTokenRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? limit,
-            int? offset,
-            string? nameContains,
-            string? status,
-            string? templateName,
-            string? sortBy,
-            string? sortDirection);
-        partial void ProcessListSandboxClaimsResponse(
+            global::LangSmith.SandboxesServiceURLPayload request);
+        partial void ProcessGenerateAServiceAccessTokenResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListSandboxClaimsResponseContent(
+        partial void ProcessGenerateAServiceAccessTokenResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List sandbox claims<br/>
-        /// List sandbox claims for the authenticated tenant, with optional filtering, sorting, and pagination.
+        /// Generate a service access token<br/>
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry.
         /// </summary>
-        /// <param name="limit">
-        /// Default Value: 50
-        /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="nameContains"></param>
-        /// <param name="status"></param>
-        /// <param name="templateName"></param>
-        /// <param name="sortBy">
-        /// Default Value: created_at
-        /// </param>
-        /// <param name="sortDirection">
-        /// Default Value: desc
-        /// </param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimListResponse> ListSandboxClaimsAsync(
-            int? limit = default,
-            int? offset = default,
-            string? nameContains = default,
-            string? status = default,
-            string? templateName = default,
-            string? sortBy = default,
-            string? sortDirection = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesServiceURLResponse> GenerateAServiceAccessTokenAsync(
+
+            global::LangSmith.SandboxesServiceURLPayload request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareListSandboxClaimsArguments(
+            PrepareGenerateAServiceAccessTokenArguments(
                 httpClient: HttpClient,
-                limit: ref limit,
-                offset: ref offset,
-                nameContains: ref nameContains,
-                status: ref status,
-                templateName: ref templateName,
-                sortBy: ref sortBy,
-                sortDirection: ref sortDirection);
+                request: request);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/v2/sandboxes/boxes",
+                path: "/v2/sandboxes/boxes/{name}/service-url",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder
-                .AddOptionalParameter("limit", limit?.ToString())
-                .AddOptionalParameter("offset", offset?.ToString())
-                .AddOptionalParameter("name_contains", nameContains)
-                .AddOptionalParameter("status", status)
-                .AddOptionalParameter("template_name", templateName)
-                .AddOptionalParameter("sort_by", sortBy)
-                .AddOptionalParameter("sort_direction", sortDirection) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -112,20 +68,20 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareListSandboxClaimsRequest(
+            PrepareGenerateAServiceAccessTokenRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                limit: limit,
-                offset: offset,
-                nameContains: nameContains,
-                status: status,
-                templateName: templateName,
-                sortBy: sortBy,
-                sortDirection: sortDirection);
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -135,7 +91,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessListSandboxClaimsResponse(
+            ProcessGenerateAServiceAccessTokenResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Bad Request
@@ -176,38 +132,76 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
-            // Forbidden
-            if ((int)__response.StatusCode == 403)
+            // Not Found
+            if ((int)__response.StatusCode == 404)
             {
-                string? __content_403 = null;
-                global::System.Exception? __exception_403 = null;
-                global::LangSmith.SandboxesErrorResponse? __value_403 = null;
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                global::LangSmith.SandboxesErrorResponse? __value_404 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
-                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerOptions);
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
-                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerOptions);
+                        __value_404 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
                 {
-                    __exception_403 = __ex;
+                    __exception_404 = __ex;
                 }
 
                 throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
-                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_403,
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_403,
-                    ResponseObject = __value_403,
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Unprocessable Entity
+            if ((int)__response.StatusCode == 422)
+            {
+                string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
+                global::LangSmith.SandboxesErrorResponse? __value_422 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_422 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_422 = __ex;
+                }
+
+                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -252,6 +246,44 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
+            // Not Implemented
+            if ((int)__response.StatusCode == 501)
+            {
+                string? __content_501 = null;
+                global::System.Exception? __exception_501 = null;
+                global::LangSmith.SandboxesErrorResponse? __value_501 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_501 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_501, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_501 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_501, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_501 = __ex;
+                }
+
+                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_501,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_501,
+                    ResponseObject = __value_501,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -265,7 +297,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessListSandboxClaimsResponseContent(
+                ProcessGenerateAServiceAccessTokenResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -275,7 +307,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.SandboxesClaimListResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::LangSmith.SandboxesServiceURLResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -305,7 +337,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.SandboxesClaimListResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::LangSmith.SandboxesServiceURLResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -336,6 +368,29 @@ namespace LangSmith
                     };
                 }
             }
+        }
+        /// <summary>
+        /// Generate a service access token<br/>
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry.
+        /// </summary>
+        /// <param name="expiresInSeconds"></param>
+        /// <param name="port"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesServiceURLResponse> GenerateAServiceAccessTokenAsync(
+            int? expiresInSeconds = default,
+            int? port = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.SandboxesServiceURLPayload
+            {
+                ExpiresInSeconds = expiresInSeconds,
+                Port = port,
+            };
+
+            return await GenerateAServiceAccessTokenAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

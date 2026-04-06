@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete Tracer Sessions<br/>
-        /// Delete a specific session.
+        /// Delete sessions.
         /// </summary>
         /// <param name="sessionIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

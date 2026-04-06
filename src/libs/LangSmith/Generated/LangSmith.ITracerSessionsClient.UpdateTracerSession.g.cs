@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Update Tracer Session<br/>
-        /// Create a new session.
+        /// Update a session.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -19,7 +19,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Tracer Session<br/>
-        /// Create a new session.
+        /// Update a session.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="name"></param>

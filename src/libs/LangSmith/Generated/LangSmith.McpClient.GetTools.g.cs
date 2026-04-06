@@ -9,13 +9,15 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string url,
             ref string? oauthProviderId,
-            ref string? lsUserId);
+            ref string? lsUserId,
+            ref bool? forceRefresh);
         partial void PrepareGetToolsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string url,
             string? oauthProviderId,
-            string? lsUserId);
+            string? lsUserId,
+            bool? forceRefresh);
         partial void ProcessGetToolsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,18 +32,24 @@ namespace LangSmith
         /// Return MCP tools — from cache if fresh, otherwise by fetching from remote.<br/>
         /// On cache miss, tries manifest fetch first (fast), then falls back to full<br/>
         /// MCP handshake. Caches the result before returning.<br/>
+        /// Pass force_refresh=true to bypass the cache and always fetch from the<br/>
+        /// remote server (the result is still cached via upsert for future requests).<br/>
         /// The ls_user_id query parameter allows service-key callers (which don't carry<br/>
         /// ls_user_id in auth) to specify the user for per-user OAuth cache lookups.
         /// </summary>
         /// <param name="url"></param>
         /// <param name="oauthProviderId"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="forceRefresh">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> GetToolsAsync(
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,
+            bool? forceRefresh = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -50,7 +58,8 @@ namespace LangSmith
                 httpClient: HttpClient,
                 url: ref url,
                 oauthProviderId: ref oauthProviderId,
-                lsUserId: ref lsUserId);
+                lsUserId: ref lsUserId,
+                forceRefresh: ref forceRefresh);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/mcp/tools",
@@ -58,7 +67,8 @@ namespace LangSmith
             __pathBuilder
                 .AddRequiredParameter("url", url)
                 .AddOptionalParameter("oauth_provider_id", oauthProviderId)
-                .AddOptionalParameter("ls_user_id", lsUserId) 
+                .AddOptionalParameter("ls_user_id", lsUserId)
+                .AddOptionalParameter("force_refresh", forceRefresh?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -93,7 +103,8 @@ namespace LangSmith
                 httpRequestMessage: __httpRequest,
                 url: url,
                 oauthProviderId: oauthProviderId,
-                lsUserId: lsUserId);
+                lsUserId: lsUserId,
+                forceRefresh: forceRefresh);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
