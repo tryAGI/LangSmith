@@ -5,8 +5,8 @@ namespace LangSmith
     public partial interface ISandboxesClient
     {
         /// <summary>
-        /// List sandbox claims<br/>
-        /// List sandbox claims for the authenticated tenant, with optional filtering, sorting, and pagination.
+        /// List sandbox templates<br/>
+        /// List sandbox templates for the authenticated tenant, with optional filtering, sorting, and pagination.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 50
@@ -15,8 +15,6 @@ namespace LangSmith
         /// Default Value: 0
         /// </param>
         /// <param name="nameContains"></param>
-        /// <param name="status"></param>
-        /// <param name="templateName"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
         /// </param>
@@ -25,12 +23,10 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimListResponse> ListSandboxClaimsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.SandboxesTemplateListResponse> ListSandboxTemplatesAsync(
             int? limit = default,
             int? offset = default,
             string? nameContains = default,
-            string? status = default,
-            string? templateName = default,
             string? sortBy = default,
             string? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default);

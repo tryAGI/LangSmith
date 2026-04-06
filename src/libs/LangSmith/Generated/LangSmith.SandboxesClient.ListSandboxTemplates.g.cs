@@ -5,37 +5,33 @@ namespace LangSmith
 {
     public partial class SandboxesClient
     {
-        partial void PrepareListSandboxClaimsArguments(
+        partial void PrepareListSandboxTemplatesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
             ref int? offset,
             ref string? nameContains,
-            ref string? status,
-            ref string? templateName,
             ref string? sortBy,
             ref string? sortDirection);
-        partial void PrepareListSandboxClaimsRequest(
+        partial void PrepareListSandboxTemplatesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
             int? offset,
             string? nameContains,
-            string? status,
-            string? templateName,
             string? sortBy,
             string? sortDirection);
-        partial void ProcessListSandboxClaimsResponse(
+        partial void ProcessListSandboxTemplatesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListSandboxClaimsResponseContent(
+        partial void ProcessListSandboxTemplatesResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List sandbox claims<br/>
-        /// List sandbox claims for the authenticated tenant, with optional filtering, sorting, and pagination.
+        /// List sandbox templates<br/>
+        /// List sandbox templates for the authenticated tenant, with optional filtering, sorting, and pagination.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 50
@@ -44,8 +40,6 @@ namespace LangSmith
         /// Default Value: 0
         /// </param>
         /// <param name="nameContains"></param>
-        /// <param name="status"></param>
-        /// <param name="templateName"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
         /// </param>
@@ -54,37 +48,31 @@ namespace LangSmith
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimListResponse> ListSandboxClaimsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesTemplateListResponse> ListSandboxTemplatesAsync(
             int? limit = default,
             int? offset = default,
             string? nameContains = default,
-            string? status = default,
-            string? templateName = default,
             string? sortBy = default,
             string? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListSandboxClaimsArguments(
+            PrepareListSandboxTemplatesArguments(
                 httpClient: HttpClient,
                 limit: ref limit,
                 offset: ref offset,
                 nameContains: ref nameContains,
-                status: ref status,
-                templateName: ref templateName,
                 sortBy: ref sortBy,
                 sortDirection: ref sortDirection);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/v2/sandboxes/boxes",
+                path: "/v2/sandboxes/templates",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("name_contains", nameContains)
-                .AddOptionalParameter("status", status)
-                .AddOptionalParameter("template_name", templateName)
                 .AddOptionalParameter("sort_by", sortBy)
                 .AddOptionalParameter("sort_direction", sortDirection) 
                 ; 
@@ -116,14 +104,12 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareListSandboxClaimsRequest(
+            PrepareListSandboxTemplatesRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 limit: limit,
                 offset: offset,
                 nameContains: nameContains,
-                status: status,
-                templateName: templateName,
                 sortBy: sortBy,
                 sortDirection: sortDirection);
 
@@ -135,7 +121,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessListSandboxClaimsResponse(
+            ProcessListSandboxTemplatesResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Bad Request
@@ -265,7 +251,7 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessListSandboxClaimsResponseContent(
+                ProcessListSandboxTemplatesResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -275,7 +261,7 @@ namespace LangSmith
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::LangSmith.SandboxesClaimListResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::LangSmith.SandboxesTemplateListResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -305,7 +291,7 @@ namespace LangSmith
                     ).ConfigureAwait(false);
 
                     return
-                        await global::LangSmith.SandboxesClaimListResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::LangSmith.SandboxesTemplateListResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
