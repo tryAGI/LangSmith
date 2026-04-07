@@ -9,10 +9,7 @@ namespace LangSmith
     public sealed partial class OCSFApi
     {
         /// <summary>
-        /// Operations that can be logged in audit_logs database table.<br/>
-        /// NOTE: not all of @audit_log_operation(&lt;log name&gt;) names are currently used here.<br/>
-        /// NOTE: OCSF mapping: endpoints with POST method and operation prefixed with "update_"<br/>
-        /// map to OCSF UPDATE activity type.
+        /// Operations that are logged in audit_logs database table.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AuditLogOperationJsonConverter))]
@@ -29,10 +26,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OCSFApi" /> class.
         /// </summary>
         /// <param name="operation">
-        /// Operations that can be logged in audit_logs database table.<br/>
-        /// NOTE: not all of @audit_log_operation(&lt;log name&gt;) names are currently used here.<br/>
-        /// NOTE: OCSF mapping: endpoints with POST method and operation prefixed with "update_"<br/>
-        /// map to OCSF UPDATE activity type.
+        /// Operations that are logged in audit_logs database table.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
