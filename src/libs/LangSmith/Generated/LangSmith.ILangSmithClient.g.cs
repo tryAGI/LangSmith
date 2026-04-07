@@ -153,6 +153,16 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetUsageClient FleetUsage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FleetWebhooksClient FleetWebhooks { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ForgeConfigurationsClient ForgeConfigurations { get; }
 
         /// <summary>
