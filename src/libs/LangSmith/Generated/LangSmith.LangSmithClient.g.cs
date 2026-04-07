@@ -234,6 +234,24 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetUsageClient FleetUsage => new FleetUsageClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FleetWebhooksClient FleetWebhooks => new FleetWebhooksClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ForgeConfigurationsClient ForgeConfigurations => new ForgeConfigurationsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

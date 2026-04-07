@@ -191,6 +191,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("backfill_id")]
+        public global::System.Guid? BackfillId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_status")]
         public string? BackfillStatus { get; set; }
 
@@ -292,6 +298,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="backfillFrom"></param>
+        /// <param name="backfillId"></param>
         /// <param name="backfillStatus"></param>
         /// <param name="backfillProgress"></param>
         /// <param name="backfillError"></param>
@@ -336,6 +343,7 @@ namespace LangSmith
             bool? extendOnly,
             bool? includeExtendedStats,
             global::System.DateTime? backfillFrom,
+            global::System.Guid? backfillId,
             string? backfillStatus,
             double? backfillProgress,
             string? backfillError,
@@ -374,6 +382,7 @@ namespace LangSmith
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.BackfillFrom = backfillFrom;
+            this.BackfillId = backfillId;
             this.BackfillStatus = backfillStatus;
             this.BackfillProgress = backfillProgress;
             this.BackfillError = backfillError;
