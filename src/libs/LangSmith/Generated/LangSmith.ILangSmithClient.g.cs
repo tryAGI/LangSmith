@@ -213,6 +213,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public NpsClient Nps { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OptimizationJobsClient OptimizationJobs { get; }
 
         /// <summary>

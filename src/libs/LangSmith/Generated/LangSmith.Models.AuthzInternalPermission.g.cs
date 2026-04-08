@@ -115,6 +115,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        FleetReadAdminConfig,
+        /// <summary>
+        /// 
+        /// </summary>
         McpServersCreate,
         /// <summary>
         /// 
@@ -272,6 +276,7 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackDelete => "feedback:delete",
                 AuthzInternalPermission.FeedbackRead => "feedback:read",
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
+                AuthzInternalPermission.FleetReadAdminConfig => "fleet:read-admin-config",
                 AuthzInternalPermission.McpServersCreate => "mcp-servers:create",
                 AuthzInternalPermission.McpServersDelete => "mcp-servers:delete",
                 AuthzInternalPermission.McpServersInvoke => "mcp-servers:invoke",
@@ -338,6 +343,7 @@ namespace LangSmith
                 "feedback:delete" => AuthzInternalPermission.FeedbackDelete,
                 "feedback:read" => AuthzInternalPermission.FeedbackRead,
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
+                "fleet:read-admin-config" => AuthzInternalPermission.FleetReadAdminConfig,
                 "mcp-servers:create" => AuthzInternalPermission.McpServersCreate,
                 "mcp-servers:delete" => AuthzInternalPermission.McpServersDelete,
                 "mcp-servers:invoke" => AuthzInternalPermission.McpServersInvoke,
