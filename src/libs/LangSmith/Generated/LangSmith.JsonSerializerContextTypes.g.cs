@@ -852,7 +852,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]>? Type206 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3641,7 +3641,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<byte[]>? ListType25 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>? ListType25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
