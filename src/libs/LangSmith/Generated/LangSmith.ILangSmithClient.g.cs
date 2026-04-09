@@ -88,6 +88,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public BackfillsClient Backfills { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BeaconClient Beacon { get; }
 
         /// <summary>
