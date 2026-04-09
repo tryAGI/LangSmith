@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class AnnotationQueuesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteAnnotationQueuesSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_DeleteAnnotationQueuesSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_DeleteAnnotationQueuesSecurityRequirement0,
+            };
         partial void PrepareDeleteAnnotationQueuesArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid> queueIds);
@@ -41,12 +60,18 @@ namespace LangSmith
                 httpClient: HttpClient,
                 queueIds: queueIds);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteAnnotationQueuesSecurityRequirements,
+                operationName: "DeleteAnnotationQueuesAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/annotation-queues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("queue_ids", queueIds, selector: static x => x.ToString()!, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -56,7 +81,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

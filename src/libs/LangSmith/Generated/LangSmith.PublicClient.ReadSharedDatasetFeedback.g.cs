@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class PublicClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ReadSharedDatasetFeedbackSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ReadSharedDatasetFeedbackSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ReadSharedDatasetFeedbackSecurityRequirement0,
+            };
         partial void PrepareReadSharedDatasetFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
@@ -92,6 +111,12 @@ namespace LangSmith
                 hasScore: hasScore,
                 level: level);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ReadSharedDatasetFeedbackSecurityRequirements,
+                operationName: "ReadSharedDatasetFeedbackAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/feedback",
                 baseUri: HttpClient.BaseAddress); 
@@ -106,7 +131,7 @@ namespace LangSmith
                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("level", level?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -116,7 +141,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

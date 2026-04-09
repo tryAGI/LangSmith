@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class McpClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_InvalidateToolsCacheSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_InvalidateToolsCacheSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_InvalidateToolsCacheSecurityRequirement0,
+            };
         partial void PrepareInvalidateToolsCacheArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string url,
@@ -50,6 +69,12 @@ namespace LangSmith
                 oauthProviderId: ref oauthProviderId,
                 lsUserId: ref lsUserId);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_InvalidateToolsCacheSecurityRequirements,
+                operationName: "InvalidateToolsCacheAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/mcp/tools",
                 baseUri: HttpClient.BaseAddress); 
@@ -57,7 +82,7 @@ namespace LangSmith
                 .AddRequiredParameter("url", url)
                 .AddOptionalParameter("oauth_provider_id", oauthProviderId)
                 .AddOptionalParameter("ls_user_id", lsUserId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -67,7 +92,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

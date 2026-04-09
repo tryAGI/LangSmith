@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_StreamDatasetHandlerSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_StreamDatasetHandlerSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_StreamDatasetHandlerSecurityRequirement0,
+            };
         partial void PrepareStreamDatasetHandlerArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.PlaygroundRunOverDatasetRequestSchema request);
@@ -40,9 +59,15 @@ namespace LangSmith
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_StreamDatasetHandlerSecurityRequirements,
+                operationName: "StreamDatasetHandlerAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/datasets/playground_experiment/stream",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -52,7 +77,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

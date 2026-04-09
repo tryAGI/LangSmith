@@ -18,7 +18,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.smith.langchain.com";
+        public const string DefaultBaseUrl = "https://api.smith.langchain.com/";
 
         private bool _disposeHttpClient = true;
 

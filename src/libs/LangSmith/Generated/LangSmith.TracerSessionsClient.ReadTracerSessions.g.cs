@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class TracerSessionsClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ReadTracerSessionsSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ReadTracerSessionsSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ReadTracerSessionsSecurityRequirement0,
+            };
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             bool? referenceFree,
@@ -142,6 +161,12 @@ namespace LangSmith
                 statsStartTime: statsStartTime,
                 accept: ref accept);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ReadTracerSessionsSecurityRequirements,
+                operationName: "ReadTracerSessionsAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
@@ -164,7 +189,7 @@ namespace LangSmith
                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("stats_start_time", statsStartTime?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -174,7 +199,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

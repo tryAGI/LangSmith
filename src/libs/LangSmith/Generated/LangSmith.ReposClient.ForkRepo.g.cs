@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class ReposClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ForkRepoSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ForkRepoSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ForkRepoSecurityRequirement0,
+            };
         partial void PrepareForkRepoArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
@@ -51,9 +70,15 @@ namespace LangSmith
                 repo: ref repo,
                 request: request);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ForkRepoSecurityRequirements,
+                operationName: "ForkRepoAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/repos/{owner}/{repo}/fork",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -63,7 +88,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

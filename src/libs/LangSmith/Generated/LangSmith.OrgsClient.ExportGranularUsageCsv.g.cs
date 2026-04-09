@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class OrgsClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ExportGranularUsageCsvSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ExportGranularUsageCsvSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ExportGranularUsageCsvSecurityRequirement0,
+            };
         partial void PrepareExportGranularUsageCsvArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.DateTime startTime,
@@ -59,6 +78,12 @@ namespace LangSmith
                 workspaceIds: workspaceIds,
                 groupBy: ref groupBy);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ExportGranularUsageCsvSecurityRequirements,
+                operationName: "ExportGranularUsageCsvAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/billing/granular-usage/export",
                 baseUri: HttpClient.BaseAddress); 
@@ -67,7 +92,7 @@ namespace LangSmith
                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                 .AddOptionalParameter("group_by", groupBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -77,7 +102,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

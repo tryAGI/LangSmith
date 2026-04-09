@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class SandboxesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_CaptureASnapshotFromASandboxSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CaptureASnapshotFromASandboxSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_CaptureASnapshotFromASandboxSecurityRequirement0,
+            };
         partial void PrepareCaptureASnapshotFromASandboxArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.SandboxesCaptureSnapshotPayload request);
@@ -41,9 +60,15 @@ namespace LangSmith
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CaptureASnapshotFromASandboxSecurityRequirements,
+                operationName: "CaptureASnapshotFromASandboxAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v2/sandboxes/boxes/{name}/snapshot",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

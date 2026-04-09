@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class AccessPoliciesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_AttachAccessPoliciesToARoleSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_AttachAccessPoliciesToARoleSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_AttachAccessPoliciesToARoleSecurityRequirement0,
+            };
         partial void PrepareAttachAccessPoliciesToARoleArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.AuthzInternalAttachAccessPoliciesPayload request);
@@ -36,9 +55,15 @@ namespace LangSmith
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AttachAccessPoliciesToARoleSecurityRequirements,
+                operationName: "AttachAccessPoliciesToARoleAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -48,7 +73,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

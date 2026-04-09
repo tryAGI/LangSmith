@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class PublicClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_CountSharedExamplesSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CountSharedExamplesSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_CountSharedExamplesSecurityRequirement0,
+            };
         partial void PrepareCountSharedExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
@@ -61,6 +80,12 @@ namespace LangSmith
                 metadata: ref metadata,
                 filter: ref filter);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CountSharedExamplesSecurityRequirements,
+                operationName: "CountSharedExamplesAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/examples/count",
                 baseUri: HttpClient.BaseAddress); 
@@ -69,7 +94,7 @@ namespace LangSmith
                 .AddOptionalParameter("as_of", asOf?.ToString())
                 .AddOptionalParameter("metadata", metadata)
                 .AddOptionalParameter("filter", filter) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -79,7 +104,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

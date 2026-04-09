@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class OrgsClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_GetOrgUsageSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_GetOrgUsageSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_GetOrgUsageSecurityRequirement0,
+            };
         partial void PrepareGetOrgUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.DateTime startingOn,
@@ -49,6 +68,12 @@ namespace LangSmith
                 endingBefore: ref endingBefore,
                 onCurrentPlan: ref onCurrentPlan);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetOrgUsageSecurityRequirements,
+                operationName: "GetOrgUsageAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/orgs/current/billing/usage",
                 baseUri: HttpClient.BaseAddress); 
@@ -56,7 +81,7 @@ namespace LangSmith
                 .AddRequiredParameter("starting_on", startingOn.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("ending_before", endingBefore.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("on_current_plan", onCurrentPlan?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -66,7 +91,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

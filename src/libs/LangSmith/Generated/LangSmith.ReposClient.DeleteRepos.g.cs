@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class ReposClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteReposSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_DeleteReposSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_DeleteReposSecurityRequirement0,
+            };
         partial void PrepareDeleteReposArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid> repoIds);
@@ -41,12 +60,18 @@ namespace LangSmith
                 httpClient: HttpClient,
                 repoIds: repoIds);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteReposSecurityRequirements,
+                operationName: "DeleteReposAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/repos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("repo_ids", repoIds, selector: static x => x.ToString()!, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -56,7 +81,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class WorkspacesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListCurrentWorkspaceSecretsSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListCurrentWorkspaceSecretsSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ListCurrentWorkspaceSecretsSecurityRequirement0,
+            };
         partial void PrepareListCurrentWorkspaceSecretsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListCurrentWorkspaceSecretsRequest(
@@ -32,9 +51,15 @@ namespace LangSmith
             PrepareListCurrentWorkspaceSecretsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListCurrentWorkspaceSecretsSecurityRequirements,
+                operationName: "ListCurrentWorkspaceSecretsAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces/current/secrets",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -44,7 +69,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

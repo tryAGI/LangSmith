@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class FeedbackClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateFeedbackWithTokenGetSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateFeedbackWithTokenGetSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_CreateFeedbackWithTokenGetSecurityRequirement0,
+            };
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
@@ -58,6 +77,12 @@ namespace LangSmith
                 comment: ref comment,
                 correction: ref correction);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateFeedbackWithTokenGetSecurityRequirements,
+                operationName: "CreateFeedbackWithTokenGetAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/feedback/tokens/{token}",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +91,7 @@ namespace LangSmith
                 .AddOptionalParameter("value", value?.ToString())
                 .AddOptionalParameter("comment", comment)
                 .AddOptionalParameter("correction", correction) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -76,7 +101,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

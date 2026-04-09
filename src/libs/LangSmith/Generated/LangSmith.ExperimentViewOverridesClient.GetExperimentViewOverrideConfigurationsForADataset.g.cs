@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class ExperimentViewOverridesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_GetExperimentViewOverrideConfigurationsForADatasetSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_GetExperimentViewOverrideConfigurationsForADatasetSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_GetExperimentViewOverrideConfigurationsForADatasetSecurityRequirement0,
+            };
         partial void PrepareGetExperimentViewOverrideConfigurationsForADatasetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetExperimentViewOverrideConfigurationsForADatasetRequest(
@@ -41,9 +60,15 @@ namespace LangSmith
             PrepareGetExperimentViewOverrideConfigurationsForADatasetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetExperimentViewOverrideConfigurationsForADatasetSecurityRequirements,
+                operationName: "GetExperimentViewOverrideConfigurationsForADatasetAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/datasets/{dataset_id}/experiment-view-overrides",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -53,7 +78,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
