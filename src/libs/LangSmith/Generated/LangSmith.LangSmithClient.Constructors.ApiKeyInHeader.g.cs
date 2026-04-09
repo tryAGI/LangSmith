@@ -6,6 +6,7 @@ namespace LangSmith
     public sealed partial class LangSmithClient
     {
         /// <inheritdoc cref="LangSmithClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::LangSmith.EndPointAuthorization}?, bool)"/>
+
         public LangSmithClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

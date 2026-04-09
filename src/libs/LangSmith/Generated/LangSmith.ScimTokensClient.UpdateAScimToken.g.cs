@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class ScimTokensClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateAScimTokenSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdateAScimTokenSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_UpdateAScimTokenSecurityRequirement0,
+            };
         partial void PrepareUpdateAScimTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::LangSmith.ScimUpdateScimTokenPayload request);
@@ -41,9 +60,15 @@ namespace LangSmith
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateAScimTokenSecurityRequirements,
+                operationName: "UpdateAScimTokenAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v1/platform/orgs/current/scim/tokens/{scim_token_id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
@@ -53,7 +78,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

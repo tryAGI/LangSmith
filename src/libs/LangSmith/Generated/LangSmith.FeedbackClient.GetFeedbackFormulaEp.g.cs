@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class FeedbackClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_GetFeedbackFormulaEpSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_GetFeedbackFormulaEpSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_GetFeedbackFormulaEpSecurityRequirement0,
+            };
         partial void PrepareGetFeedbackFormulaEpArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid feedbackFormulaId);
@@ -38,9 +57,15 @@ namespace LangSmith
                 httpClient: HttpClient,
                 feedbackFormulaId: ref feedbackFormulaId);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetFeedbackFormulaEpSecurityRequirements,
+                operationName: "GetFeedbackFormulaEpAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/feedback/formulas/{feedbackFormulaId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -50,7 +75,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

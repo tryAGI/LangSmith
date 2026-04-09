@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_GetDatasetVersionsSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_GetDatasetVersionsSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_GetDatasetVersionsSecurityRequirement0,
+            };
         partial void PrepareGetDatasetVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
@@ -62,6 +81,12 @@ namespace LangSmith
                 limit: ref limit,
                 offset: ref offset);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetDatasetVersionsSecurityRequirements,
+                operationName: "GetDatasetVersionsAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/versions",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +95,7 @@ namespace LangSmith
                 .AddOptionalParameter("example", example?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -80,7 +105,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

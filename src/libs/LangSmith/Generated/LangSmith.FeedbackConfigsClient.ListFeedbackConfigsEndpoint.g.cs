@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class FeedbackConfigsClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListFeedbackConfigsEndpointSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListFeedbackConfigsEndpointSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ListFeedbackConfigsEndpointSecurityRequirement0,
+            };
         partial void PrepareListFeedbackConfigsEndpointArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? key,
@@ -68,6 +87,12 @@ namespace LangSmith
                 sortByDesc: ref sortByDesc,
                 readAfterWrite: ref readAfterWrite);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListFeedbackConfigsEndpointSecurityRequirements,
+                operationName: "ListFeedbackConfigsEndpointAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/feedback-configs",
                 baseUri: HttpClient.BaseAddress); 
@@ -78,7 +103,7 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("read_after_write", readAfterWrite?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -88,7 +113,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

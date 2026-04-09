@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class FleetUsageClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListFleetAgentsWithUsageSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListFleetAgentsWithUsageSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ListFleetAgentsWithUsageSecurityRequirement0,
+            };
         partial void PrepareListFleetAgentsWithUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -50,6 +69,12 @@ namespace LangSmith
                 startTime: ref startTime,
                 endTime: ref endTime);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListFleetAgentsWithUsageSecurityRequirements,
+                operationName: "ListFleetAgentsWithUsageAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v1/platform/fleet/usage/agents",
                 baseUri: HttpClient.BaseAddress); 
@@ -57,7 +82,7 @@ namespace LangSmith
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddRequiredParameter("start_time", startTime)
                 .AddRequiredParameter("end_time", endTime) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -67,7 +92,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

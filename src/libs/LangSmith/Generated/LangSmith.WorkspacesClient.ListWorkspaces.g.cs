@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class WorkspacesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListWorkspacesSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListWorkspacesSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ListWorkspacesSecurityRequirement0,
+            };
         partial void PrepareListWorkspacesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeDeleted);
@@ -40,12 +59,18 @@ namespace LangSmith
                 httpClient: HttpClient,
                 includeDeleted: ref includeDeleted);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListWorkspacesSecurityRequirements,
+                operationName: "ListWorkspacesAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/api/v1/workspaces",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -55,7 +80,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

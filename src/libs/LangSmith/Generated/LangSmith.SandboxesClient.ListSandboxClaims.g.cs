@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class SandboxesClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListSandboxClaimsSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListSandboxClaimsSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_ListSandboxClaimsSecurityRequirement0,
+            };
         partial void PrepareListSandboxClaimsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -76,6 +95,12 @@ namespace LangSmith
                 sortBy: ref sortBy,
                 sortDirection: ref sortDirection);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSandboxClaimsSecurityRequirements,
+                operationName: "ListSandboxClaimsAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: "/v2/sandboxes/boxes",
                 baseUri: HttpClient.BaseAddress); 
@@ -87,7 +112,7 @@ namespace LangSmith
                 .AddOptionalParameter("template_name", templateName)
                 .AddOptionalParameter("sort_by", sortBy)
                 .AddOptionalParameter("sort_direction", sortDirection) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -97,7 +122,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

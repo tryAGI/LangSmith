@@ -5,6 +5,25 @@ namespace LangSmith
 {
     public partial class FeedbackClient
     {
+
+
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteFeedbackSecurityRequirement0 =
+            new global::LangSmith.EndPointSecurityRequirement
+            {
+                Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
+                {                    new global::LangSmith.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_DeleteFeedbackSecurityRequirements =
+            new global::LangSmith.EndPointSecurityRequirement[]
+            {                s_DeleteFeedbackSecurityRequirement0,
+            };
         partial void PrepareDeleteFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid feedbackId);
@@ -38,9 +57,15 @@ namespace LangSmith
                 httpClient: HttpClient,
                 feedbackId: ref feedbackId);
 
+
+            var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteFeedbackSecurityRequirements,
+                operationName: "DeleteFeedbackAsync");
+
             var __pathBuilder = new global::LangSmith.PathBuilder(
                 path: $"/api/v1/feedback/{feedbackId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -50,7 +75,7 @@ namespace LangSmith
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
