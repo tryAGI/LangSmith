@@ -158,6 +158,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetIntegrationsClient FleetIntegrations { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FleetUsageClient FleetUsage { get; }
 
         /// <summary>
