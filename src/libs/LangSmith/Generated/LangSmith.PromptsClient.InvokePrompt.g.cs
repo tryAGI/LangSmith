@@ -221,7 +221,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> InvokePromptAsync(
-            global::System.Collections.Generic.IList<byte[]> messages,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
             string templateFormat,
             object inputs,
             global::System.Threading.CancellationToken cancellationToken = default)

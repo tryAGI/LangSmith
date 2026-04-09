@@ -18,7 +18,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public global::System.Collections.Generic.IList<byte[]>? Prompt { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Prompt { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace LangSmith
 #endif
         public EvaluatorStructuredOutput(
             string? hubRef,
-            global::System.Collections.Generic.IList<byte[]>? prompt,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? prompt,
             string? templateFormat,
             object? schema,
             global::System.Collections.Generic.Dictionary<string, string>? variableMapping,
