@@ -117,6 +117,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public BackfillsClient Backfills => new BackfillsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BeaconClient Beacon => new BeaconClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

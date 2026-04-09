@@ -5,49 +5,38 @@ namespace LangSmith
 {
     public partial class EvaluatorsClient
     {
-        partial void PrepareBulkDeleteEvaluatorsArguments(
+        partial void PrepareDeleteEvaluatorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            byte[] evaluatorIds,
             ref bool? deleteRunRules);
-        partial void PrepareBulkDeleteEvaluatorsRequest(
+        partial void PrepareDeleteEvaluatorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            byte[] evaluatorIds,
             bool? deleteRunRules);
-        partial void ProcessBulkDeleteEvaluatorsResponse(
+        partial void ProcessDeleteEvaluatorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBulkDeleteEvaluatorsResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// Bulk delete evaluators<br/>
-        /// Delete multiple evaluators by their IDs. Returns per-item success/failure.
+        /// Delete evaluator<br/>
+        /// Delete an evaluator. When delete_run_rules is true, all run rules referencing this evaluator are deleted first (same tenant). Associated llm_evaluators and code_evaluators rows are removed by foreign-key cascade when the evaluator row is deleted.
         /// </summary>
-        /// <param name="evaluatorIds"></param>
         /// <param name="deleteRunRules"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsBulkDeleteEvaluatorsResponse> BulkDeleteEvaluatorsAsync(
-            byte[] evaluatorIds,
+        public async global::System.Threading.Tasks.Task DeleteEvaluatorAsync(
             bool? deleteRunRules = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareBulkDeleteEvaluatorsArguments(
+            PrepareDeleteEvaluatorArguments(
                 httpClient: HttpClient,
-                evaluatorIds: evaluatorIds,
                 deleteRunRules: ref deleteRunRules);
 
             var __pathBuilder = new global::LangSmith.PathBuilder(
-                path: "/v1/platform/evaluators",
+                path: "/v1/platform/evaluators/{evaluator_id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("evaluator_ids", evaluatorIds.ToString()!)
                 .AddOptionalParameter("delete_run_rules", deleteRunRules?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -78,10 +67,9 @@ namespace LangSmith
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareBulkDeleteEvaluatorsRequest(
+            PrepareDeleteEvaluatorRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                evaluatorIds: evaluatorIds,
                 deleteRunRules: deleteRunRules);
 
             using var __response = await HttpClient.SendAsync(
@@ -92,7 +80,7 @@ namespace LangSmith
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessBulkDeleteEvaluatorsResponse(
+            ProcessDeleteEvaluatorResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Bad Request
@@ -171,6 +159,82 @@ namespace LangSmith
                         h => h.Value),
                 };
             }
+            // Not Found
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                global::System.Collections.Generic.Dictionary<string, string>? __value_404 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_404 = __ex;
+                }
+
+                throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Conflict
+            if ((int)__response.StatusCode == 409)
+            {
+                string? __content_409 = null;
+                global::System.Exception? __exception_409 = null;
+                global::System.Collections.Generic.Dictionary<string, string>? __value_409 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_409 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_409, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_409 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_409, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_409 = __ex;
+                }
+
+                throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
+                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_409,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_409,
+                    ResponseObject = __value_409,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
             // Internal Server Error
             if ((int)__response.StatusCode == 500)
             {
@@ -222,18 +286,11 @@ namespace LangSmith
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessBulkDeleteEvaluatorsResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
 
                 try
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::LangSmith.EvaluatorsBulkDeleteEvaluatorsResponse.FromJson(__content, JsonSerializerContext) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -255,15 +312,6 @@ namespace LangSmith
                 try
                 {
                     __response.EnsureSuccessStatusCode();
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
-
-                    return
-                        await global::LangSmith.EvaluatorsBulkDeleteEvaluatorsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
