@@ -243,6 +243,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetIntegrationsClient FleetIntegrations => new FleetIntegrationsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FleetUsageClient FleetUsage => new FleetUsageClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
