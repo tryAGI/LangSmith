@@ -10,12 +10,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="feedbackId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> UpdateFeedbackAsync(
             global::System.Guid feedbackId,
 
             global::LangSmith.FeedbackUpdateSchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Feedback<br/>
@@ -27,6 +29,7 @@ namespace LangSmith
         /// <param name="comment"></param>
         /// <param name="correction"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.FeedbackSchema> UpdateFeedbackAsync(
@@ -36,6 +39,7 @@ namespace LangSmith
             string? comment = default,
             global::LangSmith.AnyOf<object, string, object>? correction = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

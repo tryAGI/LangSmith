@@ -11,11 +11,13 @@ namespace LangSmith
         /// IMPORTANT: attachment files can take up to 7 days to be deleted. inputs, outputs and metadata are nullified immediately.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesDeletedResponse> HardDeleteExamplesAsync(
 
             global::LangSmith.ExamplesDeleteExamplesRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Hard Delete Examples<br/>
@@ -30,11 +32,13 @@ namespace LangSmith
         /// HardDelete indicates whether to perform a hard delete.<br/>
         /// Currently only True is supported.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesDeletedResponse> HardDeleteExamplesAsync(
             global::System.Collections.Generic.IList<string> exampleIds,
             bool hardDelete,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

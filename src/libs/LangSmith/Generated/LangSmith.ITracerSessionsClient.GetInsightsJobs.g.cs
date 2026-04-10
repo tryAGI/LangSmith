@@ -17,6 +17,7 @@ namespace LangSmith
         /// </param>
         /// <param name="configId"></param>
         /// <param name="legacy"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
 #if NET8_0_OR_GREATER
@@ -28,6 +29,7 @@ namespace LangSmith
             int? offset = default,
             global::System.Guid? configId = default,
             bool? legacy = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

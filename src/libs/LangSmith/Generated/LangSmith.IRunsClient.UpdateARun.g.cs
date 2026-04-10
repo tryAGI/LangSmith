@@ -9,11 +9,13 @@ namespace LangSmith
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateARunAsync(
 
             global::LangSmith.RunsRun request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a Run<br/>
@@ -40,6 +42,7 @@ namespace LangSmith
         /// <param name="status"></param>
         /// <param name="tags"></param>
         /// <param name="traceId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateARunAsync(
@@ -64,6 +67,7 @@ namespace LangSmith
             string? status = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             string? traceId = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

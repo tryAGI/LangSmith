@@ -9,11 +9,13 @@ namespace LangSmith
         /// Create a new prompt webhook.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptWebhook> CreatePromptWebhookAsync(
 
             global::LangSmith.PromptWebhookCreate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Prompt Webhook<br/>
@@ -25,6 +27,7 @@ namespace LangSmith
         /// <param name="excludePrompts"></param>
         /// <param name="triggers"></param>
         /// <param name="id"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PromptWebhook> CreatePromptWebhookAsync(
@@ -34,6 +37,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? excludePrompts = default,
             global::System.Collections.Generic.IList<global::LangSmith.EPromptWebhookTrigger>? triggers = default,
             global::System.Guid? id = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

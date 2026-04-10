@@ -10,11 +10,13 @@ namespace LangSmith
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
 
             global::LangSmith.PatchPlatformDatasetsExamplesRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Examples<br/>
@@ -51,6 +53,7 @@ namespace LangSmith
         /// <param name="x_exampleId_Attachment_name_name">
         /// New file attachment named {name}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
@@ -64,6 +67,7 @@ namespace LangSmith
             string? x_exampleId_AttachmentsOperationsname = default,
             byte[]? x_exampleId_Attachment_name_ = default,
             string? x_exampleId_Attachment_name_name = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

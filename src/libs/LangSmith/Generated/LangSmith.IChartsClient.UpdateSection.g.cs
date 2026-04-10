@@ -10,12 +10,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="sectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionUpdate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Section<br/>
@@ -31,6 +33,7 @@ namespace LangSmith
         /// <param name="index">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
@@ -38,6 +41,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

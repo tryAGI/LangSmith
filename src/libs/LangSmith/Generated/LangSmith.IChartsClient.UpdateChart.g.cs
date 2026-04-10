@@ -10,12 +10,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Chart<br/>
@@ -46,6 +48,7 @@ namespace LangSmith
         /// <param name="commonFilters">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(
@@ -58,6 +61,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? sectionId = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
             global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>? commonFilters = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

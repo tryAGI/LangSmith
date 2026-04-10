@@ -9,11 +9,13 @@ namespace LangSmith
         /// Create a new chart.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> CreateChartAsync(
 
             global::LangSmith.CustomChartCreate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Chart<br/>
@@ -29,6 +31,7 @@ namespace LangSmith
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
         /// <param name="commonFilters"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> CreateChartAsync(
@@ -40,6 +43,7 @@ namespace LangSmith
             global::System.Guid? sectionId = default,
             object? metadata = default,
             global::LangSmith.CustomChartSeriesFilters2? commonFilters = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

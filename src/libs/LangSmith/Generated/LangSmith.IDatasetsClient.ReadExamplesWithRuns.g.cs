@@ -13,6 +13,7 @@ namespace LangSmith
         /// Response format, e.g., 'csv'
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
@@ -20,6 +21,7 @@ namespace LangSmith
 
             global::LangSmith.QueryExampleSchemaWithRunsRequest request,
             string? format = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Examples With Runs<br/>
@@ -47,6 +49,7 @@ namespace LangSmith
         /// <param name="includeAnnotatorDetail">
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>> ReadExamplesWithRunsAsync(
@@ -62,6 +65,7 @@ namespace LangSmith
             bool? stream = default,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             bool? includeAnnotatorDetail = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

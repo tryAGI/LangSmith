@@ -10,12 +10,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetAsync(
             global::System.Guid datasetId,
 
             global::LangSmith.DatasetUpdate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Dataset<br/>
@@ -23,12 +25,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetSchemaForUpdate>> UpdateDatasetAsResponseAsync(
             global::System.Guid datasetId,
 
             global::LangSmith.DatasetUpdate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Dataset<br/>
@@ -57,6 +61,7 @@ namespace LangSmith
         /// <param name="baselineExperimentId">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DatasetSchemaForUpdate> UpdateDatasetAsync(
@@ -69,6 +74,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>? transformations = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing, object>? baselineExperimentId = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

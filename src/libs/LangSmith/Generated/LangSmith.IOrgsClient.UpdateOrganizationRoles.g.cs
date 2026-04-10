@@ -9,12 +9,14 @@ namespace LangSmith
         /// </summary>
         /// <param name="roleId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Role> UpdateOrganizationRolesAsync(
             global::System.Guid roleId,
 
             global::LangSmith.UpdateRoleRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Organization Roles
@@ -23,6 +25,7 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="permissions"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Role> UpdateOrganizationRolesAsync(
@@ -30,6 +33,7 @@ namespace LangSmith
             string displayName,
             string description,
             global::System.Collections.Generic.IList<string> permissions,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

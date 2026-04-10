@@ -32,11 +32,13 @@ namespace LangSmith
         /// Both the dataset and override must exist and be accessible by the authenticated user.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExperimentViewOverridesExperimentViewOverride> UpdateExistingExperimentViewOverrideConfigurationAsync(
 
             global::LangSmith.ExperimentViewOverridesExperimentViewOverridePatchRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update existing experiment view override configuration<br/>
@@ -66,10 +68,12 @@ namespace LangSmith
         /// Both the dataset and override must exist and be accessible by the authenticated user.
         /// </summary>
         /// <param name="columnOverrides"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExperimentViewOverridesExperimentViewOverride> UpdateExistingExperimentViewOverrideConfigurationAsync(
             global::System.Collections.Generic.IList<global::LangSmith.ExperimentViewOverridesColumnOverride> columnOverrides,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,11 +9,13 @@ namespace LangSmith
         /// Queues a single run for ingestion. The request body must be a JSON-encoded run object that follows the Run schema.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CreateARunAsync(
 
             global::LangSmith.RunsRun request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Run<br/>
@@ -40,6 +42,7 @@ namespace LangSmith
         /// <param name="status"></param>
         /// <param name="tags"></param>
         /// <param name="traceId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> CreateARunAsync(
@@ -64,6 +67,7 @@ namespace LangSmith
             string? status = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             string? traceId = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
