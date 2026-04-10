@@ -8,11 +8,13 @@ namespace LangSmith
         /// Query Runs
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListRunsResponse> QueryRunsAsync(
 
             global::LangSmith.BodyParamsForRunsQuerySchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query Runs
@@ -52,6 +54,7 @@ namespace LangSmith
         /// <param name="skipPrevCursor">
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListRunsResponse> QueryRunsAsync(
@@ -79,6 +82,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
             global::LangSmith.RunDateOrder? order = default,
             bool? skipPrevCursor = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

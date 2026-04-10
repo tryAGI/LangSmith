@@ -11,11 +11,13 @@ namespace LangSmith
         /// and PHONE_HOME_USAGE_REPORTING_ENABLED are set. Authenticates via license key.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task SubmitASelfHostedUsageSnapshotAsync(
 
             global::LangSmith.BeaconSubmitUsageSnapshotPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Submit a self-hosted usage snapshot<br/>
@@ -27,6 +29,7 @@ namespace LangSmith
         /// <param name="licenseKey"></param>
         /// <param name="measures"></param>
         /// <param name="toTimestamp"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task SubmitASelfHostedUsageSnapshotAsync(
@@ -34,6 +37,7 @@ namespace LangSmith
             string? licenseKey = default,
             global::System.Collections.Generic.Dictionary<string, int>? measures = default,
             string? toTimestamp = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

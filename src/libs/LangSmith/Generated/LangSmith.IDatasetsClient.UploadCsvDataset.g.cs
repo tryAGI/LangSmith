@@ -9,11 +9,13 @@ namespace LangSmith
         /// Create a new dataset from a CSV or JSONL file.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Dataset> UploadCsvDatasetAsync(
 
             global::LangSmith.BodyUploadCsvDatasetApiV1DatasetsUploadPost request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Csv Dataset<br/>
@@ -40,6 +42,7 @@ namespace LangSmith
         /// <param name="inputKeyMappings"></param>
         /// <param name="outputKeyMappings"></param>
         /// <param name="metadataKeyMappings"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Dataset> UploadCsvDatasetAsync(
@@ -57,6 +60,7 @@ namespace LangSmith
             string? inputKeyMappings = default,
             string? outputKeyMappings = default,
             string? metadataKeyMappings = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

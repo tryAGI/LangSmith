@@ -15,11 +15,13 @@ namespace LangSmith
         /// project), which allows users to see the evaluator execution history.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> ValidateRuleAsync(
 
             global::LangSmith.RunRulesValidateSchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate Rule<br/>
@@ -74,6 +76,7 @@ namespace LangSmith
         /// <param name="testOutputs"></param>
         /// <param name="testReferenceOutputs"></param>
         /// <param name="testAttachments"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> ValidateRuleAsync(
@@ -106,6 +109,7 @@ namespace LangSmith
             object? testOutputs = default,
             object? testReferenceOutputs = default,
             object? testAttachments = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

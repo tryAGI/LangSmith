@@ -12,6 +12,7 @@ namespace LangSmith
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoOwner> AddRepoOwnerAsync(
@@ -19,6 +20,7 @@ namespace LangSmith
             string repo,
 
             global::LangSmith.AddRepoOwnerRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add Repo Owner<br/>
@@ -28,12 +30,14 @@ namespace LangSmith
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="email"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RepoOwner> AddRepoOwnerAsync(
             string owner,
             string repo,
             string email,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

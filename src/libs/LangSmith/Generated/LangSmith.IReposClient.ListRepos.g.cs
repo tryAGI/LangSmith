@@ -30,6 +30,7 @@ namespace LangSmith
         /// <param name="repoType"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
@@ -49,6 +50,7 @@ namespace LangSmith
             global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
             global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
             global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

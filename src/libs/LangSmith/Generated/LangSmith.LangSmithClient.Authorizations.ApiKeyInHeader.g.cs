@@ -26,6 +26,7 @@ namespace LangSmith
             Authorizations.Add(new global::LangSmith.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyXApiKey",
                 Location = "Header",
                 Name = "X-API-Key",
                 Value = apiKey,

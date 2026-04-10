@@ -9,11 +9,13 @@ namespace LangSmith
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
 
             global::LangSmith.SandboxesUpdateClaimPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a sandbox claim<br/>
@@ -26,6 +28,7 @@ namespace LangSmith
         /// <param name="proxyConfig"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="vcpus"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
@@ -36,6 +39,7 @@ namespace LangSmith
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             int? ttlSeconds = default,
             int? vcpus = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

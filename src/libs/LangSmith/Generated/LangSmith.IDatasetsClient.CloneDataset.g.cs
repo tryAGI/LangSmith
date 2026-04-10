@@ -9,11 +9,13 @@ namespace LangSmith
         /// Clone a dataset.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
 
             global::LangSmith.BodyCloneDatasetApiV1DatasetsClonePost request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Clone Dataset<br/>
@@ -26,6 +28,7 @@ namespace LangSmith
         /// Default Value: []
         /// </param>
         /// <param name="split"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> CloneDatasetAsync(
@@ -34,6 +37,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

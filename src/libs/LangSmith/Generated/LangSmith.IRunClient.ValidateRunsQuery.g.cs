@@ -9,11 +9,13 @@ namespace LangSmith
         /// Validate runs query syntax, returns errors for broken queries.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunsQueryValidationResponse> ValidateRunsQueryAsync(
 
             global::LangSmith.BodyParamsForRunsQuerySchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate Runs Query<br/>
@@ -54,6 +56,7 @@ namespace LangSmith
         /// <param name="skipPrevCursor">
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.RunsQueryValidationResponse> ValidateRunsQueryAsync(
@@ -81,6 +84,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunSelect>? select = default,
             global::LangSmith.RunDateOrder? order = default,
             bool? skipPrevCursor = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

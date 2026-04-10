@@ -8,11 +8,13 @@ namespace LangSmith
         /// Invoke Prompt
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> InvokePromptAsync(
 
             global::LangSmith.InvokePromptPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Invoke Prompt
@@ -20,12 +22,14 @@ namespace LangSmith
         /// <param name="messages"></param>
         /// <param name="templateFormat"></param>
         /// <param name="inputs"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> InvokePromptAsync(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
             string templateFormat,
             object inputs,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

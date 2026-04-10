@@ -10,11 +10,13 @@ namespace LangSmith
         /// Create Org Personal Access Token
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgPersonalAccessTokenAsync(
 
             global::LangSmith.APIKeyCreateRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Org Personal Access Token
@@ -27,6 +29,7 @@ namespace LangSmith
         /// <param name="roleId"></param>
         /// <param name="orgRoleId"></param>
         /// <param name="defaultWorkspaceId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.APIKeyCreateResponse> CreateOrgPersonalAccessTokenAsync(
@@ -36,6 +39,7 @@ namespace LangSmith
             global::System.Guid? roleId = default,
             global::System.Guid? orgRoleId = default,
             global::System.Guid? defaultWorkspaceId = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

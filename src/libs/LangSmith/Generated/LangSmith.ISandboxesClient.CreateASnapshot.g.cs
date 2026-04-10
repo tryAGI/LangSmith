@@ -9,11 +9,13 @@ namespace LangSmith
         /// Create a snapshot from a Docker image (async build).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSnapshotResponse> CreateASnapshotAsync(
 
             global::LangSmith.SandboxesCreateSnapshotPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a snapshot<br/>
@@ -26,6 +28,7 @@ namespace LangSmith
         /// <param name="registryPassword"></param>
         /// <param name="registryUrl"></param>
         /// <param name="registryUsername"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSnapshotResponse> CreateASnapshotAsync(
@@ -36,6 +39,7 @@ namespace LangSmith
             string? registryPassword = default,
             string? registryUrl = default,
             string? registryUsername = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

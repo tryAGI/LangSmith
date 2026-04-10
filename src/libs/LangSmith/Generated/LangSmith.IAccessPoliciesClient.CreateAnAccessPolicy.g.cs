@@ -9,11 +9,13 @@ namespace LangSmith
         /// Creates a new access policy.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AuthzInternalAccessPolicyCreateResponse> CreateAnAccessPolicyAsync(
 
             global::LangSmith.AuthzInternalCreateAccessPolicyPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an access policy<br/>
@@ -26,6 +28,7 @@ namespace LangSmith
         /// <param name="roleIds">
         /// if present, attach to the specified roles
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AuthzInternalAccessPolicyCreateResponse> CreateAnAccessPolicyAsync(
@@ -34,6 +37,7 @@ namespace LangSmith
             string? effect = default,
             string? name = default,
             global::System.Collections.Generic.IList<string>? roleIds = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

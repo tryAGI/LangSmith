@@ -19,6 +19,7 @@ namespace LangSmith
         /// </param>
         /// <param name="attributeSortKey"></param>
         /// <param name="attributeSortOrder"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
 #if NET8_0_OR_GREATER
@@ -32,6 +33,7 @@ namespace LangSmith
             int? offset = default,
             string? attributeSortKey = default,
             global::LangSmith.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2? attributeSortOrder = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

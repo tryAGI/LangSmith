@@ -9,11 +9,13 @@ namespace LangSmith
         /// Execute some custom code for testing purposes.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ExecuteAsync(
 
             global::LangSmith.BodyExecuteApiV1AceExecutePost request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute<br/>
@@ -22,12 +24,14 @@ namespace LangSmith
         /// <param name="args"></param>
         /// <param name="code"></param>
         /// <param name="language"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ExecuteAsync(
             global::System.Collections.Generic.IList<object> args,
             string code,
             string language,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

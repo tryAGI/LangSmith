@@ -8,11 +8,13 @@ namespace LangSmith
         /// Prompt Canvas
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> PromptCanvasAsync(
 
             global::LangSmith.PlaygroundPromptCanvasPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Prompt Canvas
@@ -25,6 +27,7 @@ namespace LangSmith
         /// <param name="customAction"></param>
         /// <param name="templateFormat"></param>
         /// <param name="secrets"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> PromptCanvasAsync(
@@ -36,6 +39,7 @@ namespace LangSmith
             global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength = default,
             global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel = default,
             string? customAction = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
