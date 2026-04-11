@@ -4,7 +4,10 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Represents an audit log message.
+    /// Represents an audit log message.<br/>
+    /// Indexed columns are individual DB columns. All other fields<br/>
+    /// (request_method, request_path, client_host, etc.) live in the<br/>
+    /// enrichments JSONB column.
     /// </summary>
     public sealed partial class AuditLogMessage
     {
@@ -25,12 +28,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("resource_ids")]
-        public global::System.Collections.Generic.IList<global::System.Guid>? ResourceIds { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation_succeeded")]
         public bool? OperationSucceeded { get; set; }
 
@@ -40,38 +37,6 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("request_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime RequestTime { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("request_method")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RequestMethod { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("request_path")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RequestPath { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("client_host")]
-        public string? ClientHost { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("client_port")]
-        public int? ClientPort { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("x_forwarded_for")]
-        public string? XForwardedFor { get; set; }
 
         /// <summary>
         /// 
@@ -106,14 +71,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_status_code")]
-        public int? ResponseStatusCode { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enrichments")]
-        public object? Enrichments { get; set; }
+        public global::LangSmith.AuditLogEnrichments? Enrichments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -127,19 +86,12 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="operationName"></param>
         /// <param name="requestTime"></param>
-        /// <param name="requestMethod"></param>
-        /// <param name="requestPath"></param>
-        /// <param name="resourceIds"></param>
         /// <param name="operationSucceeded"></param>
-        /// <param name="clientHost"></param>
-        /// <param name="clientPort"></param>
-        /// <param name="xForwardedFor"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="userId"></param>
         /// <param name="lsUserId"></param>
         /// <param name="organizationId"></param>
         /// <param name="workspaceId"></param>
-        /// <param name="responseStatusCode"></param>
         /// <param name="enrichments"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -148,37 +100,23 @@ namespace LangSmith
             global::System.Guid id,
             string operationName,
             global::System.DateTime requestTime,
-            string requestMethod,
-            string requestPath,
-            global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
             bool? operationSucceeded,
-            string? clientHost,
-            int? clientPort,
-            string? xForwardedFor,
             global::System.Guid? apiKeyId,
             global::System.Guid? userId,
             global::System.Guid? lsUserId,
             global::System.Guid? organizationId,
             global::System.Guid? workspaceId,
-            int? responseStatusCode,
-            object? enrichments)
+            global::LangSmith.AuditLogEnrichments? enrichments)
         {
             this.Id = id;
             this.OperationName = operationName ?? throw new global::System.ArgumentNullException(nameof(operationName));
-            this.ResourceIds = resourceIds;
             this.OperationSucceeded = operationSucceeded;
             this.RequestTime = requestTime;
-            this.RequestMethod = requestMethod ?? throw new global::System.ArgumentNullException(nameof(requestMethod));
-            this.RequestPath = requestPath ?? throw new global::System.ArgumentNullException(nameof(requestPath));
-            this.ClientHost = clientHost;
-            this.ClientPort = clientPort;
-            this.XForwardedFor = xForwardedFor;
             this.ApiKeyId = apiKeyId;
             this.UserId = userId;
             this.LsUserId = lsUserId;
             this.OrganizationId = organizationId;
             this.WorkspaceId = workspaceId;
-            this.ResponseStatusCode = responseStatusCode;
             this.Enrichments = enrichments;
         }
 

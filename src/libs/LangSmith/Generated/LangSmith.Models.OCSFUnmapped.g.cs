@@ -10,7 +10,10 @@ namespace LangSmith
     public sealed partial class OCSFUnmapped
     {
         /// <summary>
-        /// Represents an audit log message.
+        /// Represents an audit log message.<br/>
+        /// Indexed columns are individual DB columns. All other fields<br/>
+        /// (request_method, request_path, client_host, etc.) live in the<br/>
+        /// enrichments JSONB column.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_audit_log")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,7 +29,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OCSFUnmapped" /> class.
         /// </summary>
         /// <param name="originalAuditLog">
-        /// Represents an audit log message.
+        /// Represents an audit log message.<br/>
+        /// Indexed columns are individual DB columns. All other fields<br/>
+        /// (request_method, request_path, client_host, etc.) live in the<br/>
+        /// enrichments JSONB column.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

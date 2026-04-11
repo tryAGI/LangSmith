@@ -301,19 +301,19 @@ namespace LangSmith
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_400 = null;
+                                global::LangSmith.EvaluatorsErrorResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_400 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_400 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -321,7 +321,7 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
+                                throw new global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>(
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     statusCode: __response.StatusCode)
@@ -339,19 +339,19 @@ namespace LangSmith
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_401 = null;
+                                global::LangSmith.EvaluatorsErrorResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_401 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_401 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -359,7 +359,7 @@ namespace LangSmith
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
+                                throw new global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>(
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     statusCode: __response.StatusCode)
@@ -372,24 +372,62 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
+                            // Forbidden
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.EvaluatorsErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseObject = __value_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_500 = null;
+                                global::LangSmith.EvaluatorsErrorResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_500 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_500 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -397,7 +435,7 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
+                                throw new global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>(
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     statusCode: __response.StatusCode)

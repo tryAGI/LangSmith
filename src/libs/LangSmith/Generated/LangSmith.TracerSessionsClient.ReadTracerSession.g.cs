@@ -136,10 +136,10 @@ namespace LangSmith
                 } 
             }
 
-                if (accept != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
-                }
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
+            }
 
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
