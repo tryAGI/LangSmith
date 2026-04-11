@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("category")]
+        public string? Category { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
@@ -25,6 +31,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
+        public bool? Enabled { get; set; }
 
         /// <summary>
         /// 
@@ -79,8 +91,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="IntegrationsIntegration" /> class.
         /// </summary>
         /// <param name="auth"></param>
+        /// <param name="category"></param>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
+        /// <param name="enabled"></param>
         /// <param name="iconUrl"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -93,8 +107,10 @@ namespace LangSmith
 #endif
         public IntegrationsIntegration(
             global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthInfo>? auth,
+            string? category,
             string? createdAt,
             string? description,
+            bool? enabled,
             string? iconUrl,
             string? id,
             string? name,
@@ -104,8 +120,10 @@ namespace LangSmith
             string? url)
         {
             this.Auth = auth;
+            this.Category = category;
             this.CreatedAt = createdAt;
             this.Description = description;
+            this.Enabled = enabled;
             this.IconUrl = iconUrl;
             this.Id = id;
             this.Name = name;

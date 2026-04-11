@@ -14,6 +14,7 @@ namespace LangSmith
         /// <param name="nameContains"></param>
         /// <param name="id"></param>
         /// <param name="evaluatorId"></param>
+        /// <param name="tagValueId"></param>
         /// <param name="includeBackfillProgress">
         /// Default Value: false
         /// </param>
@@ -27,6 +28,7 @@ namespace LangSmith
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? evaluatorId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? includeBackfillProgress = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

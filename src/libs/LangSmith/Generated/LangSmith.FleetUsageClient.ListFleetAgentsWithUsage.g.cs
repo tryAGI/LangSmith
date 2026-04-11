@@ -57,7 +57,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.FleetUsageAgentUsageResponse> ListFleetAgentsWithUsageAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.UsageAgentUsageResponse> ListFleetAgentsWithUsageAsync(
             string startTime,
             string endTime,
             int? limit = default,
@@ -404,7 +404,7 @@ namespace LangSmith
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LangSmith.FleetUsageAgentUsageResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::LangSmith.UsageAgentUsageResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -434,7 +434,7 @@ namespace LangSmith
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LangSmith.FleetUsageAgentUsageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::LangSmith.UsageAgentUsageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)

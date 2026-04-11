@@ -33,6 +33,7 @@ namespace LangSmith
             ref string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? evaluatorId,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref bool? includeBackfillProgress);
         partial void PrepareListRulesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,6 +44,7 @@ namespace LangSmith
             string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? evaluatorId,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             bool? includeBackfillProgress);
         partial void ProcessListRulesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -63,6 +65,7 @@ namespace LangSmith
         /// <param name="nameContains"></param>
         /// <param name="id"></param>
         /// <param name="evaluatorId"></param>
+        /// <param name="tagValueId"></param>
         /// <param name="includeBackfillProgress">
         /// Default Value: false
         /// </param>
@@ -76,6 +79,7 @@ namespace LangSmith
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? evaluatorId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? includeBackfillProgress = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -90,6 +94,7 @@ namespace LangSmith
                 nameContains: ref nameContains,
                 id: id,
                 evaluatorId: evaluatorId,
+                tagValueId: tagValueId,
                 includeBackfillProgress: ref includeBackfillProgress);
 
 
@@ -124,6 +129,7 @@ namespace LangSmith
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("id", id?.ToString())
                                 .AddOptionalParameter("evaluator_id", evaluatorId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                                 .AddOptionalParameter("include_backfill_progress", includeBackfillProgress?.ToString().ToLowerInvariant()) 
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -172,6 +178,7 @@ namespace LangSmith
                     nameContains: nameContains,
                     id: id,
                     evaluatorId: evaluatorId,
+                    tagValueId: tagValueId,
                     includeBackfillProgress: includeBackfillProgress);
 
                 return __httpRequest;

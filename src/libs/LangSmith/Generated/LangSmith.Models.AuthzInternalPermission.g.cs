@@ -119,6 +119,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        FleetWriteAdminConfig,
+        /// <summary>
+        /// 
+        /// </summary>
         McpServersCreate,
         /// <summary>
         /// 
@@ -164,6 +168,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ProjectsUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectsUpdateRetention,
         /// <summary>
         /// 
         /// </summary>
@@ -277,6 +285,7 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackRead => "feedback:read",
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
                 AuthzInternalPermission.FleetReadAdminConfig => "fleet:read-admin-config",
+                AuthzInternalPermission.FleetWriteAdminConfig => "fleet:write-admin-config",
                 AuthzInternalPermission.McpServersCreate => "mcp-servers:create",
                 AuthzInternalPermission.McpServersDelete => "mcp-servers:delete",
                 AuthzInternalPermission.McpServersInvoke => "mcp-servers:invoke",
@@ -289,6 +298,7 @@ namespace LangSmith
                 AuthzInternalPermission.ProjectsDelete => "projects:delete",
                 AuthzInternalPermission.ProjectsRead => "projects:read",
                 AuthzInternalPermission.ProjectsUpdate => "projects:update",
+                AuthzInternalPermission.ProjectsUpdateRetention => "projects:update-retention",
                 AuthzInternalPermission.PromptsCreate => "prompts:create",
                 AuthzInternalPermission.PromptsDelete => "prompts:delete",
                 AuthzInternalPermission.PromptsRead => "prompts:read",
@@ -344,6 +354,7 @@ namespace LangSmith
                 "feedback:read" => AuthzInternalPermission.FeedbackRead,
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
                 "fleet:read-admin-config" => AuthzInternalPermission.FleetReadAdminConfig,
+                "fleet:write-admin-config" => AuthzInternalPermission.FleetWriteAdminConfig,
                 "mcp-servers:create" => AuthzInternalPermission.McpServersCreate,
                 "mcp-servers:delete" => AuthzInternalPermission.McpServersDelete,
                 "mcp-servers:invoke" => AuthzInternalPermission.McpServersInvoke,
@@ -356,6 +367,7 @@ namespace LangSmith
                 "projects:delete" => AuthzInternalPermission.ProjectsDelete,
                 "projects:read" => AuthzInternalPermission.ProjectsRead,
                 "projects:update" => AuthzInternalPermission.ProjectsUpdate,
+                "projects:update-retention" => AuthzInternalPermission.ProjectsUpdateRetention,
                 "prompts:create" => AuthzInternalPermission.PromptsCreate,
                 "prompts:delete" => AuthzInternalPermission.PromptsDelete,
                 "prompts:read" => AuthzInternalPermission.PromptsRead,
