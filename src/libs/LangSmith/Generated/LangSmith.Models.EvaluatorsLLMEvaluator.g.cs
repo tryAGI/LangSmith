@@ -35,6 +35,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_few_shot_examples")]
+        public int? NumFewShotExamples { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_id")]
         public string? PromptId { get; set; }
 
@@ -43,6 +49,13 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_repo_handle")]
         public string? PromptRepoHandle { get; set; }
+
+        /// <summary>
+        /// Derived from the evaluator's run rules — shared across all rules on this evaluator.<br/>
+        /// Nil when the evaluator has no run rules.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_corrections_dataset")]
+        public bool? UseCorrectionsDataset { get; set; }
 
         /// <summary>
         /// JSONB
@@ -63,8 +76,13 @@ namespace LangSmith
         /// <param name="commitHashOrTag"></param>
         /// <param name="correctionsDatasetId"></param>
         /// <param name="evaluatorId"></param>
+        /// <param name="numFewShotExamples"></param>
         /// <param name="promptId"></param>
         /// <param name="promptRepoHandle"></param>
+        /// <param name="useCorrectionsDataset">
+        /// Derived from the evaluator's run rules — shared across all rules on this evaluator.<br/>
+        /// Nil when the evaluator has no run rules.
+        /// </param>
         /// <param name="variableMapping">
         /// JSONB
         /// </param>
@@ -76,16 +94,20 @@ namespace LangSmith
             string? commitHashOrTag,
             string? correctionsDatasetId,
             string? evaluatorId,
+            int? numFewShotExamples,
             string? promptId,
             string? promptRepoHandle,
+            bool? useCorrectionsDataset,
             object? variableMapping)
         {
             this.AnnotationQueueId = annotationQueueId;
             this.CommitHashOrTag = commitHashOrTag;
             this.CorrectionsDatasetId = correctionsDatasetId;
             this.EvaluatorId = evaluatorId;
+            this.NumFewShotExamples = numFewShotExamples;
             this.PromptId = promptId;
             this.PromptRepoHandle = promptRepoHandle;
+            this.UseCorrectionsDataset = useCorrectionsDataset;
             this.VariableMapping = variableMapping;
         }
 

@@ -17,8 +17,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_few_shot_examples")]
+        public int? NumFewShotExamples { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_repo_handle")]
         public string? PromptRepoHandle { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_corrections_dataset")]
+        public bool? UseCorrectionsDataset { get; set; }
 
         /// <summary>
         /// 
@@ -36,18 +48,24 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="EvaluatorsUpdateLLMEvaluatorRequest" /> class.
         /// </summary>
         /// <param name="commitHashOrTag"></param>
+        /// <param name="numFewShotExamples"></param>
         /// <param name="promptRepoHandle"></param>
+        /// <param name="useCorrectionsDataset"></param>
         /// <param name="variableMapping"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvaluatorsUpdateLLMEvaluatorRequest(
             string? commitHashOrTag,
+            int? numFewShotExamples,
             string? promptRepoHandle,
+            bool? useCorrectionsDataset,
             object? variableMapping)
         {
             this.CommitHashOrTag = commitHashOrTag;
+            this.NumFewShotExamples = numFewShotExamples;
             this.PromptRepoHandle = promptRepoHandle;
+            this.UseCorrectionsDataset = useCorrectionsDataset;
             this.VariableMapping = variableMapping;
         }
 

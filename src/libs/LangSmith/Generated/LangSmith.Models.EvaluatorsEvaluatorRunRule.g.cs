@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("corrections_dataset_id")]
+        public string? CorrectionsDatasetId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         public string? DatasetId { get; set; }
 
@@ -35,6 +41,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_few_shot_examples")]
+        public int? NumFewShotExamples { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public string? SessionId { get; set; }
 
@@ -45,6 +57,12 @@ namespace LangSmith
         public string? SessionName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_corrections_dataset")]
+        public bool? UseCorrectionsDataset { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,29 +71,38 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="EvaluatorsEvaluatorRunRule" /> class.
         /// </summary>
+        /// <param name="correctionsDatasetId"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
         /// <param name="groupBy"></param>
         /// <param name="id"></param>
+        /// <param name="numFewShotExamples"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
+        /// <param name="useCorrectionsDataset"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvaluatorsEvaluatorRunRule(
+            string? correctionsDatasetId,
             string? datasetId,
             string? datasetName,
             string? groupBy,
             string? id,
+            int? numFewShotExamples,
             string? sessionId,
-            string? sessionName)
+            string? sessionName,
+            bool? useCorrectionsDataset)
         {
+            this.CorrectionsDatasetId = correctionsDatasetId;
             this.DatasetId = datasetId;
             this.DatasetName = datasetName;
             this.GroupBy = groupBy;
             this.Id = id;
+            this.NumFewShotExamples = numFewShotExamples;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
+            this.UseCorrectionsDataset = useCorrectionsDataset;
         }
 
         /// <summary>
