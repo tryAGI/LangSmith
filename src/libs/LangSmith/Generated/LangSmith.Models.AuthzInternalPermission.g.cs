@@ -159,7 +159,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ProjectsDecreaseTraceTier,
+        /// <summary>
+        /// 
+        /// </summary>
         ProjectsDelete,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectsIncreaseTraceTier,
         /// <summary>
         /// 
         /// </summary>
@@ -168,10 +176,6 @@ namespace LangSmith
         /// 
         /// </summary>
         ProjectsUpdate,
-        /// <summary>
-        /// 
-        /// </summary>
-        ProjectsUpdateRetention,
         /// <summary>
         /// 
         /// </summary>
@@ -295,10 +299,11 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
                 AuthzInternalPermission.OrganizationRead => "organization:read",
                 AuthzInternalPermission.ProjectsCreate => "projects:create",
+                AuthzInternalPermission.ProjectsDecreaseTraceTier => "projects:decrease-trace-tier",
                 AuthzInternalPermission.ProjectsDelete => "projects:delete",
+                AuthzInternalPermission.ProjectsIncreaseTraceTier => "projects:increase-trace-tier",
                 AuthzInternalPermission.ProjectsRead => "projects:read",
                 AuthzInternalPermission.ProjectsUpdate => "projects:update",
-                AuthzInternalPermission.ProjectsUpdateRetention => "projects:update-retention",
                 AuthzInternalPermission.PromptsCreate => "prompts:create",
                 AuthzInternalPermission.PromptsDelete => "prompts:delete",
                 AuthzInternalPermission.PromptsRead => "prompts:read",
@@ -364,10 +369,11 @@ namespace LangSmith
                 "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
                 "organization:read" => AuthzInternalPermission.OrganizationRead,
                 "projects:create" => AuthzInternalPermission.ProjectsCreate,
+                "projects:decrease-trace-tier" => AuthzInternalPermission.ProjectsDecreaseTraceTier,
                 "projects:delete" => AuthzInternalPermission.ProjectsDelete,
+                "projects:increase-trace-tier" => AuthzInternalPermission.ProjectsIncreaseTraceTier,
                 "projects:read" => AuthzInternalPermission.ProjectsRead,
                 "projects:update" => AuthzInternalPermission.ProjectsUpdate,
-                "projects:update-retention" => AuthzInternalPermission.ProjectsUpdateRetention,
                 "prompts:create" => AuthzInternalPermission.PromptsCreate,
                 "prompts:delete" => AuthzInternalPermission.PromptsDelete,
                 "prompts:read" => AuthzInternalPermission.PromptsRead,

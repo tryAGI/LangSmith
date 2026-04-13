@@ -58,6 +58,12 @@ namespace LangSmith
         public string? TenantHandle { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_plane_url")]
+        public string? DataPlaneUrl { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
@@ -98,6 +104,7 @@ namespace LangSmith
         /// <param name="isDeleted"></param>
         /// <param name="organizationId"></param>
         /// <param name="tenantHandle"></param>
+        /// <param name="dataPlaneUrl"></param>
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
         /// <param name="permissions"></param>
@@ -112,6 +119,7 @@ namespace LangSmith
             bool isDeleted,
             global::System.Guid? organizationId,
             string? tenantHandle,
+            string? dataPlaneUrl,
             global::System.Guid? roleId,
             string? roleName,
             global::System.Collections.Generic.IList<string>? permissions)
@@ -123,6 +131,7 @@ namespace LangSmith
             this.IsPersonal = isPersonal;
             this.IsDeleted = isDeleted;
             this.TenantHandle = tenantHandle;
+            this.DataPlaneUrl = dataPlaneUrl;
             this.RoleId = roleId;
             this.RoleName = roleName;
             this.Permissions = permissions;
