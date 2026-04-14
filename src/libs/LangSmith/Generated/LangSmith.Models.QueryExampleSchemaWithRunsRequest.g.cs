@@ -7,7 +7,7 @@ namespace LangSmith
     /// Request DTO for querying examples with runs - used for API input.<br/>
     /// This is separate from the internal schema to cleanly handle optional limit values.<br/>
     /// When limit is None, the internal schema will apply appropriate defaults based on<br/>
-    /// format and stream settings.
+    /// format.
     /// </summary>
     public sealed partial class QueryExampleSchemaWithRunsRequest
     {
@@ -55,12 +55,6 @@ namespace LangSmith
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
-        public bool? Stream { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
@@ -92,9 +86,6 @@ namespace LangSmith
         /// <param name="comparativeExperimentId"></param>
         /// <param name="sortParams"></param>
         /// <param name="filters"></param>
-        /// <param name="stream">
-        /// Default Value: false
-        /// </param>
         /// <param name="exampleIds"></param>
         /// <param name="includeAnnotatorDetail">
         /// Default Value: false
@@ -110,7 +101,6 @@ namespace LangSmith
             global::System.Guid? comparativeExperimentId,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
-            bool? stream,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds,
             bool? includeAnnotatorDetail)
         {
@@ -121,7 +111,6 @@ namespace LangSmith
             this.ComparativeExperimentId = comparativeExperimentId;
             this.SortParams = sortParams;
             this.Filters = filters;
-            this.Stream = stream;
             this.ExampleIds = exampleIds;
             this.IncludeAnnotatorDetail = includeAnnotatorDetail;
         }
