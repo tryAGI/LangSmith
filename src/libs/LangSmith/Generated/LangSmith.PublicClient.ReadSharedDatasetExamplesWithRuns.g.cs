@@ -449,9 +449,6 @@ namespace LangSmith
         /// <param name="comparativeExperimentId"></param>
         /// <param name="sortParams"></param>
         /// <param name="filters"></param>
-        /// <param name="stream">
-        /// Default Value: false
-        /// </param>
         /// <param name="exampleIds"></param>
         /// <param name="includeAnnotatorDetail">
         /// Default Value: false
@@ -468,7 +465,6 @@ namespace LangSmith
             global::System.Guid? comparativeExperimentId = default,
             global::LangSmith.SortParamsForRunsComparisonView? sortParams = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
-            bool? stream = default,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             bool? includeAnnotatorDetail = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -483,7 +479,6 @@ namespace LangSmith
                 ComparativeExperimentId = comparativeExperimentId,
                 SortParams = sortParams,
                 Filters = filters,
-                Stream = stream,
                 ExampleIds = exampleIds,
                 IncludeAnnotatorDetail = includeAnnotatorDetail,
             };
