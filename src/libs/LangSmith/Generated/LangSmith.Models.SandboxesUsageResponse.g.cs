@@ -71,6 +71,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("snapshots_count")]
+        public int? SnapshotsCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_limit_bytes")]
         public long? StorageLimitBytes { get; set; }
 
@@ -117,6 +123,7 @@ namespace LangSmith
         /// <param name="sandboxPoolReplicasCount"></param>
         /// <param name="sandboxesLimit"></param>
         /// <param name="sandboxesUsed"></param>
+        /// <param name="snapshotsCount"></param>
         /// <param name="storageLimitBytes"></param>
         /// <param name="storageUsedBytes"></param>
         /// <param name="templatesCount"></param>
@@ -136,6 +143,7 @@ namespace LangSmith
             int? sandboxPoolReplicasCount,
             int? sandboxesLimit,
             int? sandboxesUsed,
+            int? snapshotsCount,
             long? storageLimitBytes,
             long? storageUsedBytes,
             int? templatesCount,
@@ -152,6 +160,7 @@ namespace LangSmith
             this.SandboxPoolReplicasCount = sandboxPoolReplicasCount;
             this.SandboxesLimit = sandboxesLimit;
             this.SandboxesUsed = sandboxesUsed;
+            this.SnapshotsCount = snapshotsCount;
             this.StorageLimitBytes = storageLimitBytes;
             this.StorageUsedBytes = storageUsedBytes;
             this.TemplatesCount = templatesCount;

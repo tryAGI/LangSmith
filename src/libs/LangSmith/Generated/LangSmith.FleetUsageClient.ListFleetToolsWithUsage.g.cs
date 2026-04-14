@@ -3,11 +3,11 @@
 
 namespace LangSmith
 {
-    public partial class SandboxesClient
+    public partial class FleetUsageClient
     {
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListSnapshotsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListFleetToolsWithUsageSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -21,83 +21,62 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListSnapshotsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListFleetToolsWithUsageSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ListSnapshotsSecurityRequirement0,
+            {                s_ListFleetToolsWithUsageSecurityRequirement0,
             };
-        partial void PrepareListSnapshotsArguments(
+        partial void PrepareListFleetToolsWithUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
-            ref int? offset,
-            ref string? nameContains,
-            ref string? status,
-            ref string? sortBy,
-            ref string? sortDirection);
-        partial void PrepareListSnapshotsRequest(
+            ref string startTime,
+            ref string endTime);
+        partial void PrepareListFleetToolsWithUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
-            int? offset,
-            string? nameContains,
-            string? status,
-            string? sortBy,
-            string? sortDirection);
-        partial void ProcessListSnapshotsResponse(
+            string startTime,
+            string endTime);
+        partial void ProcessListFleetToolsWithUsageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListSnapshotsResponseContent(
+        partial void ProcessListFleetToolsWithUsageResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List snapshots<br/>
-        /// List sandbox snapshots for the authenticated tenant, with optional filtering, sorting, and pagination.
+        /// List fleet tools with usage<br/>
+        /// Returns the top tools in the workspace with run counts, latency, and agent counts for the given time window, sorted by run count descending.
         /// </summary>
         /// <param name="limit">
-        /// Default Value: 50
+        /// Default Value: 20
         /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="nameContains"></param>
-        /// <param name="status"></param>
-        /// <param name="sortBy">
-        /// Default Value: created_at
-        /// </param>
-        /// <param name="sortDirection">
-        /// Default Value: desc
-        /// </param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSnapshotListResponse> ListSnapshotsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.UsageToolUsageResponse> ListFleetToolsWithUsageAsync(
+            string startTime,
+            string endTime,
             int? limit = default,
-            int? offset = default,
-            string? nameContains = default,
-            string? status = default,
-            string? sortBy = default,
-            string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListSnapshotsArguments(
+            PrepareListFleetToolsWithUsageArguments(
                 httpClient: HttpClient,
                 limit: ref limit,
-                offset: ref offset,
-                nameContains: ref nameContains,
-                status: ref status,
-                sortBy: ref sortBy,
-                sortDirection: ref sortDirection);
+                startTime: ref startTime,
+                endTime: ref endTime);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListSnapshotsSecurityRequirements,
-                operationName: "ListSnapshotsAsync");
+                securityRequirements: s_ListFleetToolsWithUsageSecurityRequirements,
+                operationName: "ListFleetToolsWithUsageAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -116,15 +95,12 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/snapshots",
+                                path: "/v1/platform/fleet/usage/tools",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("status", status)
-                                .AddOptionalParameter("sort_by", sortBy)
-                                .AddOptionalParameter("sort_direction", sortDirection) 
+                                .AddRequiredParameter("start_time", startTime)
+                                .AddRequiredParameter("end_time", endTime) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -163,15 +139,12 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListSnapshotsRequest(
+                PrepareListFleetToolsWithUsageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     limit: limit,
-                    offset: offset,
-                    nameContains: nameContains,
-                    status: status,
-                    sortBy: sortBy,
-                    sortDirection: sortDirection);
+                    startTime: startTime,
+                    endTime: endTime);
 
                 return __httpRequest;
             }
@@ -188,9 +161,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListSnapshots",
-                                methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                operationId: "ListFleetToolsWithUsage",
+                                methodName: "ListFleetToolsWithUsageAsync",
+                                pathTemplate: "\"/v1/platform/fleet/usage/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,9 +188,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListSnapshots",
-                                methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                operationId: "ListFleetToolsWithUsage",
+                                methodName: "ListFleetToolsWithUsageAsync",
+                                pathTemplate: "\"/v1/platform/fleet/usage/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -250,9 +223,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListSnapshots",
-                                methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                operationId: "ListFleetToolsWithUsage",
+                                methodName: "ListFleetToolsWithUsageAsync",
+                                pathTemplate: "\"/v1/platform/fleet/usage/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -289,7 +262,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListSnapshotsResponse(
+                ProcessListFleetToolsWithUsageResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -297,9 +270,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListSnapshots",
-                                methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                operationId: "ListFleetToolsWithUsage",
+                                methodName: "ListFleetToolsWithUsageAsync",
+                                pathTemplate: "\"/v1/platform/fleet/usage/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -317,9 +290,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListSnapshots",
-                                methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                operationId: "ListFleetToolsWithUsage",
+                                methodName: "ListFleetToolsWithUsageAsync",
+                                pathTemplate: "\"/v1/platform/fleet/usage/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -337,19 +310,19 @@ namespace LangSmith
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_400 = null;
+                                global::LangSmith.ErrutilUserError? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.ErrutilUserError.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.ErrutilUserError.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -357,7 +330,7 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+                                throw new global::LangSmith.ApiException<global::LangSmith.ErrutilUserError>(
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     statusCode: __response.StatusCode)
@@ -370,62 +343,24 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Forbidden
-                            if ((int)__response.StatusCode == 403)
-                            {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_403 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_403 = __ex;
-                                }
-
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_500 = null;
+                                global::LangSmith.ErrutilInternalError? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::LangSmith.ErrutilInternalError.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::LangSmith.ErrutilInternalError.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -433,7 +368,7 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+                                throw new global::LangSmith.ApiException<global::LangSmith.ErrutilInternalError>(
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     statusCode: __response.StatusCode)
@@ -459,7 +394,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListSnapshotsResponseContent(
+                                ProcessListFleetToolsWithUsageResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -469,7 +404,7 @@ namespace LangSmith
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LangSmith.SandboxesSnapshotListResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::LangSmith.UsageToolUsageResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -499,7 +434,7 @@ namespace LangSmith
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LangSmith.SandboxesSnapshotListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::LangSmith.UsageToolUsageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
