@@ -299,6 +299,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        DownloadDataset,
+        /// <summary>
+        /// 
+        /// </summary>
         InviteUserToOrg,
         /// <summary>
         /// 
@@ -562,6 +566,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteWorkspace => "delete_workspace",
                 AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
+                AuditLogOperation.DownloadDataset => "download_dataset",
                 AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
                 AuditLogOperation.ListAccessPolicies => "list_access_policies",
@@ -689,6 +694,7 @@ namespace LangSmith
                 "delete_workspace" => AuditLogOperation.DeleteWorkspace,
                 "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
+                "download_dataset" => AuditLogOperation.DownloadDataset,
                 "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
                 "list_access_policies" => AuditLogOperation.ListAccessPolicies,
