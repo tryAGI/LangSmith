@@ -41,6 +41,14 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.AuthProviderNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2NullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.BulkExportCompressionNullableJsonConverter),
@@ -807,6 +815,9 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataType), TypeInfoPropertyName = "DataType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BodyUploadExamplesFromCsvApiV1ExamplesUploadDatasetIdPost))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BotocoreS3Config))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BotocoreS3ConfigAddressingStyle2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BotocoreS3ConfigUsEast1RegionalEndpoint2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExport))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportFormat), TypeInfoPropertyName = "BulkExportFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportFormatVersion), TypeInfoPropertyName = "BulkExportFormatVersion2")]
