@@ -59,6 +59,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_running_count")]
+        public int? SandboxRunningCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_stopped_count")]
+        public int? SandboxStoppedCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sandboxes_limit")]
         public int? SandboxesLimit { get; set; }
 
@@ -121,6 +133,8 @@ namespace LangSmith
         /// <param name="registriesCount"></param>
         /// <param name="sandboxDirectCount"></param>
         /// <param name="sandboxPoolReplicasCount"></param>
+        /// <param name="sandboxRunningCount"></param>
+        /// <param name="sandboxStoppedCount"></param>
         /// <param name="sandboxesLimit"></param>
         /// <param name="sandboxesUsed"></param>
         /// <param name="snapshotsCount"></param>
@@ -141,6 +155,8 @@ namespace LangSmith
             int? registriesCount,
             int? sandboxDirectCount,
             int? sandboxPoolReplicasCount,
+            int? sandboxRunningCount,
+            int? sandboxStoppedCount,
             int? sandboxesLimit,
             int? sandboxesUsed,
             int? snapshotsCount,
@@ -158,6 +174,8 @@ namespace LangSmith
             this.RegistriesCount = registriesCount;
             this.SandboxDirectCount = sandboxDirectCount;
             this.SandboxPoolReplicasCount = sandboxPoolReplicasCount;
+            this.SandboxRunningCount = sandboxRunningCount;
+            this.SandboxStoppedCount = sandboxStoppedCount;
             this.SandboxesLimit = sandboxesLimit;
             this.SandboxesUsed = sandboxesUsed;
             this.SnapshotsCount = snapshotsCount;
