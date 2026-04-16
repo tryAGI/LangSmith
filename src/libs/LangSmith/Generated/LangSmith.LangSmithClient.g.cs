@@ -498,6 +498,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public SandboxesInternalClient SandboxesInternal => new SandboxesInternalClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ScimTokensClient ScimTokens => new ScimTokensClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
