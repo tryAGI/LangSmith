@@ -303,6 +303,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public SandboxesInternalClient SandboxesInternal { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ScimTokensClient ScimTokens { get; }
 
         /// <summary>
