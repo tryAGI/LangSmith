@@ -163,6 +163,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetGithubAppClient FleetGithubApp { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FleetIntegrationsClient FleetIntegrations { get; }
 
         /// <summary>
