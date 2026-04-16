@@ -3,11 +3,11 @@
 
 namespace LangSmith
 {
-    public partial class ReposClient
+    public partial class AuthClient
     {
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListReposSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_LookupSsoByEmailSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -21,136 +21,53 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListReposSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_LookupSsoByEmailSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ListReposSecurityRequirement0,
+            {                s_LookupSsoByEmailSecurityRequirement0,
             };
-        partial void PrepareListReposArguments(
+        partial void PrepareLookupSsoByEmailArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? withLatestManifest,
-            ref int? limit,
-            ref int? offset,
-            ref string? tenantHandle,
-            global::System.Guid? tenantId,
-            ref string? query,
-            bool? hasCommits,
-            global::System.Collections.Generic.IList<string>? tags,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived,
-            global::LangSmith.TrueFalseLiteral? isPublic,
-            ref string? upstreamRepoOwner,
-            ref string? upstreamRepoHandle,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType,
-            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
-            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField,
-            ref global::LangSmith.AnyOf<string, string, object>? sortDirection);
-        partial void PrepareListReposRequest(
+            global::LangSmith.SSOEmailLookupRequest request);
+        partial void PrepareLookupSsoByEmailRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? withLatestManifest,
-            int? limit,
-            int? offset,
-            string? tenantHandle,
-            global::System.Guid? tenantId,
-            string? query,
-            bool? hasCommits,
-            global::System.Collections.Generic.IList<string>? tags,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived,
-            global::LangSmith.TrueFalseLiteral? isPublic,
-            string? upstreamRepoOwner,
-            string? upstreamRepoHandle,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType,
-            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
-            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection);
-        partial void ProcessListReposResponse(
+            global::LangSmith.SSOEmailLookupRequest request);
+        partial void ProcessLookupSsoByEmailResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListReposResponseContent(
+        partial void ProcessLookupSsoByEmailResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Repos<br/>
-        /// Get all repos.
+        /// Lookup Sso By Email<br/>
+        /// Look up SSO providers available for a SCIM-provisioned email address.
         /// </summary>
-        /// <param name="withLatestManifest">
-        /// Default Value: false
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 20
-        /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="tenantHandle"></param>
-        /// <param name="tenantId"></param>
-        /// <param name="query"></param>
-        /// <param name="hasCommits"></param>
-        /// <param name="tags"></param>
-        /// <param name="isArchived"></param>
-        /// <param name="isPublic"></param>
-        /// <param name="upstreamRepoOwner"></param>
-        /// <param name="upstreamRepoHandle"></param>
-        /// <param name="tagValueId"></param>
-        /// <param name="repoType"></param>
-        /// <param name="repoTypes"></param>
-        /// <param name="sortField"></param>
-        /// <param name="sortDirection"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
-            bool? withLatestManifest = default,
-            int? limit = default,
-            int? offset = default,
-            string? tenantHandle = default,
-            global::System.Guid? tenantId = default,
-            string? query = default,
-            bool? hasCommits = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived = default,
-            global::LangSmith.TrueFalseLiteral? isPublic = default,
-            string? upstreamRepoOwner = default,
-            string? upstreamRepoHandle = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
-            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
-            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>> LookupSsoByEmailAsync(
+
+            global::LangSmith.SSOEmailLookupRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareListReposArguments(
+            PrepareLookupSsoByEmailArguments(
                 httpClient: HttpClient,
-                withLatestManifest: ref withLatestManifest,
-                limit: ref limit,
-                offset: ref offset,
-                tenantHandle: ref tenantHandle,
-                tenantId: tenantId,
-                query: ref query,
-                hasCommits: hasCommits,
-                tags: tags,
-                isArchived: isArchived,
-                isPublic: isPublic,
-                upstreamRepoOwner: ref upstreamRepoOwner,
-                upstreamRepoHandle: ref upstreamRepoHandle,
-                tagValueId: tagValueId,
-                repoType: repoType,
-                repoTypes: repoTypes,
-                sortField: sortField,
-                sortDirection: ref sortDirection);
+                request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListReposSecurityRequirements,
-                operationName: "ListReposAsync");
+                securityRequirements: s_LookupSsoByEmailSecurityRequirements,
+                operationName: "LookupSsoByEmailAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -169,34 +86,15 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/repos",
-                                baseUri: HttpClient.BaseAddress); 
-                            __pathBuilder
-                                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("tenant_handle", tenantHandle)
-                                .AddOptionalParameter("tenant_id", tenantId?.ToString())
-                                .AddOptionalParameter("query", query)
-                                .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("is_archived", isArchived?.ToString())
-                                .AddOptionalParameter("is_public", isPublic?.ToString())
-                                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
-                                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
-                                .AddOptionalParameter("repo_type", repoType?.ToString())
-                                .AddOptionalParameter("repo_types", repoTypes?.ToString())
-                                .AddOptionalParameter("sort_field", sortField?.ToString())
-                                .AddOptionalParameter("sort_direction", sortDirection?.ToString()) 
-                                ;
+                                path: "/api/v1/sso/email-lookup",
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -219,6 +117,12 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -227,26 +131,10 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListReposRequest(
+                PrepareLookupSsoByEmailRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    withLatestManifest: withLatestManifest,
-                    limit: limit,
-                    offset: offset,
-                    tenantHandle: tenantHandle,
-                    tenantId: tenantId,
-                    query: query,
-                    hasCommits: hasCommits,
-                    tags: tags,
-                    isArchived: isArchived,
-                    isPublic: isPublic,
-                    upstreamRepoOwner: upstreamRepoOwner,
-                    upstreamRepoHandle: upstreamRepoHandle,
-                    tagValueId: tagValueId,
-                    repoType: repoType,
-                    repoTypes: repoTypes,
-                    sortField: sortField,
-                    sortDirection: sortDirection);
+                    request: request);
 
                 return __httpRequest;
             }
@@ -263,10 +151,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
-                                httpMethod: "GET",
+                                operationId: "LookupSsoByEmail",
+                                methodName: "LookupSsoByEmailAsync",
+                                pathTemplate: "\"/api/v1/sso/email-lookup\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -290,10 +178,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
-                                httpMethod: "GET",
+                                operationId: "LookupSsoByEmail",
+                                methodName: "LookupSsoByEmailAsync",
+                                pathTemplate: "\"/api/v1/sso/email-lookup\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -325,10 +213,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
-                                httpMethod: "GET",
+                                operationId: "LookupSsoByEmail",
+                                methodName: "LookupSsoByEmailAsync",
+                                pathTemplate: "\"/api/v1/sso/email-lookup\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -364,7 +252,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListReposResponse(
+                ProcessLookupSsoByEmailResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -372,10 +260,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
-                                httpMethod: "GET",
+                                operationId: "LookupSsoByEmail",
+                                methodName: "LookupSsoByEmailAsync",
+                                pathTemplate: "\"/api/v1/sso/email-lookup\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -392,10 +280,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
-                                httpMethod: "GET",
+                                operationId: "LookupSsoByEmail",
+                                methodName: "LookupSsoByEmailAsync",
+                                pathTemplate: "\"/api/v1/sso/email-lookup\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -458,7 +346,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListReposResponseContent(
+                                ProcessLookupSsoByEmailResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -468,7 +356,7 @@ namespace LangSmith
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LangSmith.ListReposResponse.FromJson(__content, JsonSerializerContext) ??
+                                        (global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -498,7 +386,7 @@ namespace LangSmith
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LangSmith.ListReposResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        (global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -536,6 +424,29 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
+        }
+        /// <summary>
+        /// Lookup Sso By Email<br/>
+        /// Look up SSO providers available for a SCIM-provisioned email address.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.SSOProviderSlim>> LookupSsoByEmailAsync(
+            string email,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.SSOEmailLookupRequest
+            {
+                Email = email,
+            };
+
+            return await LookupSsoByEmailAsync(
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
