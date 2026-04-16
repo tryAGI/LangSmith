@@ -28,6 +28,7 @@ namespace LangSmith
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
         /// <param name="repoType"></param>
+        /// <param name="repoTypes"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -48,6 +49,7 @@ namespace LangSmith
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
             global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

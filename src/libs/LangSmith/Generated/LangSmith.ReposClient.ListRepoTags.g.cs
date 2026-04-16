@@ -39,7 +39,8 @@ namespace LangSmith
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType);
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType,
+            global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes);
         partial void PrepareListRepoTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -55,7 +56,8 @@ namespace LangSmith
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType);
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType,
+            global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes);
         partial void ProcessListRepoTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -86,6 +88,7 @@ namespace LangSmith
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
         /// <param name="repoType"></param>
+        /// <param name="repoTypes"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -103,6 +106,7 @@ namespace LangSmith
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -122,7 +126,8 @@ namespace LangSmith
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 tagValueId: tagValueId,
-                repoType: repoType);
+                repoType: repoType,
+                repoTypes: repoTypes);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -162,7 +167,8 @@ namespace LangSmith
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
                                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
-                                .AddOptionalParameter("repo_type", repoType?.ToString()) 
+                                .AddOptionalParameter("repo_type", repoType?.ToString())
+                                .AddOptionalParameter("repo_types", repoTypes?.ToString()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -216,7 +222,8 @@ namespace LangSmith
                     upstreamRepoOwner: upstreamRepoOwner,
                     upstreamRepoHandle: upstreamRepoHandle,
                     tagValueId: tagValueId,
-                    repoType: repoType);
+                    repoType: repoType,
+                    repoTypes: repoTypes);
 
                 return __httpRequest;
             }

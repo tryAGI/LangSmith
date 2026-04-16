@@ -25,6 +25,7 @@ namespace LangSmith
         /// <param name="upstreamRepoHandle"></param>
         /// <param name="tagValueId"></param>
         /// <param name="repoType"></param>
+        /// <param name="repoTypes"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -42,6 +43,7 @@ namespace LangSmith
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

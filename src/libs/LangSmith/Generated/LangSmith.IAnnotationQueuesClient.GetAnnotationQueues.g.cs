@@ -22,6 +22,10 @@ namespace LangSmith
         /// <param name="assignedToMe">
         /// Default Value: false
         /// </param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortByDesc">
+        /// Default Value: true
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -35,6 +39,8 @@ namespace LangSmith
             global::System.Guid? datasetId = default,
             global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType = default,
             bool? assignedToMe = default,
+            string? sortBy = default,
+            bool? sortByDesc = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

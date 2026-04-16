@@ -35,7 +35,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             global::System.Guid? datasetId,
             global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType,
-            ref bool? assignedToMe);
+            ref bool? assignedToMe,
+            ref string? sortBy,
+            ref bool? sortByDesc);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -47,7 +49,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             global::System.Guid? datasetId,
             global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType,
-            bool? assignedToMe);
+            bool? assignedToMe,
+            string? sortBy,
+            bool? sortByDesc);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -75,6 +79,10 @@ namespace LangSmith
         /// <param name="assignedToMe">
         /// Default Value: false
         /// </param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortByDesc">
+        /// Default Value: true
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -88,6 +96,8 @@ namespace LangSmith
             global::System.Guid? datasetId = default,
             global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2? queueType = default,
             bool? assignedToMe = default,
+            string? sortBy = default,
+            bool? sortByDesc = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,7 +113,9 @@ namespace LangSmith
                 tagValueId: tagValueId,
                 datasetId: datasetId,
                 queueType: queueType,
-                assignedToMe: ref assignedToMe);
+                assignedToMe: ref assignedToMe,
+                sortBy: ref sortBy,
+                sortByDesc: ref sortByDesc);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -139,7 +151,9 @@ namespace LangSmith
                                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                                 .AddOptionalParameter("dataset_id", datasetId?.ToString())
                                 .AddOptionalParameter("queue_type", queueType?.ToString())
-                                .AddOptionalParameter("assigned_to_me", assignedToMe?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("assigned_to_me", assignedToMe?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("sort_by", sortBy)
+                                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -189,7 +203,9 @@ namespace LangSmith
                     tagValueId: tagValueId,
                     datasetId: datasetId,
                     queueType: queueType,
-                    assignedToMe: assignedToMe);
+                    assignedToMe: assignedToMe,
+                    sortBy: sortBy,
+                    sortByDesc: sortByDesc);
 
                 return __httpRequest;
             }

@@ -3,11 +3,11 @@
 
 namespace LangSmith
 {
-    public partial class ReposClient
+    public partial class FleetMcpClient
     {
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListReposSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListMcpServersSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -21,136 +21,45 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListReposSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListMcpServersSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ListReposSecurityRequirement0,
+            {                s_ListMcpServersSecurityRequirement0,
             };
-        partial void PrepareListReposArguments(
+        partial void PrepareListMcpServersArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListMcpServersRequest(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? withLatestManifest,
-            ref int? limit,
-            ref int? offset,
-            ref string? tenantHandle,
-            global::System.Guid? tenantId,
-            ref string? query,
-            bool? hasCommits,
-            global::System.Collections.Generic.IList<string>? tags,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived,
-            global::LangSmith.TrueFalseLiteral? isPublic,
-            ref string? upstreamRepoOwner,
-            ref string? upstreamRepoHandle,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType,
-            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
-            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField,
-            ref global::LangSmith.AnyOf<string, string, object>? sortDirection);
-        partial void PrepareListReposRequest(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? withLatestManifest,
-            int? limit,
-            int? offset,
-            string? tenantHandle,
-            global::System.Guid? tenantId,
-            string? query,
-            bool? hasCommits,
-            global::System.Collections.Generic.IList<string>? tags,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived,
-            global::LangSmith.TrueFalseLiteral? isPublic,
-            string? upstreamRepoOwner,
-            string? upstreamRepoHandle,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType,
-            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
-            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection);
-        partial void ProcessListReposResponse(
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListMcpServersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListReposResponseContent(
+        partial void ProcessListMcpServersResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Repos<br/>
-        /// Get all repos.
+        /// List MCP servers<br/>
+        /// Returns MCP servers visible to the caller after ABAC filtering. Service-key callers may pass X-Ls-User-Id to resolve per-user OAuth providers.
         /// </summary>
-        /// <param name="withLatestManifest">
-        /// Default Value: false
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 20
-        /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="tenantHandle"></param>
-        /// <param name="tenantId"></param>
-        /// <param name="query"></param>
-        /// <param name="hasCommits"></param>
-        /// <param name="tags"></param>
-        /// <param name="isArchived"></param>
-        /// <param name="isPublic"></param>
-        /// <param name="upstreamRepoOwner"></param>
-        /// <param name="upstreamRepoHandle"></param>
-        /// <param name="tagValueId"></param>
-        /// <param name="repoType"></param>
-        /// <param name="repoTypes"></param>
-        /// <param name="sortField"></param>
-        /// <param name="sortDirection"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
-            bool? withLatestManifest = default,
-            int? limit = default,
-            int? offset = default,
-            string? tenantHandle = default,
-            global::System.Guid? tenantId = default,
-            string? query = default,
-            bool? hasCommits = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
-            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived = default,
-            global::LangSmith.TrueFalseLiteral? isPublic = default,
-            string? upstreamRepoOwner = default,
-            string? upstreamRepoHandle = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
-            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
-            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>> ListMcpServersAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListReposArguments(
-                httpClient: HttpClient,
-                withLatestManifest: ref withLatestManifest,
-                limit: ref limit,
-                offset: ref offset,
-                tenantHandle: ref tenantHandle,
-                tenantId: tenantId,
-                query: ref query,
-                hasCommits: hasCommits,
-                tags: tags,
-                isArchived: isArchived,
-                isPublic: isPublic,
-                upstreamRepoOwner: ref upstreamRepoOwner,
-                upstreamRepoHandle: ref upstreamRepoHandle,
-                tagValueId: tagValueId,
-                repoType: repoType,
-                repoTypes: repoTypes,
-                sortField: sortField,
-                sortDirection: ref sortDirection);
+            PrepareListMcpServersArguments(
+                httpClient: HttpClient);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListReposSecurityRequirements,
-                operationName: "ListReposAsync");
+                securityRequirements: s_ListMcpServersSecurityRequirements,
+                operationName: "ListMcpServersAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -169,27 +78,8 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/repos",
-                                baseUri: HttpClient.BaseAddress); 
-                            __pathBuilder
-                                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("tenant_handle", tenantHandle)
-                                .AddOptionalParameter("tenant_id", tenantId?.ToString())
-                                .AddOptionalParameter("query", query)
-                                .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("is_archived", isArchived?.ToString())
-                                .AddOptionalParameter("is_public", isPublic?.ToString())
-                                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
-                                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
-                                .AddOptionalParameter("repo_type", repoType?.ToString())
-                                .AddOptionalParameter("repo_types", repoTypes?.ToString())
-                                .AddOptionalParameter("sort_field", sortField?.ToString())
-                                .AddOptionalParameter("sort_direction", sortDirection?.ToString()) 
-                                ;
+                                path: "/v1/fleet/mcp-servers",
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -227,26 +117,9 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListReposRequest(
+                PrepareListMcpServersRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest,
-                    withLatestManifest: withLatestManifest,
-                    limit: limit,
-                    offset: offset,
-                    tenantHandle: tenantHandle,
-                    tenantId: tenantId,
-                    query: query,
-                    hasCommits: hasCommits,
-                    tags: tags,
-                    isArchived: isArchived,
-                    isPublic: isPublic,
-                    upstreamRepoOwner: upstreamRepoOwner,
-                    upstreamRepoHandle: upstreamRepoHandle,
-                    tagValueId: tagValueId,
-                    repoType: repoType,
-                    repoTypes: repoTypes,
-                    sortField: sortField,
-                    sortDirection: sortDirection);
+                    httpRequestMessage: __httpRequest);
 
                 return __httpRequest;
             }
@@ -263,9 +136,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
+                                operationId: "ListMcpServers",
+                                methodName: "ListMcpServersAsync",
+                                pathTemplate: "\"/v1/fleet/mcp-servers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -290,9 +163,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
+                                operationId: "ListMcpServers",
+                                methodName: "ListMcpServersAsync",
+                                pathTemplate: "\"/v1/fleet/mcp-servers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -325,9 +198,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
+                                operationId: "ListMcpServers",
+                                methodName: "ListMcpServersAsync",
+                                pathTemplate: "\"/v1/fleet/mcp-servers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -364,7 +237,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListReposResponse(
+                ProcessListMcpServersResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -372,9 +245,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
+                                operationId: "ListMcpServers",
+                                methodName: "ListMcpServersAsync",
+                                pathTemplate: "\"/v1/fleet/mcp-servers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -392,9 +265,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRepos",
-                                methodName: "ListReposAsync",
-                                pathTemplate: "\"/api/v1/repos\"",
+                                operationId: "ListMcpServers",
+                                methodName: "ListMcpServersAsync",
+                                pathTemplate: "\"/v1/fleet/mcp-servers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -407,38 +280,190 @@ namespace LangSmith
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // Bad Request
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.McpServersMcpServerAPIError? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
+                                throw new global::LangSmith.ApiException<global::LangSmith.McpServersMcpServerAPIError>(
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
+                                    ResponseBody = __content_400,
+                                    ResponseObject = __value_400,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Unauthorized
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::LangSmith.McpServersMcpServerAPIError? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.McpServersMcpServerAPIError>(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Forbidden
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.McpServersMcpServerAPIError? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.McpServersMcpServerAPIError>(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseObject = __value_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Internal Server Error
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::LangSmith.McpServersMcpServerAPIError? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.McpServersMcpServerAPIError>(
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_500,
+                                    ResponseObject = __value_500,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Service Unavailable
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::LangSmith.McpServersMcpServerAPIError? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::LangSmith.McpServersMcpServerAPIError.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.McpServersMcpServerAPIError>(
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_503,
+                                    ResponseObject = __value_503,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -458,7 +483,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListReposResponseContent(
+                                ProcessListMcpServersResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -468,7 +493,7 @@ namespace LangSmith
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LangSmith.ListReposResponse.FromJson(__content, JsonSerializerContext) ??
+                                        (global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -498,7 +523,7 @@ namespace LangSmith
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LangSmith.ListReposResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        (global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
