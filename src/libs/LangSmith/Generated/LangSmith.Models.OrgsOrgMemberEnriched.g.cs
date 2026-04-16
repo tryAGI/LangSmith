@@ -51,6 +51,12 @@ namespace LangSmith
         public bool? IsPending { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("linked_login_methods")]
+        public global::System.Collections.Generic.IList<global::LangSmith.OrgsLinkedLoginMethod>? LinkedLoginMethods { get; set; }
+
+        /// <summary>
         /// nil for pending members
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
@@ -67,6 +73,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         public string? RoleName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scim_groups")]
+        public global::System.Collections.Generic.IList<global::LangSmith.OrgsSCIMGroup>? ScimGroups { get; set; }
 
         /// <summary>
         /// 
@@ -98,6 +110,7 @@ namespace LangSmith
         /// <param name="isPending">
         /// true for pending invitations
         /// </param>
+        /// <param name="linkedLoginMethods"></param>
         /// <param name="lsUserId">
         /// nil for pending members
         /// </param>
@@ -107,6 +120,7 @@ namespace LangSmith
         /// <param name="roleName">
         /// org role name
         /// </param>
+        /// <param name="scimGroups"></param>
         /// <param name="workspaceMemberships"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -119,9 +133,11 @@ namespace LangSmith
             string? id,
             bool? isDisabled,
             bool? isPending,
+            global::System.Collections.Generic.IList<global::LangSmith.OrgsLinkedLoginMethod>? linkedLoginMethods,
             string? lsUserId,
             string? roleId,
             string? roleName,
+            global::System.Collections.Generic.IList<global::LangSmith.OrgsSCIMGroup>? scimGroups,
             global::System.Collections.Generic.IList<global::LangSmith.OrgsWorkspaceMembership>? workspaceMemberships)
         {
             this.AvatarUrl = avatarUrl;
@@ -131,9 +147,11 @@ namespace LangSmith
             this.Id = id;
             this.IsDisabled = isDisabled;
             this.IsPending = isPending;
+            this.LinkedLoginMethods = linkedLoginMethods;
             this.LsUserId = lsUserId;
             this.RoleId = roleId;
             this.RoleName = roleName;
+            this.ScimGroups = scimGroups;
             this.WorkspaceMemberships = workspaceMemberships;
         }
 

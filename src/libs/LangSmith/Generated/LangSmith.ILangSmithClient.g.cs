@@ -168,6 +168,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetMcpClient FleetMcp { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FleetUsageClient FleetUsage { get; }
 
         /// <summary>
