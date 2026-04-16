@@ -39,6 +39,12 @@ namespace LangSmith
         public object? S3AdditionalKwargs { get; set; }
 
         /// <summary>
+        /// Passed to botocore Config s3 parameter. Use {"addressing_style": "virtual"} for S3-compatible services that require virtual-hosted style addressing (e.g. Volcengine TOS), or {"addressing_style": "path"} for path-style.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("config_kwargs_s3")]
+        public global::LangSmith.BotocoreS3Config? ConfigKwargsS3 { get; set; }
+
+        /// <summary>
         /// Whether to prepend the bucket name to the S3 file path. Defaults to True. Set to False to skip prepending the bucket name if bucket name is already in the endpoint URL.<br/>
         /// Default Value: true
         /// </summary>
@@ -59,6 +65,9 @@ namespace LangSmith
         /// <param name="bucketName"></param>
         /// <param name="region"></param>
         /// <param name="s3AdditionalKwargs"></param>
+        /// <param name="configKwargsS3">
+        /// Passed to botocore Config s3 parameter. Use {"addressing_style": "virtual"} for S3-compatible services that require virtual-hosted style addressing (e.g. Volcengine TOS), or {"addressing_style": "path"} for path-style.
+        /// </param>
         /// <param name="includeBucketInPrefix">
         /// Whether to prepend the bucket name to the S3 file path. Defaults to True. Set to False to skip prepending the bucket name if bucket name is already in the endpoint URL.<br/>
         /// Default Value: true
@@ -72,6 +81,7 @@ namespace LangSmith
             string? bucketName,
             string? region,
             object? s3AdditionalKwargs,
+            global::LangSmith.BotocoreS3Config? configKwargsS3,
             bool? includeBucketInPrefix)
         {
             this.EndpointUrl = endpointUrl;
@@ -79,6 +89,7 @@ namespace LangSmith
             this.BucketName = bucketName;
             this.Region = region;
             this.S3AdditionalKwargs = s3AdditionalKwargs;
+            this.ConfigKwargsS3 = configKwargsS3;
             this.IncludeBucketInPrefix = includeBucketInPrefix;
         }
 
