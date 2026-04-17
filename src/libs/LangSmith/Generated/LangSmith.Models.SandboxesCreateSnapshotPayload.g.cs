@@ -36,24 +36,6 @@ namespace LangSmith
         public string? RegistryId { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("registry_password")]
-        public string? RegistryPassword { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("registry_url")]
-        public string? RegistryUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("registry_username")]
-        public string? RegistryUsername { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,9 +48,6 @@ namespace LangSmith
         /// <param name="fsCapacityBytes"></param>
         /// <param name="name"></param>
         /// <param name="registryId"></param>
-        /// <param name="registryPassword"></param>
-        /// <param name="registryUrl"></param>
-        /// <param name="registryUsername"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,18 +55,12 @@ namespace LangSmith
             string dockerImage,
             long fsCapacityBytes,
             string name,
-            string? registryId,
-            string? registryPassword,
-            string? registryUrl,
-            string? registryUsername)
+            string? registryId)
         {
             this.DockerImage = dockerImage ?? throw new global::System.ArgumentNullException(nameof(dockerImage));
             this.FsCapacityBytes = fsCapacityBytes;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RegistryId = registryId;
-            this.RegistryPassword = registryPassword;
-            this.RegistryUrl = registryUrl;
-            this.RegistryUsername = registryUsername;
         }
 
         /// <summary>

@@ -25,9 +25,6 @@ namespace LangSmith
         /// <param name="fsCapacityBytes"></param>
         /// <param name="name"></param>
         /// <param name="registryId"></param>
-        /// <param name="registryPassword"></param>
-        /// <param name="registryUrl"></param>
-        /// <param name="registryUsername"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -36,9 +33,6 @@ namespace LangSmith
             long fsCapacityBytes,
             string name,
             string? registryId = default,
-            string? registryPassword = default,
-            string? registryUrl = default,
-            string? registryUsername = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
