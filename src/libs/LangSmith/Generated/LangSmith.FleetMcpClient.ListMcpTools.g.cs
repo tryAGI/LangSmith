@@ -98,7 +98,7 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/fleet/mcp/tools",
+                                path: "/v1/platform/fleet/mcp/tools",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddRequiredParameter("url", url)
@@ -168,7 +168,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListMcpTools",
                                 methodName: "ListMcpToolsAsync",
-                                pathTemplate: "\"/v1/fleet/mcp/tools\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +195,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListMcpTools",
                                 methodName: "ListMcpToolsAsync",
-                                pathTemplate: "\"/v1/fleet/mcp/tools\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,7 +230,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListMcpTools",
                                 methodName: "ListMcpToolsAsync",
-                                pathTemplate: "\"/v1/fleet/mcp/tools\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -277,7 +277,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListMcpTools",
                                 methodName: "ListMcpToolsAsync",
-                                pathTemplate: "\"/v1/fleet/mcp/tools\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -297,7 +297,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListMcpTools",
                                 methodName: "ListMcpToolsAsync",
-                                pathTemplate: "\"/v1/fleet/mcp/tools\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

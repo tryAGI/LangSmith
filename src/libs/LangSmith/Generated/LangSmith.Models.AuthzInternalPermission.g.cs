@@ -123,6 +123,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        IssuesCreate,
+        /// <summary>
+        /// 
+        /// </summary>
+        IssuesDelete,
+        /// <summary>
+        /// 
+        /// </summary>
+        IssuesRead,
+        /// <summary>
+        /// 
+        /// </summary>
+        IssuesUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
         McpServersCreate,
         /// <summary>
         /// 
@@ -290,6 +306,10 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
                 AuthzInternalPermission.FleetReadAdminConfig => "fleet:read-admin-config",
                 AuthzInternalPermission.FleetWriteAdminConfig => "fleet:write-admin-config",
+                AuthzInternalPermission.IssuesCreate => "issues:create",
+                AuthzInternalPermission.IssuesDelete => "issues:delete",
+                AuthzInternalPermission.IssuesRead => "issues:read",
+                AuthzInternalPermission.IssuesUpdate => "issues:update",
                 AuthzInternalPermission.McpServersCreate => "mcp-servers:create",
                 AuthzInternalPermission.McpServersDelete => "mcp-servers:delete",
                 AuthzInternalPermission.McpServersInvoke => "mcp-servers:invoke",
@@ -360,6 +380,10 @@ namespace LangSmith
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
                 "fleet:read-admin-config" => AuthzInternalPermission.FleetReadAdminConfig,
                 "fleet:write-admin-config" => AuthzInternalPermission.FleetWriteAdminConfig,
+                "issues:create" => AuthzInternalPermission.IssuesCreate,
+                "issues:delete" => AuthzInternalPermission.IssuesDelete,
+                "issues:read" => AuthzInternalPermission.IssuesRead,
+                "issues:update" => AuthzInternalPermission.IssuesUpdate,
                 "mcp-servers:create" => AuthzInternalPermission.McpServersCreate,
                 "mcp-servers:delete" => AuthzInternalPermission.McpServersDelete,
                 "mcp-servers:invoke" => AuthzInternalPermission.McpServersInvoke,

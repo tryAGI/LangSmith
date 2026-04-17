@@ -86,7 +86,7 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/fleet/mcp-servers/{mcp_server_id}/oauth-provider",
+                                path: "/v1/platform/fleet/mcp-servers/{mcp_server_id}/oauth-provider",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -153,7 +153,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RegisterPerUserMcpOAuthProvider",
                                 methodName: "RegisterPerUserMcpOAuthProviderAsync",
-                                pathTemplate: "\"/v1/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +180,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RegisterPerUserMcpOAuthProvider",
                                 methodName: "RegisterPerUserMcpOAuthProviderAsync",
-                                pathTemplate: "\"/v1/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +215,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RegisterPerUserMcpOAuthProvider",
                                 methodName: "RegisterPerUserMcpOAuthProviderAsync",
-                                pathTemplate: "\"/v1/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +262,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RegisterPerUserMcpOAuthProvider",
                                 methodName: "RegisterPerUserMcpOAuthProviderAsync",
-                                pathTemplate: "\"/v1/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +282,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RegisterPerUserMcpOAuthProvider",
                                 methodName: "RegisterPerUserMcpOAuthProviderAsync",
-                                pathTemplate: "\"/v1/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
+                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}/oauth-provider\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

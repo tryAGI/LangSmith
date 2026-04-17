@@ -35,6 +35,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        BatchQueryTraceMessages,
+        /// <summary>
+        /// 
+        /// </summary>
         BulkDeleteEvaluators,
         /// <summary>
         /// 
@@ -651,11 +655,27 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        GetDatasetComparisonView,
+        /// <summary>
+        /// 
+        /// </summary>
         GetDatasetVersion,
         /// <summary>
         /// 
         /// </summary>
         GetDatasetVersions,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetExample,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetExperimentViewOverride,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetExperimentViewOverrides,
         /// <summary>
         /// 
         /// </summary>
@@ -708,6 +728,10 @@ namespace LangSmith
         /// 
         /// </summary>
         GetOrganizationInfo,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetPairwiseQueue,
         /// <summary>
         /// 
         /// </summary>
@@ -783,6 +807,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ListExamples,
+        /// <summary>
+        /// 
+        /// </summary>
         ListFeedbackConfigs,
         /// <summary>
         /// 
@@ -820,6 +848,14 @@ namespace LangSmith
         /// 
         /// </summary>
         ListOrganizations,
+        /// <summary>
+        /// 
+        /// </summary>
+        ListPairwiseEntries,
+        /// <summary>
+        /// 
+        /// </summary>
+        ListPairwiseQueues,
         /// <summary>
         /// 
         /// </summary>
@@ -883,6 +919,30 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        QueryRun,
+        /// <summary>
+        /// 
+        /// </summary>
+        QueryRuns,
+        /// <summary>
+        /// 
+        /// </summary>
+        QueryThreadTraces,
+        /// <summary>
+        /// 
+        /// </summary>
+        QueryThreads,
+        /// <summary>
+        /// 
+        /// </summary>
+        QueryTrace,
+        /// <summary>
+        /// 
+        /// </summary>
+        QueryTraceMessages,
+        /// <summary>
+        /// 
+        /// </summary>
         ReadAccessPolicy,
         /// <summary>
         /// 
@@ -915,11 +975,35 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ReadExample,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadExamples,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadFeedback,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadFeedbacks,
+        /// <summary>
+        /// 
+        /// </summary>
         ReadModelPriceMap,
         /// <summary>
         /// 
         /// </summary>
         ReadRoleAccessPolicies,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadRun,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadRuns,
         /// <summary>
         /// 
         /// </summary>
@@ -960,6 +1044,14 @@ namespace LangSmith
         /// 
         /// </summary>
         ShareDataset,
+        /// <summary>
+        /// 
+        /// </summary>
+        StreamDatasetComparisonView,
+        /// <summary>
+        /// 
+        /// </summary>
+        StreamFeedbackDelta,
         /// <summary>
         /// 
         /// </summary>
@@ -1252,6 +1344,7 @@ namespace LangSmith
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
+                AuditLogOperation.BatchQueryTraceMessages => "batch_query_trace_messages",
                 AuditLogOperation.BulkDeleteEvaluators => "bulk_delete_evaluators",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
                 AuditLogOperation.ClaimPendingOrganizationInvite => "claim_pending_organization_invite",
@@ -1406,8 +1499,12 @@ namespace LangSmith
                 AuditLogOperation.GetBulkExportRuns => "get_bulk_export_runs",
                 AuditLogOperation.GetBulkExportRunsFiltered => "get_bulk_export_runs_filtered",
                 AuditLogOperation.GetCompanyInfo => "get_company_info",
+                AuditLogOperation.GetDatasetComparisonView => "get_dataset_comparison_view",
                 AuditLogOperation.GetDatasetVersion => "get_dataset_version",
                 AuditLogOperation.GetDatasetVersions => "get_dataset_versions",
+                AuditLogOperation.GetExample => "get_example",
+                AuditLogOperation.GetExperimentViewOverride => "get_experiment_view_override",
+                AuditLogOperation.GetExperimentViewOverrides => "get_experiment_view_overrides",
                 AuditLogOperation.GetFeedbackFormula => "get_feedback_formula",
                 AuditLogOperation.GetFilterView => "get_filter_view",
                 AuditLogOperation.GetGranularUsage => "get_granular_usage",
@@ -1421,6 +1518,7 @@ namespace LangSmith
                 AuditLogOperation.GetOrgUsageLimits => "get_org_usage_limits",
                 AuditLogOperation.GetOrganizationBillingInfo => "get_organization_billing_info",
                 AuditLogOperation.GetOrganizationInfo => "get_organization_info",
+                AuditLogOperation.GetPairwiseQueue => "get_pairwise_queue",
                 AuditLogOperation.GetRunCluster => "get_run_cluster",
                 AuditLogOperation.GetSharedExamplesCount => "get_shared_examples_count",
                 AuditLogOperation.GetSharedTokens => "get_shared_tokens",
@@ -1439,6 +1537,7 @@ namespace LangSmith
                 AuditLogOperation.ListBulkExportDestinations => "list_bulk_export_destinations",
                 AuditLogOperation.ListBulkExports => "list_bulk_exports",
                 AuditLogOperation.ListChartSections => "list_chart_sections",
+                AuditLogOperation.ListExamples => "list_examples",
                 AuditLogOperation.ListFeedbackConfigs => "list_feedback_configs",
                 AuditLogOperation.ListFeedbackFormulas => "list_feedback_formulas",
                 AuditLogOperation.ListFilterViews => "list_filter_views",
@@ -1449,6 +1548,8 @@ namespace LangSmith
                 AuditLogOperation.ListOrgServiceKeys => "list_org_service_keys",
                 AuditLogOperation.ListOrganizationRoles => "list_organization_roles",
                 AuditLogOperation.ListOrganizations => "list_organizations",
+                AuditLogOperation.ListPairwiseEntries => "list_pairwise_entries",
+                AuditLogOperation.ListPairwiseQueues => "list_pairwise_queues",
                 AuditLogOperation.ListPendingOrganizationInvites => "list_pending_organization_invites",
                 AuditLogOperation.ListPendingWorkspaceInvites => "list_pending_workspace_invites",
                 AuditLogOperation.ListPermissions => "list_permissions",
@@ -1464,6 +1565,12 @@ namespace LangSmith
                 AuditLogOperation.McpProxy => "mcp_proxy",
                 AuditLogOperation.McpProxyGet => "mcp_proxy_get",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
+                AuditLogOperation.QueryRun => "query_run",
+                AuditLogOperation.QueryRuns => "query_runs",
+                AuditLogOperation.QueryThreadTraces => "query_thread_traces",
+                AuditLogOperation.QueryThreads => "query_threads",
+                AuditLogOperation.QueryTrace => "query_trace",
+                AuditLogOperation.QueryTraceMessages => "query_trace_messages",
                 AuditLogOperation.ReadAccessPolicy => "read_access_policy",
                 AuditLogOperation.ReadBulkExportDestination => "read_bulk_export_destination",
                 AuditLogOperation.ReadChart => "read_chart",
@@ -1472,8 +1579,14 @@ namespace LangSmith
                 AuditLogOperation.ReadCharts => "read_charts",
                 AuditLogOperation.ReadDatasetDelta => "read_dataset_delta",
                 AuditLogOperation.ReadDatasetShareState => "read_dataset_share_state",
+                AuditLogOperation.ReadExample => "read_example",
+                AuditLogOperation.ReadExamples => "read_examples",
+                AuditLogOperation.ReadFeedback => "read_feedback",
+                AuditLogOperation.ReadFeedbacks => "read_feedbacks",
                 AuditLogOperation.ReadModelPriceMap => "read_model_price_map",
                 AuditLogOperation.ReadRoleAccessPolicies => "read_role_access_policies",
+                AuditLogOperation.ReadRun => "read_run",
+                AuditLogOperation.ReadRuns => "read_runs",
                 AuditLogOperation.ReadSharedDelta => "read_shared_delta",
                 AuditLogOperation.ReadSharedDeltaStream => "read_shared_delta_stream",
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
@@ -1484,6 +1597,8 @@ namespace LangSmith
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
+                AuditLogOperation.StreamDatasetComparisonView => "stream_dataset_comparison_view",
+                AuditLogOperation.StreamFeedbackDelta => "stream_feedback_delta",
                 AuditLogOperation.SubmitNpsResponse => "submit_nps_response",
                 AuditLogOperation.SyncExamples => "sync_examples",
                 AuditLogOperation.TestAlertRule => "test_alert_rule",
@@ -1568,6 +1683,7 @@ namespace LangSmith
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
+                "batch_query_trace_messages" => AuditLogOperation.BatchQueryTraceMessages,
                 "bulk_delete_evaluators" => AuditLogOperation.BulkDeleteEvaluators,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
                 "claim_pending_organization_invite" => AuditLogOperation.ClaimPendingOrganizationInvite,
@@ -1722,8 +1838,12 @@ namespace LangSmith
                 "get_bulk_export_runs" => AuditLogOperation.GetBulkExportRuns,
                 "get_bulk_export_runs_filtered" => AuditLogOperation.GetBulkExportRunsFiltered,
                 "get_company_info" => AuditLogOperation.GetCompanyInfo,
+                "get_dataset_comparison_view" => AuditLogOperation.GetDatasetComparisonView,
                 "get_dataset_version" => AuditLogOperation.GetDatasetVersion,
                 "get_dataset_versions" => AuditLogOperation.GetDatasetVersions,
+                "get_example" => AuditLogOperation.GetExample,
+                "get_experiment_view_override" => AuditLogOperation.GetExperimentViewOverride,
+                "get_experiment_view_overrides" => AuditLogOperation.GetExperimentViewOverrides,
                 "get_feedback_formula" => AuditLogOperation.GetFeedbackFormula,
                 "get_filter_view" => AuditLogOperation.GetFilterView,
                 "get_granular_usage" => AuditLogOperation.GetGranularUsage,
@@ -1737,6 +1857,7 @@ namespace LangSmith
                 "get_org_usage_limits" => AuditLogOperation.GetOrgUsageLimits,
                 "get_organization_billing_info" => AuditLogOperation.GetOrganizationBillingInfo,
                 "get_organization_info" => AuditLogOperation.GetOrganizationInfo,
+                "get_pairwise_queue" => AuditLogOperation.GetPairwiseQueue,
                 "get_run_cluster" => AuditLogOperation.GetRunCluster,
                 "get_shared_examples_count" => AuditLogOperation.GetSharedExamplesCount,
                 "get_shared_tokens" => AuditLogOperation.GetSharedTokens,
@@ -1755,6 +1876,7 @@ namespace LangSmith
                 "list_bulk_export_destinations" => AuditLogOperation.ListBulkExportDestinations,
                 "list_bulk_exports" => AuditLogOperation.ListBulkExports,
                 "list_chart_sections" => AuditLogOperation.ListChartSections,
+                "list_examples" => AuditLogOperation.ListExamples,
                 "list_feedback_configs" => AuditLogOperation.ListFeedbackConfigs,
                 "list_feedback_formulas" => AuditLogOperation.ListFeedbackFormulas,
                 "list_filter_views" => AuditLogOperation.ListFilterViews,
@@ -1765,6 +1887,8 @@ namespace LangSmith
                 "list_org_service_keys" => AuditLogOperation.ListOrgServiceKeys,
                 "list_organization_roles" => AuditLogOperation.ListOrganizationRoles,
                 "list_organizations" => AuditLogOperation.ListOrganizations,
+                "list_pairwise_entries" => AuditLogOperation.ListPairwiseEntries,
+                "list_pairwise_queues" => AuditLogOperation.ListPairwiseQueues,
                 "list_pending_organization_invites" => AuditLogOperation.ListPendingOrganizationInvites,
                 "list_pending_workspace_invites" => AuditLogOperation.ListPendingWorkspaceInvites,
                 "list_permissions" => AuditLogOperation.ListPermissions,
@@ -1780,6 +1904,12 @@ namespace LangSmith
                 "mcp_proxy" => AuditLogOperation.McpProxy,
                 "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
+                "query_run" => AuditLogOperation.QueryRun,
+                "query_runs" => AuditLogOperation.QueryRuns,
+                "query_thread_traces" => AuditLogOperation.QueryThreadTraces,
+                "query_threads" => AuditLogOperation.QueryThreads,
+                "query_trace" => AuditLogOperation.QueryTrace,
+                "query_trace_messages" => AuditLogOperation.QueryTraceMessages,
                 "read_access_policy" => AuditLogOperation.ReadAccessPolicy,
                 "read_bulk_export_destination" => AuditLogOperation.ReadBulkExportDestination,
                 "read_chart" => AuditLogOperation.ReadChart,
@@ -1788,8 +1918,14 @@ namespace LangSmith
                 "read_charts" => AuditLogOperation.ReadCharts,
                 "read_dataset_delta" => AuditLogOperation.ReadDatasetDelta,
                 "read_dataset_share_state" => AuditLogOperation.ReadDatasetShareState,
+                "read_example" => AuditLogOperation.ReadExample,
+                "read_examples" => AuditLogOperation.ReadExamples,
+                "read_feedback" => AuditLogOperation.ReadFeedback,
+                "read_feedbacks" => AuditLogOperation.ReadFeedbacks,
                 "read_model_price_map" => AuditLogOperation.ReadModelPriceMap,
                 "read_role_access_policies" => AuditLogOperation.ReadRoleAccessPolicies,
+                "read_run" => AuditLogOperation.ReadRun,
+                "read_runs" => AuditLogOperation.ReadRuns,
                 "read_shared_delta" => AuditLogOperation.ReadSharedDelta,
                 "read_shared_delta_stream" => AuditLogOperation.ReadSharedDeltaStream,
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
@@ -1800,6 +1936,8 @@ namespace LangSmith
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
+                "stream_dataset_comparison_view" => AuditLogOperation.StreamDatasetComparisonView,
+                "stream_feedback_delta" => AuditLogOperation.StreamFeedbackDelta,
                 "submit_nps_response" => AuditLogOperation.SubmitNpsResponse,
                 "sync_examples" => AuditLogOperation.SyncExamples,
                 "test_alert_rule" => AuditLogOperation.TestAlertRule,

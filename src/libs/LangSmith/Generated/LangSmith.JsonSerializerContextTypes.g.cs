@@ -3756,35 +3756,35 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>? Type932 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.CreatePlatformAlertsTestResponse3>? Type932 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.CreatePlatformAlertsTestResponse3>? Type933 { get; set; }
+        public global::LangSmith.CreatePlatformAlertsTestResponse3? Type933 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.CreatePlatformAlertsTestResponse3? Type934 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.DeletePlatformAlertsResponse3>? Type934 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.DeletePlatformAlertsResponse3>? Type935 { get; set; }
+        public global::LangSmith.DeletePlatformAlertsResponse3? Type935 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.DeletePlatformAlertsResponse3? Type936 { get; set; }
+        public global::LangSmith.AllOf<string, global::LangSmith.PatchPlatformAlertsResponse3>? Type936 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.AllOf<string, global::LangSmith.PatchPlatformAlertsResponse3>? Type937 { get; set; }
+        public global::LangSmith.PatchPlatformAlertsResponse3? Type937 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::LangSmith.PatchPlatformAlertsResponse3? Type938 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.FeaturesFeatureConfig>? Type938 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.FeaturesFeatureConfig>? Type939 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>? Type939 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4573,11 +4573,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>? ListType189 { get; set; }
+        public global::System.Collections.Generic.List<global::LangSmith.FeaturesFeatureConfig>? ListType189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::LangSmith.FeaturesFeatureConfig>? ListType190 { get; set; }
+        public global::System.Collections.Generic.List<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>? ListType190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
