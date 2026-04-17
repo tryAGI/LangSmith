@@ -79,18 +79,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_list_cache")]
-        public object? ToolListCache { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_list_cache_expires_at")]
-        public string? ToolListCacheExpiresAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
 
@@ -126,8 +114,6 @@ namespace LangSmith
         /// <param name="oauthMode"></param>
         /// <param name="oauthProviderId"></param>
         /// <param name="tenantId"></param>
-        /// <param name="toolListCache"></param>
-        /// <param name="toolListCacheExpiresAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
         /// <param name="vendorId"></param>
@@ -146,8 +132,6 @@ namespace LangSmith
             global::LangSmith.LangchainComSmithFleetMcpServersOAuthMode? oauthMode,
             string? oauthProviderId,
             string? tenantId,
-            object? toolListCache,
-            string? toolListCacheExpiresAt,
             string? updatedAt,
             string? url,
             string? vendorId)
@@ -163,8 +147,6 @@ namespace LangSmith
             this.OauthMode = oauthMode;
             this.OauthProviderId = oauthProviderId;
             this.TenantId = tenantId;
-            this.ToolListCache = toolListCache;
-            this.ToolListCacheExpiresAt = toolListCacheExpiresAt;
             this.UpdatedAt = updatedAt;
             this.Url = url;
             this.VendorId = vendorId;
