@@ -93,7 +93,7 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/fleet/integrations",
+                                path: "/v1/platform/fleet/integrations",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("type", type)
@@ -161,7 +161,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAllIntegrations",
                                 methodName: "ListAllIntegrationsAsync",
-                                pathTemplate: "\"/v1/fleet/integrations\"",
+                                pathTemplate: "\"/v1/platform/fleet/integrations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -188,7 +188,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAllIntegrations",
                                 methodName: "ListAllIntegrationsAsync",
-                                pathTemplate: "\"/v1/fleet/integrations\"",
+                                pathTemplate: "\"/v1/platform/fleet/integrations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -223,7 +223,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAllIntegrations",
                                 methodName: "ListAllIntegrationsAsync",
-                                pathTemplate: "\"/v1/fleet/integrations\"",
+                                pathTemplate: "\"/v1/platform/fleet/integrations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -270,7 +270,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAllIntegrations",
                                 methodName: "ListAllIntegrationsAsync",
-                                pathTemplate: "\"/v1/fleet/integrations\"",
+                                pathTemplate: "\"/v1/platform/fleet/integrations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -290,7 +290,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAllIntegrations",
                                 methodName: "ListAllIntegrationsAsync",
-                                pathTemplate: "\"/v1/fleet/integrations\"",
+                                pathTemplate: "\"/v1/platform/fleet/integrations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
