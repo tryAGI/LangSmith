@@ -26,6 +26,18 @@ namespace LangSmith
         /// <param name="metadataXml"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="attributeMapping"></param>
+        /// <param name="ssoGroupsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="ssoGroupsClaimField">
+        /// Default Value: groups
+        /// </param>
+        /// <param name="ssoGroupsRequired">
+        /// Default Value: false
+        /// </param>
+        /// <param name="ssoGroupsRoleSyncEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -35,6 +47,10 @@ namespace LangSmith
             string? metadataXml = default,
             string? metadataUrl = default,
             global::System.Collections.Generic.Dictionary<string, string>? attributeMapping = default,
+            bool? ssoGroupsEnabled = default,
+            string? ssoGroupsClaimField = default,
+            bool? ssoGroupsRequired = default,
+            bool? ssoGroupsRoleSyncEnabled = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

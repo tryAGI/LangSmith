@@ -1271,6 +1271,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UpdateSelfHostedLicense,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateSsoSettings,
         /// <summary>
         /// 
@@ -1653,6 +1657,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateScimGroup => "update_scim_group",
                 AuditLogOperation.UpdateScimToken => "update_scim_token",
                 AuditLogOperation.UpdateScimUser => "update_scim_user",
+                AuditLogOperation.UpdateSelfHostedLicense => "update_self_hosted_license",
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
@@ -1992,6 +1997,7 @@ namespace LangSmith
                 "update_scim_group" => AuditLogOperation.UpdateScimGroup,
                 "update_scim_token" => AuditLogOperation.UpdateScimToken,
                 "update_scim_user" => AuditLogOperation.UpdateScimUser,
+                "update_self_hosted_license" => AuditLogOperation.UpdateSelfHostedLicense,
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
