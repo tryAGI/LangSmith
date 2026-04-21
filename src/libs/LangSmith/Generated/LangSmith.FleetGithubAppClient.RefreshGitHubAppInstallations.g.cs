@@ -7,7 +7,7 @@ namespace LangSmith
     {
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_HandleGitHubAppWebhookEventsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_RefreshGitHubAppInstallationsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -21,40 +21,47 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_HandleGitHubAppWebhookEventsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_RefreshGitHubAppInstallationsSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_HandleGitHubAppWebhookEventsSecurityRequirement0,
+            {                s_RefreshGitHubAppInstallationsSecurityRequirement0,
             };
-        partial void PrepareHandleGitHubAppWebhookEventsArguments(
+        partial void PrepareRefreshGitHubAppInstallationsArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareHandleGitHubAppWebhookEventsRequest(
+        partial void PrepareRefreshGitHubAppInstallationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessHandleGitHubAppWebhookEventsResponse(
+        partial void ProcessRefreshGitHubAppInstallationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessRefreshGitHubAppInstallationsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Handle GitHub App webhook events<br/>
-        /// Process GitHub App webhooks (installation lifecycle, installation_repositories). GitHub may deliver the same event more than once; handling re-applies the current repository-selection state and is safe to repeat.
+        /// Refresh GitHub App installations<br/>
+        /// Trigger a live sync with GitHub for the current user's GitHub App<br/>
+        /// installations. Upserts new installations, deletes stale ones, and<br/>
+        /// returns the refreshed list. Requires an existing GitHub connection.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task HandleGitHubAppWebhookEventsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>> RefreshGitHubAppInstallationsAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareHandleGitHubAppWebhookEventsArguments(
+            PrepareRefreshGitHubAppInstallationsArguments(
                 httpClient: HttpClient);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_HandleGitHubAppWebhookEventsSecurityRequirements,
-                operationName: "HandleGitHubAppWebhookEventsAsync");
+                securityRequirements: s_RefreshGitHubAppInstallationsSecurityRequirements,
+                operationName: "RefreshGitHubAppInstallationsAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -73,7 +80,7 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/fleet/providers/github-app/webhooks",
+                                path: "/v1/platform/fleet/providers/github-app/installations/refresh",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -112,7 +119,7 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareHandleGitHubAppWebhookEventsRequest(
+                PrepareRefreshGitHubAppInstallationsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest);
 
@@ -131,9 +138,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "HandleGitHubAppWebhookEvents",
-                                methodName: "HandleGitHubAppWebhookEventsAsync",
-                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/webhooks\"",
+                                operationId: "RefreshGitHubAppInstallations",
+                                methodName: "RefreshGitHubAppInstallationsAsync",
+                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/installations/refresh\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -158,9 +165,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "HandleGitHubAppWebhookEvents",
-                                methodName: "HandleGitHubAppWebhookEventsAsync",
-                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/webhooks\"",
+                                operationId: "RefreshGitHubAppInstallations",
+                                methodName: "RefreshGitHubAppInstallationsAsync",
+                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/installations/refresh\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -193,9 +200,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "HandleGitHubAppWebhookEvents",
-                                methodName: "HandleGitHubAppWebhookEventsAsync",
-                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/webhooks\"",
+                                operationId: "RefreshGitHubAppInstallations",
+                                methodName: "RefreshGitHubAppInstallationsAsync",
+                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/installations/refresh\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -232,7 +239,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessHandleGitHubAppWebhookEventsResponse(
+                ProcessRefreshGitHubAppInstallationsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -240,9 +247,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "HandleGitHubAppWebhookEvents",
-                                methodName: "HandleGitHubAppWebhookEventsAsync",
-                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/webhooks\"",
+                                operationId: "RefreshGitHubAppInstallations",
+                                methodName: "RefreshGitHubAppInstallationsAsync",
+                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/installations/refresh\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -260,9 +267,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "HandleGitHubAppWebhookEvents",
-                                methodName: "HandleGitHubAppWebhookEventsAsync",
-                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/webhooks\"",
+                                operationId: "RefreshGitHubAppInstallations",
+                                methodName: "RefreshGitHubAppInstallationsAsync",
+                                pathTemplate: "\"/v1/platform/fleet/providers/github-app/installations/refresh\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -313,38 +320,76 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Forbidden
-                            if ((int)__response.StatusCode == 403)
+                            // Not Found
+                            if ((int)__response.StatusCode == 404)
                             {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::LangSmith.GithubAppErrorResponse? __value_403 = null;
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::LangSmith.GithubAppErrorResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::LangSmith.GithubAppErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::LangSmith.GithubAppErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::LangSmith.GithubAppErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_404 = global::LangSmith.GithubAppErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_403 = __ex;
+                                    __exception_404 = __ex;
                                 }
 
                                 throw new global::LangSmith.ApiException<global::LangSmith.GithubAppErrorResponse>(
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
+                                    ResponseBody = __content_404,
+                                    ResponseObject = __value_404,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Bad Gateway
+                            if ((int)__response.StatusCode == 502)
+                            {
+                                string? __content_502 = null;
+                                global::System.Exception? __exception_502 = null;
+                                global::LangSmith.GithubAppErrorResponse? __value_502 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_502 = global::LangSmith.GithubAppErrorResponse.FromJson(__content_502, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_502 = global::LangSmith.GithubAppErrorResponse.FromJson(__content_502, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_502 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.GithubAppErrorResponse>(
+                                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_502,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_502,
+                                    ResponseObject = __value_502,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -364,11 +409,18 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
+                                ProcessRefreshGitHubAppInstallationsResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                                    return
+                                        (global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>), JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -390,6 +442,15 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return
+                                        (global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>), JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
                                 {
