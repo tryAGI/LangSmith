@@ -779,6 +779,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        InviteProvisionedOrgMember,
+        /// <summary>
+        /// 
+        /// </summary>
         InviteUserToOrg,
         /// <summary>
         /// 
@@ -912,6 +916,10 @@ namespace LangSmith
         /// 
         /// </summary>
         McpProxyGet,
+        /// <summary>
+        /// 
+        /// </summary>
+        MintSelfHostedLicense,
         /// <summary>
         /// 
         /// </summary>
@@ -1538,6 +1546,7 @@ namespace LangSmith
                 AuditLogOperation.GetWorkspaceStats => "get_workspace_stats",
                 AuditLogOperation.GetWorkspaceUsageLimitsInfo => "get_workspace_usage_limits_info",
                 AuditLogOperation.InvalidateMcpToolsCache => "invalidate_mcp_tools_cache",
+                AuditLogOperation.InviteProvisionedOrgMember => "invite_provisioned_org_member",
                 AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
                 AuditLogOperation.ListAccessPolicies => "list_access_policies",
@@ -1572,6 +1581,7 @@ namespace LangSmith
                 AuditLogOperation.Login => "login",
                 AuditLogOperation.McpProxy => "mcp_proxy",
                 AuditLogOperation.McpProxyGet => "mcp_proxy_get",
+                AuditLogOperation.MintSelfHostedLicense => "mint_self_hosted_license",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
                 AuditLogOperation.QueryRun => "query_run",
                 AuditLogOperation.QueryRuns => "query_runs",
@@ -1879,6 +1889,7 @@ namespace LangSmith
                 "get_workspace_stats" => AuditLogOperation.GetWorkspaceStats,
                 "get_workspace_usage_limits_info" => AuditLogOperation.GetWorkspaceUsageLimitsInfo,
                 "invalidate_mcp_tools_cache" => AuditLogOperation.InvalidateMcpToolsCache,
+                "invite_provisioned_org_member" => AuditLogOperation.InviteProvisionedOrgMember,
                 "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
                 "list_access_policies" => AuditLogOperation.ListAccessPolicies,
@@ -1913,6 +1924,7 @@ namespace LangSmith
                 "login" => AuditLogOperation.Login,
                 "mcp_proxy" => AuditLogOperation.McpProxy,
                 "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
+                "mint_self_hosted_license" => AuditLogOperation.MintSelfHostedLicense,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
                 "query_run" => AuditLogOperation.QueryRun,
                 "query_runs" => AuditLogOperation.QueryRuns,

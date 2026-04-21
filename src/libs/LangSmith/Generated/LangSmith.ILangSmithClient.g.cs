@@ -93,6 +93,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AwsMarketplaceClient AwsMarketplace { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BackfillsClient Backfills { get; }
 
         /// <summary>

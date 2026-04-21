@@ -120,6 +120,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AwsMarketplaceClient AwsMarketplace => new AwsMarketplaceClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BackfillsClient Backfills => new BackfillsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
