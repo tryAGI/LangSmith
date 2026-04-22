@@ -43,7 +43,7 @@ namespace LangSmith
 
         /// <summary>
         /// Create a sandbox claim<br/>
-        /// Create a new sandbox from a template. Optionally blocks until ready or timeout.
+        /// Create a new sandbox. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one of `template_name`, `snapshot_id`, or `snapshot_name` must be set. Optionally blocks until ready or timeout.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -295,7 +295,7 @@ namespace LangSmith
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Template not found
+                            // Template or snapshot not found
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -617,7 +617,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Create a sandbox claim<br/>
-        /// Create a new sandbox from a template. Optionally blocks until ready or timeout.
+        /// Create a new sandbox. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one of `template_name`, `snapshot_id`, or `snapshot_name` must be set. Optionally blocks until ready or timeout.
         /// </summary>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
@@ -625,6 +625,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="snapshotId"></param>
+        /// <param name="snapshotName"></param>
         /// <param name="templateName">
         /// required for Kata path
         /// </param>
@@ -642,6 +643,7 @@ namespace LangSmith
             string? name = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             string? snapshotId = default,
+            string? snapshotName = default,
             string? templateName = default,
             int? timeout = default,
             int? ttlSeconds = default,
@@ -658,6 +660,7 @@ namespace LangSmith
                 Name = name,
                 ProxyConfig = proxyConfig,
                 SnapshotId = snapshotId,
+                SnapshotName = snapshotName,
                 TemplateName = templateName,
                 Timeout = timeout,
                 TtlSeconds = ttlSeconds,
