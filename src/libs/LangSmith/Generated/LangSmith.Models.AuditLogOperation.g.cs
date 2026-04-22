@@ -255,6 +255,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateProvisionedSaasOrg,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateRole,
         /// <summary>
         /// 
@@ -1415,6 +1419,7 @@ namespace LangSmith
                 AuditLogOperation.CreatePlaygroundSettings => "create_playground_settings",
                 AuditLogOperation.CreatePromptCanvasQuickAction => "create_prompt_canvas_quick_action",
                 AuditLogOperation.CreatePromptWebhook => "create_prompt_webhook",
+                AuditLogOperation.CreateProvisionedSaasOrg => "create_provisioned_saas_org",
                 AuditLogOperation.CreateRole => "create_role",
                 AuditLogOperation.CreateSandboxProxyProfile => "create_sandbox_proxy_profile",
                 AuditLogOperation.CreateScimGroup => "create_scim_group",
@@ -1758,6 +1763,7 @@ namespace LangSmith
                 "create_playground_settings" => AuditLogOperation.CreatePlaygroundSettings,
                 "create_prompt_canvas_quick_action" => AuditLogOperation.CreatePromptCanvasQuickAction,
                 "create_prompt_webhook" => AuditLogOperation.CreatePromptWebhook,
+                "create_provisioned_saas_org" => AuditLogOperation.CreateProvisionedSaasOrg,
                 "create_role" => AuditLogOperation.CreateRole,
                 "create_sandbox_proxy_profile" => AuditLogOperation.CreateSandboxProxyProfile,
                 "create_scim_group" => AuditLogOperation.CreateScimGroup,
