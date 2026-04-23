@@ -417,6 +417,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.DataPlanesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataPlanesStatusNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter),
@@ -1392,6 +1396,10 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CommitsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CommitsListCommitsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.CommitsCommitWithLookups>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesListPublicDataPlanesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlane>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesPublicDataPlane))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesStatus), TypeInfoPropertyName = "DataPlanesStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ErrutilInternalError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ErrutilUserError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem))]
@@ -1782,6 +1790,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AuthzInternalAccessPolicy>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.CommitsExampleRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.CommitsCommitWithLookups>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.DataPlanesPublicDataPlane>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsEvaluatorRunRule>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsEvaluator>))]

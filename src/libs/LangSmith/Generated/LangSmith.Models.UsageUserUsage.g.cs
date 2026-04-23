@@ -51,12 +51,6 @@ namespace LangSmith
         public double? TotalCost { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("week_to_date_cost")]
-        public double? WeekToDateCost { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,7 +66,6 @@ namespace LangSmith
         /// <param name="ownerEmail"></param>
         /// <param name="runCount"></param>
         /// <param name="totalCost"></param>
-        /// <param name="weekToDateCost"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -83,8 +76,7 @@ namespace LangSmith
             string? lsUserId,
             string? ownerEmail,
             int? runCount,
-            double? totalCost,
-            double? weekToDateCost)
+            double? totalCost)
         {
             this.AgentCount = agentCount;
             this.FirstUsed = firstUsed;
@@ -93,7 +85,6 @@ namespace LangSmith
             this.OwnerEmail = ownerEmail;
             this.RunCount = runCount;
             this.TotalCost = totalCost;
-            this.WeekToDateCost = weekToDateCost;
         }
 
         /// <summary>
