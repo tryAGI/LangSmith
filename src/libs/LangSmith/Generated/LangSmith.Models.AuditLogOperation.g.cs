@@ -279,6 +279,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateSelfHostedCustomer,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateServiceAccount,
         /// <summary>
         /// 
@@ -1425,6 +1429,7 @@ namespace LangSmith
                 AuditLogOperation.CreateScimGroup => "create_scim_group",
                 AuditLogOperation.CreateScimToken => "create_scim_token",
                 AuditLogOperation.CreateScimUser => "create_scim_user",
+                AuditLogOperation.CreateSelfHostedCustomer => "create_self_hosted_customer",
                 AuditLogOperation.CreateServiceAccount => "create_service_account",
                 AuditLogOperation.CreateServiceKey => "create_service_key",
                 AuditLogOperation.CreateSsoSettings => "create_sso_settings",
@@ -1769,6 +1774,7 @@ namespace LangSmith
                 "create_scim_group" => AuditLogOperation.CreateScimGroup,
                 "create_scim_token" => AuditLogOperation.CreateScimToken,
                 "create_scim_user" => AuditLogOperation.CreateScimUser,
+                "create_self_hosted_customer" => AuditLogOperation.CreateSelfHostedCustomer,
                 "create_service_account" => AuditLogOperation.CreateServiceAccount,
                 "create_service_key" => AuditLogOperation.CreateServiceKey,
                 "create_sso_settings" => AuditLogOperation.CreateSsoSettings,

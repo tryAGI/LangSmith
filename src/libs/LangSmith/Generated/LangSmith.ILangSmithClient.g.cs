@@ -128,6 +128,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public DataPlanesClient DataPlanes { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DatasetsClient Datasets { get; }
 
         /// <summary>
