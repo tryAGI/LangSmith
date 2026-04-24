@@ -56,6 +56,30 @@ namespace LangSmith
         public string? MetadataXml { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_groups_enabled")]
+        public bool? SsoGroupsEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: groups
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_groups_claim_field")]
+        public string? SsoGroupsClaimField { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_groups_required")]
+        public bool? SsoGroupsRequired { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_groups_role_sync_enabled")]
+        public bool? SsoGroupsRoleSyncEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +95,18 @@ namespace LangSmith
         /// <param name="defaultWorkspaceIds"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="metadataXml"></param>
+        /// <param name="ssoGroupsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="ssoGroupsClaimField">
+        /// Default Value: groups
+        /// </param>
+        /// <param name="ssoGroupsRequired">
+        /// Default Value: false
+        /// </param>
+        /// <param name="ssoGroupsRoleSyncEnabled">
+        /// Default Value: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,7 +117,11 @@ namespace LangSmith
             global::System.Guid defaultWorkspaceRoleId,
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
             string? metadataUrl,
-            string? metadataXml)
+            string? metadataXml,
+            bool? ssoGroupsEnabled,
+            string? ssoGroupsClaimField,
+            bool? ssoGroupsRequired,
+            bool? ssoGroupsRoleSyncEnabled)
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -90,6 +130,10 @@ namespace LangSmith
             this.DefaultWorkspaceIds = defaultWorkspaceIds ?? throw new global::System.ArgumentNullException(nameof(defaultWorkspaceIds));
             this.MetadataUrl = metadataUrl;
             this.MetadataXml = metadataXml;
+            this.SsoGroupsEnabled = ssoGroupsEnabled;
+            this.SsoGroupsClaimField = ssoGroupsClaimField;
+            this.SsoGroupsRequired = ssoGroupsRequired;
+            this.SsoGroupsRoleSyncEnabled = ssoGroupsRoleSyncEnabled;
         }
 
         /// <summary>

@@ -42,13 +42,17 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
             ref string startTime,
-            ref string endTime);
+            ref string endTime,
+            ref string? sortBy,
+            ref string? sortOrder);
         partial void PrepareListFleetUsersWithUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
             string startTime,
-            string endTime);
+            string endTime,
+            string? sortBy,
+            string? sortOrder);
         partial void ProcessListFleetUsersWithUsageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,13 +64,19 @@ namespace LangSmith
 
         /// <summary>
         /// List fleet users with usage<br/>
-        /// Returns the top users with aggregated cost data for the given time window, sorted by total cost descending.
+        /// Returns the top users with aggregated cost data for the given time window. Defaults to sorting by cost descending; pass sort_by and sort_order to change.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="sortBy">
+        /// Default Value: cost
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -74,6 +84,8 @@ namespace LangSmith
             string startTime,
             string endTime,
             int? limit = default,
+            string? sortBy = default,
+            string? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -83,7 +95,9 @@ namespace LangSmith
                 httpClient: HttpClient,
                 limit: ref limit,
                 startTime: ref startTime,
-                endTime: ref endTime);
+                endTime: ref endTime,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -115,7 +129,9 @@ namespace LangSmith
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddRequiredParameter("start_time", startTime)
-                                .AddRequiredParameter("end_time", endTime) 
+                                .AddRequiredParameter("end_time", endTime)
+                                .AddOptionalParameter("sort_by", sortBy)
+                                .AddOptionalParameter("sort_order", sortOrder) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -159,7 +175,9 @@ namespace LangSmith
                     httpRequestMessage: __httpRequest,
                     limit: limit,
                     startTime: startTime,
-                    endTime: endTime);
+                    endTime: endTime,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder);
 
                 return __httpRequest;
             }
