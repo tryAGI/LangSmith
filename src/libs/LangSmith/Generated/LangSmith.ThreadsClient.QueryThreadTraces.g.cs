@@ -31,7 +31,8 @@ namespace LangSmith
             ref string? filter,
             ref string? select,
             ref int? limit,
-            ref string? cursor);
+            ref string? cursor,
+            ref string? order);
         partial void PrepareQueryThreadTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -39,7 +40,8 @@ namespace LangSmith
             string? filter,
             string? select,
             int? limit,
-            string? cursor);
+            string? cursor,
+            string? order);
         partial void ProcessQueryThreadTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,6 +62,7 @@ namespace LangSmith
         /// <param name="select"></param>
         /// <param name="limit"></param>
         /// <param name="cursor"></param>
+        /// <param name="order"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -69,6 +72,7 @@ namespace LangSmith
             string? select = default,
             int? limit = default,
             string? cursor = default,
+            string? order = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -80,7 +84,8 @@ namespace LangSmith
                 filter: ref filter,
                 select: ref select,
                 limit: ref limit,
-                cursor: ref cursor);
+                cursor: ref cursor,
+                order: ref order);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -112,7 +117,8 @@ namespace LangSmith
                                 .AddOptionalParameter("filter", filter)
                                 .AddOptionalParameter("select", select)
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("cursor", cursor) 
+                                .AddOptionalParameter("cursor", cursor)
+                                .AddOptionalParameter("order", order) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -158,7 +164,8 @@ namespace LangSmith
                     filter: filter,
                     select: select,
                     limit: limit,
-                    cursor: cursor);
+                    cursor: cursor,
+                    order: order);
 
                 return __httpRequest;
             }
