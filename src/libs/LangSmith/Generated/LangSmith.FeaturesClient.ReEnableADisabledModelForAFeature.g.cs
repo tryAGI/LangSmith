@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FeaturesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ReEnableADisabledModelForAFeatureServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ReEnableADisabledModelForAFeatureSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,14 @@ namespace LangSmith
             {                s_ReEnableADisabledModelForAFeatureSecurityRequirement0,
             };
         partial void PrepareReEnableADisabledModelForAFeatureArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string feature,
+            ref string model);
         partial void PrepareReEnableADisabledModelForAFeatureRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string feature,
+            string model);
         partial void ProcessReEnableADisabledModelForAFeatureResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,17 +55,23 @@ namespace LangSmith
         /// Re-enable a disabled model for a feature<br/>
         /// Removes a model from the disabled list for a feature in the workspace.
         /// </summary>
+        /// <param name="feature"></param>
+        /// <param name="model"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task ReEnableADisabledModelForAFeatureAsync(
+            string feature,
+            string model,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareReEnableADisabledModelForAFeatureArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                feature: ref feature,
+                model: ref model);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -73,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/features/{feature}/disabled-models/{model}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/features/{feature}/disabled-models/{model}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_ReEnableADisabledModelForAFeatureServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -114,7 +139,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareReEnableADisabledModelForAFeatureRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    feature: feature,
+                    model: model);
 
                 return __httpRequest;
             }
@@ -133,7 +160,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReEnableADisabledModelForAFeature",
                                 methodName: "ReEnableADisabledModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/disabled-models/{model}\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/disabled-models/{model}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -160,7 +187,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReEnableADisabledModelForAFeature",
                                 methodName: "ReEnableADisabledModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/disabled-models/{model}\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/disabled-models/{model}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +222,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReEnableADisabledModelForAFeature",
                                 methodName: "ReEnableADisabledModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/disabled-models/{model}\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/disabled-models/{model}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -242,7 +269,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReEnableADisabledModelForAFeature",
                                 methodName: "ReEnableADisabledModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/disabled-models/{model}\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/disabled-models/{model}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +289,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReEnableADisabledModelForAFeature",
                                 methodName: "ReEnableADisabledModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/disabled-models/{model}\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/disabled-models/{model}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

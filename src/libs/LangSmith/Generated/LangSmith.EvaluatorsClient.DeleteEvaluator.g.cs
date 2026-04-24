@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class EvaluatorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteEvaluatorServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteEvaluatorSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareDeleteEvaluatorArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string evaluatorId,
             ref bool? deleteRunRules);
         partial void PrepareDeleteEvaluatorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string evaluatorId,
             bool? deleteRunRules);
         partial void ProcessDeleteEvaluatorResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,11 +55,13 @@ namespace LangSmith
         /// Delete evaluator<br/>
         /// Delete an evaluator. When delete_run_rules is true, all run rules referencing this evaluator are deleted first (same tenant). Associated llm_evaluators and code_evaluators rows are removed by foreign-key cascade when the evaluator row is deleted.
         /// </summary>
+        /// <param name="evaluatorId"></param>
         /// <param name="deleteRunRules"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteEvaluatorAsync(
+            string evaluatorId,
             bool? deleteRunRules = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -53,6 +70,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareDeleteEvaluatorArguments(
                 httpClient: HttpClient,
+                evaluatorId: ref evaluatorId,
                 deleteRunRules: ref deleteRunRules);
 
 
@@ -78,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/evaluators/{evaluator_id}",
-                                baseUri: HttpClient.BaseAddress); 
+                                path: $"/v1/platform/evaluators/{evaluatorId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteEvaluatorServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("delete_run_rules", deleteRunRules?.ToString().ToLowerInvariant()) 
                                 ;
@@ -123,6 +143,7 @@ namespace LangSmith
                 PrepareDeleteEvaluatorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    evaluatorId: evaluatorId,
                     deleteRunRules: deleteRunRules);
 
                 return __httpRequest;
@@ -142,7 +163,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteEvaluator",
                                 methodName: "DeleteEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -169,7 +190,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteEvaluator",
                                 methodName: "DeleteEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -204,7 +225,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteEvaluator",
                                 methodName: "DeleteEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -251,7 +272,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteEvaluator",
                                 methodName: "DeleteEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -271,7 +292,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteEvaluator",
                                 methodName: "DeleteEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

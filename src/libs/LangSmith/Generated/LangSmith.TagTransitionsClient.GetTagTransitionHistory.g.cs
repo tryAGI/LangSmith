@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class TagTransitionsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetTagTransitionHistoryServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetTagTransitionHistorySecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,11 +40,17 @@ namespace LangSmith
             };
         partial void PrepareGetTagTransitionHistoryArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref string tagName,
             ref int? limit,
             ref int? offset);
         partial void PrepareGetTagTransitionHistoryRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            string tagName,
             int? limit,
             int? offset);
         partial void ProcessGetTagTransitionHistoryResponse(
@@ -49,6 +68,9 @@ namespace LangSmith
         /// tag in a repository. Each entry records a commit change<br/>
         /// (from_commit → to_commit) along with who performed it.
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="tagName"></param>
         /// <param name="limit">
         /// Default Value: 50
         /// </param>
@@ -59,6 +81,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.TagTransitionsTagTransitionHistoryResponse> GetTagTransitionHistoryAsync(
+            string owner,
+            string repo,
+            string tagName,
             int? limit = default,
             int? offset = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -68,6 +93,9 @@ namespace LangSmith
                 client: HttpClient);
             PrepareGetTagTransitionHistoryArguments(
                 httpClient: HttpClient,
+                owner: ref owner,
+                repo: ref repo,
+                tagName: ref tagName,
                 limit: ref limit,
                 offset: ref offset);
 
@@ -94,8 +122,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/repos/{owner}/{repo}/tags/{tag_name}/history",
-                                baseUri: HttpClient.BaseAddress); 
+                                path: $"/repos/{owner}/{repo}/tags/{tagName}/history",
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetTagTransitionHistoryServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString()) 
@@ -140,6 +170,9 @@ namespace LangSmith
                 PrepareGetTagTransitionHistoryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    owner: owner,
+                    repo: repo,
+                    tagName: tagName,
                     limit: limit,
                     offset: offset);
 
@@ -160,7 +193,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTagTransitionHistory",
                                 methodName: "GetTagTransitionHistoryAsync",
-                                pathTemplate: "\"/repos/{owner}/{repo}/tags/{tag_name}/history\"",
+                                pathTemplate: "$\"/repos/{owner}/{repo}/tags/{tagName}/history\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -187,7 +220,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTagTransitionHistory",
                                 methodName: "GetTagTransitionHistoryAsync",
-                                pathTemplate: "\"/repos/{owner}/{repo}/tags/{tag_name}/history\"",
+                                pathTemplate: "$\"/repos/{owner}/{repo}/tags/{tagName}/history\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -222,7 +255,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTagTransitionHistory",
                                 methodName: "GetTagTransitionHistoryAsync",
-                                pathTemplate: "\"/repos/{owner}/{repo}/tags/{tag_name}/history\"",
+                                pathTemplate: "$\"/repos/{owner}/{repo}/tags/{tagName}/history\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -269,7 +302,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTagTransitionHistory",
                                 methodName: "GetTagTransitionHistoryAsync",
-                                pathTemplate: "\"/repos/{owner}/{repo}/tags/{tag_name}/history\"",
+                                pathTemplate: "$\"/repos/{owner}/{repo}/tags/{tagName}/history\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -289,7 +322,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTagTransitionHistory",
                                 methodName: "GetTagTransitionHistoryAsync",
-                                pathTemplate: "\"/repos/{owner}/{repo}/tags/{tag_name}/history\"",
+                                pathTemplate: "$\"/repos/{owner}/{repo}/tags/{tagName}/history\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

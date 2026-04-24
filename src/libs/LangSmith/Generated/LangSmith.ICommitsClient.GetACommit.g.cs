@@ -14,6 +14,9 @@ namespace LangSmith
         /// - Less than 8 characters: Only check for tags<br/>
         /// - 8 or more characters: Prioritize commit hash over tag, check both
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="commit"></param>
         /// <param name="getExamples">
         /// Default Value: false
         /// </param>
@@ -28,6 +31,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsCommitResponse> GetACommitAsync(
+            string owner,
+            string repo,
+            string commit,
             bool? getExamples = default,
             string? include = default,
             bool? includeModel = default,

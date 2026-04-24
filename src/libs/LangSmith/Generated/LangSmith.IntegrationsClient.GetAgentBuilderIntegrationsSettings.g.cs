@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class IntegrationsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetAgentBuilderIntegrationsSettingsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetAgentBuilderIntegrationsSettingsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -79,7 +92,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v1/agent-builder/integrations",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetAgentBuilderIntegrationsSettingsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class CommitsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListCommitsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListCommitsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,6 +40,8 @@ namespace LangSmith
             };
         partial void PrepareListCommitsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
             ref bool? includeStats,
             ref int? limit,
             ref int? offset,
@@ -34,6 +49,8 @@ namespace LangSmith
         partial void PrepareListCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
             bool? includeStats,
             int? limit,
             int? offset,
@@ -54,6 +71,8 @@ namespace LangSmith
         /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
@@ -68,6 +87,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsListCommitsResponse> ListCommitsAsync(
+            string owner,
+            string repo,
             bool? includeStats = default,
             int? limit = default,
             int? offset = default,
@@ -79,6 +100,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListCommitsArguments(
                 httpClient: HttpClient,
+                owner: ref owner,
+                repo: ref repo,
                 includeStats: ref includeStats,
                 limit: ref limit,
                 offset: ref offset,
@@ -107,8 +130,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/commits/{owner}/{repo}",
-                                baseUri: HttpClient.BaseAddress); 
+                                path: $"/commits/{owner}/{repo}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListCommitsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -155,6 +180,8 @@ namespace LangSmith
                 PrepareListCommitsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    owner: owner,
+                    repo: repo,
                     includeStats: includeStats,
                     limit: limit,
                     offset: offset,
@@ -177,7 +204,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListCommits",
                                 methodName: "ListCommitsAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -204,7 +231,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListCommits",
                                 methodName: "ListCommitsAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -239,7 +266,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListCommits",
                                 methodName: "ListCommitsAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -286,7 +313,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListCommits",
                                 methodName: "ListCommitsAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -306,7 +333,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListCommits",
                                 methodName: "ListCommitsAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

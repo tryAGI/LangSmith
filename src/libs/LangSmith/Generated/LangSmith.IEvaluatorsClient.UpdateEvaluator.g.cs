@@ -8,11 +8,13 @@ namespace LangSmith
         /// Update evaluator<br/>
         /// Update an existing evaluator's name, LLM configuration, or code configuration.
         /// </summary>
+        /// <param name="evaluatorId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsUpdateEvaluatorResponse> UpdateEvaluatorAsync(
+            string evaluatorId,
 
             global::LangSmith.EvaluatorsUpdateEvaluatorRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -21,6 +23,7 @@ namespace LangSmith
         /// Update evaluator<br/>
         /// Update an existing evaluator's name, LLM configuration, or code configuration.
         /// </summary>
+        /// <param name="evaluatorId"></param>
         /// <param name="codeEvaluator"></param>
         /// <param name="llmEvaluator"></param>
         /// <param name="name"></param>
@@ -28,6 +31,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsUpdateEvaluatorResponse> UpdateEvaluatorAsync(
+            string evaluatorId,
             global::LangSmith.EvaluatorsUpdateCodeEvaluatorRequest? codeEvaluator = default,
             global::LangSmith.EvaluatorsUpdateLLMEvaluatorRequest? llmEvaluator = default,
             string? name = default,

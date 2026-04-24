@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AccessPoliciesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetAnAccessPolicyServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetAnAccessPolicySecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_GetAnAccessPolicySecurityRequirement0,
             };
         partial void PrepareGetAnAccessPolicyArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string accessPolicyId);
         partial void PrepareGetAnAccessPolicyRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string accessPolicyId);
         partial void ProcessGetAnAccessPolicyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +58,20 @@ namespace LangSmith
         /// Get an access policy<br/>
         /// Gets a specific access policy by ID.
         /// </summary>
+        /// <param name="accessPolicyId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AuthzInternalAccessPolicy> GetAnAccessPolicyAsync(
+            string accessPolicyId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetAnAccessPolicyArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                accessPolicyId: ref accessPolicyId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/orgs/current/access-policies/{access_policy_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/orgs/current/access-policies/{accessPolicyId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetAnAccessPolicyServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +139,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareGetAnAccessPolicyRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    accessPolicyId: accessPolicyId);
 
                 return __httpRequest;
             }
@@ -138,7 +159,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/{access_policy_id}\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +186,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/{access_policy_id}\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +221,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/{access_policy_id}\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +268,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/{access_policy_id}\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +288,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/{access_policy_id}\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -25,11 +25,11 @@ namespace LangSmith
             int? offset = default,
             bool? activeIs = default,
             bool? pendingIs = default,
-            byte[]? nameLike = default,
-            byte[]? emailLike = default,
-            byte[]? workspaceNameLike = default,
-            byte[]? organizationRoleLike = default,
-            byte[]? workspaceRoleLike = default,
+            global::System.Collections.Generic.IList<string>? nameLike = default,
+            global::System.Collections.Generic.IList<string>? emailLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceNameLike = default,
+            global::System.Collections.Generic.IList<string>? organizationRoleLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceRoleLike = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -53,11 +53,11 @@ namespace LangSmith
             int? offset = default,
             bool? activeIs = default,
             bool? pendingIs = default,
-            byte[]? nameLike = default,
-            byte[]? emailLike = default,
-            byte[]? workspaceNameLike = default,
-            byte[]? organizationRoleLike = default,
-            byte[]? workspaceRoleLike = default,
+            global::System.Collections.Generic.IList<string>? nameLike = default,
+            global::System.Collections.Generic.IList<string>? emailLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceNameLike = default,
+            global::System.Collections.Generic.IList<string>? organizationRoleLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceRoleLike = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class McpVendorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListToolsForAVendorServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListToolsForAVendorSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,11 +40,13 @@ namespace LangSmith
             };
         partial void PrepareListToolsForAVendorArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string vendorSlug,
             ref int? limit,
             ref int? offset);
         partial void PrepareListToolsForAVendorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vendorSlug,
             int? limit,
             int? offset);
         partial void ProcessListToolsForAVendorResponse(
@@ -47,12 +62,14 @@ namespace LangSmith
         /// List tools for a vendor<br/>
         /// Returns the tool catalog for this vendor.
         /// </summary>
+        /// <param name="vendorSlug"></param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsListVendorToolsResponse> ListToolsForAVendorAsync(
+            string vendorSlug,
             int? limit = default,
             int? offset = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -62,6 +79,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListToolsForAVendorArguments(
                 httpClient: HttpClient,
+                vendorSlug: ref vendorSlug,
                 limit: ref limit,
                 offset: ref offset);
 
@@ -88,8 +106,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/mcp-vendors/{vendor_slug}/tools",
-                                baseUri: HttpClient.BaseAddress); 
+                                path: $"/v1/platform/mcp-vendors/{vendorSlug}/tools",
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListToolsForAVendorServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString()) 
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareListToolsForAVendorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    vendorSlug: vendorSlug,
                     limit: limit,
                     offset: offset);
 
@@ -154,7 +175,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListToolsForAVendor",
                                 methodName: "ListToolsForAVendorAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/tools\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -181,7 +202,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListToolsForAVendor",
                                 methodName: "ListToolsForAVendorAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/tools\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -216,7 +237,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListToolsForAVendor",
                                 methodName: "ListToolsForAVendorAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/tools\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,7 +284,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListToolsForAVendor",
                                 methodName: "ListToolsForAVendorAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/tools\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +304,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListToolsForAVendor",
                                 methodName: "ListToolsForAVendorAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/tools\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/tools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

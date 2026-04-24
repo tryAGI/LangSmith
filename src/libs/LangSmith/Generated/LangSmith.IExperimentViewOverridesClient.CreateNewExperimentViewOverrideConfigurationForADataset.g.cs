@@ -31,11 +31,13 @@ namespace LangSmith
         /// }<br/>
         /// This operation fails if an override already exists for the dataset (use PATCH to update).
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExperimentViewOverridesExperimentViewOverride> CreateNewExperimentViewOverrideConfigurationForADatasetAsync(
+            global::System.Guid datasetId,
 
             global::LangSmith.ExperimentViewOverridesExperimentViewOverridePostRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -67,11 +69,13 @@ namespace LangSmith
         /// }<br/>
         /// This operation fails if an override already exists for the dataset (use PATCH to update).
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="columnOverrides"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExperimentViewOverridesExperimentViewOverride> CreateNewExperimentViewOverrideConfigurationForADatasetAsync(
+            global::System.Guid datasetId,
             global::System.Collections.Generic.IList<global::LangSmith.ExperimentViewOverridesColumnOverride> columnOverrides,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

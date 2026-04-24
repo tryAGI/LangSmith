@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class CommitsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_CreateACommitServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateACommitSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,14 @@ namespace LangSmith
             };
         partial void PrepareCreateACommitArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
             global::LangSmith.CommitsCreateCommitReq request);
         partial void PrepareCreateACommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
             global::LangSmith.CommitsCreateCommitReq request);
         partial void ProcessCreateACommitResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,11 +63,15 @@ namespace LangSmith
         /// Creates a new commit in a repository.<br/>
         /// Requires authentication and write access to the repository.
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsCreateCommitResponse> CreateACommitAsync(
+            string owner,
+            string repo,
 
             global::LangSmith.CommitsCreateCommitReq request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -62,6 +83,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareCreateACommitArguments(
                 httpClient: HttpClient,
+                owner: ref owner,
+                repo: ref repo,
                 request: request);
 
 
@@ -87,8 +110,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/commits/{owner}/{repo}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/commits/{owner}/{repo}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_CreateACommitServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -135,6 +160,8 @@ namespace LangSmith
                 PrepareCreateACommitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    owner: owner,
+                    repo: repo,
                     request: request);
 
                 return __httpRequest;
@@ -154,7 +181,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateACommit",
                                 methodName: "CreateACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -181,7 +208,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateACommit",
                                 methodName: "CreateACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -216,7 +243,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateACommit",
                                 methodName: "CreateACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,7 +290,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateACommit",
                                 methodName: "CreateACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +310,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateACommit",
                                 methodName: "CreateACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -545,6 +572,8 @@ namespace LangSmith
         /// Creates a new commit in a repository.<br/>
         /// Requires authentication and write access to the repository.
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="description"></param>
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
@@ -555,6 +584,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsCreateCommitResponse> CreateACommitAsync(
+            string owner,
+            string repo,
             string? description = default,
             object? manifest = default,
             string? parentCommit = default,
@@ -571,6 +602,8 @@ namespace LangSmith
             };
 
             return await CreateACommitAsync(
+                owner: owner,
+                repo: repo,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

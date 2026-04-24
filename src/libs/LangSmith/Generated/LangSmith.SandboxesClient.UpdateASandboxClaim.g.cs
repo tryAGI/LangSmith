@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SandboxesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateASandboxClaimServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateASandboxClaimSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateASandboxClaimArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string name,
             global::LangSmith.SandboxesUpdateClaimPayload request);
         partial void PrepareUpdateASandboxClaimRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string name,
             global::LangSmith.SandboxesUpdateClaimPayload request);
         partial void ProcessUpdateASandboxClaimResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
+            string name,
 
             global::LangSmith.SandboxesUpdateClaimPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateASandboxClaimArguments(
                 httpClient: HttpClient,
+                name: ref name,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/boxes/{name}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v2/sandboxes/boxes/{name}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateASandboxClaimServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateASandboxClaimRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    name: name,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateASandboxClaim",
                                 methodName: "UpdateASandboxClaimAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateASandboxClaim",
                                 methodName: "UpdateASandboxClaimAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateASandboxClaim",
                                 methodName: "UpdateASandboxClaimAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateASandboxClaim",
                                 methodName: "UpdateASandboxClaimAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateASandboxClaim",
                                 methodName: "UpdateASandboxClaimAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -543,10 +564,11 @@ namespace LangSmith
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="memBytes"></param>
-        /// <param name="name"></param>
+        /// <param name="requestName"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="vcpus"></param>
@@ -554,10 +576,11 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
+            string name,
             long? fsCapacityBytes = default,
             int? idleTtlSeconds = default,
             long? memBytes = default,
-            string? name = default,
+            string? requestName = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             int? ttlSeconds = default,
             int? vcpus = default,
@@ -569,13 +592,14 @@ namespace LangSmith
                 FsCapacityBytes = fsCapacityBytes,
                 IdleTtlSeconds = idleTtlSeconds,
                 MemBytes = memBytes,
-                Name = name,
+                Name = requestName,
                 ProxyConfig = proxyConfig,
                 TtlSeconds = ttlSeconds,
                 Vcpus = vcpus,
             };
 
             return await UpdateASandboxClaimAsync(
+                name: name,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

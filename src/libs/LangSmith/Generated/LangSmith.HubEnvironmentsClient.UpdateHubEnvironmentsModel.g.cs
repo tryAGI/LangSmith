@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class HubEnvironmentsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateHubEnvironmentsModelServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateHubEnvironmentsModelSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateHubEnvironmentsModelArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string id,
             global::LangSmith.HubEnvironmentsUpdateEnvironmentsRequest request);
         partial void PrepareUpdateHubEnvironmentsModelRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id,
             global::LangSmith.HubEnvironmentsUpdateEnvironmentsRequest request);
         partial void ProcessUpdateHubEnvironmentsModelResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update hub environments model<br/>
         /// Replaces the environments array on an existing model.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.HubEnvironmentsHubEnvironmentsModel> UpdateHubEnvironmentsModelAsync(
+            string id,
 
             global::LangSmith.HubEnvironmentsUpdateEnvironmentsRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateHubEnvironmentsModelArguments(
                 httpClient: HttpClient,
+                id: ref id,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/hub/environments/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/api/v1/hub/environments/{id}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateHubEnvironmentsModelServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateHubEnvironmentsModelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    id: id,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateHubEnvironmentsModel",
                                 methodName: "UpdateHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateHubEnvironmentsModel",
                                 methodName: "UpdateHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateHubEnvironmentsModel",
                                 methodName: "UpdateHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateHubEnvironmentsModel",
                                 methodName: "UpdateHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateHubEnvironmentsModel",
                                 methodName: "UpdateHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -505,11 +526,13 @@ namespace LangSmith
         /// Update hub environments model<br/>
         /// Replaces the environments array on an existing model.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="environments"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.HubEnvironmentsHubEnvironmentsModel> UpdateHubEnvironmentsModelAsync(
+            string id,
             global::System.Collections.Generic.IList<global::LangSmith.HubEnvironmentsEnvironmentEntry> environments,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -520,6 +543,7 @@ namespace LangSmith
             };
 
             return await UpdateHubEnvironmentsModelAsync(
+                id: id,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

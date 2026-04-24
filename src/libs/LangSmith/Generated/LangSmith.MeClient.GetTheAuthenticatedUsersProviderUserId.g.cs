@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class MeClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetTheAuthenticatedUsersProviderUserIdServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetTheAuthenticatedUsersProviderUserIdSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_GetTheAuthenticatedUsersProviderUserIdSecurityRequirement0,
             };
         partial void PrepareGetTheAuthenticatedUsersProviderUserIdArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string providerType);
         partial void PrepareGetTheAuthenticatedUsersProviderUserIdRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string providerType);
         partial void ProcessGetTheAuthenticatedUsersProviderUserIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +58,20 @@ namespace LangSmith
         /// Get the authenticated user's provider user ID<br/>
         /// Returns the provider user ID associated with the authenticated user for a given provider type, or null if not set. Scoped to the current tenant.
         /// </summary>
+        /// <param name="providerType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> GetTheAuthenticatedUsersProviderUserIdAsync(
+            string providerType,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetTheAuthenticatedUsersProviderUserIdArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                providerType: ref providerType);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/me/providers/{providerType}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/me/providers/{providerType}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetTheAuthenticatedUsersProviderUserIdServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +139,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareGetTheAuthenticatedUsersProviderUserIdRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    providerType: providerType);
 
                 return __httpRequest;
             }
@@ -138,7 +159,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTheAuthenticatedUsersProviderUserId",
                                 methodName: "GetTheAuthenticatedUsersProviderUserIdAsync",
-                                pathTemplate: "\"/me/providers/{providerType}\"",
+                                pathTemplate: "$\"/me/providers/{providerType}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +186,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTheAuthenticatedUsersProviderUserId",
                                 methodName: "GetTheAuthenticatedUsersProviderUserIdAsync",
-                                pathTemplate: "\"/me/providers/{providerType}\"",
+                                pathTemplate: "$\"/me/providers/{providerType}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +221,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTheAuthenticatedUsersProviderUserId",
                                 methodName: "GetTheAuthenticatedUsersProviderUserIdAsync",
-                                pathTemplate: "\"/me/providers/{providerType}\"",
+                                pathTemplate: "$\"/me/providers/{providerType}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +268,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTheAuthenticatedUsersProviderUserId",
                                 methodName: "GetTheAuthenticatedUsersProviderUserIdAsync",
-                                pathTemplate: "\"/me/providers/{providerType}\"",
+                                pathTemplate: "$\"/me/providers/{providerType}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +288,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTheAuthenticatedUsersProviderUserId",
                                 methodName: "GetTheAuthenticatedUsersProviderUserIdAsync",
-                                pathTemplate: "\"/me/providers/{providerType}\"",
+                                pathTemplate: "$\"/me/providers/{providerType}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

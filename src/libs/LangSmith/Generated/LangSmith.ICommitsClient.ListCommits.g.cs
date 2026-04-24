@@ -11,6 +11,8 @@ namespace LangSmith
         /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
@@ -25,6 +27,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsListCommitsResponse> ListCommitsAsync(
+            string owner,
+            string repo,
             bool? includeStats = default,
             int? limit = default,
             int? offset = default,

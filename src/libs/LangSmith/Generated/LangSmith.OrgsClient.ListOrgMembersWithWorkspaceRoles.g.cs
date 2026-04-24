@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class OrgsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListOrgMembersWithWorkspaceRolesServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListOrgMembersWithWorkspaceRolesSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -31,11 +44,11 @@ namespace LangSmith
             ref int? offset,
             ref bool? activeIs,
             ref bool? pendingIs,
-            byte[]? nameLike,
-            byte[]? emailLike,
-            byte[]? workspaceNameLike,
-            byte[]? organizationRoleLike,
-            byte[]? workspaceRoleLike);
+            global::System.Collections.Generic.IList<string>? nameLike,
+            global::System.Collections.Generic.IList<string>? emailLike,
+            global::System.Collections.Generic.IList<string>? workspaceNameLike,
+            global::System.Collections.Generic.IList<string>? organizationRoleLike,
+            global::System.Collections.Generic.IList<string>? workspaceRoleLike);
         partial void PrepareListOrgMembersWithWorkspaceRolesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -43,11 +56,11 @@ namespace LangSmith
             int? offset,
             bool? activeIs,
             bool? pendingIs,
-            byte[]? nameLike,
-            byte[]? emailLike,
-            byte[]? workspaceNameLike,
-            byte[]? organizationRoleLike,
-            byte[]? workspaceRoleLike);
+            global::System.Collections.Generic.IList<string>? nameLike,
+            global::System.Collections.Generic.IList<string>? emailLike,
+            global::System.Collections.Generic.IList<string>? workspaceNameLike,
+            global::System.Collections.Generic.IList<string>? organizationRoleLike,
+            global::System.Collections.Generic.IList<string>? workspaceRoleLike);
         partial void ProcessListOrgMembersWithWorkspaceRolesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -78,11 +91,11 @@ namespace LangSmith
             int? offset = default,
             bool? activeIs = default,
             bool? pendingIs = default,
-            byte[]? nameLike = default,
-            byte[]? emailLike = default,
-            byte[]? workspaceNameLike = default,
-            byte[]? organizationRoleLike = default,
-            byte[]? workspaceRoleLike = default,
+            global::System.Collections.Generic.IList<string>? nameLike = default,
+            global::System.Collections.Generic.IList<string>? emailLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceNameLike = default,
+            global::System.Collections.Generic.IList<string>? organizationRoleLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceRoleLike = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -123,11 +136,11 @@ namespace LangSmith
             int? offset = default,
             bool? activeIs = default,
             bool? pendingIs = default,
-            byte[]? nameLike = default,
-            byte[]? emailLike = default,
-            byte[]? workspaceNameLike = default,
-            byte[]? organizationRoleLike = default,
-            byte[]? workspaceRoleLike = default,
+            global::System.Collections.Generic.IList<string>? nameLike = default,
+            global::System.Collections.Generic.IList<string>? emailLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceNameLike = default,
+            global::System.Collections.Generic.IList<string>? organizationRoleLike = default,
+            global::System.Collections.Generic.IList<string>? workspaceRoleLike = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -169,17 +182,19 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v1/platform/orgs/current/members",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListOrgMembersWithWorkspaceRolesServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("active_is", activeIs?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("pending_is", pendingIs?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("name_like", nameLike?.ToString())
-                                .AddOptionalParameter("email_like", emailLike?.ToString())
-                                .AddOptionalParameter("workspace_name_like", workspaceNameLike?.ToString())
-                                .AddOptionalParameter("organization_role_like", organizationRoleLike?.ToString())
-                                .AddOptionalParameter("workspace_role_like", workspaceRoleLike?.ToString()) 
+                                .AddOptionalParameter("name_like", nameLike, delimiter: ",", explode: true)
+                                .AddOptionalParameter("email_like", emailLike, delimiter: ",", explode: true)
+                                .AddOptionalParameter("workspace_name_like", workspaceNameLike, delimiter: ",", explode: true)
+                                .AddOptionalParameter("organization_role_like", organizationRoleLike, delimiter: ",", explode: true)
+                                .AddOptionalParameter("workspace_role_like", workspaceRoleLike, delimiter: ",", explode: true) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

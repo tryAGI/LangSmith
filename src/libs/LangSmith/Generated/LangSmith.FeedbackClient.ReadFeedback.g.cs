@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FeedbackClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ReadFeedbackServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ReadFeedbackSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -89,7 +102,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: $"/api/v1/feedback/{feedbackId}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ReadFeedbackServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("include_user_names", includeUserNames?.ToString().ToLowerInvariant()) 
                                 ;

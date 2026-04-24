@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class EvaluatorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_BulkDeleteEvaluatorsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_BulkDeleteEvaluatorsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,12 +40,12 @@ namespace LangSmith
             };
         partial void PrepareBulkDeleteEvaluatorsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            byte[] evaluatorIds,
+            global::System.Collections.Generic.IList<string> evaluatorIds,
             ref bool? deleteRunRules);
         partial void PrepareBulkDeleteEvaluatorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            byte[] evaluatorIds,
+            global::System.Collections.Generic.IList<string> evaluatorIds,
             bool? deleteRunRules);
         partial void ProcessBulkDeleteEvaluatorsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -53,7 +66,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsBulkDeleteEvaluatorsResponse> BulkDeleteEvaluatorsAsync(
-            byte[] evaluatorIds,
+            global::System.Collections.Generic.IList<string> evaluatorIds,
             bool? deleteRunRules = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -89,9 +102,11 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v1/platform/evaluators",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_BulkDeleteEvaluatorsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
-                                .AddRequiredParameter("evaluator_ids", evaluatorIds.ToString()!)
+                                .AddRequiredParameter("evaluator_ids", evaluatorIds, delimiter: ",", explode: false)
                                 .AddOptionalParameter("delete_run_rules", deleteRunRules?.ToString().ToLowerInvariant()) 
                                 ;
                             var __path = __pathBuilder.ToString();

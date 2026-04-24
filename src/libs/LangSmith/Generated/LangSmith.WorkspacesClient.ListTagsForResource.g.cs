@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class WorkspacesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListTagsForResourceServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListTagsForResourceSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -88,7 +101,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/workspaces/current/tags/resource",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListTagsForResourceServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddRequiredParameter("resource_type", resourceType.ToValueString())
                                 .AddRequiredParameter("resource_id", resourceId.ToString()!) 

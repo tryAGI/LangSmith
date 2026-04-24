@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FleetWebhooksClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_RunAFleetWebhookServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_RunAFleetWebhookSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareRunAFleetWebhookArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string webhookId,
             object request);
         partial void PrepareRunAFleetWebhookRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string webhookId,
             object request);
         partial void ProcessRunAFleetWebhookResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Run a fleet webhook<br/>
         /// Sends the request payload to the webhook's stored URL and returns the upstream response in a JSON envelope.
         /// </summary>
+        /// <param name="webhookId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AgentBuilderWebhooksWebhookTestResult> RunAFleetWebhookAsync(
+            string webhookId,
 
             object request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareRunAFleetWebhookArguments(
                 httpClient: HttpClient,
+                webhookId: ref webhookId,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/fleet-webhooks/{webhook_id}/run",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/fleet-webhooks/{webhookId}/run",
+                                baseUri: ResolveBaseUri(
+                                servers: s_RunAFleetWebhookServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareRunAFleetWebhookRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    webhookId: webhookId,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RunAFleetWebhook",
                                 methodName: "RunAFleetWebhookAsync",
-                                pathTemplate: "\"/v1/platform/fleet-webhooks/{webhook_id}/run\"",
+                                pathTemplate: "$\"/v1/platform/fleet-webhooks/{webhookId}/run\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RunAFleetWebhook",
                                 methodName: "RunAFleetWebhookAsync",
-                                pathTemplate: "\"/v1/platform/fleet-webhooks/{webhook_id}/run\"",
+                                pathTemplate: "$\"/v1/platform/fleet-webhooks/{webhookId}/run\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RunAFleetWebhook",
                                 methodName: "RunAFleetWebhookAsync",
-                                pathTemplate: "\"/v1/platform/fleet-webhooks/{webhook_id}/run\"",
+                                pathTemplate: "$\"/v1/platform/fleet-webhooks/{webhookId}/run\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RunAFleetWebhook",
                                 methodName: "RunAFleetWebhookAsync",
-                                pathTemplate: "\"/v1/platform/fleet-webhooks/{webhook_id}/run\"",
+                                pathTemplate: "$\"/v1/platform/fleet-webhooks/{webhookId}/run\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RunAFleetWebhook",
                                 methodName: "RunAFleetWebhookAsync",
-                                pathTemplate: "\"/v1/platform/fleet-webhooks/{webhook_id}/run\"",
+                                pathTemplate: "$\"/v1/platform/fleet-webhooks/{webhookId}/run\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -505,10 +526,12 @@ namespace LangSmith
         /// Run a fleet webhook<br/>
         /// Sends the request payload to the webhook's stored URL and returns the upstream response in a JSON envelope.
         /// </summary>
+        /// <param name="webhookId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AgentBuilderWebhooksWebhookTestResult> RunAFleetWebhookAsync(
+            string webhookId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -517,6 +540,7 @@ namespace LangSmith
             };
 
             return await RunAFleetWebhookAsync(
+                webhookId: webhookId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

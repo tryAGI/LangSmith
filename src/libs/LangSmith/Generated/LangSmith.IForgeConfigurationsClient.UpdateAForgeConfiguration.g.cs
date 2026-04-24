@@ -8,11 +8,13 @@ namespace LangSmith
         /// Update a forge configuration<br/>
         /// Updates an existing Forge configuration.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ForgeConfigurationsForgeConfiguration> UpdateAForgeConfigurationAsync(
+            string id,
 
             global::LangSmith.ForgeConfigurationsUpdateForgeConfigurationRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -21,6 +23,7 @@ namespace LangSmith
         /// Update a forge configuration<br/>
         /// Updates an existing Forge configuration.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="enabled"></param>
         /// <param name="gitCommitMetadataKey"></param>
         /// <param name="githubRepo"></param>
@@ -29,6 +32,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ForgeConfigurationsForgeConfiguration> UpdateAForgeConfigurationAsync(
+            string id,
             bool? enabled = default,
             string? gitCommitMetadataKey = default,
             string? githubRepo = default,

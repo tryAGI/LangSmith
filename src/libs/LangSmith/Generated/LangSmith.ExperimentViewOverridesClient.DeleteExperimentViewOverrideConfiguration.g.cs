@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ExperimentViewOverridesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteExperimentViewOverrideConfigurationServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteExperimentViewOverrideConfigurationSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,14 @@ namespace LangSmith
             {                s_DeleteExperimentViewOverrideConfigurationSecurityRequirement0,
             };
         partial void PrepareDeleteExperimentViewOverrideConfigurationArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::System.Guid datasetId,
+            ref global::System.Guid id);
         partial void PrepareDeleteExperimentViewOverrideConfigurationRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid datasetId,
+            global::System.Guid id);
         partial void ProcessDeleteExperimentViewOverrideConfigurationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,17 +63,23 @@ namespace LangSmith
         /// The operation will fail if the override doesn't exist or if the user doesn't have<br/>
         /// appropriate permissions for the dataset.
         /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteExperimentViewOverrideConfigurationAsync(
+            global::System.Guid datasetId,
+            global::System.Guid id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteExperimentViewOverrideConfigurationArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                datasetId: ref datasetId,
+                id: ref id);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -81,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/datasets/{dataset_id}/experiment-view-overrides/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/datasets/{datasetId}/experiment-view-overrides/{id}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteExperimentViewOverrideConfigurationServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -122,7 +147,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareDeleteExperimentViewOverrideConfigurationRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    datasetId: datasetId,
+                    id: id);
 
                 return __httpRequest;
             }
@@ -141,7 +168,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteExperimentViewOverrideConfiguration",
                                 methodName: "DeleteExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -168,7 +195,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteExperimentViewOverrideConfiguration",
                                 methodName: "DeleteExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -203,7 +230,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteExperimentViewOverrideConfiguration",
                                 methodName: "DeleteExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -250,7 +277,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteExperimentViewOverrideConfiguration",
                                 methodName: "DeleteExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -270,7 +297,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteExperimentViewOverrideConfiguration",
                                 methodName: "DeleteExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

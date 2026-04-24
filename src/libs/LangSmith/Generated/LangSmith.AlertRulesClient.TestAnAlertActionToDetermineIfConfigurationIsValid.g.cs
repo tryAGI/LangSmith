@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AlertRulesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_TestAnAlertActionToDetermineIfConfigurationIsValidServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_TestAnAlertActionToDetermineIfConfigurationIsValidSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,14 @@ namespace LangSmith
             {                s_TestAnAlertActionToDetermineIfConfigurationIsValidSecurityRequirement0,
             };
         partial void PrepareTestAnAlertActionToDetermineIfConfigurationIsValidArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string sessionId,
+            ref string alertRuleId);
         partial void PrepareTestAnAlertActionToDetermineIfConfigurationIsValidRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string sessionId,
+            string alertRuleId);
         partial void ProcessTestAnAlertActionToDetermineIfConfigurationIsValidResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +60,23 @@ namespace LangSmith
         /// Test an alert action to determine if configuration is valid<br/>
         /// Tests an alert action which will fire a notification to all configured recipients if the configuration is valid.
         /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="alertRuleId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> TestAnAlertActionToDetermineIfConfigurationIsValidAsync(
+            string sessionId,
+            string alertRuleId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareTestAnAlertActionToDetermineIfConfigurationIsValidArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                sessionId: ref sessionId,
+                alertRuleId: ref alertRuleId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +101,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/alerts/{session_id}/test",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/alerts/{sessionId}/test",
+                                baseUri: ResolveBaseUri(
+                                servers: s_TestAnAlertActionToDetermineIfConfigurationIsValidServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +144,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareTestAnAlertActionToDetermineIfConfigurationIsValidRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    sessionId: sessionId,
+                    alertRuleId: alertRuleId);
 
                 return __httpRequest;
             }
@@ -138,7 +165,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "TestAnAlertActionToDetermineIfConfigurationIsValid",
                                 methodName: "TestAnAlertActionToDetermineIfConfigurationIsValidAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/test\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/test\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +192,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "TestAnAlertActionToDetermineIfConfigurationIsValid",
                                 methodName: "TestAnAlertActionToDetermineIfConfigurationIsValidAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/test\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/test\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +227,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "TestAnAlertActionToDetermineIfConfigurationIsValid",
                                 methodName: "TestAnAlertActionToDetermineIfConfigurationIsValidAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/test\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/test\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +274,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "TestAnAlertActionToDetermineIfConfigurationIsValid",
                                 methodName: "TestAnAlertActionToDetermineIfConfigurationIsValidAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/test\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/test\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +294,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "TestAnAlertActionToDetermineIfConfigurationIsValid",
                                 methodName: "TestAnAlertActionToDetermineIfConfigurationIsValidAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/test\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/test\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class EvaluatorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateEvaluatorServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateEvaluatorSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateEvaluatorArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string evaluatorId,
             global::LangSmith.EvaluatorsUpdateEvaluatorRequest request);
         partial void PrepareUpdateEvaluatorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string evaluatorId,
             global::LangSmith.EvaluatorsUpdateEvaluatorRequest request);
         partial void ProcessUpdateEvaluatorResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update evaluator<br/>
         /// Update an existing evaluator's name, LLM configuration, or code configuration.
         /// </summary>
+        /// <param name="evaluatorId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsUpdateEvaluatorResponse> UpdateEvaluatorAsync(
+            string evaluatorId,
 
             global::LangSmith.EvaluatorsUpdateEvaluatorRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateEvaluatorArguments(
                 httpClient: HttpClient,
+                evaluatorId: ref evaluatorId,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/evaluators/{evaluator_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/evaluators/{evaluatorId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateEvaluatorServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateEvaluatorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    evaluatorId: evaluatorId,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateEvaluator",
                                 methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateEvaluator",
                                 methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateEvaluator",
                                 methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateEvaluator",
                                 methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateEvaluator",
                                 methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "\"/v1/platform/evaluators/{evaluator_id}\"",
+                                pathTemplate: "$\"/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -581,6 +602,7 @@ namespace LangSmith
         /// Update evaluator<br/>
         /// Update an existing evaluator's name, LLM configuration, or code configuration.
         /// </summary>
+        /// <param name="evaluatorId"></param>
         /// <param name="codeEvaluator"></param>
         /// <param name="llmEvaluator"></param>
         /// <param name="name"></param>
@@ -588,6 +610,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsUpdateEvaluatorResponse> UpdateEvaluatorAsync(
+            string evaluatorId,
             global::LangSmith.EvaluatorsUpdateCodeEvaluatorRequest? codeEvaluator = default,
             global::LangSmith.EvaluatorsUpdateLLMEvaluatorRequest? llmEvaluator = default,
             string? name = default,
@@ -602,6 +625,7 @@ namespace LangSmith
             };
 
             return await UpdateEvaluatorAsync(
+                evaluatorId: evaluatorId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AccessPoliciesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_AttachAccessPoliciesToARoleServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_AttachAccessPoliciesToARoleSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareAttachAccessPoliciesToARoleArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string roleId,
             global::LangSmith.AuthzInternalAttachAccessPoliciesPayload request);
         partial void PrepareAttachAccessPoliciesToARoleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string roleId,
             global::LangSmith.AuthzInternalAttachAccessPoliciesPayload request);
         partial void ProcessAttachAccessPoliciesToARoleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,11 +55,13 @@ namespace LangSmith
         /// Attach access policies to a role<br/>
         /// Attaches one or more access policies to a specific role. The request body must contain an array of access policy IDs.
         /// </summary>
+        /// <param name="roleId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task AttachAccessPoliciesToARoleAsync(
+            string roleId,
 
             global::LangSmith.AuthzInternalAttachAccessPoliciesPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -56,6 +73,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareAttachAccessPoliciesToARoleArguments(
                 httpClient: HttpClient,
+                roleId: ref roleId,
                 request: request);
 
 
@@ -81,8 +99,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/orgs/current/access-policies/roles/{roleId}/access-policies",
+                                baseUri: ResolveBaseUri(
+                                servers: s_AttachAccessPoliciesToARoleServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -129,6 +149,7 @@ namespace LangSmith
                 PrepareAttachAccessPoliciesToARoleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    roleId: roleId,
                     request: request);
 
                 return __httpRequest;
@@ -148,7 +169,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AttachAccessPoliciesToARole",
                                 methodName: "AttachAccessPoliciesToARoleAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/roles/{roleId}/access-policies\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -175,7 +196,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AttachAccessPoliciesToARole",
                                 methodName: "AttachAccessPoliciesToARoleAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/roles/{roleId}/access-policies\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -210,7 +231,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AttachAccessPoliciesToARole",
                                 methodName: "AttachAccessPoliciesToARoleAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/roles/{roleId}/access-policies\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -257,7 +278,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AttachAccessPoliciesToARole",
                                 methodName: "AttachAccessPoliciesToARoleAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/roles/{roleId}/access-policies\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -277,7 +298,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AttachAccessPoliciesToARole",
                                 methodName: "AttachAccessPoliciesToARoleAsync",
-                                pathTemplate: "\"/v1/platform/orgs/current/access-policies/roles/{role_id}/access-policies\"",
+                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/roles/{roleId}/access-policies\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -560,11 +581,13 @@ namespace LangSmith
         /// Attach access policies to a role<br/>
         /// Attaches one or more access policies to a specific role. The request body must contain an array of access policy IDs.
         /// </summary>
+        /// <param name="roleId"></param>
         /// <param name="accessPolicyIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task AttachAccessPoliciesToARoleAsync(
+            string roleId,
             global::System.Collections.Generic.IList<string>? accessPolicyIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -575,6 +598,7 @@ namespace LangSmith
             };
 
             await AttachAccessPoliciesToARoleAsync(
+                roleId: roleId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

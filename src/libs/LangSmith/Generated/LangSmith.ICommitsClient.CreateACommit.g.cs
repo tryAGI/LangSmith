@@ -9,11 +9,15 @@ namespace LangSmith
         /// Creates a new commit in a repository.<br/>
         /// Requires authentication and write access to the repository.
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsCreateCommitResponse> CreateACommitAsync(
+            string owner,
+            string repo,
 
             global::LangSmith.CommitsCreateCommitReq request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -23,6 +27,8 @@ namespace LangSmith
         /// Creates a new commit in a repository.<br/>
         /// Requires authentication and write access to the repository.
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="description"></param>
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
@@ -33,6 +39,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsCreateCommitResponse> CreateACommitAsync(
+            string owner,
+            string repo,
             string? description = default,
             object? manifest = default,
             string? parentCommit = default,

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ToolsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateAToolByIdServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateAToolByIdSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateAToolByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string id,
             global::LangSmith.ToolsUpdateToolPayload request);
         partial void PrepareUpdateAToolByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id,
             global::LangSmith.ToolsUpdateToolPayload request);
         partial void ProcessUpdateAToolByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update a tool by ID<br/>
         /// Updates an existing tool identified by its UUID.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ToolsTool> UpdateAToolByIdAsync(
+            string id,
 
             global::LangSmith.ToolsUpdateToolPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateAToolByIdArguments(
                 httpClient: HttpClient,
+                id: ref id,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/tools/id/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/tools/id/{id}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateAToolByIdServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateAToolByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    id: id,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAToolById",
                                 methodName: "UpdateAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAToolById",
                                 methodName: "UpdateAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAToolById",
                                 methodName: "UpdateAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAToolById",
                                 methodName: "UpdateAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAToolById",
                                 methodName: "UpdateAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -581,6 +602,7 @@ namespace LangSmith
         /// Update a tool by ID<br/>
         /// Updates an existing tool identified by its UUID.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="description"></param>
         /// <param name="enabled"></param>
         /// <param name="metadata"></param>
@@ -591,6 +613,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ToolsTool> UpdateAToolByIdAsync(
+            string id,
             string? description = default,
             bool? enabled = default,
             object? metadata = default,
@@ -611,6 +634,7 @@ namespace LangSmith
             };
 
             return await UpdateAToolByIdAsync(
+                id: id,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

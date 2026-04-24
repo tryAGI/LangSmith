@@ -9,11 +9,13 @@ namespace LangSmith
         /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
+            global::System.Guid datasetId,
 
             global::LangSmith.PatchPlatformDatasetsExamplesRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -23,6 +25,7 @@ namespace LangSmith
         /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="x_exampleId_">
         /// The Example update info as JSON. Can have fields 'metadata', 'split'
         /// </param>
@@ -57,6 +60,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
+            global::System.Guid datasetId,
             byte[] x_exampleId_,
             string x_exampleId_name,
             byte[]? x_exampleId_Inputs = default,
