@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AnnotationQueues2Client
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_RemoveAReviewerFromAnAnnotationQueueServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_RemoveAReviewerFromAnAnnotationQueueSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,14 @@ namespace LangSmith
             {                s_RemoveAReviewerFromAnAnnotationQueueSecurityRequirement0,
             };
         partial void PrepareRemoveAReviewerFromAnAnnotationQueueArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string queueId,
+            ref string identityId);
         partial void PrepareRemoveAReviewerFromAnAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string queueId,
+            string identityId);
         partial void ProcessRemoveAReviewerFromAnAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,17 +55,23 @@ namespace LangSmith
         /// Remove a reviewer from an annotation queue<br/>
         /// Unassigns an identity as a reviewer for the queue. Idempotent.
         /// </summary>
+        /// <param name="queueId"></param>
+        /// <param name="identityId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task RemoveAReviewerFromAnAnnotationQueueAsync(
+            string queueId,
+            string identityId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareRemoveAReviewerFromAnAnnotationQueueArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                queueId: ref queueId,
+                identityId: ref identityId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -73,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/annotation-queues/{queue_id}/reviewers/{identity_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/annotation-queues/{queueId}/reviewers/{identityId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_RemoveAReviewerFromAnAnnotationQueueServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -114,7 +139,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareRemoveAReviewerFromAnAnnotationQueueRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    queueId: queueId,
+                    identityId: identityId);
 
                 return __httpRequest;
             }
@@ -133,7 +160,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RemoveAReviewerFromAnAnnotationQueue",
                                 methodName: "RemoveAReviewerFromAnAnnotationQueueAsync",
-                                pathTemplate: "\"/v1/platform/annotation-queues/{queue_id}/reviewers/{identity_id}\"",
+                                pathTemplate: "$\"/v1/platform/annotation-queues/{queueId}/reviewers/{identityId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -160,7 +187,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RemoveAReviewerFromAnAnnotationQueue",
                                 methodName: "RemoveAReviewerFromAnAnnotationQueueAsync",
-                                pathTemplate: "\"/v1/platform/annotation-queues/{queue_id}/reviewers/{identity_id}\"",
+                                pathTemplate: "$\"/v1/platform/annotation-queues/{queueId}/reviewers/{identityId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +222,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RemoveAReviewerFromAnAnnotationQueue",
                                 methodName: "RemoveAReviewerFromAnAnnotationQueueAsync",
-                                pathTemplate: "\"/v1/platform/annotation-queues/{queue_id}/reviewers/{identity_id}\"",
+                                pathTemplate: "$\"/v1/platform/annotation-queues/{queueId}/reviewers/{identityId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -242,7 +269,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RemoveAReviewerFromAnAnnotationQueue",
                                 methodName: "RemoveAReviewerFromAnAnnotationQueueAsync",
-                                pathTemplate: "\"/v1/platform/annotation-queues/{queue_id}/reviewers/{identity_id}\"",
+                                pathTemplate: "$\"/v1/platform/annotation-queues/{queueId}/reviewers/{identityId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +289,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RemoveAReviewerFromAnAnnotationQueue",
                                 methodName: "RemoveAReviewerFromAnAnnotationQueueAsync",
-                                pathTemplate: "\"/v1/platform/annotation-queues/{queue_id}/reviewers/{identity_id}\"",
+                                pathTemplate: "$\"/v1/platform/annotation-queues/{queueId}/reviewers/{identityId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

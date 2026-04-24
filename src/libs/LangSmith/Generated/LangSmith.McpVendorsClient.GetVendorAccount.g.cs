@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class McpVendorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetVendorAccountServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetVendorAccountSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_GetVendorAccountSecurityRequirement0,
             };
         partial void PrepareGetVendorAccountArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vendorSlug);
         partial void PrepareGetVendorAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vendorSlug);
         partial void ProcessGetVendorAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +58,20 @@ namespace LangSmith
         /// Get vendor account<br/>
         /// Resolves OAuth token and returns the vendor's account info.
         /// </summary>
+        /// <param name="vendorSlug"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsArcadeAccountResponseList> GetVendorAccountAsync(
+            string vendorSlug,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetVendorAccountArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                vendorSlug: ref vendorSlug);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/mcp-vendors/{vendor_slug}/account",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/mcp-vendors/{vendorSlug}/account",
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetVendorAccountServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +139,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareGetVendorAccountRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    vendorSlug: vendorSlug);
 
                 return __httpRequest;
             }
@@ -138,7 +159,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetVendorAccount",
                                 methodName: "GetVendorAccountAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/account\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/account\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +186,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetVendorAccount",
                                 methodName: "GetVendorAccountAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/account\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/account\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +221,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetVendorAccount",
                                 methodName: "GetVendorAccountAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/account\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/account\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +268,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetVendorAccount",
                                 methodName: "GetVendorAccountAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/account\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/account\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +288,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetVendorAccount",
                                 methodName: "GetVendorAccountAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/account\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/account\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

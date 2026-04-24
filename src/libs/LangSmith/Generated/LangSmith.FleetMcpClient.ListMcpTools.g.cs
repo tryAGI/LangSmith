@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FleetMcpClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListMcpToolsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListMcpToolsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -99,7 +112,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v1/fleet/mcp/tools",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListMcpToolsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddRequiredParameter("url", url)
                                 .AddOptionalParameter("oauth_provider_id", oauthProviderId)

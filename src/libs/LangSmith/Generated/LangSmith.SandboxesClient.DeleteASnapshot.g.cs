@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SandboxesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteASnapshotServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteASnapshotSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_DeleteASnapshotSecurityRequirement0,
             };
         partial void PrepareDeleteASnapshotArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string snapshotId);
         partial void PrepareDeleteASnapshotRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string snapshotId);
         partial void ProcessDeleteASnapshotResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,17 +53,20 @@ namespace LangSmith
         /// Delete a snapshot<br/>
         /// Delete a snapshot by ID. The ext4 rootfs is removed from JuiceFS asynchronously.
         /// </summary>
+        /// <param name="snapshotId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteASnapshotAsync(
+            string snapshotId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteASnapshotArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                snapshotId: ref snapshotId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -73,8 +91,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/snapshots/{snapshot_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v2/sandboxes/snapshots/{snapshotId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteASnapshotServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -114,7 +134,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareDeleteASnapshotRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    snapshotId: snapshotId);
 
                 return __httpRequest;
             }
@@ -133,7 +154,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteASnapshot",
                                 methodName: "DeleteASnapshotAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots/{snapshot_id}\"",
+                                pathTemplate: "$\"/v2/sandboxes/snapshots/{snapshotId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -160,7 +181,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteASnapshot",
                                 methodName: "DeleteASnapshotAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots/{snapshot_id}\"",
+                                pathTemplate: "$\"/v2/sandboxes/snapshots/{snapshotId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +216,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteASnapshot",
                                 methodName: "DeleteASnapshotAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots/{snapshot_id}\"",
+                                pathTemplate: "$\"/v2/sandboxes/snapshots/{snapshotId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -242,7 +263,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteASnapshot",
                                 methodName: "DeleteASnapshotAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots/{snapshot_id}\"",
+                                pathTemplate: "$\"/v2/sandboxes/snapshots/{snapshotId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteASnapshot",
                                 methodName: "DeleteASnapshotAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots/{snapshot_id}\"",
+                                pathTemplate: "$\"/v2/sandboxes/snapshots/{snapshotId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

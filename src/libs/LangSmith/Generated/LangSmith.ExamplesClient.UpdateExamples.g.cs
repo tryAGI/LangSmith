@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ExamplesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateExamplesServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateExamplesSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::System.Guid datasetId,
             global::LangSmith.PatchPlatformDatasetsExamplesRequest request);
         partial void PrepareUpdateExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid datasetId,
             global::LangSmith.PatchPlatformDatasetsExamplesRequest request);
         partial void ProcessUpdateExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,11 +61,13 @@ namespace LangSmith
         /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
+            global::System.Guid datasetId,
 
             global::LangSmith.PatchPlatformDatasetsExamplesRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -62,6 +79,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateExamplesArguments(
                 httpClient: HttpClient,
+                datasetId: ref datasetId,
                 request: request);
 
 
@@ -87,8 +105,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/datasets/{dataset_id}/examples",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/datasets/{datasetId}/examples",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateExamplesServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,6 +139,9 @@ namespace LangSmith
                 } 
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent($"{datasetId}"),
+                                name: "\"dataset_id\"");
                             var __contentx_exampleId_ = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>());
                             __httpRequestContent.Add(
                                 content: __contentx_exampleId_,
@@ -192,6 +215,7 @@ namespace LangSmith
                 PrepareUpdateExamplesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    datasetId: datasetId,
                     request: request);
 
                 return __httpRequest;
@@ -211,7 +235,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExamples",
                                 methodName: "UpdateExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -238,7 +262,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExamples",
                                 methodName: "UpdateExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -273,7 +297,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExamples",
                                 methodName: "UpdateExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -320,7 +344,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExamples",
                                 methodName: "UpdateExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -340,7 +364,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExamples",
                                 methodName: "UpdateExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -640,6 +664,7 @@ namespace LangSmith
         /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="x_exampleId_">
         /// The Example update info as JSON. Can have fields 'metadata', 'split'
         /// </param>
@@ -674,6 +699,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesUpdatedResponse> UpdateExamplesAsync(
+            global::System.Guid datasetId,
             byte[] x_exampleId_,
             string x_exampleId_name,
             byte[]? x_exampleId_Inputs = default,
@@ -702,6 +728,7 @@ namespace LangSmith
             };
 
             return await UpdateExamplesAsync(
+                datasetId: datasetId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

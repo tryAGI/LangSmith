@@ -8,11 +8,13 @@ namespace LangSmith
         /// Update a tool by ID<br/>
         /// Updates an existing tool identified by its UUID.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ToolsTool> UpdateAToolByIdAsync(
+            string id,
 
             global::LangSmith.ToolsUpdateToolPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -21,6 +23,7 @@ namespace LangSmith
         /// Update a tool by ID<br/>
         /// Updates an existing tool identified by its UUID.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="description"></param>
         /// <param name="enabled"></param>
         /// <param name="metadata"></param>
@@ -31,6 +34,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ToolsTool> UpdateAToolByIdAsync(
+            string id,
             string? description = default,
             bool? enabled = default,
             object? metadata = default,

@@ -8,6 +8,19 @@ namespace LangSmith
     public partial class OrgsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetCurrentActiveOrgMembersServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetCurrentActiveOrgMembersSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -141,7 +154,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/orgs/current/members/active",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetCurrentActiveOrgMembersServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())

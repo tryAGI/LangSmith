@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FeaturesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_SetDefaultModelForAFeatureServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_SetDefaultModelForAFeatureSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareSetDefaultModelForAFeatureArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string feature,
             global::LangSmith.FeaturesUpsertDefaultModelRequest request);
         partial void PrepareSetDefaultModelForAFeatureRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string feature,
             global::LangSmith.FeaturesUpsertDefaultModelRequest request);
         partial void ProcessSetDefaultModelForAFeatureResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,11 +55,13 @@ namespace LangSmith
         /// Set default model for a feature<br/>
         /// Sets or replaces the default model for a feature in the workspace.
         /// </summary>
+        /// <param name="feature"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task SetDefaultModelForAFeatureAsync(
+            string feature,
 
             global::LangSmith.FeaturesUpsertDefaultModelRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -56,6 +73,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareSetDefaultModelForAFeatureArguments(
                 httpClient: HttpClient,
+                feature: ref feature,
                 request: request);
 
 
@@ -81,8 +99,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/features/{feature}/default-model",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/features/{feature}/default-model",
+                                baseUri: ResolveBaseUri(
+                                servers: s_SetDefaultModelForAFeatureServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -129,6 +149,7 @@ namespace LangSmith
                 PrepareSetDefaultModelForAFeatureRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    feature: feature,
                     request: request);
 
                 return __httpRequest;
@@ -148,7 +169,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SetDefaultModelForAFeature",
                                 methodName: "SetDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -175,7 +196,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SetDefaultModelForAFeature",
                                 methodName: "SetDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -210,7 +231,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SetDefaultModelForAFeature",
                                 methodName: "SetDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -257,7 +278,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SetDefaultModelForAFeature",
                                 methodName: "SetDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -277,7 +298,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SetDefaultModelForAFeature",
                                 methodName: "SetDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -522,11 +543,13 @@ namespace LangSmith
         /// Set default model for a feature<br/>
         /// Sets or replaces the default model for a feature in the workspace.
         /// </summary>
+        /// <param name="feature"></param>
         /// <param name="model"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetDefaultModelForAFeatureAsync(
+            string feature,
             string? model = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -537,6 +560,7 @@ namespace LangSmith
             };
 
             await SetDefaultModelForAFeatureAsync(
+                feature: feature,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

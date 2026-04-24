@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SandboxesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_CaptureASnapshotFromASandboxServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_CaptureASnapshotFromASandboxSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareCaptureASnapshotFromASandboxArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string name,
             global::LangSmith.SandboxesCaptureSnapshotPayload request);
         partial void PrepareCaptureASnapshotFromASandboxRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string name,
             global::LangSmith.SandboxesCaptureSnapshotPayload request);
         partial void ProcessCaptureASnapshotFromASandboxResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Capture a snapshot from a sandbox<br/>
         /// Create a snapshot by capturing the current state of a sandbox or promoting an existing checkpoint.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSnapshotResponse> CaptureASnapshotFromASandboxAsync(
+            string name,
 
             global::LangSmith.SandboxesCaptureSnapshotPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareCaptureASnapshotFromASandboxArguments(
                 httpClient: HttpClient,
+                name: ref name,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/boxes/{name}/snapshot",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v2/sandboxes/boxes/{name}/snapshot",
+                                baseUri: ResolveBaseUri(
+                                servers: s_CaptureASnapshotFromASandboxServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareCaptureASnapshotFromASandboxRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    name: name,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CaptureASnapshotFromASandbox",
                                 methodName: "CaptureASnapshotFromASandboxAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}/snapshot\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}/snapshot\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CaptureASnapshotFromASandbox",
                                 methodName: "CaptureASnapshotFromASandboxAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}/snapshot\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}/snapshot\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CaptureASnapshotFromASandbox",
                                 methodName: "CaptureASnapshotFromASandboxAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}/snapshot\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}/snapshot\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CaptureASnapshotFromASandbox",
                                 methodName: "CaptureASnapshotFromASandboxAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}/snapshot\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}/snapshot\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CaptureASnapshotFromASandbox",
                                 methodName: "CaptureASnapshotFromASandboxAsync",
-                                pathTemplate: "\"/v2/sandboxes/boxes/{name}/snapshot\"",
+                                pathTemplate: "$\"/v2/sandboxes/boxes/{name}/snapshot\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -581,15 +602,17 @@ namespace LangSmith
         /// Capture a snapshot from a sandbox<br/>
         /// Create a snapshot by capturing the current state of a sandbox or promoting an existing checkpoint.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="checkpoint">
         /// if omitted, creates a fresh checkpoint from the running VM
         /// </param>
-        /// <param name="name"></param>
+        /// <param name="requestName"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSnapshotResponse> CaptureASnapshotFromASandboxAsync(
             string name,
+            string requestName,
             string? checkpoint = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -597,10 +620,11 @@ namespace LangSmith
             var __request = new global::LangSmith.SandboxesCaptureSnapshotPayload
             {
                 Checkpoint = checkpoint,
-                Name = name,
+                Name = requestName,
             };
 
             return await CaptureASnapshotFromASandboxAsync(
+                name: name,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

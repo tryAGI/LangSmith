@@ -17,7 +17,7 @@
       "Slug": "delete-experiment-view-override-configuration",
       "Description": "Permanently deletes an experiment view override configuration for a dataset.\nThis operation removes all column override settings including color gradients,\nprecision configurations, and visibility settings.\n\nAfter deletion, the experiment view will revert to default column display settings.\nThis action cannot be undone - you will need to recreate the override configuration\nif you want to restore custom column settings.\n\nBoth the dataset and override must exist and be accessible by the authenticated user.\nThe operation will fail if the override doesn\u0027t exist or if the user doesn\u0027t have\nappropriate permissions for the dataset.",
       "Language": "csharp",
-      "Code": "using var client = new LangSmithClient(apiKey);\nawait client.ExperimentViewOverrides.DeleteExperimentViewOverrideConfigurationAsync();",
+      "Code": "using var client = new LangSmithClient(apiKey);\n\nawait client.ExperimentViewOverrides.DeleteExperimentViewOverrideConfigurationAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!,\n    id: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022123e4567-e89b-12d3-a456-426614174000\\u0022\u0022\u0022\u0022)!\n);",
       "Format": "sdk",
       "OperationId": "DeleteExperimentViewOverrideConfiguration",
       "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
@@ -28,7 +28,7 @@
       "Slug": "get-experiment-view-override-configuration-by-specific-id",
       "Description": "Retrieves a specific experiment view override configuration using both dataset ID and override ID.\nThis endpoint provides more precise access to experiment view overrides when you have\nthe specific override ID, useful for direct links or cached references.\n\nThe response includes the same column override information as the dataset-level endpoint:\n- Column identifiers with validation prefixes\n- Color gradient settings for numeric data visualization\n- Numeric precision configurations\n- Column visibility controls\n\nBoth the dataset and override must exist and be accessible by the authenticated user.",
       "Language": "csharp",
-      "Code": "using var client = new LangSmithClient(apiKey);\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationBySpecificIdAsync();",
+      "Code": "using var client = new LangSmithClient(apiKey);\n\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationBySpecificIdAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!,\n    id: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022123e4567-e89b-12d3-a456-426614174000\\u0022\u0022\u0022\u0022)!\n);",
       "Format": "sdk",
       "OperationId": "GetExperimentViewOverrideConfigurationBySpecificId",
       "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
@@ -39,7 +39,7 @@
       "Slug": "get-experiment-view-override-configurations-for-a-dataset",
       "Description": "Retrieves all experiment view override configurations for a specific dataset.\nThis endpoint returns column display overrides including color gradients,\nprecision settings, and column visibility configurations that customize how\nexperiment results are displayed in the UI.\n\nThe response includes all column overrides with their display settings:\n- Column identifiers (must start with inputs, outputs, reference_outputs, feedback, metrics, attachments, or metadata)\n- Color gradients for numeric data visualization\n- Precision settings for numeric columns (1-6 decimal places)\n- Hide flags to control column visibility",
       "Language": "csharp",
-      "Code": "using var client = new LangSmithClient(apiKey);\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationsForADatasetAsync();",
+      "Code": "using var client = new LangSmithClient(apiKey);\n\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationsForADatasetAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!\n);",
       "Format": "sdk",
       "OperationId": "GetExperimentViewOverrideConfigurationsForADataset",
       "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."

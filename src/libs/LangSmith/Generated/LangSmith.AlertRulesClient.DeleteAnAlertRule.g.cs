@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AlertRulesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteAnAlertRuleServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteAnAlertRuleSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,14 @@ namespace LangSmith
             {                s_DeleteAnAlertRuleSecurityRequirement0,
             };
         partial void PrepareDeleteAnAlertRuleArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string sessionId,
+            ref string alertRuleId);
         partial void PrepareDeleteAnAlertRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string sessionId,
+            string alertRuleId);
         partial void ProcessDeleteAnAlertRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +60,23 @@ namespace LangSmith
         /// Delete an alert rule<br/>
         /// Deletes an alert rule
         /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="alertRuleId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteAnAlertRuleAsync(
+            string sessionId,
+            string alertRuleId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteAnAlertRuleArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                sessionId: ref sessionId,
+                alertRuleId: ref alertRuleId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +101,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/alerts/{session_id}/{alert_rule_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/alerts/{sessionId}/{alertRuleId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteAnAlertRuleServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +144,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareDeleteAnAlertRuleRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    sessionId: sessionId,
+                    alertRuleId: alertRuleId);
 
                 return __httpRequest;
             }
@@ -138,7 +165,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAnAlertRule",
                                 methodName: "DeleteAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +192,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAnAlertRule",
                                 methodName: "DeleteAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +227,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAnAlertRule",
                                 methodName: "DeleteAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +274,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAnAlertRule",
                                 methodName: "DeleteAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +294,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAnAlertRule",
                                 methodName: "DeleteAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

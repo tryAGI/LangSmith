@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ExperimentViewOverridesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateExistingExperimentViewOverrideConfigurationServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateExistingExperimentViewOverrideConfigurationSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,14 @@ namespace LangSmith
             };
         partial void PrepareUpdateExistingExperimentViewOverrideConfigurationArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::System.Guid datasetId,
+            ref global::System.Guid id,
             global::LangSmith.ExperimentViewOverridesExperimentViewOverridePatchRequest request);
         partial void PrepareUpdateExistingExperimentViewOverrideConfigurationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid datasetId,
+            global::System.Guid id,
             global::LangSmith.ExperimentViewOverridesExperimentViewOverridePatchRequest request);
         partial void ProcessUpdateExistingExperimentViewOverrideConfigurationResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -68,11 +85,15 @@ namespace LangSmith
         /// }<br/>
         /// Both the dataset and override must exist and be accessible by the authenticated user.
         /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExperimentViewOverridesExperimentViewOverride> UpdateExistingExperimentViewOverrideConfigurationAsync(
+            global::System.Guid datasetId,
+            global::System.Guid id,
 
             global::LangSmith.ExperimentViewOverridesExperimentViewOverridePatchRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -84,6 +105,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateExistingExperimentViewOverrideConfigurationArguments(
                 httpClient: HttpClient,
+                datasetId: ref datasetId,
+                id: ref id,
                 request: request);
 
 
@@ -109,8 +132,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/datasets/{dataset_id}/experiment-view-overrides/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/datasets/{datasetId}/experiment-view-overrides/{id}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateExistingExperimentViewOverrideConfigurationServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -157,6 +182,8 @@ namespace LangSmith
                 PrepareUpdateExistingExperimentViewOverrideConfigurationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    datasetId: datasetId,
+                    id: id,
                     request: request);
 
                 return __httpRequest;
@@ -176,7 +203,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExistingExperimentViewOverrideConfiguration",
                                 methodName: "UpdateExistingExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -203,7 +230,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExistingExperimentViewOverrideConfiguration",
                                 methodName: "UpdateExistingExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -238,7 +265,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExistingExperimentViewOverrideConfiguration",
                                 methodName: "UpdateExistingExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -285,7 +312,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExistingExperimentViewOverrideConfiguration",
                                 methodName: "UpdateExistingExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +332,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateExistingExperimentViewOverrideConfiguration",
                                 methodName: "UpdateExistingExperimentViewOverrideConfigurationAsync",
-                                pathTemplate: "\"/datasets/{dataset_id}/experiment-view-overrides/{id}\"",
+                                pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -627,11 +654,15 @@ namespace LangSmith
         /// }<br/>
         /// Both the dataset and override must exist and be accessible by the authenticated user.
         /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="id"></param>
         /// <param name="columnOverrides"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExperimentViewOverridesExperimentViewOverride> UpdateExistingExperimentViewOverrideConfigurationAsync(
+            global::System.Guid datasetId,
+            global::System.Guid id,
             global::System.Collections.Generic.IList<global::LangSmith.ExperimentViewOverridesColumnOverride> columnOverrides,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -642,6 +673,8 @@ namespace LangSmith
             };
 
             return await UpdateExistingExperimentViewOverrideConfigurationAsync(
+                datasetId: datasetId,
+                id: id,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

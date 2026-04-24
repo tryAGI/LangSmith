@@ -27,9 +27,9 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsListEvaluatorsResponse> ListEvaluatorsAsync(
             string? type = default,
             string? nameContains = default,
-            byte[]? tagValueId = default,
+            global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? feedbackKey = default,
-            byte[]? resourceId = default,
+            global::System.Collections.Generic.IList<string>? resourceId = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,

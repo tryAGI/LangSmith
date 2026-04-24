@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class CommitsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetACommitServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetACommitSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,6 +40,9 @@ namespace LangSmith
             };
         partial void PrepareGetACommitArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref string commit,
             ref bool? getExamples,
             ref string? include,
             ref bool? includeModel,
@@ -34,6 +50,9 @@ namespace LangSmith
         partial void PrepareGetACommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            string commit,
             bool? getExamples,
             string? include,
             bool? includeModel,
@@ -57,6 +76,9 @@ namespace LangSmith
         /// - Less than 8 characters: Only check for tags<br/>
         /// - 8 or more characters: Prioritize commit hash over tag, check both
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="commit"></param>
         /// <param name="getExamples">
         /// Default Value: false
         /// </param>
@@ -71,6 +93,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsCommitResponse> GetACommitAsync(
+            string owner,
+            string repo,
+            string commit,
             bool? getExamples = default,
             string? include = default,
             bool? includeModel = default,
@@ -82,6 +107,9 @@ namespace LangSmith
                 client: HttpClient);
             PrepareGetACommitArguments(
                 httpClient: HttpClient,
+                owner: ref owner,
+                repo: ref repo,
+                commit: ref commit,
                 getExamples: ref getExamples,
                 include: ref include,
                 includeModel: ref includeModel,
@@ -110,8 +138,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/commits/{owner}/{repo}/{commit}",
-                                baseUri: HttpClient.BaseAddress); 
+                                path: $"/commits/{owner}/{repo}/{commit}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetACommitServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("get_examples", getExamples?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include", include)
@@ -158,6 +188,9 @@ namespace LangSmith
                 PrepareGetACommitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    owner: owner,
+                    repo: repo,
+                    commit: commit,
                     getExamples: getExamples,
                     include: include,
                     includeModel: includeModel,
@@ -180,7 +213,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetACommit",
                                 methodName: "GetACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}/{commit}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -207,7 +240,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetACommit",
                                 methodName: "GetACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}/{commit}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -242,7 +275,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetACommit",
                                 methodName: "GetACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}/{commit}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -289,7 +322,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetACommit",
                                 methodName: "GetACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}/{commit}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -309,7 +342,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetACommit",
                                 methodName: "GetACommitAsync",
-                                pathTemplate: "\"/commits/{owner}/{repo}/{commit}\"",
+                                pathTemplate: "$\"/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

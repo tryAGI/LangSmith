@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ThreadsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_QueryThreadTracesServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_QueryThreadTracesSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,6 +40,7 @@ namespace LangSmith
             };
         partial void PrepareQueryThreadTracesArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
             ref string sessionId,
             ref string? filter,
             ref string? select,
@@ -36,6 +50,7 @@ namespace LangSmith
         partial void PrepareQueryThreadTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
             string sessionId,
             string? filter,
             string? select,
@@ -57,6 +72,7 @@ namespace LangSmith
         /// Returns trace data decoded from Arrow IPC format via the smithdb<br/>
         /// QueryThreadTraces gRPC RPC.
         /// </summary>
+        /// <param name="threadId"></param>
         /// <param name="sessionId"></param>
         /// <param name="filter"></param>
         /// <param name="select"></param>
@@ -67,6 +83,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> QueryThreadTracesAsync(
+            string threadId,
             string sessionId,
             string? filter = default,
             string? select = default,
@@ -80,6 +97,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareQueryThreadTracesArguments(
                 httpClient: HttpClient,
+                threadId: ref threadId,
                 sessionId: ref sessionId,
                 filter: ref filter,
                 select: ref select,
@@ -110,8 +128,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/threads/{thread_id}/traces",
-                                baseUri: HttpClient.BaseAddress); 
+                                path: $"/v2/threads/{threadId}/traces",
+                                baseUri: ResolveBaseUri(
+                                servers: s_QueryThreadTracesServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddRequiredParameter("session_id", sessionId)
                                 .AddOptionalParameter("filter", filter)
@@ -160,6 +180,7 @@ namespace LangSmith
                 PrepareQueryThreadTracesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    threadId: threadId,
                     sessionId: sessionId,
                     filter: filter,
                     select: select,
@@ -184,7 +205,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "QueryThreadTraces",
                                 methodName: "QueryThreadTracesAsync",
-                                pathTemplate: "\"/v2/threads/{thread_id}/traces\"",
+                                pathTemplate: "$\"/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -211,7 +232,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "QueryThreadTraces",
                                 methodName: "QueryThreadTracesAsync",
-                                pathTemplate: "\"/v2/threads/{thread_id}/traces\"",
+                                pathTemplate: "$\"/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,7 +267,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "QueryThreadTraces",
                                 methodName: "QueryThreadTracesAsync",
-                                pathTemplate: "\"/v2/threads/{thread_id}/traces\"",
+                                pathTemplate: "$\"/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -293,7 +314,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "QueryThreadTraces",
                                 methodName: "QueryThreadTracesAsync",
-                                pathTemplate: "\"/v2/threads/{thread_id}/traces\"",
+                                pathTemplate: "$\"/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -313,7 +334,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "QueryThreadTraces",
                                 methodName: "QueryThreadTracesAsync",
-                                pathTemplate: "\"/v2/threads/{thread_id}/traces\"",
+                                pathTemplate: "$\"/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

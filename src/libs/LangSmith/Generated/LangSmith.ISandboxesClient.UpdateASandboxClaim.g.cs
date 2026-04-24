@@ -8,11 +8,13 @@ namespace LangSmith
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
+            string name,
 
             global::LangSmith.SandboxesUpdateClaimPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -21,10 +23,11 @@ namespace LangSmith
         /// Update a sandbox claim<br/>
         /// Update a sandbox claim's display name. The name must be unique within the tenant.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="memBytes"></param>
-        /// <param name="name"></param>
+        /// <param name="requestName"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="vcpus"></param>
@@ -32,10 +35,11 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> UpdateASandboxClaimAsync(
+            string name,
             long? fsCapacityBytes = default,
             int? idleTtlSeconds = default,
             long? memBytes = default,
-            string? name = default,
+            string? requestName = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             int? ttlSeconds = default,
             int? vcpus = default,

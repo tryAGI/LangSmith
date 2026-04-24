@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ExamplesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteExamplesServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteExamplesSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -84,7 +97,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/examples",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteExamplesServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddRequiredParameter("example_ids", exampleIds, selector: static x => x.ToString()!, delimiter: ",", explode: true) 
                                 ;

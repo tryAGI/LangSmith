@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class RunsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateARunServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateARunSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateARunArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::System.Guid runId,
             global::LangSmith.RunsRun request);
         partial void PrepareUpdateARunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid runId,
             global::LangSmith.RunsRun request);
         partial void ProcessUpdateARunResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
+        /// <param name="runId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateARunAsync(
+            global::System.Guid runId,
 
             global::LangSmith.RunsRun request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateARunArguments(
                 httpClient: HttpClient,
+                runId: ref runId,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/runs/{run_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/runs/{runId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateARunServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateARunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    runId: runId,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateARun",
                                 methodName: "UpdateARunAsync",
-                                pathTemplate: "\"/runs/{run_id}\"",
+                                pathTemplate: "$\"/runs/{runId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateARun",
                                 methodName: "UpdateARunAsync",
-                                pathTemplate: "\"/runs/{run_id}\"",
+                                pathTemplate: "$\"/runs/{runId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateARun",
                                 methodName: "UpdateARunAsync",
-                                pathTemplate: "\"/runs/{run_id}\"",
+                                pathTemplate: "$\"/runs/{runId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateARun",
                                 methodName: "UpdateARunAsync",
-                                pathTemplate: "\"/runs/{run_id}\"",
+                                pathTemplate: "$\"/runs/{runId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateARun",
                                 methodName: "UpdateARunAsync",
-                                pathTemplate: "\"/runs/{run_id}\"",
+                                pathTemplate: "$\"/runs/{runId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -615,6 +636,7 @@ namespace LangSmith
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
+        /// <param name="runId"></param>
         /// <param name="dottedOrder"></param>
         /// <param name="endTime"></param>
         /// <param name="error"></param>
@@ -640,6 +662,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateARunAsync(
+            global::System.Guid runId,
             string? dottedOrder = default,
             string? endTime = default,
             string? error = default,
@@ -690,6 +713,7 @@ namespace LangSmith
             };
 
             return await UpdateARunAsync(
+                runId: runId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

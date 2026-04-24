@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SandboxesInternalClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_Internal_StartAStoppedSandboxServiceToServiceServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_Internal_StartAStoppedSandboxServiceToServiceSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,14 @@ namespace LangSmith
             {                s_Internal_StartAStoppedSandboxServiceToServiceSecurityRequirement0,
             };
         partial void PrepareInternal_StartAStoppedSandboxServiceToServiceArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string name,
+            ref string xTenantId);
         partial void PrepareInternal_StartAStoppedSandboxServiceToServiceRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string name,
+            string xTenantId);
         partial void ProcessInternal_StartAStoppedSandboxServiceToServiceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +60,23 @@ namespace LangSmith
         /// Internal: start a stopped sandbox (service-to-service)<br/>
         /// Called by the sandbox-router to wake stopped Firecracker boxes. Blocks until the sandbox is ready or times out. The name parameter accepts either the display name or the K8s sandbox name (sb-&lt;uuid&gt;).
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="xTenantId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> Internal_StartAStoppedSandboxServiceToServiceAsync(
+            string name,
+            string xTenantId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareInternal_StartAStoppedSandboxServiceToServiceArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                name: ref name,
+                xTenantId: ref xTenantId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +101,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/internal/start/{name}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v2/sandboxes/internal/start/{name}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_Internal_StartAStoppedSandboxServiceToServiceServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -109,6 +134,9 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
+                __httpRequest.Headers.TryAddWithoutValidation("X-Tenant-Id", xTenantId.ToString());
+
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -119,7 +147,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareInternal_StartAStoppedSandboxServiceToServiceRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    name: name,
+                    xTenantId: xTenantId);
 
                 return __httpRequest;
             }
@@ -138,7 +168,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Internal_StartAStoppedSandboxServiceToService",
                                 methodName: "Internal_StartAStoppedSandboxServiceToServiceAsync",
-                                pathTemplate: "\"/v2/sandboxes/internal/start/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/internal/start/{name}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +195,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Internal_StartAStoppedSandboxServiceToService",
                                 methodName: "Internal_StartAStoppedSandboxServiceToServiceAsync",
-                                pathTemplate: "\"/v2/sandboxes/internal/start/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/internal/start/{name}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +230,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Internal_StartAStoppedSandboxServiceToService",
                                 methodName: "Internal_StartAStoppedSandboxServiceToServiceAsync",
-                                pathTemplate: "\"/v2/sandboxes/internal/start/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/internal/start/{name}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +277,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Internal_StartAStoppedSandboxServiceToService",
                                 methodName: "Internal_StartAStoppedSandboxServiceToServiceAsync",
-                                pathTemplate: "\"/v2/sandboxes/internal/start/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/internal/start/{name}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +297,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Internal_StartAStoppedSandboxServiceToService",
                                 methodName: "Internal_StartAStoppedSandboxServiceToServiceAsync",
-                                pathTemplate: "\"/v2/sandboxes/internal/start/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/internal/start/{name}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ExamplesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UploadExamplesServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UploadExamplesSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUploadExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::System.Guid datasetId,
             global::LangSmith.CreatePlatformDatasetsExamplesRequest request);
         partial void PrepareUploadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid datasetId,
             global::LangSmith.CreatePlatformDatasetsExamplesRequest request);
         partial void ProcessUploadExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,11 +61,13 @@ namespace LangSmith
         /// This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files associated with an example.
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesCreatedResponse> UploadExamplesAsync(
+            global::System.Guid datasetId,
 
             global::LangSmith.CreatePlatformDatasetsExamplesRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -62,6 +79,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUploadExamplesArguments(
                 httpClient: HttpClient,
+                datasetId: ref datasetId,
                 request: request);
 
 
@@ -87,8 +105,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/datasets/{dataset_id}/examples",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/datasets/{datasetId}/examples",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UploadExamplesServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,6 +139,9 @@ namespace LangSmith
                 } 
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent($"{datasetId}"),
+                                name: "\"dataset_id\"");
                             var __contentx_exampleId_ = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>());
                             __httpRequestContent.Add(
                                 content: __contentx_exampleId_,
@@ -175,6 +198,7 @@ namespace LangSmith
                 PrepareUploadExamplesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    datasetId: datasetId,
                     request: request);
 
                 return __httpRequest;
@@ -194,7 +218,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UploadExamples",
                                 methodName: "UploadExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -221,7 +245,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UploadExamples",
                                 methodName: "UploadExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -256,7 +280,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UploadExamples",
                                 methodName: "UploadExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -303,7 +327,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UploadExamples",
                                 methodName: "UploadExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -323,7 +347,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UploadExamples",
                                 methodName: "UploadExamplesAsync",
-                                pathTemplate: "\"/v1/platform/datasets/{dataset_id}/examples\"",
+                                pathTemplate: "$\"/v1/platform/datasets/{datasetId}/examples\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -585,6 +609,7 @@ namespace LangSmith
         /// This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files associated with an example.
         /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="x_exampleId_">
         /// The Example info as JSON. Can have fields 'metadata', 'split', 'use_source_run_io', 'source_run_id', 'created_at', 'modified_at'
         /// </param>
@@ -613,6 +638,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ExamplesExamplesCreatedResponse> UploadExamplesAsync(
+            global::System.Guid datasetId,
             byte[] x_exampleId_,
             string x_exampleId_name,
             byte[] x_exampleId_Inputs,
@@ -637,6 +663,7 @@ namespace LangSmith
             };
 
             return await UploadExamplesAsync(
+                datasetId: datasetId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

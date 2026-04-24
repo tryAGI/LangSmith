@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class ToolsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteAToolByIdServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteAToolByIdSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_DeleteAToolByIdSecurityRequirement0,
             };
         partial void PrepareDeleteAToolByIdArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string id);
         partial void PrepareDeleteAToolByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id);
         partial void ProcessDeleteAToolByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,17 +53,20 @@ namespace LangSmith
         /// Delete a tool by ID<br/>
         /// Deletes a tool identified by its UUID.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteAToolByIdAsync(
+            string id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteAToolByIdArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                id: ref id);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -73,8 +91,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/tools/id/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/tools/id/{id}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteAToolByIdServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -114,7 +134,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareDeleteAToolByIdRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    id: id);
 
                 return __httpRequest;
             }
@@ -133,7 +154,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAToolById",
                                 methodName: "DeleteAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -160,7 +181,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAToolById",
                                 methodName: "DeleteAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +216,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAToolById",
                                 methodName: "DeleteAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -242,7 +263,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAToolById",
                                 methodName: "DeleteAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteAToolById",
                                 methodName: "DeleteAToolByIdAsync",
-                                pathTemplate: "\"/v1/platform/tools/id/{id}\"",
+                                pathTemplate: "$\"/v1/platform/tools/id/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

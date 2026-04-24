@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class HubEnvironmentsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteHubEnvironmentsModelServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteHubEnvironmentsModelSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_DeleteHubEnvironmentsModelSecurityRequirement0,
             };
         partial void PrepareDeleteHubEnvironmentsModelArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string id);
         partial void PrepareDeleteHubEnvironmentsModelRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id);
         partial void ProcessDeleteHubEnvironmentsModelResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +58,20 @@ namespace LangSmith
         /// Delete hub environments model<br/>
         /// Deletes the hub environments configuration. Tenant reverts to defaults.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> DeleteHubEnvironmentsModelAsync(
+            string id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteHubEnvironmentsModelArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                id: ref id);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/hub/environments/{id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/api/v1/hub/environments/{id}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteHubEnvironmentsModelServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +139,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareDeleteHubEnvironmentsModelRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    id: id);
 
                 return __httpRequest;
             }
@@ -138,7 +159,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteHubEnvironmentsModel",
                                 methodName: "DeleteHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +186,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteHubEnvironmentsModel",
                                 methodName: "DeleteHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +221,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteHubEnvironmentsModel",
                                 methodName: "DeleteHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +268,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteHubEnvironmentsModel",
                                 methodName: "DeleteHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +288,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteHubEnvironmentsModel",
                                 methodName: "DeleteHubEnvironmentsModelAsync",
-                                pathTemplate: "\"/api/v1/hub/environments/{id}\"",
+                                pathTemplate: "$\"/api/v1/hub/environments/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

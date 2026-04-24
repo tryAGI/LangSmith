@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class EvaluatorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListEvaluatorsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListEvaluatorsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -29,9 +42,9 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string? type,
             ref string? nameContains,
-            byte[]? tagValueId,
+            global::System.Collections.Generic.IList<string>? tagValueId,
             ref string? feedbackKey,
-            byte[]? resourceId,
+            global::System.Collections.Generic.IList<string>? resourceId,
             ref string? sortBy,
             ref bool? sortByDesc,
             ref int? limit,
@@ -41,9 +54,9 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? type,
             string? nameContains,
-            byte[]? tagValueId,
+            global::System.Collections.Generic.IList<string>? tagValueId,
             string? feedbackKey,
-            byte[]? resourceId,
+            global::System.Collections.Generic.IList<string>? resourceId,
             string? sortBy,
             bool? sortByDesc,
             int? limit,
@@ -80,9 +93,9 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsListEvaluatorsResponse> ListEvaluatorsAsync(
             string? type = default,
             string? nameContains = default,
-            byte[]? tagValueId = default,
+            global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? feedbackKey = default,
-            byte[]? resourceId = default,
+            global::System.Collections.Generic.IList<string>? resourceId = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,
@@ -128,13 +141,15 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v1/platform/evaluators",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListEvaluatorsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("type", type)
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, delimiter: ",", explode: false)
                                 .AddOptionalParameter("feedback_key", feedbackKey)
-                                .AddOptionalParameter("resource_id", resourceId?.ToString())
+                                .AddOptionalParameter("resource_id", resourceId, delimiter: ",", explode: false)
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())

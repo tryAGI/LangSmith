@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SandboxesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateAWarmPoolServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateAWarmPoolSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateAWarmPoolArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string name,
             global::LangSmith.SandboxesUpdatePoolPayload request);
         partial void PrepareUpdateAWarmPoolRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string name,
             global::LangSmith.SandboxesUpdatePoolPayload request);
         partial void ProcessUpdateAWarmPoolResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update a warm pool<br/>
         /// Update a warm pool's name or replica count
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesPoolResponse> UpdateAWarmPoolAsync(
+            string name,
 
             global::LangSmith.SandboxesUpdatePoolPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateAWarmPoolArguments(
                 httpClient: HttpClient,
+                name: ref name,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/pools/{name}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v2/sandboxes/pools/{name}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateAWarmPoolServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateAWarmPoolRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    name: name,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAWarmPool",
                                 methodName: "UpdateAWarmPoolAsync",
-                                pathTemplate: "\"/v2/sandboxes/pools/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/pools/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAWarmPool",
                                 methodName: "UpdateAWarmPoolAsync",
-                                pathTemplate: "\"/v2/sandboxes/pools/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/pools/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAWarmPool",
                                 methodName: "UpdateAWarmPoolAsync",
-                                pathTemplate: "\"/v2/sandboxes/pools/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/pools/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAWarmPool",
                                 methodName: "UpdateAWarmPoolAsync",
-                                pathTemplate: "\"/v2/sandboxes/pools/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/pools/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAWarmPool",
                                 methodName: "UpdateAWarmPoolAsync",
-                                pathTemplate: "\"/v2/sandboxes/pools/{name}\"",
+                                pathTemplate: "$\"/v2/sandboxes/pools/{name}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -582,23 +603,26 @@ namespace LangSmith
         /// Update a warm pool's name or replica count
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="requestName"></param>
         /// <param name="replicas"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesPoolResponse> UpdateAWarmPoolAsync(
-            string? name = default,
+            string name,
+            string? requestName = default,
             int? replicas = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.SandboxesUpdatePoolPayload
             {
-                Name = name,
+                Name = requestName,
                 Replicas = replicas,
             };
 
             return await UpdateAWarmPoolAsync(
+                name: name,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FleetMcpClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateMcpServerServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateMcpServerSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdateMcpServerArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string mcpServerId,
             global::LangSmith.LangchainComSmithFleetMcpServersUpdateMcpServerPayload request);
         partial void PrepareUpdateMcpServerRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string mcpServerId,
             global::LangSmith.LangchainComSmithFleetMcpServersUpdateMcpServerPayload request);
         partial void ProcessUpdateMcpServerResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Update MCP server<br/>
         /// Partially updates an MCP server. Tool list cache is invalidated on success.
         /// </summary>
+        /// <param name="mcpServerId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer> UpdateMcpServerAsync(
+            string mcpServerId,
 
             global::LangSmith.LangchainComSmithFleetMcpServersUpdateMcpServerPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateMcpServerArguments(
                 httpClient: HttpClient,
+                mcpServerId: ref mcpServerId,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/fleet/mcp-servers/{mcp_server_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/fleet/mcp-servers/{mcpServerId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateMcpServerServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareUpdateMcpServerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    mcpServerId: mcpServerId,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateMcpServer",
                                 methodName: "UpdateMcpServerAsync",
-                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}\"",
+                                pathTemplate: "$\"/v1/platform/fleet/mcp-servers/{mcpServerId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateMcpServer",
                                 methodName: "UpdateMcpServerAsync",
-                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}\"",
+                                pathTemplate: "$\"/v1/platform/fleet/mcp-servers/{mcpServerId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateMcpServer",
                                 methodName: "UpdateMcpServerAsync",
-                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}\"",
+                                pathTemplate: "$\"/v1/platform/fleet/mcp-servers/{mcpServerId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateMcpServer",
                                 methodName: "UpdateMcpServerAsync",
-                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}\"",
+                                pathTemplate: "$\"/v1/platform/fleet/mcp-servers/{mcpServerId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateMcpServer",
                                 methodName: "UpdateMcpServerAsync",
-                                pathTemplate: "\"/v1/platform/fleet/mcp-servers/{mcp_server_id}\"",
+                                pathTemplate: "$\"/v1/platform/fleet/mcp-servers/{mcpServerId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -619,6 +640,7 @@ namespace LangSmith
         /// Update MCP server<br/>
         /// Partially updates an MCP server. Tool list cache is invalidated on success.
         /// </summary>
+        /// <param name="mcpServerId"></param>
         /// <param name="authType"></param>
         /// <param name="headers"></param>
         /// <param name="oauthProviderId"></param>
@@ -627,6 +649,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer> UpdateMcpServerAsync(
+            string mcpServerId,
             global::LangSmith.LangchainComSmithFleetMcpServersAuthType? authType = default,
             global::System.Collections.Generic.IList<object>? headers = default,
             string? oauthProviderId = default,
@@ -643,6 +666,7 @@ namespace LangSmith
             };
 
             return await UpdateMcpServerAsync(
+                mcpServerId: mcpServerId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

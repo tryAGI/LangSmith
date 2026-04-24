@@ -8,10 +8,12 @@ namespace LangSmith
         /// Get the authenticated user's provider user ID<br/>
         /// Returns the provider user ID associated with the authenticated user for a given provider type, or null if not set. Scoped to the current tenant.
         /// </summary>
+        /// <param name="providerType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> GetTheAuthenticatedUsersProviderUserIdAsync(
+            string providerType,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

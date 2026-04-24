@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AlertRulesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateAnAlertRuleServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateAnAlertRuleSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,14 @@ namespace LangSmith
             };
         partial void PrepareUpdateAnAlertRuleArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string sessionId,
+            ref string alertRuleId,
             global::LangSmith.AlertsUpdateAlertRuleRequest request);
         partial void PrepareUpdateAnAlertRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string sessionId,
+            string alertRuleId,
             global::LangSmith.AlertsUpdateAlertRuleRequest request);
         partial void ProcessUpdateAnAlertRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +62,15 @@ namespace LangSmith
         /// Update an alert rule<br/>
         /// Updates an alert rule.
         /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="alertRuleId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateAnAlertRuleAsync(
+            string sessionId,
+            string alertRuleId,
 
             global::LangSmith.AlertsUpdateAlertRuleRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +82,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareUpdateAnAlertRuleArguments(
                 httpClient: HttpClient,
+                sessionId: ref sessionId,
+                alertRuleId: ref alertRuleId,
                 request: request);
 
 
@@ -86,8 +109,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/alerts/{session_id}/{alert_rule_id}",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/alerts/{sessionId}/{alertRuleId}",
+                                baseUri: ResolveBaseUri(
+                                servers: s_UpdateAnAlertRuleServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +159,8 @@ namespace LangSmith
                 PrepareUpdateAnAlertRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    sessionId: sessionId,
+                    alertRuleId: alertRuleId,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +180,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAnAlertRule",
                                 methodName: "UpdateAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +207,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAnAlertRule",
                                 methodName: "UpdateAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +242,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAnAlertRule",
                                 methodName: "UpdateAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +289,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAnAlertRule",
                                 methodName: "UpdateAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +309,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateAnAlertRule",
                                 methodName: "UpdateAnAlertRuleAsync",
-                                pathTemplate: "\"/v1/platform/alerts/{session_id}/{alert_rule_id}\"",
+                                pathTemplate: "$\"/v1/platform/alerts/{sessionId}/{alertRuleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -577,12 +604,16 @@ namespace LangSmith
         /// Update an alert rule<br/>
         /// Updates an alert rule.
         /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="alertRuleId"></param>
         /// <param name="actions"></param>
         /// <param name="rule"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateAnAlertRuleAsync(
+            string sessionId,
+            string alertRuleId,
             global::System.Collections.Generic.IList<global::LangSmith.AlertsAlertActionBase> actions,
             global::LangSmith.AlertsAlertRuleBase rule,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -595,6 +626,8 @@ namespace LangSmith
             };
 
             return await UpdateAnAlertRuleAsync(
+                sessionId: sessionId,
+                alertRuleId: alertRuleId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

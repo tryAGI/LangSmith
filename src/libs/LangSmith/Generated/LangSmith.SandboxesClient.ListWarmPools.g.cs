@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SandboxesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListWarmPoolsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListWarmPoolsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -98,7 +111,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v2/sandboxes/pools",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListWarmPoolsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())

@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class PublicClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ReadSharedDatasetTracerSessionsBulkServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ReadSharedDatasetTracerSessionsBulkSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -84,7 +97,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/public/datasets/sessions-bulk",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ReadSharedDatasetTracerSessionsBulkServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddRequiredParameter("share_tokens", shareTokens, delimiter: ",", explode: true) 
                                 ;

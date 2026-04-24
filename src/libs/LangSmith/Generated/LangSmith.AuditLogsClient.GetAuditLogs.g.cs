@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class AuditLogsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetAuditLogsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_GetAuditLogsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -127,7 +140,9 @@ namespace LangSmith
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/audit-logs",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetAuditLogsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("cursor", cursor)

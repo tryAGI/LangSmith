@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class SessionsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListAgentVersionsForAProjectServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ListAgentVersionsForAProjectSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_ListAgentVersionsForAProjectSecurityRequirement0,
             };
         partial void PrepareListAgentVersionsForAProjectArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string sessionID);
         partial void PrepareListAgentVersionsForAProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string sessionID);
         partial void ProcessListAgentVersionsForAProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,17 +58,20 @@ namespace LangSmith
         /// List agent versions for a project<br/>
         /// Returns all agent versions (commit SHAs) seen in the given tracing project, ordered by first_seen_at descending.
         /// </summary>
+        /// <param name="sessionID"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionsAgentVersionResponse>> ListAgentVersionsForAProjectAsync(
+            string sessionID,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListAgentVersionsForAProjectArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                sessionID: ref sessionID);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,8 +96,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/sessions/{sessionID}/agent-versions",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/sessions/{sessionID}/agent-versions",
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListAgentVersionsForAProjectServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -119,7 +139,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareListAgentVersionsForAProjectRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    sessionID: sessionID);
 
                 return __httpRequest;
             }
@@ -138,7 +159,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAgentVersionsForAProject",
                                 methodName: "ListAgentVersionsForAProjectAsync",
-                                pathTemplate: "\"/v1/platform/sessions/{sessionID}/agent-versions\"",
+                                pathTemplate: "$\"/v1/platform/sessions/{sessionID}/agent-versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +186,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAgentVersionsForAProject",
                                 methodName: "ListAgentVersionsForAProjectAsync",
-                                pathTemplate: "\"/v1/platform/sessions/{sessionID}/agent-versions\"",
+                                pathTemplate: "$\"/v1/platform/sessions/{sessionID}/agent-versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +221,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAgentVersionsForAProject",
                                 methodName: "ListAgentVersionsForAProjectAsync",
-                                pathTemplate: "\"/v1/platform/sessions/{sessionID}/agent-versions\"",
+                                pathTemplate: "$\"/v1/platform/sessions/{sessionID}/agent-versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +268,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAgentVersionsForAProject",
                                 methodName: "ListAgentVersionsForAProjectAsync",
-                                pathTemplate: "\"/v1/platform/sessions/{sessionID}/agent-versions\"",
+                                pathTemplate: "$\"/v1/platform/sessions/{sessionID}/agent-versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +288,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListAgentVersionsForAProject",
                                 methodName: "ListAgentVersionsForAProjectAsync",
-                                pathTemplate: "\"/v1/platform/sessions/{sessionID}/agent-versions\"",
+                                pathTemplate: "$\"/v1/platform/sessions/{sessionID}/agent-versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

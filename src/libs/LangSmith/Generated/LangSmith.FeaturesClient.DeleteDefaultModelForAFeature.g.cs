@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class FeaturesClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteDefaultModelForAFeatureServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteDefaultModelForAFeatureSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -26,10 +39,12 @@ namespace LangSmith
             {                s_DeleteDefaultModelForAFeatureSecurityRequirement0,
             };
         partial void PrepareDeleteDefaultModelForAFeatureArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string feature);
         partial void PrepareDeleteDefaultModelForAFeatureRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string feature);
         partial void ProcessDeleteDefaultModelForAFeatureResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,17 +53,20 @@ namespace LangSmith
         /// Delete default model for a feature<br/>
         /// Removes the default model for a feature in the workspace.
         /// </summary>
+        /// <param name="feature"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteDefaultModelForAFeatureAsync(
+            string feature,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteDefaultModelForAFeatureArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                feature: ref feature);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -73,8 +91,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/features/{feature}/default-model",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/features/{feature}/default-model",
+                                baseUri: ResolveBaseUri(
+                                servers: s_DeleteDefaultModelForAFeatureServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -114,7 +134,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareDeleteDefaultModelForAFeatureRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    feature: feature);
 
                 return __httpRequest;
             }
@@ -133,7 +154,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteDefaultModelForAFeature",
                                 methodName: "DeleteDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -160,7 +181,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteDefaultModelForAFeature",
                                 methodName: "DeleteDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +216,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteDefaultModelForAFeature",
                                 methodName: "DeleteDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -242,7 +263,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteDefaultModelForAFeature",
                                 methodName: "DeleteDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteDefaultModelForAFeature",
                                 methodName: "DeleteDefaultModelForAFeatureAsync",
-                                pathTemplate: "\"/v1/platform/features/{feature}/default-model\"",
+                                pathTemplate: "$\"/v1/platform/features/{feature}/default-model\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

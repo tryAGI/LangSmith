@@ -6,6 +6,19 @@ namespace LangSmith
     public partial class McpVendorsClient
     {
 
+        private static readonly global::LangSmith.AutoSDKServer[] s_ReplaceVendorSettingsServers = new global::LangSmith.AutoSDKServer[]
+        {            new global::LangSmith.AutoSDKServer(
+                id: "https-api-smith-langchain-com",
+                name: "api.smith.langchain.com",
+                url: "https://api.smith.langchain.com/",
+                description: ""),
+            new global::LangSmith.AutoSDKServer(
+                id: "file",
+                name: "",
+                url: "file:///",
+                description: ""),
+        };
+
 
         private static readonly global::LangSmith.EndPointSecurityRequirement s_ReplaceVendorSettingsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
@@ -27,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareReplaceVendorSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string vendorSlug,
             global::LangSmith.McpVendorsArcadeSettingsRequest request);
         partial void PrepareReplaceVendorSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vendorSlug,
             global::LangSmith.McpVendorsArcadeSettingsRequest request);
         partial void ProcessReplaceVendorSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,11 +60,13 @@ namespace LangSmith
         /// Replace vendor settings<br/>
         /// Replaces vendor settings.
         /// </summary>
+        /// <param name="vendorSlug"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsArcadeSettingsResponse> ReplaceVendorSettingsAsync(
+            string vendorSlug,
 
             global::LangSmith.McpVendorsArcadeSettingsRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -61,6 +78,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareReplaceVendorSettingsArguments(
                 httpClient: HttpClient,
+                vendorSlug: ref vendorSlug,
                 request: request);
 
 
@@ -86,8 +104,10 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/mcp-vendors/{vendor_slug}/settings",
-                                baseUri: HttpClient.BaseAddress);
+                                path: $"/v1/platform/mcp-vendors/{vendorSlug}/settings",
+                                baseUri: ResolveBaseUri(
+                                servers: s_ReplaceVendorSettingsServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -134,6 +154,7 @@ namespace LangSmith
                 PrepareReplaceVendorSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    vendorSlug: vendorSlug,
                     request: request);
 
                 return __httpRequest;
@@ -153,7 +174,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReplaceVendorSettings",
                                 methodName: "ReplaceVendorSettingsAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/settings\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +201,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReplaceVendorSettings",
                                 methodName: "ReplaceVendorSettingsAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/settings\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +236,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReplaceVendorSettings",
                                 methodName: "ReplaceVendorSettingsAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/settings\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +283,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReplaceVendorSettings",
                                 methodName: "ReplaceVendorSettingsAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/settings\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +303,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ReplaceVendorSettings",
                                 methodName: "ReplaceVendorSettingsAsync",
-                                pathTemplate: "\"/v1/platform/mcp-vendors/{vendor_slug}/settings\"",
+                                pathTemplate: "$\"/v1/platform/mcp-vendors/{vendorSlug}/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -543,12 +564,14 @@ namespace LangSmith
         /// Replace vendor settings<br/>
         /// Replaces vendor settings.
         /// </summary>
+        /// <param name="vendorSlug"></param>
         /// <param name="organizationId"></param>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.McpVendorsArcadeSettingsResponse> ReplaceVendorSettingsAsync(
+            string vendorSlug,
             string? organizationId = default,
             string? projectId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -561,6 +584,7 @@ namespace LangSmith
             };
 
             return await ReplaceVendorSettingsAsync(
+                vendorSlug: vendorSlug,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
