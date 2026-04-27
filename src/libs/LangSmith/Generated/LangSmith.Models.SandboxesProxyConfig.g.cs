@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
+        public global::System.Collections.Generic.IList<global::LangSmith.SandboxesCallback>? Callbacks { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("no_proxy")]
         public global::System.Collections.Generic.IList<string>? NoProxy { get; set; }
 
@@ -36,6 +42,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesProxyConfig" /> class.
         /// </summary>
         /// <param name="accessControl"></param>
+        /// <param name="callbacks"></param>
         /// <param name="noProxy"></param>
         /// <param name="rules"></param>
 #if NET7_0_OR_GREATER
@@ -43,10 +50,12 @@ namespace LangSmith
 #endif
         public SandboxesProxyConfig(
             global::LangSmith.SandboxesAccessControl? accessControl,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesCallback>? callbacks,
             global::System.Collections.Generic.IList<string>? noProxy,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule>? rules)
         {
             this.AccessControl = accessControl;
+            this.Callbacks = callbacks;
             this.NoProxy = noProxy;
             this.Rules = rules;
         }
