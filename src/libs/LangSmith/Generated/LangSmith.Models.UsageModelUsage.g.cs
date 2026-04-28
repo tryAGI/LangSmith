@@ -6,26 +6,8 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class UsageAgentUsage
+    public sealed partial class UsageModelUsage
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent_name")]
-        public string? AgentName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
-        public string? AssistantId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("first_used")]
-        public string? FirstUsed { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
@@ -37,12 +19,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
         public string? ModelName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("owner_email")]
-        public string? OwnerEmail { get; set; }
 
         /// <summary>
         /// 
@@ -63,43 +39,31 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsageAgentUsage" /> class.
+        /// Initializes a new instance of the <see cref="UsageModelUsage" /> class.
         /// </summary>
-        /// <param name="agentName"></param>
-        /// <param name="assistantId"></param>
-        /// <param name="firstUsed"></param>
         /// <param name="lastUsed"></param>
         /// <param name="modelName"></param>
-        /// <param name="ownerEmail"></param>
         /// <param name="runCount"></param>
         /// <param name="totalCost"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UsageAgentUsage(
-            string? agentName,
-            string? assistantId,
-            string? firstUsed,
+        public UsageModelUsage(
             string? lastUsed,
             string? modelName,
-            string? ownerEmail,
             int? runCount,
             double? totalCost)
         {
-            this.AgentName = agentName;
-            this.AssistantId = assistantId;
-            this.FirstUsed = firstUsed;
             this.LastUsed = lastUsed;
             this.ModelName = modelName;
-            this.OwnerEmail = ownerEmail;
             this.RunCount = runCount;
             this.TotalCost = totalCost;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsageAgentUsage" /> class.
+        /// Initializes a new instance of the <see cref="UsageModelUsage" /> class.
         /// </summary>
-        public UsageAgentUsage()
+        public UsageModelUsage()
         {
         }
     }
