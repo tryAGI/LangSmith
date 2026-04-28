@@ -274,6 +274,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public OauthClient Oauth { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OptimizationJobsClient OptimizationJobs { get; }
 
         /// <summary>
