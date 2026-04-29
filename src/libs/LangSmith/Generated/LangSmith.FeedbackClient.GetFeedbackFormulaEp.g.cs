@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetFeedbackFormulaEpRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedbackFormulaId: feedbackFormulaId);
+                    feedbackFormulaId: feedbackFormulaId!);
 
                 return __httpRequest;
             }

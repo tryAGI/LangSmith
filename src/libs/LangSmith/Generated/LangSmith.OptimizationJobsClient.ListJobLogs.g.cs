@@ -150,9 +150,9 @@ namespace LangSmith
                 PrepareListJobLogsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
-                    owner: owner,
-                    repo: repo);
+                    jobId: jobId!,
+                    owner: owner!,
+                    repo: repo!);
 
                 return __httpRequest;
             }

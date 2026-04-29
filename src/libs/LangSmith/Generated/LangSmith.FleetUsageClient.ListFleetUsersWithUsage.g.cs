@@ -174,8 +174,8 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     limit: limit,
-                    startTime: startTime,
-                    endTime: endTime,
+                    startTime: startTime!,
+                    endTime: endTime!,
                     sortBy: sortBy,
                     sortOrder: sortOrder);
 

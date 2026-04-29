@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareDeleteTaggingRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    taggingId: taggingId);
+                    taggingId: taggingId!);
 
                 return __httpRequest;
             }

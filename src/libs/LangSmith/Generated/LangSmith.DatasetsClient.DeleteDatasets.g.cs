@@ -143,7 +143,7 @@ namespace LangSmith
                 PrepareDeleteDatasetsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetIds: datasetIds);
+                    datasetIds: datasetIds!);
 
                 return __httpRequest;
             }

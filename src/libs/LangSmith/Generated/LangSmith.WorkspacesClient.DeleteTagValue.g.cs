@@ -144,8 +144,8 @@ namespace LangSmith
                 PrepareDeleteTagValueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tagKeyId: tagKeyId,
-                    tagValueId: tagValueId);
+                    tagKeyId: tagKeyId!,
+                    tagValueId: tagValueId!);
 
                 return __httpRequest;
             }

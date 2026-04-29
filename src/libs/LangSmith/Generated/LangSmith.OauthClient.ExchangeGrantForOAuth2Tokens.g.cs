@@ -134,44 +134,44 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.GrantType}"),
+                                content: new global::System.Net.Http.StringContent(request.GrantType ?? string.Empty),
                                 name: "\"grant_type\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.ClientId}"),
+                                content: new global::System.Net.Http.StringContent(request.ClientId ?? string.Empty),
                                 name: "\"client_id\"");
                             if (request.Code != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Code}"),
+                                    content: new global::System.Net.Http.StringContent(request.Code ?? string.Empty),
                                     name: "\"code\"");
                             } 
                             if (request.CodeVerifier != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CodeVerifier}"),
+                                    content: new global::System.Net.Http.StringContent(request.CodeVerifier ?? string.Empty),
                                     name: "\"code_verifier\"");
                             } 
                             if (request.RedirectUri != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RedirectUri}"),
+                                    content: new global::System.Net.Http.StringContent(request.RedirectUri ?? string.Empty),
                                     name: "\"redirect_uri\"");
                             } 
                             if (request.DeviceCode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DeviceCode}"),
+                                    content: new global::System.Net.Http.StringContent(request.DeviceCode ?? string.Empty),
                                     name: "\"device_code\"");
                             } 
                             if (request.RefreshToken != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RefreshToken}"),
+                                    content: new global::System.Net.Http.StringContent(request.RefreshToken ?? string.Empty),
                                     name: "\"refresh_token\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

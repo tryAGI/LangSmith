@@ -149,9 +149,9 @@ namespace LangSmith
                 PrepareLikeCommentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    parentCommentId: parentCommentId);
+                    owner: owner!,
+                    repo: repo!,
+                    parentCommentId: parentCommentId!);
 
                 return __httpRequest;
             }

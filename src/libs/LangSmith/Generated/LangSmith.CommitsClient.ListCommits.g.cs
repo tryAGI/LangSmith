@@ -180,8 +180,8 @@ namespace LangSmith
                 PrepareListCommitsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
+                    owner: owner!,
+                    repo: repo!,
                     includeStats: includeStats,
                     limit: limit,
                     offset: offset,

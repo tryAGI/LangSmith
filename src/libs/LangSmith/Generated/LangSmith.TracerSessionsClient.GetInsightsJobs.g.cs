@@ -173,7 +173,7 @@ namespace LangSmith
                 PrepareGetInsightsJobsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     limit: limit,
                     offset: offset,
                     configId: configId,

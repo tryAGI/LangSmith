@@ -129,7 +129,7 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.XAmznMarketplaceToken}"),
+                                content: new global::System.Net.Http.StringContent(request.XAmznMarketplaceToken ?? string.Empty),
                                 name: "\"x-amzn-marketplace-token\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(

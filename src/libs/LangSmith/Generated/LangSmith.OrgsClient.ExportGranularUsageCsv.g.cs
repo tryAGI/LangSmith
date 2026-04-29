@@ -167,9 +167,9 @@ namespace LangSmith
                 PrepareExportGranularUsageCsvRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime,
-                    endTime: endTime,
-                    workspaceIds: workspaceIds,
+                    startTime: startTime!,
+                    endTime: endTime!,
+                    workspaceIds: workspaceIds!,
                     groupBy: groupBy);
 
                 return __httpRequest;

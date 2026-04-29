@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareUpdateRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    runId: runId);
+                    runId: runId!);
 
                 return __httpRequest;
             }

@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateCurrentOrgMemberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identityId: identityId,
+                    identityId: identityId!,
                     request: request);
 
                 return __httpRequest;

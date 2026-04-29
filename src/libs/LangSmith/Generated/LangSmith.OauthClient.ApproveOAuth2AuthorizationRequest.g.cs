@@ -134,25 +134,25 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.OrganizationId}"),
+                                content: new global::System.Net.Http.StringContent(request.OrganizationId ?? string.Empty),
                                 name: "\"organization_id\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.ClientId}"),
+                                content: new global::System.Net.Http.StringContent(request.ClientId ?? string.Empty),
                                 name: "\"client_id\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.RedirectUri}"),
+                                content: new global::System.Net.Http.StringContent(request.RedirectUri ?? string.Empty),
                                 name: "\"redirect_uri\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.CodeChallenge}"),
+                                content: new global::System.Net.Http.StringContent(request.CodeChallenge ?? string.Empty),
                                 name: "\"code_challenge\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.CodeChallengeMethod}"),
+                                content: new global::System.Net.Http.StringContent(request.CodeChallengeMethod ?? string.Empty),
                                 name: "\"code_challenge_method\"");
                             if (request.State != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.State}"),
+                                    content: new global::System.Net.Http.StringContent(request.State ?? string.Empty),
                                     name: "\"state\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

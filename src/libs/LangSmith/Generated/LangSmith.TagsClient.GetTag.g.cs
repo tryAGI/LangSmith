@@ -149,9 +149,9 @@ namespace LangSmith
                 PrepareGetTagRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    repo: repo,
-                    tagName: tagName,
-                    owner: owner);
+                    repo: repo!,
+                    tagName: tagName!,
+                    owner: owner!);
 
                 return __httpRequest;
             }

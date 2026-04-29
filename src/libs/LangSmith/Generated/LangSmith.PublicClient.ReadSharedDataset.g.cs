@@ -175,7 +175,7 @@ namespace LangSmith
                 PrepareReadSharedDatasetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     offset: offset,
                     limit: limit,
                     sortBy: sortBy,

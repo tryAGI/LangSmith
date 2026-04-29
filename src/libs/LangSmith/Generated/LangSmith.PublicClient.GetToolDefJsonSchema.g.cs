@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareGetToolDefJsonSchemaRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    version: version);
+                    version: version!);
 
                 return __httpRequest;
             }

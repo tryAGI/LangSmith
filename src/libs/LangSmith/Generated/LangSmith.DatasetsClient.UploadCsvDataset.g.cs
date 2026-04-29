@@ -134,6 +134,34 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Filename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentFile,
                                 name: "\"file\"",
@@ -149,14 +177,14 @@ namespace LangSmith
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Name}"),
+                                    content: new global::System.Net.Http.StringContent(request.Name ?? string.Empty),
                                     name: "\"name\"");
                             } 
                             if (request.DataType != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DataType?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.DataType).HasValue ? (request.DataType).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"data_type\"");
                             } 
                             if (request.OutputKeys != default)
@@ -177,49 +205,49 @@ namespace LangSmith
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Description}"),
+                                    content: new global::System.Net.Http.StringContent(request.Description ?? string.Empty),
                                     name: "\"description\"");
                             } 
                             if (request.InputsSchemaDefinition != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputsSchemaDefinition}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputsSchemaDefinition ?? string.Empty),
                                     name: "\"inputs_schema_definition\"");
                             } 
                             if (request.OutputsSchemaDefinition != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputsSchemaDefinition}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputsSchemaDefinition ?? string.Empty),
                                     name: "\"outputs_schema_definition\"");
                             } 
                             if (request.Transformations != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Transformations}"),
+                                    content: new global::System.Net.Http.StringContent(request.Transformations ?? string.Empty),
                                     name: "\"transformations\"");
                             } 
                             if (request.InputKeyMappings != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputKeyMappings}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputKeyMappings ?? string.Empty),
                                     name: "\"input_key_mappings\"");
                             } 
                             if (request.OutputKeyMappings != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputKeyMappings}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputKeyMappings ?? string.Empty),
                                     name: "\"output_key_mappings\"");
                             } 
                             if (request.MetadataKeyMappings != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MetadataKeyMappings}"),
+                                    content: new global::System.Net.Http.StringContent(request.MetadataKeyMappings ?? string.Empty),
                                     name: "\"metadata_key_mappings\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

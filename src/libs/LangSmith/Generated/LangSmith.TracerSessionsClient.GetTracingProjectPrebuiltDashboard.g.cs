@@ -165,7 +165,7 @@ namespace LangSmith
                 PrepareGetTracingProjectPrebuiltDashboardRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     accept: accept,
                     request: request);
 

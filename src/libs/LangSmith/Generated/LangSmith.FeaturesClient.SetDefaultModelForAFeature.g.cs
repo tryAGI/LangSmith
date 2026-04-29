@@ -149,7 +149,7 @@ namespace LangSmith
                 PrepareSetDefaultModelForAFeatureRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feature: feature,
+                    feature: feature!,
                     request: request);
 
                 return __httpRequest;

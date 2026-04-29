@@ -161,7 +161,7 @@ namespace LangSmith
                 PrepareListMcpToolsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    url: url,
+                    url: url!,
                     oauthProviderId: oauthProviderId,
                     forceRefresh: forceRefresh,
                     lsUserId: lsUserId);

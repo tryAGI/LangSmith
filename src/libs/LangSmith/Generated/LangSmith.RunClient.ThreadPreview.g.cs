@@ -160,8 +160,8 @@ namespace LangSmith
                 PrepareThreadPreviewRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId,
-                    sessionId: sessionId,
+                    threadId: threadId!,
+                    sessionId: sessionId!,
                     select: select,
                     variables: variables);
 

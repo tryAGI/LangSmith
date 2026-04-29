@@ -150,7 +150,7 @@ namespace LangSmith
                 PrepareDownloadDatasetOpenaiFtRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     asOf: asOf);
 
                 return __httpRequest;

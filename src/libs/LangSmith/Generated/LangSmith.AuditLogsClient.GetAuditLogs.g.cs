@@ -194,8 +194,8 @@ namespace LangSmith
                     limit: limit,
                     cursor: cursor,
                     workspaceId: workspaceId,
-                    startTime: startTime,
-                    endTime: endTime,
+                    startTime: startTime!,
+                    endTime: endTime!,
                     operations: operations);
 
                 return __httpRequest;

@@ -164,7 +164,7 @@ namespace LangSmith
                 PrepareReadExamplesWithRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     format: format,
                     request: request);
 

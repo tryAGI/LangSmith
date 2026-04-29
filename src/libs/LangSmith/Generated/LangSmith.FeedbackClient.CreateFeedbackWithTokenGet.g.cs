@@ -166,7 +166,7 @@ namespace LangSmith
                 PrepareCreateFeedbackWithTokenGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    token: token,
+                    token: token!,
                     score: score,
                     value: value,
                     comment: comment,

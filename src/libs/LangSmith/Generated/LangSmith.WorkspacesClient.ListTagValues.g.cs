@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareListTagValuesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tagKeyId: tagKeyId);
+                    tagKeyId: tagKeyId!);
 
                 return __httpRequest;
             }

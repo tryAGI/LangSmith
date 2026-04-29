@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareCreateAnAlertRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     request: request);
 
                 return __httpRequest;

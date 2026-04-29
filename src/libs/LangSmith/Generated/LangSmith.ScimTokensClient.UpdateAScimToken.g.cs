@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateAScimTokenRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    scimTokenId: scimTokenId,
+                    scimTokenId: scimTokenId!,
                     request: request);
 
                 return __httpRequest;

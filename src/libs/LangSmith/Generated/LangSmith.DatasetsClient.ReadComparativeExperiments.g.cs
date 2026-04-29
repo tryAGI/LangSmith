@@ -193,7 +193,7 @@ namespace LangSmith
                 PrepareReadComparativeExperimentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     name: name,
                     nameContains: nameContains,
                     id: id,

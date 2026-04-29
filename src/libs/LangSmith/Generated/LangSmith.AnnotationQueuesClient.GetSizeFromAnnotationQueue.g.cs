@@ -147,7 +147,7 @@ namespace LangSmith
                 PrepareGetSizeFromAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId,
+                    queueId: queueId!,
                     status: status);
 
                 return __httpRequest;

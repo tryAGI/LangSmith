@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ruleId: ruleId,
+                    ruleId: ruleId!,
                     request: request);
 
                 return __httpRequest;

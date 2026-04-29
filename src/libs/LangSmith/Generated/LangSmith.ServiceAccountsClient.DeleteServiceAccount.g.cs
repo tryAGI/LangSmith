@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteServiceAccountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    serviceAccountId: serviceAccountId);
+                    serviceAccountId: serviceAccountId!);
 
                 return __httpRequest;
             }

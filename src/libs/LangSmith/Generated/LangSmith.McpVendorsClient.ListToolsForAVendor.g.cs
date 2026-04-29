@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareListToolsForAVendorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vendorSlug: vendorSlug,
+                    vendorSlug: vendorSlug!,
                     limit: limit,
                     offset: offset);
 

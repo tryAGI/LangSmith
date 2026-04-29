@@ -145,8 +145,8 @@ namespace LangSmith
                 PrepareDeleteRepoRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo);
+                    owner: owner!,
+                    repo: repo!);
 
                 return __httpRequest;
             }

@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareRemoveMemberFromCurrentOrgRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identityId: identityId);
+                    identityId: identityId!);
 
                 return __httpRequest;
             }

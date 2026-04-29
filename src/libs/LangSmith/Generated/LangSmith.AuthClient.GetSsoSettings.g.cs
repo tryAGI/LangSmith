@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetSsoSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ssoLoginSlug: ssoLoginSlug);
+                    ssoLoginSlug: ssoLoginSlug!);
 
                 return __httpRequest;
             }

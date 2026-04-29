@@ -155,8 +155,8 @@ namespace LangSmith
                 PrepareReadSharedDatasetRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    runId: runId,
-                    shareToken: shareToken,
+                    runId: runId!,
+                    shareToken: shareToken!,
                     excludeS3StoredAttributes: excludeS3StoredAttributes);
 
                 return __httpRequest;

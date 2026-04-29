@@ -153,9 +153,9 @@ namespace LangSmith
                 PrepareGetRunClusterFromInsightsJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    jobId: jobId,
-                    clusterId: clusterId);
+                    sessionId: sessionId!,
+                    jobId: jobId!,
+                    clusterId: clusterId!);
 
                 return __httpRequest;
             }

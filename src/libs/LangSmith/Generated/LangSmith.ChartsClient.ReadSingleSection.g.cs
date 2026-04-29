@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareReadSingleSectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sectionId: sectionId,
+                    sectionId: sectionId!,
                     request: request);
 
                 return __httpRequest;

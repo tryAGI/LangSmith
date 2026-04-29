@@ -149,7 +149,7 @@ namespace LangSmith
                 PrepareBulkDeleteEvaluatorsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evaluatorIds: evaluatorIds,
+                    evaluatorIds: evaluatorIds!,
                     deleteRunRules: deleteRunRules);
 
                 return __httpRequest;

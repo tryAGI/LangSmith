@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateBulkExportDestinationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    destinationId: destinationId,
+                    destinationId: destinationId!,
                     request: request);
 
                 return __httpRequest;

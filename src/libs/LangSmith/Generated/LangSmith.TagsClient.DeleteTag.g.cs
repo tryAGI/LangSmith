@@ -150,9 +150,9 @@ namespace LangSmith
                 PrepareDeleteTagRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    tagName: tagName);
+                    owner: owner!,
+                    repo: repo!,
+                    tagName: tagName!);
 
                 return __httpRequest;
             }

@@ -168,11 +168,11 @@ namespace LangSmith
                 PrepareInitiateOAuth2AuthorizationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    responseType: responseType,
-                    clientId: clientId,
-                    redirectUri: redirectUri,
-                    codeChallenge: codeChallenge,
-                    codeChallengeMethod: codeChallengeMethod,
+                    responseType: responseType!,
+                    clientId: clientId!,
+                    redirectUri: redirectUri!,
+                    codeChallenge: codeChallenge!,
+                    codeChallengeMethod: codeChallengeMethod!,
                     state: state);
 
                 return __httpRequest;

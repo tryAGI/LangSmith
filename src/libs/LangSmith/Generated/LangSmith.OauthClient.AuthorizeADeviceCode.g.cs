@@ -134,10 +134,10 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.OrganizationId}"),
+                                content: new global::System.Net.Http.StringContent(request.OrganizationId ?? string.Empty),
                                 name: "\"organization_id\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.UserCode}"),
+                                content: new global::System.Net.Http.StringContent(request.UserCode ?? string.Empty),
                                 name: "\"user_code\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(

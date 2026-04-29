@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetAToolByHandleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    handle: handle);
+                    handle: handle!);
 
                 return __httpRequest;
             }

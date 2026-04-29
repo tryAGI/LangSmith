@@ -170,9 +170,9 @@ namespace LangSmith
                 PrepareGetTagTransitionHistoryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    tagName: tagName,
+                    owner: owner!,
+                    repo: repo!,
+                    tagName: tagName!,
                     limit: limit,
                     offset: offset);
 

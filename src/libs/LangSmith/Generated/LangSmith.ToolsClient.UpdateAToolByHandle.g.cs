@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateAToolByHandleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    handle: handle,
+                    handle: handle!,
                     request: request);
 
                 return __httpRequest;

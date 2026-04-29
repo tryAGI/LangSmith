@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteComparativeExperimentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    comparativeExperimentId: comparativeExperimentId);
+                    comparativeExperimentId: comparativeExperimentId!);
 
                 return __httpRequest;
             }

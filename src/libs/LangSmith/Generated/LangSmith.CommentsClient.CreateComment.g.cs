@@ -158,8 +158,8 @@ namespace LangSmith
                 PrepareCreateCommentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
+                    owner: owner!,
+                    repo: repo!,
                     request: request);
 
                 return __httpRequest;

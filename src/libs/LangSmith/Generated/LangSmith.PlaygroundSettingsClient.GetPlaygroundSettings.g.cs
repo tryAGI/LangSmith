@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetPlaygroundSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    playgroundSettingsId: playgroundSettingsId);
+                    playgroundSettingsId: playgroundSettingsId!);
 
                 return __httpRequest;
             }

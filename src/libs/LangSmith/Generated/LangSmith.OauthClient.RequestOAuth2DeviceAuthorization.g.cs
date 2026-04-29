@@ -134,7 +134,7 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.ClientId}"),
+                                content: new global::System.Net.Http.StringContent(request.ClientId ?? string.Empty),
                                 name: "\"client_id\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(

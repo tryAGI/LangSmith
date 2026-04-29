@@ -167,7 +167,7 @@ namespace LangSmith
                 PrepareReadTracerSessionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     includeStats: includeStats,
                     statsStartTime: statsStartTime,
                     accept: accept);

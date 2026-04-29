@@ -143,7 +143,7 @@ namespace LangSmith
                 PrepareDeleteTracerSessionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionIds: sessionIds);
+                    sessionIds: sessionIds!);
 
                 return __httpRequest;
             }

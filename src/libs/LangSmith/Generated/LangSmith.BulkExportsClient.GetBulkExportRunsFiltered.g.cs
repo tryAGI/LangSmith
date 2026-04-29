@@ -143,7 +143,7 @@ namespace LangSmith
                 PrepareGetBulkExportRunsFilteredRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sourceBulkExportId: sourceBulkExportId);
+                    sourceBulkExportId: sourceBulkExportId!);
 
                 return __httpRequest;
             }

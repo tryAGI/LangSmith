@@ -159,8 +159,8 @@ namespace LangSmith
                 PrepareCreateJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    repo: repo,
-                    owner: owner,
+                    repo: repo!,
+                    owner: owner!,
                     request: request);
 
                 return __httpRequest;

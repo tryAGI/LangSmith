@@ -143,7 +143,7 @@ namespace LangSmith
                 PrepareReadSharedDatasetTracerSessionsBulkRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareTokens: shareTokens);
+                    shareTokens: shareTokens!);
 
                 return __httpRequest;
             }

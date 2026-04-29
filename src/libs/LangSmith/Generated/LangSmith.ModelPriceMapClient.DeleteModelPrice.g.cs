@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareDeleteModelPriceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id);
+                    id: id!);
 
                 return __httpRequest;
             }

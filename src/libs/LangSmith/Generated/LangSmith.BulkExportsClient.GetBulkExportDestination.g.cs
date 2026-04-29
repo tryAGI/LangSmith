@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetBulkExportDestinationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    destinationId: destinationId);
+                    destinationId: destinationId!);
 
                 return __httpRequest;
             }

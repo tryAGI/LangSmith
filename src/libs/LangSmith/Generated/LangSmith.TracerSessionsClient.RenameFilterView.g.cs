@@ -159,8 +159,8 @@ namespace LangSmith
                 PrepareRenameFilterViewRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    viewId: viewId,
+                    sessionId: sessionId!,
+                    viewId: viewId!,
                     request: request);
 
                 return __httpRequest;

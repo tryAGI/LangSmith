@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareReadDeltaRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     request: request);
 
                 return __httpRequest;

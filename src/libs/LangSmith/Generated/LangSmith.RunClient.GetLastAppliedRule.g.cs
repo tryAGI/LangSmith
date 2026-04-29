@@ -150,7 +150,7 @@ namespace LangSmith
                 PrepareGetLastAppliedRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ruleId: ruleId,
+                    ruleId: ruleId!,
                     backfill: backfill);
 
                 return __httpRequest;

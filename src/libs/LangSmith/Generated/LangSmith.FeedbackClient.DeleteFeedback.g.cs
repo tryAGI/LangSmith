@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteFeedbackRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedbackId: feedbackId);
+                    feedbackId: feedbackId!);
 
                 return __httpRequest;
             }

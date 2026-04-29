@@ -184,7 +184,7 @@ namespace LangSmith
                 PrepareListRuleLogsV2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ruleId: ruleId,
+                    ruleId: ruleId!,
                     limit: limit,
                     cursor: cursor,
                     backfill: backfill,

@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareDeletePendingOrganizationInviteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    organizationId: organizationId);
+                    organizationId: organizationId!);
 
                 return __httpRequest;
             }

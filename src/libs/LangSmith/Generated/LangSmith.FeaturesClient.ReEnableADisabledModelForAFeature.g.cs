@@ -140,8 +140,8 @@ namespace LangSmith
                 PrepareReEnableADisabledModelForAFeatureRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feature: feature,
-                    model: model);
+                    feature: feature!,
+                    model: model!);
 
                 return __httpRequest;
             }

@@ -129,7 +129,7 @@ namespace LangSmith
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Token}"),
+                                content: new global::System.Net.Http.StringContent(request.Token ?? string.Empty),
                                 name: "\"token\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(

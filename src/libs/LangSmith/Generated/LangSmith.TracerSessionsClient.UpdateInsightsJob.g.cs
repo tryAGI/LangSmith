@@ -162,8 +162,8 @@ namespace LangSmith
                 PrepareUpdateInsightsJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    jobId: jobId,
+                    sessionId: sessionId!,
+                    jobId: jobId!,
                     request: request);
 
                 return __httpRequest;

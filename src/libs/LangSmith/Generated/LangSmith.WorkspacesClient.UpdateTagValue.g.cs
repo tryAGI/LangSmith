@@ -158,8 +158,8 @@ namespace LangSmith
                 PrepareUpdateTagValueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tagKeyId: tagKeyId,
-                    tagValueId: tagValueId,
+                    tagKeyId: tagKeyId!,
+                    tagValueId: tagValueId!,
                     request: request);
 
                 return __httpRequest;

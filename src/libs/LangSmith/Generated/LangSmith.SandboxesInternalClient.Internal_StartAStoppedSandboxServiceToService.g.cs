@@ -148,8 +148,8 @@ namespace LangSmith
                 PrepareInternal_StartAStoppedSandboxServiceToServiceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name,
-                    xTenantId: xTenantId);
+                    name: name!,
+                    xTenantId: xTenantId!);
 
                 return __httpRequest;
             }

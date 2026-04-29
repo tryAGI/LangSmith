@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetAScimTokenRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    scimTokenId: scimTokenId);
+                    scimTokenId: scimTokenId!);
 
                 return __httpRequest;
             }

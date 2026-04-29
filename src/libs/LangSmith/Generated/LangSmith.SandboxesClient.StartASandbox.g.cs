@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareStartASandboxRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name);
+                    name: name!);
 
                 return __httpRequest;
             }

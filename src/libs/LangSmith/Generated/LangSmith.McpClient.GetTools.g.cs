@@ -169,7 +169,7 @@ namespace LangSmith
                 PrepareGetToolsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    url: url,
+                    url: url!,
                     oauthProviderId: oauthProviderId,
                     lsUserId: lsUserId,
                     forceRefresh: forceRefresh);

@@ -223,7 +223,7 @@ namespace LangSmith
                 PrepareReadSharedDatasetTracerSessionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     id: id,
                     name: name,
                     nameContains: nameContains,

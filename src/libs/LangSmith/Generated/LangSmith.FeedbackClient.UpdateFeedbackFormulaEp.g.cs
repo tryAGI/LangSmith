@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateFeedbackFormulaEpRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedbackFormulaId: feedbackFormulaId,
+                    feedbackFormulaId: feedbackFormulaId!,
                     request: request);
 
                 return __httpRequest;
