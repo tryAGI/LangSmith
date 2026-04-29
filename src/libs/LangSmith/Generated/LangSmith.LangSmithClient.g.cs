@@ -341,16 +341,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ForgeConfigurationsClient ForgeConfigurations => new ForgeConfigurationsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public HubEnvironmentsClient HubEnvironments => new HubEnvironmentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

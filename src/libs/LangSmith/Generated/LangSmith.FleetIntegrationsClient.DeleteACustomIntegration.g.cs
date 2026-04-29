@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class PlaygroundSettingsClient
+    public partial class FleetIntegrationsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_UpdatePlaygroundSettingsServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteACustomIntegrationServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdatePlaygroundSettingsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteACustomIntegrationSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,58 +34,45 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdatePlaygroundSettingsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_DeleteACustomIntegrationSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_UpdatePlaygroundSettingsSecurityRequirement0,
+            {                s_DeleteACustomIntegrationSecurityRequirement0,
             };
-        partial void PrepareUpdatePlaygroundSettingsArguments(
+        partial void PrepareDeleteACustomIntegrationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string playgroundSettingsId,
-            global::LangSmith.PlaygroundSettingsUpdateRequest request);
-        partial void PrepareUpdatePlaygroundSettingsRequest(
+            ref string id);
+        partial void PrepareDeleteACustomIntegrationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string playgroundSettingsId,
-            global::LangSmith.PlaygroundSettingsUpdateRequest request);
-        partial void ProcessUpdatePlaygroundSettingsResponse(
+            string id);
+        partial void ProcessDeleteACustomIntegrationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdatePlaygroundSettingsResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// Update Playground Settings<br/>
-        /// Update playground settings.
+        /// Delete a custom integration<br/>
+        /// Idempotent. Returns 204 whether or not the integration existed.
         /// </summary>
-        /// <param name="playgroundSettingsId"></param>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
-            string playgroundSettingsId,
-
-            global::LangSmith.PlaygroundSettingsUpdateRequest request,
+        public async global::System.Threading.Tasks.Task DeleteACustomIntegrationAsync(
+            string id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdatePlaygroundSettingsArguments(
+            PrepareDeleteACustomIntegrationArguments(
                 httpClient: HttpClient,
-                playgroundSettingsId: ref playgroundSettingsId,
-                request: request);
+                id: ref id);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_UpdatePlaygroundSettingsSecurityRequirements,
-                operationName: "UpdatePlaygroundSettingsAsync");
+                securityRequirements: s_DeleteACustomIntegrationSecurityRequirements,
+                operationName: "DeleteACustomIntegrationAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -104,9 +91,9 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/playground-settings/{playgroundSettingsId}",
+                                path: $"/v1/fleet/integrations/{id}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_UpdatePlaygroundSettingsServers,
+                                servers: s_DeleteACustomIntegrationServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -114,7 +101,7 @@ namespace LangSmith
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: new global::System.Net.Http.HttpMethod("PATCH"),
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -137,12 +124,6 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -151,11 +132,10 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareUpdatePlaygroundSettingsRequest(
+                PrepareDeleteACustomIntegrationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    playgroundSettingsId: playgroundSettingsId!,
-                    request: request);
+                    id: id!);
 
                 return __httpRequest;
             }
@@ -172,10 +152,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdatePlaygroundSettings",
-                                methodName: "UpdatePlaygroundSettingsAsync",
-                                pathTemplate: "$\"/api/v1/playground-settings/{playgroundSettingsId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "DeleteACustomIntegration",
+                                methodName: "DeleteACustomIntegrationAsync",
+                                pathTemplate: "$\"/v1/fleet/integrations/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -199,10 +179,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdatePlaygroundSettings",
-                                methodName: "UpdatePlaygroundSettingsAsync",
-                                pathTemplate: "$\"/api/v1/playground-settings/{playgroundSettingsId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "DeleteACustomIntegration",
+                                methodName: "DeleteACustomIntegrationAsync",
+                                pathTemplate: "$\"/v1/fleet/integrations/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -234,10 +214,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdatePlaygroundSettings",
-                                methodName: "UpdatePlaygroundSettingsAsync",
-                                pathTemplate: "$\"/api/v1/playground-settings/{playgroundSettingsId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "DeleteACustomIntegration",
+                                methodName: "DeleteACustomIntegrationAsync",
+                                pathTemplate: "$\"/v1/fleet/integrations/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -273,7 +253,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessUpdatePlaygroundSettingsResponse(
+                ProcessDeleteACustomIntegrationResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -281,10 +261,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdatePlaygroundSettings",
-                                methodName: "UpdatePlaygroundSettingsAsync",
-                                pathTemplate: "$\"/api/v1/playground-settings/{playgroundSettingsId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "DeleteACustomIntegration",
+                                methodName: "DeleteACustomIntegrationAsync",
+                                pathTemplate: "$\"/v1/fleet/integrations/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -301,10 +281,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdatePlaygroundSettings",
-                                methodName: "UpdatePlaygroundSettingsAsync",
-                                pathTemplate: "$\"/api/v1/playground-settings/{playgroundSettingsId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "DeleteACustomIntegration",
+                                methodName: "DeleteACustomIntegrationAsync",
+                                pathTemplate: "$\"/v1/fleet/integrations/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -316,38 +296,76 @@ namespace LangSmith
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // Unauthorized
+                            if ((int)__response.StatusCode == 401)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::LangSmith.IntegrationsErrorResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::LangSmith.IntegrationsErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_401 = global::LangSmith.IntegrationsErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
+                                throw new global::LangSmith.ApiException<global::LangSmith.IntegrationsErrorResponse>(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Forbidden
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.IntegrationsErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.IntegrationsErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.IntegrationsErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.IntegrationsErrorResponse>(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseObject = __value_403,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -367,18 +385,11 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessUpdatePlaygroundSettingsResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LangSmith.PlaygroundSettingsResponse.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -400,15 +411,6 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
-                #if NET5_0_OR_GREATER
-                                        __effectiveCancellationToken
-                #endif
-                                    ).ConfigureAwait(false);
-
-                                    return
-                                        await global::LangSmith.PlaygroundSettingsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -445,65 +447,6 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Update Playground Settings<br/>
-        /// Update playground settings.
-        /// </summary>
-        /// <param name="playgroundSettingsId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="settings"></param>
-        /// <param name="options"></param>
-        /// <param name="availableInPlayground"></param>
-        /// <param name="availableInEvaluators"></param>
-        /// <param name="availableInAgentBuilder"></param>
-        /// <param name="availableInPolly"></param>
-        /// <param name="availableInInsightsHeavy"></param>
-        /// <param name="availableInInsightsLight"></param>
-        /// <param name="availableInIssuesAgentHeavy"></param>
-        /// <param name="availableInIssuesAgentLight"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
-            string playgroundSettingsId,
-            string? name = default,
-            string? description = default,
-            object? settings = default,
-            global::LangSmith.PlaygroundSavedOptions? options = default,
-            bool? availableInPlayground = default,
-            bool? availableInEvaluators = default,
-            bool? availableInAgentBuilder = default,
-            bool? availableInPolly = default,
-            bool? availableInInsightsHeavy = default,
-            bool? availableInInsightsLight = default,
-            bool? availableInIssuesAgentHeavy = default,
-            bool? availableInIssuesAgentLight = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.PlaygroundSettingsUpdateRequest
-            {
-                Name = name,
-                Description = description,
-                Settings = settings,
-                Options = options,
-                AvailableInPlayground = availableInPlayground,
-                AvailableInEvaluators = availableInEvaluators,
-                AvailableInAgentBuilder = availableInAgentBuilder,
-                AvailableInPolly = availableInPolly,
-                AvailableInInsightsHeavy = availableInInsightsHeavy,
-                AvailableInInsightsLight = availableInInsightsLight,
-                AvailableInIssuesAgentHeavy = availableInIssuesAgentHeavy,
-                AvailableInIssuesAgentLight = availableInIssuesAgentLight,
-            };
-
-            return await UpdatePlaygroundSettingsAsync(
-                playgroundSettingsId: playgroundSettingsId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -256,6 +256,13 @@ namespace LangSmith
         public bool? LgpTemplatesEnabled { get; set; }
 
         /// <summary>
+        /// LLMGatewayEnabled indicates whether this org can use the LLM Gateway<br/>
+        /// (admin UI and gateway policies).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_gateway_enabled")]
+        public bool? LlmGatewayEnabled { get; set; }
+
+        /// <summary>
         /// MaxAgentBuilderAssistants is the maximum number of Agent Builder assistants allowed for this org.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_agent_builder_assistants")]
@@ -527,6 +534,10 @@ namespace LangSmith
         /// <param name="lgpTemplatesEnabled">
         /// LgpTemplatesEnabled indicates whether to enable LGP templates for this org.
         /// </param>
+        /// <param name="llmGatewayEnabled">
+        /// LLMGatewayEnabled indicates whether this org can use the LLM Gateway<br/>
+        /// (admin UI and gateway policies).
+        /// </param>
         /// <param name="maxAgentBuilderAssistants">
         /// MaxAgentBuilderAssistants is the maximum number of Agent Builder assistants allowed for this org.
         /// </param>
@@ -644,6 +655,7 @@ namespace LangSmith
             bool? langsmithDeploymentDistributedRuntimeEnabled,
             bool? langsmithDeploymentDrEnabledDev,
             bool? lgpTemplatesEnabled,
+            bool? llmGatewayEnabled,
             int? maxAgentBuilderAssistants,
             int? maxAgentBuilderRuns,
             int? maxFreeLanggraphCloudDeployments,
@@ -709,6 +721,7 @@ namespace LangSmith
             this.LangsmithDeploymentDistributedRuntimeEnabled = langsmithDeploymentDistributedRuntimeEnabled;
             this.LangsmithDeploymentDrEnabledDev = langsmithDeploymentDrEnabledDev;
             this.LgpTemplatesEnabled = lgpTemplatesEnabled;
+            this.LlmGatewayEnabled = llmGatewayEnabled;
             this.MaxAgentBuilderAssistants = maxAgentBuilderAssistants;
             this.MaxAgentBuilderRuns = maxAgentBuilderRuns;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;

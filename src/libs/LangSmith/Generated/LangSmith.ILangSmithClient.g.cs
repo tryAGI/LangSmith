@@ -219,11 +219,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ForgeConfigurationsClient ForgeConfigurations { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public HubEnvironmentsClient HubEnvironments { get; }
 
         /// <summary>
