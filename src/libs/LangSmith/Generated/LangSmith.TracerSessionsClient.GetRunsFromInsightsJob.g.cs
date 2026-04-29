@@ -184,8 +184,8 @@ namespace LangSmith
                 PrepareGetRunsFromInsightsJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    jobId: jobId,
+                    sessionId: sessionId!,
+                    jobId: jobId!,
                     clusterId: clusterId,
                     limit: limit,
                     offset: offset,

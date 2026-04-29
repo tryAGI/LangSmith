@@ -178,7 +178,7 @@ namespace LangSmith
                 PrepareReadRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    runId: runId,
+                    runId: runId!,
                     sessionId: sessionId,
                     startTime: startTime,
                     excludeS3StoredAttributes: excludeS3StoredAttributes,

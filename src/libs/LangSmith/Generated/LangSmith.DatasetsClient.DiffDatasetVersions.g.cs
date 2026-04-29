@@ -154,9 +154,9 @@ namespace LangSmith
                 PrepareDiffDatasetVersionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
-                    fromVersion: fromVersion,
-                    toVersion: toVersion);
+                    datasetId: datasetId!,
+                    fromVersion: fromVersion!,
+                    toVersion: toVersion!);
 
                 return __httpRequest;
             }

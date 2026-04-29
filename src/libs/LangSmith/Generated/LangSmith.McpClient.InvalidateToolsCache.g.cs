@@ -157,7 +157,7 @@ namespace LangSmith
                 PrepareInvalidateToolsCacheRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    url: url,
+                    url: url!,
                     oauthProviderId: oauthProviderId,
                     lsUserId: lsUserId);
 

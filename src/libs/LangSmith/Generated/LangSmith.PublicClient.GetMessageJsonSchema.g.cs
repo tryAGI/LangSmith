@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareGetMessageJsonSchemaRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    version: version);
+                    version: version!);
 
                 return __httpRequest;
             }

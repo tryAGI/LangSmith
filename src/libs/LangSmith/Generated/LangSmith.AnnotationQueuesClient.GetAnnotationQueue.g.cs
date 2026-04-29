@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareGetAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId);
+                    queueId: queueId!);
 
                 return __httpRequest;
             }

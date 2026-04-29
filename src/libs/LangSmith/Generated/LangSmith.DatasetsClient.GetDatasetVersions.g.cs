@@ -170,7 +170,7 @@ namespace LangSmith
                 PrepareGetDatasetVersionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     search: search,
                     example: example,
                     limit: limit,

@@ -150,7 +150,7 @@ namespace LangSmith
                 PrepareGetDashboardRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    type: type,
+                    type: type!,
                     colorScheme: colorScheme);
 
                 return __httpRequest;

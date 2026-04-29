@@ -148,8 +148,8 @@ namespace LangSmith
                 PrepareDeleteInsightsJobConfigRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    configId: configId);
+                    sessionId: sessionId!,
+                    configId: configId!);
 
                 return __httpRequest;
             }

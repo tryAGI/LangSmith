@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteFeedbackConfigEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedbackKey: feedbackKey);
+                    feedbackKey: feedbackKey!);
 
                 return __httpRequest;
             }

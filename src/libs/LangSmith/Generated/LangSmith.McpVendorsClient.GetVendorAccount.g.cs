@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetVendorAccountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vendorSlug: vendorSlug);
+                    vendorSlug: vendorSlug!);
 
                 return __httpRequest;
             }

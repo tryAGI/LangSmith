@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareDeleteOrgPersonalAccessTokenRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    patId: patId);
+                    patId: patId!);
 
                 return __httpRequest;
             }

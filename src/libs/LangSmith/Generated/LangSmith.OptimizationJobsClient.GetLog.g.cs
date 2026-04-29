@@ -155,10 +155,10 @@ namespace LangSmith
                 PrepareGetLogRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    logId: logId,
-                    owner: owner,
-                    repo: repo,
-                    jobId: jobId);
+                    logId: logId!,
+                    owner: owner!,
+                    repo: repo!,
+                    jobId: jobId!);
 
                 return __httpRequest;
             }

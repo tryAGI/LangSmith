@@ -140,8 +140,8 @@ namespace LangSmith
                 PrepareRemoveAReviewerFromAnAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId,
-                    identityId: identityId);
+                    queueId: queueId!,
+                    identityId: identityId!);
 
                 return __httpRequest;
             }

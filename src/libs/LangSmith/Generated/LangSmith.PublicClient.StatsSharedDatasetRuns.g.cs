@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareStatsSharedDatasetRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     request: request);
 
                 return __httpRequest;

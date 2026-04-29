@@ -150,7 +150,7 @@ namespace LangSmith
                 PrepareGetSharedRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     excludeS3StoredAttributes: excludeS3StoredAttributes);
 
                 return __httpRequest;

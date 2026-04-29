@@ -163,7 +163,7 @@ namespace LangSmith
                 PrepareReadSharedDeltaStreamRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     request: request);
 
                 return __httpRequest;

@@ -145,8 +145,8 @@ namespace LangSmith
                 PrepareDeleteAnAlertRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    alertRuleId: alertRuleId);
+                    sessionId: sessionId!,
+                    alertRuleId: alertRuleId!);
 
                 return __httpRequest;
             }

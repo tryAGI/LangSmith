@@ -135,7 +135,7 @@ namespace LangSmith
                 PrepareDeleteDefaultModelForAFeatureRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feature: feature);
+                    feature: feature!);
 
                 return __httpRequest;
             }

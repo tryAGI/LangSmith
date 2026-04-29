@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetTheAuthenticatedUsersProviderUserIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    providerType: providerType);
+                    providerType: providerType!);
 
                 return __httpRequest;
             }

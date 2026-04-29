@@ -150,7 +150,7 @@ namespace LangSmith
                 PrepareGetDatasetSplitsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     asOf: asOf);
 
                 return __httpRequest;

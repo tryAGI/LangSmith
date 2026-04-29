@@ -155,8 +155,8 @@ namespace LangSmith
                 PrepareGetRunFromAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId,
-                    index: index,
+                    queueId: queueId!,
+                    index: index!,
                     includeExtra: includeExtra);
 
                 return __httpRequest;

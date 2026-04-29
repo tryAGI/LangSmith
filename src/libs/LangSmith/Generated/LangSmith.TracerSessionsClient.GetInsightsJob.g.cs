@@ -148,8 +148,8 @@ namespace LangSmith
                 PrepareGetInsightsJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
-                    jobId: jobId);
+                    sessionId: sessionId!,
+                    jobId: jobId!);
 
                 return __httpRequest;
             }

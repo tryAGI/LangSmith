@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteUsageLimitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    usageLimitId: usageLimitId);
+                    usageLimitId: usageLimitId!);
 
                 return __httpRequest;
             }

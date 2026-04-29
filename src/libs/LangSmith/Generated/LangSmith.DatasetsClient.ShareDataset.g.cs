@@ -150,7 +150,7 @@ namespace LangSmith
                 PrepareShareDatasetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     shareProjects: shareProjects);
 
                 return __httpRequest;

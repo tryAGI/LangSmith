@@ -139,7 +139,7 @@ namespace LangSmith
                 PrepareDeleteCurrentWorkspacePendingMemberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identityId: identityId);
+                    identityId: identityId!);
 
                 return __httpRequest;
             }

@@ -153,7 +153,7 @@ namespace LangSmith
                 PrepareGetTotalArchivedFromAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId,
+                    queueId: queueId!,
                     startTime: startTime,
                     endTime: endTime);
 

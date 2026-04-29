@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteChartRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    chartId: chartId);
+                    chartId: chartId!);
 
                 return __httpRequest;
             }

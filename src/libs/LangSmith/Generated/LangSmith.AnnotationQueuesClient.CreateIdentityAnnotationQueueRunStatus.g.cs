@@ -153,7 +153,7 @@ namespace LangSmith
                 PrepareCreateIdentityAnnotationQueueRunStatusRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    annotationQueueRunId: annotationQueueRunId,
+                    annotationQueueRunId: annotationQueueRunId!,
                     request: request);
 
                 return __httpRequest;

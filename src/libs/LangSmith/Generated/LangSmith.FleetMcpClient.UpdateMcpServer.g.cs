@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateMcpServerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    mcpServerId: mcpServerId,
+                    mcpServerId: mcpServerId!,
                     request: request);
 
                 return __httpRequest;

@@ -135,7 +135,7 @@ namespace LangSmith
                 PrepareDeleteAnAccessPolicyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    accessPolicyId: accessPolicyId);
+                    accessPolicyId: accessPolicyId!);
 
                 return __httpRequest;
             }

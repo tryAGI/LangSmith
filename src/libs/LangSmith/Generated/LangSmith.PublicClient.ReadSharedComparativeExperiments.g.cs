@@ -187,7 +187,7 @@ namespace LangSmith
                 PrepareReadSharedComparativeExperimentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     name: name,
                     nameContains: nameContains,
                     offset: offset,

@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareGetDatasetVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     asOf: asOf,
                     tag: tag);
 

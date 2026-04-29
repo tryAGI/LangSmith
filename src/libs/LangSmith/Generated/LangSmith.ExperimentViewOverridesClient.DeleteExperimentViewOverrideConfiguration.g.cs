@@ -148,8 +148,8 @@ namespace LangSmith
                 PrepareDeleteExperimentViewOverrideConfigurationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
-                    id: id);
+                    datasetId: datasetId!,
+                    id: id!);
 
                 return __httpRequest;
             }

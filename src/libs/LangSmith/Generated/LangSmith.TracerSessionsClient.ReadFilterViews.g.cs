@@ -148,7 +148,7 @@ namespace LangSmith
                 PrepareReadFilterViewsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     type: type);
 
                 return __httpRequest;

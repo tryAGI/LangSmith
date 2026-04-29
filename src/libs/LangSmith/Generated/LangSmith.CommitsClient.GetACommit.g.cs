@@ -188,9 +188,9 @@ namespace LangSmith
                 PrepareGetACommitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    commit: commit,
+                    owner: owner!,
+                    repo: repo!,
+                    commit: commit!,
                     getExamples: getExamples,
                     include: include,
                     includeModel: includeModel,

@@ -157,7 +157,7 @@ namespace LangSmith
                 PrepareReadExampleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    exampleId: exampleId,
+                    exampleId: exampleId!,
                     asOf: asOf,
                     dataset: dataset);
 

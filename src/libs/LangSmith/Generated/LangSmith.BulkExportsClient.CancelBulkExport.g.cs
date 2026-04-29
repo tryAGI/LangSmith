@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareCancelBulkExportRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    bulkExportId: bulkExportId,
+                    bulkExportId: bulkExportId!,
                     request: request);
 
                 return __httpRequest;

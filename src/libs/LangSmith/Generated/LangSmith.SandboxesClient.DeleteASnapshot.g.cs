@@ -135,7 +135,7 @@ namespace LangSmith
                 PrepareDeleteASnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    snapshotId: snapshotId);
+                    snapshotId: snapshotId!);
 
                 return __httpRequest;
             }

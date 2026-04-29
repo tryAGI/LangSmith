@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareAddAReviewerToAnAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId,
+                    queueId: queueId!,
                     request: request);
 
                 return __httpRequest;

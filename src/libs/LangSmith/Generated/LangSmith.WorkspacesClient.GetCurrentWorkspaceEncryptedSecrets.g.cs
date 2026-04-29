@@ -162,7 +162,7 @@ namespace LangSmith
                 PrepareGetCurrentWorkspaceEncryptedSecretsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    service: service,
+                    service: service!,
                     keyNames: keyNames,
                     expandIamRole: expandIamRole);
 

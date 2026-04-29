@@ -158,8 +158,8 @@ namespace LangSmith
                 PrepareUpdateRunInAnnotationQueueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueId: queueId,
-                    queueRunId: queueRunId,
+                    queueId: queueId!,
+                    queueRunId: queueRunId!,
                     request: request);
 
                 return __httpRequest;

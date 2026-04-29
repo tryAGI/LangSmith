@@ -146,7 +146,7 @@ namespace LangSmith
                 PrepareUpdateOnboardingStateFieldRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    field: field);
+                    field: field!);
 
                 return __httpRequest;
             }

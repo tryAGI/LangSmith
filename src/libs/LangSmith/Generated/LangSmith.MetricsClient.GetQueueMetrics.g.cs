@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareGetQueueMetricsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueName: queueName);
+                    queueName: queueName!);
 
                 return __httpRequest;
             }

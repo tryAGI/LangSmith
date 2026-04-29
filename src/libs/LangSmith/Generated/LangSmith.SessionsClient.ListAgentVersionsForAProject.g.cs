@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareListAgentVersionsForAProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionID: sessionID);
+                    sessionID: sessionID!);
 
                 return __httpRequest;
             }

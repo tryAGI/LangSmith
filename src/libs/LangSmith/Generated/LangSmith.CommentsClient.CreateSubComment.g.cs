@@ -163,9 +163,9 @@ namespace LangSmith
                 PrepareCreateSubCommentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    parentCommentId: parentCommentId,
+                    owner: owner!,
+                    repo: repo!,
+                    parentCommentId: parentCommentId!,
                     request: request);
 
                 return __httpRequest;

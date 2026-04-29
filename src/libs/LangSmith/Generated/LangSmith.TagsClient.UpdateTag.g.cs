@@ -164,9 +164,9 @@ namespace LangSmith
                 PrepareUpdateTagRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    tagName: tagName,
+                    owner: owner!,
+                    repo: repo!,
+                    tagName: tagName!,
                     request: request);
 
                 return __httpRequest;

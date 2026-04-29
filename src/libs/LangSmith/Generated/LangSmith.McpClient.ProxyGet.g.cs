@@ -158,7 +158,7 @@ namespace LangSmith
                 PrepareProxyGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    url: url,
+                    url: url!,
                     acceptStream: acceptStream,
                     timeout: timeout);
 

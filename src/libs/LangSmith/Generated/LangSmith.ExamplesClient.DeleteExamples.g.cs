@@ -143,7 +143,7 @@ namespace LangSmith
                 PrepareDeleteExamplesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    exampleIds: exampleIds);
+                    exampleIds: exampleIds!);
 
                 return __httpRequest;
             }

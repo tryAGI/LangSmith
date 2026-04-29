@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareCreateVendorSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vendorSlug: vendorSlug,
+                    vendorSlug: vendorSlug!,
                     request: request);
 
                 return __httpRequest;

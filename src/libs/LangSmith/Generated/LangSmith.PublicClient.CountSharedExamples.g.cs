@@ -169,7 +169,7 @@ namespace LangSmith
                 PrepareCountSharedExamplesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     id: id,
                     asOf: asOf,
                     metadata: metadata,

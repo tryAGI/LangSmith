@@ -170,7 +170,7 @@ namespace LangSmith
                 PrepareReadTracerSessionsRunsMetadataRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     metadataKeys: metadataKeys,
                     startTime: startTime,
                     k: k,

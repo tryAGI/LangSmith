@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdateExampleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    exampleId: exampleId,
+                    exampleId: exampleId!,
                     request: request);
 
                 return __httpRequest;

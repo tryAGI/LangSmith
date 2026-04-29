@@ -145,8 +145,8 @@ namespace LangSmith
                 PrepareGetBulkExportRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    bulkExportId: bulkExportId,
-                    runId: runId);
+                    bulkExportId: bulkExportId!,
+                    runId: runId!);
 
                 return __httpRequest;
             }

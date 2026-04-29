@@ -148,7 +148,7 @@ namespace LangSmith
                 PrepareReadFeedbackRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedbackId: feedbackId,
+                    feedbackId: feedbackId!,
                     includeUserNames: includeUserNames);
 
                 return __httpRequest;

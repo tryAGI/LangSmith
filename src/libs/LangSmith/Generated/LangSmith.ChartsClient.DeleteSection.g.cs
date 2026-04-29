@@ -140,7 +140,7 @@ namespace LangSmith
                 PrepareDeleteSectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sectionId: sectionId);
+                    sectionId: sectionId!);
 
                 return __httpRequest;
             }

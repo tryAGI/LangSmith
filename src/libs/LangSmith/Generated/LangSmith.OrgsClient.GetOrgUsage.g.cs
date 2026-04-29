@@ -156,8 +156,8 @@ namespace LangSmith
                 PrepareGetOrgUsageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startingOn: startingOn,
-                    endingBefore: endingBefore,
+                    startingOn: startingOn!,
+                    endingBefore: endingBefore!,
                     onCurrentPlan: onCurrentPlan);
 
                 return __httpRequest;

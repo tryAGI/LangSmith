@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareUpdatePlaygroundSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    playgroundSettingsId: playgroundSettingsId,
+                    playgroundSettingsId: playgroundSettingsId!,
                     request: request);
 
                 return __httpRequest;

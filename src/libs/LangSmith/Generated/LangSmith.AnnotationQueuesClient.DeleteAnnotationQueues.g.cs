@@ -146,7 +146,7 @@ namespace LangSmith
                 PrepareDeleteAnnotationQueuesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    queueIds: queueIds);
+                    queueIds: queueIds!);
 
                 return __httpRequest;
             }

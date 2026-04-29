@@ -206,7 +206,7 @@ namespace LangSmith
                 PrepareReadSharedDatasetFeedbackRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken,
+                    shareToken: shareToken!,
                     run: run,
                     key: key,
                     session: session,

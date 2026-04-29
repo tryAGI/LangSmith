@@ -164,9 +164,9 @@ namespace LangSmith
                 PrepareUpdateJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
-                    owner: owner,
-                    repo: repo,
+                    jobId: jobId!,
+                    owner: owner!,
+                    repo: repo!,
                     request: request);
 
                 return __httpRequest;

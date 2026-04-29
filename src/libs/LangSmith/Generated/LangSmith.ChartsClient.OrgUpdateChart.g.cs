@@ -154,7 +154,7 @@ namespace LangSmith
                 PrepareOrgUpdateChartRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    chartId: chartId,
+                    chartId: chartId!,
                     request: request);
 
                 return __httpRequest;

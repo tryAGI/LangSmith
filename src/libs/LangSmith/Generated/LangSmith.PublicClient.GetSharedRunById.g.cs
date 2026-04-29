@@ -155,8 +155,8 @@ namespace LangSmith
                 PrepareGetSharedRunByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
-                    shareToken: shareToken,
+                    id: id!,
+                    shareToken: shareToken!,
                     excludeS3StoredAttributes: excludeS3StoredAttributes);
 
                 return __httpRequest;
