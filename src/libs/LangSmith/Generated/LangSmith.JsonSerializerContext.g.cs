@@ -425,9 +425,17 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter),
 
-            typeof(global::LangSmith.JsonConverters.IntegrationsIntegrationTypeJsonConverter),
+            typeof(global::LangSmith.JsonConverters.IntegrationsAuthTypeJsonConverter),
 
-            typeof(global::LangSmith.JsonConverters.IntegrationsIntegrationTypeNullableJsonConverter),
+            typeof(global::LangSmith.JsonConverters.IntegrationsAuthTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsMatchByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsMatchByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsTransportJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsTransportNullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeJsonConverter),
 
@@ -1437,12 +1445,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeaturesErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeaturesFeatureConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeaturesUpsertDefaultModelRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ForgeConfigurationsCreateForgeConfigurationRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ForgeConfigurationsErrorResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ForgeConfigurationsForgeConfiguration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ForgeConfigurationsForgePR))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ForgeConfigurationsForgePRUser))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ForgeConfigurationsUpdateForgeConfigurationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppInstallLinkResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppInstallation))]
@@ -1467,13 +1469,18 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsAgentBuilderIntegrationsUpdatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IntegrationsIntegrationOverrideUpdate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsIntegrationOverrideUpdate))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsAuthInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsAuthMethod))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsProviderMatch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsAuthType), TypeInfoPropertyName = "IntegrationsAuthType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsIntegration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthInfo>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsIntegrationType), TypeInfoPropertyName = "IntegrationsIntegrationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthMethod>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsTransport), TypeInfoPropertyName = "IntegrationsTransport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IntegrationsIntegration>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsMatchBy), TypeInfoPropertyName = "IntegrationsMatchBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IntegrationsUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.LangchainComSmithFleetMcpServersAuthType), TypeInfoPropertyName = "LangchainComSmithFleetMcpServersAuthType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.LangchainComSmithFleetMcpServersCreateMcpServerPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.LangchainComSmithFleetMcpServersOAuthMode), TypeInfoPropertyName = "LangchainComSmithFleetMcpServersOAuthMode2")]
@@ -1713,8 +1720,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GithubAppRepository>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ForgeConfigurationsForgeConfiguration>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ForgeConfigurationsForgePR>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OrgsOrgMemberEnriched>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionsAgentVersionResponse>))]
@@ -1814,7 +1819,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsIntegrationCatalogEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsIntegrationOverride>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsIntegrationOverrideUpdate>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsAuthInfo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsAuthMethod>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsIntegration>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.McpVendorsArcadeAccountOrg>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.McpVendorsArcadeAccountProject>))]
@@ -1915,8 +1920,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GithubAppInstallation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GithubAppRepository>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ForgeConfigurationsForgeConfiguration>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ForgeConfigurationsForgePR>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OrgsOrgMemberEnriched>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ScimScimTokenResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TracerSessionsAgentVersionResponse>))]

@@ -34,6 +34,8 @@ namespace LangSmith
         /// <param name="availableInPolly"></param>
         /// <param name="availableInInsightsHeavy"></param>
         /// <param name="availableInInsightsLight"></param>
+        /// <param name="availableInIssuesAgentHeavy"></param>
+        /// <param name="availableInIssuesAgentLight"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -49,6 +51,8 @@ namespace LangSmith
             bool? availableInPolly = default,
             bool? availableInInsightsHeavy = default,
             bool? availableInInsightsLight = default,
+            bool? availableInIssuesAgentHeavy = default,
+            bool? availableInIssuesAgentLight = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

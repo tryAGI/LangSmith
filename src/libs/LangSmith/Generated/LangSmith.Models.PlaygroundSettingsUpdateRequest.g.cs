@@ -69,6 +69,18 @@ namespace LangSmith
         public bool? AvailableInInsightsLight { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_issues_agent_heavy")]
+        public bool? AvailableInIssuesAgentHeavy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_issues_agent_light")]
+        public bool? AvailableInIssuesAgentLight { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -87,6 +99,8 @@ namespace LangSmith
         /// <param name="availableInPolly"></param>
         /// <param name="availableInInsightsHeavy"></param>
         /// <param name="availableInInsightsLight"></param>
+        /// <param name="availableInIssuesAgentHeavy"></param>
+        /// <param name="availableInIssuesAgentLight"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +114,9 @@ namespace LangSmith
             bool? availableInAgentBuilder,
             bool? availableInPolly,
             bool? availableInInsightsHeavy,
-            bool? availableInInsightsLight)
+            bool? availableInInsightsLight,
+            bool? availableInIssuesAgentHeavy,
+            bool? availableInIssuesAgentLight)
         {
             this.Name = name;
             this.Description = description;
@@ -112,6 +128,8 @@ namespace LangSmith
             this.AvailableInPolly = availableInPolly;
             this.AvailableInInsightsHeavy = availableInInsightsHeavy;
             this.AvailableInInsightsLight = availableInInsightsLight;
+            this.AvailableInIssuesAgentHeavy = availableInIssuesAgentHeavy;
+            this.AvailableInIssuesAgentLight = availableInIssuesAgentLight;
         }
 
         /// <summary>

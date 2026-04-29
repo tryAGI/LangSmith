@@ -11,8 +11,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("auth")]
-        public global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthInfo>? Auth { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_methods")]
+        public global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthMethod>? AuthMethods { get; set; }
 
         /// <summary>
         /// 
@@ -59,15 +59,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("required_scopes")]
-        public global::System.Collections.Generic.IList<string>? RequiredScopes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        public string? Source { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.IntegrationsIntegrationTypeJsonConverter))]
-        public global::LangSmith.IntegrationsIntegrationType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.IntegrationsTransportJsonConverter))]
+        public global::LangSmith.IntegrationsTransport? Transport { get; set; }
 
         /// <summary>
         /// 
@@ -90,7 +90,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegrationsIntegration" /> class.
         /// </summary>
-        /// <param name="auth"></param>
+        /// <param name="authMethods"></param>
         /// <param name="category"></param>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
@@ -98,15 +98,15 @@ namespace LangSmith
         /// <param name="iconUrl"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="requiredScopes"></param>
-        /// <param name="type"></param>
+        /// <param name="source"></param>
+        /// <param name="transport"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public IntegrationsIntegration(
-            global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthInfo>? auth,
+            global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthMethod>? authMethods,
             string? category,
             string? createdAt,
             string? description,
@@ -114,12 +114,12 @@ namespace LangSmith
             string? iconUrl,
             string? id,
             string? name,
-            global::System.Collections.Generic.IList<string>? requiredScopes,
-            global::LangSmith.IntegrationsIntegrationType? type,
+            string? source,
+            global::LangSmith.IntegrationsTransport? transport,
             string? updatedAt,
             string? url)
         {
-            this.Auth = auth;
+            this.AuthMethods = authMethods;
             this.Category = category;
             this.CreatedAt = createdAt;
             this.Description = description;
@@ -127,8 +127,8 @@ namespace LangSmith
             this.IconUrl = iconUrl;
             this.Id = id;
             this.Name = name;
-            this.RequiredScopes = requiredScopes;
-            this.Type = type;
+            this.Source = source;
+            this.Transport = transport;
             this.UpdatedAt = updatedAt;
             this.Url = url;
         }

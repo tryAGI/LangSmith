@@ -399,6 +399,12 @@ namespace LangSmith
         public bool? IpAllowlistEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_gateway_enabled")]
+        public bool? LlmGatewayEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -594,6 +600,9 @@ namespace LangSmith
         /// <param name="ipAllowlistEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="llmGatewayEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -662,7 +671,8 @@ namespace LangSmith
             bool? enableBurndownVsCommitView,
             int? maxAgentBuilderRuns,
             bool? langsmithDeploymentDrEnabledDev,
-            bool? ipAllowlistEnabled)
+            bool? ipAllowlistEnabled,
+            bool? llmGatewayEnabled)
         {
             this.PlanTier = planTier;
             this.MaxIdentities = maxIdentities;
@@ -729,6 +739,7 @@ namespace LangSmith
             this.MaxAgentBuilderRuns = maxAgentBuilderRuns;
             this.LangsmithDeploymentDrEnabledDev = langsmithDeploymentDrEnabledDev;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
+            this.LlmGatewayEnabled = llmGatewayEnabled;
         }
 
         /// <summary>

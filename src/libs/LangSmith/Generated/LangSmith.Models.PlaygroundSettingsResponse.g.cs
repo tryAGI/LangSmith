@@ -110,6 +110,18 @@ namespace LangSmith
         public bool? AvailableInInsightsLight { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_issues_agent_heavy")]
+        public bool? AvailableInIssuesAgentHeavy { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_issues_agent_light")]
+        public bool? AvailableInIssuesAgentLight { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -148,6 +160,12 @@ namespace LangSmith
         /// <param name="availableInInsightsLight">
         /// Default Value: false
         /// </param>
+        /// <param name="availableInIssuesAgentHeavy">
+        /// Default Value: false
+        /// </param>
+        /// <param name="availableInIssuesAgentLight">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -167,7 +185,9 @@ namespace LangSmith
             bool? availableInAgentBuilder,
             bool? availableInPolly,
             bool? availableInInsightsHeavy,
-            bool? availableInInsightsLight)
+            bool? availableInInsightsLight,
+            bool? availableInIssuesAgentHeavy,
+            bool? availableInIssuesAgentLight)
         {
             this.Id = id;
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
@@ -185,6 +205,8 @@ namespace LangSmith
             this.AvailableInPolly = availableInPolly;
             this.AvailableInInsightsHeavy = availableInInsightsHeavy;
             this.AvailableInInsightsLight = availableInInsightsLight;
+            this.AvailableInIssuesAgentHeavy = availableInIssuesAgentHeavy;
+            this.AvailableInIssuesAgentLight = availableInIssuesAgentLight;
         }
 
         /// <summary>
