@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class ThreadsClient
+    public partial class RunsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_QueryThreadsServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_QueryRunsServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_QueryThreadsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_QueryRunsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,39 +34,46 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_QueryThreadsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_QueryRunsSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_QueryThreadsSecurityRequirement0,
+            {                s_QueryRunsSecurityRequirement0,
             };
-        partial void PrepareQueryThreadsArguments(
+        partial void PrepareQueryRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.ThreadsQueryThreadsRequestBody request);
-        partial void PrepareQueryThreadsRequest(
+            ref string? accept,
+            ref string? contentType,
+            global::LangSmith.QueryQueryRunsRequestBody request);
+        partial void PrepareQueryRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ThreadsQueryThreadsRequestBody request);
-        partial void ProcessQueryThreadsResponse(
+            string? accept,
+            string? contentType,
+            global::LangSmith.QueryQueryRunsRequestBody request);
+        partial void ProcessQueryRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessQueryThreadsResponseContent(
+        partial void ProcessQueryRunsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Query Threads<br/>
+        /// Query runs<br/>
         /// **Alpha:** The request and response contract may change;<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filter.
+        /// Returns a paginated list of runs for the given projects within min/max start_time. Supports filters, cursor pagination, and `selects` to select fields to return.
         /// </summary>
+        /// <param name="accept"></param>
+        /// <param name="contentType"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryRunsResponseBody> QueryRunsAsync(
 
-            global::LangSmith.ThreadsQueryThreadsRequestBody request,
+            global::LangSmith.QueryQueryRunsRequestBody request,
+            string? accept = default,
+            string? contentType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,15 +81,17 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareQueryThreadsArguments(
+            PrepareQueryRunsArguments(
                 httpClient: HttpClient,
+                accept: ref accept,
+                contentType: ref contentType,
                 request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_QueryThreadsSecurityRequirements,
-                operationName: "QueryThreadsAsync");
+                securityRequirements: s_QueryRunsSecurityRequirements,
+                operationName: "QueryRunsAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -101,9 +110,9 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/threads/query",
+                                path: "/v2/runs/query",
                                 baseUri: ResolveBaseUri(
-                                servers: s_QueryThreadsServers,
+                                servers: s_QueryRunsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -134,6 +143,16 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept.ToString());
+            }
+            if (contentType != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Content-Type", contentType.ToString());
+            }
+
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,
@@ -148,9 +167,11 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareQueryThreadsRequest(
+                PrepareQueryRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accept: accept,
+                    contentType: contentType,
                     request: request);
 
                 return __httpRequest;
@@ -168,9 +189,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
+                                operationId: "QueryRuns",
+                                methodName: "QueryRunsAsync",
+                                pathTemplate: "\"/v2/runs/query\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,9 +216,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
+                                operationId: "QueryRuns",
+                                methodName: "QueryRunsAsync",
+                                pathTemplate: "\"/v2/runs/query\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,9 +251,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
+                                operationId: "QueryRuns",
+                                methodName: "QueryRunsAsync",
+                                pathTemplate: "\"/v2/runs/query\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -269,7 +290,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessQueryThreadsResponse(
+                ProcessQueryRunsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -277,9 +298,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
+                                operationId: "QueryRuns",
+                                methodName: "QueryRunsAsync",
+                                pathTemplate: "\"/v2/runs/query\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -297,9 +318,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
+                                operationId: "QueryRuns",
+                                methodName: "QueryRunsAsync",
+                                pathTemplate: "\"/v2/runs/query\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -350,76 +371,38 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Forbidden
-                            if ((int)__response.StatusCode == 403)
+                            // Unauthorized
+                            if ((int)__response.StatusCode == 401)
                             {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_403 = null;
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::System.Collections.Generic.Dictionary<string, string>? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_403 = __ex;
+                                    __exception_401 = __ex;
                                 }
 
                                 throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // Unprocessable Entity
-                            if ((int)__response.StatusCode == 422)
-                            {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_422 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_422 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_422 = __ex;
-                                }
-
-                                throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -439,7 +422,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessQueryThreadsResponseContent(
+                                ProcessQueryRunsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -449,7 +432,7 @@ namespace LangSmith
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LangSmith.ThreadsQueryThreadsResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                        global::LangSmith.QueryQueryRunsResponseBody.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -479,7 +462,7 @@ namespace LangSmith
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LangSmith.ThreadsQueryThreadsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::LangSmith.QueryQueryRunsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -519,58 +502,138 @@ namespace LangSmith
             }
         }
         /// <summary>
-        /// Query Threads<br/>
+        /// Query runs<br/>
         /// **Alpha:** The request and response contract may change;<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filter.
+        /// Returns a paginated list of runs for the given projects within min/max start_time. Supports filters, cursor pagination, and `selects` to select fields to return.
         /// </summary>
+        /// <param name="accept"></param>
+        /// <param name="contentType"></param>
+        /// <param name="aiQuery">
+        /// `ai_query` is a natural-language query to filter runs using AI.<br/>
+        /// Example: runs that used tool calls
+        /// </param>
         /// <param name="cursor">
-        /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
+        /// `cursor` is the opaque string from a previous response's `next_cursor`.<br/>
+        /// Example: eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=
         /// </param>
         /// <param name="filter">
-        /// `filter` narrows which threads are returned, using a LangSmith filter expression evaluated against each thread's root run.<br/>
-        /// For example: has(tags, "production") or eq(status, "error").<br/>
-        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.
+        /// `filter` narrows results to runs matching this LangSmith filter expression, evaluated against each individual run.<br/>
+        /// For example: and(eq(run_type, "llm"), gt(latency, 5)) or eq(status, "error").<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: and(eq(run_type, "llm"), gt(latency, 5))
+        /// </param>
+        /// <param name="hasError">
+        /// `has_error` filters to runs that errored (true) or completed without error (false).<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="ids">
+        /// `ids` optionally limits the request to these run UUIDs.<br/>
+        /// Example: [018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, f47ac10b-58cc-4372-a567-0e02b2c3d479]
+        /// </param>
+        /// <param name="isRoot">
+        /// `is_root` returns only root runs (true) or only non-root runs (false).<br/>
+        /// Example: true
         /// </param>
         /// <param name="maxStartTime">
-        /// `max_start_time` is the inclusive upper bound on thread activity (RFC3339 date-time).
+        /// `max_start_time` is the upper bound for run `start_time` (RFC3339). Defaults to now.<br/>
+        /// Example: 2024-12-31T23:59:59Z
         /// </param>
         /// <param name="minStartTime">
-        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time).
+        /// `min_start_time` is the lower bound for run `start_time` (RFC3339). Defaults to 1 day ago.<br/>
+        /// Example: 2024-01-01T00:00:00Z
         /// </param>
         /// <param name="pageSize">
-        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `has_more` is true.<br/>
-        /// Default Value: 20<br/>
-        /// Example: 20
+        /// `page_size` is the maximum number of runs to return in this response. Defaults to 100 when omitted; must be between 1 and 1000 inclusive when set.<br/>
+        /// Default Value: 100<br/>
+        /// Example: 100
         /// </param>
-        /// <param name="projectId">
-        /// `project_id` is the tracing project UUID.<br/>
-        /// Example: 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328
+        /// <param name="projectIds">
+        /// `project_ids` lists tracing project UUIDs to query.<br/>
+        /// Example: [018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328]
+        /// </param>
+        /// <param name="referenceExamples">
+        /// `reference_examples` optionally limits to runs linked to these dataset example UUIDs.<br/>
+        /// Example: [b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e, c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f]
+        /// </param>
+        /// <param name="runType">
+        /// `run_type`, when set, restricts results to runs whose `run_type` equals this value.<br/>
+        /// Example: LLM
+        /// </param>
+        /// <param name="selects">
+        /// `selects` lists which properties to include on each returned run. If omitted, only `id` is returned. Properties not listed are omitted from each run object.<br/>
+        /// Example: [ID, NAME, PROJECT_ID, START_TIME, RUN_TYPE, STATUS]
+        /// </param>
+        /// <param name="sortOrder">
+        /// `sort_order` is the sort direction for `start_time` (`ASC` or `DESC`). Defaults to `DESC` when omitted. Maps to the SmithDB proto `Order` field.<br/>
+        /// Default Value: DESC<br/>
+        /// Example: DESC
+        /// </param>
+        /// <param name="traceFilter">
+        /// `trace_filter` narrows results to runs whose root trace matches this LangSmith filter expression.<br/>
+        /// Use this to filter by properties of the trace's root run — for example eq(status, "success") to include only traces that completed without error.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: eq(status, "success")
+        /// </param>
+        /// <param name="traceId">
+        /// `trace_id` optionally limits results to runs belonging to this trace UUID.<br/>
+        /// Example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        /// </param>
+        /// <param name="treeFilter">
+        /// `tree_filter` narrows results to runs that belong to a trace containing at least one run matching this LangSmith filter expression anywhere in the run tree (not just the root).<br/>
+        /// Use this to find runs inside traces that involved a specific tool, tag, or model — for example has(tags, "production") or eq(name, "my_tool").<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: has(tags, "production")
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryRunsResponseBody> QueryRunsAsync(
+            string? accept = default,
+            string? contentType = default,
+            string? aiQuery = default,
             string? cursor = default,
             string? filter = default,
+            bool? hasError = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? ids = default,
+            bool? isRoot = default,
             global::System.DateTime? maxStartTime = default,
             global::System.DateTime? minStartTime = default,
             int? pageSize = default,
-            global::System.Guid? projectId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? projectIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceExamples = default,
+            global::LangSmith.QueryRunType? runType = default,
+            global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects = default,
+            global::LangSmith.QuerySortOrder? sortOrder = default,
+            string? traceFilter = default,
+            global::System.Guid? traceId = default,
+            string? treeFilter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.ThreadsQueryThreadsRequestBody
+            var __request = new global::LangSmith.QueryQueryRunsRequestBody
             {
+                AiQuery = aiQuery,
                 Cursor = cursor,
                 Filter = filter,
+                HasError = hasError,
+                Ids = ids,
+                IsRoot = isRoot,
                 MaxStartTime = maxStartTime,
                 MinStartTime = minStartTime,
                 PageSize = pageSize,
-                ProjectId = projectId,
+                ProjectIds = projectIds,
+                ReferenceExamples = referenceExamples,
+                RunType = runType,
+                Selects = selects,
+                SortOrder = sortOrder,
+                TraceFilter = traceFilter,
+                TraceId = traceId,
+                TreeFilter = treeFilter,
             };
 
-            return await QueryThreadsAsync(
+            return await QueryRunsAsync(
+                accept: accept,
+                contentType: contentType,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

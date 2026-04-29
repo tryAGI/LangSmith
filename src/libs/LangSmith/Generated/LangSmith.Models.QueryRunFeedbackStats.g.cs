@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class GetThreadsTracesResponse4
+    public sealed partial class QueryRunFeedbackStats
     {
 
         /// <summary>

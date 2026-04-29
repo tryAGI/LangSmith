@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class ThreadsClient
+    public partial class RunsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_QueryThreadsServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetASingleRunServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_QueryThreadsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_GetASingleRunSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,55 +34,71 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_QueryThreadsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_GetASingleRunSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_QueryThreadsSecurityRequirement0,
+            {                s_GetASingleRunSecurityRequirement0,
             };
-        partial void PrepareQueryThreadsArguments(
+        partial void PrepareGetASingleRunArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.ThreadsQueryThreadsRequestBody request);
-        partial void PrepareQueryThreadsRequest(
+            ref string? accept,
+            ref global::System.Guid runId,
+            ref global::System.Guid projectId,
+            global::System.Collections.Generic.IList<global::LangSmith.GetRunsSelect>? selects,
+            ref global::System.DateTime startTime);
+        partial void PrepareGetASingleRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ThreadsQueryThreadsRequestBody request);
-        partial void ProcessQueryThreadsResponse(
+            string? accept,
+            global::System.Guid runId,
+            global::System.Guid projectId,
+            global::System.Collections.Generic.IList<global::LangSmith.GetRunsSelect>? selects,
+            global::System.DateTime startTime);
+        partial void ProcessGetASingleRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessQueryThreadsResponseContent(
+        partial void ProcessGetASingleRunResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Query Threads<br/>
+        /// Get a single run<br/>
         /// **Alpha:** The request and response contract may change;<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filter.
+        /// Returns one run by ID for the given session and start_time. Use the `selects` query parameter (repeatable) to select fields to return.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="accept"></param>
+        /// <param name="runId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="selects"></param>
+        /// <param name="startTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
-
-            global::LangSmith.ThreadsQueryThreadsRequestBody request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.QueryRunResponse> GetASingleRunAsync(
+            global::System.Guid runId,
+            global::System.Guid projectId,
+            global::System.DateTime startTime,
+            string? accept = default,
+            global::System.Collections.Generic.IList<global::LangSmith.GetRunsSelect>? selects = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareQueryThreadsArguments(
+            PrepareGetASingleRunArguments(
                 httpClient: HttpClient,
-                request: request);
+                accept: ref accept,
+                runId: ref runId,
+                projectId: ref projectId,
+                selects: selects,
+                startTime: ref startTime);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_QueryThreadsSecurityRequirements,
-                operationName: "QueryThreadsAsync");
+                securityRequirements: s_GetASingleRunSecurityRequirements,
+                operationName: "GetASingleRunAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -101,17 +117,22 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/threads/query",
+                                path: $"/v2/runs/{runId}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_QueryThreadsServers,
-                                defaultBaseUrl: "https://api.smith.langchain.com/"));
+                                servers: s_GetASingleRunServers,
+                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
+                            __pathBuilder
+                                .AddRequiredParameter("project_id", projectId.ToString()!)
+                                .AddOptionalParameter("selects", selects, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -134,12 +155,12 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept.ToString());
+            }
+
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -148,10 +169,14 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareQueryThreadsRequest(
+                PrepareGetASingleRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    accept: accept,
+                    runId: runId!,
+                    projectId: projectId!,
+                    selects: selects,
+                    startTime: startTime!);
 
                 return __httpRequest;
             }
@@ -168,10 +193,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
-                                httpMethod: "POST",
+                                operationId: "GetASingleRun",
+                                methodName: "GetASingleRunAsync",
+                                pathTemplate: "$\"/v2/runs/{runId}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -195,10 +220,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
-                                httpMethod: "POST",
+                                operationId: "GetASingleRun",
+                                methodName: "GetASingleRunAsync",
+                                pathTemplate: "$\"/v2/runs/{runId}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -230,10 +255,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
-                                httpMethod: "POST",
+                                operationId: "GetASingleRun",
+                                methodName: "GetASingleRunAsync",
+                                pathTemplate: "$\"/v2/runs/{runId}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -269,7 +294,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessQueryThreadsResponse(
+                ProcessGetASingleRunResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -277,10 +302,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
-                                httpMethod: "POST",
+                                operationId: "GetASingleRun",
+                                methodName: "GetASingleRunAsync",
+                                pathTemplate: "$\"/v2/runs/{runId}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -297,10 +322,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "QueryThreads",
-                                methodName: "QueryThreadsAsync",
-                                pathTemplate: "\"/v2/threads/query\"",
-                                httpMethod: "POST",
+                                operationId: "GetASingleRun",
+                                methodName: "GetASingleRunAsync",
+                                pathTemplate: "$\"/v2/runs/{runId}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -350,76 +375,76 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Forbidden
-                            if ((int)__response.StatusCode == 403)
+                            // Unauthorized
+                            if ((int)__response.StatusCode == 401)
                             {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_403 = null;
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::System.Collections.Generic.Dictionary<string, string>? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_401 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_403 = __ex;
+                                    __exception_401 = __ex;
                                 }
 
                                 throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value),
                                 };
                             }
-                            // Unprocessable Entity
-                            if ((int)__response.StatusCode == 422)
+                            // Not Found
+                            if ((int)__response.StatusCode == 404)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_422 = null;
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::System.Collections.Generic.Dictionary<string, string>? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_404 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_404, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_404 = __ex;
                                 }
 
                                 throw new global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
+                                    ResponseBody = __content_404,
+                                    ResponseObject = __value_404,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -439,7 +464,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessQueryThreadsResponseContent(
+                                ProcessGetASingleRunResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -449,7 +474,7 @@ namespace LangSmith
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::LangSmith.ThreadsQueryThreadsResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                        global::LangSmith.QueryRunResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -479,7 +504,7 @@ namespace LangSmith
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::LangSmith.ThreadsQueryThreadsResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::LangSmith.QueryRunResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -517,63 +542,6 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Query Threads<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filter.
-        /// </summary>
-        /// <param name="cursor">
-        /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
-        /// </param>
-        /// <param name="filter">
-        /// `filter` narrows which threads are returned, using a LangSmith filter expression evaluated against each thread's root run.<br/>
-        /// For example: has(tags, "production") or eq(status, "error").<br/>
-        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.
-        /// </param>
-        /// <param name="maxStartTime">
-        /// `max_start_time` is the inclusive upper bound on thread activity (RFC3339 date-time).
-        /// </param>
-        /// <param name="minStartTime">
-        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time).
-        /// </param>
-        /// <param name="pageSize">
-        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `has_more` is true.<br/>
-        /// Default Value: 20<br/>
-        /// Example: 20
-        /// </param>
-        /// <param name="projectId">
-        /// `project_id` is the tracing project UUID.<br/>
-        /// Example: 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
-            string? cursor = default,
-            string? filter = default,
-            global::System.DateTime? maxStartTime = default,
-            global::System.DateTime? minStartTime = default,
-            int? pageSize = default,
-            global::System.Guid? projectId = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.ThreadsQueryThreadsRequestBody
-            {
-                Cursor = cursor,
-                Filter = filter,
-                MaxStartTime = maxStartTime,
-                MinStartTime = minStartTime,
-                PageSize = pageSize,
-                ProjectId = projectId,
-            };
-
-            return await QueryThreadsAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

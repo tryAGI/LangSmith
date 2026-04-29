@@ -54,6 +54,17 @@
       "Format": "http",
       "OperationId": "UpdateExistingExperimentViewOverrideConfiguration",
       "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "Query Thread Traces",
+      "Slug": "query-thread-traces",
+      "Description": "**Alpha:** The request and response contract may change;\nRetrieve all traces belonging to a specific thread within a project.",
+      "Language": "http",
+      "Code": "### Query Thread Traces\nGET {{host}}/v2/threads/{{thread_id}}/traces?cursor={{cursor}}\u0026filter={{filter}}\u0026page_size=20\u0026project_id={{project_id}}\u0026selects=[\u0022NAME\u0022,\u0022START_TIME\u0022]\nX-API-Key: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: items and pagination\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "QueryThreadTraces",
+      "Setup": null
     }
   ]
 }
