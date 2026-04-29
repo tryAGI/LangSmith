@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    /// `raw` maps each category name to its estimated USD cost.
     /// </summary>
-    public sealed partial class CreateThreadsQueryResponse4
+    public sealed partial class QueryRunPromptCostDetailsRaw
     {
 
         /// <summary>

@@ -41,22 +41,20 @@ namespace LangSmith
         partial void PrepareQueryThreadTracesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
-            ref string sessionId,
-            ref string? filter,
-            ref string? select,
-            ref int? limit,
             ref string? cursor,
-            ref string? order);
+            ref string? filter,
+            ref int? pageSize,
+            ref global::System.Guid projectId,
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects);
         partial void PrepareQueryThreadTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
-            string sessionId,
-            string? filter,
-            string? select,
-            int? limit,
             string? cursor,
-            string? order);
+            string? filter,
+            int? pageSize,
+            global::System.Guid projectId,
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects);
         partial void ProcessQueryThreadTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,28 +66,27 @@ namespace LangSmith
 
         /// <summary>
         /// Query Thread Traces<br/>
-        /// Retrieve all traces belonging to a specific thread within a project.<br/>
-        /// Returns trace data decoded from Arrow IPC format via the smithdb<br/>
-        /// QueryThreadTraces gRPC RPC.
+        /// **Alpha:** The request and response contract may change;<br/>
+        /// Retrieve all traces belonging to a specific thread within a project.
         /// </summary>
         /// <param name="threadId"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="filter"></param>
-        /// <param name="select"></param>
-        /// <param name="limit"></param>
         /// <param name="cursor"></param>
-        /// <param name="order"></param>
+        /// <param name="filter"></param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="selects"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> QueryThreadTracesAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadTracesResponseBody> QueryThreadTracesAsync(
             string threadId,
-            string sessionId,
-            string? filter = default,
-            string? select = default,
-            int? limit = default,
+            global::System.Guid projectId,
             string? cursor = default,
-            string? order = default,
+            string? filter = default,
+            int? pageSize = default,
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -98,12 +95,11 @@ namespace LangSmith
             PrepareQueryThreadTracesArguments(
                 httpClient: HttpClient,
                 threadId: ref threadId,
-                sessionId: ref sessionId,
-                filter: ref filter,
-                select: ref select,
-                limit: ref limit,
                 cursor: ref cursor,
-                order: ref order);
+                filter: ref filter,
+                pageSize: ref pageSize,
+                projectId: ref projectId,
+                selects: selects);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -133,12 +129,11 @@ namespace LangSmith
                                 servers: s_QueryThreadTracesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/")); 
                             __pathBuilder
-                                .AddRequiredParameter("session_id", sessionId)
-                                .AddOptionalParameter("filter", filter)
-                                .AddOptionalParameter("select", select)
-                                .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
-                                .AddOptionalParameter("order", order) 
+                                .AddOptionalParameter("filter", filter)
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddRequiredParameter("project_id", projectId.ToString()!)
+                                .AddOptionalParameter("selects", selects, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -181,12 +176,11 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     threadId: threadId!,
-                    sessionId: sessionId!,
-                    filter: filter,
-                    select: select,
-                    limit: limit,
                     cursor: cursor,
-                    order: order);
+                    filter: filter,
+                    pageSize: pageSize,
+                    projectId: projectId!,
+                    selects: selects);
 
                 return __httpRequest;
             }
@@ -483,7 +477,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return __content;
+                                    return
+                                        global::LangSmith.ThreadsQueryThreadTracesResponseBody.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -505,13 +501,15 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return __content;
+                                    return
+                                        await global::LangSmith.ThreadsQueryThreadTracesResponseBody.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
                                 {
