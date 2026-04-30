@@ -38,7 +38,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute_mapping")]
-        public global::System.Collections.Generic.Dictionary<string, string>? AttributeMapping { get; set; }
+        public global::LangSmith.SupabaseAttributeMapping? AttributeMapping { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -98,7 +98,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
             string? metadataXml,
             string? metadataUrl,
-            global::System.Collections.Generic.Dictionary<string, string>? attributeMapping,
+            global::LangSmith.SupabaseAttributeMapping? attributeMapping,
             bool? ssoGroupsEnabled,
             string? ssoGroupsClaimField,
             bool? ssoGroupsRequired,

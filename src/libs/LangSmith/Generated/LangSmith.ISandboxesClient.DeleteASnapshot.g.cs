@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete a snapshot<br/>
-        /// Delete a snapshot by ID. The ext4 rootfs is removed from JuiceFS asynchronously.
+        /// Delete a snapshot by ID. The underlying storage is reclaimed asynchronously.
         /// </summary>
         /// <param name="snapshotId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

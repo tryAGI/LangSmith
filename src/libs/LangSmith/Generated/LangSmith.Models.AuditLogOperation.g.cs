@@ -195,6 +195,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateLicenseShareLink,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateMcpServer,
         /// <summary>
         /// 
@@ -1408,6 +1412,7 @@ namespace LangSmith
                 AuditLogOperation.CreateHubEnvironment => "create_hub_environment",
                 AuditLogOperation.CreateInsightsJob => "create_insights_job",
                 AuditLogOperation.CreateInsightsJobConfig => "create_insights_job_config",
+                AuditLogOperation.CreateLicenseShareLink => "create_license_share_link",
                 AuditLogOperation.CreateMcpServer => "create_mcp_server",
                 AuditLogOperation.CreateMcpVendorSettings => "create_mcp_vendor_settings",
                 AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
@@ -1753,6 +1758,7 @@ namespace LangSmith
                 "create_hub_environment" => AuditLogOperation.CreateHubEnvironment,
                 "create_insights_job" => AuditLogOperation.CreateInsightsJob,
                 "create_insights_job_config" => AuditLogOperation.CreateInsightsJobConfig,
+                "create_license_share_link" => AuditLogOperation.CreateLicenseShareLink,
                 "create_mcp_server" => AuditLogOperation.CreateMcpServer,
                 "create_mcp_vendor_settings" => AuditLogOperation.CreateMcpVendorSettings,
                 "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,

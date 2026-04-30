@@ -80,6 +80,18 @@ namespace LangSmith
         public bool? SsoGroupsRoleSyncEnabled { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attribute_mapping")]
+        public global::LangSmith.SupabaseAttributeMapping? AttributeMapping { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attribute_mapping_load_error")]
+        public string? AttributeMappingLoadError { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -107,6 +119,8 @@ namespace LangSmith
         /// <param name="ssoGroupsRoleSyncEnabled">
         /// Default Value: true
         /// </param>
+        /// <param name="attributeMapping"></param>
+        /// <param name="attributeMappingLoadError"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -121,7 +135,9 @@ namespace LangSmith
             bool? ssoGroupsEnabled,
             string? ssoGroupsClaimField,
             bool? ssoGroupsRequired,
-            bool? ssoGroupsRoleSyncEnabled)
+            bool? ssoGroupsRoleSyncEnabled,
+            global::LangSmith.SupabaseAttributeMapping? attributeMapping,
+            string? attributeMappingLoadError)
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -134,6 +150,8 @@ namespace LangSmith
             this.SsoGroupsClaimField = ssoGroupsClaimField;
             this.SsoGroupsRequired = ssoGroupsRequired;
             this.SsoGroupsRoleSyncEnabled = ssoGroupsRoleSyncEnabled;
+            this.AttributeMapping = attributeMapping;
+            this.AttributeMappingLoadError = attributeMappingLoadError;
         }
 
         /// <summary>

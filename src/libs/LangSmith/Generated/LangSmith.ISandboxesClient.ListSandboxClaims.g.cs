@@ -16,7 +16,6 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
-        /// <param name="templateName"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
         /// </param>
@@ -31,7 +30,6 @@ namespace LangSmith
             int? offset = default,
             string? nameContains = default,
             string? status = default,
-            string? templateName = default,
             string? sortBy = default,
             string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

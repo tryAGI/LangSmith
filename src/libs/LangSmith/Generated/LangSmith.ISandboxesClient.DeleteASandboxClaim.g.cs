@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete a sandbox claim<br/>
-        /// Delete a sandbox claim by name. Deletes both the K8s CRD and the DB record.
+        /// Delete a sandbox claim by name. Deletes the Firecracker pod/service and DB record.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// Internal: start a stopped sandbox (service-to-service)<br/>
-        /// Called by the sandbox-router to wake stopped Firecracker boxes. Blocks until the sandbox is ready or times out. The name parameter accepts either the display name or the K8s sandbox name (sb-&lt;uuid&gt;).
+        /// Called by the sandbox-router to wake stopped sandboxes. Blocks until the sandbox is ready or times out. The name parameter accepts either the display name or the K8s sandbox name (sb-&lt;uuid&gt;).
         /// </summary>
         /// <param name="name"></param>
         /// <param name="xTenantId"></param>

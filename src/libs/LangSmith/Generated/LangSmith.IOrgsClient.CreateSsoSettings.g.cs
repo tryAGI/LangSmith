@@ -46,7 +46,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
             string? metadataXml = default,
             string? metadataUrl = default,
-            global::System.Collections.Generic.Dictionary<string, string>? attributeMapping = default,
+            global::LangSmith.SupabaseAttributeMapping? attributeMapping = default,
             bool? ssoGroupsEnabled = default,
             string? ssoGroupsClaimField = default,
             bool? ssoGroupsRequired = default,

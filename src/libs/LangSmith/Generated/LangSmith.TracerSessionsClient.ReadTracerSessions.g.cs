@@ -58,6 +58,7 @@ namespace LangSmith
             ref bool? includeStats,
             ref bool? useApproxStats,
             global::System.DateTime? statsStartTime,
+            global::System.Collections.Generic.IList<string>? statsSelect,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -80,6 +81,7 @@ namespace LangSmith
             bool? includeStats,
             bool? useApproxStats,
             global::System.DateTime? statsStartTime,
+            global::System.Collections.Generic.IList<string>? statsSelect,
             string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -126,6 +128,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="statsStartTime"></param>
+        /// <param name="statsSelect"></param>
         /// <param name="accept"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -149,6 +152,7 @@ namespace LangSmith
             bool? includeStats = default,
             bool? useApproxStats = default,
             global::System.DateTime? statsStartTime = default,
+            global::System.Collections.Generic.IList<string>? statsSelect = default,
             string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -175,6 +179,7 @@ namespace LangSmith
                 includeStats: ref includeStats,
                 useApproxStats: ref useApproxStats,
                 statsStartTime: statsStartTime,
+                statsSelect: statsSelect,
                 accept: ref accept);
 
 
@@ -222,7 +227,8 @@ namespace LangSmith
                                 .AddOptionalParameter("filter", filter)
                                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString()) 
+                                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString())
+                                .AddOptionalParameter("stats_select", statsSelect?.ToString()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -288,6 +294,7 @@ namespace LangSmith
                     includeStats: includeStats,
                     useApproxStats: useApproxStats,
                     statsStartTime: statsStartTime,
+                    statsSelect: statsSelect,
                     accept: accept);
 
                 return __httpRequest;

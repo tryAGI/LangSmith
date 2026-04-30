@@ -22,8 +22,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? RequestHeaders { get; set; }
 
         /// <summary>
-        /// TTLSeconds is how long resolved headers are cached before the proxy<br/>
-        /// re-invokes URL. Must be between 60 and 3600 seconds.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,10 +45,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesCallback" /> class.
         /// </summary>
         /// <param name="matchHosts"></param>
-        /// <param name="ttlSeconds">
-        /// TTLSeconds is how long resolved headers are cached before the proxy<br/>
-        /// re-invokes URL. Must be between 60 and 3600 seconds.
-        /// </param>
+        /// <param name="ttlSeconds"></param>
         /// <param name="url"></param>
         /// <param name="requestHeaders"></param>
 #if NET7_0_OR_GREATER

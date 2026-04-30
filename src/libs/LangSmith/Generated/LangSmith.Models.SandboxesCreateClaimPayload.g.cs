@@ -51,12 +51,6 @@ namespace LangSmith
         public string? SnapshotName { get; set; }
 
         /// <summary>
-        /// required for Kata path
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("template_name")]
-        public string? TemplateName { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeout")]
@@ -96,9 +90,6 @@ namespace LangSmith
         /// <param name="proxyConfig"></param>
         /// <param name="snapshotId"></param>
         /// <param name="snapshotName"></param>
-        /// <param name="templateName">
-        /// required for Kata path
-        /// </param>
         /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="vcpus"></param>
@@ -114,7 +105,6 @@ namespace LangSmith
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             string? snapshotId,
             string? snapshotName,
-            string? templateName,
             int? timeout,
             int? ttlSeconds,
             int? vcpus,
@@ -127,7 +117,6 @@ namespace LangSmith
             this.ProxyConfig = proxyConfig;
             this.SnapshotId = snapshotId;
             this.SnapshotName = snapshotName;
-            this.TemplateName = templateName;
             this.Timeout = timeout;
             this.TtlSeconds = ttlSeconds;
             this.Vcpus = vcpus;

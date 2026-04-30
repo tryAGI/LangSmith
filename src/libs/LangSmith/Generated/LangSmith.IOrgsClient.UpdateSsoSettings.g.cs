@@ -32,6 +32,7 @@ namespace LangSmith
         /// <param name="ssoGroupsClaimField"></param>
         /// <param name="ssoGroupsRequired"></param>
         /// <param name="ssoGroupsRoleSyncEnabled"></param>
+        /// <param name="attributeMapping"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -45,6 +46,7 @@ namespace LangSmith
             string? ssoGroupsClaimField = default,
             bool? ssoGroupsRequired = default,
             bool? ssoGroupsRoleSyncEnabled = default,
+            global::LangSmith.SupabaseAttributeMapping? attributeMapping = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
