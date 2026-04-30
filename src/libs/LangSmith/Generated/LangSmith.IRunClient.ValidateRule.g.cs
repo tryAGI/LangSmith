@@ -71,6 +71,7 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="spendLimit"></param>
         /// <param name="groupBy"></param>
         /// <param name="testInputs"></param>
         /// <param name="testOutputs"></param>
@@ -104,6 +105,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
+            global::LangSmith.RunRuleSpendLimitSchema? spendLimit = default,
             string? groupBy = default,
             object? testInputs = default,
             object? testOutputs = default,

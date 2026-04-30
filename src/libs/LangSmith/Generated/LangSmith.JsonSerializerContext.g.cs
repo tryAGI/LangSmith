@@ -269,6 +269,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.RunGroupByNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeNullableJsonConverter),
@@ -704,6 +708,8 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
 
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
 
             typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object, object>),
 
@@ -1261,6 +1267,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunGroupBy), TypeInfoPropertyName = "RunGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunGroupRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunGroupStats))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRuleSpendLimitSchema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRuleSpendLimitWindow), TypeInfoPropertyName = "RunRuleSpendLimitWindow2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRulesAlertType), TypeInfoPropertyName = "RunRulesAlertType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRulesCreateSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>))]
