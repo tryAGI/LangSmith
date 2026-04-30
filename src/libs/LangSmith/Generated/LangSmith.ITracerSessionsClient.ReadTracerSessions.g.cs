@@ -40,6 +40,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="statsStartTime"></param>
+        /// <param name="statsSelect"></param>
         /// <param name="accept"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -63,6 +64,7 @@ namespace LangSmith
             bool? includeStats = default,
             bool? useApproxStats = default,
             global::System.DateTime? statsStartTime = default,
+            global::System.Collections.Generic.IList<string>? statsSelect = default,
             string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

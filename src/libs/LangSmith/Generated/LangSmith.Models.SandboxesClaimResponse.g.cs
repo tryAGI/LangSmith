@@ -65,6 +65,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("size_class")]
+        public string? SizeClass { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("snapshot_id")]
         public string? SnapshotId { get; set; }
 
@@ -79,12 +85,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_message")]
         public string? StatusMessage { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("template_name")]
-        public string? TemplateName { get; set; }
 
         /// <summary>
         /// 
@@ -122,10 +122,10 @@ namespace LangSmith
         /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="sizeClass"></param>
         /// <param name="snapshotId"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
-        /// <param name="templateName"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="updatedAt"></param>
         /// <param name="vcpus"></param>
@@ -142,10 +142,10 @@ namespace LangSmith
             long? memBytes,
             string? name,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
+            string? sizeClass,
             string? snapshotId,
             string? status,
             string? statusMessage,
-            string? templateName,
             int? ttlSeconds,
             string? updatedAt,
             int? vcpus)
@@ -159,10 +159,10 @@ namespace LangSmith
             this.MemBytes = memBytes;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
+            this.SizeClass = sizeClass;
             this.SnapshotId = snapshotId;
             this.Status = status;
             this.StatusMessage = statusMessage;
-            this.TemplateName = templateName;
             this.TtlSeconds = ttlSeconds;
             this.UpdatedAt = updatedAt;
             this.Vcpus = vcpus;

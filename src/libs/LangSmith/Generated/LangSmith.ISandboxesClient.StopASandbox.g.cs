@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Stop a sandbox<br/>
-        /// Stop a ready Firecracker sandbox. This endpoint is not idempotent; the rootfs is preserved on JuiceFS for later restart.
+        /// Stop a ready sandbox. This endpoint is not idempotent; the filesystem is preserved for later restart.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

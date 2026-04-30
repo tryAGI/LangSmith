@@ -44,7 +44,6 @@ namespace LangSmith
             ref int? offset,
             ref string? nameContains,
             ref string? status,
-            ref string? templateName,
             ref string? sortBy,
             ref string? sortDirection);
         partial void PrepareListSandboxClaimsRequest(
@@ -54,7 +53,6 @@ namespace LangSmith
             int? offset,
             string? nameContains,
             string? status,
-            string? templateName,
             string? sortBy,
             string? sortDirection);
         partial void ProcessListSandboxClaimsResponse(
@@ -78,7 +76,6 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
-        /// <param name="templateName"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
         /// </param>
@@ -93,7 +90,6 @@ namespace LangSmith
             int? offset = default,
             string? nameContains = default,
             string? status = default,
-            string? templateName = default,
             string? sortBy = default,
             string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -107,7 +103,6 @@ namespace LangSmith
                 offset: ref offset,
                 nameContains: ref nameContains,
                 status: ref status,
-                templateName: ref templateName,
                 sortBy: ref sortBy,
                 sortDirection: ref sortDirection);
 
@@ -143,7 +138,6 @@ namespace LangSmith
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("status", status)
-                                .AddOptionalParameter("template_name", templateName)
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_direction", sortDirection) 
                                 ;
@@ -191,7 +185,6 @@ namespace LangSmith
                     offset: offset,
                     nameContains: nameContains,
                     status: status,
-                    templateName: templateName,
                     sortBy: sortBy,
                     sortDirection: sortDirection);
 
