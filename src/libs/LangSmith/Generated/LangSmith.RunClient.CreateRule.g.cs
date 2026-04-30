@@ -482,6 +482,7 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="spendLimit"></param>
         /// <param name="groupBy"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -511,6 +512,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
+            global::LangSmith.RunRuleSpendLimitSchema? spendLimit = default,
             string? groupBy = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -541,6 +543,7 @@ namespace LangSmith
                 EvaluatorVersion = evaluatorVersion,
                 CreateAlignmentQueue = createAlignmentQueue,
                 IncludeExtendedStats = includeExtendedStats,
+                SpendLimit = spendLimit,
                 GroupBy = groupBy,
             };
 

@@ -159,6 +159,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
+        public global::LangSmith.RunRuleSpendLimitSchema? SpendLimit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public string? GroupBy { get; set; }
 
@@ -233,6 +239,7 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
+        /// <param name="spendLimit"></param>
         /// <param name="groupBy"></param>
         /// <param name="testInputs"></param>
         /// <param name="testOutputs"></param>
@@ -266,6 +273,7 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
+            global::LangSmith.RunRuleSpendLimitSchema? spendLimit,
             string? groupBy,
             object? testInputs,
             object? testOutputs,
@@ -296,6 +304,7 @@ namespace LangSmith
             this.EvaluatorVersion = evaluatorVersion;
             this.CreateAlignmentQueue = createAlignmentQueue;
             this.IncludeExtendedStats = includeExtendedStats;
+            this.SpendLimit = spendLimit;
             this.GroupBy = groupBy;
             this.TestInputs = testInputs;
             this.TestOutputs = testOutputs;
