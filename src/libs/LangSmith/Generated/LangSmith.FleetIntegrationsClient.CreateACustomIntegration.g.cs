@@ -524,6 +524,7 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="iconUrl"></param>
         /// <param name="name"></param>
+        /// <param name="source"></param>
         /// <param name="url"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -534,6 +535,7 @@ namespace LangSmith
             string? category = default,
             string? description = default,
             string? iconUrl = default,
+            string? source = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -543,6 +545,7 @@ namespace LangSmith
                 Description = description,
                 IconUrl = iconUrl,
                 Name = name,
+                Source = source,
                 Url = url,
             };
 

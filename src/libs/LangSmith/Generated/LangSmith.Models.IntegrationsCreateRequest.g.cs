@@ -36,6 +36,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        public string? Source { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -54,6 +60,7 @@ namespace LangSmith
         /// <param name="category"></param>
         /// <param name="description"></param>
         /// <param name="iconUrl"></param>
+        /// <param name="source"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +69,14 @@ namespace LangSmith
             string url,
             string? category,
             string? description,
-            string? iconUrl)
+            string? iconUrl,
+            string? source)
         {
             this.Category = category;
             this.Description = description;
             this.IconUrl = iconUrl;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Source = source;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 

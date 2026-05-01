@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Start a sandbox<br/>
-        /// Start a stopped or failed sandbox. This endpoint is not idempotent; it returns 202 immediately, then you can poll status for readiness.
+        /// Start a stopped or failed sandbox. This endpoint is not idempotent.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
