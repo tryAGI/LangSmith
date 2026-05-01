@@ -53,12 +53,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("timeout")]
-        public int? Timeout { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
         public int? TtlSeconds { get; set; }
 
@@ -67,12 +61,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcpus")]
         public int? Vcpus { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("wait_for_ready")]
-        public bool? WaitForReady { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,10 +78,8 @@ namespace LangSmith
         /// <param name="proxyConfig"></param>
         /// <param name="snapshotId"></param>
         /// <param name="snapshotName"></param>
-        /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="vcpus"></param>
-        /// <param name="waitForReady"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,10 +91,8 @@ namespace LangSmith
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             string? snapshotId,
             string? snapshotName,
-            int? timeout,
             int? ttlSeconds,
-            int? vcpus,
-            bool? waitForReady)
+            int? vcpus)
         {
             this.FsCapacityBytes = fsCapacityBytes;
             this.IdleTtlSeconds = idleTtlSeconds;
@@ -117,10 +101,8 @@ namespace LangSmith
             this.ProxyConfig = proxyConfig;
             this.SnapshotId = snapshotId;
             this.SnapshotName = snapshotName;
-            this.Timeout = timeout;
             this.TtlSeconds = ttlSeconds;
             this.Vcpus = vcpus;
-            this.WaitForReady = waitForReady;
         }
 
         /// <summary>

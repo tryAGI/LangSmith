@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Create a sandbox claim<br/>
-        /// Create a new sandbox from a snapshot. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one must be set. Optionally blocks until ready or timeout.
+        /// Create a new sandbox from a snapshot. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one must be set.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a sandbox claim<br/>
-        /// Create a new sandbox from a snapshot. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one must be set. Optionally blocks until ready or timeout.
+        /// Create a new sandbox from a snapshot. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one must be set.
         /// </summary>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
@@ -28,10 +28,8 @@ namespace LangSmith
         /// <param name="proxyConfig"></param>
         /// <param name="snapshotId"></param>
         /// <param name="snapshotName"></param>
-        /// <param name="timeout"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="vcpus"></param>
-        /// <param name="waitForReady"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -43,10 +41,8 @@ namespace LangSmith
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             string? snapshotId = default,
             string? snapshotName = default,
-            int? timeout = default,
             int? ttlSeconds = default,
             int? vcpus = default,
-            bool? waitForReady = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
