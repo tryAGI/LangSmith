@@ -2,33 +2,35 @@
 
 namespace LangSmith
 {
-    public partial interface ISandboxesClient
+    public partial interface IFleetIntegrationsClient
     {
         /// <summary>
-        /// Report sandbox activity<br/>
-        /// Batch-report activity for sandboxes so their idle TTL deadlines are extended.<br/>
-        /// Called by the sandbox-router via X-Service-Key authentication.
+        /// Replace integration auth methods<br/>
+        /// Replaces the integration's full list of supported auth methods.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.SandboxesBatchActivityResponse> ReportSandboxActivityAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.IntegrationsIntegration> ReplaceIntegrationAuthMethodsAsync(
+            string id,
 
-            global::LangSmith.SandboxesBatchActivityRequest request,
+            global::LangSmith.IntegrationsReplaceAuthMethodsRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Report sandbox activity<br/>
-        /// Batch-report activity for sandboxes so their idle TTL deadlines are extended.<br/>
-        /// Called by the sandbox-router via X-Service-Key authentication.
+        /// Replace integration auth methods<br/>
+        /// Replaces the integration's full list of supported auth methods.
         /// </summary>
-        /// <param name="activities"></param>
+        /// <param name="id"></param>
+        /// <param name="authMethods"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.SandboxesBatchActivityResponse> ReportSandboxActivityAsync(
-            global::System.Collections.Generic.IList<global::LangSmith.SandboxesActivityReport> activities,
+        global::System.Threading.Tasks.Task<global::LangSmith.IntegrationsIntegration> ReplaceIntegrationAuthMethodsAsync(
+            string id,
+            global::System.Collections.Generic.IList<global::LangSmith.IntegrationsAuthMethod>? authMethods = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
