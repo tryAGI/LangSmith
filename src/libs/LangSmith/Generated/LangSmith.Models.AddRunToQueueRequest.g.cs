@@ -4,9 +4,13 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Add run to AQ by SmithDB key. is_root derived server-side (LSAQ-141).
+    /// Add a single run to AQ (CH path) with an optional back-pointer to the<br/>
+    /// issues-agent proposal that seeded this add. Use when bulk-adding runs<br/>
+    /// that come from different proposals — each row carries its own<br/>
+    /// source_proposed_example_id. For unrelated bulk adds, prefer plain<br/>
+    /// List[UUID] on the same endpoint.
     /// </summary>
-    public sealed partial class AddRunToQueueByKeyRequest
+    public sealed partial class AddRunToQueueRequest
     {
         /// <summary>
         /// 
@@ -14,20 +18,6 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid RunId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid SessionId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime StartTime { get; set; }
 
         /// <summary>
         /// 
@@ -42,31 +32,25 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddRunToQueueByKeyRequest" /> class.
+        /// Initializes a new instance of the <see cref="AddRunToQueueRequest" /> class.
         /// </summary>
         /// <param name="runId"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="startTime"></param>
         /// <param name="sourceProposedExampleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AddRunToQueueByKeyRequest(
+        public AddRunToQueueRequest(
             global::System.Guid runId,
-            global::System.Guid sessionId,
-            global::System.DateTime startTime,
             global::System.Guid? sourceProposedExampleId)
         {
             this.RunId = runId;
-            this.SessionId = sessionId;
-            this.StartTime = startTime;
             this.SourceProposedExampleId = sourceProposedExampleId;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddRunToQueueByKeyRequest" /> class.
+        /// Initializes a new instance of the <see cref="AddRunToQueueRequest" /> class.
         /// </summary>
-        public AddRunToQueueByKeyRequest()
+        public AddRunToQueueRequest()
         {
         }
     }

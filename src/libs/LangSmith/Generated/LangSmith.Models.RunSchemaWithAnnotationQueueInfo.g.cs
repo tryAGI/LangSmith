@@ -385,6 +385,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? CompletedBy { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_proposed_example_id")]
+        public global::System.Guid? SourceProposedExampleId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -470,6 +476,7 @@ namespace LangSmith
         /// <param name="completedBy">
         /// Default Value: []
         /// </param>
+        /// <param name="sourceProposedExampleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -534,7 +541,8 @@ namespace LangSmith
             global::System.DateTime? addedAt,
             global::System.DateTime? effectiveAddedAt,
             global::System.Collections.Generic.IList<global::System.Guid>? reservedBy,
-            global::System.Collections.Generic.IList<global::System.Guid>? completedBy)
+            global::System.Collections.Generic.IList<global::System.Guid>? completedBy,
+            global::System.Guid? sourceProposedExampleId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Inputs = inputs;
@@ -597,6 +605,7 @@ namespace LangSmith
             this.EffectiveAddedAt = effectiveAddedAt;
             this.ReservedBy = reservedBy;
             this.CompletedBy = completedBy;
+            this.SourceProposedExampleId = sourceProposedExampleId;
         }
 
         /// <summary>

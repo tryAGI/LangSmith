@@ -37,6 +37,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_proposed_example_id")]
+        public global::System.Guid? SourceProposedExampleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -55,6 +61,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
+        /// <param name="sourceProposedExampleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,12 +70,14 @@ namespace LangSmith
             global::System.Guid queueId,
             global::System.Guid id,
             global::System.DateTime? lastReviewedTime,
-            global::System.DateTime? addedAt)
+            global::System.DateTime? addedAt,
+            global::System.Guid? sourceProposedExampleId)
         {
             this.RunId = runId;
             this.QueueId = queueId;
             this.LastReviewedTime = lastReviewedTime;
             this.AddedAt = addedAt;
+            this.SourceProposedExampleId = sourceProposedExampleId;
             this.Id = id;
         }
 
