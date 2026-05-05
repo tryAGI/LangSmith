@@ -250,6 +250,12 @@ namespace LangSmith
         public string? GroupBy { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
+        public global::LangSmith.RunRuleSpendLimitSchemaOutput? SpendLimit { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -309,6 +315,7 @@ namespace LangSmith
         /// <param name="evaluatorId"></param>
         /// <param name="alignmentAnnotationQueueId"></param>
         /// <param name="groupBy"></param>
+        /// <param name="spendLimit"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -351,7 +358,8 @@ namespace LangSmith
             bool? transient,
             global::System.Guid? evaluatorId,
             global::System.Guid? alignmentAnnotationQueueId,
-            string? groupBy)
+            string? groupBy,
+            global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -392,6 +400,7 @@ namespace LangSmith
             this.EvaluatorId = evaluatorId;
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
             this.GroupBy = groupBy;
+            this.SpendLimit = spendLimit;
         }
 
         /// <summary>

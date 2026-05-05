@@ -381,16 +381,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public McpClient Mcp => new McpClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public McpVendorsClient McpVendors => new McpVendorsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

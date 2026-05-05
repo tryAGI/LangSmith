@@ -715,10 +715,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        GetMcpTools,
-        /// <summary>
-        /// 
-        /// </summary>
         GetOnboardingState,
         /// <summary>
         /// 
@@ -787,10 +783,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        InvalidateMcpToolsCache,
-        /// <summary>
-        /// 
-        /// </summary>
         InviteProvisionedOrgMember,
         /// <summary>
         /// 
@@ -800,6 +792,10 @@ namespace LangSmith
         /// 
         /// </summary>
         InviteUsersToOrgBatch,
+        /// <summary>
+        /// 
+        /// </summary>
+        InvokeGateway,
         /// <summary>
         /// 
         /// </summary>
@@ -920,14 +916,6 @@ namespace LangSmith
         /// 
         /// </summary>
         Login,
-        /// <summary>
-        /// 
-        /// </summary>
-        McpProxy,
-        /// <summary>
-        /// 
-        /// </summary>
-        McpProxyGet,
         /// <summary>
         /// 
         /// </summary>
@@ -1542,7 +1530,6 @@ namespace LangSmith
                 AuditLogOperation.GetInsightsJob => "get_insights_job",
                 AuditLogOperation.GetInsightsJobRuns => "get_insights_job_runs",
                 AuditLogOperation.GetLoginMethods => "get_login_methods",
-                AuditLogOperation.GetMcpTools => "get_mcp_tools",
                 AuditLogOperation.GetOnboardingState => "get_onboarding_state",
                 AuditLogOperation.GetOrgDashboard => "get_org_dashboard",
                 AuditLogOperation.GetOrgUsage => "get_org_usage",
@@ -1560,10 +1547,10 @@ namespace LangSmith
                 AuditLogOperation.GetUsageLimits => "get_usage_limits",
                 AuditLogOperation.GetWorkspaceStats => "get_workspace_stats",
                 AuditLogOperation.GetWorkspaceUsageLimitsInfo => "get_workspace_usage_limits_info",
-                AuditLogOperation.InvalidateMcpToolsCache => "invalidate_mcp_tools_cache",
                 AuditLogOperation.InviteProvisionedOrgMember => "invite_provisioned_org_member",
                 AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
+                AuditLogOperation.InvokeGateway => "invoke_gateway",
                 AuditLogOperation.ListAccessPolicies => "list_access_policies",
                 AuditLogOperation.ListAnnotationQueues => "list_annotation_queues",
                 AuditLogOperation.ListBulkExportDestinations => "list_bulk_export_destinations",
@@ -1594,8 +1581,6 @@ namespace LangSmith
                 AuditLogOperation.ListWorkspaceMembers => "list_workspace_members",
                 AuditLogOperation.ListWorkspaces => "list_workspaces",
                 AuditLogOperation.Login => "login",
-                AuditLogOperation.McpProxy => "mcp_proxy",
-                AuditLogOperation.McpProxyGet => "mcp_proxy_get",
                 AuditLogOperation.MintSelfHostedLicense => "mint_self_hosted_license",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
                 AuditLogOperation.QueryRun => "query_run",
@@ -1888,7 +1873,6 @@ namespace LangSmith
                 "get_insights_job" => AuditLogOperation.GetInsightsJob,
                 "get_insights_job_runs" => AuditLogOperation.GetInsightsJobRuns,
                 "get_login_methods" => AuditLogOperation.GetLoginMethods,
-                "get_mcp_tools" => AuditLogOperation.GetMcpTools,
                 "get_onboarding_state" => AuditLogOperation.GetOnboardingState,
                 "get_org_dashboard" => AuditLogOperation.GetOrgDashboard,
                 "get_org_usage" => AuditLogOperation.GetOrgUsage,
@@ -1906,10 +1890,10 @@ namespace LangSmith
                 "get_usage_limits" => AuditLogOperation.GetUsageLimits,
                 "get_workspace_stats" => AuditLogOperation.GetWorkspaceStats,
                 "get_workspace_usage_limits_info" => AuditLogOperation.GetWorkspaceUsageLimitsInfo,
-                "invalidate_mcp_tools_cache" => AuditLogOperation.InvalidateMcpToolsCache,
                 "invite_provisioned_org_member" => AuditLogOperation.InviteProvisionedOrgMember,
                 "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
+                "invoke_gateway" => AuditLogOperation.InvokeGateway,
                 "list_access_policies" => AuditLogOperation.ListAccessPolicies,
                 "list_annotation_queues" => AuditLogOperation.ListAnnotationQueues,
                 "list_bulk_export_destinations" => AuditLogOperation.ListBulkExportDestinations,
@@ -1940,8 +1924,6 @@ namespace LangSmith
                 "list_workspace_members" => AuditLogOperation.ListWorkspaceMembers,
                 "list_workspaces" => AuditLogOperation.ListWorkspaces,
                 "login" => AuditLogOperation.Login,
-                "mcp_proxy" => AuditLogOperation.McpProxy,
-                "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
                 "mint_self_hosted_license" => AuditLogOperation.MintSelfHostedLicense,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
                 "query_run" => AuditLogOperation.QueryRun,

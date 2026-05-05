@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class GetToolsApiV1McpToolsGetOauthProviderId
+    public sealed partial class RunRulesSchemaSpendLimit
     {
 
         /// <summary>

@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class RunRuleSpendLimitSchema
+    public sealed partial class RunRuleSpendLimitSchemaInput
     {
         /// <summary>
         /// 
@@ -30,14 +30,14 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RunRuleSpendLimitSchema" /> class.
+        /// Initializes a new instance of the <see cref="RunRuleSpendLimitSchemaInput" /> class.
         /// </summary>
         /// <param name="limitUsd"></param>
         /// <param name="window"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RunRuleSpendLimitSchema(
+        public RunRuleSpendLimitSchemaInput(
             global::LangSmith.AnyOf<double?, string> limitUsd,
             global::LangSmith.RunRuleSpendLimitWindow window)
         {
@@ -46,9 +46,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RunRuleSpendLimitSchema" /> class.
+        /// Initializes a new instance of the <see cref="RunRuleSpendLimitSchemaInput" /> class.
         /// </summary>
-        public RunRuleSpendLimitSchema()
+        public RunRuleSpendLimitSchemaInput()
         {
         }
     }

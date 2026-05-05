@@ -239,11 +239,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public McpClient Mcp { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public McpVendorsClient McpVendors { get; }
 
         /// <summary>
