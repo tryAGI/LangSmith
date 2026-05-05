@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class InvalidateToolsCacheApiV1McpToolsDeleteLsUserId
+    public sealed partial class RunRuleSpendLimitSchemaOutput
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId? FromJson(
+        public static global::LangSmith.RunRuleSpendLimitSchemaOutput? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId),
-                jsonSerializerContext) as global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId;
+                typeof(global::LangSmith.RunRuleSpendLimitSchemaOutput),
+                jsonSerializerContext) as global::LangSmith.RunRuleSpendLimitSchemaOutput;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId? FromJson(
+        public static global::LangSmith.RunRuleSpendLimitSchemaOutput? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.RunRuleSpendLimitSchemaOutput>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.RunRuleSpendLimitSchemaOutput?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId;
+                typeof(global::LangSmith.RunRuleSpendLimitSchemaOutput),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.RunRuleSpendLimitSchemaOutput;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.RunRuleSpendLimitSchemaOutput?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.InvalidateToolsCacheApiV1McpToolsDeleteLsUserId?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.RunRuleSpendLimitSchemaOutput?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

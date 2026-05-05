@@ -105,7 +105,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
-            global::LangSmith.RunRuleSpendLimitSchema? spendLimit = default,
+            global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit = default,
             string? groupBy = default,
             object? testInputs = default,
             object? testOutputs = default,

@@ -160,7 +160,7 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
-        public global::LangSmith.RunRuleSpendLimitSchema? SpendLimit { get; set; }
+        public global::LangSmith.RunRuleSpendLimitSchemaInput? SpendLimit { get; set; }
 
         /// <summary>
         /// 
@@ -273,7 +273,7 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
-            global::LangSmith.RunRuleSpendLimitSchema? spendLimit,
+            global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit,
             string? groupBy,
             object? testInputs,
             object? testOutputs,
