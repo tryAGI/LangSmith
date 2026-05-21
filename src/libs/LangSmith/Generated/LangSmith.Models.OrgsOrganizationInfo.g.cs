@@ -41,6 +41,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
+        public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -196,6 +202,7 @@ namespace LangSmith
         /// <param name="defaultSsoProvision"></param>
         /// <param name="disabled"></param>
         /// <param name="displayName"></param>
+        /// <param name="engineEnabled"></param>
         /// <param name="id"></param>
         /// <param name="invitesEnabled"></param>
         /// <param name="ipAllowlist"></param>
@@ -229,6 +236,7 @@ namespace LangSmith
             bool? defaultSsoProvision,
             bool? disabled,
             string? displayName,
+            bool? engineEnabled,
             string? id,
             bool? invitesEnabled,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
@@ -259,6 +267,7 @@ namespace LangSmith
             this.DefaultSsoProvision = defaultSsoProvision;
             this.Disabled = disabled;
             this.DisplayName = displayName;
+            this.EngineEnabled = engineEnabled;
             this.Id = id;
             this.InvitesEnabled = invitesEnabled;
             this.IpAllowlist = ipAllowlist;
@@ -291,5 +300,6 @@ namespace LangSmith
         public OrgsOrganizationInfo()
         {
         }
+
     }
 }

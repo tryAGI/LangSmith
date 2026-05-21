@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_id")]
+        public string? ErrorId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
 
@@ -30,15 +36,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesErrorResponseDetail" /> class.
         /// </summary>
         /// <param name="error"></param>
+        /// <param name="errorId"></param>
         /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesErrorResponseDetail(
             string? error,
+            string? errorId,
             string? message)
         {
             this.Error = error;
+            this.ErrorId = errorId;
             this.Message = message;
         }
 
@@ -48,5 +57,6 @@ namespace LangSmith
         public SandboxesErrorResponseDetail()
         {
         }
+
     }
 }

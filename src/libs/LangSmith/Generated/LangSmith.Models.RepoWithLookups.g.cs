@@ -111,6 +111,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        public global::LangSmith.RepoWithLookupsSource2? Source { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         public string? Owner { get; set; }
 
@@ -218,6 +224,7 @@ namespace LangSmith
         /// <param name="commitTags">
         /// Default Value: []
         /// </param>
+        /// <param name="source"></param>
         /// <param name="owner"></param>
         /// <param name="likedByAuthUser"></param>
         /// <param name="lastCommitHash"></param>
@@ -249,6 +256,7 @@ namespace LangSmith
             global::System.Guid? originalRepoId,
             global::System.Guid? upstreamRepoId,
             global::System.Collections.Generic.IList<string>? commitTags,
+            global::LangSmith.RepoWithLookupsSource2? source,
             string? owner,
             bool? likedByAuthUser,
             string? lastCommitHash,
@@ -272,6 +280,7 @@ namespace LangSmith
             this.UpstreamRepoId = upstreamRepoId;
             this.CommitTags = commitTags;
             this.RepoType = repoType;
+            this.Source = source;
             this.Owner = owner;
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
             this.NumLikes = numLikes;
@@ -292,5 +301,6 @@ namespace LangSmith
         public RepoWithLookups()
         {
         }
+
     }
 }

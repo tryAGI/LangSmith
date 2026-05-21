@@ -75,5 +75,6 @@ namespace LangSmith
         public StripePaymentMethodInfo()
         {
         }
+
     }
 }

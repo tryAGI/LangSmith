@@ -105,6 +105,60 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetAuditLogsAsResponseAsync(
+                startTime: startTime,
+                endTime: endTime,
+                limit: limit,
+                cursor: cursor,
+                workspaceId: workspaceId,
+                operations: operations,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get Audit Logs<br/>
+        /// Retrieve audit log records for the authenticated user's organization in OCSF format.<br/>
+        /// Requires both start_time and end_time parameters to filter logs within a date range.<br/>
+        /// Supports cursor-based pagination.<br/>
+        /// Returns results in OCSF API Activity (Class UID: 6003) format,<br/>
+        /// which is compatible with security monitoring and SIEM tools.<br/>
+        /// Reference: https://schema.ocsf.io/1.7.0/classes/api_activity
+        /// </summary>
+        /// <param name="limit">
+        /// Number of items to return<br/>
+        /// Default Value: 10
+        /// </param>
+        /// <param name="cursor">
+        /// Cursor for pagination (base64-encoded JSON string)
+        /// </param>
+        /// <param name="workspaceId">
+        /// Filter by workspace ID
+        /// </param>
+        /// <param name="startTime">
+        /// Start datetime (inclusive) in ISO 8601 format
+        /// </param>
+        /// <param name="endTime">
+        /// End datetime (inclusive) in ISO 8601 format
+        /// </param>
+        /// <param name="operations">
+        /// Filter by operation names. If omitted, all operations are returned.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListAuditLogsOCSFResponse>> GetAuditLogsAsResponseAsync(
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
+            int? limit = default,
+            string? cursor = default,
+            global::System.Guid? workspaceId = default,
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetAuditLogsArguments(
@@ -138,18 +192,19 @@ namespace LangSmith
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/audit-logs",
                                 baseUri: ResolveBaseUri(
                                 servers: s_GetAuditLogsServers,
-                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("operations", operations?.ToString()) 
+                                .AddOptionalParameter("operations", operations?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -226,6 +281,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -236,6 +293,11 @@ namespace LangSmith
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -253,6 +315,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -262,8 +326,7 @@ namespace LangSmith
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -272,6 +335,11 @@ namespace LangSmith
                         __attempt < __maxAttempts &&
                         global::LangSmith.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -288,14 +356,15 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -335,6 +404,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -355,6 +426,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -417,9 +490,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LangSmith.ListAuditLogsOCSFResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.ListAuditLogsOCSFResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListAuditLogsOCSFResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -447,9 +524,13 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::LangSmith.ListAuditLogsOCSFResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.ListAuditLogsOCSFResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListAuditLogsOCSFResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

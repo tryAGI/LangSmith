@@ -56,13 +56,36 @@ namespace LangSmith
 
         /// <summary>
         /// Create a sandbox claim<br/>
-        /// Create a new sandbox from a snapshot. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one must be set.
+        /// Create a new sandbox from a snapshot. Provide at most one of `snapshot_id` or `snapshot_name`; if neither is provided, the server uses the default static blueprint.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> CreateASandboxClaimAsync(
+
+            global::LangSmith.SandboxesCreateClaimPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await CreateASandboxClaimAsResponseAsync(
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create a sandbox claim<br/>
+        /// Create a new sandbox from a snapshot. Provide at most one of `snapshot_id` or `snapshot_name`; if neither is provided, the server uses the default static blueprint.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesClaimResponse>> CreateASandboxClaimAsResponseAsync(
 
             global::LangSmith.SandboxesCreateClaimPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -98,6 +121,7 @@ namespace LangSmith
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/v2/sandboxes/boxes",
                                 baseUri: ResolveBaseUri(
@@ -179,6 +203,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -189,6 +215,11 @@ namespace LangSmith
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -206,6 +237,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -215,8 +248,7 @@ namespace LangSmith
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -225,6 +257,11 @@ namespace LangSmith
                         __attempt < __maxAttempts &&
                         global::LangSmith.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -241,14 +278,15 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -288,6 +326,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -308,6 +348,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Snapshot not found
@@ -348,45 +390,7 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Sandbox did not become ready in time
-                            if ((int)__response.StatusCode == 408)
-                            {
-                                string? __content_408 = null;
-                                global::System.Exception? __exception_408 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_408 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_408 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_408 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_408, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_408 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_408 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_408, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_408 = __ex;
-                                }
-
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
-                                    message: __content_408 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_408,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_408,
-                                    ResponseObject = __value_408,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // Name already exists or volume conflict
+                            // Name already exists
                             if ((int)__response.StatusCode == 409)
                             {
                                 string? __content_409 = null;
@@ -424,7 +428,7 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Validation error or creation failed
+                            // Validation error
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -500,7 +504,7 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
-                            // Internal Server Error
+                            // Sandbox creation failed or internal error
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -538,6 +542,44 @@ namespace LangSmith
                                         h => h.Value),
                                 };
                             }
+                            // Sandbox did not become ready in time
+                            if ((int)__response.StatusCode == 504)
+                            {
+                                string? __content_504 = null;
+                                global::System.Exception? __exception_504 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_504 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_504 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_504, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_504 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_504, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_504 = __ex;
+                                }
+
+                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+                                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_504,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_504,
+                                    ResponseObject = __value_504,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -560,9 +602,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LangSmith.SandboxesClaimResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.SandboxesClaimResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesClaimResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -590,9 +636,13 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::LangSmith.SandboxesClaimResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.SandboxesClaimResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesClaimResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -632,43 +682,58 @@ namespace LangSmith
         }
         /// <summary>
         /// Create a sandbox claim<br/>
-        /// Create a new sandbox from a snapshot. The snapshot may be identified by `snapshot_id` (UUID) or by `snapshot_name` (tenant-scoped unique name); exactly one must be set.
+        /// Create a new sandbox from a snapshot. Provide at most one of `snapshot_id` or `snapshot_name`; if neither is provided, the server uses the default static blueprint.
         /// </summary>
+        /// <param name="deleteAfterStopSeconds"></param>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="restoreMemory">
+        /// RestoreMemory, when non-nil, overrides the server default for<br/>
+        /// whether to resume the sandbox from its captured memory snapshot.<br/>
+        ///   true  → resume from the memory snapshot if it exists; cold-boot<br/>
+        ///           the sandbox otherwise.<br/>
+        ///   false → always cold-boot, even if a memory snapshot exists.<br/>
+        ///   nil   → use the server default.<br/>
+        /// Applies to this request only; a later stop+start of the same<br/>
+        /// sandbox reverts to the server default.
+        /// </param>
         /// <param name="snapshotId"></param>
         /// <param name="snapshotName"></param>
-        /// <param name="ttlSeconds"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="vcpus"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesClaimResponse> CreateASandboxClaimAsync(
+            int? deleteAfterStopSeconds = default,
             long? fsCapacityBytes = default,
             int? idleTtlSeconds = default,
             long? memBytes = default,
             string? name = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
+            bool? restoreMemory = default,
             string? snapshotId = default,
             string? snapshotName = default,
-            int? ttlSeconds = default,
+            global::System.Collections.Generic.IList<string>? tagValueIds = default,
             int? vcpus = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.SandboxesCreateClaimPayload
             {
+                DeleteAfterStopSeconds = deleteAfterStopSeconds,
                 FsCapacityBytes = fsCapacityBytes,
                 IdleTtlSeconds = idleTtlSeconds,
                 MemBytes = memBytes,
                 Name = name,
                 ProxyConfig = proxyConfig,
+                RestoreMemory = restoreMemory,
                 SnapshotId = snapshotId,
                 SnapshotName = snapshotName,
-                TtlSeconds = ttlSeconds,
+                TagValueIds = tagValueIds,
                 Vcpus = vcpus,
             };
 

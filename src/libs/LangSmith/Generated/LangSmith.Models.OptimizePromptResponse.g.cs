@@ -40,5 +40,6 @@ namespace LangSmith
         public OptimizePromptResponse()
         {
         }
+
     }
 }

@@ -87,6 +87,43 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ReadTracerSessionsRunsMetadataAsResponseAsync(
+                sessionId: sessionId,
+                metadataKeys: metadataKeys,
+                startTime: startTime,
+                k: k,
+                rootRunsOnly: rootRunsOnly,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Read Tracer Sessions Runs Metadata<br/>
+        /// Given a session, a number K, and (optionally) a list of metadata keys, return the top K values for each key.
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="metadataKeys"></param>
+        /// <param name="startTime"></param>
+        /// <param name="k">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="rootRunsOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>> ReadTracerSessionsRunsMetadataAsResponseAsync(
+            global::System.Guid sessionId,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
+            global::System.DateTime? startTime = default,
+            int? k = default,
+            bool? rootRunsOnly = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareReadTracerSessionsRunsMetadataArguments(
@@ -119,16 +156,17 @@ namespace LangSmith
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: $"/api/v1/sessions/{sessionId}/metadata",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ReadTracerSessionsRunsMetadataServers,
-                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("metadata_keys", metadataKeys?.ToString())
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("k", k?.ToString())
-                                .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -204,6 +242,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -214,6 +254,11 @@ namespace LangSmith
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -231,6 +276,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -240,8 +287,7 @@ namespace LangSmith
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -250,6 +296,11 @@ namespace LangSmith
                         __attempt < __maxAttempts &&
                         global::LangSmith.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -266,14 +317,15 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -313,6 +365,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -333,6 +387,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -395,9 +451,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        (global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>), JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -425,9 +485,13 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        (global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

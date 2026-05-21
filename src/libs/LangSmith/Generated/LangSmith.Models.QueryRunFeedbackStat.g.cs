@@ -166,5 +166,6 @@ namespace LangSmith
         public QueryRunFeedbackStat()
         {
         }
+
     }
 }

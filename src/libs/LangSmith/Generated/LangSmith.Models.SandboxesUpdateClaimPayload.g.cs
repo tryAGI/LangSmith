@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delete_after_stop_seconds")]
+        public int? DeleteAfterStopSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fs_capacity_bytes")]
         public long? FsCapacityBytes { get; set; }
 
@@ -41,8 +47,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
-        public int? TtlSeconds { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
+        public global::System.Collections.Generic.IList<string>? TagValueIds { get; set; }
 
         /// <summary>
         /// 
@@ -59,31 +65,34 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesUpdateClaimPayload" /> class.
         /// </summary>
+        /// <param name="deleteAfterStopSeconds"></param>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="memBytes"></param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
-        /// <param name="ttlSeconds"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="vcpus"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesUpdateClaimPayload(
+            int? deleteAfterStopSeconds,
             long? fsCapacityBytes,
             int? idleTtlSeconds,
             long? memBytes,
             string? name,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
-            int? ttlSeconds,
+            global::System.Collections.Generic.IList<string>? tagValueIds,
             int? vcpus)
         {
+            this.DeleteAfterStopSeconds = deleteAfterStopSeconds;
             this.FsCapacityBytes = fsCapacityBytes;
             this.IdleTtlSeconds = idleTtlSeconds;
             this.MemBytes = memBytes;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
-            this.TtlSeconds = ttlSeconds;
+            this.TagValueIds = tagValueIds;
             this.Vcpus = vcpus;
         }
 
@@ -93,5 +102,6 @@ namespace LangSmith
         public SandboxesUpdateClaimPayload()
         {
         }
+
     }
 }

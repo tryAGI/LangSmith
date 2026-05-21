@@ -32,6 +32,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_backend")]
+        public global::LangSmith.BulkExportRunMetadataExecutionBackend2? ExecutionBackend { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         public global::LangSmith.BulkExportRunProgress? Result { get; set; }
 
@@ -47,6 +53,7 @@ namespace LangSmith
         /// <param name="prefix"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="executionBackend"></param>
         /// <param name="result"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,11 +62,13 @@ namespace LangSmith
             string prefix,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
+            global::LangSmith.BulkExportRunMetadataExecutionBackend2? executionBackend,
             global::LangSmith.BulkExportRunProgress? result)
         {
             this.Prefix = prefix ?? throw new global::System.ArgumentNullException(nameof(prefix));
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.ExecutionBackend = executionBackend;
             this.Result = result;
         }
 
@@ -69,5 +78,6 @@ namespace LangSmith
         public BulkExportRunMetadata()
         {
         }
+
     }
 }

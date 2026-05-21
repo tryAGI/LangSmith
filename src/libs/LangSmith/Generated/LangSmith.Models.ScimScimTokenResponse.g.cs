@@ -86,5 +86,6 @@ namespace LangSmith
         public ScimScimTokenResponse()
         {
         }
+
     }
 }

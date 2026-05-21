@@ -40,5 +40,41 @@ namespace LangSmith
             bool? isView = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get a commit<br/>
+        /// Retrieves a specific commit by hash, tag, or "latest" for a repository.<br/>
+        /// This endpoint supports both authenticated and unauthenticated access.<br/>
+        /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
+        /// Commit resolution logic:<br/>
+        /// - "latest" or empty: Get the most recent commit<br/>
+        /// - Less than 8 characters: Only check for tags<br/>
+        /// - 8 or more characters: Prioritize commit hash over tag, check both
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="commit"></param>
+        /// <param name="getExamples">
+        /// Default Value: false
+        /// </param>
+        /// <param name="include"></param>
+        /// <param name="includeModel">
+        /// Default Value: false
+        /// </param>
+        /// <param name="isView">
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CommitsCommitResponse>> GetACommitAsResponseAsync(
+            string owner,
+            string repo,
+            string commit,
+            bool? getExamples = default,
+            string? include = default,
+            bool? includeModel = default,
+            bool? isView = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

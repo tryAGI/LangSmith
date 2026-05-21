@@ -115,5 +115,6 @@ namespace LangSmith
         public UserOnboardingStateResponse()
         {
         }
+
     }
 }

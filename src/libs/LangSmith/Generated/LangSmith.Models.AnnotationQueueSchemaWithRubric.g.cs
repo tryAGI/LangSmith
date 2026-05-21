@@ -207,5 +207,6 @@ namespace LangSmith
         public AnnotationQueueSchemaWithRubric()
         {
         }
+
     }
 }

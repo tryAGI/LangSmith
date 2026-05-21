@@ -50,6 +50,7 @@ namespace LangSmith
             ref bool? sortByDesc,
             ref string? metadata,
             ref string? sortByFeedbackKey,
+            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource,
             ref int? offset,
             ref int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
@@ -59,6 +60,7 @@ namespace LangSmith
             ref bool? useApproxStats,
             global::System.DateTime? statsStartTime,
             global::System.Collections.Generic.IList<string>? statsSelect,
+            ref string? statsFilter,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -73,6 +75,7 @@ namespace LangSmith
             bool? sortByDesc,
             string? metadata,
             string? sortByFeedbackKey,
+            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource,
             int? offset,
             int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
@@ -82,6 +85,7 @@ namespace LangSmith
             bool? useApproxStats,
             global::System.DateTime? statsStartTime,
             global::System.Collections.Generic.IList<string>? statsSelect,
+            string? statsFilter,
             string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -110,6 +114,7 @@ namespace LangSmith
         /// </param>
         /// <param name="metadata"></param>
         /// <param name="sortByFeedbackKey"></param>
+        /// <param name="sortByFeedbackSource"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
@@ -129,6 +134,7 @@ namespace LangSmith
         /// </param>
         /// <param name="statsStartTime"></param>
         /// <param name="statsSelect"></param>
+        /// <param name="statsFilter"></param>
         /// <param name="accept"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -144,6 +150,7 @@ namespace LangSmith
             bool? sortByDesc = default,
             string? metadata = default,
             string? sortByFeedbackKey = default,
+            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource = default,
             int? offset = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
@@ -153,6 +160,105 @@ namespace LangSmith
             bool? useApproxStats = default,
             global::System.DateTime? statsStartTime = default,
             global::System.Collections.Generic.IList<string>? statsSelect = default,
+            string? statsFilter = default,
+            string? accept = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await ReadTracerSessionsAsResponseAsync(
+                referenceFree: referenceFree,
+                referenceDataset: referenceDataset,
+                id: id,
+                name: name,
+                nameContains: nameContains,
+                datasetVersion: datasetVersion,
+                sortBy: sortBy,
+                sortByDesc: sortByDesc,
+                metadata: metadata,
+                sortByFeedbackKey: sortByFeedbackKey,
+                sortByFeedbackSource: sortByFeedbackSource,
+                offset: offset,
+                limit: limit,
+                tagValueId: tagValueId,
+                facets: facets,
+                filter: filter,
+                includeStats: includeStats,
+                useApproxStats: useApproxStats,
+                statsStartTime: statsStartTime,
+                statsSelect: statsSelect,
+                statsFilter: statsFilter,
+                accept: accept,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Read Tracer Sessions<br/>
+        /// Get all sessions.
+        /// </summary>
+        /// <param name="referenceFree"></param>
+        /// <param name="referenceDataset"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="nameContains"></param>
+        /// <param name="datasetVersion"></param>
+        /// <param name="sortBy">
+        /// Default Value: start_time
+        /// </param>
+        /// <param name="sortByDesc">
+        /// Default Value: true
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="sortByFeedbackKey"></param>
+        /// <param name="sortByFeedbackSource"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="tagValueId"></param>
+        /// <param name="facets">
+        /// Default Value: false
+        /// </param>
+        /// <param name="filter"></param>
+        /// <param name="includeStats">
+        /// Default Value: false
+        /// </param>
+        /// <param name="useApproxStats">
+        /// Default Value: false
+        /// </param>
+        /// <param name="statsStartTime"></param>
+        /// <param name="statsSelect"></param>
+        /// <param name="statsFilter"></param>
+        /// <param name="accept"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>> ReadTracerSessionsAsResponseAsync(
+            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            string? datasetVersion = default,
+            global::LangSmith.SessionSortableColumns? sortBy = default,
+            bool? sortByDesc = default,
+            string? metadata = default,
+            string? sortByFeedbackKey = default,
+            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource = default,
+            int? offset = default,
+            int? limit = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            bool? facets = default,
+            string? filter = default,
+            bool? includeStats = default,
+            bool? useApproxStats = default,
+            global::System.DateTime? statsStartTime = default,
+            global::System.Collections.Generic.IList<string>? statsSelect = default,
+            string? statsFilter = default,
             string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -171,6 +277,7 @@ namespace LangSmith
                 sortByDesc: ref sortByDesc,
                 metadata: ref metadata,
                 sortByFeedbackKey: ref sortByFeedbackKey,
+                sortByFeedbackSource: sortByFeedbackSource,
                 offset: ref offset,
                 limit: ref limit,
                 tagValueId: tagValueId,
@@ -180,6 +287,7 @@ namespace LangSmith
                 useApproxStats: ref useApproxStats,
                 statsStartTime: statsStartTime,
                 statsSelect: statsSelect,
+                statsFilter: ref statsFilter,
                 accept: ref accept);
 
 
@@ -204,11 +312,12 @@ namespace LangSmith
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/sessions",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ReadTracerSessionsServers,
-                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("reference_free", referenceFree?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("reference_dataset", referenceDataset?.ToString())
@@ -220,6 +329,7 @@ namespace LangSmith
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
+                                .AddOptionalParameter("sort_by_feedback_source", sortByFeedbackSource?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
@@ -228,7 +338,8 @@ namespace LangSmith
                                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("stats_start_time", statsStartTime?.ToString())
-                                .AddOptionalParameter("stats_select", statsSelect?.ToString()) 
+                                .AddOptionalParameter("stats_select", statsSelect?.ToString())
+                                .AddOptionalParameter("stats_filter", statsFilter)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -286,6 +397,7 @@ namespace LangSmith
                     sortByDesc: sortByDesc,
                     metadata: metadata,
                     sortByFeedbackKey: sortByFeedbackKey,
+                    sortByFeedbackSource: sortByFeedbackSource,
                     offset: offset,
                     limit: limit,
                     tagValueId: tagValueId,
@@ -295,6 +407,7 @@ namespace LangSmith
                     useApproxStats: useApproxStats,
                     statsStartTime: statsStartTime,
                     statsSelect: statsSelect,
+                    statsFilter: statsFilter,
                     accept: accept);
 
                 return __httpRequest;
@@ -325,6 +438,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -335,6 +450,11 @@ namespace LangSmith
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -352,6 +472,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -361,8 +483,7 @@ namespace LangSmith
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -371,6 +492,11 @@ namespace LangSmith
                         __attempt < __maxAttempts &&
                         global::LangSmith.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -387,14 +513,15 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -434,6 +561,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -454,6 +583,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -516,9 +647,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        (global::System.Collections.Generic.IList<global::LangSmith.TracerSession>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>), JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.TracerSession>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -546,9 +681,13 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        (global::System.Collections.Generic.IList<global::LangSmith.TracerSession>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.TracerSession>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

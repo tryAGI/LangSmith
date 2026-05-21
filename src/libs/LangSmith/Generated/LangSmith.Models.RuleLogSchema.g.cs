@@ -93,6 +93,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_only")]
+        public global::LangSmith.RuleLogActionResponse? ExtendOnly { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         public string? ThreadId { get; set; }
 
@@ -118,6 +124,7 @@ namespace LangSmith
         /// <param name="evaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
+        /// <param name="extendOnly"></param>
         /// <param name="threadId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -136,6 +143,7 @@ namespace LangSmith
             global::LangSmith.RuleLogActionResponse? evaluators,
             global::LangSmith.RuleLogActionResponse? alerts,
             global::LangSmith.RuleLogActionResponse? webhooks,
+            global::LangSmith.RuleLogActionResponse? extendOnly,
             string? threadId)
         {
             this.RuleId = ruleId;
@@ -151,6 +159,7 @@ namespace LangSmith
             this.Evaluators = evaluators;
             this.Alerts = alerts;
             this.Webhooks = webhooks;
+            this.ExtendOnly = extendOnly;
             this.ThreadId = threadId;
         }
 
@@ -160,5 +169,6 @@ namespace LangSmith
         public RuleLogSchema()
         {
         }
+
     }
 }

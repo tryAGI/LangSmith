@@ -17,14 +17,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
+        public string? CreatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataplane_url")]
         public string? DataplaneUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public string? ExpiresAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delete_after_stop_seconds")]
+        public int? DeleteAfterStopSeconds { get; set; }
 
         /// <summary>
         /// 
@@ -89,14 +95,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
-        public int? TtlSeconds { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("stopped_at")]
+        public string? StoppedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_by")]
+        public string? UpdatedBy { get; set; }
 
         /// <summary>
         /// 
@@ -114,8 +126,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesClaimResponse" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
+        /// <param name="createdBy"></param>
         /// <param name="dataplaneUrl"></param>
-        /// <param name="expiresAt"></param>
+        /// <param name="deleteAfterStopSeconds"></param>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="id"></param>
         /// <param name="idleTtlSeconds"></param>
@@ -126,16 +139,18 @@ namespace LangSmith
         /// <param name="snapshotId"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
-        /// <param name="ttlSeconds"></param>
+        /// <param name="stoppedAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="updatedBy"></param>
         /// <param name="vcpus"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesClaimResponse(
             string? createdAt,
+            string? createdBy,
             string? dataplaneUrl,
-            string? expiresAt,
+            int? deleteAfterStopSeconds,
             long? fsCapacityBytes,
             string? id,
             int? idleTtlSeconds,
@@ -146,13 +161,15 @@ namespace LangSmith
             string? snapshotId,
             string? status,
             string? statusMessage,
-            int? ttlSeconds,
+            string? stoppedAt,
             string? updatedAt,
+            string? updatedBy,
             int? vcpus)
         {
             this.CreatedAt = createdAt;
+            this.CreatedBy = createdBy;
             this.DataplaneUrl = dataplaneUrl;
-            this.ExpiresAt = expiresAt;
+            this.DeleteAfterStopSeconds = deleteAfterStopSeconds;
             this.FsCapacityBytes = fsCapacityBytes;
             this.Id = id;
             this.IdleTtlSeconds = idleTtlSeconds;
@@ -163,8 +180,9 @@ namespace LangSmith
             this.SnapshotId = snapshotId;
             this.Status = status;
             this.StatusMessage = statusMessage;
-            this.TtlSeconds = ttlSeconds;
+            this.StoppedAt = stoppedAt;
             this.UpdatedAt = updatedAt;
+            this.UpdatedBy = updatedBy;
             this.Vcpus = vcpus;
         }
 
@@ -174,5 +192,6 @@ namespace LangSmith
         public SandboxesClaimResponse()
         {
         }
+
     }
 }

@@ -33,6 +33,12 @@ namespace LangSmith
         public string? TokenType { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public string? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,6 +51,7 @@ namespace LangSmith
         /// <param name="expiresIn"></param>
         /// <param name="refreshToken"></param>
         /// <param name="tokenType"></param>
+        /// <param name="workspaceId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,12 +59,14 @@ namespace LangSmith
             string? accessToken,
             int? expiresIn,
             string? refreshToken,
-            string? tokenType)
+            string? tokenType,
+            string? workspaceId)
         {
             this.AccessToken = accessToken;
             this.ExpiresIn = expiresIn;
             this.RefreshToken = refreshToken;
             this.TokenType = tokenType;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>
@@ -66,5 +75,6 @@ namespace LangSmith
         public OauthTokenResponse()
         {
         }
+
     }
 }

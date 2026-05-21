@@ -35,6 +35,26 @@ namespace LangSmith
         /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, string>>> IngestRunsMultipartAsResponseAsync(
+
+            global::LangSmith.CreateRunsMultipartRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Ingest Runs (Multipart)<br/>
+        /// Ingests multiple runs, feedback objects, and binary attachments in a single `multipart/form-data` request.<br/>
+        /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.<br/>
+        /// * `post|patch.&lt;run_id&gt;` – JSON run payload.<br/>
+        /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
+        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
+        /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
+        /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
+        /// **Best performance** for high‑volume ingestion.
+        /// </summary>
         /// <param name="post_runId_">
         /// Run to create (JSON)
         /// </param>

@@ -148,5 +148,6 @@ namespace LangSmith
         public UsageMetadata()
         {
         }
+
     }
 }

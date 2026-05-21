@@ -42,6 +42,30 @@ namespace LangSmith
         ///     event: end
         /// </summary>
         /// <param name="shareToken"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> ReadSharedDeltaStreamAsResponseAsync(
+            global::System.Guid shareToken,
+
+            global::LangSmith.QueryFeedbackDeltaBatch request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Shared Delta Stream<br/>
+        /// Stream feedback deltas for multiple feedback keys.<br/>
+        /// Returns results in chunks as they become available. Each chunk contains<br/>
+        /// results for one or more feedback keys. Errors for individual chunks are<br/>
+        /// included in the response rather than failing the entire operation.<br/>
+        /// Response format (SSE):<br/>
+        ///     event: data<br/>
+        ///     data: {"feedback_deltas": {"key1": {session_id: {...}}, ...}, "errors": null}<br/>
+        ///     event: data<br/>
+        ///     data: {"feedback_deltas": {"key2": {...}}, "errors": null}<br/>
+        ///     event: end
+        /// </summary>
+        /// <param name="shareToken"></param>
         /// <param name="baselineSessionId"></param>
         /// <param name="comparisonSessionIds"></param>
         /// <param name="feedbackKeys"></param>

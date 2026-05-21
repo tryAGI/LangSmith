@@ -39,5 +39,6 @@ namespace LangSmith
         public UsageUserUsageResponse()
         {
         }
+
     }
 }

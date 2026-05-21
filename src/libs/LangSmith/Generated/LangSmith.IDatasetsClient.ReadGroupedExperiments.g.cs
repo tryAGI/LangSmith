@@ -24,6 +24,21 @@ namespace LangSmith
         /// Stream grouped and aggregated experiments.
         /// </summary>
         /// <param name="datasetId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> ReadGroupedExperimentsAsResponseAsync(
+            global::System.Guid datasetId,
+
+            global::LangSmith.GroupedExperimentsRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Grouped Experiments<br/>
+        /// Stream grouped and aggregated experiments.
+        /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="statsStartTime"></param>
         /// <param name="nameContains"></param>
         /// <param name="tagValueId"></param>

@@ -111,6 +111,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
+        public bool? EngineEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -136,6 +142,7 @@ namespace LangSmith
         /// <param name="ipAllowlist"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="engineEnabled"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -156,7 +163,8 @@ namespace LangSmith
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             bool? restrictBrowserSecrets,
-            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls)
+            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
+            bool? engineEnabled)
         {
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;
@@ -175,6 +183,7 @@ namespace LangSmith
             this.IpAllowlist = ipAllowlist;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
+            this.EngineEnabled = engineEnabled;
         }
 
         /// <summary>
@@ -183,5 +192,6 @@ namespace LangSmith
         public OrganizationUpdate()
         {
         }
+
     }
 }

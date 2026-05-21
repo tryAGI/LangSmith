@@ -89,6 +89,14 @@ namespace LangSmith
         public global::System.DateTime? MinStartTime { get; set; }
 
         /// <summary>
+        /// `num_errored_turns` is the count of root traces in the thread (within the query window) whose status was an error.<br/>
+        /// Example: 1
+        /// </summary>
+        /// <example>1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_errored_turns")]
+        public int? NumErroredTurns { get; set; }
+
+        /// <summary>
         /// `start_time` is a reference start time for this row (RFC3339 date-time), such as for sorting.<br/>
         /// Example: 2025-01-15T12:00:00.000Z
         /// </summary>
@@ -191,6 +199,10 @@ namespace LangSmith
         /// `min_start_time` is the earliest trace start time in the thread (RFC3339 date-time).<br/>
         /// Example: 2025-01-15T12:00:00.000Z
         /// </param>
+        /// <param name="numErroredTurns">
+        /// `num_errored_turns` is the count of root traces in the thread (within the query window) whose status was an error.<br/>
+        /// Example: 1
+        /// </param>
         /// <param name="startTime">
         /// `start_time` is a reference start time for this row (RFC3339 date-time), such as for sorting.<br/>
         /// Example: 2025-01-15T12:00:00.000Z
@@ -234,6 +246,7 @@ namespace LangSmith
             double? latencyP99,
             global::System.DateTime? maxStartTime,
             global::System.DateTime? minStartTime,
+            int? numErroredTurns,
             global::System.DateTime? startTime,
             global::System.Guid? threadId,
             double? totalCost,
@@ -253,6 +266,7 @@ namespace LangSmith
             this.LatencyP99 = latencyP99;
             this.MaxStartTime = maxStartTime;
             this.MinStartTime = minStartTime;
+            this.NumErroredTurns = numErroredTurns;
             this.StartTime = startTime;
             this.ThreadId = threadId;
             this.TotalCost = totalCost;
@@ -268,5 +282,6 @@ namespace LangSmith
         public ThreadsThreadListItem()
         {
         }
+
     }
 }

@@ -46,6 +46,18 @@ namespace LangSmith
         public global::LangSmith.DataPlanesStatus? Status { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status_updated_at")]
+        public string? StatusUpdatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspaces")]
+        public global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlaneWorkspace>? Workspaces { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,6 +72,8 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="region"></param>
         /// <param name="status"></param>
+        /// <param name="statusUpdatedAt"></param>
+        /// <param name="workspaces"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -69,7 +83,9 @@ namespace LangSmith
             string? id,
             string? name,
             string? region,
-            global::LangSmith.DataPlanesStatus? status)
+            global::LangSmith.DataPlanesStatus? status,
+            string? statusUpdatedAt,
+            global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlaneWorkspace>? workspaces)
         {
             this.ApiUrl = apiUrl;
             this.CreatedAt = createdAt;
@@ -77,6 +93,8 @@ namespace LangSmith
             this.Name = name;
             this.Region = region;
             this.Status = status;
+            this.StatusUpdatedAt = statusUpdatedAt;
+            this.Workspaces = workspaces;
         }
 
         /// <summary>
@@ -85,5 +103,6 @@ namespace LangSmith
         public DataPlanesPublicDataPlane()
         {
         }
+
     }
 }

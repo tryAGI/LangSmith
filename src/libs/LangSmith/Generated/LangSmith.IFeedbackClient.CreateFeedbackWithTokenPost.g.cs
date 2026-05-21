@@ -24,6 +24,21 @@ namespace LangSmith
         /// Create a new feedback with a token.
         /// </summary>
         /// <param name="token"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenPostAsResponseAsync(
+            global::System.Guid token,
+
+            global::LangSmith.FeedbackCreateWithTokenExtendedSchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Feedback With Token Post<br/>
+        /// Create a new feedback with a token.
+        /// </summary>
+        /// <param name="token"></param>
         /// <param name="score"></param>
         /// <param name="value"></param>
         /// <param name="comment"></param>

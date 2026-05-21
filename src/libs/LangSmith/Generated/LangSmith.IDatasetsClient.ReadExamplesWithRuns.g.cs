@@ -31,6 +31,25 @@ namespace LangSmith
         /// <param name="format">
         /// Response format, e.g., 'csv'
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>> ReadExamplesWithRunsAsResponseAsync(
+            global::System.Guid datasetId,
+
+            global::LangSmith.QueryExampleSchemaWithRunsRequest request,
+            string? format = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Examples With Runs<br/>
+        /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.
+        /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="format">
+        /// Response format, e.g., 'csv'
+        /// </param>
         /// <param name="sessionIds"></param>
         /// <param name="offset">
         /// Default Value: 0

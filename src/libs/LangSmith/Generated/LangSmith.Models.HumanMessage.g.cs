@@ -100,5 +100,6 @@ namespace LangSmith
         public HumanMessage()
         {
         }
+
     }
 }

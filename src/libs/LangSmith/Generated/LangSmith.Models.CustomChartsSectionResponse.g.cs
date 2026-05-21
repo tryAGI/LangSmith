@@ -95,5 +95,6 @@ namespace LangSmith
         public CustomChartsSectionResponse()
         {
         }
+
     }
 }

@@ -65,6 +65,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2NullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.BulkExportRunStatusJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.BulkExportRunStatusNullableJsonConverter),
@@ -92,6 +96,10 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestSource2NullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelJsonConverter),
 
@@ -160,6 +168,10 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.FeedbackLevelJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.FeedbackLevelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceParamJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceParamNullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.FeedbackTypeJsonConverter),
 
@@ -233,17 +245,37 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.ProvisioningMethodJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.ProvisioningMethodNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.ProxyRequestMethodJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProxyRequestMethodNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsSource2NullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionJsonConverter),
 
@@ -365,6 +397,22 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.UsageLimitTypeNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsSkillSpecTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsSkillSpecTypeNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetNullableJsonConverter),
@@ -405,6 +453,14 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.AuthSessionStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStrategyJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStrategyNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameNullableJsonConverter),
@@ -416,6 +472,10 @@ namespace LangSmith
             typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CredentialsBindingPayloadKindJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CredentialsBindingPayloadKindNullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.DataPlanesStatusJsonConverter),
 
@@ -449,6 +509,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.McptoolsMCPErrorCodeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McptoolsMCPErrorCodeNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.QueryRunSelectFieldJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.QueryRunSelectFieldNullableJsonConverter),
@@ -473,9 +537,37 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.SandboxesHeaderTypeNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsMessageRoleJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsMessageRoleNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadStatusNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TracerSessionIssuesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TracerSessionIssuesStatusNullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2JsonConverter),
 
@@ -513,6 +605,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2NullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2JsonConverter),
 
             typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2NullableJsonConverter),
@@ -529,9 +625,33 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemNullableJsonConverter),
 
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesSortByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesSortByNullableJsonConverter),
+
             typeof(global::LangSmith.JsonConverters.GetRunsSelectJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.GetRunsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsStatsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsStatsSelectNullableJsonConverter),
 
             typeof(global::LangSmith.JsonConverters.GetThreadsTracesSelectJsonConverter),
 
@@ -791,6 +911,10 @@ namespace LangSmith
 
             typeof(global::LangSmith.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_12fc55ec359bbf41")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>), TypeInfoPropertyName = "ToolMessageChunk_f97dfaaf21890332")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>?), TypeInfoPropertyName = "ToolMessageChunk_804fa1e47962cb9b")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_212e443f6115a54a")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AIMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>), TypeInfoPropertyName = "AnyOfStringIListAnyOfStringObject2")]
@@ -896,6 +1020,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportRun))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportRunMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportRunStatus), TypeInfoPropertyName = "BulkExportRunStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportRunMetadataExecutionBackend2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportRunProgress))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PendingUpload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkExportUpdatableStatus), TypeInfoPropertyName = "BulkExportUpdatableStatus2")]
@@ -927,6 +1052,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRepoRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRepoRequestRepoType), TypeInfoPropertyName = "CreateRepoRequestRepoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRepoRequestSource2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRepoResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RepoWithLookups))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRoleRequest))]
@@ -1058,6 +1184,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackLevel), TypeInfoPropertyName = "FeedbackLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackSourceParam), TypeInfoPropertyName = "FeedbackSourceParam2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackUpdateSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FetchClusteringJobRunsResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FilterView))]
@@ -1191,8 +1318,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PendingIdentityCreate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PermissionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundPromptCanvasPayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_12fc55ec359bbf41")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>), TypeInfoPropertyName = "ToolMessageChunk_f97dfaaf21890332")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SystemMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ToolMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SystemMessageChunk))]
@@ -1207,9 +1332,13 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSavedOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsCreateRequestSettingsType), TypeInfoPropertyName = "PlaygroundSettingsCreateRequestSettingsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsResponseSettingsType), TypeInfoPropertyName = "PlaygroundSettingsResponseSettingsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PopulateAnnotationQueueSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PromptOptimizationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.PromptOptimizationResult>))]
@@ -1228,12 +1357,13 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PromptWebhookTest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PromptWebhookUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ProvisioningMethod))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ProxyRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ProxyRequestMethod), TypeInfoPropertyName = "ProxyRequestMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PublicComparativeExperiment))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PublicExampleWithRuns))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PutDatasetVersionsSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueryExampleSchemaWithRuns))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SortParamsForRunsComparisonView))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueryExampleSchemaWithRunsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueryFeedbackDelta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueryFeedbackDeltaBatch))]
@@ -1246,6 +1376,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.IList<global::System.Guid>>), TypeInfoPropertyName = "AnyOfBooleanIListGuid2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RepoUpdateTagRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RepoWithLookupsRepoType), TypeInfoPropertyName = "RepoWithLookupsRepoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RepoWithLookupsSource2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RequestBodyForRunsGenerateQuery))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.RunsGenerateQueryFeedbackKeys>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsGenerateQueryFeedbackKeys), TypeInfoPropertyName = "RunsGenerateQueryFeedbackKeys2")]
@@ -1280,6 +1411,919 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunSchemaWithAnnotationQueueInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunShareSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStats))]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AccessScopeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaQueueTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaQueueTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithRubricQueueTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithRubricQueueTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuditLogOperationJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuditLogOperationNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthProviderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthProviderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportCompressionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportDestinationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportDestinationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportUpdatableStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportUpdatableStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CodeEvaluatorLanguageJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CodeEvaluatorLanguageNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ConfiguredByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ConfiguredByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartMetricJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartMetricNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleListOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleListOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaAggregationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaAggregationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaUpdateAggregationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaUpdateAggregationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackLevelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackLevelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceParamJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceParamNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FilterViewTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GenerateClusteringJobConfigRequestModelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GenerateClusteringJobConfigRequestModelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetDatasetsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetDatasetsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GranularUsageGroupByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GranularUsageGroupByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GroupExampleRunsByFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GroupExampleRunsByFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.HostProjectChartMetricNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.MemberSortFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.MemberSortFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFCategoryNameJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFCategoryNameNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFClassNameJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFClassNameNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PagerdutySeverityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PagerdutySeverityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PaymentPlanTierNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProvisioningMethodJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProvisioningMethodNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProxyRequestMethodJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProxyRequestMethodNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResourceTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResourceTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RuleLogActionOutcomeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RuleLogActionOutcomeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunDateOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunDateOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunGroupByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunGroupByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetBy2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetBy2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunTypeEnumJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunTypeEnumNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunnerContextEnumJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunnerContextEnumNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SessionSortableColumnsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SessionSortableColumnsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByComparativeExperimentColumnJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByComparativeExperimentColumnNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByDatasetColumnJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByDatasetColumnNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SourceTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SourceTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadMessagesFormatTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadMessagesFormatTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageChunkStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageChunkStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TraceTierJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TraceTierNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TrueFalseLiteralJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TrueFalseLiteralNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.UsageLimitTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.UsageLimitTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsSkillSpecTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsSkillSpecTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAggregationJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAggregationNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleOperatorJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleOperatorNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStrategyJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStrategyNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacOperatorJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacOperatorNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CredentialsBindingPayloadKindJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CredentialsBindingPayloadKindNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataPlanesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataPlanesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsAuthTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsAuthTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsMatchByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsMatchByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsTransportJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsTransportNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersOAuthModeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersOAuthModeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McptoolsMCPErrorCodeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McptoolsMCPErrorCodeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QuerySortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QuerySortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsRunRunTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsRunRunTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SandboxesHeaderTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SandboxesHeaderTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsMessageRoleJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsMessageRoleNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TracerSessionIssuesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TracerSessionIssuesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetServiceJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetServiceNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRulesApiV1RunsRulesGetType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRulesApiV1RunsRulesGetType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchived2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchived2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesSortByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesSortByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsStatsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsStatsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsTracesSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsTracesSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetTracesRunsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetTracesRunsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceVariant1JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceVariant12JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EntitiesItemJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartType?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?, double?>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.OneOfJsonConverter<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreateRunsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreateRunsBatchResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.PatchRunsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreatePlatformAlertsTestResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.DeletePlatformAlertsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.PatchPlatformAlertsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_12fc55ec359bbf41")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>), TypeInfoPropertyName = "ToolMessageChunk_f97dfaaf21890332")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>?), TypeInfoPropertyName = "ToolMessageChunk_804fa1e47962cb9b")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_212e443f6115a54a")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupByAttribute), TypeInfoPropertyName = "RunStatsGroupByAttribute2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupBySeriesResponseAttribute), TypeInfoPropertyName = "RunStatsGroupBySeriesResponseAttribute2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupBySeriesResponseSetBy2))]
@@ -1395,6 +2439,35 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AppSchemasTenant))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AbacErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentBuilderWebhooksWebhookTestResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.AgentsFileEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsFileEntry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentPermissions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentRuntime))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentsSkillSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsSkillSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentsSubagentSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsSubagentSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsToolsConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentModelConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentPermissionsIdentity), TypeInfoPropertyName = "AgentsAgentPermissionsIdentity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsSharedUsers))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentPermissionsTenantAccessLevel), TypeInfoPropertyName = "AgentsAgentPermissionsTenantAccessLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentPermissionsVisibility), TypeInfoPropertyName = "AgentsAgentPermissionsVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsAgentSummary))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsCreateAgentRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsHealthResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsMCPCheck))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsListAgentsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentsAgentSummary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentsMCPServerHealth>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsMCPServerHealth))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.McptoolsMCPErrorCode), TypeInfoPropertyName = "McptoolsMCPErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsSkillSpecType), TypeInfoPropertyName = "AgentsSkillSpecType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsToolSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentsToolSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentsUpdateAgentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionTarget), TypeInfoPropertyName = "AlertsAlertActionTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionBase))]
@@ -1417,6 +2490,15 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsUpdateAlertRuleRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesAddReviewerRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesAddReviewerResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthCreateSessionRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthSessionStrategy), TypeInfoPropertyName = "AuthSessionStrategy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthCreateSessionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthSessionStatus), TypeInfoPropertyName = "AuthSessionStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthGetSessionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthListTokensResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AuthTokenSummary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthTokenSummary))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthnOrganizationConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthnPublicAuthInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthzInternalAbacAttributeName), TypeInfoPropertyName = "AuthzInternalAbacAttributeName2")]
@@ -1443,10 +2525,22 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CommitsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CommitsListCommitsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.CommitsCommitWithLookups>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CredentialsErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CredentialsBindingPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CredentialsBindingPayloadKind), TypeInfoPropertyName = "CredentialsBindingPayloadKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CredentialsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.CredentialsBindingPayload>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAws))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesListPublicDataPlanesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlane>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesPublicDataPlane))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesStatus), TypeInfoPropertyName = "DataPlanesStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlaneWorkspace>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesPublicDataPlaneWorkspace))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoriesCommitInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoriesCommitResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoriesCreateDirectoryCommitRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoriesGetDirectoryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ErrutilInternalError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ErrutilUserError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem))]
@@ -1484,6 +2578,12 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeaturesErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeaturesFeatureConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeaturesUpsertDefaultModelRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesCreateGatewayPolicyRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesSubjectMatcher>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesSubjectMatcher))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesGatewayPolicyRecord))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesUpdateGatewayPolicyRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppInstallLinkResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppInstallation))]
@@ -1494,6 +2594,13 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppUserConnectionMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppUserConnectionStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GithubAppUserTokenResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HandlersCreateCheckpointResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HandlersErrorDetail))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HandlersErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HandlersExecRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiCommand))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HandlersExecResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HandlersUploadResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HubEnvironmentsCreateEnvironmentsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.HubEnvironmentsEnvironmentEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.HubEnvironmentsEnvironmentEntry))]
@@ -1556,6 +2663,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.McptoolsTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.NpsSubmitResponseRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthAuthorizationServerMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthClientRegistrationRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthClientRegistrationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthDeviceCodeResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthTokenErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthTokenResponse))]
@@ -1623,10 +2732,39 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ScimScimTokenResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ScimScimTokenSensitiveResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ScimUpdateScimTokenPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SharedProblemDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsCreateSkillRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.SkillsFileEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsFileEntry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsListSkillsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SkillsSkill>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsSkill))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SkillsSkillOwner>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsSkillOwner))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SkillsUpdateSkillRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TagTransitionsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TagTransitionsTagTransition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TagTransitionsTagTransitionHistoryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TagTransitionsTagTransition>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsBulkUpdateThreadResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsBulkUpdateThreadResultStatus), TypeInfoPropertyName = "ThreadsBulkUpdateThreadResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsBulkUpdateThreadsRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsUpdateThreadRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsBulkUpdateThreadsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ThreadsBulkUpdateThreadResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsCreateThreadAndRunRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsCreateThreadAndRunThread))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsCreateThreadAndRunThreadIfExists), TypeInfoPropertyName = "ThreadsCreateThreadAndRunThreadIfExists2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsCreateThreadOptions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsCreateThreadRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsCreateThreadRequestIfExists), TypeInfoPropertyName = "ThreadsCreateThreadRequestIfExists2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsMessage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsMessageRole), TypeInfoPropertyName = "ThreadsMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsOptionalFieldBool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsOptionalFieldString))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsQuerySingleThreadStatsResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsQueryThreadTracesResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadTraceListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsThreadTraceListItem))]
@@ -1634,14 +2772,37 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsQueryThreadsResponseBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsThreadListItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsSingleThreadStatsSelectField), TypeInfoPropertyName = "ThreadsSingleThreadStatsSelectField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsStreamRunRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ThreadsMessage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsThread))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsThreadStatus), TypeInfoPropertyName = "ThreadsThreadStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsThreadTraceSelectField), TypeInfoPropertyName = "ThreadsThreadTraceSelectField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsUpdateThreadMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ThreadsUpdateThreadResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ToolsCreateToolPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ToolsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ToolsListToolsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ToolsTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ToolsTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ToolsUpdateToolPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesStatus), TypeInfoPropertyName = "TracerSessionIssuesStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesListViewsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesViewedIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesViewedIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesAgentCreateIssuesAgentRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesAgentErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesAgentIssuesAgent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionIssuesAgentUpdateIssuesAgentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TracerSessionsAgentVersionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TriggersCreateTriggerRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TriggersErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TriggersTrigger))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TriggersTriggerListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TriggersTrigger>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TriggersUpdateTriggerRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TtlSettingsTTLSettingsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TtlSettingsUpdateTTLSettingsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UsageAgentUsage))]
@@ -1659,6 +2820,919 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SecretUpsert>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ListTagsForResourceRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateExampleApiV1ExamplesPostRequest))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AccessScopeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaQueueTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaQueueTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithRubricQueueTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithRubricQueueTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuditLogOperationJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuditLogOperationNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthProviderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthProviderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportCompressionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportDestinationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportDestinationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportFormatVersionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportRunStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportUpdatableStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BulkExportUpdatableStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ChangePaymentPlanReqNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CodeEvaluatorLanguageJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CodeEvaluatorLanguageNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ConfiguredByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ConfiguredByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRepoRequestSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartMetricJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartMetricNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CustomChartTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DatasetTransformationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptOptimizationJobStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EPromptWebhookTriggerNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleListOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleListOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ExampleSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaAggregationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaAggregationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaUpdateAggregationTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackFormulaUpdateAggregationTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackLevelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackLevelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceParamJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceParamNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FilterViewTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GenerateClusteringJobConfigRequestModelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GenerateClusteringJobConfigRequestModelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetDatasetsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetDatasetsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GranularUsageGroupByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GranularUsageGroupByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GroupExampleRunsByFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GroupExampleRunsByFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.HostProjectChartMetricNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.MemberSortFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.MemberSortFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFCategoryNameJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFCategoryNameNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFClassNameJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OCSFClassNameNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.OrganizationDashboardTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PagerdutySeverityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PagerdutySeverityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PaymentPlanTierNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProvisioningMethodJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProvisioningMethodNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProxyRequestMethodJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ProxyRequestMethodNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RepoWithLookupsSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResourceTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ResourceTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RuleLogActionOutcomeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RuleLogActionOutcomeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunDateOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunDateOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunGroupByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunGroupByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunRulesAlertTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetBy2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetBy2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunStatsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunTypeEnumJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunTypeEnumNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunnerContextEnumJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunnerContextEnumNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SessionSortableColumnsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SessionSortableColumnsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByComparativeExperimentColumnJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByComparativeExperimentColumnNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByDatasetColumnJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortByDatasetColumnNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SourceTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SourceTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TenantUsageLimitTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadMessagesFormatTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadMessagesFormatTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageChunkStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ToolMessageChunkStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TraceTierJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TraceTierNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TrueFalseLiteralJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TrueFalseLiteralNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.UsageLimitTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.UsageLimitTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsSkillSpecTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AgentsSkillSpecTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAggregationJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAggregationNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleOperatorJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleOperatorNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStrategyJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthSessionStrategyNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacOperatorJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalAbacOperatorNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CredentialsBindingPayloadKindJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.CredentialsBindingPayloadKindNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataPlanesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.DataPlanesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsAuthTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsAuthTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsMatchByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsMatchByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsTransportJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.IntegrationsTransportNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersOAuthModeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersOAuthModeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McptoolsMCPErrorCodeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.McptoolsMCPErrorCodeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QueryRunTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QuerySortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.QuerySortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsRunRunTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.RunsRunRunTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SandboxesHeaderTypeJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.SandboxesHeaderTypeNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsMessageRoleJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsMessageRoleNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TracerSessionIssuesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.TracerSessionIssuesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetServiceJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetServiceNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRulesApiV1RunsRulesGetType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRulesApiV1RunsRulesGetType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchived2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchived2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoType2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoType2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2NullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortOrderJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetFleetAgentsSortOrderNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesStatusJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesStatusNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesSortByJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetPlatformIssuesSortByNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetRunsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsStatsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsStatsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsTracesSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetThreadsTracesSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetTracesRunsSelectJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.GetTracesRunsSelectNullableJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceVariant1JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.FeedbackSourceVariant12JsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.EntitiesItemJsonConverter),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartType?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?, double?>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.OneOfJsonConverter<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, string, object>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>),
+
+            typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreateRunsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreateRunsBatchResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.PatchRunsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreatePlatformAlertsTestResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.DeletePlatformAlertsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.PatchPlatformAlertsResponse3>),
+
+            typeof(global::LangSmith.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_12fc55ec359bbf41")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>), TypeInfoPropertyName = "ToolMessageChunk_f97dfaaf21890332")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>?), TypeInfoPropertyName = "ToolMessageChunk_804fa1e47962cb9b")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_212e443f6115a54a")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.CreateExamplesApiV1ExamplesBulkPostRequestItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateExamplesApiV1ExamplesBulkPostRequestItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ExampleUpdateWithID>))]
@@ -1679,6 +3753,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRunsBatchRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.RunsRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRunsMultipartRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateUploadRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreatePlatformDatasetsExamplesRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PatchPlatformDatasetsExamplesRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2))]
@@ -1699,14 +3774,22 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListReposApiV1ReposGetRepoType2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item), TypeInfoPropertyName = "ListReposApiV1ReposGetRepoTypesVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListReposApiV1ReposGetSource2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListReposApiV1ReposGetSortField2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<string, string, object>), TypeInfoPropertyName = "AnyOfStringStringObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item), TypeInfoPropertyName = "ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetAgentsSortBy), TypeInfoPropertyName = "GetFleetAgentsSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetAgentsSortOrder), TypeInfoPropertyName = "GetFleetAgentsSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesStatus), TypeInfoPropertyName = "GetPlatformIssuesStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesSortBy), TypeInfoPropertyName = "GetPlatformIssuesSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetRunsSelect>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetRunsSelect), TypeInfoPropertyName = "GetRunsSelect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetThreadsStatsSelect>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetThreadsStatsSelect), TypeInfoPropertyName = "GetThreadsStatsSelect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetThreadsTracesSelect), TypeInfoPropertyName = "GetThreadsTracesSelect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>))]
@@ -1766,6 +3849,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateRunsBatchResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.PatchRunsResponse3>), TypeInfoPropertyName = "AllOfStringPatchRunsResponse32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PatchRunsResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.CreatePlatformAlertsTestResponse3>), TypeInfoPropertyName = "AllOfStringCreatePlatformAlertsTestResponse32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreatePlatformAlertsTestResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.DeletePlatformAlertsResponse3>), TypeInfoPropertyName = "AllOfStringDeletePlatformAlertsResponse32")]
@@ -1773,9 +3857,11 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.PatchPlatformAlertsResponse3>), TypeInfoPropertyName = "AllOfStringPatchPlatformAlertsResponse32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PatchPlatformAlertsResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.FeaturesFeatureConfig>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GithubAppInstallation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GithubAppRepository>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesGatewayPolicyRecord>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesAgentIssuesAgent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OrgsOrgMemberEnriched>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionsAgentVersionResponse>))]
@@ -1832,11 +3918,10 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OCSFResourceDetails>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OrgMemberIdentity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OrgPendingIdentity>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>>), TypeInfoPropertyName = "ToolMessageChunk_212e443f6115a54a")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.PromptOptimizationResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.PromptOptimizationJobLog>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EPromptWebhookTrigger>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<bool?, global::System.Collections.Generic.List<global::System.Guid>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RunsGenerateQueryFeedbackKeys>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RuleLogSchema>))]
@@ -1858,19 +3943,28 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.PendingIdentity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EntitiesItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AnyOf<string, int?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentsSkillSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentsSubagentSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentsAgentSummary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentsMCPServerHealth>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentsToolSpec>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AlertsAlertAction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AlertsAlertActionBase>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AuthTokenSummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AuthzInternalConditionGroup>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AuthzInternalCondition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AuthzInternalAccessPolicy>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.CommitsExampleRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.CommitsCommitWithLookups>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.CredentialsBindingPayload>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.DataPlanesPublicDataPlane>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.DataPlanesPublicDataPlaneWorkspace>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsEvaluatorRunRule>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsEvaluator>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ExperimentViewOverridesColumnOverride>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GatewayPoliciesSubjectMatcher>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.HubEnvironmentsEnvironmentEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsIntegrationCatalogEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IntegrationsIntegrationOverride>))]
@@ -1895,10 +3989,16 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesCallback>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesProxyRule>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesSnapshotResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SkillsSkill>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SkillsSkillOwner>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TagTransitionsTagTransition>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsBulkUpdateThreadResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadTraceListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadListItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ToolsTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TracerSessionIssuesViewedIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TriggersTrigger>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.UsageAgentUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.UsageModelUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.UsageToolUsage>))]
@@ -1927,6 +4027,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GetRunsSelect>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GetThreadsStatsSelect>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GetThreadsTracesSelect>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GetTracesRunsSelect>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TracerSession>))]
@@ -1976,14 +4077,511 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RepoTag>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.PromptOptimizationJob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ExperimentViewOverridesExperimentViewOverride>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.FeaturesFeatureConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.LangchainComSmithFleetMcpServersMcpServer>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.FeaturesFeatureConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GithubAppInstallation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GithubAppRepository>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GatewayPoliciesGatewayPolicyRecord>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TracerSessionIssuesIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TracerSessionIssuesAgentIssuesAgent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OrgsOrgMemberEnriched>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ScimScimTokenResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TracerSessionsAgentVersionResponse>))]
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
+            SourceGenerationContextChunk0.Default,
+
+            SourceGenerationContextChunk1.Default,
+
+            SourceGenerationContextChunk2.Default
+            );
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            options.Converters.Add(new global::LangSmith.JsonConverters.AccessScopeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AccessScopeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueSchemaQueueTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueSchemaQueueTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueSchemaWithRubricQueueTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueSchemaWithRubricQueueTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueSchemaWithSizeQueueTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnnotationQueueUpdateSchemaReviewerAccessMode2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuditLogOperationJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuditLogOperationNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthProviderJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthProviderNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BotocoreS3ConfigAddressingStyle2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BotocoreS3ConfigUsEast1RegionalEndpoint2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportCompressionNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportDestinationTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportDestinationTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportFormatJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportFormatNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportFormatVersionJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportFormatVersionNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportRunMetadataExecutionBackend2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportRunStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportRunStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportUpdatableStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BulkExportUpdatableStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ChangePaymentPlanReqJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ChangePaymentPlanReqNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CodeEvaluatorLanguageJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CodeEvaluatorLanguageNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ConfiguredByJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ConfiguredByNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CreateRepoRequestRepoTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CreateRepoRequestSource2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CreateRepoRequestSource2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CreateRunClusteringJobRequestModelNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CustomChartMetricJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CustomChartMetricNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CustomChartTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CustomChartTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.DataTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.DataTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.DatasetTransformationTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.DatasetTransformationTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptOptimizationAlgorithmNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptOptimizationJobLogTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptOptimizationJobStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptOptimizationJobStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptWebhookTriggerJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EPromptWebhookTriggerNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ExampleListOrderJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ExampleListOrderNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ExampleSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ExampleSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackFormulaAggregationTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackFormulaAggregationTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackFormulaCreateAggregationTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackFormulaUpdateAggregationTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackFormulaUpdateAggregationTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackLevelJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackLevelNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackSourceParamJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackSourceParamNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FilterViewTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FilterViewTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GenerateClusteringJobConfigRequestModelJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GenerateClusteringJobConfigRequestModelNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetDatasetsSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetDatasetsSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GranularUsageGroupByJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GranularUsageGroupByNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GroupExampleRunsByFieldJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GroupExampleRunsByFieldNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.HostProjectChartMetricJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.HostProjectChartMetricNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.MemberSortFieldJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.MemberSortFieldNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OCSFCategoryNameJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OCSFCategoryNameNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OCSFClassNameJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OCSFClassNameNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OrganizationDashboardColorSchemeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OrganizationDashboardTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OrganizationDashboardTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PagerdutySeverityJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PagerdutySeverityNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PaymentPlanTierNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestSettingsTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsResponseSettingsTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ProvisioningMethodJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ProvisioningMethodNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ProxyRequestMethodJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ProxyRequestMethodNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RepoWithLookupsSource2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RepoWithLookupsSource2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ResourceTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RuleLogActionOutcomeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RuleLogActionOutcomeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunDateOrderJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunDateOrderNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunGroupByJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunGroupByNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunRuleSpendLimitWindowJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunRuleSpendLimitWindowNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunRulesAlertTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunRulesAlertTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsGroupByAttributeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsGroupByAttributeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetBy2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseSetBy2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunStatsSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunTypeEnumJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunnerContextEnumJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunnerContextEnumNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunsFilterDataSourceTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunsGenerateQueryFeedbackKeysNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SavedRunClusteringJobRequestModelNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SessionSortableColumnsJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SessionSortableColumnsNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SortByComparativeExperimentColumnJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SortByComparativeExperimentColumnNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SortByDatasetColumnJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SortByDatasetColumnNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SortParamsForRunsComparisonViewSortOrderNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SourceTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TenantUsageLimitTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TenantUsageLimitTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadMessagesFormatTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadMessagesFormatTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ToolMessageStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ToolMessageStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ToolMessageChunkStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ToolMessageChunkStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TraceTierJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TraceTierNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TrueFalseLiteralJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TrueFalseLiteralNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.UsageLimitTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.UsageLimitTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsAgentPermissionsIdentityNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsAgentPermissionsTenantAccessLevelNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsAgentPermissionsVisibilityNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsSkillSpecTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AgentsSkillSpecTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertActionTargetNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertActionBaseTargetNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleAggregationJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleAggregationNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleAttributeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleAttributeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleOperatorJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleOperatorNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseAggregationNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseAttributeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseOperatorNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AlertsAlertRuleBaseTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthSessionStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthSessionStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthSessionStrategyJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthSessionStrategyNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthzInternalAbacAttributeNameNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthzInternalAbacOperatorJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthzInternalAbacOperatorNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthzInternalPermissionJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AuthzInternalPermissionNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CredentialsBindingPayloadKindJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.CredentialsBindingPayloadKindNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.DataPlanesStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.DataPlanesStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.IntegrationsAuthTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.IntegrationsAuthTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.IntegrationsMatchByJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.IntegrationsMatchByNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.IntegrationsTransportJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.IntegrationsTransportNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersAuthTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersOAuthModeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.LangchainComSmithFleetMcpServersOAuthModeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.McpVendorsMcpVendorStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.McptoolsMCPErrorCodeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.McptoolsMCPErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QueryRunSelectFieldJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QueryRunSelectFieldNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QueryRunStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QueryRunStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QueryRunTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QueryRunTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QuerySortOrderJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.QuerySortOrderNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunsRunRunTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.RunsRunRunTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SandboxesHeaderTypeJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.SandboxesHeaderTypeNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsBulkUpdateThreadResultStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsCreateThreadAndRunThreadIfExistsNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsCreateThreadRequestIfExistsNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsMessageRoleJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsMessageRoleNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsSingleThreadStatsSelectFieldNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsThreadStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsThreadStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ThreadsThreadTraceSelectFieldNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TracerSessionIssuesStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.TracerSessionIssuesStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.BetaGetRunsFromInsightsJobApiV1SessionsSessionIdInsightsJobIdRunsGetAttributeSortOrder2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetServiceJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetServiceNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRulesApiV1RunsRulesGetType2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRulesApiV1RunsRulesGetType2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetStatus2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchived2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetIsArchived2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoType2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoType2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetRepoTypesVariant1ItemNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetSource2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListReposApiV1ReposGetSortField2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoType2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoType2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1ItemNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSource2NullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetFleetAgentsSortByJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetFleetAgentsSortByNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetFleetAgentsSortOrderJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetFleetAgentsSortOrderNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetPlatformIssuesStatusJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetPlatformIssuesStatusNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetPlatformIssuesSortByJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetPlatformIssuesSortByNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetRunsSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetRunsSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetThreadsStatsSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetThreadsStatsSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetThreadsTracesSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetThreadsTracesSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetTracesRunsSelectJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.GetTracesRunsSelectNullableJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackSourceVariant1JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.FeedbackSourceVariant12JsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.EntitiesItemJsonConverter());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartType?, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::LangSmith.Missing, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?, double?>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.OneOfJsonConverter<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<global::System.Guid>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::LangSmith.AnyOf<string, object>>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, int?>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenCreateSchema>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, string, object>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::LangSmith.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::LangSmith.ExampleWithRunsCH>>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreateRunsResponse3>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreateRunsBatchResponse3>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.PatchRunsResponse3>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.CreatePlatformAlertsTestResponse3>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.DeletePlatformAlertsResponse3>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AllOfJsonConverter<string, global::LangSmith.PatchPlatformAlertsResponse3>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.UnixTimestampJsonConverter());
+
+            return options;
+        }
     }
 }

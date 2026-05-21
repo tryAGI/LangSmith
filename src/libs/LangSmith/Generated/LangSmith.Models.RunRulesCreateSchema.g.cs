@@ -157,14 +157,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public string? GroupBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
         public global::LangSmith.RunRuleSpendLimitSchemaInput? SpendLimit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        public string? GroupBy { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tracer_session_issue_id")]
+        public global::System.Guid? TracerSessionIssueId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -213,8 +219,9 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="spendLimit"></param>
         /// <param name="groupBy"></param>
+        /// <param name="spendLimit"></param>
+        /// <param name="tracerSessionIssueId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -243,8 +250,9 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
+            string? groupBy,
             global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit,
-            string? groupBy)
+            global::System.Guid? tracerSessionIssueId)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SessionId = sessionId;
@@ -270,8 +278,9 @@ namespace LangSmith
             this.EvaluatorVersion = evaluatorVersion;
             this.CreateAlignmentQueue = createAlignmentQueue;
             this.IncludeExtendedStats = includeExtendedStats;
-            this.SpendLimit = spendLimit;
             this.GroupBy = groupBy;
+            this.SpendLimit = spendLimit;
+            this.TracerSessionIssueId = tracerSessionIssueId;
         }
 
         /// <summary>
@@ -280,5 +289,6 @@ namespace LangSmith
         public RunRulesCreateSchema()
         {
         }
+
     }
 }

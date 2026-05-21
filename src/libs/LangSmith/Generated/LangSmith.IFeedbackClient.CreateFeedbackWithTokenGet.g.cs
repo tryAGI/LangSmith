@@ -24,5 +24,25 @@ namespace LangSmith
             string? correction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Feedback With Token Get<br/>
+        /// Create a new feedback with a token.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="score"></param>
+        /// <param name="value"></param>
+        /// <param name="comment"></param>
+        /// <param name="correction"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenGetAsResponseAsync(
+            global::System.Guid token,
+            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
+            string? comment = default,
+            string? correction = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

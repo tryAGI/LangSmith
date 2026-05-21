@@ -39,5 +39,40 @@ namespace LangSmith
             global::LangSmith.MemberSortField? sortBy = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Current Pending Org Members
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="emails">
+        /// Default Value: []
+        /// </param>
+        /// <param name="q">
+        /// Search query for email or name
+        /// </param>
+        /// <param name="sortByDesc">
+        /// Sort in descending order<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort by<br/>
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.OrgPendingIdentity>>> GetCurrentPendingOrgMembersAsResponseAsync(
+            int? limit = default,
+            int? offset = default,
+            global::System.Collections.Generic.IList<string>? emails = default,
+            string? q = default,
+            bool? sortByDesc = default,
+            global::LangSmith.MemberSortField? sortBy = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -34,6 +34,26 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRun(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.TenantShareRunToken? value)
+        {
+            value = Run;
+            return IsRun;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.TenantShareRunToken PickRun() => IsRun
+            ? Run!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::LangSmith.TenantShareDatasetToken? Dataset { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
 #endif
         public bool IsDataset => Dataset != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDataset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.TenantShareDatasetToken? value)
+        {
+            value = Dataset;
+            return IsDataset;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.TenantShareDatasetToken PickDataset() => IsDataset
+            ? Dataset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dataset' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public static EntitiesItem FromRun(global::LangSmith.TenantShareRunToken? value) => new EntitiesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EntitiesItem(global::LangSmith.TenantShareDatasetToken value) => new EntitiesItem((global::LangSmith.TenantShareDatasetToken?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace LangSmith
         {
             Dataset = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EntitiesItem FromDataset(global::LangSmith.TenantShareDatasetToken? value) => new EntitiesItem(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace LangSmith
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LangSmith.TenantShareRunToken?, TResult>? run = null,
-            global::System.Func<global::LangSmith.TenantShareDatasetToken?, TResult>? dataset = null,
+            global::System.Func<global::LangSmith.TenantShareRunToken, TResult>? run = null,
+            global::System.Func<global::LangSmith.TenantShareDatasetToken, TResult>? dataset = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace LangSmith
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LangSmith.TenantShareRunToken?>? run = null,
-            global::System.Action<global::LangSmith.TenantShareDatasetToken?>? dataset = null,
+            global::System.Action<global::LangSmith.TenantShareRunToken>? run = null,
+
+            global::System.Action<global::LangSmith.TenantShareDatasetToken>? dataset = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRun)
+            {
+                run?.Invoke(Run!);
+            }
+            else if (IsDataset)
+            {
+                dataset?.Invoke(Dataset!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LangSmith.TenantShareRunToken>? run = null,
+            global::System.Action<global::LangSmith.TenantShareDatasetToken>? dataset = null,
             bool validate = true)
         {
             if (validate)

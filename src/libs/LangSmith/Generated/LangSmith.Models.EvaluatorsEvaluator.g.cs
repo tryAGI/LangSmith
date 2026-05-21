@@ -57,6 +57,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsEvaluatorRunRule>? RunRules { get; set; }
 
         /// <summary>
+        /// Sum of LLM-as-judge run rule spend for the requested period (omitted when feature is disabled).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_usd")]
+        public double? SpendUsd { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
@@ -94,6 +100,9 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="runRules"></param>
+        /// <param name="spendUsd">
+        /// Sum of LLM-as-judge run rule spend for the requested period (omitted when feature is disabled).
+        /// </param>
         /// <param name="tenantId"></param>
         /// <param name="type"></param>
         /// <param name="updatedAt"></param>
@@ -109,6 +118,7 @@ namespace LangSmith
             global::LangSmith.EvaluatorsLLMEvaluator? llmEvaluator,
             string? name,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsEvaluatorRunRule>? runRules,
+            double? spendUsd,
             string? tenantId,
             global::LangSmith.EvaluatorsEvaluatorType? type,
             string? updatedAt)
@@ -121,6 +131,7 @@ namespace LangSmith
             this.LlmEvaluator = llmEvaluator;
             this.Name = name;
             this.RunRules = runRules;
+            this.SpendUsd = spendUsd;
             this.TenantId = tenantId;
             this.Type = type;
             this.UpdatedAt = updatedAt;
@@ -132,5 +143,6 @@ namespace LangSmith
         public EvaluatorsEvaluator()
         {
         }
+
     }
 }

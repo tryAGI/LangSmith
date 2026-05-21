@@ -51,7 +51,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AccessPoliciesClient AccessPolicies => new AccessPoliciesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AccessPoliciesClient AccessPolicies => new AccessPoliciesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -61,7 +61,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AceClient Ace => new AceClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AceClient Ace => new AceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -71,7 +71,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AlertRulesClient AlertRules => new AlertRulesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -81,7 +81,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AlertRulesClient AlertRules => new AlertRulesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -91,7 +91,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueues2Client AnnotationQueues2 => new AnnotationQueues2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -101,7 +101,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AnnotationQueues2Client AnnotationQueues2 => new AnnotationQueues2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -111,7 +111,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -121,7 +121,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -131,7 +131,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AwsMarketplaceClient AwsMarketplace => new AwsMarketplaceClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuthClient Auth => new AuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -141,7 +141,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public BackfillsClient Backfills => new BackfillsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AwsMarketplaceClient AwsMarketplace => new AwsMarketplaceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -151,7 +151,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public BeaconClient Beacon => new BeaconClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BackfillsClient Backfills => new BackfillsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -161,7 +161,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public BulkExportsClient BulkExports => new BulkExportsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BeaconClient Beacon => new BeaconClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -171,7 +171,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ChartsClient Charts => new ChartsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BulkExportsClient BulkExports => new BulkExportsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -181,7 +181,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChartsClient Charts => new ChartsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -191,7 +191,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits => new CommitsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CheckpointClient Checkpoint => new CheckpointClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -201,7 +201,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public DataPlanesClient DataPlanes => new DataPlanesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CommentsClient Comments => new CommentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -211,7 +211,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CommitsClient Commits => new CommitsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -221,7 +221,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public EvaluatorsClient Evaluators => new EvaluatorsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DataPlanesClient DataPlanes => new DataPlanesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -231,7 +231,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples => new ExamplesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -241,7 +241,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ExperimentViewOverridesClient ExperimentViewOverrides => new ExperimentViewOverridesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DirectoriesClient Directories => new DirectoriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -251,7 +251,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ExperimentsClient Experiments => new ExperimentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EvaluatorsClient Evaluators => new EvaluatorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -261,7 +261,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FeaturesClient Features => new FeaturesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ExamplesClient Examples => new ExamplesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -271,7 +271,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackClient Feedback => new FeedbackClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ExecuteClient Execute => new ExecuteClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -281,7 +281,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ExperimentViewOverridesClient ExperimentViewOverrides => new ExperimentViewOverridesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -291,7 +291,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FleetGithubAppClient FleetGithubApp => new FleetGithubAppClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ExperimentsClient Experiments => new ExperimentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -301,7 +301,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FleetIntegrationsClient FleetIntegrations => new FleetIntegrationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FeaturesClient Features => new FeaturesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -311,7 +311,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FleetMcpClient FleetMcp => new FleetMcpClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FeedbackClient Feedback => new FeedbackClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -321,7 +321,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FleetUsageClient FleetUsage => new FleetUsageClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -331,7 +331,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FleetWebhooksClient FleetWebhooks => new FleetWebhooksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -341,7 +341,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public HubEnvironmentsClient HubEnvironments => new HubEnvironmentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetAuthClient FleetAuth => new FleetAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -351,7 +351,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public InfoClient Info => new InfoClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetCredentialsClient FleetCredentials => new FleetCredentialsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -361,7 +361,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public IntegrationsClient Integrations => new IntegrationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetGithubAppClient FleetGithubApp => new FleetGithubAppClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -371,7 +371,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public LikesClient Likes => new LikesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetIntegrationsClient FleetIntegrations => new FleetIntegrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -381,7 +381,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public McpVendorsClient McpVendors => new McpVendorsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetMcpClient FleetMcp => new FleetMcpClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -391,7 +391,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public MeClient Me => new MeClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetThreadsClient FleetThreads => new FleetThreadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -401,7 +401,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public MetricsClient Metrics => new MetricsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetTriggerTemplatesClient FleetTriggerTemplates => new FleetTriggerTemplatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -411,7 +411,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetTriggersClient FleetTriggers => new FleetTriggersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -421,7 +421,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public NpsClient Nps => new NpsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetUsageClient FleetUsage => new FleetUsageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -431,7 +431,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public OauthClient Oauth => new OauthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FleetWebhooksClient FleetWebhooks => new FleetWebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -441,7 +441,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public OptimizationJobsClient OptimizationJobs => new OptimizationJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GatewayPoliciesClient GatewayPolicies => new GatewayPoliciesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -451,7 +451,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public HubEnvironmentsClient HubEnvironments => new HubEnvironmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -461,7 +461,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InfoClient Info => new InfoClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -471,7 +471,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public OwnershipsClient Ownerships => new OwnershipsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IntegrationsClient Integrations => new IntegrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -481,7 +481,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IssuesClient Issues => new IssuesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -491,7 +491,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PromptWebhooksClient PromptWebhooks => new PromptWebhooksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IssuesAgentClient IssuesAgent => new IssuesAgentClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -501,7 +501,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LikesClient Likes => new LikesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -511,7 +511,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public => new PublicClient(HttpClient, authorizations: Authorizations, options: Options)
+        public McpClient Mcp => new McpClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -521,7 +521,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations, options: Options)
+        public McpVendorsClient McpVendors => new McpVendorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -531,7 +531,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run => new RunClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MeClient Me => new MeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -541,7 +541,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public RunsClient Runs => new RunsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetricsClient Metrics => new MetricsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -551,7 +551,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SandboxesClient Sandboxes => new SandboxesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -561,7 +561,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SandboxesInternalClient SandboxesInternal => new SandboxesInternalClient(HttpClient, authorizations: Authorizations, options: Options)
+        public NpsClient Nps => new NpsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -571,7 +571,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ScimTokensClient ScimTokens => new ScimTokensClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OauthClient Oauth => new OauthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -581,7 +581,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OptimizationJobsClient OptimizationJobs => new OptimizationJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -591,7 +591,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SessionsClient Sessions => new SessionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -601,7 +601,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SettingsClient Settings => new SettingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OrgsClient Orgs => new OrgsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -611,7 +611,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TagTransitionsClient TagTransitions => new TagTransitionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OwnershipsClient Ownerships => new OwnershipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -621,7 +621,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TagsClient Tags => new TagsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -631,7 +631,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PromptWebhooksClient PromptWebhooks => new PromptWebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -641,7 +641,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ThreadsClient Threads => new ThreadsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PromptsClient Prompts => new PromptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -651,7 +651,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PublicClient Public => new PublicClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -661,7 +661,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions => new TracerSessionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ReposClient Repos => new ReposClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -671,7 +671,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RunClient Run => new RunClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -681,7 +681,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettings2Client TtlSettings2 => new TtlSettings2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public RunsClient Runs => new RunsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -691,7 +691,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits => new UsageLimitsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SandboxesClient Sandboxes => new SandboxesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -701,7 +701,157 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SandboxesInternalClient SandboxesInternal => new SandboxesInternalClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ScimTokensClient ScimTokens => new ScimTokensClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SessionsClient Sessions => new SessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SettingsClient Settings => new SettingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SkillsClient Skills => new SkillsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagTransitionsClient TagTransitions => new TagTransitionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagsClient Tags => new TagsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant => new TenantClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ThreadsClient Threads => new ThreadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsClient Tools => new ToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TtlSettings2Client TtlSettings2 => new TtlSettings2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -759,6 +909,27 @@ namespace LangSmith
         }
 
         /// <summary>
+        /// Creates a new instance of the LangSmithClient with explicit options but no base URL override.
+        /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public LangSmithClient(
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Collections.Generic.List<global::LangSmith.EndPointAuthorization>? authorizations,
+            global::LangSmith.AutoSDKClientOptions? options,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri: null,
+                authorizations,
+                options,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
         /// Creates a new instance of the LangSmithClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
@@ -769,10 +940,10 @@ namespace LangSmith
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public LangSmithClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::LangSmith.EndPointAuthorization>? authorizations = null,
-            global::LangSmith.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::LangSmith.EndPointAuthorization>? authorizations,
+            global::LangSmith.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

@@ -66,5 +66,6 @@ namespace LangSmith
         public IntegrationsErrorResponse()
         {
         }
+
     }
 }

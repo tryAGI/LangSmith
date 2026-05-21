@@ -32,6 +32,26 @@ namespace LangSmith
         public bool IsApp => App != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.AppFeedbackSource? value)
+        {
+            value = App;
+            return IsApp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.AppFeedbackSource PickApp() => IsApp
+            ? App!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'App' but the value was {ToString()}.");
+
+        /// <summary>
         /// API feedback source.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Api))]
 #endif
         public bool IsApi => Api != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.APIFeedbackSource? value)
+        {
+            value = Api;
+            return IsApi;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.APIFeedbackSource PickApi() => IsApi
+            ? Api!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Api' but the value was {ToString()}.");
 
         /// <summary>
         /// Model feedback source.
@@ -66,6 +106,26 @@ namespace LangSmith
         public bool IsModel => Model != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.ModelFeedbackSource? value)
+        {
+            value = Model;
+            return IsModel;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.ModelFeedbackSource PickModel() => IsModel
+            ? Model!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Model' but the value was {ToString()}.");
+
+        /// <summary>
         /// Auto eval feedback source.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +141,26 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoEval))]
 #endif
         public bool IsAutoEval => AutoEval != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAutoEval(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.AutoEvalFeedbackSource? value)
+        {
+            value = AutoEval;
+            return IsAutoEval;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::LangSmith.AutoEvalFeedbackSource PickAutoEval() => IsAutoEval
+            ? AutoEval!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoEval' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +178,11 @@ namespace LangSmith
         {
             App = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FeedbackSourceVariant12 FromApp(global::LangSmith.AppFeedbackSource? value) => new FeedbackSourceVariant12(value);
 
         /// <summary>
         /// 
@@ -120,6 +205,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public static FeedbackSourceVariant12 FromApi(global::LangSmith.APIFeedbackSource? value) => new FeedbackSourceVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FeedbackSourceVariant12(global::LangSmith.ModelFeedbackSource value) => new FeedbackSourceVariant12((global::LangSmith.ModelFeedbackSource?)value);
 
         /// <summary>
@@ -138,6 +228,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public static FeedbackSourceVariant12 FromModel(global::LangSmith.ModelFeedbackSource? value) => new FeedbackSourceVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FeedbackSourceVariant12(global::LangSmith.AutoEvalFeedbackSource value) => new FeedbackSourceVariant12((global::LangSmith.AutoEvalFeedbackSource?)value);
 
         /// <summary>
@@ -152,6 +247,11 @@ namespace LangSmith
         {
             AutoEval = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FeedbackSourceVariant12 FromAutoEval(global::LangSmith.AutoEvalFeedbackSource? value) => new FeedbackSourceVariant12(value);
 
         /// <summary>
         /// 
@@ -204,10 +304,10 @@ namespace LangSmith
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LangSmith.AppFeedbackSource?, TResult>? app = null,
-            global::System.Func<global::LangSmith.APIFeedbackSource?, TResult>? api = null,
-            global::System.Func<global::LangSmith.ModelFeedbackSource?, TResult>? model = null,
-            global::System.Func<global::LangSmith.AutoEvalFeedbackSource?, TResult>? autoEval = null,
+            global::System.Func<global::LangSmith.AppFeedbackSource, TResult>? app = null,
+            global::System.Func<global::LangSmith.APIFeedbackSource, TResult>? api = null,
+            global::System.Func<global::LangSmith.ModelFeedbackSource, TResult>? model = null,
+            global::System.Func<global::LangSmith.AutoEvalFeedbackSource, TResult>? autoEval = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +339,46 @@ namespace LangSmith
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::LangSmith.AppFeedbackSource?>? app = null,
-            global::System.Action<global::LangSmith.APIFeedbackSource?>? api = null,
-            global::System.Action<global::LangSmith.ModelFeedbackSource?>? model = null,
-            global::System.Action<global::LangSmith.AutoEvalFeedbackSource?>? autoEval = null,
+            global::System.Action<global::LangSmith.AppFeedbackSource>? app = null,
+
+            global::System.Action<global::LangSmith.APIFeedbackSource>? api = null,
+
+            global::System.Action<global::LangSmith.ModelFeedbackSource>? model = null,
+
+            global::System.Action<global::LangSmith.AutoEvalFeedbackSource>? autoEval = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsApp)
+            {
+                app?.Invoke(App!);
+            }
+            else if (IsApi)
+            {
+                api?.Invoke(Api!);
+            }
+            else if (IsModel)
+            {
+                model?.Invoke(Model!);
+            }
+            else if (IsAutoEval)
+            {
+                autoEval?.Invoke(AutoEval!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LangSmith.AppFeedbackSource>? app = null,
+            global::System.Action<global::LangSmith.APIFeedbackSource>? api = null,
+            global::System.Action<global::LangSmith.ModelFeedbackSource>? model = null,
+            global::System.Action<global::LangSmith.AutoEvalFeedbackSource>? autoEval = null,
             bool validate = true)
         {
             if (validate)

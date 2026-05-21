@@ -48,6 +48,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Queue,
+        /// <summary>
+        /// 
+        /// </summary>
+        Sandbox,
     }
 
     /// <summary>
@@ -72,6 +76,7 @@ namespace LangSmith
                 ResourceType.Project => "project",
                 ResourceType.Prompt => "prompt",
                 ResourceType.Queue => "queue",
+                ResourceType.Sandbox => "sandbox",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,6 +97,7 @@ namespace LangSmith
                 "project" => ResourceType.Project,
                 "prompt" => ResourceType.Prompt,
                 "queue" => ResourceType.Queue,
+                "sandbox" => ResourceType.Sandbox,
                 _ => null,
             };
         }

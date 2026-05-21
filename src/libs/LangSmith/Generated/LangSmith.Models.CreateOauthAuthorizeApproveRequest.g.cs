@@ -16,6 +16,12 @@ namespace LangSmith
         public required string OrganizationId { get; set; }
 
         /// <summary>
+        /// Default workspace ID; must belong to organization and be accessible to user
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public string? WorkspaceId { get; set; }
+
+        /// <summary>
         /// OAuth2 client ID
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
@@ -73,6 +79,9 @@ namespace LangSmith
         /// <param name="codeChallengeMethod">
         /// PKCE method, must be 'S256'
         /// </param>
+        /// <param name="workspaceId">
+        /// Default workspace ID; must belong to organization and be accessible to user
+        /// </param>
         /// <param name="state">
         /// Opaque state value to prevent CSRF
         /// </param>
@@ -85,9 +94,11 @@ namespace LangSmith
             string redirectUri,
             string codeChallenge,
             string codeChallengeMethod,
+            string? workspaceId,
             string? state)
         {
             this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.WorkspaceId = workspaceId;
             this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
             this.RedirectUri = redirectUri ?? throw new global::System.ArgumentNullException(nameof(redirectUri));
             this.CodeChallenge = codeChallenge ?? throw new global::System.ArgumentNullException(nameof(codeChallenge));
@@ -101,5 +112,6 @@ namespace LangSmith
         public CreateOauthAuthorizeApproveRequest()
         {
         }
+
     }
 }

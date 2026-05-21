@@ -51,6 +51,14 @@ namespace LangSmith
         public string? ImageDigest { get; set; }
 
         /// <summary>
+        /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
+        /// VM memory state. A non-nil value is the canonical signal that this<br/>
+        /// snapshot can warm-restore from memory; nil means rootfs only.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory_snapshot_size_bytes")]
+        public long? MemorySnapshotSizeBytes { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -102,6 +110,11 @@ namespace LangSmith
         /// <param name="fsUsedBytes"></param>
         /// <param name="id"></param>
         /// <param name="imageDigest"></param>
+        /// <param name="memorySnapshotSizeBytes">
+        /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
+        /// VM memory state. A non-nil value is the canonical signal that this<br/>
+        /// snapshot can warm-restore from memory; nil means rootfs only.
+        /// </param>
         /// <param name="name"></param>
         /// <param name="registryId"></param>
         /// <param name="sourceSandboxId"></param>
@@ -119,6 +132,7 @@ namespace LangSmith
             long? fsUsedBytes,
             string? id,
             string? imageDigest,
+            long? memorySnapshotSizeBytes,
             string? name,
             string? registryId,
             string? sourceSandboxId,
@@ -133,6 +147,7 @@ namespace LangSmith
             this.FsUsedBytes = fsUsedBytes;
             this.Id = id;
             this.ImageDigest = imageDigest;
+            this.MemorySnapshotSizeBytes = memorySnapshotSizeBytes;
             this.Name = name;
             this.RegistryId = registryId;
             this.SourceSandboxId = sourceSandboxId;
@@ -147,5 +162,6 @@ namespace LangSmith
         public SandboxesSnapshotResponse()
         {
         }
+
     }
 }

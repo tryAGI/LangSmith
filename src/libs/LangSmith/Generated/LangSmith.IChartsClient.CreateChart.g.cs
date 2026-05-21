@@ -21,6 +21,19 @@ namespace LangSmith
         /// Create Chart<br/>
         /// Create a new chart.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>> CreateChartAsResponseAsync(
+
+            global::LangSmith.CustomChartCreate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Chart<br/>
+        /// Create a new chart.
+        /// </summary>
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>

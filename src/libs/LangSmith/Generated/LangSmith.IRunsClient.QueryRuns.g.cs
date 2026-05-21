@@ -29,6 +29,24 @@ namespace LangSmith
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.QueryQueryRunsResponseBody>> QueryRunsAsResponseAsync(
+
+            global::LangSmith.QueryQueryRunsRequestBody request,
+            string? accept = default,
+            string? contentType = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Query runs<br/>
+        /// **Alpha:** The request and response contract may change;<br/>
+        /// Returns a paginated list of runs for the given projects within min/max start_time. Supports filters, cursor pagination, and `selects` to select fields to return.
+        /// </summary>
+        /// <param name="accept"></param>
+        /// <param name="contentType"></param>
         /// <param name="aiQuery">
         /// `ai_query` is a natural-language query to filter runs using AI.<br/>
         /// Example: runs that used tool calls
@@ -70,7 +88,14 @@ namespace LangSmith
         /// </param>
         /// <param name="projectIds">
         /// `project_ids` lists tracing project UUIDs to query.<br/>
+        /// Required unless `reference_dataset_id` is set. Mutually exclusive with `reference_dataset_id` — set exactly one of them.<br/>
         /// Example: [018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328]
+        /// </param>
+        /// <param name="referenceDatasetId">
+        /// `reference_dataset_id` resolves session IDs server-side from the dataset.<br/>
+        /// Required unless `project_ids` is set. Mutually exclusive with `project_ids` — set exactly one of them.<br/>
+        /// When provided and `min_start_time` is omitted, the server derives it from the earliest session creation date.<br/>
+        /// Example: 018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327
         /// </param>
         /// <param name="referenceExamples">
         /// `reference_examples` optionally limits to runs linked to these dataset example UUIDs.<br/>
@@ -121,6 +146,7 @@ namespace LangSmith
             global::System.DateTime? minStartTime = default,
             int? pageSize = default,
             global::System.Collections.Generic.IList<global::System.Guid>? projectIds = default,
+            global::System.Guid? referenceDatasetId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? referenceExamples = default,
             global::LangSmith.QueryRunType? runType = default,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects = default,

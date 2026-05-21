@@ -32,5 +32,33 @@ namespace LangSmith
             bool? includeMessages = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Run<br/>
+        /// Get a specific run.
+        /// </summary>
+        /// <param name="runId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="excludeS3StoredAttributes">
+        /// Default Value: false
+        /// </param>
+        /// <param name="excludeSerialized">
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeMessages">
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.RunSchema>> ReadRunAsResponseAsync(
+            global::System.Guid runId,
+            global::System.Guid? sessionId = default,
+            global::System.DateTime? startTime = default,
+            bool? excludeS3StoredAttributes = default,
+            bool? excludeSerialized = default,
+            bool? includeMessages = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

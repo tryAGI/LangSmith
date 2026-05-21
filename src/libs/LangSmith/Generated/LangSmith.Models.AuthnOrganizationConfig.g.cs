@@ -135,12 +135,6 @@ namespace LangSmith
         public bool? EnableGranularUsageReporting { get; set; }
 
         /// <summary>
-        /// EnableIncludeExtendedStats indicates whether the include extended stats checkbox should be shown in evaluator forms
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_include_extended_stats")]
-        public bool? EnableIncludeExtendedStats { get; set; }
-
-        /// <summary>
         /// EnableLanggraphPricing indicates whether to show Agent marketplace in Langgraph tab.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_langgraph_pricing")]
@@ -199,6 +193,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_threads_improvements")]
         public bool? EnableThreadsImprovements { get; set; }
+
+        /// <summary>
+        /// EngineDefaultEnabled indicates whether Engine is enabled by default for this organization's plan.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_default_enabled")]
+        public bool? EngineDefaultEnabled { get; set; }
 
         /// <summary>
         /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
@@ -312,18 +312,6 @@ namespace LangSmith
         public string? MaxSandboxMemory { get; set; }
 
         /// <summary>
-        /// MaxSandboxStorage is the total volume storage allowed for sandboxes (e.g., "10Gi", "50Gi").
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_storage")]
-        public string? MaxSandboxStorage { get; set; }
-
-        /// <summary>
-        /// MaxSandboxVolumes is the maximum number of sandbox volumes allowed for this org.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_volumes")]
-        public int? MaxSandboxVolumes { get; set; }
-
-        /// <summary>
         /// MaxSandboxes is the maximum number of sandbox claims allowed for this org.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_sandboxes")]
@@ -366,6 +354,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization_jobs_enabled")]
         public bool? PromptOptimizationJobsEnabled { get; set; }
+
+        /// <summary>
+        /// SandboxEnabled indicates whether this org can use sandboxes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_enabled")]
+        public bool? SandboxEnabled { get; set; }
 
         /// <summary>
         /// ShowPlaygroundPromptCanvas indicates whether to show the playground prompt canvas.
@@ -475,9 +469,6 @@ namespace LangSmith
         /// <param name="enableGranularUsageReporting">
         /// EnableGranularUsageReporting indicates whether the org can use granular usage reporting.
         /// </param>
-        /// <param name="enableIncludeExtendedStats">
-        /// EnableIncludeExtendedStats indicates whether the include extended stats checkbox should be shown in evaluator forms
-        /// </param>
         /// <param name="enableLanggraphPricing">
         /// EnableLanggraphPricing indicates whether to show Agent marketplace in Langgraph tab.
         /// </param>
@@ -507,6 +498,9 @@ namespace LangSmith
         /// </param>
         /// <param name="enableThreadsImprovements">
         /// EnableThreadsImprovements indicates whether to enable the threads improvements feature for this org.
+        /// </param>
+        /// <param name="engineDefaultEnabled">
+        /// EngineDefaultEnabled indicates whether Engine is enabled by default for this organization's plan.
         /// </param>
         /// <param name="ipAllowlistEnabled">
         /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
@@ -563,12 +557,6 @@ namespace LangSmith
         /// <param name="maxSandboxMemory">
         /// MaxSandboxMemory is the total memory allowed for sandboxes (e.g., "8Gi", "16Gi").
         /// </param>
-        /// <param name="maxSandboxStorage">
-        /// MaxSandboxStorage is the total volume storage allowed for sandboxes (e.g., "10Gi", "50Gi").
-        /// </param>
-        /// <param name="maxSandboxVolumes">
-        /// MaxSandboxVolumes is the maximum number of sandbox volumes allowed for this org.
-        /// </param>
         /// <param name="maxSandboxes">
         /// MaxSandboxes is the maximum number of sandbox claims allowed for this org.
         /// </param>
@@ -591,6 +579,9 @@ namespace LangSmith
         /// </param>
         /// <param name="promptOptimizationJobsEnabled">
         /// PromptOptimizationJobsEnabled indicates whether the org can use the prompt optimization jobs feature.
+        /// </param>
+        /// <param name="sandboxEnabled">
+        /// SandboxEnabled indicates whether this org can use sandboxes.
         /// </param>
         /// <param name="showPlaygroundPromptCanvas">
         /// ShowPlaygroundPromptCanvas indicates whether to show the playground prompt canvas.
@@ -635,7 +626,6 @@ namespace LangSmith
             bool? enableAlignEvaluators,
             bool? enableBurndownVsCommitView,
             bool? enableGranularUsageReporting,
-            bool? enableIncludeExtendedStats,
             bool? enableLanggraphPricing,
             bool? enableLgpListenersPage,
             bool? enableMarkdownInTracing,
@@ -646,6 +636,7 @@ namespace LangSmith
             bool? enableRunTreeStreaming,
             bool? enableThreadViewPlayground,
             bool? enableThreadsImprovements,
+            bool? engineDefaultEnabled,
             bool? ipAllowlistEnabled,
             bool? kvDatasetMessageSupport,
             bool? langgraphDeployOwnCloudEnabled,
@@ -664,8 +655,6 @@ namespace LangSmith
             int? maxPromptWebhooks,
             string? maxSandboxCpu,
             string? maxSandboxMemory,
-            string? maxSandboxStorage,
-            int? maxSandboxVolumes,
             int? maxSandboxes,
             int? maxWorkspaces,
             int? newRuleEvaluatorCreationVersion,
@@ -673,6 +662,7 @@ namespace LangSmith
             string? playgroundEvaluatorStrategy,
             string? premierPlanApprovalDate,
             bool? promptOptimizationJobsEnabled,
+            bool? sandboxEnabled,
             bool? showPlaygroundPromptCanvas,
             bool? showUpdatedResourceTags,
             bool? showUpdatedSidenav,
@@ -701,7 +691,6 @@ namespace LangSmith
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.EnableBurndownVsCommitView = enableBurndownVsCommitView;
             this.EnableGranularUsageReporting = enableGranularUsageReporting;
-            this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.EnableMarkdownInTracing = enableMarkdownInTracing;
@@ -712,6 +701,7 @@ namespace LangSmith
             this.EnableRunTreeStreaming = enableRunTreeStreaming;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
             this.EnableThreadsImprovements = enableThreadsImprovements;
+            this.EngineDefaultEnabled = engineDefaultEnabled;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.KvDatasetMessageSupport = kvDatasetMessageSupport;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
@@ -730,8 +720,6 @@ namespace LangSmith
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.MaxSandboxCpu = maxSandboxCpu;
             this.MaxSandboxMemory = maxSandboxMemory;
-            this.MaxSandboxStorage = maxSandboxStorage;
-            this.MaxSandboxVolumes = maxSandboxVolumes;
             this.MaxSandboxes = maxSandboxes;
             this.MaxWorkspaces = maxWorkspaces;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
@@ -739,6 +727,7 @@ namespace LangSmith
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.PremierPlanApprovalDate = premierPlanApprovalDate;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
+            this.SandboxEnabled = sandboxEnabled;
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.ShowUpdatedResourceTags = showUpdatedResourceTags;
             this.ShowUpdatedSidenav = showUpdatedSidenav;
@@ -753,5 +742,6 @@ namespace LangSmith
         public AuthnOrganizationConfig()
         {
         }
+
     }
 }

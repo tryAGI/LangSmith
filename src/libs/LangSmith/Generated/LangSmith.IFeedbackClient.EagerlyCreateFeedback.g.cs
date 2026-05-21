@@ -25,6 +25,21 @@ namespace LangSmith
         /// This method is invoked under the assumption that the run<br/>
         /// is already visible in the app, thus already present in DB
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.FeedbackSchema>> EagerlyCreateFeedbackAsResponseAsync(
+
+            global::LangSmith.FeedbackCreateSchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Eagerly Create Feedback<br/>
+        /// Create a new feedback.<br/>
+        /// This method is invoked under the assumption that the run<br/>
+        /// is already visible in the app, thus already present in DB
+        /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="key"></param>

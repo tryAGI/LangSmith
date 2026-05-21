@@ -24,6 +24,21 @@ namespace LangSmith
         /// Get runs grouped by an expression
         /// </summary>
         /// <param name="accept"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> GroupRunsAsResponseAsync(
+
+            global::LangSmith.RunGroupRequest request,
+            string? accept = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Group Runs<br/>
+        /// Get runs grouped by an expression
+        /// </summary>
+        /// <param name="accept"></param>
         /// <param name="sessionId"></param>
         /// <param name="groupBy"></param>
         /// <param name="filter"></param>

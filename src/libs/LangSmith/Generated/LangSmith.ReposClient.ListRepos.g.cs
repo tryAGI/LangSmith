@@ -55,6 +55,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType,
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
+            global::LangSmith.ListReposApiV1ReposGetSource2? source,
             global::LangSmith.ListReposApiV1ReposGetSortField2? sortField,
             ref global::LangSmith.AnyOf<string, string, object>? sortDirection);
         partial void PrepareListReposRequest(
@@ -75,6 +76,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType,
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
+            global::LangSmith.ListReposApiV1ReposGetSource2? source,
             global::LangSmith.ListReposApiV1ReposGetSortField2? sortField,
             global::LangSmith.AnyOf<string, string, object>? sortDirection);
         partial void ProcessListReposResponse(
@@ -111,6 +113,7 @@ namespace LangSmith
         /// <param name="tagValueId"></param>
         /// <param name="repoType"></param>
         /// <param name="repoTypes"></param>
+        /// <param name="source"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -132,6 +135,85 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
+            global::LangSmith.ListReposApiV1ReposGetSource2? source = default,
+            global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
+            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await ListReposAsResponseAsync(
+                withLatestManifest: withLatestManifest,
+                limit: limit,
+                offset: offset,
+                tenantHandle: tenantHandle,
+                tenantId: tenantId,
+                query: query,
+                hasCommits: hasCommits,
+                tags: tags,
+                isArchived: isArchived,
+                isPublic: isPublic,
+                upstreamRepoOwner: upstreamRepoOwner,
+                upstreamRepoHandle: upstreamRepoHandle,
+                tagValueId: tagValueId,
+                repoType: repoType,
+                repoTypes: repoTypes,
+                source: source,
+                sortField: sortField,
+                sortDirection: sortDirection,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Repos<br/>
+        /// Get all repos.
+        /// </summary>
+        /// <param name="withLatestManifest">
+        /// Default Value: false
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="tenantHandle"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="query"></param>
+        /// <param name="hasCommits"></param>
+        /// <param name="tags"></param>
+        /// <param name="isArchived"></param>
+        /// <param name="isPublic"></param>
+        /// <param name="upstreamRepoOwner"></param>
+        /// <param name="upstreamRepoHandle"></param>
+        /// <param name="tagValueId"></param>
+        /// <param name="repoType"></param>
+        /// <param name="repoTypes"></param>
+        /// <param name="source"></param>
+        /// <param name="sortField"></param>
+        /// <param name="sortDirection"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListReposResponse>> ListReposAsResponseAsync(
+            bool? withLatestManifest = default,
+            int? limit = default,
+            int? offset = default,
+            string? tenantHandle = default,
+            global::System.Guid? tenantId = default,
+            string? query = default,
+            bool? hasCommits = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            global::LangSmith.ListReposApiV1ReposGetIsArchived2? isArchived = default,
+            global::LangSmith.TrueFalseLiteral? isPublic = default,
+            string? upstreamRepoOwner = default,
+            string? upstreamRepoHandle = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::LangSmith.ListReposApiV1ReposGetRepoType2? repoType = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
+            global::LangSmith.ListReposApiV1ReposGetSource2? source = default,
             global::LangSmith.ListReposApiV1ReposGetSortField2? sortField = default,
             global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -156,6 +238,7 @@ namespace LangSmith
                 tagValueId: tagValueId,
                 repoType: repoType,
                 repoTypes: repoTypes,
+                source: source,
                 sortField: sortField,
                 sortDirection: ref sortDirection);
 
@@ -181,11 +264,12 @@ namespace LangSmith
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: "/api/v1/repos",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListReposServers,
-                                defaultBaseUrl: "https://api.smith.langchain.com/")); 
+                                defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -202,8 +286,9 @@ namespace LangSmith
                                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                                 .AddOptionalParameter("repo_type", repoType?.ToString())
                                 .AddOptionalParameter("repo_types", repoTypes?.ToString())
+                                .AddOptionalParameter("source", source?.ToString())
                                 .AddOptionalParameter("sort_field", sortField?.ToString())
-                                .AddOptionalParameter("sort_direction", sortDirection?.ToString()) 
+                                .AddOptionalParameter("sort_direction", sortDirection?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -260,6 +345,7 @@ namespace LangSmith
                     tagValueId: tagValueId,
                     repoType: repoType,
                     repoTypes: repoTypes,
+                    source: source,
                     sortField: sortField,
                     sortDirection: sortDirection);
 
@@ -291,6 +377,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -301,6 +389,11 @@ namespace LangSmith
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -318,6 +411,8 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -327,8 +422,7 @@ namespace LangSmith
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -337,6 +431,11 @@ namespace LangSmith
                         __attempt < __maxAttempts &&
                         global::LangSmith.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::LangSmith.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -353,14 +452,15 @@ namespace LangSmith
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::LangSmith.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -400,6 +500,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -420,6 +522,8 @@ namespace LangSmith
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -482,9 +586,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::LangSmith.ListReposResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.ListReposResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListReposResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -512,9 +620,13 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::LangSmith.ListReposResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.ListReposResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListReposResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

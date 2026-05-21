@@ -17,10 +17,10 @@
       "Slug": "delete-experiment-view-override-configuration",
       "Description": "Permanently deletes an experiment view override configuration for a dataset.\nThis operation removes all column override settings including color gradients,\nprecision configurations, and visibility settings.\n\nAfter deletion, the experiment view will revert to default column display settings.\nThis action cannot be undone - you will need to recreate the override configuration\nif you want to restore custom column settings.\n\nBoth the dataset and override must exist and be accessible by the authenticated user.\nThe operation will fail if the override doesn\u0027t exist or if the user doesn\u0027t have\nappropriate permissions for the dataset.",
       "Language": "csharp",
-      "Code": "using var client = new LangSmithClient(apiKey);\n\nawait client.ExperimentViewOverrides.DeleteExperimentViewOverrideConfigurationAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!,\n    id: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022123e4567-e89b-12d3-a456-426614174000\\u0022\u0022\u0022\u0022)!\n);",
+      "Code": "using var client = LangSmithClient.CreateFromEnvironment();\n\nawait client.ExperimentViewOverrides.DeleteExperimentViewOverrideConfigurationAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!,\n    id: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022123e4567-e89b-12d3-a456-426614174000\\u0022\u0022\u0022\u0022)!\n);",
       "Format": "sdk",
       "OperationId": "DeleteExperimentViewOverrideConfiguration",
-      "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and a configured credential environment variable is set: \u0060LANGSMITH_API_KEY\u0060."
     },
     {
       "Order": 3,
@@ -28,10 +28,10 @@
       "Slug": "get-experiment-view-override-configuration-by-specific-id",
       "Description": "Retrieves a specific experiment view override configuration using both dataset ID and override ID.\nThis endpoint provides more precise access to experiment view overrides when you have\nthe specific override ID, useful for direct links or cached references.\n\nThe response includes the same column override information as the dataset-level endpoint:\n- Column identifiers with validation prefixes\n- Color gradient settings for numeric data visualization\n- Numeric precision configurations\n- Column visibility controls\n\nBoth the dataset and override must exist and be accessible by the authenticated user.",
       "Language": "csharp",
-      "Code": "using var client = new LangSmithClient(apiKey);\n\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationBySpecificIdAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!,\n    id: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022123e4567-e89b-12d3-a456-426614174000\\u0022\u0022\u0022\u0022)!\n);",
+      "Code": "using var client = LangSmithClient.CreateFromEnvironment();\n\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationBySpecificIdAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!,\n    id: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022123e4567-e89b-12d3-a456-426614174000\\u0022\u0022\u0022\u0022)!\n);",
       "Format": "sdk",
       "OperationId": "GetExperimentViewOverrideConfigurationBySpecificId",
-      "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and a configured credential environment variable is set: \u0060LANGSMITH_API_KEY\u0060."
     },
     {
       "Order": 4,
@@ -39,10 +39,10 @@
       "Slug": "get-experiment-view-override-configurations-for-a-dataset",
       "Description": "Retrieves all experiment view override configurations for a specific dataset.\nThis endpoint returns column display overrides including color gradients,\nprecision settings, and column visibility configurations that customize how\nexperiment results are displayed in the UI.\n\nThe response includes all column overrides with their display settings:\n- Column identifiers (must start with inputs, outputs, reference_outputs, feedback, metrics, attachments, or metadata)\n- Color gradients for numeric data visualization\n- Precision settings for numeric columns (1-6 decimal places)\n- Hide flags to control column visibility",
       "Language": "csharp",
-      "Code": "using var client = new LangSmithClient(apiKey);\n\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationsForADatasetAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!\n);",
+      "Code": "using var client = LangSmithClient.CreateFromEnvironment();\n\nvar response = await client.ExperimentViewOverrides.GetExperimentViewOverrideConfigurationsForADatasetAsync(\n    datasetId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u0022\\u0022550e8400-e29b-41d4-a716-446655440000\\u0022\u0022\u0022\u0022)!\n);",
       "Format": "sdk",
       "OperationId": "GetExperimentViewOverrideConfigurationsForADataset",
-      "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+      "Setup": "This example assumes \u0060using LangSmith;\u0060 is in scope and a configured credential environment variable is set: \u0060LANGSMITH_API_KEY\u0060."
     },
     {
       "Order": 5,
@@ -57,11 +57,22 @@
     },
     {
       "Order": 6,
+      "Title": "Query Single Thread Stats",
+      "Slug": "query-single-thread-stats",
+      "Description": "**Alpha:** The request and response contract may change;\nCompute aggregate stats for a single thread (turn count, latency percentiles, token/cost sums, and detail breakdowns) within a project.",
+      "Language": "http",
+      "Code": "### Query Single Thread Stats\nGET {{host}}/v2/threads/{{thread_id}}/stats?selects=[\u0022TURNS\u0022,\u0022LATENCY_P50\u0022]\u0026session_id={{session_id}}\nX-API-Key: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: aggregate stats for the thread\n# Content-Type: application/json\n# 400\n# Description: bad request (missing or invalid query parameters)\n# Content-Type: application/json\n# 401\n# Description: missing or invalid authentication\n# Content-Type: application/json\n# 403\n# Description: forbidden (insufficient permission)\n# Content-Type: application/json\n# 404\n# Description: session not found\n# Content-Type: application/json\n# 422\n# Description: unprocessable entity (e.g. invalid project UUID)\n# Content-Type: application/json\n# 500\n# Description: internal server error\n# Content-Type: application/json\n# 503\n# Description: service unavailable\n# Content-Type: application/json\n# 504\n# Description: gateway timeout or deadline exceeded\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "QuerySingleThreadStats",
+      "Setup": null
+    },
+    {
+      "Order": 7,
       "Title": "Query Thread Traces",
       "Slug": "query-thread-traces",
       "Description": "**Alpha:** The request and response contract may change;\nRetrieve all traces belonging to a specific thread within a project.",
       "Language": "http",
-      "Code": "### Query Thread Traces\nGET {{host}}/v2/threads/{{thread_id}}/traces?cursor={{cursor}}\u0026filter={{filter}}\u0026page_size=20\u0026project_id={{project_id}}\u0026selects=[\u0022NAME\u0022,\u0022START_TIME\u0022]\nX-API-Key: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: items and pagination\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json",
+      "Code": "### Query Thread Traces\nGET {{host}}/v2/threads/{{thread_id}}/traces?cursor={{cursor}}\u0026filter={{filter}}\u0026page_size=20\u0026project_id={{project_id}}\u0026selects=[\u0022NAME\u0022,\u0022START_TIME\u0022]\nX-API-Key: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: items and pagination\n# Content-Type: application/json\n# 400\n# Description: bad request (missing or invalid query parameters)\n# Content-Type: application/json\n# 401\n# Description: missing or invalid authentication\n# Content-Type: application/json\n# 403\n# Description: forbidden (insufficient permission)\n# Content-Type: application/json\n# 404\n# Description: session not found\n# Content-Type: application/json\n# 422\n# Description: unprocessable entity (e.g. invalid project UUID)\n# Content-Type: application/json\n# 500\n# Description: internal server error\n# Content-Type: application/json\n# 503\n# Description: service unavailable\n# Content-Type: application/json\n# 504\n# Description: gateway timeout or deadline exceeded\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "QueryThreadTraces",
       "Setup": null

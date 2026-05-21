@@ -85,5 +85,6 @@ namespace LangSmith
         public AnnotationQueueRubricItemSchema()
         {
         }
+
     }
 }

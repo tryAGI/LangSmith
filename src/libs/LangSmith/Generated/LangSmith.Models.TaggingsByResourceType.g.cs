@@ -69,6 +69,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Queues { get; set; }
 
         /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandboxes")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Sandboxes { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -107,6 +113,9 @@ namespace LangSmith
         /// <param name="queues">
         /// Default Value: []
         /// </param>
+        /// <param name="sandboxes">
+        /// Default Value: []
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -120,7 +129,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? mcpServers,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? projects,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? prompts,
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? queues)
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? queues,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? sandboxes)
         {
             this.Alerts = alerts;
             this.Dashboards = dashboards;
@@ -132,6 +142,7 @@ namespace LangSmith
             this.Projects = projects;
             this.Prompts = prompts;
             this.Queues = queues;
+            this.Sandboxes = sandboxes;
         }
 
         /// <summary>
@@ -140,5 +151,6 @@ namespace LangSmith
         public TaggingsByResourceType()
         {
         }
+
     }
 }

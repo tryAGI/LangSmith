@@ -35,6 +35,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        BatchDeleteSandboxClaims,
+        /// <summary>
+        /// 
+        /// </summary>
         BatchQueryTraceMessages,
         /// <summary>
         /// 
@@ -44,6 +48,10 @@ namespace LangSmith
         /// 
         /// </summary>
         CancelBulkExport,
+        /// <summary>
+        /// 
+        /// </summary>
+        CaptureSandboxSnapshot,
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +127,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateCredential,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateCsvDataset,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateDataPlane,
         /// <summary>
         /// 
         /// </summary>
@@ -267,7 +283,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateSandboxClaim,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateSandboxPolicy,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateSandboxProxyProfile,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateSandboxRegistry,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateSandboxSnapshot,
         /// <summary>
         /// 
         /// </summary>
@@ -503,7 +535,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        DeleteSandboxClaim,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteSandboxPolicy,
+        /// <summary>
+        /// 
+        /// </summary>
         DeleteSandboxProxyProfile,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteSandboxRegistry,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteSandboxSnapshot,
         /// <summary>
         /// 
         /// </summary>
@@ -611,6 +659,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        GenerateSandboxServiceUrl,
+        /// <summary>
+        /// 
+        /// </summary>
         GenerateSharedDatasetQuery,
         /// <summary>
         /// 
@@ -715,6 +767,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        GetMcpTools,
+        /// <summary>
+        /// 
+        /// </summary>
         GetOnboardingState,
         /// <summary>
         /// 
@@ -744,6 +800,22 @@ namespace LangSmith
         /// 
         /// </summary>
         GetRunCluster,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetSandboxClaim,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetSandboxClaimStatus,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetSandboxRegistry,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetSandboxSnapshot,
         /// <summary>
         /// 
         /// </summary>
@@ -780,6 +852,10 @@ namespace LangSmith
         /// 
         /// </summary>
         GetWorkspaceUsageLimitsInfo,
+        /// <summary>
+        /// 
+        /// </summary>
+        InvalidateMcpToolsCache,
         /// <summary>
         /// 
         /// </summary>
@@ -883,6 +959,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ListSandboxClaims,
+        /// <summary>
+        /// 
+        /// </summary>
+        ListSandboxRegistries,
+        /// <summary>
+        /// 
+        /// </summary>
+        ListSandboxSnapshots,
+        /// <summary>
+        /// 
+        /// </summary>
         ListServiceAccounts,
         /// <summary>
         /// 
@@ -919,6 +1007,14 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        McpProxy,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpProxyGet,
+        /// <summary>
+        /// 
+        /// </summary>
         MintSelfHostedLicense,
         /// <summary>
         /// 
@@ -932,6 +1028,14 @@ namespace LangSmith
         /// 
         /// </summary>
         QueryRuns,
+        /// <summary>
+        /// 
+        /// </summary>
+        QuerySingleThreadStats,
+        /// <summary>
+        /// 
+        /// </summary>
+        QueryThreadMessages,
         /// <summary>
         /// 
         /// </summary>
@@ -972,6 +1076,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ReadCharts,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReadComparativeExperiments,
         /// <summary>
         /// 
         /// </summary>
@@ -1055,11 +1163,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        StartSandboxClaim,
+        /// <summary>
+        /// 
+        /// </summary>
+        StopSandboxClaim,
+        /// <summary>
+        /// 
+        /// </summary>
         StreamDatasetComparisonView,
         /// <summary>
         /// 
         /// </summary>
         StreamFeedbackDelta,
+        /// <summary>
+        /// 
+        /// </summary>
+        StreamGroupedExperiments,
         /// <summary>
         /// 
         /// </summary>
@@ -1076,6 +1196,10 @@ namespace LangSmith
         /// 
         /// </summary>
         TestFleetWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
+        TestOpGeneric,
         /// <summary>
         /// 
         /// </summary>
@@ -1263,7 +1387,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UpdateSandboxClaim,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateSandboxPolicy,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateSandboxProxyProfile,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateSandboxRegistry,
         /// <summary>
         /// 
         /// </summary>
@@ -1360,9 +1496,11 @@ namespace LangSmith
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
+                AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
                 AuditLogOperation.BatchQueryTraceMessages => "batch_query_trace_messages",
                 AuditLogOperation.BulkDeleteEvaluators => "bulk_delete_evaluators",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
+                AuditLogOperation.CaptureSandboxSnapshot => "capture_sandbox_snapshot",
                 AuditLogOperation.ClaimPendingOrganizationInvite => "claim_pending_organization_invite",
                 AuditLogOperation.ClaimPendingWorkspaceInvite => "claim_pending_workspace_invite",
                 AuditLogOperation.CloneChartSection => "clone_chart_section",
@@ -1381,7 +1519,9 @@ namespace LangSmith
                 AuditLogOperation.CreateChartSection => "create_chart_section",
                 AuditLogOperation.CreateCommit => "create_commit",
                 AuditLogOperation.CreateComparativeExperiment => "create_comparative_experiment",
+                AuditLogOperation.CreateCredential => "create_credential",
                 AuditLogOperation.CreateCsvDataset => "create_csv_dataset",
+                AuditLogOperation.CreateDataPlane => "create_data_plane",
                 AuditLogOperation.CreateDataset => "create_dataset",
                 AuditLogOperation.CreateDeployment => "create_deployment",
                 AuditLogOperation.CreateDirectoryCommit => "create_directory_commit",
@@ -1418,7 +1558,11 @@ namespace LangSmith
                 AuditLogOperation.CreatePromptWebhook => "create_prompt_webhook",
                 AuditLogOperation.CreateProvisionedSaasOrg => "create_provisioned_saas_org",
                 AuditLogOperation.CreateRole => "create_role",
+                AuditLogOperation.CreateSandboxClaim => "create_sandbox_claim",
+                AuditLogOperation.CreateSandboxPolicy => "create_sandbox_policy",
                 AuditLogOperation.CreateSandboxProxyProfile => "create_sandbox_proxy_profile",
+                AuditLogOperation.CreateSandboxRegistry => "create_sandbox_registry",
+                AuditLogOperation.CreateSandboxSnapshot => "create_sandbox_snapshot",
                 AuditLogOperation.CreateScimGroup => "create_scim_group",
                 AuditLogOperation.CreateScimToken => "create_scim_token",
                 AuditLogOperation.CreateScimUser => "create_scim_user",
@@ -1477,7 +1621,11 @@ namespace LangSmith
                 AuditLogOperation.DeletePromptWebhook => "delete_prompt_webhook",
                 AuditLogOperation.DeleteRole => "delete_role",
                 AuditLogOperation.DeleteRuns => "delete_runs",
+                AuditLogOperation.DeleteSandboxClaim => "delete_sandbox_claim",
+                AuditLogOperation.DeleteSandboxPolicy => "delete_sandbox_policy",
                 AuditLogOperation.DeleteSandboxProxyProfile => "delete_sandbox_proxy_profile",
+                AuditLogOperation.DeleteSandboxRegistry => "delete_sandbox_registry",
+                AuditLogOperation.DeleteSandboxSnapshot => "delete_sandbox_snapshot",
                 AuditLogOperation.DeleteScimGroup => "delete_scim_group",
                 AuditLogOperation.DeleteScimToken => "delete_scim_token",
                 AuditLogOperation.DeleteScimUser => "delete_scim_user",
@@ -1504,6 +1652,7 @@ namespace LangSmith
                 AuditLogOperation.GenerateDataset => "generate_dataset",
                 AuditLogOperation.GenerateInsightsJobConfig => "generate_insights_job_config",
                 AuditLogOperation.GenerateRunsQuery => "generate_runs_query",
+                AuditLogOperation.GenerateSandboxServiceUrl => "generate_sandbox_service_url",
                 AuditLogOperation.GenerateSharedDatasetQuery => "generate_shared_dataset_query",
                 AuditLogOperation.GetAnnotationQueue => "get_annotation_queue",
                 AuditLogOperation.GetAnnotationQueueArchivedSize => "get_annotation_queue_archived_size",
@@ -1530,6 +1679,7 @@ namespace LangSmith
                 AuditLogOperation.GetInsightsJob => "get_insights_job",
                 AuditLogOperation.GetInsightsJobRuns => "get_insights_job_runs",
                 AuditLogOperation.GetLoginMethods => "get_login_methods",
+                AuditLogOperation.GetMcpTools => "get_mcp_tools",
                 AuditLogOperation.GetOnboardingState => "get_onboarding_state",
                 AuditLogOperation.GetOrgDashboard => "get_org_dashboard",
                 AuditLogOperation.GetOrgUsage => "get_org_usage",
@@ -1538,6 +1688,10 @@ namespace LangSmith
                 AuditLogOperation.GetOrganizationInfo => "get_organization_info",
                 AuditLogOperation.GetPairwiseQueue => "get_pairwise_queue",
                 AuditLogOperation.GetRunCluster => "get_run_cluster",
+                AuditLogOperation.GetSandboxClaim => "get_sandbox_claim",
+                AuditLogOperation.GetSandboxClaimStatus => "get_sandbox_claim_status",
+                AuditLogOperation.GetSandboxRegistry => "get_sandbox_registry",
+                AuditLogOperation.GetSandboxSnapshot => "get_sandbox_snapshot",
                 AuditLogOperation.GetSharedExamplesCount => "get_shared_examples_count",
                 AuditLogOperation.GetSharedTokens => "get_shared_tokens",
                 AuditLogOperation.GetSsoSettings => "get_sso_settings",
@@ -1547,6 +1701,7 @@ namespace LangSmith
                 AuditLogOperation.GetUsageLimits => "get_usage_limits",
                 AuditLogOperation.GetWorkspaceStats => "get_workspace_stats",
                 AuditLogOperation.GetWorkspaceUsageLimitsInfo => "get_workspace_usage_limits_info",
+                AuditLogOperation.InvalidateMcpToolsCache => "invalidate_mcp_tools_cache",
                 AuditLogOperation.InviteProvisionedOrgMember => "invite_provisioned_org_member",
                 AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
@@ -1572,6 +1727,9 @@ namespace LangSmith
                 AuditLogOperation.ListPendingOrganizationInvites => "list_pending_organization_invites",
                 AuditLogOperation.ListPendingWorkspaceInvites => "list_pending_workspace_invites",
                 AuditLogOperation.ListPermissions => "list_permissions",
+                AuditLogOperation.ListSandboxClaims => "list_sandbox_claims",
+                AuditLogOperation.ListSandboxRegistries => "list_sandbox_registries",
+                AuditLogOperation.ListSandboxSnapshots => "list_sandbox_snapshots",
                 AuditLogOperation.ListServiceAccounts => "list_service_accounts",
                 AuditLogOperation.ListTagKeys => "list_tag_keys",
                 AuditLogOperation.ListTagValues => "list_tag_values",
@@ -1581,10 +1739,14 @@ namespace LangSmith
                 AuditLogOperation.ListWorkspaceMembers => "list_workspace_members",
                 AuditLogOperation.ListWorkspaces => "list_workspaces",
                 AuditLogOperation.Login => "login",
+                AuditLogOperation.McpProxy => "mcp_proxy",
+                AuditLogOperation.McpProxyGet => "mcp_proxy_get",
                 AuditLogOperation.MintSelfHostedLicense => "mint_self_hosted_license",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
                 AuditLogOperation.QueryRun => "query_run",
                 AuditLogOperation.QueryRuns => "query_runs",
+                AuditLogOperation.QuerySingleThreadStats => "query_single_thread_stats",
+                AuditLogOperation.QueryThreadMessages => "query_thread_messages",
                 AuditLogOperation.QueryThreadTraces => "query_thread_traces",
                 AuditLogOperation.QueryThreads => "query_threads",
                 AuditLogOperation.QueryTrace => "query_trace",
@@ -1595,6 +1757,7 @@ namespace LangSmith
                 AuditLogOperation.ReadChartPreview => "read_chart_preview",
                 AuditLogOperation.ReadChartSection => "read_chart_section",
                 AuditLogOperation.ReadCharts => "read_charts",
+                AuditLogOperation.ReadComparativeExperiments => "read_comparative_experiments",
                 AuditLogOperation.ReadDatasetDelta => "read_dataset_delta",
                 AuditLogOperation.ReadDatasetShareState => "read_dataset_share_state",
                 AuditLogOperation.ReadExample => "read_example",
@@ -1615,12 +1778,16 @@ namespace LangSmith
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
+                AuditLogOperation.StartSandboxClaim => "start_sandbox_claim",
+                AuditLogOperation.StopSandboxClaim => "stop_sandbox_claim",
                 AuditLogOperation.StreamDatasetComparisonView => "stream_dataset_comparison_view",
                 AuditLogOperation.StreamFeedbackDelta => "stream_feedback_delta",
+                AuditLogOperation.StreamGroupedExperiments => "stream_grouped_experiments",
                 AuditLogOperation.SubmitNpsResponse => "submit_nps_response",
                 AuditLogOperation.SyncExamples => "sync_examples",
                 AuditLogOperation.TestAlertRule => "test_alert_rule",
                 AuditLogOperation.TestFleetWebhook => "test_fleet_webhook",
+                AuditLogOperation.TestOpGeneric => "test_op_generic",
                 AuditLogOperation.TestPromptWebhook => "test_prompt_webhook",
                 AuditLogOperation.TriggerForgeConfiguration => "trigger_forge_configuration",
                 AuditLogOperation.UnshareDataset => "unshare_dataset",
@@ -1667,7 +1834,10 @@ namespace LangSmith
                 AuditLogOperation.UpdatePromptCanvasQuickAction => "update_prompt_canvas_quick_action",
                 AuditLogOperation.UpdatePromptWebhook => "update_prompt_webhook",
                 AuditLogOperation.UpdateRole => "update_role",
+                AuditLogOperation.UpdateSandboxClaim => "update_sandbox_claim",
+                AuditLogOperation.UpdateSandboxPolicy => "update_sandbox_policy",
                 AuditLogOperation.UpdateSandboxProxyProfile => "update_sandbox_proxy_profile",
+                AuditLogOperation.UpdateSandboxRegistry => "update_sandbox_registry",
                 AuditLogOperation.UpdateScimGroup => "update_scim_group",
                 AuditLogOperation.UpdateScimToken => "update_scim_token",
                 AuditLogOperation.UpdateScimUser => "update_scim_user",
@@ -1703,9 +1873,11 @@ namespace LangSmith
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
+                "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
                 "batch_query_trace_messages" => AuditLogOperation.BatchQueryTraceMessages,
                 "bulk_delete_evaluators" => AuditLogOperation.BulkDeleteEvaluators,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
+                "capture_sandbox_snapshot" => AuditLogOperation.CaptureSandboxSnapshot,
                 "claim_pending_organization_invite" => AuditLogOperation.ClaimPendingOrganizationInvite,
                 "claim_pending_workspace_invite" => AuditLogOperation.ClaimPendingWorkspaceInvite,
                 "clone_chart_section" => AuditLogOperation.CloneChartSection,
@@ -1724,7 +1896,9 @@ namespace LangSmith
                 "create_chart_section" => AuditLogOperation.CreateChartSection,
                 "create_commit" => AuditLogOperation.CreateCommit,
                 "create_comparative_experiment" => AuditLogOperation.CreateComparativeExperiment,
+                "create_credential" => AuditLogOperation.CreateCredential,
                 "create_csv_dataset" => AuditLogOperation.CreateCsvDataset,
+                "create_data_plane" => AuditLogOperation.CreateDataPlane,
                 "create_dataset" => AuditLogOperation.CreateDataset,
                 "create_deployment" => AuditLogOperation.CreateDeployment,
                 "create_directory_commit" => AuditLogOperation.CreateDirectoryCommit,
@@ -1761,7 +1935,11 @@ namespace LangSmith
                 "create_prompt_webhook" => AuditLogOperation.CreatePromptWebhook,
                 "create_provisioned_saas_org" => AuditLogOperation.CreateProvisionedSaasOrg,
                 "create_role" => AuditLogOperation.CreateRole,
+                "create_sandbox_claim" => AuditLogOperation.CreateSandboxClaim,
+                "create_sandbox_policy" => AuditLogOperation.CreateSandboxPolicy,
                 "create_sandbox_proxy_profile" => AuditLogOperation.CreateSandboxProxyProfile,
+                "create_sandbox_registry" => AuditLogOperation.CreateSandboxRegistry,
+                "create_sandbox_snapshot" => AuditLogOperation.CreateSandboxSnapshot,
                 "create_scim_group" => AuditLogOperation.CreateScimGroup,
                 "create_scim_token" => AuditLogOperation.CreateScimToken,
                 "create_scim_user" => AuditLogOperation.CreateScimUser,
@@ -1820,7 +1998,11 @@ namespace LangSmith
                 "delete_prompt_webhook" => AuditLogOperation.DeletePromptWebhook,
                 "delete_role" => AuditLogOperation.DeleteRole,
                 "delete_runs" => AuditLogOperation.DeleteRuns,
+                "delete_sandbox_claim" => AuditLogOperation.DeleteSandboxClaim,
+                "delete_sandbox_policy" => AuditLogOperation.DeleteSandboxPolicy,
                 "delete_sandbox_proxy_profile" => AuditLogOperation.DeleteSandboxProxyProfile,
+                "delete_sandbox_registry" => AuditLogOperation.DeleteSandboxRegistry,
+                "delete_sandbox_snapshot" => AuditLogOperation.DeleteSandboxSnapshot,
                 "delete_scim_group" => AuditLogOperation.DeleteScimGroup,
                 "delete_scim_token" => AuditLogOperation.DeleteScimToken,
                 "delete_scim_user" => AuditLogOperation.DeleteScimUser,
@@ -1847,6 +2029,7 @@ namespace LangSmith
                 "generate_dataset" => AuditLogOperation.GenerateDataset,
                 "generate_insights_job_config" => AuditLogOperation.GenerateInsightsJobConfig,
                 "generate_runs_query" => AuditLogOperation.GenerateRunsQuery,
+                "generate_sandbox_service_url" => AuditLogOperation.GenerateSandboxServiceUrl,
                 "generate_shared_dataset_query" => AuditLogOperation.GenerateSharedDatasetQuery,
                 "get_annotation_queue" => AuditLogOperation.GetAnnotationQueue,
                 "get_annotation_queue_archived_size" => AuditLogOperation.GetAnnotationQueueArchivedSize,
@@ -1873,6 +2056,7 @@ namespace LangSmith
                 "get_insights_job" => AuditLogOperation.GetInsightsJob,
                 "get_insights_job_runs" => AuditLogOperation.GetInsightsJobRuns,
                 "get_login_methods" => AuditLogOperation.GetLoginMethods,
+                "get_mcp_tools" => AuditLogOperation.GetMcpTools,
                 "get_onboarding_state" => AuditLogOperation.GetOnboardingState,
                 "get_org_dashboard" => AuditLogOperation.GetOrgDashboard,
                 "get_org_usage" => AuditLogOperation.GetOrgUsage,
@@ -1881,6 +2065,10 @@ namespace LangSmith
                 "get_organization_info" => AuditLogOperation.GetOrganizationInfo,
                 "get_pairwise_queue" => AuditLogOperation.GetPairwiseQueue,
                 "get_run_cluster" => AuditLogOperation.GetRunCluster,
+                "get_sandbox_claim" => AuditLogOperation.GetSandboxClaim,
+                "get_sandbox_claim_status" => AuditLogOperation.GetSandboxClaimStatus,
+                "get_sandbox_registry" => AuditLogOperation.GetSandboxRegistry,
+                "get_sandbox_snapshot" => AuditLogOperation.GetSandboxSnapshot,
                 "get_shared_examples_count" => AuditLogOperation.GetSharedExamplesCount,
                 "get_shared_tokens" => AuditLogOperation.GetSharedTokens,
                 "get_sso_settings" => AuditLogOperation.GetSsoSettings,
@@ -1890,6 +2078,7 @@ namespace LangSmith
                 "get_usage_limits" => AuditLogOperation.GetUsageLimits,
                 "get_workspace_stats" => AuditLogOperation.GetWorkspaceStats,
                 "get_workspace_usage_limits_info" => AuditLogOperation.GetWorkspaceUsageLimitsInfo,
+                "invalidate_mcp_tools_cache" => AuditLogOperation.InvalidateMcpToolsCache,
                 "invite_provisioned_org_member" => AuditLogOperation.InviteProvisionedOrgMember,
                 "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
@@ -1915,6 +2104,9 @@ namespace LangSmith
                 "list_pending_organization_invites" => AuditLogOperation.ListPendingOrganizationInvites,
                 "list_pending_workspace_invites" => AuditLogOperation.ListPendingWorkspaceInvites,
                 "list_permissions" => AuditLogOperation.ListPermissions,
+                "list_sandbox_claims" => AuditLogOperation.ListSandboxClaims,
+                "list_sandbox_registries" => AuditLogOperation.ListSandboxRegistries,
+                "list_sandbox_snapshots" => AuditLogOperation.ListSandboxSnapshots,
                 "list_service_accounts" => AuditLogOperation.ListServiceAccounts,
                 "list_tag_keys" => AuditLogOperation.ListTagKeys,
                 "list_tag_values" => AuditLogOperation.ListTagValues,
@@ -1924,10 +2116,14 @@ namespace LangSmith
                 "list_workspace_members" => AuditLogOperation.ListWorkspaceMembers,
                 "list_workspaces" => AuditLogOperation.ListWorkspaces,
                 "login" => AuditLogOperation.Login,
+                "mcp_proxy" => AuditLogOperation.McpProxy,
+                "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
                 "mint_self_hosted_license" => AuditLogOperation.MintSelfHostedLicense,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
                 "query_run" => AuditLogOperation.QueryRun,
                 "query_runs" => AuditLogOperation.QueryRuns,
+                "query_single_thread_stats" => AuditLogOperation.QuerySingleThreadStats,
+                "query_thread_messages" => AuditLogOperation.QueryThreadMessages,
                 "query_thread_traces" => AuditLogOperation.QueryThreadTraces,
                 "query_threads" => AuditLogOperation.QueryThreads,
                 "query_trace" => AuditLogOperation.QueryTrace,
@@ -1938,6 +2134,7 @@ namespace LangSmith
                 "read_chart_preview" => AuditLogOperation.ReadChartPreview,
                 "read_chart_section" => AuditLogOperation.ReadChartSection,
                 "read_charts" => AuditLogOperation.ReadCharts,
+                "read_comparative_experiments" => AuditLogOperation.ReadComparativeExperiments,
                 "read_dataset_delta" => AuditLogOperation.ReadDatasetDelta,
                 "read_dataset_share_state" => AuditLogOperation.ReadDatasetShareState,
                 "read_example" => AuditLogOperation.ReadExample,
@@ -1958,12 +2155,16 @@ namespace LangSmith
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
+                "start_sandbox_claim" => AuditLogOperation.StartSandboxClaim,
+                "stop_sandbox_claim" => AuditLogOperation.StopSandboxClaim,
                 "stream_dataset_comparison_view" => AuditLogOperation.StreamDatasetComparisonView,
                 "stream_feedback_delta" => AuditLogOperation.StreamFeedbackDelta,
+                "stream_grouped_experiments" => AuditLogOperation.StreamGroupedExperiments,
                 "submit_nps_response" => AuditLogOperation.SubmitNpsResponse,
                 "sync_examples" => AuditLogOperation.SyncExamples,
                 "test_alert_rule" => AuditLogOperation.TestAlertRule,
                 "test_fleet_webhook" => AuditLogOperation.TestFleetWebhook,
+                "test_op_generic" => AuditLogOperation.TestOpGeneric,
                 "test_prompt_webhook" => AuditLogOperation.TestPromptWebhook,
                 "trigger_forge_configuration" => AuditLogOperation.TriggerForgeConfiguration,
                 "unshare_dataset" => AuditLogOperation.UnshareDataset,
@@ -2010,7 +2211,10 @@ namespace LangSmith
                 "update_prompt_canvas_quick_action" => AuditLogOperation.UpdatePromptCanvasQuickAction,
                 "update_prompt_webhook" => AuditLogOperation.UpdatePromptWebhook,
                 "update_role" => AuditLogOperation.UpdateRole,
+                "update_sandbox_claim" => AuditLogOperation.UpdateSandboxClaim,
+                "update_sandbox_policy" => AuditLogOperation.UpdateSandboxPolicy,
                 "update_sandbox_proxy_profile" => AuditLogOperation.UpdateSandboxProxyProfile,
+                "update_sandbox_registry" => AuditLogOperation.UpdateSandboxRegistry,
                 "update_scim_group" => AuditLogOperation.UpdateScimGroup,
                 "update_scim_token" => AuditLogOperation.UpdateScimToken,
                 "update_scim_user" => AuditLogOperation.UpdateScimUser,

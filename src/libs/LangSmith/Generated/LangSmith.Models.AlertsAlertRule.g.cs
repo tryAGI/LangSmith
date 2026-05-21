@@ -196,5 +196,6 @@ namespace LangSmith
         public AlertsAlertRule()
         {
         }
+
     }
 }

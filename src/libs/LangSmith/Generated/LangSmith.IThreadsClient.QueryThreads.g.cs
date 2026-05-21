@@ -25,6 +25,21 @@ namespace LangSmith
         /// Query threads within a project (session), with cursor-based pagination.<br/>
         /// Returns threads matching the given time range and optional filter.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsQueryThreadsResponseBody>> QueryThreadsAsResponseAsync(
+
+            global::LangSmith.ThreadsQueryThreadsRequestBody request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Query Threads<br/>
+        /// **Alpha:** The request and response contract may change;<br/>
+        /// Query threads within a project (session), with cursor-based pagination.<br/>
+        /// Returns threads matching the given time range and optional filter.
+        /// </summary>
         /// <param name="cursor">
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
         /// </param>

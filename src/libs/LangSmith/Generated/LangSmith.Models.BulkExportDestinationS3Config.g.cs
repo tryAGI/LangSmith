@@ -52,6 +52,12 @@ namespace LangSmith
         public bool? IncludeBucketInPrefix { get; set; }
 
         /// <summary>
+        /// AWS IAM role ARN that LangSmith assumes instead of using static credentials.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aws_role_arn")]
+        public string? AwsRoleArn { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +78,9 @@ namespace LangSmith
         /// Whether to prepend the bucket name to the S3 file path. Defaults to True. Set to False to skip prepending the bucket name if bucket name is already in the endpoint URL.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="awsRoleArn">
+        /// AWS IAM role ARN that LangSmith assumes instead of using static credentials.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,7 +91,8 @@ namespace LangSmith
             string? region,
             object? s3AdditionalKwargs,
             global::LangSmith.BotocoreS3Config? configKwargsS3,
-            bool? includeBucketInPrefix)
+            bool? includeBucketInPrefix,
+            string? awsRoleArn)
         {
             this.EndpointUrl = endpointUrl;
             this.Prefix = prefix;
@@ -91,6 +101,7 @@ namespace LangSmith
             this.S3AdditionalKwargs = s3AdditionalKwargs;
             this.ConfigKwargsS3 = configKwargsS3;
             this.IncludeBucketInPrefix = includeBucketInPrefix;
+            this.AwsRoleArn = awsRoleArn;
         }
 
         /// <summary>
@@ -99,5 +110,6 @@ namespace LangSmith
         public BulkExportDestinationS3Config()
         {
         }
+
     }
 }

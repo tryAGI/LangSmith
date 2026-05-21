@@ -32,6 +32,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
+        public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPersonal { get; set; }
@@ -207,6 +213,7 @@ namespace LangSmith
         /// <param name="isPersonal"></param>
         /// <param name="id"></param>
         /// <param name="displayName"></param>
+        /// <param name="engineEnabled"></param>
         /// <param name="tier"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
@@ -271,6 +278,7 @@ namespace LangSmith
             bool isPersonal,
             global::System.Guid? id,
             string? displayName,
+            bool? engineEnabled,
             global::LangSmith.PaymentPlanTier? tier,
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
@@ -301,6 +309,7 @@ namespace LangSmith
             this.Id = id;
             this.DisplayName = displayName;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.EngineEnabled = engineEnabled;
             this.IsPersonal = isPersonal;
             this.Tier = tier;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
@@ -336,5 +345,6 @@ namespace LangSmith
         public OrganizationInfo()
         {
         }
+
     }
 }

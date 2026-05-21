@@ -85,11 +85,22 @@ namespace LangSmith
 
         /// <summary>
         /// `project_ids` lists tracing project UUIDs to query.<br/>
+        /// Required unless `reference_dataset_id` is set. Mutually exclusive with `reference_dataset_id` — set exactly one of them.<br/>
         /// Example: [018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328]
         /// </summary>
         /// <example>[018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? ProjectIds { get; set; }
+
+        /// <summary>
+        /// `reference_dataset_id` resolves session IDs server-side from the dataset.<br/>
+        /// Required unless `project_ids` is set. Mutually exclusive with `project_ids` — set exactly one of them.<br/>
+        /// When provided and `min_start_time` is omitted, the server derives it from the earliest session creation date.<br/>
+        /// Example: 018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327
+        /// </summary>
+        /// <example>018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
+        public global::System.Guid? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// `reference_examples` optionally limits to runs linked to these dataset example UUIDs.<br/>
@@ -204,7 +215,14 @@ namespace LangSmith
         /// </param>
         /// <param name="projectIds">
         /// `project_ids` lists tracing project UUIDs to query.<br/>
+        /// Required unless `reference_dataset_id` is set. Mutually exclusive with `reference_dataset_id` — set exactly one of them.<br/>
         /// Example: [018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328]
+        /// </param>
+        /// <param name="referenceDatasetId">
+        /// `reference_dataset_id` resolves session IDs server-side from the dataset.<br/>
+        /// Required unless `project_ids` is set. Mutually exclusive with `project_ids` — set exactly one of them.<br/>
+        /// When provided and `min_start_time` is omitted, the server derives it from the earliest session creation date.<br/>
+        /// Example: 018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327
         /// </param>
         /// <param name="referenceExamples">
         /// `reference_examples` optionally limits to runs linked to these dataset example UUIDs.<br/>
@@ -253,6 +271,7 @@ namespace LangSmith
             global::System.DateTime? minStartTime,
             int? pageSize,
             global::System.Collections.Generic.IList<global::System.Guid>? projectIds,
+            global::System.Guid? referenceDatasetId,
             global::System.Collections.Generic.IList<global::System.Guid>? referenceExamples,
             global::LangSmith.QueryRunType? runType,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects,
@@ -271,6 +290,7 @@ namespace LangSmith
             this.MinStartTime = minStartTime;
             this.PageSize = pageSize;
             this.ProjectIds = projectIds;
+            this.ReferenceDatasetId = referenceDatasetId;
             this.ReferenceExamples = referenceExamples;
             this.RunType = runType;
             this.Selects = selects;
@@ -286,5 +306,6 @@ namespace LangSmith
         public QueryQueryRunsRequestBody()
         {
         }
+
     }
 }

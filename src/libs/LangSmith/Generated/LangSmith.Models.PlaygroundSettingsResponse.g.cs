@@ -110,16 +110,46 @@ namespace LangSmith
         public bool? AvailableInInsightsLight { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_issues_agent_heavy")]
-        public bool? AvailableInIssuesAgentHeavy { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_enabled")]
+        public bool? OauthEnabled { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("available_in_issues_agent_light")]
-        public bool? AvailableInIssuesAgentLight { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_url")]
+        public string? OauthTokenUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_client_id")]
+        public string? OauthClientId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_client_secret")]
+        public string? OauthClientSecret { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_endpoint_auth_method")]
+        public global::LangSmith.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2? OauthTokenEndpointAuthMethod { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_params")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? OauthParams { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_headers")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? OauthHeaders { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -160,12 +190,13 @@ namespace LangSmith
         /// <param name="availableInInsightsLight">
         /// Default Value: false
         /// </param>
-        /// <param name="availableInIssuesAgentHeavy">
-        /// Default Value: false
-        /// </param>
-        /// <param name="availableInIssuesAgentLight">
-        /// Default Value: false
-        /// </param>
+        /// <param name="oauthEnabled"></param>
+        /// <param name="oauthTokenUrl"></param>
+        /// <param name="oauthClientId"></param>
+        /// <param name="oauthClientSecret"></param>
+        /// <param name="oauthTokenEndpointAuthMethod"></param>
+        /// <param name="oauthParams"></param>
+        /// <param name="oauthHeaders"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -186,8 +217,13 @@ namespace LangSmith
             bool? availableInPolly,
             bool? availableInInsightsHeavy,
             bool? availableInInsightsLight,
-            bool? availableInIssuesAgentHeavy,
-            bool? availableInIssuesAgentLight)
+            bool? oauthEnabled,
+            string? oauthTokenUrl,
+            string? oauthClientId,
+            string? oauthClientSecret,
+            global::LangSmith.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2? oauthTokenEndpointAuthMethod,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? oauthParams,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? oauthHeaders)
         {
             this.Id = id;
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
@@ -205,8 +241,13 @@ namespace LangSmith
             this.AvailableInPolly = availableInPolly;
             this.AvailableInInsightsHeavy = availableInInsightsHeavy;
             this.AvailableInInsightsLight = availableInInsightsLight;
-            this.AvailableInIssuesAgentHeavy = availableInIssuesAgentHeavy;
-            this.AvailableInIssuesAgentLight = availableInIssuesAgentLight;
+            this.OauthEnabled = oauthEnabled;
+            this.OauthTokenUrl = oauthTokenUrl;
+            this.OauthClientId = oauthClientId;
+            this.OauthClientSecret = oauthClientSecret;
+            this.OauthTokenEndpointAuthMethod = oauthTokenEndpointAuthMethod;
+            this.OauthParams = oauthParams;
+            this.OauthHeaders = oauthHeaders;
         }
 
         /// <summary>
@@ -215,5 +256,6 @@ namespace LangSmith
         public PlaygroundSettingsResponse()
         {
         }
+
     }
 }

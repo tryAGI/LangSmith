@@ -178,5 +178,6 @@ namespace LangSmith
         public OrganizationBillingInfo()
         {
         }
+
     }
 }

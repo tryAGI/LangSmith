@@ -15,6 +15,12 @@ namespace LangSmith
         public string? PlanTier { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_default_enabled")]
+        public bool? EngineDefaultEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_identities")]
@@ -93,16 +99,16 @@ namespace LangSmith
         public int? MaxFreeLanggraphCloudDeployments { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_enabled")]
+        public bool? SandboxEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_sandboxes")]
         public int? MaxSandboxes { get; set; }
-
-        /// <summary>
-        /// Default Value: 100
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_volumes")]
-        public int? MaxSandboxVolumes { get; set; }
 
         /// <summary>
         /// Default Value: 200
@@ -115,12 +121,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_memory")]
         public string? MaxSandboxMemory { get; set; }
-
-        /// <summary>
-        /// Default Value: 1Ti
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_storage")]
-        public string? MaxSandboxStorage { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -329,12 +329,6 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_include_extended_stats")]
-        public bool? EnableIncludeExtendedStats { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_markdown_in_tracing")]
         public bool? EnableMarkdownInTracing { get; set; }
 
@@ -405,6 +399,12 @@ namespace LangSmith
         public bool? LlmGatewayEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_deep_agents_enabled")]
+        public bool? ManagedDeepAgentsEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -414,6 +414,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
         /// </summary>
         /// <param name="planTier"></param>
+        /// <param name="engineDefaultEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="maxIdentities">
         /// Default Value: 5
         /// </param>
@@ -447,20 +450,17 @@ namespace LangSmith
         /// <param name="maxFreeLanggraphCloudDeployments">
         /// Default Value: 0
         /// </param>
+        /// <param name="sandboxEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="maxSandboxes">
         /// Default Value: 10
-        /// </param>
-        /// <param name="maxSandboxVolumes">
-        /// Default Value: 100
         /// </param>
         /// <param name="maxSandboxCpu">
         /// Default Value: 200
         /// </param>
         /// <param name="maxSandboxMemory">
         /// Default Value: 400Gi
-        /// </param>
-        /// <param name="maxSandboxStorage">
-        /// Default Value: 1Ti
         /// </param>
         /// <param name="canUseSamlSso">
         /// Default Value: false
@@ -564,9 +564,6 @@ namespace LangSmith
         /// <param name="clioEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="enableIncludeExtendedStats">
-        /// Default Value: false
-        /// </param>
         /// <param name="enableMarkdownInTracing">
         /// Default Value: false
         /// </param>
@@ -603,11 +600,15 @@ namespace LangSmith
         /// <param name="llmGatewayEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="managedDeepAgentsEnabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationConfig(
             string? planTier,
+            bool? engineDefaultEnabled,
             int? maxIdentities,
             int? maxWorkspaces,
             bool? canUseRbac,
@@ -621,11 +622,10 @@ namespace LangSmith
             bool? canUseLanggraphCloud,
             int? maxLanggraphCloudDeployments,
             int? maxFreeLanggraphCloudDeployments,
+            bool? sandboxEnabled,
             int? maxSandboxes,
-            int? maxSandboxVolumes,
             string? maxSandboxCpu,
             string? maxSandboxMemory,
-            string? maxSandboxStorage,
             bool? canUseSamlSso,
             bool? canUseBulkExport,
             bool? showUpdatedSidenav,
@@ -660,7 +660,6 @@ namespace LangSmith
             int? newRuleEvaluatorCreationVersion,
             bool? enableLgpListenersPage,
             bool? clioEnabled,
-            bool? enableIncludeExtendedStats,
             bool? enableMarkdownInTracing,
             bool? enablePricingRedesign,
             bool? arbitraryCostTrackingEnabled,
@@ -672,9 +671,11 @@ namespace LangSmith
             int? maxAgentBuilderRuns,
             bool? langsmithDeploymentDrEnabledDev,
             bool? ipAllowlistEnabled,
-            bool? llmGatewayEnabled)
+            bool? llmGatewayEnabled,
+            bool? managedDeepAgentsEnabled)
         {
             this.PlanTier = planTier;
+            this.EngineDefaultEnabled = engineDefaultEnabled;
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
             this.CanUseRbac = canUseRbac;
@@ -688,11 +689,10 @@ namespace LangSmith
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
+            this.SandboxEnabled = sandboxEnabled;
             this.MaxSandboxes = maxSandboxes;
-            this.MaxSandboxVolumes = maxSandboxVolumes;
             this.MaxSandboxCpu = maxSandboxCpu;
             this.MaxSandboxMemory = maxSandboxMemory;
-            this.MaxSandboxStorage = maxSandboxStorage;
             this.CanUseSamlSso = canUseSamlSso;
             this.CanUseBulkExport = canUseBulkExport;
             this.ShowUpdatedSidenav = showUpdatedSidenav;
@@ -727,7 +727,6 @@ namespace LangSmith
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.ClioEnabled = clioEnabled;
-            this.EnableIncludeExtendedStats = enableIncludeExtendedStats;
             this.EnableMarkdownInTracing = enableMarkdownInTracing;
             this.EnablePricingRedesign = enablePricingRedesign;
             this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
@@ -740,6 +739,7 @@ namespace LangSmith
             this.LangsmithDeploymentDrEnabledDev = langsmithDeploymentDrEnabledDev;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.LlmGatewayEnabled = llmGatewayEnabled;
+            this.ManagedDeepAgentsEnabled = managedDeepAgentsEnabled;
         }
 
         /// <summary>
@@ -748,5 +748,6 @@ namespace LangSmith
         public OrganizationConfig()
         {
         }
+
     }
 }

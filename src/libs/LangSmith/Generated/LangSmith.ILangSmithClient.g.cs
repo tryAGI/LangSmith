@@ -84,6 +84,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public AgentsClient Agents { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AlertRulesClient AlertRules { get; }
 
         /// <summary>
@@ -139,6 +144,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public CheckpointClient Checkpoint { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CommentsClient Comments { get; }
 
         /// <summary>
@@ -159,12 +169,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public DirectoriesClient Directories { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EvaluatorsClient Evaluators { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public ExamplesClient Examples { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ExecuteClient Execute { get; }
 
         /// <summary>
         /// 
@@ -194,6 +214,21 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FilesClient Files { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FleetAuthClient FleetAuth { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FleetCredentialsClient FleetCredentials { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FleetGithubAppClient FleetGithubApp { get; }
 
         /// <summary>
@@ -209,12 +244,32 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public FleetThreadsClient FleetThreads { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FleetTriggerTemplatesClient FleetTriggerTemplates { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FleetTriggersClient FleetTriggers { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FleetUsageClient FleetUsage { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public FleetWebhooksClient FleetWebhooks { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public GatewayPoliciesClient GatewayPolicies { get; }
 
         /// <summary>
         /// 
@@ -234,7 +289,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        public IssuesClient Issues { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IssuesAgentClient IssuesAgent { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public LikesClient Likes { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public McpClient Mcp { get; }
 
         /// <summary>
         /// 
@@ -350,6 +420,11 @@ namespace LangSmith
         /// 
         /// </summary>
         public SettingsClient Settings { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SkillsClient Skills { get; }
 
         /// <summary>
         /// 

@@ -25,6 +25,21 @@ namespace LangSmith
         /// Deletion is performed by setting inputs, outputs, and metadata to null and deleting attachment files while keeping the example ID, dataset ID, and creation timestamp.<br/>
         /// IMPORTANT: attachment files can take up to 7 days to be deleted. inputs, outputs and metadata are nullified immediately.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ExamplesExamplesDeletedResponse>> HardDeleteExamplesAsResponseAsync(
+
+            global::LangSmith.ExamplesDeleteExamplesRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Hard Delete Examples<br/>
+        /// This endpoint hard deletes *all* versions of a dataset example(s).<br/>
+        /// Deletion is performed by setting inputs, outputs, and metadata to null and deleting attachment files while keeping the example ID, dataset ID, and creation timestamp.<br/>
+        /// IMPORTANT: attachment files can take up to 7 days to be deleted. inputs, outputs and metadata are nullified immediately.
+        /// </summary>
         /// <param name="exampleIds">
         /// ExampleIDs is a list of UUIDs identifying the examples to delete.
         /// </param>

@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Batch delete sandbox claims<br/>
-        /// Delete multiple sandbox claims by name in a single request.
+        /// Delete multiple sandbox claims by name or UUID in a single request.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,20 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Batch delete sandbox claims<br/>
-        /// Delete multiple sandbox claims by name in a single request.
+        /// Delete multiple sandbox claims by name or UUID in a single request.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesBatchDeleteResponse>> BatchDeleteSandboxClaimsAsResponseAsync(
+
+            global::LangSmith.SandboxesBatchDeleteRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Batch delete sandbox claims<br/>
+        /// Delete multiple sandbox claims by name or UUID in a single request.
         /// </summary>
         /// <param name="names"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

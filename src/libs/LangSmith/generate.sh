@@ -15,4 +15,5 @@ autosdk generate openapi.json \
   --methodNamingConvention Summary \
   --ignore-openapi-errors \
   --base-url https://api.smith.langchain.com \
-  --security-scheme ApiKey:Header:X-API-Key
+  --security-scheme ApiKey:Header:X-API-Key \
+  --auth-env-var LANGSMITH_API_KEY

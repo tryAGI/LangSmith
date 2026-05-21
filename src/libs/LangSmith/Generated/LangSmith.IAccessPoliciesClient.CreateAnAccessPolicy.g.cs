@@ -21,6 +21,19 @@ namespace LangSmith
         /// Create an access policy<br/>
         /// Creates a new access policy.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AuthzInternalAccessPolicyCreateResponse>> CreateAnAccessPolicyAsResponseAsync(
+
+            global::LangSmith.AuthzInternalCreateAccessPolicyPayload request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an access policy<br/>
+        /// Creates a new access policy.
+        /// </summary>
         /// <param name="conditionGroups"></param>
         /// <param name="description"></param>
         /// <param name="effect"></param>

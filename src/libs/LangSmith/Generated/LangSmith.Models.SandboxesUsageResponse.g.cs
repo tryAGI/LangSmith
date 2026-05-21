@@ -89,32 +89,8 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("storage_limit_bytes")]
-        public long? StorageLimitBytes { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("storage_used_bytes")]
-        public long? StorageUsedBytes { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("templates_count")]
         public int? TemplatesCount { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("volumes_limit")]
-        public int? VolumesLimit { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("volumes_used")]
-        public int? VolumesUsed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -138,11 +114,7 @@ namespace LangSmith
         /// <param name="sandboxesLimit"></param>
         /// <param name="sandboxesUsed"></param>
         /// <param name="snapshotsCount"></param>
-        /// <param name="storageLimitBytes"></param>
-        /// <param name="storageUsedBytes"></param>
         /// <param name="templatesCount"></param>
-        /// <param name="volumesLimit"></param>
-        /// <param name="volumesUsed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -160,11 +132,7 @@ namespace LangSmith
             int? sandboxesLimit,
             int? sandboxesUsed,
             int? snapshotsCount,
-            long? storageLimitBytes,
-            long? storageUsedBytes,
-            int? templatesCount,
-            int? volumesLimit,
-            int? volumesUsed)
+            int? templatesCount)
         {
             this.CpuLimitMillicores = cpuLimitMillicores;
             this.CpuUsedMillicores = cpuUsedMillicores;
@@ -179,11 +147,7 @@ namespace LangSmith
             this.SandboxesLimit = sandboxesLimit;
             this.SandboxesUsed = sandboxesUsed;
             this.SnapshotsCount = snapshotsCount;
-            this.StorageLimitBytes = storageLimitBytes;
-            this.StorageUsedBytes = storageUsedBytes;
             this.TemplatesCount = templatesCount;
-            this.VolumesLimit = volumesLimit;
-            this.VolumesUsed = volumesUsed;
         }
 
         /// <summary>
@@ -192,5 +156,6 @@ namespace LangSmith
         public SandboxesUsageResponse()
         {
         }
+
     }
 }

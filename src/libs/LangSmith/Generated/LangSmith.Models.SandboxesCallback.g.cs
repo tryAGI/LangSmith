@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("full_request")]
+        public bool? FullRequest { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match_hosts")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> MatchHosts { get; set; }
@@ -47,6 +53,7 @@ namespace LangSmith
         /// <param name="matchHosts"></param>
         /// <param name="ttlSeconds"></param>
         /// <param name="url"></param>
+        /// <param name="fullRequest"></param>
         /// <param name="requestHeaders"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,8 +62,10 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string> matchHosts,
             int ttlSeconds,
             string url,
+            bool? fullRequest,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? requestHeaders)
         {
+            this.FullRequest = fullRequest;
             this.MatchHosts = matchHosts ?? throw new global::System.ArgumentNullException(nameof(matchHosts));
             this.RequestHeaders = requestHeaders;
             this.TtlSeconds = ttlSeconds;
@@ -69,5 +78,6 @@ namespace LangSmith
         public SandboxesCallback()
         {
         }
+
     }
 }

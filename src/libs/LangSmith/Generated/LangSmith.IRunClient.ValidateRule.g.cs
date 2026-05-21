@@ -33,6 +33,25 @@ namespace LangSmith
         /// The evaluator execution traces are written to the database (in the "evaluators"<br/>
         /// project), which allows users to see the evaluator execution history.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<object>>> ValidateRuleAsResponseAsync(
+
+            global::LangSmith.RunRulesValidateSchema request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Validate Rule<br/>
+        /// Validate a rule by executing it with test data without creating a saved rule.<br/>
+        /// This endpoint allows testing LLM-as-judge evaluators before saving them. It accepts<br/>
+        /// a rule configuration (same as rule creation) and test data, executes the evaluator,<br/>
+        /// and returns the evaluation results in the same format as batch_invoke_evaluator.<br/>
+        /// Only LLM-as-judge rules (evaluators) are supported. Code evaluators are not allowed.<br/>
+        /// The evaluator execution traces are written to the database (in the "evaluators"<br/>
+        /// project), which allows users to see the evaluator execution history.
+        /// </summary>
         /// <param name="displayName"></param>
         /// <param name="sessionId"></param>
         /// <param name="isEnabled">
@@ -71,8 +90,9 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="spendLimit"></param>
         /// <param name="groupBy"></param>
+        /// <param name="spendLimit"></param>
+        /// <param name="tracerSessionIssueId"></param>
         /// <param name="testInputs"></param>
         /// <param name="testOutputs"></param>
         /// <param name="testReferenceOutputs"></param>
@@ -105,8 +125,9 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
-            global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit = default,
             string? groupBy = default,
+            global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit = default,
+            global::System.Guid? tracerSessionIssueId = default,
             object? testInputs = default,
             object? testOutputs = default,
             object? testReferenceOutputs = default,

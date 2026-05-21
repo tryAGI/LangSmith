@@ -58,5 +58,6 @@ namespace LangSmith
         public ExamplesErrorResponse()
         {
         }
+
     }
 }

@@ -68,5 +68,6 @@ namespace LangSmith
         public InputTokenDetails()
         {
         }
+
     }
 }

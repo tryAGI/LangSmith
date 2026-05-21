@@ -24,6 +24,21 @@ namespace LangSmith
         /// This is used for updating a user's role (all auth modes) or full_name/password (basic auth)
         /// </summary>
         /// <param name="identityId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> UpdateCurrentOrgMemberAsResponseAsync(
+            global::System.Guid identityId,
+
+            global::LangSmith.OrgIdentityPatch request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Current Org Member<br/>
+        /// This is used for updating a user's role (all auth modes) or full_name/password (basic auth)
+        /// </summary>
+        /// <param name="identityId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
         /// <param name="roleId"></param>

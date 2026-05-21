@@ -16,5 +16,17 @@ namespace LangSmith
             string scimTokenId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get a SCIM token<br/>
+        /// Retrieve a specific SCIM token by ID for the current organization. The full token value is not returned.
+        /// </summary>
+        /// <param name="scimTokenId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ScimScimTokenResponse>> GetAScimTokenAsResponseAsync(
+            string scimTokenId,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

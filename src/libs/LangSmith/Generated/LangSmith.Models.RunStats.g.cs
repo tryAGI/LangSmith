@@ -126,31 +126,31 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
-        public string? TotalCost { get; set; }
+        public double? TotalCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost")]
-        public string? PromptCost { get; set; }
+        public double? PromptCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
-        public string? CompletionCost { get; set; }
+        public double? CompletionCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_p50")]
-        public string? CostP50 { get; set; }
+        public double? CostP50 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_p99")]
-        public string? CostP99 { get; set; }
+        public double? CostP99 { get; set; }
 
         /// <summary>
         /// 
@@ -236,11 +236,11 @@ namespace LangSmith
             global::System.Collections.Generic.IList<object>? runFacets,
             double? errorRate,
             double? streamingRate,
-            string? totalCost,
-            string? promptCost,
-            string? completionCost,
-            string? costP50,
-            string? costP99,
+            double? totalCost,
+            double? promptCost,
+            double? completionCost,
+            double? costP50,
+            double? costP99,
             object? promptTokenDetails,
             object? completionTokenDetails,
             object? promptCostDetails,
@@ -282,5 +282,6 @@ namespace LangSmith
         public RunStats()
         {
         }
+
     }
 }

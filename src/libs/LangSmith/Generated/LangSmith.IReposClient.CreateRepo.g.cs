@@ -21,6 +21,19 @@ namespace LangSmith
         /// Create Repo<br/>
         /// Create a repo.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateRepoResponse>> CreateRepoAsResponseAsync(
+
+            global::LangSmith.CreateRepoRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Repo<br/>
+        /// Create a repo.
+        /// </summary>
         /// <param name="repoHandle"></param>
         /// <param name="description"></param>
         /// <param name="readme"></param>
@@ -29,6 +42,7 @@ namespace LangSmith
         /// <param name="repoType">
         /// Default Value: prompt
         /// </param>
+        /// <param name="source"></param>
         /// <param name="restrictedMode"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,6 +54,7 @@ namespace LangSmith
             string? readme = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::LangSmith.CreateRepoRequestRepoType? repoType = default,
+            global::LangSmith.CreateRepoRequestSource2? source = default,
             bool? restrictedMode = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

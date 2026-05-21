@@ -47,6 +47,24 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("protected_resources_supported")]
+        public global::System.Collections.Generic.IList<string>? ProtectedResourcesSupported { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("registration_endpoint")]
+        public string? RegistrationEndpoint { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resource_parameter_supported")]
+        public bool? ResourceParameterSupported { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_types_supported")]
         public global::System.Collections.Generic.IList<string>? ResponseTypesSupported { get; set; }
 
@@ -89,6 +107,9 @@ namespace LangSmith
         /// <param name="grantTypesSupported"></param>
         /// <param name="issuer"></param>
         /// <param name="jwksUri"></param>
+        /// <param name="protectedResourcesSupported"></param>
+        /// <param name="registrationEndpoint"></param>
+        /// <param name="resourceParameterSupported"></param>
         /// <param name="responseTypesSupported"></param>
         /// <param name="revocationEndpoint"></param>
         /// <param name="scopesSupported"></param>
@@ -104,6 +125,9 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? grantTypesSupported,
             string? issuer,
             string? jwksUri,
+            global::System.Collections.Generic.IList<string>? protectedResourcesSupported,
+            string? registrationEndpoint,
+            bool? resourceParameterSupported,
             global::System.Collections.Generic.IList<string>? responseTypesSupported,
             string? revocationEndpoint,
             global::System.Collections.Generic.IList<string>? scopesSupported,
@@ -116,6 +140,9 @@ namespace LangSmith
             this.GrantTypesSupported = grantTypesSupported;
             this.Issuer = issuer;
             this.JwksUri = jwksUri;
+            this.ProtectedResourcesSupported = protectedResourcesSupported;
+            this.RegistrationEndpoint = registrationEndpoint;
+            this.ResourceParameterSupported = resourceParameterSupported;
             this.ResponseTypesSupported = responseTypesSupported;
             this.RevocationEndpoint = revocationEndpoint;
             this.ScopesSupported = scopesSupported;
@@ -129,5 +156,6 @@ namespace LangSmith
         public OauthAuthorizationServerMetadata()
         {
         }
+
     }
 }

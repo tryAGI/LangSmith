@@ -18,8 +18,19 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_n_hours")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int LastNHours { get; set; }
+        public int? LastNHours { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public string? StartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        public string? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -94,10 +105,12 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SavedRunClusteringJobRequest" /> class.
         /// </summary>
-        /// <param name="lastNHours"></param>
         /// <param name="sample"></param>
         /// <param name="model"></param>
         /// <param name="name"></param>
+        /// <param name="lastNHours"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
         /// <param name="hierarchy"></param>
         /// <param name="partitions"></param>
         /// <param name="summaryPrompt"></param>
@@ -110,10 +123,12 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SavedRunClusteringJobRequest(
-            int lastNHours,
             global::LangSmith.AnyOf<double?, int?, object> sample,
             global::LangSmith.SavedRunClusteringJobRequestModel model,
             string? name,
+            int? lastNHours,
+            string? startTime,
+            string? endTime,
             global::System.Collections.Generic.IList<int>? hierarchy,
             global::System.Collections.Generic.Dictionary<string, string>? partitions,
             string? summaryPrompt,
@@ -125,6 +140,8 @@ namespace LangSmith
         {
             this.Name = name;
             this.LastNHours = lastNHours;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
             this.Hierarchy = hierarchy;
             this.Partitions = partitions;
             this.Sample = sample;
@@ -143,5 +160,6 @@ namespace LangSmith
         public SavedRunClusteringJobRequest()
         {
         }
+
     }
 }

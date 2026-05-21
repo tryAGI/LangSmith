@@ -23,5 +23,24 @@ namespace LangSmith
             bool? includePrebuilts = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// [Beta] Get Insights Job Configs<br/>
+        /// Get all insights job configs for a session.
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="includePrebuilts">
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.GetClusteringJobConfigsResponse>> GetInsightsJobConfigsAsResponseAsync(
+            global::System.Guid sessionId,
+            bool? includePrebuilts = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

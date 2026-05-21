@@ -19,6 +19,18 @@ namespace LangSmith
         /// <summary>
         /// Update Current Organization Info
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.OrganizationInfo>> UpdateCurrentOrganizationInfoAsResponseAsync(
+
+            global::LangSmith.OrganizationUpdate request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Current Organization Info
+        /// </summary>
         /// <param name="displayName"></param>
         /// <param name="publicSharingDisabled"></param>
         /// <param name="patCreationDisabled"></param>
@@ -36,6 +48,7 @@ namespace LangSmith
         /// <param name="ipAllowlist"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="engineEnabled"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -57,6 +70,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? ipAllowlist = default,
             bool? restrictBrowserSecrets = default,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls = default,
+            bool? engineEnabled = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

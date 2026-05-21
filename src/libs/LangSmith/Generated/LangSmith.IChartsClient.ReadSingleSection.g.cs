@@ -24,6 +24,21 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartsSection>> ReadSingleSectionAsResponseAsync(
+            global::System.Guid sectionId,
+
+            global::LangSmith.CustomChartsSectionRequest request,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Single Section<br/>
+        /// Get a single section by ID.
+        /// </summary>
+        /// <param name="sectionId"></param>
         /// <param name="timezone">
         /// Default Value: UTC
         /// </param>

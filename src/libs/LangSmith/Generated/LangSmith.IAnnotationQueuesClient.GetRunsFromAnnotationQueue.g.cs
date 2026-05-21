@@ -29,5 +29,30 @@ namespace LangSmith
             global::LangSmith.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2? status = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Runs From Annotation Queue
+        /// </summary>
+        /// <param name="queueId"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="archived"></param>
+        /// <param name="includeStats"></param>
+        /// <param name="status"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::LangSmith.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.RunSchemaWithAnnotationQueueInfo>>> GetRunsFromAnnotationQueueAsResponseAsync(
+            global::System.Guid queueId,
+            int? offset = default,
+            int? limit = default,
+            bool? archived = default,
+            bool? includeStats = default,
+            global::LangSmith.GetRunsFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsGetStatus2? status = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

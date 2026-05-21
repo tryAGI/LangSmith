@@ -159,14 +159,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public string? GroupBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
         public global::LangSmith.RunRuleSpendLimitSchemaInput? SpendLimit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        public string? GroupBy { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tracer_session_issue_id")]
+        public global::System.Guid? TracerSessionIssueId { get; set; }
 
         /// <summary>
         /// 
@@ -239,8 +245,9 @@ namespace LangSmith
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
-        /// <param name="spendLimit"></param>
         /// <param name="groupBy"></param>
+        /// <param name="spendLimit"></param>
+        /// <param name="tracerSessionIssueId"></param>
         /// <param name="testInputs"></param>
         /// <param name="testOutputs"></param>
         /// <param name="testReferenceOutputs"></param>
@@ -273,8 +280,9 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
-            global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit,
             string? groupBy,
+            global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit,
+            global::System.Guid? tracerSessionIssueId,
             object? testInputs,
             object? testOutputs,
             object? testReferenceOutputs,
@@ -304,8 +312,9 @@ namespace LangSmith
             this.EvaluatorVersion = evaluatorVersion;
             this.CreateAlignmentQueue = createAlignmentQueue;
             this.IncludeExtendedStats = includeExtendedStats;
-            this.SpendLimit = spendLimit;
             this.GroupBy = groupBy;
+            this.SpendLimit = spendLimit;
+            this.TracerSessionIssueId = tracerSessionIssueId;
             this.TestInputs = testInputs;
             this.TestOutputs = testOutputs;
             this.TestReferenceOutputs = testReferenceOutputs;
@@ -318,5 +327,6 @@ namespace LangSmith
         public RunRulesValidateSchema()
         {
         }
+
     }
 }

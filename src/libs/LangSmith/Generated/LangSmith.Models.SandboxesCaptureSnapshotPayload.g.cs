@@ -15,6 +15,16 @@ namespace LangSmith
         public string? Checkpoint { get; set; }
 
         /// <summary>
+        /// IncludeMemory, when true, captures a full VM memory snapshot<br/>
+        /// alongside the filesystem clone. Only honored when the sandbox is running<br/>
+        /// AND Checkpoint is omitted (i.e. a fresh in-VM checkpoint is requested).<br/>
+        /// Defaults to false to keep snapshots small unless memory restore is<br/>
+        /// explicitly desired.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_memory")]
+        public bool? IncludeMemory { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -34,14 +44,23 @@ namespace LangSmith
         /// <param name="checkpoint">
         /// if omitted, creates a fresh checkpoint from the running VM
         /// </param>
+        /// <param name="includeMemory">
+        /// IncludeMemory, when true, captures a full VM memory snapshot<br/>
+        /// alongside the filesystem clone. Only honored when the sandbox is running<br/>
+        /// AND Checkpoint is omitted (i.e. a fresh in-VM checkpoint is requested).<br/>
+        /// Defaults to false to keep snapshots small unless memory restore is<br/>
+        /// explicitly desired.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesCaptureSnapshotPayload(
             string name,
-            string? checkpoint)
+            string? checkpoint,
+            bool? includeMemory)
         {
             this.Checkpoint = checkpoint;
+            this.IncludeMemory = includeMemory;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
@@ -51,5 +70,6 @@ namespace LangSmith
         public SandboxesCaptureSnapshotPayload()
         {
         }
+
     }
 }

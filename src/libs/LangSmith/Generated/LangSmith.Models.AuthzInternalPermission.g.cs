@@ -43,6 +43,14 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        BulkExportsManage,
+        /// <summary>
+        /// 
+        /// </summary>
+        BulkExportsRead,
+        /// <summary>
+        /// 
+        /// </summary>
         ChartsCreate,
         /// <summary>
         /// 
@@ -120,6 +128,10 @@ namespace LangSmith
         /// 
         /// </summary>
         FleetWriteAdminConfig,
+        /// <summary>
+        /// 
+        /// </summary>
+        GatewayInvoke,
         /// <summary>
         /// 
         /// </summary>
@@ -247,6 +259,26 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        SandboxesCreate,
+        /// <summary>
+        /// 
+        /// </summary>
+        SandboxesDelete,
+        /// <summary>
+        /// 
+        /// </summary>
+        SandboxesExec,
+        /// <summary>
+        /// 
+        /// </summary>
+        SandboxesRead,
+        /// <summary>
+        /// 
+        /// </summary>
+        SandboxesUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
         WorkspacesManage,
         /// <summary>
         /// 
@@ -286,6 +318,8 @@ namespace LangSmith
                 AuthzInternalPermission.AnnotationQueuesDelete => "annotation-queues:delete",
                 AuthzInternalPermission.AnnotationQueuesRead => "annotation-queues:read",
                 AuthzInternalPermission.AnnotationQueuesUpdate => "annotation-queues:update",
+                AuthzInternalPermission.BulkExportsManage => "bulk-exports:manage",
+                AuthzInternalPermission.BulkExportsRead => "bulk-exports:read",
                 AuthzInternalPermission.ChartsCreate => "charts:create",
                 AuthzInternalPermission.ChartsDelete => "charts:delete",
                 AuthzInternalPermission.ChartsRead => "charts:read",
@@ -306,6 +340,7 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
                 AuthzInternalPermission.FleetReadAdminConfig => "fleet:read-admin-config",
                 AuthzInternalPermission.FleetWriteAdminConfig => "fleet:write-admin-config",
+                AuthzInternalPermission.GatewayInvoke => "gateway:invoke",
                 AuthzInternalPermission.IssuesCreate => "issues:create",
                 AuthzInternalPermission.IssuesDelete => "issues:delete",
                 AuthzInternalPermission.IssuesRead => "issues:read",
@@ -337,6 +372,11 @@ namespace LangSmith
                 AuthzInternalPermission.RunsDelete => "runs:delete",
                 AuthzInternalPermission.RunsRead => "runs:read",
                 AuthzInternalPermission.RunsShare => "runs:share",
+                AuthzInternalPermission.SandboxesCreate => "sandboxes:create",
+                AuthzInternalPermission.SandboxesDelete => "sandboxes:delete",
+                AuthzInternalPermission.SandboxesExec => "sandboxes:exec",
+                AuthzInternalPermission.SandboxesRead => "sandboxes:read",
+                AuthzInternalPermission.SandboxesUpdate => "sandboxes:update",
                 AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
                 AuthzInternalPermission.WorkspacesManageMembers => "workspaces:manage-members",
                 AuthzInternalPermission.WorkspacesManageModelConfigs => "workspaces:manage-model-configs",
@@ -360,6 +400,8 @@ namespace LangSmith
                 "annotation-queues:delete" => AuthzInternalPermission.AnnotationQueuesDelete,
                 "annotation-queues:read" => AuthzInternalPermission.AnnotationQueuesRead,
                 "annotation-queues:update" => AuthzInternalPermission.AnnotationQueuesUpdate,
+                "bulk-exports:manage" => AuthzInternalPermission.BulkExportsManage,
+                "bulk-exports:read" => AuthzInternalPermission.BulkExportsRead,
                 "charts:create" => AuthzInternalPermission.ChartsCreate,
                 "charts:delete" => AuthzInternalPermission.ChartsDelete,
                 "charts:read" => AuthzInternalPermission.ChartsRead,
@@ -380,6 +422,7 @@ namespace LangSmith
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
                 "fleet:read-admin-config" => AuthzInternalPermission.FleetReadAdminConfig,
                 "fleet:write-admin-config" => AuthzInternalPermission.FleetWriteAdminConfig,
+                "gateway:invoke" => AuthzInternalPermission.GatewayInvoke,
                 "issues:create" => AuthzInternalPermission.IssuesCreate,
                 "issues:delete" => AuthzInternalPermission.IssuesDelete,
                 "issues:read" => AuthzInternalPermission.IssuesRead,
@@ -411,6 +454,11 @@ namespace LangSmith
                 "runs:delete" => AuthzInternalPermission.RunsDelete,
                 "runs:read" => AuthzInternalPermission.RunsRead,
                 "runs:share" => AuthzInternalPermission.RunsShare,
+                "sandboxes:create" => AuthzInternalPermission.SandboxesCreate,
+                "sandboxes:delete" => AuthzInternalPermission.SandboxesDelete,
+                "sandboxes:exec" => AuthzInternalPermission.SandboxesExec,
+                "sandboxes:read" => AuthzInternalPermission.SandboxesRead,
+                "sandboxes:update" => AuthzInternalPermission.SandboxesUpdate,
                 "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
                 "workspaces:manage-members" => AuthzInternalPermission.WorkspacesManageMembers,
                 "workspaces:manage-model-configs" => AuthzInternalPermission.WorkspacesManageModelConfigs,
