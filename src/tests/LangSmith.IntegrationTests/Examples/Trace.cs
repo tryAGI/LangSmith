@@ -56,7 +56,7 @@ public partial class Tests
 
         // Generate a completion
         var chatCompletion = await openAiClient.Chat.CreateChatCompletionAsync(
-            model: CreateChatCompletionRequestModel.Gpt35Turbo,
+            model: tryAGI.OpenAI.CreateChatCompletionRequestModel.Gpt35Turbo,
             messages: messages);
 
         // End runs
