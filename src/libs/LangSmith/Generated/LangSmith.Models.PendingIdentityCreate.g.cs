@@ -33,6 +33,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
+        public string? RoleName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? WorkspaceIds { get; set; }
 
@@ -41,6 +47,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_role_id")]
         public global::System.Guid? WorkspaceRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_role_name")]
+        public string? WorkspaceRoleName { get; set; }
 
         /// <summary>
         /// 
@@ -65,8 +77,10 @@ namespace LangSmith
         /// </summary>
         /// <param name="email"></param>
         /// <param name="roleId"></param>
+        /// <param name="roleName"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="workspaceRoleId"></param>
+        /// <param name="workspaceRoleName"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
 #if NET7_0_OR_GREATER
@@ -75,15 +89,19 @@ namespace LangSmith
         public PendingIdentityCreate(
             string email,
             global::System.Guid? roleId,
+            string? roleName,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds,
             global::System.Guid? workspaceRoleId,
+            string? workspaceRoleName,
             string? password,
             string? fullName)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.RoleId = roleId;
+            this.RoleName = roleName;
             this.WorkspaceIds = workspaceIds;
             this.WorkspaceRoleId = workspaceRoleId;
+            this.WorkspaceRoleName = workspaceRoleName;
             this.Password = password;
             this.FullName = fullName;
         }

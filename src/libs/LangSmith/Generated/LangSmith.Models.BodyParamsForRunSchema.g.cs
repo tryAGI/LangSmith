@@ -15,7 +15,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
         public global::System.Guid? Trace { get; set; }
@@ -129,6 +129,7 @@ namespace LangSmith
         public string? Cursor { get; set; }
 
         /// <summary>
+        /// Maximum number of runs to return. Not applied when trace is set — all runs in the trace are returned in a single response.<br/>
         /// Default Value: 100
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
@@ -164,7 +165,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="BodyParamsForRunSchema" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="trace"></param>
+        /// <param name="trace">
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
+        /// </param>
         /// <param name="parentRun"></param>
         /// <param name="runType"></param>
         /// <param name="session"></param>
@@ -186,6 +189,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
+        /// Maximum number of runs to return. Not applied when trace is set — all runs in the trace are returned in a single response.<br/>
         /// Default Value: 100
         /// </param>
         /// <param name="select">

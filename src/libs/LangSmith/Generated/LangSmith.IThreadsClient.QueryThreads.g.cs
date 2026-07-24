@@ -49,13 +49,13 @@ namespace LangSmith
         /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.
         /// </param>
         /// <param name="maxStartTime">
-        /// `max_start_time` is the inclusive upper bound on thread activity (RFC3339 date-time).
+        /// `max_start_time` is the exclusive upper bound on thread activity (RFC3339 date-time). Defaults to now (UTC) when omitted.
         /// </param>
         /// <param name="minStartTime">
-        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time).
+        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time). Defaults to 1 day before now (UTC) when omitted.
         /// </param>
         /// <param name="pageSize">
-        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `has_more` is true.<br/>
+        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `next_cursor` is non-null.<br/>
         /// Default Value: 20<br/>
         /// Example: 20
         /// </param>

@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete Tracer Sessions<br/>
-        /// Delete sessions.
+        /// Delete projects.
         /// </summary>
         /// <param name="sessionIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +18,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Tracer Sessions<br/>
-        /// Delete sessions.
+        /// Delete projects.
         /// </summary>
         /// <param name="sessionIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

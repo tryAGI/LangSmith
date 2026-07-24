@@ -43,6 +43,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_trace_id")]
+        public global::System.Guid? RunTraceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime StartTime { get; set; }
@@ -118,6 +124,7 @@ namespace LangSmith
         /// <param name="runName"></param>
         /// <param name="runType"></param>
         /// <param name="runSessionId"></param>
+        /// <param name="runTraceId"></param>
         /// <param name="applicationTime"></param>
         /// <param name="addToAnnotationQueue"></param>
         /// <param name="addToDataset"></param>
@@ -137,6 +144,7 @@ namespace LangSmith
             string? runName,
             string? runType,
             global::System.Guid? runSessionId,
+            global::System.Guid? runTraceId,
             global::System.DateTime? applicationTime,
             global::LangSmith.RuleLogActionResponse? addToAnnotationQueue,
             global::LangSmith.RuleLogActionResponse? addToDataset,
@@ -151,6 +159,7 @@ namespace LangSmith
             this.RunName = runName;
             this.RunType = runType;
             this.RunSessionId = runSessionId;
+            this.RunTraceId = runTraceId;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.ApplicationTime = applicationTime;

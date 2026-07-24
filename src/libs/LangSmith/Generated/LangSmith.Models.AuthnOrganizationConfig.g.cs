@@ -33,6 +33,12 @@ namespace LangSmith
         public bool? ByocEnabled { get; set; }
 
         /// <summary>
+        /// ByocMaxDataPlanes is the maximum number of BYOC data planes this org may have provisioned at once.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_max_data_planes")]
+        public int? ByocMaxDataPlanes { get; set; }
+
+        /// <summary>
         /// CanAddSeats indicates whether this org can invite new users based on their plan.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_add_seats")]
@@ -117,6 +123,12 @@ namespace LangSmith
         public bool? DemoLgpNewGraphEnabled { get; set; }
 
         /// <summary>
+        /// DevZeroDeploymentsEnabled indicates whether the org can create development deployments that scale to zero.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dev_zero_deployments_enabled")]
+        public bool? DevZeroDeploymentsEnabled { get; set; }
+
+        /// <summary>
         /// EnableAlignEvaluators indicates whether to enable the align evaluators flow for this org.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_align_evaluators")]
@@ -159,12 +171,6 @@ namespace LangSmith
         public bool? EnableMonthlyUsageCharts { get; set; }
 
         /// <summary>
-        /// EnableOrgUsageCharts indicates whether to show organization usage charts backed by ClickHouse queries instead of Metronome.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_org_usage_charts")]
-        public bool? EnableOrgUsageCharts { get; set; }
-
-        /// <summary>
         /// EnablePricingRedesign indicates whether the pricing redesign is enabled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_pricing_redesign")]
@@ -201,6 +207,33 @@ namespace LangSmith
         public bool? EngineDefaultEnabled { get; set; }
 
         /// <summary>
+        /// EngineLCUSpendLimitMonthly is an optional Metronome-set monthly LCU spend limit<br/>
+        /// for Engine. nil means no limit at this layer. Both the Metronome plan and customer<br/>
+        /// custom fields use this single key; the plan-then-customer config merge means the<br/>
+        /// customer value (when set) overwrites the plan value, so only the resolved value<br/>
+        /// arrives here. The effective enforced limit is the minimum of this and the org admin<br/>
+        /// limit (organizations.engine_lcu_spend_limit_monthly).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public double? EngineLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
+        /// FleetBuiltinModelsEnabled indicates whether the org can use Fleet's served<br/>
+        /// built-in models (the Fast/Pro/Max tiers). Resolved from the Metronome<br/>
+        /// plan/customer custom field, falling back to organizations.config; code<br/>
+        /// default false (paid feature, fail-closed).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_builtin_models_enabled")]
+        public bool? FleetBuiltinModelsEnabled { get; set; }
+
+        /// <summary>
+        /// FleetLCUSpendLimitMonthly caps an org's monthly Fleet LCU spend, resolved from<br/>
+        /// Metronome custom fields. nil or negative means unlimited; 0 blocks all runs.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_lcu_spend_limit_monthly")]
+        public double? FleetLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
         /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
         /// Set by Metronome entitlement, not admin-patchable.
         /// </summary>
@@ -208,10 +241,27 @@ namespace LangSmith
         public bool? IpAllowlistEnabled { get; set; }
 
         /// <summary>
+        /// IsAnonymous, when true, restricts members to viewing only themselves in<br/>
+        /// member-listing endpoints.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_anonymous")]
+        public bool? IsAnonymous { get; set; }
+
+        /// <summary>
         /// KvDatasetMessageSupport indicates whether to use the new messages experience for KV datasets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
         public bool? KvDatasetMessageSupport { get; set; }
+
+        /// <summary>
+        /// LangChainProviderSpendLimitMonthly overrides the per-plan-tier monthly at-cost<br/>
+        /// spend cap (USD) for the /langchain gateway resell provider, resolved from plan/<br/>
+        /// Metronome config like FleetLCUSpendLimitMonthly. nil falls back to the tier<br/>
+        /// default; this is how a cap raised on request is applied. Permission to use the<br/>
+        /// provider is still governed by plan tier, not this value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langchain_provider_spend_limit_monthly")]
+        public double? LangchainProviderSpendLimitMonthly { get; set; }
 
         /// <summary>
         /// LangGraphDeployOwnCloudEnabled indicates whether the org can deploy LangGraph cloud to their own cloud.
@@ -294,7 +344,7 @@ namespace LangSmith
         public int? MaxLanggraphCloudDeployments { get; set; }
 
         /// <summary>
-        /// MaxPromptWebhooks is the maximum number of prompt webhooks allowed for this org.
+        /// MaxPromptWebhooks independently limits each org's Prompt Hub and Context Hub webhook collections.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_webhooks")]
         public int? MaxPromptWebhooks { get; set; }
@@ -312,7 +362,7 @@ namespace LangSmith
         public string? MaxSandboxMemory { get; set; }
 
         /// <summary>
-        /// MaxSandboxes is the maximum number of sandbox claims allowed for this org.
+        /// MaxSandboxes is the maximum number of sandboxes allowed for this org.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_sandboxes")]
         public int? MaxSandboxes { get; set; }
@@ -418,6 +468,9 @@ namespace LangSmith
         /// <param name="byocEnabled">
         /// Indicates whether this org can provision BYOC data planes.
         /// </param>
+        /// <param name="byocMaxDataPlanes">
+        /// ByocMaxDataPlanes is the maximum number of BYOC data planes this org may have provisioned at once.
+        /// </param>
         /// <param name="canAddSeats">
         /// CanAddSeats indicates whether this org can invite new users based on their plan.
         /// </param>
@@ -460,6 +513,9 @@ namespace LangSmith
         /// <param name="demoLgpNewGraphEnabled">
         /// DemoLgpNewGraphEnabled indicates whether this org can use the demo page for creating new graphs.
         /// </param>
+        /// <param name="devZeroDeploymentsEnabled">
+        /// DevZeroDeploymentsEnabled indicates whether the org can create development deployments that scale to zero.
+        /// </param>
         /// <param name="enableAlignEvaluators">
         /// EnableAlignEvaluators indicates whether to enable the align evaluators flow for this org.
         /// </param>
@@ -481,9 +537,6 @@ namespace LangSmith
         /// <param name="enableMonthlyUsageCharts">
         /// EnableMonthlyUsageCharts indicates whether to show monthly organization usage charts backed by Metronome for self hosted customers
         /// </param>
-        /// <param name="enableOrgUsageCharts">
-        /// EnableOrgUsageCharts indicates whether to show organization usage charts backed by ClickHouse queries instead of Metronome.
-        /// </param>
         /// <param name="enablePricingRedesign">
         /// EnablePricingRedesign indicates whether the pricing redesign is enabled
         /// </param>
@@ -502,12 +555,41 @@ namespace LangSmith
         /// <param name="engineDefaultEnabled">
         /// EngineDefaultEnabled indicates whether Engine is enabled by default for this organization's plan.
         /// </param>
+        /// <param name="engineLcuSpendLimitMonthly">
+        /// EngineLCUSpendLimitMonthly is an optional Metronome-set monthly LCU spend limit<br/>
+        /// for Engine. nil means no limit at this layer. Both the Metronome plan and customer<br/>
+        /// custom fields use this single key; the plan-then-customer config merge means the<br/>
+        /// customer value (when set) overwrites the plan value, so only the resolved value<br/>
+        /// arrives here. The effective enforced limit is the minimum of this and the org admin<br/>
+        /// limit (organizations.engine_lcu_spend_limit_monthly).
+        /// </param>
+        /// <param name="fleetBuiltinModelsEnabled">
+        /// FleetBuiltinModelsEnabled indicates whether the org can use Fleet's served<br/>
+        /// built-in models (the Fast/Pro/Max tiers). Resolved from the Metronome<br/>
+        /// plan/customer custom field, falling back to organizations.config; code<br/>
+        /// default false (paid feature, fail-closed).
+        /// </param>
+        /// <param name="fleetLcuSpendLimitMonthly">
+        /// FleetLCUSpendLimitMonthly caps an org's monthly Fleet LCU spend, resolved from<br/>
+        /// Metronome custom fields. nil or negative means unlimited; 0 blocks all runs.
+        /// </param>
         /// <param name="ipAllowlistEnabled">
         /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
         /// Set by Metronome entitlement, not admin-patchable.
         /// </param>
+        /// <param name="isAnonymous">
+        /// IsAnonymous, when true, restricts members to viewing only themselves in<br/>
+        /// member-listing endpoints.
+        /// </param>
         /// <param name="kvDatasetMessageSupport">
         /// KvDatasetMessageSupport indicates whether to use the new messages experience for KV datasets.
+        /// </param>
+        /// <param name="langchainProviderSpendLimitMonthly">
+        /// LangChainProviderSpendLimitMonthly overrides the per-plan-tier monthly at-cost<br/>
+        /// spend cap (USD) for the /langchain gateway resell provider, resolved from plan/<br/>
+        /// Metronome config like FleetLCUSpendLimitMonthly. nil falls back to the tier<br/>
+        /// default; this is how a cap raised on request is applied. Permission to use the<br/>
+        /// provider is still governed by plan tier, not this value.
         /// </param>
         /// <param name="langgraphDeployOwnCloudEnabled">
         /// LangGraphDeployOwnCloudEnabled indicates whether the org can deploy LangGraph cloud to their own cloud.
@@ -549,7 +631,7 @@ namespace LangSmith
         /// MaxLanggraphCloudDeployments is the maximum number of LangGraph Platform deployments allowed for this org.
         /// </param>
         /// <param name="maxPromptWebhooks">
-        /// MaxPromptWebhooks is the maximum number of prompt webhooks allowed for this org.
+        /// MaxPromptWebhooks independently limits each org's Prompt Hub and Context Hub webhook collections.
         /// </param>
         /// <param name="maxSandboxCpu">
         /// MaxSandboxCpu is the total CPU cores allowed for sandboxes (e.g., "4", "8").
@@ -558,7 +640,7 @@ namespace LangSmith
         /// MaxSandboxMemory is the total memory allowed for sandboxes (e.g., "8Gi", "16Gi").
         /// </param>
         /// <param name="maxSandboxes">
-        /// MaxSandboxes is the maximum number of sandbox claims allowed for this org.
+        /// MaxSandboxes is the maximum number of sandboxes allowed for this org.
         /// </param>
         /// <param name="maxWorkspaces">
         /// MaxWorkspaces is the maximum number of workspaces allowed in this org. -1 means no limit.
@@ -609,6 +691,7 @@ namespace LangSmith
             bool? allowCustomIframes,
             bool? arbitraryCostTrackingEnabled,
             bool? byocEnabled,
+            int? byocMaxDataPlanes,
             bool? canAddSeats,
             bool? canDisablePublicSharing,
             bool? canRestrictBrowserSecrets,
@@ -623,6 +706,7 @@ namespace LangSmith
             bool? clioEnabled,
             int? datadogRumSessionSampleRate,
             bool? demoLgpNewGraphEnabled,
+            bool? devZeroDeploymentsEnabled,
             bool? enableAlignEvaluators,
             bool? enableBurndownVsCommitView,
             bool? enableGranularUsageReporting,
@@ -630,15 +714,19 @@ namespace LangSmith
             bool? enableLgpListenersPage,
             bool? enableMarkdownInTracing,
             bool? enableMonthlyUsageCharts,
-            bool? enableOrgUsageCharts,
             bool? enablePricingRedesign,
             bool? enableQueryingV2Endpoints,
             bool? enableRunTreeStreaming,
             bool? enableThreadViewPlayground,
             bool? enableThreadsImprovements,
             bool? engineDefaultEnabled,
+            double? engineLcuSpendLimitMonthly,
+            bool? fleetBuiltinModelsEnabled,
+            double? fleetLcuSpendLimitMonthly,
             bool? ipAllowlistEnabled,
+            bool? isAnonymous,
             bool? kvDatasetMessageSupport,
+            double? langchainProviderSpendLimitMonthly,
             bool? langgraphDeployOwnCloudEnabled,
             bool? langgraphEnterpriseEnabled,
             bool? langgraphRemoteReconcilerEnabled,
@@ -674,6 +762,7 @@ namespace LangSmith
             this.AllowCustomIframes = allowCustomIframes;
             this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
             this.ByocEnabled = byocEnabled;
+            this.ByocMaxDataPlanes = byocMaxDataPlanes;
             this.CanAddSeats = canAddSeats;
             this.CanDisablePublicSharing = canDisablePublicSharing;
             this.CanRestrictBrowserSecrets = canRestrictBrowserSecrets;
@@ -688,6 +777,7 @@ namespace LangSmith
             this.ClioEnabled = clioEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
+            this.DevZeroDeploymentsEnabled = devZeroDeploymentsEnabled;
             this.EnableAlignEvaluators = enableAlignEvaluators;
             this.EnableBurndownVsCommitView = enableBurndownVsCommitView;
             this.EnableGranularUsageReporting = enableGranularUsageReporting;
@@ -695,15 +785,19 @@ namespace LangSmith
             this.EnableLgpListenersPage = enableLgpListenersPage;
             this.EnableMarkdownInTracing = enableMarkdownInTracing;
             this.EnableMonthlyUsageCharts = enableMonthlyUsageCharts;
-            this.EnableOrgUsageCharts = enableOrgUsageCharts;
             this.EnablePricingRedesign = enablePricingRedesign;
             this.EnableQueryingV2Endpoints = enableQueryingV2Endpoints;
             this.EnableRunTreeStreaming = enableRunTreeStreaming;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
             this.EnableThreadsImprovements = enableThreadsImprovements;
             this.EngineDefaultEnabled = engineDefaultEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
+            this.FleetBuiltinModelsEnabled = fleetBuiltinModelsEnabled;
+            this.FleetLcuSpendLimitMonthly = fleetLcuSpendLimitMonthly;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
+            this.IsAnonymous = isAnonymous;
             this.KvDatasetMessageSupport = kvDatasetMessageSupport;
+            this.LangchainProviderSpendLimitMonthly = langchainProviderSpendLimitMonthly;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.LanggraphEnterpriseEnabled = langgraphEnterpriseEnabled;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;

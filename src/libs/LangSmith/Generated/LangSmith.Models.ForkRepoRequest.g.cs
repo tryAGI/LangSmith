@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? TagValueIds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepoHandle { get; set; }
@@ -49,6 +55,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ForkRepoRequest" /> class.
         /// </summary>
         /// <param name="repoHandle"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="readme"></param>
         /// <param name="description"></param>
         /// <param name="tags"></param>
@@ -58,11 +65,13 @@ namespace LangSmith
 #endif
         public ForkRepoRequest(
             string repoHandle,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds,
             string? readme,
             string? description,
             global::System.Collections.Generic.IList<string>? tags,
             bool? isPublic)
         {
+            this.TagValueIds = tagValueIds;
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
             this.Readme = readme;
             this.Description = description;

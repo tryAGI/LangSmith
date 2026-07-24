@@ -44,6 +44,8 @@ namespace LangSmith
             ref int? offset,
             ref string? nameContains,
             ref string? status,
+            ref string? createdBy,
+            global::System.Collections.Generic.IList<string>? label,
             ref string? sortBy,
             ref string? sortDirection);
         partial void PrepareListSnapshotsRequest(
@@ -53,6 +55,8 @@ namespace LangSmith
             int? offset,
             string? nameContains,
             string? status,
+            string? createdBy,
+            global::System.Collections.Generic.IList<string>? label,
             string? sortBy,
             string? sortDirection);
         partial void ProcessListSnapshotsResponse(
@@ -76,6 +80,8 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="label"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
         /// </param>
@@ -90,6 +96,8 @@ namespace LangSmith
             int? offset = default,
             string? nameContains = default,
             string? status = default,
+            string? createdBy = default,
+            global::System.Collections.Generic.IList<string>? label = default,
             string? sortBy = default,
             string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -100,6 +108,8 @@ namespace LangSmith
                 offset: offset,
                 nameContains: nameContains,
                 status: status,
+                createdBy: createdBy,
+                label: label,
                 sortBy: sortBy,
                 sortDirection: sortDirection,
                 requestOptions: requestOptions,
@@ -120,6 +130,8 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="label"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
         /// </param>
@@ -134,6 +146,8 @@ namespace LangSmith
             int? offset = default,
             string? nameContains = default,
             string? status = default,
+            string? createdBy = default,
+            global::System.Collections.Generic.IList<string>? label = default,
             string? sortBy = default,
             string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -147,6 +161,8 @@ namespace LangSmith
                 offset: ref offset,
                 nameContains: ref nameContains,
                 status: ref status,
+                createdBy: ref createdBy,
+                label: label,
                 sortBy: ref sortBy,
                 sortDirection: ref sortDirection);
 
@@ -183,6 +199,8 @@ namespace LangSmith
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("status", status)
+                                .AddOptionalParameter("created_by", createdBy)
+                                .AddOptionalParameter("label", label, delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_direction", sortDirection)
                                 ;
@@ -230,6 +248,8 @@ namespace LangSmith
                     offset: offset,
                     nameContains: nameContains,
                     status: status,
+                    createdBy: createdBy,
+                    label: label,
                     sortBy: sortBy,
                     sortDirection: sortDirection);
 
@@ -435,18 +455,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
@@ -473,18 +492,17 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -511,18 +529,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -556,17 +573,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -603,17 +618,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

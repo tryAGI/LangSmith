@@ -48,6 +48,18 @@ namespace LangSmith
         /// 
         /// </summary>
         SourceRunId,
+        /// <summary>
+        /// 
+        /// </summary>
+        SourceRunStartTime,
+        /// <summary>
+        /// 
+        /// </summary>
+        SourceSessionId,
+        /// <summary>
+        /// 
+        /// </summary>
+        SourceTraceId,
     }
 
     /// <summary>
@@ -72,6 +84,9 @@ namespace LangSmith
                 ExampleSelect.Name => "name",
                 ExampleSelect.Outputs => "outputs",
                 ExampleSelect.SourceRunId => "source_run_id",
+                ExampleSelect.SourceRunStartTime => "source_run_start_time",
+                ExampleSelect.SourceSessionId => "source_session_id",
+                ExampleSelect.SourceTraceId => "source_trace_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,6 +107,9 @@ namespace LangSmith
                 "name" => ExampleSelect.Name,
                 "outputs" => ExampleSelect.Outputs,
                 "source_run_id" => ExampleSelect.SourceRunId,
+                "source_run_start_time" => ExampleSelect.SourceRunStartTime,
+                "source_session_id" => ExampleSelect.SourceSessionId,
+                "source_trace_id" => ExampleSelect.SourceTraceId,
                 _ => null,
             };
         }

@@ -30,6 +30,24 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_session_id")]
+        public global::System.Guid? SourceSessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_run_start_time")]
+        public global::System.DateTime? SourceRunStartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_trace_id")]
+        public global::System.Guid? SourceTraceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
@@ -87,6 +105,9 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="outputs"></param>
         /// <param name="sourceRunId"></param>
+        /// <param name="sourceSessionId"></param>
+        /// <param name="sourceRunStartTime"></param>
+        /// <param name="sourceTraceId"></param>
         /// <param name="metadata"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -101,6 +122,9 @@ namespace LangSmith
             string name,
             object? outputs,
             global::System.Guid? sourceRunId,
+            global::System.Guid? sourceSessionId,
+            global::System.DateTime? sourceRunStartTime,
+            global::System.Guid? sourceTraceId,
             object? metadata,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
@@ -109,6 +133,9 @@ namespace LangSmith
             this.Outputs = outputs;
             this.DatasetId = datasetId;
             this.SourceRunId = sourceRunId;
+            this.SourceSessionId = sourceSessionId;
+            this.SourceRunStartTime = sourceRunStartTime;
+            this.SourceTraceId = sourceTraceId;
             this.Metadata = metadata;
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.CreatedAt = createdAt;

@@ -165,6 +165,42 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_managed_evaluator")]
+        public bool? IsManagedEvaluator { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_tracing_disabled")]
+        public bool? IsTracingDisabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_evaluator_trace_retention")]
+        public bool? ExtendEvaluatorTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_dataset_trace_retention")]
+        public bool? ExtendDatasetTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_annotation_queue_trace_retention")]
+        public bool? ExtendAnnotationQueueTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_webhook_trace_retention")]
+        public bool? ExtendWebhookTraceRetention { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_extended_stats")]
         public bool? IncludeExtendedStats { get; set; }
 
@@ -256,6 +292,18 @@ namespace LangSmith
         public global::LangSmith.RunRuleSpendLimitSchemaOutput? SpendLimit { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_count")]
+        public int? TraceCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_usd")]
+        public double? SpendUsd { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -300,6 +348,16 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isManagedEvaluator">
+        /// Default Value: false
+        /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention"></param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
@@ -316,6 +374,8 @@ namespace LangSmith
         /// <param name="alignmentAnnotationQueueId"></param>
         /// <param name="groupBy"></param>
         /// <param name="spendLimit"></param>
+        /// <param name="traceCount"></param>
+        /// <param name="spendUsd"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -348,6 +408,12 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             bool? extendOnly,
+            bool? isManagedEvaluator,
+            bool? isTracingDisabled,
+            bool? extendEvaluatorTraceRetention,
+            bool? extendDatasetTraceRetention,
+            bool? extendAnnotationQueueTraceRetention,
+            bool? extendWebhookTraceRetention,
             bool? includeExtendedStats,
             global::System.DateTime? backfillFrom,
             global::System.Guid? backfillId,
@@ -359,7 +425,9 @@ namespace LangSmith
             global::System.Guid? evaluatorId,
             global::System.Guid? alignmentAnnotationQueueId,
             string? groupBy,
-            global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit)
+            global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit,
+            int? traceCount,
+            double? spendUsd)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -386,6 +454,12 @@ namespace LangSmith
             this.Alerts = alerts;
             this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;
+            this.IsManagedEvaluator = isManagedEvaluator;
+            this.IsTracingDisabled = isTracingDisabled;
+            this.ExtendEvaluatorTraceRetention = extendEvaluatorTraceRetention;
+            this.ExtendDatasetTraceRetention = extendDatasetTraceRetention;
+            this.ExtendAnnotationQueueTraceRetention = extendAnnotationQueueTraceRetention;
+            this.ExtendWebhookTraceRetention = extendWebhookTraceRetention;
             this.IncludeExtendedStats = includeExtendedStats;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -401,6 +475,8 @@ namespace LangSmith
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
             this.GroupBy = groupBy;
             this.SpendLimit = spendLimit;
+            this.TraceCount = traceCount;
+            this.SpendUsd = spendUsd;
         }
 
         /// <summary>

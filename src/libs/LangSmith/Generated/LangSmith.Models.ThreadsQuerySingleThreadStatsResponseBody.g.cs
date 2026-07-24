@@ -33,6 +33,12 @@ namespace LangSmith
         public int? CompletionTokens { get; set; }
 
         /// <summary>
+        /// `feedback_stats` aggregates run-level feedback across the thread's traces, keyed by feedback key. Populated when `FEEDBACK_STATS` is selected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_stats")]
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.QueryRunFeedbackStat>? FeedbackStats { get; set; }
+
+        /// <summary>
         /// `first_start_time` is the earliest trace start time in the thread (RFC3339). Populated when `FIRST_START_TIME` is selected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_start_time")]
@@ -125,6 +131,9 @@ namespace LangSmith
         /// <param name="completionTokens">
         /// `completion_tokens` is the sum of per-trace completion token counts across the thread. Populated when `COMPLETION_TOKENS` is selected.
         /// </param>
+        /// <param name="feedbackStats">
+        /// `feedback_stats` aggregates run-level feedback across the thread's traces, keyed by feedback key. Populated when `FEEDBACK_STATS` is selected.
+        /// </param>
         /// <param name="firstStartTime">
         /// `first_start_time` is the earliest trace start time in the thread (RFC3339). Populated when `FIRST_START_TIME` is selected.
         /// </param>
@@ -169,6 +178,7 @@ namespace LangSmith
             global::LangSmith.QueryRunCompletionCostDetails? completionCostDetails,
             global::LangSmith.QueryRunCompletionTokenDetails? completionTokenDetails,
             int? completionTokens,
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.QueryRunFeedbackStat>? feedbackStats,
             global::System.DateTime? firstStartTime,
             global::System.DateTime? lastEndTime,
             global::System.DateTime? lastStartTime,
@@ -186,6 +196,7 @@ namespace LangSmith
             this.CompletionCostDetails = completionCostDetails;
             this.CompletionTokenDetails = completionTokenDetails;
             this.CompletionTokens = completionTokens;
+            this.FeedbackStats = feedbackStats;
             this.FirstStartTime = firstStartTime;
             this.LastEndTime = lastEndTime;
             this.LastStartTime = lastStartTime;

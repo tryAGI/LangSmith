@@ -56,7 +56,7 @@ namespace LangSmith
 
         /// <summary>
         /// Register an OAuth2 dynamic client<br/>
-        /// Public RFC 7591 Dynamic Client Registration endpoint. Only mints public clients with loopback HTTP or HTTPS-with-domain redirect URIs. Body limit 8 KB.
+        /// Public RFC 7591 Dynamic Client Registration endpoint. Only mints public clients with allowed loopback, HTTPS, or native client redirect URIs. Body limit 8 KB.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +79,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Register an OAuth2 dynamic client<br/>
-        /// Public RFC 7591 Dynamic Client Registration endpoint. Only mints public clients with loopback HTTP or HTTPS-with-domain redirect URIs. Body limit 8 KB.
+        /// Public RFC 7591 Dynamic Client Registration endpoint. Only mints public clients with allowed loopback, HTTPS, or native client redirect URIs. Body limit 8 KB.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -377,18 +377,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.OauthTokenErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.OauthTokenErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Request Entity Too Large
                             if ((int)__response.StatusCode == 413)
@@ -415,18 +414,17 @@ namespace LangSmith
                                     __exception_413 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.OauthTokenErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.OauthTokenErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_413,
-                                    ResponseObject = __value_413,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -453,18 +451,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.OauthTokenErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.OauthTokenErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -498,17 +495,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -545,17 +540,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -568,35 +561,47 @@ namespace LangSmith
         }
         /// <summary>
         /// Register an OAuth2 dynamic client<br/>
-        /// Public RFC 7591 Dynamic Client Registration endpoint. Only mints public clients with loopback HTTP or HTTPS-with-domain redirect URIs. Body limit 8 KB.
+        /// Public RFC 7591 Dynamic Client Registration endpoint. Only mints public clients with allowed loopback, HTTPS, or native client redirect URIs. Body limit 8 KB.
         /// </summary>
         /// <param name="clientName"></param>
+        /// <param name="clientUri"></param>
         /// <param name="grantTypes"></param>
+        /// <param name="logoUri"></param>
+        /// <param name="policyUri"></param>
         /// <param name="redirectUris"></param>
         /// <param name="responseTypes"></param>
         /// <param name="scope"></param>
         /// <param name="tokenEndpointAuthMethod"></param>
+        /// <param name="tosUri"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.OauthClientRegistrationResponse> RegisterAnOAuth2DynamicClientAsync(
             string? clientName = default,
+            string? clientUri = default,
             global::System.Collections.Generic.IList<string>? grantTypes = default,
+            string? logoUri = default,
+            string? policyUri = default,
             global::System.Collections.Generic.IList<string>? redirectUris = default,
             global::System.Collections.Generic.IList<string>? responseTypes = default,
             string? scope = default,
             string? tokenEndpointAuthMethod = default,
+            string? tosUri = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.OauthClientRegistrationRequest
             {
                 ClientName = clientName,
+                ClientUri = clientUri,
                 GrantTypes = grantTypes,
+                LogoUri = logoUri,
+                PolicyUri = policyUri,
                 RedirectUris = redirectUris,
                 ResponseTypes = responseTypes,
                 Scope = scope,
                 TokenEndpointAuthMethod = tokenEndpointAuthMethod,
+                TosUri = tosUri,
             };
 
             return await RegisterAnOAuth2DynamicClientAsync(

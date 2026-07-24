@@ -9,8 +9,7 @@ namespace LangSmith
     public sealed partial class DataPlanesCreateDataPlaneRequestAws
     {
         /// <summary>
-        /// ExternalID is the value LangSmith presents as ExternalId when assuming role_arn. Must<br/>
-        /// match the ExternalId condition in the customer role's trust policy. Required.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_id")]
         public string? ExternalId { get; set; }
@@ -20,6 +19,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_load_balancer")]
+        public bool? PublicLoadBalancer { get; set; }
 
         /// <summary>
         /// 
@@ -48,11 +53,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DataPlanesCreateDataPlaneRequestAws" /> class.
         /// </summary>
-        /// <param name="externalId">
-        /// ExternalID is the value LangSmith presents as ExternalId when assuming role_arn. Must<br/>
-        /// match the ExternalId condition in the customer role's trust policy. Required.
-        /// </param>
+        /// <param name="externalId"></param>
         /// <param name="name"></param>
+        /// <param name="publicLoadBalancer"></param>
         /// <param name="region"></param>
         /// <param name="roleArn"></param>
         /// <param name="vpcCidr"></param>
@@ -62,12 +65,14 @@ namespace LangSmith
         public DataPlanesCreateDataPlaneRequestAws(
             string? externalId,
             string? name,
+            bool? publicLoadBalancer,
             string? region,
             string? roleArn,
             string? vpcCidr)
         {
             this.ExternalId = externalId;
             this.Name = name;
+            this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region;
             this.RoleArn = roleArn;
             this.VpcCidr = vpcCidr;

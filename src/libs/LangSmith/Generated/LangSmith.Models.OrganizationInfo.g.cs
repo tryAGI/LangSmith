@@ -38,6 +38,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public string? EngineLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPersonal { get; set; }
@@ -115,6 +121,12 @@ namespace LangSmith
         public bool? WorkspaceAdminCanInviteToOrg { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
@@ -189,6 +201,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
 
@@ -197,6 +215,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_allowed_urls")]
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_evals_enabled")]
+        public bool? ManagedEvalsEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_eval_terms_accepted_at")]
+        public string? ManagedEvalTermsAcceptedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -214,6 +244,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="displayName"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="tier"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
@@ -246,6 +277,9 @@ namespace LangSmith
         /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
+        /// <param name="byocCreateSaasWorkspaceEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="marketplacePayoutsEnabled">
         /// Default Value: false
         /// </param>
@@ -268,8 +302,11 @@ namespace LangSmith
         /// <param name="ipAllowlistEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="managedEvalsEnabled"></param>
+        /// <param name="managedEvalTermsAcceptedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -279,6 +316,7 @@ namespace LangSmith
             global::System.Guid? id,
             string? displayName,
             bool? engineEnabled,
+            string? engineLcuSpendLimitMonthly,
             global::LangSmith.PaymentPlanTier? tier,
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
@@ -291,6 +329,7 @@ namespace LangSmith
             bool? publicSharingDisabled,
             bool? patCreationDisabled,
             bool? workspaceAdminCanInviteToOrg,
+            bool? byocCreateSaasWorkspaceEnabled,
             bool? marketplacePayoutsEnabled,
             bool? defaultSsoProvision,
             int? maxApiKeyExpiryDays,
@@ -303,13 +342,17 @@ namespace LangSmith
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             bool? ipAllowlistEnabled,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
-            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls)
+            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
+            bool? managedEvalsEnabled,
+            string? managedEvalTermsAcceptedAt)
         {
             this.Id = id;
             this.DisplayName = displayName;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.IsPersonal = isPersonal;
             this.Tier = tier;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
@@ -323,6 +366,7 @@ namespace LangSmith
             this.PublicSharingDisabled = publicSharingDisabled;
             this.PatCreationDisabled = patCreationDisabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
@@ -335,8 +379,11 @@ namespace LangSmith
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
+            this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
+            this.ManagedEvalsEnabled = managedEvalsEnabled;
+            this.ManagedEvalTermsAcceptedAt = managedEvalTermsAcceptedAt;
         }
 
         /// <summary>

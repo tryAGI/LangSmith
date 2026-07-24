@@ -386,18 +386,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -431,17 +430,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -478,17 +475,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -522,6 +517,11 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled"></param>
+        /// <param name="extendEvaluatorTraceRetention"></param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -561,6 +561,11 @@ namespace LangSmith
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
             bool? extendOnly = default,
+            bool? isTracingDisabled = default,
+            bool? extendEvaluatorTraceRetention = default,
+            bool? extendDatasetTraceRetention = default,
+            bool? extendAnnotationQueueTraceRetention = default,
+            bool? extendWebhookTraceRetention = default,
             bool? transient = default,
             global::System.Guid? addToAnnotationQueueId = default,
             global::System.Guid? addToDatasetId = default,
@@ -592,6 +597,11 @@ namespace LangSmith
                 UseCorrectionsDataset = useCorrectionsDataset,
                 NumFewShotExamples = numFewShotExamples,
                 ExtendOnly = extendOnly,
+                IsTracingDisabled = isTracingDisabled,
+                ExtendEvaluatorTraceRetention = extendEvaluatorTraceRetention,
+                ExtendDatasetTraceRetention = extendDatasetTraceRetention,
+                ExtendAnnotationQueueTraceRetention = extendAnnotationQueueTraceRetention,
+                ExtendWebhookTraceRetention = extendWebhookTraceRetention,
                 Transient = transient,
                 AddToAnnotationQueueId = addToAnnotationQueueId,
                 AddToDatasetId = addToDatasetId,

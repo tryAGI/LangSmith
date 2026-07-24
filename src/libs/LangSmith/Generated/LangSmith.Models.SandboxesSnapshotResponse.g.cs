@@ -51,6 +51,12 @@ namespace LangSmith
         public string? ImageDigest { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Labels { get; set; }
+
+        /// <summary>
         /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
         /// VM memory state. A non-nil value is the canonical signal that this<br/>
         /// snapshot can warm-restore from memory; nil means rootfs only.
@@ -110,6 +116,7 @@ namespace LangSmith
         /// <param name="fsUsedBytes"></param>
         /// <param name="id"></param>
         /// <param name="imageDigest"></param>
+        /// <param name="labels"></param>
         /// <param name="memorySnapshotSizeBytes">
         /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
         /// VM memory state. A non-nil value is the canonical signal that this<br/>
@@ -132,6 +139,7 @@ namespace LangSmith
             long? fsUsedBytes,
             string? id,
             string? imageDigest,
+            global::System.Collections.Generic.Dictionary<string, string>? labels,
             long? memorySnapshotSizeBytes,
             string? name,
             string? registryId,
@@ -147,6 +155,7 @@ namespace LangSmith
             this.FsUsedBytes = fsUsedBytes;
             this.Id = id;
             this.ImageDigest = imageDigest;
+            this.Labels = labels;
             this.MemorySnapshotSizeBytes = memorySnapshotSizeBytes;
             this.Name = name;
             this.RegistryId = registryId;

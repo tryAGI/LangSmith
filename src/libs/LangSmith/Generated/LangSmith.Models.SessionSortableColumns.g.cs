@@ -35,10 +35,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        RunsCount,
-        /// <summary>
-        /// 
-        /// </summary>
         StartTime,
     }
 
@@ -60,7 +56,6 @@ namespace LangSmith
                 SessionSortableColumns.LatencyP50 => "latency_p50",
                 SessionSortableColumns.LatencyP99 => "latency_p99",
                 SessionSortableColumns.Name => "name",
-                SessionSortableColumns.RunsCount => "runs_count",
                 SessionSortableColumns.StartTime => "start_time",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -78,7 +73,6 @@ namespace LangSmith
                 "latency_p50" => SessionSortableColumns.LatencyP50,
                 "latency_p99" => SessionSortableColumns.LatencyP99,
                 "name" => SessionSortableColumns.Name,
-                "runs_count" => SessionSortableColumns.RunsCount,
                 "start_time" => SessionSortableColumns.StartTime,
                 _ => null,
             };

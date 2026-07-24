@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: []
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agents")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Agents { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alerts")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Alerts { get; set; }
 
@@ -75,6 +81,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Sandboxes { get; set; }
 
         /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Skills { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,6 +95,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="TaggingsByResourceType" /> class.
         /// </summary>
+        /// <param name="agents">
+        /// Default Value: []
+        /// </param>
         /// <param name="alerts">
         /// Default Value: []
         /// </param>
@@ -116,10 +131,14 @@ namespace LangSmith
         /// <param name="sandboxes">
         /// Default Value: []
         /// </param>
+        /// <param name="skills">
+        /// Default Value: []
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TaggingsByResourceType(
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? agents,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? alerts,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? dashboards,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? datasets,
@@ -130,8 +149,10 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? projects,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? prompts,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? queues,
-            global::System.Collections.Generic.IList<global::LangSmith.Resource>? sandboxes)
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? sandboxes,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? skills)
         {
+            this.Agents = agents;
             this.Alerts = alerts;
             this.Dashboards = dashboards;
             this.Datasets = datasets;
@@ -143,6 +164,7 @@ namespace LangSmith
             this.Prompts = prompts;
             this.Queues = queues;
             this.Sandboxes = sandboxes;
+            this.Skills = skills;
         }
 
         /// <summary>

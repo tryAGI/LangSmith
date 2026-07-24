@@ -70,6 +70,15 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -97,6 +106,7 @@ namespace LangSmith
         /// <param name="testOutputs"></param>
         /// <param name="testReferenceOutputs"></param>
         /// <param name="testAttachments"></param>
+        /// <param name="testThreadId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -113,6 +123,11 @@ namespace LangSmith
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
             bool? extendOnly = default,
+            bool? isTracingDisabled = default,
+            bool? extendEvaluatorTraceRetention = default,
+            bool? extendDatasetTraceRetention = default,
+            bool? extendAnnotationQueueTraceRetention = default,
+            bool? extendWebhookTraceRetention = default,
             bool? transient = default,
             global::System.Guid? addToAnnotationQueueId = default,
             global::System.Guid? addToDatasetId = default,
@@ -132,6 +147,7 @@ namespace LangSmith
             object? testOutputs = default,
             object? testReferenceOutputs = default,
             object? testAttachments = default,
+            string? testThreadId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

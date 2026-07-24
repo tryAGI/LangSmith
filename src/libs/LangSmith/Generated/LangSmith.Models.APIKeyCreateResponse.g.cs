@@ -71,6 +71,24 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
+        public global::System.Guid? RoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
+        public global::LangSmith.AccessScope? AccessScope { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
@@ -93,6 +111,9 @@ namespace LangSmith
         /// <param name="expiresAt"></param>
         /// <param name="workspaceNames"></param>
         /// <param name="defaultWorkspaceName"></param>
+        /// <param name="roleId"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="accessScope"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,7 +126,10 @@ namespace LangSmith
             global::System.DateTime? lastUsedAt,
             global::System.DateTime? expiresAt,
             global::System.Collections.Generic.IList<string>? workspaceNames,
-            string? defaultWorkspaceName)
+            string? defaultWorkspaceName,
+            global::System.Guid? roleId,
+            global::System.Guid? orgRoleId,
+            global::LangSmith.AccessScope? accessScope)
         {
             this.CreatedAt = createdAt;
             this.Id = id;
@@ -115,6 +139,9 @@ namespace LangSmith
             this.ExpiresAt = expiresAt;
             this.WorkspaceNames = workspaceNames;
             this.DefaultWorkspaceName = defaultWorkspaceName;
+            this.RoleId = roleId;
+            this.OrgRoleId = orgRoleId;
+            this.AccessScope = accessScope;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
         }
 

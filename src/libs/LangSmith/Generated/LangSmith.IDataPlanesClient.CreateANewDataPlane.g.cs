@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Create a new data plane<br/>
-        /// Provisions a new data plane shell. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new data plane<br/>
-        /// Provisions a new data plane shell. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,13 +32,11 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new data plane<br/>
-        /// Provisions a new data plane shell. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
         /// </summary>
-        /// <param name="externalId">
-        /// ExternalID is the value LangSmith presents as ExternalId when assuming role_arn. Must<br/>
-        /// match the ExternalId condition in the customer role's trust policy. Required.
-        /// </param>
+        /// <param name="externalId"></param>
         /// <param name="name"></param>
+        /// <param name="publicLoadBalancer"></param>
         /// <param name="region"></param>
         /// <param name="roleArn"></param>
         /// <param name="vpcCidr"></param>
@@ -48,6 +46,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> CreateANewDataPlaneAsync(
             string? externalId = default,
             string? name = default,
+            bool? publicLoadBalancer = default,
             string? region = default,
             string? roleArn = default,
             string? vpcCidr = default,

@@ -41,6 +41,7 @@ namespace LangSmith
         /// Default Value: []
         /// </param>
         /// <param name="split"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -50,6 +51,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
             global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

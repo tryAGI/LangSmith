@@ -6,7 +6,10 @@ namespace LangSmith
     /// <summary>
     /// Schema for validating rules without creating them.<br/>
     /// Extends RunRulesCreateSchema with test data fields for validation.<br/>
-    /// Only LLM-as-judge rules (evaluators) are supported, not code_evaluators.
+    /// Only LLM-as-judge rules (evaluators) are supported, not code_evaluators.<br/>
+    /// For trace-level evaluators, provide test_inputs / test_outputs.<br/>
+    /// For thread evaluators (group_by="thread_id"), provide test_thread_id +<br/>
+    /// session_id instead; the backend fetches and assembles all turns automatically.
     /// </summary>
     public sealed partial class RunRulesValidateSchema
     {
@@ -83,6 +86,36 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extend_only")]
         public bool? ExtendOnly { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_tracing_disabled")]
+        public bool? IsTracingDisabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_evaluator_trace_retention")]
+        public bool? ExtendEvaluatorTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_dataset_trace_retention")]
+        public bool? ExtendDatasetTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_annotation_queue_trace_retention")]
+        public bool? ExtendAnnotationQueueTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_webhook_trace_retention")]
+        public bool? ExtendWebhookTraceRetention { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -199,6 +232,12 @@ namespace LangSmith
         public object? TestAttachments { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("test_thread_id")]
+        public string? TestThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -225,6 +264,15 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -252,6 +300,7 @@ namespace LangSmith
         /// <param name="testOutputs"></param>
         /// <param name="testReferenceOutputs"></param>
         /// <param name="testAttachments"></param>
+        /// <param name="testThreadId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -268,6 +317,11 @@ namespace LangSmith
             bool? useCorrectionsDataset,
             int? numFewShotExamples,
             bool? extendOnly,
+            bool? isTracingDisabled,
+            bool? extendEvaluatorTraceRetention,
+            bool? extendDatasetTraceRetention,
+            bool? extendAnnotationQueueTraceRetention,
+            bool? extendWebhookTraceRetention,
             bool? transient,
             global::System.Guid? addToAnnotationQueueId,
             global::System.Guid? addToDatasetId,
@@ -286,7 +340,8 @@ namespace LangSmith
             object? testInputs,
             object? testOutputs,
             object? testReferenceOutputs,
-            object? testAttachments)
+            object? testAttachments,
+            string? testThreadId)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SessionId = sessionId;
@@ -300,6 +355,11 @@ namespace LangSmith
             this.UseCorrectionsDataset = useCorrectionsDataset;
             this.NumFewShotExamples = numFewShotExamples;
             this.ExtendOnly = extendOnly;
+            this.IsTracingDisabled = isTracingDisabled;
+            this.ExtendEvaluatorTraceRetention = extendEvaluatorTraceRetention;
+            this.ExtendDatasetTraceRetention = extendDatasetTraceRetention;
+            this.ExtendAnnotationQueueTraceRetention = extendAnnotationQueueTraceRetention;
+            this.ExtendWebhookTraceRetention = extendWebhookTraceRetention;
             this.Transient = transient;
             this.AddToAnnotationQueueId = addToAnnotationQueueId;
             this.AddToDatasetId = addToDatasetId;
@@ -319,6 +379,7 @@ namespace LangSmith
             this.TestOutputs = testOutputs;
             this.TestReferenceOutputs = testReferenceOutputs;
             this.TestAttachments = testAttachments;
+            this.TestThreadId = testThreadId;
         }
 
         /// <summary>

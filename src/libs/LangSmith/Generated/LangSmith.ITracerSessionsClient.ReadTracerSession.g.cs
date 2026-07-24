@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Read Tracer Session<br/>
-        /// Get a specific session.
+        /// Get a specific project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="includeStats">
@@ -26,7 +26,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Tracer Session<br/>
-        /// Get a specific session.
+        /// Get a specific project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="includeStats">

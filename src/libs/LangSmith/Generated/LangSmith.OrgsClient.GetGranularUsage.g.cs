@@ -43,14 +43,18 @@ namespace LangSmith
             ref global::System.DateTime startTime,
             ref global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
-            ref global::LangSmith.GranularUsageGroupBy? groupBy);
+            ref global::LangSmith.GranularUsageGroupBy? groupBy,
+            ref global::LangSmith.GranularUsageKind? kind,
+            global::LangSmith.TraceTier? traceTier);
         partial void PrepareGetGranularUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
-            global::LangSmith.GranularUsageGroupBy? groupBy);
+            global::LangSmith.GranularUsageGroupBy? groupBy,
+            global::LangSmith.GranularUsageKind? kind,
+            global::LangSmith.TraceTier? traceTier);
         partial void ProcessGetGranularUsageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,8 +67,17 @@ namespace LangSmith
         /// <summary>
         /// Get Granular Usage<br/>
         /// Get granular usage data with flexible grouping.<br/>
-        /// workspace_ids filters results to the specified workspaces. Only workspaces<br/>
-        /// the user has read access to will be included in the results.
+        /// `kind` selects the billable usage domain:<br/>
+        /// - `traces` (default): trace counts.<br/>
+        /// - `langsmith_deployments`: LangSmith Deployment metrics (nodes<br/>
+        ///   executed, agent runs, agent uptime). The three Deployment fields<br/>
+        ///   are populated and `traces` is `0`.<br/>
+        /// `trace_tier` (only meaningful for `kind=traces`) optionally restricts<br/>
+        /// results to a single retention tier (longlived = extended retention,<br/>
+        /// shortlived = standard retention). When `group_by=trace_tier`, results<br/>
+        /// are split into one record per retention tier per time bucket.<br/>
+        /// `workspace_ids` filters results to the specified workspaces. Only<br/>
+        /// workspaces the user has read access to are included.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -73,6 +86,17 @@ namespace LangSmith
         /// Dimensions for grouping granular usage data.<br/>
         /// Default Value: workspace
         /// </param>
+        /// <param name="kind">
+        /// Which billable usage domain a granular-usage query targets.<br/>
+        /// - `traces`: trace counts.<br/>
+        /// - `langsmith_deployments`: LangSmith Deployment metrics (nodes executed,<br/>
+        ///   agent runs, agent uptime).<br/>
+        /// Default is `traces` for backward compatibility — existing callers of<br/>
+        /// `GET /granular-usage` without a `kind` query param get the same<br/>
+        /// response shape they always did.<br/>
+        /// Default Value: traces
+        /// </param>
+        /// <param name="traceTier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -81,6 +105,8 @@ namespace LangSmith
             global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
             global::LangSmith.GranularUsageGroupBy? groupBy = default,
+            global::LangSmith.GranularUsageKind? kind = default,
+            global::LangSmith.TraceTier? traceTier = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,6 +115,8 @@ namespace LangSmith
                 endTime: endTime,
                 workspaceIds: workspaceIds,
                 groupBy: groupBy,
+                kind: kind,
+                traceTier: traceTier,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -98,8 +126,17 @@ namespace LangSmith
         /// <summary>
         /// Get Granular Usage<br/>
         /// Get granular usage data with flexible grouping.<br/>
-        /// workspace_ids filters results to the specified workspaces. Only workspaces<br/>
-        /// the user has read access to will be included in the results.
+        /// `kind` selects the billable usage domain:<br/>
+        /// - `traces` (default): trace counts.<br/>
+        /// - `langsmith_deployments`: LangSmith Deployment metrics (nodes<br/>
+        ///   executed, agent runs, agent uptime). The three Deployment fields<br/>
+        ///   are populated and `traces` is `0`.<br/>
+        /// `trace_tier` (only meaningful for `kind=traces`) optionally restricts<br/>
+        /// results to a single retention tier (longlived = extended retention,<br/>
+        /// shortlived = standard retention). When `group_by=trace_tier`, results<br/>
+        /// are split into one record per retention tier per time bucket.<br/>
+        /// `workspace_ids` filters results to the specified workspaces. Only<br/>
+        /// workspaces the user has read access to are included.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -108,6 +145,17 @@ namespace LangSmith
         /// Dimensions for grouping granular usage data.<br/>
         /// Default Value: workspace
         /// </param>
+        /// <param name="kind">
+        /// Which billable usage domain a granular-usage query targets.<br/>
+        /// - `traces`: trace counts.<br/>
+        /// - `langsmith_deployments`: LangSmith Deployment metrics (nodes executed,<br/>
+        ///   agent runs, agent uptime).<br/>
+        /// Default is `traces` for backward compatibility — existing callers of<br/>
+        /// `GET /granular-usage` without a `kind` query param get the same<br/>
+        /// response shape they always did.<br/>
+        /// Default Value: traces
+        /// </param>
+        /// <param name="traceTier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -116,6 +164,8 @@ namespace LangSmith
             global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
             global::LangSmith.GranularUsageGroupBy? groupBy = default,
+            global::LangSmith.GranularUsageKind? kind = default,
+            global::LangSmith.TraceTier? traceTier = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -126,7 +176,9 @@ namespace LangSmith
                 startTime: ref startTime,
                 endTime: ref endTime,
                 workspaceIds: workspaceIds,
-                groupBy: ref groupBy);
+                groupBy: ref groupBy,
+                kind: ref kind,
+                traceTier: traceTier);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -161,6 +213,8 @@ namespace LangSmith
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("group_by", groupBy?.ToValueString())
+                                .AddOptionalParameter("kind", kind?.ToValueString())
+                                .AddOptionalParameter("trace_tier", traceTier?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -205,7 +259,9 @@ namespace LangSmith
                     startTime: startTime!,
                     endTime: endTime!,
                     workspaceIds: workspaceIds!,
-                    groupBy: groupBy);
+                    groupBy: groupBy,
+                    kind: kind,
+                    traceTier: traceTier);
 
                 return __httpRequest;
             }
@@ -409,18 +465,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -454,17 +509,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -501,17 +554,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

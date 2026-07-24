@@ -36,6 +36,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="bulkExportDestinationId"></param>
         /// <param name="sessionId"></param>
+        /// <param name="allExperiments">
+        /// Default Value: false
+        /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
@@ -47,7 +50,7 @@ namespace LangSmith
         /// Default Value: v1
         /// </param>
         /// <param name="compression">
-        /// Default Value: gzip
+        /// Default Value: zstandard
         /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
@@ -56,8 +59,9 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.BulkExport> CreateBulkExportAsync(
             global::System.Guid bulkExportDestinationId,
-            global::System.Guid sessionId,
             global::System.DateTime startTime,
+            global::System.Guid? sessionId = default,
+            bool? allExperiments = default,
             global::System.DateTime? endTime = default,
             string? filter = default,
             global::LangSmith.BulkExportFormat? format = default,

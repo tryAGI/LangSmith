@@ -47,6 +47,10 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
+        /// <param name="feedbackThreadId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
@@ -68,6 +72,8 @@ namespace LangSmith
             global::System.Guid? sessionId = default,
             global::System.Guid? traceId = default,
             global::System.DateTime? startTime = default,
+            string? feedbackThreadId = default,
+            bool? extendTraceRetention = default,
             global::System.Guid? id = default,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,

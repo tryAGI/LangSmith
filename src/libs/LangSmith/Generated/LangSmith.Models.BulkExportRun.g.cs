@@ -25,6 +25,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public global::System.Guid? SessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -96,6 +102,7 @@ namespace LangSmith
         /// <param name="status"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="sessionId"></param>
         /// <param name="retryNumber">
         /// Default Value: 0
         /// </param>
@@ -113,6 +120,7 @@ namespace LangSmith
             global::LangSmith.BulkExportRunStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            global::System.Guid? sessionId,
             int? retryNumber,
             object? errors,
             global::System.DateTime? finishedAt,
@@ -121,6 +129,7 @@ namespace LangSmith
         {
             this.BulkExportId = bulkExportId;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.SessionId = sessionId;
             this.Id = id;
             this.Status = status;
             this.RetryNumber = retryNumber;

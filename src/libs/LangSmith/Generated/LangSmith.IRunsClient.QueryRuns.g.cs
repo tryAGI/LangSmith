@@ -47,13 +47,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
-        /// <param name="aiQuery">
-        /// `ai_query` is a natural-language query to filter runs using AI.<br/>
-        /// Example: runs that used tool calls
-        /// </param>
         /// <param name="cursor">
-        /// `cursor` is the opaque string from a previous response's `next_cursor`.<br/>
-        /// Example: eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=
+        /// `cursor` is the opaque string from a previous response's `next_cursor`. Treat it as opaque and pass it back unmodified.<br/>
+        /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
         /// </param>
         /// <param name="filter">
         /// `filter` narrows results to runs matching this LangSmith filter expression, evaluated against each individual run.<br/>
@@ -109,11 +105,6 @@ namespace LangSmith
         /// `selects` lists which properties to include on each returned run. If omitted, only `id` is returned. Properties not listed are omitted from each run object.<br/>
         /// Example: [ID, NAME, PROJECT_ID, START_TIME, RUN_TYPE, STATUS]
         /// </param>
-        /// <param name="sortOrder">
-        /// `sort_order` is the sort direction for `start_time` (`ASC` or `DESC`). Defaults to `DESC` when omitted. Maps to the SmithDB proto `Order` field.<br/>
-        /// Default Value: DESC<br/>
-        /// Example: DESC
-        /// </param>
         /// <param name="traceFilter">
         /// `trace_filter` narrows results to runs whose root trace matches this LangSmith filter expression.<br/>
         /// Use this to filter by properties of the trace's root run — for example eq(status, "success") to include only traces that completed without error.<br/>
@@ -136,7 +127,6 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryRunsResponseBody> QueryRunsAsync(
             string? accept = default,
             string? contentType = default,
-            string? aiQuery = default,
             string? cursor = default,
             string? filter = default,
             bool? hasError = default,
@@ -150,7 +140,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? referenceExamples = default,
             global::LangSmith.QueryRunType? runType = default,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects = default,
-            global::LangSmith.QuerySortOrder? sortOrder = default,
             string? traceFilter = default,
             global::System.Guid? traceId = default,
             string? treeFilter = default,

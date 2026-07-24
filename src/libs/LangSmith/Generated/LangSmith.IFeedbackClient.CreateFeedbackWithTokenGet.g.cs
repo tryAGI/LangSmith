@@ -10,6 +10,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="token"></param>
         /// <param name="score"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
         /// <param name="correction"></param>
@@ -19,6 +22,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            bool? extendTraceRetention = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,
@@ -30,6 +34,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="token"></param>
         /// <param name="score"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
         /// <param name="correction"></param>
@@ -39,6 +46,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenGetAsResponseAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            bool? extendTraceRetention = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,

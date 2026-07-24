@@ -63,13 +63,14 @@ namespace LangSmith
         /// unchanged. `policy_type` is immutable — to change a<br/>
         /// policy's type, delete it and create a new one.<br/>
         /// **config** if supplied must match the policy's type:<br/>
-        /// - spend-cap: `{"window": ..., "limit_usd": ...}`<br/>
-        /// - guard:     `{"version": 1, "detect": {...}}`<br/>
+        /// - spend-cap:  `{"window": ..., "limit_usd": ...}`<br/>
+        /// - guard:      `{"version": 1, "detect": {...}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
+        /// - rate-limit: `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// Mismatched shapes are rejected with 400.<br/>
-        /// **default_spend_cap cascade:** editing a `default_spend_cap`<br/>
-        /// updates the config/action/enabled/priority on every<br/>
-        /// attached child policy so the template stays the source of<br/>
-        /// truth across rollouts.
+        /// **default cascade:** editing a `default_spend_cap` or<br/>
+        /// `default_rate_limit` updates the config/action/enabled/priority<br/>
+        /// on every attached child policy so the template stays the source<br/>
+        /// of truth across rollouts.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -106,13 +107,14 @@ namespace LangSmith
         /// unchanged. `policy_type` is immutable — to change a<br/>
         /// policy's type, delete it and create a new one.<br/>
         /// **config** if supplied must match the policy's type:<br/>
-        /// - spend-cap: `{"window": ..., "limit_usd": ...}`<br/>
-        /// - guard:     `{"version": 1, "detect": {...}}`<br/>
+        /// - spend-cap:  `{"window": ..., "limit_usd": ...}`<br/>
+        /// - guard:      `{"version": 1, "detect": {...}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
+        /// - rate-limit: `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// Mismatched shapes are rejected with 400.<br/>
-        /// **default_spend_cap cascade:** editing a `default_spend_cap`<br/>
-        /// updates the config/action/enabled/priority on every<br/>
-        /// attached child policy so the template stays the source of<br/>
-        /// truth across rollouts.
+        /// **default cascade:** editing a `default_spend_cap` or<br/>
+        /// `default_rate_limit` updates the config/action/enabled/priority<br/>
+        /// on every attached child policy so the template stays the source<br/>
+        /// of truth across rollouts.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -395,7 +397,7 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // validation failure
+                            // validation error
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -420,18 +422,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized
                             if ((int)__response.StatusCode == 401)
@@ -458,18 +459,17 @@ namespace LangSmith
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // LLM Gateway not enabled, or caller lacks OrganizationManage
                             if ((int)__response.StatusCode == 403)
@@ -496,18 +496,17 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // policy not found
                             if ((int)__response.StatusCode == 404)
@@ -534,18 +533,17 @@ namespace LangSmith
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // matcher edit collides with another policy in the same family
                             if ((int)__response.StatusCode == 409)
@@ -572,18 +570,17 @@ namespace LangSmith
                                     __exception_409 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_409,
-                                    ResponseObject = __value_409,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -610,18 +607,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -655,17 +651,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -702,17 +696,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -730,13 +722,14 @@ namespace LangSmith
         /// unchanged. `policy_type` is immutable — to change a<br/>
         /// policy's type, delete it and create a new one.<br/>
         /// **config** if supplied must match the policy's type:<br/>
-        /// - spend-cap: `{"window": ..., "limit_usd": ...}`<br/>
-        /// - guard:     `{"version": 1, "detect": {...}}`<br/>
+        /// - spend-cap:  `{"window": ..., "limit_usd": ...}`<br/>
+        /// - guard:      `{"version": 1, "detect": {...}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
+        /// - rate-limit: `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// Mismatched shapes are rejected with 400.<br/>
-        /// **default_spend_cap cascade:** editing a `default_spend_cap`<br/>
-        /// updates the config/action/enabled/priority on every<br/>
-        /// attached child policy so the template stays the source of<br/>
-        /// truth across rollouts.
+        /// **default cascade:** editing a `default_spend_cap` or<br/>
+        /// `default_rate_limit` updates the config/action/enabled/priority<br/>
+        /// on every attached child policy so the template stays the source<br/>
+        /// of truth across rollouts.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="action">

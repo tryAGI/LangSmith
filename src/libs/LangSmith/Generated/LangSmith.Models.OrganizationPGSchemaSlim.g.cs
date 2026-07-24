@@ -109,6 +109,12 @@ namespace LangSmith
         public bool? WorkspaceAdminCanInviteToOrg { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
@@ -165,6 +171,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
 
@@ -179,6 +191,18 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
         public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public string? EngineLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_evals_enabled")]
+        public bool? ManagedEvalsEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -217,6 +241,7 @@ namespace LangSmith
         /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
+        /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="defaultSsoProvision">
         /// Default Value: false
         /// </param>
@@ -230,9 +255,12 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
+        /// <param name="managedEvalsEnabled"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -253,6 +281,7 @@ namespace LangSmith
             bool? publicSharingDisabled,
             bool? patCreationDisabled,
             bool? workspaceAdminCanInviteToOrg,
+            bool? byocCreateSaasWorkspaceEnabled,
             bool? defaultSsoProvision,
             int? maxApiKeyExpiryDays,
             string? securityContact,
@@ -262,9 +291,12 @@ namespace LangSmith
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
-            bool? engineEnabled)
+            bool? engineEnabled,
+            string? engineLcuSpendLimitMonthly,
+            bool? managedEvalsEnabled)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -282,6 +314,7 @@ namespace LangSmith
             this.PublicSharingDisabled = publicSharingDisabled;
             this.PatCreationDisabled = patCreationDisabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
             this.SecurityContact = securityContact;
@@ -291,9 +324,12 @@ namespace LangSmith
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
+            this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
+            this.ManagedEvalsEnabled = managedEvalsEnabled;
         }
 
         /// <summary>

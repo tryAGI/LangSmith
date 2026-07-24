@@ -87,6 +87,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        RunSelectLastQueuedAt,
+        /// <summary>
+        /// 
+        /// </summary>
         RunSelectLatencySeconds,
         /// <summary>
         /// 
@@ -217,6 +221,7 @@ namespace LangSmith
                 QueryRunSelectField.RunSelectInputsPreview => "INPUTS_PREVIEW",
                 QueryRunSelectField.RunSelectIsInDataset => "IS_IN_DATASET",
                 QueryRunSelectField.RunSelectIsRoot => "IS_ROOT",
+                QueryRunSelectField.RunSelectLastQueuedAt => "LAST_QUEUED_AT",
                 QueryRunSelectField.RunSelectLatencySeconds => "LATENCY_SECONDS",
                 QueryRunSelectField.RunSelectManifest => "MANIFEST",
                 QueryRunSelectField.RunSelectMetadata => "METADATA",
@@ -271,6 +276,7 @@ namespace LangSmith
                 "INPUTS_PREVIEW" => QueryRunSelectField.RunSelectInputsPreview,
                 "IS_IN_DATASET" => QueryRunSelectField.RunSelectIsInDataset,
                 "IS_ROOT" => QueryRunSelectField.RunSelectIsRoot,
+                "LAST_QUEUED_AT" => QueryRunSelectField.RunSelectLastQueuedAt,
                 "LATENCY_SECONDS" => QueryRunSelectField.RunSelectLatencySeconds,
                 "MANIFEST" => QueryRunSelectField.RunSelectManifest,
                 "METADATA" => QueryRunSelectField.RunSelectMetadata,

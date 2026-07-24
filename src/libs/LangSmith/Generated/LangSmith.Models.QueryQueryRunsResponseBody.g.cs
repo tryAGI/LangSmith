@@ -9,24 +9,16 @@ namespace LangSmith
     public sealed partial class QueryQueryRunsResponseBody
     {
         /// <summary>
-        /// `has_more` is true when another page of runs exists after this one.<br/>
-        /// Example: true
-        /// </summary>
-        /// <example>true</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        public bool? HasMore { get; set; }
-
-        /// <summary>
-        /// `items` is the page of runs, sorted by `start_time` in the direction given by the request `sort_order`.
+        /// `items` is the page of runs, sorted by `start_time` descending.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         public global::System.Collections.Generic.IList<global::LangSmith.QueryRunResponse>? Items { get; set; }
 
         /// <summary>
-        /// `next_cursor` is the opaque cursor to pass as `cursor` on the next request when `has_more` is true. Omitted on the final page.<br/>
-        /// Example: eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=
+        /// `next_cursor` is the opaque cursor to pass as `cursor` on the next request. Null on the final page.<br/>
+        /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
         /// </summary>
-        /// <example>eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=</example>
+        /// <example>eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_cursor")]
         public string? NextCursor { get; set; }
 
@@ -39,26 +31,20 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryQueryRunsResponseBody" /> class.
         /// </summary>
-        /// <param name="hasMore">
-        /// `has_more` is true when another page of runs exists after this one.<br/>
-        /// Example: true
-        /// </param>
         /// <param name="items">
-        /// `items` is the page of runs, sorted by `start_time` in the direction given by the request `sort_order`.
+        /// `items` is the page of runs, sorted by `start_time` descending.
         /// </param>
         /// <param name="nextCursor">
-        /// `next_cursor` is the opaque cursor to pass as `cursor` on the next request when `has_more` is true. Omitted on the final page.<br/>
-        /// Example: eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=
+        /// `next_cursor` is the opaque cursor to pass as `cursor` on the next request. Null on the final page.<br/>
+        /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueryQueryRunsResponseBody(
-            bool? hasMore,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunResponse>? items,
             string? nextCursor)
         {
-            this.HasMore = hasMore;
             this.Items = items;
             this.NextCursor = nextCursor;
         }

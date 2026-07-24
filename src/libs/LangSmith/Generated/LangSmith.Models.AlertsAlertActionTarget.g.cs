@@ -19,6 +19,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Slack,
+        /// <summary>
+        /// 
+        /// </summary>
         Webhook,
     }
 
@@ -36,6 +40,7 @@ namespace LangSmith
             {
                 AlertsAlertActionTarget.Dynatrace => "dynatrace",
                 AlertsAlertActionTarget.Pagerduty => "pagerduty",
+                AlertsAlertActionTarget.Slack => "slack",
                 AlertsAlertActionTarget.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace LangSmith
             {
                 "dynatrace" => AlertsAlertActionTarget.Dynatrace,
                 "pagerduty" => AlertsAlertActionTarget.Pagerduty,
+                "slack" => AlertsAlertActionTarget.Slack,
                 "webhook" => AlertsAlertActionTarget.Webhook,
                 _ => null,
             };

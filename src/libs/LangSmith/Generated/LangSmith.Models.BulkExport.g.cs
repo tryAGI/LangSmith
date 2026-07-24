@@ -19,8 +19,13 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("all_experiments")]
+        public bool? AllExperiments { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +62,7 @@ namespace LangSmith
         public global::LangSmith.BulkExportFormatVersion? FormatVersion { get; set; }
 
         /// <summary>
-        /// Default Value: gzip
+        /// Default Value: zstandard
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compression")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter))]
@@ -133,13 +138,16 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="BulkExport" /> class.
         /// </summary>
         /// <param name="bulkExportDestinationId"></param>
-        /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="status"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="allExperiments">
+        /// Default Value: false
+        /// </param>
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
         /// <param name="format">
@@ -150,7 +158,7 @@ namespace LangSmith
         /// Default Value: v1
         /// </param>
         /// <param name="compression">
-        /// Default Value: gzip
+        /// Default Value: zstandard
         /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
@@ -161,13 +169,14 @@ namespace LangSmith
 #endif
         public BulkExport(
             global::System.Guid bulkExportDestinationId,
-            global::System.Guid sessionId,
             global::System.DateTime startTime,
             global::System.Guid id,
             global::System.Guid tenantId,
             global::LangSmith.BulkExportStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            global::System.Guid? sessionId,
+            bool? allExperiments,
             global::System.DateTime? endTime,
             string? filter,
             global::LangSmith.BulkExportFormat? format,
@@ -180,6 +189,7 @@ namespace LangSmith
         {
             this.BulkExportDestinationId = bulkExportDestinationId;
             this.SessionId = sessionId;
+            this.AllExperiments = allExperiments;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Filter = filter;

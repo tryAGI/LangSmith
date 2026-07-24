@@ -31,11 +31,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ThreadTraceSelectError,
+        /// <summary>
+        /// 
+        /// </summary>
         ThreadTraceSelectErrorPreview,
         /// <summary>
         /// 
         /// </summary>
         ThreadTraceSelectFirstTokenTime,
+        /// <summary>
+        /// 
+        /// </summary>
+        ThreadTraceSelectInputs,
         /// <summary>
         /// 
         /// </summary>
@@ -52,6 +60,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ThreadTraceSelectOp,
+        /// <summary>
+        /// 
+        /// </summary>
+        ThreadTraceSelectOutputs,
         /// <summary>
         /// 
         /// </summary>
@@ -111,12 +123,15 @@ namespace LangSmith
                 ThreadsThreadTraceSelectField.ThreadTraceSelectCompletionTokens => "COMPLETION_TOKENS",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectCompletionTokenDetails => "COMPLETION_TOKEN_DETAILS",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectEndTime => "END_TIME",
+                ThreadsThreadTraceSelectField.ThreadTraceSelectError => "ERROR",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectErrorPreview => "ERROR_PREVIEW",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectFirstTokenTime => "FIRST_TOKEN_TIME",
+                ThreadsThreadTraceSelectField.ThreadTraceSelectInputs => "INPUTS",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectInputsPreview => "INPUTS_PREVIEW",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectLatency => "LATENCY",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectName => "NAME",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectOp => "OP",
+                ThreadsThreadTraceSelectField.ThreadTraceSelectOutputs => "OUTPUTS",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectOutputsPreview => "OUTPUTS_PREVIEW",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectPromptCost => "PROMPT_COST",
                 ThreadsThreadTraceSelectField.ThreadTraceSelectPromptCostDetails => "PROMPT_COST_DETAILS",
@@ -142,12 +157,15 @@ namespace LangSmith
                 "COMPLETION_TOKENS" => ThreadsThreadTraceSelectField.ThreadTraceSelectCompletionTokens,
                 "COMPLETION_TOKEN_DETAILS" => ThreadsThreadTraceSelectField.ThreadTraceSelectCompletionTokenDetails,
                 "END_TIME" => ThreadsThreadTraceSelectField.ThreadTraceSelectEndTime,
+                "ERROR" => ThreadsThreadTraceSelectField.ThreadTraceSelectError,
                 "ERROR_PREVIEW" => ThreadsThreadTraceSelectField.ThreadTraceSelectErrorPreview,
                 "FIRST_TOKEN_TIME" => ThreadsThreadTraceSelectField.ThreadTraceSelectFirstTokenTime,
+                "INPUTS" => ThreadsThreadTraceSelectField.ThreadTraceSelectInputs,
                 "INPUTS_PREVIEW" => ThreadsThreadTraceSelectField.ThreadTraceSelectInputsPreview,
                 "LATENCY" => ThreadsThreadTraceSelectField.ThreadTraceSelectLatency,
                 "NAME" => ThreadsThreadTraceSelectField.ThreadTraceSelectName,
                 "OP" => ThreadsThreadTraceSelectField.ThreadTraceSelectOp,
+                "OUTPUTS" => ThreadsThreadTraceSelectField.ThreadTraceSelectOutputs,
                 "OUTPUTS_PREVIEW" => ThreadsThreadTraceSelectField.ThreadTraceSelectOutputsPreview,
                 "PROMPT_COST" => ThreadsThreadTraceSelectField.ThreadTraceSelectPromptCost,
                 "PROMPT_COST_DETAILS" => ThreadsThreadTraceSelectField.ThreadTraceSelectPromptCostDetails,

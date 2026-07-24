@@ -30,6 +30,26 @@ namespace LangSmith
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
+        /// Granularity a limit applies to within a tenant.<br/>
+        /// Default Value: workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.UsageLimitScopeJsonConverter))]
+        public global::LangSmith.UsageLimitScope? Scope { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public global::System.Guid? SessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("identity_id")]
+        public global::System.Guid? IdentityId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
@@ -67,6 +87,12 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="id"></param>
+        /// <param name="scope">
+        /// Granularity a limit applies to within a tenant.<br/>
+        /// Default Value: workspace
+        /// </param>
+        /// <param name="sessionId"></param>
+        /// <param name="identityId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,11 +102,17 @@ namespace LangSmith
             global::System.Guid tenantId,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.Guid? id)
+            global::System.Guid? id,
+            global::LangSmith.UsageLimitScope? scope,
+            global::System.Guid? sessionId,
+            global::System.Guid? identityId)
         {
             this.LimitType = limitType;
             this.LimitValue = limitValue;
             this.Id = id;
+            this.Scope = scope;
+            this.SessionId = sessionId;
+            this.IdentityId = identityId;
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

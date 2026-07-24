@@ -48,9 +48,14 @@ namespace LangSmith
             ref global::LangSmith.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
             ref string? sortByFeedbackKey,
+            ref string? sortByFeedbackSource,
             ref int? offset,
             ref int? limit,
             ref bool? facets,
+            ref bool? useApproxStats,
+            global::System.DateTime? statsStartTime,
+            global::System.Collections.Generic.IList<string>? statsSelect,
+            ref string? statsFilter,
             ref string? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -63,9 +68,14 @@ namespace LangSmith
             global::LangSmith.SessionSortableColumns? sortBy,
             bool? sortByDesc,
             string? sortByFeedbackKey,
+            string? sortByFeedbackSource,
             int? offset,
             int? limit,
             bool? facets,
+            bool? useApproxStats,
+            global::System.DateTime? statsStartTime,
+            global::System.Collections.Generic.IList<string>? statsSelect,
+            string? statsFilter,
             string? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -92,6 +102,7 @@ namespace LangSmith
         /// Default Value: true
         /// </param>
         /// <param name="sortByFeedbackKey"></param>
+        /// <param name="sortByFeedbackSource"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
@@ -101,6 +112,12 @@ namespace LangSmith
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="useApproxStats">
+        /// Default Value: false
+        /// </param>
+        /// <param name="statsStartTime"></param>
+        /// <param name="statsSelect"></param>
+        /// <param name="statsFilter"></param>
         /// <param name="accept"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -114,9 +131,14 @@ namespace LangSmith
             global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = default,
             string? sortByFeedbackKey = default,
+            string? sortByFeedbackSource = default,
             int? offset = default,
             int? limit = default,
             bool? facets = default,
+            bool? useApproxStats = default,
+            global::System.DateTime? statsStartTime = default,
+            global::System.Collections.Generic.IList<string>? statsSelect = default,
+            string? statsFilter = default,
             string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -130,9 +152,14 @@ namespace LangSmith
                 sortBy: sortBy,
                 sortByDesc: sortByDesc,
                 sortByFeedbackKey: sortByFeedbackKey,
+                sortByFeedbackSource: sortByFeedbackSource,
                 offset: offset,
                 limit: limit,
                 facets: facets,
+                useApproxStats: useApproxStats,
+                statsStartTime: statsStartTime,
+                statsSelect: statsSelect,
+                statsFilter: statsFilter,
                 accept: accept,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -156,6 +183,7 @@ namespace LangSmith
         /// Default Value: true
         /// </param>
         /// <param name="sortByFeedbackKey"></param>
+        /// <param name="sortByFeedbackSource"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
@@ -165,6 +193,12 @@ namespace LangSmith
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="useApproxStats">
+        /// Default Value: false
+        /// </param>
+        /// <param name="statsStartTime"></param>
+        /// <param name="statsSelect"></param>
+        /// <param name="statsFilter"></param>
         /// <param name="accept"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -178,9 +212,14 @@ namespace LangSmith
             global::LangSmith.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = default,
             string? sortByFeedbackKey = default,
+            string? sortByFeedbackSource = default,
             int? offset = default,
             int? limit = default,
             bool? facets = default,
+            bool? useApproxStats = default,
+            global::System.DateTime? statsStartTime = default,
+            global::System.Collections.Generic.IList<string>? statsSelect = default,
+            string? statsFilter = default,
             string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -197,9 +236,14 @@ namespace LangSmith
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc,
                 sortByFeedbackKey: ref sortByFeedbackKey,
+                sortByFeedbackSource: ref sortByFeedbackSource,
                 offset: ref offset,
                 limit: ref limit,
                 facets: ref facets,
+                useApproxStats: ref useApproxStats,
+                statsStartTime: statsStartTime,
+                statsSelect: statsSelect,
+                statsFilter: ref statsFilter,
                 accept: ref accept);
 
 
@@ -238,9 +282,14 @@ namespace LangSmith
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
+                                .AddOptionalParameter("sort_by_feedback_source", sortByFeedbackSource)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("facets", facets?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString())
+                                .AddOptionalParameter("stats_select", statsSelect?.ToString())
+                                .AddOptionalParameter("stats_filter", statsFilter)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -296,9 +345,14 @@ namespace LangSmith
                     sortBy: sortBy,
                     sortByDesc: sortByDesc,
                     sortByFeedbackKey: sortByFeedbackKey,
+                    sortByFeedbackSource: sortByFeedbackSource,
                     offset: offset,
                     limit: limit,
                     facets: facets,
+                    useApproxStats: useApproxStats,
+                    statsStartTime: statsStartTime,
+                    statsSelect: statsSelect,
+                    statsFilter: statsFilter,
                     accept: accept);
 
                 return __httpRequest;
@@ -503,18 +557,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -548,17 +601,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -595,17 +646,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

@@ -48,6 +48,12 @@ namespace LangSmith
         /// Files maps path to an Entry (object = create/update/link, null = delete/unlink).
         /// </param>
         /// <param name="parentCommit"></param>
+        /// <param name="skipWebhooks">
+        /// SkipWebhooks, when true, suppresses Context Hub commit webhooks for this<br/>
+        /// commit. Deliberately a plain bool, not the any (bool | []string) shape of<br/>
+        /// the prompt-hub CreateCommitReq.SkipWebhooks: Context Hub v1 has no<br/>
+        /// per-webhook filtering, so a bool is the correct shape.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -56,6 +62,7 @@ namespace LangSmith
             string repo,
             object? files = default,
             string? parentCommit = default,
+            bool? skipWebhooks = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

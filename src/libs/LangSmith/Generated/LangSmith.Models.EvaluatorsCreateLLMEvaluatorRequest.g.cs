@@ -15,6 +15,12 @@ namespace LangSmith
         public string? CommitHashOrTag { get; set; }
 
         /// <summary>
+        /// Model Configuration ID
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("playground_settings_id")]
+        public string? PlaygroundSettingsId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_repo_handle")]
@@ -36,6 +42,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="EvaluatorsCreateLLMEvaluatorRequest" /> class.
         /// </summary>
         /// <param name="commitHashOrTag"></param>
+        /// <param name="playgroundSettingsId">
+        /// Model Configuration ID
+        /// </param>
         /// <param name="promptRepoHandle"></param>
         /// <param name="variableMapping"></param>
 #if NET7_0_OR_GREATER
@@ -43,10 +52,12 @@ namespace LangSmith
 #endif
         public EvaluatorsCreateLLMEvaluatorRequest(
             string? commitHashOrTag,
+            string? playgroundSettingsId,
             string? promptRepoHandle,
             object? variableMapping)
         {
             this.CommitHashOrTag = commitHashOrTag;
+            this.PlaygroundSettingsId = playgroundSettingsId;
             this.PromptRepoHandle = promptRepoHandle;
             this.VariableMapping = variableMapping;
         }

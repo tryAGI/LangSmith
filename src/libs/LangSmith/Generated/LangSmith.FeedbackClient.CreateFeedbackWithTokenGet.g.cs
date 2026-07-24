@@ -42,6 +42,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
             ref global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            ref bool? extendTraceRetention,
             ref global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
             ref string? comment,
             ref string? correction);
@@ -50,6 +51,7 @@ namespace LangSmith
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            bool? extendTraceRetention,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
             string? comment,
             string? correction);
@@ -68,6 +70,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="token"></param>
         /// <param name="score"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
         /// <param name="correction"></param>
@@ -77,6 +82,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            bool? extendTraceRetention = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,
@@ -86,6 +92,7 @@ namespace LangSmith
             var __response = await CreateFeedbackWithTokenGetAsResponseAsync(
                 token: token,
                 score: score,
+                extendTraceRetention: extendTraceRetention,
                 value: value,
                 comment: comment,
                 correction: correction,
@@ -101,6 +108,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="token"></param>
         /// <param name="score"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
         /// <param name="correction"></param>
@@ -110,6 +120,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenGetAsResponseAsync(
             global::System.Guid token,
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            bool? extendTraceRetention = default,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,
@@ -122,6 +133,7 @@ namespace LangSmith
                 httpClient: HttpClient,
                 token: ref token,
                 score: ref score,
+                extendTraceRetention: ref extendTraceRetention,
                 value: ref value,
                 comment: ref comment,
                 correction: ref correction);
@@ -156,6 +168,7 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("score", score?.ToString())
+                                .AddOptionalParameter("extend_trace_retention", extendTraceRetention?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("value", value?.ToString())
                                 .AddOptionalParameter("comment", comment)
                                 .AddOptionalParameter("correction", correction)
@@ -202,6 +215,7 @@ namespace LangSmith
                     httpRequestMessage: __httpRequest,
                     token: token!,
                     score: score,
+                    extendTraceRetention: extendTraceRetention,
                     value: value,
                     comment: comment,
                     correction: correction);
@@ -408,18 +422,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -451,17 +464,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -496,17 +507,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

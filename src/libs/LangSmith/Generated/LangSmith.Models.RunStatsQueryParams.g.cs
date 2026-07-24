@@ -15,7 +15,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
         public global::System.Guid? Trace { get; set; }
@@ -141,6 +141,18 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? Select { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
+        public global::System.Guid? ReferenceDatasetId { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_details")]
+        public bool? IncludeDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -150,7 +162,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunStatsQueryParams" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="trace"></param>
+        /// <param name="trace">
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
+        /// </param>
         /// <param name="parentRun"></param>
         /// <param name="runType"></param>
         /// <param name="session"></param>
@@ -173,6 +187,10 @@ namespace LangSmith
         /// <param name="groupBy"></param>
         /// <param name="groups"></param>
         /// <param name="select"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="includeDetails">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -198,7 +216,9 @@ namespace LangSmith
             bool? useExperimentalSearch,
             global::LangSmith.RunStatsGroupBy? groupBy,
             global::System.Collections.Generic.IList<string>? groups,
-            global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? select)
+            global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? select,
+            global::System.Guid? referenceDatasetId,
+            bool? includeDetails)
         {
             this.Id = id;
             this.Trace = trace;
@@ -222,6 +242,8 @@ namespace LangSmith
             this.GroupBy = groupBy;
             this.Groups = groups;
             this.Select = select;
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.IncludeDetails = includeDetails;
         }
 
         /// <summary>

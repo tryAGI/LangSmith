@@ -21,6 +21,12 @@ namespace LangSmith
         public int? NumFewShotExamples { get; set; }
 
         /// <summary>
+        /// Model Configuration ID
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("playground_settings_id")]
+        public string? PlaygroundSettingsId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_repo_handle")]
@@ -49,6 +55,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="commitHashOrTag"></param>
         /// <param name="numFewShotExamples"></param>
+        /// <param name="playgroundSettingsId">
+        /// Model Configuration ID
+        /// </param>
         /// <param name="promptRepoHandle"></param>
         /// <param name="useCorrectionsDataset"></param>
         /// <param name="variableMapping"></param>
@@ -58,12 +67,14 @@ namespace LangSmith
         public EvaluatorsUpdateLLMEvaluatorRequest(
             string? commitHashOrTag,
             int? numFewShotExamples,
+            string? playgroundSettingsId,
             string? promptRepoHandle,
             bool? useCorrectionsDataset,
             object? variableMapping)
         {
             this.CommitHashOrTag = commitHashOrTag;
             this.NumFewShotExamples = numFewShotExamples;
+            this.PlaygroundSettingsId = playgroundSettingsId;
             this.PromptRepoHandle = promptRepoHandle;
             this.UseCorrectionsDataset = useCorrectionsDataset;
             this.VariableMapping = variableMapping;

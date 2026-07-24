@@ -55,7 +55,7 @@ namespace LangSmith
             int? index = default,
             global::System.Guid? sectionId = default,
             object? metadata = default,
-            global::LangSmith.CustomChartSeriesFilters2? commonFilters = default,
+            global::LangSmith.CustomChartSeriesFilters? commonFilters = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

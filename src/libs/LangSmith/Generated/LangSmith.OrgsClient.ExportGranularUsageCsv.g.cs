@@ -43,14 +43,18 @@ namespace LangSmith
             ref global::System.DateTime startTime,
             ref global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
-            ref global::LangSmith.GranularUsageGroupBy? groupBy);
+            ref global::LangSmith.GranularUsageGroupBy? groupBy,
+            ref global::LangSmith.GranularUsageKind? kind,
+            global::LangSmith.TraceTier? traceTier);
         partial void PrepareExportGranularUsageCsvRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
-            global::LangSmith.GranularUsageGroupBy? groupBy);
+            global::LangSmith.GranularUsageGroupBy? groupBy,
+            global::LangSmith.GranularUsageKind? kind,
+            global::LangSmith.TraceTier? traceTier);
         partial void ProcessExportGranularUsageCsvResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,9 +67,12 @@ namespace LangSmith
         /// <summary>
         /// Export Granular Usage Csv<br/>
         /// Export granular usage data as CSV.<br/>
-        /// Returns the same data as the granular-usage endpoint but formatted as a<br/>
-        /// downloadable CSV file. Only workspaces the user has read access to will<br/>
-        /// be included in the results.
+        /// Same `kind` semantics as `/granular-usage`. The CSV's value columns<br/>
+        /// vary by kind:<br/>
+        /// - `traces`: single `Traces` column.<br/>
+        /// - `langsmith_deployments`: `Nodes Executed`, `Agent Runs`,<br/>
+        ///   `Agent Uptime (seconds)` columns.<br/>
+        /// Dimension columns are identical across kinds.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -74,6 +81,17 @@ namespace LangSmith
         /// Dimensions for grouping granular usage data.<br/>
         /// Default Value: workspace
         /// </param>
+        /// <param name="kind">
+        /// Which billable usage domain a granular-usage query targets.<br/>
+        /// - `traces`: trace counts.<br/>
+        /// - `langsmith_deployments`: LangSmith Deployment metrics (nodes executed,<br/>
+        ///   agent runs, agent uptime).<br/>
+        /// Default is `traces` for backward compatibility — existing callers of<br/>
+        /// `GET /granular-usage` without a `kind` query param get the same<br/>
+        /// response shape they always did.<br/>
+        /// Default Value: traces
+        /// </param>
+        /// <param name="traceTier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -82,6 +100,8 @@ namespace LangSmith
             global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
             global::LangSmith.GranularUsageGroupBy? groupBy = default,
+            global::LangSmith.GranularUsageKind? kind = default,
+            global::LangSmith.TraceTier? traceTier = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -90,6 +110,8 @@ namespace LangSmith
                 endTime: endTime,
                 workspaceIds: workspaceIds,
                 groupBy: groupBy,
+                kind: kind,
+                traceTier: traceTier,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -99,9 +121,12 @@ namespace LangSmith
         /// <summary>
         /// Export Granular Usage Csv<br/>
         /// Export granular usage data as CSV.<br/>
-        /// Returns the same data as the granular-usage endpoint but formatted as a<br/>
-        /// downloadable CSV file. Only workspaces the user has read access to will<br/>
-        /// be included in the results.
+        /// Same `kind` semantics as `/granular-usage`. The CSV's value columns<br/>
+        /// vary by kind:<br/>
+        /// - `traces`: single `Traces` column.<br/>
+        /// - `langsmith_deployments`: `Nodes Executed`, `Agent Runs`,<br/>
+        ///   `Agent Uptime (seconds)` columns.<br/>
+        /// Dimension columns are identical across kinds.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -110,6 +135,17 @@ namespace LangSmith
         /// Dimensions for grouping granular usage data.<br/>
         /// Default Value: workspace
         /// </param>
+        /// <param name="kind">
+        /// Which billable usage domain a granular-usage query targets.<br/>
+        /// - `traces`: trace counts.<br/>
+        /// - `langsmith_deployments`: LangSmith Deployment metrics (nodes executed,<br/>
+        ///   agent runs, agent uptime).<br/>
+        /// Default is `traces` for backward compatibility — existing callers of<br/>
+        /// `GET /granular-usage` without a `kind` query param get the same<br/>
+        /// response shape they always did.<br/>
+        /// Default Value: traces
+        /// </param>
+        /// <param name="traceTier"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -118,6 +154,8 @@ namespace LangSmith
             global::System.DateTime endTime,
             global::System.Collections.Generic.IList<global::System.Guid> workspaceIds,
             global::LangSmith.GranularUsageGroupBy? groupBy = default,
+            global::LangSmith.GranularUsageKind? kind = default,
+            global::LangSmith.TraceTier? traceTier = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -128,7 +166,9 @@ namespace LangSmith
                 startTime: ref startTime,
                 endTime: ref endTime,
                 workspaceIds: workspaceIds,
-                groupBy: ref groupBy);
+                groupBy: ref groupBy,
+                kind: ref kind,
+                traceTier: traceTier);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -163,6 +203,8 @@ namespace LangSmith
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("group_by", groupBy?.ToValueString())
+                                .AddOptionalParameter("kind", kind?.ToValueString())
+                                .AddOptionalParameter("trace_tier", traceTier?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -207,7 +249,9 @@ namespace LangSmith
                     startTime: startTime!,
                     endTime: endTime!,
                     workspaceIds: workspaceIds!,
-                    groupBy: groupBy);
+                    groupBy: groupBy,
+                    kind: kind,
+                    traceTier: traceTier);
 
                 return __httpRequest;
             }
@@ -411,18 +455,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -454,17 +497,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -499,17 +540,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

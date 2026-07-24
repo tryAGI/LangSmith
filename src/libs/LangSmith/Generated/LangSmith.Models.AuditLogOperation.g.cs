@@ -19,6 +19,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        AddItemsToAnnotationQueue,
+        /// <summary>
+        /// 
+        /// </summary>
         AddMemberToWorkspace,
         /// <summary>
         /// 
@@ -36,6 +40,10 @@ namespace LangSmith
         /// 
         /// </summary>
         BatchDeleteSandboxClaims,
+        /// <summary>
+        /// 
+        /// </summary>
+        BatchQueryRuns,
         /// <summary>
         /// 
         /// </summary>
@@ -227,6 +235,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        CreateOauthClient,
+        /// <summary>
+        /// 
+        /// </summary>
         CreateOnboardingState,
         /// <summary>
         /// 
@@ -367,6 +379,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        DeleteAnnotationQueueItem,
+        /// <summary>
+        /// 
+        /// </summary>
         DeleteAnnotationQueueRun,
         /// <summary>
         /// 
@@ -392,6 +408,10 @@ namespace LangSmith
         /// 
         /// </summary>
         DeleteComparativeExperiment,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteDataPlane,
         /// <summary>
         /// 
         /// </summary>
@@ -484,6 +504,10 @@ namespace LangSmith
         /// 
         /// </summary>
         DeleteModelPriceMap,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeleteOauthClient,
         /// <summary>
         /// 
         /// </summary>
@@ -619,6 +643,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        DeleteWorkspaceSecret,
+        /// <summary>
+        /// 
+        /// </summary>
         DiffDatasetVersions,
         /// <summary>
         /// 
@@ -639,7 +667,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        ExportGranularUsageCsv,
+        ExportGranularUsageDeploymentsCsv,
+        /// <summary>
+        /// 
+        /// </summary>
+        ExportGranularUsageTracesCsv,
         /// <summary>
         /// 
         /// </summary>
@@ -672,6 +704,10 @@ namespace LangSmith
         /// 
         /// </summary>
         GetAnnotationQueueArchivedSize,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetAnnotationQueueItems,
         /// <summary>
         /// 
         /// </summary>
@@ -751,7 +787,11 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        GetGranularUsage,
+        GetGranularUsageDeployments,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetGranularUsageTraces,
         /// <summary>
         /// 
         /// </summary>
@@ -799,7 +839,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        GetProvisionedSaasOrg,
+        /// <summary>
+        /// 
+        /// </summary>
         GetRunCluster,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetRunUrl,
         /// <summary>
         /// 
         /// </summary>
@@ -816,6 +864,10 @@ namespace LangSmith
         /// 
         /// </summary>
         GetSandboxSnapshot,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetSelfHostedCustomer,
         /// <summary>
         /// 
         /// </summary>
@@ -1055,6 +1107,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        QueryTraces,
+        /// <summary>
+        /// 
+        /// </summary>
         ReadAccessPolicy,
         /// <summary>
         /// 
@@ -1151,6 +1207,14 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        RevokeOauthGrant,
+        /// <summary>
+        /// 
+        /// </summary>
+        RotateOauthClientSecret,
+        /// <summary>
+        /// 
+        /// </summary>
         SendSsoEmailConfirmation,
         /// <summary>
         /// 
@@ -1160,6 +1224,10 @@ namespace LangSmith
         /// 
         /// </summary>
         ShareDataset,
+        /// <summary>
+        /// 
+        /// </summary>
+        ShareRun,
         /// <summary>
         /// 
         /// </summary>
@@ -1219,11 +1287,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UnshareRun,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateAlertRule,
         /// <summary>
         /// 
         /// </summary>
         UpdateAnnotationQueue,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateAnnotationQueueItem,
         /// <summary>
         /// 
         /// </summary>
@@ -1280,6 +1356,10 @@ namespace LangSmith
         /// 
         /// </summary>
         UpdateExamples,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateExamplesMetadata,
         /// <summary>
         /// 
         /// </summary>
@@ -1343,6 +1423,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UpdateOauthClient,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateOnboardingState,
         /// <summary>
         /// 
@@ -1356,6 +1440,10 @@ namespace LangSmith
         /// 
         /// </summary>
         UpdateOrgMember,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateOrgPendingMember,
         /// <summary>
         /// 
         /// </summary>
@@ -1380,6 +1468,10 @@ namespace LangSmith
         /// 
         /// </summary>
         UpdatePromptWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdateProvisionedSaasOrg,
         /// <summary>
         /// 
         /// </summary>
@@ -1423,6 +1515,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UpdateServiceKey,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateSsoSettings,
         /// <summary>
         /// 
@@ -1459,6 +1555,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        UpdateWorkspacePendingMember,
+        /// <summary>
+        /// 
+        /// </summary>
         UpdateWorkspaceSecrets,
         /// <summary>
         /// 
@@ -1468,6 +1568,10 @@ namespace LangSmith
         /// 
         /// </summary>
         UpsertFeatureDisabledModel,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpsertRoleRestriction,
         /// <summary>
         /// 
         /// </summary>
@@ -1492,11 +1596,13 @@ namespace LangSmith
             {
                 AuditLogOperation.AddAnnotationQueueReviewer => "add_annotation_queue_reviewer",
                 AuditLogOperation.AddBasicAuthUsersToOrg => "add_basic_auth_users_to_org",
+                AuditLogOperation.AddItemsToAnnotationQueue => "add_items_to_annotation_queue",
                 AuditLogOperation.AddMemberToWorkspace => "add_member_to_workspace",
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
                 AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
+                AuditLogOperation.BatchQueryRuns => "batch_query_runs",
                 AuditLogOperation.BatchQueryTraceMessages => "batch_query_trace_messages",
                 AuditLogOperation.BulkDeleteEvaluators => "bulk_delete_evaluators",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
@@ -1544,6 +1650,7 @@ namespace LangSmith
                 AuditLogOperation.CreateMcpServer => "create_mcp_server",
                 AuditLogOperation.CreateMcpVendorSettings => "create_mcp_vendor_settings",
                 AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
+                AuditLogOperation.CreateOauthClient => "create_oauth_client",
                 AuditLogOperation.CreateOnboardingState => "create_onboarding_state",
                 AuditLogOperation.CreateOrgChart => "create_org_chart",
                 AuditLogOperation.CreateOrgChartSection => "create_org_chart_section",
@@ -1579,6 +1686,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
                 AuditLogOperation.DeleteAlertRule => "delete_alert_rule",
                 AuditLogOperation.DeleteAnnotationQueue => "delete_annotation_queue",
+                AuditLogOperation.DeleteAnnotationQueueItem => "delete_annotation_queue_item",
                 AuditLogOperation.DeleteAnnotationQueueRun => "delete_annotation_queue_run",
                 AuditLogOperation.DeleteAnnotationQueueRuns => "delete_annotation_queue_runs",
                 AuditLogOperation.DeleteAnnotationQueues => "delete_annotation_queues",
@@ -1586,6 +1694,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteChart => "delete_chart",
                 AuditLogOperation.DeleteChartSection => "delete_chart_section",
                 AuditLogOperation.DeleteComparativeExperiment => "delete_comparative_experiment",
+                AuditLogOperation.DeleteDataPlane => "delete_data_plane",
                 AuditLogOperation.DeleteDataset => "delete_dataset",
                 AuditLogOperation.DeleteDatasets => "delete_datasets",
                 AuditLogOperation.DeleteDeployment => "delete_deployment",
@@ -1609,6 +1718,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteMcpServer => "delete_mcp_server",
                 AuditLogOperation.DeleteMcpVendorSettings => "delete_mcp_vendor_settings",
                 AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
+                AuditLogOperation.DeleteOauthClient => "delete_oauth_client",
                 AuditLogOperation.DeleteOrgChart => "delete_org_chart",
                 AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
                 AuditLogOperation.DeleteOrgMember => "delete_org_member",
@@ -1642,12 +1752,14 @@ namespace LangSmith
                 AuditLogOperation.DeleteWorkspace => "delete_workspace",
                 AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
+                AuditLogOperation.DeleteWorkspaceSecret => "delete_workspace_secret",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
                 AuditLogOperation.DownloadDataset => "download_dataset",
                 AuditLogOperation.EvaluateExperiment => "evaluate_experiment",
                 AuditLogOperation.ExecuteCustomCode => "execute_custom_code",
                 AuditLogOperation.ExportAnnotationQueue => "export_annotation_queue",
-                AuditLogOperation.ExportGranularUsageCsv => "export_granular_usage_csv",
+                AuditLogOperation.ExportGranularUsageDeploymentsCsv => "export_granular_usage_deployments_csv",
+                AuditLogOperation.ExportGranularUsageTracesCsv => "export_granular_usage_traces_csv",
                 AuditLogOperation.ExportUsageBackfillCsv => "export_usage_backfill_csv",
                 AuditLogOperation.GenerateDataset => "generate_dataset",
                 AuditLogOperation.GenerateInsightsJobConfig => "generate_insights_job_config",
@@ -1656,6 +1768,7 @@ namespace LangSmith
                 AuditLogOperation.GenerateSharedDatasetQuery => "generate_shared_dataset_query",
                 AuditLogOperation.GetAnnotationQueue => "get_annotation_queue",
                 AuditLogOperation.GetAnnotationQueueArchivedSize => "get_annotation_queue_archived_size",
+                AuditLogOperation.GetAnnotationQueueItems => "get_annotation_queue_items",
                 AuditLogOperation.GetAnnotationQueueRun => "get_annotation_queue_run",
                 AuditLogOperation.GetAnnotationQueueRuns => "get_annotation_queue_runs",
                 AuditLogOperation.GetAnnotationQueueSize => "get_annotation_queue_size",
@@ -1675,7 +1788,8 @@ namespace LangSmith
                 AuditLogOperation.GetExperimentViewOverrides => "get_experiment_view_overrides",
                 AuditLogOperation.GetFeedbackFormula => "get_feedback_formula",
                 AuditLogOperation.GetFilterView => "get_filter_view",
-                AuditLogOperation.GetGranularUsage => "get_granular_usage",
+                AuditLogOperation.GetGranularUsageDeployments => "get_granular_usage_deployments",
+                AuditLogOperation.GetGranularUsageTraces => "get_granular_usage_traces",
                 AuditLogOperation.GetInsightsJob => "get_insights_job",
                 AuditLogOperation.GetInsightsJobRuns => "get_insights_job_runs",
                 AuditLogOperation.GetLoginMethods => "get_login_methods",
@@ -1687,11 +1801,14 @@ namespace LangSmith
                 AuditLogOperation.GetOrganizationBillingInfo => "get_organization_billing_info",
                 AuditLogOperation.GetOrganizationInfo => "get_organization_info",
                 AuditLogOperation.GetPairwiseQueue => "get_pairwise_queue",
+                AuditLogOperation.GetProvisionedSaasOrg => "get_provisioned_saas_org",
                 AuditLogOperation.GetRunCluster => "get_run_cluster",
+                AuditLogOperation.GetRunUrl => "get_run_url",
                 AuditLogOperation.GetSandboxClaim => "get_sandbox_claim",
                 AuditLogOperation.GetSandboxClaimStatus => "get_sandbox_claim_status",
                 AuditLogOperation.GetSandboxRegistry => "get_sandbox_registry",
                 AuditLogOperation.GetSandboxSnapshot => "get_sandbox_snapshot",
+                AuditLogOperation.GetSelfHostedCustomer => "get_self_hosted_customer",
                 AuditLogOperation.GetSharedExamplesCount => "get_shared_examples_count",
                 AuditLogOperation.GetSharedTokens => "get_shared_tokens",
                 AuditLogOperation.GetSsoSettings => "get_sso_settings",
@@ -1751,6 +1868,7 @@ namespace LangSmith
                 AuditLogOperation.QueryThreads => "query_threads",
                 AuditLogOperation.QueryTrace => "query_trace",
                 AuditLogOperation.QueryTraceMessages => "query_trace_messages",
+                AuditLogOperation.QueryTraces => "query_traces",
                 AuditLogOperation.ReadAccessPolicy => "read_access_policy",
                 AuditLogOperation.ReadBulkExportDestination => "read_bulk_export_destination",
                 AuditLogOperation.ReadChart => "read_chart",
@@ -1775,9 +1893,12 @@ namespace LangSmith
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
+                AuditLogOperation.RevokeOauthGrant => "revoke_oauth_grant",
+                AuditLogOperation.RotateOauthClientSecret => "rotate_oauth_client_secret",
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
+                AuditLogOperation.ShareRun => "share_run",
                 AuditLogOperation.StartSandboxClaim => "start_sandbox_claim",
                 AuditLogOperation.StopSandboxClaim => "stop_sandbox_claim",
                 AuditLogOperation.StreamDatasetComparisonView => "stream_dataset_comparison_view",
@@ -1792,8 +1913,10 @@ namespace LangSmith
                 AuditLogOperation.TriggerForgeConfiguration => "trigger_forge_configuration",
                 AuditLogOperation.UnshareDataset => "unshare_dataset",
                 AuditLogOperation.UnshareEntities => "unshare_entities",
+                AuditLogOperation.UnshareRun => "unshare_run",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
+                AuditLogOperation.UpdateAnnotationQueueItem => "update_annotation_queue_item",
                 AuditLogOperation.UpdateAnnotationQueueRun => "update_annotation_queue_run",
                 AuditLogOperation.UpdateBasicAuthUser => "update_basic_auth_user",
                 AuditLogOperation.UpdateBulkExportDestination => "update_bulk_export_destination",
@@ -1808,6 +1931,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateEvaluator => "update_evaluator",
                 AuditLogOperation.UpdateExample => "update_example",
                 AuditLogOperation.UpdateExamples => "update_examples",
+                AuditLogOperation.UpdateExamplesMetadata => "update_examples_metadata",
                 AuditLogOperation.UpdateExperimentViewOverride => "update_experiment_view_override",
                 AuditLogOperation.UpdateFeedbackConfig => "update_feedback_config",
                 AuditLogOperation.UpdateFeedbackFormula => "update_feedback_formula",
@@ -1823,16 +1947,19 @@ namespace LangSmith
                 AuditLogOperation.UpdateMcpServer => "update_mcp_server",
                 AuditLogOperation.UpdateMcpVendorSettings => "update_mcp_vendor_settings",
                 AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
+                AuditLogOperation.UpdateOauthClient => "update_oauth_client",
                 AuditLogOperation.UpdateOnboardingState => "update_onboarding_state",
                 AuditLogOperation.UpdateOrgChart => "update_org_chart",
                 AuditLogOperation.UpdateOrgChartSection => "update_org_chart_section",
                 AuditLogOperation.UpdateOrgMember => "update_org_member",
+                AuditLogOperation.UpdateOrgPendingMember => "update_org_pending_member",
                 AuditLogOperation.UpdateOrganizationInfo => "update_organization_info",
                 AuditLogOperation.UpdatePaymentMethod => "update_payment_method",
                 AuditLogOperation.UpdatePaymentPlan => "update_payment_plan",
                 AuditLogOperation.UpdatePlaygroundSettings => "update_playground_settings",
                 AuditLogOperation.UpdatePromptCanvasQuickAction => "update_prompt_canvas_quick_action",
                 AuditLogOperation.UpdatePromptWebhook => "update_prompt_webhook",
+                AuditLogOperation.UpdateProvisionedSaasOrg => "update_provisioned_saas_org",
                 AuditLogOperation.UpdateRole => "update_role",
                 AuditLogOperation.UpdateSandboxClaim => "update_sandbox_claim",
                 AuditLogOperation.UpdateSandboxPolicy => "update_sandbox_policy",
@@ -1843,6 +1970,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateScimUser => "update_scim_user",
                 AuditLogOperation.UpdateSelfHostedCustomer => "update_self_hosted_customer",
                 AuditLogOperation.UpdateSelfHostedLicense => "update_self_hosted_license",
+                AuditLogOperation.UpdateServiceKey => "update_service_key",
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
@@ -1852,9 +1980,11 @@ namespace LangSmith
                 AuditLogOperation.UpdateUsageLimit => "update_usage_limit",
                 AuditLogOperation.UpdateWorkspace => "update_workspace",
                 AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
+                AuditLogOperation.UpdateWorkspacePendingMember => "update_workspace_pending_member",
                 AuditLogOperation.UpdateWorkspaceSecrets => "update_workspace_secrets",
                 AuditLogOperation.UpsertFeatureDefaultModel => "upsert_feature_default_model",
                 AuditLogOperation.UpsertFeatureDisabledModel => "upsert_feature_disabled_model",
+                AuditLogOperation.UpsertRoleRestriction => "upsert_role_restriction",
                 AuditLogOperation.ValidateExample => "validate_example",
                 AuditLogOperation.ValidateExamples => "validate_examples",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -1869,11 +1999,13 @@ namespace LangSmith
             {
                 "add_annotation_queue_reviewer" => AuditLogOperation.AddAnnotationQueueReviewer,
                 "add_basic_auth_users_to_org" => AuditLogOperation.AddBasicAuthUsersToOrg,
+                "add_items_to_annotation_queue" => AuditLogOperation.AddItemsToAnnotationQueue,
                 "add_member_to_workspace" => AuditLogOperation.AddMemberToWorkspace,
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
                 "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
+                "batch_query_runs" => AuditLogOperation.BatchQueryRuns,
                 "batch_query_trace_messages" => AuditLogOperation.BatchQueryTraceMessages,
                 "bulk_delete_evaluators" => AuditLogOperation.BulkDeleteEvaluators,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
@@ -1921,6 +2053,7 @@ namespace LangSmith
                 "create_mcp_server" => AuditLogOperation.CreateMcpServer,
                 "create_mcp_vendor_settings" => AuditLogOperation.CreateMcpVendorSettings,
                 "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
+                "create_oauth_client" => AuditLogOperation.CreateOauthClient,
                 "create_onboarding_state" => AuditLogOperation.CreateOnboardingState,
                 "create_org_chart" => AuditLogOperation.CreateOrgChart,
                 "create_org_chart_section" => AuditLogOperation.CreateOrgChartSection,
@@ -1956,6 +2089,7 @@ namespace LangSmith
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
                 "delete_alert_rule" => AuditLogOperation.DeleteAlertRule,
                 "delete_annotation_queue" => AuditLogOperation.DeleteAnnotationQueue,
+                "delete_annotation_queue_item" => AuditLogOperation.DeleteAnnotationQueueItem,
                 "delete_annotation_queue_run" => AuditLogOperation.DeleteAnnotationQueueRun,
                 "delete_annotation_queue_runs" => AuditLogOperation.DeleteAnnotationQueueRuns,
                 "delete_annotation_queues" => AuditLogOperation.DeleteAnnotationQueues,
@@ -1963,6 +2097,7 @@ namespace LangSmith
                 "delete_chart" => AuditLogOperation.DeleteChart,
                 "delete_chart_section" => AuditLogOperation.DeleteChartSection,
                 "delete_comparative_experiment" => AuditLogOperation.DeleteComparativeExperiment,
+                "delete_data_plane" => AuditLogOperation.DeleteDataPlane,
                 "delete_dataset" => AuditLogOperation.DeleteDataset,
                 "delete_datasets" => AuditLogOperation.DeleteDatasets,
                 "delete_deployment" => AuditLogOperation.DeleteDeployment,
@@ -1986,6 +2121,7 @@ namespace LangSmith
                 "delete_mcp_server" => AuditLogOperation.DeleteMcpServer,
                 "delete_mcp_vendor_settings" => AuditLogOperation.DeleteMcpVendorSettings,
                 "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
+                "delete_oauth_client" => AuditLogOperation.DeleteOauthClient,
                 "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
                 "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
                 "delete_org_member" => AuditLogOperation.DeleteOrgMember,
@@ -2019,12 +2155,14 @@ namespace LangSmith
                 "delete_workspace" => AuditLogOperation.DeleteWorkspace,
                 "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
+                "delete_workspace_secret" => AuditLogOperation.DeleteWorkspaceSecret,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
                 "evaluate_experiment" => AuditLogOperation.EvaluateExperiment,
                 "execute_custom_code" => AuditLogOperation.ExecuteCustomCode,
                 "export_annotation_queue" => AuditLogOperation.ExportAnnotationQueue,
-                "export_granular_usage_csv" => AuditLogOperation.ExportGranularUsageCsv,
+                "export_granular_usage_deployments_csv" => AuditLogOperation.ExportGranularUsageDeploymentsCsv,
+                "export_granular_usage_traces_csv" => AuditLogOperation.ExportGranularUsageTracesCsv,
                 "export_usage_backfill_csv" => AuditLogOperation.ExportUsageBackfillCsv,
                 "generate_dataset" => AuditLogOperation.GenerateDataset,
                 "generate_insights_job_config" => AuditLogOperation.GenerateInsightsJobConfig,
@@ -2033,6 +2171,7 @@ namespace LangSmith
                 "generate_shared_dataset_query" => AuditLogOperation.GenerateSharedDatasetQuery,
                 "get_annotation_queue" => AuditLogOperation.GetAnnotationQueue,
                 "get_annotation_queue_archived_size" => AuditLogOperation.GetAnnotationQueueArchivedSize,
+                "get_annotation_queue_items" => AuditLogOperation.GetAnnotationQueueItems,
                 "get_annotation_queue_run" => AuditLogOperation.GetAnnotationQueueRun,
                 "get_annotation_queue_runs" => AuditLogOperation.GetAnnotationQueueRuns,
                 "get_annotation_queue_size" => AuditLogOperation.GetAnnotationQueueSize,
@@ -2052,7 +2191,8 @@ namespace LangSmith
                 "get_experiment_view_overrides" => AuditLogOperation.GetExperimentViewOverrides,
                 "get_feedback_formula" => AuditLogOperation.GetFeedbackFormula,
                 "get_filter_view" => AuditLogOperation.GetFilterView,
-                "get_granular_usage" => AuditLogOperation.GetGranularUsage,
+                "get_granular_usage_deployments" => AuditLogOperation.GetGranularUsageDeployments,
+                "get_granular_usage_traces" => AuditLogOperation.GetGranularUsageTraces,
                 "get_insights_job" => AuditLogOperation.GetInsightsJob,
                 "get_insights_job_runs" => AuditLogOperation.GetInsightsJobRuns,
                 "get_login_methods" => AuditLogOperation.GetLoginMethods,
@@ -2064,11 +2204,14 @@ namespace LangSmith
                 "get_organization_billing_info" => AuditLogOperation.GetOrganizationBillingInfo,
                 "get_organization_info" => AuditLogOperation.GetOrganizationInfo,
                 "get_pairwise_queue" => AuditLogOperation.GetPairwiseQueue,
+                "get_provisioned_saas_org" => AuditLogOperation.GetProvisionedSaasOrg,
                 "get_run_cluster" => AuditLogOperation.GetRunCluster,
+                "get_run_url" => AuditLogOperation.GetRunUrl,
                 "get_sandbox_claim" => AuditLogOperation.GetSandboxClaim,
                 "get_sandbox_claim_status" => AuditLogOperation.GetSandboxClaimStatus,
                 "get_sandbox_registry" => AuditLogOperation.GetSandboxRegistry,
                 "get_sandbox_snapshot" => AuditLogOperation.GetSandboxSnapshot,
+                "get_self_hosted_customer" => AuditLogOperation.GetSelfHostedCustomer,
                 "get_shared_examples_count" => AuditLogOperation.GetSharedExamplesCount,
                 "get_shared_tokens" => AuditLogOperation.GetSharedTokens,
                 "get_sso_settings" => AuditLogOperation.GetSsoSettings,
@@ -2128,6 +2271,7 @@ namespace LangSmith
                 "query_threads" => AuditLogOperation.QueryThreads,
                 "query_trace" => AuditLogOperation.QueryTrace,
                 "query_trace_messages" => AuditLogOperation.QueryTraceMessages,
+                "query_traces" => AuditLogOperation.QueryTraces,
                 "read_access_policy" => AuditLogOperation.ReadAccessPolicy,
                 "read_bulk_export_destination" => AuditLogOperation.ReadBulkExportDestination,
                 "read_chart" => AuditLogOperation.ReadChart,
@@ -2152,9 +2296,12 @@ namespace LangSmith
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
+                "revoke_oauth_grant" => AuditLogOperation.RevokeOauthGrant,
+                "rotate_oauth_client_secret" => AuditLogOperation.RotateOauthClientSecret,
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
+                "share_run" => AuditLogOperation.ShareRun,
                 "start_sandbox_claim" => AuditLogOperation.StartSandboxClaim,
                 "stop_sandbox_claim" => AuditLogOperation.StopSandboxClaim,
                 "stream_dataset_comparison_view" => AuditLogOperation.StreamDatasetComparisonView,
@@ -2169,8 +2316,10 @@ namespace LangSmith
                 "trigger_forge_configuration" => AuditLogOperation.TriggerForgeConfiguration,
                 "unshare_dataset" => AuditLogOperation.UnshareDataset,
                 "unshare_entities" => AuditLogOperation.UnshareEntities,
+                "unshare_run" => AuditLogOperation.UnshareRun,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,
+                "update_annotation_queue_item" => AuditLogOperation.UpdateAnnotationQueueItem,
                 "update_annotation_queue_run" => AuditLogOperation.UpdateAnnotationQueueRun,
                 "update_basic_auth_user" => AuditLogOperation.UpdateBasicAuthUser,
                 "update_bulk_export_destination" => AuditLogOperation.UpdateBulkExportDestination,
@@ -2185,6 +2334,7 @@ namespace LangSmith
                 "update_evaluator" => AuditLogOperation.UpdateEvaluator,
                 "update_example" => AuditLogOperation.UpdateExample,
                 "update_examples" => AuditLogOperation.UpdateExamples,
+                "update_examples_metadata" => AuditLogOperation.UpdateExamplesMetadata,
                 "update_experiment_view_override" => AuditLogOperation.UpdateExperimentViewOverride,
                 "update_feedback_config" => AuditLogOperation.UpdateFeedbackConfig,
                 "update_feedback_formula" => AuditLogOperation.UpdateFeedbackFormula,
@@ -2200,16 +2350,19 @@ namespace LangSmith
                 "update_mcp_server" => AuditLogOperation.UpdateMcpServer,
                 "update_mcp_vendor_settings" => AuditLogOperation.UpdateMcpVendorSettings,
                 "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
+                "update_oauth_client" => AuditLogOperation.UpdateOauthClient,
                 "update_onboarding_state" => AuditLogOperation.UpdateOnboardingState,
                 "update_org_chart" => AuditLogOperation.UpdateOrgChart,
                 "update_org_chart_section" => AuditLogOperation.UpdateOrgChartSection,
                 "update_org_member" => AuditLogOperation.UpdateOrgMember,
+                "update_org_pending_member" => AuditLogOperation.UpdateOrgPendingMember,
                 "update_organization_info" => AuditLogOperation.UpdateOrganizationInfo,
                 "update_payment_method" => AuditLogOperation.UpdatePaymentMethod,
                 "update_payment_plan" => AuditLogOperation.UpdatePaymentPlan,
                 "update_playground_settings" => AuditLogOperation.UpdatePlaygroundSettings,
                 "update_prompt_canvas_quick_action" => AuditLogOperation.UpdatePromptCanvasQuickAction,
                 "update_prompt_webhook" => AuditLogOperation.UpdatePromptWebhook,
+                "update_provisioned_saas_org" => AuditLogOperation.UpdateProvisionedSaasOrg,
                 "update_role" => AuditLogOperation.UpdateRole,
                 "update_sandbox_claim" => AuditLogOperation.UpdateSandboxClaim,
                 "update_sandbox_policy" => AuditLogOperation.UpdateSandboxPolicy,
@@ -2220,6 +2373,7 @@ namespace LangSmith
                 "update_scim_user" => AuditLogOperation.UpdateScimUser,
                 "update_self_hosted_customer" => AuditLogOperation.UpdateSelfHostedCustomer,
                 "update_self_hosted_license" => AuditLogOperation.UpdateSelfHostedLicense,
+                "update_service_key" => AuditLogOperation.UpdateServiceKey,
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
@@ -2229,9 +2383,11 @@ namespace LangSmith
                 "update_usage_limit" => AuditLogOperation.UpdateUsageLimit,
                 "update_workspace" => AuditLogOperation.UpdateWorkspace,
                 "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,
+                "update_workspace_pending_member" => AuditLogOperation.UpdateWorkspacePendingMember,
                 "update_workspace_secrets" => AuditLogOperation.UpdateWorkspaceSecrets,
                 "upsert_feature_default_model" => AuditLogOperation.UpsertFeatureDefaultModel,
                 "upsert_feature_disabled_model" => AuditLogOperation.UpsertFeatureDisabledModel,
+                "upsert_role_restriction" => AuditLogOperation.UpsertRoleRestriction,
                 "validate_example" => AuditLogOperation.ValidateExample,
                 "validate_examples" => AuditLogOperation.ValidateExamples,
                 _ => null,

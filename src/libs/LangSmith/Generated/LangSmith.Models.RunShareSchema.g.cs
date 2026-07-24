@@ -18,6 +18,13 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shared_trace_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid SharedTraceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid ShareToken { get; set; }
@@ -32,15 +39,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunShareSchema" /> class.
         /// </summary>
         /// <param name="runId"></param>
+        /// <param name="sharedTraceId"></param>
         /// <param name="shareToken"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunShareSchema(
             global::System.Guid runId,
+            global::System.Guid sharedTraceId,
             global::System.Guid shareToken)
         {
             this.RunId = runId;
+            this.SharedTraceId = sharedTraceId;
             this.ShareToken = shareToken;
         }
 

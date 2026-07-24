@@ -59,6 +59,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fix_verification")]
+        public object? FixVerification { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -97,6 +103,13 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("proposed_prompt_fixes")]
         public global::System.Collections.Generic.IList<object>? ProposedPromptFixes { get; set; }
+
+        /// <summary>
+        /// RecurrencesSinceWatching counts linked traces whose run start_time is after<br/>
+        /// watching_since — i.e. recurrences observed during the current watch period.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("recurrences_since_watching")]
+        public int? RecurrencesSinceWatching { get; set; }
 
         /// <summary>
         /// 
@@ -142,6 +155,12 @@ namespace LangSmith
         public string? UpdatedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("watching_since")]
+        public string? WatchingSince { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -158,6 +177,7 @@ namespace LangSmith
         /// <param name="fixDispatchedAt"></param>
         /// <param name="fixPrNumber"></param>
         /// <param name="fixPrompt"></param>
+        /// <param name="fixVerification"></param>
         /// <param name="id"></param>
         /// <param name="lastSeenAt"></param>
         /// <param name="name"></param>
@@ -165,6 +185,10 @@ namespace LangSmith
         /// <param name="proposedExamples"></param>
         /// <param name="proposedFix"></param>
         /// <param name="proposedPromptFixes"></param>
+        /// <param name="recurrencesSinceWatching">
+        /// RecurrencesSinceWatching counts linked traces whose run start_time is after<br/>
+        /// watching_since — i.e. recurrences observed during the current watch period.
+        /// </param>
         /// <param name="sessionId"></param>
         /// <param name="severity"></param>
         /// <param name="status"></param>
@@ -172,6 +196,7 @@ namespace LangSmith
         /// <param name="tenantId"></param>
         /// <param name="traces"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="watchingSince"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -184,6 +209,7 @@ namespace LangSmith
             string? fixDispatchedAt,
             int? fixPrNumber,
             string? fixPrompt,
+            object? fixVerification,
             string? id,
             string? lastSeenAt,
             string? name,
@@ -191,13 +217,15 @@ namespace LangSmith
             global::System.Collections.Generic.IList<object>? proposedExamples,
             string? proposedFix,
             global::System.Collections.Generic.IList<object>? proposedPromptFixes,
+            int? recurrencesSinceWatching,
             string? sessionId,
             int? severity,
             global::LangSmith.TracerSessionIssuesStatus? status,
             global::System.Collections.Generic.IList<string>? tags,
             string? tenantId,
             object? traces,
-            string? updatedAt)
+            string? updatedAt,
+            string? watchingSince)
         {
             this.Actions = actions;
             this.CreatedAt = createdAt;
@@ -207,6 +235,7 @@ namespace LangSmith
             this.FixDispatchedAt = fixDispatchedAt;
             this.FixPrNumber = fixPrNumber;
             this.FixPrompt = fixPrompt;
+            this.FixVerification = fixVerification;
             this.Id = id;
             this.LastSeenAt = lastSeenAt;
             this.Name = name;
@@ -214,6 +243,7 @@ namespace LangSmith
             this.ProposedExamples = proposedExamples;
             this.ProposedFix = proposedFix;
             this.ProposedPromptFixes = proposedPromptFixes;
+            this.RecurrencesSinceWatching = recurrencesSinceWatching;
             this.SessionId = sessionId;
             this.Severity = severity;
             this.Status = status;
@@ -221,6 +251,7 @@ namespace LangSmith
             this.TenantId = tenantId;
             this.Traces = traces;
             this.UpdatedAt = updatedAt;
+            this.WatchingSince = watchingSince;
         }
 
         /// <summary>
