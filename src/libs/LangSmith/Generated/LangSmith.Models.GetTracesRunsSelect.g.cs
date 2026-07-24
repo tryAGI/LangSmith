@@ -87,6 +87,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        LastQueuedAt,
+        /// <summary>
+        /// 
+        /// </summary>
         LatencySeconds,
         /// <summary>
         /// 
@@ -217,6 +221,7 @@ namespace LangSmith
                 GetTracesRunsSelect.InputsPreview => "INPUTS_PREVIEW",
                 GetTracesRunsSelect.IsInDataset => "IS_IN_DATASET",
                 GetTracesRunsSelect.IsRoot => "IS_ROOT",
+                GetTracesRunsSelect.LastQueuedAt => "LAST_QUEUED_AT",
                 GetTracesRunsSelect.LatencySeconds => "LATENCY_SECONDS",
                 GetTracesRunsSelect.Manifest => "MANIFEST",
                 GetTracesRunsSelect.Metadata => "METADATA",
@@ -271,6 +276,7 @@ namespace LangSmith
                 "INPUTS_PREVIEW" => GetTracesRunsSelect.InputsPreview,
                 "IS_IN_DATASET" => GetTracesRunsSelect.IsInDataset,
                 "IS_ROOT" => GetTracesRunsSelect.IsRoot,
+                "LAST_QUEUED_AT" => GetTracesRunsSelect.LastQueuedAt,
                 "LATENCY_SECONDS" => GetTracesRunsSelect.LatencySeconds,
                 "MANIFEST" => GetTracesRunsSelect.Manifest,
                 "METADATA" => GetTracesRunsSelect.Metadata,

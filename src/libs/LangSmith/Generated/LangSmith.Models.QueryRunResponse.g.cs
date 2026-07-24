@@ -145,6 +145,14 @@ namespace LangSmith
         public bool? IsRoot { get; set; }
 
         /// <summary>
+        /// `last_queued_at` is the most recent time this run was added to an annotation queue.<br/>
+        /// Example: 2024-01-15T10:31:00Z
+        /// </summary>
+        /// <example>2024-01-15T10:31:00Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_queued_at")]
+        public global::System.DateTime? LastQueuedAt { get; set; }
+
+        /// <summary>
         /// `latency_seconds` is wall-clock duration from start to end in seconds.<br/>
         /// Example: 1.523F
         /// </summary>
@@ -409,6 +417,10 @@ namespace LangSmith
         /// `is_root` is true when this run has no parent (it is the trace root).<br/>
         /// Example: true
         /// </param>
+        /// <param name="lastQueuedAt">
+        /// `last_queued_at` is the most recent time this run was added to an annotation queue.<br/>
+        /// Example: 2024-01-15T10:31:00Z
+        /// </param>
         /// <param name="latencySeconds">
         /// `latency_seconds` is wall-clock duration from start to end in seconds.<br/>
         /// Example: 1.523F
@@ -525,6 +537,7 @@ namespace LangSmith
             string? inputsPreview,
             bool? isInDataset,
             bool? isRoot,
+            global::System.DateTime? lastQueuedAt,
             double? latencySeconds,
             object? manifest,
             object? metadata,
@@ -570,6 +583,7 @@ namespace LangSmith
             this.InputsPreview = inputsPreview;
             this.IsInDataset = isInDataset;
             this.IsRoot = isRoot;
+            this.LastQueuedAt = lastQueuedAt;
             this.LatencySeconds = latencySeconds;
             this.Manifest = manifest;
             this.Metadata = metadata;

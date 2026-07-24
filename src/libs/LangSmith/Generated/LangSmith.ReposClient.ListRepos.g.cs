@@ -41,6 +41,7 @@ namespace LangSmith
         partial void PrepareListReposArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? withLatestManifest,
+            ref bool? includeOwners,
             ref int? limit,
             ref int? offset,
             ref string? tenantHandle,
@@ -62,6 +63,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? withLatestManifest,
+            bool? includeOwners,
             int? limit,
             int? offset,
             string? tenantHandle,
@@ -95,6 +97,9 @@ namespace LangSmith
         /// <param name="withLatestManifest">
         /// Default Value: false
         /// </param>
+        /// <param name="includeOwners">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -121,6 +126,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
             bool? withLatestManifest = default,
+            bool? includeOwners = default,
             int? limit = default,
             int? offset = default,
             string? tenantHandle = default,
@@ -143,6 +149,7 @@ namespace LangSmith
         {
             var __response = await ListReposAsResponseAsync(
                 withLatestManifest: withLatestManifest,
+                includeOwners: includeOwners,
                 limit: limit,
                 offset: offset,
                 tenantHandle: tenantHandle,
@@ -173,6 +180,9 @@ namespace LangSmith
         /// <param name="withLatestManifest">
         /// Default Value: false
         /// </param>
+        /// <param name="includeOwners">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -199,6 +209,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListReposResponse>> ListReposAsResponseAsync(
             bool? withLatestManifest = default,
+            bool? includeOwners = default,
             int? limit = default,
             int? offset = default,
             string? tenantHandle = default,
@@ -224,6 +235,7 @@ namespace LangSmith
             PrepareListReposArguments(
                 httpClient: HttpClient,
                 withLatestManifest: ref withLatestManifest,
+                includeOwners: ref includeOwners,
                 limit: ref limit,
                 offset: ref offset,
                 tenantHandle: ref tenantHandle,
@@ -272,6 +284,7 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_owners", includeOwners?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("tenant_handle", tenantHandle)
@@ -331,6 +344,7 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     withLatestManifest: withLatestManifest,
+                    includeOwners: includeOwners,
                     limit: limit,
                     offset: offset,
                     tenantHandle: tenantHandle,
@@ -551,18 +565,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -596,17 +609,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -643,17 +654,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

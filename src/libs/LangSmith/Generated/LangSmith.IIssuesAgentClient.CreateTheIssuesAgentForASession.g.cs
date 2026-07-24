@@ -56,6 +56,9 @@ namespace LangSmith
         /// <param name="githubRepoSubdir"></param>
         /// <param name="githubRepoUrl"></param>
         /// <param name="priorities"></param>
+        /// <param name="runFilter">
+        /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -69,6 +72,7 @@ namespace LangSmith
             string? githubRepoSubdir = default,
             string? githubRepoUrl = default,
             global::System.Collections.Generic.IList<string>? priorities = default,
+            string? runFilter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

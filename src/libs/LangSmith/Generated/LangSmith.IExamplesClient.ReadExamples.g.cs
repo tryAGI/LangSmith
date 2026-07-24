@@ -28,7 +28,7 @@ namespace LangSmith
         /// </param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
-        /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
+        /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, source_session_id, source_run_start_time, source_trace_id, metadata, inputs, outputs]
         /// </param>
         /// <param name="descending"></param>
         /// <param name="filter"></param>
@@ -75,7 +75,7 @@ namespace LangSmith
         /// </param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
-        /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
+        /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, source_session_id, source_run_start_time, source_trace_id, metadata, inputs, outputs]
         /// </param>
         /// <param name="descending"></param>
         /// <param name="filter"></param>

@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Agent,
+        /// <summary>
+        /// 
+        /// </summary>
         Dashboard,
         /// <summary>
         /// 
@@ -52,6 +56,10 @@ namespace LangSmith
         /// 
         /// </summary>
         Sandbox,
+        /// <summary>
+        /// 
+        /// </summary>
+        Skill,
     }
 
     /// <summary>
@@ -66,6 +74,7 @@ namespace LangSmith
         {
             return value switch
             {
+                ResourceType.Agent => "agent",
                 ResourceType.Dashboard => "dashboard",
                 ResourceType.Dataset => "dataset",
                 ResourceType.Deployment => "deployment",
@@ -77,6 +86,7 @@ namespace LangSmith
                 ResourceType.Prompt => "prompt",
                 ResourceType.Queue => "queue",
                 ResourceType.Sandbox => "sandbox",
+                ResourceType.Skill => "skill",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -87,6 +97,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "agent" => ResourceType.Agent,
                 "dashboard" => ResourceType.Dashboard,
                 "dataset" => ResourceType.Dataset,
                 "deployment" => ResourceType.Deployment,
@@ -98,6 +109,7 @@ namespace LangSmith
                 "prompt" => ResourceType.Prompt,
                 "queue" => ResourceType.Queue,
                 "sandbox" => ResourceType.Sandbox,
+                "skill" => ResourceType.Skill,
                 _ => null,
             };
         }

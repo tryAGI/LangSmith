@@ -185,6 +185,12 @@ namespace LangSmith
         public int? TestRunNumber { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experiment_progress")]
+        public global::LangSmith.ExperimentProgress? ExperimentProgress { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -222,6 +228,7 @@ namespace LangSmith
         /// <param name="errorRate"></param>
         /// <param name="streamingRate"></param>
         /// <param name="testRunNumber"></param>
+        /// <param name="experimentProgress"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -254,7 +261,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<object>? runFacets,
             double? errorRate,
             double? streamingRate,
-            int? testRunNumber)
+            int? testRunNumber,
+            global::LangSmith.ExperimentProgress? experimentProgress)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -285,6 +293,7 @@ namespace LangSmith
             this.ErrorRate = errorRate;
             this.StreamingRate = streamingRate;
             this.TestRunNumber = testRunNumber;
+            this.ExperimentProgress = experimentProgress;
         }
 
         /// <summary>

@@ -37,13 +37,19 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="traceIds"></param>
         /// <param name="metadata"></param>
+        /// <param name="deleteExamples">
+        /// Default Value: false
+        /// </param>
+        /// <param name="startTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteRunsAsync(
             global::System.Guid? sessionId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? traceIds = default,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            object? metadata = default,
+            bool? deleteExamples = default,
+            global::System.DateTime? startTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

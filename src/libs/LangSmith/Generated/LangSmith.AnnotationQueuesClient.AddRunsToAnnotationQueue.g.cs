@@ -41,11 +41,13 @@ namespace LangSmith
         partial void PrepareAddRunsToAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid queueId,
+            ref bool? extendTraceRetention,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request);
         partial void PrepareAddRunsToAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid queueId,
+            bool? extendTraceRetention,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request);
         partial void ProcessAddRunsToAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -60,6 +62,9 @@ namespace LangSmith
         /// Add Runs To Annotation Queue
         /// </summary>
         /// <param name="queueId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: false
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -68,6 +73,7 @@ namespace LangSmith
             global::System.Guid queueId,
 
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request,
+            bool? extendTraceRetention = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -75,6 +81,7 @@ namespace LangSmith
                 queueId: queueId,
 
                 request: request,
+                extendTraceRetention: extendTraceRetention,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -85,6 +92,9 @@ namespace LangSmith
         /// Add Runs To Annotation Queue
         /// </summary>
         /// <param name="queueId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: false
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -93,6 +103,7 @@ namespace LangSmith
             global::System.Guid queueId,
 
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Collections.Generic.IList<global::LangSmith.AddRunToQueueRequest>, global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunAddSchema>> request,
+            bool? extendTraceRetention = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -101,6 +112,7 @@ namespace LangSmith
             PrepareAddRunsToAnnotationQueueArguments(
                 httpClient: HttpClient,
                 queueId: ref queueId,
+                extendTraceRetention: ref extendTraceRetention,
                 request: request);
 
 
@@ -131,6 +143,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_AddRunsToAnnotationQueueServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("extend_trace_retention", extendTraceRetention?.ToString().ToLowerInvariant())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -178,6 +193,7 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     queueId: queueId!,
+                    extendTraceRetention: extendTraceRetention,
                     request: request);
 
                 return __httpRequest;
@@ -382,18 +398,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -427,17 +442,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -474,17 +487,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -499,11 +510,15 @@ namespace LangSmith
         /// Add Runs To Annotation Queue
         /// </summary>
         /// <param name="queueId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRunSchema>> AddRunsToAnnotationQueueAsync(
             global::System.Guid queueId,
+            bool? extendTraceRetention = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -513,6 +528,7 @@ namespace LangSmith
 
             return await AddRunsToAnnotationQueueAsync(
                 queueId: queueId,
+                extendTraceRetention: extendTraceRetention,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

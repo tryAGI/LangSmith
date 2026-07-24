@@ -41,6 +41,14 @@ namespace LangSmith
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
+        /// `error` is the full root run error message when the run failed. Omitted unless included in `selects`.<br/>
+        /// Example: context deadline exceeded
+        /// </summary>
+        /// <example>context deadline exceeded</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
         /// `error_preview` is a short error summary when the run failed. Omitted unless included in `selects`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_preview")]
@@ -53,6 +61,12 @@ namespace LangSmith
         /// <example>2024-01-15T10:30:00.312Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_token_time")]
         public global::System.DateTime? FirstTokenTime { get; set; }
+
+        /// <summary>
+        /// `inputs` is the full root run input payload. Omitted unless included in `selects`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// `inputs_preview` is a truncated text preview of inputs. Omitted unless included in `selects`.
@@ -77,6 +91,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("op")]
         public double? Op { get; set; }
+
+        /// <summary>
+        /// `outputs` is the full root run output payload. Omitted unless included in `selects`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// `outputs_preview` is a truncated text preview of outputs. Omitted unless included in `selects`.
@@ -169,12 +189,19 @@ namespace LangSmith
         /// `end_time` is when the root run ended (RFC3339 date-time). JSON null if the run is still in progress. Omitted unless included in `selects`.<br/>
         /// Example: 2025-01-15T12:00:01.500Z
         /// </param>
+        /// <param name="error">
+        /// `error` is the full root run error message when the run failed. Omitted unless included in `selects`.<br/>
+        /// Example: context deadline exceeded
+        /// </param>
         /// <param name="errorPreview">
         /// `error_preview` is a short error summary when the run failed. Omitted unless included in `selects`.
         /// </param>
         /// <param name="firstTokenTime">
         /// `first_token_time` is when the first output token was produced (RFC3339 date-time), for streamed runs when that metadata exists. Omitted unless included in `selects`.<br/>
         /// Example: 2024-01-15T10:30:00.312Z
+        /// </param>
+        /// <param name="inputs">
+        /// `inputs` is the full root run input payload. Omitted unless included in `selects`.
         /// </param>
         /// <param name="inputsPreview">
         /// `inputs_preview` is a truncated text preview of inputs. Omitted unless included in `selects`.
@@ -187,6 +214,9 @@ namespace LangSmith
         /// </param>
         /// <param name="op">
         /// `op` is a numeric code identifying the root run's `run_type` (for example LLM vs. tool vs. chain). Encoded as a number for compatibility with legacy clients; prefer the string `run_type` on `RunResponse` when available. Omitted unless included in `selects`.
+        /// </param>
+        /// <param name="outputs">
+        /// `outputs` is the full root run output payload. Omitted unless included in `selects`.
         /// </param>
         /// <param name="outputsPreview">
         /// `outputs_preview` is a truncated text preview of outputs. Omitted unless included in `selects`.
@@ -230,12 +260,15 @@ namespace LangSmith
             global::LangSmith.QueryRunCompletionTokenDetails? completionTokenDetails,
             int? completionTokens,
             global::System.DateTime? endTime,
+            string? error,
             string? errorPreview,
             global::System.DateTime? firstTokenTime,
+            object? inputs,
             string? inputsPreview,
             double? latency,
             string? name,
             double? op,
+            object? outputs,
             string? outputsPreview,
             double? promptCost,
             global::LangSmith.QueryRunPromptCostDetails? promptCostDetails,
@@ -252,12 +285,15 @@ namespace LangSmith
             this.CompletionTokenDetails = completionTokenDetails;
             this.CompletionTokens = completionTokens;
             this.EndTime = endTime;
+            this.Error = error;
             this.ErrorPreview = errorPreview;
             this.FirstTokenTime = firstTokenTime;
+            this.Inputs = inputs;
             this.InputsPreview = inputsPreview;
             this.Latency = latency;
             this.Name = name;
             this.Op = op;
+            this.Outputs = outputs;
             this.OutputsPreview = outputsPreview;
             this.PromptCost = promptCost;
             this.PromptCostDetails = promptCostDetails;

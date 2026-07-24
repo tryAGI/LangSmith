@@ -191,6 +191,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experiment_progress")]
+        public global::LangSmith.ExperimentProgress? ExperimentProgress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_count")]
         public int? ExampleCount { get; set; }
 
@@ -252,6 +258,7 @@ namespace LangSmith
         /// <param name="errorRate"></param>
         /// <param name="streamingRate"></param>
         /// <param name="testRunNumber"></param>
+        /// <param name="experimentProgress"></param>
         /// <param name="exampleCount"></param>
         /// <param name="minStartTime"></param>
         /// <param name="maxStartTime"></param>
@@ -289,6 +296,7 @@ namespace LangSmith
             double? errorRate,
             double? streamingRate,
             int? testRunNumber,
+            global::LangSmith.ExperimentProgress? experimentProgress,
             int? exampleCount,
             global::System.DateTime? minStartTime,
             global::System.DateTime? maxStartTime)
@@ -322,6 +330,7 @@ namespace LangSmith
             this.ErrorRate = errorRate;
             this.StreamingRate = streamingRate;
             this.TestRunNumber = testRunNumber;
+            this.ExperimentProgress = experimentProgress;
             this.ExampleCount = exampleCount;
             this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
             this.MinStartTime = minStartTime;

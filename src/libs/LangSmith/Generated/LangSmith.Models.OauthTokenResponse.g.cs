@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id_token")]
+        public string? IdToken { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refresh_token")]
         public string? RefreshToken { get; set; }
 
@@ -49,6 +55,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="accessToken"></param>
         /// <param name="expiresIn"></param>
+        /// <param name="idToken"></param>
         /// <param name="refreshToken"></param>
         /// <param name="tokenType"></param>
         /// <param name="workspaceId"></param>
@@ -58,12 +65,14 @@ namespace LangSmith
         public OauthTokenResponse(
             string? accessToken,
             int? expiresIn,
+            string? idToken,
             string? refreshToken,
             string? tokenType,
             string? workspaceId)
         {
             this.AccessToken = accessToken;
             this.ExpiresIn = expiresIn;
+            this.IdToken = idToken;
             this.RefreshToken = refreshToken;
             this.TokenType = tokenType;
             this.WorkspaceId = workspaceId;

@@ -55,6 +55,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartSubSectionResponse>? SubSections { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("layout")]
+        public global::LangSmith.DashboardLayoutOutput? Layout { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +76,7 @@ namespace LangSmith
         /// <param name="index"></param>
         /// <param name="sessionId"></param>
         /// <param name="subSections"></param>
+        /// <param name="layout"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +87,8 @@ namespace LangSmith
             string? description,
             int? index,
             global::System.Guid? sessionId,
-            global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartSubSectionResponse>? subSections)
+            global::System.Collections.Generic.IList<global::LangSmith.SingleCustomChartSubSectionResponse>? subSections,
+            global::LangSmith.DashboardLayoutOutput? layout)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description;
@@ -89,6 +97,7 @@ namespace LangSmith
             this.SessionId = sessionId;
             this.Charts = charts ?? throw new global::System.ArgumentNullException(nameof(charts));
             this.SubSections = subSections;
+            this.Layout = layout;
         }
 
         /// <summary>

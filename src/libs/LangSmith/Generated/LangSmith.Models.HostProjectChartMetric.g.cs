@@ -47,6 +47,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        RunQueueWaitTime,
+        /// <summary>
+        /// 
+        /// </summary>
         WorkerCount,
     }
 
@@ -71,6 +75,7 @@ namespace LangSmith
                 HostProjectChartMetric.ReplicaCount => "replica_count",
                 HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
                 HostProjectChartMetric.RestartCount => "restart_count",
+                HostProjectChartMetric.RunQueueWaitTime => "run_queue_wait_time",
                 HostProjectChartMetric.WorkerCount => "worker_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -91,6 +96,7 @@ namespace LangSmith
                 "replica_count" => HostProjectChartMetric.ReplicaCount,
                 "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,
                 "restart_count" => HostProjectChartMetric.RestartCount,
+                "run_queue_wait_time" => HostProjectChartMetric.RunQueueWaitTime,
                 "worker_count" => HostProjectChartMetric.WorkerCount,
                 _ => null,
             };

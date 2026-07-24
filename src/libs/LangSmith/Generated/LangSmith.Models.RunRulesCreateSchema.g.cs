@@ -85,6 +85,36 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_tracing_disabled")]
+        public bool? IsTracingDisabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_evaluator_trace_retention")]
+        public bool? ExtendEvaluatorTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_dataset_trace_retention")]
+        public bool? ExtendDatasetTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_annotation_queue_trace_retention")]
+        public bool? ExtendAnnotationQueueTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_webhook_trace_retention")]
+        public bool? ExtendWebhookTraceRetention { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transient")]
         public bool? Transient { get; set; }
 
@@ -199,6 +229,15 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -238,6 +277,11 @@ namespace LangSmith
             bool? useCorrectionsDataset,
             int? numFewShotExamples,
             bool? extendOnly,
+            bool? isTracingDisabled,
+            bool? extendEvaluatorTraceRetention,
+            bool? extendDatasetTraceRetention,
+            bool? extendAnnotationQueueTraceRetention,
+            bool? extendWebhookTraceRetention,
             bool? transient,
             global::System.Guid? addToAnnotationQueueId,
             global::System.Guid? addToDatasetId,
@@ -266,6 +310,11 @@ namespace LangSmith
             this.UseCorrectionsDataset = useCorrectionsDataset;
             this.NumFewShotExamples = numFewShotExamples;
             this.ExtendOnly = extendOnly;
+            this.IsTracingDisabled = isTracingDisabled;
+            this.ExtendEvaluatorTraceRetention = extendEvaluatorTraceRetention;
+            this.ExtendDatasetTraceRetention = extendDatasetTraceRetention;
+            this.ExtendAnnotationQueueTraceRetention = extendAnnotationQueueTraceRetention;
+            this.ExtendWebhookTraceRetention = extendWebhookTraceRetention;
             this.Transient = transient;
             this.AddToAnnotationQueueId = addToAnnotationQueueId;
             this.AddToDatasetId = addToDatasetId;

@@ -39,6 +39,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Priorities { get; set; }
 
         /// <summary>
+        /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_filter")]
+        public string? RunFilter { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,6 +58,9 @@ namespace LangSmith
         /// <param name="githubRepoSubdir"></param>
         /// <param name="githubRepoUrl"></param>
         /// <param name="priorities"></param>
+        /// <param name="runFilter">
+        /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,13 +69,15 @@ namespace LangSmith
             string? githubBaseBranch,
             string? githubRepoSubdir,
             string? githubRepoUrl,
-            global::System.Collections.Generic.IList<string>? priorities)
+            global::System.Collections.Generic.IList<string>? priorities,
+            string? runFilter)
         {
             this.ContextHubRepoHandle = contextHubRepoHandle;
             this.GithubBaseBranch = githubBaseBranch;
             this.GithubRepoSubdir = githubRepoSubdir;
             this.GithubRepoUrl = githubRepoUrl;
             this.Priorities = priorities;
+            this.RunFilter = runFilter;
         }
 
         /// <summary>

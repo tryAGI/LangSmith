@@ -65,6 +65,13 @@ namespace LangSmith
         public required int EvaluatorCount { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("custom_app_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CustomAppCount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -81,6 +88,7 @@ namespace LangSmith
         /// <param name="deploymentCount"></param>
         /// <param name="dashboardsCount"></param>
         /// <param name="evaluatorCount"></param>
+        /// <param name="customAppCount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -92,7 +100,8 @@ namespace LangSmith
             int annotationQueueCount,
             int deploymentCount,
             int dashboardsCount,
-            int evaluatorCount)
+            int evaluatorCount,
+            int customAppCount)
         {
             this.TenantId = tenantId;
             this.DatasetCount = datasetCount;
@@ -102,6 +111,7 @@ namespace LangSmith
             this.DeploymentCount = deploymentCount;
             this.DashboardsCount = dashboardsCount;
             this.EvaluatorCount = evaluatorCount;
+            this.CustomAppCount = customAppCount;
         }
 
         /// <summary>

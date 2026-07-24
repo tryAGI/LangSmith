@@ -24,7 +24,19 @@ namespace LangSmith
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public object? Metadata { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delete_examples")]
+        public bool? DeleteExamples { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,17 +50,25 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="traceIds"></param>
         /// <param name="metadata"></param>
+        /// <param name="deleteExamples">
+        /// Default Value: false
+        /// </param>
+        /// <param name="startTime"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyDeleteRunsApiV1RunsDeletePost(
             global::System.Guid? sessionId,
             global::System.Collections.Generic.IList<global::System.Guid>? traceIds,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            object? metadata,
+            bool? deleteExamples,
+            global::System.DateTime? startTime)
         {
             this.SessionId = sessionId;
             this.TraceIds = traceIds;
             this.Metadata = metadata;
+            this.DeleteExamples = deleteExamples;
+            this.StartTime = startTime;
         }
 
         /// <summary>

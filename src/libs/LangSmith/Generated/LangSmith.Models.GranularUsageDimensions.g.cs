@@ -57,6 +57,12 @@ namespace LangSmith
         public string? WorkspaceName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_tier")]
+        public global::LangSmith.TraceTier? TraceTier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -73,6 +79,7 @@ namespace LangSmith
         /// <param name="projectName"></param>
         /// <param name="workspaceId"></param>
         /// <param name="workspaceName"></param>
+        /// <param name="traceTier"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,7 +91,8 @@ namespace LangSmith
             global::System.Guid? projectId,
             string? projectName,
             global::System.Guid? workspaceId,
-            string? workspaceName)
+            string? workspaceName,
+            global::LangSmith.TraceTier? traceTier)
         {
             this.UserId = userId;
             this.UserEmail = userEmail;
@@ -94,6 +102,7 @@ namespace LangSmith
             this.ProjectName = projectName;
             this.WorkspaceId = workspaceId;
             this.WorkspaceName = workspaceName;
+            this.TraceTier = traceTier;
         }
 
         /// <summary>

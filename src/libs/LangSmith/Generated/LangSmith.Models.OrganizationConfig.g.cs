@@ -15,10 +15,16 @@ namespace LangSmith
         public string? PlanTier { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_default_enabled")]
         public bool? EngineDefaultEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public double? EngineLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
         /// Default Value: 5
@@ -171,6 +177,12 @@ namespace LangSmith
         public bool? ByocEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: 5
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_max_data_planes")]
+        public int? ByocMaxDataPlanes { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_langgraph_pricing")]
@@ -181,12 +193,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_thread_view_playground")]
         public bool? EnableThreadViewPlayground { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_org_usage_charts")]
-        public bool? EnableOrgUsageCharts { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -357,6 +363,24 @@ namespace LangSmith
         public bool? AgentBuilderEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_builtin_models_enabled")]
+        public bool? FleetBuiltinModelsEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dev_zero_deployments_enabled")]
+        public bool? DevZeroDeploymentsEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_lcu_spend_limit_monthly")]
+        public double? FleetLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
         /// Default Value: 1000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_agent_builder_assistants")]
@@ -405,6 +429,12 @@ namespace LangSmith
         public bool? ManagedDeepAgentsEnabled { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_anonymous")]
+        public bool? IsAnonymous { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -414,9 +444,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
         /// </summary>
         /// <param name="planTier"></param>
-        /// <param name="engineDefaultEnabled">
-        /// Default Value: false
-        /// </param>
+        /// <param name="engineDefaultEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="maxIdentities">
         /// Default Value: 5
         /// </param>
@@ -486,13 +515,13 @@ namespace LangSmith
         /// <param name="byocEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="byocMaxDataPlanes">
+        /// Default Value: 5
+        /// </param>
         /// <param name="enableLanggraphPricing">
         /// Default Value: false
         /// </param>
         /// <param name="enableThreadViewPlayground">
-        /// Default Value: false
-        /// </param>
-        /// <param name="enableOrgUsageCharts">
         /// Default Value: false
         /// </param>
         /// <param name="useExactSearchForPrompts">
@@ -579,6 +608,13 @@ namespace LangSmith
         /// <param name="agentBuilderEnabled">
         /// Default Value: true
         /// </param>
+        /// <param name="fleetBuiltinModelsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="devZeroDeploymentsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="fleetLcuSpendLimitMonthly"></param>
         /// <param name="maxAgentBuilderAssistants">
         /// Default Value: 1000
         /// </param>
@@ -603,12 +639,14 @@ namespace LangSmith
         /// <param name="managedDeepAgentsEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="isAnonymous"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationConfig(
             string? planTier,
             bool? engineDefaultEnabled,
+            double? engineLcuSpendLimitMonthly,
             int? maxIdentities,
             int? maxWorkspaces,
             bool? canUseRbac,
@@ -634,9 +672,9 @@ namespace LangSmith
             bool? showPlaygroundPromptCanvas,
             bool? allowCustomIframes,
             bool? byocEnabled,
+            int? byocMaxDataPlanes,
             bool? enableLanggraphPricing,
             bool? enableThreadViewPlayground,
-            bool? enableOrgUsageCharts,
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
             bool? promptOptimizationJobsEnabled,
@@ -665,6 +703,9 @@ namespace LangSmith
             bool? arbitraryCostTrackingEnabled,
             bool? langsmithDeploymentDistributedRuntimeEnabled,
             bool? agentBuilderEnabled,
+            bool? fleetBuiltinModelsEnabled,
+            bool? devZeroDeploymentsEnabled,
+            double? fleetLcuSpendLimitMonthly,
             int? maxAgentBuilderAssistants,
             bool? enableGranularUsageReporting,
             bool? enableBurndownVsCommitView,
@@ -672,10 +713,12 @@ namespace LangSmith
             bool? langsmithDeploymentDrEnabledDev,
             bool? ipAllowlistEnabled,
             bool? llmGatewayEnabled,
-            bool? managedDeepAgentsEnabled)
+            bool? managedDeepAgentsEnabled,
+            bool? isAnonymous)
         {
             this.PlanTier = planTier;
             this.EngineDefaultEnabled = engineDefaultEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
             this.CanUseRbac = canUseRbac;
@@ -701,9 +744,9 @@ namespace LangSmith
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.AllowCustomIframes = allowCustomIframes;
             this.ByocEnabled = byocEnabled;
+            this.ByocMaxDataPlanes = byocMaxDataPlanes;
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
-            this.EnableOrgUsageCharts = enableOrgUsageCharts;
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
@@ -732,6 +775,9 @@ namespace LangSmith
             this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
             this.LangsmithDeploymentDistributedRuntimeEnabled = langsmithDeploymentDistributedRuntimeEnabled;
             this.AgentBuilderEnabled = agentBuilderEnabled;
+            this.FleetBuiltinModelsEnabled = fleetBuiltinModelsEnabled;
+            this.DevZeroDeploymentsEnabled = devZeroDeploymentsEnabled;
+            this.FleetLcuSpendLimitMonthly = fleetLcuSpendLimitMonthly;
             this.MaxAgentBuilderAssistants = maxAgentBuilderAssistants;
             this.EnableGranularUsageReporting = enableGranularUsageReporting;
             this.EnableBurndownVsCommitView = enableBurndownVsCommitView;
@@ -740,6 +786,7 @@ namespace LangSmith
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.LlmGatewayEnabled = llmGatewayEnabled;
             this.ManagedDeepAgentsEnabled = managedDeepAgentsEnabled;
+            this.IsAnonymous = isAnonymous;
         }
 
         /// <summary>

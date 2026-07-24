@@ -29,8 +29,26 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_uri")]
+        public string? ClientUri { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grant_types")]
         public global::System.Collections.Generic.IList<string>? GrantTypes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logo_uri")]
+        public string? LogoUri { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("policy_uri")]
+        public string? PolicyUri { get; set; }
 
         /// <summary>
         /// 
@@ -51,6 +69,12 @@ namespace LangSmith
         public string? TokenEndpointAuthMethod { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tos_uri")]
+        public string? TosUri { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,10 +86,14 @@ namespace LangSmith
         /// <param name="clientId"></param>
         /// <param name="clientIdIssuedAt"></param>
         /// <param name="clientName"></param>
+        /// <param name="clientUri"></param>
         /// <param name="grantTypes"></param>
+        /// <param name="logoUri"></param>
+        /// <param name="policyUri"></param>
         /// <param name="redirectUris"></param>
         /// <param name="responseTypes"></param>
         /// <param name="tokenEndpointAuthMethod"></param>
+        /// <param name="tosUri"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,18 +101,26 @@ namespace LangSmith
             string? clientId,
             int? clientIdIssuedAt,
             string? clientName,
+            string? clientUri,
             global::System.Collections.Generic.IList<string>? grantTypes,
+            string? logoUri,
+            string? policyUri,
             global::System.Collections.Generic.IList<string>? redirectUris,
             global::System.Collections.Generic.IList<string>? responseTypes,
-            string? tokenEndpointAuthMethod)
+            string? tokenEndpointAuthMethod,
+            string? tosUri)
         {
             this.ClientId = clientId;
             this.ClientIdIssuedAt = clientIdIssuedAt;
             this.ClientName = clientName;
+            this.ClientUri = clientUri;
             this.GrantTypes = grantTypes;
+            this.LogoUri = logoUri;
+            this.PolicyUri = policyUri;
             this.RedirectUris = redirectUris;
             this.ResponseTypes = responseTypes;
             this.TokenEndpointAuthMethod = tokenEndpointAuthMethod;
+            this.TosUri = tosUri;
         }
 
         /// <summary>

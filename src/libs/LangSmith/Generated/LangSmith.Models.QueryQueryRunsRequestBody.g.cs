@@ -9,18 +9,10 @@ namespace LangSmith
     public sealed partial class QueryQueryRunsRequestBody
     {
         /// <summary>
-        /// `ai_query` is a natural-language query to filter runs using AI.<br/>
-        /// Example: runs that used tool calls
+        /// `cursor` is the opaque string from a previous response's `next_cursor`. Treat it as opaque and pass it back unmodified.<br/>
+        /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
         /// </summary>
-        /// <example>runs that used tool calls</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ai_query")]
-        public string? AiQuery { get; set; }
-
-        /// <summary>
-        /// `cursor` is the opaque string from a previous response's `next_cursor`.<br/>
-        /// Example: eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=
-        /// </summary>
-        /// <example>eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=</example>
+        /// <example>eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         public string? Cursor { get; set; }
 
@@ -128,16 +120,6 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? Selects { get; set; }
 
         /// <summary>
-        /// `sort_order` is the sort direction for `start_time` (`ASC` or `DESC`). Defaults to `DESC` when omitted. Maps to the SmithDB proto `Order` field.<br/>
-        /// Default Value: DESC<br/>
-        /// Example: DESC
-        /// </summary>
-        /// <example>DESC</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_order")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.QuerySortOrderJsonConverter))]
-        public global::LangSmith.QuerySortOrder? SortOrder { get; set; }
-
-        /// <summary>
         /// `trace_filter` narrows results to runs whose root trace matches this LangSmith filter expression.<br/>
         /// Use this to filter by properties of the trace's root run — for example eq(status, "success") to include only traces that completed without error.<br/>
         /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
@@ -174,13 +156,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryQueryRunsRequestBody" /> class.
         /// </summary>
-        /// <param name="aiQuery">
-        /// `ai_query` is a natural-language query to filter runs using AI.<br/>
-        /// Example: runs that used tool calls
-        /// </param>
         /// <param name="cursor">
-        /// `cursor` is the opaque string from a previous response's `next_cursor`.<br/>
-        /// Example: eyJsYXN0X2lkIjoiMDE4ZTRjN2UtYTlmYi03ZWYwLWE1YjYtNmVhM2E4MmU5MzI3In0=
+        /// `cursor` is the opaque string from a previous response's `next_cursor`. Treat it as opaque and pass it back unmodified.<br/>
+        /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
         /// </param>
         /// <param name="filter">
         /// `filter` narrows results to runs matching this LangSmith filter expression, evaluated against each individual run.<br/>
@@ -236,11 +214,6 @@ namespace LangSmith
         /// `selects` lists which properties to include on each returned run. If omitted, only `id` is returned. Properties not listed are omitted from each run object.<br/>
         /// Example: [ID, NAME, PROJECT_ID, START_TIME, RUN_TYPE, STATUS]
         /// </param>
-        /// <param name="sortOrder">
-        /// `sort_order` is the sort direction for `start_time` (`ASC` or `DESC`). Defaults to `DESC` when omitted. Maps to the SmithDB proto `Order` field.<br/>
-        /// Default Value: DESC<br/>
-        /// Example: DESC
-        /// </param>
         /// <param name="traceFilter">
         /// `trace_filter` narrows results to runs whose root trace matches this LangSmith filter expression.<br/>
         /// Use this to filter by properties of the trace's root run — for example eq(status, "success") to include only traces that completed without error.<br/>
@@ -261,7 +234,6 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueryQueryRunsRequestBody(
-            string? aiQuery,
             string? cursor,
             string? filter,
             bool? hasError,
@@ -275,12 +247,10 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? referenceExamples,
             global::LangSmith.QueryRunType? runType,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects,
-            global::LangSmith.QuerySortOrder? sortOrder,
             string? traceFilter,
             global::System.Guid? traceId,
             string? treeFilter)
         {
-            this.AiQuery = aiQuery;
             this.Cursor = cursor;
             this.Filter = filter;
             this.HasError = hasError;
@@ -294,7 +264,6 @@ namespace LangSmith
             this.ReferenceExamples = referenceExamples;
             this.RunType = runType;
             this.Selects = selects;
-            this.SortOrder = sortOrder;
             this.TraceFilter = traceFilter;
             this.TraceId = traceId;
             this.TreeFilter = treeFilter;

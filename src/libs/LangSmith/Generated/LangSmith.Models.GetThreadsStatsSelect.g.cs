@@ -27,6 +27,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        FeedbackStats,
+        /// <summary>
+        /// 
+        /// </summary>
         FirstStartTime,
         /// <summary>
         /// 
@@ -90,6 +94,7 @@ namespace LangSmith
                 GetThreadsStatsSelect.CompletionCostDetails => "COMPLETION_COST_DETAILS",
                 GetThreadsStatsSelect.CompletionTokens => "COMPLETION_TOKENS",
                 GetThreadsStatsSelect.CompletionTokenDetails => "COMPLETION_TOKEN_DETAILS",
+                GetThreadsStatsSelect.FeedbackStats => "FEEDBACK_STATS",
                 GetThreadsStatsSelect.FirstStartTime => "FIRST_START_TIME",
                 GetThreadsStatsSelect.LastEndTime => "LAST_END_TIME",
                 GetThreadsStatsSelect.LastStartTime => "LAST_START_TIME",
@@ -116,6 +121,7 @@ namespace LangSmith
                 "COMPLETION_COST_DETAILS" => GetThreadsStatsSelect.CompletionCostDetails,
                 "COMPLETION_TOKENS" => GetThreadsStatsSelect.CompletionTokens,
                 "COMPLETION_TOKEN_DETAILS" => GetThreadsStatsSelect.CompletionTokenDetails,
+                "FEEDBACK_STATS" => GetThreadsStatsSelect.FeedbackStats,
                 "FIRST_START_TIME" => GetThreadsStatsSelect.FirstStartTime,
                 "LAST_END_TIME" => GetThreadsStatsSelect.LastEndTime,
                 "LAST_START_TIME" => GetThreadsStatsSelect.LastStartTime,

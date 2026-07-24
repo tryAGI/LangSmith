@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_export_usage_backfill")]
         public bool? CanExportUsageBackfill { get; set; }
 
@@ -35,6 +41,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 
@@ -43,6 +55,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
         public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        /// EngineLCUSpendLimitMonthly is the org admin (Layer 3) monthly Engine LCU spend<br/>
+        /// limit; null means the admin set no limit. The effective enforced limit is the<br/>
+        /// minimum of this and the finance/plan limits carried on Config.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public string? EngineLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
         /// 
@@ -97,6 +117,22 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
         public string? LlmAuthProxyJwtAudience { get; set; }
+
+        /// <summary>
+        /// ManagedEvalTermsAcceptedAt is the raw ISO 8601 timestamp string from the<br/>
+        /// config JSONB of when an org admin accepted the managed evaluator terms;<br/>
+        /// null if never accepted. Returned verbatim so the value is byte-identical<br/>
+        /// to the smith-backend implementation under weighted routing.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_eval_terms_accepted_at")]
+        public string? ManagedEvalTermsAcceptedAt { get; set; }
+
+        /// <summary>
+        /// ManagedEvalsEnabled is the org-level consent flag for managed evaluators<br/>
+        /// (evaluators that spend a LangChain-held provider key).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_evals_enabled")]
+        public bool? ManagedEvalsEnabled { get; set; }
 
         /// <summary>
         /// 
@@ -197,12 +233,19 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrgsOrganizationInfo" /> class.
         /// </summary>
+        /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="canExportUsageBackfill"></param>
         /// <param name="config"></param>
         /// <param name="defaultSsoProvision"></param>
         /// <param name="disabled"></param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="displayName"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly">
+        /// EngineLCUSpendLimitMonthly is the org admin (Layer 3) monthly Engine LCU spend<br/>
+        /// limit; null means the admin set no limit. The effective enforced limit is the<br/>
+        /// minimum of this and the finance/plan limits carried on Config.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="invitesEnabled"></param>
         /// <param name="ipAllowlist"></param>
@@ -212,6 +255,16 @@ namespace LangSmith
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
+        /// <param name="managedEvalTermsAcceptedAt">
+        /// ManagedEvalTermsAcceptedAt is the raw ISO 8601 timestamp string from the<br/>
+        /// config JSONB of when an org admin accepted the managed evaluator terms;<br/>
+        /// null if never accepted. Returned verbatim so the value is byte-identical<br/>
+        /// to the smith-backend implementation under weighted routing.
+        /// </param>
+        /// <param name="managedEvalsEnabled">
+        /// ManagedEvalsEnabled is the org-level consent flag for managed evaluators<br/>
+        /// (evaluators that spend a LangChain-held provider key).
+        /// </param>
         /// <param name="marketplacePayoutsEnabled"></param>
         /// <param name="maxApiKeyExpiryDays"></param>
         /// <param name="maxPatExpiryDays"></param>
@@ -231,12 +284,15 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrgsOrganizationInfo(
+            bool? byocCreateSaasWorkspaceEnabled,
             bool? canExportUsageBackfill,
             global::LangSmith.AuthnOrganizationConfig? config,
             bool? defaultSsoProvision,
             bool? disabled,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             string? displayName,
             bool? engineEnabled,
+            string? engineLcuSpendLimitMonthly,
             string? id,
             bool? invitesEnabled,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
@@ -246,6 +302,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
+            string? managedEvalTermsAcceptedAt,
+            bool? managedEvalsEnabled,
             bool? marketplacePayoutsEnabled,
             int? maxApiKeyExpiryDays,
             int? maxPatExpiryDays,
@@ -262,12 +320,15 @@ namespace LangSmith
             string? tier,
             bool? workspaceAdminCanInviteToOrg)
         {
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.Config = config;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.Disabled = disabled;
+            this.DisabledModelProviders = disabledModelProviders;
             this.DisplayName = displayName;
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.Id = id;
             this.InvitesEnabled = invitesEnabled;
             this.IpAllowlist = ipAllowlist;
@@ -277,6 +338,8 @@ namespace LangSmith
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
+            this.ManagedEvalTermsAcceptedAt = managedEvalTermsAcceptedAt;
+            this.ManagedEvalsEnabled = managedEvalsEnabled;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
             this.MaxPatExpiryDays = maxPatExpiryDays;

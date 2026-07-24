@@ -87,6 +87,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        LastQueuedAt,
+        /// <summary>
+        /// 
+        /// </summary>
         LatencySeconds,
         /// <summary>
         /// 
@@ -217,6 +221,7 @@ namespace LangSmith
                 GetRunsSelect.InputsPreview => "INPUTS_PREVIEW",
                 GetRunsSelect.IsInDataset => "IS_IN_DATASET",
                 GetRunsSelect.IsRoot => "IS_ROOT",
+                GetRunsSelect.LastQueuedAt => "LAST_QUEUED_AT",
                 GetRunsSelect.LatencySeconds => "LATENCY_SECONDS",
                 GetRunsSelect.Manifest => "MANIFEST",
                 GetRunsSelect.Metadata => "METADATA",
@@ -271,6 +276,7 @@ namespace LangSmith
                 "INPUTS_PREVIEW" => GetRunsSelect.InputsPreview,
                 "IS_IN_DATASET" => GetRunsSelect.IsInDataset,
                 "IS_ROOT" => GetRunsSelect.IsRoot,
+                "LAST_QUEUED_AT" => GetRunsSelect.LastQueuedAt,
                 "LATENCY_SECONDS" => GetRunsSelect.LatencySeconds,
                 "MANIFEST" => GetRunsSelect.Manifest,
                 "METADATA" => GetRunsSelect.Metadata,

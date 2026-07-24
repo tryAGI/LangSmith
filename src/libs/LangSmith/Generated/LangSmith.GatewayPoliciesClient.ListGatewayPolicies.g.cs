@@ -39,10 +39,16 @@ namespace LangSmith
             {                s_ListGatewayPoliciesSecurityRequirement0,
             };
         partial void PrepareListGatewayPoliciesArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? policyType,
+            ref string? subjectMatcherKey,
+            ref string? subjectMatcherValue);
         partial void PrepareListGatewayPoliciesRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? policyType,
+            string? subjectMatcherKey,
+            string? subjectMatcherValue);
         partial void ProcessListGatewayPoliciesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,20 +62,38 @@ namespace LangSmith
         /// List gateway policies<br/>
         /// Returns every gateway policy in the current organization.<br/>
         /// The response includes both admin-created policies and<br/>
-        /// runtime-materialized children of `default_spend_cap`<br/>
-        /// policies (children carry `parent_policy_id`).<br/>
+        /// runtime-materialized children of `default_spend_cap` and<br/>
+        /// `default_rate_limit` policies (children carry `parent_policy_id`).<br/>
         /// **Spend tracking:** each spend-cap policy carries<br/>
         /// `current_spend_usd` — the spend accumulated in the policy's<br/>
-        /// active window.
+        /// active window.<br/>
+        /// **Filters** (all optional):<br/>
+        /// - `policy_type` — `spend_cap`, `default_spend_cap`, `guard`, `route_config`, `rate_limit`, or `default_rate_limit`<br/>
+        /// - `subject_matcher_key` + `subject_matcher_value` — narrow to<br/>
+        /// policies whose subject_matchers contain `{key, value}`<br/>
+        /// For batch lookups by a set of subject values (e.g. many<br/>
+        /// run_rule_ids at once), use POST<br/>
+        /// `/v1/platform/gateway-policies/search`; it accepts the<br/>
+        /// values in a JSON body and avoids the URL-length ceiling<br/>
+        /// that a repeated query param would hit at scale.
         /// </summary>
+        /// <param name="policyType"></param>
+        /// <param name="subjectMatcherKey"></param>
+        /// <param name="subjectMatcherValue"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesGatewayPolicyRecord>> ListGatewayPoliciesAsync(
+            string? policyType = default,
+            string? subjectMatcherKey = default,
+            string? subjectMatcherValue = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListGatewayPoliciesAsResponseAsync(
+                policyType: policyType,
+                subjectMatcherKey: subjectMatcherKey,
+                subjectMatcherValue: subjectMatcherValue,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -80,23 +104,41 @@ namespace LangSmith
         /// List gateway policies<br/>
         /// Returns every gateway policy in the current organization.<br/>
         /// The response includes both admin-created policies and<br/>
-        /// runtime-materialized children of `default_spend_cap`<br/>
-        /// policies (children carry `parent_policy_id`).<br/>
+        /// runtime-materialized children of `default_spend_cap` and<br/>
+        /// `default_rate_limit` policies (children carry `parent_policy_id`).<br/>
         /// **Spend tracking:** each spend-cap policy carries<br/>
         /// `current_spend_usd` — the spend accumulated in the policy's<br/>
-        /// active window.
+        /// active window.<br/>
+        /// **Filters** (all optional):<br/>
+        /// - `policy_type` — `spend_cap`, `default_spend_cap`, `guard`, `route_config`, `rate_limit`, or `default_rate_limit`<br/>
+        /// - `subject_matcher_key` + `subject_matcher_value` — narrow to<br/>
+        /// policies whose subject_matchers contain `{key, value}`<br/>
+        /// For batch lookups by a set of subject values (e.g. many<br/>
+        /// run_rule_ids at once), use POST<br/>
+        /// `/v1/platform/gateway-policies/search`; it accepts the<br/>
+        /// values in a JSON body and avoids the URL-length ceiling<br/>
+        /// that a repeated query param would hit at scale.
         /// </summary>
+        /// <param name="policyType"></param>
+        /// <param name="subjectMatcherKey"></param>
+        /// <param name="subjectMatcherValue"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesGatewayPolicyRecord>>> ListGatewayPoliciesAsResponseAsync(
+            string? policyType = default,
+            string? subjectMatcherKey = default,
+            string? subjectMatcherValue = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListGatewayPoliciesArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                policyType: ref policyType,
+                subjectMatcherKey: ref subjectMatcherKey,
+                subjectMatcherValue: ref subjectMatcherValue);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -126,6 +168,11 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListGatewayPoliciesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("policy_type", policyType)
+                                .AddOptionalParameter("subject_matcher_key", subjectMatcherKey)
+                                .AddOptionalParameter("subject_matcher_value", subjectMatcherValue)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -165,7 +212,10 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareListGatewayPoliciesRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    policyType: policyType,
+                    subjectMatcherKey: subjectMatcherKey,
+                    subjectMatcherValue: subjectMatcherValue);
 
                 return __httpRequest;
             }
@@ -369,18 +419,17 @@ namespace LangSmith
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // LLM Gateway not enabled, or caller lacks OrganizationRead
                             if ((int)__response.StatusCode == 403)
@@ -407,18 +456,17 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -445,18 +493,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.GatewayPoliciesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -490,17 +537,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -537,17 +582,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

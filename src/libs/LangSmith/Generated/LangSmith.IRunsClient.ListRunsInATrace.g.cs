@@ -21,11 +21,11 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryTraceResponseBody> ListRunsInATraceAsync(
             global::System.Guid traceId,
-            global::System.DateTime maxStartTime,
-            global::System.DateTime minStartTime,
             global::System.Guid projectId,
             string? accept = default,
             string? filter = default,
+            global::System.DateTime? maxStartTime = default,
+            global::System.DateTime? minStartTime = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>? selects = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -46,11 +46,11 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.QueryQueryTraceResponseBody>> ListRunsInATraceAsResponseAsync(
             global::System.Guid traceId,
-            global::System.DateTime maxStartTime,
-            global::System.DateTime minStartTime,
             global::System.Guid projectId,
             string? accept = default,
             string? filter = default,
+            global::System.DateTime? maxStartTime = default,
+            global::System.DateTime? minStartTime = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>? selects = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

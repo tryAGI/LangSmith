@@ -75,11 +75,19 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        DatasetsDownload,
+        /// <summary>
+        /// 
+        /// </summary>
         DatasetsRead,
         /// <summary>
         /// 
         /// </summary>
         DatasetsShare,
+        /// <summary>
+        /// 
+        /// </summary>
+        DatasetsTagOnCreate,
         /// <summary>
         /// 
         /// </summary>
@@ -203,6 +211,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        ProjectsTagOnCreate,
+        /// <summary>
+        /// 
+        /// </summary>
         ProjectsUpdate,
         /// <summary>
         /// 
@@ -223,7 +235,15 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        PromptsTagOnCreate,
+        /// <summary>
+        /// 
+        /// </summary>
         PromptsUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        RulesConfigureRetention,
         /// <summary>
         /// 
         /// </summary>
@@ -272,6 +292,10 @@ namespace LangSmith
         /// 
         /// </summary>
         SandboxesRead,
+        /// <summary>
+        /// 
+        /// </summary>
+        SandboxesTagOnCreate,
         /// <summary>
         /// 
         /// </summary>
@@ -326,8 +350,10 @@ namespace LangSmith
                 AuthzInternalPermission.ChartsUpdate => "charts:update",
                 AuthzInternalPermission.DatasetsCreate => "datasets:create",
                 AuthzInternalPermission.DatasetsDelete => "datasets:delete",
+                AuthzInternalPermission.DatasetsDownload => "datasets:download",
                 AuthzInternalPermission.DatasetsRead => "datasets:read",
                 AuthzInternalPermission.DatasetsShare => "datasets:share",
+                AuthzInternalPermission.DatasetsTagOnCreate => "datasets:tag-on-create",
                 AuthzInternalPermission.DatasetsUpdate => "datasets:update",
                 AuthzInternalPermission.DeploymentsCreate => "deployments:create",
                 AuthzInternalPermission.DeploymentsDelete => "deployments:delete",
@@ -358,12 +384,15 @@ namespace LangSmith
                 AuthzInternalPermission.ProjectsDelete => "projects:delete",
                 AuthzInternalPermission.ProjectsIncreaseTraceTier => "projects:increase-trace-tier",
                 AuthzInternalPermission.ProjectsRead => "projects:read",
+                AuthzInternalPermission.ProjectsTagOnCreate => "projects:tag-on-create",
                 AuthzInternalPermission.ProjectsUpdate => "projects:update",
                 AuthzInternalPermission.PromptsCreate => "prompts:create",
                 AuthzInternalPermission.PromptsDelete => "prompts:delete",
                 AuthzInternalPermission.PromptsRead => "prompts:read",
                 AuthzInternalPermission.PromptsShare => "prompts:share",
+                AuthzInternalPermission.PromptsTagOnCreate => "prompts:tag-on-create",
                 AuthzInternalPermission.PromptsUpdate => "prompts:update",
+                AuthzInternalPermission.RulesConfigureRetention => "rules:configure-retention",
                 AuthzInternalPermission.RulesCreate => "rules:create",
                 AuthzInternalPermission.RulesDelete => "rules:delete",
                 AuthzInternalPermission.RulesRead => "rules:read",
@@ -376,6 +405,7 @@ namespace LangSmith
                 AuthzInternalPermission.SandboxesDelete => "sandboxes:delete",
                 AuthzInternalPermission.SandboxesExec => "sandboxes:exec",
                 AuthzInternalPermission.SandboxesRead => "sandboxes:read",
+                AuthzInternalPermission.SandboxesTagOnCreate => "sandboxes:tag-on-create",
                 AuthzInternalPermission.SandboxesUpdate => "sandboxes:update",
                 AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
                 AuthzInternalPermission.WorkspacesManageMembers => "workspaces:manage-members",
@@ -408,8 +438,10 @@ namespace LangSmith
                 "charts:update" => AuthzInternalPermission.ChartsUpdate,
                 "datasets:create" => AuthzInternalPermission.DatasetsCreate,
                 "datasets:delete" => AuthzInternalPermission.DatasetsDelete,
+                "datasets:download" => AuthzInternalPermission.DatasetsDownload,
                 "datasets:read" => AuthzInternalPermission.DatasetsRead,
                 "datasets:share" => AuthzInternalPermission.DatasetsShare,
+                "datasets:tag-on-create" => AuthzInternalPermission.DatasetsTagOnCreate,
                 "datasets:update" => AuthzInternalPermission.DatasetsUpdate,
                 "deployments:create" => AuthzInternalPermission.DeploymentsCreate,
                 "deployments:delete" => AuthzInternalPermission.DeploymentsDelete,
@@ -440,12 +472,15 @@ namespace LangSmith
                 "projects:delete" => AuthzInternalPermission.ProjectsDelete,
                 "projects:increase-trace-tier" => AuthzInternalPermission.ProjectsIncreaseTraceTier,
                 "projects:read" => AuthzInternalPermission.ProjectsRead,
+                "projects:tag-on-create" => AuthzInternalPermission.ProjectsTagOnCreate,
                 "projects:update" => AuthzInternalPermission.ProjectsUpdate,
                 "prompts:create" => AuthzInternalPermission.PromptsCreate,
                 "prompts:delete" => AuthzInternalPermission.PromptsDelete,
                 "prompts:read" => AuthzInternalPermission.PromptsRead,
                 "prompts:share" => AuthzInternalPermission.PromptsShare,
+                "prompts:tag-on-create" => AuthzInternalPermission.PromptsTagOnCreate,
                 "prompts:update" => AuthzInternalPermission.PromptsUpdate,
+                "rules:configure-retention" => AuthzInternalPermission.RulesConfigureRetention,
                 "rules:create" => AuthzInternalPermission.RulesCreate,
                 "rules:delete" => AuthzInternalPermission.RulesDelete,
                 "rules:read" => AuthzInternalPermission.RulesRead,
@@ -458,6 +493,7 @@ namespace LangSmith
                 "sandboxes:delete" => AuthzInternalPermission.SandboxesDelete,
                 "sandboxes:exec" => AuthzInternalPermission.SandboxesExec,
                 "sandboxes:read" => AuthzInternalPermission.SandboxesRead,
+                "sandboxes:tag-on-create" => AuthzInternalPermission.SandboxesTagOnCreate,
                 "sandboxes:update" => AuthzInternalPermission.SandboxesUpdate,
                 "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
                 "workspaces:manage-members" => AuthzInternalPermission.WorkspacesManageMembers,

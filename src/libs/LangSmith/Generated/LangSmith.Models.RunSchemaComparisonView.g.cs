@@ -197,6 +197,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("first_token_time")]
+        public global::System.DateTime? FirstTokenTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
         public string? TotalCost { get; set; }
 
@@ -230,12 +236,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_path")]
         public string? AppPath { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("feedbacks")]
-        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? Feedbacks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -281,12 +281,12 @@ namespace LangSmith
         /// <param name="totalTokens"></param>
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
+        /// <param name="firstTokenTime"></param>
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
         /// <param name="feedbackStats"></param>
         /// <param name="appPath"></param>
-        /// <param name="feedbacks"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -322,12 +322,12 @@ namespace LangSmith
             int? totalTokens,
             int? promptTokens,
             int? completionTokens,
+            global::System.DateTime? firstTokenTime,
             string? totalCost,
             string? promptCost,
             string? completionCost,
             global::System.Collections.Generic.Dictionary<string, object>? feedbackStats,
-            string? appPath,
-            global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>? feedbacks)
+            string? appPath)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Inputs = inputs;
@@ -359,13 +359,13 @@ namespace LangSmith
             this.TotalTokens = totalTokens;
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
+            this.FirstTokenTime = firstTokenTime;
             this.TotalCost = totalCost;
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.FeedbackStats = feedbackStats;
             this.AppPath = appPath;
-            this.Feedbacks = feedbacks;
         }
 
         /// <summary>

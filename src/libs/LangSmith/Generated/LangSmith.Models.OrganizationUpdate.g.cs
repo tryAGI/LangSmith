@@ -101,8 +101,20 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
 
         /// <summary>
         /// 
@@ -115,6 +127,13 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
         public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
+        public global::LangSmith.AnyOf<double?, string, object>? EngineLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -140,9 +159,12 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
+        /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -162,9 +184,12 @@ namespace LangSmith
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
+            bool? byocCreateSaasWorkspaceEnabled,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
-            bool? engineEnabled)
+            bool? engineEnabled,
+            global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly)
         {
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;
@@ -181,9 +206,12 @@ namespace LangSmith
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
+            this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
         }
 
         /// <summary>

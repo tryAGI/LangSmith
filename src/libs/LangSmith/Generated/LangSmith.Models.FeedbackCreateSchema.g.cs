@@ -93,6 +93,18 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_thread_id")]
+        public string? FeedbackThreadId { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_trace_retention")]
+        public bool? ExtendTraceRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
@@ -136,6 +148,10 @@ namespace LangSmith
         /// <param name="sessionId"></param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
+        /// <param name="feedbackThreadId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
@@ -157,6 +173,8 @@ namespace LangSmith
             global::System.Guid? sessionId,
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
+            string? feedbackThreadId,
+            bool? extendTraceRetention,
             global::System.Guid? id,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
@@ -175,6 +193,8 @@ namespace LangSmith
             this.SessionId = sessionId;
             this.TraceId = traceId;
             this.StartTime = startTime;
+            this.FeedbackThreadId = feedbackThreadId;
+            this.ExtendTraceRetention = extendTraceRetention;
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;

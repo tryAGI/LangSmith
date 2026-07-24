@@ -39,6 +39,13 @@ namespace LangSmith
         public string? Id { get; set; }
 
         /// <summary>
+        /// IsManaged marks a LangChain-managed evaluator (currently the managed<br/>
+        /// Perceived Error judge). NULL in the DB is read as false via COALESCE.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_managed")]
+        public bool? IsManaged { get; set; }
+
+        /// <summary>
         /// Embedded child evaluator (populated based on type)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_evaluator")]
@@ -55,12 +62,6 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_rules")]
         public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsEvaluatorRunRule>? RunRules { get; set; }
-
-        /// <summary>
-        /// Sum of LLM-as-judge run rule spend for the requested period (omitted when feature is disabled).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("spend_usd")]
-        public double? SpendUsd { get; set; }
 
         /// <summary>
         /// 
@@ -95,14 +96,15 @@ namespace LangSmith
         /// <param name="createdBy"></param>
         /// <param name="feedbackKeys"></param>
         /// <param name="id"></param>
+        /// <param name="isManaged">
+        /// IsManaged marks a LangChain-managed evaluator (currently the managed<br/>
+        /// Perceived Error judge). NULL in the DB is read as false via COALESCE.
+        /// </param>
         /// <param name="llmEvaluator">
         /// Embedded child evaluator (populated based on type)
         /// </param>
         /// <param name="name"></param>
         /// <param name="runRules"></param>
-        /// <param name="spendUsd">
-        /// Sum of LLM-as-judge run rule spend for the requested period (omitted when feature is disabled).
-        /// </param>
         /// <param name="tenantId"></param>
         /// <param name="type"></param>
         /// <param name="updatedAt"></param>
@@ -115,10 +117,10 @@ namespace LangSmith
             string? createdBy,
             global::System.Collections.Generic.IList<string>? feedbackKeys,
             string? id,
+            bool? isManaged,
             global::LangSmith.EvaluatorsLLMEvaluator? llmEvaluator,
             string? name,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsEvaluatorRunRule>? runRules,
-            double? spendUsd,
             string? tenantId,
             global::LangSmith.EvaluatorsEvaluatorType? type,
             string? updatedAt)
@@ -128,10 +130,10 @@ namespace LangSmith
             this.CreatedBy = createdBy;
             this.FeedbackKeys = feedbackKeys;
             this.Id = id;
+            this.IsManaged = isManaged;
             this.LlmEvaluator = llmEvaluator;
             this.Name = name;
             this.RunRules = runRules;
-            this.SpendUsd = spendUsd;
             this.TenantId = tenantId;
             this.Type = type;
             this.UpdatedAt = updatedAt;

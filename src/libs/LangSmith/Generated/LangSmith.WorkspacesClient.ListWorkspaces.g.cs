@@ -40,11 +40,13 @@ namespace LangSmith
             };
         partial void PrepareListWorkspacesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? includeDeleted);
+            ref bool? includeDeleted,
+            global::System.Guid? dataPlaneId);
         partial void PrepareListWorkspacesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? includeDeleted);
+            bool? includeDeleted,
+            global::System.Guid? dataPlaneId);
         partial void ProcessListWorkspacesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,16 +63,19 @@ namespace LangSmith
         /// <param name="includeDeleted">
         /// Default Value: false
         /// </param>
+        /// <param name="dataPlaneId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>> ListWorkspacesAsync(
             bool? includeDeleted = default,
+            global::System.Guid? dataPlaneId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListWorkspacesAsResponseAsync(
                 includeDeleted: includeDeleted,
+                dataPlaneId: dataPlaneId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -84,11 +89,13 @@ namespace LangSmith
         /// <param name="includeDeleted">
         /// Default Value: false
         /// </param>
+        /// <param name="dataPlaneId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>>> ListWorkspacesAsResponseAsync(
             bool? includeDeleted = default,
+            global::System.Guid? dataPlaneId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -96,7 +103,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListWorkspacesArguments(
                 httpClient: HttpClient,
-                includeDeleted: ref includeDeleted);
+                includeDeleted: ref includeDeleted,
+                dataPlaneId: dataPlaneId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -128,6 +136,7 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("data_plane_id", dataPlaneId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -169,7 +178,8 @@ namespace LangSmith
                 PrepareListWorkspacesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    includeDeleted: includeDeleted);
+                    includeDeleted: includeDeleted,
+                    dataPlaneId: dataPlaneId);
 
                 return __httpRequest;
             }
@@ -373,18 +383,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -418,17 +427,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -465,17 +472,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

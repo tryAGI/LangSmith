@@ -27,6 +27,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        SingleThreadStatsSelectFeedbackStats,
+        /// <summary>
+        /// 
+        /// </summary>
         SingleThreadStatsSelectFirstStartTime,
         /// <summary>
         /// 
@@ -90,6 +94,7 @@ namespace LangSmith
                 ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectCompletionCostDetails => "COMPLETION_COST_DETAILS",
                 ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectCompletionTokens => "COMPLETION_TOKENS",
                 ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectCompletionTokenDetails => "COMPLETION_TOKEN_DETAILS",
+                ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectFeedbackStats => "FEEDBACK_STATS",
                 ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectFirstStartTime => "FIRST_START_TIME",
                 ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectLastEndTime => "LAST_END_TIME",
                 ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectLastStartTime => "LAST_START_TIME",
@@ -116,6 +121,7 @@ namespace LangSmith
                 "COMPLETION_COST_DETAILS" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectCompletionCostDetails,
                 "COMPLETION_TOKENS" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectCompletionTokens,
                 "COMPLETION_TOKEN_DETAILS" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectCompletionTokenDetails,
+                "FEEDBACK_STATS" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectFeedbackStats,
                 "FIRST_START_TIME" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectFirstStartTime,
                 "LAST_END_TIME" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectLastEndTime,
                 "LAST_START_TIME" => ThreadsSingleThreadStatsSelectField.SingleThreadStatsSelectLastStartTime,

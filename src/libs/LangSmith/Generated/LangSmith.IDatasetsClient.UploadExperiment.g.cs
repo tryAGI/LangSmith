@@ -34,6 +34,7 @@ namespace LangSmith
         /// Upload Experiment<br/>
         /// Upload an experiment that has already been run.
         /// </summary>
+        /// <param name="tagValueIds"></param>
         /// <param name="experimentName"></param>
         /// <param name="experimentDescription"></param>
         /// <param name="datasetId"></param>
@@ -52,6 +53,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow> results,
             global::System.DateTime experimentStartTime,
             global::System.DateTime experimentEndTime,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             string? experimentDescription = default,
             global::System.Guid? datasetId = default,
             string? datasetName = default,

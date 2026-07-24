@@ -37,6 +37,9 @@ namespace LangSmith
         /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
         /// <param name="sourceRunId"></param>
+        /// <param name="sourceSessionId"></param>
+        /// <param name="sourceRunStartTime"></param>
+        /// <param name="sourceTraceId"></param>
         /// <param name="metadata"></param>
         /// <param name="inputs"></param>
         /// <param name="split">
@@ -61,6 +64,9 @@ namespace LangSmith
             global::System.Guid datasetId,
             object? outputs = default,
             global::System.Guid? sourceRunId = default,
+            global::System.Guid? sourceSessionId = default,
+            global::System.DateTime? sourceRunStartTime = default,
+            global::System.Guid? sourceTraceId = default,
             object? metadata = default,
             object? inputs = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,

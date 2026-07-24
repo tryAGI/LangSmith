@@ -7,7 +7,7 @@ namespace LangSmith
         /// <summary>
         /// Get a single run<br/>
         /// **Alpha:** The request and response contract may change;<br/>
-        /// Returns one run by ID for the given session and start_time. Use the `selects` query parameter (repeatable) to select fields to return.
+        /// Returns one run by ID for the given session. Use the `selects` query parameter (repeatable) to select fields to return.
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="runId"></param>
@@ -20,15 +20,15 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.QueryRunResponse> GetASingleRunAsync(
             global::System.Guid runId,
             global::System.Guid projectId,
-            global::System.DateTime startTime,
             string? accept = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetRunsSelect>? selects = default,
+            global::System.DateTime? startTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get a single run<br/>
         /// **Alpha:** The request and response contract may change;<br/>
-        /// Returns one run by ID for the given session and start_time. Use the `selects` query parameter (repeatable) to select fields to return.
+        /// Returns one run by ID for the given session. Use the `selects` query parameter (repeatable) to select fields to return.
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="runId"></param>
@@ -41,9 +41,9 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.QueryRunResponse>> GetASingleRunAsResponseAsync(
             global::System.Guid runId,
             global::System.Guid projectId,
-            global::System.DateTime startTime,
             string? accept = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetRunsSelect>? selects = default,
+            global::System.DateTime? startTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

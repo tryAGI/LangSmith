@@ -57,6 +57,25 @@ namespace LangSmith
         public string? SessionName { get; set; }
 
         /// <summary>
+        /// SpendLimit is the effective spend-cap limit for this rule (nil when unconfigured).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
+        public global::LangSmith.EvaluatorsSpendLimit? SpendLimit { get; set; }
+
+        /// <summary>
+        /// Per-rule usage for the current ISO week (omitted when feature is disabled).<br/>
+        /// LLM-evaluator rules are initialized to 0; code-evaluator rules include trace counts only.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_usd")]
+        public double? SpendUsd { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_count")]
+        public int? TraceCount { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_corrections_dataset")]
@@ -79,6 +98,14 @@ namespace LangSmith
         /// <param name="numFewShotExamples"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
+        /// <param name="spendLimit">
+        /// SpendLimit is the effective spend-cap limit for this rule (nil when unconfigured).
+        /// </param>
+        /// <param name="spendUsd">
+        /// Per-rule usage for the current ISO week (omitted when feature is disabled).<br/>
+        /// LLM-evaluator rules are initialized to 0; code-evaluator rules include trace counts only.
+        /// </param>
+        /// <param name="traceCount"></param>
         /// <param name="useCorrectionsDataset"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -92,6 +119,9 @@ namespace LangSmith
             int? numFewShotExamples,
             string? sessionId,
             string? sessionName,
+            global::LangSmith.EvaluatorsSpendLimit? spendLimit,
+            double? spendUsd,
+            int? traceCount,
             bool? useCorrectionsDataset)
         {
             this.CorrectionsDatasetId = correctionsDatasetId;
@@ -102,6 +132,9 @@ namespace LangSmith
             this.NumFewShotExamples = numFewShotExamples;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
+            this.SpendLimit = spendLimit;
+            this.SpendUsd = spendUsd;
+            this.TraceCount = traceCount;
             this.UseCorrectionsDataset = useCorrectionsDataset;
         }
 

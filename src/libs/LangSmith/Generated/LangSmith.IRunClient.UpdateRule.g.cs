@@ -57,6 +57,11 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled"></param>
+        /// <param name="extendEvaluatorTraceRetention"></param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -96,6 +101,11 @@ namespace LangSmith
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
             bool? extendOnly = default,
+            bool? isTracingDisabled = default,
+            bool? extendEvaluatorTraceRetention = default,
+            bool? extendDatasetTraceRetention = default,
+            bool? extendAnnotationQueueTraceRetention = default,
+            bool? extendWebhookTraceRetention = default,
             bool? transient = default,
             global::System.Guid? addToAnnotationQueueId = default,
             global::System.Guid? addToDatasetId = default,

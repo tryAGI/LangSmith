@@ -67,6 +67,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        GroupCount,
+        /// <summary>
+        /// 
+        /// </summary>
         LastRunStartTime,
         /// <summary>
         /// 
@@ -168,6 +172,7 @@ namespace LangSmith
                 RunStatsSelect.FeedbackStats => "feedback_stats",
                 RunStatsSelect.FirstTokenP50 => "first_token_p50",
                 RunStatsSelect.FirstTokenP99 => "first_token_p99",
+                RunStatsSelect.GroupCount => "group_count",
                 RunStatsSelect.LastRunStartTime => "last_run_start_time",
                 RunStatsSelect.LatencyAvg => "latency_avg",
                 RunStatsSelect.LatencyP50 => "latency_p50",
@@ -211,6 +216,7 @@ namespace LangSmith
                 "feedback_stats" => RunStatsSelect.FeedbackStats,
                 "first_token_p50" => RunStatsSelect.FirstTokenP50,
                 "first_token_p99" => RunStatsSelect.FirstTokenP99,
+                "group_count" => RunStatsSelect.GroupCount,
                 "last_run_start_time" => RunStatsSelect.LastRunStartTime,
                 "latency_avg" => RunStatsSelect.LatencyAvg,
                 "latency_p50" => RunStatsSelect.LatencyP50,

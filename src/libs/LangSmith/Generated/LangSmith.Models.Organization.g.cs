@@ -104,6 +104,12 @@ namespace LangSmith
         public bool? MarketplacePayoutsEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
@@ -153,6 +159,9 @@ namespace LangSmith
         /// <param name="marketplacePayoutsEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="byocCreateSaasWorkspaceEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="defaultSsoProvision">
         /// Default Value: false
         /// </param>
@@ -179,6 +188,7 @@ namespace LangSmith
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
             bool? marketplacePayoutsEnabled,
+            bool? byocCreateSaasWorkspaceEnabled,
             bool? defaultSsoProvision,
             string? securityContact,
             string? scimGroupNameSeparator)
@@ -198,6 +208,7 @@ namespace LangSmith
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.SecurityContact = securityContact;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;

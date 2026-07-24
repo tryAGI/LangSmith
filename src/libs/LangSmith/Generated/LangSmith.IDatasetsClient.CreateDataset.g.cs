@@ -34,6 +34,7 @@ namespace LangSmith
         /// Create Dataset<br/>
         /// Create a new dataset.
         /// </summary>
+        /// <param name="tagValueIds"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
@@ -54,6 +55,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Dataset> CreateDatasetAsync(
             string name,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             string? description = default,
             global::System.DateTime? createdAt = default,
             object? inputsSchemaDefinition = default,

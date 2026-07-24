@@ -40,7 +40,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="shareToken"></param>
         /// <param name="id"></param>
-        /// <param name="trace"></param>
+        /// <param name="trace">
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
+        /// </param>
         /// <param name="parentRun"></param>
         /// <param name="runType"></param>
         /// <param name="session"></param>
@@ -63,6 +65,10 @@ namespace LangSmith
         /// <param name="groupBy"></param>
         /// <param name="groups"></param>
         /// <param name="select"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="includeDetails">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -90,6 +96,8 @@ namespace LangSmith
             global::LangSmith.RunStatsGroupBy? groupBy = default,
             global::System.Collections.Generic.IList<string>? groups = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? select = default,
+            global::System.Guid? referenceDatasetId = default,
+            bool? includeDetails = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

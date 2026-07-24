@@ -288,6 +288,14 @@ namespace LangSmith
                                     name: "\"metadata_key_mappings\"");
 
                             }
+                            if (request.TagValueIds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TagValueIds ?? string.Empty),
+                                    name: "\"tag_value_ids\"");
+
+                            }
 
                             __httpRequest.Content = __httpRequestContent;
 
@@ -506,18 +514,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -551,17 +558,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -598,17 +603,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -644,6 +647,7 @@ namespace LangSmith
         /// <param name="inputKeyMappings"></param>
         /// <param name="outputKeyMappings"></param>
         /// <param name="metadataKeyMappings"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -662,6 +666,7 @@ namespace LangSmith
             string? inputKeyMappings = default,
             string? outputKeyMappings = default,
             string? metadataKeyMappings = default,
+            string? tagValueIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -681,6 +686,7 @@ namespace LangSmith
                 InputKeyMappings = inputKeyMappings,
                 OutputKeyMappings = outputKeyMappings,
                 MetadataKeyMappings = metadataKeyMappings,
+                TagValueIds = tagValueIds,
             };
 
             return await UploadCsvDatasetAsync(
@@ -716,6 +722,7 @@ namespace LangSmith
         /// <param name="inputKeyMappings"></param>
         /// <param name="outputKeyMappings"></param>
         /// <param name="metadataKeyMappings"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -734,6 +741,7 @@ namespace LangSmith
             string? inputKeyMappings = default,
             string? outputKeyMappings = default,
             string? metadataKeyMappings = default,
+            string? tagValueIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -755,6 +763,7 @@ namespace LangSmith
                 InputKeyMappings = inputKeyMappings,
                 OutputKeyMappings = outputKeyMappings,
                 MetadataKeyMappings = metadataKeyMappings,
+                TagValueIds = tagValueIds,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -949,6 +958,14 @@ namespace LangSmith
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.MetadataKeyMappings ?? string.Empty),
                                     name: "\"metadata_key_mappings\"");
+
+                            }
+                            if (request.TagValueIds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TagValueIds ?? string.Empty),
+                                    name: "\"tag_value_ids\"");
 
                             }
 
@@ -1169,18 +1186,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -1210,17 +1226,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1253,17 +1267,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -1301,6 +1313,7 @@ namespace LangSmith
         /// <param name="inputKeyMappings"></param>
         /// <param name="outputKeyMappings"></param>
         /// <param name="metadataKeyMappings"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -1319,6 +1332,7 @@ namespace LangSmith
             string? inputKeyMappings = default,
             string? outputKeyMappings = default,
             string? metadataKeyMappings = default,
+            string? tagValueIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1340,6 +1354,7 @@ namespace LangSmith
                 InputKeyMappings = inputKeyMappings,
                 OutputKeyMappings = outputKeyMappings,
                 MetadataKeyMappings = metadataKeyMappings,
+                TagValueIds = tagValueIds,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1534,6 +1549,14 @@ namespace LangSmith
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.MetadataKeyMappings ?? string.Empty),
                                     name: "\"metadata_key_mappings\"");
+
+                            }
+                            if (request.TagValueIds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TagValueIds ?? string.Empty),
+                                    name: "\"tag_value_ids\"");
 
                             }
 
@@ -1754,18 +1777,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -1799,17 +1821,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1846,17 +1866,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

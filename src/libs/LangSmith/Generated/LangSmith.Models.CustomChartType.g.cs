@@ -15,7 +15,23 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        Kpi,
+        /// <summary>
+        /// 
+        /// </summary>
         Line,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pie,
+        /// <summary>
+        /// 
+        /// </summary>
+        Table,
+        /// <summary>
+        /// 
+        /// </summary>
+        TopK,
     }
 
     /// <summary>
@@ -31,7 +47,11 @@ namespace LangSmith
             return value switch
             {
                 CustomChartType.Bar => "bar",
+                CustomChartType.Kpi => "kpi",
                 CustomChartType.Line => "line",
+                CustomChartType.Pie => "pie",
+                CustomChartType.Table => "table",
+                CustomChartType.TopK => "top-k",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +63,11 @@ namespace LangSmith
             return value switch
             {
                 "bar" => CustomChartType.Bar,
+                "kpi" => CustomChartType.Kpi,
                 "line" => CustomChartType.Line,
+                "pie" => CustomChartType.Pie,
+                "table" => CustomChartType.Table,
+                "top-k" => CustomChartType.TopK,
                 _ => null,
             };
         }

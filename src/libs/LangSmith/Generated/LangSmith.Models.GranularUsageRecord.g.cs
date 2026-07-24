@@ -4,7 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// A single granular usage data point.
+    /// A single granular usage data point.<br/>
+    /// Carries both trace and LangSmith Deployment metric fields; the<br/>
+    /// `kind` query param on `GET /granular-usage` picks which metric domain<br/>
+    /// the row's values come from. Fields for the unselected domain are<br/>
+    /// always `0`. Backwards-compat: callers that only read `traces` (the<br/>
+    /// pre-existing field) keep working unchanged.
     /// </summary>
     public sealed partial class GranularUsageRecord
     {
@@ -28,6 +33,24 @@ namespace LangSmith
         public int? Traces { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("nodes_executed")]
+        public int? NodesExecuted { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_runs")]
+        public int? AgentRuns { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_uptime_seconds")]
+        public int? AgentUptimeSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,17 +66,32 @@ namespace LangSmith
         /// <param name="traces">
         /// Default Value: 0
         /// </param>
+        /// <param name="nodesExecuted">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="agentRuns">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="agentUptimeSeconds">
+        /// Default Value: 0
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GranularUsageRecord(
             global::LangSmith.GranularUsageDimensions dimensions,
             global::System.DateTime? timeBucket,
-            int? traces)
+            int? traces,
+            int? nodesExecuted,
+            int? agentRuns,
+            int? agentUptimeSeconds)
         {
             this.TimeBucket = timeBucket;
             this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
             this.Traces = traces;
+            this.NodesExecuted = nodesExecuted;
+            this.AgentRuns = agentRuns;
+            this.AgentUptimeSeconds = agentUptimeSeconds;
         }
 
         /// <summary>

@@ -40,7 +40,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="shareToken"></param>
         /// <param name="id"></param>
-        /// <param name="trace"></param>
+        /// <param name="trace">
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
+        /// </param>
         /// <param name="parentRun"></param>
         /// <param name="runType"></param>
         /// <param name="session"></param>
@@ -62,6 +64,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
+        /// Maximum number of runs to return. Not applied when trace is set — all runs in the trace are returned in a single response.<br/>
         /// Default Value: 100
         /// </param>
         /// <param name="select">

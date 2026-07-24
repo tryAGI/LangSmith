@@ -36,6 +36,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="dockerImage"></param>
         /// <param name="fsCapacityBytes"></param>
+        /// <param name="labels">
+        /// Labels seed the snapshot's labels, overriding any label of the same key derived from the Docker image.
+        /// </param>
         /// <param name="name"></param>
         /// <param name="registryId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -45,6 +48,7 @@ namespace LangSmith
             string dockerImage,
             long fsCapacityBytes,
             string name,
+            global::System.Collections.Generic.Dictionary<string, string>? labels = default,
             string? registryId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

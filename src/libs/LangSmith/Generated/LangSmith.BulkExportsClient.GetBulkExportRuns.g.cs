@@ -40,11 +40,15 @@ namespace LangSmith
             };
         partial void PrepareGetBulkExportRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid bulkExportId);
+            ref global::System.Guid bulkExportId,
+            int? limit,
+            ref int? offset);
         partial void PrepareGetBulkExportRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid bulkExportId);
+            global::System.Guid bulkExportId,
+            int? limit,
+            int? offset);
         partial void ProcessGetBulkExportRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,16 +63,24 @@ namespace LangSmith
         /// Get a bulk export's runs
         /// </summary>
         /// <param name="bulkExportId"></param>
+        /// <param name="limit"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.BulkExportRun>> GetBulkExportRunsAsync(
             global::System.Guid bulkExportId,
+            int? limit = default,
+            int? offset = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetBulkExportRunsAsResponseAsync(
                 bulkExportId: bulkExportId,
+                limit: limit,
+                offset: offset,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -80,11 +92,17 @@ namespace LangSmith
         /// Get a bulk export's runs
         /// </summary>
         /// <param name="bulkExportId"></param>
+        /// <param name="limit"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.BulkExportRun>>> GetBulkExportRunsAsResponseAsync(
             global::System.Guid bulkExportId,
+            int? limit = default,
+            int? offset = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -92,7 +110,9 @@ namespace LangSmith
                 client: HttpClient);
             PrepareGetBulkExportRunsArguments(
                 httpClient: HttpClient,
-                bulkExportId: ref bulkExportId);
+                bulkExportId: ref bulkExportId,
+                limit: limit,
+                offset: ref offset);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -122,6 +142,10 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_GetBulkExportRunsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("offset", offset?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -162,7 +186,9 @@ namespace LangSmith
                 PrepareGetBulkExportRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    bulkExportId: bulkExportId!);
+                    bulkExportId: bulkExportId!,
+                    limit: limit,
+                    offset: offset);
 
                 return __httpRequest;
             }
@@ -366,18 +392,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -411,17 +436,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -458,17 +481,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

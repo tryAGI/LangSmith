@@ -384,17 +384,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -431,17 +429,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -459,6 +455,9 @@ namespace LangSmith
         /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
         /// <param name="sourceRunId"></param>
+        /// <param name="sourceSessionId"></param>
+        /// <param name="sourceRunStartTime"></param>
+        /// <param name="sourceTraceId"></param>
         /// <param name="metadata"></param>
         /// <param name="inputs"></param>
         /// <param name="split">
@@ -483,6 +482,9 @@ namespace LangSmith
             global::System.Guid datasetId,
             object? outputs = default,
             global::System.Guid? sourceRunId = default,
+            global::System.Guid? sourceSessionId = default,
+            global::System.DateTime? sourceRunStartTime = default,
+            global::System.Guid? sourceTraceId = default,
             object? metadata = default,
             object? inputs = default,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
@@ -499,6 +501,9 @@ namespace LangSmith
                 Outputs = outputs,
                 DatasetId = datasetId,
                 SourceRunId = sourceRunId,
+                SourceSessionId = sourceSessionId,
+                SourceRunStartTime = sourceRunStartTime,
+                SourceTraceId = sourceTraceId,
                 Metadata = metadata,
                 Inputs = inputs,
                 Split = split,

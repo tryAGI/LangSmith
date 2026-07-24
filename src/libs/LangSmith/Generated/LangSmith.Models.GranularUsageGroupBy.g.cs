@@ -19,6 +19,10 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
+        TraceTier,
+        /// <summary>
+        /// 
+        /// </summary>
         User,
         /// <summary>
         /// 
@@ -40,6 +44,7 @@ namespace LangSmith
             {
                 GranularUsageGroupBy.ApiKey => "api_key",
                 GranularUsageGroupBy.Project => "project",
+                GranularUsageGroupBy.TraceTier => "trace_tier",
                 GranularUsageGroupBy.User => "user",
                 GranularUsageGroupBy.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,6 +59,7 @@ namespace LangSmith
             {
                 "api_key" => GranularUsageGroupBy.ApiKey,
                 "project" => GranularUsageGroupBy.Project,
+                "trace_tier" => GranularUsageGroupBy.TraceTier,
                 "user" => GranularUsageGroupBy.User,
                 "workspace" => GranularUsageGroupBy.Workspace,
                 _ => null,

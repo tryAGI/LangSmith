@@ -84,11 +84,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public AgentsClient Agents { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public AlertRulesClient AlertRules { get; }
 
         /// <summary>
@@ -129,22 +124,12 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public BeaconClient Beacon { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public BulkExportsClient BulkExports { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public ChartsClient Charts { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CheckpointClient Checkpoint { get; }
 
         /// <summary>
         /// 
@@ -184,11 +169,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public ExecuteClient Execute { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ExperimentViewOverridesClient ExperimentViewOverrides { get; }
 
         /// <summary>
@@ -214,57 +194,22 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files { get; }
+        public FleetOrgsClient FleetOrgs { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public FleetAuthClient FleetAuth { get; }
+        public FleetSecretsClient FleetSecrets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public FleetCredentialsClient FleetCredentials { get; }
+        public FleetTenantsClient FleetTenants { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public FleetGithubAppClient FleetGithubApp { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetIntegrationsClient FleetIntegrations { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetMcpClient FleetMcp { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetThreadsClient FleetThreads { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetTriggerTemplatesClient FleetTriggerTemplates { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetTriggersClient FleetTriggers { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetUsageClient FleetUsage { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FleetWebhooksClient FleetWebhooks { get; }
+        public FleetUsersClient FleetUsers { get; }
 
         /// <summary>
         /// 
@@ -319,17 +264,7 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public MetricsClient Metrics { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ModelPriceMapClient ModelPriceMap { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public NpsClient Nps { get; }
 
         /// <summary>
         /// 
@@ -399,11 +334,6 @@ namespace LangSmith
         /// <summary>
         /// 
         /// </summary>
-        public SandboxesInternalClient SandboxesInternal { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ScimTokensClient ScimTokens { get; }
 
         /// <summary>
@@ -420,11 +350,6 @@ namespace LangSmith
         /// 
         /// </summary>
         public SettingsClient Settings { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SkillsClient Skills { get; }
 
         /// <summary>
         /// 

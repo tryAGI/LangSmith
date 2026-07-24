@@ -192,6 +192,12 @@ namespace LangSmith
         public global::LangSmith.CommitManifestResponse? LatestCommitManifest { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owners")]
+        public global::System.Collections.Generic.IList<global::LangSmith.RepoOwner>? Owners { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -232,6 +238,7 @@ namespace LangSmith
         /// <param name="originalRepoFullName"></param>
         /// <param name="upstreamRepoFullName"></param>
         /// <param name="latestCommitManifest"></param>
+        /// <param name="owners"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -263,7 +270,8 @@ namespace LangSmith
             string? createdBy,
             string? originalRepoFullName,
             string? upstreamRepoFullName,
-            global::LangSmith.CommitManifestResponse? latestCommitManifest)
+            global::LangSmith.CommitManifestResponse? latestCommitManifest,
+            global::System.Collections.Generic.IList<global::LangSmith.RepoOwner>? owners)
         {
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
             this.Description = description;
@@ -293,6 +301,7 @@ namespace LangSmith
             this.OriginalRepoFullName = originalRepoFullName;
             this.UpstreamRepoFullName = upstreamRepoFullName;
             this.LatestCommitManifest = latestCommitManifest;
+            this.Owners = owners;
         }
 
         /// <summary>

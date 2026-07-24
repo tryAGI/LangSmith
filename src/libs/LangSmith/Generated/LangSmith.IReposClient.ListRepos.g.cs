@@ -11,6 +11,9 @@ namespace LangSmith
         /// <param name="withLatestManifest">
         /// Default Value: false
         /// </param>
+        /// <param name="includeOwners">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -37,6 +40,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
             bool? withLatestManifest = default,
+            bool? includeOwners = default,
             int? limit = default,
             int? offset = default,
             string? tenantHandle = default,
@@ -61,6 +65,9 @@ namespace LangSmith
         /// Get all repos.
         /// </summary>
         /// <param name="withLatestManifest">
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeOwners">
         /// Default Value: false
         /// </param>
         /// <param name="limit">
@@ -89,6 +96,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListReposResponse>> ListReposAsResponseAsync(
             bool? withLatestManifest = default,
+            bool? includeOwners = default,
             int? limit = default,
             int? offset = default,
             string? tenantHandle = default,

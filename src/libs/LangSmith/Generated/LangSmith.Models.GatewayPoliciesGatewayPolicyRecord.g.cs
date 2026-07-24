@@ -42,6 +42,15 @@ namespace LangSmith
         public double? CurrentSpendUsd { get; set; }
 
         /// <summary>
+        /// CurrentUsage is the consumed units in each configured limit's current<br/>
+        /// window. Set for any rate_limit policy regardless of enabled state, one<br/>
+        /// entry per limit in the config. Nil for non-rate_limit policies or when<br/>
+        /// the usage lookup failed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("current_usage")]
+        public global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesRateLimitUsage>? CurrentUsage { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -79,10 +88,9 @@ namespace LangSmith
 
         /// <summary>
         /// ParentPolicyID is set on materialized children of a default_spend_cap<br/>
-        /// to the default's id, and cleared (NULL) only when an admin Create<br/>
-        /// with the same matchers takes over the materialized row. Update on a<br/>
-        /// child preserves the link; Delete on the parent cascade-soft-deletes<br/>
-        /// every child rather than detaching them.
+        /// to the default's id. An explicit Update or a Create with the same<br/>
+        /// matchers clears the link and takes ownership of the materialized row.<br/>
+        /// Delete on the parent cascade-soft-deletes children still attached.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_policy_id")]
         public string? ParentPolicyId { get; set; }
@@ -130,6 +138,12 @@ namespace LangSmith
         /// still surface usage so users can see what would have been counted.<br/>
         /// Nil for non-spend_cap policies or when the spend lookup failed.
         /// </param>
+        /// <param name="currentUsage">
+        /// CurrentUsage is the consumed units in each configured limit's current<br/>
+        /// window. Set for any rate_limit policy regardless of enabled state, one<br/>
+        /// entry per limit in the config. Nil for non-rate_limit policies or when<br/>
+        /// the usage lookup failed.
+        /// </param>
         /// <param name="description"></param>
         /// <param name="enabled"></param>
         /// <param name="id"></param>
@@ -138,10 +152,9 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="parentPolicyId">
         /// ParentPolicyID is set on materialized children of a default_spend_cap<br/>
-        /// to the default's id, and cleared (NULL) only when an admin Create<br/>
-        /// with the same matchers takes over the materialized row. Update on a<br/>
-        /// child preserves the link; Delete on the parent cascade-soft-deletes<br/>
-        /// every child rather than detaching them.
+        /// to the default's id. An explicit Update or a Create with the same<br/>
+        /// matchers clears the link and takes ownership of the materialized row.<br/>
+        /// Delete on the parent cascade-soft-deletes children still attached.
         /// </param>
         /// <param name="policyType"></param>
         /// <param name="priority"></param>
@@ -156,6 +169,7 @@ namespace LangSmith
             string? createdAt,
             string? createdBy,
             double? currentSpendUsd,
+            global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesRateLimitUsage>? currentUsage,
             string? description,
             bool? enabled,
             string? id,
@@ -173,6 +187,7 @@ namespace LangSmith
             this.CreatedAt = createdAt;
             this.CreatedBy = createdBy;
             this.CurrentSpendUsd = currentSpendUsd;
+            this.CurrentUsage = currentUsage;
             this.Description = description;
             this.Enabled = enabled;
             this.Id = id;

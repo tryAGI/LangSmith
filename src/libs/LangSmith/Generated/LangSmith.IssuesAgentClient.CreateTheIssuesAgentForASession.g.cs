@@ -396,18 +396,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized
                             if ((int)__response.StatusCode == 401)
@@ -434,18 +433,17 @@ namespace LangSmith
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
@@ -472,18 +470,17 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Conflict
                             if ((int)__response.StatusCode == 409)
@@ -510,18 +507,17 @@ namespace LangSmith
                                     __exception_409 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_409,
-                                    ResponseObject = __value_409,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -548,18 +544,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesAgentErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -593,17 +588,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -640,17 +633,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -673,6 +664,9 @@ namespace LangSmith
         /// <param name="githubRepoSubdir"></param>
         /// <param name="githubRepoUrl"></param>
         /// <param name="priorities"></param>
+        /// <param name="runFilter">
+        /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -686,6 +680,7 @@ namespace LangSmith
             string? githubRepoSubdir = default,
             string? githubRepoUrl = default,
             global::System.Collections.Generic.IList<string>? priorities = default,
+            string? runFilter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -696,6 +691,7 @@ namespace LangSmith
                 GithubRepoSubdir = githubRepoSubdir,
                 GithubRepoUrl = githubRepoUrl,
                 Priorities = priorities,
+                RunFilter = runFilter,
             };
 
             return await CreateTheIssuesAgentForASessionAsync(
