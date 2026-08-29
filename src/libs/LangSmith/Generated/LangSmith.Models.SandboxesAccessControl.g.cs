@@ -4,18 +4,18 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SandboxesAccessControl
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_list")]
         public global::System.Collections.Generic.IList<string>? AllowList { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deny_list")]
         public global::System.Collections.Generic.IList<string>? DenyList { get; set; }

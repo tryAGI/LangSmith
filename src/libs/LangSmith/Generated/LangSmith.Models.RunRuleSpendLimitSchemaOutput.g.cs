@@ -4,19 +4,19 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RunRuleSpendLimitSchemaOutput
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_usd")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LimitUsd { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("window")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunRuleSpendLimitWindowJsonConverter))]

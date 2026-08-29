@@ -118,7 +118,7 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/v1/platform/orgs/current/access-policies/{accessPolicyId}",
+                                path: $"/api/v1/platform/orgs/current/access-policies/{accessPolicyId}",
                                 baseUri: ResolveBaseUri(
                                 servers: s_GetAnAccessPolicyServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
@@ -149,7 +149,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -181,7 +181,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
+                                pathTemplate: "$\"/api/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +215,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
+                                pathTemplate: "$\"/api/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -256,7 +256,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
+                                pathTemplate: "$\"/api/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -304,7 +304,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
+                                pathTemplate: "$\"/api/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -326,7 +326,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetAnAccessPolicy",
                                 methodName: "GetAnAccessPolicyAsync",
-                                pathTemplate: "$\"/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
+                                pathTemplate: "$\"/api/v1/platform/orgs/current/access-policies/{accessPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -346,19 +346,19 @@ namespace LangSmith
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::LangSmith.AbacErrorResponse? __value_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::LangSmith.AbacErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::LangSmith.AbacErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -366,37 +366,36 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.AbacErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::LangSmith.AbacErrorResponse? __value_403 = null;
+                                global::LangSmith.SharedProblemDetails? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::LangSmith.AbacErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::LangSmith.AbacErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -404,37 +403,36 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.AbacErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Access policy not found
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::LangSmith.AbacErrorResponse? __value_404 = null;
+                                global::LangSmith.SharedProblemDetails? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::LangSmith.AbacErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::LangSmith.SharedProblemDetails.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::LangSmith.AbacErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::LangSmith.SharedProblemDetails.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -442,37 +440,36 @@ namespace LangSmith
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.AbacErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal server error
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::LangSmith.AbacErrorResponse? __value_500 = null;
+                                global::LangSmith.SharedProblemDetails? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::LangSmith.AbacErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::LangSmith.AbacErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -480,37 +477,36 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.AbacErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Service unavailable
                             if ((int)__response.StatusCode == 503)
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::LangSmith.AbacErrorResponse? __value_503 = null;
+                                global::LangSmith.SharedProblemDetails? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::LangSmith.AbacErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::LangSmith.SharedProblemDetails.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::LangSmith.AbacErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::LangSmith.SharedProblemDetails.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -518,18 +514,17 @@ namespace LangSmith
                                     __exception_503 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.AbacErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_503,
-                                    ResponseObject = __value_503,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -563,17 +558,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -610,17 +603,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

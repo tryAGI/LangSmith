@@ -9,11 +9,11 @@ namespace LangSmith
     public enum UsageLimitType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MonthlyLonglivedTraces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MonthlyTraces,
     }

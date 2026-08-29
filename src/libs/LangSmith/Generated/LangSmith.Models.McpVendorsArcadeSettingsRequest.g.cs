@@ -4,18 +4,18 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class McpVendorsArcadeSettingsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         public string? OrganizationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         public string? ProjectId { get; set; }

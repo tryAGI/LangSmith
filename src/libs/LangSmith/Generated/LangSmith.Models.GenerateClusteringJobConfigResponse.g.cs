@@ -9,20 +9,20 @@ namespace LangSmith
     public sealed partial class GenerateClusteringJobConfigResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SummaryPrompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute_schemas")]
         public global::System.Collections.Generic.Dictionary<string, object>? AttributeSchemas { get; set; }

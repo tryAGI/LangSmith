@@ -4,18 +4,18 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnnotationQueueRunUpdateSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_reviewed_time")]
         public global::System.DateTime? LastReviewedTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
         public global::System.DateTime? AddedAt { get; set; }

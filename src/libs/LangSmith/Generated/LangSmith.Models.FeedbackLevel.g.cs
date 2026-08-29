@@ -9,11 +9,11 @@ namespace LangSmith
     public enum FeedbackLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Run,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Session,
     }

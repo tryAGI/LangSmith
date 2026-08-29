@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete a snapshot<br/>
-        /// Delete a snapshot by ID. The underlying storage is reclaimed asynchronously.
+        /// Delete a snapshot by ID or by a Docker-style name[:tag] reference. The underlying storage is reclaimed asynchronously.
         /// </summary>
         /// <param name="snapshotId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +18,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a snapshot<br/>
-        /// Delete a snapshot by ID. The underlying storage is reclaimed asynchronously.
+        /// Delete a snapshot by ID or by a Docker-style name[:tag] reference. The underlying storage is reclaimed asynchronously.
         /// </summary>
         /// <param name="snapshotId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -4,18 +4,18 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TriggerRulesRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? RuleIds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         public global::System.Guid? DatasetId { get; set; }

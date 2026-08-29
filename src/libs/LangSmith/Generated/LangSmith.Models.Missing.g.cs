@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Missing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"__missing__"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("__missing__")]

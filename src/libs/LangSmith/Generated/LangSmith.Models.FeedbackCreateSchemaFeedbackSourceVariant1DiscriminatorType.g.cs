@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Api,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         App,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AutoEval,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Model,
     }

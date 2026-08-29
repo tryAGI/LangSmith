@@ -4,55 +4,67 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DataPlanesPublicDataPlane
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_url")]
         public string? ApiUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("maintenance_window")]
+        public string? MaintenanceWindow { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
         public string? Region { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesStatusJsonConverter))]
         public global::LangSmith.DataPlanesStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_updated_at")]
         public string? StatusUpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
+        public global::LangSmith.DataPlanesDataPlaneTTLSettings? Ttl { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspaces")]
         public global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlaneWorkspace>? Workspaces { get; set; }
@@ -69,10 +81,12 @@ namespace LangSmith
         /// <param name="apiUrl"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
+        /// <param name="maintenanceWindow"></param>
         /// <param name="name"></param>
         /// <param name="region"></param>
         /// <param name="status"></param>
         /// <param name="statusUpdatedAt"></param>
+        /// <param name="ttl"></param>
         /// <param name="workspaces"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -81,19 +95,23 @@ namespace LangSmith
             string? apiUrl,
             string? createdAt,
             string? id,
+            string? maintenanceWindow,
             string? name,
             string? region,
             global::LangSmith.DataPlanesStatus? status,
             string? statusUpdatedAt,
+            global::LangSmith.DataPlanesDataPlaneTTLSettings? ttl,
             global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlaneWorkspace>? workspaces)
         {
             this.ApiUrl = apiUrl;
             this.CreatedAt = createdAt;
             this.Id = id;
+            this.MaintenanceWindow = maintenanceWindow;
             this.Name = name;
             this.Region = region;
             this.Status = status;
             this.StatusUpdatedAt = statusUpdatedAt;
+            this.Ttl = ttl;
             this.Workspaces = workspaces;
         }
 

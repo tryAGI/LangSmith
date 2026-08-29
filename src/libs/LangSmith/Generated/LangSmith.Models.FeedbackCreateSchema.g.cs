@@ -9,107 +9,119 @@ namespace LangSmith
     public sealed partial class FeedbackCreateSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
         public global::LangSmith.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>))]
         public global::LangSmith.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         public string? Comment { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>))]
         public global::LangSmith.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_group_id")]
         public global::System.Guid? FeedbackGroupId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         public global::System.Guid? ComparativeExperimentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         public global::System.Guid? RunId { get; set; }
 
         /// <summary>
-        /// 
+        /// Required. The ID of the tracing project (session) the feedback belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
         public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_thread_id")]
+        public string? FeedbackThreadId { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_trace_retention")]
+        public bool? ExtendTraceRetention { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
         public global::LangSmith.FeedbackSourceVariant12? FeedbackSource { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
         public global::LangSmith.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public bool? Error { get; set; }
@@ -133,9 +145,15 @@ namespace LangSmith
         /// <param name="feedbackGroupId"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
-        /// <param name="sessionId"></param>
+        /// <param name="sessionId">
+        /// Required. The ID of the tracing project (session) the feedback belongs to.
+        /// </param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
+        /// <param name="feedbackThreadId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
@@ -157,6 +175,8 @@ namespace LangSmith
             global::System.Guid? sessionId,
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
+            string? feedbackThreadId,
+            bool? extendTraceRetention,
             global::System.Guid? id,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
@@ -175,6 +195,8 @@ namespace LangSmith
             this.SessionId = sessionId;
             this.TraceId = traceId;
             this.StartTime = startTime;
+            this.FeedbackThreadId = feedbackThreadId;
+            this.ExtendTraceRetention = extendTraceRetention;
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;

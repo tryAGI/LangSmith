@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BotocoreS3ConfigUsEast1RegionalEndpoint2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Legacy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regional,
     }

@@ -4,25 +4,25 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AuthzInternalConditionGroup
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
         public global::System.Collections.Generic.IList<global::LangSmith.AuthzInternalCondition>? Conditions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AuthzInternalPermissionJsonConverter))]
         public global::LangSmith.AuthzInternalPermission? Permission { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_type")]
         public string? ResourceType { get; set; }

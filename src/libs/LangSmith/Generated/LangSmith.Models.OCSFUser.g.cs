@@ -9,13 +9,13 @@ namespace LangSmith
     public sealed partial class OCSFUser
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uid")]
         public global::System.Guid? Uid { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credential_uid")]
         public global::System.Guid? CredentialUid { get; set; }

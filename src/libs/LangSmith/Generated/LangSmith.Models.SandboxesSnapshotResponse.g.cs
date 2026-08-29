@@ -4,51 +4,63 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SandboxesSnapshotResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
         public string? CreatedBy { get; set; }
 
         /// <summary>
-        /// 
+        /// Description says what this snapshot's image can do, so a caller can hand it to an agent as a capability summary.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker_image")]
         public string? DockerImage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fs_capacity_bytes")]
         public long? FsCapacityBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fs_used_bytes")]
         public long? FsUsedBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_digest")]
         public string? ImageDigest { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Labels { get; set; }
 
         /// <summary>
         /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
@@ -59,37 +71,44 @@ namespace LangSmith
         public long? MemorySnapshotSizeBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry_id")]
         public string? RegistryId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_sandbox_id")]
         public string? SourceSandboxId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_message")]
         public string? StatusMessage { get; set; }
 
         /// <summary>
-        /// 
+        /// Tags currently resolving to this snapshot, under Name. A snapshot with no<br/>
+        /// tags is dangling — addressable only by id.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
@@ -105,11 +124,15 @@ namespace LangSmith
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="createdBy"></param>
+        /// <param name="description">
+        /// Description says what this snapshot's image can do, so a caller can hand it to an agent as a capability summary.
+        /// </param>
         /// <param name="dockerImage"></param>
         /// <param name="fsCapacityBytes"></param>
         /// <param name="fsUsedBytes"></param>
         /// <param name="id"></param>
         /// <param name="imageDigest"></param>
+        /// <param name="labels"></param>
         /// <param name="memorySnapshotSizeBytes">
         /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
         /// VM memory state. A non-nil value is the canonical signal that this<br/>
@@ -120,6 +143,10 @@ namespace LangSmith
         /// <param name="sourceSandboxId"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
+        /// <param name="tags">
+        /// Tags currently resolving to this snapshot, under Name. A snapshot with no<br/>
+        /// tags is dangling — addressable only by id.
+        /// </param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -127,32 +154,38 @@ namespace LangSmith
         public SandboxesSnapshotResponse(
             string? createdAt,
             string? createdBy,
+            string? description,
             string? dockerImage,
             long? fsCapacityBytes,
             long? fsUsedBytes,
             string? id,
             string? imageDigest,
+            global::System.Collections.Generic.Dictionary<string, string>? labels,
             long? memorySnapshotSizeBytes,
             string? name,
             string? registryId,
             string? sourceSandboxId,
             string? status,
             string? statusMessage,
+            global::System.Collections.Generic.IList<string>? tags,
             string? updatedAt)
         {
             this.CreatedAt = createdAt;
             this.CreatedBy = createdBy;
+            this.Description = description;
             this.DockerImage = dockerImage;
             this.FsCapacityBytes = fsCapacityBytes;
             this.FsUsedBytes = fsUsedBytes;
             this.Id = id;
             this.ImageDigest = imageDigest;
+            this.Labels = labels;
             this.MemorySnapshotSizeBytes = memorySnapshotSizeBytes;
             this.Name = name;
             this.RegistryId = registryId;
             this.SourceSandboxId = sourceSandboxId;
             this.Status = status;
             this.StatusMessage = statusMessage;
+            this.Tags = tags;
             this.UpdatedAt = updatedAt;
         }
 

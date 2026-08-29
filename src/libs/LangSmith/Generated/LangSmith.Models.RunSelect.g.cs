@@ -9,243 +9,243 @@ namespace LangSmith
     public enum RunSelect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AppPath,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChildRunIds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DottedOrder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorOrSignedUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Events,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EventsOrSignedUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Extra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtraOrSignedUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedbackStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputsOrSignedUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputsS3Urls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InsertedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastQueuedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manifest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ManifestId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ManifestS3Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Messages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputsOrSignedUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputsS3Urls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParentRunId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParentRunIds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PriceModelId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReferenceDatasetId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReferenceExampleId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S3Urls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Serialized,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SerializedOrSignedUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShareToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Status,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceFirstReceivedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceMinMaxStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceTier,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceUpgrade,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TtlSeconds,
     }

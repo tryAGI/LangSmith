@@ -4,20 +4,20 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResolvedAnnotationQueueRunSchemaSection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeedsMyReview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeedsOthersReview,
     }

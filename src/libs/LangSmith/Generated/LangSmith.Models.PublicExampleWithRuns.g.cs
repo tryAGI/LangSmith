@@ -9,71 +9,95 @@ namespace LangSmith
     public sealed partial class PublicExampleWithRuns
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         public object? Outputs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_run_id")]
         public global::System.Guid? SourceRunId { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_session_id")]
+        public global::System.Guid? SourceSessionId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_run_start_time")]
+        public global::System.DateTime? SourceRunStartTime { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_trace_id")]
+        public global::System.Guid? SourceTraceId { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Inputs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_thread_id")]
+        public string? SourceThreadId { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachment_urls")]
         public object? AttachmentUrls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -95,9 +119,13 @@ namespace LangSmith
         /// <param name="runs"></param>
         /// <param name="outputs"></param>
         /// <param name="sourceRunId"></param>
+        /// <param name="sourceSessionId"></param>
+        /// <param name="sourceRunStartTime"></param>
+        /// <param name="sourceTraceId"></param>
         /// <param name="metadata"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
+        /// <param name="sourceThreadId"></param>
         /// <param name="attachmentUrls"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -110,20 +138,28 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.RunPublicDatasetSchema> runs,
             object? outputs,
             global::System.Guid? sourceRunId,
+            global::System.Guid? sourceSessionId,
+            global::System.DateTime? sourceRunStartTime,
+            global::System.Guid? sourceTraceId,
             object? metadata,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
+            string? sourceThreadId,
             object? attachmentUrls)
         {
             this.Outputs = outputs;
             this.DatasetId = datasetId;
             this.SourceRunId = sourceRunId;
+            this.SourceSessionId = sourceSessionId;
+            this.SourceRunStartTime = sourceRunStartTime;
+            this.SourceTraceId = sourceTraceId;
             this.Metadata = metadata;
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.CreatedAt = createdAt;
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ModifiedAt = modifiedAt;
+            this.SourceThreadId = sourceThreadId;
             this.AttachmentUrls = attachmentUrls;
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
         }

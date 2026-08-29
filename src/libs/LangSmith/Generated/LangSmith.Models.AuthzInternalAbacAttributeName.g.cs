@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AuthzInternalAbacAttributeName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacAttributeNameResourceTagKey,
     }

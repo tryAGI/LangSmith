@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Read Tracer Sessions<br/>
-        /// Get all sessions.
+        /// List all projects.
         /// </summary>
         /// <param name="referenceFree"></param>
         /// <param name="referenceDataset"></param>
@@ -74,7 +74,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Tracer Sessions<br/>
-        /// Get all sessions.
+        /// List all projects.
         /// </summary>
         /// <param name="referenceFree"></param>
         /// <param name="referenceDataset"></param>

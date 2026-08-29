@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FeedbackFormulaUpdateAggregationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sum,
     }

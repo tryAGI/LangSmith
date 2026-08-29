@@ -43,8 +43,8 @@ namespace LangSmith
             ref string? accept,
             ref global::System.Guid traceId,
             ref string? filter,
-            ref global::System.DateTime maxStartTime,
-            ref global::System.DateTime minStartTime,
+            ref global::System.DateTime? maxStartTime,
+            ref global::System.DateTime? minStartTime,
             ref global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>? selects);
         partial void PrepareListRunsInATraceRequest(
@@ -53,8 +53,8 @@ namespace LangSmith
             string? accept,
             global::System.Guid traceId,
             string? filter,
-            global::System.DateTime maxStartTime,
-            global::System.DateTime minStartTime,
+            global::System.DateTime? maxStartTime,
+            global::System.DateTime? minStartTime,
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>? selects);
         partial void ProcessListRunsInATraceResponse(
@@ -68,8 +68,8 @@ namespace LangSmith
 
         /// <summary>
         /// List runs in a trace<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Returns runs for a trace ID within min/max start time. Optional `filter`; repeatable `selects` to select fields to return.
+        /// Returns runs for a trace ID within min/max start time. Optional `filter`; repeatable `selects` to select fields to return.<br/>
+        /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="traceId"></param>
@@ -83,22 +83,22 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryTraceResponseBody> ListRunsInATraceAsync(
             global::System.Guid traceId,
-            global::System.DateTime maxStartTime,
-            global::System.DateTime minStartTime,
             global::System.Guid projectId,
             string? accept = default,
             string? filter = default,
+            global::System.DateTime? maxStartTime = default,
+            global::System.DateTime? minStartTime = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>? selects = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListRunsInATraceAsResponseAsync(
                 traceId: traceId,
-                maxStartTime: maxStartTime,
-                minStartTime: minStartTime,
                 projectId: projectId,
                 accept: accept,
                 filter: filter,
+                maxStartTime: maxStartTime,
+                minStartTime: minStartTime,
                 selects: selects,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -108,8 +108,8 @@ namespace LangSmith
         }
         /// <summary>
         /// List runs in a trace<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Returns runs for a trace ID within min/max start time. Optional `filter`; repeatable `selects` to select fields to return.
+        /// Returns runs for a trace ID within min/max start time. Optional `filter`; repeatable `selects` to select fields to return.<br/>
+        /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="traceId"></param>
@@ -123,11 +123,11 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.QueryQueryTraceResponseBody>> ListRunsInATraceAsResponseAsync(
             global::System.Guid traceId,
-            global::System.DateTime maxStartTime,
-            global::System.DateTime minStartTime,
             global::System.Guid projectId,
             string? accept = default,
             string? filter = default,
+            global::System.DateTime? maxStartTime = default,
+            global::System.DateTime? minStartTime = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>? selects = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -168,14 +168,14 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/v2/traces/{traceId}/runs",
+                                path: $"/api/v2/traces/{traceId}/runs",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListRunsInATraceServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("filter", filter)
-                                .AddRequiredParameter("max_start_time", maxStartTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddRequiredParameter("min_start_time", minStartTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("max_start_time", maxStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("min_start_time", minStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("project_id", projectId.ToString()!)
                                 .AddOptionalParameter("selects", selects, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
@@ -206,7 +206,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
             if (accept != default)
@@ -228,8 +228,8 @@ namespace LangSmith
                     accept: accept,
                     traceId: traceId!,
                     filter: filter,
-                    maxStartTime: maxStartTime!,
-                    minStartTime: minStartTime!,
+                    maxStartTime: maxStartTime,
+                    minStartTime: minStartTime,
                     projectId: projectId!,
                     selects: selects);
 
@@ -250,7 +250,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListRunsInATrace",
                                 methodName: "ListRunsInATraceAsync",
-                                pathTemplate: "$\"/v2/traces/{traceId}/runs\"",
+                                pathTemplate: "$\"/api/v2/traces/{traceId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -284,7 +284,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListRunsInATrace",
                                 methodName: "ListRunsInATraceAsync",
-                                pathTemplate: "$\"/v2/traces/{traceId}/runs\"",
+                                pathTemplate: "$\"/api/v2/traces/{traceId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -325,7 +325,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListRunsInATrace",
                                 methodName: "ListRunsInATraceAsync",
-                                pathTemplate: "$\"/v2/traces/{traceId}/runs\"",
+                                pathTemplate: "$\"/api/v2/traces/{traceId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -373,7 +373,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListRunsInATrace",
                                 methodName: "ListRunsInATraceAsync",
-                                pathTemplate: "$\"/v2/traces/{traceId}/runs\"",
+                                pathTemplate: "$\"/api/v2/traces/{traceId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -395,7 +395,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListRunsInATrace",
                                 methodName: "ListRunsInATraceAsync",
-                                pathTemplate: "$\"/v2/traces/{traceId}/runs\"",
+                                pathTemplate: "$\"/api/v2/traces/{traceId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -435,18 +435,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // missing or invalid authentication
                             if ((int)__response.StatusCode == 401)
@@ -473,18 +472,17 @@ namespace LangSmith
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // forbidden (insufficient permission)
                             if ((int)__response.StatusCode == 403)
@@ -511,18 +509,17 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // session not found
                             if ((int)__response.StatusCode == 404)
@@ -549,18 +546,17 @@ namespace LangSmith
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // unprocessable entity (e.g. invalid UUID)
                             if ((int)__response.StatusCode == 422)
@@ -587,18 +583,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // internal server error
                             if ((int)__response.StatusCode == 500)
@@ -625,18 +620,54 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // V2 filter syntax is unavailable for this deployment; use legacy function-style filters or set SMITHDB_QUERY_ENABLED=true
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::LangSmith.SharedProblemDetails? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = global::LangSmith.SharedProblemDetails.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = global::LangSmith.SharedProblemDetails.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
                             // service unavailable
                             if ((int)__response.StatusCode == 503)
@@ -663,18 +694,17 @@ namespace LangSmith
                                     __exception_503 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_503,
-                                    ResponseObject = __value_503,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // gateway timeout or deadline exceeded
                             if ((int)__response.StatusCode == 504)
@@ -701,18 +731,17 @@ namespace LangSmith
                                     __exception_504 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_504,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_504,
-                                    ResponseObject = __value_504,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_504,
+                                    responseObject: __value_504,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -746,17 +775,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -793,17 +820,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

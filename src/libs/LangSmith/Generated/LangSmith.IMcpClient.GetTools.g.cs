@@ -11,12 +11,13 @@ namespace LangSmith
         /// MCP handshake. Caches the result before returning.<br/>
         /// Pass force_refresh=true to bypass the cache and always fetch from the<br/>
         /// remote server (the result is still cached via upsert for future requests).<br/>
-        /// The ls_user_id query parameter allows service-key callers (which don't carry<br/>
-        /// ls_user_id in auth) to specify the user for per-user OAuth cache lookups.
+        /// ``agent_id`` lets deployment/service-key callers name an agent OAuth<br/>
+        /// subject. ``ls_user_id`` overrides are limited to service identities.
         /// </summary>
         /// <param name="url"></param>
         /// <param name="oauthProviderId"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="agentId"></param>
         /// <param name="forceRefresh">
         /// Default Value: false
         /// </param>
@@ -27,6 +28,7 @@ namespace LangSmith
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,
+            string? agentId = default,
             bool? forceRefresh = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -37,12 +39,13 @@ namespace LangSmith
         /// MCP handshake. Caches the result before returning.<br/>
         /// Pass force_refresh=true to bypass the cache and always fetch from the<br/>
         /// remote server (the result is still cached via upsert for future requests).<br/>
-        /// The ls_user_id query parameter allows service-key callers (which don't carry<br/>
-        /// ls_user_id in auth) to specify the user for per-user OAuth cache lookups.
+        /// ``agent_id`` lets deployment/service-key callers name an agent OAuth<br/>
+        /// subject. ``ls_user_id`` overrides are limited to service identities.
         /// </summary>
         /// <param name="url"></param>
         /// <param name="oauthProviderId"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="agentId"></param>
         /// <param name="forceRefresh">
         /// Default Value: false
         /// </param>
@@ -53,6 +56,7 @@ namespace LangSmith
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,
+            string? agentId = default,
             bool? forceRefresh = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

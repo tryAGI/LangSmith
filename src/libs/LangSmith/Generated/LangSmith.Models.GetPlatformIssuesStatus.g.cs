@@ -4,22 +4,30 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetPlatformIssuesStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Fixing,
+        /// <summary>
+        ///
         /// </summary>
         Ignored,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Open,
+        /// <summary>
+        ///
+        /// </summary>
+        Watching,
     }
 
     /// <summary>
@@ -35,8 +43,10 @@ namespace LangSmith
             return value switch
             {
                 GetPlatformIssuesStatus.Completed => "completed",
+                GetPlatformIssuesStatus.Fixing => "fixing",
                 GetPlatformIssuesStatus.Ignored => "ignored",
                 GetPlatformIssuesStatus.Open => "open",
+                GetPlatformIssuesStatus.Watching => "watching",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +58,10 @@ namespace LangSmith
             return value switch
             {
                 "completed" => GetPlatformIssuesStatus.Completed,
+                "fixing" => GetPlatformIssuesStatus.Fixing,
                 "ignored" => GetPlatformIssuesStatus.Ignored,
                 "open" => GetPlatformIssuesStatus.Open,
+                "watching" => GetPlatformIssuesStatus.Watching,
                 _ => null,
             };
         }

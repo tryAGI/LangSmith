@@ -4,30 +4,36 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SandboxesProxyConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_control")]
         public global::LangSmith.SandboxesAccessControl? AccessControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
         public global::System.Collections.Generic.IList<global::LangSmith.SandboxesCallback>? Callbacks { get; set; }
 
         /// <summary>
-        /// 
+        /// Description says what this configuration as a whole lets the sandbox reach, complementing the per-rule descriptions. At most 1024 characters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("no_proxy")]
         public global::System.Collections.Generic.IList<string>? NoProxy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         public global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule>? Rules { get; set; }
@@ -43,6 +49,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="accessControl"></param>
         /// <param name="callbacks"></param>
+        /// <param name="description">
+        /// Description says what this configuration as a whole lets the sandbox reach, complementing the per-rule descriptions. At most 1024 characters.
+        /// </param>
         /// <param name="noProxy"></param>
         /// <param name="rules"></param>
 #if NET7_0_OR_GREATER
@@ -51,11 +60,13 @@ namespace LangSmith
         public SandboxesProxyConfig(
             global::LangSmith.SandboxesAccessControl? accessControl,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesCallback>? callbacks,
+            string? description,
             global::System.Collections.Generic.IList<string>? noProxy,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule>? rules)
         {
             this.AccessControl = accessControl;
             this.Callbacks = callbacks;
+            this.Description = description;
             this.NoProxy = noProxy;
             this.Rules = rules;
         }

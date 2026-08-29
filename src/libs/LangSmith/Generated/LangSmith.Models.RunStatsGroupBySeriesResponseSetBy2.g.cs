@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RunStatsGroupBySeriesResponseSetBy2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Section,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Series,
     }

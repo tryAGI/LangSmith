@@ -9,24 +9,17 @@ namespace LangSmith
     public sealed partial class RuleLogsPaginatedResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema> Logs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         public string? Cursor { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,19 +31,16 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RuleLogsPaginatedResponse" /> class.
         /// </summary>
         /// <param name="logs"></param>
-        /// <param name="hasMore"></param>
         /// <param name="cursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RuleLogsPaginatedResponse(
             global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema> logs,
-            bool hasMore,
             string? cursor)
         {
             this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
             this.Cursor = cursor;
-            this.HasMore = hasMore;
         }
 
         /// <summary>

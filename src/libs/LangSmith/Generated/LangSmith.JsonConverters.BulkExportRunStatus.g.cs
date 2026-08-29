@@ -20,7 +20,7 @@ namespace LangSmith.JsonConverters
                     {
                         return global::LangSmith.BulkExportRunStatusExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

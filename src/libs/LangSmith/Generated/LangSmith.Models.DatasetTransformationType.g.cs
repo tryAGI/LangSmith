@@ -10,23 +10,23 @@ namespace LangSmith
     public enum DatasetTransformationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConvertToOpenaiMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConvertToOpenaiTool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtractToolsFromRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RemoveExtraFields,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RemoveSystemMessages,
     }

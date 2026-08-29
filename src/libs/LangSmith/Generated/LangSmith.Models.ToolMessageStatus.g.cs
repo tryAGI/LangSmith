@@ -9,11 +9,11 @@ namespace LangSmith
     public enum ToolMessageStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

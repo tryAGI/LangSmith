@@ -4,20 +4,20 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FilterViewType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Runs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SingleRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Threads,
     }

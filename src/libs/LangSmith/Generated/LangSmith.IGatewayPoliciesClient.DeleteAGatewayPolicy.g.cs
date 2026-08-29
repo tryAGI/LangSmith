@@ -7,8 +7,9 @@ namespace LangSmith
         /// <summary>
         /// Delete a gateway policy<br/>
         /// Deletes a gateway policy. Subsequent reads return 404.<br/>
-        /// **default_spend_cap cascade:** deleting a `default_spend_cap`<br/>
-        /// also deletes every child policy materialized from it.
+        /// **default cascade:** deleting a `default_spend_cap` or<br/>
+        /// `default_rate_limit` also deletes every child policy<br/>
+        /// materialized from it.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -21,8 +22,9 @@ namespace LangSmith
         /// <summary>
         /// Delete a gateway policy<br/>
         /// Deletes a gateway policy. Subsequent reads return 404.<br/>
-        /// **default_spend_cap cascade:** deleting a `default_spend_cap`<br/>
-        /// also deletes every child policy materialized from it.
+        /// **default cascade:** deleting a `default_spend_cap` or<br/>
+        /// `default_rate_limit` also deletes every child policy<br/>
+        /// materialized from it.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

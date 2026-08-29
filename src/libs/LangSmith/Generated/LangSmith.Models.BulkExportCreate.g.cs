@@ -4,39 +4,44 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BulkExportCreate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bulk_export_destination_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid BulkExportDestinationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("all_experiments")]
+        public bool? AllExperiments { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         public string? Filter { get; set; }
@@ -57,20 +62,20 @@ namespace LangSmith
         public global::LangSmith.BulkExportFormatVersion? FormatVersion { get; set; }
 
         /// <summary>
-        /// Default Value: gzip
+        /// Default Value: zstandard
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compression")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.BulkExportCompressionJsonConverter))]
         public global::LangSmith.BulkExportCompression? Compression { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval_hours")]
         public int? IntervalHours { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("export_fields")]
         public global::System.Collections.Generic.IList<string>? ExportFields { get; set; }
@@ -85,8 +90,11 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="BulkExportCreate" /> class.
         /// </summary>
         /// <param name="bulkExportDestinationId"></param>
-        /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="allExperiments">
+        /// Default Value: false
+        /// </param>
         /// <param name="endTime"></param>
         /// <param name="filter"></param>
         /// <param name="format">
@@ -97,7 +105,7 @@ namespace LangSmith
         /// Default Value: v1
         /// </param>
         /// <param name="compression">
-        /// Default Value: gzip
+        /// Default Value: zstandard
         /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
@@ -106,8 +114,9 @@ namespace LangSmith
 #endif
         public BulkExportCreate(
             global::System.Guid bulkExportDestinationId,
-            global::System.Guid sessionId,
             global::System.DateTime startTime,
+            global::System.Guid? sessionId,
+            bool? allExperiments,
             global::System.DateTime? endTime,
             string? filter,
             global::LangSmith.BulkExportFormat? format,
@@ -118,6 +127,7 @@ namespace LangSmith
         {
             this.BulkExportDestinationId = bulkExportDestinationId;
             this.SessionId = sessionId;
+            this.AllExperiments = allExperiments;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Filter = filter;

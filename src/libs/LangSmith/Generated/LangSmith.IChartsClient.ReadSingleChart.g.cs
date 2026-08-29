@@ -6,14 +6,14 @@ namespace LangSmith
     {
         /// <summary>
         /// Read Single Chart<br/>
-        /// Get a single chart by ID.
+        /// Get a single chart or text block by ID.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.SingleCustomChartResponse> ReadSingleChartAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponse> ReadSingleChartAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartsRequest request,
@@ -21,14 +21,14 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Single Chart<br/>
-        /// Get a single chart by ID.
+        /// Get a single chart or text block by ID.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SingleCustomChartResponse>> ReadSingleChartAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponse>> ReadSingleChartAsResponseAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartsRequest request,
@@ -36,7 +36,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Single Chart<br/>
-        /// Get a single chart by ID.
+        /// Get a single chart or text block by ID.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="timezone">
@@ -56,7 +56,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.SingleCustomChartResponse> ReadSingleChartAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponse> ReadSingleChartAsync(
             global::System.Guid chartId,
             string? timezone = default,
             global::System.DateTime? startTime = default,

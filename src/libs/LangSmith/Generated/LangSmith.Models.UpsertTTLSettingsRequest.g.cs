@@ -9,13 +9,13 @@ namespace LangSmith
     public sealed partial class UpsertTTLSettingsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         public global::System.Guid? TenantId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_trace_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.TraceTierJsonConverter))]

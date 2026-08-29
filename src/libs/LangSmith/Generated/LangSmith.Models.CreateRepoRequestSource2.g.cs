@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateRepoRequestSource2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         External,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Internal,
     }

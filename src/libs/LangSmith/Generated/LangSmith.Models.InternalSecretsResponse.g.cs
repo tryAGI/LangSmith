@@ -4,19 +4,19 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class InternalSecretsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_secrets")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EncryptedSecrets { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         public global::System.Guid? TenantId { get; set; }

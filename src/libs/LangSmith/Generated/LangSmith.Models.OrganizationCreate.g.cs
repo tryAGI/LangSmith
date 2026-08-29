@@ -9,21 +9,21 @@ namespace LangSmith
     public sealed partial class OrganizationCreate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPersonal { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
         public string? SecurityContact { get; set; }

@@ -9,1471 +9,1671 @@ namespace LangSmith
     public enum AuditLogOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddAnnotationQueueReviewer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddBasicAuthUsersToOrg,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        AddItemsToAnnotationQueue,
+        /// <summary>
+        ///
         /// </summary>
         AddMemberToWorkspace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddMembersToWorkspaceBatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddRunsToAnnotationQueue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AttachAccessPolicies,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BatchDeleteSandboxClaims,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        BatchQueryRuns,
+        /// <summary>
+        ///
         /// </summary>
         BatchQueryTraceMessages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BulkDeleteEvaluators,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CancelBulkExport,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CaptureSandboxSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClaimPendingOrganizationInvite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClaimPendingWorkspaceInvite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CloneChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CloneDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConfirmPaymentCheckoutSession,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConfirmSsoUserEmail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CountExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateAccessPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateAlertRule,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateAnnotationQueue,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        CreateAnnotationQueueItemStatus,
+        /// <summary>
+        ///
         /// </summary>
         CreateAnnotationQueueRunStatus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateApiKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateBulkExport,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateBulkExportDestination,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateCommit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateComparativeExperiment,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        CreateConnection,
+        /// <summary>
+        ///
         /// </summary>
         CreateCredential,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateCsvDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateDataPlane,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateDeployment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateDirectoryCommit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateEvaluator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateExample,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateExperimentViaUpload,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateExperimentViewOverride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFeedbackConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFeedbackFormula,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFilterView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFleetUsageLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFleetWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateForgeConfiguration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateGatewayPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateHubEnvironment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateInsightsJob,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateInsightsJobConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateLicenseShareLink,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateMcpServer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateMcpVendorSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateModelPriceMap,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        CreateOauthClient,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateOauthProvider,
+        /// <summary>
+        ///
         /// </summary>
         CreateOnboardingState,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateOrgChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateOrgChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateOrganization,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePaymentAccountLink,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePaymentCheckoutSession,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePaymentSetupIntent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePersonalAccessToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePlaygroundExperiment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePlaygroundSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePromptCanvasQuickAction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatePromptWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateProvisionedSaasOrg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateRole,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSandboxClaim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSandboxPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSandboxProxyProfile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSandboxRegistry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSandboxSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateScimGroup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateScimToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateScimUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSelfHostedCustomer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateServiceAccount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateServiceKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateSsoSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTagKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTagValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTagging,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTenant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateWorkspace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteAccessPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteAlertRule,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteAnnotationQueue,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        DeleteAnnotationQueueItem,
+        /// <summary>
+        ///
         /// </summary>
         DeleteAnnotationQueueRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteAnnotationQueueRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteAnnotationQueues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteApiKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteComparativeExperiment,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        DeleteConnection,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteCredential,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteDataPlane,
+        /// <summary>
+        ///
         /// </summary>
         DeleteDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteDatasets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteDeployment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteDirectory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteEvaluator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteExample,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteExperimentViewOverride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFeatureDefaultModel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFeatureDisabledModel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFeedbackConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFeedbackFormula,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFilterView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFleetUsageLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFleetWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteForgeConfiguration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteGatewayPolicy,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        DeleteGithubAppConfiguration,
+        /// <summary>
+        ///
         /// </summary>
         DeleteHubEnvironment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteInsightsJob,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteInsightsJobConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteMcpServer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteMcpVendorSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteModelPriceMap,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        DeleteOauthClient,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteOauthProvider,
+        /// <summary>
+        ///
         /// </summary>
         DeleteOrgChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteOrgChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteOrgMember,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteOrgPendingMember,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeletePendingOrganizationInvite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeletePendingWorkspaceInvite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeletePersonalAccessToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeletePlaygroundSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeletePromptCanvasQuickAction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeletePromptWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteRole,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteSandboxClaim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteSandboxPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteSandboxProxyProfile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteSandboxRegistry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteSandboxSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteScimGroup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteScimToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteScimUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteServiceAccount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteServiceKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteSsoSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTagKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTagValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTagging,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTracerSession,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTracerSessions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteUsageLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteWorkspace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteWorkspaceMember,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteWorkspacePendingMember,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        DeleteWorkspaceSecret,
+        /// <summary>
+        ///
+        /// </summary>
+        DetachAccessPolicies,
+        /// <summary>
+        ///
         /// </summary>
         DiffDatasetVersions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DownloadDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluateExperiment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExecuteCustomCode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExportAnnotationQueue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        ExportGranularUsageCsv,
+        ExportGranularUsageDeploymentsCsv,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        ExportGranularUsageTracesCsv,
+        /// <summary>
+        ///
         /// </summary>
         ExportUsageBackfillCsv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GenerateDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GenerateInsightsJobConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GenerateRunsQuery,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GenerateSandboxDownloadUrl,
+        /// <summary>
+        ///
         /// </summary>
         GenerateSandboxServiceUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GenerateSharedDatasetQuery,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAnnotationQueue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAnnotationQueueArchivedSize,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GetAnnotationQueueItems,
+        /// <summary>
+        ///
         /// </summary>
         GetAnnotationQueueRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAnnotationQueueRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAnnotationQueueSize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAnnotationQueueTotalSize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAnnotationQueuesForRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetAuditLogs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetBulkExport,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetBulkExportRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetBulkExportRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetBulkExportRunsFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetCompanyInfo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetDatasetComparisonView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetDatasetVersion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetDatasetVersions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetExample,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetExperimentViewOverride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetExperimentViewOverrides,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetFeedbackFormula,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetFilterView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        GetGranularUsage,
+        GetGranularUsageDeployments,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GetGranularUsageTraces,
+        /// <summary>
+        ///
         /// </summary>
         GetInsightsJob,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetInsightsJobRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetLoginMethods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetMcpTools,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetOnboardingState,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetOrgDashboard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetOrgUsage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetOrgUsageLimits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetOrganizationBillingInfo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetOrganizationInfo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetPairwiseQueue,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GetProvisionedSaasOrg,
+        /// <summary>
+        ///
         /// </summary>
         GetRunCluster,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GetRunUrl,
+        /// <summary>
+        ///
         /// </summary>
         GetSandboxClaim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetSandboxClaimStatus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetSandboxRegistry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetSandboxSnapshot,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GetSelfHostedCustomer,
+        /// <summary>
+        ///
         /// </summary>
         GetSharedExamplesCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetSharedTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetSsoSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetSsoSettingsCurrent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetTagKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetTagValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetUsageLimits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetWorkspaceStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GetWorkspaceUsageLimitsInfo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidateMcpToolsCache,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InviteProvisionedOrgMember,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InviteUserToOrg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InviteUsersToOrgBatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvokeGateway,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListAccessPolicies,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListAnnotationQueues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListBulkExportDestinations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListBulkExports,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListChartSections,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListFeedbackConfigs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListFeedbackFormulas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListFilterViews,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListInsightsJobConfigs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListInsightsJobs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListOrgMembers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListOrgPersonalAccessTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListOrgServiceKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListOrganizationRoles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListOrganizations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListPairwiseEntries,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListPairwiseQueues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListPendingOrganizationInvites,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListPendingWorkspaceInvites,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListPermissions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListSandboxClaims,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListSandboxRegistries,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListSandboxSnapshots,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListServiceAccounts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListTagKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListTagValues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListTaggings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListTags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListTagsForResource,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListWorkspaceMembers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListWorkspaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Login,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpProxy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpProxyGet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MintSelfHostedLicense,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PopulateAnnotationQueue,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        PurchasePrepaidGatewayProviderCredits,
+        /// <summary>
+        ///
         /// </summary>
         QueryRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QuerySingleThreadStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryThreadMessages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryThreadTraces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryThreads,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryTrace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryTraceMessages,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        QueryTraces,
+        /// <summary>
+        ///
         /// </summary>
         ReadAccessPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadBulkExportDestination,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadChartPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadCharts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadComparativeExperiments,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        ReadCredentialOauth2,
+        /// <summary>
+        ///
+        /// </summary>
+        ReadCredentialSecret,
+        /// <summary>
+        ///
         /// </summary>
         ReadDatasetDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadDatasetShareState,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadExample,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadFeedback,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadFeedbacks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadModelPriceMap,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadRoleAccessPolicies,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadRuns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadSharedDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadSharedDeltaStream,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadTracingDashboard,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        ReadWorkspaceEncryptedSecrets,
+        /// <summary>
+        ///
         /// </summary>
         RegisterMcpServerOauth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RemoveAnnotationQueueReviewer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RenameFilterView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResolveAnnotationQueueRun,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        RevokeOauthGrant,
+        /// <summary>
+        ///
+        /// </summary>
+        RotateOauthClientSecret,
+        /// <summary>
+        ///
         /// </summary>
         SendSsoEmailConfirmation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SetTenantHandle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShareDataset,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        ShareRun,
+        /// <summary>
+        ///
+        /// </summary>
+        ShareThread,
+        /// <summary>
+        ///
+        /// </summary>
+        StartOauthConnection,
+        /// <summary>
+        ///
         /// </summary>
         StartSandboxClaim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StopSandboxClaim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamDatasetComparisonView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamFeedbackDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamGroupedExperiments,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubmitNpsResponse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SyncExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TestAlertRule,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TestFleetWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TestOpGeneric,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TestPromptWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TriggerForgeConfiguration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnshareDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnshareEntities,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UnshareRun,
+        /// <summary>
+        ///
+        /// </summary>
+        UnshareThread,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateAccessPolicy,
+        /// <summary>
+        ///
         /// </summary>
         UpdateAlertRule,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateAnnotationQueue,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateAnnotationQueueItem,
+        /// <summary>
+        ///
         /// </summary>
         UpdateAnnotationQueueRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateBasicAuthUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateBulkExportDestination,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateBusinessInfo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateChartSection,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateConnection,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateCredential,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateDataPlane,
+        /// <summary>
+        ///
         /// </summary>
         UpdateDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateDatasetSplits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateDatasetVersion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateDefaultSsoProvisionOrganization,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateDeployment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateEvaluator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateExample,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateExamples,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateExamplesMetadata,
+        /// <summary>
+        ///
         /// </summary>
         UpdateExperimentViewOverride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFeedbackConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFeedbackFormula,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFilterView,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFleetUsageLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFleetWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateForgeConfiguration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateGatewayPolicy,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateGithubAppConfiguration,
+        /// <summary>
+        ///
         /// </summary>
         UpdateHubEnvironment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateInsightsJob,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateInsightsJobConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateLoginMethods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateMcpServer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateMcpVendorSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateModelPriceMap,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateOauthClient,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateOauthProvider,
+        /// <summary>
+        ///
         /// </summary>
         UpdateOnboardingState,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateOrgChart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateOrgChartSection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateOrgMember,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateOrgPendingMember,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateOrgSecrets,
+        /// <summary>
+        ///
         /// </summary>
         UpdateOrganizationInfo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatePaymentMethod,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatePaymentPlan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatePlaygroundSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatePromptCanvasQuickAction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatePromptWebhook,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateProvisionedSaasOrg,
+        /// <summary>
+        ///
         /// </summary>
         UpdateRole,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateSandboxClaim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateSandboxPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateSandboxProxyProfile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateSandboxRegistry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateScimGroup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateScimToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateScimUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateSelfHostedCustomer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateSelfHostedLicense,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateServiceKey,
+        /// <summary>
+        ///
         /// </summary>
         UpdateSsoSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateTagKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateTagValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateTool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateTracerSession,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateTtlSettings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateUsageLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateWorkspace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateWorkspaceMember,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpdateWorkspacePendingMember,
+        /// <summary>
+        ///
         /// </summary>
         UpdateWorkspaceSecrets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpsertFeatureDefaultModel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpsertFeatureDisabledModel,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UpsertGithubAppConfiguration,
+        /// <summary>
+        ///
+        /// </summary>
+        UpsertRoleRestriction,
+        /// <summary>
+        ///
         /// </summary>
         ValidateExample,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ValidateExamples,
     }
@@ -1492,11 +1692,13 @@ namespace LangSmith
             {
                 AuditLogOperation.AddAnnotationQueueReviewer => "add_annotation_queue_reviewer",
                 AuditLogOperation.AddBasicAuthUsersToOrg => "add_basic_auth_users_to_org",
+                AuditLogOperation.AddItemsToAnnotationQueue => "add_items_to_annotation_queue",
                 AuditLogOperation.AddMemberToWorkspace => "add_member_to_workspace",
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
                 AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
+                AuditLogOperation.BatchQueryRuns => "batch_query_runs",
                 AuditLogOperation.BatchQueryTraceMessages => "batch_query_trace_messages",
                 AuditLogOperation.BulkDeleteEvaluators => "bulk_delete_evaluators",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
@@ -1511,6 +1713,7 @@ namespace LangSmith
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
                 AuditLogOperation.CreateAlertRule => "create_alert_rule",
                 AuditLogOperation.CreateAnnotationQueue => "create_annotation_queue",
+                AuditLogOperation.CreateAnnotationQueueItemStatus => "create_annotation_queue_item_status",
                 AuditLogOperation.CreateAnnotationQueueRunStatus => "create_annotation_queue_run_status",
                 AuditLogOperation.CreateApiKey => "create_api_key",
                 AuditLogOperation.CreateBulkExport => "create_bulk_export",
@@ -1519,6 +1722,7 @@ namespace LangSmith
                 AuditLogOperation.CreateChartSection => "create_chart_section",
                 AuditLogOperation.CreateCommit => "create_commit",
                 AuditLogOperation.CreateComparativeExperiment => "create_comparative_experiment",
+                AuditLogOperation.CreateConnection => "create_connection",
                 AuditLogOperation.CreateCredential => "create_credential",
                 AuditLogOperation.CreateCsvDataset => "create_csv_dataset",
                 AuditLogOperation.CreateDataPlane => "create_data_plane",
@@ -1544,6 +1748,8 @@ namespace LangSmith
                 AuditLogOperation.CreateMcpServer => "create_mcp_server",
                 AuditLogOperation.CreateMcpVendorSettings => "create_mcp_vendor_settings",
                 AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
+                AuditLogOperation.CreateOauthClient => "create_oauth_client",
+                AuditLogOperation.CreateOauthProvider => "create_oauth_provider",
                 AuditLogOperation.CreateOnboardingState => "create_onboarding_state",
                 AuditLogOperation.CreateOrgChart => "create_org_chart",
                 AuditLogOperation.CreateOrgChartSection => "create_org_chart_section",
@@ -1579,6 +1785,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
                 AuditLogOperation.DeleteAlertRule => "delete_alert_rule",
                 AuditLogOperation.DeleteAnnotationQueue => "delete_annotation_queue",
+                AuditLogOperation.DeleteAnnotationQueueItem => "delete_annotation_queue_item",
                 AuditLogOperation.DeleteAnnotationQueueRun => "delete_annotation_queue_run",
                 AuditLogOperation.DeleteAnnotationQueueRuns => "delete_annotation_queue_runs",
                 AuditLogOperation.DeleteAnnotationQueues => "delete_annotation_queues",
@@ -1586,6 +1793,9 @@ namespace LangSmith
                 AuditLogOperation.DeleteChart => "delete_chart",
                 AuditLogOperation.DeleteChartSection => "delete_chart_section",
                 AuditLogOperation.DeleteComparativeExperiment => "delete_comparative_experiment",
+                AuditLogOperation.DeleteConnection => "delete_connection",
+                AuditLogOperation.DeleteCredential => "delete_credential",
+                AuditLogOperation.DeleteDataPlane => "delete_data_plane",
                 AuditLogOperation.DeleteDataset => "delete_dataset",
                 AuditLogOperation.DeleteDatasets => "delete_datasets",
                 AuditLogOperation.DeleteDeployment => "delete_deployment",
@@ -1603,12 +1813,15 @@ namespace LangSmith
                 AuditLogOperation.DeleteFleetWebhook => "delete_fleet_webhook",
                 AuditLogOperation.DeleteForgeConfiguration => "delete_forge_configuration",
                 AuditLogOperation.DeleteGatewayPolicy => "delete_gateway_policy",
+                AuditLogOperation.DeleteGithubAppConfiguration => "delete_github_app_configuration",
                 AuditLogOperation.DeleteHubEnvironment => "delete_hub_environment",
                 AuditLogOperation.DeleteInsightsJob => "delete_insights_job",
                 AuditLogOperation.DeleteInsightsJobConfig => "delete_insights_job_config",
                 AuditLogOperation.DeleteMcpServer => "delete_mcp_server",
                 AuditLogOperation.DeleteMcpVendorSettings => "delete_mcp_vendor_settings",
                 AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
+                AuditLogOperation.DeleteOauthClient => "delete_oauth_client",
+                AuditLogOperation.DeleteOauthProvider => "delete_oauth_provider",
                 AuditLogOperation.DeleteOrgChart => "delete_org_chart",
                 AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
                 AuditLogOperation.DeleteOrgMember => "delete_org_member",
@@ -1642,20 +1855,25 @@ namespace LangSmith
                 AuditLogOperation.DeleteWorkspace => "delete_workspace",
                 AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
+                AuditLogOperation.DeleteWorkspaceSecret => "delete_workspace_secret",
+                AuditLogOperation.DetachAccessPolicies => "detach_access_policies",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
                 AuditLogOperation.DownloadDataset => "download_dataset",
                 AuditLogOperation.EvaluateExperiment => "evaluate_experiment",
                 AuditLogOperation.ExecuteCustomCode => "execute_custom_code",
                 AuditLogOperation.ExportAnnotationQueue => "export_annotation_queue",
-                AuditLogOperation.ExportGranularUsageCsv => "export_granular_usage_csv",
+                AuditLogOperation.ExportGranularUsageDeploymentsCsv => "export_granular_usage_deployments_csv",
+                AuditLogOperation.ExportGranularUsageTracesCsv => "export_granular_usage_traces_csv",
                 AuditLogOperation.ExportUsageBackfillCsv => "export_usage_backfill_csv",
                 AuditLogOperation.GenerateDataset => "generate_dataset",
                 AuditLogOperation.GenerateInsightsJobConfig => "generate_insights_job_config",
                 AuditLogOperation.GenerateRunsQuery => "generate_runs_query",
+                AuditLogOperation.GenerateSandboxDownloadUrl => "generate_sandbox_download_url",
                 AuditLogOperation.GenerateSandboxServiceUrl => "generate_sandbox_service_url",
                 AuditLogOperation.GenerateSharedDatasetQuery => "generate_shared_dataset_query",
                 AuditLogOperation.GetAnnotationQueue => "get_annotation_queue",
                 AuditLogOperation.GetAnnotationQueueArchivedSize => "get_annotation_queue_archived_size",
+                AuditLogOperation.GetAnnotationQueueItems => "get_annotation_queue_items",
                 AuditLogOperation.GetAnnotationQueueRun => "get_annotation_queue_run",
                 AuditLogOperation.GetAnnotationQueueRuns => "get_annotation_queue_runs",
                 AuditLogOperation.GetAnnotationQueueSize => "get_annotation_queue_size",
@@ -1675,7 +1893,8 @@ namespace LangSmith
                 AuditLogOperation.GetExperimentViewOverrides => "get_experiment_view_overrides",
                 AuditLogOperation.GetFeedbackFormula => "get_feedback_formula",
                 AuditLogOperation.GetFilterView => "get_filter_view",
-                AuditLogOperation.GetGranularUsage => "get_granular_usage",
+                AuditLogOperation.GetGranularUsageDeployments => "get_granular_usage_deployments",
+                AuditLogOperation.GetGranularUsageTraces => "get_granular_usage_traces",
                 AuditLogOperation.GetInsightsJob => "get_insights_job",
                 AuditLogOperation.GetInsightsJobRuns => "get_insights_job_runs",
                 AuditLogOperation.GetLoginMethods => "get_login_methods",
@@ -1687,11 +1906,14 @@ namespace LangSmith
                 AuditLogOperation.GetOrganizationBillingInfo => "get_organization_billing_info",
                 AuditLogOperation.GetOrganizationInfo => "get_organization_info",
                 AuditLogOperation.GetPairwiseQueue => "get_pairwise_queue",
+                AuditLogOperation.GetProvisionedSaasOrg => "get_provisioned_saas_org",
                 AuditLogOperation.GetRunCluster => "get_run_cluster",
+                AuditLogOperation.GetRunUrl => "get_run_url",
                 AuditLogOperation.GetSandboxClaim => "get_sandbox_claim",
                 AuditLogOperation.GetSandboxClaimStatus => "get_sandbox_claim_status",
                 AuditLogOperation.GetSandboxRegistry => "get_sandbox_registry",
                 AuditLogOperation.GetSandboxSnapshot => "get_sandbox_snapshot",
+                AuditLogOperation.GetSelfHostedCustomer => "get_self_hosted_customer",
                 AuditLogOperation.GetSharedExamplesCount => "get_shared_examples_count",
                 AuditLogOperation.GetSharedTokens => "get_shared_tokens",
                 AuditLogOperation.GetSsoSettings => "get_sso_settings",
@@ -1743,6 +1965,7 @@ namespace LangSmith
                 AuditLogOperation.McpProxyGet => "mcp_proxy_get",
                 AuditLogOperation.MintSelfHostedLicense => "mint_self_hosted_license",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
+                AuditLogOperation.PurchasePrepaidGatewayProviderCredits => "purchase_prepaid_gateway_provider_credits",
                 AuditLogOperation.QueryRun => "query_run",
                 AuditLogOperation.QueryRuns => "query_runs",
                 AuditLogOperation.QuerySingleThreadStats => "query_single_thread_stats",
@@ -1751,6 +1974,7 @@ namespace LangSmith
                 AuditLogOperation.QueryThreads => "query_threads",
                 AuditLogOperation.QueryTrace => "query_trace",
                 AuditLogOperation.QueryTraceMessages => "query_trace_messages",
+                AuditLogOperation.QueryTraces => "query_traces",
                 AuditLogOperation.ReadAccessPolicy => "read_access_policy",
                 AuditLogOperation.ReadBulkExportDestination => "read_bulk_export_destination",
                 AuditLogOperation.ReadChart => "read_chart",
@@ -1758,6 +1982,8 @@ namespace LangSmith
                 AuditLogOperation.ReadChartSection => "read_chart_section",
                 AuditLogOperation.ReadCharts => "read_charts",
                 AuditLogOperation.ReadComparativeExperiments => "read_comparative_experiments",
+                AuditLogOperation.ReadCredentialOauth2 => "read_credential_oauth2",
+                AuditLogOperation.ReadCredentialSecret => "read_credential_secret",
                 AuditLogOperation.ReadDatasetDelta => "read_dataset_delta",
                 AuditLogOperation.ReadDatasetShareState => "read_dataset_share_state",
                 AuditLogOperation.ReadExample => "read_example",
@@ -1771,13 +1997,19 @@ namespace LangSmith
                 AuditLogOperation.ReadSharedDelta => "read_shared_delta",
                 AuditLogOperation.ReadSharedDeltaStream => "read_shared_delta_stream",
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
+                AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
+                AuditLogOperation.RevokeOauthGrant => "revoke_oauth_grant",
+                AuditLogOperation.RotateOauthClientSecret => "rotate_oauth_client_secret",
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
+                AuditLogOperation.ShareRun => "share_run",
+                AuditLogOperation.ShareThread => "share_thread",
+                AuditLogOperation.StartOauthConnection => "start_oauth_connection",
                 AuditLogOperation.StartSandboxClaim => "start_sandbox_claim",
                 AuditLogOperation.StopSandboxClaim => "stop_sandbox_claim",
                 AuditLogOperation.StreamDatasetComparisonView => "stream_dataset_comparison_view",
@@ -1792,14 +2024,21 @@ namespace LangSmith
                 AuditLogOperation.TriggerForgeConfiguration => "trigger_forge_configuration",
                 AuditLogOperation.UnshareDataset => "unshare_dataset",
                 AuditLogOperation.UnshareEntities => "unshare_entities",
+                AuditLogOperation.UnshareRun => "unshare_run",
+                AuditLogOperation.UnshareThread => "unshare_thread",
+                AuditLogOperation.UpdateAccessPolicy => "update_access_policy",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
+                AuditLogOperation.UpdateAnnotationQueueItem => "update_annotation_queue_item",
                 AuditLogOperation.UpdateAnnotationQueueRun => "update_annotation_queue_run",
                 AuditLogOperation.UpdateBasicAuthUser => "update_basic_auth_user",
                 AuditLogOperation.UpdateBulkExportDestination => "update_bulk_export_destination",
                 AuditLogOperation.UpdateBusinessInfo => "update_business_info",
                 AuditLogOperation.UpdateChart => "update_chart",
                 AuditLogOperation.UpdateChartSection => "update_chart_section",
+                AuditLogOperation.UpdateConnection => "update_connection",
+                AuditLogOperation.UpdateCredential => "update_credential",
+                AuditLogOperation.UpdateDataPlane => "update_data_plane",
                 AuditLogOperation.UpdateDataset => "update_dataset",
                 AuditLogOperation.UpdateDatasetSplits => "update_dataset_splits",
                 AuditLogOperation.UpdateDatasetVersion => "update_dataset_version",
@@ -1808,6 +2047,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateEvaluator => "update_evaluator",
                 AuditLogOperation.UpdateExample => "update_example",
                 AuditLogOperation.UpdateExamples => "update_examples",
+                AuditLogOperation.UpdateExamplesMetadata => "update_examples_metadata",
                 AuditLogOperation.UpdateExperimentViewOverride => "update_experiment_view_override",
                 AuditLogOperation.UpdateFeedbackConfig => "update_feedback_config",
                 AuditLogOperation.UpdateFeedbackFormula => "update_feedback_formula",
@@ -1816,6 +2056,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateFleetWebhook => "update_fleet_webhook",
                 AuditLogOperation.UpdateForgeConfiguration => "update_forge_configuration",
                 AuditLogOperation.UpdateGatewayPolicy => "update_gateway_policy",
+                AuditLogOperation.UpdateGithubAppConfiguration => "update_github_app_configuration",
                 AuditLogOperation.UpdateHubEnvironment => "update_hub_environment",
                 AuditLogOperation.UpdateInsightsJob => "update_insights_job",
                 AuditLogOperation.UpdateInsightsJobConfig => "update_insights_job_config",
@@ -1823,16 +2064,21 @@ namespace LangSmith
                 AuditLogOperation.UpdateMcpServer => "update_mcp_server",
                 AuditLogOperation.UpdateMcpVendorSettings => "update_mcp_vendor_settings",
                 AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
+                AuditLogOperation.UpdateOauthClient => "update_oauth_client",
+                AuditLogOperation.UpdateOauthProvider => "update_oauth_provider",
                 AuditLogOperation.UpdateOnboardingState => "update_onboarding_state",
                 AuditLogOperation.UpdateOrgChart => "update_org_chart",
                 AuditLogOperation.UpdateOrgChartSection => "update_org_chart_section",
                 AuditLogOperation.UpdateOrgMember => "update_org_member",
+                AuditLogOperation.UpdateOrgPendingMember => "update_org_pending_member",
+                AuditLogOperation.UpdateOrgSecrets => "update_org_secrets",
                 AuditLogOperation.UpdateOrganizationInfo => "update_organization_info",
                 AuditLogOperation.UpdatePaymentMethod => "update_payment_method",
                 AuditLogOperation.UpdatePaymentPlan => "update_payment_plan",
                 AuditLogOperation.UpdatePlaygroundSettings => "update_playground_settings",
                 AuditLogOperation.UpdatePromptCanvasQuickAction => "update_prompt_canvas_quick_action",
                 AuditLogOperation.UpdatePromptWebhook => "update_prompt_webhook",
+                AuditLogOperation.UpdateProvisionedSaasOrg => "update_provisioned_saas_org",
                 AuditLogOperation.UpdateRole => "update_role",
                 AuditLogOperation.UpdateSandboxClaim => "update_sandbox_claim",
                 AuditLogOperation.UpdateSandboxPolicy => "update_sandbox_policy",
@@ -1843,6 +2089,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateScimUser => "update_scim_user",
                 AuditLogOperation.UpdateSelfHostedCustomer => "update_self_hosted_customer",
                 AuditLogOperation.UpdateSelfHostedLicense => "update_self_hosted_license",
+                AuditLogOperation.UpdateServiceKey => "update_service_key",
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
@@ -1852,9 +2099,12 @@ namespace LangSmith
                 AuditLogOperation.UpdateUsageLimit => "update_usage_limit",
                 AuditLogOperation.UpdateWorkspace => "update_workspace",
                 AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
+                AuditLogOperation.UpdateWorkspacePendingMember => "update_workspace_pending_member",
                 AuditLogOperation.UpdateWorkspaceSecrets => "update_workspace_secrets",
                 AuditLogOperation.UpsertFeatureDefaultModel => "upsert_feature_default_model",
                 AuditLogOperation.UpsertFeatureDisabledModel => "upsert_feature_disabled_model",
+                AuditLogOperation.UpsertGithubAppConfiguration => "upsert_github_app_configuration",
+                AuditLogOperation.UpsertRoleRestriction => "upsert_role_restriction",
                 AuditLogOperation.ValidateExample => "validate_example",
                 AuditLogOperation.ValidateExamples => "validate_examples",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -1869,11 +2119,13 @@ namespace LangSmith
             {
                 "add_annotation_queue_reviewer" => AuditLogOperation.AddAnnotationQueueReviewer,
                 "add_basic_auth_users_to_org" => AuditLogOperation.AddBasicAuthUsersToOrg,
+                "add_items_to_annotation_queue" => AuditLogOperation.AddItemsToAnnotationQueue,
                 "add_member_to_workspace" => AuditLogOperation.AddMemberToWorkspace,
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
                 "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
+                "batch_query_runs" => AuditLogOperation.BatchQueryRuns,
                 "batch_query_trace_messages" => AuditLogOperation.BatchQueryTraceMessages,
                 "bulk_delete_evaluators" => AuditLogOperation.BulkDeleteEvaluators,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
@@ -1888,6 +2140,7 @@ namespace LangSmith
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
                 "create_alert_rule" => AuditLogOperation.CreateAlertRule,
                 "create_annotation_queue" => AuditLogOperation.CreateAnnotationQueue,
+                "create_annotation_queue_item_status" => AuditLogOperation.CreateAnnotationQueueItemStatus,
                 "create_annotation_queue_run_status" => AuditLogOperation.CreateAnnotationQueueRunStatus,
                 "create_api_key" => AuditLogOperation.CreateApiKey,
                 "create_bulk_export" => AuditLogOperation.CreateBulkExport,
@@ -1896,6 +2149,7 @@ namespace LangSmith
                 "create_chart_section" => AuditLogOperation.CreateChartSection,
                 "create_commit" => AuditLogOperation.CreateCommit,
                 "create_comparative_experiment" => AuditLogOperation.CreateComparativeExperiment,
+                "create_connection" => AuditLogOperation.CreateConnection,
                 "create_credential" => AuditLogOperation.CreateCredential,
                 "create_csv_dataset" => AuditLogOperation.CreateCsvDataset,
                 "create_data_plane" => AuditLogOperation.CreateDataPlane,
@@ -1921,6 +2175,8 @@ namespace LangSmith
                 "create_mcp_server" => AuditLogOperation.CreateMcpServer,
                 "create_mcp_vendor_settings" => AuditLogOperation.CreateMcpVendorSettings,
                 "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
+                "create_oauth_client" => AuditLogOperation.CreateOauthClient,
+                "create_oauth_provider" => AuditLogOperation.CreateOauthProvider,
                 "create_onboarding_state" => AuditLogOperation.CreateOnboardingState,
                 "create_org_chart" => AuditLogOperation.CreateOrgChart,
                 "create_org_chart_section" => AuditLogOperation.CreateOrgChartSection,
@@ -1956,6 +2212,7 @@ namespace LangSmith
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
                 "delete_alert_rule" => AuditLogOperation.DeleteAlertRule,
                 "delete_annotation_queue" => AuditLogOperation.DeleteAnnotationQueue,
+                "delete_annotation_queue_item" => AuditLogOperation.DeleteAnnotationQueueItem,
                 "delete_annotation_queue_run" => AuditLogOperation.DeleteAnnotationQueueRun,
                 "delete_annotation_queue_runs" => AuditLogOperation.DeleteAnnotationQueueRuns,
                 "delete_annotation_queues" => AuditLogOperation.DeleteAnnotationQueues,
@@ -1963,6 +2220,9 @@ namespace LangSmith
                 "delete_chart" => AuditLogOperation.DeleteChart,
                 "delete_chart_section" => AuditLogOperation.DeleteChartSection,
                 "delete_comparative_experiment" => AuditLogOperation.DeleteComparativeExperiment,
+                "delete_connection" => AuditLogOperation.DeleteConnection,
+                "delete_credential" => AuditLogOperation.DeleteCredential,
+                "delete_data_plane" => AuditLogOperation.DeleteDataPlane,
                 "delete_dataset" => AuditLogOperation.DeleteDataset,
                 "delete_datasets" => AuditLogOperation.DeleteDatasets,
                 "delete_deployment" => AuditLogOperation.DeleteDeployment,
@@ -1980,12 +2240,15 @@ namespace LangSmith
                 "delete_fleet_webhook" => AuditLogOperation.DeleteFleetWebhook,
                 "delete_forge_configuration" => AuditLogOperation.DeleteForgeConfiguration,
                 "delete_gateway_policy" => AuditLogOperation.DeleteGatewayPolicy,
+                "delete_github_app_configuration" => AuditLogOperation.DeleteGithubAppConfiguration,
                 "delete_hub_environment" => AuditLogOperation.DeleteHubEnvironment,
                 "delete_insights_job" => AuditLogOperation.DeleteInsightsJob,
                 "delete_insights_job_config" => AuditLogOperation.DeleteInsightsJobConfig,
                 "delete_mcp_server" => AuditLogOperation.DeleteMcpServer,
                 "delete_mcp_vendor_settings" => AuditLogOperation.DeleteMcpVendorSettings,
                 "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
+                "delete_oauth_client" => AuditLogOperation.DeleteOauthClient,
+                "delete_oauth_provider" => AuditLogOperation.DeleteOauthProvider,
                 "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
                 "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
                 "delete_org_member" => AuditLogOperation.DeleteOrgMember,
@@ -2019,20 +2282,25 @@ namespace LangSmith
                 "delete_workspace" => AuditLogOperation.DeleteWorkspace,
                 "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
+                "delete_workspace_secret" => AuditLogOperation.DeleteWorkspaceSecret,
+                "detach_access_policies" => AuditLogOperation.DetachAccessPolicies,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
                 "evaluate_experiment" => AuditLogOperation.EvaluateExperiment,
                 "execute_custom_code" => AuditLogOperation.ExecuteCustomCode,
                 "export_annotation_queue" => AuditLogOperation.ExportAnnotationQueue,
-                "export_granular_usage_csv" => AuditLogOperation.ExportGranularUsageCsv,
+                "export_granular_usage_deployments_csv" => AuditLogOperation.ExportGranularUsageDeploymentsCsv,
+                "export_granular_usage_traces_csv" => AuditLogOperation.ExportGranularUsageTracesCsv,
                 "export_usage_backfill_csv" => AuditLogOperation.ExportUsageBackfillCsv,
                 "generate_dataset" => AuditLogOperation.GenerateDataset,
                 "generate_insights_job_config" => AuditLogOperation.GenerateInsightsJobConfig,
                 "generate_runs_query" => AuditLogOperation.GenerateRunsQuery,
+                "generate_sandbox_download_url" => AuditLogOperation.GenerateSandboxDownloadUrl,
                 "generate_sandbox_service_url" => AuditLogOperation.GenerateSandboxServiceUrl,
                 "generate_shared_dataset_query" => AuditLogOperation.GenerateSharedDatasetQuery,
                 "get_annotation_queue" => AuditLogOperation.GetAnnotationQueue,
                 "get_annotation_queue_archived_size" => AuditLogOperation.GetAnnotationQueueArchivedSize,
+                "get_annotation_queue_items" => AuditLogOperation.GetAnnotationQueueItems,
                 "get_annotation_queue_run" => AuditLogOperation.GetAnnotationQueueRun,
                 "get_annotation_queue_runs" => AuditLogOperation.GetAnnotationQueueRuns,
                 "get_annotation_queue_size" => AuditLogOperation.GetAnnotationQueueSize,
@@ -2052,7 +2320,8 @@ namespace LangSmith
                 "get_experiment_view_overrides" => AuditLogOperation.GetExperimentViewOverrides,
                 "get_feedback_formula" => AuditLogOperation.GetFeedbackFormula,
                 "get_filter_view" => AuditLogOperation.GetFilterView,
-                "get_granular_usage" => AuditLogOperation.GetGranularUsage,
+                "get_granular_usage_deployments" => AuditLogOperation.GetGranularUsageDeployments,
+                "get_granular_usage_traces" => AuditLogOperation.GetGranularUsageTraces,
                 "get_insights_job" => AuditLogOperation.GetInsightsJob,
                 "get_insights_job_runs" => AuditLogOperation.GetInsightsJobRuns,
                 "get_login_methods" => AuditLogOperation.GetLoginMethods,
@@ -2064,11 +2333,14 @@ namespace LangSmith
                 "get_organization_billing_info" => AuditLogOperation.GetOrganizationBillingInfo,
                 "get_organization_info" => AuditLogOperation.GetOrganizationInfo,
                 "get_pairwise_queue" => AuditLogOperation.GetPairwiseQueue,
+                "get_provisioned_saas_org" => AuditLogOperation.GetProvisionedSaasOrg,
                 "get_run_cluster" => AuditLogOperation.GetRunCluster,
+                "get_run_url" => AuditLogOperation.GetRunUrl,
                 "get_sandbox_claim" => AuditLogOperation.GetSandboxClaim,
                 "get_sandbox_claim_status" => AuditLogOperation.GetSandboxClaimStatus,
                 "get_sandbox_registry" => AuditLogOperation.GetSandboxRegistry,
                 "get_sandbox_snapshot" => AuditLogOperation.GetSandboxSnapshot,
+                "get_self_hosted_customer" => AuditLogOperation.GetSelfHostedCustomer,
                 "get_shared_examples_count" => AuditLogOperation.GetSharedExamplesCount,
                 "get_shared_tokens" => AuditLogOperation.GetSharedTokens,
                 "get_sso_settings" => AuditLogOperation.GetSsoSettings,
@@ -2120,6 +2392,7 @@ namespace LangSmith
                 "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
                 "mint_self_hosted_license" => AuditLogOperation.MintSelfHostedLicense,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
+                "purchase_prepaid_gateway_provider_credits" => AuditLogOperation.PurchasePrepaidGatewayProviderCredits,
                 "query_run" => AuditLogOperation.QueryRun,
                 "query_runs" => AuditLogOperation.QueryRuns,
                 "query_single_thread_stats" => AuditLogOperation.QuerySingleThreadStats,
@@ -2128,6 +2401,7 @@ namespace LangSmith
                 "query_threads" => AuditLogOperation.QueryThreads,
                 "query_trace" => AuditLogOperation.QueryTrace,
                 "query_trace_messages" => AuditLogOperation.QueryTraceMessages,
+                "query_traces" => AuditLogOperation.QueryTraces,
                 "read_access_policy" => AuditLogOperation.ReadAccessPolicy,
                 "read_bulk_export_destination" => AuditLogOperation.ReadBulkExportDestination,
                 "read_chart" => AuditLogOperation.ReadChart,
@@ -2135,6 +2409,8 @@ namespace LangSmith
                 "read_chart_section" => AuditLogOperation.ReadChartSection,
                 "read_charts" => AuditLogOperation.ReadCharts,
                 "read_comparative_experiments" => AuditLogOperation.ReadComparativeExperiments,
+                "read_credential_oauth2" => AuditLogOperation.ReadCredentialOauth2,
+                "read_credential_secret" => AuditLogOperation.ReadCredentialSecret,
                 "read_dataset_delta" => AuditLogOperation.ReadDatasetDelta,
                 "read_dataset_share_state" => AuditLogOperation.ReadDatasetShareState,
                 "read_example" => AuditLogOperation.ReadExample,
@@ -2148,13 +2424,19 @@ namespace LangSmith
                 "read_shared_delta" => AuditLogOperation.ReadSharedDelta,
                 "read_shared_delta_stream" => AuditLogOperation.ReadSharedDeltaStream,
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
+                "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
+                "revoke_oauth_grant" => AuditLogOperation.RevokeOauthGrant,
+                "rotate_oauth_client_secret" => AuditLogOperation.RotateOauthClientSecret,
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
+                "share_run" => AuditLogOperation.ShareRun,
+                "share_thread" => AuditLogOperation.ShareThread,
+                "start_oauth_connection" => AuditLogOperation.StartOauthConnection,
                 "start_sandbox_claim" => AuditLogOperation.StartSandboxClaim,
                 "stop_sandbox_claim" => AuditLogOperation.StopSandboxClaim,
                 "stream_dataset_comparison_view" => AuditLogOperation.StreamDatasetComparisonView,
@@ -2169,14 +2451,21 @@ namespace LangSmith
                 "trigger_forge_configuration" => AuditLogOperation.TriggerForgeConfiguration,
                 "unshare_dataset" => AuditLogOperation.UnshareDataset,
                 "unshare_entities" => AuditLogOperation.UnshareEntities,
+                "unshare_run" => AuditLogOperation.UnshareRun,
+                "unshare_thread" => AuditLogOperation.UnshareThread,
+                "update_access_policy" => AuditLogOperation.UpdateAccessPolicy,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,
+                "update_annotation_queue_item" => AuditLogOperation.UpdateAnnotationQueueItem,
                 "update_annotation_queue_run" => AuditLogOperation.UpdateAnnotationQueueRun,
                 "update_basic_auth_user" => AuditLogOperation.UpdateBasicAuthUser,
                 "update_bulk_export_destination" => AuditLogOperation.UpdateBulkExportDestination,
                 "update_business_info" => AuditLogOperation.UpdateBusinessInfo,
                 "update_chart" => AuditLogOperation.UpdateChart,
                 "update_chart_section" => AuditLogOperation.UpdateChartSection,
+                "update_connection" => AuditLogOperation.UpdateConnection,
+                "update_credential" => AuditLogOperation.UpdateCredential,
+                "update_data_plane" => AuditLogOperation.UpdateDataPlane,
                 "update_dataset" => AuditLogOperation.UpdateDataset,
                 "update_dataset_splits" => AuditLogOperation.UpdateDatasetSplits,
                 "update_dataset_version" => AuditLogOperation.UpdateDatasetVersion,
@@ -2185,6 +2474,7 @@ namespace LangSmith
                 "update_evaluator" => AuditLogOperation.UpdateEvaluator,
                 "update_example" => AuditLogOperation.UpdateExample,
                 "update_examples" => AuditLogOperation.UpdateExamples,
+                "update_examples_metadata" => AuditLogOperation.UpdateExamplesMetadata,
                 "update_experiment_view_override" => AuditLogOperation.UpdateExperimentViewOverride,
                 "update_feedback_config" => AuditLogOperation.UpdateFeedbackConfig,
                 "update_feedback_formula" => AuditLogOperation.UpdateFeedbackFormula,
@@ -2193,6 +2483,7 @@ namespace LangSmith
                 "update_fleet_webhook" => AuditLogOperation.UpdateFleetWebhook,
                 "update_forge_configuration" => AuditLogOperation.UpdateForgeConfiguration,
                 "update_gateway_policy" => AuditLogOperation.UpdateGatewayPolicy,
+                "update_github_app_configuration" => AuditLogOperation.UpdateGithubAppConfiguration,
                 "update_hub_environment" => AuditLogOperation.UpdateHubEnvironment,
                 "update_insights_job" => AuditLogOperation.UpdateInsightsJob,
                 "update_insights_job_config" => AuditLogOperation.UpdateInsightsJobConfig,
@@ -2200,16 +2491,21 @@ namespace LangSmith
                 "update_mcp_server" => AuditLogOperation.UpdateMcpServer,
                 "update_mcp_vendor_settings" => AuditLogOperation.UpdateMcpVendorSettings,
                 "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
+                "update_oauth_client" => AuditLogOperation.UpdateOauthClient,
+                "update_oauth_provider" => AuditLogOperation.UpdateOauthProvider,
                 "update_onboarding_state" => AuditLogOperation.UpdateOnboardingState,
                 "update_org_chart" => AuditLogOperation.UpdateOrgChart,
                 "update_org_chart_section" => AuditLogOperation.UpdateOrgChartSection,
                 "update_org_member" => AuditLogOperation.UpdateOrgMember,
+                "update_org_pending_member" => AuditLogOperation.UpdateOrgPendingMember,
+                "update_org_secrets" => AuditLogOperation.UpdateOrgSecrets,
                 "update_organization_info" => AuditLogOperation.UpdateOrganizationInfo,
                 "update_payment_method" => AuditLogOperation.UpdatePaymentMethod,
                 "update_payment_plan" => AuditLogOperation.UpdatePaymentPlan,
                 "update_playground_settings" => AuditLogOperation.UpdatePlaygroundSettings,
                 "update_prompt_canvas_quick_action" => AuditLogOperation.UpdatePromptCanvasQuickAction,
                 "update_prompt_webhook" => AuditLogOperation.UpdatePromptWebhook,
+                "update_provisioned_saas_org" => AuditLogOperation.UpdateProvisionedSaasOrg,
                 "update_role" => AuditLogOperation.UpdateRole,
                 "update_sandbox_claim" => AuditLogOperation.UpdateSandboxClaim,
                 "update_sandbox_policy" => AuditLogOperation.UpdateSandboxPolicy,
@@ -2220,6 +2516,7 @@ namespace LangSmith
                 "update_scim_user" => AuditLogOperation.UpdateScimUser,
                 "update_self_hosted_customer" => AuditLogOperation.UpdateSelfHostedCustomer,
                 "update_self_hosted_license" => AuditLogOperation.UpdateSelfHostedLicense,
+                "update_service_key" => AuditLogOperation.UpdateServiceKey,
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
@@ -2229,9 +2526,12 @@ namespace LangSmith
                 "update_usage_limit" => AuditLogOperation.UpdateUsageLimit,
                 "update_workspace" => AuditLogOperation.UpdateWorkspace,
                 "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,
+                "update_workspace_pending_member" => AuditLogOperation.UpdateWorkspacePendingMember,
                 "update_workspace_secrets" => AuditLogOperation.UpdateWorkspaceSecrets,
                 "upsert_feature_default_model" => AuditLogOperation.UpsertFeatureDefaultModel,
                 "upsert_feature_disabled_model" => AuditLogOperation.UpsertFeatureDisabledModel,
+                "upsert_github_app_configuration" => AuditLogOperation.UpsertGithubAppConfiguration,
+                "upsert_role_restriction" => AuditLogOperation.UpsertRoleRestriction,
                 "validate_example" => AuditLogOperation.ValidateExample,
                 "validate_examples" => AuditLogOperation.ValidateExamples,
                 _ => null,

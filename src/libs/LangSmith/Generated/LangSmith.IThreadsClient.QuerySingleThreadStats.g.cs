@@ -6,10 +6,11 @@ namespace LangSmith
     {
         /// <summary>
         /// Query Single Thread Stats<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Compute aggregate stats for a single thread (turn count, latency percentiles, token/cost sums, and detail breakdowns) within a project.
+        /// Compute aggregate stats for a single thread (turn count, latency percentiles, token/cost sums, and detail breakdowns) within a project.<br/>
+        /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="threadId"></param>
+        /// <param name="filter"></param>
         /// <param name="selects"></param>
         /// <param name="sessionId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,16 +18,18 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQuerySingleThreadStatsResponseBody> QuerySingleThreadStatsAsync(
             string threadId,
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsStatsSelect> selects,
             global::System.Guid sessionId,
-            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsStatsSelect>? selects = default,
+            string? filter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query Single Thread Stats<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Compute aggregate stats for a single thread (turn count, latency percentiles, token/cost sums, and detail breakdowns) within a project.
+        /// Compute aggregate stats for a single thread (turn count, latency percentiles, token/cost sums, and detail breakdowns) within a project.<br/>
+        /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="threadId"></param>
+        /// <param name="filter"></param>
         /// <param name="selects"></param>
         /// <param name="sessionId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -34,8 +37,9 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsQuerySingleThreadStatsResponseBody>> QuerySingleThreadStatsAsResponseAsync(
             string threadId,
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsStatsSelect> selects,
             global::System.Guid sessionId,
-            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsStatsSelect>? selects = default,
+            string? filter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

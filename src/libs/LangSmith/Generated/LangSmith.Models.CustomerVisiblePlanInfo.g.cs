@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class CustomerVisiblePlanInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PaymentPlanTierJsonConverter))]
@@ -17,14 +17,14 @@ namespace LangSmith
         public required global::LangSmith.PaymentPlanTier Tier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_on")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime StartedOn { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ends_on")]
         public global::System.DateTime? EndsOn { get; set; }

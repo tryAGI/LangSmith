@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class EvaluateExperimentRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

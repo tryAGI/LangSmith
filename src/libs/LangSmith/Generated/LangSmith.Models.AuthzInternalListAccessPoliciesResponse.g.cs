@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AuthzInternalListAccessPoliciesResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_policies")]
         public global::System.Collections.Generic.IList<global::LangSmith.AuthzInternalAccessPolicy>? AccessPolicies { get; set; }

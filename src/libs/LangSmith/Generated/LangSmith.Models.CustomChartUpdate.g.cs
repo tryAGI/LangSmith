@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CustomChartUpdate
     {
@@ -61,8 +61,15 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>))]
-        public global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>? CommonFilters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>))]
+        public global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? CommonFilters { get; set; }
+
+        /// <summary>
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("markdown")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Markdown { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,6 +104,9 @@ namespace LangSmith
         /// <param name="commonFilters">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="markdown">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,7 +118,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? series,
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? sectionId,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>? commonFilters)
+            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? commonFilters,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? markdown)
         {
             this.Title = title;
             this.Description = description;
@@ -118,6 +129,7 @@ namespace LangSmith
             this.SectionId = sectionId;
             this.Metadata = metadata;
             this.CommonFilters = commonFilters;
+            this.Markdown = markdown;
         }
 
         /// <summary>

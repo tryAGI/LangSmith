@@ -9,19 +9,19 @@ namespace LangSmith
     public sealed partial class AnnotationQueueUpdateSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset")]
         public global::System.Guid? DefaultDataset { get; set; }
@@ -40,19 +40,19 @@ namespace LangSmith
         public bool? EnableReservations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reservation_minutes")]
         public int? ReservationMinutes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rubric_items")]
         public global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? RubricItems { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rubric_instructions")]
         public string? RubricInstructions { get; set; }
@@ -65,7 +65,7 @@ namespace LangSmith
         public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewer_access_mode")]
         public global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? ReviewerAccessMode { get; set; }

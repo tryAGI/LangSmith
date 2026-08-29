@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum McpVendorsMcpVendorStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpVendorStatusDisabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpVendorStatusEnabled,
     }

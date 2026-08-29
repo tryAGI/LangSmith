@@ -9,11 +9,11 @@ namespace LangSmith
     public enum GetCurrentWorkspaceEncryptedSecretsApiV1WorkspacesCurrentSecretsEncryptedGetService
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentBuilder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Polly,
     }

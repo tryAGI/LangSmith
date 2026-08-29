@@ -20,7 +20,7 @@ namespace LangSmith.JsonConverters
                     {
                         return global::LangSmith.ListReposApiV1ReposGetIsArchived2Extensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -9,19 +9,19 @@ namespace LangSmith
     public enum PagerdutySeverity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Critical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Info,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

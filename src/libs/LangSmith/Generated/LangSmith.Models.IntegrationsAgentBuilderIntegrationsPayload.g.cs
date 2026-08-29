@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IntegrationsAgentBuilderIntegrationsPayload
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integration_catalog")]
         public global::System.Collections.Generic.IList<global::LangSmith.IntegrationsIntegrationCatalogEntry>? IntegrationCatalog { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integration_overrides")]
         public global::System.Collections.Generic.IList<global::LangSmith.IntegrationsIntegrationOverride>? IntegrationOverrides { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations_enabled_by_default")]
         public bool? IntegrationsEnabledByDefault { get; set; }

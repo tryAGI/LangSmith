@@ -9,112 +9,131 @@ namespace LangSmith
     public sealed partial class OrganizationUpdate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
         public bool? PublicSharingDisabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pat_creation_disabled")]
         public bool? PatCreationDisabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unshare_all")]
         public bool? UnshareAll { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
         public bool? JitProvisioningEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_admin_can_invite_to_org")]
         public bool? WorkspaceAdminCanInviteToOrg { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invites_enabled")]
         public bool? InvitesEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_api_key_expiry_days")]
         public int? MaxApiKeyExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
         public string? SecurityContact { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_pat_expiry_days")]
         public int? MaxPatExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_service_key_expiry_days")]
         public int? MaxServiceKeyExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
         public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
         public string? LlmAuthProxyJwtAudience { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist")]
         public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_allowed_urls")]
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
         public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
+        public global::LangSmith.AnyOf<double?, string, object>? EngineLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -140,9 +159,12 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
+        /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -162,9 +184,12 @@ namespace LangSmith
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
+            bool? byocCreateSaasWorkspaceEnabled,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
-            bool? engineEnabled)
+            bool? engineEnabled,
+            global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly)
         {
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;
@@ -181,9 +206,12 @@ namespace LangSmith
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
+            this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
         }
 
         /// <summary>

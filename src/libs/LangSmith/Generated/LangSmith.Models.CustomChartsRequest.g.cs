@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CustomChartsRequest
     {
@@ -15,13 +15,13 @@ namespace LangSmith
         public string? Timezone { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         public global::System.DateTime? EndTime { get; set; }
@@ -40,13 +40,13 @@ namespace LangSmith
         public bool? OmitData { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("after_index")]
         public int? AfterIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
         public global::System.Collections.Generic.IList<global::System.Guid>? TagValueId { get; set; }

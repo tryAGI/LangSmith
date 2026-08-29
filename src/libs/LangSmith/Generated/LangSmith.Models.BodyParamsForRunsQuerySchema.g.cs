@@ -9,109 +9,109 @@ namespace LangSmith
     public sealed partial class BodyParamsForRunsQuerySchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Collections.Generic.IList<global::System.Guid>? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
         public global::System.Guid? Trace { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run")]
         public global::System.Guid? ParentRun { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
         public global::LangSmith.RunTypeEnum? RunType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         public global::System.Collections.Generic.IList<global::System.Guid>? Session { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example")]
         public global::System.Collections.Generic.IList<global::System.Guid>? ReferenceExample { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_order")]
         public int? ExecutionOrder { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public bool? Error { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         public string? Query { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         public string? Filter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter")]
         public string? TraceFilter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter")]
         public string? TreeFilter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_root")]
         public bool? IsRoot { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source_type")]
         public global::LangSmith.RunsFilterDataSourceTypeEnum? DataSourceType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skip_pagination")]
         public bool? SkipPagination { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_filter")]
         public string? SearchFilter { get; set; }
@@ -123,12 +123,13 @@ namespace LangSmith
         public bool? UseExperimentalSearch { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         public string? Cursor { get; set; }
 
         /// <summary>
+        /// Maximum number of runs to return. Not applied when trace is set — all runs in the trace are returned in a single response.<br/>
         /// Default Value: 100
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
@@ -164,7 +165,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="BodyParamsForRunsQuerySchema" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="trace"></param>
+        /// <param name="trace">
+        /// Filter runs by trace ID. When set, limit and cursor-based pagination are not applied — all runs in the trace are returned in a single response.
+        /// </param>
         /// <param name="parentRun"></param>
         /// <param name="runType"></param>
         /// <param name="session"></param>
@@ -186,6 +189,7 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
+        /// Maximum number of runs to return. Not applied when trace is set — all runs in the trace are returned in a single response.<br/>
         /// Default Value: 100
         /// </param>
         /// <param name="select">

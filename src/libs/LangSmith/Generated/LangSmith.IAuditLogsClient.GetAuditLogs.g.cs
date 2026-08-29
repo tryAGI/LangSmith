@@ -32,6 +32,15 @@ namespace LangSmith
         /// <param name="operations">
         /// Filter by operation names. If omitted, all operations are returned.
         /// </param>
+        /// <param name="actorLsUserIds">
+        /// Filter by human actor (ls_user_id).
+        /// </param>
+        /// <param name="actorApiKeyIds">
+        /// Filter by API key actor (api_key_id).
+        /// </param>
+        /// <param name="resourceIds">
+        /// Filter by resource ID. Matches if any resource ID is present on the log.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -42,6 +51,9 @@ namespace LangSmith
             string? cursor = default,
             global::System.Guid? workspaceId = default,
             global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorLsUserIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorApiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -72,6 +84,15 @@ namespace LangSmith
         /// <param name="operations">
         /// Filter by operation names. If omitted, all operations are returned.
         /// </param>
+        /// <param name="actorLsUserIds">
+        /// Filter by human actor (ls_user_id).
+        /// </param>
+        /// <param name="actorApiKeyIds">
+        /// Filter by API key actor (api_key_id).
+        /// </param>
+        /// <param name="resourceIds">
+        /// Filter by resource ID. Matches if any resource ID is present on the log.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -82,6 +103,9 @@ namespace LangSmith
             string? cursor = default,
             global::System.Guid? workspaceId = default,
             global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorLsUserIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorApiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

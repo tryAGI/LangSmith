@@ -35,8 +35,10 @@ namespace LangSmith
         /// </summary>
         /// <param name="email"></param>
         /// <param name="roleId"></param>
+        /// <param name="roleName"></param>
         /// <param name="workspaceIds"></param>
         /// <param name="workspaceRoleId"></param>
+        /// <param name="workspaceRoleName"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -45,8 +47,10 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
             global::System.Guid? roleId = default,
+            string? roleName = default,
             global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds = default,
             global::System.Guid? workspaceRoleId = default,
+            string? workspaceRoleName = default,
             string? password = default,
             string? fullName = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

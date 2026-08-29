@@ -9,103 +9,103 @@ namespace LangSmith
     public enum CustomChartMetric
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokensP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokensP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorRate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Feedback,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedbackScoreAvg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedbackValues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyAvg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MedianTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokensP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokensP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamingRate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TokensP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
     }

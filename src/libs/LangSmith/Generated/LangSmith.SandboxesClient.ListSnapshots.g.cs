@@ -40,20 +40,30 @@ namespace LangSmith
             };
         partial void PrepareListSnapshotsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? pageSize,
+            ref string? cursor,
             ref int? limit,
             ref int? offset,
             ref string? nameContains,
             ref string? status,
+            ref string? createdBy,
+            global::System.Collections.Generic.IList<string>? label,
             ref string? sortBy,
+            ref string? sortOrder,
             ref string? sortDirection);
         partial void PrepareListSnapshotsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? pageSize,
+            string? cursor,
             int? limit,
             int? offset,
             string? nameContains,
             string? status,
+            string? createdBy,
+            global::System.Collections.Generic.IList<string>? label,
             string? sortBy,
+            string? sortOrder,
             string? sortDirection);
         partial void ProcessListSnapshotsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -66,8 +76,14 @@ namespace LangSmith
 
         /// <summary>
         /// List snapshots<br/>
-        /// List sandbox snapshots for the authenticated tenant, with optional filtering, sorting, and pagination.
+        /// List sandbox snapshots for the authenticated tenant, with optional filtering, sorting, and pagination.<br/>
+        /// Page with page_size and cursor: replay the response's next_cursor until it comes back null, which is the only signal that no pages remain.<br/>
+        /// Cursors are opaque and only valid on this endpoint; do not parse or construct one.
         /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 50
         /// </param>
@@ -76,8 +92,13 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="label"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
         /// </param>
         /// <param name="sortDirection">
         /// Default Value: desc
@@ -86,21 +107,31 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSnapshotListResponse> ListSnapshotsAsync(
+            int? pageSize = default,
+            string? cursor = default,
             int? limit = default,
             int? offset = default,
             string? nameContains = default,
             string? status = default,
+            string? createdBy = default,
+            global::System.Collections.Generic.IList<string>? label = default,
             string? sortBy = default,
+            string? sortOrder = default,
             string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListSnapshotsAsResponseAsync(
+                pageSize: pageSize,
+                cursor: cursor,
                 limit: limit,
                 offset: offset,
                 nameContains: nameContains,
                 status: status,
+                createdBy: createdBy,
+                label: label,
                 sortBy: sortBy,
+                sortOrder: sortOrder,
                 sortDirection: sortDirection,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -110,8 +141,14 @@ namespace LangSmith
         }
         /// <summary>
         /// List snapshots<br/>
-        /// List sandbox snapshots for the authenticated tenant, with optional filtering, sorting, and pagination.
+        /// List sandbox snapshots for the authenticated tenant, with optional filtering, sorting, and pagination.<br/>
+        /// Page with page_size and cursor: replay the response's next_cursor until it comes back null, which is the only signal that no pages remain.<br/>
+        /// Cursors are opaque and only valid on this endpoint; do not parse or construct one.
         /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 50
         /// </param>
@@ -120,8 +157,13 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="label"></param>
         /// <param name="sortBy">
         /// Default Value: created_at
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
         /// </param>
         /// <param name="sortDirection">
         /// Default Value: desc
@@ -130,11 +172,16 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesSnapshotListResponse>> ListSnapshotsAsResponseAsync(
+            int? pageSize = default,
+            string? cursor = default,
             int? limit = default,
             int? offset = default,
             string? nameContains = default,
             string? status = default,
+            string? createdBy = default,
+            global::System.Collections.Generic.IList<string>? label = default,
             string? sortBy = default,
+            string? sortOrder = default,
             string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -143,11 +190,16 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListSnapshotsArguments(
                 httpClient: HttpClient,
+                pageSize: ref pageSize,
+                cursor: ref cursor,
                 limit: ref limit,
                 offset: ref offset,
                 nameContains: ref nameContains,
                 status: ref status,
+                createdBy: ref createdBy,
+                label: label,
                 sortBy: ref sortBy,
+                sortOrder: ref sortOrder,
                 sortDirection: ref sortDirection);
 
 
@@ -174,16 +226,21 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v2/sandboxes/snapshots",
+                                path: "/api/v2/sandboxes/snapshots",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListSnapshotsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("status", status)
+                                .AddOptionalParameter("created_by", createdBy)
+                                .AddOptionalParameter("label", label, delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_by", sortBy)
+                                .AddOptionalParameter("sort_order", sortOrder)
                                 .AddOptionalParameter("sort_direction", sortDirection)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -213,7 +270,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -226,11 +283,16 @@ namespace LangSmith
                 PrepareListSnapshotsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    pageSize: pageSize,
+                    cursor: cursor,
                     limit: limit,
                     offset: offset,
                     nameContains: nameContains,
                     status: status,
+                    createdBy: createdBy,
+                    label: label,
                     sortBy: sortBy,
+                    sortOrder: sortOrder,
                     sortDirection: sortDirection);
 
                 return __httpRequest;
@@ -250,7 +312,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListSnapshots",
                                 methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                pathTemplate: "\"/api/v2/sandboxes/snapshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -284,7 +346,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListSnapshots",
                                 methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                pathTemplate: "\"/api/v2/sandboxes/snapshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -325,7 +387,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListSnapshots",
                                 methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                pathTemplate: "\"/api/v2/sandboxes/snapshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -373,7 +435,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListSnapshots",
                                 methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                pathTemplate: "\"/api/v2/sandboxes/snapshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -395,7 +457,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListSnapshots",
                                 methodName: "ListSnapshotsAsync",
-                                pathTemplate: "\"/v2/sandboxes/snapshots\"",
+                                pathTemplate: "\"/api/v2/sandboxes/snapshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -410,7 +472,7 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request
+                            // invalid page_size, cursor, or sort_order, or a deprecated parameter combined with its replacement
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -435,18 +497,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
@@ -473,18 +534,54 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // invalid limit or offset
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -511,18 +608,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -556,17 +652,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -603,17 +697,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

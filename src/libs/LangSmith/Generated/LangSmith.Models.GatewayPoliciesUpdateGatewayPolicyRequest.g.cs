@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GatewayPoliciesUpdateGatewayPolicyRequest
     {
@@ -16,7 +16,7 @@ namespace LangSmith
         public string? Action { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         public object? Config { get; set; }
@@ -50,7 +50,7 @@ namespace LangSmith
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_matchers")]
         public global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesSubjectMatcher>? SubjectMatchers { get; set; }

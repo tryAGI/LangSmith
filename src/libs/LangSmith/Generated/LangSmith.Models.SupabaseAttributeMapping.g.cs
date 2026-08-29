@@ -11,7 +11,7 @@ namespace LangSmith
     public sealed partial class SupabaseAttributeMapping
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
         public global::System.Collections.Generic.Dictionary<string, global::LangSmith.SupabaseAttributeMappingKey>? Keys { get; set; }

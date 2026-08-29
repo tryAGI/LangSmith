@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GroupExampleRunsByField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExampleMetadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunMetadata,
     }

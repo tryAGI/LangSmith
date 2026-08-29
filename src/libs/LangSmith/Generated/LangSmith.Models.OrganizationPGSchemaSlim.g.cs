@@ -9,65 +9,65 @@ namespace LangSmith
     public sealed partial class OrganizationPGSchemaSlim
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by_user_id")]
         public global::System.Guid? CreatedByUserId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by_ls_user_id")]
         public global::System.Guid? CreatedByLsUserId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPersonal { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Disabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]
         public string? SsoLoginSlug { get; set; }
@@ -109,31 +109,37 @@ namespace LangSmith
         public bool? WorkspaceAdminCanInviteToOrg { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_sso_provision")]
         public bool? DefaultSsoProvision { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_api_key_expiry_days")]
         public int? MaxApiKeyExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
         public string? SecurityContact { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_pat_expiry_days")]
         public int? MaxPatExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_service_key_expiry_days")]
         public int? MaxServiceKeyExpiryDays { get; set; }
@@ -145,40 +151,58 @@ namespace LangSmith
         public string? ScimGroupNameSeparator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
         public string? LlmAuthProxyJwtAudience { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist")]
         public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_allowed_urls")]
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
         public bool? EngineEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public string? EngineLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_evals_enabled")]
+        public bool? ManagedEvalsEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -217,6 +241,7 @@ namespace LangSmith
         /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
+        /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="defaultSsoProvision">
         /// Default Value: false
         /// </param>
@@ -230,9 +255,12 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
+        /// <param name="managedEvalsEnabled"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -253,6 +281,7 @@ namespace LangSmith
             bool? publicSharingDisabled,
             bool? patCreationDisabled,
             bool? workspaceAdminCanInviteToOrg,
+            bool? byocCreateSaasWorkspaceEnabled,
             bool? defaultSsoProvision,
             int? maxApiKeyExpiryDays,
             string? securityContact,
@@ -262,9 +291,12 @@ namespace LangSmith
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
-            bool? engineEnabled)
+            bool? engineEnabled,
+            string? engineLcuSpendLimitMonthly,
+            bool? managedEvalsEnabled)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -282,6 +314,7 @@ namespace LangSmith
             this.PublicSharingDisabled = publicSharingDisabled;
             this.PatCreationDisabled = patCreationDisabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
             this.SecurityContact = securityContact;
@@ -291,9 +324,12 @@ namespace LangSmith
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
+            this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
+            this.ManagedEvalsEnabled = managedEvalsEnabled;
         }
 
         /// <summary>

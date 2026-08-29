@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EPromptOptimizationAlgorithm
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Demo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Promptim,
     }

@@ -9,7 +9,7 @@ namespace LangSmith
     public enum OCSFCategoryName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationActivity,
     }

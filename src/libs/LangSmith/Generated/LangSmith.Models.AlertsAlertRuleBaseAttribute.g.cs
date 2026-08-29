@@ -4,32 +4,32 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AlertsAlertRuleBaseAttribute
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedbackScore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunLatency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
     }

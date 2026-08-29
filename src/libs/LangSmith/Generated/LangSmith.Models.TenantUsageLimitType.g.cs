@@ -4,40 +4,40 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TenantUsageLimitType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EventsIngestedPerHour,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EventsIngestedPerMinute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PayloadSize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalUniqueTraces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TracesDeletedPerHour,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserDefinedMonthlyLonglivedTraces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserDefinedMonthlyTraces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserDefinedUnknown,
     }

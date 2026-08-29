@@ -9,11 +9,11 @@ namespace LangSmith
     public enum SortParamsForRunsComparisonViewSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

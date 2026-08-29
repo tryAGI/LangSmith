@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class OCSFHttpRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("http_method")]
         [global::System.Text.Json.Serialization.JsonRequired]

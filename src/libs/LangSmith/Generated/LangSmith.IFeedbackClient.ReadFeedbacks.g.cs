@@ -24,6 +24,7 @@ namespace LangSmith
         /// <param name="level"></param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
+        /// <param name="feedbackThreadId"></param>
         /// <param name="includeUserNames"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -42,6 +43,7 @@ namespace LangSmith
             global::LangSmith.FeedbackLevel? level = default,
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
+            string? feedbackThreadId = default,
             bool? includeUserNames = default,
             global::System.Guid? comparativeExperimentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -66,6 +68,7 @@ namespace LangSmith
         /// <param name="level"></param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
+        /// <param name="feedbackThreadId"></param>
         /// <param name="includeUserNames"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -84,6 +87,7 @@ namespace LangSmith
             global::LangSmith.FeedbackLevel? level = default,
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
+            string? feedbackThreadId = default,
             bool? includeUserNames = default,
             global::System.Guid? comparativeExperimentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

@@ -9,61 +9,61 @@ namespace LangSmith
     public sealed partial class RepoWithLookups
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepoHandle { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("readme")]
         public string? Readme { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_public")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPublic { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -76,20 +76,20 @@ namespace LangSmith
         public bool? RestrictedMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Tags { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_id")]
         public global::System.Guid? OriginalRepoId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_repo_id")]
         public global::System.Guid? UpstreamRepoId { get; set; }
@@ -101,7 +101,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? CommitTags { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RepoWithLookupsRepoTypeJsonConverter))]
@@ -109,87 +109,93 @@ namespace LangSmith
         public required global::LangSmith.RepoWithLookupsRepoType RepoType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         public global::LangSmith.RepoWithLookupsSource2? Source { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         public string? Owner { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FullName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_likes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumLikes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumDownloads { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_views")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumViews { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("liked_by_auth_user")]
         public bool? LikedByAuthUser { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_commit_hash")]
         public string? LastCommitHash { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumCommits { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
         public string? CreatedBy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_full_name")]
         public string? OriginalRepoFullName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_repo_full_name")]
         public string? UpstreamRepoFullName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_commit_manifest")]
         public global::LangSmith.CommitManifestResponse? LatestCommitManifest { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owners")]
+        public global::System.Collections.Generic.IList<global::LangSmith.RepoOwner>? Owners { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -232,6 +238,7 @@ namespace LangSmith
         /// <param name="originalRepoFullName"></param>
         /// <param name="upstreamRepoFullName"></param>
         /// <param name="latestCommitManifest"></param>
+        /// <param name="owners"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -263,7 +270,8 @@ namespace LangSmith
             string? createdBy,
             string? originalRepoFullName,
             string? upstreamRepoFullName,
-            global::LangSmith.CommitManifestResponse? latestCommitManifest)
+            global::LangSmith.CommitManifestResponse? latestCommitManifest,
+            global::System.Collections.Generic.IList<global::LangSmith.RepoOwner>? owners)
         {
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
             this.Description = description;
@@ -293,6 +301,7 @@ namespace LangSmith
             this.OriginalRepoFullName = originalRepoFullName;
             this.UpstreamRepoFullName = upstreamRepoFullName;
             this.LatestCommitManifest = latestCommitManifest;
+            this.Owners = owners;
         }
 
         /// <summary>

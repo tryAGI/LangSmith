@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : global::System.IEquatable<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T1? Value1 { get; init; }
@@ -18,7 +18,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
@@ -26,7 +26,7 @@ namespace LangSmith
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue1(
 #if NET6_0_OR_GREATER
@@ -39,14 +39,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T1 PickValue1() => IsValue1
             ? Value1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
@@ -55,7 +55,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
@@ -63,7 +63,7 @@ namespace LangSmith
         public bool IsValue2 => Value2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue2(
 #if NET6_0_OR_GREATER
@@ -76,14 +76,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T2 PickValue2() => IsValue2
             ? Value2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T3? Value3 { get; init; }
@@ -92,7 +92,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
@@ -100,7 +100,7 @@ namespace LangSmith
         public bool IsValue3 => Value3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue3(
 #if NET6_0_OR_GREATER
@@ -113,14 +113,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T3 PickValue3() => IsValue3
             ? Value3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T4? Value4 { get; init; }
@@ -129,7 +129,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
@@ -137,7 +137,7 @@ namespace LangSmith
         public bool IsValue4 => Value4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue4(
 #if NET6_0_OR_GREATER
@@ -150,14 +150,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T4 PickValue4() => IsValue4
             ? Value4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T5? Value5 { get; init; }
@@ -166,7 +166,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
@@ -174,7 +174,7 @@ namespace LangSmith
         public bool IsValue5 => Value5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue5(
 #if NET6_0_OR_GREATER
@@ -187,14 +187,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T5 PickValue5() => IsValue5
             ? Value5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T6? Value6 { get; init; }
@@ -203,7 +203,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
@@ -211,7 +211,7 @@ namespace LangSmith
         public bool IsValue6 => Value6 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue6(
 #if NET6_0_OR_GREATER
@@ -224,14 +224,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T6 PickValue6() => IsValue6
             ? Value6!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T7? Value7 { get; init; }
@@ -240,7 +240,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
@@ -248,7 +248,7 @@ namespace LangSmith
         public bool IsValue7 => Value7 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue7(
 #if NET6_0_OR_GREATER
@@ -261,14 +261,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T7 PickValue7() => IsValue7
             ? Value7!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T8? Value8 { get; init; }
@@ -277,7 +277,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
@@ -285,7 +285,7 @@ namespace LangSmith
         public bool IsValue8 => Value8 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue8(
 #if NET6_0_OR_GREATER
@@ -298,14 +298,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T8 PickValue8() => IsValue8
             ? Value8!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T9? Value9 { get; init; }
@@ -314,7 +314,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
@@ -322,7 +322,7 @@ namespace LangSmith
         public bool IsValue9 => Value9 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue9(
 #if NET6_0_OR_GREATER
@@ -335,14 +335,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T9 PickValue9() => IsValue9
             ? Value9!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T10? Value10 { get; init; }
@@ -351,7 +351,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
@@ -359,7 +359,7 @@ namespace LangSmith
         public bool IsValue10 => Value10 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue10(
 #if NET6_0_OR_GREATER
@@ -372,14 +372,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T10 PickValue10() => IsValue10
             ? Value10!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value10' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T11? Value11 { get; init; }
@@ -388,7 +388,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
@@ -396,7 +396,7 @@ namespace LangSmith
         public bool IsValue11 => Value11 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue11(
 #if NET6_0_OR_GREATER
@@ -409,14 +409,14 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T11 PickValue11() => IsValue11
             ? Value11!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value11' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public T12? Value12 { get; init; }
@@ -425,7 +425,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
@@ -433,7 +433,7 @@ namespace LangSmith
         public bool IsValue12 => Value12 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue12(
 #if NET6_0_OR_GREATER
@@ -446,23 +446,23 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T12 PickValue12() => IsValue12
             ? Value12!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value12' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T1 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T1?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T1? value)
         {
@@ -470,22 +470,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue1(T1? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T2?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T2? value)
         {
@@ -493,22 +493,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue2(T2? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T3 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T3?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T3? value)
         {
@@ -516,22 +516,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue3(T3? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T4?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T4? value)
         {
@@ -539,22 +539,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue4(T4? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T5 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T5?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T5? value)
         {
@@ -562,22 +562,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue5(T5? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T6?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value6;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T6? value)
         {
@@ -585,22 +585,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue6(T6? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T7 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T7?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T7?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value7;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T7? value)
         {
@@ -608,22 +608,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue7(T7? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T8?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T8?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value8;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T8? value)
         {
@@ -631,22 +631,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue8(T8? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T9 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T9?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T9?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value9;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T9? value)
         {
@@ -654,22 +654,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue9(T9? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T10 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T10?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T10?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value10;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T10? value)
         {
@@ -677,22 +677,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue10(T10? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T11 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T11?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T11?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value11;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T11? value)
         {
@@ -700,22 +700,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue11(T11? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T12 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T12?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator T12?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value12;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(T12? value)
         {
@@ -723,12 +723,12 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromValue12(T12? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OneOf(
             T1? value1,
@@ -760,7 +760,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Value12 as object ??
@@ -774,11 +774,11 @@ namespace LangSmith
             Value4 as object ??
             Value3 as object ??
             Value2 as object ??
-            Value1 as object 
+            Value1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Value1?.ToString() ??
@@ -792,11 +792,11 @@ namespace LangSmith
             Value9?.ToString() ??
             Value10?.ToString() ??
             Value11?.ToString() ??
-            Value12?.ToString() 
+            Value12?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -804,7 +804,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<T1, TResult>? value1 = null,
@@ -879,7 +879,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<T1>? value1 = null,
@@ -963,7 +963,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<T1>? value1 = null,
@@ -1036,7 +1036,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1077,7 +1077,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
         {
@@ -1093,12 +1093,12 @@ namespace LangSmith
                 global::System.Collections.Generic.EqualityComparer<T9?>.Default.Equals(Value9, other.Value9) &&
                 global::System.Collections.Generic.EqualityComparer<T10?>.Default.Equals(Value10, other.Value10) &&
                 global::System.Collections.Generic.EqualityComparer<T11?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<T12?>.Default.Equals(Value12, other.Value12) 
+                global::System.Collections.Generic.EqualityComparer<T12?>.Default.Equals(Value12, other.Value12)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj2)
         {
@@ -1106,7 +1106,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj2)
         {
@@ -1114,7 +1114,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

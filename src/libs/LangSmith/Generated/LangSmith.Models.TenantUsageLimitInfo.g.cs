@@ -4,25 +4,25 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TenantUsageLimitInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reject_set")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool InRejectSet { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_limit_type")]
         public global::LangSmith.TenantUsageLimitType? UsageLimitType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_limit")]
         public int? TenantLimit { get; set; }

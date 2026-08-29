@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class RunStatsGroupBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunStatsGroupByAttributeJsonConverter))]
@@ -17,7 +17,7 @@ namespace LangSmith
         public required global::LangSmith.RunStatsGroupByAttribute Attribute { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public string? Path { get; set; }

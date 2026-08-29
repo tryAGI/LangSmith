@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pairwise,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Single,
     }

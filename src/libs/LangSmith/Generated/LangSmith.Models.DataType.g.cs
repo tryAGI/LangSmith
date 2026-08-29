@@ -9,15 +9,15 @@ namespace LangSmith
     public enum DataType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llm,
     }

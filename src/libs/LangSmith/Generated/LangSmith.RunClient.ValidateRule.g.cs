@@ -166,7 +166,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -389,18 +389,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -434,17 +433,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -481,17 +478,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -530,6 +525,15 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -540,6 +544,7 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
+        /// <param name="trajectoryEvaluators"></param>
         /// <param name="evaluatorId"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
@@ -557,6 +562,10 @@ namespace LangSmith
         /// <param name="testOutputs"></param>
         /// <param name="testReferenceOutputs"></param>
         /// <param name="testAttachments"></param>
+        /// <param name="testThreadId"></param>
+        /// <param name="validateProjectCompatibility">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -573,12 +582,18 @@ namespace LangSmith
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
             bool? extendOnly = default,
+            bool? isTracingDisabled = default,
+            bool? extendEvaluatorTraceRetention = default,
+            bool? extendDatasetTraceRetention = default,
+            bool? extendAnnotationQueueTraceRetention = default,
+            bool? extendWebhookTraceRetention = default,
             bool? transient = default,
             global::System.Guid? addToAnnotationQueueId = default,
             global::System.Guid? addToDatasetId = default,
             bool? addToDatasetPreferCorrection = default,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators = default,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators = default,
+            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? trajectoryEvaluators = default,
             global::System.Guid? evaluatorId = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
@@ -592,6 +607,8 @@ namespace LangSmith
             object? testOutputs = default,
             object? testReferenceOutputs = default,
             object? testAttachments = default,
+            string? testThreadId = default,
+            bool? validateProjectCompatibility = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -609,12 +626,18 @@ namespace LangSmith
                 UseCorrectionsDataset = useCorrectionsDataset,
                 NumFewShotExamples = numFewShotExamples,
                 ExtendOnly = extendOnly,
+                IsTracingDisabled = isTracingDisabled,
+                ExtendEvaluatorTraceRetention = extendEvaluatorTraceRetention,
+                ExtendDatasetTraceRetention = extendDatasetTraceRetention,
+                ExtendAnnotationQueueTraceRetention = extendAnnotationQueueTraceRetention,
+                ExtendWebhookTraceRetention = extendWebhookTraceRetention,
                 Transient = transient,
                 AddToAnnotationQueueId = addToAnnotationQueueId,
                 AddToDatasetId = addToDatasetId,
                 AddToDatasetPreferCorrection = addToDatasetPreferCorrection,
                 Evaluators = evaluators,
                 CodeEvaluators = codeEvaluators,
+                TrajectoryEvaluators = trajectoryEvaluators,
                 EvaluatorId = evaluatorId,
                 Alerts = alerts,
                 Webhooks = webhooks,
@@ -628,6 +651,8 @@ namespace LangSmith
                 TestOutputs = testOutputs,
                 TestReferenceOutputs = testReferenceOutputs,
                 TestAttachments = testAttachments,
+                TestThreadId = testThreadId,
+                ValidateProjectCompatibility = validateProjectCompatibility,
             };
 
             return await ValidateRuleAsync(

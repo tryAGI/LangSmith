@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class HealthInfoGetResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clickhouse_disk_free_pct")]
         [global::System.Text.Json.Serialization.JsonRequired]

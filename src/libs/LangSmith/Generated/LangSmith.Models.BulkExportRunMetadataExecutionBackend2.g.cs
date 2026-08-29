@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BulkExportRunMetadataExecutionBackend2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clickhouse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Smithdb,
     }

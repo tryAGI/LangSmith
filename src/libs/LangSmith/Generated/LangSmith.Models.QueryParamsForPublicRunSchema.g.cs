@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class QueryParamsForPublicRunSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Collections.Generic.IList<global::System.Guid>? Id { get; set; }

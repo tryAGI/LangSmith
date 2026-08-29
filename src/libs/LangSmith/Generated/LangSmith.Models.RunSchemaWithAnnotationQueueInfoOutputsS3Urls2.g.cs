@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RunSchemaWithAnnotationQueueInfoOutputsS3Urls2
     {

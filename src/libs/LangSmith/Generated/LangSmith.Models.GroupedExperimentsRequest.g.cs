@@ -9,31 +9,31 @@ namespace LangSmith
     public sealed partial class GroupedExperimentsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stats_start_time")]
         public global::System.DateTime? StatsStartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name_contains")]
         public string? NameContains { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
         public global::System.Collections.Generic.IList<global::System.Guid>? TagValueId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_version")]
         public string? DatasetVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         public string? Filter { get; set; }
@@ -45,7 +45,7 @@ namespace LangSmith
         public bool? UseApproxStats { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_keys")]
         [global::System.Text.Json.Serialization.JsonRequired]

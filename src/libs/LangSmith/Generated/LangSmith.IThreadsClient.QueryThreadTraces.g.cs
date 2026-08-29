@@ -6,8 +6,8 @@ namespace LangSmith
     {
         /// <summary>
         /// Query Thread Traces<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Retrieve all traces belonging to a specific thread within a project.
+        /// Retrieve all traces belonging to a specific thread within a project.<br/>
+        /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="cursor"></param>
@@ -31,8 +31,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query Thread Traces<br/>
-        /// **Alpha:** The request and response contract may change;<br/>
-        /// Retrieve all traces belonging to a specific thread within a project.
+        /// Retrieve all traces belonging to a specific thread within a project.<br/>
+        /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="cursor"></param>

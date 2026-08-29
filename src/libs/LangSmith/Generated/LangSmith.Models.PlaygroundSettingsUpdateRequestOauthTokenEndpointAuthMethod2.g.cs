@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PlaygroundSettingsUpdateRequestOauthTokenEndpointAuthMethod2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientSecretBasic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientSecretPost,
     }

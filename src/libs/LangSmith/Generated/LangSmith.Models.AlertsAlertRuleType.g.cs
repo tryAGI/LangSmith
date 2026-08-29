@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AlertsAlertRuleType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Change,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Threshold,
     }

@@ -4,90 +4,90 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OauthAuthorizationServerMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authorization_endpoint")]
         public string? AuthorizationEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_challenge_methods_supported")]
         public global::System.Collections.Generic.IList<string>? CodeChallengeMethodsSupported { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("device_authorization_endpoint")]
         public string? DeviceAuthorizationEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grant_types_supported")]
         public global::System.Collections.Generic.IList<string>? GrantTypesSupported { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issuer")]
         public string? Issuer { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks_uri")]
         public string? JwksUri { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected_resources_supported")]
         public global::System.Collections.Generic.IList<string>? ProtectedResourcesSupported { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registration_endpoint")]
         public string? RegistrationEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_parameter_supported")]
         public bool? ResourceParameterSupported { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_types_supported")]
         public global::System.Collections.Generic.IList<string>? ResponseTypesSupported { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("revocation_endpoint")]
         public string? RevocationEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scopes_supported")]
         public global::System.Collections.Generic.IList<string>? ScopesSupported { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_endpoint")]
         public string? TokenEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_endpoint_auth_methods_supported")]
         public global::System.Collections.Generic.IList<string>? TokenEndpointAuthMethodsSupported { get; set; }

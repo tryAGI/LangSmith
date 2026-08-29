@@ -4,60 +4,72 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FilterViewUpdate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter_string")]
         public string? FilterString { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter_string")]
         public string? TraceFilterString { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter_string")]
         public string? TreeFilterString { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_filter_string")]
+        public string? ThreadFilterString { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public global::LangSmith.FilterViewType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("syntax_version")]
+        public int? SyntaxVersion { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         public string? Duration { get; set; }
@@ -76,7 +88,9 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
+        /// <param name="threadFilterString"></param>
         /// <param name="type"></param>
+        /// <param name="syntaxVersion"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="duration"></param>
@@ -89,7 +103,9 @@ namespace LangSmith
             string? description,
             string? traceFilterString,
             string? treeFilterString,
+            string? threadFilterString,
             global::LangSmith.FilterViewType? type,
+            int? syntaxVersion,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             string? duration)
@@ -99,7 +115,9 @@ namespace LangSmith
             this.Description = description;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
+            this.ThreadFilterString = threadFilterString;
             this.Type = type;
+            this.SyntaxVersion = syntaxVersion;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Duration = duration;

@@ -9,135 +9,139 @@ namespace LangSmith
     public enum RunStatsSelect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllRunStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllTokenStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokensP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokensP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CostP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorRate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedbackStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenP99,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        GroupCount,
+        /// <summary>
+        ///
         /// </summary>
         LastRunStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyAvg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MedianTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokensP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokensP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunFacets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionFeedbackStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamingRate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadFeedbackStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TokensP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
     }
@@ -168,6 +172,7 @@ namespace LangSmith
                 RunStatsSelect.FeedbackStats => "feedback_stats",
                 RunStatsSelect.FirstTokenP50 => "first_token_p50",
                 RunStatsSelect.FirstTokenP99 => "first_token_p99",
+                RunStatsSelect.GroupCount => "group_count",
                 RunStatsSelect.LastRunStartTime => "last_run_start_time",
                 RunStatsSelect.LatencyAvg => "latency_avg",
                 RunStatsSelect.LatencyP50 => "latency_p50",
@@ -211,6 +216,7 @@ namespace LangSmith
                 "feedback_stats" => RunStatsSelect.FeedbackStats,
                 "first_token_p50" => RunStatsSelect.FirstTokenP50,
                 "first_token_p99" => RunStatsSelect.FirstTokenP99,
+                "group_count" => RunStatsSelect.GroupCount,
                 "last_run_start_time" => RunStatsSelect.LastRunStartTime,
                 "latency_avg" => RunStatsSelect.LatencyAvg,
                 "latency_p50" => RunStatsSelect.LatencyP50,

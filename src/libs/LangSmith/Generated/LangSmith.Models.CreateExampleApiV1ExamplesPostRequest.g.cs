@@ -9,32 +9,50 @@ namespace LangSmith
     public sealed partial class CreateExampleApiV1ExamplesPostRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         public object? Outputs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_run_id")]
         public global::System.Guid? SourceRunId { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_session_id")]
+        public global::System.Guid? SourceSessionId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_run_start_time")]
+        public global::System.DateTime? SourceRunStartTime { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_trace_id")]
+        public global::System.Guid? SourceTraceId { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         public object? Inputs { get; set; }
@@ -47,7 +65,7 @@ namespace LangSmith
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
@@ -72,7 +90,7 @@ namespace LangSmith
         public bool? UseLegacyMessageFormat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
@@ -89,6 +107,9 @@ namespace LangSmith
         /// <param name="datasetId"></param>
         /// <param name="outputs"></param>
         /// <param name="sourceRunId"></param>
+        /// <param name="sourceSessionId"></param>
+        /// <param name="sourceRunStartTime"></param>
+        /// <param name="sourceTraceId"></param>
         /// <param name="metadata"></param>
         /// <param name="inputs"></param>
         /// <param name="split">
@@ -113,6 +134,9 @@ namespace LangSmith
             global::System.Guid datasetId,
             object? outputs,
             global::System.Guid? sourceRunId,
+            global::System.Guid? sourceSessionId,
+            global::System.DateTime? sourceRunStartTime,
+            global::System.Guid? sourceTraceId,
             object? metadata,
             object? inputs,
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
@@ -125,6 +149,9 @@ namespace LangSmith
             this.Outputs = outputs;
             this.DatasetId = datasetId;
             this.SourceRunId = sourceRunId;
+            this.SourceSessionId = sourceSessionId;
+            this.SourceRunStartTime = sourceRunStartTime;
+            this.SourceTraceId = sourceTraceId;
             this.Metadata = metadata;
             this.Inputs = inputs;
             this.Split = split;

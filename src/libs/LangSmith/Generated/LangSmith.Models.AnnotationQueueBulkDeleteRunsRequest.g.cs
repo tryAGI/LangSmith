@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnnotationQueueBulkDeleteRunsRequest
     {
@@ -15,13 +15,13 @@ namespace LangSmith
         public bool? DeleteAll { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? RunIds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_run_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? ExcludeRunIds { get; set; }

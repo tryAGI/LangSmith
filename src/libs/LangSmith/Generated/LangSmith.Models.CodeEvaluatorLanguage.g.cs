@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CodeEvaluatorLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Javascript,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Python,
     }

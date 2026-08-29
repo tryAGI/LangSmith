@@ -60,7 +60,7 @@ namespace LangSmith
         /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.<br/>
         /// * `post|patch.&lt;run_id&gt;` – JSON run payload.<br/>
         /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
-        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
+        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id` and `session_id`).<br/>
         /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
         /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
@@ -90,7 +90,7 @@ namespace LangSmith
         /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.<br/>
         /// * `post|patch.&lt;run_id&gt;` – JSON run payload.<br/>
         /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
-        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
+        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id` and `session_id`).<br/>
         /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
         /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
@@ -137,7 +137,7 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/runs/multipart",
+                                path: "/api/v1/runs/multipart",
                                 baseUri: ResolveBaseUri(
                                 servers: s_IngestRunsMultipartServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
@@ -168,7 +168,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -457,7 +457,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "IngestRunsMultipart",
                                 methodName: "IngestRunsMultipartAsync",
-                                pathTemplate: "\"/runs/multipart\"",
+                                pathTemplate: "\"/api/v1/runs/multipart\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -491,7 +491,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "IngestRunsMultipart",
                                 methodName: "IngestRunsMultipartAsync",
-                                pathTemplate: "\"/runs/multipart\"",
+                                pathTemplate: "\"/api/v1/runs/multipart\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -532,7 +532,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "IngestRunsMultipart",
                                 methodName: "IngestRunsMultipartAsync",
-                                pathTemplate: "\"/runs/multipart\"",
+                                pathTemplate: "\"/api/v1/runs/multipart\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -580,7 +580,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "IngestRunsMultipart",
                                 methodName: "IngestRunsMultipartAsync",
-                                pathTemplate: "\"/runs/multipart\"",
+                                pathTemplate: "\"/api/v1/runs/multipart\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -602,7 +602,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "IngestRunsMultipart",
                                 methodName: "IngestRunsMultipartAsync",
-                                pathTemplate: "\"/runs/multipart\"",
+                                pathTemplate: "\"/api/v1/runs/multipart\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -642,18 +642,17 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
@@ -680,18 +679,17 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Conflict
                             if ((int)__response.StatusCode == 409)
@@ -718,18 +716,54 @@ namespace LangSmith
                                     __exception_409 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_409,
-                                    ResponseObject = __value_409,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // Request Entity Too Large
+                            if ((int)__response.StatusCode == 413)
+                            {
+                                string? __content_413 = null;
+                                global::System.Exception? __exception_413 = null;
+                                global::LangSmith.RunsErrorResponse? __value_413 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_413 = global::LangSmith.RunsErrorResponse.FromJson(__content_413, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_413 = global::LangSmith.RunsErrorResponse.FromJson(__content_413, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_413 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_413,
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
                             // Unprocessable Entity
                             if ((int)__response.StatusCode == 422)
@@ -756,18 +790,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Too Many Requests
                             if ((int)__response.StatusCode == 429)
@@ -794,18 +827,54 @@ namespace LangSmith
                                     __exception_429 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_429,
-                                    ResponseObject = __value_429,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // a feedback part needs session_id in current db deployment
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::LangSmith.RunsErrorResponse? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = global::LangSmith.RunsErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = global::LangSmith.RunsErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -839,17 +908,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -886,17 +953,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -913,7 +978,7 @@ namespace LangSmith
         /// **Part‑name pattern**: `&lt;event&gt;.&lt;run_id&gt;[.&lt;field&gt;]` where `event` ∈ {`post`, `patch`, `feedback`, `attachment`}.<br/>
         /// * `post|patch.&lt;run_id&gt;` – JSON run payload.<br/>
         /// * `post|patch.&lt;run_id&gt;.&lt;field&gt;` – out‑of‑band run data (`inputs`, `outputs`, `events`, `error`, `extra`, `serialized`).<br/>
-        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id`).<br/>
+        /// * `feedback.&lt;run_id&gt;` – JSON feedback payload (must include `trace_id` and `session_id`).<br/>
         /// * `attachment.&lt;run_id&gt;.&lt;filename&gt;` – arbitrary binary attachment stored in S3.<br/>
         /// **Headers**: every part must set `Content-Type` **and** either a `Content-Length` header or `length` parameter. Per‑part `Content-Encoding` is **not** allowed; the top‑level request may be `Content-Encoding: gzip` or `Content-Encoding: zstd`.<br/>
         /// **Best performance** for high‑volume ingestion.
@@ -943,10 +1008,10 @@ namespace LangSmith
         /// Large outputs object (JSON) stored out‑of‑band
         /// </param>
         /// <param name="feedback_runId_">
-        /// Feedback object (JSON) – must include trace_id
+        /// Feedback object (JSON) – must include trace_id and session_id
         /// </param>
         /// <param name="feedback_runId_name">
-        /// Feedback object (JSON) – must include trace_id
+        /// Feedback object (JSON) – must include trace_id and session_id
         /// </param>
         /// <param name="attachment_runId__filename_">
         /// Binary attachment linked to run {run_id}

@@ -4,42 +4,46 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DataPlanesStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusActive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusDeprovisioning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusInactive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusProvisioning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusProvisioningFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusRequested,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DataPlaneStatusRevoked,
+        /// <summary>
+        ///
+        /// </summary>
+        DataPlaneStatusUpdating,
     }
 
     /// <summary>
@@ -62,6 +66,7 @@ namespace LangSmith
                 DataPlanesStatus.DataPlaneStatusProvisioningFailed => "provisioning_failed",
                 DataPlanesStatus.DataPlaneStatusRequested => "requested",
                 DataPlanesStatus.DataPlaneStatusRevoked => "revoked",
+                DataPlanesStatus.DataPlaneStatusUpdating => "updating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,6 +85,7 @@ namespace LangSmith
                 "provisioning_failed" => DataPlanesStatus.DataPlaneStatusProvisioningFailed,
                 "requested" => DataPlanesStatus.DataPlaneStatusRequested,
                 "revoked" => DataPlanesStatus.DataPlaneStatusRevoked,
+                "updating" => DataPlanesStatus.DataPlaneStatusUpdating,
                 _ => null,
             };
         }

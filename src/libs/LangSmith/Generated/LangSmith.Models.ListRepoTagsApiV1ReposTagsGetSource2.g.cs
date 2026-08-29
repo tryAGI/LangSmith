@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ListRepoTagsApiV1ReposTagsGetSource2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         External,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Internal,
     }

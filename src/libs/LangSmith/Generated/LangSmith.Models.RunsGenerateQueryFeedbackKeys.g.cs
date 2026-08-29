@@ -4,36 +4,36 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RunsGenerateQueryFeedbackKeys
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResultsSize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserEdited,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserOpenedRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserRemoved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserScore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserSelectedRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ValidFilter,
     }

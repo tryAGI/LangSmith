@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ExampleListOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Random,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RecentlyCreated,
     }

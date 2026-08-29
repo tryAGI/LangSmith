@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BulkExportCompression
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gzip,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snappy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zstandard,
     }

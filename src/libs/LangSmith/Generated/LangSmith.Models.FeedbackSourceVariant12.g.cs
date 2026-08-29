@@ -5,12 +5,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FeedbackSourceVariant12 : global::System.IEquatable<FeedbackSourceVariant12>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(App))]
@@ -32,7 +32,7 @@ namespace LangSmith
         public bool IsApp => App != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApp(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LangSmith.AppFeedbackSource PickApp() => IsApp
             ? App!
@@ -61,7 +61,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Api))]
@@ -69,7 +69,7 @@ namespace LangSmith
         public bool IsApi => Api != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApi(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LangSmith.APIFeedbackSource PickApi() => IsApi
             ? Api!
@@ -98,7 +98,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Model))]
@@ -106,7 +106,7 @@ namespace LangSmith
         public bool IsModel => Model != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModel(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LangSmith.ModelFeedbackSource PickModel() => IsModel
             ? Model!
@@ -135,7 +135,7 @@ namespace LangSmith
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoEval))]
@@ -143,7 +143,7 @@ namespace LangSmith
         public bool IsAutoEval => AutoEval != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutoEval(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::LangSmith.AutoEvalFeedbackSource PickAutoEval() => IsAutoEval
             ? AutoEval!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoEval' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FeedbackSourceVariant12(global::LangSmith.AppFeedbackSource value) => new FeedbackSourceVariant12((global::LangSmith.AppFeedbackSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LangSmith.AppFeedbackSource?(FeedbackSourceVariant12 @this) => @this.App;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackSourceVariant12(global::LangSmith.AppFeedbackSource? value)
         {
@@ -180,22 +180,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FeedbackSourceVariant12 FromApp(global::LangSmith.AppFeedbackSource? value) => new FeedbackSourceVariant12(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FeedbackSourceVariant12(global::LangSmith.APIFeedbackSource value) => new FeedbackSourceVariant12((global::LangSmith.APIFeedbackSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LangSmith.APIFeedbackSource?(FeedbackSourceVariant12 @this) => @this.Api;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackSourceVariant12(global::LangSmith.APIFeedbackSource? value)
         {
@@ -203,22 +203,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FeedbackSourceVariant12 FromApi(global::LangSmith.APIFeedbackSource? value) => new FeedbackSourceVariant12(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FeedbackSourceVariant12(global::LangSmith.ModelFeedbackSource value) => new FeedbackSourceVariant12((global::LangSmith.ModelFeedbackSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LangSmith.ModelFeedbackSource?(FeedbackSourceVariant12 @this) => @this.Model;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackSourceVariant12(global::LangSmith.ModelFeedbackSource? value)
         {
@@ -226,22 +226,22 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FeedbackSourceVariant12 FromModel(global::LangSmith.ModelFeedbackSource? value) => new FeedbackSourceVariant12(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FeedbackSourceVariant12(global::LangSmith.AutoEvalFeedbackSource value) => new FeedbackSourceVariant12((global::LangSmith.AutoEvalFeedbackSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::LangSmith.AutoEvalFeedbackSource?(FeedbackSourceVariant12 @this) => @this.AutoEval;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackSourceVariant12(global::LangSmith.AutoEvalFeedbackSource? value)
         {
@@ -249,12 +249,12 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FeedbackSourceVariant12 FromAutoEval(global::LangSmith.AutoEvalFeedbackSource? value) => new FeedbackSourceVariant12(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackSourceVariant12(
             global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType? type,
@@ -273,27 +273,27 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AutoEval as object ??
             Model as object ??
             Api as object ??
-            App as object 
+            App as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             App?.ToString() ??
             Api?.ToString() ??
             Model?.ToString() ??
-            AutoEval?.ToString() 
+            AutoEval?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::LangSmith.AppFeedbackSource, TResult>? app = null,
@@ -336,7 +336,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::LangSmith.AppFeedbackSource>? app = null,
@@ -372,7 +372,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::LangSmith.AppFeedbackSource>? app = null,
@@ -405,7 +405,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FeedbackSourceVariant12 other)
         {
@@ -438,12 +438,12 @@ namespace LangSmith
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.AppFeedbackSource?>.Default.Equals(App, other.App) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.APIFeedbackSource?>.Default.Equals(Api, other.Api) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.ModelFeedbackSource?>.Default.Equals(Model, other.Model) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AutoEvalFeedbackSource?>.Default.Equals(AutoEval, other.AutoEval) 
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.AutoEvalFeedbackSource?>.Default.Equals(AutoEval, other.AutoEval)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FeedbackSourceVariant12 obj1, FeedbackSourceVariant12 obj2)
         {
@@ -451,7 +451,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FeedbackSourceVariant12 obj1, FeedbackSourceVariant12 obj2)
         {
@@ -459,7 +459,7 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

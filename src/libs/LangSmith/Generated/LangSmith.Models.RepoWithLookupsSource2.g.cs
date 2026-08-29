@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RepoWithLookupsSource2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         External,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Internal,
     }

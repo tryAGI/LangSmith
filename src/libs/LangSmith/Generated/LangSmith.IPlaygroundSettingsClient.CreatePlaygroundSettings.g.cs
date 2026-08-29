@@ -41,6 +41,9 @@ namespace LangSmith
         /// <param name="settingsType">
         /// Default Value: complex
         /// </param>
+        /// <param name="scope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="oauthEnabled"></param>
         /// <param name="oauthTokenUrl"></param>
         /// <param name="oauthClientId"></param>
@@ -57,6 +60,7 @@ namespace LangSmith
             string? description = default,
             global::LangSmith.PlaygroundSavedOptions? options = default,
             global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? settingsType = default,
+            global::LangSmith.PlaygroundSettingsCreateRequestScope? scope = default,
             bool? oauthEnabled = default,
             string? oauthTokenUrl = default,
             string? oauthClientId = default,

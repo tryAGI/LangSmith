@@ -48,6 +48,9 @@ namespace LangSmith
         /// <param name="index">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="layout">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -56,6 +59,7 @@ namespace LangSmith
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
+            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing, object>? layout = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

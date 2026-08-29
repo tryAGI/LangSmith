@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RunStatsGroupBySeriesResponseAttribute
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tag,
     }

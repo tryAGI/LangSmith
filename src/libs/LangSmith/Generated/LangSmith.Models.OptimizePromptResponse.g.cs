@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class OptimizePromptResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optimization_job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

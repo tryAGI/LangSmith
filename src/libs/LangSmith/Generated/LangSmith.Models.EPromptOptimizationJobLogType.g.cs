@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EPromptOptimizationJobLogType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Info,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Link,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Result,
     }

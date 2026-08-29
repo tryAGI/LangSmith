@@ -9,34 +9,40 @@ namespace LangSmith
     public sealed partial class FeedbackCreateWithTokenExtendedSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
         public global::LangSmith.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_trace_retention")]
+        public bool? ExtendTraceRetention { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>))]
         public global::LangSmith.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         public string? Comment { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, string, object>))]
         public global::LangSmith.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
@@ -51,6 +57,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="FeedbackCreateWithTokenExtendedSchema" /> class.
         /// </summary>
         /// <param name="score"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
         /// <param name="correction"></param>
@@ -60,12 +69,14 @@ namespace LangSmith
 #endif
         public FeedbackCreateWithTokenExtendedSchema(
             global::LangSmith.AnyOf<double?, int?, bool?, object>? score,
+            bool? extendTraceRetention,
             global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value,
             string? comment,
             global::LangSmith.AnyOf<object, string, object>? correction,
             object? metadata)
         {
             this.Score = score;
+            this.ExtendTraceRetention = extendTraceRetention;
             this.Value = value;
             this.Comment = comment;
             this.Correction = correction;

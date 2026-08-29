@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnnotationQueueSchemaWithRubricQueueType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pairwise,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Single,
     }

@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ThreadsQueryThreadsRequestBody
     {
@@ -23,19 +23,19 @@ namespace LangSmith
         public string? Filter { get; set; }
 
         /// <summary>
-        /// `max_start_time` is the inclusive upper bound on thread activity (RFC3339 date-time).
+        /// `max_start_time` is the exclusive upper bound on thread activity (RFC3339 date-time). Defaults to now (UTC) when omitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_start_time")]
         public global::System.DateTime? MaxStartTime { get; set; }
 
         /// <summary>
-        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time).
+        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time). Defaults to 1 day before now (UTC) when omitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_start_time")]
         public global::System.DateTime? MinStartTime { get; set; }
 
         /// <summary>
-        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `has_more` is true.<br/>
+        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `next_cursor` is non-null.<br/>
         /// Default Value: 20<br/>
         /// Example: 20
         /// </summary>
@@ -50,6 +50,37 @@ namespace LangSmith
         /// <example>0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         public global::System.Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// `thread_filter` narrows results using a LangSmith filter expression evaluated against each complete thread summary.<br/>
+        /// Self-hosted deployments require LangSmith v0.17 or later; unsupported deployments return 501.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: gte(turn_count, 3)
+        /// </summary>
+        /// <example>gte(turn_count, 3)</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_filter")]
+        public string? ThreadFilter { get; set; }
+
+        /// <summary>
+        /// `trace_filter` narrows results to threads containing at least one trace whose root run matches this LangSmith filter expression.<br/>
+        /// Trace-level aggregate fields are evaluated using the complete trace summary.<br/>
+        /// Self-hosted deployments require LangSmith v0.17 or later; unsupported deployments return 501.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: eq(status, "error")
+        /// </summary>
+        /// <example>eq(status, "error")</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter")]
+        public string? TraceFilter { get; set; }
+
+        /// <summary>
+        /// `tree_filter` narrows results to threads containing at least one trace with a matching run anywhere in its run tree.<br/>
+        /// Self-hosted deployments require LangSmith v0.17 or later; unsupported deployments return 501.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: has(tags, "production")
+        /// </summary>
+        /// <example>has(tags, "production")</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter")]
+        public string? TreeFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,19 +100,38 @@ namespace LangSmith
         /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.
         /// </param>
         /// <param name="maxStartTime">
-        /// `max_start_time` is the inclusive upper bound on thread activity (RFC3339 date-time).
+        /// `max_start_time` is the exclusive upper bound on thread activity (RFC3339 date-time). Defaults to now (UTC) when omitted.
         /// </param>
         /// <param name="minStartTime">
-        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time).
+        /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time). Defaults to 1 day before now (UTC) when omitted.
         /// </param>
         /// <param name="pageSize">
-        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `has_more` is true.<br/>
+        /// `page_size` is the maximum number of threads to return in this response. Defaults to 20 when omitted; must be between 1 and 100 inclusive when set. The response may contain fewer threads than `page_size` even when `next_cursor` is non-null.<br/>
         /// Default Value: 20<br/>
         /// Example: 20
         /// </param>
         /// <param name="projectId">
         /// `project_id` is the tracing project UUID.<br/>
         /// Example: 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328
+        /// </param>
+        /// <param name="threadFilter">
+        /// `thread_filter` narrows results using a LangSmith filter expression evaluated against each complete thread summary.<br/>
+        /// Self-hosted deployments require LangSmith v0.17 or later; unsupported deployments return 501.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: gte(turn_count, 3)
+        /// </param>
+        /// <param name="traceFilter">
+        /// `trace_filter` narrows results to threads containing at least one trace whose root run matches this LangSmith filter expression.<br/>
+        /// Trace-level aggregate fields are evaluated using the complete trace summary.<br/>
+        /// Self-hosted deployments require LangSmith v0.17 or later; unsupported deployments return 501.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: eq(status, "error")
+        /// </param>
+        /// <param name="treeFilter">
+        /// `tree_filter` narrows results to threads containing at least one trace with a matching run anywhere in its run tree.<br/>
+        /// Self-hosted deployments require LangSmith v0.17 or later; unsupported deployments return 501.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
+        /// Example: has(tags, "production")
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -92,7 +142,10 @@ namespace LangSmith
             global::System.DateTime? maxStartTime,
             global::System.DateTime? minStartTime,
             int? pageSize,
-            global::System.Guid? projectId)
+            global::System.Guid? projectId,
+            string? threadFilter,
+            string? traceFilter,
+            string? treeFilter)
         {
             this.Cursor = cursor;
             this.Filter = filter;
@@ -100,6 +153,9 @@ namespace LangSmith
             this.MinStartTime = minStartTime;
             this.PageSize = pageSize;
             this.ProjectId = projectId;
+            this.ThreadFilter = threadFilter;
+            this.TraceFilter = traceFilter;
+            this.TreeFilter = treeFilter;
         }
 
         /// <summary>

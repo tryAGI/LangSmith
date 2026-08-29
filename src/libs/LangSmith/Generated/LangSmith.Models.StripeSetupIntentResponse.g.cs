@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class StripeSetupIntentResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         [global::System.Text.Json.Serialization.JsonRequired]

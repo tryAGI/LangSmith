@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class ThreadPreviewResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ThreadId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previews")]
         [global::System.Text.Json.Serialization.JsonRequired]

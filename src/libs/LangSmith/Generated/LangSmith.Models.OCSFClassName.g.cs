@@ -9,7 +9,7 @@ namespace LangSmith
     public enum OCSFClassName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiActivity,
     }

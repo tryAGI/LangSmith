@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AccessScope
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Organization,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workspace,
     }

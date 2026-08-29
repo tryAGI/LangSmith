@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BulkExportDestinationS3ConfigS3AdditionalKwargs2
     {

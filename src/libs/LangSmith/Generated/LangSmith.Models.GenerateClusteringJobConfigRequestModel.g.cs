@@ -9,11 +9,11 @@ namespace LangSmith
     public enum GenerateClusteringJobConfigRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openai,
     }

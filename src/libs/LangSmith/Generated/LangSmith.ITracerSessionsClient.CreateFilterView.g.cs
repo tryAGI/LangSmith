@@ -42,10 +42,14 @@ namespace LangSmith
         /// <param name="filterString"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
+        /// <param name="threadFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="type">
         /// Default Value: runs
+        /// </param>
+        /// <param name="syntaxVersion">
+        /// Default Value: 1
         /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -59,8 +63,10 @@ namespace LangSmith
             string? filterString = default,
             string? traceFilterString = default,
             string? treeFilterString = default,
+            string? threadFilterString = default,
             string? description = default,
             global::LangSmith.FilterViewType? type = default,
+            int? syntaxVersion = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             string? duration = default,

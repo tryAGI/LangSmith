@@ -9,13 +9,13 @@ namespace LangSmith
     public sealed partial class IdentityAnnotationQueueRunStatusCreateSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("override_added_at")]
         public global::System.DateTime? OverrideAddedAt { get; set; }

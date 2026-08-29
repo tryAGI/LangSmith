@@ -6,7 +6,9 @@ namespace LangSmith
     {
         /// <summary>
         /// Create Feedback<br/>
-        /// Create a new feedback.
+        /// Create a new feedback.<br/>
+        /// `session_id` is required: it identifies the tracing project the feedback<br/>
+        /// belongs to.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +21,9 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Feedback<br/>
-        /// Create a new feedback.
+        /// Create a new feedback.<br/>
+        /// `session_id` is required: it identifies the tracing project the feedback<br/>
+        /// belongs to.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +36,9 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Feedback<br/>
-        /// Create a new feedback.
+        /// Create a new feedback.<br/>
+        /// `session_id` is required: it identifies the tracing project the feedback<br/>
+        /// belongs to.
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -44,9 +50,15 @@ namespace LangSmith
         /// <param name="feedbackGroupId"></param>
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
-        /// <param name="sessionId"></param>
+        /// <param name="sessionId">
+        /// Required. The ID of the tracing project (session) the feedback belongs to.
+        /// </param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
+        /// <param name="feedbackThreadId"></param>
+        /// <param name="extendTraceRetention">
+        /// Default Value: true
+        /// </param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
@@ -68,6 +80,8 @@ namespace LangSmith
             global::System.Guid? sessionId = default,
             global::System.Guid? traceId = default,
             global::System.DateTime? startTime = default,
+            string? feedbackThreadId = default,
+            bool? extendTraceRetention = default,
             global::System.Guid? id = default,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,

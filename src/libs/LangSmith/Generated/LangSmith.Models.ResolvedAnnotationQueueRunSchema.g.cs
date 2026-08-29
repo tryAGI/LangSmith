@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class ResolvedAnnotationQueueRunSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("section")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ResolvedAnnotationQueueRunSchemaSectionJsonConverter))]
@@ -17,7 +17,7 @@ namespace LangSmith
         public required global::LangSmith.ResolvedAnnotationQueueRunSchemaSection Section { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -62,7 +62,7 @@ namespace LangSmith
         public required int ActivityId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -76,14 +76,14 @@ namespace LangSmith
         public required int StatusId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("time")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -132,7 +132,7 @@ namespace LangSmith
         public required global::LangSmith.OCSFEndpoint SrcEndpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resources")]
         [global::System.Text.Json.Serialization.JsonRequired]

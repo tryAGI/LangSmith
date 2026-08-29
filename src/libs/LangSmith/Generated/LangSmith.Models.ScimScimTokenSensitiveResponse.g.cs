@@ -4,48 +4,54 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ScimScimTokenSensitiveResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
+        public string? CreatedBy { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
         public string? LastUsedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("short_token")]
         public string? ShortToken { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         public string? Token { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
@@ -60,6 +66,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="ScimScimTokenSensitiveResponse" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
+        /// <param name="createdBy"></param>
         /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="lastUsedAt"></param>
@@ -71,6 +78,7 @@ namespace LangSmith
 #endif
         public ScimScimTokenSensitiveResponse(
             string? createdAt,
+            string? createdBy,
             string? description,
             string? id,
             string? lastUsedAt,
@@ -79,6 +87,7 @@ namespace LangSmith
             string? updatedAt)
         {
             this.CreatedAt = createdAt;
+            this.CreatedBy = createdBy;
             this.Description = description;
             this.Id = id;
             this.LastUsedAt = lastUsedAt;
