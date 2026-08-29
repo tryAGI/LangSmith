@@ -9,6 +9,12 @@ namespace LangSmith
     public sealed partial class DataPlanesUpdateDataPlaneRequest
     {
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("firewall")]
+        public global::LangSmith.DataPlanesUpdateDataPlaneFirewallSettings? Firewall { get; set; }
+
+        /// <summary>
         /// MaintenanceWindow is the two-hour weekly maintenance window in UTC.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintenance_window")]
@@ -29,6 +35,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DataPlanesUpdateDataPlaneRequest" /> class.
         /// </summary>
+        /// <param name="firewall"></param>
         /// <param name="maintenanceWindow">
         /// MaintenanceWindow is the two-hour weekly maintenance window in UTC.
         /// </param>
@@ -37,9 +44,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataPlanesUpdateDataPlaneRequest(
+            global::LangSmith.DataPlanesUpdateDataPlaneFirewallSettings? firewall,
             string? maintenanceWindow,
             global::LangSmith.DataPlanesUpdateDataPlaneTTLSettings? ttl)
         {
+            this.Firewall = firewall;
             this.MaintenanceWindow = maintenanceWindow;
             this.Ttl = ttl;
         }

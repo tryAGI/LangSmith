@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("firewall")]
+        public global::LangSmith.DataPlanesDataPlaneFirewallSettings? Firewall { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -80,6 +86,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="apiUrl"></param>
         /// <param name="createdAt"></param>
+        /// <param name="firewall"></param>
         /// <param name="id"></param>
         /// <param name="maintenanceWindow"></param>
         /// <param name="name"></param>
@@ -94,6 +101,7 @@ namespace LangSmith
         public DataPlanesPublicDataPlane(
             string? apiUrl,
             string? createdAt,
+            global::LangSmith.DataPlanesDataPlaneFirewallSettings? firewall,
             string? id,
             string? maintenanceWindow,
             string? name,
@@ -105,6 +113,7 @@ namespace LangSmith
         {
             this.ApiUrl = apiUrl;
             this.CreatedAt = createdAt;
+            this.Firewall = firewall;
             this.Id = id;
             this.MaintenanceWindow = maintenanceWindow;
             this.Name = name;
