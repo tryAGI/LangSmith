@@ -6,14 +6,14 @@ namespace LangSmith
     {
         /// <summary>
         /// Update Chart<br/>
-        /// Update a chart.
+        /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse> UpdateChartAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
@@ -21,14 +21,14 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Chart<br/>
-        /// Update a chart.
+        /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>> UpdateChartAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse>> UpdateChartAsResponseAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
@@ -36,7 +36,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Chart<br/>
-        /// Update a chart.
+        /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="title">
@@ -63,10 +63,13 @@ namespace LangSmith
         /// <param name="commonFilters">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="markdown">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse> UpdateChartAsync(
             global::System.Guid chartId,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
@@ -75,7 +78,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? series = default,
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? sectionId = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>? commonFilters = default,
+            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? commonFilters = default,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? markdown = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

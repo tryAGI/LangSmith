@@ -4,184 +4,188 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetRunsSelect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AppPath,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Attachments,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DottedOrder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Events,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Extra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedbackStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsInDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsRoot,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        LastQueuedAt,
+        /// <summary>
+        ///
         /// </summary>
         LatencySeconds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manifest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParentRunIds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PriceModelId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReferenceDatasetId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReferenceExampleId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShareUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Status,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadEvaluationTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceId,
     }
@@ -217,6 +221,7 @@ namespace LangSmith
                 GetRunsSelect.InputsPreview => "INPUTS_PREVIEW",
                 GetRunsSelect.IsInDataset => "IS_IN_DATASET",
                 GetRunsSelect.IsRoot => "IS_ROOT",
+                GetRunsSelect.LastQueuedAt => "LAST_QUEUED_AT",
                 GetRunsSelect.LatencySeconds => "LATENCY_SECONDS",
                 GetRunsSelect.Manifest => "MANIFEST",
                 GetRunsSelect.Metadata => "METADATA",
@@ -271,6 +276,7 @@ namespace LangSmith
                 "INPUTS_PREVIEW" => GetRunsSelect.InputsPreview,
                 "IS_IN_DATASET" => GetRunsSelect.IsInDataset,
                 "IS_ROOT" => GetRunsSelect.IsRoot,
+                "LAST_QUEUED_AT" => GetRunsSelect.LastQueuedAt,
                 "LATENCY_SECONDS" => GetRunsSelect.LatencySeconds,
                 "MANIFEST" => GetRunsSelect.Manifest,
                 "METADATA" => GetRunsSelect.Metadata,

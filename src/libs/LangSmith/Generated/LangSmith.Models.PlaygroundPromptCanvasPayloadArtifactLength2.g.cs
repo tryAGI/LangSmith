@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PlaygroundPromptCanvasPayloadArtifactLength2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Long,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Longest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Short,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shortest,
     }

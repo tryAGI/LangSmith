@@ -4,61 +4,61 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CustomChartCreate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         public int? Index { get; set; }
 
         /// <summary>
-        /// Enum for custom chart types.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CustomChartTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.CustomChartCreateChartTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.CustomChartType ChartType { get; set; }
+        public required global::LangSmith.CustomChartCreateChartType ChartType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("series")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate> Series { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("section_id")]
         public global::System.Guid? SectionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        public global::LangSmith.CustomChartSeriesFilters2? CommonFilters { get; set; }
+        public global::LangSmith.CustomChartSeriesFilters? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,9 +70,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CustomChartCreate" /> class.
         /// </summary>
         /// <param name="title"></param>
-        /// <param name="chartType">
-        /// Enum for custom chart types.
-        /// </param>
+        /// <param name="chartType"></param>
         /// <param name="series"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
@@ -84,13 +82,13 @@ namespace LangSmith
 #endif
         public CustomChartCreate(
             string title,
-            global::LangSmith.CustomChartType chartType,
+            global::LangSmith.CustomChartCreateChartType chartType,
             global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate> series,
             string? description,
             int? index,
             global::System.Guid? sectionId,
             object? metadata,
-            global::LangSmith.CustomChartSeriesFilters2? commonFilters)
+            global::LangSmith.CustomChartSeriesFilters? commonFilters)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description;

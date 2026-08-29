@@ -4,18 +4,18 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OrgsOrgMemberEnriched
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
         public string? AvatarUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
@@ -27,7 +27,7 @@ namespace LangSmith
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
@@ -51,7 +51,7 @@ namespace LangSmith
         public bool? IsPending { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("linked_login_methods")]
         public global::System.Collections.Generic.IList<global::LangSmith.OrgsLinkedLoginMethod>? LinkedLoginMethods { get; set; }
@@ -75,13 +75,13 @@ namespace LangSmith
         public string? RoleName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scim_groups")]
         public global::System.Collections.Generic.IList<global::LangSmith.OrgsSCIMGroup>? ScimGroups { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_memberships")]
         public global::System.Collections.Generic.IList<global::LangSmith.OrgsWorkspaceMembership>? WorkspaceMemberships { get; set; }

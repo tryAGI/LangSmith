@@ -9,11 +9,11 @@ namespace LangSmith
     public enum PlaygroundSettingsResponseSettingsType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Complex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Simple,
     }

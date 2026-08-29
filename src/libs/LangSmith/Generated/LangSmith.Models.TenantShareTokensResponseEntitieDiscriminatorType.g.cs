@@ -4,18 +4,22 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TenantShareTokensResponseEntitieDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Run,
+        /// <summary>
+        ///
+        /// </summary>
+        Thread,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace LangSmith
             {
                 TenantShareTokensResponseEntitieDiscriminatorType.Dataset => "dataset",
                 TenantShareTokensResponseEntitieDiscriminatorType.Run => "run",
+                TenantShareTokensResponseEntitieDiscriminatorType.Thread => "thread",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace LangSmith
             {
                 "dataset" => TenantShareTokensResponseEntitieDiscriminatorType.Dataset,
                 "run" => TenantShareTokensResponseEntitieDiscriminatorType.Run,
+                "thread" => TenantShareTokensResponseEntitieDiscriminatorType.Thread,
                 _ => null,
             };
         }

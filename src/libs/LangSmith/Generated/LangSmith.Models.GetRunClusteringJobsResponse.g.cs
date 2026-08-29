@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class GetRunClusteringJobsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clustering_jobs")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,21 +9,21 @@ namespace LangSmith
     public sealed partial class CommitManifestResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_hash")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitHash { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Manifest { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         public global::System.Collections.Generic.IList<global::LangSmith.RepoExampleResponse>? Examples { get; set; }

@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BulkExportFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parquet,
     }

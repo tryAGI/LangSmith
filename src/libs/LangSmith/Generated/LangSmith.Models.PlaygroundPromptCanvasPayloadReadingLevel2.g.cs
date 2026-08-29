@@ -4,24 +4,24 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PlaygroundPromptCanvasPayloadReadingLevel2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Child,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         College,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Teenager,
     }

@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TraceTier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Longlived,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shortlived,
     }

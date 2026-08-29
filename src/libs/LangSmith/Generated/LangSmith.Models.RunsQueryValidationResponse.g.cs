@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class RunsQueryValidationResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("valid")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Valid { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         public global::System.Collections.Generic.IList<global::LangSmith.RunsQueryValidationError>? Errors { get; set; }

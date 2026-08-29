@@ -4,26 +4,26 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BodyCloneDatasetApiV1DatasetsClonePost
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid TargetDatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid SourceDatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         public global::LangSmith.AnyOf<global::System.DateTime?, string>? AsOf { get; set; }
@@ -35,11 +35,17 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? Examples { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
         public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Split { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? TagValueIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,6 +63,7 @@ namespace LangSmith
         /// Default Value: []
         /// </param>
         /// <param name="split"></param>
+        /// <param name="tagValueIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,13 +72,15 @@ namespace LangSmith
             global::System.Guid sourceDatasetId,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.Collections.Generic.IList<global::System.Guid>? examples,
-            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split)
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds)
         {
             this.TargetDatasetId = targetDatasetId;
             this.SourceDatasetId = sourceDatasetId;
             this.AsOf = asOf;
             this.Examples = examples;
             this.Split = split;
+            this.TagValueIds = tagValueIds;
         }
 
         /// <summary>

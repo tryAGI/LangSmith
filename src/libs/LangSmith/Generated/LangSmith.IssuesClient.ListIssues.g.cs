@@ -44,9 +44,13 @@ namespace LangSmith
             ref string? sessionName,
             ref global::LangSmith.GetPlatformIssuesStatus? status,
             ref int? severity,
+            global::System.Collections.Generic.IList<int>? severityExact,
+            global::System.Collections.Generic.IList<global::LangSmith.GetPlatformIssuesActivityItem>? activity,
             ref string? tag,
+            ref global::System.Guid? traceId,
             ref string? updatedAt,
             ref global::LangSmith.GetPlatformIssuesSortBy? sortBy,
+            ref bool? statusFirst,
             ref int? limit,
             ref int? offset);
         partial void PrepareListIssuesRequest(
@@ -56,9 +60,13 @@ namespace LangSmith
             string? sessionName,
             global::LangSmith.GetPlatformIssuesStatus? status,
             int? severity,
+            global::System.Collections.Generic.IList<int>? severityExact,
+            global::System.Collections.Generic.IList<global::LangSmith.GetPlatformIssuesActivityItem>? activity,
             string? tag,
+            global::System.Guid? traceId,
             string? updatedAt,
             global::LangSmith.GetPlatformIssuesSortBy? sortBy,
+            bool? statusFirst,
             int? limit,
             int? offset);
         partial void ProcessListIssuesResponse(
@@ -74,15 +82,19 @@ namespace LangSmith
         /// [Beta] List issues<br/>
         /// **Beta:** This endpoint is in active development and may change without notice.<br/>
         /// Returns issues for the authenticated tenant, optionally filtered<br/>
-        /// by session, status, severity, tag, or last modified time.
+        /// by session, status, severity, tag, linked trace, or last modified time.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
         /// <param name="status"></param>
         /// <param name="severity"></param>
+        /// <param name="severityExact"></param>
+        /// <param name="activity"></param>
         /// <param name="tag"></param>
+        /// <param name="traceId"></param>
         /// <param name="updatedAt"></param>
         /// <param name="sortBy"></param>
+        /// <param name="statusFirst"></param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -91,14 +103,18 @@ namespace LangSmith
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
 #endif
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>> ListIssuesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>> ListIssuesAsync(
             string? sessionId = default,
             string? sessionName = default,
             global::LangSmith.GetPlatformIssuesStatus? status = default,
             int? severity = default,
+            global::System.Collections.Generic.IList<int>? severityExact = default,
+            global::System.Collections.Generic.IList<global::LangSmith.GetPlatformIssuesActivityItem>? activity = default,
             string? tag = default,
+            global::System.Guid? traceId = default,
             string? updatedAt = default,
             global::LangSmith.GetPlatformIssuesSortBy? sortBy = default,
+            bool? statusFirst = default,
             int? limit = default,
             int? offset = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -109,9 +125,13 @@ namespace LangSmith
                 sessionName: sessionName,
                 status: status,
                 severity: severity,
+                severityExact: severityExact,
+                activity: activity,
                 tag: tag,
+                traceId: traceId,
                 updatedAt: updatedAt,
                 sortBy: sortBy,
+                statusFirst: statusFirst,
                 limit: limit,
                 offset: offset,
                 requestOptions: requestOptions,
@@ -124,15 +144,19 @@ namespace LangSmith
         /// [Beta] List issues<br/>
         /// **Beta:** This endpoint is in active development and may change without notice.<br/>
         /// Returns issues for the authenticated tenant, optionally filtered<br/>
-        /// by session, status, severity, tag, or last modified time.
+        /// by session, status, severity, tag, linked trace, or last modified time.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
         /// <param name="status"></param>
         /// <param name="severity"></param>
+        /// <param name="severityExact"></param>
+        /// <param name="activity"></param>
         /// <param name="tag"></param>
+        /// <param name="traceId"></param>
         /// <param name="updatedAt"></param>
         /// <param name="sortBy"></param>
+        /// <param name="statusFirst"></param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -141,14 +165,18 @@ namespace LangSmith
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
 #endif
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>>> ListIssuesAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>>> ListIssuesAsResponseAsync(
             string? sessionId = default,
             string? sessionName = default,
             global::LangSmith.GetPlatformIssuesStatus? status = default,
             int? severity = default,
+            global::System.Collections.Generic.IList<int>? severityExact = default,
+            global::System.Collections.Generic.IList<global::LangSmith.GetPlatformIssuesActivityItem>? activity = default,
             string? tag = default,
+            global::System.Guid? traceId = default,
             string? updatedAt = default,
             global::LangSmith.GetPlatformIssuesSortBy? sortBy = default,
+            bool? statusFirst = default,
             int? limit = default,
             int? offset = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -162,9 +190,13 @@ namespace LangSmith
                 sessionName: ref sessionName,
                 status: ref status,
                 severity: ref severity,
+                severityExact: severityExact,
+                activity: activity,
                 tag: ref tag,
+                traceId: ref traceId,
                 updatedAt: ref updatedAt,
                 sortBy: ref sortBy,
+                statusFirst: ref statusFirst,
                 limit: ref limit,
                 offset: ref offset);
 
@@ -192,7 +224,7 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/v1/platform/issues",
+                                path: "/api/v1/platform/issues",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListIssuesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
@@ -201,9 +233,13 @@ namespace LangSmith
                                 .AddOptionalParameter("session_name", sessionName)
                                 .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("severity", severity?.ToString())
+                                .AddOptionalParameter("severity_exact", severityExact, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("activity", activity, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("tag", tag)
+                                .AddOptionalParameter("trace_id", traceId?.ToString())
                                 .AddOptionalParameter("updated_at", updatedAt)
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("status_first", statusFirst?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 ;
@@ -234,7 +270,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -251,9 +287,13 @@ namespace LangSmith
                     sessionName: sessionName,
                     status: status,
                     severity: severity,
+                    severityExact: severityExact,
+                    activity: activity,
                     tag: tag,
+                    traceId: traceId,
                     updatedAt: updatedAt,
                     sortBy: sortBy,
+                    statusFirst: statusFirst,
                     limit: limit,
                     offset: offset);
 
@@ -274,7 +314,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListIssues",
                                 methodName: "ListIssuesAsync",
-                                pathTemplate: "\"/v1/platform/issues\"",
+                                pathTemplate: "\"/api/v1/platform/issues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -308,7 +348,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListIssues",
                                 methodName: "ListIssuesAsync",
-                                pathTemplate: "\"/v1/platform/issues\"",
+                                pathTemplate: "\"/api/v1/platform/issues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -349,7 +389,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListIssues",
                                 methodName: "ListIssuesAsync",
-                                pathTemplate: "\"/v1/platform/issues\"",
+                                pathTemplate: "\"/api/v1/platform/issues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -397,7 +437,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListIssues",
                                 methodName: "ListIssuesAsync",
-                                pathTemplate: "\"/v1/platform/issues\"",
+                                pathTemplate: "\"/api/v1/platform/issues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -419,7 +459,7 @@ namespace LangSmith
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListIssues",
                                 methodName: "ListIssuesAsync",
-                                pathTemplate: "\"/v1/platform/issues\"",
+                                pathTemplate: "\"/api/v1/platform/issues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -439,19 +479,19 @@ namespace LangSmith
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::LangSmith.TracerSessionIssuesErrorResponse? __value_400 = null;
+                                global::LangSmith.IssuesErrorResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.IssuesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.IssuesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -459,37 +499,36 @@ namespace LangSmith
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.IssuesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::LangSmith.TracerSessionIssuesErrorResponse? __value_401 = null;
+                                global::LangSmith.IssuesErrorResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::LangSmith.IssuesErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::LangSmith.IssuesErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -497,37 +536,36 @@ namespace LangSmith
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.IssuesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::LangSmith.TracerSessionIssuesErrorResponse? __value_403 = null;
+                                global::LangSmith.IssuesErrorResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.IssuesErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.IssuesErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -535,37 +573,36 @@ namespace LangSmith
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.IssuesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::LangSmith.TracerSessionIssuesErrorResponse? __value_500 = null;
+                                global::LangSmith.IssuesErrorResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::LangSmith.IssuesErrorResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::LangSmith.TracerSessionIssuesErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::LangSmith.IssuesErrorResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -573,18 +610,17 @@ namespace LangSmith
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.TracerSessionIssuesErrorResponse>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.IssuesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -608,9 +644,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>), JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -618,17 +654,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -642,9 +676,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesIssue>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -665,17 +699,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

@@ -4,53 +4,53 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OrgUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CustomerId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable_metric_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BillableMetricId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable_metric_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BillableMetricName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StartTimestamp { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EndTimestamp { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public double? Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         public global::System.Collections.Generic.Dictionary<string, double>? Groups { get; set; }

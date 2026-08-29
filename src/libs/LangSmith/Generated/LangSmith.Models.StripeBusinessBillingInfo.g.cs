@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class StripeBusinessBillingInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("address")]
         public global::LangSmith.StripeCustomerAddress? Address { get; set; }

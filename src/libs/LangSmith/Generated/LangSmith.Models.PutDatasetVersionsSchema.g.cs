@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PutDatasetVersionsSchema
     {
@@ -17,7 +17,7 @@ namespace LangSmith
         public required global::LangSmith.AnyOf<global::System.DateTime?, string> AsOf { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
         [global::System.Text.Json.Serialization.JsonRequired]

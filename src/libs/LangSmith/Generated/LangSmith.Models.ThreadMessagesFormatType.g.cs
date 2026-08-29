@@ -9,15 +9,15 @@ namespace LangSmith
     public enum ThreadMessagesFormatType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllMessages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstHumanLastAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HumanAiPairs,
     }

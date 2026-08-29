@@ -4,20 +4,36 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetPlatformIssuesSortBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Default,
+        /// <summary>
+        ///
+        /// </summary>
+        LastSeen,
+        /// <summary>
+        ///
+        /// </summary>
+        LastUpdated,
+        /// <summary>
+        ///
         /// </summary>
         Severity,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        TraceCount,
+        /// <summary>
+        ///
         /// </summary>
         UpdatedAt,
     }
@@ -35,7 +51,11 @@ namespace LangSmith
             return value switch
             {
                 GetPlatformIssuesSortBy.CreatedAt => "created_at",
+                GetPlatformIssuesSortBy.Default => "default",
+                GetPlatformIssuesSortBy.LastSeen => "last_seen",
+                GetPlatformIssuesSortBy.LastUpdated => "last_updated",
                 GetPlatformIssuesSortBy.Severity => "severity",
+                GetPlatformIssuesSortBy.TraceCount => "trace_count",
                 GetPlatformIssuesSortBy.UpdatedAt => "updated_at",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,7 +68,11 @@ namespace LangSmith
             return value switch
             {
                 "created_at" => GetPlatformIssuesSortBy.CreatedAt,
+                "default" => GetPlatformIssuesSortBy.Default,
+                "last_seen" => GetPlatformIssuesSortBy.LastSeen,
+                "last_updated" => GetPlatformIssuesSortBy.LastUpdated,
                 "severity" => GetPlatformIssuesSortBy.Severity,
+                "trace_count" => GetPlatformIssuesSortBy.TraceCount,
                 "updated_at" => GetPlatformIssuesSortBy.UpdatedAt,
                 _ => null,
             };

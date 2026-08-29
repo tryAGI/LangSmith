@@ -16,7 +16,7 @@ namespace LangSmith
         public required global::LangSmith.GranularUsageStride Stride { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]

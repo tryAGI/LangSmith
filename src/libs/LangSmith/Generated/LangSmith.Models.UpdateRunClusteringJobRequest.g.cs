@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class UpdateRunClusteringJobRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,28 +4,28 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AuthProvider
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomOidc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Oidc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Supabase_nonSso,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Supabase_sso,
     }

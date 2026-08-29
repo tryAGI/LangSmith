@@ -4,54 +4,70 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResourceType
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Agent,
+        /// <summary>
+        ///
+        /// </summary>
+        CustomApp,
+        /// <summary>
+        ///
         /// </summary>
         Dashboard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deployment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Evaluator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Experiment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FleetIntegration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpServer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Project,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sandbox,
+        /// <summary>
+        ///
+        /// </summary>
+        Skill,
+        /// <summary>
+        ///
+        /// </summary>
+        SnapshotName,
     }
 
     /// <summary>
@@ -66,6 +82,8 @@ namespace LangSmith
         {
             return value switch
             {
+                ResourceType.Agent => "agent",
+                ResourceType.CustomApp => "custom_app",
                 ResourceType.Dashboard => "dashboard",
                 ResourceType.Dataset => "dataset",
                 ResourceType.Deployment => "deployment",
@@ -77,6 +95,8 @@ namespace LangSmith
                 ResourceType.Prompt => "prompt",
                 ResourceType.Queue => "queue",
                 ResourceType.Sandbox => "sandbox",
+                ResourceType.Skill => "skill",
+                ResourceType.SnapshotName => "snapshot_name",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -87,6 +107,8 @@ namespace LangSmith
         {
             return value switch
             {
+                "agent" => ResourceType.Agent,
+                "custom_app" => ResourceType.CustomApp,
                 "dashboard" => ResourceType.Dashboard,
                 "dataset" => ResourceType.Dataset,
                 "deployment" => ResourceType.Deployment,
@@ -98,6 +120,8 @@ namespace LangSmith
                 "prompt" => ResourceType.Prompt,
                 "queue" => ResourceType.Queue,
                 "sandbox" => ResourceType.Sandbox,
+                "skill" => ResourceType.Skill,
+                "snapshot_name" => ResourceType.SnapshotName,
                 _ => null,
             };
         }

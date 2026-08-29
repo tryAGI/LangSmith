@@ -35,12 +35,21 @@ namespace LangSmith.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.TenantShareDatasetToken)}");
                 dataset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::LangSmith.TenantShareThreadToken? thread = default;
+            if (discriminator?.Type == global::LangSmith.TenantShareTokensResponseEntitieDiscriminatorType.Thread)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareThreadToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareThreadToken> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.TenantShareThreadToken)}");
+                thread = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::LangSmith.EntitiesItem(
                 discriminator?.Type,
                 run,
 
-                dataset
+                dataset,
+
+                thread
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace LangSmith.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareDatasetToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareDatasetToken?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.TenantShareDatasetToken).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset!, typeInfo);
+            }
+            else if (value.IsThread)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.TenantShareThreadToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.TenantShareThreadToken?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.TenantShareThreadToken).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thread!, typeInfo);
             }
         }
     }

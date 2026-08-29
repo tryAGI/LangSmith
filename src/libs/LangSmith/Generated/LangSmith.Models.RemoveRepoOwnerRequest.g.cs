@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class RemoveRepoOwnerRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identity_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

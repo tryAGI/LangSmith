@@ -9,13 +9,28 @@ namespace LangSmith
     public sealed partial class SharedProblemDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         public string? Detail { get; set; }
 
         /// <summary>
-        /// 
+        /// Details is a LangSmith extension carrying structured fields for ErrorClass.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("details")]
+        public global::LangSmith.SharedParseErrorDetails? Details { get; set; }
+
+        /// <summary>
+        /// ErrorClass is a LangSmith extension sub-categorizing a status code.<br/>
+        /// Additional values require expanding this enum and adding a oneOf<br/>
+        /// discriminator on Details to keep the class↔details contract typed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_class")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SharedProblemDetailsErrorClassJsonConverter))]
+        public global::LangSmith.SharedProblemDetailsErrorClass? ErrorClass { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instance")]
         public string? Instance { get; set; }
@@ -27,19 +42,19 @@ namespace LangSmith
         public string? Remedy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public int? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
@@ -54,6 +69,14 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SharedProblemDetails" /> class.
         /// </summary>
         /// <param name="detail"></param>
+        /// <param name="details">
+        /// Details is a LangSmith extension carrying structured fields for ErrorClass.
+        /// </param>
+        /// <param name="errorClass">
+        /// ErrorClass is a LangSmith extension sub-categorizing a status code.<br/>
+        /// Additional values require expanding this enum and adding a oneOf<br/>
+        /// discriminator on Details to keep the class↔details contract typed.
+        /// </param>
         /// <param name="instance"></param>
         /// <param name="remedy">
         /// Remedy is a LangSmith extension for user-recoverable errors.
@@ -66,6 +89,8 @@ namespace LangSmith
 #endif
         public SharedProblemDetails(
             string? detail,
+            global::LangSmith.SharedParseErrorDetails? details,
+            global::LangSmith.SharedProblemDetailsErrorClass? errorClass,
             string? instance,
             string? remedy,
             int? status,
@@ -73,6 +98,8 @@ namespace LangSmith
             string? type)
         {
             this.Detail = detail;
+            this.Details = details;
+            this.ErrorClass = errorClass;
             this.Instance = instance;
             this.Remedy = remedy;
             this.Status = status;

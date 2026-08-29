@@ -16,7 +16,7 @@ namespace LangSmith
     public sealed partial class GroupedExamplesWithRunsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         [global::System.Text.Json.Serialization.JsonRequired]

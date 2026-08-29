@@ -6,9 +6,9 @@ namespace LangSmith
     {
         /// <summary>
         /// List commits<br/>
-        /// Lists all commits for a repository with pagination support.<br/>
+        /// List commits for a repository, with pagination support.<br/>
         /// This endpoint supports both authenticated and unauthenticated access.<br/>
-        /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
+        /// Authenticated users can access private repositories; unauthenticated users can only access public repositories.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
         /// <param name="owner"></param>
@@ -37,9 +37,9 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List commits<br/>
-        /// Lists all commits for a repository with pagination support.<br/>
+        /// List commits for a repository, with pagination support.<br/>
         /// This endpoint supports both authenticated and unauthenticated access.<br/>
-        /// Authenticated users can access private repos, while unauthenticated users can only access public repos.<br/>
+        /// Authenticated users can access private repositories; unauthenticated users can only access public repositories.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
         /// <param name="owner"></param>

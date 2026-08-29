@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class SessionFeedbackDelta
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_deltas")]
         [global::System.Text.Json.Serialization.JsonRequired]

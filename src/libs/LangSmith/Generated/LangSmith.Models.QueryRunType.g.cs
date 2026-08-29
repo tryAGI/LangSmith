@@ -4,36 +4,36 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum QueryRunType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypeChain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypeEmbedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypeLLM,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypeParser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypePrompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypeRetriever,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunTypeTool,
     }

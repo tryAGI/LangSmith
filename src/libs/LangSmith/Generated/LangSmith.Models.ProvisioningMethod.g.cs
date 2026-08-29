@@ -4,20 +4,20 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProvisioningMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bootstrap,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Saml_jit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scim,
     }

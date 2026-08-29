@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BulkExportUpdatableStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
     }

@@ -4,72 +4,76 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetThreadsStatsSelect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokenDetails,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        FeedbackStats,
+        /// <summary>
+        ///
         /// </summary>
         FirstStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastEndTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyP50,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyP99,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Turns,
     }
@@ -90,6 +94,7 @@ namespace LangSmith
                 GetThreadsStatsSelect.CompletionCostDetails => "COMPLETION_COST_DETAILS",
                 GetThreadsStatsSelect.CompletionTokens => "COMPLETION_TOKENS",
                 GetThreadsStatsSelect.CompletionTokenDetails => "COMPLETION_TOKEN_DETAILS",
+                GetThreadsStatsSelect.FeedbackStats => "FEEDBACK_STATS",
                 GetThreadsStatsSelect.FirstStartTime => "FIRST_START_TIME",
                 GetThreadsStatsSelect.LastEndTime => "LAST_END_TIME",
                 GetThreadsStatsSelect.LastStartTime => "LAST_START_TIME",
@@ -116,6 +121,7 @@ namespace LangSmith
                 "COMPLETION_COST_DETAILS" => GetThreadsStatsSelect.CompletionCostDetails,
                 "COMPLETION_TOKENS" => GetThreadsStatsSelect.CompletionTokens,
                 "COMPLETION_TOKEN_DETAILS" => GetThreadsStatsSelect.CompletionTokenDetails,
+                "FEEDBACK_STATS" => GetThreadsStatsSelect.FeedbackStats,
                 "FIRST_START_TIME" => GetThreadsStatsSelect.FirstStartTime,
                 "LAST_END_TIME" => GetThreadsStatsSelect.LastEndTime,
                 "LAST_START_TIME" => GetThreadsStatsSelect.LastStartTime,

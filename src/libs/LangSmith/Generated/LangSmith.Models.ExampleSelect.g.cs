@@ -4,50 +4,66 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ExampleSelect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AttachmentUrls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DatasetId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModifiedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SourceRunId,
+        /// <summary>
+        ///
+        /// </summary>
+        SourceRunStartTime,
+        /// <summary>
+        ///
+        /// </summary>
+        SourceSessionId,
+        /// <summary>
+        ///
+        /// </summary>
+        SourceThreadId,
+        /// <summary>
+        ///
+        /// </summary>
+        SourceTraceId,
     }
 
     /// <summary>
@@ -72,6 +88,10 @@ namespace LangSmith
                 ExampleSelect.Name => "name",
                 ExampleSelect.Outputs => "outputs",
                 ExampleSelect.SourceRunId => "source_run_id",
+                ExampleSelect.SourceRunStartTime => "source_run_start_time",
+                ExampleSelect.SourceSessionId => "source_session_id",
+                ExampleSelect.SourceThreadId => "source_thread_id",
+                ExampleSelect.SourceTraceId => "source_trace_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,6 +112,10 @@ namespace LangSmith
                 "name" => ExampleSelect.Name,
                 "outputs" => ExampleSelect.Outputs,
                 "source_run_id" => ExampleSelect.SourceRunId,
+                "source_run_start_time" => ExampleSelect.SourceRunStartTime,
+                "source_session_id" => ExampleSelect.SourceSessionId,
+                "source_thread_id" => ExampleSelect.SourceThreadId,
+                "source_trace_id" => ExampleSelect.SourceTraceId,
                 _ => null,
             };
         }

@@ -9,40 +9,46 @@ namespace LangSmith
     public sealed partial class EvaluatorStructuredOutput
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hub_ref")]
         public string? HubRef { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template_format")]
         public string? TemplateFormat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         public object? Schema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variable_mapping")]
         public global::System.Collections.Generic.Dictionary<string, string>? VariableMapping { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public object? Model { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("playground_settings_id")]
+        public string? PlaygroundSettingsId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,6 +65,7 @@ namespace LangSmith
         /// <param name="schema"></param>
         /// <param name="variableMapping"></param>
         /// <param name="model"></param>
+        /// <param name="playgroundSettingsId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,7 +75,8 @@ namespace LangSmith
             string? templateFormat,
             object? schema,
             global::System.Collections.Generic.Dictionary<string, string>? variableMapping,
-            object? model)
+            object? model,
+            string? playgroundSettingsId)
         {
             this.HubRef = hubRef;
             this.Prompt = prompt;
@@ -76,6 +84,7 @@ namespace LangSmith
             this.Schema = schema;
             this.VariableMapping = variableMapping;
             this.Model = model;
+            this.PlaygroundSettingsId = playgroundSettingsId;
         }
 
         /// <summary>

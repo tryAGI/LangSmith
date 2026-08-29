@@ -9,7 +9,7 @@ namespace LangSmith
     public enum RunRulesAlertType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pagerduty,
     }

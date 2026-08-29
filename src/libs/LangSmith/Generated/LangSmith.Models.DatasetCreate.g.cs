@@ -9,32 +9,38 @@ namespace LangSmith
     public sealed partial class DatasetCreate
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? TagValueIds { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
         public object? InputsSchemaDefinition { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
         public object? OutputsSchemaDefinition { get; set; }
@@ -46,19 +52,19 @@ namespace LangSmith
         public bool? ExternallyManaged { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
         public global::System.Collections.Generic.IList<global::LangSmith.DatasetTransformation>? Transformations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         public object? Extra { get; set; }
@@ -81,6 +87,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="DatasetCreate" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="inputsSchemaDefinition"></param>
@@ -100,6 +107,7 @@ namespace LangSmith
 #endif
         public DatasetCreate(
             string name,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds,
             string? description,
             global::System.DateTime? createdAt,
             object? inputsSchemaDefinition,
@@ -110,6 +118,7 @@ namespace LangSmith
             object? extra,
             global::LangSmith.DataType? dataType)
         {
+            this.TagValueIds = tagValueIds;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.CreatedAt = createdAt;

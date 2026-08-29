@@ -9,15 +9,15 @@ namespace LangSmith
     public enum OrganizationDashboardType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Credits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Invoices,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Usage,
     }

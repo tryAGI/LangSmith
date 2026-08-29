@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BulkExportDestinationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S3,
     }

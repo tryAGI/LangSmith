@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RunRulesPagerdutyAlertSchema
     {
@@ -15,14 +15,14 @@ namespace LangSmith
         public global::LangSmith.RunRulesAlertType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("routing_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RoutingKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         public string? Summary { get; set; }

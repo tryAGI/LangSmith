@@ -9,19 +9,19 @@ namespace LangSmith
     public enum SourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Api,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         App,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AutoEval,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Model,
     }

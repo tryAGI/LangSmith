@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class GenerateClusteringJobConfigRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_context")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -23,13 +23,13 @@ namespace LangSmith
         public global::LangSmith.GenerateClusteringJobConfigRequestModel? Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cluster_model")]
         public string? ClusterModel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_model")]
         public string? SummaryModel { get; set; }

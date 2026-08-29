@@ -42,6 +42,15 @@ namespace LangSmith
         /// <param name="checkpoint">
         /// if omitted, creates a fresh checkpoint from the running VM
         /// </param>
+        /// <param name="description">
+        /// Description says what this snapshot's image can do, so a caller can hand it to an agent as a capability summary. At most 1024 characters.
+        /// </param>
+        /// <param name="dockerImage">
+        /// sandbox-local Docker image to export
+        /// </param>
+        /// <param name="fsCapacityBytes">
+        /// required for Docker image export unless the sandbox has a capacity
+        /// </param>
         /// <param name="includeMemory">
         /// IncludeMemory, when true, captures a full VM memory snapshot<br/>
         /// alongside the filesystem clone. Only honored when the sandbox is running<br/>
@@ -49,7 +58,13 @@ namespace LangSmith
         /// Defaults to false to keep snapshots small unless memory restore is<br/>
         /// explicitly desired.
         /// </param>
+        /// <param name="labels">
+        /// Labels seed the captured snapshot's labels.
+        /// </param>
         /// <param name="requestName"></param>
+        /// <param name="tag">
+        /// mutable Docker-style tag; defaults to "latest"
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -57,7 +72,12 @@ namespace LangSmith
             string name,
             string requestName,
             string? checkpoint = default,
+            string? description = default,
+            string? dockerImage = default,
+            long? fsCapacityBytes = default,
             bool? includeMemory = default,
+            global::System.Collections.Generic.Dictionary<string, string>? labels = default,
+            string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

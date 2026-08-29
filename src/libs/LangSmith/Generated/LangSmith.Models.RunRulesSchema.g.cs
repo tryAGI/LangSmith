@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class RunRulesSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,81 +29,81 @@ namespace LangSmith
         public bool? IsEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
         public string? SessionName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         public global::System.Guid? DatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_name")]
         public string? DatasetName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampling_rate")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double SamplingRate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         public string? Filter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter")]
         public string? TraceFilter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter")]
         public string? TreeFilter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_annotation_queue_id")]
         public global::System.Guid? AddToAnnotationQueueId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_annotation_queue_name")]
         public string? AddToAnnotationQueueName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_dataset_id")]
         public global::System.Guid? AddToDatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_dataset_name")]
         public string? AddToDatasetName { get; set; }
@@ -115,7 +115,7 @@ namespace LangSmith
         public bool? AddToDatasetPreferCorrection { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("corrections_dataset_id")]
         public global::System.Guid? CorrectionsDatasetId { get; set; }
@@ -127,31 +127,37 @@ namespace LangSmith
         public bool? UseCorrectionsDataset { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_few_shot_examples")]
         public int? NumFewShotExamples { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluators")]
         public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? Evaluators { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_evaluators")]
         public global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? CodeEvaluators { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trajectory_evaluators")]
+        public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? TrajectoryEvaluators { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alerts")]
         public global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? Alerts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
         public global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? Webhooks { get; set; }
@@ -165,55 +171,91 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_managed_evaluator")]
+        public bool? IsManagedEvaluator { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_tracing_disabled")]
+        public bool? IsTracingDisabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_evaluator_trace_retention")]
+        public bool? ExtendEvaluatorTraceRetention { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_dataset_trace_retention")]
+        public bool? ExtendDatasetTraceRetention { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_annotation_queue_trace_retention")]
+        public bool? ExtendAnnotationQueueTraceRetention { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extend_webhook_trace_retention")]
+        public bool? ExtendWebhookTraceRetention { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_extended_stats")]
         public bool? IncludeExtendedStats { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_from")]
         public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_id")]
         public global::System.Guid? BackfillId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_status")]
         public string? BackfillStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_progress")]
         public double? BackfillProgress { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_error")]
         public string? BackfillError { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_completed_at")]
         public global::System.DateTime? BackfillCompletedAt { get; set; }
@@ -225,35 +267,53 @@ namespace LangSmith
         public bool? Transient { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EvaluatorVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_id")]
         public global::System.Guid? EvaluatorId { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_name")]
+        public string? EvaluatorName { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alignment_annotation_queue_id")]
         public global::System.Guid? AlignmentAnnotationQueueId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public string? GroupBy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
         public global::LangSmith.RunRuleSpendLimitSchemaOutput? SpendLimit { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_count")]
+        public int? TraceCount { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_usd")]
+        public double? SpendUsd { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -295,11 +355,22 @@ namespace LangSmith
         /// <param name="numFewShotExamples"></param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
+        /// <param name="trajectoryEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isManagedEvaluator">
+        /// Default Value: false
+        /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention"></param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="includeExtendedStats">
         /// Default Value: false
         /// </param>
@@ -313,9 +384,12 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="evaluatorId"></param>
+        /// <param name="evaluatorName"></param>
         /// <param name="alignmentAnnotationQueueId"></param>
         /// <param name="groupBy"></param>
         /// <param name="spendLimit"></param>
+        /// <param name="traceCount"></param>
+        /// <param name="spendUsd"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -345,9 +419,16 @@ namespace LangSmith
             int? numFewShotExamples,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
+            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? trajectoryEvaluators,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             bool? extendOnly,
+            bool? isManagedEvaluator,
+            bool? isTracingDisabled,
+            bool? extendEvaluatorTraceRetention,
+            bool? extendDatasetTraceRetention,
+            bool? extendAnnotationQueueTraceRetention,
+            bool? extendWebhookTraceRetention,
             bool? includeExtendedStats,
             global::System.DateTime? backfillFrom,
             global::System.Guid? backfillId,
@@ -357,9 +438,12 @@ namespace LangSmith
             global::System.DateTime? backfillCompletedAt,
             bool? transient,
             global::System.Guid? evaluatorId,
+            string? evaluatorName,
             global::System.Guid? alignmentAnnotationQueueId,
             string? groupBy,
-            global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit)
+            global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit,
+            int? traceCount,
+            double? spendUsd)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -383,9 +467,16 @@ namespace LangSmith
             this.NumFewShotExamples = numFewShotExamples;
             this.Evaluators = evaluators;
             this.CodeEvaluators = codeEvaluators;
+            this.TrajectoryEvaluators = trajectoryEvaluators;
             this.Alerts = alerts;
             this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;
+            this.IsManagedEvaluator = isManagedEvaluator;
+            this.IsTracingDisabled = isTracingDisabled;
+            this.ExtendEvaluatorTraceRetention = extendEvaluatorTraceRetention;
+            this.ExtendDatasetTraceRetention = extendDatasetTraceRetention;
+            this.ExtendAnnotationQueueTraceRetention = extendAnnotationQueueTraceRetention;
+            this.ExtendWebhookTraceRetention = extendWebhookTraceRetention;
             this.IncludeExtendedStats = includeExtendedStats;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -398,9 +489,12 @@ namespace LangSmith
             this.Transient = transient;
             this.EvaluatorVersion = evaluatorVersion;
             this.EvaluatorId = evaluatorId;
+            this.EvaluatorName = evaluatorName;
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
             this.GroupBy = groupBy;
             this.SpendLimit = spendLimit;
+            this.TraceCount = traceCount;
+            this.SpendUsd = spendUsd;
         }
 
         /// <summary>

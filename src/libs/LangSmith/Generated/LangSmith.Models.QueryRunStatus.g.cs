@@ -4,20 +4,20 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum QueryRunStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunStatusError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunStatusPending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunStatusSuccess,
     }

@@ -9,21 +9,21 @@ namespace LangSmith
     public sealed partial class QueueInfoResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queued")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Queued { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Active { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduled")]
         [global::System.Text.Json.Serialization.JsonRequired]

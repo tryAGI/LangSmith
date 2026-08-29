@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DataPlanesListPublicDataPlanesResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_planes")]
         public global::System.Collections.Generic.IList<global::LangSmith.DataPlanesPublicDataPlane>? DataPlanes { get; set; }

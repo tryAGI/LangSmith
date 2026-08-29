@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class McpVendorsListMcpVendorsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcp_vendors")]
         public global::System.Collections.Generic.IList<global::LangSmith.McpVendorsMcpVendor>? McpVendors { get; set; }

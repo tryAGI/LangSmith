@@ -9,15 +9,15 @@ namespace LangSmith
     public enum EPromptWebhookTrigger
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Commit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tag_create,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tag_update,
     }

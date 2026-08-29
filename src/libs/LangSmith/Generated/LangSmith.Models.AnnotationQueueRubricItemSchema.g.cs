@@ -4,46 +4,52 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnnotationQueueRubricItemSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FeedbackKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_descriptions")]
         public global::System.Collections.Generic.Dictionary<string, string>? ValueDescriptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_descriptions")]
         public global::System.Collections.Generic.Dictionary<string, string>? ScoreDescriptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_required")]
         public bool? IsRequired { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_assertion")]
         public bool? IsAssertion { get; set; }
+
+        /// <summary>
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("regex_validator")]
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? RegexValidator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,6 +66,9 @@ namespace LangSmith
         /// <param name="scoreDescriptions"></param>
         /// <param name="isRequired"></param>
         /// <param name="isAssertion"></param>
+        /// <param name="regexValidator">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -69,7 +78,8 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? valueDescriptions,
             global::System.Collections.Generic.Dictionary<string, string>? scoreDescriptions,
             bool? isRequired,
-            bool? isAssertion)
+            bool? isAssertion,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? regexValidator)
         {
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.Description = description;
@@ -77,6 +87,7 @@ namespace LangSmith
             this.ScoreDescriptions = scoreDescriptions;
             this.IsRequired = isRequired;
             this.IsAssertion = isAssertion;
+            this.RegexValidator = regexValidator;
         }
 
         /// <summary>

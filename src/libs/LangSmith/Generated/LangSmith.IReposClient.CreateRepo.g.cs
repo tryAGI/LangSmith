@@ -34,6 +34,7 @@ namespace LangSmith
         /// Create Repo<br/>
         /// Create a repo.
         /// </summary>
+        /// <param name="tagValueIds"></param>
         /// <param name="repoHandle"></param>
         /// <param name="description"></param>
         /// <param name="readme"></param>
@@ -50,6 +51,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> CreateRepoAsync(
             string repoHandle,
             bool isPublic,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             string? description = default,
             string? readme = default,
             global::System.Collections.Generic.IList<string>? tags = default,

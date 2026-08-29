@@ -4,56 +4,56 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AuthzInternalAbacOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorEquals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorEqualsIfExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorEqualsIgnoreCase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorEqualsIgnoreCaseIfExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorMatches,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorMatchesIfExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorNotEquals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorNotEqualsIfExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorNotEqualsIgnoreCase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorNotEqualsIgnoreCaseIfExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorNotMatches,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbacOperatorNotMatchesIfExists,
     }

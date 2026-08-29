@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class CreateClusteringJobConfigRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -29,7 +29,7 @@ namespace LangSmith
         public required global::LangSmith.CreateRunClusteringJobRequest Config { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule_cron")]
         public string? ScheduleCron { get; set; }

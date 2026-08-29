@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class RepoTagRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TagName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

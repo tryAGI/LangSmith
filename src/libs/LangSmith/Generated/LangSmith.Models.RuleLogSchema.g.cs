@@ -9,95 +9,101 @@ namespace LangSmith
     public sealed partial class RuleLogSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid RuleId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid RunId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_name")]
         public string? RunName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
         public string? RunType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_session_id")]
         public global::System.Guid? RunSessionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_trace_id")]
+        public global::System.Guid? RunTraceId { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime EndTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("application_time")]
         public global::System.DateTime? ApplicationTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_annotation_queue")]
         public global::LangSmith.RuleLogActionResponse? AddToAnnotationQueue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_dataset")]
         public global::LangSmith.RuleLogActionResponse? AddToDataset { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluators")]
         public global::LangSmith.RuleLogActionResponse? Evaluators { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alerts")]
         public global::LangSmith.RuleLogActionResponse? Alerts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
         public global::LangSmith.RuleLogActionResponse? Webhooks { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extend_only")]
         public global::LangSmith.RuleLogActionResponse? ExtendOnly { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         public string? ThreadId { get; set; }
@@ -118,6 +124,7 @@ namespace LangSmith
         /// <param name="runName"></param>
         /// <param name="runType"></param>
         /// <param name="runSessionId"></param>
+        /// <param name="runTraceId"></param>
         /// <param name="applicationTime"></param>
         /// <param name="addToAnnotationQueue"></param>
         /// <param name="addToDataset"></param>
@@ -137,6 +144,7 @@ namespace LangSmith
             string? runName,
             string? runType,
             global::System.Guid? runSessionId,
+            global::System.Guid? runTraceId,
             global::System.DateTime? applicationTime,
             global::LangSmith.RuleLogActionResponse? addToAnnotationQueue,
             global::LangSmith.RuleLogActionResponse? addToDataset,
@@ -151,6 +159,7 @@ namespace LangSmith
             this.RunName = runName;
             this.RunType = runType;
             this.RunSessionId = runSessionId;
+            this.RunTraceId = runTraceId;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.ApplicationTime = applicationTime;

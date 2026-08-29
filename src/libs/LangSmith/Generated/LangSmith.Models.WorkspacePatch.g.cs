@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class WorkspacePatch
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

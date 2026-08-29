@@ -9,65 +9,71 @@ namespace LangSmith
     public sealed partial class ExperimentResultsUpload
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? TagValueIds { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ExperimentName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_description")]
         public string? ExperimentDescription { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         public global::System.Guid? DatasetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_name")]
         public string? DatasetName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_description")]
         public string? DatasetDescription { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_experiment_scores")]
         public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>? SummaryExperimentScores { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow> Results { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime ExperimentStartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime ExperimentEndTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_metadata")]
         public object? ExperimentMetadata { get; set; }
@@ -85,6 +91,7 @@ namespace LangSmith
         /// <param name="results"></param>
         /// <param name="experimentStartTime"></param>
         /// <param name="experimentEndTime"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="experimentDescription"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
@@ -99,6 +106,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ExperimentResultRow> results,
             global::System.DateTime experimentStartTime,
             global::System.DateTime experimentEndTime,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds,
             string? experimentDescription,
             global::System.Guid? datasetId,
             string? datasetName,
@@ -106,6 +114,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.FeedbackCreateCoreSchema>? summaryExperimentScores,
             object? experimentMetadata)
         {
+            this.TagValueIds = tagValueIds;
             this.ExperimentName = experimentName ?? throw new global::System.ArgumentNullException(nameof(experimentName));
             this.ExperimentDescription = experimentDescription;
             this.DatasetId = datasetId;

@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EvaluatorsEvaluatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluatorTypeCode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvaluatorTypeLLM,
     }

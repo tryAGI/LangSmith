@@ -9,11 +9,11 @@ namespace LangSmith
     public enum RunDateOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class AddRepoOwnerRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]

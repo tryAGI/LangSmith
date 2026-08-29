@@ -16,7 +16,7 @@ namespace LangSmith
         public required global::LangSmith.PromptWebhookBase Webhook { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonRequired]

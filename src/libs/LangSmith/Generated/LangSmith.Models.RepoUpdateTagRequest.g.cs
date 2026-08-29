@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class RepoUpdateTagRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

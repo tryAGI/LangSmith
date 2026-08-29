@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TenantBulkUnshareRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_tokens")]
         public global::System.Collections.Generic.IList<global::System.Guid>? ShareTokens { get; set; }

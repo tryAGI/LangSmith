@@ -44,6 +44,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="repoHandle"></param>
         /// <param name="readme"></param>
         /// <param name="description"></param>
@@ -56,6 +57,7 @@ namespace LangSmith
             string owner,
             string repo,
             string repoHandle,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             string? readme = default,
             string? description = default,
             global::System.Collections.Generic.IList<string>? tags = default,

@@ -58,14 +58,14 @@ namespace LangSmith
 
         /// <summary>
         /// Update Chart<br/>
-        /// Update a chart.
+        /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse> UpdateChartAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
@@ -84,14 +84,14 @@ namespace LangSmith
         }
         /// <summary>
         /// Update Chart<br/>
-        /// Update a chart.
+        /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>> UpdateChartAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse>> UpdateChartAsResponseAsync(
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
@@ -162,7 +162,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -386,18 +386,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -421,9 +420,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.CustomChartResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -431,17 +430,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -455,9 +452,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.CustomChartResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -478,17 +475,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -501,7 +496,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Update Chart<br/>
-        /// Update a chart.
+        /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="title">
@@ -528,10 +523,13 @@ namespace LangSmith
         /// <param name="commonFilters">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="markdown">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> UpdateChartAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse> UpdateChartAsync(
             global::System.Guid chartId,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
@@ -540,7 +538,8 @@ namespace LangSmith
             global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? series = default,
             global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? sectionId = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters2, global::LangSmith.Missing, object>? commonFilters = default,
+            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing, object>? commonFilters = default,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? markdown = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -554,6 +553,7 @@ namespace LangSmith
                 SectionId = sectionId,
                 Metadata = metadata,
                 CommonFilters = commonFilters,
+                Markdown = markdown,
             };
 
             return await UpdateChartAsync(

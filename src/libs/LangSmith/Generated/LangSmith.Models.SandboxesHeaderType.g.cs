@@ -4,20 +4,20 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SandboxesHeaderType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HeaderTypeOpaque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HeaderTypePlaintext,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HeaderTypeWorkspaceSecret,
     }

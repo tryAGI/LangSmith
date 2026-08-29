@@ -52,6 +52,15 @@ namespace LangSmith
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="isTracingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendEvaluatorTraceRetention">
+        /// Default Value: false
+        /// </param>
+        /// <param name="extendDatasetTraceRetention"></param>
+        /// <param name="extendAnnotationQueueTraceRetention"></param>
+        /// <param name="extendWebhookTraceRetention"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
@@ -62,6 +71,7 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
+        /// <param name="trajectoryEvaluators"></param>
         /// <param name="evaluatorId"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
@@ -91,12 +101,18 @@ namespace LangSmith
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
             bool? extendOnly = default,
+            bool? isTracingDisabled = default,
+            bool? extendEvaluatorTraceRetention = default,
+            bool? extendDatasetTraceRetention = default,
+            bool? extendAnnotationQueueTraceRetention = default,
+            bool? extendWebhookTraceRetention = default,
             bool? transient = default,
             global::System.Guid? addToAnnotationQueueId = default,
             global::System.Guid? addToDatasetId = default,
             bool? addToDatasetPreferCorrection = default,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators = default,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators = default,
+            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? trajectoryEvaluators = default,
             global::System.Guid? evaluatorId = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,

@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class OCSFHttpResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         public int? Code { get; set; }

@@ -9,19 +9,19 @@ namespace LangSmith
     public sealed partial class OCSFEndpoint
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip")]
         public string? Ip { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("port")]
         public int? Port { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intermediate_ips")]
         public global::System.Collections.Generic.IList<string>? IntermediateIps { get; set; }

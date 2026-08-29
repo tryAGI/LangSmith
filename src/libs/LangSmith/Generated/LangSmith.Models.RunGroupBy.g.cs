@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RunGroupBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Conversation,
     }

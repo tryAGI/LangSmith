@@ -4,16 +4,21 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BulkExportDestinationUpdate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credentials")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.BulkExportDestinationS3Credentials Credentials { get; set; }
+        public global::LangSmith.BulkExportDestinationS3Credentials? Credentials { get; set; }
+
+        /// <summary>
+        /// AWS IAM role ARN that LangSmith assumes instead of using static credentials.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aws_role_arn")]
+        public string? AwsRoleArn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,13 +30,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="BulkExportDestinationUpdate" /> class.
         /// </summary>
         /// <param name="credentials"></param>
+        /// <param name="awsRoleArn">
+        /// AWS IAM role ARN that LangSmith assumes instead of using static credentials.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BulkExportDestinationUpdate(
-            global::LangSmith.BulkExportDestinationS3Credentials credentials)
+            global::LangSmith.BulkExportDestinationS3Credentials? credentials,
+            string? awsRoleArn)
         {
-            this.Credentials = credentials ?? throw new global::System.ArgumentNullException(nameof(credentials));
+            this.Credentials = credentials;
+            this.AwsRoleArn = awsRoleArn;
         }
 
         /// <summary>

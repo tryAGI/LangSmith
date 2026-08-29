@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateRunsMultipartRequest
     {
@@ -57,13 +57,13 @@ namespace LangSmith
         public string? Patch_runId_Outputsname { get; set; }
 
         /// <summary>
-        /// Feedback object (JSON) – must include trace_id
+        /// Feedback object (JSON) – must include trace_id and session_id
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback.{run_id}")]
         public byte[]? Feedback_runId_ { get; set; }
 
         /// <summary>
-        /// Feedback object (JSON) – must include trace_id
+        /// Feedback object (JSON) – must include trace_id and session_id
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback.{run_id}name")]
         public string? Feedback_runId_name { get; set; }
@@ -114,10 +114,10 @@ namespace LangSmith
         /// Large outputs object (JSON) stored out‑of‑band
         /// </param>
         /// <param name="feedback_runId_">
-        /// Feedback object (JSON) – must include trace_id
+        /// Feedback object (JSON) – must include trace_id and session_id
         /// </param>
         /// <param name="feedback_runId_name">
-        /// Feedback object (JSON) – must include trace_id
+        /// Feedback object (JSON) – must include trace_id and session_id
         /// </param>
         /// <param name="attachment_runId__filename_">
         /// Binary attachment linked to run {run_id}

@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProxyRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,16 +35,28 @@ namespace LangSmith
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         public object? Body { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_provider_id")]
         public string? OauthProviderId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
+        public string? LsUserId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
+        public string? AgentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,6 +79,8 @@ namespace LangSmith
         /// </param>
         /// <param name="body"></param>
         /// <param name="oauthProviderId"></param>
+        /// <param name="lsUserId"></param>
+        /// <param name="agentId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,7 +90,9 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             int? timeout,
             object? body,
-            string? oauthProviderId)
+            string? oauthProviderId,
+            string? lsUserId,
+            string? agentId)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Method = method;
@@ -84,6 +100,8 @@ namespace LangSmith
             this.Timeout = timeout;
             this.Body = body;
             this.OauthProviderId = oauthProviderId;
+            this.LsUserId = lsUserId;
+            this.AgentId = agentId;
         }
 
         /// <summary>

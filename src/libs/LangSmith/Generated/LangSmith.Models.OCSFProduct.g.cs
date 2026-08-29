@@ -9,14 +9,14 @@ namespace LangSmith
     public sealed partial class OCSFProduct
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vendor_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

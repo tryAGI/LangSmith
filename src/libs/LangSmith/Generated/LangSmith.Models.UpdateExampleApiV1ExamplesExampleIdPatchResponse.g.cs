@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateExampleApiV1ExamplesExampleIdPatchResponse
     {

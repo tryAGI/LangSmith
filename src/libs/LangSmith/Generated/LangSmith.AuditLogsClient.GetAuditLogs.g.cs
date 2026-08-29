@@ -45,7 +45,10 @@ namespace LangSmith
             global::System.Guid? workspaceId,
             ref global::System.DateTime startTime,
             ref global::System.DateTime endTime,
-            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations);
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorLsUserIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorApiKeyIds,
+            global::System.Collections.Generic.IList<string>? resourceIds);
         partial void PrepareGetAuditLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -54,7 +57,10 @@ namespace LangSmith
             global::System.Guid? workspaceId,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
-            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations);
+            global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorLsUserIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorApiKeyIds,
+            global::System.Collections.Generic.IList<string>? resourceIds);
         partial void ProcessGetAuditLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -92,6 +98,15 @@ namespace LangSmith
         /// <param name="operations">
         /// Filter by operation names. If omitted, all operations are returned.
         /// </param>
+        /// <param name="actorLsUserIds">
+        /// Filter by human actor (ls_user_id).
+        /// </param>
+        /// <param name="actorApiKeyIds">
+        /// Filter by API key actor (api_key_id).
+        /// </param>
+        /// <param name="resourceIds">
+        /// Filter by resource ID. Matches if any resource ID is present on the log.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -102,6 +117,9 @@ namespace LangSmith
             string? cursor = default,
             global::System.Guid? workspaceId = default,
             global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorLsUserIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorApiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,6 +130,9 @@ namespace LangSmith
                 cursor: cursor,
                 workspaceId: workspaceId,
                 operations: operations,
+                actorLsUserIds: actorLsUserIds,
+                actorApiKeyIds: actorApiKeyIds,
+                resourceIds: resourceIds,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -146,6 +167,15 @@ namespace LangSmith
         /// <param name="operations">
         /// Filter by operation names. If omitted, all operations are returned.
         /// </param>
+        /// <param name="actorLsUserIds">
+        /// Filter by human actor (ls_user_id).
+        /// </param>
+        /// <param name="actorApiKeyIds">
+        /// Filter by API key actor (api_key_id).
+        /// </param>
+        /// <param name="resourceIds">
+        /// Filter by resource ID. Matches if any resource ID is present on the log.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -156,6 +186,9 @@ namespace LangSmith
             string? cursor = default,
             global::System.Guid? workspaceId = default,
             global::System.Collections.Generic.IList<global::LangSmith.AuditLogOperation>? operations = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorLsUserIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? actorApiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -168,7 +201,10 @@ namespace LangSmith
                 workspaceId: workspaceId,
                 startTime: ref startTime,
                 endTime: ref endTime,
-                operations: operations);
+                operations: operations,
+                actorLsUserIds: actorLsUserIds,
+                actorApiKeyIds: actorApiKeyIds,
+                resourceIds: resourceIds);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -205,6 +241,9 @@ namespace LangSmith
                                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("operations", operations?.ToString())
+                                .AddOptionalParameter("actor_ls_user_ids", actorLsUserIds?.ToString())
+                                .AddOptionalParameter("actor_api_key_ids", actorApiKeyIds?.ToString())
+                                .AddOptionalParameter("resource_ids", resourceIds?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -233,7 +272,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -251,7 +290,10 @@ namespace LangSmith
                     workspaceId: workspaceId,
                     startTime: startTime!,
                     endTime: endTime!,
-                    operations: operations);
+                    operations: operations,
+                    actorLsUserIds: actorLsUserIds,
+                    actorApiKeyIds: actorApiKeyIds,
+                    resourceIds: resourceIds);
 
                 return __httpRequest;
             }
@@ -455,18 +497,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -500,17 +541,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -547,17 +586,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

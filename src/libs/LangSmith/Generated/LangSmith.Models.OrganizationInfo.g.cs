@@ -11,39 +11,50 @@ namespace LangSmith
     public sealed partial class OrganizationInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.<br/>
+        /// Each field's type annotation drives how Metronome custom-field values are validated<br/>
+        /// when resolving config (see smith-backend's ``_parse_metronome_value`` and smith-go's<br/>
+        /// ``rejectInvalidMetronomeValue``): a value that doesn't fit the annotated type is<br/>
+        /// dropped and the field keeps whatever value was already resolved for it, rather than<br/>
+        /// raising. Changing a field's type here changes what Metronome values are accepted for it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.OrganizationConfig Config { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
         public bool? EngineEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
+        public string? EngineLcuSpendLimitMonthly { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPersonal { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
@@ -91,7 +102,7 @@ namespace LangSmith
         public bool? InvitesEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]
         public string? SsoLoginSlug { get; set; }
@@ -115,6 +126,12 @@ namespace LangSmith
         public bool? WorkspaceAdminCanInviteToOrg { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
+        public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
@@ -127,25 +144,25 @@ namespace LangSmith
         public bool? DefaultSsoProvision { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_api_key_expiry_days")]
         public int? MaxApiKeyExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_contact")]
         public string? SecurityContact { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_pat_expiry_days")]
         public int? MaxPatExpiryDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_service_key_expiry_days")]
         public int? MaxServiceKeyExpiryDays { get; set; }
@@ -163,19 +180,19 @@ namespace LangSmith
         public bool? CanExportUsageBackfill { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
         public string? LlmAuthProxyJwtAudience { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip_allowlist")]
         public global::System.Collections.Generic.IList<string>? IpAllowlist { get; set; }
@@ -187,16 +204,34 @@ namespace LangSmith
         public bool? IpAllowlistEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disabled_model_providers")]
+        public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_allowed_urls")]
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_evals_enabled")]
+        public bool? ManagedEvalsEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_eval_terms_accepted_at")]
+        public string? ManagedEvalTermsAcceptedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -208,12 +243,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OrganizationInfo" /> class.
         /// </summary>
         /// <param name="config">
-        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.<br/>
+        /// Each field's type annotation drives how Metronome custom-field values are validated<br/>
+        /// when resolving config (see smith-backend's ``_parse_metronome_value`` and smith-go's<br/>
+        /// ``rejectInvalidMetronomeValue``): a value that doesn't fit the annotated type is<br/>
+        /// dropped and the field keeps whatever value was already resolved for it, rather than<br/>
+        /// raising. Changing a field's type here changes what Metronome values are accepted for it.
         /// </param>
         /// <param name="isPersonal"></param>
         /// <param name="id"></param>
         /// <param name="displayName"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="tier"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
@@ -246,6 +287,9 @@ namespace LangSmith
         /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
+        /// <param name="byocCreateSaasWorkspaceEnabled">
+        /// Default Value: true
+        /// </param>
         /// <param name="marketplacePayoutsEnabled">
         /// Default Value: false
         /// </param>
@@ -268,8 +312,11 @@ namespace LangSmith
         /// <param name="ipAllowlistEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="managedEvalsEnabled"></param>
+        /// <param name="managedEvalTermsAcceptedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -279,6 +326,7 @@ namespace LangSmith
             global::System.Guid? id,
             string? displayName,
             bool? engineEnabled,
+            string? engineLcuSpendLimitMonthly,
             global::LangSmith.PaymentPlanTier? tier,
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
@@ -291,6 +339,7 @@ namespace LangSmith
             bool? publicSharingDisabled,
             bool? patCreationDisabled,
             bool? workspaceAdminCanInviteToOrg,
+            bool? byocCreateSaasWorkspaceEnabled,
             bool? marketplacePayoutsEnabled,
             bool? defaultSsoProvision,
             int? maxApiKeyExpiryDays,
@@ -303,13 +352,17 @@ namespace LangSmith
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             bool? ipAllowlistEnabled,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
-            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls)
+            global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
+            bool? managedEvalsEnabled,
+            string? managedEvalTermsAcceptedAt)
         {
             this.Id = id;
             this.DisplayName = displayName;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.EngineEnabled = engineEnabled;
+            this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.IsPersonal = isPersonal;
             this.Tier = tier;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
@@ -323,6 +376,7 @@ namespace LangSmith
             this.PublicSharingDisabled = publicSharingDisabled;
             this.PatCreationDisabled = patCreationDisabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
+            this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
@@ -335,8 +389,11 @@ namespace LangSmith
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
+            this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
+            this.ManagedEvalsEnabled = managedEvalsEnabled;
+            this.ManagedEvalTermsAcceptedAt = managedEvalTermsAcceptedAt;
         }
 
         /// <summary>

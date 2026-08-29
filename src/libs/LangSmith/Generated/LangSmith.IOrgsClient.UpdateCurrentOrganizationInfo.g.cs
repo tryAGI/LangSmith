@@ -46,9 +46,12 @@ namespace LangSmith
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
+        /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
+        /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="engineEnabled"></param>
+        /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -68,9 +71,12 @@ namespace LangSmith
             bool? llmAuthProxyEnabled = default,
             string? llmAuthProxyJwtAudience = default,
             global::System.Collections.Generic.IList<string>? ipAllowlist = default,
+            global::System.Collections.Generic.IList<string>? disabledModelProviders = default,
             bool? restrictBrowserSecrets = default,
+            bool? byocCreateSaasWorkspaceEnabled = default,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls = default,
             bool? engineEnabled = default,
+            global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

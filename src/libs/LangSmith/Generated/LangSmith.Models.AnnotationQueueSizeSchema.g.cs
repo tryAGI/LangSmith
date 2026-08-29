@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class AnnotationQueueSizeSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]

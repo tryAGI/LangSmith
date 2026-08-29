@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class ListRepoOwnersResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owners")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,52 +4,58 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlaygroundSettingsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Settings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         public global::LangSmith.PlaygroundSavedOptions? Options { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
+        public global::System.Guid? OrganizationId { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -62,13 +68,13 @@ namespace LangSmith
         public global::LangSmith.PlaygroundSettingsResponseSettingsType? SettingsType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by_ls_user_id")]
         public global::System.Guid? CreatedByLsUserId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_by_ls_user_id")]
         public global::System.Guid? UpdatedByLsUserId { get; set; }
@@ -110,43 +116,43 @@ namespace LangSmith
         public bool? AvailableInInsightsLight { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_enabled")]
         public bool? OauthEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_url")]
         public string? OauthTokenUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_client_id")]
         public string? OauthClientId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_client_secret")]
         public string? OauthClientSecret { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_endpoint_auth_method")]
         public global::LangSmith.PlaygroundSettingsResponseOauthTokenEndpointAuthMethod2? OauthTokenEndpointAuthMethod { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_params")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? OauthParams { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_headers")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? OauthHeaders { get; set; }
@@ -166,6 +172,7 @@ namespace LangSmith
         /// <param name="updatedAt"></param>
         /// <param name="options"></param>
         /// <param name="name"></param>
+        /// <param name="organizationId"></param>
         /// <param name="description"></param>
         /// <param name="settingsType">
         /// Default Value: complex
@@ -207,6 +214,7 @@ namespace LangSmith
             global::System.DateTime updatedAt,
             global::LangSmith.PlaygroundSavedOptions? options,
             string? name,
+            global::System.Guid? organizationId,
             string? description,
             global::LangSmith.PlaygroundSettingsResponseSettingsType? settingsType,
             global::System.Guid? createdByLsUserId,
@@ -229,6 +237,7 @@ namespace LangSmith
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Options = options;
             this.Name = name;
+            this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Description = description;

@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class RunStatsGroupBySeriesResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attribute")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter))]
@@ -17,7 +17,7 @@ namespace LangSmith
         public required global::LangSmith.RunStatsGroupBySeriesResponseAttribute Attribute { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public string? Path { get; set; }
@@ -29,7 +29,7 @@ namespace LangSmith
         public int? MaxGroups { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("set_by")]
         public global::LangSmith.RunStatsGroupBySeriesResponseSetBy2? SetBy { get; set; }

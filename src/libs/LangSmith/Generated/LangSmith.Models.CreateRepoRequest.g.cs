@@ -9,33 +9,39 @@ namespace LangSmith
     public sealed partial class CreateRepoRequest
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? TagValueIds { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepoHandle { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("readme")]
         public string? Readme { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_public")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPublic { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
         public global::System.Collections.Generic.IList<string>? Tags { get; set; }
@@ -48,13 +54,13 @@ namespace LangSmith
         public global::LangSmith.CreateRepoRequestRepoType? RepoType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         public global::LangSmith.CreateRepoRequestSource2? Source { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restricted_mode")]
         public bool? RestrictedMode { get; set; }
@@ -70,6 +76,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="repoHandle"></param>
         /// <param name="isPublic"></param>
+        /// <param name="tagValueIds"></param>
         /// <param name="description"></param>
         /// <param name="readme"></param>
         /// <param name="tags"></param>
@@ -84,6 +91,7 @@ namespace LangSmith
         public CreateRepoRequest(
             string repoHandle,
             bool isPublic,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds,
             string? description,
             string? readme,
             global::System.Collections.Generic.IList<string>? tags,
@@ -91,6 +99,7 @@ namespace LangSmith
             global::LangSmith.CreateRepoRequestSource2? source,
             bool? restrictedMode)
         {
+            this.TagValueIds = tagValueIds;
             this.RepoHandle = repoHandle ?? throw new global::System.ArgumentNullException(nameof(repoHandle));
             this.Description = description;
             this.Readme = readme;

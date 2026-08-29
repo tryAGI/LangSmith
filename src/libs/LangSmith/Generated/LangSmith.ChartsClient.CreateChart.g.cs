@@ -40,11 +40,11 @@ namespace LangSmith
             };
         partial void PrepareCreateChartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.CustomChartCreate request);
+            global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request);
         partial void PrepareCreateChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.CustomChartCreate request);
+            global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request);
         partial void ProcessCreateChartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,15 +56,15 @@ namespace LangSmith
 
         /// <summary>
         /// Create Chart<br/>
-        /// Create a new chart.
+        /// Create a chart or dashboard text block.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> CreateChartAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse> CreateChartAsync(
 
-            global::LangSmith.CustomChartCreate request,
+            global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,20 +79,18 @@ namespace LangSmith
         }
         /// <summary>
         /// Create Chart<br/>
-        /// Create a new chart.
+        /// Create a chart or dashboard text block.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>> CreateChartAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse>> CreateChartAsResponseAsync(
 
-            global::LangSmith.CustomChartCreate request,
+            global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateChartArguments(
@@ -154,7 +152,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -377,18 +375,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -412,9 +409,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.CustomChartResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.CreateChartApiV1ChartsCreatePostResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -422,17 +419,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -446,9 +441,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.CustomChartResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.CreateChartApiV1ChartsCreatePostResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -469,17 +464,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -492,43 +485,17 @@ namespace LangSmith
         }
         /// <summary>
         /// Create Chart<br/>
-        /// Create a new chart.
+        /// Create a chart or dashboard text block.
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
-        /// <param name="chartType">
-        /// Enum for custom chart types.
-        /// </param>
-        /// <param name="series"></param>
-        /// <param name="sectionId"></param>
-        /// <param name="metadata"></param>
-        /// <param name="commonFilters"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartResponse> CreateChartAsync(
-            string title,
-            global::LangSmith.CustomChartType chartType,
-            global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesCreate> series,
-            string? description = default,
-            int? index = default,
-            global::System.Guid? sectionId = default,
-            object? metadata = default,
-            global::LangSmith.CustomChartSeriesFilters2? commonFilters = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse> CreateChartAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.CustomChartCreate
+            var __request = new global::LangSmith.CreateChartApiV1ChartsCreatePostRequest
             {
-                Title = title,
-                Description = description,
-                Index = index,
-                ChartType = chartType,
-                Series = series,
-                SectionId = sectionId,
-                Metadata = metadata,
-                CommonFilters = commonFilters,
             };
 
             return await CreateChartAsync(

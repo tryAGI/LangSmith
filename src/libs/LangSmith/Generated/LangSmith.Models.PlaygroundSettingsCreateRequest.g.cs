@@ -4,31 +4,31 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlaygroundSettingsCreateRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Settings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         public global::LangSmith.PlaygroundSavedOptions? Options { get; set; }
@@ -41,43 +41,50 @@ namespace LangSmith
         public global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? SettingsType { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.PlaygroundSettingsCreateRequestScopeJsonConverter))]
+        public global::LangSmith.PlaygroundSettingsCreateRequestScope? Scope { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_enabled")]
         public bool? OauthEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_url")]
         public string? OauthTokenUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_client_id")]
         public string? OauthClientId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_client_secret")]
         public string? OauthClientSecret { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_endpoint_auth_method")]
         public global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2? OauthTokenEndpointAuthMethod { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_params")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? OauthParams { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_headers")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? OauthHeaders { get; set; }
@@ -98,6 +105,9 @@ namespace LangSmith
         /// <param name="settingsType">
         /// Default Value: complex
         /// </param>
+        /// <param name="scope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="oauthEnabled"></param>
         /// <param name="oauthTokenUrl"></param>
         /// <param name="oauthClientId"></param>
@@ -114,6 +124,7 @@ namespace LangSmith
             string? description,
             global::LangSmith.PlaygroundSavedOptions? options,
             global::LangSmith.PlaygroundSettingsCreateRequestSettingsType? settingsType,
+            global::LangSmith.PlaygroundSettingsCreateRequestScope? scope,
             bool? oauthEnabled,
             string? oauthTokenUrl,
             string? oauthClientId,
@@ -127,6 +138,7 @@ namespace LangSmith
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Options = options;
             this.SettingsType = settingsType;
+            this.Scope = scope;
             this.OauthEnabled = oauthEnabled;
             this.OauthTokenUrl = oauthTokenUrl;
             this.OauthClientId = oauthClientId;

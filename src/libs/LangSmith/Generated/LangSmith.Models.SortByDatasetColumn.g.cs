@@ -9,27 +9,27 @@ namespace LangSmith
     public enum SortByDatasetColumn
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExampleCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastSessionStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModifiedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionCount,
     }

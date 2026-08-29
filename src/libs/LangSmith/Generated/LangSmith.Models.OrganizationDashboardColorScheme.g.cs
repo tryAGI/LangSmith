@@ -9,11 +9,11 @@ namespace LangSmith
     public enum OrganizationDashboardColorScheme
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dark,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Light,
     }

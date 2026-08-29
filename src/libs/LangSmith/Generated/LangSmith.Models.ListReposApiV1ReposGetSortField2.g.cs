@@ -4,28 +4,28 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ListReposApiV1ReposGetSortField2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NumDownloads,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NumLikes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NumViews,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Relevance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatedAt,
     }

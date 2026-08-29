@@ -4,20 +4,20 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BotocoreS3ConfigAddressingStyle2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Path,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Virtual,
     }

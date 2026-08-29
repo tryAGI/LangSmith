@@ -43,6 +43,7 @@ namespace LangSmith
             ref string url,
             ref string? oauthProviderId,
             ref string? lsUserId,
+            ref string? agentId,
             ref bool? forceRefresh);
         partial void PrepareGetToolsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,6 +51,7 @@ namespace LangSmith
             string url,
             string? oauthProviderId,
             string? lsUserId,
+            string? agentId,
             bool? forceRefresh);
         partial void ProcessGetToolsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -67,12 +69,13 @@ namespace LangSmith
         /// MCP handshake. Caches the result before returning.<br/>
         /// Pass force_refresh=true to bypass the cache and always fetch from the<br/>
         /// remote server (the result is still cached via upsert for future requests).<br/>
-        /// The ls_user_id query parameter allows service-key callers (which don't carry<br/>
-        /// ls_user_id in auth) to specify the user for per-user OAuth cache lookups.
+        /// ``agent_id`` lets deployment/service-key callers name an agent OAuth<br/>
+        /// subject. ``ls_user_id`` overrides are limited to service identities.
         /// </summary>
         /// <param name="url"></param>
         /// <param name="oauthProviderId"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="agentId"></param>
         /// <param name="forceRefresh">
         /// Default Value: false
         /// </param>
@@ -83,6 +86,7 @@ namespace LangSmith
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,
+            string? agentId = default,
             bool? forceRefresh = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -91,6 +95,7 @@ namespace LangSmith
                 url: url,
                 oauthProviderId: oauthProviderId,
                 lsUserId: lsUserId,
+                agentId: agentId,
                 forceRefresh: forceRefresh,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -105,12 +110,13 @@ namespace LangSmith
         /// MCP handshake. Caches the result before returning.<br/>
         /// Pass force_refresh=true to bypass the cache and always fetch from the<br/>
         /// remote server (the result is still cached via upsert for future requests).<br/>
-        /// The ls_user_id query parameter allows service-key callers (which don't carry<br/>
-        /// ls_user_id in auth) to specify the user for per-user OAuth cache lookups.
+        /// ``agent_id`` lets deployment/service-key callers name an agent OAuth<br/>
+        /// subject. ``ls_user_id`` overrides are limited to service identities.
         /// </summary>
         /// <param name="url"></param>
         /// <param name="oauthProviderId"></param>
         /// <param name="lsUserId"></param>
+        /// <param name="agentId"></param>
         /// <param name="forceRefresh">
         /// Default Value: false
         /// </param>
@@ -121,6 +127,7 @@ namespace LangSmith
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,
+            string? agentId = default,
             bool? forceRefresh = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -132,6 +139,7 @@ namespace LangSmith
                 url: ref url,
                 oauthProviderId: ref oauthProviderId,
                 lsUserId: ref lsUserId,
+                agentId: ref agentId,
                 forceRefresh: ref forceRefresh);
 
 
@@ -166,6 +174,7 @@ namespace LangSmith
                                 .AddRequiredParameter("url", url)
                                 .AddOptionalParameter("oauth_provider_id", oauthProviderId)
                                 .AddOptionalParameter("ls_user_id", lsUserId)
+                                .AddOptionalParameter("agent_id", agentId)
                                 .AddOptionalParameter("force_refresh", forceRefresh?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -195,7 +204,7 @@ namespace LangSmith
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -211,6 +220,7 @@ namespace LangSmith
                     url: url!,
                     oauthProviderId: oauthProviderId,
                     lsUserId: lsUserId,
+                    agentId: agentId,
                     forceRefresh: forceRefresh);
 
                 return __httpRequest;
@@ -415,18 +425,17 @@ namespace LangSmith
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>(
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -458,17 +467,15 @@ namespace LangSmith
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -503,17 +510,15 @@ namespace LangSmith
                                     {
                                     }
 
-                                    throw new global::LangSmith.ApiException(
+                                    throw global::LangSmith.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

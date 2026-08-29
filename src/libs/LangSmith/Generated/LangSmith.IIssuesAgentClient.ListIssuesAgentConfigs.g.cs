@@ -15,7 +15,7 @@ namespace LangSmith
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
 #endif
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesAgentIssuesAgent>> ListIssuesAgentConfigsAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.AgentIssuesAgent>> ListIssuesAgentConfigsAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -29,7 +29,7 @@ namespace LangSmith
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
 #endif
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSessionIssuesAgentIssuesAgent>>> ListIssuesAgentConfigsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.AgentIssuesAgent>>> ListIssuesAgentConfigsAsResponseAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

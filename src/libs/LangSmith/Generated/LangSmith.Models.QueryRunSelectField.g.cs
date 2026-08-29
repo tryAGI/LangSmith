@@ -4,184 +4,188 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum QueryRunSelectField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectAppPath,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectAttachments,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectCompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectCompletionCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectCompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectCompletionTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectDottedOrder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectEndTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectErrorPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectEvents,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectExtra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectFeedbackStats,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectFirstTokenTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectID,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectInputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectInputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectIsInDataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectIsRoot,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        RunSelectLastQueuedAt,
+        /// <summary>
+        ///
         /// </summary>
         RunSelectLatencySeconds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectManifest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectMetadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectOutputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectOutputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectParentRunIDs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectPriceModelID,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectProjectID,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectPromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectPromptCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectPromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectPromptTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectReferenceDatasetID,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectReferenceExampleID,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectRunType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectShareURL,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectStatus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectTags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectThreadEvaluationTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectThreadID,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectTotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectTotalTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RunSelectTraceID,
     }
@@ -217,6 +221,7 @@ namespace LangSmith
                 QueryRunSelectField.RunSelectInputsPreview => "INPUTS_PREVIEW",
                 QueryRunSelectField.RunSelectIsInDataset => "IS_IN_DATASET",
                 QueryRunSelectField.RunSelectIsRoot => "IS_ROOT",
+                QueryRunSelectField.RunSelectLastQueuedAt => "LAST_QUEUED_AT",
                 QueryRunSelectField.RunSelectLatencySeconds => "LATENCY_SECONDS",
                 QueryRunSelectField.RunSelectManifest => "MANIFEST",
                 QueryRunSelectField.RunSelectMetadata => "METADATA",
@@ -271,6 +276,7 @@ namespace LangSmith
                 "INPUTS_PREVIEW" => QueryRunSelectField.RunSelectInputsPreview,
                 "IS_IN_DATASET" => QueryRunSelectField.RunSelectIsInDataset,
                 "IS_ROOT" => QueryRunSelectField.RunSelectIsRoot,
+                "LAST_QUEUED_AT" => QueryRunSelectField.RunSelectLastQueuedAt,
                 "LATENCY_SECONDS" => QueryRunSelectField.RunSelectLatencySeconds,
                 "MANIFEST" => QueryRunSelectField.RunSelectManifest,
                 "METADATA" => QueryRunSelectField.RunSelectMetadata,

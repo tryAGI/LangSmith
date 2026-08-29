@@ -4,18 +4,18 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateRunsBatchRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch")]
         public global::System.Collections.Generic.IList<global::LangSmith.RunsRun>? Patch { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("post")]
         public global::System.Collections.Generic.IList<global::LangSmith.RunsRun>? Post { get; set; }

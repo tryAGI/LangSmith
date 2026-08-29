@@ -40,12 +40,16 @@ namespace LangSmith
         /// </summary>
         /// <param name="destinationId"></param>
         /// <param name="credentials"></param>
+        /// <param name="awsRoleArn">
+        /// AWS IAM role ARN that LangSmith assumes instead of using static credentials.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.BulkExportDestination> UpdateBulkExportDestinationAsync(
             global::System.Guid destinationId,
-            global::LangSmith.BulkExportDestinationS3Credentials credentials,
+            global::LangSmith.BulkExportDestinationS3Credentials? credentials = default,
+            string? awsRoleArn = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

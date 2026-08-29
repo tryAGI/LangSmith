@@ -4,92 +4,104 @@
 namespace LangSmith
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetThreadsTracesSelect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndTime,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Error,
+        /// <summary>
+        ///
         /// </summary>
         ErrorPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstTokenTime,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Inputs,
+        /// <summary>
+        ///
         /// </summary>
         InputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Op,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Outputs,
+        /// <summary>
+        ///
         /// </summary>
         OutputsPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptCostDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokenDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceId,
     }
@@ -111,12 +123,15 @@ namespace LangSmith
                 GetThreadsTracesSelect.CompletionTokens => "COMPLETION_TOKENS",
                 GetThreadsTracesSelect.CompletionTokenDetails => "COMPLETION_TOKEN_DETAILS",
                 GetThreadsTracesSelect.EndTime => "END_TIME",
+                GetThreadsTracesSelect.Error => "ERROR",
                 GetThreadsTracesSelect.ErrorPreview => "ERROR_PREVIEW",
                 GetThreadsTracesSelect.FirstTokenTime => "FIRST_TOKEN_TIME",
+                GetThreadsTracesSelect.Inputs => "INPUTS",
                 GetThreadsTracesSelect.InputsPreview => "INPUTS_PREVIEW",
                 GetThreadsTracesSelect.Latency => "LATENCY",
                 GetThreadsTracesSelect.Name => "NAME",
                 GetThreadsTracesSelect.Op => "OP",
+                GetThreadsTracesSelect.Outputs => "OUTPUTS",
                 GetThreadsTracesSelect.OutputsPreview => "OUTPUTS_PREVIEW",
                 GetThreadsTracesSelect.PromptCost => "PROMPT_COST",
                 GetThreadsTracesSelect.PromptCostDetails => "PROMPT_COST_DETAILS",
@@ -142,12 +157,15 @@ namespace LangSmith
                 "COMPLETION_TOKENS" => GetThreadsTracesSelect.CompletionTokens,
                 "COMPLETION_TOKEN_DETAILS" => GetThreadsTracesSelect.CompletionTokenDetails,
                 "END_TIME" => GetThreadsTracesSelect.EndTime,
+                "ERROR" => GetThreadsTracesSelect.Error,
                 "ERROR_PREVIEW" => GetThreadsTracesSelect.ErrorPreview,
                 "FIRST_TOKEN_TIME" => GetThreadsTracesSelect.FirstTokenTime,
+                "INPUTS" => GetThreadsTracesSelect.Inputs,
                 "INPUTS_PREVIEW" => GetThreadsTracesSelect.InputsPreview,
                 "LATENCY" => GetThreadsTracesSelect.Latency,
                 "NAME" => GetThreadsTracesSelect.Name,
                 "OP" => GetThreadsTracesSelect.Op,
+                "OUTPUTS" => GetThreadsTracesSelect.Outputs,
                 "OUTPUTS_PREVIEW" => GetThreadsTracesSelect.OutputsPreview,
                 "PROMPT_COST" => GetThreadsTracesSelect.PromptCost,
                 "PROMPT_COST_DETAILS" => GetThreadsTracesSelect.PromptCostDetails,

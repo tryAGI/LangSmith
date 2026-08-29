@@ -9,72 +9,77 @@ namespace LangSmith
     public sealed partial class OrganizationBillingInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.<br/>
+        /// Each field's type annotation drives how Metronome custom-field values are validated<br/>
+        /// when resolving config (see smith-backend's ``_parse_metronome_value`` and smith-go's<br/>
+        /// ``rejectInvalidMetronomeValue``): a value that doesn't fit the annotated type is<br/>
+        /// dropped and the field keeps whatever value was already resolved for it, rather than<br/>
+        /// raising. Changing a field's type here changes what Metronome values are accepted for it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::LangSmith.OrganizationConfig Config { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connected_to_stripe")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool ConnectedToStripe { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connected_to_metronome")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool ConnectedToMetronome { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsPersonal { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payment_method")]
         public global::LangSmith.StripePaymentMethodInfo? PaymentMethod { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_of_billing_period")]
         public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_plan")]
         public global::LangSmith.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upcoming_plan")]
         public global::LangSmith.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
@@ -98,7 +103,7 @@ namespace LangSmith
         public bool? DefaultSsoProvision { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plus_plan_transition")]
         public global::LangSmith.PlusPlanTransitionInfo? PlusPlanTransition { get; set; }
@@ -114,7 +119,12 @@ namespace LangSmith
         /// </summary>
         /// <param name="displayName"></param>
         /// <param name="config">
-        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.<br/>
+        /// Each field's type annotation drives how Metronome custom-field values are validated<br/>
+        /// when resolving config (see smith-backend's ``_parse_metronome_value`` and smith-go's<br/>
+        /// ``rejectInvalidMetronomeValue``): a value that doesn't fit the annotated type is<br/>
+        /// dropped and the field keeps whatever value was already resolved for it, rather than<br/>
+        /// raising. Changing a field's type here changes what Metronome values are accepted for it.
         /// </param>
         /// <param name="connectedToStripe"></param>
         /// <param name="connectedToMetronome"></param>

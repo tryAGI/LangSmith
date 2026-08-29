@@ -37,7 +37,7 @@ namespace LangSmith
         public global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch_examples")]
         public global::System.Collections.Generic.Dictionary<string, global::LangSmith.ExampleUpdate>? PatchExamples { get; set; }
