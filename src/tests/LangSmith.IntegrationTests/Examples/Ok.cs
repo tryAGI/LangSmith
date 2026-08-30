@@ -12,6 +12,6 @@ public partial class Tests
     public async Task Ok()
     {
         using var client = GetAuthorizedClient();
-        var response = await client.OkAsync();
+        var response = await client.Info.GetHealthInfoAsync();
     }
 }
