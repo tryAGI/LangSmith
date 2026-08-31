@@ -15,6 +15,13 @@ namespace LangSmith
         public global::LangSmith.InfoBatchIngestConfig? BatchIngestConfig { get; set; }
 
         /// <summary>
+        /// BillingInstallationID is the persistent per-installation identity for<br/>
+        /// self-hosted deployments.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("billing_installation_id")]
+        public string? BillingInstallationId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customer_info")]
@@ -60,6 +67,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="InfoInfoGetResponse" /> class.
         /// </summary>
         /// <param name="batchIngestConfig"></param>
+        /// <param name="billingInstallationId">
+        /// BillingInstallationID is the persistent per-installation identity for<br/>
+        /// self-hosted deployments.
+        /// </param>
         /// <param name="customerInfo"></param>
         /// <param name="gitSha"></param>
         /// <param name="instanceFlags"></param>
@@ -71,6 +82,7 @@ namespace LangSmith
 #endif
         public InfoInfoGetResponse(
             global::LangSmith.InfoBatchIngestConfig? batchIngestConfig,
+            string? billingInstallationId,
             global::LangSmith.InfoCustomerInfo? customerInfo,
             string? gitSha,
             object? instanceFlags,
@@ -79,6 +91,7 @@ namespace LangSmith
             string? version)
         {
             this.BatchIngestConfig = batchIngestConfig;
+            this.BillingInstallationId = billingInstallationId;
             this.CustomerInfo = customerInfo;
             this.GitSha = gitSha;
             this.InstanceFlags = instanceFlags;

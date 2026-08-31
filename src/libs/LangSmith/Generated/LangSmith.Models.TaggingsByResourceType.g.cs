@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: []
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("custom_apps")]
+        public global::System.Collections.Generic.IList<global::LangSmith.Resource>? CustomApps { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dashboards")]
         public global::System.Collections.Generic.IList<global::LangSmith.Resource>? Dashboards { get; set; }
 
@@ -107,6 +113,9 @@ namespace LangSmith
         /// <param name="alerts">
         /// Default Value: []
         /// </param>
+        /// <param name="customApps">
+        /// Default Value: []
+        /// </param>
         /// <param name="dashboards">
         /// Default Value: []
         /// </param>
@@ -149,6 +158,7 @@ namespace LangSmith
         public TaggingsByResourceType(
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? agents,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? alerts,
+            global::System.Collections.Generic.IList<global::LangSmith.Resource>? customApps,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? dashboards,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? datasets,
             global::System.Collections.Generic.IList<global::LangSmith.Resource>? deployments,
@@ -164,6 +174,7 @@ namespace LangSmith
         {
             this.Agents = agents;
             this.Alerts = alerts;
+            this.CustomApps = customApps;
             this.Dashboards = dashboards;
             this.Datasets = datasets;
             this.Deployments = deployments;
