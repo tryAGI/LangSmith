@@ -6,14 +6,14 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class DirectoryGetDirectoryResponse
+    public sealed partial class DirectoryCommitSelector
     {
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("commit_hash")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CommitHash { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DirectoryCommitSelectorTypeJsonConverter))]
+        public global::LangSmith.DirectoryCommitSelectorType Type { get; set; }
 
         /// <summary>
         ///
@@ -23,41 +23,31 @@ namespace LangSmith
         public required global::System.Guid CommitId { get; set; }
 
         /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Files { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DirectoryGetDirectoryResponse" /> class.
+        /// Initializes a new instance of the <see cref="DirectoryCommitSelector" /> class.
         /// </summary>
-        /// <param name="commitHash"></param>
         /// <param name="commitId"></param>
-        /// <param name="files"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DirectoryGetDirectoryResponse(
-            string commitHash,
+        public DirectoryCommitSelector(
             global::System.Guid commitId,
-            object files)
+            global::LangSmith.DirectoryCommitSelectorType type)
         {
-            this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
+            this.Type = type;
             this.CommitId = commitId;
-            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DirectoryGetDirectoryResponse" /> class.
+        /// Initializes a new instance of the <see cref="DirectoryCommitSelector" /> class.
         /// </summary>
-        public DirectoryGetDirectoryResponse()
+        public DirectoryCommitSelector()
         {
         }
 
