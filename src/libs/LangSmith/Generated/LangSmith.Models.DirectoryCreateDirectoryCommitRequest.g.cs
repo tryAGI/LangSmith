@@ -4,12 +4,12 @@
 namespace LangSmith
 {
     /// <summary>
-    ///
+    /// Example: {"files":{"skills/current":{"type":"skill","repo_handle":"shared-skill","selector":{"type":"LATEST"}},"agents/pinned":{"type":"agent","repo_handle":"review-agent","selector":{"type":"COMMIT","commit_id":"0198f3ab-7c2d-7def-8a91-23456789abcd"}}}}
     /// </summary>
     public sealed partial class DirectoryCreateDirectoryCommitRequest
     {
         /// <summary>
-        /// Files maps path to an Entry (object = create/update/link, null = delete/unlink).
+        /// Paths to create, update, link, delete, or unlink. Use null to delete or unlink an existing path.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         public object? Files { get; set; }
@@ -21,10 +21,7 @@ namespace LangSmith
         public string? ParentCommit { get; set; }
 
         /// <summary>
-        /// SkipWebhooks, when true, suppresses Context Hub commit webhooks for this<br/>
-        /// commit. Deliberately a plain bool, not the any (bool | []string) shape of<br/>
-        /// the prompt-hub CreateCommitReq.SkipWebhooks: Context Hub v1 has no<br/>
-        /// per-webhook filtering, so a bool is the correct shape.
+        /// SkipWebhooks suppresses Context Hub commit webhooks for this commit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skip_webhooks")]
         public bool? SkipWebhooks { get; set; }
@@ -39,14 +36,11 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="DirectoryCreateDirectoryCommitRequest" /> class.
         /// </summary>
         /// <param name="files">
-        /// Files maps path to an Entry (object = create/update/link, null = delete/unlink).
+        /// Paths to create, update, link, delete, or unlink. Use null to delete or unlink an existing path.
         /// </param>
         /// <param name="parentCommit"></param>
         /// <param name="skipWebhooks">
-        /// SkipWebhooks, when true, suppresses Context Hub commit webhooks for this<br/>
-        /// commit. Deliberately a plain bool, not the any (bool | []string) shape of<br/>
-        /// the prompt-hub CreateCommitReq.SkipWebhooks: Context Hub v1 has no<br/>
-        /// per-webhook filtering, so a bool is the correct shape.
+        /// SkipWebhooks suppresses Context Hub commit webhooks for this commit.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

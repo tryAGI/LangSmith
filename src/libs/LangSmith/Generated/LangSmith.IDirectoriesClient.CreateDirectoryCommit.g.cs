@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Create directory commit<br/>
-        /// Creates a new directory commit for an agent or skill repository by applying file/link create, update, and delete operations.
+        /// Creates a new directory commit for an agent or skill repository by applying file/link create, update, and delete operations. Linked directories default to the LATEST selector; use COMMIT to pin one commit. The legacy commit_id write field is deprecated and resolves as LATEST.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -23,7 +23,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create directory commit<br/>
-        /// Creates a new directory commit for an agent or skill repository by applying file/link create, update, and delete operations.
+        /// Creates a new directory commit for an agent or skill repository by applying file/link create, update, and delete operations. Linked directories default to the LATEST selector; use COMMIT to pin one commit. The legacy commit_id write field is deprecated and resolves as LATEST.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -40,19 +40,16 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create directory commit<br/>
-        /// Creates a new directory commit for an agent or skill repository by applying file/link create, update, and delete operations.
+        /// Creates a new directory commit for an agent or skill repository by applying file/link create, update, and delete operations. Linked directories default to the LATEST selector; use COMMIT to pin one commit. The legacy commit_id write field is deprecated and resolves as LATEST.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="files">
-        /// Files maps path to an Entry (object = create/update/link, null = delete/unlink).
+        /// Paths to create, update, link, delete, or unlink. Use null to delete or unlink an existing path.
         /// </param>
         /// <param name="parentCommit"></param>
         /// <param name="skipWebhooks">
-        /// SkipWebhooks, when true, suppresses Context Hub commit webhooks for this<br/>
-        /// commit. Deliberately a plain bool, not the any (bool | []string) shape of<br/>
-        /// the prompt-hub CreateCommitReq.SkipWebhooks: Context Hub v1 has no<br/>
-        /// per-webhook filtering, so a bool is the correct shape.
+        /// SkipWebhooks suppresses Context Hub commit webhooks for this commit.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Files maps path to an Entry (object = create/update/link, null = delete/unlink).
+    /// Paths to create, update, link, delete, or unlink. Use null to delete or unlink an existing path.
     /// </summary>
     public sealed partial class DirectoryCreateDirectoryCommitRequestFiles
     {
