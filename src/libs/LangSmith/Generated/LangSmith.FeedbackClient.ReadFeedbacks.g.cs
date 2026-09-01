@@ -243,9 +243,17 @@ namespace LangSmith
                                 servers: s_ReadFeedbacksServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("run", run?.ToString())
+                                .AddOptionalParameter("run", run?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("key", key?.ToString())
-                                .AddOptionalParameter("session", session?.ToString())
+                                .AddOptionalParameter("session", session?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
