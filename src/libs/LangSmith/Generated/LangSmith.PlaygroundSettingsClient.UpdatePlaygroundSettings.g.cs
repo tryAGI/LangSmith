@@ -40,12 +40,12 @@ namespace LangSmith
             };
         partial void PrepareUpdatePlaygroundSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string playgroundSettingsId,
+            ref global::System.Guid playgroundSettingsId,
             global::LangSmith.PlaygroundSettingsUpdateRequest request);
         partial void PrepareUpdatePlaygroundSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
             global::LangSmith.PlaygroundSettingsUpdateRequest request);
         partial void ProcessUpdatePlaygroundSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -66,7 +66,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
 
             global::LangSmith.PlaygroundSettingsUpdateRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -92,7 +92,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.PlaygroundSettingsResponse>> UpdatePlaygroundSettingsAsResponseAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
 
             global::LangSmith.PlaygroundSettingsUpdateRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -520,7 +520,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
             string? name = default,
             string? description = default,
             object? settings = default,

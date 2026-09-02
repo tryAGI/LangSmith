@@ -99,6 +99,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateAgentAuthConnection,
+        /// <summary>
+        ///
+        /// </summary>
         CreateAlertRule,
         /// <summary>
         ///
@@ -388,6 +392,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteAccessPolicy,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteAgentAuthConnection,
         /// <summary>
         ///
         /// </summary>
@@ -1375,6 +1383,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateAgentAuthConnection,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateAlertRule,
         /// <summary>
         ///
@@ -1740,6 +1752,7 @@ namespace LangSmith
                 AuditLogOperation.ConfirmSsoUserEmail => "confirm_sso_user_email",
                 AuditLogOperation.CountExamples => "count_examples",
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
+                AuditLogOperation.CreateAgentAuthConnection => "create_agent_auth_connection",
                 AuditLogOperation.CreateAlertRule => "create_alert_rule",
                 AuditLogOperation.CreateAnnotationQueue => "create_annotation_queue",
                 AuditLogOperation.CreateAnnotationQueueItemStatus => "create_annotation_queue_item_status",
@@ -1813,6 +1826,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTool => "create_tool",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
+                AuditLogOperation.DeleteAgentAuthConnection => "delete_agent_auth_connection",
                 AuditLogOperation.DeleteAlertRule => "delete_alert_rule",
                 AuditLogOperation.DeleteAnnotationQueue => "delete_annotation_queue",
                 AuditLogOperation.DeleteAnnotationQueueItem => "delete_annotation_queue_item",
@@ -2059,6 +2073,7 @@ namespace LangSmith
                 AuditLogOperation.UnshareRun => "unshare_run",
                 AuditLogOperation.UnshareThread => "unshare_thread",
                 AuditLogOperation.UpdateAccessPolicy => "update_access_policy",
+                AuditLogOperation.UpdateAgentAuthConnection => "update_agent_auth_connection",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
                 AuditLogOperation.UpdateAnnotationQueueItem => "update_annotation_queue_item",
@@ -2174,6 +2189,7 @@ namespace LangSmith
                 "confirm_sso_user_email" => AuditLogOperation.ConfirmSsoUserEmail,
                 "count_examples" => AuditLogOperation.CountExamples,
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
+                "create_agent_auth_connection" => AuditLogOperation.CreateAgentAuthConnection,
                 "create_alert_rule" => AuditLogOperation.CreateAlertRule,
                 "create_annotation_queue" => AuditLogOperation.CreateAnnotationQueue,
                 "create_annotation_queue_item_status" => AuditLogOperation.CreateAnnotationQueueItemStatus,
@@ -2247,6 +2263,7 @@ namespace LangSmith
                 "create_tool" => AuditLogOperation.CreateTool,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
+                "delete_agent_auth_connection" => AuditLogOperation.DeleteAgentAuthConnection,
                 "delete_alert_rule" => AuditLogOperation.DeleteAlertRule,
                 "delete_annotation_queue" => AuditLogOperation.DeleteAnnotationQueue,
                 "delete_annotation_queue_item" => AuditLogOperation.DeleteAnnotationQueueItem,
@@ -2493,6 +2510,7 @@ namespace LangSmith
                 "unshare_run" => AuditLogOperation.UnshareRun,
                 "unshare_thread" => AuditLogOperation.UnshareThread,
                 "update_access_policy" => AuditLogOperation.UpdateAccessPolicy,
+                "update_agent_auth_connection" => AuditLogOperation.UpdateAgentAuthConnection,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,
                 "update_annotation_queue_item" => AuditLogOperation.UpdateAnnotationQueueItem,

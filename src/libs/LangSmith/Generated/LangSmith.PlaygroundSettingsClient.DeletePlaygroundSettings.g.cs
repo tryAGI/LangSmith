@@ -40,11 +40,11 @@ namespace LangSmith
             };
         partial void PrepareDeletePlaygroundSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string playgroundSettingsId);
+            ref global::System.Guid playgroundSettingsId);
         partial void PrepareDeletePlaygroundSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string playgroundSettingsId);
+            global::System.Guid playgroundSettingsId);
         partial void ProcessDeletePlaygroundSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,7 +63,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeletePlaygroundSettingsAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,7 +84,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> DeletePlaygroundSettingsAsResponseAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -40,11 +40,11 @@ namespace LangSmith
             };
         partial void PrepareReadSharedDatasetTracerSessionsBulkArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> shareTokens);
+            global::System.Collections.Generic.IList<global::System.Guid> shareTokens);
         partial void PrepareReadSharedDatasetTracerSessionsBulkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> shareTokens);
+            global::System.Collections.Generic.IList<global::System.Guid> shareTokens);
         partial void ProcessReadSharedDatasetTracerSessionsBulkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,7 +63,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>> ReadSharedDatasetTracerSessionsBulkAsync(
-            global::System.Collections.Generic.IList<string> shareTokens,
+            global::System.Collections.Generic.IList<global::System.Guid> shareTokens,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,7 +84,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>> ReadSharedDatasetTracerSessionsBulkAsResponseAsync(
-            global::System.Collections.Generic.IList<string> shareTokens,
+            global::System.Collections.Generic.IList<global::System.Guid> shareTokens,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -123,7 +123,7 @@ namespace LangSmith
                                 servers: s_ReadSharedDatasetTracerSessionsBulkServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddRequiredParameter("share_tokens", shareTokens, delimiter: ",", explode: true)
+                                .AddRequiredParameter("share_tokens", shareTokens, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

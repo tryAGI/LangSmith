@@ -14,7 +14,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
 
             global::LangSmith.PlaygroundSettingsUpdateRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -29,7 +29,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.PlaygroundSettingsResponse>> UpdatePlaygroundSettingsAsResponseAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
 
             global::LangSmith.PlaygroundSettingsUpdateRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -60,7 +60,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
-            string playgroundSettingsId,
+            global::System.Guid playgroundSettingsId,
             string? name = default,
             string? description = default,
             object? settings = default,
