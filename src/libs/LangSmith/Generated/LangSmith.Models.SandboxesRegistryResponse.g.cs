@@ -35,6 +35,20 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesRegistryResponseProviderJsonConverter))]
+        public global::LangSmith.SandboxesRegistryResponseProvider? Provider { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repository_search_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesRegistryResponseRepositorySearchModeJsonConverter))]
+        public global::LangSmith.SandboxesRegistryResponseRepositorySearchMode? RepositorySearchMode { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
 
@@ -63,6 +77,8 @@ namespace LangSmith
         /// <param name="createdBy"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="provider"></param>
+        /// <param name="repositorySearchMode"></param>
         /// <param name="updatedAt"></param>
         /// <param name="updatedBy"></param>
         /// <param name="url"></param>
@@ -74,6 +90,8 @@ namespace LangSmith
             string? createdBy,
             string? id,
             string? name,
+            global::LangSmith.SandboxesRegistryResponseProvider? provider,
+            global::LangSmith.SandboxesRegistryResponseRepositorySearchMode? repositorySearchMode,
             string? updatedAt,
             string? updatedBy,
             string? url)
@@ -82,6 +100,8 @@ namespace LangSmith
             this.CreatedBy = createdBy;
             this.Id = id;
             this.Name = name;
+            this.Provider = provider;
+            this.RepositorySearchMode = repositorySearchMode;
             this.UpdatedAt = updatedAt;
             this.UpdatedBy = updatedBy;
             this.Url = url;

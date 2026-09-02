@@ -251,6 +251,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationReadMetadata,
+        /// <summary>
+        ///
+        /// </summary>
         ProjectsCreate,
         /// <summary>
         ///
@@ -470,6 +474,7 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationManageModelSecrets => "organization:manage-model-secrets",
                 AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
                 AuthzInternalPermission.OrganizationRead => "organization:read",
+                AuthzInternalPermission.OrganizationReadMetadata => "organization:read-metadata",
                 AuthzInternalPermission.ProjectsCreate => "projects:create",
                 AuthzInternalPermission.ProjectsDecreaseTraceTier => "projects:decrease-trace-tier",
                 AuthzInternalPermission.ProjectsDelete => "projects:delete",
@@ -577,6 +582,7 @@ namespace LangSmith
                 "organization:manage-model-secrets" => AuthzInternalPermission.OrganizationManageModelSecrets,
                 "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
                 "organization:read" => AuthzInternalPermission.OrganizationRead,
+                "organization:read-metadata" => AuthzInternalPermission.OrganizationReadMetadata,
                 "projects:create" => AuthzInternalPermission.ProjectsCreate,
                 "projects:decrease-trace-tier" => AuthzInternalPermission.ProjectsDecreaseTraceTier,
                 "projects:delete" => AuthzInternalPermission.ProjectsDelete,
