@@ -25,7 +25,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifact")]
-        public global::LangSmith.Artifact? Artifact { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.Artifact Artifact { get; set; }
 
         /// <summary>
         ///
@@ -70,10 +71,10 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="PlaygroundPromptCanvasPayload" /> class.
         /// </summary>
         /// <param name="messages"></param>
+        /// <param name="artifact"></param>
         /// <param name="templateFormat"></param>
         /// <param name="secrets"></param>
         /// <param name="highlighted"></param>
-        /// <param name="artifact"></param>
         /// <param name="artifactLength"></param>
         /// <param name="readingLevel"></param>
         /// <param name="customAction"></param>
@@ -82,17 +83,17 @@ namespace LangSmith
 #endif
         public PlaygroundPromptCanvasPayload(
             global::System.Collections.Generic.IList<global::LangSmith.OneOf<global::LangSmith.AIMessage, global::LangSmith.HumanMessage, global::LangSmith.ChatMessage, global::LangSmith.SystemMessage, global::LangSmith.FunctionMessage, global::LangSmith.ToolMessage, global::LangSmith.AIMessageChunk, global::LangSmith.HumanMessageChunk, global::LangSmith.ChatMessageChunk, global::LangSmith.SystemMessageChunk, global::LangSmith.FunctionMessageChunk, global::LangSmith.ToolMessageChunk>> messages,
+            global::LangSmith.Artifact artifact,
             global::LangSmith.PlaygroundPromptCanvasPayloadTemplateFormat templateFormat,
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::LangSmith.Highlight? highlighted,
-            global::LangSmith.Artifact? artifact,
             global::LangSmith.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength,
             global::LangSmith.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel,
             string? customAction)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Highlighted = highlighted;
-            this.Artifact = artifact;
+            this.Artifact = artifact ?? throw new global::System.ArgumentNullException(nameof(artifact));
             this.ArtifactLength = artifactLength;
             this.ReadingLevel = readingLevel;
             this.CustomAction = customAction;
