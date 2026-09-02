@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_cidrs")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>? AllowedCidrs { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> AllowedDomains { get; set; }
@@ -25,12 +31,15 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="DataPlanesDataPlaneFirewallSettings" /> class.
         /// </summary>
         /// <param name="allowedDomains"></param>
+        /// <param name="allowedCidrs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataPlanesDataPlaneFirewallSettings(
-            global::System.Collections.Generic.IList<string> allowedDomains)
+            global::System.Collections.Generic.IList<string> allowedDomains,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>? allowedCidrs)
         {
+            this.AllowedCidrs = allowedCidrs;
             this.AllowedDomains = allowedDomains ?? throw new global::System.ArgumentNullException(nameof(allowedDomains));
         }
 

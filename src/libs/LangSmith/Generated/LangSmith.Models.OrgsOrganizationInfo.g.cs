@@ -167,6 +167,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_name")]
+        public global::LangSmith.OrgsOrganizationRole? OrgRoleName { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pat_creation_disabled")]
         public bool? PatCreationDisabled { get; set; }
 
@@ -270,6 +282,8 @@ namespace LangSmith
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
         /// <param name="memberDisabled"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         /// <param name="patCreationDisabled"></param>
         /// <param name="permissions"></param>
         /// <param name="publicSharingDisabled"></param>
@@ -309,6 +323,8 @@ namespace LangSmith
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
             bool? memberDisabled,
+            global::System.Guid? orgRoleId,
+            global::LangSmith.OrgsOrganizationRole? orgRoleName,
             bool? patCreationDisabled,
             global::System.Collections.Generic.IList<string>? permissions,
             bool? publicSharingDisabled,
@@ -345,6 +361,8 @@ namespace LangSmith
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.MemberDisabled = memberDisabled;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
             this.PatCreationDisabled = patCreationDisabled;
             this.Permissions = permissions;
             this.PublicSharingDisabled = publicSharingDisabled;

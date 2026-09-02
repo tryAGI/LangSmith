@@ -72,6 +72,18 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_name")]
+        public global::LangSmith.OrganizationRoles? OrgRoleName { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
@@ -262,6 +274,8 @@ namespace LangSmith
         /// <param name="permissions">
         /// Default Value: []
         /// </param>
+        /// <param name="orgRoleName"></param>
+        /// <param name="orgRoleId"></param>
         /// <param name="disabled">
         /// Default Value: false
         /// </param>
@@ -330,6 +344,8 @@ namespace LangSmith
             global::LangSmith.PaymentPlanTier? tier,
             bool? reachedMaxWorkspaces,
             global::System.Collections.Generic.IList<string>? permissions,
+            global::LangSmith.OrganizationRoles? orgRoleName,
+            global::System.Guid? orgRoleId,
             bool? disabled,
             bool? memberDisabled,
             bool? ssoOnly,
@@ -367,6 +383,8 @@ namespace LangSmith
             this.Tier = tier;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;
+            this.OrgRoleName = orgRoleName;
+            this.OrgRoleId = orgRoleId;
             this.Disabled = disabled;
             this.MemberDisabled = memberDisabled;
             this.SsoOnly = ssoOnly;
