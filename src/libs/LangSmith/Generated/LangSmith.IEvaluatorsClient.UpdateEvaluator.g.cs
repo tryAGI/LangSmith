@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Update evaluator<br/>
-        /// Update an existing evaluator's name, LLM configuration, or code configuration.
+        /// Update an existing evaluator's name, LLM configuration, or code configuration. Returns 409 when a code evaluator build is ENQUEUED or BUILDING.
         /// </summary>
         /// <param name="evaluatorId"></param>
         /// <param name="request"></param>
@@ -21,7 +21,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update evaluator<br/>
-        /// Update an existing evaluator's name, LLM configuration, or code configuration.
+        /// Update an existing evaluator's name, LLM configuration, or code configuration. Returns 409 when a code evaluator build is ENQUEUED or BUILDING.
         /// </summary>
         /// <param name="evaluatorId"></param>
         /// <param name="request"></param>
@@ -36,7 +36,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update evaluator<br/>
-        /// Update an existing evaluator's name, LLM configuration, or code configuration.
+        /// Update an existing evaluator's name, LLM configuration, or code configuration. Returns 409 when a code evaluator build is ENQUEUED or BUILDING.
         /// </summary>
         /// <param name="evaluatorId"></param>
         /// <param name="codeEvaluator"></param>

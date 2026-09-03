@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class EvaluatorsClient
+    public partial class FleetThreadsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateEvaluatorServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ActivateAThreadSandboxServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateEvaluatorSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ActivateAThreadSandboxSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,48 +34,41 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdateEvaluatorSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ActivateAThreadSandboxSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_UpdateEvaluatorSecurityRequirement0,
+            {                s_ActivateAThreadSandboxSecurityRequirement0,
             };
-        partial void PrepareUpdateEvaluatorArguments(
+        partial void PrepareActivateAThreadSandboxArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string evaluatorId,
-            global::LangSmith.EvaluatorsUpdateEvaluatorRequest request);
-        partial void PrepareUpdateEvaluatorRequest(
+            ref global::System.Guid threadId);
+        partial void PrepareActivateAThreadSandboxRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string evaluatorId,
-            global::LangSmith.EvaluatorsUpdateEvaluatorRequest request);
-        partial void ProcessUpdateEvaluatorResponse(
+            global::System.Guid threadId);
+        partial void ProcessActivateAThreadSandboxResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateEvaluatorResponseContent(
+        partial void ProcessActivateAThreadSandboxResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Update evaluator<br/>
-        /// Update an existing evaluator's name, LLM configuration, or code configuration. Returns 409 when a code evaluator build is ENQUEUED or BUILDING.
+        /// Activate a thread sandbox<br/>
+        /// Starts or resumes the sandbox referenced by the thread and returns when it is ready. The operation is idempotent. The thread must include sandbox.sandbox_slug.
         /// </summary>
-        /// <param name="evaluatorId"></param>
-        /// <param name="request"></param>
+        /// <param name="threadId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsUpdateEvaluatorResponse> UpdateEvaluatorAsync(
-            string evaluatorId,
-
-            global::LangSmith.EvaluatorsUpdateEvaluatorRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsSandboxRef> ActivateAThreadSandboxAsync(
+            global::System.Guid threadId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await UpdateEvaluatorAsResponseAsync(
-                evaluatorId: evaluatorId,
-
-                request: request,
+            var __response = await ActivateAThreadSandboxAsResponseAsync(
+                threadId: threadId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -83,35 +76,29 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Update evaluator<br/>
-        /// Update an existing evaluator's name, LLM configuration, or code configuration. Returns 409 when a code evaluator build is ENQUEUED or BUILDING.
+        /// Activate a thread sandbox<br/>
+        /// Starts or resumes the sandbox referenced by the thread and returns when it is ready. The operation is idempotent. The thread must include sandbox.sandbox_slug.
         /// </summary>
-        /// <param name="evaluatorId"></param>
-        /// <param name="request"></param>
+        /// <param name="threadId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.EvaluatorsUpdateEvaluatorResponse>> UpdateEvaluatorAsResponseAsync(
-            string evaluatorId,
-
-            global::LangSmith.EvaluatorsUpdateEvaluatorRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsSandboxRef>> ActivateAThreadSandboxAsResponseAsync(
+            global::System.Guid threadId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateEvaluatorArguments(
+            PrepareActivateAThreadSandboxArguments(
                 httpClient: HttpClient,
-                evaluatorId: ref evaluatorId,
-                request: request);
+                threadId: ref threadId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_UpdateEvaluatorSecurityRequirements,
-                operationName: "UpdateEvaluatorAsync");
+                securityRequirements: s_ActivateAThreadSandboxSecurityRequirements,
+                operationName: "ActivateAThreadSandboxAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -131,9 +118,9 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/platform/evaluators/{evaluatorId}",
+                                path: $"/v1/fleet/threads/{threadId}/sandbox-activation",
                                 baseUri: ResolveBaseUri(
-                                servers: s_UpdateEvaluatorServers,
+                                servers: s_ActivateAThreadSandboxServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -141,7 +128,7 @@ namespace LangSmith
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: new global::System.Net.Http.HttpMethod("PATCH"),
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -164,12 +151,6 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -178,11 +159,10 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareUpdateEvaluatorRequest(
+                PrepareActivateAThreadSandboxRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evaluatorId: evaluatorId!,
-                    request: request);
+                    threadId: threadId!);
 
                 return __httpRequest;
             }
@@ -199,10 +179,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateEvaluator",
-                                methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "ActivateAThreadSandbox",
+                                methodName: "ActivateAThreadSandboxAsync",
+                                pathTemplate: "$\"/v1/fleet/threads/{threadId}/sandbox-activation\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -233,10 +213,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateEvaluator",
-                                methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "ActivateAThreadSandbox",
+                                methodName: "ActivateAThreadSandboxAsync",
+                                pathTemplate: "$\"/v1/fleet/threads/{threadId}/sandbox-activation\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -274,10 +254,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateEvaluator",
-                                methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "ActivateAThreadSandbox",
+                                methodName: "ActivateAThreadSandboxAsync",
+                                pathTemplate: "$\"/v1/fleet/threads/{threadId}/sandbox-activation\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -314,7 +294,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessUpdateEvaluatorResponse(
+                ProcessActivateAThreadSandboxResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -322,10 +302,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateEvaluator",
-                                methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "ActivateAThreadSandbox",
+                                methodName: "ActivateAThreadSandboxAsync",
+                                pathTemplate: "$\"/v1/fleet/threads/{threadId}/sandbox-activation\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -344,10 +324,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateEvaluator",
-                                methodName: "UpdateEvaluatorAsync",
-                                pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "ActivateAThreadSandbox",
+                                methodName: "ActivateAThreadSandboxAsync",
+                                pathTemplate: "$\"/v1/fleet/threads/{threadId}/sandbox-activation\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -366,19 +346,19 @@ namespace LangSmith
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::LangSmith.EvaluatorsErrorResponse? __value_400 = null;
+                                global::LangSmith.ThreadsSandboxActivationProblem? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -387,7 +367,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.ThreadsSandboxActivationProblem>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -398,61 +378,24 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Unauthorized
-                            if ((int)__response.StatusCode == 401)
-                            {
-                                string? __content_401 = null;
-                                global::System.Exception? __exception_401 = null;
-                                global::LangSmith.EvaluatorsErrorResponse? __value_401 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_401, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_401 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_401, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_401 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_401,
-                                    responseBody: __content_401,
-                                    responseObject: __value_401,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::LangSmith.EvaluatorsErrorResponse? __value_403 = null;
+                                global::LangSmith.ThreadsSandboxActivationProblem? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -461,7 +404,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.ThreadsSandboxActivationProblem>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -477,19 +420,19 @@ namespace LangSmith
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::LangSmith.EvaluatorsErrorResponse? __value_404 = null;
+                                global::LangSmith.ThreadsSandboxActivationProblem? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -498,7 +441,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.ThreadsSandboxActivationProblem>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -514,19 +457,19 @@ namespace LangSmith
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::LangSmith.EvaluatorsErrorResponse? __value_409 = null;
+                                global::LangSmith.ThreadsSandboxActivationProblem? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -535,7 +478,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.ThreadsSandboxActivationProblem>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
@@ -546,38 +489,38 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Internal Server Error
-                            if ((int)__response.StatusCode == 500)
+                            // Not Implemented
+                            if ((int)__response.StatusCode == 501)
                             {
-                                string? __content_500 = null;
-                                global::System.Exception? __exception_500 = null;
-                                global::LangSmith.EvaluatorsErrorResponse? __value_500 = null;
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::LangSmith.ThreadsSandboxActivationProblem? __value_501 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_501, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::LangSmith.EvaluatorsErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                        __value_501 = global::LangSmith.ThreadsSandboxActivationProblem.FromJson(__content_501, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_500 = __ex;
+                                    __exception_501 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.EvaluatorsErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.ThreadsSandboxActivationProblem>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_500,
-                                    responseBody: __content_500,
-                                    responseObject: __value_500,
+                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -596,7 +539,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessUpdateEvaluatorResponseContent(
+                                ProcessActivateAThreadSandboxResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -605,9 +548,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.EvaluatorsUpdateEvaluatorResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.ThreadsSandboxRef.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.EvaluatorsUpdateEvaluatorResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsSandboxRef>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -637,9 +580,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.EvaluatorsUpdateEvaluatorResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.ThreadsSandboxRef.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.EvaluatorsUpdateEvaluatorResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsSandboxRef>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -678,38 +621,6 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Update evaluator<br/>
-        /// Update an existing evaluator's name, LLM configuration, or code configuration. Returns 409 when a code evaluator build is ENQUEUED or BUILDING.
-        /// </summary>
-        /// <param name="evaluatorId"></param>
-        /// <param name="codeEvaluator"></param>
-        /// <param name="llmEvaluator"></param>
-        /// <param name="name"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsUpdateEvaluatorResponse> UpdateEvaluatorAsync(
-            string evaluatorId,
-            global::LangSmith.EvaluatorsUpdateCodeEvaluatorRequest? codeEvaluator = default,
-            global::LangSmith.EvaluatorsUpdateLLMEvaluatorRequest? llmEvaluator = default,
-            string? name = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.EvaluatorsUpdateEvaluatorRequest
-            {
-                CodeEvaluator = codeEvaluator,
-                LlmEvaluator = llmEvaluator,
-                Name = name,
-            };
-
-            return await UpdateEvaluatorAsync(
-                evaluatorId: evaluatorId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

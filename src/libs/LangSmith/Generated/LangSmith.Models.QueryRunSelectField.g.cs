@@ -95,6 +95,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RunSelectLsUserID,
+        /// <summary>
+        ///
+        /// </summary>
         RunSelectManifest,
         /// <summary>
         ///
@@ -223,6 +227,7 @@ namespace LangSmith
                 QueryRunSelectField.RunSelectIsRoot => "IS_ROOT",
                 QueryRunSelectField.RunSelectLastQueuedAt => "LAST_QUEUED_AT",
                 QueryRunSelectField.RunSelectLatencySeconds => "LATENCY_SECONDS",
+                QueryRunSelectField.RunSelectLsUserID => "LS_USER_ID",
                 QueryRunSelectField.RunSelectManifest => "MANIFEST",
                 QueryRunSelectField.RunSelectMetadata => "METADATA",
                 QueryRunSelectField.RunSelectName => "NAME",
@@ -278,6 +283,7 @@ namespace LangSmith
                 "IS_ROOT" => QueryRunSelectField.RunSelectIsRoot,
                 "LAST_QUEUED_AT" => QueryRunSelectField.RunSelectLastQueuedAt,
                 "LATENCY_SECONDS" => QueryRunSelectField.RunSelectLatencySeconds,
+                "LS_USER_ID" => QueryRunSelectField.RunSelectLsUserID,
                 "MANIFEST" => QueryRunSelectField.RunSelectManifest,
                 "METADATA" => QueryRunSelectField.RunSelectMetadata,
                 "NAME" => QueryRunSelectField.RunSelectName,
