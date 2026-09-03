@@ -209,6 +209,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public FleetThreadsClient FleetThreads { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public FleetUsersClient FleetUsers { get; }
 
         /// <summary>

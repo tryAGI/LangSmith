@@ -95,6 +95,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        LsUserId,
+        /// <summary>
+        ///
+        /// </summary>
         Manifest,
         /// <summary>
         ///
@@ -223,6 +227,7 @@ namespace LangSmith
                 GetRunsSelect.IsRoot => "IS_ROOT",
                 GetRunsSelect.LastQueuedAt => "LAST_QUEUED_AT",
                 GetRunsSelect.LatencySeconds => "LATENCY_SECONDS",
+                GetRunsSelect.LsUserId => "LS_USER_ID",
                 GetRunsSelect.Manifest => "MANIFEST",
                 GetRunsSelect.Metadata => "METADATA",
                 GetRunsSelect.Name => "NAME",
@@ -278,6 +283,7 @@ namespace LangSmith
                 "IS_ROOT" => GetRunsSelect.IsRoot,
                 "LAST_QUEUED_AT" => GetRunsSelect.LastQueuedAt,
                 "LATENCY_SECONDS" => GetRunsSelect.LatencySeconds,
+                "LS_USER_ID" => GetRunsSelect.LsUserId,
                 "MANIFEST" => GetRunsSelect.Manifest,
                 "METADATA" => GetRunsSelect.Metadata,
                 "NAME" => GetRunsSelect.Name,

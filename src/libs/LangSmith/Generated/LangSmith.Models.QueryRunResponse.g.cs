@@ -161,6 +161,14 @@ namespace LangSmith
         public double? LatencySeconds { get; set; }
 
         /// <summary>
+        /// `ls_user_id` identifies the LangSmith user whose credential traced the run. It is absent for runs traced with a service-account API key, which has no associated user.<br/>
+        /// Example: f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c
+        /// </summary>
+        /// <example>f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
+        public global::System.Guid? LsUserId { get; set; }
+
+        /// <summary>
         /// `manifest` is the serialized configuration of the traced component (for example the model parameters, prompt template, or pipeline definition), when recorded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
@@ -425,6 +433,10 @@ namespace LangSmith
         /// `latency_seconds` is wall-clock duration from start to end in seconds.<br/>
         /// Example: 1.523F
         /// </param>
+        /// <param name="lsUserId">
+        /// `ls_user_id` identifies the LangSmith user whose credential traced the run. It is absent for runs traced with a service-account API key, which has no associated user.<br/>
+        /// Example: f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c
+        /// </param>
         /// <param name="manifest">
         /// `manifest` is the serialized configuration of the traced component (for example the model parameters, prompt template, or pipeline definition), when recorded.
         /// </param>
@@ -539,6 +551,7 @@ namespace LangSmith
             bool? isRoot,
             global::System.DateTime? lastQueuedAt,
             double? latencySeconds,
+            global::System.Guid? lsUserId,
             object? manifest,
             object? metadata,
             string? name,
@@ -585,6 +598,7 @@ namespace LangSmith
             this.IsRoot = isRoot;
             this.LastQueuedAt = lastQueuedAt;
             this.LatencySeconds = latencySeconds;
+            this.LsUserId = lsUserId;
             this.Manifest = manifest;
             this.Metadata = metadata;
             this.Name = name;

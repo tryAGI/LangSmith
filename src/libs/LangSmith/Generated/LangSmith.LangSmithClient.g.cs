@@ -328,6 +328,16 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public FleetThreadsClient FleetThreads => new FleetThreadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
         public FleetUsersClient FleetUsers => new FleetUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
