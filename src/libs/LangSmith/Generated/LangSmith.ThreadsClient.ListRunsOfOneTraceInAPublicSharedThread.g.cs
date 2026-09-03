@@ -40,12 +40,14 @@ namespace LangSmith
             };
         partial void PrepareListRunsOfOneTraceInAPublicSharedThreadArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? accept,
             ref global::System.Guid shareToken,
             ref global::System.Guid traceId,
             global::System.Collections.Generic.IList<string> selects);
         partial void PrepareListRunsOfOneTraceInAPublicSharedThreadRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? accept,
             global::System.Guid shareToken,
             global::System.Guid traceId,
             global::System.Collections.Generic.IList<string> selects);
@@ -63,6 +65,7 @@ namespace LangSmith
         /// Returns every run in the given trace, provided that trace's root belongs to the shared thread.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="shareToken"></param>
         /// <param name="traceId"></param>
         /// <param name="selects"></param>
@@ -73,6 +76,7 @@ namespace LangSmith
             global::System.Guid shareToken,
             global::System.Guid traceId,
             global::System.Collections.Generic.IList<string> selects,
+            string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -80,6 +84,7 @@ namespace LangSmith
                 shareToken: shareToken,
                 traceId: traceId,
                 selects: selects,
+                accept: accept,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -91,6 +96,7 @@ namespace LangSmith
         /// Returns every run in the given trace, provided that trace's root belongs to the shared thread.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="shareToken"></param>
         /// <param name="traceId"></param>
         /// <param name="selects"></param>
@@ -101,6 +107,7 @@ namespace LangSmith
             global::System.Guid shareToken,
             global::System.Guid traceId,
             global::System.Collections.Generic.IList<string> selects,
+            string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,6 +115,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListRunsOfOneTraceInAPublicSharedThreadArguments(
                 httpClient: HttpClient,
+                accept: ref accept,
                 shareToken: ref shareToken,
                 traceId: ref traceId,
                 selects: selects);
@@ -156,6 +164,10 @@ namespace LangSmith
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
+
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
@@ -172,6 +184,12 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept.ToString());
+            }
+
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -183,6 +201,7 @@ namespace LangSmith
                 PrepareListRunsOfOneTraceInAPublicSharedThreadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accept: accept,
                     shareToken: shareToken!,
                     traceId: traceId!,
                     selects: selects!);

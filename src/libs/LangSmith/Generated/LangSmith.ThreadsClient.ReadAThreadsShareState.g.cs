@@ -58,9 +58,9 @@ namespace LangSmith
 
         /// <summary>
         /// Read a thread's share state<br/>
-        /// Returns the share token for a thread, or 404 when it is not<br/>
-        /// shared. Gated on runs:share so the control's state matches the<br/>
-        /// control's permission.
+        /// Returns the share token for a thread. The token is omitted when<br/>
+        /// the thread is not shared. Gated on runs:share so the control's<br/>
+        /// state matches the control's permission.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="projectId"></param>
@@ -84,9 +84,9 @@ namespace LangSmith
         }
         /// <summary>
         /// Read a thread's share state<br/>
-        /// Returns the share token for a thread, or 404 when it is not<br/>
-        /// shared. Gated on runs:share so the control's state matches the<br/>
-        /// control's permission.
+        /// Returns the share token for a thread. The token is omitted when<br/>
+        /// the thread is not shared. Gated on runs:share so the control's<br/>
+        /// state matches the control's permission.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="projectId"></param>
@@ -463,43 +463,6 @@ namespace LangSmith
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Not Found
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                global::LangSmith.SharedProblemDetails? __value_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::LangSmith.SharedProblemDetails.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_404 = global::LangSmith.SharedProblemDetails.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

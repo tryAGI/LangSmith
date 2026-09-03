@@ -13,8 +13,7 @@ namespace LangSmith
         /// </summary>
         /// <example>018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid ShareToken { get; set; }
+        public global::System.Guid? ShareToken { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +31,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ThreadshareShareTokenResponseBody(
-            global::System.Guid shareToken)
+            global::System.Guid? shareToken)
         {
             this.ShareToken = shareToken;
         }

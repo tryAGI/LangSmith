@@ -6,9 +6,9 @@ namespace LangSmith
     {
         /// <summary>
         /// Read a thread's share state<br/>
-        /// Returns the share token for a thread, or 404 when it is not<br/>
-        /// shared. Gated on runs:share so the control's state matches the<br/>
-        /// control's permission.
+        /// Returns the share token for a thread. The token is omitted when<br/>
+        /// the thread is not shared. Gated on runs:share so the control's<br/>
+        /// state matches the control's permission.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="projectId"></param>
@@ -22,9 +22,9 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read a thread's share state<br/>
-        /// Returns the share token for a thread, or 404 when it is not<br/>
-        /// shared. Gated on runs:share so the control's state matches the<br/>
-        /// control's permission.
+        /// Returns the share token for a thread. The token is omitted when<br/>
+        /// the thread is not shared. Gated on runs:share so the control's<br/>
+        /// state matches the control's permission.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="projectId"></param>
