@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class ThreadshareThreadManifestConversations
+    public sealed partial class ValidationErrorCtx
     {
 
         /// <summary>

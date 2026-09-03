@@ -9,6 +9,7 @@ namespace LangSmith
         /// Returns every run in the given trace, provided that trace's root belongs to the shared thread.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="shareToken"></param>
         /// <param name="traceId"></param>
         /// <param name="selects"></param>
@@ -19,6 +20,7 @@ namespace LangSmith
             global::System.Guid shareToken,
             global::System.Guid traceId,
             global::System.Collections.Generic.IList<string> selects,
+            string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -26,6 +28,7 @@ namespace LangSmith
         /// Returns every run in the given trace, provided that trace's root belongs to the shared thread.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="shareToken"></param>
         /// <param name="traceId"></param>
         /// <param name="selects"></param>
@@ -36,6 +39,7 @@ namespace LangSmith
             global::System.Guid shareToken,
             global::System.Guid traceId,
             global::System.Collections.Generic.IList<string> selects,
+            string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

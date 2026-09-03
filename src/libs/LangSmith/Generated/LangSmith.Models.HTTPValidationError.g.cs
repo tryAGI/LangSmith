@@ -12,7 +12,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public global::System.Collections.Generic.IList<global::LangSmith.ValidationError>? Detail { get; set; }
+        public global::System.Collections.Generic.IList<string>? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HTTPValidationError(
-            global::System.Collections.Generic.IList<global::LangSmith.ValidationError>? detail)
+            global::System.Collections.Generic.IList<string>? detail)
         {
             this.Detail = detail;
         }
