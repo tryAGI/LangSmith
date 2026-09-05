@@ -39,6 +39,8 @@ namespace LangSmith
         /// Update a sandbox registry's name and/or credentials.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="authType"></param>
+        /// <param name="awsRoleArn"></param>
         /// <param name="requestName"></param>
         /// <param name="password"></param>
         /// <param name="url"></param>
@@ -48,6 +50,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesRegistryResponse> UpdateARegistryAsync(
             string name,
+            global::LangSmith.SandboxesUpdateRegistryPayloadAuthType? authType = default,
+            string? awsRoleArn = default,
             string? requestName = default,
             string? password = default,
             string? url = default,

@@ -11,6 +11,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesUpdateRegistryPayloadAuthTypeJsonConverter))]
+        public global::LangSmith.SandboxesUpdateRegistryPayloadAuthType? AuthType { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aws_role_arn")]
+        public string? AwsRoleArn { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -41,6 +54,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesUpdateRegistryPayload" /> class.
         /// </summary>
+        /// <param name="authType"></param>
+        /// <param name="awsRoleArn"></param>
         /// <param name="name"></param>
         /// <param name="password"></param>
         /// <param name="url"></param>
@@ -49,11 +64,15 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesUpdateRegistryPayload(
+            global::LangSmith.SandboxesUpdateRegistryPayloadAuthType? authType,
+            string? awsRoleArn,
             string? name,
             string? password,
             string? url,
             string? username)
         {
+            this.AuthType = authType;
+            this.AwsRoleArn = awsRoleArn;
             this.Name = name;
             this.Password = password;
             this.Url = url;

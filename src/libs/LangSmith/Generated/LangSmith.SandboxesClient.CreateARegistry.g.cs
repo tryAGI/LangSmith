@@ -500,6 +500,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // AWS IAM role authentication is not configured
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -600,6 +637,8 @@ namespace LangSmith
         /// Create a registry<br/>
         /// Create a sandbox registry for pulling private images.
         /// </summary>
+        /// <param name="authType"></param>
+        /// <param name="awsRoleArn"></param>
         /// <param name="name"></param>
         /// <param name="password"></param>
         /// <param name="url"></param>
@@ -609,14 +648,18 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesRegistryResponse> CreateARegistryAsync(
             string name,
-            string password,
             string url,
-            string username,
+            global::LangSmith.SandboxesCreateRegistryPayloadAuthType? authType = default,
+            string? awsRoleArn = default,
+            string? password = default,
+            string? username = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.SandboxesCreateRegistryPayload
             {
+                AuthType = authType,
+                AwsRoleArn = awsRoleArn,
                 Name = name,
                 Password = password,
                 Url = url,

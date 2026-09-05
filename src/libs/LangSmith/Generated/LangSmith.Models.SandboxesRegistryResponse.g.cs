@@ -11,6 +11,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesRegistryResponseAuthTypeJsonConverter))]
+        public global::LangSmith.SandboxesRegistryResponseAuthType? AuthType { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aws_role_arn")]
+        public string? AwsRoleArn { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
@@ -73,6 +86,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesRegistryResponse" /> class.
         /// </summary>
+        /// <param name="authType"></param>
+        /// <param name="awsRoleArn"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdBy"></param>
         /// <param name="id"></param>
@@ -86,6 +101,8 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesRegistryResponse(
+            global::LangSmith.SandboxesRegistryResponseAuthType? authType,
+            string? awsRoleArn,
             string? createdAt,
             string? createdBy,
             string? id,
@@ -96,6 +113,8 @@ namespace LangSmith
             string? updatedBy,
             string? url)
         {
+            this.AuthType = authType;
+            this.AwsRoleArn = awsRoleArn;
             this.CreatedAt = createdAt;
             this.CreatedBy = createdBy;
             this.Id = id;

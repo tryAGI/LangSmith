@@ -34,6 +34,8 @@ namespace LangSmith
         /// Create a registry<br/>
         /// Create a sandbox registry for pulling private images.
         /// </summary>
+        /// <param name="authType"></param>
+        /// <param name="awsRoleArn"></param>
         /// <param name="name"></param>
         /// <param name="password"></param>
         /// <param name="url"></param>
@@ -43,9 +45,11 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesRegistryResponse> CreateARegistryAsync(
             string name,
-            string password,
             string url,
-            string username,
+            global::LangSmith.SandboxesCreateRegistryPayloadAuthType? authType = default,
+            string? awsRoleArn = default,
+            string? password = default,
+            string? username = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
