@@ -40,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareQueryThreadsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? accept,
             global::LangSmith.ThreadsQueryThreadsRequestBody request);
         partial void PrepareQueryThreadsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? accept,
             global::LangSmith.ThreadsQueryThreadsRequestBody request);
         partial void ProcessQueryThreadsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -60,6 +62,7 @@ namespace LangSmith
         /// Returns threads matching the given time range and optional filters.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -67,12 +70,14 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
 
             global::LangSmith.ThreadsQueryThreadsRequestBody request,
+            string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await QueryThreadsAsResponseAsync(
 
                 request: request,
+                accept: accept,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -85,6 +90,7 @@ namespace LangSmith
         /// Returns threads matching the given time range and optional filters.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -92,6 +98,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsQueryThreadsResponseBody>> QueryThreadsAsResponseAsync(
 
             global::LangSmith.ThreadsQueryThreadsRequestBody request,
+            string? accept = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -101,6 +108,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareQueryThreadsArguments(
                 httpClient: HttpClient,
+                accept: ref accept,
                 request: request);
 
 
@@ -160,6 +168,12 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept.ToString());
+            }
+
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,
@@ -177,6 +191,7 @@ namespace LangSmith
                 PrepareQueryThreadsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accept: accept,
                     request: request);
 
                 return __httpRequest;
@@ -791,6 +806,7 @@ namespace LangSmith
         /// Returns threads matching the given time range and optional filters.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="cursor">
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
         /// </param>
@@ -837,6 +853,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
+            string? accept = default,
             string? cursor = default,
             string? filter = default,
             global::System.DateTime? maxStartTime = default,
@@ -863,6 +880,7 @@ namespace LangSmith
             };
 
             return await QueryThreadsAsync(
+                accept: accept,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

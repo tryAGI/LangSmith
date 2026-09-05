@@ -1155,6 +1155,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        QueryThreadStats,
+        /// <summary>
+        ///
+        /// </summary>
         QueryThreadTraces,
         /// <summary>
         ///
@@ -2016,6 +2020,7 @@ namespace LangSmith
                 AuditLogOperation.QueryRuns => "query_runs",
                 AuditLogOperation.QuerySingleThreadStats => "query_single_thread_stats",
                 AuditLogOperation.QueryThreadMessages => "query_thread_messages",
+                AuditLogOperation.QueryThreadStats => "query_thread_stats",
                 AuditLogOperation.QueryThreadTraces => "query_thread_traces",
                 AuditLogOperation.QueryThreads => "query_threads",
                 AuditLogOperation.QueryTrace => "query_trace",
@@ -2453,6 +2458,7 @@ namespace LangSmith
                 "query_runs" => AuditLogOperation.QueryRuns,
                 "query_single_thread_stats" => AuditLogOperation.QuerySingleThreadStats,
                 "query_thread_messages" => AuditLogOperation.QueryThreadMessages,
+                "query_thread_stats" => AuditLogOperation.QueryThreadStats,
                 "query_thread_traces" => AuditLogOperation.QueryThreadTraces,
                 "query_threads" => AuditLogOperation.QueryThreads,
                 "query_trace" => AuditLogOperation.QueryTrace,
