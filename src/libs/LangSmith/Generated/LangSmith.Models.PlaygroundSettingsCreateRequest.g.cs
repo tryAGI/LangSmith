@@ -75,7 +75,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_token_endpoint_auth_method")]
-        public global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2? OauthTokenEndpointAuthMethod { get; set; }
+        public global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod? OauthTokenEndpointAuthMethod { get; set; }
 
         /// <summary>
         ///
@@ -129,7 +129,7 @@ namespace LangSmith
             string? oauthTokenUrl,
             string? oauthClientId,
             string? oauthClientSecret,
-            global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2? oauthTokenEndpointAuthMethod,
+            global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod? oauthTokenEndpointAuthMethod,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? oauthParams,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? oauthHeaders)
         {

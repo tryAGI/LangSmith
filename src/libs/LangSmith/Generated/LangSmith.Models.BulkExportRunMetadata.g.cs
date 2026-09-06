@@ -33,7 +33,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_backend")]
-        public global::LangSmith.BulkExportRunMetadataExecutionBackend2? ExecutionBackend { get; set; }
+        public global::LangSmith.BulkExportRunMetadataExecutionBackend? ExecutionBackend { get; set; }
 
         /// <summary>
         ///
@@ -62,7 +62,7 @@ namespace LangSmith
             string prefix,
             global::System.DateTime startTime,
             global::System.DateTime endTime,
-            global::LangSmith.BulkExportRunMetadataExecutionBackend2? executionBackend,
+            global::LangSmith.BulkExportRunMetadataExecutionBackend? executionBackend,
             global::LangSmith.BulkExportRunProgress? result)
         {
             this.Prefix = prefix ?? throw new global::System.ArgumentNullException(nameof(prefix));

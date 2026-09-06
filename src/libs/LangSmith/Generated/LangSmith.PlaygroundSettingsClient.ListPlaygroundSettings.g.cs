@@ -40,11 +40,11 @@ namespace LangSmith
             };
         partial void PrepareListPlaygroundSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope2? scope);
+            ref global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope? scope);
         partial void PrepareListPlaygroundSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope2? scope);
+            global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope? scope);
         partial void ProcessListPlaygroundSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,7 +63,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundSettingsResponse>> ListPlaygroundSettingsAsync(
-            global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope2? scope = default,
+            global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope? scope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,7 +84,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.PlaygroundSettingsResponse>>> ListPlaygroundSettingsAsResponseAsync(
-            global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope2? scope = default,
+            global::LangSmith.ListPlaygroundSettingsApiV1PlaygroundSettingsGetScope? scope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

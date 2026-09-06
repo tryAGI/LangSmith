@@ -6,14 +6,58 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class ListRepoTagsApiV1ReposTagsGetRepoType
+    public enum ListRepoTagsApiV1ReposTagsGetRepoType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Agent,
+        /// <summary>
+        ///
+        /// </summary>
+        File,
+        /// <summary>
+        ///
+        /// </summary>
+        Prompt,
+        /// <summary>
+        ///
+        /// </summary>
+        Skill,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ListRepoTagsApiV1ReposTagsGetRepoTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ListRepoTagsApiV1ReposTagsGetRepoType value)
+        {
+            return value switch
+            {
+                ListRepoTagsApiV1ReposTagsGetRepoType.Agent => "agent",
+                ListRepoTagsApiV1ReposTagsGetRepoType.File => "file",
+                ListRepoTagsApiV1ReposTagsGetRepoType.Prompt => "prompt",
+                ListRepoTagsApiV1ReposTagsGetRepoType.Skill => "skill",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ListRepoTagsApiV1ReposTagsGetRepoType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "agent" => ListRepoTagsApiV1ReposTagsGetRepoType.Agent,
+                "file" => ListRepoTagsApiV1ReposTagsGetRepoType.File,
+                "prompt" => ListRepoTagsApiV1ReposTagsGetRepoType.Prompt,
+                "skill" => ListRepoTagsApiV1ReposTagsGetRepoType.Skill,
+                _ => null,
+            };
+        }
     }
 }

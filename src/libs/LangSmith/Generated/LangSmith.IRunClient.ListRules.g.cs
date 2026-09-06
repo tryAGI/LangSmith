@@ -24,7 +24,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>> ListRulesAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::LangSmith.ListRulesApiV1RunsRulesGetType2? type = default,
+            global::LangSmith.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? evaluatorId = default,
@@ -52,7 +52,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>>> ListRulesAsResponseAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::LangSmith.ListRulesApiV1RunsRulesGetType2? type = default,
+            global::LangSmith.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? evaluatorId = default,

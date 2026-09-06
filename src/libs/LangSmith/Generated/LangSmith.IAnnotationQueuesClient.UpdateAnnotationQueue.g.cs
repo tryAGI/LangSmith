@@ -66,7 +66,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata = default,
-            global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? reviewerAccessMode = default,
+            global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode? reviewerAccessMode = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

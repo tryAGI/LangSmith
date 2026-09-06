@@ -13,7 +13,7 @@ namespace LangSmith
         /// S3 addressing style. Use "virtual" for services that require virtual-hosted style (e.g. Volcengine TOS), "path" for path-style, or "auto" (default) to let boto3 decide.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("addressing_style")]
-        public global::LangSmith.BotocoreS3ConfigAddressingStyle2? AddressingStyle { get; set; }
+        public global::LangSmith.BotocoreS3ConfigAddressingStyle? AddressingStyle { get; set; }
 
         /// <summary>
         /// Whether to use the S3 Accelerate endpoint.
@@ -31,7 +31,7 @@ namespace LangSmith
         /// Which S3 endpoint to use when region is us-east-1.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("us_east_1_regional_endpoint")]
-        public global::LangSmith.BotocoreS3ConfigUsEast1RegionalEndpoint2? UsEast1RegionalEndpoint { get; set; }
+        public global::LangSmith.BotocoreS3ConfigUsEast1RegionalEndpoint? UsEast1RegionalEndpoint { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,10 +58,10 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BotocoreS3Config(
-            global::LangSmith.BotocoreS3ConfigAddressingStyle2? addressingStyle,
+            global::LangSmith.BotocoreS3ConfigAddressingStyle? addressingStyle,
             bool? useAccelerateEndpoint,
             bool? payloadSigningEnabled,
-            global::LangSmith.BotocoreS3ConfigUsEast1RegionalEndpoint2? usEast1RegionalEndpoint)
+            global::LangSmith.BotocoreS3ConfigUsEast1RegionalEndpoint? usEast1RegionalEndpoint)
         {
             this.AddressingStyle = addressingStyle;
             this.UseAccelerateEndpoint = useAccelerateEndpoint;

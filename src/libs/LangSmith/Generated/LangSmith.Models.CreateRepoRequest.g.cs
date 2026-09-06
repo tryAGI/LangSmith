@@ -57,7 +57,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        public global::LangSmith.CreateRepoRequestSource2? Source { get; set; }
+        public global::LangSmith.CreateRepoRequestSource? Source { get; set; }
 
         /// <summary>
         ///
@@ -96,7 +96,7 @@ namespace LangSmith
             string? readme,
             global::System.Collections.Generic.IList<string>? tags,
             global::LangSmith.CreateRepoRequestRepoType? repoType,
-            global::LangSmith.CreateRepoRequestSource2? source,
+            global::LangSmith.CreateRepoRequestSource? source,
             bool? restrictedMode)
         {
             this.TagValueIds = tagValueIds;
