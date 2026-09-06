@@ -47,14 +47,14 @@ namespace LangSmith
             ref string? query,
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived,
+            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived,
             ref global::LangSmith.TrueFalseLiteral? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType,
+            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType,
             global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes,
-            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource2? source);
+            ref global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource? source);
         partial void PrepareListRepoTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -65,14 +65,14 @@ namespace LangSmith
             string? query,
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived,
             global::LangSmith.TrueFalseLiteral? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType,
             global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource2? source);
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource? source);
         partial void ProcessListRepoTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -116,14 +116,14 @@ namespace LangSmith
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
             global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType = default,
             global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource2? source = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource? source = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -183,14 +183,14 @@ namespace LangSmith
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
             global::LangSmith.TrueFalseLiteral? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType2? repoType = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType? repoType = default,
             global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>? repoTypes = default,
-            global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource2? source = default,
+            global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource? source = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

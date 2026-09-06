@@ -112,7 +112,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        public global::LangSmith.RepoWithLookupsSource2? Source { get; set; }
+        public global::LangSmith.RepoWithLookupsSource? Source { get; set; }
 
         /// <summary>
         ///
@@ -263,7 +263,7 @@ namespace LangSmith
             global::System.Guid? originalRepoId,
             global::System.Guid? upstreamRepoId,
             global::System.Collections.Generic.IList<string>? commitTags,
-            global::LangSmith.RepoWithLookupsSource2? source,
+            global::LangSmith.RepoWithLookupsSource? source,
             string? owner,
             bool? likedByAuthUser,
             string? lastCommitHash,

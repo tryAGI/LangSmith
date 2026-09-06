@@ -511,7 +511,7 @@ namespace LangSmith
             string? readme = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::LangSmith.CreateRepoRequestRepoType? repoType = default,
-            global::LangSmith.CreateRepoRequestSource2? source = default,
+            global::LangSmith.CreateRepoRequestSource? source = default,
             bool? restrictedMode = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

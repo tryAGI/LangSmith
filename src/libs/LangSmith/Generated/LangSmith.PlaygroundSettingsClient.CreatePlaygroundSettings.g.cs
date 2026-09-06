@@ -520,7 +520,7 @@ namespace LangSmith
             string? oauthTokenUrl = default,
             string? oauthClientId = default,
             string? oauthClientSecret = default,
-            global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod2? oauthTokenEndpointAuthMethod = default,
+            global::LangSmith.PlaygroundSettingsCreateRequestOauthTokenEndpointAuthMethod? oauthTokenEndpointAuthMethod = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? oauthParams = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? oauthHeaders = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

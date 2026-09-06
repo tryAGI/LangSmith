@@ -132,7 +132,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
-        public global::System.Collections.Generic.IList<string>? Groups { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Groups { get; set; }
 
         /// <summary>
         ///
@@ -215,7 +215,7 @@ namespace LangSmith
             string? searchFilter,
             bool? useExperimentalSearch,
             global::LangSmith.RunStatsGroupBy? groupBy,
-            global::System.Collections.Generic.IList<string>? groups,
+            global::System.Collections.Generic.IList<string?>? groups,
             global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? select,
             global::System.Guid? referenceDatasetId,
             bool? includeDetails)

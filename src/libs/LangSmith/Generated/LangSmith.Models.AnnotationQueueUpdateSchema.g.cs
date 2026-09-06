@@ -68,7 +68,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewer_access_mode")]
-        public global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? ReviewerAccessMode { get; set; }
+        public global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode? ReviewerAccessMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -108,7 +108,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing, object>? metadata,
-            global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode2? reviewerAccessMode)
+            global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode? reviewerAccessMode)
         {
             this.Name = name;
             this.Description = description;

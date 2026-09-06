@@ -94,7 +94,7 @@ namespace LangSmith
             string? searchFilter = default,
             bool? useExperimentalSearch = default,
             global::LangSmith.RunStatsGroupBy? groupBy = default,
-            global::System.Collections.Generic.IList<string>? groups = default,
+            global::System.Collections.Generic.IList<string?>? groups = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunStatsSelect>? select = default,
             global::System.Guid? referenceDatasetId = default,
             bool? includeDetails = default,
