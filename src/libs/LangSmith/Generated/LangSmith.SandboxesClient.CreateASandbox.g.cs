@@ -704,6 +704,11 @@ namespace LangSmith
         ///   false → never: always cold-boot.<br/>
         /// Applies to this request only.
         /// </param>
+        /// <param name="runConfig">
+        /// RunConfig overrides the snapshot's run config for this sandbox: user and<br/>
+        /// work_dir replace the snapshot's, env_vars merge over it. The result is<br/>
+        /// what the sandbox boots with, and what a snapshot captured from it carries.
+        /// </param>
         /// <param name="snapshot">
         /// Snapshot is a Docker-style name or name:tag reference to boot from. A bare name resolves to name:latest.
         /// </param>
@@ -729,6 +734,7 @@ namespace LangSmith
             bool? preserveMemoryOnStop = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             bool? restoreMemory = default,
+            global::LangSmith.SandboxapiRunConfig? runConfig = default,
             string? snapshot = default,
             string? snapshotId = default,
             string? snapshotName = default,
@@ -751,6 +757,7 @@ namespace LangSmith
                 PreserveMemoryOnStop = preserveMemoryOnStop,
                 ProxyConfig = proxyConfig,
                 RestoreMemory = restoreMemory,
+                RunConfig = runConfig,
                 Snapshot = snapshot,
                 SnapshotId = snapshotId,
                 SnapshotName = snapshotName,

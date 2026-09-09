@@ -62,6 +62,12 @@ namespace LangSmith
         /// Labels seed the captured snapshot's labels.
         /// </param>
         /// <param name="requestName"></param>
+        /// <param name="runConfig">
+        /// RunConfig overrides the runtime configuration the snapshot carries: for a<br/>
+        /// docker_image export, the image's USER, WORKDIR and ENV; for a capture of<br/>
+        /// the running VM, the sandbox's own. user and work_dir replace, env_vars<br/>
+        /// merge.
+        /// </param>
         /// <param name="tag">
         /// mutable Docker-style tag; defaults to "latest"
         /// </param>
@@ -77,6 +83,7 @@ namespace LangSmith
             long? fsCapacityBytes = default,
             bool? includeMemory = default,
             global::System.Collections.Generic.Dictionary<string, string>? labels = default,
+            global::LangSmith.SandboxapiRunConfig? runConfig = default,
             string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -600,7 +600,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
-            string? groupBy = default,
+            global::LangSmith.RunRulesValidateSchemaGroupBy? groupBy = default,
             global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit = default,
             global::System.Guid? tracerSessionIssueId = default,
             object? testInputs = default,

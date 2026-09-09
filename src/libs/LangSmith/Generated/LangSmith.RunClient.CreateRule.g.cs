@@ -574,7 +574,7 @@ namespace LangSmith
             int? evaluatorVersion = default,
             bool? createAlignmentQueue = default,
             bool? includeExtendedStats = default,
-            string? groupBy = default,
+            global::LangSmith.RunRulesCreateSchemaGroupBy? groupBy = default,
             global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit = default,
             global::System.Guid? tracerSessionIssueId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

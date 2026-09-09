@@ -48,6 +48,15 @@ namespace LangSmith
         public string? RegistryId { get; set; }
 
         /// <summary>
+        /// RunConfig overrides the runtime configuration taken from the Docker image.<br/>
+        /// Every sandbox created from the snapshot runs as the image's USER, in its<br/>
+        /// WORKDIR, with its ENV beneath the sandbox's own env_vars; user and<br/>
+        /// work_dir given here replace the image's, and env_vars merge over it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
+
+        /// <summary>
         /// mutable Docker-style tag; defaults to "latest"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
@@ -72,6 +81,12 @@ namespace LangSmith
         /// Labels seed the snapshot's labels, overriding any label of the same key derived from the Docker image.
         /// </param>
         /// <param name="registryId"></param>
+        /// <param name="runConfig">
+        /// RunConfig overrides the runtime configuration taken from the Docker image.<br/>
+        /// Every sandbox created from the snapshot runs as the image's USER, in its<br/>
+        /// WORKDIR, with its ENV beneath the sandbox's own env_vars; user and<br/>
+        /// work_dir given here replace the image's, and env_vars merge over it.
+        /// </param>
         /// <param name="tag">
         /// mutable Docker-style tag; defaults to "latest"
         /// </param>
@@ -85,6 +100,7 @@ namespace LangSmith
             string? description,
             global::System.Collections.Generic.Dictionary<string, string>? labels,
             string? registryId,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? tag)
         {
             this.Description = description;
@@ -93,6 +109,7 @@ namespace LangSmith
             this.Labels = labels;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RegistryId = registryId;
+            this.RunConfig = runConfig;
             this.Tag = tag;
         }
 

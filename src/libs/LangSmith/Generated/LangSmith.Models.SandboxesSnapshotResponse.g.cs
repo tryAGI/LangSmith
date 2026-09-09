@@ -83,6 +83,13 @@ namespace LangSmith
         public string? RegistryId { get; set; }
 
         /// <summary>
+        /// RunConfig is what sandboxes from this snapshot boot with. Absent on<br/>
+        /// snapshots built before it was recorded, which run as root with their own env.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_sandbox_id")]
@@ -140,6 +147,10 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="registryId"></param>
+        /// <param name="runConfig">
+        /// RunConfig is what sandboxes from this snapshot boot with. Absent on<br/>
+        /// snapshots built before it was recorded, which run as root with their own env.
+        /// </param>
         /// <param name="sourceSandboxId"></param>
         /// <param name="status"></param>
         /// <param name="statusMessage"></param>
@@ -164,6 +175,7 @@ namespace LangSmith
             long? memorySnapshotSizeBytes,
             string? name,
             string? registryId,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? sourceSandboxId,
             string? status,
             string? statusMessage,
@@ -182,6 +194,7 @@ namespace LangSmith
             this.MemorySnapshotSizeBytes = memorySnapshotSizeBytes;
             this.Name = name;
             this.RegistryId = registryId;
+            this.RunConfig = runConfig;
             this.SourceSandboxId = sourceSandboxId;
             this.Status = status;
             this.StatusMessage = statusMessage;

@@ -4,8 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    ///
+    /// Deprecated: use run_config.env_vars. Rejected when run_config is also set.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class SandboxesExecRequestEnv
     {
 

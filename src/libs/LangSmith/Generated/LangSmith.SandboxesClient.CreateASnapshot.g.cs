@@ -573,6 +573,12 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="registryId"></param>
+        /// <param name="runConfig">
+        /// RunConfig overrides the runtime configuration taken from the Docker image.<br/>
+        /// Every sandbox created from the snapshot runs as the image's USER, in its<br/>
+        /// WORKDIR, with its ENV beneath the sandbox's own env_vars; user and<br/>
+        /// work_dir given here replace the image's, and env_vars merge over it.
+        /// </param>
         /// <param name="tag">
         /// mutable Docker-style tag; defaults to "latest"
         /// </param>
@@ -586,6 +592,7 @@ namespace LangSmith
             string? description = default,
             global::System.Collections.Generic.Dictionary<string, string>? labels = default,
             string? registryId = default,
+            global::LangSmith.SandboxapiRunConfig? runConfig = default,
             string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -598,6 +605,7 @@ namespace LangSmith
                 Labels = labels,
                 Name = name,
                 RegistryId = registryId,
+                RunConfig = runConfig,
                 Tag = tag,
             };
 

@@ -93,6 +93,12 @@ namespace LangSmith
         public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
 
         /// <summary>
+        /// RunConfig is what the sandbox's commands run with: the user, working directory and base env beneath env_vars.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_class")]
@@ -163,6 +169,9 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="preserveMemoryOnStop"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="runConfig">
+        /// RunConfig is what the sandbox's commands run with: the user, working directory and base env beneath env_vars.
+        /// </param>
         /// <param name="sizeClass"></param>
         /// <param name="snapshotId"></param>
         /// <param name="status"></param>
@@ -189,6 +198,7 @@ namespace LangSmith
             string? name,
             bool? preserveMemoryOnStop,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? sizeClass,
             string? snapshotId,
             string? status,
@@ -212,6 +222,7 @@ namespace LangSmith
             this.Name = name;
             this.PreserveMemoryOnStop = preserveMemoryOnStop;
             this.ProxyConfig = proxyConfig;
+            this.RunConfig = runConfig;
             this.SizeClass = sizeClass;
             this.SnapshotId = snapshotId;
             this.Status = status;

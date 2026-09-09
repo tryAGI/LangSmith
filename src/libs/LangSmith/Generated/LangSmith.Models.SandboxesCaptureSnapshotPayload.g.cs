@@ -56,6 +56,15 @@ namespace LangSmith
         public required string Name { get; set; }
 
         /// <summary>
+        /// RunConfig overrides the runtime configuration the snapshot carries: for a<br/>
+        /// docker_image export, the image's USER, WORKDIR and ENV; for a capture of<br/>
+        /// the running VM, the sandbox's own. user and work_dir replace, env_vars<br/>
+        /// merge.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
+
+        /// <summary>
         /// mutable Docker-style tag; defaults to "latest"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
@@ -93,6 +102,12 @@ namespace LangSmith
         /// <param name="labels">
         /// Labels seed the captured snapshot's labels.
         /// </param>
+        /// <param name="runConfig">
+        /// RunConfig overrides the runtime configuration the snapshot carries: for a<br/>
+        /// docker_image export, the image's USER, WORKDIR and ENV; for a capture of<br/>
+        /// the running VM, the sandbox's own. user and work_dir replace, env_vars<br/>
+        /// merge.
+        /// </param>
         /// <param name="tag">
         /// mutable Docker-style tag; defaults to "latest"
         /// </param>
@@ -107,6 +122,7 @@ namespace LangSmith
             long? fsCapacityBytes,
             bool? includeMemory,
             global::System.Collections.Generic.Dictionary<string, string>? labels,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? tag)
         {
             this.Checkpoint = checkpoint;
@@ -116,6 +132,7 @@ namespace LangSmith
             this.IncludeMemory = includeMemory;
             this.Labels = labels;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunConfig = runConfig;
             this.Tag = tag;
         }
 

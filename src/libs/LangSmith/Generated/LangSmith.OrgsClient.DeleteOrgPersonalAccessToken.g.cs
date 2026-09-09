@@ -55,7 +55,10 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Delete Org Personal Access Token
+        /// Delete Org Personal Access Token<br/>
+        /// Delete a personal access token, removing the record entirely.<br/>
+        /// Callers may always delete their own tokens; organization admins may delete<br/>
+        /// any member's.
         /// </summary>
         /// <param name="patId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -75,7 +78,10 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Delete Org Personal Access Token
+        /// Delete Org Personal Access Token<br/>
+        /// Delete a personal access token, removing the record entirely.<br/>
+        /// Callers may always delete their own tokens; organization admins may delete<br/>
+        /// any member's.
         /// </summary>
         /// <param name="patId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -339,6 +345,43 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The personal access token does not exist, or belongs to another member and the caller may not administer other members' tokens.
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::LangSmith.ProblemDetails? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::LangSmith.ProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::LangSmith.ProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.ProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {

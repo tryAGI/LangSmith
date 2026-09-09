@@ -51,6 +51,14 @@ namespace LangSmith
         public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
 
         /// <summary>
+        /// RunConfig changes what subsequent commands run with: user and work_dir<br/>
+        /// replace the current values, env_vars merge over them. Commands already<br/>
+        /// running are unaffected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_ids")]
@@ -80,6 +88,11 @@ namespace LangSmith
         /// </param>
         /// <param name="name"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="runConfig">
+        /// RunConfig changes what subsequent commands run with: user and work_dir<br/>
+        /// replace the current values, env_vars merge over them. Commands already<br/>
+        /// running are unaffected.
+        /// </param>
         /// <param name="tagValueIds"></param>
         /// <param name="vcpus"></param>
 #if NET7_0_OR_GREATER
@@ -93,6 +106,7 @@ namespace LangSmith
             long? memBytes,
             string? name,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             global::System.Collections.Generic.IList<string>? tagValueIds,
             int? vcpus)
         {
@@ -103,6 +117,7 @@ namespace LangSmith
             this.MemBytes = memBytes;
             this.Name = name;
             this.ProxyConfig = proxyConfig;
+            this.RunConfig = runConfig;
             this.TagValueIds = tagValueIds;
             this.Vcpus = vcpus;
         }

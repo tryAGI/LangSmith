@@ -643,6 +643,14 @@ namespace LangSmith
         /// The response includes the thread counts, run counts, latency percentiles, rates, token totals, and cost totals requested in `select`.<br/>
         /// Self-hosted deployments require LangSmith `v0.17` or later.
         /// </summary>
+        /// <param name="filter">
+        /// `filter` is a deprecated, unscoped LangSmith filter expression evaluated<br/>
+        /// against trace root runs. Kept for compatibility with deployments that<br/>
+        /// serve this endpoint via the legacy ClickHouse backend (no SmithDB query<br/>
+        /// service configured); prefer `trace_filter`, `tree_filter`, or<br/>
+        /// `thread_filter` otherwise, since those require SmithDB.<br/>
+        /// Example: eq(status, "error")
+        /// </param>
         /// <param name="maxStartTime">
         /// `max_start_time` is the exclusive upper bound on thread activity (RFC3339 date-time). Defaults to now (UTC) when omitted.
         /// </param>
@@ -675,6 +683,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadStatsResponseBody> QueryThreadStatsAsync(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadStatsSelectField> select,
+            string? filter = default,
             global::System.DateTime? maxStartTime = default,
             global::System.DateTime? minStartTime = default,
             string? threadFilter = default,
@@ -685,6 +694,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.ThreadsQueryThreadStatsRequestBody
             {
+                Filter = filter,
                 MaxStartTime = maxStartTime,
                 MinStartTime = minStartTime,
                 ProjectId = projectId,

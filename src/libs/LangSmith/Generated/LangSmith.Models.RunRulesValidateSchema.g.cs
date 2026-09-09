@@ -199,7 +199,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        public string? GroupBy { get; set; }
+        public global::LangSmith.RunRulesValidateSchemaGroupBy? GroupBy { get; set; }
 
         /// <summary>
         ///
@@ -351,7 +351,7 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
-            string? groupBy,
+            global::LangSmith.RunRulesValidateSchemaGroupBy? groupBy,
             global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit,
             global::System.Guid? tracerSessionIssueId,
             object? testInputs,

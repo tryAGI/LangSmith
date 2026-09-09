@@ -89,6 +89,14 @@ namespace LangSmith
         public bool? RestoreMemory { get; set; }
 
         /// <summary>
+        /// RunConfig overrides the snapshot's run config for this sandbox: user and<br/>
+        /// work_dir replace the snapshot's, env_vars merge over it. The result is<br/>
+        /// what the sandbox boots with, and what a snapshot captured from it carries.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
+
+        /// <summary>
         /// Snapshot is a Docker-style name or name:tag reference to boot from. A bare name resolves to name:latest.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("snapshot")]
@@ -157,6 +165,11 @@ namespace LangSmith
         ///   false → never: always cold-boot.<br/>
         /// Applies to this request only.
         /// </param>
+        /// <param name="runConfig">
+        /// RunConfig overrides the snapshot's run config for this sandbox: user and<br/>
+        /// work_dir replace the snapshot's, env_vars merge over it. The result is<br/>
+        /// what the sandbox boots with, and what a snapshot captured from it carries.
+        /// </param>
         /// <param name="snapshot">
         /// Snapshot is a Docker-style name or name:tag reference to boot from. A bare name resolves to name:latest.
         /// </param>
@@ -182,6 +195,7 @@ namespace LangSmith
             bool? preserveMemoryOnStop,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             bool? restoreMemory,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? snapshot,
             string? snapshotId,
             string? snapshotName,
@@ -200,6 +214,7 @@ namespace LangSmith
             this.PreserveMemoryOnStop = preserveMemoryOnStop;
             this.ProxyConfig = proxyConfig;
             this.RestoreMemory = restoreMemory;
+            this.RunConfig = runConfig;
             this.Snapshot = snapshot;
             this.SnapshotId = snapshotId;
             this.SnapshotName = snapshotName;

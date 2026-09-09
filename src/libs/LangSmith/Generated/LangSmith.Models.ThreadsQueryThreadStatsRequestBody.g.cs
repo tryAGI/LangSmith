@@ -9,6 +9,18 @@ namespace LangSmith
     public sealed partial class ThreadsQueryThreadStatsRequestBody
     {
         /// <summary>
+        /// `filter` is a deprecated, unscoped LangSmith filter expression evaluated<br/>
+        /// against trace root runs. Kept for compatibility with deployments that<br/>
+        /// serve this endpoint via the legacy ClickHouse backend (no SmithDB query<br/>
+        /// service configured); prefer `trace_filter`, `tree_filter`, or<br/>
+        /// `thread_filter` otherwise, since those require SmithDB.<br/>
+        /// Example: eq(status, "error")
+        /// </summary>
+        /// <example>eq(status, "error")</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
+        public string? Filter { get; set; }
+
+        /// <summary>
         /// `max_start_time` is the exclusive upper bound on thread activity (RFC3339 date-time). Defaults to now (UTC) when omitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_start_time")]
@@ -79,6 +91,14 @@ namespace LangSmith
         /// `select` lists the aggregate statistics to compute and return. At least one value is required.<br/>
         /// Example: [THREAD_COUNT, TRACE_COUNT, TOTAL_TOKENS, TOTAL_COST]
         /// </param>
+        /// <param name="filter">
+        /// `filter` is a deprecated, unscoped LangSmith filter expression evaluated<br/>
+        /// against trace root runs. Kept for compatibility with deployments that<br/>
+        /// serve this endpoint via the legacy ClickHouse backend (no SmithDB query<br/>
+        /// service configured); prefer `trace_filter`, `tree_filter`, or<br/>
+        /// `thread_filter` otherwise, since those require SmithDB.<br/>
+        /// Example: eq(status, "error")
+        /// </param>
         /// <param name="maxStartTime">
         /// `max_start_time` is the exclusive upper bound on thread activity (RFC3339 date-time). Defaults to now (UTC) when omitted.
         /// </param>
@@ -103,12 +123,14 @@ namespace LangSmith
         public ThreadsQueryThreadStatsRequestBody(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadStatsSelectField> select,
+            string? filter,
             global::System.DateTime? maxStartTime,
             global::System.DateTime? minStartTime,
             string? threadFilter,
             string? traceFilter,
             string? treeFilter)
         {
+            this.Filter = filter;
             this.MaxStartTime = maxStartTime;
             this.MinStartTime = minStartTime;
             this.ProjectId = projectId;
