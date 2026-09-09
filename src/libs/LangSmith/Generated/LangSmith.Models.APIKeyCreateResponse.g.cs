@@ -59,6 +59,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revoked_at")]
+        public global::System.DateTime? RevokedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_names")]
         public global::System.Collections.Generic.IList<string>? WorkspaceNames { get; set; }
 
@@ -115,6 +121,7 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="lastUsedAt"></param>
         /// <param name="expiresAt"></param>
+        /// <param name="revokedAt"></param>
         /// <param name="workspaceNames"></param>
         /// <param name="defaultWorkspaceName"></param>
         /// <param name="roleId"></param>
@@ -132,6 +139,7 @@ namespace LangSmith
             global::System.DateTime? createdAt,
             global::System.DateTime? lastUsedAt,
             global::System.DateTime? expiresAt,
+            global::System.DateTime? revokedAt,
             global::System.Collections.Generic.IList<string>? workspaceNames,
             string? defaultWorkspaceName,
             global::System.Guid? roleId,
@@ -145,6 +153,7 @@ namespace LangSmith
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.LastUsedAt = lastUsedAt;
             this.ExpiresAt = expiresAt;
+            this.RevokedAt = revokedAt;
             this.WorkspaceNames = workspaceNames;
             this.DefaultWorkspaceName = defaultWorkspaceName;
             this.RoleId = roleId;

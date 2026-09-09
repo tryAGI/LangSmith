@@ -1255,6 +1255,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ReadOrgEncryptedSecrets,
+        /// <summary>
+        ///
+        /// </summary>
         ReadRoleAccessPolicies,
         /// <summary>
         ///
@@ -1300,6 +1304,10 @@ namespace LangSmith
         ///
         /// </summary>
         RevokeOauthGrant,
+        /// <summary>
+        ///
+        /// </summary>
+        RevokePersonalAccessToken,
         /// <summary>
         ///
         /// </summary>
@@ -2061,6 +2069,7 @@ namespace LangSmith
                 AuditLogOperation.ReadFeedback => "read_feedback",
                 AuditLogOperation.ReadFeedbacks => "read_feedbacks",
                 AuditLogOperation.ReadModelPriceMap => "read_model_price_map",
+                AuditLogOperation.ReadOrgEncryptedSecrets => "read_org_encrypted_secrets",
                 AuditLogOperation.ReadRoleAccessPolicies => "read_role_access_policies",
                 AuditLogOperation.ReadRun => "read_run",
                 AuditLogOperation.ReadRuns => "read_runs",
@@ -2073,6 +2082,7 @@ namespace LangSmith
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
                 AuditLogOperation.RevokeOauthGrant => "revoke_oauth_grant",
+                AuditLogOperation.RevokePersonalAccessToken => "revoke_personal_access_token",
                 AuditLogOperation.RotateOauthClientSecret => "rotate_oauth_client_secret",
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
@@ -2503,6 +2513,7 @@ namespace LangSmith
                 "read_feedback" => AuditLogOperation.ReadFeedback,
                 "read_feedbacks" => AuditLogOperation.ReadFeedbacks,
                 "read_model_price_map" => AuditLogOperation.ReadModelPriceMap,
+                "read_org_encrypted_secrets" => AuditLogOperation.ReadOrgEncryptedSecrets,
                 "read_role_access_policies" => AuditLogOperation.ReadRoleAccessPolicies,
                 "read_run" => AuditLogOperation.ReadRun,
                 "read_runs" => AuditLogOperation.ReadRuns,
@@ -2515,6 +2526,7 @@ namespace LangSmith
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
                 "revoke_oauth_grant" => AuditLogOperation.RevokeOauthGrant,
+                "revoke_personal_access_token" => AuditLogOperation.RevokePersonalAccessToken,
                 "rotate_oauth_client_secret" => AuditLogOperation.RotateOauthClientSecret,
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
