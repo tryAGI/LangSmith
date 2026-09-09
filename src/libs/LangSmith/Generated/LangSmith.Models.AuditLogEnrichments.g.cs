@@ -51,6 +51,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? ResourceIds { get; set; }
 
         /// <summary>
+        /// LangSmith user ID of the member the resource belonged to, set when that is not the actor.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resource_owner_ls_user_id")]
+        public string? ResourceOwnerLsUserId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,9 @@ namespace LangSmith
         /// <param name="xForwardedFor"></param>
         /// <param name="responseStatusCode"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="resourceOwnerLsUserId">
+        /// LangSmith user ID of the member the resource belonged to, set when that is not the actor.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,7 +85,8 @@ namespace LangSmith
             int? clientPort,
             string? xForwardedFor,
             int? responseStatusCode,
-            global::System.Collections.Generic.IList<string>? resourceIds)
+            global::System.Collections.Generic.IList<string>? resourceIds,
+            string? resourceOwnerLsUserId)
         {
             this.RequestMethod = requestMethod;
             this.RequestPath = requestPath;
@@ -85,6 +95,7 @@ namespace LangSmith
             this.XForwardedFor = xForwardedFor;
             this.ResponseStatusCode = responseStatusCode;
             this.ResourceIds = resourceIds;
+            this.ResourceOwnerLsUserId = resourceOwnerLsUserId;
         }
 
         /// <summary>

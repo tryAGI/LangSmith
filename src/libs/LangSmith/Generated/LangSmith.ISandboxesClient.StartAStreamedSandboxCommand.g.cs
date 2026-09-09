@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LangSmith
 {
     public partial interface ISandboxesClient
@@ -31,10 +33,11 @@ namespace LangSmith
         /// CommandID makes the request idempotent: a known ID attaches to that<br/>
         /// running command instead of starting a second one.
         /// </param>
-        /// <param name="cwd"></param>
-        /// <param name="env"></param>
         /// <param name="idleTimeoutSeconds">
         /// 0 = default, -1 = never idle-kill
+        /// </param>
+        /// <param name="runConfig">
+        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
         /// </param>
         /// <param name="shell"></param>
         /// <param name="stdin">
@@ -55,9 +58,8 @@ namespace LangSmith
             string sandboxId,
             global::System.Collections.Generic.IList<string>? command = default,
             string? commandId = default,
-            string? cwd = default,
-            global::System.Collections.Generic.Dictionary<string, string>? env = default,
             int? idleTimeoutSeconds = default,
+            global::LangSmith.SandboxapiRunConfig? runConfig = default,
             string? shell = default,
             byte[]? stdin = default,
             int? timeoutSeconds = default,

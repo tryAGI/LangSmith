@@ -194,7 +194,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
-        public string? GroupBy { get; set; }
+        public global::LangSmith.RunRulesUpdateSchemaGroupBy? GroupBy { get; set; }
 
         /// <summary>
         ///
@@ -291,7 +291,7 @@ namespace LangSmith
             int? evaluatorVersion,
             bool? createAlignmentQueue,
             bool? includeExtendedStats,
-            string? groupBy,
+            global::LangSmith.RunRulesUpdateSchemaGroupBy? groupBy,
             global::LangSmith.RunRuleSpendLimitSchemaInput? spendLimit)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));

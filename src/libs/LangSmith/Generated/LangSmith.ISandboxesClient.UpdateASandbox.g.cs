@@ -48,6 +48,11 @@ namespace LangSmith
         /// </param>
         /// <param name="requestName"></param>
         /// <param name="proxyConfig"></param>
+        /// <param name="runConfig">
+        /// RunConfig changes what subsequent commands run with: user and work_dir<br/>
+        /// replace the current values, env_vars merge over them. Commands already<br/>
+        /// running are unaffected.
+        /// </param>
         /// <param name="tagValueIds"></param>
         /// <param name="vcpus"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -62,6 +67,7 @@ namespace LangSmith
             long? memBytes = default,
             string? requestName = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
+            global::LangSmith.SandboxapiRunConfig? runConfig = default,
             global::System.Collections.Generic.IList<string>? tagValueIds = default,
             int? vcpus = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

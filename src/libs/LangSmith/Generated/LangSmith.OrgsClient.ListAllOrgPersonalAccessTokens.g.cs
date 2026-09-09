@@ -1,14 +1,12 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 namespace LangSmith
 {
-    public partial class SandboxesClient
+    public partial class OrgsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_ExecuteASandboxCommandServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListAllOrgPersonalAccessTokensServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -22,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ExecuteASandboxCommandSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListAllOrgPersonalAccessTokensSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -36,48 +34,43 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ExecuteASandboxCommandSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListAllOrgPersonalAccessTokensSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ExecuteASandboxCommandSecurityRequirement0,
+            {                s_ListAllOrgPersonalAccessTokensSecurityRequirement0,
             };
-        partial void PrepareExecuteASandboxCommandArguments(
+        partial void PrepareListAllOrgPersonalAccessTokensArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sandboxId,
-            global::LangSmith.SandboxesExecRequest request);
-        partial void PrepareExecuteASandboxCommandRequest(
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds);
+        partial void PrepareListAllOrgPersonalAccessTokensRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sandboxId,
-            global::LangSmith.SandboxesExecRequest request);
-        partial void ProcessExecuteASandboxCommandResponse(
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds);
+        partial void ProcessListAllOrgPersonalAccessTokensResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessExecuteASandboxCommandResponseContent(
+        partial void ProcessListAllOrgPersonalAccessTokensResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Execute a sandbox command<br/>
-        /// Execute a command inside a sandbox and return stdout, stderr, and exit code. Use the streaming execute endpoints for long-running commands that may exceed the synchronous request deadline.
+        /// List All Org Personal Access Tokens<br/>
+        /// List every organization member's personal access tokens.
         /// </summary>
-        /// <param name="sandboxId"></param>
-        /// <param name="request"></param>
+        /// <param name="workspaceIds">
+        /// Default Value: []
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesExecResponse> ExecuteASandboxCommandAsync(
-            string sandboxId,
-
-            global::LangSmith.SandboxesExecRequest request,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>> ListAllOrgPersonalAccessTokensAsync(
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ExecuteASandboxCommandAsResponseAsync(
-                sandboxId: sandboxId,
-
-                request: request,
+            var __response = await ListAllOrgPersonalAccessTokensAsResponseAsync(
+                workspaceIds: workspaceIds,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -85,35 +78,31 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Execute a sandbox command<br/>
-        /// Execute a command inside a sandbox and return stdout, stderr, and exit code. Use the streaming execute endpoints for long-running commands that may exceed the synchronous request deadline.
+        /// List All Org Personal Access Tokens<br/>
+        /// List every organization member's personal access tokens.
         /// </summary>
-        /// <param name="sandboxId"></param>
-        /// <param name="request"></param>
+        /// <param name="workspaceIds">
+        /// Default Value: []
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesExecResponse>> ExecuteASandboxCommandAsResponseAsync(
-            string sandboxId,
-
-            global::LangSmith.SandboxesExecRequest request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>>> ListAllOrgPersonalAccessTokensAsResponseAsync(
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareExecuteASandboxCommandArguments(
+            PrepareListAllOrgPersonalAccessTokensArguments(
                 httpClient: HttpClient,
-                sandboxId: ref sandboxId,
-                request: request);
+                workspaceIds: workspaceIds);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ExecuteASandboxCommandSecurityRequirements,
-                operationName: "ExecuteASandboxCommandAsync");
+                securityRequirements: s_ListAllOrgPersonalAccessTokensSecurityRequirements,
+                operationName: "ListAllOrgPersonalAccessTokensAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -133,17 +122,20 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v2/sandboxes/{sandboxId}/execute",
+                                path: "/api/v1/orgs/current/members/personal-access-tokens",
                                 baseUri: ResolveBaseUri(
-                                servers: s_ExecuteASandboxCommandServers,
+                                servers: s_ListAllOrgPersonalAccessTokensServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -166,12 +158,6 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -180,11 +166,10 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareExecuteASandboxCommandRequest(
+                PrepareListAllOrgPersonalAccessTokensRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sandboxId: sandboxId!,
-                    request: request);
+                    workspaceIds: workspaceIds);
 
                 return __httpRequest;
             }
@@ -201,10 +186,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExecuteASandboxCommand",
-                                methodName: "ExecuteASandboxCommandAsync",
-                                pathTemplate: "$\"/api/v2/sandboxes/{sandboxId}/execute\"",
-                                httpMethod: "POST",
+                                operationId: "ListAllOrgPersonalAccessTokens",
+                                methodName: "ListAllOrgPersonalAccessTokensAsync",
+                                pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -235,10 +220,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExecuteASandboxCommand",
-                                methodName: "ExecuteASandboxCommandAsync",
-                                pathTemplate: "$\"/api/v2/sandboxes/{sandboxId}/execute\"",
-                                httpMethod: "POST",
+                                operationId: "ListAllOrgPersonalAccessTokens",
+                                methodName: "ListAllOrgPersonalAccessTokensAsync",
+                                pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -276,10 +261,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExecuteASandboxCommand",
-                                methodName: "ExecuteASandboxCommandAsync",
-                                pathTemplate: "$\"/api/v2/sandboxes/{sandboxId}/execute\"",
-                                httpMethod: "POST",
+                                operationId: "ListAllOrgPersonalAccessTokens",
+                                methodName: "ListAllOrgPersonalAccessTokensAsync",
+                                pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -316,7 +301,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessExecuteASandboxCommandResponse(
+                ProcessListAllOrgPersonalAccessTokensResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -324,10 +309,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExecuteASandboxCommand",
-                                methodName: "ExecuteASandboxCommandAsync",
-                                pathTemplate: "$\"/api/v2/sandboxes/{sandboxId}/execute\"",
-                                httpMethod: "POST",
+                                operationId: "ListAllOrgPersonalAccessTokens",
+                                methodName: "ListAllOrgPersonalAccessTokensAsync",
+                                pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -346,10 +331,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExecuteASandboxCommand",
-                                methodName: "ExecuteASandboxCommandAsync",
-                                pathTemplate: "$\"/api/v2/sandboxes/{sandboxId}/execute\"",
-                                httpMethod: "POST",
+                                operationId: "ListAllOrgPersonalAccessTokens",
+                                methodName: "ListAllOrgPersonalAccessTokensAsync",
+                                pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -363,61 +348,24 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request
-                            if ((int)__response.StatusCode == 400)
-                            {
-                                string? __content_400 = null;
-                                global::System.Exception? __exception_400 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_400 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_400 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_400 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_400,
-                                    responseBody: __content_400,
-                                    responseObject: __value_400,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Forbidden
+                            // The caller may not view other members' tokens.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_403 = null;
+                                global::LangSmith.ProblemDetails? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.ProblemDetails.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::LangSmith.ProblemDetails.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -426,7 +374,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.ProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -437,98 +385,24 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Not Found
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_404 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseObject: __value_404,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // The sandbox closed its connection during execution
-                            if ((int)__response.StatusCode == 409)
-                            {
-                                string? __content_409 = null;
-                                global::System.Exception? __exception_409 = null;
-                                global::LangSmith.SharedProblemDetails? __value_409 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::LangSmith.SharedProblemDetails.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_409 = global::LangSmith.SharedProblemDetails.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_409 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_409,
-                                    responseBody: __content_409,
-                                    responseObject: __value_409,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Synchronous execution exceeded the request deadline
+                            // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::LangSmith.SharedProblemDetails? __value_422 = null;
+                                global::LangSmith.HTTPValidationError? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.SharedProblemDetails.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.SharedProblemDetails.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -537,49 +411,12 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
                                     responseBody: __content_422,
                                     responseObject: __value_422,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Internal Server Error
-                            if ((int)__response.StatusCode == 500)
-                            {
-                                string? __content_500 = null;
-                                global::System.Exception? __exception_500 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_500 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_500, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_500 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_500, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_500 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_500,
-                                    responseBody: __content_500,
-                                    responseObject: __value_500,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -598,7 +435,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessExecuteASandboxCommandResponseContent(
+                                ProcessListAllOrgPersonalAccessTokensResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -607,9 +444,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.SandboxesExecResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesExecResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -639,9 +476,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.SandboxesExecResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesExecResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.APIKeyGetResponse>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -680,45 +517,6 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Execute a sandbox command<br/>
-        /// Execute a command inside a sandbox and return stdout, stderr, and exit code. Use the streaming execute endpoints for long-running commands that may exceed the synchronous request deadline.
-        /// </summary>
-        /// <param name="sandboxId"></param>
-        /// <param name="command">
-        /// Command accepts either a shell command string or an argv string array.
-        /// </param>
-        /// <param name="runConfig">
-        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
-        /// </param>
-        /// <param name="shell"></param>
-        /// <param name="timeoutSeconds"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesExecResponse> ExecuteASandboxCommandAsync(
-            string sandboxId,
-            global::System.Collections.Generic.IList<string>? command = default,
-            global::LangSmith.SandboxapiRunConfig? runConfig = default,
-            string? shell = default,
-            int? timeoutSeconds = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.SandboxesExecRequest
-            {
-                Command = command,
-                RunConfig = runConfig,
-                Shell = shell,
-                TimeoutSeconds = timeoutSeconds,
-            };
-
-            return await ExecuteASandboxCommandAsync(
-                sandboxId: sandboxId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

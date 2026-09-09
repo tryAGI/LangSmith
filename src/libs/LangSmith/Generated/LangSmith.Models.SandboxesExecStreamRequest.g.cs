@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -22,15 +24,17 @@ namespace LangSmith
         public string? CommandId { get; set; }
 
         /// <summary>
-        ///
+        /// Deprecated: use run_config.work_dir. Rejected when run_config is also set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwd")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Cwd { get; set; }
 
         /// <summary>
-        ///
+        /// Deprecated: use run_config.env_vars. Rejected when run_config is also set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("env")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? Env { get; set; }
 
         /// <summary>
@@ -38,6 +42,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_seconds")]
         public int? IdleTimeoutSeconds { get; set; }
+
+        /// <summary>
+        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
 
         /// <summary>
         ///
@@ -81,10 +91,11 @@ namespace LangSmith
         /// CommandID makes the request idempotent: a known ID attaches to that<br/>
         /// running command instead of starting a second one.
         /// </param>
-        /// <param name="cwd"></param>
-        /// <param name="env"></param>
         /// <param name="idleTimeoutSeconds">
         /// 0 = default, -1 = never idle-kill
+        /// </param>
+        /// <param name="runConfig">
+        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
         /// </param>
         /// <param name="shell"></param>
         /// <param name="stdin">
@@ -104,9 +115,8 @@ namespace LangSmith
         public SandboxesExecStreamRequest(
             global::System.Collections.Generic.IList<string>? command,
             string? commandId,
-            string? cwd,
-            global::System.Collections.Generic.Dictionary<string, string>? env,
             int? idleTimeoutSeconds,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? shell,
             byte[]? stdin,
             int? timeoutSeconds,
@@ -114,9 +124,8 @@ namespace LangSmith
         {
             this.Command = command;
             this.CommandId = commandId;
-            this.Cwd = cwd;
-            this.Env = env;
             this.IdleTimeoutSeconds = idleTimeoutSeconds;
+            this.RunConfig = runConfig;
             this.Shell = shell;
             this.Stdin = stdin;
             this.TimeoutSeconds = timeoutSeconds;

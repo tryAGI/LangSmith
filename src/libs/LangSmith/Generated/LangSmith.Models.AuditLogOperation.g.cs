@@ -99,7 +99,15 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateAgent,
+        /// <summary>
+        ///
+        /// </summary>
         CreateAgentAuthConnection,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateAgentRuntimeBinding,
         /// <summary>
         ///
         /// </summary>
@@ -991,6 +999,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ListAllOrgPersonalAccessTokens,
+        /// <summary>
+        ///
+        /// </summary>
         ListAnnotationQueues,
         /// <summary>
         ///
@@ -1387,6 +1399,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateAgent,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateAgentAuthConnection,
         /// <summary>
         ///
@@ -1756,7 +1772,9 @@ namespace LangSmith
                 AuditLogOperation.ConfirmSsoUserEmail => "confirm_sso_user_email",
                 AuditLogOperation.CountExamples => "count_examples",
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
+                AuditLogOperation.CreateAgent => "create_agent",
                 AuditLogOperation.CreateAgentAuthConnection => "create_agent_auth_connection",
+                AuditLogOperation.CreateAgentRuntimeBinding => "create_agent_runtime_binding",
                 AuditLogOperation.CreateAlertRule => "create_alert_rule",
                 AuditLogOperation.CreateAnnotationQueue => "create_annotation_queue",
                 AuditLogOperation.CreateAnnotationQueueItemStatus => "create_annotation_queue_item_status",
@@ -1979,6 +1997,7 @@ namespace LangSmith
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
                 AuditLogOperation.InvokeGateway => "invoke_gateway",
                 AuditLogOperation.ListAccessPolicies => "list_access_policies",
+                AuditLogOperation.ListAllOrgPersonalAccessTokens => "list_all_org_personal_access_tokens",
                 AuditLogOperation.ListAnnotationQueues => "list_annotation_queues",
                 AuditLogOperation.ListBulkExportDestinations => "list_bulk_export_destinations",
                 AuditLogOperation.ListBulkExports => "list_bulk_exports",
@@ -2078,6 +2097,7 @@ namespace LangSmith
                 AuditLogOperation.UnshareRun => "unshare_run",
                 AuditLogOperation.UnshareThread => "unshare_thread",
                 AuditLogOperation.UpdateAccessPolicy => "update_access_policy",
+                AuditLogOperation.UpdateAgent => "update_agent",
                 AuditLogOperation.UpdateAgentAuthConnection => "update_agent_auth_connection",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
@@ -2194,7 +2214,9 @@ namespace LangSmith
                 "confirm_sso_user_email" => AuditLogOperation.ConfirmSsoUserEmail,
                 "count_examples" => AuditLogOperation.CountExamples,
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
+                "create_agent" => AuditLogOperation.CreateAgent,
                 "create_agent_auth_connection" => AuditLogOperation.CreateAgentAuthConnection,
+                "create_agent_runtime_binding" => AuditLogOperation.CreateAgentRuntimeBinding,
                 "create_alert_rule" => AuditLogOperation.CreateAlertRule,
                 "create_annotation_queue" => AuditLogOperation.CreateAnnotationQueue,
                 "create_annotation_queue_item_status" => AuditLogOperation.CreateAnnotationQueueItemStatus,
@@ -2417,6 +2439,7 @@ namespace LangSmith
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
                 "invoke_gateway" => AuditLogOperation.InvokeGateway,
                 "list_access_policies" => AuditLogOperation.ListAccessPolicies,
+                "list_all_org_personal_access_tokens" => AuditLogOperation.ListAllOrgPersonalAccessTokens,
                 "list_annotation_queues" => AuditLogOperation.ListAnnotationQueues,
                 "list_bulk_export_destinations" => AuditLogOperation.ListBulkExportDestinations,
                 "list_bulk_exports" => AuditLogOperation.ListBulkExports,
@@ -2516,6 +2539,7 @@ namespace LangSmith
                 "unshare_run" => AuditLogOperation.UnshareRun,
                 "unshare_thread" => AuditLogOperation.UnshareThread,
                 "update_access_policy" => AuditLogOperation.UpdateAccessPolicy,
+                "update_agent" => AuditLogOperation.UpdateAgent,
                 "update_agent_auth_connection" => AuditLogOperation.UpdateAgentAuthConnection,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,

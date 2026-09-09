@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LangSmith
 {
     public partial interface ISandboxesClient
@@ -42,8 +44,9 @@ namespace LangSmith
         /// <param name="command">
         /// Command accepts either a shell command string or an argv string array.
         /// </param>
-        /// <param name="cwd"></param>
-        /// <param name="env"></param>
+        /// <param name="runConfig">
+        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
+        /// </param>
         /// <param name="shell"></param>
         /// <param name="timeoutSeconds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -52,8 +55,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesExecResponse> ExecuteASandboxCommandAsync(
             string sandboxId,
             global::System.Collections.Generic.IList<string>? command = default,
-            string? cwd = default,
-            global::System.Collections.Generic.Dictionary<string, string>? env = default,
+            global::LangSmith.SandboxapiRunConfig? runConfig = default,
             string? shell = default,
             int? timeoutSeconds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

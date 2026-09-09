@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -15,16 +17,24 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Command { get; set; }
 
         /// <summary>
-        ///
+        /// Deprecated: use run_config.work_dir. Rejected when run_config is also set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwd")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Cwd { get; set; }
 
         /// <summary>
-        ///
+        /// Deprecated: use run_config.env_vars. Rejected when run_config is also set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("env")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? Env { get; set; }
+
+        /// <summary>
+        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("run_config")]
+        public global::LangSmith.SandboxapiRunConfig? RunConfig { get; set; }
 
         /// <summary>
         ///
@@ -50,8 +60,9 @@ namespace LangSmith
         /// <param name="command">
         /// Command accepts either a shell command string or an argv string array.
         /// </param>
-        /// <param name="cwd"></param>
-        /// <param name="env"></param>
+        /// <param name="runConfig">
+        /// RunConfig overrides, for this command only, the user, working directory and env the sandbox's commands run with.
+        /// </param>
         /// <param name="shell"></param>
         /// <param name="timeoutSeconds"></param>
 #if NET7_0_OR_GREATER
@@ -59,14 +70,12 @@ namespace LangSmith
 #endif
         public SandboxesExecRequest(
             global::System.Collections.Generic.IList<string>? command,
-            string? cwd,
-            global::System.Collections.Generic.Dictionary<string, string>? env,
+            global::LangSmith.SandboxapiRunConfig? runConfig,
             string? shell,
             int? timeoutSeconds)
         {
             this.Command = command;
-            this.Cwd = cwd;
-            this.Env = env;
+            this.RunConfig = runConfig;
             this.Shell = shell;
             this.TimeoutSeconds = timeoutSeconds;
         }
