@@ -33,6 +33,13 @@ namespace LangSmith
         public bool? ByocEnabled { get; set; }
 
         /// <summary>
+        /// ByocExternalID is the organization's assigned AWS external ID, stored only in org config.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_external_id")]
+        public string? ByocExternalId { get; set; }
+
+        /// <summary>
         /// ByocMaxDataPlanes is the maximum number of BYOC data planes this org may have provisioned at once.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byoc_max_data_planes")]
@@ -511,6 +518,10 @@ namespace LangSmith
         /// <param name="byocEnabled">
         /// Indicates whether this org can provision BYOC data planes.
         /// </param>
+        /// <param name="byocExternalId">
+        /// ByocExternalID is the organization's assigned AWS external ID, stored only in org config.<br/>
+        /// Included only in responses
+        /// </param>
         /// <param name="byocMaxDataPlanes">
         /// ByocMaxDataPlanes is the maximum number of BYOC data planes this org may have provisioned at once.
         /// </param>
@@ -762,6 +773,7 @@ namespace LangSmith
             bool? allowCustomIframes,
             bool? arbitraryCostTrackingEnabled,
             bool? byocEnabled,
+            string? byocExternalId,
             int? byocMaxDataPlanes,
             bool? canAddSeats,
             bool? canDisablePublicSharing,
@@ -838,6 +850,7 @@ namespace LangSmith
             this.AllowCustomIframes = allowCustomIframes;
             this.ArbitraryCostTrackingEnabled = arbitraryCostTrackingEnabled;
             this.ByocEnabled = byocEnabled;
+            this.ByocExternalId = byocExternalId;
             this.ByocMaxDataPlanes = byocMaxDataPlanes;
             this.CanAddSeats = canAddSeats;
             this.CanDisablePublicSharing = canDisablePublicSharing;

@@ -56,7 +56,8 @@ namespace LangSmith
 
         /// <summary>
         /// Create a new data plane<br/>
-        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
+        /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +80,8 @@ namespace LangSmith
         }
         /// <summary>
         /// Create a new data plane<br/>
-        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
+        /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -463,24 +465,24 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Name already exists for this organization
+                            // Name already exists or the organization's external ID needs configuration
                             if ((int)__response.StatusCode == 409)
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::LangSmith.DataPlanesErrorResponse? __value_409 = null;
+                                global::LangSmith.DataPlanesCreateErrorResponse? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::LangSmith.DataPlanesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::LangSmith.DataPlanesCreateErrorResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::LangSmith.DataPlanesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::LangSmith.DataPlanesCreateErrorResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -489,7 +491,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.DataPlanesErrorResponse>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.DataPlanesCreateErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
@@ -672,7 +674,8 @@ namespace LangSmith
         }
         /// <summary>
         /// Create a new data plane<br/>
-        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
+        /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="byovpcId">
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
@@ -686,7 +689,6 @@ namespace LangSmith
         /// <param name="byovpcPublicSubnetIds">
         /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
         /// </param>
-        /// <param name="externalId"></param>
         /// <param name="name"></param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="region"></param>
@@ -702,7 +704,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPublicSubnetIds = default,
-            string? externalId = default,
             string? name = default,
             bool? publicLoadBalancer = default,
             string? region = default,
@@ -717,7 +718,6 @@ namespace LangSmith
                 ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds,
                 ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds,
                 ByovpcPublicSubnetIds = byovpcPublicSubnetIds,
-                ExternalId = externalId,
                 Name = name,
                 PublicLoadBalancer = publicLoadBalancer,
                 Region = region,

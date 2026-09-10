@@ -35,12 +35,6 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("external_id")]
-        public string? ExternalId { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -89,7 +83,6 @@ namespace LangSmith
         /// <param name="byovpcPublicSubnetIds">
         /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
         /// </param>
-        /// <param name="externalId"></param>
         /// <param name="name"></param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="region"></param>
@@ -105,7 +98,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds,
             global::System.Collections.Generic.IList<string>? byovpcPublicSubnetIds,
-            string? externalId,
             string? name,
             bool? publicLoadBalancer,
             string? region,
@@ -116,7 +108,6 @@ namespace LangSmith
             this.ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds;
             this.ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds;
             this.ByovpcPublicSubnetIds = byovpcPublicSubnetIds;
-            this.ExternalId = externalId;
             this.Name = name;
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region;

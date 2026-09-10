@@ -196,6 +196,13 @@ namespace LangSmith
         public bool? ByocEnabled { get; set; }
 
         /// <summary>
+        /// The organization's assigned AWS external ID for BYOC role trust policies.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoc_external_id")]
+        public string? ByocExternalId { get; set; }
+
+        /// <summary>
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byoc_max_data_planes")]
@@ -563,6 +570,10 @@ namespace LangSmith
         /// <param name="byocEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="byocExternalId">
+        /// The organization's assigned AWS external ID for BYOC role trust policies.<br/>
+        /// Included only in responses
+        /// </param>
         /// <param name="byocMaxDataPlanes">
         /// Default Value: 5
         /// </param>
@@ -729,6 +740,7 @@ namespace LangSmith
             bool? showPlaygroundPromptCanvas,
             bool? allowCustomIframes,
             bool? byocEnabled,
+            string? byocExternalId,
             int? byocMaxDataPlanes,
             bool? enableLanggraphPricing,
             bool? enableThreadViewPlayground,
@@ -806,6 +818,7 @@ namespace LangSmith
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
             this.AllowCustomIframes = allowCustomIframes;
             this.ByocEnabled = byocEnabled;
+            this.ByocExternalId = byocExternalId;
             this.ByocMaxDataPlanes = byocMaxDataPlanes;
             this.EnableLanggraphPricing = enableLanggraphPricing;
             this.EnableThreadViewPlayground = enableThreadViewPlayground;
