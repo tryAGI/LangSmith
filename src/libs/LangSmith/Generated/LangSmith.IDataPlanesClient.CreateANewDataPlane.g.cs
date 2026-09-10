@@ -6,7 +6,8 @@ namespace LangSmith
     {
         /// <summary>
         /// Create a new data plane<br/>
-        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
+        /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +20,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new data plane<br/>
-        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
+        /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +34,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new data plane<br/>
-        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.
+        /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
+        /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="byovpcId">
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
@@ -46,7 +49,6 @@ namespace LangSmith
         /// <param name="byovpcPublicSubnetIds">
         /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
         /// </param>
-        /// <param name="externalId"></param>
         /// <param name="name"></param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="region"></param>
@@ -62,7 +64,6 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPublicSubnetIds = default,
-            string? externalId = default,
             string? name = default,
             bool? publicLoadBalancer = default,
             string? region = default,
