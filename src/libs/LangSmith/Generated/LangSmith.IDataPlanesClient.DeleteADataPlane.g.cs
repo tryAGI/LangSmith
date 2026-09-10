@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete a data plane<br/>
-        /// Verifies that the stored customer AWS role has delete permissions, removes linked workspaces, and starts asynchronous deprovisioning for a data plane owned by the caller's organization. Requires BYOC to be enabled for the org and org admin permissions.
+        /// Verifies that the stored customer AWS role has delete permissions, removes linked workspaces, and starts asynchronous deprovisioning for an active or provisioning_failed data plane owned by the caller's organization. Requires BYOC to be enabled for the org and org admin permissions.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +18,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a data plane<br/>
-        /// Verifies that the stored customer AWS role has delete permissions, removes linked workspaces, and starts asynchronous deprovisioning for a data plane owned by the caller's organization. Requires BYOC to be enabled for the org and org admin permissions.
+        /// Verifies that the stored customer AWS role has delete permissions, removes linked workspaces, and starts asynchronous deprovisioning for an active or provisioning_failed data plane owned by the caller's organization. Requires BYOC to be enabled for the org and org admin permissions.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
