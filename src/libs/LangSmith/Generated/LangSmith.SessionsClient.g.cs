@@ -35,6 +35,10 @@ namespace LangSmith
         public global::LangSmith.AutoSDKClientOptions Options { get; }
 
 
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
+
+
         internal global::LangSmith.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::LangSmith.AutoSDKServerConfiguration();
 
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::LangSmith.SourceGenerationContext.Default);

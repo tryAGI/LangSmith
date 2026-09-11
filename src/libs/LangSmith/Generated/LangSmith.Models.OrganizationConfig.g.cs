@@ -462,12 +462,6 @@ namespace LangSmith
         public bool? TunedEvalsEnabled { get; set; }
 
         /// <summary>
-        /// Default Value: true
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("gateway_data_protection_enabled")]
-        public bool? GatewayDataProtectionEnabled { get; set; }
-
-        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gateway_pii_redaction_enabled")]
@@ -696,9 +690,6 @@ namespace LangSmith
         /// <param name="tunedEvalsEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="gatewayDataProtectionEnabled">
-        /// Default Value: true
-        /// </param>
         /// <param name="gatewayPiiRedactionEnabled">
         /// Default Value: false
         /// </param>
@@ -783,7 +774,6 @@ namespace LangSmith
             bool? ipAllowlistEnabled,
             bool? llmGatewayEnabled,
             bool? tunedEvalsEnabled,
-            bool? gatewayDataProtectionEnabled,
             bool? gatewayPiiRedactionEnabled,
             bool? managedDeepAgentsEnabled,
             bool? isAnonymous)
@@ -861,7 +851,6 @@ namespace LangSmith
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.LlmGatewayEnabled = llmGatewayEnabled;
             this.TunedEvalsEnabled = tunedEvalsEnabled;
-            this.GatewayDataProtectionEnabled = gatewayDataProtectionEnabled;
             this.GatewayPiiRedactionEnabled = gatewayPiiRedactionEnabled;
             this.ManagedDeepAgentsEnabled = managedDeepAgentsEnabled;
             this.IsAnonymous = isAnonymous;
