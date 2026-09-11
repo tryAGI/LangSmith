@@ -59,8 +59,9 @@ namespace LangSmith
         /// <summary>
         /// Update Org Service Key<br/>
         /// Update an API key's role(s) in place without rotating the key.<br/>
-        /// Restricted to org admins (ORGANIZATION_MANAGE). Applies to both<br/>
-        /// org-scoped and workspace-scoped keys listed in /orgs/current/service-keys.
+        /// Organization Operators cannot assign the Organization Admin role or change<br/>
+        /// a key that already holds it, and no key can change its own roles. Applies<br/>
+        /// to both org-scoped and workspace-scoped keys.
         /// </summary>
         /// <param name="apiKeyId"></param>
         /// <param name="request"></param>
@@ -87,8 +88,9 @@ namespace LangSmith
         /// <summary>
         /// Update Org Service Key<br/>
         /// Update an API key's role(s) in place without rotating the key.<br/>
-        /// Restricted to org admins (ORGANIZATION_MANAGE). Applies to both<br/>
-        /// org-scoped and workspace-scoped keys listed in /orgs/current/service-keys.
+        /// Organization Operators cannot assign the Organization Admin role or change<br/>
+        /// a key that already holds it, and no key can change its own roles. Applies<br/>
+        /// to both org-scoped and workspace-scoped keys.
         /// </summary>
         /// <param name="apiKeyId"></param>
         /// <param name="request"></param>
@@ -501,8 +503,9 @@ namespace LangSmith
         /// <summary>
         /// Update Org Service Key<br/>
         /// Update an API key's role(s) in place without rotating the key.<br/>
-        /// Restricted to org admins (ORGANIZATION_MANAGE). Applies to both<br/>
-        /// org-scoped and workspace-scoped keys listed in /orgs/current/service-keys.
+        /// Organization Operators cannot assign the Organization Admin role or change<br/>
+        /// a key that already holds it, and no key can change its own roles. Applies<br/>
+        /// to both org-scoped and workspace-scoped keys.
         /// </summary>
         /// <param name="apiKeyId"></param>
         /// <param name="roleId"></param>
