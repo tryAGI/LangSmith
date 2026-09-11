@@ -197,7 +197,7 @@ namespace LangSmith
                                 servers: s_ReadSharedExamplesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("as_of", asOf?.ToString())
                                 .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("offset", offset?.ToString())

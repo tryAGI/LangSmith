@@ -163,7 +163,7 @@ namespace LangSmith
                                 servers: s_ReadTracerSessionsRunsMetadataServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("metadata_keys", metadataKeys?.ToString())
+                                .AddOptionalParameter("metadata_keys", metadataKeys, delimiter: ",", explode: true)
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("k", k?.ToString())
                                 .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString().ToLowerInvariant())

@@ -154,7 +154,7 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("service", service.ToValueString())
-                                .AddOptionalParameter("key_names", keyNames?.ToString())
+                                .AddOptionalParameter("key_names", keyNames, delimiter: ",", explode: true)
                                 .AddOptionalParameter("expand_iam_role", expandIamRole?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();

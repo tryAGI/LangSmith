@@ -249,15 +249,15 @@ namespace LangSmith
                                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                                 .AddOptionalParameter("query", query)
                                 .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("is_archived", isArchived?.ToString())
-                                .AddOptionalParameter("is_public", isPublic?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
+                                .AddOptionalParameter("is_archived", isArchived?.ToValueString())
+                                .AddOptionalParameter("is_public", isPublic?.ToValueString())
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
-                                .AddOptionalParameter("repo_type", repoType?.ToString())
-                                .AddOptionalParameter("repo_types", repoTypes?.ToString())
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("repo_type", repoType?.ToValueString())
+                                .AddOptionalParameter("repo_types", repoTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("source", source?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

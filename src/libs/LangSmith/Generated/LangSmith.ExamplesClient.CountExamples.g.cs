@@ -177,11 +177,11 @@ namespace LangSmith
                                 servers: s_CountExamplesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("as_of", asOf?.ToString())
                                 .AddOptionalParameter("metadata", metadata)
-                                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString())
-                                .AddOptionalParameter("splits", splits?.ToString())
+                                .AddOptionalParameter("full_text_contains", fullTextContains, delimiter: ",", explode: true)
+                                .AddOptionalParameter("splits", splits, delimiter: ",", explode: true)
                                 .AddOptionalParameter("dataset", dataset?.ToString())
                                 .AddOptionalParameter("filter", filter)
                                 ;

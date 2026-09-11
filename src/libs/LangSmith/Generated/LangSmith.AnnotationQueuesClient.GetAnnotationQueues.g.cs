@@ -217,14 +217,14 @@ namespace LangSmith
                                 servers: s_GetAnnotationQueuesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("ids", ids?.ToString())
+                                .AddOptionalParameter("ids", ids, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("dataset_id", datasetId?.ToString())
-                                .AddOptionalParameter("queue_type", queueType?.ToString())
+                                .AddOptionalParameter("queue_type", queueType?.ToValueString())
                                 .AddOptionalParameter("assigned_to_me", assignedToMe?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())

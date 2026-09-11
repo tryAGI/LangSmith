@@ -148,8 +148,8 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("session_id", sessionId.ToString()!)
-                                .AddOptionalParameter("select", select?.ToString())
-                                .AddOptionalParameter("variables", variables?.ToString())
+                                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("variables", variables, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

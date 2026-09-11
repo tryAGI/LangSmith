@@ -275,7 +275,7 @@ namespace LangSmith
                                 servers: s_ReadSharedDatasetTracerSessionsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("dataset_version", datasetVersion)
@@ -288,7 +288,7 @@ namespace LangSmith
                                 .AddOptionalParameter("facets", facets?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("stats_start_time", statsStartTime?.ToString())
-                                .AddOptionalParameter("stats_select", statsSelect?.ToString())
+                                .AddOptionalParameter("stats_select", statsSelect, delimiter: ",", explode: true)
                                 .AddOptionalParameter("stats_filter", statsFilter)
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -134,7 +134,7 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("type", type.ToValueString())
-                                .AddOptionalParameter("color_scheme", colorScheme?.ToString()!)
+                                .AddOptionalParameter("color_scheme", colorScheme?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

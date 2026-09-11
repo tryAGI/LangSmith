@@ -121,7 +121,7 @@ namespace LangSmith
                                 servers: s_ListTagsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("resource_type", resourceType?.ToString())
+                                .AddOptionalParameter("resource_type", resourceType?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

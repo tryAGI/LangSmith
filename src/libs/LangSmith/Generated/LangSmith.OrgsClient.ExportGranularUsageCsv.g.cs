@@ -201,10 +201,10 @@ namespace LangSmith
                             __pathBuilder
                                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("workspace_ids", workspaceIds?.ToString())
+                                .AddOptionalParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("group_by", groupBy?.ToValueString())
                                 .AddOptionalParameter("kind", kind?.ToValueString())
-                                .AddOptionalParameter("trace_tier", traceTier?.ToString())
+                                .AddOptionalParameter("trace_tier", traceTier?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

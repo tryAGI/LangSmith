@@ -225,7 +225,7 @@ namespace LangSmith
                                 servers: s_ReadDatasetsStreamServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("data_type", dataType?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
@@ -238,7 +238,7 @@ namespace LangSmith
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
