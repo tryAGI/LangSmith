@@ -240,10 +240,10 @@ namespace LangSmith
                                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("operations", operations?.ToString())
-                                .AddOptionalParameter("actor_ls_user_ids", actorLsUserIds?.ToString())
-                                .AddOptionalParameter("actor_api_key_ids", actorApiKeyIds?.ToString())
-                                .AddOptionalParameter("resource_ids", resourceIds?.ToString())
+                                .AddOptionalParameter("operations", operations, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("actor_ls_user_ids", actorLsUserIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("actor_api_key_ids", actorApiKeyIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("resource_ids", resourceIds, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -123,7 +123,7 @@ namespace LangSmith
                                 servers: s_ListPlaygroundSettingsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("scope", scope?.ToString())
+                                .AddOptionalParameter("scope", scope?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

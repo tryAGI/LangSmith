@@ -189,7 +189,7 @@ namespace LangSmith
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("attribute_sort_key", attributeSortKey)
-                                .AddOptionalParameter("attribute_sort_order", attributeSortOrder?.ToString())
+                                .AddOptionalParameter("attribute_sort_order", attributeSortOrder?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

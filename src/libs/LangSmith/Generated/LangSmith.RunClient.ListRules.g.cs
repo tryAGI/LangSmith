@@ -185,11 +185,11 @@ namespace LangSmith
                             __pathBuilder
                                 .AddOptionalParameter("dataset_id", datasetId?.ToString())
                                 .AddOptionalParameter("session_id", sessionId?.ToString())
-                                .AddOptionalParameter("type", type?.ToString())
+                                .AddOptionalParameter("type", type?.ToValueString())
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("evaluator_id", evaluatorId?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("include_backfill_progress", includeBackfillProgress?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();

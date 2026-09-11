@@ -248,19 +248,19 @@ namespace LangSmith
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
                 validate: false), delimiter: ",", explode: true)
-                                .AddOptionalParameter("key", key?.ToString())
+                                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
                                 .AddOptionalParameter("session", session?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
                 validate: false), delimiter: ",", explode: true)
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("user", user?.ToString())
+                                .AddOptionalParameter("user", user, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("level", level?.ToString())
+                                .AddOptionalParameter("level", level?.ToValueString())
                                 .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString())
                                 .AddOptionalParameter("min_created_at", minCreatedAt?.ToString())
                                 .AddOptionalParameter("feedback_thread_id", feedbackThreadId)

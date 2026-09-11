@@ -173,7 +173,7 @@ namespace LangSmith
                                 servers: s_ListFeedbackConfigsEndpointServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("key", key?.ToString())
+                                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
