@@ -64,6 +64,10 @@ namespace LangSmith
         /// </summary>
         public global::LangSmith.AutoSDKClientOptions Options { get; }
 
+        /// <summary>
+        /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.
+        /// </summary>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; }
 
         /// <summary>
         ///
@@ -300,6 +304,11 @@ namespace LangSmith
         ///
         /// </summary>
         public PlaygroundSettingsClient PlaygroundSettings { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ProductfeedbackClient Productfeedback { get; }
 
         /// <summary>
         ///

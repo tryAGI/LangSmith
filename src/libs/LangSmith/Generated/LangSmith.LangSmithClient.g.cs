@@ -41,6 +41,10 @@ namespace LangSmith
         public global::LangSmith.AutoSDKClientOptions Options { get; }
 
 
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
+
+
         internal global::LangSmith.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::LangSmith.AutoSDKServerConfiguration();
 
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::LangSmith.SourceGenerationContext.Default);
@@ -61,6 +65,7 @@ namespace LangSmith
         public AccessPoliciesClient AccessPolicies => new AccessPoliciesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -71,6 +76,7 @@ namespace LangSmith
         public AceClient Ace => new AceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -81,6 +87,7 @@ namespace LangSmith
         public AlertRulesClient AlertRules => new AlertRulesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -91,6 +98,7 @@ namespace LangSmith
         public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -101,6 +109,7 @@ namespace LangSmith
         public AnnotationQueues2Client AnnotationQueues2 => new AnnotationQueues2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -111,6 +120,7 @@ namespace LangSmith
         public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -121,6 +131,7 @@ namespace LangSmith
         public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -131,6 +142,7 @@ namespace LangSmith
         public AuthClient Auth => new AuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -141,6 +153,7 @@ namespace LangSmith
         public AwsMarketplaceClient AwsMarketplace => new AwsMarketplaceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -151,6 +164,7 @@ namespace LangSmith
         public BackfillsClient Backfills => new BackfillsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -161,6 +175,7 @@ namespace LangSmith
         public BulkExportsClient BulkExports => new BulkExportsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -171,6 +186,7 @@ namespace LangSmith
         public ChartsClient Charts => new ChartsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -181,6 +197,7 @@ namespace LangSmith
         public CommentsClient Comments => new CommentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -191,6 +208,7 @@ namespace LangSmith
         public CommitsClient Commits => new CommitsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -201,6 +219,7 @@ namespace LangSmith
         public DataPlanesClient DataPlanes => new DataPlanesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -211,6 +230,7 @@ namespace LangSmith
         public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -221,6 +241,7 @@ namespace LangSmith
         public DirectoriesClient Directories => new DirectoriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -231,6 +252,7 @@ namespace LangSmith
         public EvaluatorsClient Evaluators => new EvaluatorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -241,6 +263,7 @@ namespace LangSmith
         public ExamplesClient Examples => new ExamplesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -251,6 +274,7 @@ namespace LangSmith
         public ExperimentViewOverridesClient ExperimentViewOverrides => new ExperimentViewOverridesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -261,6 +285,7 @@ namespace LangSmith
         public ExperimentsClient Experiments => new ExperimentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -271,6 +296,7 @@ namespace LangSmith
         public FeaturesClient Features => new FeaturesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -281,6 +307,7 @@ namespace LangSmith
         public FeedbackClient Feedback => new FeedbackClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -291,6 +318,7 @@ namespace LangSmith
         public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -301,6 +329,7 @@ namespace LangSmith
         public FleetOrgsClient FleetOrgs => new FleetOrgsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -311,6 +340,7 @@ namespace LangSmith
         public FleetSecretsClient FleetSecrets => new FleetSecretsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -321,6 +351,7 @@ namespace LangSmith
         public FleetTenantsClient FleetTenants => new FleetTenantsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -331,6 +362,7 @@ namespace LangSmith
         public FleetThreadsClient FleetThreads => new FleetThreadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -341,6 +373,7 @@ namespace LangSmith
         public FleetUsersClient FleetUsers => new FleetUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -351,6 +384,7 @@ namespace LangSmith
         public GatewayPoliciesClient GatewayPolicies => new GatewayPoliciesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -361,6 +395,7 @@ namespace LangSmith
         public HubEnvironmentsClient HubEnvironments => new HubEnvironmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -371,6 +406,7 @@ namespace LangSmith
         public InfoClient Info => new InfoClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -381,6 +417,7 @@ namespace LangSmith
         public IntegrationsClient Integrations => new IntegrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -391,6 +428,7 @@ namespace LangSmith
         public IssuesClient Issues => new IssuesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -401,6 +439,7 @@ namespace LangSmith
         public IssuesAgentClient IssuesAgent => new IssuesAgentClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -411,6 +450,7 @@ namespace LangSmith
         public LikesClient Likes => new LikesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -421,6 +461,7 @@ namespace LangSmith
         public McpClient Mcp => new McpClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -431,6 +472,7 @@ namespace LangSmith
         public McpVendorsClient McpVendors => new McpVendorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -441,6 +483,7 @@ namespace LangSmith
         public MeClient Me => new MeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -451,6 +494,7 @@ namespace LangSmith
         public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -461,6 +505,7 @@ namespace LangSmith
         public OauthClient Oauth => new OauthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -471,6 +516,7 @@ namespace LangSmith
         public OptimizationJobsClient OptimizationJobs => new OptimizationJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -481,6 +527,7 @@ namespace LangSmith
         public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -491,6 +538,7 @@ namespace LangSmith
         public OrgsClient Orgs => new OrgsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -501,6 +549,7 @@ namespace LangSmith
         public OwnershipsClient Ownerships => new OwnershipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -511,6 +560,18 @@ namespace LangSmith
         public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ProductfeedbackClient Productfeedback => new ProductfeedbackClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -521,6 +582,7 @@ namespace LangSmith
         public PromptWebhooksClient PromptWebhooks => new PromptWebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -531,6 +593,7 @@ namespace LangSmith
         public PromptsClient Prompts => new PromptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -541,6 +604,7 @@ namespace LangSmith
         public PublicClient Public => new PublicClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -551,6 +615,7 @@ namespace LangSmith
         public ReposClient Repos => new ReposClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -561,6 +626,7 @@ namespace LangSmith
         public RunClient Run => new RunClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -571,6 +637,7 @@ namespace LangSmith
         public RunsClient Runs => new RunsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -581,6 +648,7 @@ namespace LangSmith
         public SandboxesClient Sandboxes => new SandboxesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -591,6 +659,7 @@ namespace LangSmith
         public ScimTokensClient ScimTokens => new ScimTokensClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -601,6 +670,7 @@ namespace LangSmith
         public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -611,6 +681,7 @@ namespace LangSmith
         public SessionsClient Sessions => new SessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -621,6 +692,7 @@ namespace LangSmith
         public SettingsClient Settings => new SettingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -631,6 +703,7 @@ namespace LangSmith
         public TagTransitionsClient TagTransitions => new TagTransitionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -641,6 +714,7 @@ namespace LangSmith
         public TagsClient Tags => new TagsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -651,6 +725,7 @@ namespace LangSmith
         public TenantClient Tenant => new TenantClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -661,6 +736,7 @@ namespace LangSmith
         public ThreadsClient Threads => new ThreadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -671,6 +747,7 @@ namespace LangSmith
         public ToolsClient Tools => new ToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -681,6 +758,7 @@ namespace LangSmith
         public TracerSessionsClient TracerSessions => new TracerSessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -691,6 +769,7 @@ namespace LangSmith
         public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -701,6 +780,7 @@ namespace LangSmith
         public TtlSettings2Client TtlSettings2 => new TtlSettings2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -711,6 +791,7 @@ namespace LangSmith
         public UsageLimitsClient UsageLimits => new UsageLimitsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
@@ -721,6 +802,7 @@ namespace LangSmith
         public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
             AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };

@@ -246,20 +246,10 @@ namespace LangSmith
         public double? FleetLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
-        /// GatewayDataProtectionEnabled indicates whether this org can use gateway<br/>
-        /// data protection (the "guard" policy type, backed by Presidio).<br/>
-        /// Set by Metronome entitlement, not admin-patchable. Defaults on, so orgs<br/>
-        /// without an explicit entitlement value can configure guard policies.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("gateway_data_protection_enabled")]
-        public bool? GatewayDataProtectionEnabled { get; set; }
-
-        /// <summary>
         /// GatewayPIIRedactionEnabled indicates whether this org can use PII<br/>
         /// detection/redaction inside gateway data protection (guard) policies.<br/>
-        /// Sub-gate beneath GatewayDataProtectionEnabled: when this is off,<br/>
-        /// PII-configured guard policies are unavailable as a whole.<br/>
-        /// Set by Metronome entitlement, not admin-patchable.
+        /// When this is off, PII-configured guard policies are unavailable as a<br/>
+        /// whole. Set by Metronome entitlement, not admin-patchable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gateway_pii_redaction_enabled")]
         public bool? GatewayPiiRedactionEnabled { get; set; }
@@ -632,18 +622,11 @@ namespace LangSmith
         /// FleetLCUSpendLimitMonthly caps an org's monthly Fleet LCU spend, resolved from<br/>
         /// Metronome custom fields. nil or negative means unlimited; 0 blocks all runs.
         /// </param>
-        /// <param name="gatewayDataProtectionEnabled">
-        /// GatewayDataProtectionEnabled indicates whether this org can use gateway<br/>
-        /// data protection (the "guard" policy type, backed by Presidio).<br/>
-        /// Set by Metronome entitlement, not admin-patchable. Defaults on, so orgs<br/>
-        /// without an explicit entitlement value can configure guard policies.
-        /// </param>
         /// <param name="gatewayPiiRedactionEnabled">
         /// GatewayPIIRedactionEnabled indicates whether this org can use PII<br/>
         /// detection/redaction inside gateway data protection (guard) policies.<br/>
-        /// Sub-gate beneath GatewayDataProtectionEnabled: when this is off,<br/>
-        /// PII-configured guard policies are unavailable as a whole.<br/>
-        /// Set by Metronome entitlement, not admin-patchable.
+        /// When this is off, PII-configured guard policies are unavailable as a<br/>
+        /// whole. Set by Metronome entitlement, not admin-patchable.
         /// </param>
         /// <param name="ipAllowlistEnabled">
         /// IPAllowlistEnabled indicates whether this org can configure and enforce IP allowlists.<br/>
@@ -806,7 +789,6 @@ namespace LangSmith
             double? engineLcuSpendLimitMonthly,
             bool? fleetBuiltinModelsEnabled,
             double? fleetLcuSpendLimitMonthly,
-            bool? gatewayDataProtectionEnabled,
             bool? gatewayPiiRedactionEnabled,
             bool? ipAllowlistEnabled,
             bool? isAnonymous,
@@ -883,7 +865,6 @@ namespace LangSmith
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.FleetBuiltinModelsEnabled = fleetBuiltinModelsEnabled;
             this.FleetLcuSpendLimitMonthly = fleetLcuSpendLimitMonthly;
-            this.GatewayDataProtectionEnabled = gatewayDataProtectionEnabled;
             this.GatewayPiiRedactionEnabled = gatewayPiiRedactionEnabled;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.IsAnonymous = isAnonymous;

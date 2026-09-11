@@ -1363,6 +1363,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        SubmitProductFeedback,
+        /// <summary>
+        ///
+        /// </summary>
         SyncExamples,
         /// <summary>
         ///
@@ -2096,6 +2100,7 @@ namespace LangSmith
                 AuditLogOperation.StreamFeedbackDelta => "stream_feedback_delta",
                 AuditLogOperation.StreamGroupedExperiments => "stream_grouped_experiments",
                 AuditLogOperation.SubmitNpsResponse => "submit_nps_response",
+                AuditLogOperation.SubmitProductFeedback => "submit_product_feedback",
                 AuditLogOperation.SyncExamples => "sync_examples",
                 AuditLogOperation.TestAlertRule => "test_alert_rule",
                 AuditLogOperation.TestFleetWebhook => "test_fleet_webhook",
@@ -2540,6 +2545,7 @@ namespace LangSmith
                 "stream_feedback_delta" => AuditLogOperation.StreamFeedbackDelta,
                 "stream_grouped_experiments" => AuditLogOperation.StreamGroupedExperiments,
                 "submit_nps_response" => AuditLogOperation.SubmitNpsResponse,
+                "submit_product_feedback" => AuditLogOperation.SubmitProductFeedback,
                 "sync_examples" => AuditLogOperation.SyncExamples,
                 "test_alert_rule" => AuditLogOperation.TestAlertRule,
                 "test_fleet_webhook" => AuditLogOperation.TestFleetWebhook,
