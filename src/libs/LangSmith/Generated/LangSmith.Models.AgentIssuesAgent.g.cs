@@ -203,6 +203,13 @@ namespace LangSmith
         public string? UserInstructions { get; set; }
 
         /// <summary>
+        /// ValidationDeploymentID selects the deployment used for baseline replay<br/>
+        /// and as the parent of fix-verification previews.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("validation_deployment_id")]
+        public string? ValidationDeploymentId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -274,6 +281,10 @@ namespace LangSmith
         /// context and reconciles it into the Agent Overview on the next scan, but<br/>
         /// never edits it. NULL when the user hasn't set any.
         /// </param>
+        /// <param name="validationDeploymentId">
+        /// ValidationDeploymentID selects the deployment used for baseline replay<br/>
+        /// and as the parent of fix-verification previews.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -307,7 +318,8 @@ namespace LangSmith
             string? tenantId,
             string? tenantName,
             string? updatedAt,
-            string? userInstructions)
+            string? userInstructions,
+            string? validationDeploymentId)
         {
             this.AgentOverviewAccepted = agentOverviewAccepted;
             this.AnalysisLevel = analysisLevel;
@@ -339,6 +351,7 @@ namespace LangSmith
             this.TenantName = tenantName;
             this.UpdatedAt = updatedAt;
             this.UserInstructions = userInstructions;
+            this.ValidationDeploymentId = validationDeploymentId;
         }
 
         /// <summary>

@@ -106,6 +106,13 @@ namespace LangSmith
         public string? UserInstructions { get; set; }
 
         /// <summary>
+        /// ValidationDeploymentID is a deployment UUID or LangSmith deployment URL,<br/>
+        /// or an empty string to disable validation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("validation_deployment_id")]
+        public string? ValidationDeploymentId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -143,6 +150,10 @@ namespace LangSmith
         /// <param name="userInstructions">
         /// Freeform user preferences. Send "" to clear (the frontend must not send null).
         /// </param>
+        /// <param name="validationDeploymentId">
+        /// ValidationDeploymentID is a deployment UUID or LangSmith deployment URL,<br/>
+        /// or an empty string to disable validation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -161,7 +172,8 @@ namespace LangSmith
             string? runFilter,
             string? sessionAgentOverviewRepoId,
             string? sessionLcuSpendLimitMonthly,
-            string? userInstructions)
+            string? userInstructions,
+            string? validationDeploymentId)
         {
             this.AgentOverviewAccepted = agentOverviewAccepted;
             this.AnalysisLevel = analysisLevel;
@@ -178,6 +190,7 @@ namespace LangSmith
             this.SessionAgentOverviewRepoId = sessionAgentOverviewRepoId;
             this.SessionLcuSpendLimitMonthly = sessionLcuSpendLimitMonthly;
             this.UserInstructions = userInstructions;
+            this.ValidationDeploymentId = validationDeploymentId;
         }
 
         /// <summary>

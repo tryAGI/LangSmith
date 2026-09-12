@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("advanced_features_enabled")]
+        public bool? AdvancedFeaturesEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         public string? Code { get; set; }
 
@@ -46,12 +52,6 @@ namespace LangSmith
         public string? Language { get; set; }
 
         /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_secrets_keys")]
-        public global::System.Collections.Generic.IList<string>? WorkspaceSecretsKeys { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,6 +60,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="EvaluatorsCodeEvaluator" /> class.
         /// </summary>
+        /// <param name="advancedFeaturesEnabled"></param>
         /// <param name="code"></param>
         /// <param name="dependencies"></param>
         /// <param name="evaluatorBuildError"></param>
@@ -68,26 +69,25 @@ namespace LangSmith
         /// <param name="language">
         /// Default: "python"
         /// </param>
-        /// <param name="workspaceSecretsKeys"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvaluatorsCodeEvaluator(
+            bool? advancedFeaturesEnabled,
             string? code,
             string? dependencies,
             string? evaluatorBuildError,
             global::LangSmith.EvaluatorsEvaluatorBuildStatus? evaluatorBuildStatus,
             string? evaluatorId,
-            string? language,
-            global::System.Collections.Generic.IList<string>? workspaceSecretsKeys)
+            string? language)
         {
+            this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
             this.Dependencies = dependencies;
             this.EvaluatorBuildError = evaluatorBuildError;
             this.EvaluatorBuildStatus = evaluatorBuildStatus;
             this.EvaluatorId = evaluatorId;
             this.Language = language;
-            this.WorkspaceSecretsKeys = workspaceSecretsKeys;
         }
 
         /// <summary>

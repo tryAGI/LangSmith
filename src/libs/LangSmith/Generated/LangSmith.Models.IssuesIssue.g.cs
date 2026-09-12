@@ -72,7 +72,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fix_verification")]
-        public object? FixVerification { get; set; }
+        public global::LangSmith.IssuesIssueFixVerification? FixVerification { get; set; }
 
         /// <summary>
         ///
@@ -181,6 +181,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("validation_result")]
+        public global::LangSmith.IssuesIssueValidationResult? ValidationResult { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("watching_since")]
         public string? WatchingSince { get; set; }
 
@@ -226,6 +232,7 @@ namespace LangSmith
         /// <param name="tenantId"></param>
         /// <param name="traces"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="validationResult"></param>
         /// <param name="watchingSince"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -241,7 +248,7 @@ namespace LangSmith
             string? fixDispatchedAt,
             int? fixPrNumber,
             string? fixPrompt,
-            object? fixVerification,
+            global::LangSmith.IssuesIssueFixVerification? fixVerification,
             string? id,
             string? lastSeenAt,
             global::LangSmith.IssuesLinearContext? linearContext,
@@ -259,6 +266,7 @@ namespace LangSmith
             string? tenantId,
             object? traces,
             string? updatedAt,
+            global::LangSmith.IssuesIssueValidationResult? validationResult,
             string? watchingSince)
         {
             this.Actions = actions;
@@ -289,6 +297,7 @@ namespace LangSmith
             this.TenantId = tenantId;
             this.Traces = traces;
             this.UpdatedAt = updatedAt;
+            this.ValidationResult = validationResult;
             this.WatchingSince = watchingSince;
         }
 
