@@ -83,6 +83,10 @@ namespace LangSmith
         /// <param name="userInstructions">
         /// Freeform user preferences. Send "" to clear (the frontend must not send null).
         /// </param>
+        /// <param name="validationDeploymentId">
+        /// ValidationDeploymentID is a deployment UUID or LangSmith deployment URL,<br/>
+        /// or an empty string to disable validation.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -106,6 +110,7 @@ namespace LangSmith
             string? sessionAgentOverviewRepoId = default,
             string? sessionLcuSpendLimitMonthly = default,
             string? userInstructions = default,
+            string? validationDeploymentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
