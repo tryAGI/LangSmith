@@ -147,12 +147,6 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trajectory_evaluators")]
-        public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? TrajectoryEvaluators { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alerts")]
         public global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? Alerts { get; set; }
 
@@ -355,7 +349,6 @@ namespace LangSmith
         /// <param name="numFewShotExamples"></param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
-        /// <param name="trajectoryEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
         /// <param name="extendOnly">
@@ -419,7 +412,6 @@ namespace LangSmith
             int? numFewShotExamples,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
-            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? trajectoryEvaluators,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
             bool? extendOnly,
@@ -467,7 +459,6 @@ namespace LangSmith
             this.NumFewShotExamples = numFewShotExamples;
             this.Evaluators = evaluators;
             this.CodeEvaluators = codeEvaluators;
-            this.TrajectoryEvaluators = trajectoryEvaluators;
             this.Alerts = alerts;
             this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;

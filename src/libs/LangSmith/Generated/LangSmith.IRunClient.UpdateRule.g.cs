@@ -72,7 +72,6 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
-        /// <param name="trajectoryEvaluators"></param>
         /// <param name="evaluatorId"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
@@ -113,7 +112,6 @@ namespace LangSmith
             bool? addToDatasetPreferCorrection = default,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators = default,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators = default,
-            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? trajectoryEvaluators = default,
             global::System.Guid? evaluatorId = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts = default,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks = default,
