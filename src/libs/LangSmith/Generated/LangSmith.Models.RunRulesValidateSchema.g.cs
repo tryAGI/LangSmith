@@ -156,12 +156,6 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trajectory_evaluators")]
-        public global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? TrajectoryEvaluators { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_id")]
         public global::System.Guid? EvaluatorId { get; set; }
 
@@ -295,7 +289,6 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluators"></param>
         /// <param name="codeEvaluators"></param>
-        /// <param name="trajectoryEvaluators"></param>
         /// <param name="evaluatorId"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
@@ -344,7 +337,6 @@ namespace LangSmith
             bool? addToDatasetPreferCorrection,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? evaluators,
             global::System.Collections.Generic.IList<global::LangSmith.CodeEvaluatorTopLevel>? codeEvaluators,
-            global::System.Collections.Generic.IList<global::LangSmith.EvaluatorTopLevel>? trajectoryEvaluators,
             global::System.Guid? evaluatorId,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesPagerdutyAlertSchema>? alerts,
             global::System.Collections.Generic.IList<global::LangSmith.RunRulesWebhookSchema>? webhooks,
@@ -384,7 +376,6 @@ namespace LangSmith
             this.AddToDatasetPreferCorrection = addToDatasetPreferCorrection;
             this.Evaluators = evaluators;
             this.CodeEvaluators = codeEvaluators;
-            this.TrajectoryEvaluators = trajectoryEvaluators;
             this.EvaluatorId = evaluatorId;
             this.Alerts = alerts;
             this.Webhooks = webhooks;
