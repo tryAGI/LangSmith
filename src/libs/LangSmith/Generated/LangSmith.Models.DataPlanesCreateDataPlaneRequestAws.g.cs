@@ -9,6 +9,12 @@ namespace LangSmith
     public sealed partial class DataPlanesCreateDataPlaneRequestAws
     {
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("additional_tags")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? AdditionalTags { get; set; }
+
+        /// <summary>
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_id")]
@@ -71,6 +77,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DataPlanesCreateDataPlaneRequestAws" /> class.
         /// </summary>
+        /// <param name="additionalTags"></param>
         /// <param name="byovpcId">
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
         /// </param>
@@ -94,6 +101,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataPlanesCreateDataPlaneRequestAws(
+            global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags,
             string? byovpcId,
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds,
@@ -104,6 +112,7 @@ namespace LangSmith
             string? roleArn,
             string? vpcCidr)
         {
+            this.AdditionalTags = additionalTags;
             this.ByovpcId = byovpcId;
             this.ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds;
             this.ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds;

@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// List annotation queue items<br/>
-        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
+        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. Optional min_start_time/max_start_time bound the item's trace start time; items with no start time are excluded when either bound is set. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="status"></param>
@@ -15,6 +15,8 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="itemType"></param>
+        /// <param name="minStartTime"></param>
+        /// <param name="maxStartTime"></param>
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
@@ -27,12 +29,14 @@ namespace LangSmith
             int? pageSize = default,
             string? cursor = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType = default,
+            global::System.DateTime? minStartTime = default,
+            global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List annotation queue items<br/>
-        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
+        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. Optional min_start_time/max_start_time bound the item's trace start time; items with no start time are excluded when either bound is set. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="status"></param>
@@ -41,6 +45,8 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="itemType"></param>
+        /// <param name="minStartTime"></param>
+        /// <param name="maxStartTime"></param>
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
@@ -53,6 +59,8 @@ namespace LangSmith
             int? pageSize = default,
             string? cursor = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType = default,
+            global::System.DateTime? minStartTime = default,
+            global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
