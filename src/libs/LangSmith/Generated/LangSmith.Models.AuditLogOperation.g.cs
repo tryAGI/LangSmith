@@ -1383,6 +1383,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        TestEvaluator,
+        /// <summary>
+        ///
+        /// </summary>
         TestFleetWebhook,
         /// <summary>
         ///
@@ -2117,6 +2121,7 @@ namespace LangSmith
                 AuditLogOperation.SubmitProductFeedback => "submit_product_feedback",
                 AuditLogOperation.SyncExamples => "sync_examples",
                 AuditLogOperation.TestAlertRule => "test_alert_rule",
+                AuditLogOperation.TestEvaluator => "test_evaluator",
                 AuditLogOperation.TestFleetWebhook => "test_fleet_webhook",
                 AuditLogOperation.TestOpGeneric => "test_op_generic",
                 AuditLogOperation.TestPromptWebhook => "test_prompt_webhook",
@@ -2565,6 +2570,7 @@ namespace LangSmith
                 "submit_product_feedback" => AuditLogOperation.SubmitProductFeedback,
                 "sync_examples" => AuditLogOperation.SyncExamples,
                 "test_alert_rule" => AuditLogOperation.TestAlertRule,
+                "test_evaluator" => AuditLogOperation.TestEvaluator,
                 "test_fleet_webhook" => AuditLogOperation.TestFleetWebhook,
                 "test_op_generic" => AuditLogOperation.TestOpGeneric,
                 "test_prompt_webhook" => AuditLogOperation.TestPromptWebhook,
