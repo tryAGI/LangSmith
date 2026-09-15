@@ -677,6 +677,7 @@ namespace LangSmith
         /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
         /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
+        /// <param name="additionalTags"></param>
         /// <param name="byovpcId">
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
         /// </param>
@@ -700,6 +701,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> CreateANewDataPlaneAsync(
+            global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags = default,
             string? byovpcId = default,
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds = default,
@@ -714,6 +716,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.DataPlanesCreateDataPlaneRequestAws
             {
+                AdditionalTags = additionalTags,
                 ByovpcId = byovpcId,
                 ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds,
                 ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds,

@@ -1,3 +1,4 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -6,50 +7,289 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class SandboxesSandboxAWSMountAuthConfig
+    public readonly partial struct SandboxesSandboxAWSMountAuthConfig : global::System.IEquatable<SandboxesSandboxAWSMountAuthConfig>
     {
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("access_key_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.SandboxesProxySecretValue AccessKeyId { get; set; }
+#if NET6_0_OR_GREATER
+        public global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig? Role { get; init; }
+#else
+        public global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig? Role { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("secret_access_key")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.SandboxesProxySecretValue SecretAccessKey { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SandboxesSandboxAWSMountAuthConfig" /> class.
-        /// </summary>
-        /// <param name="accessKeyId"></param>
-        /// <param name="secretAccessKey"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Role))]
 #endif
-        public SandboxesSandboxAWSMountAuthConfig(
-            global::LangSmith.SandboxesProxySecretValue accessKeyId,
-            global::LangSmith.SandboxesProxySecretValue secretAccessKey)
+        public bool IsRole => Role != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRole(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig? value)
         {
-            this.AccessKeyId = accessKeyId ?? throw new global::System.ArgumentNullException(nameof(accessKeyId));
-            this.SecretAccessKey = secretAccessKey ?? throw new global::System.ArgumentNullException(nameof(secretAccessKey));
+            value = Role;
+            return IsRole;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SandboxesSandboxAWSMountAuthConfig" /> class.
+        ///
         /// </summary>
-        public SandboxesSandboxAWSMountAuthConfig()
+        public global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig PickRole() => IsRole
+            ? Role!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Role' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig? Static { get; init; }
+#else
+        public global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig? Static { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
+#endif
+        public bool IsStatic => Static != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickStatic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig? value)
         {
+            value = Static;
+            return IsStatic;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        public global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig PickStatic() => IsStatic
+            ? Static!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator SandboxesSandboxAWSMountAuthConfig(global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig value) => new SandboxesSandboxAWSMountAuthConfig((global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig?(SandboxesSandboxAWSMountAuthConfig @this) => @this.Role;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SandboxesSandboxAWSMountAuthConfig(global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig? value)
+        {
+            Role = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SandboxesSandboxAWSMountAuthConfig FromRole(global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig? value) => new SandboxesSandboxAWSMountAuthConfig(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator SandboxesSandboxAWSMountAuthConfig(global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig value) => new SandboxesSandboxAWSMountAuthConfig((global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig?(SandboxesSandboxAWSMountAuthConfig @this) => @this.Static;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SandboxesSandboxAWSMountAuthConfig(global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig? value)
+        {
+            Static = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SandboxesSandboxAWSMountAuthConfig FromStatic(global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig? value) => new SandboxesSandboxAWSMountAuthConfig(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SandboxesSandboxAWSMountAuthConfig(
+            global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig? role,
+            global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig? @static
+            )
+        {
+            Role = role;
+            Static = @static;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public object? Object =>
+            Static as object ??
+            Role as object
+            ;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string? ToString() =>
+            Role?.ToString() ??
+            Static?.ToString()
+            ;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Validate()
+        {
+            return IsRole && !IsStatic || !IsRole && IsStatic;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig, TResult>? role = null,
+            global::System.Func<global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig, TResult>? @static = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRole && role != null)
+            {
+                return role(Role!);
+            }
+            else if (IsStatic && @static != null)
+            {
+                return @static(Static!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public void Match(
+            global::System.Action<global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig>? role = null,
+
+            global::System.Action<global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig>? @static = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRole)
+            {
+                role?.Invoke(Role!);
+            }
+            else if (IsStatic)
+            {
+                @static?.Invoke(Static!);
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig>? role = null,
+            global::System.Action<global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig>? @static = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRole)
+            {
+                role?.Invoke(Role!);
+            }
+            else if (IsStatic)
+            {
+                @static?.Invoke(Static!);
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Role,
+                typeof(global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig),
+                Static,
+                typeof(global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(SandboxesSandboxAWSMountAuthConfig other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig?>.Default.Equals(Role, other.Role) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig?>.Default.Equals(Static, other.Static)
+                ;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(SandboxesSandboxAWSMountAuthConfig obj1, SandboxesSandboxAWSMountAuthConfig obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<SandboxesSandboxAWSMountAuthConfig>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(SandboxesSandboxAWSMountAuthConfig obj1, SandboxesSandboxAWSMountAuthConfig obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is SandboxesSandboxAWSMountAuthConfig o && Equals(o);
+        }
     }
 }

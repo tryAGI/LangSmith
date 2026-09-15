@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Get annotation queue item placement<br/>
-        /// Resolve a RUN or THREAD item to its current review section and zero-based position for deep linking.
+        /// Resolve a RUN or THREAD item to its current review section and zero-based position for deep linking. The returned cursor counts RUN and THREAD items together, so it is only valid for a list request with no item_type or start-time filter.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="itemId"></param>
@@ -20,7 +20,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get annotation queue item placement<br/>
-        /// Resolve a RUN or THREAD item to its current review section and zero-based position for deep linking.
+        /// Resolve a RUN or THREAD item to its current review section and zero-based position for deep linking. The returned cursor counts RUN and THREAD items together, so it is only valid for a list request with no item_type or start-time filter.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="itemId"></param>

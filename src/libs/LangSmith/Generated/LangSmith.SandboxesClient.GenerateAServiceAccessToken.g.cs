@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// Generate a service access token<br/>
-        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry.
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. LangSmith login and token access are mutually exclusive per service URL.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="request"></param>
@@ -84,7 +84,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Generate a service access token<br/>
-        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry.
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. LangSmith login and token access are mutually exclusive per service URL.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="request"></param>
@@ -435,6 +435,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Conflict
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Unprocessable Entity
                             if ((int)__response.StatusCode == 422)
                             {
@@ -644,9 +681,17 @@ namespace LangSmith
         }
         /// <summary>
         /// Generate a service access token<br/>
-        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry.
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. LangSmith login and token access are mutually exclusive per service URL.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="access">
+        /// Access selects the login mode, mutually exclusive with the minted token.<br/>
+        /// Omit the field for token mode: mint a short-lived service token (default).<br/>
+        ///   "restricted" — LangSmith login: any user with SandboxesRead on the sandbox.<br/>
+        ///   "workspace"  — LangSmith login: any member of the owning workspace.<br/>
+        ///   "off"        — remove an existing LangSmith login grant and mint a token.<br/>
+        /// A LangSmith login grant is durable; token mode is refused (409) while one exists.
+        /// </param>
         /// <param name="expiresInSeconds"></param>
         /// <param name="port"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -654,6 +699,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesServiceURLResponse> GenerateAServiceAccessTokenAsync(
             string name,
+            global::LangSmith.SandboxesServiceURLPayloadAccess? access = default,
             int? expiresInSeconds = default,
             int? port = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -661,6 +707,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.SandboxesServiceURLPayload
             {
+                Access = access,
                 ExpiresInSeconds = expiresInSeconds,
                 Port = port,
             };

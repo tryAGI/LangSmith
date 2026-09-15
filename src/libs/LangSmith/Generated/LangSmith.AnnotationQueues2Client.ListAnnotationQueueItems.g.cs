@@ -45,6 +45,8 @@ namespace LangSmith
             ref int? pageSize,
             ref string? cursor,
             ref global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType,
+            ref global::System.DateTime? minStartTime,
+            ref global::System.DateTime? maxStartTime,
             ref global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction);
         partial void PrepareListAnnotationQueueItemsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,6 +56,8 @@ namespace LangSmith
             int? pageSize,
             string? cursor,
             global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType,
+            global::System.DateTime? minStartTime,
+            global::System.DateTime? maxStartTime,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction);
         partial void ProcessListAnnotationQueueItemsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -66,7 +70,7 @@ namespace LangSmith
 
         /// <summary>
         /// List annotation queue items<br/>
-        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
+        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. Optional min_start_time/max_start_time bound the item's trace start time; items with no start time are excluded when either bound is set. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="status"></param>
@@ -75,6 +79,8 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="itemType"></param>
+        /// <param name="minStartTime"></param>
+        /// <param name="maxStartTime"></param>
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
@@ -87,6 +93,8 @@ namespace LangSmith
             int? pageSize = default,
             string? cursor = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType = default,
+            global::System.DateTime? minStartTime = default,
+            global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -97,6 +105,8 @@ namespace LangSmith
                 pageSize: pageSize,
                 cursor: cursor,
                 itemType: itemType,
+                minStartTime: minStartTime,
+                maxStartTime: maxStartTime,
                 direction: direction,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -106,7 +116,7 @@ namespace LangSmith
         }
         /// <summary>
         /// List annotation queue items<br/>
-        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
+        /// List RUN and THREAD items in a single annotation queue for one review status section, with opaque cursor pagination. Optional item_type=RUN|THREAD filters the page. Optional min_start_time/max_start_time bound the item's trace start time; items with no start time are excluded when either bound is set. direction=backward returns items before the supplied cursor. The response contains item metadata only, not expanded run or thread payloads. status=archived returns items whose queue review requirements have been satisfied, not merely items the caller personally marked completed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="status"></param>
@@ -115,6 +125,8 @@ namespace LangSmith
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="itemType"></param>
+        /// <param name="minStartTime"></param>
+        /// <param name="maxStartTime"></param>
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
@@ -127,6 +139,8 @@ namespace LangSmith
             int? pageSize = default,
             string? cursor = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType = default,
+            global::System.DateTime? minStartTime = default,
+            global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -140,6 +154,8 @@ namespace LangSmith
                 pageSize: ref pageSize,
                 cursor: ref cursor,
                 itemType: ref itemType,
+                minStartTime: ref minStartTime,
+                maxStartTime: ref maxStartTime,
                 direction: ref direction);
 
 
@@ -175,6 +191,8 @@ namespace LangSmith
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("item_type", itemType?.ToValueString())
+                                .AddOptionalParameter("min_start_time", minStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("max_start_time", maxStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("direction", direction?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -222,6 +240,8 @@ namespace LangSmith
                     pageSize: pageSize,
                     cursor: cursor,
                     itemType: itemType,
+                    minStartTime: minStartTime,
+                    maxStartTime: maxStartTime,
                     direction: direction);
 
                 return __httpRequest;

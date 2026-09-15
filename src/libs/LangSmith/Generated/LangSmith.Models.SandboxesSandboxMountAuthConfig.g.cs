@@ -12,6 +12,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aws")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesSandboxAWSMountAuthConfigJsonConverter))]
         public global::LangSmith.SandboxesSandboxAWSMountAuthConfig? Aws { get; set; }
 
         /// <summary>
