@@ -43,14 +43,18 @@ namespace LangSmith
             ref string queueId,
             ref string status,
             ref string? startTime,
-            ref string? endTime);
+            ref string? endTime,
+            ref global::System.DateTime? minStartTime,
+            ref global::System.DateTime? maxStartTime);
         partial void PrepareGetTheAnnotationQueueItemCountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string queueId,
             string status,
             string? startTime,
-            string? endTime);
+            string? endTime,
+            global::System.DateTime? minStartTime,
+            global::System.DateTime? maxStartTime);
         partial void ProcessGetTheAnnotationQueueItemCountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,12 +66,14 @@ namespace LangSmith
 
         /// <summary>
         /// Get the annotation queue item count<br/>
-        /// Returns the number of annotation queue items for the requested reviewer-specific or archived bucket.
+        /// Returns the number of annotation queue items in one status bucket. The two time windows are independent: start_time/end_time bound when an item was archived, min_start_time/max_start_time bound when its trace ran. Items with no trace start time are excluded when either of the latter is set.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="status"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="minStartTime"></param>
+        /// <param name="maxStartTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -76,6 +82,8 @@ namespace LangSmith
             string status,
             string? startTime = default,
             string? endTime = default,
+            global::System.DateTime? minStartTime = default,
+            global::System.DateTime? maxStartTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,6 +92,8 @@ namespace LangSmith
                 status: status,
                 startTime: startTime,
                 endTime: endTime,
+                minStartTime: minStartTime,
+                maxStartTime: maxStartTime,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -92,12 +102,14 @@ namespace LangSmith
         }
         /// <summary>
         /// Get the annotation queue item count<br/>
-        /// Returns the number of annotation queue items for the requested reviewer-specific or archived bucket.
+        /// Returns the number of annotation queue items in one status bucket. The two time windows are independent: start_time/end_time bound when an item was archived, min_start_time/max_start_time bound when its trace ran. Items with no trace start time are excluded when either of the latter is set.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="status"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="minStartTime"></param>
+        /// <param name="maxStartTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -106,6 +118,8 @@ namespace LangSmith
             string status,
             string? startTime = default,
             string? endTime = default,
+            global::System.DateTime? minStartTime = default,
+            global::System.DateTime? maxStartTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -116,7 +130,9 @@ namespace LangSmith
                 queueId: ref queueId,
                 status: ref status,
                 startTime: ref startTime,
-                endTime: ref endTime);
+                endTime: ref endTime,
+                minStartTime: ref minStartTime,
+                maxStartTime: ref maxStartTime);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -150,6 +166,8 @@ namespace LangSmith
                                 .AddRequiredParameter("status", status)
                                 .AddOptionalParameter("start_time", startTime)
                                 .AddOptionalParameter("end_time", endTime)
+                                .AddOptionalParameter("min_start_time", minStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("max_start_time", maxStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -194,7 +212,9 @@ namespace LangSmith
                     queueId: queueId!,
                     status: status!,
                     startTime: startTime,
-                    endTime: endTime);
+                    endTime: endTime,
+                    minStartTime: minStartTime,
+                    maxStartTime: maxStartTime);
 
                 return __httpRequest;
             }
