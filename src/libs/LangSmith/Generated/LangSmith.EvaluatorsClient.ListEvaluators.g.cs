@@ -45,6 +45,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tagValueId,
             ref string? feedbackKey,
             global::System.Collections.Generic.IList<string>? resourceId,
+            ref string? agentId,
             ref string? sortBy,
             ref bool? sortByDesc,
             ref int? limit,
@@ -57,6 +58,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tagValueId,
             string? feedbackKey,
             global::System.Collections.Generic.IList<string>? resourceId,
+            string? agentId,
             string? sortBy,
             bool? sortByDesc,
             int? limit,
@@ -79,6 +81,7 @@ namespace LangSmith
         /// <param name="tagValueId"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="resourceId"></param>
+        /// <param name="agentId"></param>
         /// <param name="sortBy"></param>
         /// <param name="sortByDesc"></param>
         /// <param name="limit">
@@ -96,6 +99,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? resourceId = default,
+            string? agentId = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,
@@ -109,6 +113,7 @@ namespace LangSmith
                 tagValueId: tagValueId,
                 feedbackKey: feedbackKey,
                 resourceId: resourceId,
+                agentId: agentId,
                 sortBy: sortBy,
                 sortByDesc: sortByDesc,
                 limit: limit,
@@ -128,6 +133,7 @@ namespace LangSmith
         /// <param name="tagValueId"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="resourceId"></param>
+        /// <param name="agentId"></param>
         /// <param name="sortBy"></param>
         /// <param name="sortByDesc"></param>
         /// <param name="limit">
@@ -145,6 +151,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? resourceId = default,
+            string? agentId = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,
@@ -161,6 +168,7 @@ namespace LangSmith
                 tagValueId: tagValueId,
                 feedbackKey: ref feedbackKey,
                 resourceId: resourceId,
+                agentId: ref agentId,
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc,
                 limit: ref limit,
@@ -200,6 +208,7 @@ namespace LangSmith
                                 .AddOptionalParameter("tag_value_id", tagValueId, delimiter: ",", explode: false)
                                 .AddOptionalParameter("feedback_key", feedbackKey)
                                 .AddOptionalParameter("resource_id", resourceId, delimiter: ",", explode: false)
+                                .AddOptionalParameter("agent_id", agentId)
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -250,6 +259,7 @@ namespace LangSmith
                     tagValueId: tagValueId,
                     feedbackKey: feedbackKey,
                     resourceId: resourceId,
+                    agentId: agentId,
                     sortBy: sortBy,
                     sortByDesc: sortByDesc,
                     limit: limit,
