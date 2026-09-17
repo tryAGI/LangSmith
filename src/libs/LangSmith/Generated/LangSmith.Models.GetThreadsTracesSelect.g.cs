@@ -104,6 +104,10 @@ namespace LangSmith
         ///
         /// </summary>
         TraceId,
+        /// <summary>
+        ///
+        /// </summary>
+        TurnNumber,
     }
 
     /// <summary>
@@ -142,6 +146,7 @@ namespace LangSmith
                 GetThreadsTracesSelect.TotalCost => "TOTAL_COST",
                 GetThreadsTracesSelect.TotalTokens => "TOTAL_TOKENS",
                 GetThreadsTracesSelect.TraceId => "TRACE_ID",
+                GetThreadsTracesSelect.TurnNumber => "TURN_NUMBER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -176,6 +181,7 @@ namespace LangSmith
                 "TOTAL_COST" => GetThreadsTracesSelect.TotalCost,
                 "TOTAL_TOKENS" => GetThreadsTracesSelect.TotalTokens,
                 "TRACE_ID" => GetThreadsTracesSelect.TraceId,
+                "TURN_NUMBER" => GetThreadsTracesSelect.TurnNumber,
                 _ => null,
             };
         }

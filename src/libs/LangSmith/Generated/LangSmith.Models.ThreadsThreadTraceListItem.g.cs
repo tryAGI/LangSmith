@@ -166,6 +166,14 @@ namespace LangSmith
         public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
+        /// `turn_number` is the 1-based position in the whole thread, ordered by start_time then trace_id ascending, before filtering or pagination. Updates and deletions can change this position. Omitted unless TURN_NUMBER is included in `selects`.<br/>
+        /// Example: 1
+        /// </summary>
+        /// <example>1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("turn_number")]
+        public int? TurnNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -253,6 +261,10 @@ namespace LangSmith
         /// or when `selects` is omitted entirely (sole fallback field).<br/>
         /// Example: 018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327
         /// </param>
+        /// <param name="turnNumber">
+        /// `turn_number` is the 1-based position in the whole thread, ordered by start_time then trace_id ascending, before filtering or pagination. Updates and deletions can change this position. Omitted unless TURN_NUMBER is included in `selects`.<br/>
+        /// Example: 1
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -280,7 +292,8 @@ namespace LangSmith
             global::System.Guid? threadId,
             double? totalCost,
             int? totalTokens,
-            global::System.Guid? traceId)
+            global::System.Guid? traceId,
+            int? turnNumber)
         {
             this.CompletionCost = completionCost;
             this.CompletionCostDetails = completionCostDetails;
@@ -306,6 +319,7 @@ namespace LangSmith
             this.TotalCost = totalCost;
             this.TotalTokens = totalTokens;
             this.TraceId = traceId;
+            this.TurnNumber = turnNumber;
         }
 
         /// <summary>
