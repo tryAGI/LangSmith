@@ -7,8 +7,9 @@ namespace LangSmith
         /// <summary>
         /// Revoke Org Personal Access Token<br/>
         /// Revoke a personal access token, so it stops working but its record remains.<br/>
-        /// The token is marked revoked rather than deleted, and its expiry is moved to the<br/>
-        /// revocation time so it stops authenticating. Callers may always revoke their own<br/>
+        /// The token is marked revoked rather than deleted, and stops authenticating as<br/>
+        /// soon as its cached auth entry refreshes. Its expiry is left untouched, so the<br/>
+        /// revocation can be lifted by deleting it. Callers may always revoke their own<br/>
         /// tokens; organization admins may revoke any member's.
         /// </summary>
         /// <param name="patId"></param>
@@ -22,8 +23,9 @@ namespace LangSmith
         /// <summary>
         /// Revoke Org Personal Access Token<br/>
         /// Revoke a personal access token, so it stops working but its record remains.<br/>
-        /// The token is marked revoked rather than deleted, and its expiry is moved to the<br/>
-        /// revocation time so it stops authenticating. Callers may always revoke their own<br/>
+        /// The token is marked revoked rather than deleted, and stops authenticating as<br/>
+        /// soon as its cached auth entry refreshes. Its expiry is left untouched, so the<br/>
+        /// revocation can be lifted by deleting it. Callers may always revoke their own<br/>
         /// tokens; organization admins may revoke any member's.
         /// </summary>
         /// <param name="patId"></param>

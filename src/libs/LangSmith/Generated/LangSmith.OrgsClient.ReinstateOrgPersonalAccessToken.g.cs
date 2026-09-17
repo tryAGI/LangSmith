@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class OrgsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_RevokeOrgPersonalAccessTokenServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ReinstateOrgPersonalAccessTokenServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_RevokeOrgPersonalAccessTokenSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ReinstateOrgPersonalAccessTokenSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,79 +34,74 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_RevokeOrgPersonalAccessTokenSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ReinstateOrgPersonalAccessTokenSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_RevokeOrgPersonalAccessTokenSecurityRequirement0,
+            {                s_ReinstateOrgPersonalAccessTokenSecurityRequirement0,
             };
-        partial void PrepareRevokeOrgPersonalAccessTokenArguments(
+        partial void PrepareReinstateOrgPersonalAccessTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid patId);
-        partial void PrepareRevokeOrgPersonalAccessTokenRequest(
+        partial void PrepareReinstateOrgPersonalAccessTokenRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid patId);
-        partial void ProcessRevokeOrgPersonalAccessTokenResponse(
+        partial void ProcessReinstateOrgPersonalAccessTokenResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessRevokeOrgPersonalAccessTokenResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// Revoke Org Personal Access Token<br/>
-        /// Revoke a personal access token, so it stops working but its record remains.<br/>
-        /// The token is marked revoked rather than deleted, and stops authenticating as<br/>
-        /// soon as its cached auth entry refreshes. Its expiry is left untouched, so the<br/>
-        /// revocation can be lifted by deleting it. Callers may always revoke their own<br/>
-        /// tokens; organization admins may revoke any member's.
+        /// Reinstate Org Personal Access Token<br/>
+        /// Lift a revocation, so the personal access token authenticates again.<br/>
+        /// The token returns to the expiry it was created with, and one whose expiry has<br/>
+        /// since passed stays expired. If the token was used while revoked, it starts<br/>
+        /// working again once the rejection leaves the authentication cache. Lifting a<br/>
+        /// revocation that is not there changes nothing. Callers may always administer<br/>
+        /// their own tokens; organization admins may administer any member's.
         /// </summary>
         /// <param name="patId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.APIKeyGetResponse> RevokeOrgPersonalAccessTokenAsync(
+        public async global::System.Threading.Tasks.Task ReinstateOrgPersonalAccessTokenAsync(
             global::System.Guid patId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await RevokeOrgPersonalAccessTokenAsResponseAsync(
+            await ReinstateOrgPersonalAccessTokenAsResponseAsync(
                 patId: patId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
-
-            return __response.Body;
         }
         /// <summary>
-        /// Revoke Org Personal Access Token<br/>
-        /// Revoke a personal access token, so it stops working but its record remains.<br/>
-        /// The token is marked revoked rather than deleted, and stops authenticating as<br/>
-        /// soon as its cached auth entry refreshes. Its expiry is left untouched, so the<br/>
-        /// revocation can be lifted by deleting it. Callers may always revoke their own<br/>
-        /// tokens; organization admins may revoke any member's.
+        /// Reinstate Org Personal Access Token<br/>
+        /// Lift a revocation, so the personal access token authenticates again.<br/>
+        /// The token returns to the expiry it was created with, and one whose expiry has<br/>
+        /// since passed stays expired. If the token was used while revoked, it starts<br/>
+        /// working again once the rejection leaves the authentication cache. Lifting a<br/>
+        /// revocation that is not there changes nothing. Callers may always administer<br/>
+        /// their own tokens; organization admins may administer any member's.
         /// </summary>
         /// <param name="patId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.APIKeyGetResponse>> RevokeOrgPersonalAccessTokenAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse> ReinstateOrgPersonalAccessTokenAsResponseAsync(
             global::System.Guid patId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareRevokeOrgPersonalAccessTokenArguments(
+            PrepareReinstateOrgPersonalAccessTokenArguments(
                 httpClient: HttpClient,
                 patId: ref patId);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_RevokeOrgPersonalAccessTokenSecurityRequirements,
-                operationName: "RevokeOrgPersonalAccessTokenAsync");
+                securityRequirements: s_ReinstateOrgPersonalAccessTokenSecurityRequirements,
+                operationName: "ReinstateOrgPersonalAccessTokenAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -128,7 +123,7 @@ namespace LangSmith
                             var __pathBuilder = new global::LangSmith.PathBuilder(
                                 path: $"/api/v1/orgs/current/personal-access-tokens/{patId}/revocation",
                                 baseUri: ResolveBaseUri(
-                                servers: s_RevokeOrgPersonalAccessTokenServers,
+                                servers: s_ReinstateOrgPersonalAccessTokenServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -136,7 +131,7 @@ namespace LangSmith
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -167,7 +162,7 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareRevokeOrgPersonalAccessTokenRequest(
+                PrepareReinstateOrgPersonalAccessTokenRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     patId: patId!);
@@ -187,10 +182,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RevokeOrgPersonalAccessToken",
-                                methodName: "RevokeOrgPersonalAccessTokenAsync",
+                                operationId: "ReinstateOrgPersonalAccessToken",
+                                methodName: "ReinstateOrgPersonalAccessTokenAsync",
                                 pathTemplate: "$\"/api/v1/orgs/current/personal-access-tokens/{patId}/revocation\"",
-                                httpMethod: "POST",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -221,10 +216,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RevokeOrgPersonalAccessToken",
-                                methodName: "RevokeOrgPersonalAccessTokenAsync",
+                                operationId: "ReinstateOrgPersonalAccessToken",
+                                methodName: "ReinstateOrgPersonalAccessTokenAsync",
                                 pathTemplate: "$\"/api/v1/orgs/current/personal-access-tokens/{patId}/revocation\"",
-                                httpMethod: "POST",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -262,10 +257,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RevokeOrgPersonalAccessToken",
-                                methodName: "RevokeOrgPersonalAccessTokenAsync",
+                                operationId: "ReinstateOrgPersonalAccessToken",
+                                methodName: "ReinstateOrgPersonalAccessTokenAsync",
                                 pathTemplate: "$\"/api/v1/orgs/current/personal-access-tokens/{patId}/revocation\"",
-                                httpMethod: "POST",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -302,7 +297,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessRevokeOrgPersonalAccessTokenResponse(
+                ProcessReinstateOrgPersonalAccessTokenResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -310,10 +305,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RevokeOrgPersonalAccessToken",
-                                methodName: "RevokeOrgPersonalAccessTokenAsync",
+                                operationId: "ReinstateOrgPersonalAccessToken",
+                                methodName: "ReinstateOrgPersonalAccessTokenAsync",
                                 pathTemplate: "$\"/api/v1/orgs/current/personal-access-tokens/{patId}/revocation\"",
-                                httpMethod: "POST",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -332,10 +327,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RevokeOrgPersonalAccessToken",
-                                methodName: "RevokeOrgPersonalAccessTokenAsync",
+                                operationId: "ReinstateOrgPersonalAccessToken",
+                                methodName: "ReinstateOrgPersonalAccessTokenAsync",
                                 pathTemplate: "$\"/api/v1/orgs/current/personal-access-tokens/{patId}/revocation\"",
-                                httpMethod: "POST",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -436,22 +431,15 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessRevokeOrgPersonalAccessTokenResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.APIKeyGetResponse.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.APIKeyGetResponse>(
+                return new global::LangSmith.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -471,19 +459,10 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
-                #if NET5_0_OR_GREATER
-                                        __effectiveCancellationToken
-                #endif
-                                    ).ConfigureAwait(false);
-
-                                    var __value = await global::LangSmith.APIKeyGetResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.APIKeyGetResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

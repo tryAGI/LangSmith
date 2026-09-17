@@ -407,6 +407,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteAgent,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteAgentAuthConnection,
         /// <summary>
         ///
@@ -1299,6 +1303,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ReinstatePersonalAccessToken,
+        /// <summary>
+        ///
+        /// </summary>
         RemoveAnnotationQueueReviewer,
         /// <summary>
         ///
@@ -1877,6 +1885,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTool => "create_tool",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
+                AuditLogOperation.DeleteAgent => "delete_agent",
                 AuditLogOperation.DeleteAgentAuthConnection => "delete_agent_auth_connection",
                 AuditLogOperation.DeleteAgentAuthOidcIntegration => "delete_agent_auth_oidc_integration",
                 AuditLogOperation.DeleteAlertRule => "delete_alert_rule",
@@ -2100,6 +2109,7 @@ namespace LangSmith
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
                 AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
+                AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
@@ -2326,6 +2336,7 @@ namespace LangSmith
                 "create_tool" => AuditLogOperation.CreateTool,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
+                "delete_agent" => AuditLogOperation.DeleteAgent,
                 "delete_agent_auth_connection" => AuditLogOperation.DeleteAgentAuthConnection,
                 "delete_agent_auth_oidc_integration" => AuditLogOperation.DeleteAgentAuthOidcIntegration,
                 "delete_alert_rule" => AuditLogOperation.DeleteAlertRule,
@@ -2549,6 +2560,7 @@ namespace LangSmith
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
                 "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
+                "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
