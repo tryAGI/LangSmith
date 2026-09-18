@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Request to create a run clustering job.
+    /// Saved configuration for an Insights job.
     /// </summary>
     public sealed partial class SavedRunClusteringJobRequest
     {

@@ -60,7 +60,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Update Insights Job Config<br/>
-        /// Update an insights job config.
+        /// Update an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>
@@ -92,7 +92,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Update Insights Job Config<br/>
-        /// Update an insights job config.
+        /// Update an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>
@@ -511,7 +511,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Update Insights Job Config<br/>
-        /// Update an insights job config.
+        /// Update an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>

@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Response to update a session cluster job.
+    /// Response to updating an Insights job.
     /// </summary>
     public sealed partial class UpdateRunClusteringJobResponse
     {

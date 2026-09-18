@@ -60,7 +60,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Get Run Cluster From Insights Job<br/>
-        /// Get a specific cluster for a session.
+        /// Get a cluster from the report produced by an Insights job.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
@@ -90,7 +90,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Get Run Cluster From Insights Job<br/>
-        /// Get a specific cluster for a session.
+        /// Get a cluster from the report produced by an Insights job.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>

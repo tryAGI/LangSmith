@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Request to auto-generate a clustering job config.
+    /// Request to generate an Insights job configuration.
     /// </summary>
     public sealed partial class GenerateClusteringJobConfigRequest
     {

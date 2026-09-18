@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Response to creating a run clustering job.
+    /// An Insights job queued for execution.
     /// </summary>
     public sealed partial class CreateRunClusteringJobResponse
     {

@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Create Insights Job Config<br/>
-        /// Save an insights job config.
+        /// Create an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -87,7 +87,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Create Insights Job Config<br/>
-        /// Save an insights job config.
+        /// Create an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -502,13 +502,13 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Create Insights Job Config<br/>
-        /// Save an insights job config.
+        /// Create an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="config">
-        /// Request to create a run clustering job.
+        /// Configuration for an Insights job.
         /// </param>
         /// <param name="scheduleCron"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

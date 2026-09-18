@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// [Beta] Get Insights Job Configs<br/>
-        /// Get all insights job configs for a session.
+        /// List Insights job configurations for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="includePrebuilts">
@@ -25,7 +25,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [Beta] Get Insights Job Configs<br/>
-        /// Get all insights job configs for a session.
+        /// List Insights job configurations for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="includePrebuilts">

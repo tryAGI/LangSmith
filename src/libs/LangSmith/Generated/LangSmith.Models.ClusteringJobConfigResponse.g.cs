@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Full clustering job config with all details.
+    /// An Insights job configuration.
     /// </summary>
     public sealed partial class ClusteringJobConfigResponse
     {
@@ -30,7 +30,7 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
-        /// Request to create a run clustering job.
+        /// Saved configuration for an Insights job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,7 +61,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="config">
-        /// Request to create a run clustering job.
+        /// Saved configuration for an Insights job.
         /// </param>
         /// <param name="prebuilt"></param>
         /// <param name="description"></param>

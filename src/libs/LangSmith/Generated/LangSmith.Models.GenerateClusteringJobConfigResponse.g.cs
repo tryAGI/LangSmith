@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Auto-generated clustering job config (not persisted; frontend creates the config).
+    /// Generated Insights job configuration. This configuration is not saved.
     /// </summary>
     public sealed partial class GenerateClusteringJobConfigResponse
     {

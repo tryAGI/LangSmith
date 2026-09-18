@@ -45,7 +45,9 @@ namespace LangSmith
             ref string? filter,
             ref int? pageSize,
             ref global::System.Guid projectId,
-            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects);
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects,
+            ref string? traceFilter,
+            ref string? treeFilter);
         partial void PrepareQueryThreadTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -54,7 +56,9 @@ namespace LangSmith
             string? filter,
             int? pageSize,
             global::System.Guid projectId,
-            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects);
+            global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects,
+            string? traceFilter,
+            string? treeFilter);
         partial void ProcessQueryThreadTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -77,6 +81,8 @@ namespace LangSmith
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="selects"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -87,6 +93,8 @@ namespace LangSmith
             string? filter = default,
             int? pageSize = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects = default,
+            string? traceFilter = default,
+            string? treeFilter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,6 +105,8 @@ namespace LangSmith
                 filter: filter,
                 pageSize: pageSize,
                 selects: selects,
+                traceFilter: traceFilter,
+                treeFilter: treeFilter,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -116,6 +126,8 @@ namespace LangSmith
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="selects"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -126,6 +138,8 @@ namespace LangSmith
             string? filter = default,
             int? pageSize = default,
             global::System.Collections.Generic.IList<global::LangSmith.GetThreadsTracesSelect>? selects = default,
+            string? traceFilter = default,
+            string? treeFilter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -138,7 +152,9 @@ namespace LangSmith
                 filter: ref filter,
                 pageSize: ref pageSize,
                 projectId: ref projectId,
-                selects: selects);
+                selects: selects,
+                traceFilter: ref traceFilter,
+                treeFilter: ref treeFilter);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -174,6 +190,8 @@ namespace LangSmith
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddRequiredParameter("project_id", projectId.ToString()!)
                                 .AddOptionalParameter("selects", selects, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("trace_filter", traceFilter)
+                                .AddOptionalParameter("tree_filter", treeFilter)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -220,7 +238,9 @@ namespace LangSmith
                     filter: filter,
                     pageSize: pageSize,
                     projectId: projectId!,
-                    selects: selects);
+                    selects: selects,
+                    traceFilter: traceFilter,
+                    treeFilter: treeFilter);
 
                 return __httpRequest;
             }

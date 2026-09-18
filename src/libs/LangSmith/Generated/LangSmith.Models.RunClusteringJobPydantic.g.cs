@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Session cluster job
+    /// An Insights job.
     /// </summary>
     public sealed partial class RunClusteringJobPydantic
     {

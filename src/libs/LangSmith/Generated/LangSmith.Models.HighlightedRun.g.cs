@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// A trace highlighted in an insights report summary. Up to 10 per insights job.
+    /// A trace highlighted in an Insights report summary. Up to 10 per report.
     /// </summary>
     public sealed partial class HighlightedRun
     {

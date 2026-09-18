@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Create Insights Job<br/>
-        /// Create an insights job.
+        /// Create an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -87,7 +87,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Create Insights Job<br/>
-        /// Create an insights job.
+        /// Create an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -502,7 +502,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Create Insights Job<br/>
-        /// Create an insights job.
+        /// Create an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>

@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// High level summary of an insights job that pulls out patterns and specific traces.
+    /// High-level summary of an Insights report with patterns and specific traces.
     /// </summary>
     public sealed partial class InsightsSummary
     {
