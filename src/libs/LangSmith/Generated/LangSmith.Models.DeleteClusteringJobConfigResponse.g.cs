@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Response to delete a clustering job config.
+    /// Confirmation that an Insights job configuration was deleted.
     /// </summary>
     public sealed partial class DeleteClusteringJobConfigResponse
     {

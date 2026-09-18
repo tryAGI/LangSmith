@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Auto-Generate Insights Job Config<br/>
-        /// Auto-generate an insights job config.
+        /// Generate an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -87,7 +87,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Auto-Generate Insights Job Config<br/>
-        /// Auto-generate an insights job config.
+        /// Generate an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -502,7 +502,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Auto-Generate Insights Job Config<br/>
-        /// Auto-generate an insights job config.
+        /// Generate an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="userContext"></param>

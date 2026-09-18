@@ -11,6 +11,26 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AgentAuthConnectionsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentAuthConnectionsDelete,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentAuthConnectionsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentAuthConnectionsRevoke,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentAuthConnectionsUpdate,
+        /// <summary>
+        ///
+        /// </summary>
         AlertsCreate,
         /// <summary>
         ///
@@ -418,6 +438,11 @@ namespace LangSmith
         {
             return value switch
             {
+                AuthzInternalPermission.AgentAuthConnectionsCreate => "agent-auth-connections:create",
+                AuthzInternalPermission.AgentAuthConnectionsDelete => "agent-auth-connections:delete",
+                AuthzInternalPermission.AgentAuthConnectionsRead => "agent-auth-connections:read",
+                AuthzInternalPermission.AgentAuthConnectionsRevoke => "agent-auth-connections:revoke",
+                AuthzInternalPermission.AgentAuthConnectionsUpdate => "agent-auth-connections:update",
                 AuthzInternalPermission.AlertsCreate => "alerts:create",
                 AuthzInternalPermission.AlertsDelete => "alerts:delete",
                 AuthzInternalPermission.AlertsRead => "alerts:read",
@@ -527,6 +552,11 @@ namespace LangSmith
         {
             return value switch
             {
+                "agent-auth-connections:create" => AuthzInternalPermission.AgentAuthConnectionsCreate,
+                "agent-auth-connections:delete" => AuthzInternalPermission.AgentAuthConnectionsDelete,
+                "agent-auth-connections:read" => AuthzInternalPermission.AgentAuthConnectionsRead,
+                "agent-auth-connections:revoke" => AuthzInternalPermission.AgentAuthConnectionsRevoke,
+                "agent-auth-connections:update" => AuthzInternalPermission.AgentAuthConnectionsUpdate,
                 "alerts:create" => AuthzInternalPermission.AlertsCreate,
                 "alerts:delete" => AuthzInternalPermission.AlertsDelete,
                 "alerts:read" => AuthzInternalPermission.AlertsRead,

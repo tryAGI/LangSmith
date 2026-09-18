@@ -129,6 +129,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfigRoleArn), TypeInfoPropertyName = "SandboxesSandboxAWSMountStaticAuthConfigRoleArn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateSandboxesUploadRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSandboxesUsageCostsResourceType), TypeInfoPropertyName = "GetSandboxesUsageCostsResourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSandboxesUsageCostsGranularity), TypeInfoPropertyName = "GetSandboxesUsageCostsGranularity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
@@ -152,6 +153,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyAWSStaticConfigRoleArn?), TypeInfoPropertyName = "NullableSandboxesProxyAWSStaticConfigRoleArn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfigRoleArn?), TypeInfoPropertyName = "NullableSandboxesSandboxAWSMountStaticAuthConfigRoleArn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSandboxesUsageCostsResourceType?), TypeInfoPropertyName = "NullableGetSandboxesUsageCostsResourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSandboxesUsageCostsGranularity?), TypeInfoPropertyName = "NullableGetSandboxesUsageCostsGranularity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesBatchDeleteSkipped>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesProxyHeader>))]
@@ -364,7 +366,11 @@ namespace LangSmith
 
                     || typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsResourceType)
 
-                    || typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsResourceType?);
+                    || typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsResourceType?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsGranularity)
+
+                    || typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsGranularity?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -549,6 +555,16 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsResourceType?))
                 {
                     return new global::LangSmith.JsonConverters.GetSandboxesUsageCostsResourceTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsGranularity))
+                {
+                    return new global::LangSmith.JsonConverters.GetSandboxesUsageCostsGranularityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetSandboxesUsageCostsGranularity?))
+                {
+                    return new global::LangSmith.JsonConverters.GetSandboxesUsageCostsGranularityNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

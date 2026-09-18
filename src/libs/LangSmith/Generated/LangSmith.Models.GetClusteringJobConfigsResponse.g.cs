@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Response to get clustering job configs.
+    /// A collection of Insights job configurations.
     /// </summary>
     public sealed partial class GetClusteringJobConfigsResponse
     {

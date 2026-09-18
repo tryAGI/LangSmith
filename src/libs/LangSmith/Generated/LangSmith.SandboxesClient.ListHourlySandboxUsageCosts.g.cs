@@ -45,6 +45,7 @@ namespace LangSmith
             ref global::LangSmith.GetSandboxesUsageCostsResourceType? resourceType,
             global::System.Collections.Generic.IList<string>? resourceIds,
             ref int? pageSize,
+            ref global::LangSmith.GetSandboxesUsageCostsGranularity? granularity,
             ref string? cursor);
         partial void PrepareListHourlySandboxUsageCostsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,6 +55,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsResourceType? resourceType,
             global::System.Collections.Generic.IList<string>? resourceIds,
             int? pageSize,
+            global::LangSmith.GetSandboxesUsageCostsGranularity? granularity,
             string? cursor);
         partial void ProcessListHourlySandboxUsageCostsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -75,6 +77,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="granularity">
+        /// Default Value: HOUR
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -85,6 +90,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsResourceType? resourceType = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
             int? pageSize = default,
+            global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -95,6 +101,7 @@ namespace LangSmith
                 resourceType: resourceType,
                 resourceIds: resourceIds,
                 pageSize: pageSize,
+                granularity: granularity,
                 cursor: cursor,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -113,6 +120,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="granularity">
+        /// Default Value: HOUR
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -123,6 +133,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsResourceType? resourceType = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
             int? pageSize = default,
+            global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -136,6 +147,7 @@ namespace LangSmith
                 resourceType: ref resourceType,
                 resourceIds: resourceIds,
                 pageSize: ref pageSize,
+                granularity: ref granularity,
                 cursor: ref cursor);
 
 
@@ -172,6 +184,7 @@ namespace LangSmith
                                 .AddOptionalParameter("resource_type", resourceType?.ToValueString())
                                 .AddOptionalParameter("resource_ids", resourceIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("granularity", granularity?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -219,6 +232,7 @@ namespace LangSmith
                     resourceType: resourceType,
                     resourceIds: resourceIds,
                     pageSize: pageSize,
+                    granularity: granularity,
                     cursor: cursor);
 
                 return __httpRequest;

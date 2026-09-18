@@ -64,7 +64,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Get Insights Jobs<br/>
-        /// Get all clusters for a session.
+        /// List Insights jobs for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="limit">
@@ -104,7 +104,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Get Insights Jobs<br/>
-        /// Get all clusters for a session.
+        /// List Insights jobs for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="limit">

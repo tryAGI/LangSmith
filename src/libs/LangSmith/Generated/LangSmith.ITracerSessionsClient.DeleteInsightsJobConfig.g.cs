@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// [Beta] Delete Insights Job Config<br/>
-        /// Delete an insights job config.
+        /// Delete an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>
@@ -23,7 +23,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [Beta] Delete Insights Job Config<br/>
-        /// Delete an insights job config.
+        /// Delete an Insights job configuration for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="configId"></param>

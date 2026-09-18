@@ -15,6 +15,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="granularity">
+        /// Default Value: HOUR
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -25,6 +28,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsResourceType? resourceType = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
             int? pageSize = default,
+            global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -39,6 +43,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="granularity">
+        /// Default Value: HOUR
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -49,6 +56,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsResourceType? resourceType = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
             int? pageSize = default,
+            global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -68,7 +68,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Get Runs From Insights Job<br/>
-        /// Get all runs for a cluster job, optionally filtered by cluster.
+        /// List runs analyzed by an Insights job, optionally filtered by report cluster.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
@@ -114,7 +114,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Get Runs From Insights Job<br/>
-        /// Get all runs for a cluster job, optionally filtered by cluster.
+        /// List runs analyzed by an Insights job, optionally filtered by report cluster.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>

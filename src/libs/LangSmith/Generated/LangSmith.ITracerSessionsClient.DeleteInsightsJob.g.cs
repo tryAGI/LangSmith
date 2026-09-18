@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// [Beta] Delete Insights Job<br/>
-        /// Delete a session cluster job.
+        /// Delete an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
@@ -23,7 +23,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [Beta] Delete Insights Job<br/>
-        /// Delete a session cluster job.
+        /// Delete an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>

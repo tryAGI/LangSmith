@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Response to get a specific cluster job for a session.
+    /// An Insights job and the report it produced.
     /// </summary>
     public sealed partial class GetRunClusteringJobResponse
     {

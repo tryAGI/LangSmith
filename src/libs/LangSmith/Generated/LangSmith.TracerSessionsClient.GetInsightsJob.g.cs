@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// [Beta] Get Insights Job<br/>
-        /// Get a specific cluster job for a session.
+        /// Get an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>
@@ -85,7 +85,7 @@ namespace LangSmith
         }
         /// <summary>
         /// [Beta] Get Insights Job<br/>
-        /// Get a specific cluster job for a session.
+        /// Get an Insights job for a project.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="jobId"></param>

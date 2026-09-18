@@ -159,6 +159,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateComputerEnvironment,
+        /// <summary>
+        ///
+        /// </summary>
         CreateConnection,
         /// <summary>
         ///
@@ -1823,6 +1827,7 @@ namespace LangSmith
                 AuditLogOperation.CreateChartSection => "create_chart_section",
                 AuditLogOperation.CreateCommit => "create_commit",
                 AuditLogOperation.CreateComparativeExperiment => "create_comparative_experiment",
+                AuditLogOperation.CreateComputerEnvironment => "create_computer_environment",
                 AuditLogOperation.CreateConnection => "create_connection",
                 AuditLogOperation.CreateCredential => "create_credential",
                 AuditLogOperation.CreateCsvDataset => "create_csv_dataset",
@@ -2274,6 +2279,7 @@ namespace LangSmith
                 "create_chart_section" => AuditLogOperation.CreateChartSection,
                 "create_commit" => AuditLogOperation.CreateCommit,
                 "create_comparative_experiment" => AuditLogOperation.CreateComparativeExperiment,
+                "create_computer_environment" => AuditLogOperation.CreateComputerEnvironment,
                 "create_connection" => AuditLogOperation.CreateConnection,
                 "create_credential" => AuditLogOperation.CreateCredential,
                 "create_csv_dataset" => AuditLogOperation.CreateCsvDataset,
