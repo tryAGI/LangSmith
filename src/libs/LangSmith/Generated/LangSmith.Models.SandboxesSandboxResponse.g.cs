@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class SandboxesSandboxResponse
     {
         /// <summary>
-        /// AccessDelegation is the LangSmith access this sandbox was granted, absent when it has none. Either mode can appear: a grant is reported as requested, except that INHERIT requested by a creator who is itself delegated is stored as EXPLICIT carrying that creator's own ceiling, so the value always describes what this sandbox can reach rather than what was asked for.
+        /// AccessDelegation is the LangSmith access this sandbox was granted, absent when it has none. It is reported exactly as it was requested at create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_delegation")]
         public global::LangSmith.SandboxesAccessDelegation? AccessDelegation { get; set; }
@@ -162,7 +162,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesSandboxResponse" /> class.
         /// </summary>
         /// <param name="accessDelegation">
-        /// AccessDelegation is the LangSmith access this sandbox was granted, absent when it has none. Either mode can appear: a grant is reported as requested, except that INHERIT requested by a creator who is itself delegated is stored as EXPLICIT carrying that creator's own ceiling, so the value always describes what this sandbox can reach rather than what was asked for.
+        /// AccessDelegation is the LangSmith access this sandbox was granted, absent when it has none. It is reported exactly as it was requested at create.
         /// </param>
         /// <param name="cpuMillicores"></param>
         /// <param name="createdAt"></param>

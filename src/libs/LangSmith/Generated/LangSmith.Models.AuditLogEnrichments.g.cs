@@ -57,6 +57,12 @@ namespace LangSmith
         public string? ResourceOwnerLsUserId { get; set; }
 
         /// <summary>
+        /// Sandbox that made the call under an access-delegation grant, set when the actor fields name its delegator rather than a user acting directly.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delegated_from_sandbox_id")]
+        public string? DelegatedFromSandboxId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -75,6 +81,9 @@ namespace LangSmith
         /// <param name="resourceOwnerLsUserId">
         /// LangSmith user ID of the member the resource belonged to, set when that is not the actor.
         /// </param>
+        /// <param name="delegatedFromSandboxId">
+        /// Sandbox that made the call under an access-delegation grant, set when the actor fields name its delegator rather than a user acting directly.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,7 +95,8 @@ namespace LangSmith
             string? xForwardedFor,
             int? responseStatusCode,
             global::System.Collections.Generic.IList<string>? resourceIds,
-            string? resourceOwnerLsUserId)
+            string? resourceOwnerLsUserId,
+            string? delegatedFromSandboxId)
         {
             this.RequestMethod = requestMethod;
             this.RequestPath = requestPath;
@@ -96,6 +106,7 @@ namespace LangSmith
             this.ResponseStatusCode = responseStatusCode;
             this.ResourceIds = resourceIds;
             this.ResourceOwnerLsUserId = resourceOwnerLsUserId;
+            this.DelegatedFromSandboxId = delegatedFromSandboxId;
         }
 
         /// <summary>
