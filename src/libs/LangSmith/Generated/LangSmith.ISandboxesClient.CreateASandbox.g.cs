@@ -34,6 +34,9 @@ namespace LangSmith
         /// Create a sandbox<br/>
         /// Create a new sandbox from a snapshot. Provide at most one of `snapshot_id` or `snapshot_name`; if neither is provided, the server uses the default snapshot. `snapshot_name` accepts a Docker-style `name` or `name:tag` reference (a bare name resolves to `name:latest`).
         /// </summary>
+        /// <param name="accessDelegation">
+        /// AccessDelegation lets code inside the sandbox call the LangSmith API as you, with at most the permissions granted here. Omit for no access.
+        /// </param>
         /// <param name="cpuMillicores">
         /// CPUMillicores optionally requests CPU at millicore granularity (e.g. 500 = 0.5 vCPU); takes precedence over VCPUs. Fractional (sub-vCPU) values are not available for every sandbox.
         /// </param>
@@ -82,6 +85,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSandboxResponse> CreateASandboxAsync(
+            global::LangSmith.SandboxesAccessDelegation? accessDelegation = default,
             int? cpuMillicores = default,
             int? deleteAfterStopSeconds = default,
             global::System.Collections.Generic.Dictionary<string, string>? envVars = default,

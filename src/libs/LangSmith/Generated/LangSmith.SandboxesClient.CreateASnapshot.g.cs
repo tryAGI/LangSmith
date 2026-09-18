@@ -56,7 +56,7 @@ namespace LangSmith
 
         /// <summary>
         /// Create a snapshot<br/>
-        /// Create a snapshot from a Docker image (async build).
+        /// Create a snapshot from a Docker image (async build). Names use lowercase registry-style components separated by slashes, up to 255 characters. The system/ namespace is read-only.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +79,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Create a snapshot<br/>
-        /// Create a snapshot from a Docker image (async build).
+        /// Create a snapshot from a Docker image (async build). Names use lowercase registry-style components separated by slashes, up to 255 characters. The system/ namespace is read-only.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -561,7 +561,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Create a snapshot<br/>
-        /// Create a snapshot from a Docker image (async build).
+        /// Create a snapshot from a Docker image (async build). Names use lowercase registry-style components separated by slashes, up to 255 characters. The system/ namespace is read-only.
         /// </summary>
         /// <param name="description">
         /// Description says what this snapshot's image can do, so a caller can hand it to an agent as a capability summary. At most 1024 characters.

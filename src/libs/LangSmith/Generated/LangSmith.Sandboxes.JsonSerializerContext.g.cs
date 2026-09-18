@@ -26,6 +26,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthSandboxDelegationMode), TypeInfoPropertyName = "AuthSandboxDelegationMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiContextHubMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiFileInfo))]
@@ -46,6 +47,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpecDiscriminatorType), TypeInfoPropertyName = "SandboxapiMountSpecDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiRunConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesAccessControl))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesAccessDelegation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesBatchDeleteRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesBatchDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesBatchDeleteSkipped>))]
@@ -132,6 +134,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSandboxesUsageCostsGranularity), TypeInfoPropertyName = "GetSandboxesUsageCostsGranularity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuthSandboxDelegationMode?), TypeInfoPropertyName = "NullableAuthSandboxDelegationMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpecType?), TypeInfoPropertyName = "NullableSandboxapiGitMountRefSpecType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountKind?), TypeInfoPropertyName = "NullableSandboxapiMountKind2")]
@@ -296,7 +299,11 @@ namespace LangSmith
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::LangSmith.SandboxapiGitMountRefSpecType)
+                    typeToConvert == typeof(global::LangSmith.AuthSandboxDelegationMode)
+
+                    || typeToConvert == typeof(global::LangSmith.AuthSandboxDelegationMode?)
+
+                    || typeToConvert == typeof(global::LangSmith.SandboxapiGitMountRefSpecType)
 
                     || typeToConvert == typeof(global::LangSmith.SandboxapiGitMountRefSpecType?)
 
@@ -377,6 +384,16 @@ namespace LangSmith
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::LangSmith.AuthSandboxDelegationMode))
+                {
+                    return new global::LangSmith.JsonConverters.AuthSandboxDelegationModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AuthSandboxDelegationMode?))
+                {
+                    return new global::LangSmith.JsonConverters.AuthSandboxDelegationModeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LangSmith.SandboxapiGitMountRefSpecType))
                 {
                     return new global::LangSmith.JsonConverters.SandboxapiGitMountRefSpecTypeJsonConverter();

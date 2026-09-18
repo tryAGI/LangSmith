@@ -9,6 +9,12 @@ namespace LangSmith
     public sealed partial class SandboxesCreateSandboxPayload
     {
         /// <summary>
+        /// AccessDelegation lets code inside the sandbox call the LangSmith API as you, with at most the permissions granted here. Omit for no access.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_delegation")]
+        public global::LangSmith.SandboxesAccessDelegation? AccessDelegation { get; set; }
+
+        /// <summary>
         /// CPUMillicores optionally requests CPU at millicore granularity (e.g. 500 = 0.5 vCPU); takes precedence over VCPUs. Fractional (sub-vCPU) values are not available for every sandbox.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu_millicores")]
@@ -135,6 +141,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesCreateSandboxPayload" /> class.
         /// </summary>
+        /// <param name="accessDelegation">
+        /// AccessDelegation lets code inside the sandbox call the LangSmith API as you, with at most the permissions granted here. Omit for no access.
+        /// </param>
         /// <param name="cpuMillicores">
         /// CPUMillicores optionally requests CPU at millicore granularity (e.g. 500 = 0.5 vCPU); takes precedence over VCPUs. Fractional (sub-vCPU) values are not available for every sandbox.
         /// </param>
@@ -183,6 +192,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesCreateSandboxPayload(
+            global::LangSmith.SandboxesAccessDelegation? accessDelegation,
             int? cpuMillicores,
             int? deleteAfterStopSeconds,
             global::System.Collections.Generic.Dictionary<string, string>? envVars,
@@ -202,6 +212,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tagValueIds,
             int? vcpus)
         {
+            this.AccessDelegation = accessDelegation;
             this.CpuMillicores = cpuMillicores;
             this.DeleteAfterStopSeconds = deleteAfterStopSeconds;
             this.EnvVars = envVars;
