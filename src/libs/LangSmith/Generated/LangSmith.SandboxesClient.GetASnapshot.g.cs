@@ -56,7 +56,7 @@ namespace LangSmith
 
         /// <summary>
         /// Get a snapshot<br/>
-        /// Get a sandbox snapshot by ID or by a Docker-style reference. A bare name means name:latest, falling back to the newest ready untagged snapshot of that name. To list the tags under a name, use /api/v2/sandboxes/snapshots-by-name/{name}.
+        /// Get a sandbox snapshot by ID or a registry-style reference, including system/default:latest. URL-encode references containing slashes. A bare name means name:latest, falling back to the newest ready untagged snapshot of that name. To list the tags under a name, use /api/v2/sandboxes/snapshots-by-name/{name}.
         /// </summary>
         /// <param name="snapshotId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -77,7 +77,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get a snapshot<br/>
-        /// Get a sandbox snapshot by ID or by a Docker-style reference. A bare name means name:latest, falling back to the newest ready untagged snapshot of that name. To list the tags under a name, use /api/v2/sandboxes/snapshots-by-name/{name}.
+        /// Get a sandbox snapshot by ID or a registry-style reference, including system/default:latest. URL-encode references containing slashes. A bare name means name:latest, falling back to the newest ready untagged snapshot of that name. To list the tags under a name, use /api/v2/sandboxes/snapshots-by-name/{name}.
         /// </summary>
         /// <param name="snapshotId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
