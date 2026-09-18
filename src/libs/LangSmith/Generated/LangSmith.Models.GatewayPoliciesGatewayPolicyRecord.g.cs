@@ -33,6 +33,13 @@ namespace LangSmith
         public string? CreatedBy { get; set; }
 
         /// <summary>
+        /// CurrentSpend is the list of spends recorded for each of the<br/>
+        /// tracked spend limit windows, used in v2 of spend_cap policy type.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("current_spend")]
+        public global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesSpendUsage>? CurrentSpend { get; set; }
+
+        /// <summary>
         /// CurrentSpendUSD is the spend in the policy's current window. Set for<br/>
         /// any spend_cap policy regardless of enabled state — disabled policies<br/>
         /// still surface usage so users can see what would have been counted.<br/>
@@ -132,6 +139,10 @@ namespace LangSmith
         /// <param name="config"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdBy"></param>
+        /// <param name="currentSpend">
+        /// CurrentSpend is the list of spends recorded for each of the<br/>
+        /// tracked spend limit windows, used in v2 of spend_cap policy type.
+        /// </param>
         /// <param name="currentSpendUsd">
         /// CurrentSpendUSD is the spend in the policy's current window. Set for<br/>
         /// any spend_cap policy regardless of enabled state — disabled policies<br/>
@@ -168,6 +179,7 @@ namespace LangSmith
             object? config,
             string? createdAt,
             string? createdBy,
+            global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesSpendUsage>? currentSpend,
             double? currentSpendUsd,
             global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesRateLimitUsage>? currentUsage,
             string? description,
@@ -186,6 +198,7 @@ namespace LangSmith
             this.Config = config;
             this.CreatedAt = createdAt;
             this.CreatedBy = createdBy;
+            this.CurrentSpend = currentSpend;
             this.CurrentSpendUsd = currentSpendUsd;
             this.CurrentUsage = currentUsage;
             this.Description = description;

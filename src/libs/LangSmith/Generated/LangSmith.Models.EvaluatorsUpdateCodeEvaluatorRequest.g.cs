@@ -33,6 +33,12 @@ namespace LangSmith
         public string? Language { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_code_evaluator_settings")]
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? ManagedCodeEvaluatorSettings { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,6 +51,7 @@ namespace LangSmith
         /// <param name="code"></param>
         /// <param name="dependencies"></param>
         /// <param name="language"></param>
+        /// <param name="managedCodeEvaluatorSettings"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,12 +59,14 @@ namespace LangSmith
             bool? advancedFeaturesEnabled,
             string? code,
             string? dependencies,
-            string? language)
+            string? language,
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings)
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
             this.Dependencies = dependencies;
             this.Language = language;
+            this.ManagedCodeEvaluatorSettings = managedCodeEvaluatorSettings;
         }
 
         /// <summary>

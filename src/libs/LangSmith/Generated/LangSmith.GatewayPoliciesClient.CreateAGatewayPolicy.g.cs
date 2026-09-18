@@ -60,8 +60,10 @@ namespace LangSmith
         /// **policy_type** is one of `spend_cap`, `default_spend_cap`,<br/>
         /// `guard`, `route_config`, `model_fallback`, `rate_limit`, or `default_rate_limit`.<br/>
         /// The shape of `config` depends on policy_type:<br/>
-        /// - `spend_cap` / `default_spend_cap`:<br/>
+        /// - `spend_cap` / `default_spend_cap`, one limit:<br/>
         /// `{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}`<br/>
+        /// - `spend_cap` / `default_spend_cap`, a limit per window:<br/>
+        /// `{"version": 2, "limits": [{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}]}`<br/>
         /// - `guard`:<br/>
         /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
         /// `timeout_seconds` (optional, 0.1–30) caps guard pipeline execution time; defaults to 2s. `timeout_action` defaults to `allow`.<br/>
@@ -128,8 +130,10 @@ namespace LangSmith
         /// **policy_type** is one of `spend_cap`, `default_spend_cap`,<br/>
         /// `guard`, `route_config`, `model_fallback`, `rate_limit`, or `default_rate_limit`.<br/>
         /// The shape of `config` depends on policy_type:<br/>
-        /// - `spend_cap` / `default_spend_cap`:<br/>
+        /// - `spend_cap` / `default_spend_cap`, one limit:<br/>
         /// `{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}`<br/>
+        /// - `spend_cap` / `default_spend_cap`, a limit per window:<br/>
+        /// `{"version": 2, "limits": [{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}]}`<br/>
         /// - `guard`:<br/>
         /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
         /// `timeout_seconds` (optional, 0.1–30) caps guard pipeline execution time; defaults to 2s. `timeout_action` defaults to `allow`.<br/>
@@ -729,8 +733,10 @@ namespace LangSmith
         /// **policy_type** is one of `spend_cap`, `default_spend_cap`,<br/>
         /// `guard`, `route_config`, `model_fallback`, `rate_limit`, or `default_rate_limit`.<br/>
         /// The shape of `config` depends on policy_type:<br/>
-        /// - `spend_cap` / `default_spend_cap`:<br/>
+        /// - `spend_cap` / `default_spend_cap`, one limit:<br/>
         /// `{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}`<br/>
+        /// - `spend_cap` / `default_spend_cap`, a limit per window:<br/>
+        /// `{"version": 2, "limits": [{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}]}`<br/>
         /// - `guard`:<br/>
         /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
         /// `timeout_seconds` (optional, 0.1–30) caps guard pipeline execution time; defaults to 2s. `timeout_action` defaults to `allow`.<br/>
