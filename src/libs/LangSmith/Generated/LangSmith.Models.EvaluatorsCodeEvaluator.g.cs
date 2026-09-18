@@ -52,6 +52,18 @@ namespace LangSmith
         public string? Language { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_code_evaluator_key")]
+        public string? ManagedCodeEvaluatorKey { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("managed_code_evaluator_settings")]
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? ManagedCodeEvaluatorSettings { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -69,6 +81,8 @@ namespace LangSmith
         /// <param name="language">
         /// Default: "python"
         /// </param>
+        /// <param name="managedCodeEvaluatorKey"></param>
+        /// <param name="managedCodeEvaluatorSettings"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,7 +93,9 @@ namespace LangSmith
             string? evaluatorBuildError,
             global::LangSmith.EvaluatorsEvaluatorBuildStatus? evaluatorBuildStatus,
             string? evaluatorId,
-            string? language)
+            string? language,
+            string? managedCodeEvaluatorKey,
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings)
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
@@ -88,6 +104,8 @@ namespace LangSmith
             this.EvaluatorBuildStatus = evaluatorBuildStatus;
             this.EvaluatorId = evaluatorId;
             this.Language = language;
+            this.ManagedCodeEvaluatorKey = managedCodeEvaluatorKey;
+            this.ManagedCodeEvaluatorSettings = managedCodeEvaluatorSettings;
         }
 
         /// <summary>

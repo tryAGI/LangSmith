@@ -1483,6 +1483,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateComputerEnvironment,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateConnection,
         /// <summary>
         ///
@@ -2158,6 +2162,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateBusinessInfo => "update_business_info",
                 AuditLogOperation.UpdateChart => "update_chart",
                 AuditLogOperation.UpdateChartSection => "update_chart_section",
+                AuditLogOperation.UpdateComputerEnvironment => "update_computer_environment",
                 AuditLogOperation.UpdateConnection => "update_connection",
                 AuditLogOperation.UpdateCredential => "update_credential",
                 AuditLogOperation.UpdateCustomApp => "update_custom_app",
@@ -2610,6 +2615,7 @@ namespace LangSmith
                 "update_business_info" => AuditLogOperation.UpdateBusinessInfo,
                 "update_chart" => AuditLogOperation.UpdateChart,
                 "update_chart_section" => AuditLogOperation.UpdateChartSection,
+                "update_computer_environment" => AuditLogOperation.UpdateComputerEnvironment,
                 "update_connection" => AuditLogOperation.UpdateConnection,
                 "update_credential" => AuditLogOperation.UpdateCredential,
                 "update_custom_app" => AuditLogOperation.UpdateCustomApp,

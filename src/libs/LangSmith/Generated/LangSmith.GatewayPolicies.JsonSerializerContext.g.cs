@@ -29,6 +29,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesSubjectMatcher>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesSubjectMatcher))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesGatewayPolicyRecord))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesSpendUsage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesSpendUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GatewayPoliciesRateLimitUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesRateLimitUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesRateLimitMetric), TypeInfoPropertyName = "GatewayPoliciesRateLimitMetric2")]
@@ -44,6 +46,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesRateLimitWindow?), TypeInfoPropertyName = "NullableGatewayPoliciesRateLimitWindow2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GatewayPoliciesSubjectMatcher>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GatewayPoliciesSpendUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GatewayPoliciesRateLimitUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GatewayPoliciesGatewayPolicyRecord>))]
     internal sealed partial class GatewayPoliciesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
