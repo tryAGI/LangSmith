@@ -45,6 +45,13 @@ namespace LangSmith
         public global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? ManagedCodeEvaluatorSettings { get; set; }
 
         /// <summary>
+        /// RequireAttachments opts the evaluator into selecting/presigning run<br/>
+        /// attachments (s3_urls) at evaluation time. Default false.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("require_attachments")]
+        public bool? RequireAttachments { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,6 +68,10 @@ namespace LangSmith
         /// </param>
         /// <param name="managedCodeEvaluatorKey"></param>
         /// <param name="managedCodeEvaluatorSettings"></param>
+        /// <param name="requireAttachments">
+        /// RequireAttachments opts the evaluator into selecting/presigning run<br/>
+        /// attachments (s3_urls) at evaluation time. Default false.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,7 +81,8 @@ namespace LangSmith
             string? dependencies,
             string? language,
             string? managedCodeEvaluatorKey,
-            global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings)
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings,
+            bool? requireAttachments)
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
@@ -78,6 +90,7 @@ namespace LangSmith
             this.Language = language;
             this.ManagedCodeEvaluatorKey = managedCodeEvaluatorKey;
             this.ManagedCodeEvaluatorSettings = managedCodeEvaluatorSettings;
+            this.RequireAttachments = requireAttachments;
         }
 
         /// <summary>
