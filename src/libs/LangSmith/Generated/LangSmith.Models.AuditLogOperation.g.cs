@@ -35,6 +35,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ArchiveComputerEnvironment,
+        /// <summary>
+        ///
+        /// </summary>
         AttachAccessPolicies,
         /// <summary>
         ///
@@ -1800,6 +1804,7 @@ namespace LangSmith
                 AuditLogOperation.AddMemberToWorkspace => "add_member_to_workspace",
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
+                AuditLogOperation.ArchiveComputerEnvironment => "archive_computer_environment",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
                 AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
                 AuditLogOperation.BatchQueryRuns => "batch_query_runs",
@@ -2253,6 +2258,7 @@ namespace LangSmith
                 "add_member_to_workspace" => AuditLogOperation.AddMemberToWorkspace,
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
+                "archive_computer_environment" => AuditLogOperation.ArchiveComputerEnvironment,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
                 "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
                 "batch_query_runs" => AuditLogOperation.BatchQueryRuns,
