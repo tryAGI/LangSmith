@@ -27,7 +27,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Files { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::LangSmith.DirectoryDirectoryEntryOutput> Files { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace LangSmith
         public DirectoryGetDirectoryResponse(
             string commitHash,
             global::System.Guid commitId,
-            object files)
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.DirectoryDirectoryEntryOutput> files)
         {
             this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
             this.CommitId = commitId;
