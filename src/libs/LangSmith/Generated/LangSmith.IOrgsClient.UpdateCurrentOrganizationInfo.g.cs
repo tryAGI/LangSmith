@@ -34,6 +34,7 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="publicSharingDisabled"></param>
         /// <param name="patCreationDisabled"></param>
+        /// <param name="apiKeyCreationFromApiKeysEnabled"></param>
         /// <param name="unshareAll"></param>
         /// <param name="jitProvisioningEnabled"></param>
         /// <param name="workspaceAdminCanInviteToOrg"></param>
@@ -59,6 +60,7 @@ namespace LangSmith
             string? displayName = default,
             bool? publicSharingDisabled = default,
             bool? patCreationDisabled = default,
+            bool? apiKeyCreationFromApiKeysEnabled = default,
             bool? unshareAll = default,
             bool? jitProvisioningEnabled = default,
             bool? workspaceAdminCanInviteToOrg = default,

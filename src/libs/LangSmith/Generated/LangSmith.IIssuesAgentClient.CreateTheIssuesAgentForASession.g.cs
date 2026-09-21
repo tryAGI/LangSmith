@@ -64,9 +64,18 @@ namespace LangSmith
         /// false.
         /// </param>
         /// <param name="contextHubRepoHandle"></param>
-        /// <param name="githubBaseBranch"></param>
-        /// <param name="githubRepoSubdir"></param>
-        /// <param name="githubRepoUrl"></param>
+        /// <param name="githubBaseBranch">
+        /// Legacy: applies to the repo github_repo_url names.
+        /// </param>
+        /// <param name="githubRepoSubdir">
+        /// Legacy: applies to the repo github_repo_url names.
+        /// </param>
+        /// <param name="githubRepoUrl">
+        /// Legacy: treated as a one-entry github_repos list.
+        /// </param>
+        /// <param name="githubRepos">
+        /// Created with the board. Wins over the deprecated fields below.
+        /// </param>
         /// <param name="priorities"></param>
         /// <param name="runFilter">
         /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
@@ -85,6 +94,7 @@ namespace LangSmith
             string? githubBaseBranch = default,
             string? githubRepoSubdir = default,
             string? githubRepoUrl = default,
+            global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepoInput>? githubRepos = default,
             global::System.Collections.Generic.IList<string>? priorities = default,
             string? runFilter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_key_creation_from_api_keys_enabled")]
+        public bool? ApiKeyCreationFromApiKeysEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unshare_all")]
         public bool? UnshareAll { get; set; }
 
@@ -147,6 +153,7 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="publicSharingDisabled"></param>
         /// <param name="patCreationDisabled"></param>
+        /// <param name="apiKeyCreationFromApiKeysEnabled"></param>
         /// <param name="unshareAll"></param>
         /// <param name="jitProvisioningEnabled"></param>
         /// <param name="workspaceAdminCanInviteToOrg"></param>
@@ -172,6 +179,7 @@ namespace LangSmith
             string? displayName,
             bool? publicSharingDisabled,
             bool? patCreationDisabled,
+            bool? apiKeyCreationFromApiKeysEnabled,
             bool? unshareAll,
             bool? jitProvisioningEnabled,
             bool? workspaceAdminCanInviteToOrg,
@@ -194,6 +202,7 @@ namespace LangSmith
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;
             this.PatCreationDisabled = patCreationDisabled;
+            this.ApiKeyCreationFromApiKeysEnabled = apiKeyCreationFromApiKeysEnabled;
             this.UnshareAll = unshareAll;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;

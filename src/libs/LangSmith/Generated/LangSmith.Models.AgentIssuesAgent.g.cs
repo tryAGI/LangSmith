@@ -62,22 +62,28 @@ namespace LangSmith
         public string? EngineVersion { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: aliases the oldest entry in GithubRepos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_base_branch")]
         public string? GithubBaseBranch { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: aliases the oldest entry in GithubRepos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_subdir")]
         public string? GithubRepoSubdir { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: aliases the oldest entry in GithubRepos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_url")]
         public string? GithubRepoUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("github_repos")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepo>? GithubRepos { get; set; }
 
         /// <summary>
         ///
@@ -234,9 +240,16 @@ namespace LangSmith
         /// <param name="cronEnabled"></param>
         /// <param name="cronSchedule"></param>
         /// <param name="engineVersion"></param>
-        /// <param name="githubBaseBranch"></param>
-        /// <param name="githubRepoSubdir"></param>
-        /// <param name="githubRepoUrl"></param>
+        /// <param name="githubBaseBranch">
+        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// </param>
+        /// <param name="githubRepoSubdir">
+        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// </param>
+        /// <param name="githubRepoUrl">
+        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// </param>
+        /// <param name="githubRepos"></param>
         /// <param name="id"></param>
         /// <param name="issueCount"></param>
         /// <param name="latestRunId"></param>
@@ -300,6 +313,7 @@ namespace LangSmith
             string? githubBaseBranch,
             string? githubRepoSubdir,
             string? githubRepoUrl,
+            global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepo>? githubRepos,
             string? id,
             int? issueCount,
             string? latestRunId,
@@ -332,6 +346,7 @@ namespace LangSmith
             this.GithubBaseBranch = githubBaseBranch;
             this.GithubRepoSubdir = githubRepoSubdir;
             this.GithubRepoUrl = githubRepoUrl;
+            this.GithubRepos = githubRepos;
             this.Id = id;
             this.IssueCount = issueCount;
             this.LatestRunId = latestRunId;

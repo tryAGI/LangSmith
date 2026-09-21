@@ -34,22 +34,28 @@ namespace LangSmith
         public string? ContextHubRepoHandle { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: applies to the repo github_repo_url names.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_base_branch")]
         public string? GithubBaseBranch { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: applies to the repo github_repo_url names.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_subdir")]
         public string? GithubRepoSubdir { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: treated as a one-entry github_repos list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_url")]
         public string? GithubRepoUrl { get; set; }
+
+        /// <summary>
+        /// Created with the board. Wins over the deprecated fields below.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("github_repos")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepoInput>? GithubRepos { get; set; }
 
         /// <summary>
         ///
@@ -85,9 +91,18 @@ namespace LangSmith
         /// false.
         /// </param>
         /// <param name="contextHubRepoHandle"></param>
-        /// <param name="githubBaseBranch"></param>
-        /// <param name="githubRepoSubdir"></param>
-        /// <param name="githubRepoUrl"></param>
+        /// <param name="githubBaseBranch">
+        /// Legacy: applies to the repo github_repo_url names.
+        /// </param>
+        /// <param name="githubRepoSubdir">
+        /// Legacy: applies to the repo github_repo_url names.
+        /// </param>
+        /// <param name="githubRepoUrl">
+        /// Legacy: treated as a one-entry github_repos list.
+        /// </param>
+        /// <param name="githubRepos">
+        /// Created with the board. Wins over the deprecated fields below.
+        /// </param>
         /// <param name="priorities"></param>
         /// <param name="runFilter">
         /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
@@ -102,6 +117,7 @@ namespace LangSmith
             string? githubBaseBranch,
             string? githubRepoSubdir,
             string? githubRepoUrl,
+            global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepoInput>? githubRepos,
             global::System.Collections.Generic.IList<string>? priorities,
             string? runFilter)
         {
@@ -111,6 +127,7 @@ namespace LangSmith
             this.GithubBaseBranch = githubBaseBranch;
             this.GithubRepoSubdir = githubRepoSubdir;
             this.GithubRepoUrl = githubRepoUrl;
+            this.GithubRepos = githubRepos;
             this.Priorities = priorities;
             this.RunFilter = runFilter;
         }
