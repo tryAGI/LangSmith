@@ -41,19 +41,20 @@ namespace LangSmith
         public bool? CronEnabled { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: ignored without github_repo_url.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_base_branch")]
         public string? GithubBaseBranch { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: ignored without github_repo_url.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_subdir")]
         public string? GithubRepoSubdir { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: use the github-repos endpoints. Absent leaves repos alone,<br/>
+        /// "" unlinks all, otherwise replaces the list with the one repo named.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_url")]
         public string? GithubRepoUrl { get; set; }
@@ -129,9 +130,16 @@ namespace LangSmith
         /// <param name="autoOpenFixPr"></param>
         /// <param name="contextHubRepoHandle"></param>
         /// <param name="cronEnabled"></param>
-        /// <param name="githubBaseBranch"></param>
-        /// <param name="githubRepoSubdir"></param>
-        /// <param name="githubRepoUrl"></param>
+        /// <param name="githubBaseBranch">
+        /// Legacy: ignored without github_repo_url.
+        /// </param>
+        /// <param name="githubRepoSubdir">
+        /// Legacy: ignored without github_repo_url.
+        /// </param>
+        /// <param name="githubRepoUrl">
+        /// Legacy: use the github-repos endpoints. Absent leaves repos alone,<br/>
+        /// "" unlinks all, otherwise replaces the list with the one repo named.
+        /// </param>
         /// <param name="linearIntegration"></param>
         /// <param name="previewVerifyEnabled"></param>
         /// <param name="priorities"></param>

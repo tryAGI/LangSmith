@@ -132,6 +132,12 @@ namespace LangSmith
         public bool? PatCreationDisabled { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_key_creation_from_api_keys_enabled")]
+        public bool? ApiKeyCreationFromApiKeysEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_admin_can_invite_to_org")]
@@ -298,6 +304,7 @@ namespace LangSmith
         /// <param name="patCreationDisabled">
         /// Default Value: false
         /// </param>
+        /// <param name="apiKeyCreationFromApiKeysEnabled"></param>
         /// <param name="workspaceAdminCanInviteToOrg">
         /// Default Value: false
         /// </param>
@@ -354,6 +361,7 @@ namespace LangSmith
             string? ssoLoginSlug,
             bool? publicSharingDisabled,
             bool? patCreationDisabled,
+            bool? apiKeyCreationFromApiKeysEnabled,
             bool? workspaceAdminCanInviteToOrg,
             bool? byocCreateSaasWorkspaceEnabled,
             bool? marketplacePayoutsEnabled,
@@ -393,6 +401,7 @@ namespace LangSmith
             this.SsoLoginSlug = ssoLoginSlug;
             this.PublicSharingDisabled = publicSharingDisabled;
             this.PatCreationDisabled = patCreationDisabled;
+            this.ApiKeyCreationFromApiKeysEnabled = apiKeyCreationFromApiKeysEnabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;

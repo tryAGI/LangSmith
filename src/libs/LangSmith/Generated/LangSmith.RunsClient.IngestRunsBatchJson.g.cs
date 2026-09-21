@@ -428,6 +428,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Request body was not fully received within the server time limit
+                            if ((int)__response.StatusCode == 408)
+                            {
+                                string? __content_408 = null;
+                                global::System.Exception? __exception_408 = null;
+                                global::LangSmith.RunsErrorResponse? __value_408 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_408 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_408 = global::LangSmith.RunsErrorResponse.FromJson(__content_408, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_408 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_408 = global::LangSmith.RunsErrorResponse.FromJson(__content_408, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_408 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.RunsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_408 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_408,
+                                    responseBody: __content_408,
+                                    responseObject: __value_408,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Conflict
                             if ((int)__response.StatusCode == 409)
                             {
