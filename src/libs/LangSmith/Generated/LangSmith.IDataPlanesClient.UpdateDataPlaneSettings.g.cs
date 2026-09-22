@@ -40,6 +40,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="firewall"></param>
+        /// <param name="fleetOidc"></param>
         /// <param name="maintenanceWindow">
         /// MaintenanceWindow is the two-hour weekly maintenance window in UTC.
         /// </param>
@@ -50,6 +51,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> UpdateDataPlaneSettingsAsync(
             string id,
             global::LangSmith.DataPlanesUpdateDataPlaneFirewallSettings? firewall = default,
+            global::LangSmith.DataPlanesUpdateDataPlaneFleetOIDCSettings? fleetOidc = default,
             string? maintenanceWindow = default,
             global::LangSmith.DataPlanesUpdateDataPlaneTTLSettings? ttl = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_oidc")]
+        public global::LangSmith.DataPlanesDataPlaneFleetOIDCSettings? FleetOidc { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -87,6 +93,7 @@ namespace LangSmith
         /// <param name="apiUrl"></param>
         /// <param name="createdAt"></param>
         /// <param name="firewall"></param>
+        /// <param name="fleetOidc"></param>
         /// <param name="id"></param>
         /// <param name="maintenanceWindow"></param>
         /// <param name="name"></param>
@@ -102,6 +109,7 @@ namespace LangSmith
             string? apiUrl,
             string? createdAt,
             global::LangSmith.DataPlanesDataPlaneFirewallSettings? firewall,
+            global::LangSmith.DataPlanesDataPlaneFleetOIDCSettings? fleetOidc,
             string? id,
             string? maintenanceWindow,
             string? name,
@@ -114,6 +122,7 @@ namespace LangSmith
             this.ApiUrl = apiUrl;
             this.CreatedAt = createdAt;
             this.Firewall = firewall;
+            this.FleetOidc = fleetOidc;
             this.Id = id;
             this.MaintenanceWindow = maintenanceWindow;
             this.Name = name;

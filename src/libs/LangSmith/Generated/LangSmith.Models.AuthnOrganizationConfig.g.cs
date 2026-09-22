@@ -332,6 +332,22 @@ namespace LangSmith
         public bool? LlmGatewayEnabled { get; set; }
 
         /// <summary>
+        /// LMTEnabled indicates whether this org's plan entitles it to use LangSmith<br/>
+        /// Managed Tools. Set by Metronome entitlement. Product code does not<br/>
+        /// enforce this yet; the field exists so Metronome can wire Plus/Enterprise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lmt_enabled")]
+        public bool? LmtEnabled { get; set; }
+
+        /// <summary>
+        /// LMTLSUSpendLimitMonthly caps an org's monthly Managed Tools LSU spend,<br/>
+        /// resolved from Metronome custom fields. nil or negative means unlimited;<br/>
+        /// 0 blocks all usage. Per-org only — no env default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lmt_lsu_spend_limit_monthly")]
+        public double? LmtLsuSpendLimitMonthly { get; set; }
+
+        /// <summary>
         /// MaxAgentBuilderAssistants is the maximum number of Agent Builder assistants allowed for this org.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_agent_builder_assistants")]
@@ -667,6 +683,16 @@ namespace LangSmith
         /// LLMGatewayEnabled indicates whether this org can use the LLM Gateway<br/>
         /// (admin UI and gateway policies).
         /// </param>
+        /// <param name="lmtEnabled">
+        /// LMTEnabled indicates whether this org's plan entitles it to use LangSmith<br/>
+        /// Managed Tools. Set by Metronome entitlement. Product code does not<br/>
+        /// enforce this yet; the field exists so Metronome can wire Plus/Enterprise.
+        /// </param>
+        /// <param name="lmtLsuSpendLimitMonthly">
+        /// LMTLSUSpendLimitMonthly caps an org's monthly Managed Tools LSU spend,<br/>
+        /// resolved from Metronome custom fields. nil or negative means unlimited;<br/>
+        /// 0 blocks all usage. Per-org only — no env default.
+        /// </param>
         /// <param name="maxAgentBuilderAssistants">
         /// MaxAgentBuilderAssistants is the maximum number of Agent Builder assistants allowed for this org.
         /// </param>
@@ -802,6 +828,8 @@ namespace LangSmith
             bool? langsmithDeploymentDrEnabledDev,
             bool? lgpTemplatesEnabled,
             bool? llmGatewayEnabled,
+            bool? lmtEnabled,
+            double? lmtLsuSpendLimitMonthly,
             int? maxAgentBuilderAssistants,
             int? maxAgentBuilderRuns,
             int? maxFreeLanggraphCloudDeployments,
@@ -878,6 +906,8 @@ namespace LangSmith
             this.LangsmithDeploymentDrEnabledDev = langsmithDeploymentDrEnabledDev;
             this.LgpTemplatesEnabled = lgpTemplatesEnabled;
             this.LlmGatewayEnabled = llmGatewayEnabled;
+            this.LmtEnabled = lmtEnabled;
+            this.LmtLsuSpendLimitMonthly = lmtLsuSpendLimitMonthly;
             this.MaxAgentBuilderAssistants = maxAgentBuilderAssistants;
             this.MaxAgentBuilderRuns = maxAgentBuilderRuns;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
