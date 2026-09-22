@@ -359,6 +359,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RunsReadInputs,
+        /// <summary>
+        ///
+        /// </summary>
+        RunsReadOutputs,
+        /// <summary>
+        ///
+        /// </summary>
         RunsReadStats,
         /// <summary>
         ///
@@ -525,6 +533,8 @@ namespace LangSmith
                 AuthzInternalPermission.RunsCreate => "runs:create",
                 AuthzInternalPermission.RunsDelete => "runs:delete",
                 AuthzInternalPermission.RunsRead => "runs:read",
+                AuthzInternalPermission.RunsReadInputs => "runs:read-inputs",
+                AuthzInternalPermission.RunsReadOutputs => "runs:read-outputs",
                 AuthzInternalPermission.RunsReadStats => "runs:read-stats",
                 AuthzInternalPermission.RunsShare => "runs:share",
                 AuthzInternalPermission.SandboxesCreate => "sandboxes:create",
@@ -639,6 +649,8 @@ namespace LangSmith
                 "runs:create" => AuthzInternalPermission.RunsCreate,
                 "runs:delete" => AuthzInternalPermission.RunsDelete,
                 "runs:read" => AuthzInternalPermission.RunsRead,
+                "runs:read-inputs" => AuthzInternalPermission.RunsReadInputs,
+                "runs:read-outputs" => AuthzInternalPermission.RunsReadOutputs,
                 "runs:read-stats" => AuthzInternalPermission.RunsReadStats,
                 "runs:share" => AuthzInternalPermission.RunsShare,
                 "sandboxes:create" => AuthzInternalPermission.SandboxesCreate,

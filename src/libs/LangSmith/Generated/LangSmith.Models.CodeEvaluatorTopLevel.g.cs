@@ -22,6 +22,12 @@ namespace LangSmith
         public global::LangSmith.CodeEvaluatorLanguage? Language { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("require_attachments")]
+        public bool? RequireAttachments { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -34,15 +40,20 @@ namespace LangSmith
         /// <param name="language">
         /// Default Value: python
         /// </param>
+        /// <param name="requireAttachments">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeEvaluatorTopLevel(
             string code,
-            global::LangSmith.CodeEvaluatorLanguage? language)
+            global::LangSmith.CodeEvaluatorLanguage? language,
+            bool? requireAttachments)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Language = language;
+            this.RequireAttachments = requireAttachments;
         }
 
         /// <summary>
