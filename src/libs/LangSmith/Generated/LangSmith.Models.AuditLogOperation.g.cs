@@ -1323,6 +1323,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ResolveAgentAuthAgent,
+        /// <summary>
+        ///
+        /// </summary>
         ResolveAnnotationQueueRun,
         /// <summary>
         ///
@@ -2126,6 +2130,7 @@ namespace LangSmith
                 AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
+                AuditLogOperation.ResolveAgentAuthAgent => "resolve_agent_auth_agent",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
                 AuditLogOperation.RevokeOauthGrant => "revoke_oauth_grant",
                 AuditLogOperation.RevokePersonalAccessToken => "revoke_personal_access_token",
@@ -2580,6 +2585,7 @@ namespace LangSmith
                 "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
+                "resolve_agent_auth_agent" => AuditLogOperation.ResolveAgentAuthAgent,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
                 "revoke_oauth_grant" => AuditLogOperation.RevokeOauthGrant,
                 "revoke_personal_access_token" => AuditLogOperation.RevokePersonalAccessToken,

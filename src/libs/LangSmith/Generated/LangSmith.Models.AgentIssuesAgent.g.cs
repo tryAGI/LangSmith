@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -149,10 +151,24 @@ namespace LangSmith
         public string? RunFilter { get; set; }
 
         /// <summary>
-        /// SelectedTraceCount is the number of traces Engine inspected in the last 14 days.
+        /// Compatibility alias for selected_trace_count_last_14_days.<br/>
+        /// Deprecated: use selected_trace_count_last_14_days.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_trace_count")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? SelectedTraceCount { get; set; }
+
+        /// <summary>
+        /// The number of traces Engine inspected in the last 14 days.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("selected_trace_count_last_14_days")]
+        public int? SelectedTraceCountLast14Days { get; set; }
+
+        /// <summary>
+        /// The number of traces Engine inspected in the last 7 days.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("selected_trace_count_last_7_days")]
+        public int? SelectedTraceCountLast7Days { get; set; }
 
         /// <summary>
         ///
@@ -269,8 +285,11 @@ namespace LangSmith
         /// (prompt guidance, not an enforced query). NULL = no scope. Clamped by<br/>
         /// validateRunFilter.
         /// </param>
-        /// <param name="selectedTraceCount">
-        /// SelectedTraceCount is the number of traces Engine inspected in the last 14 days.
+        /// <param name="selectedTraceCountLast14Days">
+        /// The number of traces Engine inspected in the last 14 days.
+        /// </param>
+        /// <param name="selectedTraceCountLast7Days">
+        /// The number of traces Engine inspected in the last 7 days.
         /// </param>
         /// <param name="sessionAgentOverviewRepoId"></param>
         /// <param name="sessionId"></param>
@@ -324,7 +343,8 @@ namespace LangSmith
             bool? previewVerifyEnabled,
             global::System.Collections.Generic.IList<string>? priorities,
             string? runFilter,
-            int? selectedTraceCount,
+            int? selectedTraceCountLast14Days,
+            int? selectedTraceCountLast7Days,
             string? sessionAgentOverviewRepoId,
             string? sessionId,
             string? sessionLcuSpendLimitMonthly,
@@ -357,7 +377,8 @@ namespace LangSmith
             this.PreviewVerifyEnabled = previewVerifyEnabled;
             this.Priorities = priorities;
             this.RunFilter = runFilter;
-            this.SelectedTraceCount = selectedTraceCount;
+            this.SelectedTraceCountLast14Days = selectedTraceCountLast14Days;
+            this.SelectedTraceCountLast7Days = selectedTraceCountLast7Days;
             this.SessionAgentOverviewRepoId = sessionAgentOverviewRepoId;
             this.SessionId = sessionId;
             this.SessionLcuSpendLimitMonthly = sessionLcuSpendLimitMonthly;
