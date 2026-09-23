@@ -46,6 +46,7 @@ namespace LangSmith
             ref int? offset,
             ref string? nameContains,
             ref string? status,
+            global::System.Collections.Generic.IList<string>? tagValueId,
             ref string? createdBy,
             global::System.Collections.Generic.IList<string>? label,
             ref string? sortBy,
@@ -60,6 +61,7 @@ namespace LangSmith
             int? offset,
             string? nameContains,
             string? status,
+            global::System.Collections.Generic.IList<string>? tagValueId,
             string? createdBy,
             global::System.Collections.Generic.IList<string>? label,
             string? sortBy,
@@ -92,6 +94,7 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
+        /// <param name="tagValueId"></param>
         /// <param name="createdBy"></param>
         /// <param name="label"></param>
         /// <param name="sortBy">
@@ -113,6 +116,7 @@ namespace LangSmith
             int? offset = default,
             string? nameContains = default,
             string? status = default,
+            global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? createdBy = default,
             global::System.Collections.Generic.IList<string>? label = default,
             string? sortBy = default,
@@ -128,6 +132,7 @@ namespace LangSmith
                 offset: offset,
                 nameContains: nameContains,
                 status: status,
+                tagValueId: tagValueId,
                 createdBy: createdBy,
                 label: label,
                 sortBy: sortBy,
@@ -157,6 +162,7 @@ namespace LangSmith
         /// </param>
         /// <param name="nameContains"></param>
         /// <param name="status"></param>
+        /// <param name="tagValueId"></param>
         /// <param name="createdBy"></param>
         /// <param name="label"></param>
         /// <param name="sortBy">
@@ -178,6 +184,7 @@ namespace LangSmith
             int? offset = default,
             string? nameContains = default,
             string? status = default,
+            global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? createdBy = default,
             global::System.Collections.Generic.IList<string>? label = default,
             string? sortBy = default,
@@ -196,6 +203,7 @@ namespace LangSmith
                 offset: ref offset,
                 nameContains: ref nameContains,
                 status: ref status,
+                tagValueId: tagValueId,
                 createdBy: ref createdBy,
                 label: label,
                 sortBy: ref sortBy,
@@ -237,6 +245,7 @@ namespace LangSmith
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("status", status)
+                                .AddOptionalParameter("tag_value_id", tagValueId, delimiter: ",", explode: true)
                                 .AddOptionalParameter("created_by", createdBy)
                                 .AddOptionalParameter("label", label, delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_by", sortBy)
@@ -289,6 +298,7 @@ namespace LangSmith
                     offset: offset,
                     nameContains: nameContains,
                     status: status,
+                    tagValueId: tagValueId,
                     createdBy: createdBy,
                     label: label,
                     sortBy: sortBy,
