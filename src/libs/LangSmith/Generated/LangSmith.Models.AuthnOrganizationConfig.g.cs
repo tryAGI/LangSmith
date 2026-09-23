@@ -333,8 +333,8 @@ namespace LangSmith
 
         /// <summary>
         /// LMTEnabled indicates whether this org's plan entitles it to use LangSmith<br/>
-        /// Managed Tools. Set by Metronome entitlement. Product code does not<br/>
-        /// enforce this yet; the field exists so Metronome can wire Plus/Enterprise.
+        /// Managed Tools. Set by Metronome entitlement and required for all<br/>
+        /// Managed Tools APIs and MCP requests. Unset or false blocks access.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lmt_enabled")]
         public bool? LmtEnabled { get; set; }
@@ -686,8 +686,8 @@ namespace LangSmith
         /// </param>
         /// <param name="lmtEnabled">
         /// LMTEnabled indicates whether this org's plan entitles it to use LangSmith<br/>
-        /// Managed Tools. Set by Metronome entitlement. Product code does not<br/>
-        /// enforce this yet; the field exists so Metronome can wire Plus/Enterprise.
+        /// Managed Tools. Set by Metronome entitlement and required for all<br/>
+        /// Managed Tools APIs and MCP requests. Unset or false blocks access.
         /// </param>
         /// <param name="lmtLsuSpendLimitMonthly">
         /// LMTLSUSpendLimitMonthly caps an org's monthly Managed Tools LSU spend,<br/>

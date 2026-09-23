@@ -53,6 +53,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provisioning_settings")]
+        public global::LangSmith.DataPlanesDataPlaneProvisioningSettings? ProvisioningSettings { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
         public string? Region { get; set; }
 
@@ -97,6 +103,7 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="maintenanceWindow"></param>
         /// <param name="name"></param>
+        /// <param name="provisioningSettings"></param>
         /// <param name="region"></param>
         /// <param name="status"></param>
         /// <param name="statusUpdatedAt"></param>
@@ -113,6 +120,7 @@ namespace LangSmith
             string? id,
             string? maintenanceWindow,
             string? name,
+            global::LangSmith.DataPlanesDataPlaneProvisioningSettings? provisioningSettings,
             string? region,
             global::LangSmith.DataPlanesStatus? status,
             string? statusUpdatedAt,
@@ -126,6 +134,7 @@ namespace LangSmith
             this.Id = id;
             this.MaintenanceWindow = maintenanceWindow;
             this.Name = name;
+            this.ProvisioningSettings = provisioningSettings;
             this.Region = region;
             this.Status = status;
             this.StatusUpdatedAt = statusUpdatedAt;

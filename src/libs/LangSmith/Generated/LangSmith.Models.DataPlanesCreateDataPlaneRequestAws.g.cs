@@ -21,28 +21,10 @@ namespace LangSmith
         public bool? ByoiamEnabled { get; set; }
 
         /// <summary>
-        /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_id")]
-        public string? ByovpcId { get; set; }
-
-        /// <summary>
-        /// The subnet IDs of the private app subnets to deploy into when deploying in BYOVPC mode.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_private_app_subnet_ids")]
-        public global::System.Collections.Generic.IList<string>? ByovpcPrivateAppSubnetIds { get; set; }
-
-        /// <summary>
-        /// The subnet IDs of the private database subnets to deploy into when deploying in BYOVPC mode.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_private_db_subnet_ids")]
-        public global::System.Collections.Generic.IList<string>? ByovpcPrivateDbSubnetIds { get; set; }
-
-        /// <summary>
-        /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_public_subnet_ids")]
-        public global::System.Collections.Generic.IList<string>? ByovpcPublicSubnetIds { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("byovpc")]
+        public global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? Byovpc { get; set; }
 
         /// <summary>
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
@@ -93,18 +75,7 @@ namespace LangSmith
         /// <param name="byoiamEnabled">
         /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
         /// </param>
-        /// <param name="byovpcId">
-        /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
-        /// </param>
-        /// <param name="byovpcPrivateAppSubnetIds">
-        /// The subnet IDs of the private app subnets to deploy into when deploying in BYOVPC mode.
-        /// </param>
-        /// <param name="byovpcPrivateDbSubnetIds">
-        /// The subnet IDs of the private database subnets to deploy into when deploying in BYOVPC mode.
-        /// </param>
-        /// <param name="byovpcPublicSubnetIds">
-        /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
-        /// </param>
+        /// <param name="byovpc"></param>
         /// <param name="eksApiPrivatelinkDisabled">
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
@@ -121,10 +92,7 @@ namespace LangSmith
         public DataPlanesCreateDataPlaneRequestAws(
             global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags,
             bool? byoiamEnabled,
-            string? byovpcId,
-            global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds,
-            global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds,
-            global::System.Collections.Generic.IList<string>? byovpcPublicSubnetIds,
+            global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             bool? eksApiPrivatelinkDisabled,
             string? name,
             bool? publicLoadBalancer,
@@ -134,10 +102,7 @@ namespace LangSmith
         {
             this.AdditionalTags = additionalTags;
             this.ByoiamEnabled = byoiamEnabled;
-            this.ByovpcId = byovpcId;
-            this.ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds;
-            this.ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds;
-            this.ByovpcPublicSubnetIds = byovpcPublicSubnetIds;
+            this.Byovpc = byovpc;
             this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
             this.Name = name;
             this.PublicLoadBalancer = publicLoadBalancer;
