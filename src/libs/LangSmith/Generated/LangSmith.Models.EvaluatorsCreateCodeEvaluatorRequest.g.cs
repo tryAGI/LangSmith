@@ -36,7 +36,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("managed_code_evaluator_key")]
-        public string? ManagedCodeEvaluatorKey { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.EvaluatorsManagedCodeEvaluatorKeyJsonConverter))]
+        public global::LangSmith.EvaluatorsManagedCodeEvaluatorKey? ManagedCodeEvaluatorKey { get; set; }
 
         /// <summary>
         ///
@@ -80,7 +81,7 @@ namespace LangSmith
             string? code,
             string? dependencies,
             string? language,
-            string? managedCodeEvaluatorKey,
+            global::LangSmith.EvaluatorsManagedCodeEvaluatorKey? managedCodeEvaluatorKey,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings,
             bool? requireAttachments)
         {

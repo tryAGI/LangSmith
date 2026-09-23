@@ -480,7 +480,7 @@ namespace LangSmith
         public bool? LmtEnabled { get; set; }
 
         /// <summary>
-        /// Caps an org's monthly Managed Tools LSU spend, resolved from Metronome custom fields. None or negative means unlimited; 0 blocks all usage. Per-org only — never pick up a deployment-wide env default.
+        /// Caps an org's monthly Managed Tools LSU spend, resolved from Metronome custom fields. Unset or zero blocks usage. Negative means unlimited; positive values cap monthly LSU usage. Per-org only, with no environment default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lmt_lsu_spend_limit_monthly")]
         public double? LmtLsuSpendLimitMonthly { get; set; }
@@ -712,7 +712,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="lmtLsuSpendLimitMonthly">
-        /// Caps an org's monthly Managed Tools LSU spend, resolved from Metronome custom fields. None or negative means unlimited; 0 blocks all usage. Per-org only — never pick up a deployment-wide env default.
+        /// Caps an org's monthly Managed Tools LSU spend, resolved from Metronome custom fields. Unset or zero blocks usage. Negative means unlimited; positive values cap monthly LSU usage. Per-org only, with no environment default.
         /// </param>
         /// <param name="isAnonymous"></param>
 #if NET7_0_OR_GREATER

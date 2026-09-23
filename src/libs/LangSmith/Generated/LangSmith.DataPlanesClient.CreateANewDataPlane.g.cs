@@ -678,6 +678,9 @@ namespace LangSmith
         /// Uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane.
         /// </summary>
         /// <param name="additionalTags"></param>
+        /// <param name="byoiamEnabled">
+        /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
+        /// </param>
         /// <param name="byovpcId">
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
         /// </param>
@@ -689,6 +692,9 @@ namespace LangSmith
         /// </param>
         /// <param name="byovpcPublicSubnetIds">
         /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
+        /// </param>
+        /// <param name="eksApiPrivatelinkDisabled">
+        /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
         /// <param name="name"></param>
         /// <param name="publicLoadBalancer"></param>
@@ -702,10 +708,12 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> CreateANewDataPlaneAsync(
             global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags = default,
+            bool? byoiamEnabled = default,
             string? byovpcId = default,
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds = default,
             global::System.Collections.Generic.IList<string>? byovpcPublicSubnetIds = default,
+            bool? eksApiPrivatelinkDisabled = default,
             string? name = default,
             bool? publicLoadBalancer = default,
             string? region = default,
@@ -717,10 +725,12 @@ namespace LangSmith
             var __request = new global::LangSmith.DataPlanesCreateDataPlaneRequestAws
             {
                 AdditionalTags = additionalTags,
+                ByoiamEnabled = byoiamEnabled,
                 ByovpcId = byovpcId,
                 ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds,
                 ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds,
                 ByovpcPublicSubnetIds = byovpcPublicSubnetIds,
+                EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled,
                 Name = name,
                 PublicLoadBalancer = publicLoadBalancer,
                 Region = region,
