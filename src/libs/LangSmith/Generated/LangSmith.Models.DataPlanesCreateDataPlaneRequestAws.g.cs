@@ -15,6 +15,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? AdditionalTags { get; set; }
 
         /// <summary>
+        /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoiam_enabled")]
+        public bool? ByoiamEnabled { get; set; }
+
+        /// <summary>
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_id")]
@@ -37,6 +43,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byovpc_public_subnet_ids")]
         public global::System.Collections.Generic.IList<string>? ByovpcPublicSubnetIds { get; set; }
+
+        /// <summary>
+        /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("eks_api_privatelink_disabled")]
+        public bool? EksApiPrivatelinkDisabled { get; set; }
 
         /// <summary>
         ///
@@ -78,6 +90,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="DataPlanesCreateDataPlaneRequestAws" /> class.
         /// </summary>
         /// <param name="additionalTags"></param>
+        /// <param name="byoiamEnabled">
+        /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
+        /// </param>
         /// <param name="byovpcId">
         /// The ID of the customer-managed VPC to deploy into when deploying in BYOVPC mode.
         /// </param>
@@ -89,6 +104,9 @@ namespace LangSmith
         /// </param>
         /// <param name="byovpcPublicSubnetIds">
         /// The subnet IDs of the optional public subnets to deploy into when deploying in BYOVPC mode.
+        /// </param>
+        /// <param name="eksApiPrivatelinkDisabled">
+        /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
         /// <param name="name"></param>
         /// <param name="publicLoadBalancer"></param>
@@ -102,10 +120,12 @@ namespace LangSmith
 #endif
         public DataPlanesCreateDataPlaneRequestAws(
             global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags,
+            bool? byoiamEnabled,
             string? byovpcId,
             global::System.Collections.Generic.IList<string>? byovpcPrivateAppSubnetIds,
             global::System.Collections.Generic.IList<string>? byovpcPrivateDbSubnetIds,
             global::System.Collections.Generic.IList<string>? byovpcPublicSubnetIds,
+            bool? eksApiPrivatelinkDisabled,
             string? name,
             bool? publicLoadBalancer,
             string? region,
@@ -113,10 +133,12 @@ namespace LangSmith
             string? vpcCidr)
         {
             this.AdditionalTags = additionalTags;
+            this.ByoiamEnabled = byoiamEnabled;
             this.ByovpcId = byovpcId;
             this.ByovpcPrivateAppSubnetIds = byovpcPrivateAppSubnetIds;
             this.ByovpcPrivateDbSubnetIds = byovpcPrivateDbSubnetIds;
             this.ByovpcPublicSubnetIds = byovpcPublicSubnetIds;
+            this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
             this.Name = name;
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region;

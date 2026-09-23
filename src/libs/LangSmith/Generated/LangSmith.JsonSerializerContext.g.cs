@@ -805,6 +805,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsCodeEvaluator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsEvaluatorBuildStatus), TypeInfoPropertyName = "EvaluatorsEvaluatorBuildStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey), TypeInfoPropertyName = "EvaluatorsManagedCodeEvaluatorKey2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsCreateCodeEvaluatorRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsCreateEvaluatorRequest))]
@@ -1025,7 +1026,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesHeaderType), TypeInfoPropertyName = "SandboxesHeaderType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyAWSConfig), TypeInfoPropertyName = "SandboxesProxyAWSConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyAWSRoleConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyAWSStaticConfig))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1048,6 +1048,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput, object>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_object_17e37acb6be9a65c")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyAWSStaticConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesCallback>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyRule>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyRule))]
@@ -1492,6 +1493,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueryRunSelectField?), TypeInfoPropertyName = "NullableQueryRunSelectField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryDirectoryEntryOutput?), TypeInfoPropertyName = "NullableDirectoryDirectoryEntryOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsEvaluatorBuildStatus?), TypeInfoPropertyName = "NullableEvaluatorsEvaluatorBuildStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey?), TypeInfoPropertyName = "NullableEvaluatorsManagedCodeEvaluatorKey2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsEvaluatorType?), TypeInfoPropertyName = "NullableEvaluatorsEvaluatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesRateLimitMetric?), TypeInfoPropertyName = "NullableGatewayPoliciesRateLimitMetric2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GatewayPoliciesRateLimitWindow?), TypeInfoPropertyName = "NullableGatewayPoliciesRateLimitWindow2")]
@@ -1536,8 +1538,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryDirectorySelector?), TypeInfoPropertyName = "NullableDirectoryDirectorySelector2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryDirectorySelectorDiscriminatorType?), TypeInfoPropertyName = "NullableDirectoryDirectorySelectorDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryAgentEntryInputType?), TypeInfoPropertyName = "NullableDirectoryAgentEntryInputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectorySkillEntryInputType?), TypeInfoPropertyName = "NullableDirectorySkillEntryInputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryFileEntryType?), TypeInfoPropertyName = "NullableDirectoryFileEntryType2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1560,6 +1560,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput, object>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_object_17e37acb6be9a65c")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectorySkillEntryInputType?), TypeInfoPropertyName = "NullableDirectorySkillEntryInputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryFileEntryType?), TypeInfoPropertyName = "NullableDirectoryFileEntryType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryDirectoryEntryInputDiscriminatorType?), TypeInfoPropertyName = "NullableDirectoryDirectoryEntryInputDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryAgentEntryOutputType?), TypeInfoPropertyName = "NullableDirectoryAgentEntryOutputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectorySkillEntryOutputType?), TypeInfoPropertyName = "NullableDirectorySkillEntryOutputType2")]
@@ -2536,6 +2538,10 @@ namespace LangSmith
                     || typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType)
 
                     || typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType?)
+
+                    || typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey)
+
+                    || typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey?)
 
                     || typeToConvert == typeof(global::LangSmith.GatewayPoliciesRateLimitMetric)
 
@@ -4138,6 +4144,16 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType?))
                 {
                     return new global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey))
+                {
+                    return new global::LangSmith.JsonConverters.EvaluatorsManagedCodeEvaluatorKeyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey?))
+                {
+                    return new global::LangSmith.JsonConverters.EvaluatorsManagedCodeEvaluatorKeyNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LangSmith.GatewayPoliciesRateLimitMetric))

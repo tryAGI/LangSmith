@@ -341,8 +341,9 @@ namespace LangSmith
 
         /// <summary>
         /// LMTLSUSpendLimitMonthly caps an org's monthly Managed Tools LSU spend,<br/>
-        /// resolved from Metronome custom fields. nil or negative means unlimited;<br/>
-        /// 0 blocks all usage. Per-org only — no env default.
+        /// resolved from Metronome custom fields. Unset or zero blocks usage.<br/>
+        /// Negative means unlimited; positive values cap monthly LSU usage.<br/>
+        /// Per-org only, with no environment default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lmt_lsu_spend_limit_monthly")]
         public double? LmtLsuSpendLimitMonthly { get; set; }
@@ -690,8 +691,9 @@ namespace LangSmith
         /// </param>
         /// <param name="lmtLsuSpendLimitMonthly">
         /// LMTLSUSpendLimitMonthly caps an org's monthly Managed Tools LSU spend,<br/>
-        /// resolved from Metronome custom fields. nil or negative means unlimited;<br/>
-        /// 0 blocks all usage. Per-org only — no env default.
+        /// resolved from Metronome custom fields. Unset or zero blocks usage.<br/>
+        /// Negative means unlimited; positive values cap monthly LSU usage.<br/>
+        /// Per-org only, with no environment default.
         /// </param>
         /// <param name="maxAgentBuilderAssistants">
         /// MaxAgentBuilderAssistants is the maximum number of Agent Builder assistants allowed for this org.

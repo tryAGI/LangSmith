@@ -604,7 +604,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // V2 filter syntax is unavailable for this deployment; use legacy function-style filters or set SMITHDB_QUERY_ENABLED=true
+                            // The requested filter syntax is unavailable for this deployment
                             if ((int)__response.StatusCode == 501)
                             {
                                 string? __content_501 = null;
