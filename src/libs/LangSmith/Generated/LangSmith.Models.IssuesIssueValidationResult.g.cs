@@ -17,8 +17,20 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("baseline_experiment_id")]
+        public global::System.Guid? BaselineExperimentId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
+        public global::System.Guid? DatasetId { get; set; }
 
         /// <summary>
         ///
@@ -55,7 +67,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="IssuesIssueValidationResult" /> class.
         /// </summary>
         /// <param name="activeRevisionId"></param>
+        /// <param name="baselineExperimentId"></param>
         /// <param name="completedAt"></param>
+        /// <param name="datasetId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="outcome"></param>
         /// <param name="reason"></param>
@@ -65,14 +79,18 @@ namespace LangSmith
 #endif
         public IssuesIssueValidationResult(
             global::System.Guid? activeRevisionId,
+            global::System.Guid? baselineExperimentId,
             global::System.DateTime? completedAt,
+            global::System.Guid? datasetId,
             global::System.Guid? deploymentId,
             global::LangSmith.IssuesIssueValidationResultOutcome? outcome,
             string? reason,
             global::System.Collections.Generic.IList<string>? rootTraceIds)
         {
             this.ActiveRevisionId = activeRevisionId;
+            this.BaselineExperimentId = baselineExperimentId;
             this.CompletedAt = completedAt;
+            this.DatasetId = datasetId;
             this.DeploymentId = deploymentId;
             this.Outcome = outcome;
             this.Reason = reason;

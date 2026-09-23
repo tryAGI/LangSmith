@@ -14,7 +14,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> UpdateDataPlaneSettingsAsync(
-            string id,
+            global::System.Guid id,
 
             global::LangSmith.DataPlanesUpdateDataPlaneRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -29,7 +29,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DataPlanesPublicDataPlane>> UpdateDataPlaneSettingsAsResponseAsync(
-            string id,
+            global::System.Guid id,
 
             global::LangSmith.DataPlanesUpdateDataPlaneRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -49,7 +49,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> UpdateDataPlaneSettingsAsync(
-            string id,
+            global::System.Guid id,
             global::LangSmith.DataPlanesUpdateDataPlaneFirewallSettings? firewall = default,
             global::LangSmith.DataPlanesUpdateDataPlaneFleetOIDCSettings? fleetOidc = default,
             string? maintenanceWindow = default,

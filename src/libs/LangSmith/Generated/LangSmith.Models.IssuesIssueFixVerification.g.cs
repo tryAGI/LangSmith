@@ -17,6 +17,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("baseline_experiment_id")]
+        public global::System.Guid? BaselineExperimentId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
+        public global::System.Guid? DatasetId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_deployment_id")]
         public global::System.Guid? ParentDeploymentId { get; set; }
 
@@ -25,6 +37,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview_deployment_id")]
         public global::System.Guid? PreviewDeploymentId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preview_experiment_id")]
+        public global::System.Guid? PreviewExperimentId { get; set; }
 
         /// <summary>
         ///
@@ -61,8 +79,11 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="IssuesIssueFixVerification" /> class.
         /// </summary>
         /// <param name="attempt"></param>
+        /// <param name="baselineExperimentId"></param>
+        /// <param name="datasetId"></param>
         /// <param name="parentDeploymentId"></param>
         /// <param name="previewDeploymentId"></param>
+        /// <param name="previewExperimentId"></param>
         /// <param name="reason"></param>
         /// <param name="rootTraceIds"></param>
         /// <param name="status"></param>
@@ -72,16 +93,22 @@ namespace LangSmith
 #endif
         public IssuesIssueFixVerification(
             int? attempt,
+            global::System.Guid? baselineExperimentId,
+            global::System.Guid? datasetId,
             global::System.Guid? parentDeploymentId,
             global::System.Guid? previewDeploymentId,
+            global::System.Guid? previewExperimentId,
             string? reason,
             global::System.Collections.Generic.IList<string>? rootTraceIds,
             global::LangSmith.IssuesIssueFixVerificationStatus? status,
             global::System.DateTime? updatedAt)
         {
             this.Attempt = attempt;
+            this.BaselineExperimentId = baselineExperimentId;
+            this.DatasetId = datasetId;
             this.ParentDeploymentId = parentDeploymentId;
             this.PreviewDeploymentId = previewDeploymentId;
+            this.PreviewExperimentId = previewExperimentId;
             this.Reason = reason;
             this.RootTraceIds = rootTraceIds;
             this.Status = status;
