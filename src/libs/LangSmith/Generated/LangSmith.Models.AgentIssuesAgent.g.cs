@@ -201,6 +201,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("target_auth")]
+        public global::LangSmith.AgentTargetAuthStatus? TargetAuth { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         public string? TenantId { get; set; }
 
@@ -303,6 +309,7 @@ namespace LangSmith
         /// <param name="sessionName">
         /// JOINed from tracer_session
         /// </param>
+        /// <param name="targetAuth"></param>
         /// <param name="tenantId"></param>
         /// <param name="tenantName">
         /// JOINed from tenants (workspace label); resolved server-side so the org-admin list can label rows across workspaces the caller isn't a member of
@@ -349,6 +356,7 @@ namespace LangSmith
             string? sessionId,
             string? sessionLcuSpendLimitMonthly,
             string? sessionName,
+            global::LangSmith.AgentTargetAuthStatus? targetAuth,
             string? tenantId,
             string? tenantName,
             string? updatedAt,
@@ -383,6 +391,7 @@ namespace LangSmith
             this.SessionId = sessionId;
             this.SessionLcuSpendLimitMonthly = sessionLcuSpendLimitMonthly;
             this.SessionName = sessionName;
+            this.TargetAuth = targetAuth;
             this.TenantId = tenantId;
             this.TenantName = tenantName;
             this.UpdatedAt = updatedAt;

@@ -101,6 +101,13 @@ namespace LangSmith
         public string? SessionLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
+        /// TargetAuth replaces validation-deployment authentication. Header values<br/>
+        /// are write-only.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("target_auth")]
+        public global::LangSmith.AgentTargetAuthInput? TargetAuth { get; set; }
+
+        /// <summary>
         /// Freeform user preferences. Send "" to clear (the frontend must not send null).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_instructions")]
@@ -155,6 +162,10 @@ namespace LangSmith
         /// than null, since null is indistinguishable from "absent". Serialized as a<br/>
         /// string to preserve NUMERIC precision.
         /// </param>
+        /// <param name="targetAuth">
+        /// TargetAuth replaces validation-deployment authentication. Header values<br/>
+        /// are write-only.
+        /// </param>
         /// <param name="userInstructions">
         /// Freeform user preferences. Send "" to clear (the frontend must not send null).
         /// </param>
@@ -180,6 +191,7 @@ namespace LangSmith
             string? runFilter,
             string? sessionAgentOverviewRepoId,
             string? sessionLcuSpendLimitMonthly,
+            global::LangSmith.AgentTargetAuthInput? targetAuth,
             string? userInstructions,
             string? validationDeploymentId)
         {
@@ -197,6 +209,7 @@ namespace LangSmith
             this.RunFilter = runFilter;
             this.SessionAgentOverviewRepoId = sessionAgentOverviewRepoId;
             this.SessionLcuSpendLimitMonthly = sessionLcuSpendLimitMonthly;
+            this.TargetAuth = targetAuth;
             this.UserInstructions = userInstructions;
             this.ValidationDeploymentId = validationDeploymentId;
         }

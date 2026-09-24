@@ -551,6 +551,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteFleetFeedback,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteFleetUsageLimit,
         /// <summary>
         ///
@@ -1591,6 +1595,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateFleetFeedback,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateFleetUsageLimit,
         /// <summary>
         ///
@@ -1961,6 +1969,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteFeedbackConfig => "delete_feedback_config",
                 AuditLogOperation.DeleteFeedbackFormula => "delete_feedback_formula",
                 AuditLogOperation.DeleteFilterView => "delete_filter_view",
+                AuditLogOperation.DeleteFleetFeedback => "delete_fleet_feedback",
                 AuditLogOperation.DeleteFleetUsageLimit => "delete_fleet_usage_limit",
                 AuditLogOperation.DeleteFleetWebhook => "delete_fleet_webhook",
                 AuditLogOperation.DeleteForgeConfiguration => "delete_forge_configuration",
@@ -2221,6 +2230,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateFeedbackConfig => "update_feedback_config",
                 AuditLogOperation.UpdateFeedbackFormula => "update_feedback_formula",
                 AuditLogOperation.UpdateFilterView => "update_filter_view",
+                AuditLogOperation.UpdateFleetFeedback => "update_fleet_feedback",
                 AuditLogOperation.UpdateFleetUsageLimit => "update_fleet_usage_limit",
                 AuditLogOperation.UpdateFleetWebhook => "update_fleet_webhook",
                 AuditLogOperation.UpdateForgeConfiguration => "update_forge_configuration",
@@ -2422,6 +2432,7 @@ namespace LangSmith
                 "delete_feedback_config" => AuditLogOperation.DeleteFeedbackConfig,
                 "delete_feedback_formula" => AuditLogOperation.DeleteFeedbackFormula,
                 "delete_filter_view" => AuditLogOperation.DeleteFilterView,
+                "delete_fleet_feedback" => AuditLogOperation.DeleteFleetFeedback,
                 "delete_fleet_usage_limit" => AuditLogOperation.DeleteFleetUsageLimit,
                 "delete_fleet_webhook" => AuditLogOperation.DeleteFleetWebhook,
                 "delete_forge_configuration" => AuditLogOperation.DeleteForgeConfiguration,
@@ -2682,6 +2693,7 @@ namespace LangSmith
                 "update_feedback_config" => AuditLogOperation.UpdateFeedbackConfig,
                 "update_feedback_formula" => AuditLogOperation.UpdateFeedbackFormula,
                 "update_filter_view" => AuditLogOperation.UpdateFilterView,
+                "update_fleet_feedback" => AuditLogOperation.UpdateFleetFeedback,
                 "update_fleet_usage_limit" => AuditLogOperation.UpdateFleetUsageLimit,
                 "update_fleet_webhook" => AuditLogOperation.UpdateFleetWebhook,
                 "update_forge_configuration" => AuditLogOperation.UpdateForgeConfiguration,
