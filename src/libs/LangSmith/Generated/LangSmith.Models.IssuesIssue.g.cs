@@ -39,13 +39,19 @@ namespace LangSmith
         public string? Description { get; set; }
 
         /// <summary>
+        /// Nil for the trace-list issues that are the norm.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evidence")]
+        public global::LangSmith.IssuesEvidence? Evidence { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_seen_at")]
         public string? FirstSeenAt { get; set; }
 
         /// <summary>
-        ///
+        /// Legacy: branch of the oldest fix in the board's oldest connected repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fix_branch")]
         public string? FixBranch { get; set; }
@@ -63,7 +69,8 @@ namespace LangSmith
         public int? FixPrNumber { get; set; }
 
         /// <summary>
-        ///
+        /// Issue-level: the problem every fix shares, and the last time a fix run<br/>
+        /// was dispatched for this issue — one run works several fixes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fix_prompt")]
         public string? FixPrompt { get; set; }
@@ -73,6 +80,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fix_verification")]
         public global::LangSmith.IssuesIssueFixVerification? FixVerification { get; set; }
+
+        /// <summary>
+        /// Newest first.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fixes")]
+        public global::System.Collections.Generic.IList<global::LangSmith.IssuesFix>? Fixes { get; set; }
 
         /// <summary>
         ///
@@ -206,12 +219,23 @@ namespace LangSmith
         /// </param>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
+        /// <param name="evidence">
+        /// Nil for the trace-list issues that are the norm.
+        /// </param>
         /// <param name="firstSeenAt"></param>
-        /// <param name="fixBranch"></param>
+        /// <param name="fixBranch">
+        /// Legacy: branch of the oldest fix in the board's oldest connected repository.
+        /// </param>
         /// <param name="fixDispatchedAt"></param>
         /// <param name="fixPrNumber"></param>
-        /// <param name="fixPrompt"></param>
+        /// <param name="fixPrompt">
+        /// Issue-level: the problem every fix shares, and the last time a fix run<br/>
+        /// was dispatched for this issue — one run works several fixes.
+        /// </param>
         /// <param name="fixVerification"></param>
+        /// <param name="fixes">
+        /// Newest first.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="lastSeenAt"></param>
         /// <param name="linearContext"></param>
@@ -243,12 +267,14 @@ namespace LangSmith
             string? autoResolutionState,
             string? createdAt,
             string? description,
+            global::LangSmith.IssuesEvidence? evidence,
             string? firstSeenAt,
             string? fixBranch,
             string? fixDispatchedAt,
             int? fixPrNumber,
             string? fixPrompt,
             global::LangSmith.IssuesIssueFixVerification? fixVerification,
+            global::System.Collections.Generic.IList<global::LangSmith.IssuesFix>? fixes,
             string? id,
             string? lastSeenAt,
             global::LangSmith.IssuesLinearContext? linearContext,
@@ -274,12 +300,14 @@ namespace LangSmith
             this.AutoResolutionState = autoResolutionState;
             this.CreatedAt = createdAt;
             this.Description = description;
+            this.Evidence = evidence;
             this.FirstSeenAt = firstSeenAt;
             this.FixBranch = fixBranch;
             this.FixDispatchedAt = fixDispatchedAt;
             this.FixPrNumber = fixPrNumber;
             this.FixPrompt = fixPrompt;
             this.FixVerification = fixVerification;
+            this.Fixes = fixes;
             this.Id = id;
             this.LastSeenAt = lastSeenAt;
             this.LinearContext = linearContext;
