@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LangSmith
 {
     public partial class FeedbackClient
@@ -517,7 +519,6 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
-        /// <param name="error"></param>
         /// <param name="extra"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -541,7 +542,6 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
-            bool? error = default,
             object? extra = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -566,7 +566,6 @@ namespace LangSmith
                 Id = id,
                 FeedbackSource = feedbackSource,
                 FeedbackConfig = feedbackConfig,
-                Error = error,
                 Extra = extra,
             };
 

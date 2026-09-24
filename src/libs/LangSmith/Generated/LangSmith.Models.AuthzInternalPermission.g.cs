@@ -187,6 +187,42 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        FleetAgentsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetAgentsDelete,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetAgentsInvoke,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetAgentsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetAgentsUpdate,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetSkillsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetSkillsDelete,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetSkillsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetSkillsUpdate,
+        /// <summary>
+        ///
+        /// </summary>
         FleetReadAdminConfig,
         /// <summary>
         ///
@@ -490,6 +526,15 @@ namespace LangSmith
                 AuthzInternalPermission.FeedbackDelete => "feedback:delete",
                 AuthzInternalPermission.FeedbackRead => "feedback:read",
                 AuthzInternalPermission.FeedbackUpdate => "feedback:update",
+                AuthzInternalPermission.FleetAgentsCreate => "fleet-agents:create",
+                AuthzInternalPermission.FleetAgentsDelete => "fleet-agents:delete",
+                AuthzInternalPermission.FleetAgentsInvoke => "fleet-agents:invoke",
+                AuthzInternalPermission.FleetAgentsRead => "fleet-agents:read",
+                AuthzInternalPermission.FleetAgentsUpdate => "fleet-agents:update",
+                AuthzInternalPermission.FleetSkillsCreate => "fleet-skills:create",
+                AuthzInternalPermission.FleetSkillsDelete => "fleet-skills:delete",
+                AuthzInternalPermission.FleetSkillsRead => "fleet-skills:read",
+                AuthzInternalPermission.FleetSkillsUpdate => "fleet-skills:update",
                 AuthzInternalPermission.FleetReadAdminConfig => "fleet:read-admin-config",
                 AuthzInternalPermission.FleetWriteAdminConfig => "fleet:write-admin-config",
                 AuthzInternalPermission.GatewayInvoke => "gateway:invoke",
@@ -606,6 +651,15 @@ namespace LangSmith
                 "feedback:delete" => AuthzInternalPermission.FeedbackDelete,
                 "feedback:read" => AuthzInternalPermission.FeedbackRead,
                 "feedback:update" => AuthzInternalPermission.FeedbackUpdate,
+                "fleet-agents:create" => AuthzInternalPermission.FleetAgentsCreate,
+                "fleet-agents:delete" => AuthzInternalPermission.FleetAgentsDelete,
+                "fleet-agents:invoke" => AuthzInternalPermission.FleetAgentsInvoke,
+                "fleet-agents:read" => AuthzInternalPermission.FleetAgentsRead,
+                "fleet-agents:update" => AuthzInternalPermission.FleetAgentsUpdate,
+                "fleet-skills:create" => AuthzInternalPermission.FleetSkillsCreate,
+                "fleet-skills:delete" => AuthzInternalPermission.FleetSkillsDelete,
+                "fleet-skills:read" => AuthzInternalPermission.FleetSkillsRead,
+                "fleet-skills:update" => AuthzInternalPermission.FleetSkillsUpdate,
                 "fleet:read-admin-config" => AuthzInternalPermission.FleetReadAdminConfig,
                 "fleet:write-admin-config" => AuthzInternalPermission.FleetWriteAdminConfig,
                 "gateway:invoke" => AuthzInternalPermission.GatewayInvoke,
