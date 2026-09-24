@@ -23,6 +23,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Developer102026,
+        /// <summary>
+        ///
+        /// </summary>
         DeveloperLegacy,
         /// <summary>
         ///
@@ -40,6 +44,10 @@ namespace LangSmith
         ///
         /// </summary>
         Free072026,
+        /// <summary>
+        ///
+        /// </summary>
+        Free102026,
         /// <summary>
         ///
         /// </summary>
@@ -63,6 +71,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Plus102026,
+        /// <summary>
+        ///
+        /// </summary>
         PlusLegacy,
         /// <summary>
         ///
@@ -76,6 +88,10 @@ namespace LangSmith
         ///
         /// </summary>
         Startup072026,
+        /// <summary>
+        ///
+        /// </summary>
+        Startup102026,
         /// <summary>
         ///
         /// </summary>
@@ -97,20 +113,24 @@ namespace LangSmith
                 PaymentPlanTier.Developer => "developer",
                 PaymentPlanTier.Developer012026 => "developer_01_2026",
                 PaymentPlanTier.Developer072026 => "developer_07_2026",
+                PaymentPlanTier.Developer102026 => "developer_10_2026",
                 PaymentPlanTier.DeveloperLegacy => "developer_legacy",
                 PaymentPlanTier.Enterprise => "enterprise",
                 PaymentPlanTier.EnterpriseLegacy => "enterprise_legacy",
                 PaymentPlanTier.Free => "free",
                 PaymentPlanTier.Free072026 => "free_07_2026",
+                PaymentPlanTier.Free102026 => "free_10_2026",
                 PaymentPlanTier.NoPlan => "no_plan",
                 PaymentPlanTier.Partner => "partner",
                 PaymentPlanTier.Plus => "plus",
                 PaymentPlanTier.Plus012026 => "plus_01_2026",
                 PaymentPlanTier.Plus072026 => "plus_07_2026",
+                PaymentPlanTier.Plus102026 => "plus_10_2026",
                 PaymentPlanTier.PlusLegacy => "plus_legacy",
                 PaymentPlanTier.Premier => "premier",
                 PaymentPlanTier.Startup => "startup",
                 PaymentPlanTier.Startup072026 => "startup_07_2026",
+                PaymentPlanTier.Startup102026 => "startup_10_2026",
                 PaymentPlanTier.StartupV0 => "startup_v0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -125,20 +145,24 @@ namespace LangSmith
                 "developer" => PaymentPlanTier.Developer,
                 "developer_01_2026" => PaymentPlanTier.Developer012026,
                 "developer_07_2026" => PaymentPlanTier.Developer072026,
+                "developer_10_2026" => PaymentPlanTier.Developer102026,
                 "developer_legacy" => PaymentPlanTier.DeveloperLegacy,
                 "enterprise" => PaymentPlanTier.Enterprise,
                 "enterprise_legacy" => PaymentPlanTier.EnterpriseLegacy,
                 "free" => PaymentPlanTier.Free,
                 "free_07_2026" => PaymentPlanTier.Free072026,
+                "free_10_2026" => PaymentPlanTier.Free102026,
                 "no_plan" => PaymentPlanTier.NoPlan,
                 "partner" => PaymentPlanTier.Partner,
                 "plus" => PaymentPlanTier.Plus,
                 "plus_01_2026" => PaymentPlanTier.Plus012026,
                 "plus_07_2026" => PaymentPlanTier.Plus072026,
+                "plus_10_2026" => PaymentPlanTier.Plus102026,
                 "plus_legacy" => PaymentPlanTier.PlusLegacy,
                 "premier" => PaymentPlanTier.Premier,
                 "startup" => PaymentPlanTier.Startup,
                 "startup_07_2026" => PaymentPlanTier.Startup072026,
+                "startup_10_2026" => PaymentPlanTier.Startup102026,
                 "startup_v0" => PaymentPlanTier.StartupV0,
                 _ => null,
             };
