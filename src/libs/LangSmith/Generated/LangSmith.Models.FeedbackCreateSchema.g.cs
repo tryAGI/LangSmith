@@ -127,6 +127,12 @@ namespace LangSmith
         public bool? Error { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
+        public object? Extra { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -158,6 +164,7 @@ namespace LangSmith
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="error"></param>
+        /// <param name="extra"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -180,7 +187,8 @@ namespace LangSmith
             global::System.Guid? id,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
-            bool? error)
+            bool? error,
+            object? extra)
         {
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
@@ -201,6 +209,7 @@ namespace LangSmith
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;
             this.Error = error;
+            this.Extra = extra;
         }
 
         /// <summary>
