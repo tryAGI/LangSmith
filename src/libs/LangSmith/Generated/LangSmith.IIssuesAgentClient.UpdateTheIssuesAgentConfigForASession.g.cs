@@ -87,6 +87,10 @@ namespace LangSmith
         /// than null, since null is indistinguishable from "absent". Serialized as a<br/>
         /// string to preserve NUMERIC precision.
         /// </param>
+        /// <param name="targetAuth">
+        /// TargetAuth replaces validation-deployment authentication. Header values<br/>
+        /// are write-only.
+        /// </param>
         /// <param name="userInstructions">
         /// Freeform user preferences. Send "" to clear (the frontend must not send null).
         /// </param>
@@ -116,6 +120,7 @@ namespace LangSmith
             string? runFilter = default,
             string? sessionAgentOverviewRepoId = default,
             string? sessionLcuSpendLimitMonthly = default,
+            global::LangSmith.AgentTargetAuthInput? targetAuth = default,
             string? userInstructions = default,
             string? validationDeploymentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

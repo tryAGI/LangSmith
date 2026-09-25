@@ -59,9 +59,9 @@ namespace LangSmith
         /// </param>
         /// <param name="autoOpenFixPr">
         /// AutoOpenFixPR opens a draft pull request for every fix the agent<br/>
-        /// produces, instead of waiting for one to be opened from the issue. Has no<br/>
-        /// effect without github_repo_url, since a fix has nowhere to open. Omit for<br/>
-        /// false.
+        /// produces — one per repository it changed — instead of waiting for one to<br/>
+        /// be opened from the issue. Has no effect until the board tracks a<br/>
+        /// repository, since a fix has nowhere to open. Omit for false.
         /// </param>
         /// <param name="contextHubRepoHandle"></param>
         /// <param name="githubBaseBranch">

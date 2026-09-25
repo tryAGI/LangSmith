@@ -474,6 +474,18 @@ namespace LangSmith
         public bool? ManagedDeepAgentsEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lmt_enabled")]
+        public bool? LmtEnabled { get; set; }
+
+        /// <summary>
+        /// Caps an org's monthly Managed Tools LSU spend, resolved from Metronome custom fields. Unset or zero blocks usage. Negative means unlimited; positive values cap monthly LSU usage. Per-org only, with no environment default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lmt_lsu_spend_limit_monthly")]
+        public double? LmtLsuSpendLimitMonthly { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_anonymous")]
@@ -696,6 +708,12 @@ namespace LangSmith
         /// <param name="managedDeepAgentsEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="lmtEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="lmtLsuSpendLimitMonthly">
+        /// Caps an org's monthly Managed Tools LSU spend, resolved from Metronome custom fields. Unset or zero blocks usage. Negative means unlimited; positive values cap monthly LSU usage. Per-org only, with no environment default.
+        /// </param>
         /// <param name="isAnonymous"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -776,6 +794,8 @@ namespace LangSmith
             bool? tunedEvalsEnabled,
             bool? gatewayPiiRedactionEnabled,
             bool? managedDeepAgentsEnabled,
+            bool? lmtEnabled,
+            double? lmtLsuSpendLimitMonthly,
             bool? isAnonymous)
         {
             this.PlanTier = planTier;
@@ -853,6 +873,8 @@ namespace LangSmith
             this.TunedEvalsEnabled = tunedEvalsEnabled;
             this.GatewayPiiRedactionEnabled = gatewayPiiRedactionEnabled;
             this.ManagedDeepAgentsEnabled = managedDeepAgentsEnabled;
+            this.LmtEnabled = lmtEnabled;
+            this.LmtLsuSpendLimitMonthly = lmtLsuSpendLimitMonthly;
             this.IsAnonymous = isAnonymous;
         }
 

@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_oidc")]
+        public global::LangSmith.DataPlanesDataPlaneFleetOIDCSettings? FleetOidc { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -43,6 +49,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provisioning_settings")]
+        public global::LangSmith.DataPlanesDataPlaneProvisioningSettings? ProvisioningSettings { get; set; }
 
         /// <summary>
         ///
@@ -87,9 +99,11 @@ namespace LangSmith
         /// <param name="apiUrl"></param>
         /// <param name="createdAt"></param>
         /// <param name="firewall"></param>
+        /// <param name="fleetOidc"></param>
         /// <param name="id"></param>
         /// <param name="maintenanceWindow"></param>
         /// <param name="name"></param>
+        /// <param name="provisioningSettings"></param>
         /// <param name="region"></param>
         /// <param name="status"></param>
         /// <param name="statusUpdatedAt"></param>
@@ -102,9 +116,11 @@ namespace LangSmith
             string? apiUrl,
             string? createdAt,
             global::LangSmith.DataPlanesDataPlaneFirewallSettings? firewall,
+            global::LangSmith.DataPlanesDataPlaneFleetOIDCSettings? fleetOidc,
             string? id,
             string? maintenanceWindow,
             string? name,
+            global::LangSmith.DataPlanesDataPlaneProvisioningSettings? provisioningSettings,
             string? region,
             global::LangSmith.DataPlanesStatus? status,
             string? statusUpdatedAt,
@@ -114,9 +130,11 @@ namespace LangSmith
             this.ApiUrl = apiUrl;
             this.CreatedAt = createdAt;
             this.Firewall = firewall;
+            this.FleetOidc = fleetOidc;
             this.Id = id;
             this.MaintenanceWindow = maintenanceWindow;
             this.Name = name;
+            this.ProvisioningSettings = provisioningSettings;
             this.Region = region;
             this.Status = status;
             this.StatusUpdatedAt = statusUpdatedAt;

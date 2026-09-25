@@ -23,6 +23,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Developer102026,
+        /// <summary>
+        ///
+        /// </summary>
         Disabled,
         /// <summary>
         ///
@@ -32,6 +36,10 @@ namespace LangSmith
         ///
         /// </summary>
         Free072026,
+        /// <summary>
+        ///
+        /// </summary>
+        Free102026,
         /// <summary>
         ///
         /// </summary>
@@ -51,6 +59,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Plus102026,
+        /// <summary>
+        ///
+        /// </summary>
         Premier,
         /// <summary>
         ///
@@ -60,6 +72,10 @@ namespace LangSmith
         ///
         /// </summary>
         Startup072026,
+        /// <summary>
+        ///
+        /// </summary>
+        Startup102026,
         /// <summary>
         ///
         /// </summary>
@@ -81,16 +97,20 @@ namespace LangSmith
                 ChangePaymentPlanReq.Developer => "developer",
                 ChangePaymentPlanReq.Developer012026 => "developer_01_2026",
                 ChangePaymentPlanReq.Developer072026 => "developer_07_2026",
+                ChangePaymentPlanReq.Developer102026 => "developer_10_2026",
                 ChangePaymentPlanReq.Disabled => "disabled",
                 ChangePaymentPlanReq.Free => "free",
                 ChangePaymentPlanReq.Free072026 => "free_07_2026",
+                ChangePaymentPlanReq.Free102026 => "free_10_2026",
                 ChangePaymentPlanReq.Partner => "partner",
                 ChangePaymentPlanReq.Plus => "plus",
                 ChangePaymentPlanReq.Plus012026 => "plus_01_2026",
                 ChangePaymentPlanReq.Plus072026 => "plus_07_2026",
+                ChangePaymentPlanReq.Plus102026 => "plus_10_2026",
                 ChangePaymentPlanReq.Premier => "premier",
                 ChangePaymentPlanReq.Startup => "startup",
                 ChangePaymentPlanReq.Startup072026 => "startup_07_2026",
+                ChangePaymentPlanReq.Startup102026 => "startup_10_2026",
                 ChangePaymentPlanReq.StartupV0 => "startup_v0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -105,16 +125,20 @@ namespace LangSmith
                 "developer" => ChangePaymentPlanReq.Developer,
                 "developer_01_2026" => ChangePaymentPlanReq.Developer012026,
                 "developer_07_2026" => ChangePaymentPlanReq.Developer072026,
+                "developer_10_2026" => ChangePaymentPlanReq.Developer102026,
                 "disabled" => ChangePaymentPlanReq.Disabled,
                 "free" => ChangePaymentPlanReq.Free,
                 "free_07_2026" => ChangePaymentPlanReq.Free072026,
+                "free_10_2026" => ChangePaymentPlanReq.Free102026,
                 "partner" => ChangePaymentPlanReq.Partner,
                 "plus" => ChangePaymentPlanReq.Plus,
                 "plus_01_2026" => ChangePaymentPlanReq.Plus012026,
                 "plus_07_2026" => ChangePaymentPlanReq.Plus072026,
+                "plus_10_2026" => ChangePaymentPlanReq.Plus102026,
                 "premier" => ChangePaymentPlanReq.Premier,
                 "startup" => ChangePaymentPlanReq.Startup,
                 "startup_07_2026" => ChangePaymentPlanReq.Startup072026,
+                "startup_10_2026" => ChangePaymentPlanReq.Startup102026,
                 "startup_v0" => ChangePaymentPlanReq.StartupV0,
                 _ => null,
             };

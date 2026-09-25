@@ -29,6 +29,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsCodeEvaluator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsEvaluatorBuildStatus), TypeInfoPropertyName = "EvaluatorsEvaluatorBuildStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey), TypeInfoPropertyName = "EvaluatorsManagedCodeEvaluatorKey2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsCreateCodeEvaluatorRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsCreateEvaluatorRequest))]
@@ -56,6 +57,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsEvaluatorBuildStatus?), TypeInfoPropertyName = "NullableEvaluatorsEvaluatorBuildStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey?), TypeInfoPropertyName = "NullableEvaluatorsManagedCodeEvaluatorKey2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsEvaluatorType?), TypeInfoPropertyName = "NullableEvaluatorsEvaluatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem>))]
@@ -194,7 +196,11 @@ namespace LangSmith
 
                     || typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType)
 
-                    || typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType?);
+                    || typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType?)
+
+                    || typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey)
+
+                    || typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -219,6 +225,16 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.EvaluatorsEvaluatorType?))
                 {
                     return new global::LangSmith.JsonConverters.EvaluatorsEvaluatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey))
+                {
+                    return new global::LangSmith.JsonConverters.EvaluatorsManagedCodeEvaluatorKeyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.EvaluatorsManagedCodeEvaluatorKey?))
+                {
+                    return new global::LangSmith.JsonConverters.EvaluatorsManagedCodeEvaluatorKeyNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

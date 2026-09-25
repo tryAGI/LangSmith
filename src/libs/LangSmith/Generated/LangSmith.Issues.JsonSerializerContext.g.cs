@@ -27,9 +27,15 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesEvidence))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesSeriesEvidence))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesEvidenceType), TypeInfoPropertyName = "IssuesEvidenceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesFix))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesIssue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesIssueFixVerification))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IssuesFix>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesLinearContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesLinearSync))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesStatus), TypeInfoPropertyName = "IssuesStatus2")]
@@ -40,6 +46,12 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesListViewsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IssuesViewedIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesViewedIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricDefinition))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsScalarMetricDefinition))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricEntity), TypeInfoPropertyName = "RunsanalyticsMetricEntity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricField), TypeInfoPropertyName = "RunsanalyticsMetricField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricType), TypeInfoPropertyName = "RunsanalyticsMetricType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesStatus), TypeInfoPropertyName = "GetPlatformIssuesStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetPlatformIssuesActivityItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesActivityItem), TypeInfoPropertyName = "GetPlatformIssuesActivityItem2")]
@@ -47,15 +59,21 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.IssuesIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesEvidenceType?), TypeInfoPropertyName = "NullableIssuesEvidenceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesStatus?), TypeInfoPropertyName = "NullableIssuesStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesIssueFixVerificationStatus?), TypeInfoPropertyName = "NullableIssuesIssueFixVerificationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesIssueValidationResultOutcome?), TypeInfoPropertyName = "NullableIssuesIssueValidationResultOutcome2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.IssuesLinearSyncState?), TypeInfoPropertyName = "NullableIssuesLinearSyncState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricEntity?), TypeInfoPropertyName = "NullableRunsanalyticsMetricEntity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricField?), TypeInfoPropertyName = "NullableRunsanalyticsMetricField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricType?), TypeInfoPropertyName = "NullableRunsanalyticsMetricType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesStatus?), TypeInfoPropertyName = "NullableGetPlatformIssuesStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesActivityItem?), TypeInfoPropertyName = "NullableGetPlatformIssuesActivityItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesSortBy?), TypeInfoPropertyName = "NullableGetPlatformIssuesSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IssuesFix>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IssuesViewedIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.GetPlatformIssuesActivityItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.IssuesIssue>))]
@@ -184,7 +202,11 @@ namespace LangSmith
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::LangSmith.IssuesIssueFixVerificationStatus)
+                    typeToConvert == typeof(global::LangSmith.IssuesEvidenceType)
+
+                    || typeToConvert == typeof(global::LangSmith.IssuesEvidenceType?)
+
+                    || typeToConvert == typeof(global::LangSmith.IssuesIssueFixVerificationStatus)
 
                     || typeToConvert == typeof(global::LangSmith.IssuesIssueFixVerificationStatus?)
 
@@ -199,6 +221,18 @@ namespace LangSmith
                     || typeToConvert == typeof(global::LangSmith.IssuesStatus)
 
                     || typeToConvert == typeof(global::LangSmith.IssuesStatus?)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricEntity)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricEntity?)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricField)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricField?)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType?)
 
                     || typeToConvert == typeof(global::LangSmith.GetPlatformIssuesStatus)
 
@@ -217,6 +251,16 @@ namespace LangSmith
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::LangSmith.IssuesEvidenceType))
+                {
+                    return new global::LangSmith.JsonConverters.IssuesEvidenceTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.IssuesEvidenceType?))
+                {
+                    return new global::LangSmith.JsonConverters.IssuesEvidenceTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LangSmith.IssuesIssueFixVerificationStatus))
                 {
                     return new global::LangSmith.JsonConverters.IssuesIssueFixVerificationStatusJsonConverter();
@@ -255,6 +299,36 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.IssuesStatus?))
                 {
                     return new global::LangSmith.JsonConverters.IssuesStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricEntity))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsMetricEntityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricEntity?))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsMetricEntityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricField))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsMetricFieldJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricField?))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsMetricFieldNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsMetricTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType?))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsMetricTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LangSmith.GetPlatformIssuesStatus))

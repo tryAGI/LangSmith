@@ -40,11 +40,11 @@ namespace LangSmith
             };
         partial void PrepareDeleteADataPlaneArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string id);
+            ref global::System.Guid id);
         partial void PrepareDeleteADataPlaneRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string id);
+            global::System.Guid id);
         partial void ProcessDeleteADataPlaneResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,7 +63,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesPublicDataPlane> DeleteADataPlaneAsync(
-            string id,
+            global::System.Guid id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,7 +84,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DataPlanesPublicDataPlane>> DeleteADataPlaneAsResponseAsync(
-            string id,
+            global::System.Guid id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

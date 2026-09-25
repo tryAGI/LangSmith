@@ -183,6 +183,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateCustomAppEditingCredential,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateCustomAppEditingSandbox,
+        /// <summary>
+        ///
+        /// </summary>
         CreateDataPlane,
         /// <summary>
         ///
@@ -260,6 +268,10 @@ namespace LangSmith
         ///
         /// </summary>
         CreateLicenseShareLink,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateMcpGateway,
         /// <summary>
         ///
         /// </summary>
@@ -455,6 +467,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteBulkExportDestination,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteChart,
         /// <summary>
         ///
@@ -476,6 +492,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteCustomApp,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteCustomAppEditingSandbox,
         /// <summary>
         ///
         /// </summary>
@@ -535,6 +555,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteFleetFeedback,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteFleetUsageLimit,
         /// <summary>
         ///
@@ -564,6 +588,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteInsightsJobConfig,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteMcpGateway,
         /// <summary>
         ///
         /// </summary>
@@ -1571,6 +1599,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateFleetFeedback,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateFleetUsageLimit,
         /// <summary>
         ///
@@ -1604,6 +1636,10 @@ namespace LangSmith
         ///
         /// </summary>
         UpdateLoginMethods,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateMcpGateway,
         /// <summary>
         ///
         /// </summary>
@@ -1845,6 +1881,8 @@ namespace LangSmith
                 AuditLogOperation.CreateCredential => "create_credential",
                 AuditLogOperation.CreateCsvDataset => "create_csv_dataset",
                 AuditLogOperation.CreateCustomApp => "create_custom_app",
+                AuditLogOperation.CreateCustomAppEditingCredential => "create_custom_app_editing_credential",
+                AuditLogOperation.CreateCustomAppEditingSandbox => "create_custom_app_editing_sandbox",
                 AuditLogOperation.CreateDataPlane => "create_data_plane",
                 AuditLogOperation.CreateDataset => "create_dataset",
                 AuditLogOperation.CreateDeployment => "create_deployment",
@@ -1865,6 +1903,7 @@ namespace LangSmith
                 AuditLogOperation.CreateInsightsJob => "create_insights_job",
                 AuditLogOperation.CreateInsightsJobConfig => "create_insights_job_config",
                 AuditLogOperation.CreateLicenseShareLink => "create_license_share_link",
+                AuditLogOperation.CreateMcpGateway => "create_mcp_gateway",
                 AuditLogOperation.CreateMcpServer => "create_mcp_server",
                 AuditLogOperation.CreateMcpVendorSettings => "create_mcp_vendor_settings",
                 AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
@@ -1913,12 +1952,14 @@ namespace LangSmith
                 AuditLogOperation.DeleteAnnotationQueueRuns => "delete_annotation_queue_runs",
                 AuditLogOperation.DeleteAnnotationQueues => "delete_annotation_queues",
                 AuditLogOperation.DeleteApiKey => "delete_api_key",
+                AuditLogOperation.DeleteBulkExportDestination => "delete_bulk_export_destination",
                 AuditLogOperation.DeleteChart => "delete_chart",
                 AuditLogOperation.DeleteChartSection => "delete_chart_section",
                 AuditLogOperation.DeleteComparativeExperiment => "delete_comparative_experiment",
                 AuditLogOperation.DeleteConnection => "delete_connection",
                 AuditLogOperation.DeleteCredential => "delete_credential",
                 AuditLogOperation.DeleteCustomApp => "delete_custom_app",
+                AuditLogOperation.DeleteCustomAppEditingSandbox => "delete_custom_app_editing_sandbox",
                 AuditLogOperation.DeleteDataPlane => "delete_data_plane",
                 AuditLogOperation.DeleteDataset => "delete_dataset",
                 AuditLogOperation.DeleteDatasets => "delete_datasets",
@@ -1933,6 +1974,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteFeedbackConfig => "delete_feedback_config",
                 AuditLogOperation.DeleteFeedbackFormula => "delete_feedback_formula",
                 AuditLogOperation.DeleteFilterView => "delete_filter_view",
+                AuditLogOperation.DeleteFleetFeedback => "delete_fleet_feedback",
                 AuditLogOperation.DeleteFleetUsageLimit => "delete_fleet_usage_limit",
                 AuditLogOperation.DeleteFleetWebhook => "delete_fleet_webhook",
                 AuditLogOperation.DeleteForgeConfiguration => "delete_forge_configuration",
@@ -1941,6 +1983,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteHubEnvironment => "delete_hub_environment",
                 AuditLogOperation.DeleteInsightsJob => "delete_insights_job",
                 AuditLogOperation.DeleteInsightsJobConfig => "delete_insights_job_config",
+                AuditLogOperation.DeleteMcpGateway => "delete_mcp_gateway",
                 AuditLogOperation.DeleteMcpServer => "delete_mcp_server",
                 AuditLogOperation.DeleteMcpVendorSettings => "delete_mcp_vendor_settings",
                 AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
@@ -2192,6 +2235,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateFeedbackConfig => "update_feedback_config",
                 AuditLogOperation.UpdateFeedbackFormula => "update_feedback_formula",
                 AuditLogOperation.UpdateFilterView => "update_filter_view",
+                AuditLogOperation.UpdateFleetFeedback => "update_fleet_feedback",
                 AuditLogOperation.UpdateFleetUsageLimit => "update_fleet_usage_limit",
                 AuditLogOperation.UpdateFleetWebhook => "update_fleet_webhook",
                 AuditLogOperation.UpdateForgeConfiguration => "update_forge_configuration",
@@ -2201,6 +2245,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateInsightsJob => "update_insights_job",
                 AuditLogOperation.UpdateInsightsJobConfig => "update_insights_job_config",
                 AuditLogOperation.UpdateLoginMethods => "update_login_methods",
+                AuditLogOperation.UpdateMcpGateway => "update_mcp_gateway",
                 AuditLogOperation.UpdateMcpServer => "update_mcp_server",
                 AuditLogOperation.UpdateMcpVendorSettings => "update_mcp_vendor_settings",
                 AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
@@ -2300,6 +2345,8 @@ namespace LangSmith
                 "create_credential" => AuditLogOperation.CreateCredential,
                 "create_csv_dataset" => AuditLogOperation.CreateCsvDataset,
                 "create_custom_app" => AuditLogOperation.CreateCustomApp,
+                "create_custom_app_editing_credential" => AuditLogOperation.CreateCustomAppEditingCredential,
+                "create_custom_app_editing_sandbox" => AuditLogOperation.CreateCustomAppEditingSandbox,
                 "create_data_plane" => AuditLogOperation.CreateDataPlane,
                 "create_dataset" => AuditLogOperation.CreateDataset,
                 "create_deployment" => AuditLogOperation.CreateDeployment,
@@ -2320,6 +2367,7 @@ namespace LangSmith
                 "create_insights_job" => AuditLogOperation.CreateInsightsJob,
                 "create_insights_job_config" => AuditLogOperation.CreateInsightsJobConfig,
                 "create_license_share_link" => AuditLogOperation.CreateLicenseShareLink,
+                "create_mcp_gateway" => AuditLogOperation.CreateMcpGateway,
                 "create_mcp_server" => AuditLogOperation.CreateMcpServer,
                 "create_mcp_vendor_settings" => AuditLogOperation.CreateMcpVendorSettings,
                 "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
@@ -2368,12 +2416,14 @@ namespace LangSmith
                 "delete_annotation_queue_runs" => AuditLogOperation.DeleteAnnotationQueueRuns,
                 "delete_annotation_queues" => AuditLogOperation.DeleteAnnotationQueues,
                 "delete_api_key" => AuditLogOperation.DeleteApiKey,
+                "delete_bulk_export_destination" => AuditLogOperation.DeleteBulkExportDestination,
                 "delete_chart" => AuditLogOperation.DeleteChart,
                 "delete_chart_section" => AuditLogOperation.DeleteChartSection,
                 "delete_comparative_experiment" => AuditLogOperation.DeleteComparativeExperiment,
                 "delete_connection" => AuditLogOperation.DeleteConnection,
                 "delete_credential" => AuditLogOperation.DeleteCredential,
                 "delete_custom_app" => AuditLogOperation.DeleteCustomApp,
+                "delete_custom_app_editing_sandbox" => AuditLogOperation.DeleteCustomAppEditingSandbox,
                 "delete_data_plane" => AuditLogOperation.DeleteDataPlane,
                 "delete_dataset" => AuditLogOperation.DeleteDataset,
                 "delete_datasets" => AuditLogOperation.DeleteDatasets,
@@ -2388,6 +2438,7 @@ namespace LangSmith
                 "delete_feedback_config" => AuditLogOperation.DeleteFeedbackConfig,
                 "delete_feedback_formula" => AuditLogOperation.DeleteFeedbackFormula,
                 "delete_filter_view" => AuditLogOperation.DeleteFilterView,
+                "delete_fleet_feedback" => AuditLogOperation.DeleteFleetFeedback,
                 "delete_fleet_usage_limit" => AuditLogOperation.DeleteFleetUsageLimit,
                 "delete_fleet_webhook" => AuditLogOperation.DeleteFleetWebhook,
                 "delete_forge_configuration" => AuditLogOperation.DeleteForgeConfiguration,
@@ -2396,6 +2447,7 @@ namespace LangSmith
                 "delete_hub_environment" => AuditLogOperation.DeleteHubEnvironment,
                 "delete_insights_job" => AuditLogOperation.DeleteInsightsJob,
                 "delete_insights_job_config" => AuditLogOperation.DeleteInsightsJobConfig,
+                "delete_mcp_gateway" => AuditLogOperation.DeleteMcpGateway,
                 "delete_mcp_server" => AuditLogOperation.DeleteMcpServer,
                 "delete_mcp_vendor_settings" => AuditLogOperation.DeleteMcpVendorSettings,
                 "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
@@ -2647,6 +2699,7 @@ namespace LangSmith
                 "update_feedback_config" => AuditLogOperation.UpdateFeedbackConfig,
                 "update_feedback_formula" => AuditLogOperation.UpdateFeedbackFormula,
                 "update_filter_view" => AuditLogOperation.UpdateFilterView,
+                "update_fleet_feedback" => AuditLogOperation.UpdateFleetFeedback,
                 "update_fleet_usage_limit" => AuditLogOperation.UpdateFleetUsageLimit,
                 "update_fleet_webhook" => AuditLogOperation.UpdateFleetWebhook,
                 "update_forge_configuration" => AuditLogOperation.UpdateForgeConfiguration,
@@ -2656,6 +2709,7 @@ namespace LangSmith
                 "update_insights_job" => AuditLogOperation.UpdateInsightsJob,
                 "update_insights_job_config" => AuditLogOperation.UpdateInsightsJobConfig,
                 "update_login_methods" => AuditLogOperation.UpdateLoginMethods,
+                "update_mcp_gateway" => AuditLogOperation.UpdateMcpGateway,
                 "update_mcp_server" => AuditLogOperation.UpdateMcpServer,
                 "update_mcp_vendor_settings" => AuditLogOperation.UpdateMcpVendorSettings,
                 "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
