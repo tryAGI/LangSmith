@@ -467,6 +467,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteBulkExportDestination,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteChart,
         /// <summary>
         ///
@@ -1948,6 +1952,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteAnnotationQueueRuns => "delete_annotation_queue_runs",
                 AuditLogOperation.DeleteAnnotationQueues => "delete_annotation_queues",
                 AuditLogOperation.DeleteApiKey => "delete_api_key",
+                AuditLogOperation.DeleteBulkExportDestination => "delete_bulk_export_destination",
                 AuditLogOperation.DeleteChart => "delete_chart",
                 AuditLogOperation.DeleteChartSection => "delete_chart_section",
                 AuditLogOperation.DeleteComparativeExperiment => "delete_comparative_experiment",
@@ -2411,6 +2416,7 @@ namespace LangSmith
                 "delete_annotation_queue_runs" => AuditLogOperation.DeleteAnnotationQueueRuns,
                 "delete_annotation_queues" => AuditLogOperation.DeleteAnnotationQueues,
                 "delete_api_key" => AuditLogOperation.DeleteApiKey,
+                "delete_bulk_export_destination" => AuditLogOperation.DeleteBulkExportDestination,
                 "delete_chart" => AuditLogOperation.DeleteChart,
                 "delete_chart_section" => AuditLogOperation.DeleteChartSection,
                 "delete_comparative_experiment" => AuditLogOperation.DeleteComparativeExperiment,
