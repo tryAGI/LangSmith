@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// Delete annotation queue items<br/>
-        /// Remove RUN or THREAD items from a single annotation queue by item ID.
+        /// Remove RUN or THREAD items from a single annotation queue by item ID. Both active and completed items can be removed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="request"></param>
@@ -84,7 +84,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Delete annotation queue items<br/>
-        /// Remove RUN or THREAD items from a single annotation queue by item ID.
+        /// Remove RUN or THREAD items from a single annotation queue by item ID. Both active and completed items can be removed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="request"></param>
@@ -607,7 +607,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Delete annotation queue items<br/>
-        /// Remove RUN or THREAD items from a single annotation queue by item ID.
+        /// Remove RUN or THREAD items from a single annotation queue by item ID. Both active and completed items can be removed.
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="itemIds"></param>
