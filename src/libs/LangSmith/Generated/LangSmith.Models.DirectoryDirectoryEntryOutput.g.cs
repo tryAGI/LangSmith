@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.DirectoryFileEntry PickFile() => IsFile
-            ? File!
+        public global::LangSmith.DirectoryFileEntry PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.DirectoryAgentEntryOutput PickAgent() => IsAgent
-            ? Agent!
+        public global::LangSmith.DirectoryAgentEntryOutput PickAgent() => Agent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.DirectorySkillEntryOutput PickSkill() => IsSkill
-            ? Skill!
+        public global::LangSmith.DirectorySkillEntryOutput PickSkill() => Skill is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Skill' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsFile && file != null)
+            if (File is { } __value0 && file != null)
             {
-                return file(File!);
+                return file(__value0);
             }
-            else if (IsAgent && agent != null)
+            else if (Agent is { } __value1 && agent != null)
             {
-                return agent(Agent!);
+                return agent(__value1);
             }
-            else if (IsSkill && skill != null)
+            else if (Skill is { } __value2 && skill != null)
             {
-                return skill(Skill!);
+                return skill(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
-            else if (IsAgent)
+            else if (Agent is { } __value1)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value1);
             }
-            else if (IsSkill)
+            else if (Skill is { } __value2)
             {
-                skill?.Invoke(Skill!);
+                skill?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
-            else if (IsAgent)
+            else if (Agent is { } __value1)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value1);
             }
-            else if (IsSkill)
+            else if (Skill is { } __value2)
             {
-                skill?.Invoke(Skill!);
+                skill?.Invoke(__value2);
             }
         }
 

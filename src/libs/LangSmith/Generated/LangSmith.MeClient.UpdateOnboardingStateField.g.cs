@@ -174,7 +174,7 @@ namespace LangSmith
                 PrepareUpdateOnboardingStateFieldRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    field: field!);
+                    field: field);
 
                 return __httpRequest;
             }
@@ -196,7 +196,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/me/onboarding_state/{field}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -230,7 +230,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/me/onboarding_state/{field}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -271,7 +271,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/me/onboarding_state/{field}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -319,7 +319,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/me/onboarding_state/{field}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/me/onboarding_state/{field}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

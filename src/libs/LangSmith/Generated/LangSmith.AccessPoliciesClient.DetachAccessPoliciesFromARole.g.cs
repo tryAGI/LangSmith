@@ -166,8 +166,8 @@ namespace LangSmith
                 PrepareDetachAccessPoliciesFromARoleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    roleId: roleId!,
-                    accessPolicyIds: accessPolicyIds!);
+                    roleId: roleId,
+                    accessPolicyIds: accessPolicyIds);
 
                 return __httpRequest;
             }
@@ -189,7 +189,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/orgs/current/roles/{roleId}/access-policies\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -223,7 +223,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/orgs/current/roles/{roleId}/access-policies\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -264,7 +264,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/orgs/current/roles/{roleId}/access-policies\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -312,7 +312,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/orgs/current/roles/{roleId}/access-policies\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/orgs/current/roles/{roleId}/access-policies\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

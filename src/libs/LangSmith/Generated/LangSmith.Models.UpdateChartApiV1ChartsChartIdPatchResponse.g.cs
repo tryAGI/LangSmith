@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.CustomChartResponse PickLine() => IsLine
-            ? Line!
+        public global::LangSmith.CustomChartResponse PickLine() => Line is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Line' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.CustomTextBlockResponse PickText() => IsText
-            ? Text!
+        public global::LangSmith.CustomTextBlockResponse PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsLine && line != null)
+            if (Line is { } __value0 && line != null)
             {
-                return line(Line!);
+                return line(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsLine)
+            if (Line is { } __value0)
             {
-                line?.Invoke(Line!);
+                line?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsLine)
+            if (Line is { } __value0)
             {
-                line?.Invoke(Line!);
+                line?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
         }
 

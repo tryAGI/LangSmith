@@ -225,11 +225,11 @@ namespace LangSmith
                                 servers: s_ReadDatasetsStreamServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("data_type", dataType?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
@@ -238,7 +238,7 @@ namespace LangSmith
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -313,7 +313,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/datasets/stream\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/datasets/stream\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -388,7 +388,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/datasets/stream\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -436,7 +436,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/datasets/stream\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -458,7 +458,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/datasets/stream\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

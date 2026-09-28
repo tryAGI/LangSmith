@@ -187,9 +187,9 @@ namespace LangSmith
                                 .AddOptionalParameter("session_id", sessionId?.ToString())
                                 .AddOptionalParameter("type", type?.ToValueString())
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("evaluator_id", evaluatorId?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("include_backfill_progress", includeBackfillProgress?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -261,7 +261,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/runs/rules\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/runs/rules\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -336,7 +336,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/runs/rules\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -384,7 +384,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/runs/rules\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -406,7 +406,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/runs/rules\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

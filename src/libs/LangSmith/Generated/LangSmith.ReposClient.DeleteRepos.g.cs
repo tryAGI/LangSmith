@@ -129,7 +129,7 @@ namespace LangSmith
                                 servers: s_DeleteReposServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddRequiredParameter("repo_ids", repoIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddRequiredParameter("repo_ids", repoIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -171,7 +171,7 @@ namespace LangSmith
                 PrepareDeleteReposRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    repoIds: repoIds!);
+                    repoIds: repoIds);
 
                 return __httpRequest;
             }
@@ -193,7 +193,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -227,7 +227,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -316,7 +316,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

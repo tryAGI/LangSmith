@@ -163,7 +163,7 @@ namespace LangSmith
                 PrepareDeleteTheIssuesAgentForASessionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId!);
+                    sessionId: sessionId);
 
                 return __httpRequest;
             }
@@ -185,7 +185,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/issues-agent\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -219,7 +219,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/issues-agent\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -260,7 +260,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/issues-agent\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/issues-agent\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -330,7 +330,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/issues-agent\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

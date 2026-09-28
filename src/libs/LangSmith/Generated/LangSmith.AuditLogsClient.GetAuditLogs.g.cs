@@ -241,8 +241,8 @@ namespace LangSmith
                                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("operations", operations, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
-                                .AddOptionalParameter("actor_ls_user_ids", actorLsUserIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
-                                .AddOptionalParameter("actor_api_key_ids", actorApiKeyIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("actor_ls_user_ids", actorLsUserIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
+                                .AddOptionalParameter("actor_api_key_ids", actorApiKeyIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("resource_ids", resourceIds, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -288,8 +288,8 @@ namespace LangSmith
                     limit: limit,
                     cursor: cursor,
                     workspaceId: workspaceId,
-                    startTime: startTime!,
-                    endTime: endTime!,
+                    startTime: startTime,
+                    endTime: endTime,
                     operations: operations,
                     actorLsUserIds: actorLsUserIds,
                     actorApiKeyIds: actorApiKeyIds,
@@ -315,7 +315,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -349,7 +349,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -390,7 +390,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -438,7 +438,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -460,7 +460,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

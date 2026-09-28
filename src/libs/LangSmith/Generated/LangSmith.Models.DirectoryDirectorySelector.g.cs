@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.DirectoryLatestSelector PickLatest() => IsLatest
-            ? Latest!
+        public global::LangSmith.DirectoryLatestSelector PickLatest() => Latest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Latest' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.DirectoryCommitSelector PickCommit() => IsCommit
-            ? Commit!
+        public global::LangSmith.DirectoryCommitSelector PickCommit() => Commit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Commit' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsLatest && latest != null)
+            if (Latest is { } __value0 && latest != null)
             {
-                return latest(Latest!);
+                return latest(__value0);
             }
-            else if (IsCommit && commit != null)
+            else if (Commit is { } __value1 && commit != null)
             {
-                return commit(Commit!);
+                return commit(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsLatest)
+            if (Latest is { } __value0)
             {
-                latest?.Invoke(Latest!);
+                latest?.Invoke(__value0);
             }
-            else if (IsCommit)
+            else if (Commit is { } __value1)
             {
-                commit?.Invoke(Commit!);
+                commit?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsLatest)
+            if (Latest is { } __value0)
             {
-                latest?.Invoke(Latest!);
+                latest?.Invoke(__value0);
             }
-            else if (IsCommit)
+            else if (Commit is { } __value1)
             {
-                commit?.Invoke(Commit!);
+                commit?.Invoke(__value1);
             }
         }
 

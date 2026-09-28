@@ -68,19 +68,19 @@ namespace LangSmith.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DirectoryFileEntry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DirectoryFileEntry?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DirectoryFileEntry).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFile(), typeInfo);
             }
             else if (value.IsAgent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DirectoryAgentEntryInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DirectoryAgentEntryInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DirectoryAgentEntryInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgent(), typeInfo);
             }
             else if (value.IsSkill)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DirectorySkillEntryInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DirectorySkillEntryInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DirectorySkillEntryInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Skill!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSkill(), typeInfo);
             }
         }
     }

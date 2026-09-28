@@ -296,7 +296,7 @@ namespace LangSmith
                                 .AddOptionalParameter("is_public", isPublic?.ToValueString())
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("repo_type", repoType?.ToValueString())
                                 .AddOptionalParameter("repo_types", repoTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source?.ToValueString())
@@ -383,7 +383,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -417,7 +417,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -458,7 +458,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -506,7 +506,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -528,7 +528,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/repos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

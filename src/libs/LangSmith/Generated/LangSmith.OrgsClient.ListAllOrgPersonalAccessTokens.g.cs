@@ -127,7 +127,7 @@ namespace LangSmith
                                 servers: s_ListAllOrgPersonalAccessTokensServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("workspace_ids", workspaceIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -191,7 +191,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -225,7 +225,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -266,7 +266,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -314,7 +314,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -336,7 +336,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/members/personal-access-tokens\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

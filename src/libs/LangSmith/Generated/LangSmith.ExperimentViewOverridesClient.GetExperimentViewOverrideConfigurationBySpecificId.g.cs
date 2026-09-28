@@ -186,8 +186,8 @@ namespace LangSmith
                 PrepareGetExperimentViewOverrideConfigurationBySpecificIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId!,
-                    id: id!);
+                    datasetId: datasetId,
+                    id: id);
 
                 return __httpRequest;
             }
@@ -209,7 +209,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -354,7 +354,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/datasets/{datasetId}/experiment-view-overrides/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

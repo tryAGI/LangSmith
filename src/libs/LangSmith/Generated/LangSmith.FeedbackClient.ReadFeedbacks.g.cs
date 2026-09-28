@@ -244,20 +244,20 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("run", run?.Match(
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().")),
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().") },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("key", key, delimiter: ",", explode: true)
                                 .AddOptionalParameter("session", session?.Match(
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().")),
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().") },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("user", user, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("user", user, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("level", level?.ToValueString())
@@ -343,7 +343,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -377,7 +377,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -418,7 +418,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -466,7 +466,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -488,7 +488,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
