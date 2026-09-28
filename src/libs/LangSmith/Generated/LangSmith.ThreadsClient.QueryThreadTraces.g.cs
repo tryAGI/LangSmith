@@ -188,7 +188,7 @@ namespace LangSmith
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("filter", filter)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                                .AddRequiredParameter("project_id", projectId.ToString()!)
+                                .AddRequiredParameter("project_id", projectId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("selects", selects, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("trace_filter", traceFilter)
                                 .AddOptionalParameter("tree_filter", treeFilter)
@@ -233,11 +233,11 @@ namespace LangSmith
                 PrepareQueryThreadTracesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId!,
+                    threadId: threadId,
                     cursor: cursor,
                     filter: filter,
                     pageSize: pageSize,
-                    projectId: projectId!,
+                    projectId: projectId,
                     selects: selects,
                     traceFilter: traceFilter,
                     treeFilter: treeFilter);
@@ -262,7 +262,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -385,7 +385,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -407,7 +407,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v2/threads/{threadId}/traces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

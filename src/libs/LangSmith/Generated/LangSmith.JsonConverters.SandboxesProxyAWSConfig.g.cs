@@ -143,13 +143,13 @@ namespace LangSmith.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.SandboxesProxyAWSRoleConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.SandboxesProxyAWSRoleConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.SandboxesProxyAWSRoleConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Role!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRole(), typeInfo);
             }
             else if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.SandboxesProxyAWSStaticConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.SandboxesProxyAWSStaticConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.SandboxesProxyAWSStaticConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStatic(), typeInfo);
             }
         }
     }

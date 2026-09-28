@@ -201,7 +201,7 @@ namespace LangSmith
                             __pathBuilder
                                 .AddRequiredParameter("start_time", startTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("workspace_ids", workspaceIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("workspace_ids", workspaceIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("group_by", groupBy?.ToValueString())
                                 .AddOptionalParameter("kind", kind?.ToValueString())
                                 .AddOptionalParameter("trace_tier", traceTier?.ToValueString())
@@ -246,8 +246,8 @@ namespace LangSmith
                 PrepareExportGranularUsageCsvRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime!,
-                    endTime: endTime!,
+                    startTime: startTime,
+                    endTime: endTime,
                     workspaceIds: workspaceIds,
                     groupBy: groupBy,
                     kind: kind,
@@ -273,7 +273,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/billing/granular-usage/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -307,7 +307,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/billing/granular-usage/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -348,7 +348,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/billing/granular-usage/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -396,7 +396,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/billing/granular-usage/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -418,7 +418,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/orgs/current/billing/granular-usage/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

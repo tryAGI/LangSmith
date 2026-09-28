@@ -166,7 +166,7 @@ namespace LangSmith
                 PrepareDeleteEvaluatorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evaluatorId: evaluatorId!,
+                    evaluatorId: evaluatorId,
                     deleteRunRules: deleteRunRules);
 
                 return __httpRequest;
@@ -189,7 +189,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -223,7 +223,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -264,7 +264,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -312,7 +312,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/platform/evaluators/{evaluatorId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -42,8 +42,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig PickRole() => IsRole
-            ? Role!
+        public global::LangSmith.SandboxesSandboxAWSMountRoleAuthConfig PickRole() => Role is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Role' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig PickStatic() => IsStatic
-            ? Static!
+        public global::LangSmith.SandboxesSandboxAWSMountStaticAuthConfig PickStatic() => Static is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsRole && role != null)
+            if (Role is { } __value0 && role != null)
             {
-                return role(Role!);
+                return role(__value0);
             }
-            else if (IsStatic && @static != null)
+            else if (Static is { } __value1 && @static != null)
             {
-                return @static(Static!);
+                return @static(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsRole)
+            if (Role is { } __value0)
             {
-                role?.Invoke(Role!);
+                role?.Invoke(__value0);
             }
-            else if (IsStatic)
+            else if (Static is { } __value1)
             {
-                @static?.Invoke(Static!);
+                @static?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsRole)
+            if (Role is { } __value0)
             {
-                role?.Invoke(Role!);
+                role?.Invoke(__value0);
             }
-            else if (IsStatic)
+            else if (Static is { } __value1)
             {
-                @static?.Invoke(Static!);
+                @static?.Invoke(__value1);
             }
         }
 

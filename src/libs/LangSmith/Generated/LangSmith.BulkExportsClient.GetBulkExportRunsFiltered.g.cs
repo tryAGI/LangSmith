@@ -143,7 +143,7 @@ namespace LangSmith
                                 servers: s_GetBulkExportRunsFilteredServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddRequiredParameter("source_bulk_export_id", sourceBulkExportId.ToString()!)
+                                .AddRequiredParameter("source_bulk_export_id", sourceBulkExportId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 ;
@@ -187,7 +187,7 @@ namespace LangSmith
                 PrepareGetBulkExportRunsFilteredRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sourceBulkExportId: sourceBulkExportId!,
+                    sourceBulkExportId: sourceBulkExportId,
                     limit: limit,
                     offset: offset);
 
@@ -211,7 +211,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/bulk-exports/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -245,7 +245,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/bulk-exports/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/bulk-exports/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/bulk-exports/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -356,7 +356,7 @@ namespace LangSmith
                                 pathTemplate: "\"/api/v1/bulk-exports/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

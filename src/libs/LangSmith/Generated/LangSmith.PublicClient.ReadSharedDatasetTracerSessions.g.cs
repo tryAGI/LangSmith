@@ -275,7 +275,7 @@ namespace LangSmith
                                 servers: s_ReadSharedDatasetTracerSessionsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("dataset_version", datasetVersion)
@@ -337,7 +337,7 @@ namespace LangSmith
                 PrepareReadSharedDatasetTracerSessionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken!,
+                    shareToken: shareToken,
                     id: id,
                     name: name,
                     nameContains: nameContains,
@@ -375,7 +375,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -409,7 +409,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -450,7 +450,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -498,7 +498,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -520,7 +520,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -184,9 +184,9 @@ namespace LangSmith
                 PrepareGetRunClusterFromInsightsJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId!,
-                    jobId: jobId!,
-                    clusterId: clusterId!);
+                    sessionId: sessionId,
+                    jobId: jobId,
+                    clusterId: clusterId);
 
                 return __httpRequest;
             }
@@ -208,7 +208,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -242,7 +242,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -283,7 +283,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -353,7 +353,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/insights/{jobId}/clusters/{clusterId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

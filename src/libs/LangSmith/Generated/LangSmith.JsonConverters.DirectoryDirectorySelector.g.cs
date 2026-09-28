@@ -59,13 +59,13 @@ namespace LangSmith.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DirectoryLatestSelector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DirectoryLatestSelector?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DirectoryLatestSelector).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Latest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLatest(), typeInfo);
             }
             else if (value.IsCommit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DirectoryCommitSelector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DirectoryCommitSelector?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DirectoryCommitSelector).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Commit!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCommit(), typeInfo);
             }
         }
     }

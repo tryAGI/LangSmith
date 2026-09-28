@@ -170,8 +170,8 @@ namespace LangSmith
                 PrepareGetFleetUserInTenantRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenantId: tenantId!,
-                    id: id!);
+                    tenantId: tenantId,
+                    id: id);
 
                 return __httpRequest;
             }
@@ -193,7 +193,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/v1/fleet/tenants/{tenantId}/users/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -227,7 +227,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/v1/fleet/tenants/{tenantId}/users/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/v1/fleet/tenants/{tenantId}/users/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -316,7 +316,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/v1/fleet/tenants/{tenantId}/users/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/v1/fleet/tenants/{tenantId}/users/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

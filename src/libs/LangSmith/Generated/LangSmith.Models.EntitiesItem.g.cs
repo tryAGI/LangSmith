@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.TenantShareRunToken PickRun() => IsRun
-            ? Run!
+        public global::LangSmith.TenantShareRunToken PickRun() => Run is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.TenantShareDatasetToken PickDataset() => IsDataset
-            ? Dataset!
+        public global::LangSmith.TenantShareDatasetToken PickDataset() => Dataset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dataset' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.TenantShareThreadToken PickThread() => IsThread
-            ? Thread!
+        public global::LangSmith.TenantShareThreadToken PickThread() => Thread is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thread' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsRun && run != null)
+            if (Run is { } __value0 && run != null)
             {
-                return run(Run!);
+                return run(__value0);
             }
-            else if (IsDataset && dataset != null)
+            else if (Dataset is { } __value1 && dataset != null)
             {
-                return dataset(Dataset!);
+                return dataset(__value1);
             }
-            else if (IsThread && thread != null)
+            else if (Thread is { } __value2 && thread != null)
             {
-                return thread(Thread!);
+                return thread(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsRun)
+            if (Run is { } __value0)
             {
-                run?.Invoke(Run!);
+                run?.Invoke(__value0);
             }
-            else if (IsDataset)
+            else if (Dataset is { } __value1)
             {
-                dataset?.Invoke(Dataset!);
+                dataset?.Invoke(__value1);
             }
-            else if (IsThread)
+            else if (Thread is { } __value2)
             {
-                thread?.Invoke(Thread!);
+                thread?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsRun)
+            if (Run is { } __value0)
             {
-                run?.Invoke(Run!);
+                run?.Invoke(__value0);
             }
-            else if (IsDataset)
+            else if (Dataset is { } __value1)
             {
-                dataset?.Invoke(Dataset!);
+                dataset?.Invoke(__value1);
             }
-            else if (IsThread)
+            else if (Thread is { } __value2)
             {
-                thread?.Invoke(Thread!);
+                thread?.Invoke(__value2);
             }
         }
 

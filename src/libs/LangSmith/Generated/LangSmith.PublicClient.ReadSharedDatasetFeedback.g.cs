@@ -211,13 +211,13 @@ namespace LangSmith
                                 servers: s_ReadSharedDatasetFeedbackServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("run", run, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("run", run, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("key", key, delimiter: ",", explode: true)
-                                .AddOptionalParameter("session", session, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("session", session, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("user", user, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("user", user, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("level", level?.ToValueString())
@@ -262,7 +262,7 @@ namespace LangSmith
                 PrepareReadSharedDatasetFeedbackRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    shareToken: shareToken!,
+                    shareToken: shareToken,
                     run: run,
                     key: key,
                     session: session,
@@ -294,7 +294,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -328,7 +328,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -369,7 +369,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -417,7 +417,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -439,7 +439,7 @@ namespace LangSmith
                                 pathTemplate: "$\"/api/v1/public/{shareToken}/datasets/feedback\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -47,8 +47,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.AppFeedbackSource PickApp() => IsApp
-            ? App!
+        public global::LangSmith.AppFeedbackSource PickApp() => App is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'App' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.APIFeedbackSource PickApi() => IsApi
-            ? Api!
+        public global::LangSmith.APIFeedbackSource PickApi() => Api is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Api' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.ModelFeedbackSource PickModel() => IsModel
-            ? Model!
+        public global::LangSmith.ModelFeedbackSource PickModel() => Model is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Model' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.AutoEvalFeedbackSource PickAutoEval() => IsAutoEval
-            ? AutoEval!
+        public global::LangSmith.AutoEvalFeedbackSource PickAutoEval() => AutoEval is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoEval' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsApp && app != null)
+            if (App is { } __value0 && app != null)
             {
-                return app(App!);
+                return app(__value0);
             }
-            else if (IsApi && api != null)
+            else if (Api is { } __value1 && api != null)
             {
-                return api(Api!);
+                return api(__value1);
             }
-            else if (IsModel && model != null)
+            else if (Model is { } __value2 && model != null)
             {
-                return model(Model!);
+                return model(__value2);
             }
-            else if (IsAutoEval && autoEval != null)
+            else if (AutoEval is { } __value3 && autoEval != null)
             {
-                return autoEval(AutoEval!);
+                return autoEval(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsApp)
+            if (App is { } __value0)
             {
-                app?.Invoke(App!);
+                app?.Invoke(__value0);
             }
-            else if (IsApi)
+            else if (Api is { } __value1)
             {
-                api?.Invoke(Api!);
+                api?.Invoke(__value1);
             }
-            else if (IsModel)
+            else if (Model is { } __value2)
             {
-                model?.Invoke(Model!);
+                model?.Invoke(__value2);
             }
-            else if (IsAutoEval)
+            else if (AutoEval is { } __value3)
             {
-                autoEval?.Invoke(AutoEval!);
+                autoEval?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace LangSmith
                 Validate();
             }
 
-            if (IsApp)
+            if (App is { } __value0)
             {
-                app?.Invoke(App!);
+                app?.Invoke(__value0);
             }
-            else if (IsApi)
+            else if (Api is { } __value1)
             {
-                api?.Invoke(Api!);
+                api?.Invoke(__value1);
             }
-            else if (IsModel)
+            else if (Model is { } __value2)
             {
-                model?.Invoke(Model!);
+                model?.Invoke(__value2);
             }
-            else if (IsAutoEval)
+            else if (AutoEval is { } __value3)
             {
-                autoEval?.Invoke(AutoEval!);
+                autoEval?.Invoke(__value3);
             }
         }
 

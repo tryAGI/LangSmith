@@ -141,13 +141,13 @@ namespace LangSmith.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.SingleCustomChartResponseSerialized), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.SingleCustomChartResponseSerialized?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.SingleCustomChartResponseSerialized).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SingleCustomChartResponseSerialized!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSingleCustomChartResponseSerialized(), typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.CustomTextBlockResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.CustomTextBlockResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.CustomTextBlockResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
         }
     }
