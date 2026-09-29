@@ -680,6 +680,16 @@ namespace LangSmith
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
         /// <param name="runId"></param>
+        /// <param name="agentEnvironment">
+        /// Experimental. The Agent environment the run belongs to, case-insensitive;<br/>
+        /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
+        /// others get a 403.
+        /// </param>
+        /// <param name="agentId">
+        /// Experimental. Addresses the run to an Agent, with agent_environment, in<br/>
+        /// place of session_id or session_name. Only workspaces enabled for Agent<br/>
+        /// addressing accept it; others get a 403.
+        /// </param>
         /// <param name="dottedOrder"></param>
         /// <param name="endTime"></param>
         /// <param name="error"></param>
@@ -706,6 +716,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateARunAsync(
             global::System.Guid runId,
+            global::LangSmith.RunsRunAgentEnvironment? agentEnvironment = default,
+            string? agentId = default,
             string? dottedOrder = default,
             string? endTime = default,
             string? error = default,
@@ -732,6 +744,8 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.RunsRun
             {
+                AgentEnvironment = agentEnvironment,
+                AgentId = agentId,
                 DottedOrder = dottedOrder,
                 EndTime = endTime,
                 Error = error,

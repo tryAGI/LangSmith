@@ -9,8 +9,10 @@ namespace LangSmith
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
-        /// `session_id` is required: it identifies the tracing project the feedback<br/>
-        /// belongs to.
+        /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
+        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// `agent_environment`, which name that project through an Agent environment<br/>
+        /// that already exists.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -24,8 +26,10 @@ namespace LangSmith
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
-        /// `session_id` is required: it identifies the tracing project the feedback<br/>
-        /// belongs to.
+        /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
+        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// `agent_environment`, which name that project through an Agent environment<br/>
+        /// that already exists.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -39,8 +43,10 @@ namespace LangSmith
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
-        /// `session_id` is required: it identifies the tracing project the feedback<br/>
-        /// belongs to.
+        /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
+        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// `agent_environment`, which name that project through an Agent environment<br/>
+        /// that already exists.
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -53,7 +59,13 @@ namespace LangSmith
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
         /// <param name="sessionId">
-        /// Required. The ID of the tracing project (session) the feedback belongs to.
+        /// Required unless the feedback is addressed by agent_id and agent_environment. The ID of the tracing project (session) the feedback belongs to.
+        /// </param>
+        /// <param name="agentId">
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent's id, not a UUID: 1 to 63 lowercase ASCII letters, digits, or hyphens, starting with a letter and ending with a letter or digit (e.g. support-agent). Addresses the tracing project through an Agent instead of session_id. Sent together with agent_environment, and never alongside session_id. The Agent and the environment must already exist; sending feedback does not create them.
+        /// </param>
+        /// <param name="agentEnvironment">
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent environment whose tracing project the feedback belongs to. Matched case-insensitively. Sent together with agent_id.
         /// </param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
@@ -80,6 +92,8 @@ namespace LangSmith
             global::System.Guid? comparativeExperimentId = default,
             global::System.Guid? runId = default,
             global::System.Guid? sessionId = default,
+            string? agentId = default,
+            global::LangSmith.FeedbackCreateSchemaAgentEnvironment? agentEnvironment = default,
             global::System.Guid? traceId = default,
             global::System.DateTime? startTime = default,
             string? feedbackThreadId = default,

@@ -59,8 +59,10 @@ namespace LangSmith
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
-        /// `session_id` is required: it identifies the tracing project the feedback<br/>
-        /// belongs to.
+        /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
+        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// `agent_environment`, which name that project through an Agent environment<br/>
+        /// that already exists.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -84,8 +86,10 @@ namespace LangSmith
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
-        /// `session_id` is required: it identifies the tracing project the feedback<br/>
-        /// belongs to.
+        /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
+        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// `agent_environment`, which name that project through an Agent environment<br/>
+        /// that already exists.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -358,6 +362,102 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            //
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            //
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            //
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {
@@ -494,8 +594,10 @@ namespace LangSmith
         /// <summary>
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
-        /// `session_id` is required: it identifies the tracing project the feedback<br/>
-        /// belongs to.
+        /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
+        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// `agent_environment`, which name that project through an Agent environment<br/>
+        /// that already exists.
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -508,7 +610,13 @@ namespace LangSmith
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
         /// <param name="sessionId">
-        /// Required. The ID of the tracing project (session) the feedback belongs to.
+        /// Required unless the feedback is addressed by agent_id and agent_environment. The ID of the tracing project (session) the feedback belongs to.
+        /// </param>
+        /// <param name="agentId">
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent's id, not a UUID: 1 to 63 lowercase ASCII letters, digits, or hyphens, starting with a letter and ending with a letter or digit (e.g. support-agent). Addresses the tracing project through an Agent instead of session_id. Sent together with agent_environment, and never alongside session_id. The Agent and the environment must already exist; sending feedback does not create them.
+        /// </param>
+        /// <param name="agentEnvironment">
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent environment whose tracing project the feedback belongs to. Matched case-insensitively. Sent together with agent_id.
         /// </param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
@@ -535,6 +643,8 @@ namespace LangSmith
             global::System.Guid? comparativeExperimentId = default,
             global::System.Guid? runId = default,
             global::System.Guid? sessionId = default,
+            string? agentId = default,
+            global::LangSmith.FeedbackCreateSchemaAgentEnvironment? agentEnvironment = default,
             global::System.Guid? traceId = default,
             global::System.DateTime? startTime = default,
             string? feedbackThreadId = default,
@@ -559,6 +669,8 @@ namespace LangSmith
                 ComparativeExperimentId = comparativeExperimentId,
                 RunId = runId,
                 SessionId = sessionId,
+                AgentId = agentId,
+                AgentEnvironment = agentEnvironment,
                 TraceId = traceId,
                 StartTime = startTime,
                 FeedbackThreadId = feedbackThreadId,

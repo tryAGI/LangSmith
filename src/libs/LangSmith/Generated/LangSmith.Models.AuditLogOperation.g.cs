@@ -1083,6 +1083,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ListGithubThreadOutcomes,
+        /// <summary>
+        ///
+        /// </summary>
         ListInsightsJobConfigs,
         /// <summary>
         ///
@@ -1196,6 +1200,10 @@ namespace LangSmith
         ///
         /// </summary>
         PurchasePrepaidGatewayProviderCredits,
+        /// <summary>
+        ///
+        /// </summary>
+        QueryGithubThreadOutcomes,
         /// <summary>
         ///
         /// </summary>
@@ -2106,6 +2114,7 @@ namespace LangSmith
                 AuditLogOperation.ListFeedbackConfigs => "list_feedback_configs",
                 AuditLogOperation.ListFeedbackFormulas => "list_feedback_formulas",
                 AuditLogOperation.ListFilterViews => "list_filter_views",
+                AuditLogOperation.ListGithubThreadOutcomes => "list_github_thread_outcomes",
                 AuditLogOperation.ListInsightsJobConfigs => "list_insights_job_configs",
                 AuditLogOperation.ListInsightsJobs => "list_insights_jobs",
                 AuditLogOperation.ListOrgMembers => "list_org_members",
@@ -2135,6 +2144,7 @@ namespace LangSmith
                 AuditLogOperation.MintSelfHostedLicense => "mint_self_hosted_license",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
                 AuditLogOperation.PurchasePrepaidGatewayProviderCredits => "purchase_prepaid_gateway_provider_credits",
+                AuditLogOperation.QueryGithubThreadOutcomes => "query_github_thread_outcomes",
                 AuditLogOperation.QueryRun => "query_run",
                 AuditLogOperation.QueryRuns => "query_runs",
                 AuditLogOperation.QuerySingleThreadStats => "query_single_thread_stats",
@@ -2570,6 +2580,7 @@ namespace LangSmith
                 "list_feedback_configs" => AuditLogOperation.ListFeedbackConfigs,
                 "list_feedback_formulas" => AuditLogOperation.ListFeedbackFormulas,
                 "list_filter_views" => AuditLogOperation.ListFilterViews,
+                "list_github_thread_outcomes" => AuditLogOperation.ListGithubThreadOutcomes,
                 "list_insights_job_configs" => AuditLogOperation.ListInsightsJobConfigs,
                 "list_insights_jobs" => AuditLogOperation.ListInsightsJobs,
                 "list_org_members" => AuditLogOperation.ListOrgMembers,
@@ -2599,6 +2610,7 @@ namespace LangSmith
                 "mint_self_hosted_license" => AuditLogOperation.MintSelfHostedLicense,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
                 "purchase_prepaid_gateway_provider_credits" => AuditLogOperation.PurchasePrepaidGatewayProviderCredits,
+                "query_github_thread_outcomes" => AuditLogOperation.QueryGithubThreadOutcomes,
                 "query_run" => AuditLogOperation.QueryRun,
                 "query_runs" => AuditLogOperation.QueryRuns,
                 "query_single_thread_stats" => AuditLogOperation.QuerySingleThreadStats,

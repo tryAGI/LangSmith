@@ -9,6 +9,23 @@ namespace LangSmith
     public sealed partial class RunsRun
     {
         /// <summary>
+        /// Experimental. The Agent environment the run belongs to, case-insensitive;<br/>
+        /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
+        /// others get a 403.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_environment")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunsRunAgentEnvironmentJsonConverter))]
+        public global::LangSmith.RunsRunAgentEnvironment? AgentEnvironment { get; set; }
+
+        /// <summary>
+        /// Experimental. Addresses the run to an Agent, with agent_environment, in<br/>
+        /// place of session_id or session_name. Only workspaces enabled for Agent<br/>
+        /// addressing accept it; others get a 403.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dotted_order")]
@@ -144,6 +161,16 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="RunsRun" /> class.
         /// </summary>
+        /// <param name="agentEnvironment">
+        /// Experimental. The Agent environment the run belongs to, case-insensitive;<br/>
+        /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
+        /// others get a 403.
+        /// </param>
+        /// <param name="agentId">
+        /// Experimental. Addresses the run to an Agent, with agent_environment, in<br/>
+        /// place of session_id or session_name. Only workspaces enabled for Agent<br/>
+        /// addressing accept it; others get a 403.
+        /// </param>
         /// <param name="dottedOrder"></param>
         /// <param name="endTime"></param>
         /// <param name="error"></param>
@@ -169,6 +196,8 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunsRun(
+            global::LangSmith.RunsRunAgentEnvironment? agentEnvironment,
+            string? agentId,
             string? dottedOrder,
             string? endTime,
             string? error,
@@ -191,6 +220,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tags,
             string? traceId)
         {
+            this.AgentEnvironment = agentEnvironment;
+            this.AgentId = agentId;
             this.DottedOrder = dottedOrder;
             this.EndTime = endTime;
             this.Error = error;

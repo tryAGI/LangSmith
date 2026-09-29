@@ -75,10 +75,22 @@ namespace LangSmith
         public global::System.Guid? RunId { get; set; }
 
         /// <summary>
-        /// Required. The ID of the tracing project (session) the feedback belongs to.
+        /// Required unless the feedback is addressed by agent_id and agent_environment. The ID of the tracing project (session) the feedback belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public global::System.Guid? SessionId { get; set; }
+
+        /// <summary>
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent's id, not a UUID: 1 to 63 lowercase ASCII letters, digits, or hyphens, starting with a letter and ending with a letter or digit (e.g. support-agent). Addresses the tracing project through an Agent instead of session_id. Sent together with agent_environment, and never alongside session_id. The Agent and the environment must already exist; sending feedback does not create them.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent environment whose tracing project the feedback belongs to. Matched case-insensitively. Sent together with agent_id.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_environment")]
+        public global::LangSmith.FeedbackCreateSchemaAgentEnvironment? AgentEnvironment { get; set; }
 
         /// <summary>
         ///
@@ -155,7 +167,13 @@ namespace LangSmith
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
         /// <param name="sessionId">
-        /// Required. The ID of the tracing project (session) the feedback belongs to.
+        /// Required unless the feedback is addressed by agent_id and agent_environment. The ID of the tracing project (session) the feedback belongs to.
+        /// </param>
+        /// <param name="agentId">
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent's id, not a UUID: 1 to 63 lowercase ASCII letters, digits, or hyphens, starting with a letter and ending with a letter or digit (e.g. support-agent). Addresses the tracing project through an Agent instead of session_id. Sent together with agent_environment, and never alongside session_id. The Agent and the environment must already exist; sending feedback does not create them.
+        /// </param>
+        /// <param name="agentEnvironment">
+        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent environment whose tracing project the feedback belongs to. Matched case-insensitively. Sent together with agent_id.
         /// </param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
@@ -182,6 +200,8 @@ namespace LangSmith
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
             global::System.Guid? sessionId,
+            string? agentId,
+            global::LangSmith.FeedbackCreateSchemaAgentEnvironment? agentEnvironment,
             global::System.Guid? traceId,
             global::System.DateTime? startTime,
             string? feedbackThreadId,
@@ -202,6 +222,8 @@ namespace LangSmith
             this.ComparativeExperimentId = comparativeExperimentId;
             this.RunId = runId;
             this.SessionId = sessionId;
+            this.AgentId = agentId;
+            this.AgentEnvironment = agentEnvironment;
             this.TraceId = traceId;
             this.StartTime = startTime;
             this.FeedbackThreadId = feedbackThreadId;

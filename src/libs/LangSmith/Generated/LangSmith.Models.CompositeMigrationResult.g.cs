@@ -30,6 +30,13 @@ namespace LangSmith
         public required global::System.Collections.Generic.IList<global::System.Guid> Failed { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rejected")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::System.Guid> Rejected { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,17 +48,20 @@ namespace LangSmith
         /// <param name="migrated"></param>
         /// <param name="skipped"></param>
         /// <param name="failed"></param>
+        /// <param name="rejected"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompositeMigrationResult(
             global::System.Collections.Generic.IList<global::System.Guid> migrated,
             global::System.Collections.Generic.IList<global::System.Guid> skipped,
-            global::System.Collections.Generic.IList<global::System.Guid> failed)
+            global::System.Collections.Generic.IList<global::System.Guid> failed,
+            global::System.Collections.Generic.IList<global::System.Guid> rejected)
         {
             this.Migrated = migrated ?? throw new global::System.ArgumentNullException(nameof(migrated));
             this.Skipped = skipped ?? throw new global::System.ArgumentNullException(nameof(skipped));
             this.Failed = failed ?? throw new global::System.ArgumentNullException(nameof(failed));
+            this.Rejected = rejected ?? throw new global::System.ArgumentNullException(nameof(rejected));
         }
 
         /// <summary>
