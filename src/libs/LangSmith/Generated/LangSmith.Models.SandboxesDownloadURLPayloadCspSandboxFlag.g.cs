@@ -39,6 +39,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AllowSameOrigin,
+        /// <summary>
+        ///
+        /// </summary>
         AllowScripts,
         /// <summary>
         ///
@@ -65,6 +69,7 @@ namespace LangSmith
                 SandboxesDownloadURLPayloadCspSandboxFlag.AllowPointerLock => "allow-pointer-lock",
                 SandboxesDownloadURLPayloadCspSandboxFlag.AllowPopups => "allow-popups",
                 SandboxesDownloadURLPayloadCspSandboxFlag.AllowPresentation => "allow-presentation",
+                SandboxesDownloadURLPayloadCspSandboxFlag.AllowSameOrigin => "allow-same-origin",
                 SandboxesDownloadURLPayloadCspSandboxFlag.AllowScripts => "allow-scripts",
                 SandboxesDownloadURLPayloadCspSandboxFlag.AllowTopNavigationByUserActivation => "allow-top-navigation-by-user-activation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -84,6 +89,7 @@ namespace LangSmith
                 "allow-pointer-lock" => SandboxesDownloadURLPayloadCspSandboxFlag.AllowPointerLock,
                 "allow-popups" => SandboxesDownloadURLPayloadCspSandboxFlag.AllowPopups,
                 "allow-presentation" => SandboxesDownloadURLPayloadCspSandboxFlag.AllowPresentation,
+                "allow-same-origin" => SandboxesDownloadURLPayloadCspSandboxFlag.AllowSameOrigin,
                 "allow-scripts" => SandboxesDownloadURLPayloadCspSandboxFlag.AllowScripts,
                 "allow-top-navigation-by-user-activation" => SandboxesDownloadURLPayloadCspSandboxFlag.AllowTopNavigationByUserActivation,
                 _ => null,

@@ -295,6 +295,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateOidcIntegration,
+        /// <summary>
+        ///
+        /// </summary>
         CreateOnboardingState,
         /// <summary>
         ///
@@ -612,6 +616,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteOauthProvider,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteOidcIntegration,
         /// <summary>
         ///
         /// </summary>
@@ -1671,6 +1679,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateOidcIntegration,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateOnboardingState,
         /// <summary>
         ///
@@ -1917,6 +1929,7 @@ namespace LangSmith
                 AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
                 AuditLogOperation.CreateOauthClient => "create_oauth_client",
                 AuditLogOperation.CreateOauthProvider => "create_oauth_provider",
+                AuditLogOperation.CreateOidcIntegration => "create_oidc_integration",
                 AuditLogOperation.CreateOnboardingState => "create_onboarding_state",
                 AuditLogOperation.CreateOrgChart => "create_org_chart",
                 AuditLogOperation.CreateOrgChartSection => "create_org_chart_section",
@@ -1997,6 +2010,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
                 AuditLogOperation.DeleteOauthClient => "delete_oauth_client",
                 AuditLogOperation.DeleteOauthProvider => "delete_oauth_provider",
+                AuditLogOperation.DeleteOidcIntegration => "delete_oidc_integration",
                 AuditLogOperation.DeleteOrgChart => "delete_org_chart",
                 AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
                 AuditLogOperation.DeleteOrgMember => "delete_org_member",
@@ -2261,6 +2275,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
                 AuditLogOperation.UpdateOauthClient => "update_oauth_client",
                 AuditLogOperation.UpdateOauthProvider => "update_oauth_provider",
+                AuditLogOperation.UpdateOidcIntegration => "update_oidc_integration",
                 AuditLogOperation.UpdateOnboardingState => "update_onboarding_state",
                 AuditLogOperation.UpdateOrgChart => "update_org_chart",
                 AuditLogOperation.UpdateOrgChartSection => "update_org_chart_section",
@@ -2383,6 +2398,7 @@ namespace LangSmith
                 "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
                 "create_oauth_client" => AuditLogOperation.CreateOauthClient,
                 "create_oauth_provider" => AuditLogOperation.CreateOauthProvider,
+                "create_oidc_integration" => AuditLogOperation.CreateOidcIntegration,
                 "create_onboarding_state" => AuditLogOperation.CreateOnboardingState,
                 "create_org_chart" => AuditLogOperation.CreateOrgChart,
                 "create_org_chart_section" => AuditLogOperation.CreateOrgChartSection,
@@ -2463,6 +2479,7 @@ namespace LangSmith
                 "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
                 "delete_oauth_client" => AuditLogOperation.DeleteOauthClient,
                 "delete_oauth_provider" => AuditLogOperation.DeleteOauthProvider,
+                "delete_oidc_integration" => AuditLogOperation.DeleteOidcIntegration,
                 "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
                 "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
                 "delete_org_member" => AuditLogOperation.DeleteOrgMember,
@@ -2727,6 +2744,7 @@ namespace LangSmith
                 "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
                 "update_oauth_client" => AuditLogOperation.UpdateOauthClient,
                 "update_oauth_provider" => AuditLogOperation.UpdateOauthProvider,
+                "update_oidc_integration" => AuditLogOperation.UpdateOidcIntegration,
                 "update_onboarding_state" => AuditLogOperation.UpdateOnboardingState,
                 "update_org_chart" => AuditLogOperation.UpdateOrgChart,
                 "update_org_chart_section" => AuditLogOperation.UpdateOrgChartSection,
