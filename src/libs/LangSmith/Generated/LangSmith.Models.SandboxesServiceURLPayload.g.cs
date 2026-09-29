@@ -11,7 +11,7 @@ namespace LangSmith
         /// <summary>
         /// Access selects the login mode, mutually exclusive with the minted token.<br/>
         /// Omit the field for token mode: mint a short-lived service token (default).<br/>
-        ///   "restricted" — LangSmith login: any user with SandboxesRead on the sandbox.<br/>
+        ///   "restricted" — LangSmith login: the sandbox's creator, or any user with SandboxesExec on it (admins by default).<br/>
         ///   "workspace"  — LangSmith login: any member of the owning workspace.<br/>
         ///   "off"        — remove an existing LangSmith login grant and mint a token.<br/>
         /// A LangSmith login grant is durable; token mode is refused (409) while one exists.
@@ -44,7 +44,7 @@ namespace LangSmith
         /// <param name="access">
         /// Access selects the login mode, mutually exclusive with the minted token.<br/>
         /// Omit the field for token mode: mint a short-lived service token (default).<br/>
-        ///   "restricted" — LangSmith login: any user with SandboxesRead on the sandbox.<br/>
+        ///   "restricted" — LangSmith login: the sandbox's creator, or any user with SandboxesExec on it (admins by default).<br/>
         ///   "workspace"  — LangSmith login: any member of the owning workspace.<br/>
         ///   "off"        — remove an existing LangSmith login grant and mint a token.<br/>
         /// A LangSmith login grant is durable; token mode is refused (409) while one exists.

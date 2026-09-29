@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationRoleCustom,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationRoleAdmin,
         /// <summary>
         ///
@@ -42,6 +46,7 @@ namespace LangSmith
         {
             return value switch
             {
+                OrgsOrganizationRole.OrganizationRoleCustom => "CUSTOM",
                 OrgsOrganizationRole.OrganizationRoleAdmin => "ORGANIZATION_ADMIN",
                 OrgsOrganizationRole.OrganizationRoleOperator => "ORGANIZATION_OPERATOR",
                 OrgsOrganizationRole.OrganizationRoleRestricted => "ORGANIZATION_RESTRICTED",
@@ -57,6 +62,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "CUSTOM" => OrgsOrganizationRole.OrganizationRoleCustom,
                 "ORGANIZATION_ADMIN" => OrgsOrganizationRole.OrganizationRoleAdmin,
                 "ORGANIZATION_OPERATOR" => OrgsOrganizationRole.OrganizationRoleOperator,
                 "ORGANIZATION_RESTRICTED" => OrgsOrganizationRole.OrganizationRoleRestricted,
