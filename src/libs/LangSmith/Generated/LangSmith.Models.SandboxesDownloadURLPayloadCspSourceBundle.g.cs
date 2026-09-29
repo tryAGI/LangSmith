@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Any,
+        /// <summary>
+        ///
+        /// </summary>
         Cdnjs,
         /// <summary>
         ///
@@ -42,6 +46,7 @@ namespace LangSmith
         {
             return value switch
             {
+                SandboxesDownloadURLPayloadCspSourceBundle.Any => "any",
                 SandboxesDownloadURLPayloadCspSourceBundle.Cdnjs => "cdnjs",
                 SandboxesDownloadURLPayloadCspSourceBundle.GoogleFonts => "google-fonts",
                 SandboxesDownloadURLPayloadCspSourceBundle.Jsdelivr => "jsdelivr",
@@ -57,6 +62,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "any" => SandboxesDownloadURLPayloadCspSourceBundle.Any,
                 "cdnjs" => SandboxesDownloadURLPayloadCspSourceBundle.Cdnjs,
                 "google-fonts" => SandboxesDownloadURLPayloadCspSourceBundle.GoogleFonts,
                 "jsdelivr" => SandboxesDownloadURLPayloadCspSourceBundle.Jsdelivr,

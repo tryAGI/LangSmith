@@ -21,6 +21,12 @@ namespace LangSmith
         public string? ContentType { get; set; }
 
         /// <summary>
+        /// CSPSandbox false serves the file with no CSP sandbox directive; omit to keep it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("csp_sandbox")]
+        public bool? CspSandbox { get; set; }
+
+        /// <summary>
         /// CSPSandboxFlags loosen the CSP sandbox the file is served under; omit for the most restrictive policy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("csp_sandbox_flags")]
@@ -57,6 +63,9 @@ namespace LangSmith
         /// <param name="path"></param>
         /// <param name="contentDisposition"></param>
         /// <param name="contentType"></param>
+        /// <param name="cspSandbox">
+        /// CSPSandbox false serves the file with no CSP sandbox directive; omit to keep it.
+        /// </param>
         /// <param name="cspSandboxFlags">
         /// CSPSandboxFlags loosen the CSP sandbox the file is served under; omit for the most restrictive policy.
         /// </param>
@@ -73,12 +82,14 @@ namespace LangSmith
             string path,
             string? contentDisposition,
             string? contentType,
+            bool? cspSandbox,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesDownloadURLPayloadCspSandboxFlag>? cspSandboxFlags,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesDownloadURLPayloadCspSourceBundle>? cspSourceBundles,
             int? expiresInSeconds)
         {
             this.ContentDisposition = contentDisposition;
             this.ContentType = contentType;
+            this.CspSandbox = cspSandbox;
             this.CspSandboxFlags = cspSandboxFlags;
             this.CspSourceBundles = cspSourceBundles;
             this.ExpiresInSeconds = expiresInSeconds;
