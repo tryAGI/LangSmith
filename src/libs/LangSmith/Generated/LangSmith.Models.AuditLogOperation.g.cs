@@ -1795,6 +1795,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateTraceFlightScore,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateTracerSession,
         /// <summary>
         ///
@@ -2304,6 +2308,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
                 AuditLogOperation.UpdateTool => "update_tool",
+                AuditLogOperation.UpdateTraceFlightScore => "update_trace_flight_score",
                 AuditLogOperation.UpdateTracerSession => "update_tracer_session",
                 AuditLogOperation.UpdateTtlSettings => "update_ttl_settings",
                 AuditLogOperation.UpdateUsageLimit => "update_usage_limit",
@@ -2773,6 +2778,7 @@ namespace LangSmith
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
                 "update_tool" => AuditLogOperation.UpdateTool,
+                "update_trace_flight_score" => AuditLogOperation.UpdateTraceFlightScore,
                 "update_tracer_session" => AuditLogOperation.UpdateTracerSession,
                 "update_ttl_settings" => AuditLogOperation.UpdateTtlSettings,
                 "update_usage_limit" => AuditLogOperation.UpdateUsageLimit,
