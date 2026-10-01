@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
+        public string? AvatarUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
         public bool? ByocCreateSaasWorkspaceEnabled { get; set; }
 
@@ -252,6 +258,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OrgsOrganizationInfo" /> class.
         /// </summary>
         /// <param name="apiKeyCreationFromApiKeysEnabled"></param>
+        /// <param name="avatarUrl"></param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="canExportUsageBackfill"></param>
         /// <param name="config"></param>
@@ -306,6 +313,7 @@ namespace LangSmith
 #endif
         public OrgsOrganizationInfo(
             bool? apiKeyCreationFromApiKeysEnabled,
+            string? avatarUrl,
             bool? byocCreateSaasWorkspaceEnabled,
             bool? canExportUsageBackfill,
             global::LangSmith.AuthnOrganizationConfig? config,
@@ -345,6 +353,7 @@ namespace LangSmith
             bool? workspaceAdminCanInviteToOrg)
         {
             this.ApiKeyCreationFromApiKeysEnabled = apiKeyCreationFromApiKeysEnabled;
+            this.AvatarUrl = avatarUrl;
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.Config = config;

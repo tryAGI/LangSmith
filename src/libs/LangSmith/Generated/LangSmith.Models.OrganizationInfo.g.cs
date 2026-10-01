@@ -23,6 +23,12 @@ namespace LangSmith
         public string? DisplayName { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
+        public string? AvatarUrl { get; set; }
+
+        /// <summary>
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.<br/>
         /// Each field's type annotation drives how Metronome custom-field values are validated<br/>
         /// when resolving config (see smith-backend's ``_parse_metronome_value`` and smith-go's<br/>
@@ -271,6 +277,7 @@ namespace LangSmith
         /// <param name="isPersonal"></param>
         /// <param name="id"></param>
         /// <param name="displayName"></param>
+        /// <param name="avatarUrl"></param>
         /// <param name="engineEnabled"></param>
         /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="tier"></param>
@@ -346,6 +353,7 @@ namespace LangSmith
             bool isPersonal,
             global::System.Guid? id,
             string? displayName,
+            string? avatarUrl,
             bool? engineEnabled,
             string? engineLcuSpendLimitMonthly,
             global::LangSmith.PaymentPlanTier? tier,
@@ -384,6 +392,7 @@ namespace LangSmith
         {
             this.Id = id;
             this.DisplayName = displayName;
+            this.AvatarUrl = avatarUrl;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.EngineEnabled = engineEnabled;
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;

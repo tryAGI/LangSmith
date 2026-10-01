@@ -25,6 +25,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
+        public string? AvatarUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         public global::LangSmith.PaymentPlanTier? Tier { get; set; }
 
@@ -223,6 +229,7 @@ namespace LangSmith
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
         /// <param name="disabled"></param>
+        /// <param name="avatarUrl"></param>
         /// <param name="tier"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdByUserId"></param>
@@ -276,6 +283,7 @@ namespace LangSmith
             string displayName,
             bool isPersonal,
             bool disabled,
+            string? avatarUrl,
             global::LangSmith.PaymentPlanTier? tier,
             global::System.DateTime? createdAt,
             global::System.Guid? createdByUserId,
@@ -308,6 +316,7 @@ namespace LangSmith
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.AvatarUrl = avatarUrl;
             this.Tier = tier;
             this.CreatedAt = createdAt;
             this.CreatedByUserId = createdByUserId;

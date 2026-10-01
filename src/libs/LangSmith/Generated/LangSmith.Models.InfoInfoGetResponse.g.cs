@@ -30,6 +30,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_github_web_base_url")]
+        public string? EngineGithubWebBaseUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_sha")]
         public string? GitSha { get; set; }
 
@@ -72,6 +78,7 @@ namespace LangSmith
         /// self-hosted deployments.
         /// </param>
         /// <param name="customerInfo"></param>
+        /// <param name="engineGithubWebBaseUrl"></param>
         /// <param name="gitSha"></param>
         /// <param name="instanceFlags"></param>
         /// <param name="licenseExpirationTime"></param>
@@ -84,6 +91,7 @@ namespace LangSmith
             global::LangSmith.InfoBatchIngestConfig? batchIngestConfig,
             string? billingInstallationId,
             global::LangSmith.InfoCustomerInfo? customerInfo,
+            string? engineGithubWebBaseUrl,
             string? gitSha,
             object? instanceFlags,
             string? licenseExpirationTime,
@@ -93,6 +101,7 @@ namespace LangSmith
             this.BatchIngestConfig = batchIngestConfig;
             this.BillingInstallationId = billingInstallationId;
             this.CustomerInfo = customerInfo;
+            this.EngineGithubWebBaseUrl = engineGithubWebBaseUrl;
             this.GitSha = gitSha;
             this.InstanceFlags = instanceFlags;
             this.LicenseExpirationTime = licenseExpirationTime;
