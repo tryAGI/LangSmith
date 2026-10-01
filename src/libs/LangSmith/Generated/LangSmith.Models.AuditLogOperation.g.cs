@@ -35,6 +35,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AddTeamMembers,
+        /// <summary>
+        ///
+        /// </summary>
         ArchiveComputerEnvironment,
         /// <summary>
         ///
@@ -412,6 +416,10 @@ namespace LangSmith
         ///
         /// </summary>
         CreateTagging,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTeam,
         /// <summary>
         ///
         /// </summary>
@@ -1868,6 +1876,7 @@ namespace LangSmith
                 AuditLogOperation.AddMemberToWorkspace => "add_member_to_workspace",
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
+                AuditLogOperation.AddTeamMembers => "add_team_members",
                 AuditLogOperation.ArchiveComputerEnvironment => "archive_computer_environment",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
                 AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
@@ -1963,6 +1972,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTagKey => "create_tag_key",
                 AuditLogOperation.CreateTagValue => "create_tag_value",
                 AuditLogOperation.CreateTagging => "create_tagging",
+                AuditLogOperation.CreateTeam => "create_team",
                 AuditLogOperation.CreateTenant => "create_tenant",
                 AuditLogOperation.CreateTool => "create_tool",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
@@ -2338,6 +2348,7 @@ namespace LangSmith
                 "add_member_to_workspace" => AuditLogOperation.AddMemberToWorkspace,
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
+                "add_team_members" => AuditLogOperation.AddTeamMembers,
                 "archive_computer_environment" => AuditLogOperation.ArchiveComputerEnvironment,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
                 "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
@@ -2433,6 +2444,7 @@ namespace LangSmith
                 "create_tag_key" => AuditLogOperation.CreateTagKey,
                 "create_tag_value" => AuditLogOperation.CreateTagValue,
                 "create_tagging" => AuditLogOperation.CreateTagging,
+                "create_team" => AuditLogOperation.CreateTeam,
                 "create_tenant" => AuditLogOperation.CreateTenant,
                 "create_tool" => AuditLogOperation.CreateTool,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
