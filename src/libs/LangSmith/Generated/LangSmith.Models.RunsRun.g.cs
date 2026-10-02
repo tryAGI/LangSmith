@@ -9,30 +9,15 @@ namespace LangSmith
     public sealed partial class RunsRun
     {
         /// <summary>
-        /// Beta. Addresses the run to an Agent environment in place of<br/>
-        /// session_id or session_name. Cannot be combined with agent_id or<br/>
-        /// agent_environment. Only workspaces enabled for Agent addressing accept<br/>
-        /// it; others get a 403.
+        /// Beta. Addresses the run to an Agent environment in place of session_id or<br/>
+        /// session_name, as lrn:agents/{id}/environments/{environment}. The environment is<br/>
+        /// case-insensitive. Only workspaces enabled for Agent addressing accept it;<br/>
+        /// others get a 403.<br/>
+        /// Example: lrn:agents/support-agent/environments/production
         /// </summary>
+        /// <example>lrn:agents/support-agent/environments/production</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("address")]
-        public global::LangSmith.AddressAgentAddress? Address { get; set; }
-
-        /// <summary>
-        /// Beta. The Agent environment the run belongs to, case-insensitive;<br/>
-        /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
-        /// others get a 403.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent_environment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RunsRunAgentEnvironmentJsonConverter))]
-        public global::LangSmith.RunsRunAgentEnvironment? AgentEnvironment { get; set; }
-
-        /// <summary>
-        /// Beta, superseded by address. Addresses the run to an Agent, with<br/>
-        /// agent_environment, in place of session_id or session_name. Only<br/>
-        /// workspaces enabled for Agent addressing accept it; others get a 403.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
-        public string? AgentId { get; set; }
+        public string? Address { get; set; }
 
         /// <summary>
         ///
@@ -171,20 +156,11 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="RunsRun" /> class.
         /// </summary>
         /// <param name="address">
-        /// Beta. Addresses the run to an Agent environment in place of<br/>
-        /// session_id or session_name. Cannot be combined with agent_id or<br/>
-        /// agent_environment. Only workspaces enabled for Agent addressing accept<br/>
-        /// it; others get a 403.
-        /// </param>
-        /// <param name="agentEnvironment">
-        /// Beta. The Agent environment the run belongs to, case-insensitive;<br/>
-        /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
-        /// others get a 403.
-        /// </param>
-        /// <param name="agentId">
-        /// Beta, superseded by address. Addresses the run to an Agent, with<br/>
-        /// agent_environment, in place of session_id or session_name. Only<br/>
-        /// workspaces enabled for Agent addressing accept it; others get a 403.
+        /// Beta. Addresses the run to an Agent environment in place of session_id or<br/>
+        /// session_name, as lrn:agents/{id}/environments/{environment}. The environment is<br/>
+        /// case-insensitive. Only workspaces enabled for Agent addressing accept it;<br/>
+        /// others get a 403.<br/>
+        /// Example: lrn:agents/support-agent/environments/production
         /// </param>
         /// <param name="dottedOrder"></param>
         /// <param name="endTime"></param>
@@ -211,9 +187,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunsRun(
-            global::LangSmith.AddressAgentAddress? address,
-            global::LangSmith.RunsRunAgentEnvironment? agentEnvironment,
-            string? agentId,
+            string? address,
             string? dottedOrder,
             string? endTime,
             string? error,
@@ -237,8 +211,6 @@ namespace LangSmith
             string? traceId)
         {
             this.Address = address;
-            this.AgentEnvironment = agentEnvironment;
-            this.AgentId = agentId;
             this.DottedOrder = dottedOrder;
             this.EndTime = endTime;
             this.Error = error;

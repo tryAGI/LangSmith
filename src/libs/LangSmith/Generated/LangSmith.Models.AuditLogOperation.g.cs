@@ -47,6 +47,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AttachTeamAccessPolicy,
+        /// <summary>
+        ///
+        /// </summary>
         BatchDeleteSandboxClaims,
         /// <summary>
         ///
@@ -775,6 +779,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DetachTeamAccessPolicy,
+        /// <summary>
+        ///
+        /// </summary>
         DiffDatasetVersions,
         /// <summary>
         ///
@@ -1355,6 +1363,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ReadTeamAccessPolicies,
+        /// <summary>
+        ///
+        /// </summary>
         ReadTracingDashboard,
         /// <summary>
         ///
@@ -1883,6 +1895,7 @@ namespace LangSmith
                 AuditLogOperation.AddTeamMembers => "add_team_members",
                 AuditLogOperation.ArchiveComputerEnvironment => "archive_computer_environment",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
+                AuditLogOperation.AttachTeamAccessPolicy => "attach_team_access_policy",
                 AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
                 AuditLogOperation.BatchQueryRuns => "batch_query_runs",
                 AuditLogOperation.BatchQueryTraceMessages => "batch_query_trace_messages",
@@ -2065,6 +2078,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
                 AuditLogOperation.DeleteWorkspaceSecret => "delete_workspace_secret",
                 AuditLogOperation.DetachAccessPolicies => "detach_access_policies",
+                AuditLogOperation.DetachTeamAccessPolicy => "detach_team_access_policy",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
                 AuditLogOperation.DownloadCustomAppSource => "download_custom_app_source",
                 AuditLogOperation.DownloadDataset => "download_dataset",
@@ -2210,6 +2224,7 @@ namespace LangSmith
                 AuditLogOperation.ReadRuns => "read_runs",
                 AuditLogOperation.ReadSharedDelta => "read_shared_delta",
                 AuditLogOperation.ReadSharedDeltaStream => "read_shared_delta_stream",
+                AuditLogOperation.ReadTeamAccessPolicies => "read_team_access_policies",
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
                 AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
@@ -2356,6 +2371,7 @@ namespace LangSmith
                 "add_team_members" => AuditLogOperation.AddTeamMembers,
                 "archive_computer_environment" => AuditLogOperation.ArchiveComputerEnvironment,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
+                "attach_team_access_policy" => AuditLogOperation.AttachTeamAccessPolicy,
                 "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
                 "batch_query_runs" => AuditLogOperation.BatchQueryRuns,
                 "batch_query_trace_messages" => AuditLogOperation.BatchQueryTraceMessages,
@@ -2538,6 +2554,7 @@ namespace LangSmith
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
                 "delete_workspace_secret" => AuditLogOperation.DeleteWorkspaceSecret,
                 "detach_access_policies" => AuditLogOperation.DetachAccessPolicies,
+                "detach_team_access_policy" => AuditLogOperation.DetachTeamAccessPolicy,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
                 "download_custom_app_source" => AuditLogOperation.DownloadCustomAppSource,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
@@ -2683,6 +2700,7 @@ namespace LangSmith
                 "read_runs" => AuditLogOperation.ReadRuns,
                 "read_shared_delta" => AuditLogOperation.ReadSharedDelta,
                 "read_shared_delta_stream" => AuditLogOperation.ReadSharedDeltaStream,
+                "read_team_access_policies" => AuditLogOperation.ReadTeamAccessPolicies,
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
                 "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
