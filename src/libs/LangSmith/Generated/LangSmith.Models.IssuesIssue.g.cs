@@ -63,6 +63,13 @@ namespace LangSmith
         public string? FixDispatchedAt { get; set; }
 
         /// <summary>
+        /// Non-nil once the issue is handed off to a coding agent; Engine skips its<br/>
+        /// own fix run while it is set.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fix_handoff_bot_user_id")]
+        public string? FixHandoffBotUserId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fix_pr_number")]
@@ -227,6 +234,10 @@ namespace LangSmith
         /// Legacy: branch of the oldest fix in the board's oldest connected repository.
         /// </param>
         /// <param name="fixDispatchedAt"></param>
+        /// <param name="fixHandoffBotUserId">
+        /// Non-nil once the issue is handed off to a coding agent; Engine skips its<br/>
+        /// own fix run while it is set.
+        /// </param>
         /// <param name="fixPrNumber"></param>
         /// <param name="fixPrompt">
         /// Issue-level: the problem every fix shares, and the last time a fix run<br/>
@@ -271,6 +282,7 @@ namespace LangSmith
             string? firstSeenAt,
             string? fixBranch,
             string? fixDispatchedAt,
+            string? fixHandoffBotUserId,
             int? fixPrNumber,
             string? fixPrompt,
             global::LangSmith.IssuesIssueFixVerification? fixVerification,
@@ -304,6 +316,7 @@ namespace LangSmith
             this.FirstSeenAt = firstSeenAt;
             this.FixBranch = fixBranch;
             this.FixDispatchedAt = fixDispatchedAt;
+            this.FixHandoffBotUserId = fixHandoffBotUserId;
             this.FixPrNumber = fixPrNumber;
             this.FixPrompt = fixPrompt;
             this.FixVerification = fixVerification;

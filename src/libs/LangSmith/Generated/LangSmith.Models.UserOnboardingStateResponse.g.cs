@@ -55,6 +55,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_platform_welcome_viewed_at")]
+        public global::System.DateTime? AgentPlatformWelcomeViewedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -84,6 +90,7 @@ namespace LangSmith
         /// <param name="playgroundCompletedAt"></param>
         /// <param name="evaluationCompletedAt"></param>
         /// <param name="successViewedAt"></param>
+        /// <param name="agentPlatformWelcomeViewedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -96,7 +103,8 @@ namespace LangSmith
             global::System.DateTime? lgstudioCompletedAt,
             global::System.DateTime? playgroundCompletedAt,
             global::System.DateTime? evaluationCompletedAt,
-            global::System.DateTime? successViewedAt)
+            global::System.DateTime? successViewedAt,
+            global::System.DateTime? agentPlatformWelcomeViewedAt)
         {
             this.Id = id;
             this.LsUserId = lsUserId;
@@ -105,6 +113,7 @@ namespace LangSmith
             this.PlaygroundCompletedAt = playgroundCompletedAt;
             this.EvaluationCompletedAt = evaluationCompletedAt;
             this.SuccessViewedAt = successViewedAt;
+            this.AgentPlatformWelcomeViewedAt = agentPlatformWelcomeViewedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }
