@@ -46,6 +46,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? Headers { get; set; }
 
         /// <summary>
+        /// MatchHeaders restricts a header injection rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("match_headers")]
+        public global::System.Collections.Generic.IList<string>? MatchHeaders { get; set; }
+
+        /// <summary>
         /// MatchHosts is only accepted for header injection rules. Provider auth<br/>
         /// rules use built-in host matching.
         /// </summary>
@@ -91,6 +97,9 @@ namespace LangSmith
         /// </param>
         /// <param name="gcp"></param>
         /// <param name="headers"></param>
+        /// <param name="matchHeaders">
+        /// MatchHeaders restricts a header injection rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
+        /// </param>
         /// <param name="matchHosts">
         /// MatchHosts is only accepted for header injection rules. Provider auth<br/>
         /// rules use built-in host matching.
@@ -108,6 +117,7 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? envVars,
             global::LangSmith.SandboxesProxyGCPConfig? gcp,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? headers,
+            global::System.Collections.Generic.IList<string>? matchHeaders,
             global::System.Collections.Generic.IList<string>? matchHosts,
             global::System.Collections.Generic.IList<string>? matchPaths,
             string? type)
@@ -118,6 +128,7 @@ namespace LangSmith
             this.EnvVars = envVars;
             this.Gcp = gcp;
             this.Headers = headers;
+            this.MatchHeaders = matchHeaders;
             this.MatchHosts = matchHosts;
             this.MatchPaths = matchPaths;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

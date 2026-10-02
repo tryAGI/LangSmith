@@ -104,6 +104,12 @@ namespace LangSmith
         public string? SlackChannelId { get; set; }
 
         /// <summary>
+        /// SlackHandoff is nil when no coding-agent hand-off is set on this destination.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("slack_handoff")]
+        public global::LangSmith.WebhooksSlackHandoffResponse? SlackHandoff { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slack_team_id")]
@@ -171,6 +177,9 @@ namespace LangSmith
         /// Keep empty Slack fields in the response. The frontend uses an explicit<br/>
         /// empty string to distinguish URL destinations from Slack destinations.
         /// </param>
+        /// <param name="slackHandoff">
+        /// SlackHandoff is nil when no coding-agent hand-off is set on this destination.
+        /// </param>
         /// <param name="slackTeamId"></param>
         /// <param name="tenantId"></param>
         /// <param name="updatedAt"></param>
@@ -201,6 +210,7 @@ namespace LangSmith
             int? severityThreshold,
             string? signingSecret,
             string? slackChannelId,
+            global::LangSmith.WebhooksSlackHandoffResponse? slackHandoff,
             string? slackTeamId,
             string? tenantId,
             string? updatedAt,
@@ -222,6 +232,7 @@ namespace LangSmith
             this.SeverityThreshold = severityThreshold;
             this.SigningSecret = signingSecret;
             this.SlackChannelId = slackChannelId;
+            this.SlackHandoff = slackHandoff;
             this.SlackTeamId = slackTeamId;
             this.TenantId = tenantId;
             this.UpdatedAt = updatedAt;
