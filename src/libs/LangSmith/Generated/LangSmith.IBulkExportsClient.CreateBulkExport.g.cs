@@ -52,6 +52,9 @@ namespace LangSmith
         /// <param name="compression">
         /// Default Value: zstandard
         /// </param>
+        /// <param name="isRollupDisabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -67,6 +70,7 @@ namespace LangSmith
             global::LangSmith.BulkExportFormat? format = default,
             global::LangSmith.BulkExportFormatVersion? formatVersion = default,
             global::LangSmith.BulkExportCompression? compression = default,
+            bool? isRollupDisabled = default,
             int? intervalHours = default,
             global::System.Collections.Generic.IList<string>? exportFields = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

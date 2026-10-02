@@ -69,6 +69,12 @@ namespace LangSmith
         public global::LangSmith.BulkExportCompression? Compression { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_rollup_disabled")]
+        public bool? IsRollupDisabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval_hours")]
@@ -107,6 +113,9 @@ namespace LangSmith
         /// <param name="compression">
         /// Default Value: zstandard
         /// </param>
+        /// <param name="isRollupDisabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="intervalHours"></param>
         /// <param name="exportFields"></param>
 #if NET7_0_OR_GREATER
@@ -122,6 +131,7 @@ namespace LangSmith
             global::LangSmith.BulkExportFormat? format,
             global::LangSmith.BulkExportFormatVersion? formatVersion,
             global::LangSmith.BulkExportCompression? compression,
+            bool? isRollupDisabled,
             int? intervalHours,
             global::System.Collections.Generic.IList<string>? exportFields)
         {
@@ -134,6 +144,7 @@ namespace LangSmith
             this.Format = format;
             this.FormatVersion = formatVersion;
             this.Compression = compression;
+            this.IsRollupDisabled = isRollupDisabled;
             this.IntervalHours = intervalHours;
             this.ExportFields = exportFields;
         }

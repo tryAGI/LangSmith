@@ -680,15 +680,21 @@ namespace LangSmith
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.
         /// </summary>
         /// <param name="runId"></param>
+        /// <param name="address">
+        /// Beta. Addresses the run to an Agent environment in place of<br/>
+        /// session_id or session_name. Cannot be combined with agent_id or<br/>
+        /// agent_environment. Only workspaces enabled for Agent addressing accept<br/>
+        /// it; others get a 403.
+        /// </param>
         /// <param name="agentEnvironment">
-        /// Experimental. The Agent environment the run belongs to, case-insensitive;<br/>
+        /// Beta. The Agent environment the run belongs to, case-insensitive;<br/>
         /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
         /// others get a 403.
         /// </param>
         /// <param name="agentId">
-        /// Experimental. Addresses the run to an Agent, with agent_environment, in<br/>
-        /// place of session_id or session_name. Only workspaces enabled for Agent<br/>
-        /// addressing accept it; others get a 403.
+        /// Beta, superseded by address. Addresses the run to an Agent, with<br/>
+        /// agent_environment, in place of session_id or session_name. Only<br/>
+        /// workspaces enabled for Agent addressing accept it; others get a 403.
         /// </param>
         /// <param name="dottedOrder"></param>
         /// <param name="endTime"></param>
@@ -716,6 +722,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateARunAsync(
             global::System.Guid runId,
+            global::LangSmith.AddressAgentAddress? address = default,
             global::LangSmith.RunsRunAgentEnvironment? agentEnvironment = default,
             string? agentId = default,
             string? dottedOrder = default,
@@ -744,6 +751,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.RunsRun
             {
+                Address = address,
                 AgentEnvironment = agentEnvironment,
                 AgentId = agentId,
                 DottedOrder = dottedOrder,

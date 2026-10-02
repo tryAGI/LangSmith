@@ -129,6 +129,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("topic_search_enabled")]
+        public bool? TopicSearchEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
@@ -170,6 +176,9 @@ namespace LangSmith
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="topicSearchEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="engineEnabled"></param>
         /// <param name="engineLcuSpendLimitMonthly"></param>
 #if NET7_0_OR_GREATER
@@ -196,6 +205,7 @@ namespace LangSmith
             bool? restrictBrowserSecrets,
             bool? byocCreateSaasWorkspaceEnabled,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
+            bool? topicSearchEnabled,
             bool? engineEnabled,
             global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly)
         {
@@ -219,6 +229,7 @@ namespace LangSmith
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
+            this.TopicSearchEnabled = topicSearchEnabled;
             this.EngineEnabled = engineEnabled;
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
         }

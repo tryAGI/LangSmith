@@ -9,7 +9,16 @@ namespace LangSmith
     public sealed partial class RunsRun
     {
         /// <summary>
-        /// Experimental. The Agent environment the run belongs to, case-insensitive;<br/>
+        /// Beta. Addresses the run to an Agent environment in place of<br/>
+        /// session_id or session_name. Cannot be combined with agent_id or<br/>
+        /// agent_environment. Only workspaces enabled for Agent addressing accept<br/>
+        /// it; others get a 403.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("address")]
+        public global::LangSmith.AddressAgentAddress? Address { get; set; }
+
+        /// <summary>
+        /// Beta. The Agent environment the run belongs to, case-insensitive;<br/>
         /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
         /// others get a 403.
         /// </summary>
@@ -18,9 +27,9 @@ namespace LangSmith
         public global::LangSmith.RunsRunAgentEnvironment? AgentEnvironment { get; set; }
 
         /// <summary>
-        /// Experimental. Addresses the run to an Agent, with agent_environment, in<br/>
-        /// place of session_id or session_name. Only workspaces enabled for Agent<br/>
-        /// addressing accept it; others get a 403.
+        /// Beta, superseded by address. Addresses the run to an Agent, with<br/>
+        /// agent_environment, in place of session_id or session_name. Only<br/>
+        /// workspaces enabled for Agent addressing accept it; others get a 403.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
         public string? AgentId { get; set; }
@@ -161,15 +170,21 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="RunsRun" /> class.
         /// </summary>
+        /// <param name="address">
+        /// Beta. Addresses the run to an Agent environment in place of<br/>
+        /// session_id or session_name. Cannot be combined with agent_id or<br/>
+        /// agent_environment. Only workspaces enabled for Agent addressing accept<br/>
+        /// it; others get a 403.
+        /// </param>
         /// <param name="agentEnvironment">
-        /// Experimental. The Agent environment the run belongs to, case-insensitive;<br/>
+        /// Beta. The Agent environment the run belongs to, case-insensitive;<br/>
         /// requires agent_id. Only workspaces enabled for Agent addressing accept it;<br/>
         /// others get a 403.
         /// </param>
         /// <param name="agentId">
-        /// Experimental. Addresses the run to an Agent, with agent_environment, in<br/>
-        /// place of session_id or session_name. Only workspaces enabled for Agent<br/>
-        /// addressing accept it; others get a 403.
+        /// Beta, superseded by address. Addresses the run to an Agent, with<br/>
+        /// agent_environment, in place of session_id or session_name. Only<br/>
+        /// workspaces enabled for Agent addressing accept it; others get a 403.
         /// </param>
         /// <param name="dottedOrder"></param>
         /// <param name="endTime"></param>
@@ -196,6 +211,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunsRun(
+            global::LangSmith.AddressAgentAddress? address,
             global::LangSmith.RunsRunAgentEnvironment? agentEnvironment,
             string? agentId,
             string? dottedOrder,
@@ -220,6 +236,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tags,
             string? traceId)
         {
+            this.Address = address;
             this.AgentEnvironment = agentEnvironment;
             this.AgentId = agentId;
             this.DottedOrder = dottedOrder;

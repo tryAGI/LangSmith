@@ -41,6 +41,12 @@ namespace LangSmith
         public required global::LangSmith.OrganizationConfig Config { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("topic_search_enabled")]
+        public bool? TopicSearchEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
@@ -278,6 +284,9 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="displayName"></param>
         /// <param name="avatarUrl"></param>
+        /// <param name="topicSearchEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="engineEnabled"></param>
         /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="tier"></param>
@@ -354,6 +363,7 @@ namespace LangSmith
             global::System.Guid? id,
             string? displayName,
             string? avatarUrl,
+            bool? topicSearchEnabled,
             bool? engineEnabled,
             string? engineLcuSpendLimitMonthly,
             global::LangSmith.PaymentPlanTier? tier,
@@ -394,6 +404,7 @@ namespace LangSmith
             this.DisplayName = displayName;
             this.AvatarUrl = avatarUrl;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.TopicSearchEnabled = topicSearchEnabled;
             this.EngineEnabled = engineEnabled;
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.IsPersonal = isPersonal;
