@@ -199,6 +199,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("topic_search_enabled")]
+        public bool? TopicSearchEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_enabled")]
@@ -272,6 +278,9 @@ namespace LangSmith
         /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="topicSearchEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="engineEnabled"></param>
         /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="managedEvalsEnabled"></param>
@@ -310,6 +319,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
+            bool? topicSearchEnabled,
             bool? engineEnabled,
             string? engineLcuSpendLimitMonthly,
             bool? managedEvalsEnabled)
@@ -345,6 +355,7 @@ namespace LangSmith
             this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
+            this.TopicSearchEnabled = topicSearchEnabled;
             this.EngineEnabled = engineEnabled;
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.ManagedEvalsEnabled = managedEvalsEnabled;

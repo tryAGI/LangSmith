@@ -119,6 +119,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateAgentEnvironment,
+        /// <summary>
+        ///
+        /// </summary>
         CreateAgentRuntimeBinding,
         /// <summary>
         ///
@@ -1897,6 +1901,7 @@ namespace LangSmith
                 AuditLogOperation.CreateAgent => "create_agent",
                 AuditLogOperation.CreateAgentAuthConnection => "create_agent_auth_connection",
                 AuditLogOperation.CreateAgentAuthOidcIntegration => "create_agent_auth_oidc_integration",
+                AuditLogOperation.CreateAgentEnvironment => "create_agent_environment",
                 AuditLogOperation.CreateAgentRuntimeBinding => "create_agent_runtime_binding",
                 AuditLogOperation.CreateAlertRule => "create_alert_rule",
                 AuditLogOperation.CreateAnnotationQueue => "create_annotation_queue",
@@ -2369,6 +2374,7 @@ namespace LangSmith
                 "create_agent" => AuditLogOperation.CreateAgent,
                 "create_agent_auth_connection" => AuditLogOperation.CreateAgentAuthConnection,
                 "create_agent_auth_oidc_integration" => AuditLogOperation.CreateAgentAuthOidcIntegration,
+                "create_agent_environment" => AuditLogOperation.CreateAgentEnvironment,
                 "create_agent_runtime_binding" => AuditLogOperation.CreateAgentRuntimeBinding,
                 "create_alert_rule" => AuditLogOperation.CreateAlertRule,
                 "create_annotation_queue" => AuditLogOperation.CreateAnnotationQueue,

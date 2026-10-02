@@ -10,7 +10,7 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
         /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
-        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// required unless the feedback is addressed by `address`, or by `agent_id` and<br/>
         /// `agent_environment`, which name that project through an Agent environment<br/>
         /// that already exists.
         /// </summary>
@@ -27,7 +27,7 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
         /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
-        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// required unless the feedback is addressed by `address`, or by `agent_id` and<br/>
         /// `agent_environment`, which name that project through an Agent environment<br/>
         /// that already exists.
         /// </summary>
@@ -44,7 +44,7 @@ namespace LangSmith
         /// Create Feedback<br/>
         /// Create a new feedback.<br/>
         /// `session_id` identifies the tracing project the feedback belongs to. It is<br/>
-        /// required unless the feedback is addressed by `agent_id` and<br/>
+        /// required unless the feedback is addressed by `address`, or by `agent_id` and<br/>
         /// `agent_environment`, which name that project through an Agent environment<br/>
         /// that already exists.
         /// </summary>
@@ -62,10 +62,13 @@ namespace LangSmith
         /// Required unless the feedback is addressed by agent_id and agent_environment. The ID of the tracing project (session) the feedback belongs to.
         /// </param>
         /// <param name="agentId">
-        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent's id, not a UUID: 1 to 63 lowercase ASCII letters, digits, or hyphens, starting with a letter and ending with a letter or digit (e.g. support-agent). Addresses the tracing project through an Agent instead of session_id. Sent together with agent_environment, and never alongside session_id. The Agent and the environment must already exist; sending feedback does not create them.
+        /// Beta. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent's id, not a UUID: 1 to 63 lowercase ASCII letters, digits, or hyphens, starting with a letter and ending with a letter or digit (e.g. support-agent). Addresses the tracing project through an Agent instead of session_id. Sent together with agent_environment, and never alongside session_id. The Agent and the environment must already exist; sending feedback does not create them.
         /// </param>
         /// <param name="agentEnvironment">
-        /// Experimental. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent environment whose tracing project the feedback belongs to. Matched case-insensitively. Sent together with agent_id.
+        /// Beta. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. The Agent environment whose tracing project the feedback belongs to. Matched case-insensitively. Sent together with agent_id.
+        /// </param>
+        /// <param name="address">
+        /// Beta. Only supported in workspaces where Agent addressing is enabled; other workspaces get a 403. Addresses the tracing project through an Agent environment instead of session_id. Never combined with agent_id, agent_environment, or session_id. The Agent and the environment must already exist; sending feedback does not create them.
         /// </param>
         /// <param name="traceId"></param>
         /// <param name="startTime"></param>
@@ -94,6 +97,7 @@ namespace LangSmith
             global::System.Guid? sessionId = default,
             string? agentId = default,
             global::LangSmith.FeedbackCreateSchemaAgentEnvironment? agentEnvironment = default,
+            global::LangSmith.AddressAgentAddress? address = default,
             global::System.Guid? traceId = default,
             global::System.DateTime? startTime = default,
             string? feedbackThreadId = default,

@@ -243,6 +243,12 @@ namespace LangSmith
         public string? Tier { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("topic_search_enabled")]
+        public bool? TopicSearchEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_admin_can_invite_to_org")]
@@ -307,6 +313,9 @@ namespace LangSmith
         /// <param name="ssoLoginSlug"></param>
         /// <param name="ssoOnly"></param>
         /// <param name="tier"></param>
+        /// <param name="topicSearchEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="workspaceAdminCanInviteToOrg"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -350,6 +359,7 @@ namespace LangSmith
             string? ssoLoginSlug,
             bool? ssoOnly,
             string? tier,
+            bool? topicSearchEnabled,
             bool? workspaceAdminCanInviteToOrg)
         {
             this.ApiKeyCreationFromApiKeysEnabled = apiKeyCreationFromApiKeysEnabled;
@@ -390,6 +400,7 @@ namespace LangSmith
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
             this.Tier = tier;
+            this.TopicSearchEnabled = topicSearchEnabled;
             this.WorkspaceAdminCanInviteToOrg = workspaceAdminCanInviteToOrg;
         }
 

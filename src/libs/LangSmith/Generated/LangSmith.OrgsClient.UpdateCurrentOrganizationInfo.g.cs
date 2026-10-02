@@ -506,6 +506,9 @@ namespace LangSmith
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="topicSearchEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="engineEnabled"></param>
         /// <param name="engineLcuSpendLimitMonthly"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -532,6 +535,7 @@ namespace LangSmith
             bool? restrictBrowserSecrets = default,
             bool? byocCreateSaasWorkspaceEnabled = default,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls = default,
+            bool? topicSearchEnabled = default,
             bool? engineEnabled = default,
             global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -559,6 +563,7 @@ namespace LangSmith
                 RestrictBrowserSecrets = restrictBrowserSecrets,
                 ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled,
                 LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls,
+                TopicSearchEnabled = topicSearchEnabled,
                 EngineEnabled = engineEnabled,
                 EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly,
             };
