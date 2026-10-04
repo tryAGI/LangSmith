@@ -69,7 +69,7 @@ namespace LangSmith
             global::System.Guid? sourceTraceId = default,
             object? metadata = default,
             object? inputs = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
             global::System.Guid? id = default,
             bool? useSourceRunIo = default,
             global::System.Collections.Generic.IList<string>? useSourceRunAttachments = default,

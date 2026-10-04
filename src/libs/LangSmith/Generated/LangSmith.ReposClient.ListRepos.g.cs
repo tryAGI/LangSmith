@@ -58,7 +58,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
             ref global::LangSmith.ListReposApiV1ReposGetSource? source,
             ref global::LangSmith.ListReposApiV1ReposGetSortField? sortField,
-            ref global::LangSmith.AnyOf<string, string, object>? sortDirection);
+            ref string? sortDirection);
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -80,7 +80,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes,
             global::LangSmith.ListReposApiV1ReposGetSource? source,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection);
+            string? sortDirection);
         partial void ProcessListReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -143,7 +143,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.ListReposApiV1ReposGetSource? source = default,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -226,7 +226,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.ListReposApiV1ReposGetSource? source = default,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -301,7 +301,7 @@ namespace LangSmith
                                 .AddOptionalParameter("repo_types", repoTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source?.ToValueString())
                                 .AddOptionalParameter("sort_field", sortField?.ToValueString())
-                                .AddOptionalParameter("sort_direction", sortDirection?.ToString())
+                                .AddOptionalParameter("sort_direction", sortDirection)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(

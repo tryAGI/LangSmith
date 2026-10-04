@@ -505,7 +505,7 @@ namespace LangSmith
             global::System.Guid sourceDatasetId,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
-            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split = default,
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

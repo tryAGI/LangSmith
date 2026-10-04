@@ -42,8 +42,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
+        public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -87,7 +87,7 @@ namespace LangSmith
             object? outputs,
             global::LangSmith.AttachmentsOperations? attachmentsOperations,
             object? metadata,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
             bool? overwrite)
         {
             this.DatasetId = datasetId;

@@ -21,9 +21,9 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
             bool? extendTraceRetention = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
             string? comment = default,
             string? correction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -45,9 +45,9 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenGetAsResponseAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
             bool? extendTraceRetention = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
             string? comment = default,
             string? correction = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

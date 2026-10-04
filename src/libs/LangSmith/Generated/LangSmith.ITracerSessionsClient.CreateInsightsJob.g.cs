@@ -82,7 +82,7 @@ namespace LangSmith
             int? lastNHours = default,
             global::System.Collections.Generic.IList<int>? hierarchy = default,
             global::System.Collections.Generic.Dictionary<string, string>? partitions = default,
-            global::LangSmith.AnyOf<double?, int?, object>? sample = default,
+            global::LangSmith.AnyOf<double?, int?>? sample = default,
             string? summaryPrompt = default,
             string? filter = default,
             string? name = default,

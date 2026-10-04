@@ -40,9 +40,9 @@ namespace LangSmith
             };
         partial void PrepareReadFeedbacksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run,
             global::System.Collections.Generic.IList<string>? key,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source,
             ref int? limit,
             ref int? offset,
@@ -58,9 +58,9 @@ namespace LangSmith
         partial void PrepareReadFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run,
             global::System.Collections.Generic.IList<string>? key,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source,
             int? limit,
             int? offset,
@@ -109,9 +109,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>> ReadFeedbacksAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run = default,
             global::System.Collections.Generic.IList<string>? key = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session = default,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source = default,
             int? limit = default,
             int? offset = default,
@@ -176,9 +176,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.FeedbackSchema>>> ReadFeedbacksAsResponseAsync(
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? run = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? run = default,
             global::System.Collections.Generic.IList<string>? key = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?, object>? session = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, global::System.Guid?>? session = default,
             global::System.Collections.Generic.IList<global::LangSmith.SourceType>? source = default,
             int? limit = default,
             int? offset = default,
@@ -246,13 +246,11 @@ namespace LangSmith
                                 .AddOptionalParameter("run", run?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().")),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().") },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("key", key, delimiter: ",", explode: true)
                                 .AddOptionalParameter("session", session?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().")),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString().") },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())

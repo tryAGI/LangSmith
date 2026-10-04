@@ -26,9 +26,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<int?, double?, object, object> Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, double?, object>))]
+        public global::LangSmith.AnyOf<int?, double?, object>? Value { get; set; }
 
         /// <summary>
         ///
@@ -55,7 +54,7 @@ namespace LangSmith
         public CustomChartsDataPoint(
             string seriesId,
             global::System.DateTime timestamp,
-            global::LangSmith.AnyOf<int?, double?, object, object> value,
+            global::LangSmith.AnyOf<int?, double?, object>? value,
             string? group)
         {
             this.SeriesId = seriesId ?? throw new global::System.ArgumentNullException(nameof(seriesId));
