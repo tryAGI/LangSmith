@@ -38,8 +38,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Split { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? Split { get; set; }
 
         /// <summary>
         ///
@@ -72,7 +72,7 @@ namespace LangSmith
             global::System.Guid sourceDatasetId,
             global::LangSmith.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.Collections.Generic.IList<global::System.Guid>? examples,
-            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? split,
+            global::LangSmith.AnyOf<string, global::System.Collections.Generic.IList<string>>? split,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds)
         {
             this.TargetDatasetId = targetDatasetId;

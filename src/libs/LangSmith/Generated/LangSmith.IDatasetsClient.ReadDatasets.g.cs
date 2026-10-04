@@ -36,7 +36,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -81,7 +81,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.Dataset>>> ReadDatasetsAsResponseAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,

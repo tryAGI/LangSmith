@@ -508,11 +508,11 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
-            global::LangSmith.AnyOf<double?, int?, bool?, object>? score = default,
+            global::LangSmith.AnyOf<double?, int?, bool?>? score = default,
             bool? extendTraceRetention = default,
-            global::LangSmith.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::LangSmith.AnyOf<double?, int?, bool?, string>? value = default,
             string? comment = default,
-            global::LangSmith.AnyOf<object, string, object>? correction = default,
+            global::LangSmith.AnyOf<object, string>? correction = default,
             object? metadata = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

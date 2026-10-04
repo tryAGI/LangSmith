@@ -144,8 +144,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine_lcu_spend_limit_monthly")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
-        public global::LangSmith.AnyOf<double?, string, object>? EngineLcuSpendLimitMonthly { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, string>))]
+        public global::LangSmith.AnyOf<double?, string>? EngineLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -207,7 +207,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
             bool? topicSearchEnabled,
             bool? engineEnabled,
-            global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly)
+            global::LangSmith.AnyOf<double?, string>? engineLcuSpendLimitMonthly)
         {
             this.DisplayName = displayName;
             this.PublicSharingDisabled = publicSharingDisabled;

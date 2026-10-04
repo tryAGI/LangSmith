@@ -19,8 +19,8 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing, object>))]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
@@ -33,8 +33,8 @@ namespace LangSmith
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("layout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing, object>))]
-        public global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing, object>? Layout { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>? Layout { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,9 +62,9 @@ namespace LangSmith
 #endif
         public CustomChartsSectionUpdate(
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index,
-            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing, object>? layout)
+            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>? layout)
         {
             this.Title = title;
             this.Description = description;

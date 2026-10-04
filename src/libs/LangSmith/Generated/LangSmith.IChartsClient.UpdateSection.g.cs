@@ -57,9 +57,9 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing, object>? description = default,
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description = default,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
-            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing, object>? layout = default,
+            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>? layout = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

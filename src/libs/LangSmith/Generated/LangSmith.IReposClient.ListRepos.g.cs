@@ -57,7 +57,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.ListReposApiV1ReposGetSource? source = default,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -113,7 +113,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ListReposApiV1ReposGetRepoTypesVariant1Item>? repoTypes = default,
             global::LangSmith.ListReposApiV1ReposGetSource? source = default,
             global::LangSmith.ListReposApiV1ReposGetSortField? sortField = default,
-            global::LangSmith.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -41,7 +41,7 @@ namespace LangSmith
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
+            ref global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType,
             ref string? name,
             ref string? nameContains,
             ref string? metadata,
@@ -56,7 +56,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType,
             string? name,
             string? nameContains,
             string? metadata,
@@ -108,7 +108,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Dataset>> ReadDatasetsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -173,7 +173,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.Dataset>>> ReadDatasetsAsResponseAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?, object>? dataType = default,
+            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.DataType>, global::LangSmith.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -237,7 +237,6 @@ namespace LangSmith
                                 .AddOptionalParameter("data_type", dataType?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)

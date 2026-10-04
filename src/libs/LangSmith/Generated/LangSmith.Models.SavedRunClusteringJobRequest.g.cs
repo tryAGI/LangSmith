@@ -48,9 +48,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AnyOf<double?, int?, object> Sample { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<double?, int?>))]
+        public global::LangSmith.AnyOf<double?, int?>? Sample { get; set; }
 
         /// <summary>
         ///
@@ -105,7 +104,6 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SavedRunClusteringJobRequest" /> class.
         /// </summary>
-        /// <param name="sample"></param>
         /// <param name="model"></param>
         /// <param name="name"></param>
         /// <param name="lastNHours"></param>
@@ -113,6 +111,7 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="hierarchy"></param>
         /// <param name="partitions"></param>
+        /// <param name="sample"></param>
         /// <param name="summaryPrompt"></param>
         /// <param name="filter"></param>
         /// <param name="attributeSchemas"></param>
@@ -123,7 +122,6 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SavedRunClusteringJobRequest(
-            global::LangSmith.AnyOf<double?, int?, object> sample,
             global::LangSmith.SavedRunClusteringJobRequestModel model,
             string? name,
             int? lastNHours,
@@ -131,6 +129,7 @@ namespace LangSmith
             string? endTime,
             global::System.Collections.Generic.IList<int>? hierarchy,
             global::System.Collections.Generic.Dictionary<string, string>? partitions,
+            global::LangSmith.AnyOf<double?, int?>? sample,
             string? summaryPrompt,
             string? filter,
             object? attributeSchemas,

@@ -82,7 +82,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls = default,
             bool? topicSearchEnabled = default,
             bool? engineEnabled = default,
-            global::LangSmith.AnyOf<double?, string, object>? engineLcuSpendLimitMonthly = default,
+            global::LangSmith.AnyOf<double?, string>? engineLcuSpendLimitMonthly = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
