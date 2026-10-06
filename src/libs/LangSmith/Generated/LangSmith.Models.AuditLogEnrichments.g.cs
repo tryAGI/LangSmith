@@ -63,6 +63,54 @@ namespace LangSmith
         public string? DelegatedFromSandboxId { get; set; }
 
         /// <summary>
+        /// Time the server took to handle the request, in milliseconds.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration_milliseconds")]
+        public int? DurationMilliseconds { get; set; }
+
+        /// <summary>
+        /// User-Agent header of the request, truncated to 256 bytes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_agent")]
+        public string? UserAgent { get; set; }
+
+        /// <summary>
+        /// Tool the request invoked, as named by the caller.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_name")]
+        public string? ToolName { get; set; }
+
+        /// <summary>
+        /// LangSmith product that made the request, as reported by the caller.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public string? Caller { get; set; }
+
+        /// <summary>
+        /// True when the invoked tool reported a failure inside a successful response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_tool_error")]
+        public bool? IsToolError { get; set; }
+
+        /// <summary>
+        /// Managed Tools gateway the request went through.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("gateway")]
+        public global::LangSmith.AuditLogGateway? Gateway { get; set; }
+
+        /// <summary>
+        /// Server and tool a Managed Tools gateway routed the call to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("upstream")]
+        public global::LangSmith.AuditLogUpstream? Upstream { get; set; }
+
+        /// <summary>
+        /// Managed Tools MCP server the request reached.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server")]
+        public global::LangSmith.AuditLogServer? Server { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -84,6 +132,30 @@ namespace LangSmith
         /// <param name="delegatedFromSandboxId">
         /// Sandbox that made the call under an access-delegation grant, set when the actor fields name its delegator rather than a user acting directly.
         /// </param>
+        /// <param name="durationMilliseconds">
+        /// Time the server took to handle the request, in milliseconds.
+        /// </param>
+        /// <param name="userAgent">
+        /// User-Agent header of the request, truncated to 256 bytes.
+        /// </param>
+        /// <param name="toolName">
+        /// Tool the request invoked, as named by the caller.
+        /// </param>
+        /// <param name="caller">
+        /// LangSmith product that made the request, as reported by the caller.
+        /// </param>
+        /// <param name="isToolError">
+        /// True when the invoked tool reported a failure inside a successful response.
+        /// </param>
+        /// <param name="gateway">
+        /// Managed Tools gateway the request went through.
+        /// </param>
+        /// <param name="upstream">
+        /// Server and tool a Managed Tools gateway routed the call to.
+        /// </param>
+        /// <param name="server">
+        /// Managed Tools MCP server the request reached.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -96,7 +168,15 @@ namespace LangSmith
             int? responseStatusCode,
             global::System.Collections.Generic.IList<string>? resourceIds,
             string? resourceOwnerLsUserId,
-            string? delegatedFromSandboxId)
+            string? delegatedFromSandboxId,
+            int? durationMilliseconds,
+            string? userAgent,
+            string? toolName,
+            string? caller,
+            bool? isToolError,
+            global::LangSmith.AuditLogGateway? gateway,
+            global::LangSmith.AuditLogUpstream? upstream,
+            global::LangSmith.AuditLogServer? server)
         {
             this.RequestMethod = requestMethod;
             this.RequestPath = requestPath;
@@ -107,6 +187,14 @@ namespace LangSmith
             this.ResourceIds = resourceIds;
             this.ResourceOwnerLsUserId = resourceOwnerLsUserId;
             this.DelegatedFromSandboxId = delegatedFromSandboxId;
+            this.DurationMilliseconds = durationMilliseconds;
+            this.UserAgent = userAgent;
+            this.ToolName = toolName;
+            this.Caller = caller;
+            this.IsToolError = isToolError;
+            this.Gateway = gateway;
+            this.Upstream = upstream;
+            this.Server = server;
         }
 
         /// <summary>

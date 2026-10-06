@@ -218,6 +218,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_login_enabled")]
+        public bool? OidcLoginEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
         public string? LlmAuthProxyJwtAudience { get; set; }
 
@@ -344,6 +350,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="llmAuthProxyEnabled"></param>
+        /// <param name="oidcLoginEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
         /// <param name="ipAllowlistEnabled">
@@ -391,6 +398,7 @@ namespace LangSmith
             string? scimGroupNameSeparator,
             bool? canExportUsageBackfill,
             bool? llmAuthProxyEnabled,
+            bool? oidcLoginEnabled,
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             bool? ipAllowlistEnabled,
@@ -433,6 +441,7 @@ namespace LangSmith
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
+            this.OidcLoginEnabled = oidcLoginEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
