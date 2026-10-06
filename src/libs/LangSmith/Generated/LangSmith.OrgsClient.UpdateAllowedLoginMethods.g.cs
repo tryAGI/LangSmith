@@ -486,17 +486,20 @@ namespace LangSmith
         /// Update allowed login methods for the current organization.
         /// </summary>
         /// <param name="ssoOnly"></param>
+        /// <param name="oidcLoginEnabled"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateAllowedLoginMethodsAsync(
             bool? ssoOnly = default,
+            bool? oidcLoginEnabled = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::LangSmith.AllowedLoginMethodsUpdate
             {
                 SsoOnly = ssoOnly,
+                OidcLoginEnabled = oidcLoginEnabled,
             };
 
             return await UpdateAllowedLoginMethodsAsync(

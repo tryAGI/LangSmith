@@ -15,6 +15,12 @@ namespace LangSmith
         public bool? SsoOnly { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_login_enabled")]
+        public bool? OidcLoginEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -24,13 +30,16 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="AllowedLoginMethodsUpdate" /> class.
         /// </summary>
         /// <param name="ssoOnly"></param>
+        /// <param name="oidcLoginEnabled"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AllowedLoginMethodsUpdate(
-            bool? ssoOnly)
+            bool? ssoOnly,
+            bool? oidcLoginEnabled)
         {
             this.SsoOnly = ssoOnly;
+            this.OidcLoginEnabled = oidcLoginEnabled;
         }
 
         /// <summary>

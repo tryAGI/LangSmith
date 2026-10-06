@@ -1071,6 +1071,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        InvokeMcpGateway,
+        /// <summary>
+        ///
+        /// </summary>
+        InvokeMcpServer,
+        /// <summary>
+        ///
+        /// </summary>
         ListAccessPolicies,
         /// <summary>
         ///
@@ -1384,6 +1392,10 @@ namespace LangSmith
         ///
         /// </summary>
         RemoveAnnotationQueueReviewer,
+        /// <summary>
+        ///
+        /// </summary>
+        RemoveTeamMember,
         /// <summary>
         ///
         /// </summary>
@@ -2151,6 +2163,8 @@ namespace LangSmith
                 AuditLogOperation.InviteUserToOrg => "invite_user_to_org",
                 AuditLogOperation.InviteUsersToOrgBatch => "invite_users_to_org_batch",
                 AuditLogOperation.InvokeGateway => "invoke_gateway",
+                AuditLogOperation.InvokeMcpGateway => "invoke_mcp_gateway",
+                AuditLogOperation.InvokeMcpServer => "invoke_mcp_server",
                 AuditLogOperation.ListAccessPolicies => "list_access_policies",
                 AuditLogOperation.ListAllOrgPersonalAccessTokens => "list_all_org_personal_access_tokens",
                 AuditLogOperation.ListAnnotationQueues => "list_annotation_queues",
@@ -2230,6 +2244,7 @@ namespace LangSmith
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
                 AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
+                AuditLogOperation.RemoveTeamMember => "remove_team_member",
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAgentAuthAgent => "resolve_agent_auth_agent",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
@@ -2627,6 +2642,8 @@ namespace LangSmith
                 "invite_user_to_org" => AuditLogOperation.InviteUserToOrg,
                 "invite_users_to_org_batch" => AuditLogOperation.InviteUsersToOrgBatch,
                 "invoke_gateway" => AuditLogOperation.InvokeGateway,
+                "invoke_mcp_gateway" => AuditLogOperation.InvokeMcpGateway,
+                "invoke_mcp_server" => AuditLogOperation.InvokeMcpServer,
                 "list_access_policies" => AuditLogOperation.ListAccessPolicies,
                 "list_all_org_personal_access_tokens" => AuditLogOperation.ListAllOrgPersonalAccessTokens,
                 "list_annotation_queues" => AuditLogOperation.ListAnnotationQueues,
@@ -2706,6 +2723,7 @@ namespace LangSmith
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
                 "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
+                "remove_team_member" => AuditLogOperation.RemoveTeamMember,
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_agent_auth_agent" => AuditLogOperation.ResolveAgentAuthAgent,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,

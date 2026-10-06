@@ -171,6 +171,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_login_enabled")]
+        public bool? OidcLoginEnabled { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_jwt_audience")]
         public string? LlmAuthProxyJwtAudience { get; set; }
 
@@ -273,6 +279,7 @@ namespace LangSmith
         /// Default Value: :
         /// </param>
         /// <param name="llmAuthProxyEnabled"></param>
+        /// <param name="oidcLoginEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
         /// <param name="disabledModelProviders"></param>
@@ -314,6 +321,7 @@ namespace LangSmith
             int? maxServiceKeyExpiryDays,
             string? scimGroupNameSeparator,
             bool? llmAuthProxyEnabled,
+            bool? oidcLoginEnabled,
             string? llmAuthProxyJwtAudience,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             global::System.Collections.Generic.IList<string>? disabledModelProviders,
@@ -350,6 +358,7 @@ namespace LangSmith
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
+            this.OidcLoginEnabled = oidcLoginEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
             this.IpAllowlist = ipAllowlist;
             this.DisabledModelProviders = disabledModelProviders;
