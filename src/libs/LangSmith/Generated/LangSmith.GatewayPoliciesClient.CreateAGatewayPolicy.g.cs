@@ -65,8 +65,9 @@ namespace LangSmith
         /// - `spend_cap` / `default_spend_cap`, a limit per window:<br/>
         /// `{"version": 2, "limits": [{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}]}`<br/>
         /// - `guard`:<br/>
-        /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
+        /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;, "custom": [{"pattern": "&lt;regex&gt;"}]}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
         /// `timeout_seconds` (optional, 0.1–30) caps guard pipeline execution time; defaults to 2s. `timeout_action` defaults to `allow`.<br/>
+        /// `detect.custom` (optional) holds at most one Go regexp (RE2 syntax) of up to 512 bytes; matching text is redacted. Avoid capture groups: if present, only the first group is redacted, wherever that text appears.<br/>
         /// - `route_config`:<br/>
         /// `{"strategy": "priority_fallback", "triggers": {"status_codes": [&lt;int&gt;]}, "fallbacks": [{"model_configs": [{"model_config_id": "&lt;playground-settings-uuid&gt;"}]}]}`<br/>
         /// `triggers` is required, with no default: `status_codes` must be a non-empty list (include 502 and 504 for upstream transport failures). `fallbacks` contains an entry whose `model_configs` are tried in priority order (1–5). `subject_matchers` must be a single `workspace_id` entry.<br/>
@@ -135,8 +136,9 @@ namespace LangSmith
         /// - `spend_cap` / `default_spend_cap`, a limit per window:<br/>
         /// `{"version": 2, "limits": [{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}]}`<br/>
         /// - `guard`:<br/>
-        /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
+        /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;, "custom": [{"pattern": "&lt;regex&gt;"}]}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
         /// `timeout_seconds` (optional, 0.1–30) caps guard pipeline execution time; defaults to 2s. `timeout_action` defaults to `allow`.<br/>
+        /// `detect.custom` (optional) holds at most one Go regexp (RE2 syntax) of up to 512 bytes; matching text is redacted. Avoid capture groups: if present, only the first group is redacted, wherever that text appears.<br/>
         /// - `route_config`:<br/>
         /// `{"strategy": "priority_fallback", "triggers": {"status_codes": [&lt;int&gt;]}, "fallbacks": [{"model_configs": [{"model_config_id": "&lt;playground-settings-uuid&gt;"}]}]}`<br/>
         /// `triggers` is required, with no default: `status_codes` must be a non-empty list (include 502 and 504 for upstream transport failures). `fallbacks` contains an entry whose `model_configs` are tried in priority order (1–5). `subject_matchers` must be a single `workspace_id` entry.<br/>
@@ -738,8 +740,9 @@ namespace LangSmith
         /// - `spend_cap` / `default_spend_cap`, a limit per window:<br/>
         /// `{"version": 2, "limits": [{"window": "hourly"|"daily"|"weekly"|"monthly", "limit_usd": &lt;number&gt;}]}`<br/>
         /// - `guard`:<br/>
-        /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
+        /// `{"version": 1, "detect": {"pii": &lt;bool&gt;, "secrets": &lt;bool&gt;, "custom": [{"pattern": "&lt;regex&gt;"}]}, "timeout_seconds": &lt;number&gt;, "timeout_action": "allow"|"block"}`<br/>
         /// `timeout_seconds` (optional, 0.1–30) caps guard pipeline execution time; defaults to 2s. `timeout_action` defaults to `allow`.<br/>
+        /// `detect.custom` (optional) holds at most one Go regexp (RE2 syntax) of up to 512 bytes; matching text is redacted. Avoid capture groups: if present, only the first group is redacted, wherever that text appears.<br/>
         /// - `route_config`:<br/>
         /// `{"strategy": "priority_fallback", "triggers": {"status_codes": [&lt;int&gt;]}, "fallbacks": [{"model_configs": [{"model_config_id": "&lt;playground-settings-uuid&gt;"}]}]}`<br/>
         /// `triggers` is required, with no default: `status_codes` must be a non-empty list (include 502 and 504 for upstream transport failures). `fallbacks` contains an entry whose `model_configs` are tried in priority order (1–5). `subject_matchers` must be a single `workspace_id` entry.<br/>

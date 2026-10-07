@@ -70,6 +70,12 @@ namespace LangSmith
         public bool? CanUseAuditLogs { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_teams")]
+        public bool? CanUseTeams { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_add_seats")]
@@ -519,6 +525,9 @@ namespace LangSmith
         /// <param name="canUseAuditLogs">
         /// Default Value: false
         /// </param>
+        /// <param name="canUseTeams">
+        /// Default Value: false
+        /// </param>
         /// <param name="canAddSeats">
         /// Default Value: true
         /// </param>
@@ -728,6 +737,7 @@ namespace LangSmith
             bool? canUseRbac,
             bool? canUseAbac,
             bool? canUseAuditLogs,
+            bool? canUseTeams,
             bool? canAddSeats,
             string? startupPlanApprovalDate,
             string? partnerPlanApprovalDate,
@@ -807,6 +817,7 @@ namespace LangSmith
             this.CanUseRbac = canUseRbac;
             this.CanUseAbac = canUseAbac;
             this.CanUseAuditLogs = canUseAuditLogs;
+            this.CanUseTeams = canUseTeams;
             this.CanAddSeats = canAddSeats;
             this.StartupPlanApprovalDate = startupPlanApprovalDate;
             this.PartnerPlanApprovalDate = partnerPlanApprovalDate;

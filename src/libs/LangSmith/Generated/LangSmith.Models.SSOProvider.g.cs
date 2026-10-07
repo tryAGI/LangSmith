@@ -30,6 +30,13 @@ namespace LangSmith
         public required global::System.Guid ProviderId { get; set; }
 
         /// <summary>
+        /// Default Value: saml
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SSOProviderTypeJsonConverter))]
+        public global::LangSmith.SSOProviderType? ProviderType { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_role_id")]
@@ -54,6 +61,30 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_xml")]
         public string? MetadataXml { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_issuer_url")]
+        public string? OidcIssuerUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_client_id")]
+        public string? OidcClientId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_scopes")]
+        public global::System.Collections.Generic.IList<string>? OidcScopes { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_claim_mapping")]
+        public global::System.Collections.Generic.Dictionary<string, string>? OidcClaimMapping { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -105,8 +136,15 @@ namespace LangSmith
         /// <param name="providerId"></param>
         /// <param name="defaultWorkspaceRoleId"></param>
         /// <param name="defaultWorkspaceIds"></param>
+        /// <param name="providerType">
+        /// Default Value: saml
+        /// </param>
         /// <param name="metadataUrl"></param>
         /// <param name="metadataXml"></param>
+        /// <param name="oidcIssuerUrl"></param>
+        /// <param name="oidcClientId"></param>
+        /// <param name="oidcScopes"></param>
+        /// <param name="oidcClaimMapping"></param>
         /// <param name="ssoGroupsEnabled">
         /// Default Value: false
         /// </param>
@@ -130,8 +168,13 @@ namespace LangSmith
             global::System.Guid providerId,
             global::System.Guid defaultWorkspaceRoleId,
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
+            global::LangSmith.SSOProviderType? providerType,
             string? metadataUrl,
             string? metadataXml,
+            string? oidcIssuerUrl,
+            string? oidcClientId,
+            global::System.Collections.Generic.IList<string>? oidcScopes,
+            global::System.Collections.Generic.Dictionary<string, string>? oidcClaimMapping,
             bool? ssoGroupsEnabled,
             string? ssoGroupsClaimField,
             bool? ssoGroupsRequired,
@@ -142,10 +185,15 @@ namespace LangSmith
             this.Id = id;
             this.OrganizationId = organizationId;
             this.ProviderId = providerId;
+            this.ProviderType = providerType;
             this.DefaultWorkspaceRoleId = defaultWorkspaceRoleId;
             this.DefaultWorkspaceIds = defaultWorkspaceIds ?? throw new global::System.ArgumentNullException(nameof(defaultWorkspaceIds));
             this.MetadataUrl = metadataUrl;
             this.MetadataXml = metadataXml;
+            this.OidcIssuerUrl = oidcIssuerUrl;
+            this.OidcClientId = oidcClientId;
+            this.OidcScopes = oidcScopes;
+            this.OidcClaimMapping = oidcClaimMapping;
             this.SsoGroupsEnabled = ssoGroupsEnabled;
             this.SsoGroupsClaimField = ssoGroupsClaimField;
             this.SsoGroupsRequired = ssoGroupsRequired;

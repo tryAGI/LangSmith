@@ -253,6 +253,12 @@ namespace LangSmith
         public int? PromptTokens { get; set; }
 
         /// <summary>
+        /// `query_metadata` describes this query result, including `sem_filter_score` when a semantic filter is used. Returned automatically by run queries, or null when unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("query_metadata")]
+        public object? QueryMetadata { get; set; }
+
+        /// <summary>
         /// `reference_dataset_id` is the dataset UUID for the reference example, if any.<br/>
         /// Example: c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f
         /// </summary>
@@ -479,6 +485,9 @@ namespace LangSmith
         /// `prompt_tokens` is the prompt-side token count.<br/>
         /// Example: 200
         /// </param>
+        /// <param name="queryMetadata">
+        /// `query_metadata` describes this query result, including `sem_filter_score` when a semantic filter is used. Returned automatically by run queries, or null when unavailable.
+        /// </param>
         /// <param name="referenceDatasetId">
         /// `reference_dataset_id` is the dataset UUID for the reference example, if any.<br/>
         /// Example: c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f
@@ -564,6 +573,7 @@ namespace LangSmith
             global::LangSmith.QueryRunPromptCostDetails? promptCostDetails,
             global::LangSmith.QueryRunPromptTokenDetails? promptTokenDetails,
             int? promptTokens,
+            object? queryMetadata,
             global::System.Guid? referenceDatasetId,
             global::System.Guid? referenceExampleId,
             global::LangSmith.QueryRunType? runType,
@@ -611,6 +621,7 @@ namespace LangSmith
             this.PromptCostDetails = promptCostDetails;
             this.PromptTokenDetails = promptTokenDetails;
             this.PromptTokens = promptTokens;
+            this.QueryMetadata = queryMetadata;
             this.ReferenceDatasetId = referenceDatasetId;
             this.ReferenceExampleId = referenceExampleId;
             this.RunType = runType;

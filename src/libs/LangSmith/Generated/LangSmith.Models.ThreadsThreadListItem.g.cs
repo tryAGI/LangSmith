@@ -97,6 +97,12 @@ namespace LangSmith
         public int? NumErroredTurns { get; set; }
 
         /// <summary>
+        /// `query_metadata` describes why this thread matched the query, including `sem_filter_score` when a semantic filter is used. Returned automatically, or null when unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("query_metadata")]
+        public object? QueryMetadata { get; set; }
+
+        /// <summary>
         /// `start_time` is a reference start time for this row (RFC3339 date-time), such as for sorting.<br/>
         /// Example: 2025-01-15T12:00:00.000Z
         /// </summary>
@@ -203,6 +209,9 @@ namespace LangSmith
         /// `num_errored_turns` is the count of root traces in the thread (within the query window) whose status was an error.<br/>
         /// Example: 1
         /// </param>
+        /// <param name="queryMetadata">
+        /// `query_metadata` describes why this thread matched the query, including `sem_filter_score` when a semantic filter is used. Returned automatically, or null when unavailable.
+        /// </param>
         /// <param name="startTime">
         /// `start_time` is a reference start time for this row (RFC3339 date-time), such as for sorting.<br/>
         /// Example: 2025-01-15T12:00:00.000Z
@@ -247,6 +256,7 @@ namespace LangSmith
             global::System.DateTime? maxStartTime,
             global::System.DateTime? minStartTime,
             int? numErroredTurns,
+            object? queryMetadata,
             global::System.DateTime? startTime,
             global::System.Guid? threadId,
             double? totalCost,
@@ -267,6 +277,7 @@ namespace LangSmith
             this.MaxStartTime = maxStartTime;
             this.MinStartTime = minStartTime;
             this.NumErroredTurns = numErroredTurns;
+            this.QueryMetadata = queryMetadata;
             this.StartTime = startTime;
             this.ThreadId = threadId;
             this.TotalCost = totalCost;
