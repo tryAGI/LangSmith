@@ -9,6 +9,12 @@ namespace LangSmith
     public sealed partial class QueryTrace
     {
         /// <summary>
+        /// `query_metadata` describes why this trace matched the query, including `sem_filter_score` when a semantic filter is used. Returned automatically, or null when unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("query_metadata")]
+        public object? QueryMetadata { get; set; }
+
+        /// <summary>
         /// `root_run` is the trace's root run. Which properties are populated is controlled by `selects` in the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("root_run")]
@@ -29,6 +35,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryTrace" /> class.
         /// </summary>
+        /// <param name="queryMetadata">
+        /// `query_metadata` describes why this trace matched the query, including `sem_filter_score` when a semantic filter is used. Returned automatically, or null when unavailable.
+        /// </param>
         /// <param name="rootRun">
         /// `root_run` is the trace's root run. Which properties are populated is controlled by `selects` in the request.
         /// </param>
@@ -39,9 +48,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueryTrace(
+            object? queryMetadata,
             global::LangSmith.QueryRunResponse? rootRun,
             global::LangSmith.QueryTraceAggregates? traceAggregates)
         {
+            this.QueryMetadata = queryMetadata;
             this.RootRun = rootRun;
             this.TraceAggregates = traceAggregates;
         }

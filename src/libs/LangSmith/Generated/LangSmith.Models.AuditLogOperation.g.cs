@@ -431,6 +431,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateTeamWorkspaceGrant,
+        /// <summary>
+        ///
+        /// </summary>
         CreateTenant,
         /// <summary>
         ///
@@ -740,6 +744,14 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteTagging,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteTeam,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteTeamWorkspaceGrant,
         /// <summary>
         ///
         /// </summary>
@@ -1827,6 +1839,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateTeam,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateTeamWorkspaceGrant,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateTool,
         /// <summary>
         ///
@@ -2003,6 +2023,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTagValue => "create_tag_value",
                 AuditLogOperation.CreateTagging => "create_tagging",
                 AuditLogOperation.CreateTeam => "create_team",
+                AuditLogOperation.CreateTeamWorkspaceGrant => "create_team_workspace_grant",
                 AuditLogOperation.CreateTenant => "create_tenant",
                 AuditLogOperation.CreateTool => "create_tool",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
@@ -2081,6 +2102,8 @@ namespace LangSmith
                 AuditLogOperation.DeleteTagKey => "delete_tag_key",
                 AuditLogOperation.DeleteTagValue => "delete_tag_value",
                 AuditLogOperation.DeleteTagging => "delete_tagging",
+                AuditLogOperation.DeleteTeam => "delete_team",
+                AuditLogOperation.DeleteTeamWorkspaceGrant => "delete_team_workspace_grant",
                 AuditLogOperation.DeleteTool => "delete_tool",
                 AuditLogOperation.DeleteTracerSession => "delete_tracer_session",
                 AuditLogOperation.DeleteTracerSessions => "delete_tracer_sessions",
@@ -2352,6 +2375,8 @@ namespace LangSmith
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
+                AuditLogOperation.UpdateTeam => "update_team",
+                AuditLogOperation.UpdateTeamWorkspaceGrant => "update_team_workspace_grant",
                 AuditLogOperation.UpdateTool => "update_tool",
                 AuditLogOperation.UpdateTraceFlightScore => "update_trace_flight_score",
                 AuditLogOperation.UpdateTracerSession => "update_tracer_session",
@@ -2482,6 +2507,7 @@ namespace LangSmith
                 "create_tag_value" => AuditLogOperation.CreateTagValue,
                 "create_tagging" => AuditLogOperation.CreateTagging,
                 "create_team" => AuditLogOperation.CreateTeam,
+                "create_team_workspace_grant" => AuditLogOperation.CreateTeamWorkspaceGrant,
                 "create_tenant" => AuditLogOperation.CreateTenant,
                 "create_tool" => AuditLogOperation.CreateTool,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
@@ -2560,6 +2586,8 @@ namespace LangSmith
                 "delete_tag_key" => AuditLogOperation.DeleteTagKey,
                 "delete_tag_value" => AuditLogOperation.DeleteTagValue,
                 "delete_tagging" => AuditLogOperation.DeleteTagging,
+                "delete_team" => AuditLogOperation.DeleteTeam,
+                "delete_team_workspace_grant" => AuditLogOperation.DeleteTeamWorkspaceGrant,
                 "delete_tool" => AuditLogOperation.DeleteTool,
                 "delete_tracer_session" => AuditLogOperation.DeleteTracerSession,
                 "delete_tracer_sessions" => AuditLogOperation.DeleteTracerSessions,
@@ -2831,6 +2859,8 @@ namespace LangSmith
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
+                "update_team" => AuditLogOperation.UpdateTeam,
+                "update_team_workspace_grant" => AuditLogOperation.UpdateTeamWorkspaceGrant,
                 "update_tool" => AuditLogOperation.UpdateTool,
                 "update_trace_flight_score" => AuditLogOperation.UpdateTraceFlightScore,
                 "update_tracer_session" => AuditLogOperation.UpdateTracerSession,
