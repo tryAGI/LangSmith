@@ -619,6 +619,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteMcpOidcConnection,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteMcpServer,
         /// <summary>
         ///
@@ -1707,6 +1711,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateMcpOidcConnection,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateMcpServer,
         /// <summary>
         ///
@@ -2070,6 +2078,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteInsightsJob => "delete_insights_job",
                 AuditLogOperation.DeleteInsightsJobConfig => "delete_insights_job_config",
                 AuditLogOperation.DeleteMcpGateway => "delete_mcp_gateway",
+                AuditLogOperation.DeleteMcpOidcConnection => "delete_mcp_oidc_connection",
                 AuditLogOperation.DeleteMcpServer => "delete_mcp_server",
                 AuditLogOperation.DeleteMcpVendorSettings => "delete_mcp_vendor_settings",
                 AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
@@ -2342,6 +2351,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateInsightsJobConfig => "update_insights_job_config",
                 AuditLogOperation.UpdateLoginMethods => "update_login_methods",
                 AuditLogOperation.UpdateMcpGateway => "update_mcp_gateway",
+                AuditLogOperation.UpdateMcpOidcConnection => "update_mcp_oidc_connection",
                 AuditLogOperation.UpdateMcpServer => "update_mcp_server",
                 AuditLogOperation.UpdateMcpVendorSettings => "update_mcp_vendor_settings",
                 AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
@@ -2554,6 +2564,7 @@ namespace LangSmith
                 "delete_insights_job" => AuditLogOperation.DeleteInsightsJob,
                 "delete_insights_job_config" => AuditLogOperation.DeleteInsightsJobConfig,
                 "delete_mcp_gateway" => AuditLogOperation.DeleteMcpGateway,
+                "delete_mcp_oidc_connection" => AuditLogOperation.DeleteMcpOidcConnection,
                 "delete_mcp_server" => AuditLogOperation.DeleteMcpServer,
                 "delete_mcp_vendor_settings" => AuditLogOperation.DeleteMcpVendorSettings,
                 "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
@@ -2826,6 +2837,7 @@ namespace LangSmith
                 "update_insights_job_config" => AuditLogOperation.UpdateInsightsJobConfig,
                 "update_login_methods" => AuditLogOperation.UpdateLoginMethods,
                 "update_mcp_gateway" => AuditLogOperation.UpdateMcpGateway,
+                "update_mcp_oidc_connection" => AuditLogOperation.UpdateMcpOidcConnection,
                 "update_mcp_server" => AuditLogOperation.UpdateMcpServer,
                 "update_mcp_vendor_settings" => AuditLogOperation.UpdateMcpVendorSettings,
                 "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
