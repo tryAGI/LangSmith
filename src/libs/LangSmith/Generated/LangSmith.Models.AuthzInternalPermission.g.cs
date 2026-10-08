@@ -287,6 +287,66 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationAccessControlManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationAuditLogsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationAuthenticationManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationBillingManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationBillingRead,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationEngineManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationEngineRead,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationGatewayManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationInfrastructureManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationInfrastructureRead,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationInstallationOperationsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationInstallationOperationsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationInstallationUsageManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationIntegrationsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationIntegrationsRead,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationManage,
         /// <summary>
         ///
@@ -299,6 +359,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationMembersManage,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationPATsCreate,
         /// <summary>
         ///
@@ -308,6 +372,30 @@ namespace LangSmith
         ///
         /// </summary>
         OrganizationReadMetadata,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationRetentionManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationSecurityPolicyManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationServiceKeyManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationSettingsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationUsageControlsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationWorkspacesManage,
         /// <summary>
         ///
         /// </summary>
@@ -551,12 +639,34 @@ namespace LangSmith
                 AuthzInternalPermission.ModelPriceMapDelete => "model-price-map:delete",
                 AuthzInternalPermission.ModelPriceMapRead => "model-price-map:read",
                 AuthzInternalPermission.ModelPriceMapUpdate => "model-price-map:update",
+                AuthzInternalPermission.OrganizationAccessControlManage => "organization:access-control:manage",
+                AuthzInternalPermission.OrganizationAuditLogsRead => "organization:audit-logs:read",
+                AuthzInternalPermission.OrganizationAuthenticationManage => "organization:authentication:manage",
+                AuthzInternalPermission.OrganizationBillingManage => "organization:billing:manage",
+                AuthzInternalPermission.OrganizationBillingRead => "organization:billing:read",
+                AuthzInternalPermission.OrganizationEngineManage => "organization:engine:manage",
+                AuthzInternalPermission.OrganizationEngineRead => "organization:engine:read",
+                AuthzInternalPermission.OrganizationGatewayManage => "organization:gateway:manage",
+                AuthzInternalPermission.OrganizationInfrastructureManage => "organization:infrastructure:manage",
+                AuthzInternalPermission.OrganizationInfrastructureRead => "organization:infrastructure:read",
+                AuthzInternalPermission.OrganizationInstallationOperationsManage => "organization:installation-operations:manage",
+                AuthzInternalPermission.OrganizationInstallationOperationsRead => "organization:installation-operations:read",
+                AuthzInternalPermission.OrganizationInstallationUsageManage => "organization:installation-usage:manage",
+                AuthzInternalPermission.OrganizationIntegrationsManage => "organization:integrations:manage",
+                AuthzInternalPermission.OrganizationIntegrationsRead => "organization:integrations:read",
                 AuthzInternalPermission.OrganizationManage => "organization:manage",
                 AuthzInternalPermission.OrganizationManageModelConfigs => "organization:manage-model-configs",
                 AuthzInternalPermission.OrganizationManageModelSecrets => "organization:manage-model-secrets",
+                AuthzInternalPermission.OrganizationMembersManage => "organization:members:manage",
                 AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
                 AuthzInternalPermission.OrganizationRead => "organization:read",
                 AuthzInternalPermission.OrganizationReadMetadata => "organization:read-metadata",
+                AuthzInternalPermission.OrganizationRetentionManage => "organization:retention:manage",
+                AuthzInternalPermission.OrganizationSecurityPolicyManage => "organization:security-policy:manage",
+                AuthzInternalPermission.OrganizationServiceKeyManage => "organization:service-key:manage",
+                AuthzInternalPermission.OrganizationSettingsManage => "organization:settings:manage",
+                AuthzInternalPermission.OrganizationUsageControlsManage => "organization:usage-controls:manage",
+                AuthzInternalPermission.OrganizationWorkspacesManage => "organization:workspaces:manage",
                 AuthzInternalPermission.ProjectsCreate => "projects:create",
                 AuthzInternalPermission.ProjectsDecreaseTraceTier => "projects:decrease-trace-tier",
                 AuthzInternalPermission.ProjectsDelete => "projects:delete",
@@ -676,12 +786,34 @@ namespace LangSmith
                 "model-price-map:delete" => AuthzInternalPermission.ModelPriceMapDelete,
                 "model-price-map:read" => AuthzInternalPermission.ModelPriceMapRead,
                 "model-price-map:update" => AuthzInternalPermission.ModelPriceMapUpdate,
+                "organization:access-control:manage" => AuthzInternalPermission.OrganizationAccessControlManage,
+                "organization:audit-logs:read" => AuthzInternalPermission.OrganizationAuditLogsRead,
+                "organization:authentication:manage" => AuthzInternalPermission.OrganizationAuthenticationManage,
+                "organization:billing:manage" => AuthzInternalPermission.OrganizationBillingManage,
+                "organization:billing:read" => AuthzInternalPermission.OrganizationBillingRead,
+                "organization:engine:manage" => AuthzInternalPermission.OrganizationEngineManage,
+                "organization:engine:read" => AuthzInternalPermission.OrganizationEngineRead,
+                "organization:gateway:manage" => AuthzInternalPermission.OrganizationGatewayManage,
+                "organization:infrastructure:manage" => AuthzInternalPermission.OrganizationInfrastructureManage,
+                "organization:infrastructure:read" => AuthzInternalPermission.OrganizationInfrastructureRead,
+                "organization:installation-operations:manage" => AuthzInternalPermission.OrganizationInstallationOperationsManage,
+                "organization:installation-operations:read" => AuthzInternalPermission.OrganizationInstallationOperationsRead,
+                "organization:installation-usage:manage" => AuthzInternalPermission.OrganizationInstallationUsageManage,
+                "organization:integrations:manage" => AuthzInternalPermission.OrganizationIntegrationsManage,
+                "organization:integrations:read" => AuthzInternalPermission.OrganizationIntegrationsRead,
                 "organization:manage" => AuthzInternalPermission.OrganizationManage,
                 "organization:manage-model-configs" => AuthzInternalPermission.OrganizationManageModelConfigs,
                 "organization:manage-model-secrets" => AuthzInternalPermission.OrganizationManageModelSecrets,
+                "organization:members:manage" => AuthzInternalPermission.OrganizationMembersManage,
                 "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
                 "organization:read" => AuthzInternalPermission.OrganizationRead,
                 "organization:read-metadata" => AuthzInternalPermission.OrganizationReadMetadata,
+                "organization:retention:manage" => AuthzInternalPermission.OrganizationRetentionManage,
+                "organization:security-policy:manage" => AuthzInternalPermission.OrganizationSecurityPolicyManage,
+                "organization:service-key:manage" => AuthzInternalPermission.OrganizationServiceKeyManage,
+                "organization:settings:manage" => AuthzInternalPermission.OrganizationSettingsManage,
+                "organization:usage-controls:manage" => AuthzInternalPermission.OrganizationUsageControlsManage,
+                "organization:workspaces:manage" => AuthzInternalPermission.OrganizationWorkspacesManage,
                 "projects:create" => AuthzInternalPermission.ProjectsCreate,
                 "projects:decrease-trace-tier" => AuthzInternalPermission.ProjectsDecreaseTraceTier,
                 "projects:delete" => AuthzInternalPermission.ProjectsDelete,

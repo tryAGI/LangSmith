@@ -15,6 +15,22 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CompletionTokenDetailsAudio,
+        /// <summary>
+        ///
+        /// </summary>
+        CompletionTokenDetailsImage,
+        /// <summary>
+        ///
+        /// </summary>
+        CompletionTokenDetailsReasoning,
+        /// <summary>
+        ///
+        /// </summary>
+        CompletionTokenDetailsVideo,
+        /// <summary>
+        ///
+        /// </summary>
         CompletionTokens,
         /// <summary>
         ///
@@ -32,6 +48,34 @@ namespace LangSmith
         ///
         /// </summary>
         PromptCost,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsAudio,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsCacheCreation,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsCacheRead,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsEphemeral1hInputTokens,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsEphemeral5mInputTokens,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsImage,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptTokenDetailsVideo,
         /// <summary>
         ///
         /// </summary>
@@ -59,11 +103,22 @@ namespace LangSmith
             return value switch
             {
                 CustomChartMetricField.CompletionCost => "completion_cost",
+                CustomChartMetricField.CompletionTokenDetailsAudio => "completion_token_details.audio",
+                CustomChartMetricField.CompletionTokenDetailsImage => "completion_token_details.image",
+                CustomChartMetricField.CompletionTokenDetailsReasoning => "completion_token_details.reasoning",
+                CustomChartMetricField.CompletionTokenDetailsVideo => "completion_token_details.video",
                 CustomChartMetricField.CompletionTokens => "completion_tokens",
                 CustomChartMetricField.FeedbackScore => "feedback_score",
                 CustomChartMetricField.FirstTokenSeconds => "first_token_seconds",
                 CustomChartMetricField.LatencySeconds => "latency_seconds",
                 CustomChartMetricField.PromptCost => "prompt_cost",
+                CustomChartMetricField.PromptTokenDetailsAudio => "prompt_token_details.audio",
+                CustomChartMetricField.PromptTokenDetailsCacheCreation => "prompt_token_details.cache_creation",
+                CustomChartMetricField.PromptTokenDetailsCacheRead => "prompt_token_details.cache_read",
+                CustomChartMetricField.PromptTokenDetailsEphemeral1hInputTokens => "prompt_token_details.ephemeral_1h_input_tokens",
+                CustomChartMetricField.PromptTokenDetailsEphemeral5mInputTokens => "prompt_token_details.ephemeral_5m_input_tokens",
+                CustomChartMetricField.PromptTokenDetailsImage => "prompt_token_details.image",
+                CustomChartMetricField.PromptTokenDetailsVideo => "prompt_token_details.video",
                 CustomChartMetricField.PromptTokens => "prompt_tokens",
                 CustomChartMetricField.TotalCost => "total_cost",
                 CustomChartMetricField.TotalTokens => "total_tokens",
@@ -78,11 +133,22 @@ namespace LangSmith
             return value switch
             {
                 "completion_cost" => CustomChartMetricField.CompletionCost,
+                "completion_token_details.audio" => CustomChartMetricField.CompletionTokenDetailsAudio,
+                "completion_token_details.image" => CustomChartMetricField.CompletionTokenDetailsImage,
+                "completion_token_details.reasoning" => CustomChartMetricField.CompletionTokenDetailsReasoning,
+                "completion_token_details.video" => CustomChartMetricField.CompletionTokenDetailsVideo,
                 "completion_tokens" => CustomChartMetricField.CompletionTokens,
                 "feedback_score" => CustomChartMetricField.FeedbackScore,
                 "first_token_seconds" => CustomChartMetricField.FirstTokenSeconds,
                 "latency_seconds" => CustomChartMetricField.LatencySeconds,
                 "prompt_cost" => CustomChartMetricField.PromptCost,
+                "prompt_token_details.audio" => CustomChartMetricField.PromptTokenDetailsAudio,
+                "prompt_token_details.cache_creation" => CustomChartMetricField.PromptTokenDetailsCacheCreation,
+                "prompt_token_details.cache_read" => CustomChartMetricField.PromptTokenDetailsCacheRead,
+                "prompt_token_details.ephemeral_1h_input_tokens" => CustomChartMetricField.PromptTokenDetailsEphemeral1hInputTokens,
+                "prompt_token_details.ephemeral_5m_input_tokens" => CustomChartMetricField.PromptTokenDetailsEphemeral5mInputTokens,
+                "prompt_token_details.image" => CustomChartMetricField.PromptTokenDetailsImage,
+                "prompt_token_details.video" => CustomChartMetricField.PromptTokenDetailsVideo,
                 "prompt_tokens" => CustomChartMetricField.PromptTokens,
                 "total_cost" => CustomChartMetricField.TotalCost,
                 "total_tokens" => CustomChartMetricField.TotalTokens,
