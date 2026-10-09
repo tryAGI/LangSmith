@@ -11,6 +11,13 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid Id { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FeedbackKey { get; set; }
@@ -51,6 +58,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackConfigSchema" /> class.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="tenantId"></param>
@@ -60,12 +68,14 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FeedbackConfigSchema(
+            global::System.Guid id,
             string feedbackKey,
             global::LangSmith.FeedbackConfig feedbackConfig,
             global::System.Guid tenantId,
             global::System.DateTime modifiedAt,
             bool? isLowerScoreBetter)
         {
+            this.Id = id;
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.FeedbackConfig = feedbackConfig ?? throw new global::System.ArgumentNullException(nameof(feedbackConfig));
             this.TenantId = tenantId;

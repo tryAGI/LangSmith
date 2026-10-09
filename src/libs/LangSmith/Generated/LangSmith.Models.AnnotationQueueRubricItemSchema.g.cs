@@ -52,6 +52,12 @@ namespace LangSmith
         public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? RegexValidator { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config_id")]
+        public global::System.Guid? FeedbackConfigId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -69,6 +75,7 @@ namespace LangSmith
         /// <param name="regexValidator">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="feedbackConfigId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,7 +86,8 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? scoreDescriptions,
             bool? isRequired,
             bool? isAssertion,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? regexValidator)
+            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? regexValidator,
+            global::System.Guid? feedbackConfigId)
         {
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.Description = description;
@@ -88,6 +96,7 @@ namespace LangSmith
             this.IsRequired = isRequired;
             this.IsAssertion = isAssertion;
             this.RegexValidator = regexValidator;
+            this.FeedbackConfigId = feedbackConfigId;
         }
 
         /// <summary>

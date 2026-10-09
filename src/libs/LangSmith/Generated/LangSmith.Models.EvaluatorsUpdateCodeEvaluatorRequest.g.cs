@@ -21,6 +21,12 @@ namespace LangSmith
         public string? Code { get; set; }
 
         /// <summary>
+        /// CodeEvaluatorInput is config (not a snapshot rebuild). Null clears it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code_evaluator_input")]
+        public global::LangSmith.EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput? CodeEvaluatorInput { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
@@ -56,6 +62,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="advancedFeaturesEnabled"></param>
         /// <param name="code"></param>
+        /// <param name="codeEvaluatorInput">
+        /// CodeEvaluatorInput is config (not a snapshot rebuild). Null clears it.
+        /// </param>
         /// <param name="dependencies"></param>
         /// <param name="language"></param>
         /// <param name="managedCodeEvaluatorSettings"></param>
@@ -69,6 +78,7 @@ namespace LangSmith
         public EvaluatorsUpdateCodeEvaluatorRequest(
             bool? advancedFeaturesEnabled,
             string? code,
+            global::LangSmith.EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput? codeEvaluatorInput,
             string? dependencies,
             string? language,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings,
@@ -76,6 +86,7 @@ namespace LangSmith
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
+            this.CodeEvaluatorInput = codeEvaluatorInput;
             this.Dependencies = dependencies;
             this.Language = language;
             this.ManagedCodeEvaluatorSettings = managedCodeEvaluatorSettings;

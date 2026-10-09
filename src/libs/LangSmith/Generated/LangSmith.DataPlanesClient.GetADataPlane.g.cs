@@ -56,7 +56,7 @@ namespace LangSmith
 
         /// <summary>
         /// Get a data plane<br/>
-        /// Returns a data plane and its saved provisioning settings in any lifecycle state. Requires BYOC and organization management permission.
+        /// Returns a data plane and its saved provisioning settings in any lifecycle state. Requires BYOC and organization:infrastructure:read.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -77,7 +77,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get a data plane<br/>
-        /// Returns a data plane and its saved provisioning settings in any lifecycle state. Requires BYOC and organization management permission.
+        /// Returns a data plane and its saved provisioning settings in any lifecycle state. Requires BYOC and organization:infrastructure:read.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -21,6 +21,13 @@ namespace LangSmith
         public string? Code { get; set; }
 
         /// <summary>
+        /// CodeEvaluatorInput is which thread data the evaluator receives.<br/>
+        /// Null or omitted for run evaluators.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code_evaluator_input")]
+        public global::LangSmith.EvaluatorsCodeEvaluatorInput? CodeEvaluatorInput { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
@@ -63,6 +70,10 @@ namespace LangSmith
         /// </summary>
         /// <param name="advancedFeaturesEnabled"></param>
         /// <param name="code"></param>
+        /// <param name="codeEvaluatorInput">
+        /// CodeEvaluatorInput is which thread data the evaluator receives.<br/>
+        /// Null or omitted for run evaluators.
+        /// </param>
         /// <param name="dependencies"></param>
         /// <param name="language">
         /// Default: "python"
@@ -79,6 +90,7 @@ namespace LangSmith
         public EvaluatorsCreateCodeEvaluatorRequest(
             bool? advancedFeaturesEnabled,
             string? code,
+            global::LangSmith.EvaluatorsCodeEvaluatorInput? codeEvaluatorInput,
             string? dependencies,
             string? language,
             global::LangSmith.EvaluatorsManagedCodeEvaluatorKey? managedCodeEvaluatorKey,
@@ -87,6 +99,7 @@ namespace LangSmith
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
+            this.CodeEvaluatorInput = codeEvaluatorInput;
             this.Dependencies = dependencies;
             this.Language = language;
             this.ManagedCodeEvaluatorKey = managedCodeEvaluatorKey;

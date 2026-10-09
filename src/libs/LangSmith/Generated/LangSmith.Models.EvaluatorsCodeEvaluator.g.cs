@@ -21,6 +21,13 @@ namespace LangSmith
         public string? Code { get; set; }
 
         /// <summary>
+        /// CodeEvaluatorInput is which thread data the evaluator receives.<br/>
+        /// Null for run evaluators.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code_evaluator_input")]
+        public global::LangSmith.EvaluatorsCodeEvaluatorInput? CodeEvaluatorInput { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
@@ -82,6 +89,10 @@ namespace LangSmith
         /// </summary>
         /// <param name="advancedFeaturesEnabled"></param>
         /// <param name="code"></param>
+        /// <param name="codeEvaluatorInput">
+        /// CodeEvaluatorInput is which thread data the evaluator receives.<br/>
+        /// Null for run evaluators.
+        /// </param>
         /// <param name="dependencies"></param>
         /// <param name="evaluatorBuildError"></param>
         /// <param name="evaluatorBuildStatus"></param>
@@ -101,6 +112,7 @@ namespace LangSmith
         public EvaluatorsCodeEvaluator(
             bool? advancedFeaturesEnabled,
             string? code,
+            global::LangSmith.EvaluatorsCodeEvaluatorInput? codeEvaluatorInput,
             string? dependencies,
             string? evaluatorBuildError,
             global::LangSmith.EvaluatorsEvaluatorBuildStatus? evaluatorBuildStatus,
@@ -112,6 +124,7 @@ namespace LangSmith
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
+            this.CodeEvaluatorInput = codeEvaluatorInput;
             this.Dependencies = dependencies;
             this.EvaluatorBuildError = evaluatorBuildError;
             this.EvaluatorBuildStatus = evaluatorBuildStatus;
