@@ -15,6 +15,22 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        MetricFieldCompletionCostDetailsAudio,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldCompletionCostDetailsImage,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldCompletionCostDetailsReasoning,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldCompletionCostDetailsVideo,
+        /// <summary>
+        ///
+        /// </summary>
         MetricFieldCompletionTokenDetailsAudio,
         /// <summary>
         ///
@@ -48,6 +64,34 @@ namespace LangSmith
         ///
         /// </summary>
         MetricFieldPromptCost,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsAudio,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsCacheCreation,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsCacheRead,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsEphemeral1H,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsEphemeral5M,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsImage,
+        /// <summary>
+        ///
+        /// </summary>
+        MetricFieldPromptCostDetailsVideo,
         /// <summary>
         ///
         /// </summary>
@@ -103,6 +147,10 @@ namespace LangSmith
             return value switch
             {
                 RunsanalyticsMetricField.MetricFieldCompletionCost => "completion_cost",
+                RunsanalyticsMetricField.MetricFieldCompletionCostDetailsAudio => "completion_cost_details.audio",
+                RunsanalyticsMetricField.MetricFieldCompletionCostDetailsImage => "completion_cost_details.image",
+                RunsanalyticsMetricField.MetricFieldCompletionCostDetailsReasoning => "completion_cost_details.reasoning",
+                RunsanalyticsMetricField.MetricFieldCompletionCostDetailsVideo => "completion_cost_details.video",
                 RunsanalyticsMetricField.MetricFieldCompletionTokenDetailsAudio => "completion_token_details.audio",
                 RunsanalyticsMetricField.MetricFieldCompletionTokenDetailsImage => "completion_token_details.image",
                 RunsanalyticsMetricField.MetricFieldCompletionTokenDetailsReasoning => "completion_token_details.reasoning",
@@ -112,6 +160,13 @@ namespace LangSmith
                 RunsanalyticsMetricField.MetricFieldFirstTokenSeconds => "first_token_seconds",
                 RunsanalyticsMetricField.MetricFieldLatencySeconds => "latency_seconds",
                 RunsanalyticsMetricField.MetricFieldPromptCost => "prompt_cost",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsAudio => "prompt_cost_details.audio",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsCacheCreation => "prompt_cost_details.cache_creation",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsCacheRead => "prompt_cost_details.cache_read",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsEphemeral1H => "prompt_cost_details.ephemeral_1h_input_tokens",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsEphemeral5M => "prompt_cost_details.ephemeral_5m_input_tokens",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsImage => "prompt_cost_details.image",
+                RunsanalyticsMetricField.MetricFieldPromptCostDetailsVideo => "prompt_cost_details.video",
                 RunsanalyticsMetricField.MetricFieldPromptTokenDetailsAudio => "prompt_token_details.audio",
                 RunsanalyticsMetricField.MetricFieldPromptTokenDetailsCacheCreation => "prompt_token_details.cache_creation",
                 RunsanalyticsMetricField.MetricFieldPromptTokenDetailsCacheRead => "prompt_token_details.cache_read",
@@ -133,6 +188,10 @@ namespace LangSmith
             return value switch
             {
                 "completion_cost" => RunsanalyticsMetricField.MetricFieldCompletionCost,
+                "completion_cost_details.audio" => RunsanalyticsMetricField.MetricFieldCompletionCostDetailsAudio,
+                "completion_cost_details.image" => RunsanalyticsMetricField.MetricFieldCompletionCostDetailsImage,
+                "completion_cost_details.reasoning" => RunsanalyticsMetricField.MetricFieldCompletionCostDetailsReasoning,
+                "completion_cost_details.video" => RunsanalyticsMetricField.MetricFieldCompletionCostDetailsVideo,
                 "completion_token_details.audio" => RunsanalyticsMetricField.MetricFieldCompletionTokenDetailsAudio,
                 "completion_token_details.image" => RunsanalyticsMetricField.MetricFieldCompletionTokenDetailsImage,
                 "completion_token_details.reasoning" => RunsanalyticsMetricField.MetricFieldCompletionTokenDetailsReasoning,
@@ -142,6 +201,13 @@ namespace LangSmith
                 "first_token_seconds" => RunsanalyticsMetricField.MetricFieldFirstTokenSeconds,
                 "latency_seconds" => RunsanalyticsMetricField.MetricFieldLatencySeconds,
                 "prompt_cost" => RunsanalyticsMetricField.MetricFieldPromptCost,
+                "prompt_cost_details.audio" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsAudio,
+                "prompt_cost_details.cache_creation" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsCacheCreation,
+                "prompt_cost_details.cache_read" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsCacheRead,
+                "prompt_cost_details.ephemeral_1h_input_tokens" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsEphemeral1H,
+                "prompt_cost_details.ephemeral_5m_input_tokens" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsEphemeral5M,
+                "prompt_cost_details.image" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsImage,
+                "prompt_cost_details.video" => RunsanalyticsMetricField.MetricFieldPromptCostDetailsVideo,
                 "prompt_token_details.audio" => RunsanalyticsMetricField.MetricFieldPromptTokenDetailsAudio,
                 "prompt_token_details.cache_creation" => RunsanalyticsMetricField.MetricFieldPromptTokenDetailsCacheCreation,
                 "prompt_token_details.cache_read" => RunsanalyticsMetricField.MetricFieldPromptTokenDetailsCacheRead,

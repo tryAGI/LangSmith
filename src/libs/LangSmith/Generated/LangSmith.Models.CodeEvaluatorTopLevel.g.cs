@@ -28,6 +28,12 @@ namespace LangSmith
         public bool? RequireAttachments { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code_evaluator_input")]
+        public global::LangSmith.CodeEvaluatorInputType? CodeEvaluatorInput { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,17 +49,20 @@ namespace LangSmith
         /// <param name="requireAttachments">
         /// Default Value: false
         /// </param>
+        /// <param name="codeEvaluatorInput"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeEvaluatorTopLevel(
             string code,
             global::LangSmith.CodeEvaluatorLanguage? language,
-            bool? requireAttachments)
+            bool? requireAttachments,
+            global::LangSmith.CodeEvaluatorInputType? codeEvaluatorInput)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Language = language;
             this.RequireAttachments = requireAttachments;
+            this.CodeEvaluatorInput = codeEvaluatorInput;
         }
 
         /// <summary>
