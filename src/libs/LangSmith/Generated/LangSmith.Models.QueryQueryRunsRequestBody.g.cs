@@ -9,6 +9,16 @@ namespace LangSmith
     public sealed partial class QueryQueryRunsRequestBody
     {
         /// <summary>
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the run.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes. Not supported on public dataset queries.<br/>
+        /// Example: The customer was charged twice
+        /// </summary>
+        /// <example>The customer was charged twice</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ai_search")]
+        public string? AiSearch { get; set; }
+
+        /// <summary>
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Treat it as opaque and pass it back unmodified.<br/>
         /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
         /// </summary>
@@ -156,6 +166,12 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryQueryRunsRequestBody" /> class.
         /// </summary>
+        /// <param name="aiSearch">
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the run.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes. Not supported on public dataset queries.<br/>
+        /// Example: The customer was charged twice
+        /// </param>
         /// <param name="cursor">
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Treat it as opaque and pass it back unmodified.<br/>
         /// Example: eyJ2IjoxLCJhIjoicnVucy5xdWVyeSIsImsiOiJwYXNzIiwiYiI6InNkYiIsInQiOiJsdChjdXJzb3IsICcyMDI1LTEyLTEyIDE5OjAzOjI4LjQ4MTI1NTAxOWIxM2YyJykifQ
@@ -234,6 +250,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueryQueryRunsRequestBody(
+            string? aiSearch,
             string? cursor,
             string? filter,
             bool? hasError,
@@ -251,6 +268,7 @@ namespace LangSmith
             global::System.Guid? traceId,
             string? treeFilter)
         {
+            this.AiSearch = aiSearch;
             this.Cursor = cursor;
             this.Filter = filter;
             this.HasError = hasError;

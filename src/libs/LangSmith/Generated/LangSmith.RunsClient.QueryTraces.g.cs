@@ -40,11 +40,13 @@ namespace LangSmith
             };
         partial void PrepareQueryTracesArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? accept,
             ref string? contentType,
             global::LangSmith.QueryQueryTracesRequestBody request);
         partial void PrepareQueryTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? accept,
             string? contentType,
             global::LangSmith.QueryQueryTracesRequestBody request);
         partial void ProcessQueryTracesResponse(
@@ -61,8 +63,10 @@ namespace LangSmith
         /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
         /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
         /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
+        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -71,6 +75,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryTracesResponseBody> QueryTracesAsync(
 
             global::LangSmith.QueryQueryTracesRequestBody request,
+            string? accept = default,
             string? contentType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -78,6 +83,7 @@ namespace LangSmith
             var __response = await QueryTracesAsResponseAsync(
 
                 request: request,
+                accept: accept,
                 contentType: contentType,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -90,8 +96,10 @@ namespace LangSmith
         /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
         /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
         /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
+        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -100,6 +108,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.QueryQueryTracesResponseBody>> QueryTracesAsResponseAsync(
 
             global::LangSmith.QueryQueryTracesRequestBody request,
+            string? accept = default,
             string? contentType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -110,6 +119,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareQueryTracesArguments(
                 httpClient: HttpClient,
+                accept: ref accept,
                 contentType: ref contentType,
                 request: request);
 
@@ -154,6 +164,10 @@ namespace LangSmith
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
+
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
@@ -171,6 +185,10 @@ namespace LangSmith
                 }
             }
 
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept.ToString());
+            }
             if (contentType != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("Content-Type", contentType.ToString());
@@ -193,6 +211,7 @@ namespace LangSmith
                 PrepareQueryTracesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accept: accept,
                     contentType: contentType,
                     request: request);
 
@@ -521,6 +540,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // not acceptable (ai_search requires Accept: text/event-stream)
+                            if ((int)__response.StatusCode == 406)
+                            {
+                                string? __content_406 = null;
+                                global::System.Exception? __exception_406 = null;
+                                global::LangSmith.SharedProblemDetails? __value_406 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_406 = global::LangSmith.SharedProblemDetails.FromJson(__content_406, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_406 = global::LangSmith.SharedProblemDetails.FromJson(__content_406, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_406 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_406,
+                                    responseBody: __content_406,
+                                    responseObject: __value_406,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // unprocessable entity (e.g. invalid UUID)
                             if ((int)__response.StatusCode == 422)
                             {
@@ -595,7 +651,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // V2 filter syntax is unavailable for this deployment; use legacy function-style filters or set SMITHDB_QUERY_ENABLED=true
+                            // V2 filter syntax or ai_search is unavailable for this deployment; use legacy function-style filters or set SMITHDB_QUERY_ENABLED=true
                             if ((int)__response.StatusCode == 501)
                             {
                                 string? __content_501 = null;
@@ -807,9 +863,17 @@ namespace LangSmith
         /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
         /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
         /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
+        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="contentType"></param>
+        /// <param name="aiSearch">
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the trace.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
+        /// Example: A run that contains a billing dispute
+        /// </param>
         /// <param name="cursor">
         /// `cursor` is the opaque string returned in a previous response's `next_cursor`.
         /// </param>
@@ -850,7 +914,9 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryTracesResponseBody> QueryTracesAsync(
+            string? accept = default,
             string? contentType = default,
+            string? aiSearch = default,
             string? cursor = default,
             global::System.DateTime? maxStartTime = default,
             global::System.DateTime? minStartTime = default,
@@ -865,6 +931,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.QueryQueryTracesRequestBody
             {
+                AiSearch = aiSearch,
                 Cursor = cursor,
                 MaxStartTime = maxStartTime,
                 MinStartTime = minStartTime,
@@ -877,6 +944,7 @@ namespace LangSmith
             };
 
             return await QueryTracesAsync(
+                accept: accept,
                 contentType: contentType,
                 request: __request,
                 requestOptions: requestOptions,
