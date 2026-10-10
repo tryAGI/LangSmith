@@ -27,23 +27,25 @@ namespace LangSmith
         public global::System.Guid? DefaultDataset { get; set; }
 
         /// <summary>
-        /// Default Value: 1
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_reviewers_per_item")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
         public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? NumReviewersPerItem { get; set; }
 
         /// <summary>
-        /// Default Value: true
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_reservations")]
-        public bool? EnableReservations { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>? EnableReservations { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reservation_minutes")]
-        public int? ReservationMinutes { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
+        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? ReservationMinutes { get; set; }
 
         /// <summary>
         ///
@@ -83,12 +85,14 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="defaultDataset"></param>
         /// <param name="numReviewersPerItem">
-        /// Default Value: 1
+        /// Default Value: {"__missing__":"__missing__"}
         /// </param>
         /// <param name="enableReservations">
-        /// Default Value: true
+        /// Default Value: {"__missing__":"__missing__"}
         /// </param>
-        /// <param name="reservationMinutes"></param>
+        /// <param name="reservationMinutes">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
         /// <param name="metadata">
@@ -103,8 +107,8 @@ namespace LangSmith
             string? description,
             global::System.Guid? defaultDataset,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem,
-            bool? enableReservations,
-            int? reservationMinutes,
+            global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>? enableReservations,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? reservationMinutes,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata,

@@ -496,12 +496,14 @@ namespace LangSmith
         /// <param name="description"></param>
         /// <param name="defaultDataset"></param>
         /// <param name="numReviewersPerItem">
-        /// Default Value: 1
+        /// Default Value: {"__missing__":"__missing__"}
         /// </param>
         /// <param name="enableReservations">
-        /// Default Value: true
+        /// Default Value: {"__missing__":"__missing__"}
         /// </param>
-        /// <param name="reservationMinutes"></param>
+        /// <param name="reservationMinutes">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
         /// <param name="metadata">
@@ -517,8 +519,8 @@ namespace LangSmith
             string? description = default,
             global::System.Guid? defaultDataset = default,
             global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem = default,
-            bool? enableReservations = default,
-            int? reservationMinutes = default,
+            global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>? enableReservations = default,
+            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? reservationMinutes = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
             global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,

@@ -311,6 +311,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateOidcSsoSettings,
+        /// <summary>
+        ///
+        /// </summary>
         CreateOnboardingState,
         /// <summary>
         ///
@@ -644,6 +648,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteOidcIntegration,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteOidcSsoSettings,
         /// <summary>
         ///
         /// </summary>
@@ -1515,6 +1523,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        TestWebhookDestination,
+        /// <summary>
+        ///
+        /// </summary>
         TriggerForgeConfiguration,
         /// <summary>
         ///
@@ -1736,6 +1748,10 @@ namespace LangSmith
         ///
         /// </summary>
         UpdateOidcIntegration,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateOidcSsoSettings,
         /// <summary>
         ///
         /// </summary>
@@ -2001,6 +2017,7 @@ namespace LangSmith
                 AuditLogOperation.CreateOauthClient => "create_oauth_client",
                 AuditLogOperation.CreateOauthProvider => "create_oauth_provider",
                 AuditLogOperation.CreateOidcIntegration => "create_oidc_integration",
+                AuditLogOperation.CreateOidcSsoSettings => "create_oidc_sso_settings",
                 AuditLogOperation.CreateOnboardingState => "create_onboarding_state",
                 AuditLogOperation.CreateOrgChart => "create_org_chart",
                 AuditLogOperation.CreateOrgChartSection => "create_org_chart_section",
@@ -2085,6 +2102,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteOauthClient => "delete_oauth_client",
                 AuditLogOperation.DeleteOauthProvider => "delete_oauth_provider",
                 AuditLogOperation.DeleteOidcIntegration => "delete_oidc_integration",
+                AuditLogOperation.DeleteOidcSsoSettings => "delete_oidc_sso_settings",
                 AuditLogOperation.DeleteOrgChart => "delete_org_chart",
                 AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
                 AuditLogOperation.DeleteOrgMember => "delete_org_member",
@@ -2302,6 +2320,7 @@ namespace LangSmith
                 AuditLogOperation.TestFleetWebhook => "test_fleet_webhook",
                 AuditLogOperation.TestOpGeneric => "test_op_generic",
                 AuditLogOperation.TestPromptWebhook => "test_prompt_webhook",
+                AuditLogOperation.TestWebhookDestination => "test_webhook_destination",
                 AuditLogOperation.TriggerForgeConfiguration => "trigger_forge_configuration",
                 AuditLogOperation.UnshareDataset => "unshare_dataset",
                 AuditLogOperation.UnshareEntities => "unshare_entities",
@@ -2358,6 +2377,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateOauthClient => "update_oauth_client",
                 AuditLogOperation.UpdateOauthProvider => "update_oauth_provider",
                 AuditLogOperation.UpdateOidcIntegration => "update_oidc_integration",
+                AuditLogOperation.UpdateOidcSsoSettings => "update_oidc_sso_settings",
                 AuditLogOperation.UpdateOnboardingState => "update_onboarding_state",
                 AuditLogOperation.UpdateOrgChart => "update_org_chart",
                 AuditLogOperation.UpdateOrgChartSection => "update_org_chart_section",
@@ -2487,6 +2507,7 @@ namespace LangSmith
                 "create_oauth_client" => AuditLogOperation.CreateOauthClient,
                 "create_oauth_provider" => AuditLogOperation.CreateOauthProvider,
                 "create_oidc_integration" => AuditLogOperation.CreateOidcIntegration,
+                "create_oidc_sso_settings" => AuditLogOperation.CreateOidcSsoSettings,
                 "create_onboarding_state" => AuditLogOperation.CreateOnboardingState,
                 "create_org_chart" => AuditLogOperation.CreateOrgChart,
                 "create_org_chart_section" => AuditLogOperation.CreateOrgChartSection,
@@ -2571,6 +2592,7 @@ namespace LangSmith
                 "delete_oauth_client" => AuditLogOperation.DeleteOauthClient,
                 "delete_oauth_provider" => AuditLogOperation.DeleteOauthProvider,
                 "delete_oidc_integration" => AuditLogOperation.DeleteOidcIntegration,
+                "delete_oidc_sso_settings" => AuditLogOperation.DeleteOidcSsoSettings,
                 "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
                 "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
                 "delete_org_member" => AuditLogOperation.DeleteOrgMember,
@@ -2788,6 +2810,7 @@ namespace LangSmith
                 "test_fleet_webhook" => AuditLogOperation.TestFleetWebhook,
                 "test_op_generic" => AuditLogOperation.TestOpGeneric,
                 "test_prompt_webhook" => AuditLogOperation.TestPromptWebhook,
+                "test_webhook_destination" => AuditLogOperation.TestWebhookDestination,
                 "trigger_forge_configuration" => AuditLogOperation.TriggerForgeConfiguration,
                 "unshare_dataset" => AuditLogOperation.UnshareDataset,
                 "unshare_entities" => AuditLogOperation.UnshareEntities,
@@ -2844,6 +2867,7 @@ namespace LangSmith
                 "update_oauth_client" => AuditLogOperation.UpdateOauthClient,
                 "update_oauth_provider" => AuditLogOperation.UpdateOauthProvider,
                 "update_oidc_integration" => AuditLogOperation.UpdateOidcIntegration,
+                "update_oidc_sso_settings" => AuditLogOperation.UpdateOidcSsoSettings,
                 "update_onboarding_state" => AuditLogOperation.UpdateOnboardingState,
                 "update_org_chart" => AuditLogOperation.UpdateOrgChart,
                 "update_org_chart_section" => AuditLogOperation.UpdateOrgChartSection,
