@@ -39,6 +39,13 @@ namespace LangSmith
         public string? VerificationUri { get; set; }
 
         /// <summary>
+        /// The verification URI with the user code included, so the user confirms<br/>
+        /// the code instead of typing it (RFC 8628 §3.3.1).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("verification_uri_complete")]
+        public string? VerificationUriComplete { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,6 +59,10 @@ namespace LangSmith
         /// <param name="interval"></param>
         /// <param name="userCode"></param>
         /// <param name="verificationUri"></param>
+        /// <param name="verificationUriComplete">
+        /// The verification URI with the user code included, so the user confirms<br/>
+        /// the code instead of typing it (RFC 8628 §3.3.1).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,13 +71,15 @@ namespace LangSmith
             int? expiresIn,
             int? interval,
             string? userCode,
-            string? verificationUri)
+            string? verificationUri,
+            string? verificationUriComplete)
         {
             this.DeviceCode = deviceCode;
             this.ExpiresIn = expiresIn;
             this.Interval = interval;
             this.UserCode = userCode;
             this.VerificationUri = verificationUri;
+            this.VerificationUriComplete = verificationUriComplete;
         }
 
         /// <summary>

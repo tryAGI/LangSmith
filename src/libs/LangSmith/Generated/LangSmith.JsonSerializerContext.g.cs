@@ -48,6 +48,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueRubricItemSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<string, global::LangSmith.Missing>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.Missing))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackConfigSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueRunAddSchema))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.TraceTier), TypeInfoPropertyName = "TraceTier2")]
@@ -65,6 +66,9 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueSizeSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueUpdateSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<int?, global::LangSmith.Missing>), TypeInfoPropertyName = "AnyOfInt32Missing2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>), TypeInfoPropertyName = "AnyOfBooleanMissing2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<object, global::LangSmith.Missing>), TypeInfoPropertyName = "AnyOfObjectMissing2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode), TypeInfoPropertyName = "AnnotationQueueUpdateSchemaReviewerAccessMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AppFeedbackSource))]
@@ -297,7 +301,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackCategory))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackType), TypeInfoPropertyName = "FeedbackType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.FeedbackConfigSchema))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<double?, int?, bool?>), TypeInfoPropertyName = "AnyOfDoubleInt32Boolean2")]
     #pragma warning restore CS0618
@@ -520,7 +523,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RuleLogActionOutcome), TypeInfoPropertyName = "RuleLogActionOutcome2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RuleLogActionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RuleLogSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RuleLogsPaginatedResponse))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -541,6 +543,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RuleLogsPaginatedResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.RuleLogSchema>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunGroupBy), TypeInfoPropertyName = "RunGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunGroupRequest))]
@@ -1030,7 +1033,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesSandboxMountConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateSnapshotPayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesDownloadURLPayload))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1051,6 +1053,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesDownloadURLPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesDownloadURLPayloadCspSandboxFlag>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesDownloadURLPayloadCspSandboxFlag), TypeInfoPropertyName = "SandboxesDownloadURLPayloadCspSandboxFlag2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesDownloadURLPayloadCspSourceBundle>))]
@@ -1369,6 +1372,9 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueSchemaWithRubricQueueType?), TypeInfoPropertyName = "NullableAnnotationQueueSchemaWithRubricQueueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueSchemaWithSizeQueueType?), TypeInfoPropertyName = "NullableAnnotationQueueSchemaWithSizeQueueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<int?, global::LangSmith.Missing>?), TypeInfoPropertyName = "NullableAnyOfInt32Missing2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>?), TypeInfoPropertyName = "NullableAnyOfBooleanMissing2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<object, global::LangSmith.Missing>?), TypeInfoPropertyName = "NullableAnyOfObjectMissing2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode?), TypeInfoPropertyName = "NullableAnnotationQueueUpdateSchemaReviewerAccessMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AuditLogOperation?), TypeInfoPropertyName = "NullableAuditLogOperation2")]
@@ -1551,8 +1557,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricField?), TypeInfoPropertyName = "NullableRunsanalyticsMetricField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricType?), TypeInfoPropertyName = "NullableRunsanalyticsMetricType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpecType?), TypeInfoPropertyName = "NullableSandboxapiGitMountRefSpecType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountKind?), TypeInfoPropertyName = "NullableSandboxapiMountKind2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpecDiscriminatorType?), TypeInfoPropertyName = "NullableSandboxapiMountSpecDiscriminatorType2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1573,6 +1577,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountKind?), TypeInfoPropertyName = "NullableSandboxapiMountKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpecDiscriminatorType?), TypeInfoPropertyName = "NullableSandboxapiMountSpecDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateRegistryPayloadAuthType?), TypeInfoPropertyName = "NullableSandboxesCreateRegistryPayloadAuthType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesDownloadURLPayloadCspSandboxFlag?), TypeInfoPropertyName = "NullableSandboxesDownloadURLPayloadCspSandboxFlag2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesDownloadURLPayloadCspSourceBundle?), TypeInfoPropertyName = "NullableSandboxesDownloadURLPayloadCspSourceBundle2")]
@@ -1939,6 +1945,10 @@ namespace LangSmith
             options.Converters.Add(new global::LangSmith.JsonConverters.ReadSingleChartApiV1ChartsChartIdPostResponseJsonConverter());
             options.Converters.Add(new global::LangSmith.JsonConverters.UpdateChartApiV1ChartsChartIdPatchResponseJsonConverter());
             options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>());
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>());
+            #pragma warning disable CS0618 // Converter references a deprecated API model.
+            options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::LangSmith.Missing>());
+            #pragma warning restore CS0618
             options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>());
             options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>());
             options.Converters.Add(new global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>());
