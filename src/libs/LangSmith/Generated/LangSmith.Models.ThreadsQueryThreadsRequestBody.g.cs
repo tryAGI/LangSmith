@@ -9,6 +9,16 @@ namespace LangSmith
     public sealed partial class ThreadsQueryThreadsRequestBody
     {
         /// <summary>
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the thread.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
+        /// Example: A conversation about a refund request
+        /// </summary>
+        /// <example>A conversation about a refund request</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ai_search")]
+        public string? AiSearch { get; set; }
+
+        /// <summary>
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
@@ -91,6 +101,12 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadsQueryThreadsRequestBody" /> class.
         /// </summary>
+        /// <param name="aiSearch">
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the thread.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
+        /// Example: A conversation about a refund request
+        /// </param>
         /// <param name="cursor">
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
         /// </param>
@@ -137,6 +153,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ThreadsQueryThreadsRequestBody(
+            string? aiSearch,
             string? cursor,
             string? filter,
             global::System.DateTime? maxStartTime,
@@ -147,6 +164,7 @@ namespace LangSmith
             string? traceFilter,
             string? treeFilter)
         {
+            this.AiSearch = aiSearch;
             this.Cursor = cursor;
             this.Filter = filter;
             this.MaxStartTime = maxStartTime;

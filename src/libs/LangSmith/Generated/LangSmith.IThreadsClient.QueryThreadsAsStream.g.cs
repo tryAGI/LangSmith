@@ -16,25 +16,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
-
-            global::LangSmith.ThreadsQueryThreadsRequestBody request,
-            string? accept = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
-        /// Self-hosted deployments require LangSmith `v0.16` or later.
-        /// </summary>
-        /// <param name="accept"></param>
-        /// <param name="request"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ThreadsQueryThreadsResponseBody>> QueryThreadsAsResponseAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::LangSmith.SharedSSEEvent> QueryThreadsAsStreamAsync(
 
             global::LangSmith.ThreadsQueryThreadsRequestBody request,
             string? accept = default,
@@ -99,7 +81,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::LangSmith.SharedSSEEvent> QueryThreadsAsStreamAsync(
             string? accept = default,
             string? aiSearch = default,
             string? cursor = default,

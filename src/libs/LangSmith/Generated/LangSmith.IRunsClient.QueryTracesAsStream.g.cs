@@ -18,28 +18,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryTracesResponseBody> QueryTracesAsync(
-
-            global::LangSmith.QueryQueryTracesRequestBody request,
-            string? accept = default,
-            string? contentType = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Query traces<br/>
-        /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
-        /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
-        /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
-        /// Self-hosted deployments require LangSmith `v0.16` or later.
-        /// </summary>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
-        /// <param name="request"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.QueryQueryTracesResponseBody>> QueryTracesAsResponseAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::LangSmith.SharedSSEEvent> QueryTracesAsStreamAsync(
 
             global::LangSmith.QueryQueryTracesRequestBody request,
             string? accept = default,
@@ -101,7 +80,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.QueryQueryTracesResponseBody> QueryTracesAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::LangSmith.SharedSSEEvent> QueryTracesAsStreamAsync(
             string? accept = default,
             string? contentType = default,
             string? aiSearch = default,

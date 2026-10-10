@@ -60,6 +60,7 @@ namespace LangSmith
         /// Query Threads<br/>
         /// Query threads within a project (session), with cursor-based pagination.<br/>
         /// Returns threads matching the given time range and optional filters.<br/>
+        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -88,6 +89,7 @@ namespace LangSmith
         /// Query Threads<br/>
         /// Query threads within a project (session), with cursor-based pagination.<br/>
         /// Returns threads matching the given time range and optional filters.<br/>
+        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -151,6 +153,10 @@ namespace LangSmith
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
 
             foreach (var __authorization in __authorizations)
             {
@@ -519,6 +525,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // not acceptable (ai_search requires Accept: text/event-stream)
+                            if ((int)__response.StatusCode == 406)
+                            {
+                                string? __content_406 = null;
+                                global::System.Exception? __exception_406 = null;
+                                global::LangSmith.SharedProblemDetails? __value_406 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_406 = global::LangSmith.SharedProblemDetails.FromJson(__content_406, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_406 = global::LangSmith.SharedProblemDetails.FromJson(__content_406, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_406 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_406,
+                                    responseBody: __content_406,
+                                    responseObject: __value_406,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // unprocessable entity (e.g. invalid project UUID)
                             if ((int)__response.StatusCode == 422)
                             {
@@ -593,7 +636,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // V2 filter syntax or thread_filters are unavailable for this deployment; use legacy function-style filters without thread_filters or set SMITHDB_QUERY_ENABLED=true
+                            // V2 filter syntax, thread_filters, or ai_search are unavailable for this deployment; use legacy function-style filters without thread_filters or set SMITHDB_QUERY_ENABLED=true
                             if ((int)__response.StatusCode == 501)
                             {
                                 string? __content_501 = null;
@@ -804,9 +847,16 @@ namespace LangSmith
         /// Query Threads<br/>
         /// Query threads within a project (session), with cursor-based pagination.<br/>
         /// Returns threads matching the given time range and optional filters.<br/>
+        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
+        /// <param name="aiSearch">
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the thread.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
+        /// Example: A conversation about a refund request
+        /// </param>
         /// <param name="cursor">
         /// `cursor` is the opaque string from a previous response's `next_cursor`. Omit on the first request; pass the returned cursor to fetch the next page.
         /// </param>
@@ -854,6 +904,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ThreadsQueryThreadsResponseBody> QueryThreadsAsync(
             string? accept = default,
+            string? aiSearch = default,
             string? cursor = default,
             string? filter = default,
             global::System.DateTime? maxStartTime = default,
@@ -868,6 +919,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.ThreadsQueryThreadsRequestBody
             {
+                AiSearch = aiSearch,
                 Cursor = cursor,
                 Filter = filter,
                 MaxStartTime = maxStartTime,

@@ -9,6 +9,16 @@ namespace LangSmith
     public sealed partial class QueryQueryTracesRequestBody
     {
         /// <summary>
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the trace.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
+        /// Example: A run that contains a billing dispute
+        /// </summary>
+        /// <example>A run that contains a billing dispute</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ai_search")]
+        public string? AiSearch { get; set; }
+
+        /// <summary>
         /// `cursor` is the opaque string returned in a previous response's `next_cursor`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
@@ -87,6 +97,12 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryQueryTracesRequestBody" /> class.
         /// </summary>
+        /// <param name="aiSearch">
+        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the trace.<br/>
+        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
+        /// Example: A run that contains a billing dispute
+        /// </param>
         /// <param name="cursor">
         /// `cursor` is the opaque string returned in a previous response's `next_cursor`.
         /// </param>
@@ -127,6 +143,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueryQueryTracesRequestBody(
+            string? aiSearch,
             string? cursor,
             global::System.DateTime? maxStartTime,
             global::System.DateTime? minStartTime,
@@ -137,6 +154,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? traceIds,
             string? treeFilter)
         {
+            this.AiSearch = aiSearch;
             this.Cursor = cursor;
             this.MaxStartTime = maxStartTime;
             this.MinStartTime = minStartTime;
