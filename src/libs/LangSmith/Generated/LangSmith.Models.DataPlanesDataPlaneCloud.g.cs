@@ -12,6 +12,10 @@ namespace LangSmith
         ///
         /// </summary>
         DataPlaneCloudAWS,
+        /// <summary>
+        ///
+        /// </summary>
+        DataPlaneCloudAzure,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace LangSmith
             return value switch
             {
                 DataPlanesDataPlaneCloud.DataPlaneCloudAWS => "AWS",
+                DataPlanesDataPlaneCloud.DataPlaneCloudAzure => "AZURE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace LangSmith
             return value switch
             {
                 "AWS" => DataPlanesDataPlaneCloud.DataPlaneCloudAWS,
+                "AZURE" => DataPlanesDataPlaneCloud.DataPlaneCloudAzure,
                 _ => null,
             };
         }

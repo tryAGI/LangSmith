@@ -15,6 +15,12 @@ namespace LangSmith
         public global::System.Collections.Generic.Dictionary<string, string>? AdditionalTags { get; set; }
 
         /// <summary>
+        /// EntraTenantID is the Microsoft Entra tenant of the resource group.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("azure_entra_tenant_id")]
+        public string? AzureEntraTenantId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byovpc")]
@@ -48,11 +54,17 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resource_group_id")]
+        public string? ResourceGroupId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_arn")]
         public string? RoleArn { get; set; }
 
         /// <summary>
-        /// VPCCIDR is the effective VPC CIDR, including for customer-managed VPCs.
+        /// VPCCIDR is the effective AWS VPC or Azure VNet CIDR, including for customer-managed VPCs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpc_cidr")]
         public string? VpcCidr { get; set; }
@@ -67,34 +79,42 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="DataPlanesDataPlaneProvisioningSettings" /> class.
         /// </summary>
         /// <param name="additionalTags"></param>
+        /// <param name="azureEntraTenantId">
+        /// EntraTenantID is the Microsoft Entra tenant of the resource group.
+        /// </param>
         /// <param name="byovpc"></param>
         /// <param name="cloud"></param>
         /// <param name="isByoiamEnabled"></param>
         /// <param name="isEksApiPrivatelinkDisabled"></param>
         /// <param name="isPublicLoadBalancer"></param>
+        /// <param name="resourceGroupId"></param>
         /// <param name="roleArn"></param>
         /// <param name="vpcCidr">
-        /// VPCCIDR is the effective VPC CIDR, including for customer-managed VPCs.
+        /// VPCCIDR is the effective AWS VPC or Azure VNet CIDR, including for customer-managed VPCs.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataPlanesDataPlaneProvisioningSettings(
             global::System.Collections.Generic.Dictionary<string, string>? additionalTags,
+            string? azureEntraTenantId,
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             global::LangSmith.DataPlanesDataPlaneCloud? cloud,
             bool? isByoiamEnabled,
             bool? isEksApiPrivatelinkDisabled,
             bool? isPublicLoadBalancer,
+            string? resourceGroupId,
             string? roleArn,
             string? vpcCidr)
         {
             this.AdditionalTags = additionalTags;
+            this.AzureEntraTenantId = azureEntraTenantId;
             this.Byovpc = byovpc;
             this.Cloud = cloud;
             this.IsByoiamEnabled = isByoiamEnabled;
             this.IsEksApiPrivatelinkDisabled = isEksApiPrivatelinkDisabled;
             this.IsPublicLoadBalancer = isPublicLoadBalancer;
+            this.ResourceGroupId = resourceGroupId;
             this.RoleArn = roleArn;
             this.VpcCidr = vpcCidr;
         }

@@ -522,7 +522,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // LLM Gateway not enabled for the organization, or caller lacks OrganizationManage
+                            // LLM Gateway not enabled for the organization, or caller lacks organization:gateway:manage
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
