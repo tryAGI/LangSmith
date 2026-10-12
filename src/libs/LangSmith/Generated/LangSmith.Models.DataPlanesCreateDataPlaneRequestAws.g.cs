@@ -36,7 +36,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         ///
@@ -48,13 +49,15 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
-        public string? Region { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Region { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_arn")]
-        public string? RoleArn { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string RoleArn { get; set; }
 
         /// <summary>
         /// VPCCIDR is used only when LangSmith creates the VPC.
@@ -71,6 +74,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DataPlanesCreateDataPlaneRequestAws" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="region"></param>
+        /// <param name="roleArn"></param>
         /// <param name="additionalTags"></param>
         /// <param name="byoiamEnabled">
         /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
@@ -79,10 +85,7 @@ namespace LangSmith
         /// <param name="eksApiPrivatelinkDisabled">
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
-        /// <param name="name"></param>
         /// <param name="publicLoadBalancer"></param>
-        /// <param name="region"></param>
-        /// <param name="roleArn"></param>
         /// <param name="vpcCidr">
         /// VPCCIDR is used only when LangSmith creates the VPC.
         /// </param>
@@ -90,24 +93,24 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataPlanesCreateDataPlaneRequestAws(
+            string name,
+            string region,
+            string roleArn,
             global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags,
             bool? byoiamEnabled,
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             bool? eksApiPrivatelinkDisabled,
-            string? name,
             bool? publicLoadBalancer,
-            string? region,
-            string? roleArn,
             string? vpcCidr)
         {
             this.AdditionalTags = additionalTags;
             this.ByoiamEnabled = byoiamEnabled;
             this.Byovpc = byovpc;
             this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
-            this.Name = name;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PublicLoadBalancer = publicLoadBalancer;
-            this.Region = region;
-            this.RoleArn = roleArn;
+            this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));
+            this.RoleArn = roleArn ?? throw new global::System.ArgumentNullException(nameof(roleArn));
             this.VpcCidr = vpcCidr;
         }
 
