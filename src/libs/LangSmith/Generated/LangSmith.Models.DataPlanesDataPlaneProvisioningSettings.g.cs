@@ -64,6 +64,15 @@ namespace LangSmith
         public string? RoleArn { get; set; }
 
         /// <summary>
+        /// TraceStorage is the run and trace store. It is SMITHDB when SmithDB is<br/>
+        /// enabled and serves queries, and CLICKHOUSE otherwise, including for data<br/>
+        /// planes created before this setting existed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_storage")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesDataPlaneTraceStorageJsonConverter))]
+        public global::LangSmith.DataPlanesDataPlaneTraceStorage? TraceStorage { get; set; }
+
+        /// <summary>
         /// VPCCIDR is the effective AWS VPC or Azure VNet CIDR, including for customer-managed VPCs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpc_cidr")]
@@ -89,6 +98,11 @@ namespace LangSmith
         /// <param name="isPublicLoadBalancer"></param>
         /// <param name="resourceGroupId"></param>
         /// <param name="roleArn"></param>
+        /// <param name="traceStorage">
+        /// TraceStorage is the run and trace store. It is SMITHDB when SmithDB is<br/>
+        /// enabled and serves queries, and CLICKHOUSE otherwise, including for data<br/>
+        /// planes created before this setting existed.
+        /// </param>
         /// <param name="vpcCidr">
         /// VPCCIDR is the effective AWS VPC or Azure VNet CIDR, including for customer-managed VPCs.
         /// </param>
@@ -105,6 +119,7 @@ namespace LangSmith
             bool? isPublicLoadBalancer,
             string? resourceGroupId,
             string? roleArn,
+            global::LangSmith.DataPlanesDataPlaneTraceStorage? traceStorage,
             string? vpcCidr)
         {
             this.AdditionalTags = additionalTags;
@@ -116,6 +131,7 @@ namespace LangSmith
             this.IsPublicLoadBalancer = isPublicLoadBalancer;
             this.ResourceGroupId = resourceGroupId;
             this.RoleArn = roleArn;
+            this.TraceStorage = traceStorage;
             this.VpcCidr = vpcCidr;
         }
 

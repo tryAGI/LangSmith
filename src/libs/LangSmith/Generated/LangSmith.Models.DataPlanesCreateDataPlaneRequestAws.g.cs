@@ -60,6 +60,13 @@ namespace LangSmith
         public required string RoleArn { get; set; }
 
         /// <summary>
+        /// TraceStorage selects the run and trace store. Defaults to CLICKHOUSE.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_storage")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesDataPlaneTraceStorageJsonConverter))]
+        public global::LangSmith.DataPlanesDataPlaneTraceStorage? TraceStorage { get; set; }
+
+        /// <summary>
         /// VPCCIDR is used only when LangSmith creates the VPC.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpc_cidr")]
@@ -86,6 +93,9 @@ namespace LangSmith
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
         /// <param name="publicLoadBalancer"></param>
+        /// <param name="traceStorage">
+        /// TraceStorage selects the run and trace store. Defaults to CLICKHOUSE.
+        /// </param>
         /// <param name="vpcCidr">
         /// VPCCIDR is used only when LangSmith creates the VPC.
         /// </param>
@@ -101,6 +111,7 @@ namespace LangSmith
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             bool? eksApiPrivatelinkDisabled,
             bool? publicLoadBalancer,
+            global::LangSmith.DataPlanesDataPlaneTraceStorage? traceStorage,
             string? vpcCidr)
         {
             this.AdditionalTags = additionalTags;
@@ -111,6 +122,7 @@ namespace LangSmith
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));
             this.RoleArn = roleArn ?? throw new global::System.ArgumentNullException(nameof(roleArn));
+            this.TraceStorage = traceStorage;
             this.VpcCidr = vpcCidr;
         }
 
