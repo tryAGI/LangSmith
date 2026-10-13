@@ -56,13 +56,24 @@ namespace LangSmith.JsonConverters
             if (__jsonProps.Contains("region")) __score1++;
             if (__jsonProps.Contains("resource_group_id")) __score1++;
             if (__jsonProps.Contains("vpc_cidr")) __score1++;
+            var __score2 = 0;
+            if (__jsonProps.Contains("byoiam_enabled")) __score2++;
+            if (__jsonProps.Contains("gcp_project_id")) __score2++;
+            if (__jsonProps.Contains("name")) __score2++;
+            if (__jsonProps.Contains("provisioner_service_account")) __score2++;
+            if (__jsonProps.Contains("public_load_balancer")) __score2++;
+            if (__jsonProps.Contains("region")) __score2++;
+            if (__jsonProps.Contains("sandboxes_enabled")) __score2++;
+            if (__jsonProps.Contains("vpc_cidr")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::LangSmith.DataPlanesCreateDataPlaneRequestAws? aws = default;
             global::LangSmith.DataPlanesCreateDataPlaneRequestAzure? azure = default;
+            global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? gcp = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -95,9 +106,24 @@ namespace LangSmith.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP).Name}");
+                        gcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (aws == null && azure == null)
+            if (aws == null && azure == null && gcp == null)
             {
                 try
                 {
@@ -114,7 +140,7 @@ namespace LangSmith.JsonConverters
                 }
             }
 
-            if (aws == null && azure == null)
+            if (aws == null && azure == null && gcp == null)
             {
                 try
                 {
@@ -131,10 +157,29 @@ namespace LangSmith.JsonConverters
                 }
             }
 
+            if (aws == null && azure == null && gcp == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP).Name}");
+                    gcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
             var __value = new global::LangSmith.DataPlanesCreateDataPlaneRequest(
                 aws,
 
-                azure
+                azure,
+
+                gcp
                 );
 
             return __value;
@@ -160,6 +205,12 @@ namespace LangSmith.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAzure), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DataPlanesCreateDataPlaneRequestAzure?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAzure).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAzure(), typeInfo);
+            }
+            else if (value.IsGcp)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGcp(), typeInfo);
             }
         }
     }

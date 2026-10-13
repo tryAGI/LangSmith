@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete a data plane<br/>
-        /// Verifies that the stored customer AWS role has delete permissions, or that the stored Azure subscription is reachable. Then removes linked workspaces and starts asynchronous deprovisioning for an active or provisioning_failed data plane owned by the caller's organization. Azure data planes can also be deleted while provisioning. Requires BYOC to be enabled for the org and organization:infrastructure:manage.
+        /// Verifies that the stored customer AWS role has delete permissions, that the stored Azure subscription is reachable, or that the stored GCP provisioner service account can be impersonated. Then removes linked workspaces and starts asynchronous deprovisioning for an active or provisioning_failed data plane owned by the caller's organization. Azure and GCP data planes can also be deleted while provisioning. Requires BYOC to be enabled for the org and organization:infrastructure:manage.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +18,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a data plane<br/>
-        /// Verifies that the stored customer AWS role has delete permissions, or that the stored Azure subscription is reachable. Then removes linked workspaces and starts asynchronous deprovisioning for an active or provisioning_failed data plane owned by the caller's organization. Azure data planes can also be deleted while provisioning. Requires BYOC to be enabled for the org and organization:infrastructure:manage.
+        /// Verifies that the stored customer AWS role has delete permissions, that the stored Azure subscription is reachable, or that the stored GCP provisioner service account can be impersonated. Then removes linked workspaces and starts asynchronous deprovisioning for an active or provisioning_failed data plane owned by the caller's organization. Azure and GCP data planes can also be deleted while provisioning. Requires BYOC to be enabled for the org and organization:infrastructure:manage.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
