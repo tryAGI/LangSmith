@@ -82,6 +82,43 @@ namespace LangSmith
         public global::LangSmith.DataPlanesCreateDataPlaneRequestAzure PickAzure() => Azure is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Azure' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? Gcp { get; init; }
+#else
+        public global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? Gcp { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Gcp))]
+#endif
+        public bool IsGcp => Gcp != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickGcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? value)
+        {
+            value = Gcp;
+            return IsGcp;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::LangSmith.DataPlanesCreateDataPlaneRequestGCP PickGcp() => Gcp is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gcp' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -131,19 +168,45 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator DataPlanesCreateDataPlaneRequest(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP value) => new DataPlanesCreateDataPlaneRequest((global::LangSmith.DataPlanesCreateDataPlaneRequestGCP?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::LangSmith.DataPlanesCreateDataPlaneRequestGCP?(DataPlanesCreateDataPlaneRequest @this) => @this.Gcp;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public DataPlanesCreateDataPlaneRequest(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? value)
+        {
+            Gcp = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static DataPlanesCreateDataPlaneRequest FromGcp(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? value) => new DataPlanesCreateDataPlaneRequest(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public DataPlanesCreateDataPlaneRequest(
             global::LangSmith.DataPlanesCreateDataPlaneRequestAws? aws,
-            global::LangSmith.DataPlanesCreateDataPlaneRequestAzure? azure
+            global::LangSmith.DataPlanesCreateDataPlaneRequestAzure? azure,
+            global::LangSmith.DataPlanesCreateDataPlaneRequestGCP? gcp
             )
         {
             Aws = aws;
             Azure = azure;
+            Gcp = gcp;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Gcp as object ??
             Azure as object ??
             Aws as object
             ;
@@ -153,7 +216,8 @@ namespace LangSmith
         /// </summary>
         public override string? ToString() =>
             Aws?.ToString() ??
-            Azure?.ToString()
+            Azure?.ToString() ??
+            Gcp?.ToString()
             ;
 
         /// <summary>
@@ -161,7 +225,7 @@ namespace LangSmith
         /// </summary>
         public bool Validate()
         {
-            return IsAws && !IsAzure || !IsAws && IsAzure;
+            return IsAws && !IsAzure && !IsGcp || !IsAws && IsAzure && !IsGcp || !IsAws && !IsAzure && IsGcp;
         }
 
         /// <summary>
@@ -170,6 +234,7 @@ namespace LangSmith
         public TResult? Match<TResult>(
             global::System.Func<global::LangSmith.DataPlanesCreateDataPlaneRequestAws, TResult>? aws = null,
             global::System.Func<global::LangSmith.DataPlanesCreateDataPlaneRequestAzure, TResult>? azure = null,
+            global::System.Func<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP, TResult>? gcp = null,
             bool validate = true)
         {
             if (validate)
@@ -185,6 +250,10 @@ namespace LangSmith
             {
                 return azure(__value1);
             }
+            else if (Gcp is { } __value2 && gcp != null)
+            {
+                return gcp(__value2);
+            }
 
             return default(TResult);
         }
@@ -196,6 +265,8 @@ namespace LangSmith
             global::System.Action<global::LangSmith.DataPlanesCreateDataPlaneRequestAws>? aws = null,
 
             global::System.Action<global::LangSmith.DataPlanesCreateDataPlaneRequestAzure>? azure = null,
+
+            global::System.Action<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP>? gcp = null,
             bool validate = true)
         {
             if (validate)
@@ -210,6 +281,10 @@ namespace LangSmith
             else if (Azure is { } __value1)
             {
                 azure?.Invoke(__value1);
+            }
+            else if (Gcp is { } __value2)
+            {
+                gcp?.Invoke(__value2);
             }
         }
 
@@ -219,6 +294,7 @@ namespace LangSmith
         public void Switch(
             global::System.Action<global::LangSmith.DataPlanesCreateDataPlaneRequestAws>? aws = null,
             global::System.Action<global::LangSmith.DataPlanesCreateDataPlaneRequestAzure>? azure = null,
+            global::System.Action<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP>? gcp = null,
             bool validate = true)
         {
             if (validate)
@@ -233,6 +309,10 @@ namespace LangSmith
             else if (Azure is { } __value1)
             {
                 azure?.Invoke(__value1);
+            }
+            else if (Gcp is { } __value2)
+            {
+                gcp?.Invoke(__value2);
             }
         }
 
@@ -247,6 +327,8 @@ namespace LangSmith
                 typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAws),
                 Azure,
                 typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAzure),
+                Gcp,
+                typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestGCP),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -264,7 +346,8 @@ namespace LangSmith
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.DataPlanesCreateDataPlaneRequestAws?>.Default.Equals(Aws, other.Aws) &&
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.DataPlanesCreateDataPlaneRequestAzure?>.Default.Equals(Azure, other.Azure)
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.DataPlanesCreateDataPlaneRequestAzure?>.Default.Equals(Azure, other.Azure) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.DataPlanesCreateDataPlaneRequestGCP?>.Default.Equals(Gcp, other.Gcp)
                 ;
         }
 

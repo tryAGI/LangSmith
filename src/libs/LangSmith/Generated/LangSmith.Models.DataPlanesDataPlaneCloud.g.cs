@@ -16,6 +16,10 @@ namespace LangSmith
         ///
         /// </summary>
         DataPlaneCloudAzure,
+        /// <summary>
+        ///
+        /// </summary>
+        DataPlaneCloudGCP,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace LangSmith
             {
                 DataPlanesDataPlaneCloud.DataPlaneCloudAWS => "AWS",
                 DataPlanesDataPlaneCloud.DataPlaneCloudAzure => "AZURE",
+                DataPlanesDataPlaneCloud.DataPlaneCloudGCP => "GCP",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace LangSmith
             {
                 "AWS" => DataPlanesDataPlaneCloud.DataPlaneCloudAWS,
                 "AZURE" => DataPlanesDataPlaneCloud.DataPlaneCloudAzure,
+                "GCP" => DataPlanesDataPlaneCloud.DataPlaneCloudGCP,
                 _ => null,
             };
         }

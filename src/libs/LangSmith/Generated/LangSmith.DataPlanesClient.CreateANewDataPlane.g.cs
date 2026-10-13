@@ -57,7 +57,7 @@ namespace LangSmith
         /// <summary>
         /// Create a new data plane<br/>
         /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
-        /// The cloud of the control plane selects the AWS or the Azure request. For AWS, the control plane uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane. For Azure, the control plane uses the Entra tenant and the resource group in the request.
+        /// The cloud of the control plane selects the AWS, the Azure, or the GCP request. For AWS, the control plane uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane. For Azure, the control plane uses the Entra tenant and the resource group in the request. For GCP, the control plane impersonates the provisioner service account in the request. That service account must be in the request's project, and its description must be the organization's assigned external ID.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -81,7 +81,7 @@ namespace LangSmith
         /// <summary>
         /// Create a new data plane<br/>
         /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
-        /// The cloud of the control plane selects the AWS or the Azure request. For AWS, the control plane uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane. For Azure, the control plane uses the Entra tenant and the resource group in the request.
+        /// The cloud of the control plane selects the AWS, the Azure, or the GCP request. For AWS, the control plane uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane. For Azure, the control plane uses the Entra tenant and the resource group in the request. For GCP, the control plane impersonates the provisioner service account in the request. That service account must be in the request's project, and its description must be the organization's assigned external ID.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -673,7 +673,7 @@ namespace LangSmith
         /// <summary>
         /// Create a new data plane<br/>
         /// Creates a new data plane object. Persists the rendered data plane spec, and returns 202 with the data plane in status=requested. Requires BYOC enabled org and org admin.<br/>
-        /// The cloud of the control plane selects the AWS or the Azure request. For AWS, the control plane uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane. For Azure, the control plane uses the Entra tenant and the resource group in the request.
+        /// The cloud of the control plane selects the AWS, the Azure, or the GCP request. For AWS, the control plane uses the organization's assigned external ID to assume the AWS role. Configure that ID in the role's trust policy before creating a data plane. For Azure, the control plane uses the Entra tenant and the resource group in the request. For GCP, the control plane impersonates the provisioner service account in the request. That service account must be in the request's project, and its description must be the organization's assigned external ID.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
