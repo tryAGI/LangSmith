@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encryption")]
+        public global::LangSmith.SandboxapiMountEncryptionSpec? Encryption { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -63,6 +69,7 @@ namespace LangSmith
         /// <param name="s3"></param>
         /// <param name="type"></param>
         /// <param name="cache"></param>
+        /// <param name="encryption"></param>
         /// <param name="readOnly"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,9 +80,11 @@ namespace LangSmith
             global::LangSmith.SandboxapiS3MountSpec s3,
             global::LangSmith.SandboxapiMountKind type,
             global::LangSmith.SandboxapiMountCacheSpec? cache,
+            global::LangSmith.SandboxapiMountEncryptionSpec? encryption,
             bool? readOnly)
         {
             this.Cache = cache;
+            this.Encryption = encryption;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.MountPath = mountPath ?? throw new global::System.ArgumentNullException(nameof(mountPath));
             this.ReadOnly = readOnly;

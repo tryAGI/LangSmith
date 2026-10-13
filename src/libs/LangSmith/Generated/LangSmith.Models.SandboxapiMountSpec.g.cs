@@ -31,6 +31,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encryption")]
+        public global::LangSmith.SandboxapiMountEncryptionSpec? Encryption { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gcs")]
         public global::LangSmith.SandboxapiGCSMountSpec? Gcs { get; set; }
 
@@ -79,6 +85,7 @@ namespace LangSmith
         /// <param name="mountPath"></param>
         /// <param name="cache"></param>
         /// <param name="contexthub"></param>
+        /// <param name="encryption"></param>
         /// <param name="gcs"></param>
         /// <param name="git"></param>
         /// <param name="readOnly"></param>
@@ -91,6 +98,7 @@ namespace LangSmith
             string mountPath,
             global::LangSmith.SandboxapiMountCacheSpec? cache,
             global::LangSmith.SandboxapiContextHubMountSpec? contexthub,
+            global::LangSmith.SandboxapiMountEncryptionSpec? encryption,
             global::LangSmith.SandboxapiGCSMountSpec? gcs,
             global::LangSmith.SandboxapiGitMountSpec? git,
             bool? readOnly,
@@ -98,6 +106,7 @@ namespace LangSmith
         {
             this.Cache = cache;
             this.Contexthub = contexthub;
+            this.Encryption = encryption;
             this.Gcs = gcs;
             this.Git = git;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
