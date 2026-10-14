@@ -45,7 +45,8 @@ namespace LangSmith
             ref int? offset,
             int? limit,
             ref bool? sortByDesc,
-            ref bool? readAfterWrite);
+            ref bool? readAfterWrite,
+            ref bool? includeAllConfigs);
         partial void PrepareListFeedbackConfigsEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -54,7 +55,8 @@ namespace LangSmith
             int? offset,
             int? limit,
             bool? sortByDesc,
-            bool? readAfterWrite);
+            bool? readAfterWrite,
+            bool? includeAllConfigs);
         partial void ProcessListFeedbackConfigsEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -79,6 +81,10 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="includeAllConfigs">
+        /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -89,6 +95,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -99,6 +106,7 @@ namespace LangSmith
                 limit: limit,
                 sortByDesc: sortByDesc,
                 readAfterWrite: readAfterWrite,
+                includeAllConfigs: includeAllConfigs,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -120,6 +128,10 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="includeAllConfigs">
+        /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -130,6 +142,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -142,7 +155,8 @@ namespace LangSmith
                 offset: ref offset,
                 limit: limit,
                 sortByDesc: ref sortByDesc,
-                readAfterWrite: ref readAfterWrite);
+                readAfterWrite: ref readAfterWrite,
+                includeAllConfigs: ref includeAllConfigs);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -179,6 +193,7 @@ namespace LangSmith
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("read_after_write", readAfterWrite?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_all_configs", includeAllConfigs?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -225,7 +240,8 @@ namespace LangSmith
                     offset: offset,
                     limit: limit,
                     sortByDesc: sortByDesc,
-                    readAfterWrite: readAfterWrite);
+                    readAfterWrite: readAfterWrite,
+                    includeAllConfigs: includeAllConfigs);
 
                 return __httpRequest;
             }

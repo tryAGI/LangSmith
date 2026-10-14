@@ -50,6 +50,24 @@ namespace LangSmith
         public bool? IsLowerScoreBetter { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_enforced")]
+        public bool? IsEnforced { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_first")]
+        public bool? IsFirst { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_deleted")]
+        public bool? IsDeleted { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +82,15 @@ namespace LangSmith
         /// <param name="tenantId"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="isLowerScoreBetter"></param>
+        /// <param name="isEnforced">
+        /// Default Value: false
+        /// </param>
+        /// <param name="isFirst">
+        /// Default Value: false
+        /// </param>
+        /// <param name="isDeleted">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,7 +100,10 @@ namespace LangSmith
             global::LangSmith.FeedbackConfig feedbackConfig,
             global::System.Guid tenantId,
             global::System.DateTime modifiedAt,
-            bool? isLowerScoreBetter)
+            bool? isLowerScoreBetter,
+            bool? isEnforced,
+            bool? isFirst,
+            bool? isDeleted)
         {
             this.Id = id;
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
@@ -81,6 +111,9 @@ namespace LangSmith
             this.TenantId = tenantId;
             this.ModifiedAt = modifiedAt;
             this.IsLowerScoreBetter = isLowerScoreBetter;
+            this.IsEnforced = isEnforced;
+            this.IsFirst = isFirst;
+            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
