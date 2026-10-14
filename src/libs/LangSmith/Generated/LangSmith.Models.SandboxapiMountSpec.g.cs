@@ -10,12 +10,19 @@ namespace LangSmith
         TypeDiscriminatorPropertyName = "type",
         IgnoreUnrecognizedTypeDiscriminators = true,
         UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::LangSmith.SandboxapiAzureBlobContainerMountSpec), typeDiscriminator: "azure_blob")]
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::LangSmith.SandboxapiContextHubRepoMountSpec), typeDiscriminator: "contexthub")]
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::LangSmith.SandboxapiGCSBucketMountSpec), typeDiscriminator: "gcs")]
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::LangSmith.SandboxapiGitRepoMountSpec), typeDiscriminator: "git")]
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::LangSmith.SandboxapiS3BucketMountSpec), typeDiscriminator: "s3")]
     public partial class SandboxapiMountSpec
     {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("azure_blob")]
+        public global::LangSmith.SandboxapiAzureBlobMountSpec? AzureBlob { get; set; }
+
         /// <summary>
         ///
         /// </summary>
@@ -83,6 +90,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="id"></param>
         /// <param name="mountPath"></param>
+        /// <param name="azureBlob"></param>
         /// <param name="cache"></param>
         /// <param name="contexthub"></param>
         /// <param name="encryption"></param>
@@ -96,6 +104,7 @@ namespace LangSmith
         public SandboxapiMountSpec(
             string id,
             string mountPath,
+            global::LangSmith.SandboxapiAzureBlobMountSpec? azureBlob,
             global::LangSmith.SandboxapiMountCacheSpec? cache,
             global::LangSmith.SandboxapiContextHubMountSpec? contexthub,
             global::LangSmith.SandboxapiMountEncryptionSpec? encryption,
@@ -104,6 +113,7 @@ namespace LangSmith
             bool? readOnly,
             global::LangSmith.SandboxapiS3MountSpec? s3)
         {
+            this.AzureBlob = azureBlob;
             this.Cache = cache;
             this.Contexthub = contexthub;
             this.Encryption = encryption;

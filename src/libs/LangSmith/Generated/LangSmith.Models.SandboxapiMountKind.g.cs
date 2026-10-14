@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        MountKindAzureBlob,
+        /// <summary>
+        ///
+        /// </summary>
         MountKindContextHub,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace LangSmith
         {
             return value switch
             {
+                SandboxapiMountKind.MountKindAzureBlob => "azure_blob",
                 SandboxapiMountKind.MountKindContextHub => "contexthub",
                 SandboxapiMountKind.MountKindGCS => "gcs",
                 SandboxapiMountKind.MountKindGit => "git",
@@ -52,6 +57,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "azure_blob" => SandboxapiMountKind.MountKindAzureBlob,
                 "contexthub" => SandboxapiMountKind.MountKindContextHub,
                 "gcs" => SandboxapiMountKind.MountKindGCS,
                 "git" => SandboxapiMountKind.MountKindGit,
