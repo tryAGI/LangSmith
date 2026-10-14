@@ -16,9 +16,7 @@ namespace LangSmith
         public required global::LangSmith.SandboxesProxySecretValue AccessKeyId { get; set; }
 
         /// <summary>
-        /// RoleARN selects automatically renewed IAM-role credentials instead of static keys.<br/>
-        /// Access follows the role's effective AWS permissions, not the sandbox's mount scope.<br/>
-        /// Configure at creation; the role cannot be changed afterward.
+        /// IAM role to assume with AssumeRoleWithWebIdentity, using a short-lived OIDC token LangSmith signs for this workspace. The role's trust policy must trust LangSmith's issuer for the token subject. Credentials renew automatically, and access follows the role's effective AWS permissions. Mutually exclusive with static keys, and cannot be changed after creation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_arn")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesProxyAWSStaticConfigRoleArnJsonConverter))]
@@ -43,9 +41,7 @@ namespace LangSmith
         /// <param name="accessKeyId"></param>
         /// <param name="secretAccessKey"></param>
         /// <param name="roleArn">
-        /// RoleARN selects automatically renewed IAM-role credentials instead of static keys.<br/>
-        /// Access follows the role's effective AWS permissions, not the sandbox's mount scope.<br/>
-        /// Configure at creation; the role cannot be changed afterward.
+        /// IAM role to assume with AssumeRoleWithWebIdentity, using a short-lived OIDC token LangSmith signs for this workspace. The role's trust policy must trust LangSmith's issuer for the token subject. Credentials renew automatically, and access follows the role's effective AWS permissions. Mutually exclusive with static keys, and cannot be changed after creation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

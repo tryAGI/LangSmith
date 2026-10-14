@@ -4,9 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// RoleARN selects automatically renewed IAM-role credentials instead of static keys.<br/>
-    /// Access follows the role's effective AWS permissions, not the sandbox's mount scope.<br/>
-    /// Configure at creation; the role cannot be changed afterward.
+    /// IAM role to assume with AssumeRoleWithWebIdentity, using a short-lived OIDC token LangSmith signs for this workspace. The role's trust policy must trust LangSmith's issuer for the token subject. Credentials renew automatically, and access follows the role's effective AWS permissions. Mutually exclusive with static keys, and cannot be changed after creation.
     /// </summary>
     public enum SandboxesProxyAWSStaticConfigRoleArn
     {

@@ -890,9 +890,19 @@ namespace LangSmith
         /// `is_root` returns only root runs (true) or only non-root runs (false).<br/>
         /// Example: true
         /// </param>
+        /// <param name="maxFeedbackModifiedAt">
+        /// `max_feedback_modified_at` is the exclusive upper bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `filter`, `trace_filter`, or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-12-31T23:59:59Z
+        /// </param>
         /// <param name="maxStartTime">
         /// `max_start_time` is the upper bound for run `start_time` (RFC3339). Defaults to now.<br/>
         /// Example: 2024-12-31T23:59:59Z
+        /// </param>
+        /// <param name="minFeedbackModifiedAt">
+        /// `min_feedback_modified_at` is the inclusive lower bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `filter`, `trace_filter`, or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-01-01T00:00:00Z
         /// </param>
         /// <param name="minStartTime">
         /// `min_start_time` is the lower bound for run `start_time` (RFC3339). Defaults to 1 day ago.<br/>
@@ -954,7 +964,9 @@ namespace LangSmith
             bool? hasError = default,
             global::System.Collections.Generic.IList<global::System.Guid>? ids = default,
             bool? isRoot = default,
+            global::System.DateTime? maxFeedbackModifiedAt = default,
             global::System.DateTime? maxStartTime = default,
+            global::System.DateTime? minFeedbackModifiedAt = default,
             global::System.DateTime? minStartTime = default,
             int? pageSize = default,
             global::System.Collections.Generic.IList<global::System.Guid>? projectIds = default,
@@ -976,7 +988,9 @@ namespace LangSmith
                 HasError = hasError,
                 Ids = ids,
                 IsRoot = isRoot,
+                MaxFeedbackModifiedAt = maxFeedbackModifiedAt,
                 MaxStartTime = maxStartTime,
+                MinFeedbackModifiedAt = minFeedbackModifiedAt,
                 MinStartTime = minStartTime,
                 PageSize = pageSize,
                 ProjectIds = projectIds,

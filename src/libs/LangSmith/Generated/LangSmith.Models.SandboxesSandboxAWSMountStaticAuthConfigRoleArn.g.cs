@@ -4,8 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    /// IAM role to assume with permissions scoped to the configured S3 mounts.<br/>
-    /// Mutually exclusive with static credentials. Configure only at creation.
+    /// IAM role to assume with AssumeRoleWithWebIdentity, using a short-lived OIDC token LangSmith signs for this workspace; the role's trust policy must trust LangSmith's issuer for the token subject. LangSmith scopes the credentials to the configured S3 mounts. Mutually exclusive with static credentials, and cannot be changed after creation.
     /// </summary>
     public enum SandboxesSandboxAWSMountStaticAuthConfigRoleArn
     {
