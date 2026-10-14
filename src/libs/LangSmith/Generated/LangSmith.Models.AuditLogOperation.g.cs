@@ -1923,6 +1923,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpsertWorkspaceSecret,
+        /// <summary>
+        ///
+        /// </summary>
         ValidateExample,
         /// <summary>
         ///
@@ -2420,6 +2424,7 @@ namespace LangSmith
                 AuditLogOperation.UpsertFeatureDisabledModel => "upsert_feature_disabled_model",
                 AuditLogOperation.UpsertGithubAppConfiguration => "upsert_github_app_configuration",
                 AuditLogOperation.UpsertRoleRestriction => "upsert_role_restriction",
+                AuditLogOperation.UpsertWorkspaceSecret => "upsert_workspace_secret",
                 AuditLogOperation.ValidateExample => "validate_example",
                 AuditLogOperation.ValidateExamples => "validate_examples",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -2910,6 +2915,7 @@ namespace LangSmith
                 "upsert_feature_disabled_model" => AuditLogOperation.UpsertFeatureDisabledModel,
                 "upsert_github_app_configuration" => AuditLogOperation.UpsertGithubAppConfiguration,
                 "upsert_role_restriction" => AuditLogOperation.UpsertRoleRestriction,
+                "upsert_workspace_secret" => AuditLogOperation.UpsertWorkspaceSecret,
                 "validate_example" => AuditLogOperation.ValidateExample,
                 "validate_examples" => AuditLogOperation.ValidateExamples,
                 _ => null,

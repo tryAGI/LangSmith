@@ -123,10 +123,16 @@ namespace LangSmith
         public global::LangSmith.FeedbackSourceVariant12? FeedbackSource { get; set; }
 
         /// <summary>
-        ///
+        /// The scale the score is checked against. If the feedback key already has a feedback config, this must match it exactly or the request is rejected; if it has none, this becomes the key's feedback config.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
         public global::LangSmith.FeedbackConfig? FeedbackConfig { get; set; }
+
+        /// <summary>
+        /// The ID of the feedback config this feedback was written against. It must be a feedback config for this feedback key in the same workspace, or the feedback is rejected. It doesn't change how the score is checked; feedback_config does that. If omitted, the server may record the key's enforced feedback config, or the one created for the key by this request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config_id")]
+        public global::System.Guid? FeedbackConfigId { get; set; }
 
         /// <summary>
         /// Deprecated. Use `extra.error` instead. If both values are provided, `error` takes precedence.
@@ -174,7 +180,12 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
-        /// <param name="feedbackConfig"></param>
+        /// <param name="feedbackConfig">
+        /// The scale the score is checked against. If the feedback key already has a feedback config, this must match it exactly or the request is rejected; if it has none, this becomes the key's feedback config.
+        /// </param>
+        /// <param name="feedbackConfigId">
+        /// The ID of the feedback config this feedback was written against. It must be a feedback config for this feedback key in the same workspace, or the feedback is rejected. It doesn't change how the score is checked; feedback_config does that. If omitted, the server may record the key's enforced feedback config, or the one created for the key by this request.
+        /// </param>
         /// <param name="extra"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -199,6 +210,7 @@ namespace LangSmith
             global::System.Guid? id,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
+            global::System.Guid? feedbackConfigId,
             object? extra)
         {
             this.CreatedAt = createdAt;
@@ -220,6 +232,7 @@ namespace LangSmith
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;
+            this.FeedbackConfigId = feedbackConfigId;
             this.Extra = extra;
         }
 

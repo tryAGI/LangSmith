@@ -16,8 +16,7 @@ namespace LangSmith
         public required global::LangSmith.SandboxesProxySecretValue AccessKeyId { get; set; }
 
         /// <summary>
-        /// IAM role to assume with permissions scoped to the configured S3 mounts.<br/>
-        /// Mutually exclusive with static credentials. Configure only at creation.
+        /// IAM role to assume with AssumeRoleWithWebIdentity, using a short-lived OIDC token LangSmith signs for this workspace; the role's trust policy must trust LangSmith's issuer for the token subject. LangSmith scopes the credentials to the configured S3 mounts. Mutually exclusive with static credentials, and cannot be changed after creation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_arn")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesSandboxAWSMountStaticAuthConfigRoleArnJsonConverter))]
@@ -42,8 +41,7 @@ namespace LangSmith
         /// <param name="accessKeyId"></param>
         /// <param name="secretAccessKey"></param>
         /// <param name="roleArn">
-        /// IAM role to assume with permissions scoped to the configured S3 mounts.<br/>
-        /// Mutually exclusive with static credentials. Configure only at creation.
+        /// IAM role to assume with AssumeRoleWithWebIdentity, using a short-lived OIDC token LangSmith signs for this workspace; the role's trust policy must trust LangSmith's issuer for the token subject. LangSmith scopes the credentials to the configured S3 mounts. Mutually exclusive with static credentials, and cannot be changed after creation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

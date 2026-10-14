@@ -167,6 +167,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        FeedbackConfigsManageEnforced,
+        /// <summary>
+        ///
+        /// </summary>
         FeedbackConfigsUpdate,
         /// <summary>
         ///
@@ -609,6 +613,7 @@ namespace LangSmith
                 AuthzInternalPermission.ExperimentsRun => "experiments:run",
                 AuthzInternalPermission.FeedbackConfigsCreate => "feedback-configs:create",
                 AuthzInternalPermission.FeedbackConfigsDelete => "feedback-configs:delete",
+                AuthzInternalPermission.FeedbackConfigsManageEnforced => "feedback-configs:manage-enforced",
                 AuthzInternalPermission.FeedbackConfigsUpdate => "feedback-configs:update",
                 AuthzInternalPermission.FeedbackCreate => "feedback:create",
                 AuthzInternalPermission.FeedbackDelete => "feedback:delete",
@@ -756,6 +761,7 @@ namespace LangSmith
                 "experiments:run" => AuthzInternalPermission.ExperimentsRun,
                 "feedback-configs:create" => AuthzInternalPermission.FeedbackConfigsCreate,
                 "feedback-configs:delete" => AuthzInternalPermission.FeedbackConfigsDelete,
+                "feedback-configs:manage-enforced" => AuthzInternalPermission.FeedbackConfigsManageEnforced,
                 "feedback-configs:update" => AuthzInternalPermission.FeedbackConfigsUpdate,
                 "feedback:create" => AuthzInternalPermission.FeedbackCreate,
                 "feedback:delete" => AuthzInternalPermission.FeedbackDelete,

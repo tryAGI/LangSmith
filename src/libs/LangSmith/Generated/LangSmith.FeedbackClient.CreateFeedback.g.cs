@@ -620,7 +620,12 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
-        /// <param name="feedbackConfig"></param>
+        /// <param name="feedbackConfig">
+        /// The scale the score is checked against. If the feedback key already has a feedback config, this must match it exactly or the request is rejected; if it has none, this becomes the key's feedback config.
+        /// </param>
+        /// <param name="feedbackConfigId">
+        /// The ID of the feedback config this feedback was written against. It must be a feedback config for this feedback key in the same workspace, or the feedback is rejected. It doesn't change how the score is checked; feedback_config does that. If omitted, the server may record the key's enforced feedback config, or the one created for the key by this request.
+        /// </param>
         /// <param name="extra"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -645,6 +650,7 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::LangSmith.FeedbackSourceVariant12? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
+            global::System.Guid? feedbackConfigId = default,
             object? extra = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -670,6 +676,7 @@ namespace LangSmith
                 Id = id,
                 FeedbackSource = feedbackSource,
                 FeedbackConfig = feedbackConfig,
+                FeedbackConfigId = feedbackConfigId,
                 Extra = extra,
             };
 

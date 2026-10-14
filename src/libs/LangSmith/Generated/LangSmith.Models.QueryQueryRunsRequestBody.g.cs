@@ -61,12 +61,30 @@ namespace LangSmith
         public bool? IsRoot { get; set; }
 
         /// <summary>
+        /// `max_feedback_modified_at` is the exclusive upper bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `filter`, `trace_filter`, or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-12-31T23:59:59Z
+        /// </summary>
+        /// <example>2024-12-31T23:59:59Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_feedback_modified_at")]
+        public global::System.DateTime? MaxFeedbackModifiedAt { get; set; }
+
+        /// <summary>
         /// `max_start_time` is the upper bound for run `start_time` (RFC3339). Defaults to now.<br/>
         /// Example: 2024-12-31T23:59:59Z
         /// </summary>
         /// <example>2024-12-31T23:59:59Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_start_time")]
         public global::System.DateTime? MaxStartTime { get; set; }
+
+        /// <summary>
+        /// `min_feedback_modified_at` is the inclusive lower bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `filter`, `trace_filter`, or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-01-01T00:00:00Z
+        /// </summary>
+        /// <example>2024-01-01T00:00:00Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("min_feedback_modified_at")]
+        public global::System.DateTime? MinFeedbackModifiedAt { get; set; }
 
         /// <summary>
         /// `min_start_time` is the lower bound for run `start_time` (RFC3339). Defaults to 1 day ago.<br/>
@@ -194,9 +212,19 @@ namespace LangSmith
         /// `is_root` returns only root runs (true) or only non-root runs (false).<br/>
         /// Example: true
         /// </param>
+        /// <param name="maxFeedbackModifiedAt">
+        /// `max_feedback_modified_at` is the exclusive upper bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `filter`, `trace_filter`, or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-12-31T23:59:59Z
+        /// </param>
         /// <param name="maxStartTime">
         /// `max_start_time` is the upper bound for run `start_time` (RFC3339). Defaults to now.<br/>
         /// Example: 2024-12-31T23:59:59Z
+        /// </param>
+        /// <param name="minFeedbackModifiedAt">
+        /// `min_feedback_modified_at` is the inclusive lower bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `filter`, `trace_filter`, or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-01-01T00:00:00Z
         /// </param>
         /// <param name="minStartTime">
         /// `min_start_time` is the lower bound for run `start_time` (RFC3339). Defaults to 1 day ago.<br/>
@@ -256,7 +284,9 @@ namespace LangSmith
             bool? hasError,
             global::System.Collections.Generic.IList<global::System.Guid>? ids,
             bool? isRoot,
+            global::System.DateTime? maxFeedbackModifiedAt,
             global::System.DateTime? maxStartTime,
+            global::System.DateTime? minFeedbackModifiedAt,
             global::System.DateTime? minStartTime,
             int? pageSize,
             global::System.Collections.Generic.IList<global::System.Guid>? projectIds,
@@ -274,7 +304,9 @@ namespace LangSmith
             this.HasError = hasError;
             this.Ids = ids;
             this.IsRoot = isRoot;
+            this.MaxFeedbackModifiedAt = maxFeedbackModifiedAt;
             this.MaxStartTime = maxStartTime;
+            this.MinFeedbackModifiedAt = minFeedbackModifiedAt;
             this.MinStartTime = minStartTime;
             this.PageSize = pageSize;
             this.ProjectIds = projectIds;
