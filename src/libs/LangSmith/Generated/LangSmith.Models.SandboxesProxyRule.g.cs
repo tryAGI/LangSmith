@@ -16,6 +16,13 @@ namespace LangSmith
         public global::LangSmith.SandboxesProxyAWSConfig? Aws { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("azure")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesProxyAzureConfigJsonConverter))]
+        public global::LangSmith.SandboxesProxyAzureConfig? Azure { get; set; }
+
+        /// <summary>
         /// Description says what this rule lets the sandbox reach, so an agent driving the sandbox can be told its capabilities. At most 1024 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -37,6 +44,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gcp")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesProxyGCPConfigJsonConverter))]
         public global::LangSmith.SandboxesProxyGCPConfig? Gcp { get; set; }
 
         /// <summary>
@@ -88,6 +96,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="name"></param>
         /// <param name="aws"></param>
+        /// <param name="azure"></param>
         /// <param name="description">
         /// Description says what this rule lets the sandbox reach, so an agent driving the sandbox can be told its capabilities. At most 1024 characters.
         /// </param>
@@ -112,6 +121,7 @@ namespace LangSmith
         public SandboxesProxyRule(
             string name,
             global::LangSmith.SandboxesProxyAWSConfig? aws,
+            global::LangSmith.SandboxesProxyAzureConfig? azure,
             string? description,
             bool? enabled,
             global::System.Collections.Generic.Dictionary<string, string>? envVars,
@@ -123,6 +133,7 @@ namespace LangSmith
             string? type)
         {
             this.Aws = aws;
+            this.Azure = azure;
             this.Description = description;
             this.Enabled = enabled;
             this.EnvVars = envVars;

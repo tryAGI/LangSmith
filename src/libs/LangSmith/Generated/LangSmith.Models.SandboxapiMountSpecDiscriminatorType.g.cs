@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AzureBlob,
+        /// <summary>
+        ///
+        /// </summary>
         Contexthub,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace LangSmith
         {
             return value switch
             {
+                SandboxapiMountSpecDiscriminatorType.AzureBlob => "azure_blob",
                 SandboxapiMountSpecDiscriminatorType.Contexthub => "contexthub",
                 SandboxapiMountSpecDiscriminatorType.Gcs => "gcs",
                 SandboxapiMountSpecDiscriminatorType.Git => "git",
@@ -52,6 +57,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "azure_blob" => SandboxapiMountSpecDiscriminatorType.AzureBlob,
                 "contexthub" => SandboxapiMountSpecDiscriminatorType.Contexthub,
                 "gcs" => SandboxapiMountSpecDiscriminatorType.Gcs,
                 "git" => SandboxapiMountSpecDiscriminatorType.Git,

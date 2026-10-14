@@ -743,6 +743,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteSlackAppConfiguration,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteSsoSettings,
         /// <summary>
         ///
@@ -1467,6 +1471,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        StartAgentAuthSecretInput,
+        /// <summary>
+        ///
+        /// </summary>
         StartOauthConnection,
         /// <summary>
         ///
@@ -1923,6 +1931,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpsertSlackAppConfiguration,
+        /// <summary>
+        ///
+        /// </summary>
         UpsertWorkspaceSecret,
         /// <summary>
         ///
@@ -2129,6 +2141,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteScimUser => "delete_scim_user",
                 AuditLogOperation.DeleteServiceAccount => "delete_service_account",
                 AuditLogOperation.DeleteServiceKey => "delete_service_key",
+                AuditLogOperation.DeleteSlackAppConfiguration => "delete_slack_app_configuration",
                 AuditLogOperation.DeleteSsoSettings => "delete_sso_settings",
                 AuditLogOperation.DeleteTagKey => "delete_tag_key",
                 AuditLogOperation.DeleteTagValue => "delete_tag_value",
@@ -2310,6 +2323,7 @@ namespace LangSmith
                 AuditLogOperation.ShareDataset => "share_dataset",
                 AuditLogOperation.ShareRun => "share_run",
                 AuditLogOperation.ShareThread => "share_thread",
+                AuditLogOperation.StartAgentAuthSecretInput => "start_agent_auth_secret_input",
                 AuditLogOperation.StartOauthConnection => "start_oauth_connection",
                 AuditLogOperation.StartSandboxClaim => "start_sandbox_claim",
                 AuditLogOperation.StopSandboxClaim => "stop_sandbox_claim",
@@ -2424,6 +2438,7 @@ namespace LangSmith
                 AuditLogOperation.UpsertFeatureDisabledModel => "upsert_feature_disabled_model",
                 AuditLogOperation.UpsertGithubAppConfiguration => "upsert_github_app_configuration",
                 AuditLogOperation.UpsertRoleRestriction => "upsert_role_restriction",
+                AuditLogOperation.UpsertSlackAppConfiguration => "upsert_slack_app_configuration",
                 AuditLogOperation.UpsertWorkspaceSecret => "upsert_workspace_secret",
                 AuditLogOperation.ValidateExample => "validate_example",
                 AuditLogOperation.ValidateExamples => "validate_examples",
@@ -2620,6 +2635,7 @@ namespace LangSmith
                 "delete_scim_user" => AuditLogOperation.DeleteScimUser,
                 "delete_service_account" => AuditLogOperation.DeleteServiceAccount,
                 "delete_service_key" => AuditLogOperation.DeleteServiceKey,
+                "delete_slack_app_configuration" => AuditLogOperation.DeleteSlackAppConfiguration,
                 "delete_sso_settings" => AuditLogOperation.DeleteSsoSettings,
                 "delete_tag_key" => AuditLogOperation.DeleteTagKey,
                 "delete_tag_value" => AuditLogOperation.DeleteTagValue,
@@ -2801,6 +2817,7 @@ namespace LangSmith
                 "share_dataset" => AuditLogOperation.ShareDataset,
                 "share_run" => AuditLogOperation.ShareRun,
                 "share_thread" => AuditLogOperation.ShareThread,
+                "start_agent_auth_secret_input" => AuditLogOperation.StartAgentAuthSecretInput,
                 "start_oauth_connection" => AuditLogOperation.StartOauthConnection,
                 "start_sandbox_claim" => AuditLogOperation.StartSandboxClaim,
                 "stop_sandbox_claim" => AuditLogOperation.StopSandboxClaim,
@@ -2915,6 +2932,7 @@ namespace LangSmith
                 "upsert_feature_disabled_model" => AuditLogOperation.UpsertFeatureDisabledModel,
                 "upsert_github_app_configuration" => AuditLogOperation.UpsertGithubAppConfiguration,
                 "upsert_role_restriction" => AuditLogOperation.UpsertRoleRestriction,
+                "upsert_slack_app_configuration" => AuditLogOperation.UpsertSlackAppConfiguration,
                 "upsert_workspace_secret" => AuditLogOperation.UpsertWorkspaceSecret,
                 "validate_example" => AuditLogOperation.ValidateExample,
                 "validate_examples" => AuditLogOperation.ValidateExamples,

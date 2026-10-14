@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class SandboxesSandboxGCPMountAuthConfig
+    public readonly partial struct SandboxesSandboxGCPMountAuthConfig
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace LangSmith
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::LangSmith.SandboxesSandboxGCPMountAuthConfig),
-                jsonSerializerContext) as global::LangSmith.SandboxesSandboxGCPMountAuthConfig;
+                jsonSerializerContext) as global::LangSmith.SandboxesSandboxGCPMountAuthConfig?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace LangSmith
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::LangSmith.SandboxesSandboxGCPMountAuthConfig),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.SandboxesSandboxGCPMountAuthConfig;
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.SandboxesSandboxGCPMountAuthConfig?;
         }
 
         /// <summary>
