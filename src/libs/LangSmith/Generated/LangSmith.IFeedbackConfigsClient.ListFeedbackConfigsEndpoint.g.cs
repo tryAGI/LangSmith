@@ -19,6 +19,10 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="includeAllConfigs">
+        /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -29,6 +33,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -46,6 +51,10 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="includeAllConfigs">
+        /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -56,6 +65,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
