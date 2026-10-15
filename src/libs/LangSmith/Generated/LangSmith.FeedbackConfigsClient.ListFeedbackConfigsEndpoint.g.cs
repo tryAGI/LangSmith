@@ -46,6 +46,7 @@ namespace LangSmith
             int? limit,
             ref bool? sortByDesc,
             ref bool? readAfterWrite,
+            bool? isEnforced,
             ref bool? includeAllConfigs);
         partial void PrepareListFeedbackConfigsEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -56,6 +57,7 @@ namespace LangSmith
             int? limit,
             bool? sortByDesc,
             bool? readAfterWrite,
+            bool? isEnforced,
             bool? includeAllConfigs);
         partial void ProcessListFeedbackConfigsEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -81,6 +83,9 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="isEnforced">
+        /// Only enforced configs when true, only unenforced when false.
+        /// </param>
         /// <param name="includeAllConfigs">
         /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
         /// Default Value: false
@@ -95,6 +100,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? isEnforced = default,
             bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -106,6 +112,7 @@ namespace LangSmith
                 limit: limit,
                 sortByDesc: sortByDesc,
                 readAfterWrite: readAfterWrite,
+                isEnforced: isEnforced,
                 includeAllConfigs: includeAllConfigs,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -128,6 +135,9 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="isEnforced">
+        /// Only enforced configs when true, only unenforced when false.
+        /// </param>
         /// <param name="includeAllConfigs">
         /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
         /// Default Value: false
@@ -142,6 +152,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? isEnforced = default,
             bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -156,6 +167,7 @@ namespace LangSmith
                 limit: limit,
                 sortByDesc: ref sortByDesc,
                 readAfterWrite: ref readAfterWrite,
+                isEnforced: isEnforced,
                 includeAllConfigs: ref includeAllConfigs);
 
 
@@ -193,6 +205,7 @@ namespace LangSmith
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("read_after_write", readAfterWrite?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("is_enforced", isEnforced?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include_all_configs", includeAllConfigs?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -241,6 +254,7 @@ namespace LangSmith
                     limit: limit,
                     sortByDesc: sortByDesc,
                     readAfterWrite: readAfterWrite,
+                    isEnforced: isEnforced,
                     includeAllConfigs: includeAllConfigs);
 
                 return __httpRequest;

@@ -21,7 +21,7 @@ namespace LangSmith
         public global::LangSmith.DataPlanesUpdateDataPlaneFleetOIDCSettings? FleetOidc { get; set; }
 
         /// <summary>
-        /// MaintenanceWindow is a weekly UTC window: two hours on AWS, or four hours on Azure.
+        /// MaintenanceWindow is a weekly UTC window: two hours on AWS and GCP, or four hours on Azure.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintenance_window")]
         public string? MaintenanceWindow { get; set; }
@@ -44,7 +44,7 @@ namespace LangSmith
         /// <param name="firewall"></param>
         /// <param name="fleetOidc"></param>
         /// <param name="maintenanceWindow">
-        /// MaintenanceWindow is a weekly UTC window: two hours on AWS, or four hours on Azure.
+        /// MaintenanceWindow is a weekly UTC window: two hours on AWS and GCP, or four hours on Azure.
         /// </param>
         /// <param name="ttl"></param>
 #if NET7_0_OR_GREATER

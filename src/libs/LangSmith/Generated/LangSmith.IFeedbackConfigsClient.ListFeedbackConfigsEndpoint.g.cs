@@ -19,6 +19,9 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="isEnforced">
+        /// Only enforced configs when true, only unenforced when false.
+        /// </param>
         /// <param name="includeAllConfigs">
         /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
         /// Default Value: false
@@ -33,6 +36,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? isEnforced = default,
             bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -51,6 +55,9 @@ namespace LangSmith
         /// <param name="readAfterWrite">
         /// Default Value: false
         /// </param>
+        /// <param name="isEnforced">
+        /// Only enforced configs when true, only unenforced when false.
+        /// </param>
         /// <param name="includeAllConfigs">
         /// Return every config of each key, deleted ones included, instead of one config per key. Pages of up to 100 configs unless ``limit`` is set; ``X-Pagination-Total`` gives the full count.<br/>
         /// Default Value: false
@@ -65,6 +72,7 @@ namespace LangSmith
             int? limit = default,
             bool? sortByDesc = default,
             bool? readAfterWrite = default,
+            bool? isEnforced = default,
             bool? includeAllConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

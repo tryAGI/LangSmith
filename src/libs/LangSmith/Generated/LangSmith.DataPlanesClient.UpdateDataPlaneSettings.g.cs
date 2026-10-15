@@ -576,7 +576,7 @@ namespace LangSmith
         /// <param name="firewall"></param>
         /// <param name="fleetOidc"></param>
         /// <param name="maintenanceWindow">
-        /// MaintenanceWindow is a weekly UTC window: two hours on AWS, or four hours on Azure.
+        /// MaintenanceWindow is a weekly UTC window: two hours on AWS and GCP, or four hours on Azure.
         /// </param>
         /// <param name="ttl"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

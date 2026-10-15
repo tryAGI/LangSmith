@@ -40,48 +40,61 @@ namespace LangSmith
             };
         partial void PrepareDeleteFeedbackConfigEndpointArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string feedbackKey);
+            ref string? feedbackKey,
+            global::System.Guid? id);
         partial void PrepareDeleteFeedbackConfigEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string feedbackKey);
+            string? feedbackKey,
+            global::System.Guid? id);
         partial void ProcessDeleteFeedbackConfigEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
         /// Delete Feedback Config Endpoint<br/>
-        /// Soft delete a feedback config by marking it as deleted.<br/>
+        /// Soft delete one feedback config by id, or every config of a feedback key.<br/>
         /// The config can be recreated later with the same key (simple reuse pattern).<br/>
-        /// Existing feedback records with this key will remain unchanged.
+        /// Existing feedback records with this key will remain unchanged. Deleting an<br/>
+        /// enforced config turns off its enforcement instead of removing it, and needs<br/>
+        /// the feedback-configs:manage-enforced permission.<br/>
+        /// Deleting an unenforced config that an annotation queue uses is refused.
         /// </summary>
         /// <param name="feedbackKey"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task DeleteFeedbackConfigEndpointAsync(
-            string feedbackKey,
+            string? feedbackKey = default,
+            global::System.Guid? id = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             await DeleteFeedbackConfigEndpointAsResponseAsync(
                 feedbackKey: feedbackKey,
+                id: id,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete Feedback Config Endpoint<br/>
-        /// Soft delete a feedback config by marking it as deleted.<br/>
+        /// Soft delete one feedback config by id, or every config of a feedback key.<br/>
         /// The config can be recreated later with the same key (simple reuse pattern).<br/>
-        /// Existing feedback records with this key will remain unchanged.
+        /// Existing feedback records with this key will remain unchanged. Deleting an<br/>
+        /// enforced config turns off its enforcement instead of removing it, and needs<br/>
+        /// the feedback-configs:manage-enforced permission.<br/>
+        /// Deleting an unenforced config that an annotation queue uses is refused.
         /// </summary>
         /// <param name="feedbackKey"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse> DeleteFeedbackConfigEndpointAsResponseAsync(
-            string feedbackKey,
+            string? feedbackKey = default,
+            global::System.Guid? id = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,7 +102,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareDeleteFeedbackConfigEndpointArguments(
                 httpClient: HttpClient,
-                feedbackKey: ref feedbackKey);
+                feedbackKey: ref feedbackKey,
+                id: id);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -120,7 +134,8 @@ namespace LangSmith
                                 servers: s_DeleteFeedbackConfigEndpointServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddRequiredParameter("feedback_key", feedbackKey)
+                                .AddOptionalParameter("feedback_key", feedbackKey)
+                                .AddOptionalParameter("id", id?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -162,7 +177,8 @@ namespace LangSmith
                 PrepareDeleteFeedbackConfigEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedbackKey: feedbackKey);
+                    feedbackKey: feedbackKey,
+                    id: id);
 
                 return __httpRequest;
             }
@@ -341,6 +357,70 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            //
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            //
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {

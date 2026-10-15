@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public global::System.Guid? Id { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FeedbackKey { get; set; }
@@ -37,6 +43,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="UpdateFeedbackConfigSchema" /> class.
         /// </summary>
         /// <param name="feedbackKey"></param>
+        /// <param name="id"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="isLowerScoreBetter"></param>
 #if NET7_0_OR_GREATER
@@ -44,9 +51,11 @@ namespace LangSmith
 #endif
         public UpdateFeedbackConfigSchema(
             string feedbackKey,
+            global::System.Guid? id,
             global::LangSmith.FeedbackConfig? feedbackConfig,
             bool? isLowerScoreBetter)
         {
+            this.Id = id;
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.FeedbackConfig = feedbackConfig;
             this.IsLowerScoreBetter = isLowerScoreBetter;

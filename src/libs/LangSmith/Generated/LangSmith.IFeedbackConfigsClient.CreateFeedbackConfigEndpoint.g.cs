@@ -36,6 +36,9 @@ namespace LangSmith
         /// <param name="isLowerScoreBetter">
         /// Default Value: false
         /// </param>
+        /// <param name="isEnforced">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -43,6 +46,7 @@ namespace LangSmith
             string feedbackKey,
             global::LangSmith.FeedbackConfig feedbackConfig,
             bool? isLowerScoreBetter = default,
+            bool? isEnforced = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
