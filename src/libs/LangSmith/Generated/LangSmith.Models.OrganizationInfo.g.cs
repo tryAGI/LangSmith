@@ -108,13 +108,6 @@ namespace LangSmith
         public bool? MemberDisabled { get; set; }
 
         /// <summary>
-        /// Whether the current request is authenticated via SAML SSO.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_sso_user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsSsoUser { get; set; }
-
-        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
@@ -294,9 +287,6 @@ namespace LangSmith
         /// raising. Changing a field's type here changes what Metronome values are accepted for it.
         /// </param>
         /// <param name="isPersonal"></param>
-        /// <param name="isSsoUser">
-        /// Whether the current request is authenticated via SAML SSO.
-        /// </param>
         /// <param name="id"></param>
         /// <param name="displayName"></param>
         /// <param name="avatarUrl"></param>
@@ -377,7 +367,6 @@ namespace LangSmith
         public OrganizationInfo(
             global::LangSmith.OrganizationConfig config,
             bool isPersonal,
-            bool isSsoUser,
             global::System.Guid? id,
             string? displayName,
             string? avatarUrl,
@@ -434,7 +423,6 @@ namespace LangSmith
             this.OrgRoleId = orgRoleId;
             this.Disabled = disabled;
             this.MemberDisabled = memberDisabled;
-            this.IsSsoUser = isSsoUser;
             this.SsoOnly = ssoOnly;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.InvitesEnabled = invitesEnabled;

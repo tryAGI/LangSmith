@@ -107,13 +107,6 @@ namespace LangSmith
         public bool? IsPersonal { get; set; }
 
         /// <summary>
-        /// Whether the current request is authenticated via SAML SSO.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_sso_user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsSsoUser { get; set; }
-
-        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
@@ -270,9 +263,6 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrgsOrganizationInfo" /> class.
         /// </summary>
-        /// <param name="isSsoUser">
-        /// Whether the current request is authenticated via SAML SSO.
-        /// </param>
         /// <param name="apiKeyCreationFromApiKeysEnabled"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
@@ -331,7 +321,6 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrgsOrganizationInfo(
-            bool isSsoUser,
             bool? apiKeyCreationFromApiKeysEnabled,
             string? avatarUrl,
             bool? byocCreateSaasWorkspaceEnabled,
@@ -389,7 +378,6 @@ namespace LangSmith
             this.IpAllowlist = ipAllowlist;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.IsPersonal = isPersonal;
-            this.IsSsoUser = isSsoUser;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
