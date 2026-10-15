@@ -19,7 +19,7 @@ namespace LangSmith
         public global::LangSmith.AgentCreateIssuesAgentRequestAnalysisLevel? AnalysisLevel { get; set; }
 
         /// <summary>
-        /// AutoOpenFixPR opens a draft pull request for every fix the agent<br/>
+        /// AutoOpenFixPR opens a pull request for every fix the agent<br/>
         /// produces — one per repository it changed — instead of waiting for one to<br/>
         /// be opened from the issue. Has no effect until the board tracks a<br/>
         /// repository, since a fix has nowhere to open. Omit for false.
@@ -85,7 +85,7 @@ namespace LangSmith
         /// "standard".
         /// </param>
         /// <param name="autoOpenFixPr">
-        /// AutoOpenFixPR opens a draft pull request for every fix the agent<br/>
+        /// AutoOpenFixPR opens a pull request for every fix the agent<br/>
         /// produces — one per repository it changed — instead of waiting for one to<br/>
         /// be opened from the issue. Has no effect until the board tracks a<br/>
         /// repository, since a fix has nowhere to open. Omit for false.

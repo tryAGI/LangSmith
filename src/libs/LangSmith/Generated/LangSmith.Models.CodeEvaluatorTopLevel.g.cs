@@ -34,6 +34,12 @@ namespace LangSmith
         public global::LangSmith.CodeEvaluatorInputType? CodeEvaluatorInput { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("advanced_features_enabled")]
+        public bool? AdvancedFeaturesEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,6 +56,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="codeEvaluatorInput"></param>
+        /// <param name="advancedFeaturesEnabled"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,12 +64,14 @@ namespace LangSmith
             string code,
             global::LangSmith.CodeEvaluatorLanguage? language,
             bool? requireAttachments,
-            global::LangSmith.CodeEvaluatorInputType? codeEvaluatorInput)
+            global::LangSmith.CodeEvaluatorInputType? codeEvaluatorInput,
+            bool? advancedFeaturesEnabled)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Language = language;
             this.RequireAttachments = requireAttachments;
             this.CodeEvaluatorInput = codeEvaluatorInput;
+            this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
         }
 
         /// <summary>

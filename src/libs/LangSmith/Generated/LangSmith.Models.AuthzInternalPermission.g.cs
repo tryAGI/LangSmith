@@ -31,6 +31,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AgentAuthCredentialsUse,
+        /// <summary>
+        ///
+        /// </summary>
         AlertsCreate,
         /// <summary>
         ///
@@ -579,6 +583,7 @@ namespace LangSmith
                 AuthzInternalPermission.AgentAuthConnectionsRead => "agent-auth-connections:read",
                 AuthzInternalPermission.AgentAuthConnectionsRevoke => "agent-auth-connections:revoke",
                 AuthzInternalPermission.AgentAuthConnectionsUpdate => "agent-auth-connections:update",
+                AuthzInternalPermission.AgentAuthCredentialsUse => "agent-auth-credentials:use",
                 AuthzInternalPermission.AlertsCreate => "alerts:create",
                 AuthzInternalPermission.AlertsDelete => "alerts:delete",
                 AuthzInternalPermission.AlertsRead => "alerts:read",
@@ -727,6 +732,7 @@ namespace LangSmith
                 "agent-auth-connections:read" => AuthzInternalPermission.AgentAuthConnectionsRead,
                 "agent-auth-connections:revoke" => AuthzInternalPermission.AgentAuthConnectionsRevoke,
                 "agent-auth-connections:update" => AuthzInternalPermission.AgentAuthConnectionsUpdate,
+                "agent-auth-credentials:use" => AuthzInternalPermission.AgentAuthCredentialsUse,
                 "alerts:create" => AuthzInternalPermission.AlertsCreate,
                 "alerts:delete" => AuthzInternalPermission.AlertsDelete,
                 "alerts:read" => AuthzInternalPermission.AlertsRead,

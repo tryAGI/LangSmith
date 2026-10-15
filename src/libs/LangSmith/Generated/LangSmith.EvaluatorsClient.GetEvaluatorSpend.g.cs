@@ -48,6 +48,7 @@ namespace LangSmith
             ref string? type,
             ref string? feedbackKey,
             global::System.Collections.Generic.IList<string>? tagValueId,
+            ref string? agentId,
             ref string periodStart);
         partial void PrepareGetEvaluatorSpendRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -60,6 +61,7 @@ namespace LangSmith
             string? type,
             string? feedbackKey,
             global::System.Collections.Generic.IList<string>? tagValueId,
+            string? agentId,
             string periodStart);
         partial void ProcessGetEvaluatorSpendResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -72,7 +74,7 @@ namespace LangSmith
 
         /// <summary>
         /// Get evaluator spend<br/>
-        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, and tag_value_id may be supplied with group_by to narrow listing aggregations.
+        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, tag_value_id, and agent_id may be supplied with group_by to narrow listing aggregations.
         /// </summary>
         /// <param name="groupBy"></param>
         /// <param name="evaluatorId"></param>
@@ -82,6 +84,7 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="agentId"></param>
         /// <param name="periodStart"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -96,6 +99,7 @@ namespace LangSmith
             string? type = default,
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
+            string? agentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,6 +113,7 @@ namespace LangSmith
                 type: type,
                 feedbackKey: feedbackKey,
                 tagValueId: tagValueId,
+                agentId: agentId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -117,7 +122,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get evaluator spend<br/>
-        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, and tag_value_id may be supplied with group_by to narrow listing aggregations.
+        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, tag_value_id, and agent_id may be supplied with group_by to narrow listing aggregations.
         /// </summary>
         /// <param name="groupBy"></param>
         /// <param name="evaluatorId"></param>
@@ -127,6 +132,7 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="agentId"></param>
         /// <param name="periodStart"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -141,6 +147,7 @@ namespace LangSmith
             string? type = default,
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
+            string? agentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -156,6 +163,7 @@ namespace LangSmith
                 type: ref type,
                 feedbackKey: ref feedbackKey,
                 tagValueId: tagValueId,
+                agentId: ref agentId,
                 periodStart: ref periodStart);
 
 
@@ -195,6 +203,7 @@ namespace LangSmith
                                 .AddOptionalParameter("type", type)
                                 .AddOptionalParameter("feedback_key", feedbackKey)
                                 .AddOptionalParameter("tag_value_id", tagValueId, delimiter: ",", explode: false)
+                                .AddOptionalParameter("agent_id", agentId)
                                 .AddRequiredParameter("period_start", periodStart)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -245,6 +254,7 @@ namespace LangSmith
                     type: type,
                     feedbackKey: feedbackKey,
                     tagValueId: tagValueId,
+                    agentId: agentId,
                     periodStart: periodStart);
 
                 return __httpRequest;
