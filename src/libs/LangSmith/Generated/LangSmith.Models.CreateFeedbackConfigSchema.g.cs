@@ -29,6 +29,12 @@ namespace LangSmith
         public bool? IsLowerScoreBetter { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_enforced")]
+        public bool? IsEnforced { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,17 +48,22 @@ namespace LangSmith
         /// <param name="isLowerScoreBetter">
         /// Default Value: false
         /// </param>
+        /// <param name="isEnforced">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateFeedbackConfigSchema(
             string feedbackKey,
             global::LangSmith.FeedbackConfig feedbackConfig,
-            bool? isLowerScoreBetter)
+            bool? isLowerScoreBetter,
+            bool? isEnforced)
         {
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.FeedbackConfig = feedbackConfig ?? throw new global::System.ArgumentNullException(nameof(feedbackConfig));
             this.IsLowerScoreBetter = isLowerScoreBetter;
+            this.IsEnforced = isEnforced;
         }
 
         /// <summary>

@@ -115,6 +115,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateAgentAuthApp,
+        /// <summary>
+        ///
+        /// </summary>
         CreateAgentAuthConnection,
         /// <summary>
         ///
@@ -456,6 +460,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteAgent,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteAgentAuthApp,
         /// <summary>
         ///
         /// </summary>
@@ -1563,6 +1571,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateAgentAuthApp,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateAgentAuthConnection,
         /// <summary>
         ///
@@ -1984,6 +1996,7 @@ namespace LangSmith
                 AuditLogOperation.CountExamples => "count_examples",
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
                 AuditLogOperation.CreateAgent => "create_agent",
+                AuditLogOperation.CreateAgentAuthApp => "create_agent_auth_app",
                 AuditLogOperation.CreateAgentAuthConnection => "create_agent_auth_connection",
                 AuditLogOperation.CreateAgentAuthOidcIntegration => "create_agent_auth_oidc_integration",
                 AuditLogOperation.CreateAgentEnvironment => "create_agent_environment",
@@ -2070,6 +2083,7 @@ namespace LangSmith
                 AuditLogOperation.CreateWorkspace => "create_workspace",
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
                 AuditLogOperation.DeleteAgent => "delete_agent",
+                AuditLogOperation.DeleteAgentAuthApp => "delete_agent_auth_app",
                 AuditLogOperation.DeleteAgentAuthConnection => "delete_agent_auth_connection",
                 AuditLogOperation.DeleteAgentAuthOidcIntegration => "delete_agent_auth_oidc_integration",
                 AuditLogOperation.DeleteAlertRule => "delete_alert_rule",
@@ -2346,6 +2360,7 @@ namespace LangSmith
                 AuditLogOperation.UnshareThread => "unshare_thread",
                 AuditLogOperation.UpdateAccessPolicy => "update_access_policy",
                 AuditLogOperation.UpdateAgent => "update_agent",
+                AuditLogOperation.UpdateAgentAuthApp => "update_agent_auth_app",
                 AuditLogOperation.UpdateAgentAuthConnection => "update_agent_auth_connection",
                 AuditLogOperation.UpdateAgentAuthOidcIntegration => "update_agent_auth_oidc_integration",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
@@ -2478,6 +2493,7 @@ namespace LangSmith
                 "count_examples" => AuditLogOperation.CountExamples,
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
                 "create_agent" => AuditLogOperation.CreateAgent,
+                "create_agent_auth_app" => AuditLogOperation.CreateAgentAuthApp,
                 "create_agent_auth_connection" => AuditLogOperation.CreateAgentAuthConnection,
                 "create_agent_auth_oidc_integration" => AuditLogOperation.CreateAgentAuthOidcIntegration,
                 "create_agent_environment" => AuditLogOperation.CreateAgentEnvironment,
@@ -2564,6 +2580,7 @@ namespace LangSmith
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
                 "delete_agent" => AuditLogOperation.DeleteAgent,
+                "delete_agent_auth_app" => AuditLogOperation.DeleteAgentAuthApp,
                 "delete_agent_auth_connection" => AuditLogOperation.DeleteAgentAuthConnection,
                 "delete_agent_auth_oidc_integration" => AuditLogOperation.DeleteAgentAuthOidcIntegration,
                 "delete_alert_rule" => AuditLogOperation.DeleteAlertRule,
@@ -2840,6 +2857,7 @@ namespace LangSmith
                 "unshare_thread" => AuditLogOperation.UnshareThread,
                 "update_access_policy" => AuditLogOperation.UpdateAccessPolicy,
                 "update_agent" => AuditLogOperation.UpdateAgent,
+                "update_agent_auth_app" => AuditLogOperation.UpdateAgentAuthApp,
                 "update_agent_auth_connection" => AuditLogOperation.UpdateAgentAuthConnection,
                 "update_agent_auth_oidc_integration" => AuditLogOperation.UpdateAgentAuthOidcIntegration,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,

@@ -486,6 +486,7 @@ namespace LangSmith
         /// <summary>
         /// Update Feedback Config Endpoint
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="isLowerScoreBetter"></param>
@@ -494,6 +495,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.FeedbackConfigSchema> UpdateFeedbackConfigEndpointAsync(
             string feedbackKey,
+            global::System.Guid? id = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
             bool? isLowerScoreBetter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -501,6 +503,7 @@ namespace LangSmith
         {
             var __request = new global::LangSmith.UpdateFeedbackConfigSchema
             {
+                Id = id,
                 FeedbackKey = feedbackKey,
                 FeedbackConfig = feedbackConfig,
                 IsLowerScoreBetter = isLowerScoreBetter,
