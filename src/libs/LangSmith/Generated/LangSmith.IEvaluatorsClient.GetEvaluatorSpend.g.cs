@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Get evaluator spend<br/>
-        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, and tag_value_id may be supplied with group_by to narrow listing aggregations.
+        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, tag_value_id, and agent_id may be supplied with group_by to narrow listing aggregations.
         /// </summary>
         /// <param name="groupBy"></param>
         /// <param name="evaluatorId"></param>
@@ -16,6 +16,7 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="agentId"></param>
         /// <param name="periodStart"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -30,11 +31,12 @@ namespace LangSmith
             string? type = default,
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
+            string? agentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get evaluator spend<br/>
-        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, and tag_value_id may be supplied with group_by to narrow listing aggregations.
+        /// Returns per-day LLM evaluator spend for the requested 7-day period, grouped by evaluator, resource, or run rule. Exactly one of group_by, evaluator_id, session_id, or dataset_id is required. resource_id, type, feedback_key, tag_value_id, and agent_id may be supplied with group_by to narrow listing aggregations.
         /// </summary>
         /// <param name="groupBy"></param>
         /// <param name="evaluatorId"></param>
@@ -44,6 +46,7 @@ namespace LangSmith
         /// <param name="type"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="tagValueId"></param>
+        /// <param name="agentId"></param>
         /// <param name="periodStart"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -58,6 +61,7 @@ namespace LangSmith
             string? type = default,
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
+            string? agentId = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
