@@ -52,6 +52,17 @@ namespace LangSmith
         public bool? RequireAttachments { get; set; }
 
         /// <summary>
+        /// WorkspaceSecretsKeys names the workspace secrets this evaluator may use.<br/>
+        /// Each is sent as a header on requests to the hosts allowed for that<br/>
+        /// secret; evaluator code never sees the value. Requires<br/>
+        /// advanced_features_enabled, and each secret needs an allowed host with a<br/>
+        /// header. Omit to keep the current list; [] clears it. Changing it does<br/>
+        /// not rebuild the evaluator.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_secrets_keys")]
+        public global::System.Collections.Generic.IList<string>? WorkspaceSecretsKeys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +83,14 @@ namespace LangSmith
         /// RequireAttachments is fetch-time config: updating it does not rebuild<br/>
         /// the sandbox snapshot.
         /// </param>
+        /// <param name="workspaceSecretsKeys">
+        /// WorkspaceSecretsKeys names the workspace secrets this evaluator may use.<br/>
+        /// Each is sent as a header on requests to the hosts allowed for that<br/>
+        /// secret; evaluator code never sees the value. Requires<br/>
+        /// advanced_features_enabled, and each secret needs an allowed host with a<br/>
+        /// header. Omit to keep the current list; [] clears it. Changing it does<br/>
+        /// not rebuild the evaluator.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,7 +101,8 @@ namespace LangSmith
             string? dependencies,
             string? language,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings,
-            bool? requireAttachments)
+            bool? requireAttachments,
+            global::System.Collections.Generic.IList<string>? workspaceSecretsKeys)
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
@@ -91,6 +111,7 @@ namespace LangSmith
             this.Language = language;
             this.ManagedCodeEvaluatorSettings = managedCodeEvaluatorSettings;
             this.RequireAttachments = requireAttachments;
+            this.WorkspaceSecretsKeys = workspaceSecretsKeys;
         }
 
         /// <summary>

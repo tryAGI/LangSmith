@@ -56,7 +56,11 @@ namespace LangSmith
 
         /// <summary>
         /// Test Prompt Webhook<br/>
-        /// Test a specific prompt webhook.
+        /// Test a specific prompt webhook.<br/>
+        /// Sends the sample payload to the webhook configuration in the request body<br/>
+        /// without saving it, but only if the webhook's triggers include the payload's<br/>
+        /// event and its prompt filters match the payload's prompt. Otherwise nothing<br/>
+        /// is sent. Fails if the destination does not accept the payload.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +83,11 @@ namespace LangSmith
         }
         /// <summary>
         /// Test Prompt Webhook<br/>
-        /// Test a specific prompt webhook.
+        /// Test a specific prompt webhook.<br/>
+        /// Sends the sample payload to the webhook configuration in the request body<br/>
+        /// without saving it, but only if the webhook's triggers include the payload's<br/>
+        /// event and its prompt filters match the payload's prompt. Otherwise nothing<br/>
+        /// is sent. Fails if the destination does not accept the payload.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -487,7 +495,11 @@ namespace LangSmith
         }
         /// <summary>
         /// Test Prompt Webhook<br/>
-        /// Test a specific prompt webhook.
+        /// Test a specific prompt webhook.<br/>
+        /// Sends the sample payload to the webhook configuration in the request body<br/>
+        /// without saving it, but only if the webhook's triggers include the payload's<br/>
+        /// event and its prompt filters match the payload's prompt. Otherwise nothing<br/>
+        /// is sent. Fails if the destination does not accept the payload.
         /// </summary>
         /// <param name="webhook">
         /// Base schema for prompt webhooks.

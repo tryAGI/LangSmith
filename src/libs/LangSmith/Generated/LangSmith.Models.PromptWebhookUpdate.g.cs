@@ -4,36 +4,38 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Schema for updating a prompt webhook.
+    /// Schema for updating a prompt webhook.<br/>
+    /// Omitted fields keep their current values. A list or headers value that is<br/>
+    /// set replaces the stored value.
     /// </summary>
     public sealed partial class PromptWebhookUpdate
     {
         /// <summary>
-        ///
+        /// IDs of the prompts whose events fire the webhook, replacing the current list. Omit to keep it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_prompts")]
         public global::System.Collections.Generic.IList<global::System.Guid>? IncludePrompts { get; set; }
 
         /// <summary>
-        ///
+        /// IDs of prompts whose events never fire the webhook, replacing the current list. Omit to keep it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_prompts")]
         public global::System.Collections.Generic.IList<global::System.Guid>? ExcludePrompts { get; set; }
 
         /// <summary>
-        ///
+        /// URL that receives the POST requests. Omit to keep the current URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
         /// <summary>
-        ///
+        /// HTTP headers sent with each request, replacing all current headers. Omit to keep them. Masked values (********) from a read are rejected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         public object? Headers { get; set; }
 
         /// <summary>
-        ///
+        /// Events that fire the webhook (commit, tag:create, tag:update), replacing the current list. Omit to keep it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggers")]
         public global::System.Collections.Generic.IList<global::LangSmith.EPromptWebhookTrigger>? Triggers { get; set; }
@@ -47,11 +49,21 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptWebhookUpdate" /> class.
         /// </summary>
-        /// <param name="includePrompts"></param>
-        /// <param name="excludePrompts"></param>
-        /// <param name="url"></param>
-        /// <param name="headers"></param>
-        /// <param name="triggers"></param>
+        /// <param name="includePrompts">
+        /// IDs of the prompts whose events fire the webhook, replacing the current list. Omit to keep it.
+        /// </param>
+        /// <param name="excludePrompts">
+        /// IDs of prompts whose events never fire the webhook, replacing the current list. Omit to keep it.
+        /// </param>
+        /// <param name="url">
+        /// URL that receives the POST requests. Omit to keep the current URL.
+        /// </param>
+        /// <param name="headers">
+        /// HTTP headers sent with each request, replacing all current headers. Omit to keep them. Masked values (********) from a read are rejected.
+        /// </param>
+        /// <param name="triggers">
+        /// Events that fire the webhook (commit, tag:create, tag:update), replacing the current list. Omit to keep it.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

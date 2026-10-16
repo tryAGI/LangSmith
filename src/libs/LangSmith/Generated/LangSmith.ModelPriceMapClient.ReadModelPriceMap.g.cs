@@ -42,13 +42,19 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
             ref int? limit,
-            ref string? q);
+            ref string? q,
+            global::System.Collections.Generic.IList<string>? provider,
+            ref string? sortBy,
+            ref global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder);
         partial void PrepareReadModelPriceMapRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
             int? limit,
-            string? q);
+            string? q,
+            global::System.Collections.Generic.IList<string>? provider,
+            string? sortBy,
+            global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder);
         partial void ProcessReadModelPriceMapResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,6 +74,16 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="q"></param>
+        /// <param name="provider">
+        /// Only return price maps for these providers (case-insensitive).
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort on. Defaults to match priority order.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort direction for sort_by. Unset start dates sort last.<br/>
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -75,6 +91,9 @@ namespace LangSmith
             int? offset = default,
             int? limit = default,
             string? q = default,
+            global::System.Collections.Generic.IList<string>? provider = default,
+            string? sortBy = default,
+            global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,6 +101,9 @@ namespace LangSmith
                 offset: offset,
                 limit: limit,
                 q: q,
+                provider: provider,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -98,6 +120,16 @@ namespace LangSmith
         /// Default Value: 100
         /// </param>
         /// <param name="q"></param>
+        /// <param name="provider">
+        /// Only return price maps for these providers (case-insensitive).
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort on. Defaults to match priority order.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort direction for sort_by. Unset start dates sort last.<br/>
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -105,6 +137,9 @@ namespace LangSmith
             int? offset = default,
             int? limit = default,
             string? q = default,
+            global::System.Collections.Generic.IList<string>? provider = default,
+            string? sortBy = default,
+            global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -114,7 +149,10 @@ namespace LangSmith
                 httpClient: HttpClient,
                 offset: ref offset,
                 limit: ref limit,
-                q: ref q);
+                q: ref q,
+                provider: provider,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -148,6 +186,9 @@ namespace LangSmith
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("q", q)
+                                .AddOptionalParameter("provider", provider, delimiter: ",", explode: true)
+                                .AddOptionalParameter("sort_by", sortBy)
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -191,7 +232,10 @@ namespace LangSmith
                     httpRequestMessage: __httpRequest,
                     offset: offset,
                     limit: limit,
-                    q: q);
+                    q: q,
+                    provider: provider,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder);
 
                 return __httpRequest;
             }

@@ -451,6 +451,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateWebhookDestination,
+        /// <summary>
+        ///
+        /// </summary>
         CreateWorkspace,
         /// <summary>
         ///
@@ -792,6 +796,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteUsageLimit,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteWebhookDestination,
         /// <summary>
         ///
         /// </summary>
@@ -1419,6 +1427,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RefreshMcpGatewayTools,
+        /// <summary>
+        ///
+        /// </summary>
         RegisterMcpServerOauth,
         /// <summary>
         ///
@@ -1911,6 +1923,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateWebhookDestination,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateWorkspace,
         /// <summary>
         ///
@@ -2080,6 +2096,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTeamWorkspaceGrant => "create_team_workspace_grant",
                 AuditLogOperation.CreateTenant => "create_tenant",
                 AuditLogOperation.CreateTool => "create_tool",
+                AuditLogOperation.CreateWebhookDestination => "create_webhook_destination",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
                 AuditLogOperation.DeleteAgent => "delete_agent",
@@ -2166,6 +2183,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteTracerSession => "delete_tracer_session",
                 AuditLogOperation.DeleteTracerSessions => "delete_tracer_sessions",
                 AuditLogOperation.DeleteUsageLimit => "delete_usage_limit",
+                AuditLogOperation.DeleteWebhookDestination => "delete_webhook_destination",
                 AuditLogOperation.DeleteWorkspace => "delete_workspace",
                 AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
@@ -2322,6 +2340,7 @@ namespace LangSmith
                 AuditLogOperation.ReadTeamAccessPolicies => "read_team_access_policies",
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
                 AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
+                AuditLogOperation.RefreshMcpGatewayTools => "refresh_mcp_gateway_tools",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
                 AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
@@ -2445,6 +2464,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateTracerSession => "update_tracer_session",
                 AuditLogOperation.UpdateTtlSettings => "update_ttl_settings",
                 AuditLogOperation.UpdateUsageLimit => "update_usage_limit",
+                AuditLogOperation.UpdateWebhookDestination => "update_webhook_destination",
                 AuditLogOperation.UpdateWorkspace => "update_workspace",
                 AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
                 AuditLogOperation.UpdateWorkspacePendingMember => "update_workspace_pending_member",
@@ -2577,6 +2597,7 @@ namespace LangSmith
                 "create_team_workspace_grant" => AuditLogOperation.CreateTeamWorkspaceGrant,
                 "create_tenant" => AuditLogOperation.CreateTenant,
                 "create_tool" => AuditLogOperation.CreateTool,
+                "create_webhook_destination" => AuditLogOperation.CreateWebhookDestination,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
                 "delete_agent" => AuditLogOperation.DeleteAgent,
@@ -2663,6 +2684,7 @@ namespace LangSmith
                 "delete_tracer_session" => AuditLogOperation.DeleteTracerSession,
                 "delete_tracer_sessions" => AuditLogOperation.DeleteTracerSessions,
                 "delete_usage_limit" => AuditLogOperation.DeleteUsageLimit,
+                "delete_webhook_destination" => AuditLogOperation.DeleteWebhookDestination,
                 "delete_workspace" => AuditLogOperation.DeleteWorkspace,
                 "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
@@ -2819,6 +2841,7 @@ namespace LangSmith
                 "read_team_access_policies" => AuditLogOperation.ReadTeamAccessPolicies,
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
                 "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
+                "refresh_mcp_gateway_tools" => AuditLogOperation.RefreshMcpGatewayTools,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
                 "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
@@ -2942,6 +2965,7 @@ namespace LangSmith
                 "update_tracer_session" => AuditLogOperation.UpdateTracerSession,
                 "update_ttl_settings" => AuditLogOperation.UpdateTtlSettings,
                 "update_usage_limit" => AuditLogOperation.UpdateUsageLimit,
+                "update_webhook_destination" => AuditLogOperation.UpdateWebhookDestination,
                 "update_workspace" => AuditLogOperation.UpdateWorkspace,
                 "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,
                 "update_workspace_pending_member" => AuditLogOperation.UpdateWorkspacePendingMember,

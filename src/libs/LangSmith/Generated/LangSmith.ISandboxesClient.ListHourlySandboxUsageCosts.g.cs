@@ -19,6 +19,9 @@ namespace LangSmith
         /// Default Value: HOUR
         /// </param>
         /// <param name="cursor"></param>
+        /// <param name="includeTotals">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -30,6 +33,7 @@ namespace LangSmith
             int? pageSize = default,
             global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
+            bool? includeTotals = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -47,6 +51,9 @@ namespace LangSmith
         /// Default Value: HOUR
         /// </param>
         /// <param name="cursor"></param>
+        /// <param name="includeTotals">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -58,6 +65,7 @@ namespace LangSmith
             int? pageSize = default,
             global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
+            bool? includeTotals = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

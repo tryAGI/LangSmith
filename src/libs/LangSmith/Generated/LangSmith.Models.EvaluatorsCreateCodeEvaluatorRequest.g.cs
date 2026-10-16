@@ -60,6 +60,16 @@ namespace LangSmith
         public bool? RequireAttachments { get; set; }
 
         /// <summary>
+        /// WorkspaceSecretsKeys names the workspace secrets this evaluator may use.<br/>
+        /// Each is sent as a header on requests to the hosts allowed for that<br/>
+        /// secret; evaluator code never sees the value. Requires<br/>
+        /// advanced_features_enabled, and each secret needs an allowed host with a<br/>
+        /// header.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_secrets_keys")]
+        public global::System.Collections.Generic.IList<string>? WorkspaceSecretsKeys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -84,6 +94,13 @@ namespace LangSmith
         /// RequireAttachments opts the evaluator into selecting/presigning run<br/>
         /// attachments (s3_urls) at evaluation time. Default false.
         /// </param>
+        /// <param name="workspaceSecretsKeys">
+        /// WorkspaceSecretsKeys names the workspace secrets this evaluator may use.<br/>
+        /// Each is sent as a header on requests to the hosts allowed for that<br/>
+        /// secret; evaluator code never sees the value. Requires<br/>
+        /// advanced_features_enabled, and each secret needs an allowed host with a<br/>
+        /// header.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,7 +112,8 @@ namespace LangSmith
             string? language,
             global::LangSmith.EvaluatorsManagedCodeEvaluatorKey? managedCodeEvaluatorKey,
             global::System.Collections.Generic.Dictionary<string, global::LangSmith.EvaluatorsManagedCodeEvaluatorMetricSetting>? managedCodeEvaluatorSettings,
-            bool? requireAttachments)
+            bool? requireAttachments,
+            global::System.Collections.Generic.IList<string>? workspaceSecretsKeys)
         {
             this.AdvancedFeaturesEnabled = advancedFeaturesEnabled;
             this.Code = code;
@@ -105,6 +123,7 @@ namespace LangSmith
             this.ManagedCodeEvaluatorKey = managedCodeEvaluatorKey;
             this.ManagedCodeEvaluatorSettings = managedCodeEvaluatorSettings;
             this.RequireAttachments = requireAttachments;
+            this.WorkspaceSecretsKeys = workspaceSecretsKeys;
         }
 
         /// <summary>
