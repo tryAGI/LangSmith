@@ -408,6 +408,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public UsageClient Usage { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public UsageLimitsClient UsageLimits { get; }
 
         /// <summary>

@@ -24,6 +24,10 @@ namespace LangSmith
         ///
         /// </summary>
         Thread,
+        /// <summary>
+        ///
+        /// </summary>
+        Trajectory,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace LangSmith
                 EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.FirstHumanLastAi => "first_human_last_ai",
                 EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.HumanAiPairs => "human_ai_pairs",
                 EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.Thread => "thread",
+                EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.Trajectory => "trajectory",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace LangSmith
                 "first_human_last_ai" => EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.FirstHumanLastAi,
                 "human_ai_pairs" => EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.HumanAiPairs,
                 "thread" => EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.Thread,
+                "trajectory" => EvaluatorsUpdateCodeEvaluatorRequestCodeEvaluatorInput.Trajectory,
                 _ => null,
             };
         }
