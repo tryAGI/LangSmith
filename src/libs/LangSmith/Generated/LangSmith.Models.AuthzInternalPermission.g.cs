@@ -564,6 +564,10 @@ namespace LangSmith
         ///
         /// </summary>
         WorkspacesRead,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesTracingKeysCreate,
     }
 
     /// <summary>
@@ -717,6 +721,7 @@ namespace LangSmith
                 AuthzInternalPermission.WorkspacesManageModelConfigs => "workspaces:manage-model-configs",
                 AuthzInternalPermission.WorkspacesManageSecrets => "workspaces:manage-secrets",
                 AuthzInternalPermission.WorkspacesRead => "workspaces:read",
+                AuthzInternalPermission.WorkspacesTracingKeysCreate => "workspaces:tracing-keys:create",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -866,6 +871,7 @@ namespace LangSmith
                 "workspaces:manage-model-configs" => AuthzInternalPermission.WorkspacesManageModelConfigs,
                 "workspaces:manage-secrets" => AuthzInternalPermission.WorkspacesManageSecrets,
                 "workspaces:read" => AuthzInternalPermission.WorkspacesRead,
+                "workspaces:tracing-keys:create" => AuthzInternalPermission.WorkspacesTracingKeysCreate,
                 _ => null,
             };
         }

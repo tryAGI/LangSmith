@@ -103,6 +103,25 @@ namespace LangSmith
         public string? CreatedBy { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_tracing_key")]
+        public bool? IsTracingKey { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? WorkspaceIds { get; set; }
+
+        /// <summary>
+        /// Whether tracing-key deletion authority has been confirmed. Legacy key responses do not evaluate this capability.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_delete")]
+        public bool? CanDelete { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -124,6 +143,16 @@ namespace LangSmith
         /// <param name="orgRoleId"></param>
         /// <param name="accessScope"></param>
         /// <param name="createdBy"></param>
+        /// <param name="isTracingKey">
+        /// Default Value: false
+        /// </param>
+        /// <param name="workspaceIds">
+        /// Default Value: []
+        /// </param>
+        /// <param name="canDelete">
+        /// Whether tracing-key deletion authority has been confirmed. Legacy key responses do not evaluate this capability.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -140,7 +169,10 @@ namespace LangSmith
             global::System.Guid? roleId,
             global::System.Guid? orgRoleId,
             global::LangSmith.AccessScope? accessScope,
-            string? createdBy)
+            string? createdBy,
+            bool? isTracingKey,
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds,
+            bool? canDelete)
         {
             this.CreatedAt = createdAt;
             this.Id = id;
@@ -155,6 +187,9 @@ namespace LangSmith
             this.OrgRoleId = orgRoleId;
             this.AccessScope = accessScope;
             this.CreatedBy = createdBy;
+            this.IsTracingKey = isTracingKey;
+            this.WorkspaceIds = workspaceIds;
+            this.CanDelete = canDelete;
         }
 
         /// <summary>

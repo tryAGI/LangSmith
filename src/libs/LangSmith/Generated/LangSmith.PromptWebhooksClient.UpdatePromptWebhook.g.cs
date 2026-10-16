@@ -58,7 +58,9 @@ namespace LangSmith
 
         /// <summary>
         /// Update Prompt Webhook<br/>
-        /// Update a specific prompt webhook.
+        /// Update a specific prompt webhook.<br/>
+        /// Omitted fields keep their current values; list fields and headers that are<br/>
+        /// set replace the stored values.
         /// </summary>
         /// <param name="webhookId"></param>
         /// <param name="request"></param>
@@ -84,7 +86,9 @@ namespace LangSmith
         }
         /// <summary>
         /// Update Prompt Webhook<br/>
-        /// Update a specific prompt webhook.
+        /// Update a specific prompt webhook.<br/>
+        /// Omitted fields keep their current values; list fields and headers that are<br/>
+        /// set replace the stored values.
         /// </summary>
         /// <param name="webhookId"></param>
         /// <param name="request"></param>
@@ -496,14 +500,26 @@ namespace LangSmith
         }
         /// <summary>
         /// Update Prompt Webhook<br/>
-        /// Update a specific prompt webhook.
+        /// Update a specific prompt webhook.<br/>
+        /// Omitted fields keep their current values; list fields and headers that are<br/>
+        /// set replace the stored values.
         /// </summary>
         /// <param name="webhookId"></param>
-        /// <param name="includePrompts"></param>
-        /// <param name="excludePrompts"></param>
-        /// <param name="url"></param>
-        /// <param name="headers"></param>
-        /// <param name="triggers"></param>
+        /// <param name="includePrompts">
+        /// IDs of the prompts whose events fire the webhook, replacing the current list. Omit to keep it.
+        /// </param>
+        /// <param name="excludePrompts">
+        /// IDs of prompts whose events never fire the webhook, replacing the current list. Omit to keep it.
+        /// </param>
+        /// <param name="url">
+        /// URL that receives the POST requests. Omit to keep the current URL.
+        /// </param>
+        /// <param name="headers">
+        /// HTTP headers sent with each request, replacing all current headers. Omit to keep them. Masked values (********) from a read are rejected.
+        /// </param>
+        /// <param name="triggers">
+        /// Events that fire the webhook (commit, tag:create, tag:update), replacing the current list. Omit to keep it.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

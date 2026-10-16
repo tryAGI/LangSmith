@@ -380,7 +380,7 @@ namespace LangSmith
         public int? MaxLanggraphCloudDeployments { get; set; }
 
         /// <summary>
-        /// MaxPromptWebhooks independently limits each org's Prompt Hub and Context Hub webhook collections.
+        /// MaxPromptWebhooks limits each org's Prompt Hub webhooks.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_webhooks")]
         public int? MaxPromptWebhooks { get; set; }
@@ -712,7 +712,7 @@ namespace LangSmith
         /// MaxLanggraphCloudDeployments is the maximum number of LangGraph Platform deployments allowed for this org.
         /// </param>
         /// <param name="maxPromptWebhooks">
-        /// MaxPromptWebhooks independently limits each org's Prompt Hub and Context Hub webhook collections.
+        /// MaxPromptWebhooks limits each org's Prompt Hub webhooks.
         /// </param>
         /// <param name="maxSandboxCpu">
         /// MaxSandboxCpu is the total CPU cores allowed for sandboxes (e.g., "4", "8").

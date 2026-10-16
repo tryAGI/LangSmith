@@ -22,6 +22,13 @@ namespace LangSmith
         public string? NextCursor { get; set; }
 
         /// <summary>
+        /// Totals cover the entire filtered interval, independently of the cursor.<br/>
+        /// Omitted unless requested and unrestricted resource access is verified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("totals")]
+        public global::LangSmith.SandboxesSandboxUsageCostTotals? Totals { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -32,15 +39,21 @@ namespace LangSmith
         /// </summary>
         /// <param name="items"></param>
         /// <param name="nextCursor"></param>
+        /// <param name="totals">
+        /// Totals cover the entire filtered interval, independently of the cursor.<br/>
+        /// Omitted unless requested and unrestricted resource access is verified.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesSandboxUsageCostsResponse(
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesSandboxUsageCost> items,
-            string? nextCursor)
+            string? nextCursor,
+            global::LangSmith.SandboxesSandboxUsageCostTotals? totals)
         {
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.NextCursor = nextCursor;
+            this.Totals = totals;
         }
 
         /// <summary>
