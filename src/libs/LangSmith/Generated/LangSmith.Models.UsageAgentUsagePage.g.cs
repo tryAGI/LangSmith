@@ -13,7 +13,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::LangSmith.UsageAgentUsage> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::LangSmith.UsagePublicAgentUsage> Items { get; set; }
 
         /// <summary>
         ///
@@ -36,7 +36,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageAgentUsagePage(
-            global::System.Collections.Generic.IList<global::LangSmith.UsageAgentUsage> items,
+            global::System.Collections.Generic.IList<global::LangSmith.UsagePublicAgentUsage> items,
             string? nextCursor)
         {
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));

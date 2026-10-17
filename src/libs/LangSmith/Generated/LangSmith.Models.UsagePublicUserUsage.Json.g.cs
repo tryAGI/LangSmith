@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class UsageAgentUsage
+    public sealed partial class UsagePublicUserUsage
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.UsageAgentUsage? FromJson(
+        public static global::LangSmith.UsagePublicUserUsage? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.UsageAgentUsage),
-                jsonSerializerContext) as global::LangSmith.UsageAgentUsage;
+                typeof(global::LangSmith.UsagePublicUserUsage),
+                jsonSerializerContext) as global::LangSmith.UsagePublicUserUsage;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.UsageAgentUsage? FromJson(
+        public static global::LangSmith.UsagePublicUserUsage? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.UsageAgentUsage? FromJson(
+        public static global::LangSmith.UsagePublicUserUsage? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace LangSmith
                     global::LangSmith.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.UsageAgentUsage>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.UsagePublicUserUsage>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.UsageAgentUsage?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.UsagePublicUserUsage?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.UsageAgentUsage),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.UsageAgentUsage;
+                typeof(global::LangSmith.UsagePublicUserUsage),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.UsagePublicUserUsage;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.UsageAgentUsage?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.UsagePublicUserUsage?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.UsageAgentUsage?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.UsagePublicUserUsage?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace LangSmith
                     global::LangSmith.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.UsageAgentUsage?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.UsagePublicUserUsage?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

@@ -4589,19 +4589,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.UsageAgentUsage? Type1139 { get; set; }
+        public global::LangSmith.UsageAgentUsagePage? Type1139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.UsageAgentUsagePage? Type1140 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.UsagePublicAgentUsage>? Type1140 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.UsageAgentUsage>? Type1141 { get; set; }
+        public global::LangSmith.UsagePublicAgentUsage? Type1141 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.UsageUserUsage? Type1142 { get; set; }
+        public global::LangSmith.UsagePublicUserUsage? Type1142 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -4609,7 +4609,7 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::LangSmith.UsageUserUsage>? Type1144 { get; set; }
+        public global::System.Collections.Generic.IList<global::LangSmith.UsagePublicUserUsage>? Type1144 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -5970,11 +5970,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LangSmith.UsageAgentUsage>? ListType149 { get; set; }
+        public global::System.Collections.Generic.List<global::LangSmith.UsagePublicAgentUsage>? ListType149 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::LangSmith.UsageUserUsage>? ListType150 { get; set; }
+        public global::System.Collections.Generic.List<global::LangSmith.UsagePublicUserUsage>? ListType150 { get; set; }
         /// <summary>
         ///
         /// </summary>

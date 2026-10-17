@@ -6,20 +6,14 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class UsageAgentUsage
+    public sealed partial class UsagePublicUserUsage
     {
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent_name")]
-        public string? AgentName { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AssistantId { get; set; }
+        public required int AgentCount { get; set; }
 
         /// <summary>
         ///
@@ -38,14 +32,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
-        public string? ModelName { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("owner_email")]
-        public string? OwnerEmail { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
+        public string? LsUserId { get; set; }
 
         /// <summary>
         ///
@@ -55,11 +43,18 @@ namespace LangSmith
         public required int RunCount { get; set; }
 
         /// <summary>
-        ///
+        /// Estimated cost in USD from recorded traces.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double TotalCost { get; set; }
+
+        /// <summary>
+        /// Recorded user email used to group usage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_email")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string UserEmail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,43 +63,44 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsageAgentUsage" /> class.
+        /// Initializes a new instance of the <see cref="UsagePublicUserUsage" /> class.
         /// </summary>
-        /// <param name="assistantId"></param>
+        /// <param name="agentCount"></param>
         /// <param name="firstUsed"></param>
         /// <param name="lastUsed"></param>
         /// <param name="runCount"></param>
-        /// <param name="totalCost"></param>
-        /// <param name="agentName"></param>
-        /// <param name="modelName"></param>
-        /// <param name="ownerEmail"></param>
+        /// <param name="totalCost">
+        /// Estimated cost in USD from recorded traces.
+        /// </param>
+        /// <param name="userEmail">
+        /// Recorded user email used to group usage.
+        /// </param>
+        /// <param name="lsUserId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UsageAgentUsage(
-            string assistantId,
+        public UsagePublicUserUsage(
+            int agentCount,
             global::System.DateTime firstUsed,
             global::System.DateTime lastUsed,
             int runCount,
             double totalCost,
-            string? agentName,
-            string? modelName,
-            string? ownerEmail)
+            string userEmail,
+            string? lsUserId)
         {
-            this.AgentName = agentName;
-            this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
+            this.AgentCount = agentCount;
             this.FirstUsed = firstUsed;
             this.LastUsed = lastUsed;
-            this.ModelName = modelName;
-            this.OwnerEmail = ownerEmail;
+            this.LsUserId = lsUserId;
             this.RunCount = runCount;
             this.TotalCost = totalCost;
+            this.UserEmail = userEmail ?? throw new global::System.ArgumentNullException(nameof(userEmail));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsageAgentUsage" /> class.
+        /// Initializes a new instance of the <see cref="UsagePublicUserUsage" /> class.
         /// </summary>
-        public UsageAgentUsage()
+        public UsagePublicUserUsage()
         {
         }
 
