@@ -6,14 +6,20 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class UsageUserUsage
+    public sealed partial class UsagePublicAgentUsage
     {
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent_count")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AgentCount { get; set; }
+        public required string AgentId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_name")]
+        public string? AgentName { get; set; }
 
         /// <summary>
         ///
@@ -32,15 +38,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
-        public string? LsUserId { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("owner_email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string OwnerEmail { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
+        public string? ModelName { get; set; }
 
         /// <summary>
         ///
@@ -50,7 +49,7 @@ namespace LangSmith
         public required int RunCount { get; set; }
 
         /// <summary>
-        ///
+        /// Estimated cost in USD from recorded traces.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -63,40 +62,42 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsageUserUsage" /> class.
+        /// Initializes a new instance of the <see cref="UsagePublicAgentUsage" /> class.
         /// </summary>
-        /// <param name="agentCount"></param>
+        /// <param name="agentId"></param>
         /// <param name="firstUsed"></param>
         /// <param name="lastUsed"></param>
-        /// <param name="ownerEmail"></param>
         /// <param name="runCount"></param>
-        /// <param name="totalCost"></param>
-        /// <param name="lsUserId"></param>
+        /// <param name="totalCost">
+        /// Estimated cost in USD from recorded traces.
+        /// </param>
+        /// <param name="agentName"></param>
+        /// <param name="modelName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UsageUserUsage(
-            int agentCount,
+        public UsagePublicAgentUsage(
+            string agentId,
             global::System.DateTime firstUsed,
             global::System.DateTime lastUsed,
-            string ownerEmail,
             int runCount,
             double totalCost,
-            string? lsUserId)
+            string? agentName,
+            string? modelName)
         {
-            this.AgentCount = agentCount;
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
+            this.AgentName = agentName;
             this.FirstUsed = firstUsed;
             this.LastUsed = lastUsed;
-            this.LsUserId = lsUserId;
-            this.OwnerEmail = ownerEmail ?? throw new global::System.ArgumentNullException(nameof(ownerEmail));
+            this.ModelName = modelName;
             this.RunCount = runCount;
             this.TotalCost = totalCost;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsageUserUsage" /> class.
+        /// Initializes a new instance of the <see cref="UsagePublicAgentUsage" /> class.
         /// </summary>
-        public UsageUserUsage()
+        public UsagePublicAgentUsage()
         {
         }
 

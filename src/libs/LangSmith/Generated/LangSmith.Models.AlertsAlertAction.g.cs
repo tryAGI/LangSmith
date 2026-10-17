@@ -36,6 +36,30 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_suspended")]
+        public bool? IsSuspended { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("suspended_at")]
+        public string? SuspendedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("suspended_reason")]
+        public string? SuspendedReason { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("suspended_status_code")]
+        public int? SuspendedStatusCode { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,6 +85,10 @@ namespace LangSmith
         /// <param name="alertRuleId"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
+        /// <param name="isSuspended"></param>
+        /// <param name="suspendedAt"></param>
+        /// <param name="suspendedReason"></param>
+        /// <param name="suspendedStatusCode"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -71,12 +99,20 @@ namespace LangSmith
             string? alertRuleId,
             string? createdAt,
             string? id,
+            bool? isSuspended,
+            string? suspendedAt,
+            string? suspendedReason,
+            int? suspendedStatusCode,
             string? updatedAt)
         {
             this.AlertRuleId = alertRuleId;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.CreatedAt = createdAt;
             this.Id = id;
+            this.IsSuspended = isSuspended;
+            this.SuspendedAt = suspendedAt;
+            this.SuspendedReason = suspendedReason;
+            this.SuspendedStatusCode = suspendedStatusCode;
             this.Target = target;
             this.UpdatedAt = updatedAt;
         }

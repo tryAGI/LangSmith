@@ -66,7 +66,7 @@ namespace LangSmith
 
         /// <summary>
         /// List Fleet user costs<br/>
-        /// Returns the same user cost report as the Fleet usage UI, grouped by recorded user email. Runs without a user email are omitted. Costs are derived from recorded traces, not invoice totals. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
+        /// Returns the same user cost report as the Fleet usage UI, grouped by recorded user email. Runs without a user email are omitted. Costs are estimates in USD from recorded traces, not invoice totals. Requires `fleet:read-admin-config`. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 20
@@ -108,7 +108,7 @@ namespace LangSmith
         }
         /// <summary>
         /// List Fleet user costs<br/>
-        /// Returns the same user cost report as the Fleet usage UI, grouped by recorded user email. Runs without a user email are omitted. Costs are derived from recorded traces, not invoice totals. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
+        /// Returns the same user cost report as the Fleet usage UI, grouped by recorded user email. Runs without a user email are omitted. Costs are estimates in USD from recorded traces, not invoice totals. Requires `fleet:read-admin-config`. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 20

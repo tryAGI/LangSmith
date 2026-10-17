@@ -287,6 +287,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateMcpCredentialSession,
+        /// <summary>
+        ///
+        /// </summary>
         CreateMcpGateway,
         /// <summary>
         ///
@@ -2055,6 +2059,7 @@ namespace LangSmith
                 AuditLogOperation.CreateInsightsJob => "create_insights_job",
                 AuditLogOperation.CreateInsightsJobConfig => "create_insights_job_config",
                 AuditLogOperation.CreateLicenseShareLink => "create_license_share_link",
+                AuditLogOperation.CreateMcpCredentialSession => "create_mcp_credential_session",
                 AuditLogOperation.CreateMcpGateway => "create_mcp_gateway",
                 AuditLogOperation.CreateMcpServer => "create_mcp_server",
                 AuditLogOperation.CreateMcpVendorSettings => "create_mcp_vendor_settings",
@@ -2556,6 +2561,7 @@ namespace LangSmith
                 "create_insights_job" => AuditLogOperation.CreateInsightsJob,
                 "create_insights_job_config" => AuditLogOperation.CreateInsightsJobConfig,
                 "create_license_share_link" => AuditLogOperation.CreateLicenseShareLink,
+                "create_mcp_credential_session" => AuditLogOperation.CreateMcpCredentialSession,
                 "create_mcp_gateway" => AuditLogOperation.CreateMcpGateway,
                 "create_mcp_server" => AuditLogOperation.CreateMcpServer,
                 "create_mcp_vendor_settings" => AuditLogOperation.CreateMcpVendorSettings,

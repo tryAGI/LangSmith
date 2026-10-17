@@ -66,7 +66,7 @@ namespace LangSmith
 
         /// <summary>
         /// List Fleet agent costs<br/>
-        /// Returns the same agent cost report as the Fleet usage UI. Costs are derived from recorded traces, not invoice totals. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
+        /// Returns the same agent cost report as the Fleet usage UI. Costs are estimates in USD from recorded traces, not invoice totals. Requires `fleet:read-admin-config`. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 20
@@ -108,7 +108,7 @@ namespace LangSmith
         }
         /// <summary>
         /// List Fleet agent costs<br/>
-        /// Returns the same agent cost report as the Fleet usage UI. Costs are derived from recorded traces, not invoice totals. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
+        /// Returns the same agent cost report as the Fleet usage UI. Costs are estimates in USD from recorded traces, not invoice totals. Requires `fleet:read-admin-config`. Keep the time window and sorting unchanged across pages. Results are live: late traces or cost updates can move rows between pages; pagination does not provide a frozen snapshot.
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 20
