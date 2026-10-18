@@ -295,6 +295,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateMcpProfile,
+        /// <summary>
+        ///
+        /// </summary>
         CreateMcpServer,
         /// <summary>
         ///
@@ -640,6 +644,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteMcpOidcConnection,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteMcpProfile,
         /// <summary>
         ///
         /// </summary>
@@ -1763,6 +1771,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateMcpProfile,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateMcpServer,
         /// <summary>
         ///
@@ -2061,6 +2073,7 @@ namespace LangSmith
                 AuditLogOperation.CreateLicenseShareLink => "create_license_share_link",
                 AuditLogOperation.CreateMcpCredentialSession => "create_mcp_credential_session",
                 AuditLogOperation.CreateMcpGateway => "create_mcp_gateway",
+                AuditLogOperation.CreateMcpProfile => "create_mcp_profile",
                 AuditLogOperation.CreateMcpServer => "create_mcp_server",
                 AuditLogOperation.CreateMcpVendorSettings => "create_mcp_vendor_settings",
                 AuditLogOperation.CreateModelPriceMap => "create_model_price_map",
@@ -2148,6 +2161,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteInsightsJobConfig => "delete_insights_job_config",
                 AuditLogOperation.DeleteMcpGateway => "delete_mcp_gateway",
                 AuditLogOperation.DeleteMcpOidcConnection => "delete_mcp_oidc_connection",
+                AuditLogOperation.DeleteMcpProfile => "delete_mcp_profile",
                 AuditLogOperation.DeleteMcpServer => "delete_mcp_server",
                 AuditLogOperation.DeleteMcpVendorSettings => "delete_mcp_vendor_settings",
                 AuditLogOperation.DeleteModelPriceMap => "delete_model_price_map",
@@ -2428,6 +2442,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateLoginMethods => "update_login_methods",
                 AuditLogOperation.UpdateMcpGateway => "update_mcp_gateway",
                 AuditLogOperation.UpdateMcpOidcConnection => "update_mcp_oidc_connection",
+                AuditLogOperation.UpdateMcpProfile => "update_mcp_profile",
                 AuditLogOperation.UpdateMcpServer => "update_mcp_server",
                 AuditLogOperation.UpdateMcpVendorSettings => "update_mcp_vendor_settings",
                 AuditLogOperation.UpdateModelPriceMap => "update_model_price_map",
@@ -2563,6 +2578,7 @@ namespace LangSmith
                 "create_license_share_link" => AuditLogOperation.CreateLicenseShareLink,
                 "create_mcp_credential_session" => AuditLogOperation.CreateMcpCredentialSession,
                 "create_mcp_gateway" => AuditLogOperation.CreateMcpGateway,
+                "create_mcp_profile" => AuditLogOperation.CreateMcpProfile,
                 "create_mcp_server" => AuditLogOperation.CreateMcpServer,
                 "create_mcp_vendor_settings" => AuditLogOperation.CreateMcpVendorSettings,
                 "create_model_price_map" => AuditLogOperation.CreateModelPriceMap,
@@ -2650,6 +2666,7 @@ namespace LangSmith
                 "delete_insights_job_config" => AuditLogOperation.DeleteInsightsJobConfig,
                 "delete_mcp_gateway" => AuditLogOperation.DeleteMcpGateway,
                 "delete_mcp_oidc_connection" => AuditLogOperation.DeleteMcpOidcConnection,
+                "delete_mcp_profile" => AuditLogOperation.DeleteMcpProfile,
                 "delete_mcp_server" => AuditLogOperation.DeleteMcpServer,
                 "delete_mcp_vendor_settings" => AuditLogOperation.DeleteMcpVendorSettings,
                 "delete_model_price_map" => AuditLogOperation.DeleteModelPriceMap,
@@ -2930,6 +2947,7 @@ namespace LangSmith
                 "update_login_methods" => AuditLogOperation.UpdateLoginMethods,
                 "update_mcp_gateway" => AuditLogOperation.UpdateMcpGateway,
                 "update_mcp_oidc_connection" => AuditLogOperation.UpdateMcpOidcConnection,
+                "update_mcp_profile" => AuditLogOperation.UpdateMcpProfile,
                 "update_mcp_server" => AuditLogOperation.UpdateMcpServer,
                 "update_mcp_vendor_settings" => AuditLogOperation.UpdateMcpVendorSettings,
                 "update_model_price_map" => AuditLogOperation.UpdateModelPriceMap,
