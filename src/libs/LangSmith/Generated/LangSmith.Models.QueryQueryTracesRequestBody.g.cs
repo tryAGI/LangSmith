@@ -25,12 +25,30 @@ namespace LangSmith
         public string? Cursor { get; set; }
 
         /// <summary>
+        /// `max_feedback_modified_at` is the exclusive upper bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `trace_filter` or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Root runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-12-31T23:59:59Z
+        /// </summary>
+        /// <example>2024-12-31T23:59:59Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_feedback_modified_at")]
+        public global::System.DateTime? MaxFeedbackModifiedAt { get; set; }
+
+        /// <summary>
         /// `max_start_time` is the exclusive upper bound for the root-run start time scan (RFC3339). Defaults to the request time when omitted.<br/>
         /// Example: 2024-12-31T23:59:59Z
         /// </summary>
         /// <example>2024-12-31T23:59:59Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_start_time")]
         public global::System.DateTime? MaxStartTime { get; set; }
+
+        /// <summary>
+        /// `min_feedback_modified_at` is the inclusive lower bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `trace_filter` or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Root runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-01-01T00:00:00Z
+        /// </summary>
+        /// <example>2024-01-01T00:00:00Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("min_feedback_modified_at")]
+        public global::System.DateTime? MinFeedbackModifiedAt { get; set; }
 
         /// <summary>
         /// `min_start_time` is the inclusive lower bound for the root-run start time scan (RFC3339). Defaults to 24 hours before the request when omitted.<br/>
@@ -106,9 +124,19 @@ namespace LangSmith
         /// <param name="cursor">
         /// `cursor` is the opaque string returned in a previous response's `next_cursor`.
         /// </param>
+        /// <param name="maxFeedbackModifiedAt">
+        /// `max_feedback_modified_at` is the exclusive upper bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `trace_filter` or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Root runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-12-31T23:59:59Z
+        /// </param>
         /// <param name="maxStartTime">
         /// `max_start_time` is the exclusive upper bound for the root-run start time scan (RFC3339). Defaults to the request time when omitted.<br/>
         /// Example: 2024-12-31T23:59:59Z
+        /// </param>
+        /// <param name="minFeedbackModifiedAt">
+        /// `min_feedback_modified_at` is the inclusive lower bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `trace_filter` or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Root runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-01-01T00:00:00Z
         /// </param>
         /// <param name="minStartTime">
         /// `min_start_time` is the inclusive lower bound for the root-run start time scan (RFC3339). Defaults to 24 hours before the request when omitted.<br/>
@@ -145,7 +173,9 @@ namespace LangSmith
         public QueryQueryTracesRequestBody(
             string? aiSearch,
             string? cursor,
+            global::System.DateTime? maxFeedbackModifiedAt,
             global::System.DateTime? maxStartTime,
+            global::System.DateTime? minFeedbackModifiedAt,
             global::System.DateTime? minStartTime,
             int? pageSize,
             global::System.Guid? projectId,
@@ -156,7 +186,9 @@ namespace LangSmith
         {
             this.AiSearch = aiSearch;
             this.Cursor = cursor;
+            this.MaxFeedbackModifiedAt = maxFeedbackModifiedAt;
             this.MaxStartTime = maxStartTime;
+            this.MinFeedbackModifiedAt = minFeedbackModifiedAt;
             this.MinStartTime = minStartTime;
             this.PageSize = pageSize;
             this.ProjectId = projectId;

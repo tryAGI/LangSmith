@@ -65,9 +65,19 @@ namespace LangSmith
         /// <param name="cursor">
         /// `cursor` is the opaque string returned in a previous response's `next_cursor`.
         /// </param>
+        /// <param name="maxFeedbackModifiedAt">
+        /// `max_feedback_modified_at` is the exclusive upper bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `trace_filter` or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Root runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-12-31T23:59:59Z
+        /// </param>
         /// <param name="maxStartTime">
         /// `max_start_time` is the exclusive upper bound for the root-run start time scan (RFC3339). Defaults to the request time when omitted.<br/>
         /// Example: 2024-12-31T23:59:59Z
+        /// </param>
+        /// <param name="minFeedbackModifiedAt">
+        /// `min_feedback_modified_at` is the inclusive lower bound (RFC3339) on feedback `modified_at`, applied to the feedback conditions in `trace_filter` or `tree_filter` (for example eq(feedback_key, "correctness")).<br/>
+        /// Requires at least one feedback condition. Root runs must still fall within the `start_time` window.<br/>
+        /// Example: 2024-01-01T00:00:00Z
         /// </param>
         /// <param name="minStartTime">
         /// `min_start_time` is the inclusive lower bound for the root-run start time scan (RFC3339). Defaults to 24 hours before the request when omitted.<br/>
@@ -106,7 +116,9 @@ namespace LangSmith
             string? contentType = default,
             string? aiSearch = default,
             string? cursor = default,
+            global::System.DateTime? maxFeedbackModifiedAt = default,
             global::System.DateTime? maxStartTime = default,
+            global::System.DateTime? minFeedbackModifiedAt = default,
             global::System.DateTime? minStartTime = default,
             int? pageSize = default,
             global::System.Guid? projectId = default,

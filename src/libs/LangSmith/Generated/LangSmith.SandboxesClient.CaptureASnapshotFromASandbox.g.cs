@@ -687,6 +687,9 @@ namespace LangSmith
         /// <param name="checkpoint">
         /// if omitted, creates a fresh checkpoint from the running VM
         /// </param>
+        /// <param name="confirmAllowSnapshotSecretValues">
+        /// Must be true when the included settings hold literal secret values (opaque values rather than workspace secret references, and any env var value), acknowledging that the snapshot stores them and every sandbox created from it can use them.
+        /// </param>
         /// <param name="description">
         /// Description says what this snapshot's image can do, so a caller can hand it to an agent as a capability summary. At most 1024 characters.
         /// </param>
@@ -695,6 +698,9 @@ namespace LangSmith
         /// </param>
         /// <param name="fsCapacityBytes">
         /// required for Docker image export unless the sandbox has a capacity
+        /// </param>
+        /// <param name="include">
+        /// Sandbox settings to carry into the snapshot. Sandboxes created from it start with each carried setting their create request leaves unset: "mounts" (the mount_config, with its auth), "proxy_config", "env_vars", "resources" (CPU and memory), "lifecycle" (idle_ttl_seconds, delete_after_stop_seconds, preserve_memory_on_stop), and "labels" (merged under this request's labels; reserved com.langchain.* labels are left out). "all" names every one of these. VM memory is captured with include_memory, not here. Warning: mounts, proxy_config and env_vars carry the sandbox's credentials, and every sandbox created from the snapshot can use them.
         /// </param>
         /// <param name="includeMemory">
         /// IncludeMemory, when true, captures a full VM memory snapshot<br/>
@@ -723,9 +729,11 @@ namespace LangSmith
             string name,
             string requestName,
             string? checkpoint = default,
+            bool? confirmAllowSnapshotSecretValues = default,
             string? description = default,
             string? dockerImage = default,
             long? fsCapacityBytes = default,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesCaptureSnapshotPayloadIncludeItem>? include = default,
             bool? includeMemory = default,
             global::System.Collections.Generic.Dictionary<string, string>? labels = default,
             global::LangSmith.SandboxapiRunConfig? runConfig = default,
@@ -736,9 +744,11 @@ namespace LangSmith
             var __request = new global::LangSmith.SandboxesCaptureSnapshotPayload
             {
                 Checkpoint = checkpoint,
+                ConfirmAllowSnapshotSecretValues = confirmAllowSnapshotSecretValues,
                 Description = description,
                 DockerImage = dockerImage,
                 FsCapacityBytes = fsCapacityBytes,
+                Include = include,
                 IncludeMemory = includeMemory,
                 Labels = labels,
                 Name = requestName,

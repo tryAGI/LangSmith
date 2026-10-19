@@ -57,6 +57,12 @@ namespace LangSmith
         public string? ImageDigest { get; set; }
 
         /// <summary>
+        /// The settings this snapshot carries, in include terms: sandboxes created from it start with each one their create request leaves unset. Env var values are never returned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("included")]
+        public global::System.Collections.Generic.IList<global::LangSmith.SandboxesSnapshotResponseIncludedItem>? Included { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
@@ -71,10 +77,22 @@ namespace LangSmith
         public long? MemorySnapshotSizeBytes { get; set; }
 
         /// <summary>
+        /// The mount_config sandboxes created from this snapshot start with when their create request has none, with secret values redacted. Present only on snapshots captured with include "mounts" or "all" from a sandbox that had mounts.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mount_config")]
+        public global::LangSmith.SandboxesSandboxMountConfig? MountConfig { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// The proxy_config sandboxes created from this snapshot start with when their create request has none, with secret values redacted. Present only on snapshots captured with include "proxy_config" or "all".
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("proxy_config")]
+        public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
 
         /// <summary>
         ///
@@ -139,13 +157,22 @@ namespace LangSmith
         /// <param name="fsUsedBytes"></param>
         /// <param name="id"></param>
         /// <param name="imageDigest"></param>
+        /// <param name="included">
+        /// The settings this snapshot carries, in include terms: sandboxes created from it start with each one their create request leaves unset. Env var values are never returned.
+        /// </param>
         /// <param name="labels"></param>
         /// <param name="memorySnapshotSizeBytes">
         /// MemorySnapshotSizeBytes is non-nil iff the snapshot was captured with<br/>
         /// VM memory state. A non-nil value is the canonical signal that this<br/>
         /// snapshot can warm-restore from memory; nil means rootfs only.
         /// </param>
+        /// <param name="mountConfig">
+        /// The mount_config sandboxes created from this snapshot start with when their create request has none, with secret values redacted. Present only on snapshots captured with include "mounts" or "all" from a sandbox that had mounts.
+        /// </param>
         /// <param name="name"></param>
+        /// <param name="proxyConfig">
+        /// The proxy_config sandboxes created from this snapshot start with when their create request has none, with secret values redacted. Present only on snapshots captured with include "proxy_config" or "all".
+        /// </param>
         /// <param name="registryId"></param>
         /// <param name="runConfig">
         /// RunConfig is what sandboxes from this snapshot boot with. Absent on<br/>
@@ -171,9 +198,12 @@ namespace LangSmith
             long? fsUsedBytes,
             string? id,
             string? imageDigest,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesSnapshotResponseIncludedItem>? included,
             global::System.Collections.Generic.Dictionary<string, string>? labels,
             long? memorySnapshotSizeBytes,
+            global::LangSmith.SandboxesSandboxMountConfig? mountConfig,
             string? name,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig,
             string? registryId,
             global::LangSmith.SandboxapiRunConfig? runConfig,
             string? sourceSandboxId,
@@ -190,9 +220,12 @@ namespace LangSmith
             this.FsUsedBytes = fsUsedBytes;
             this.Id = id;
             this.ImageDigest = imageDigest;
+            this.Included = included;
             this.Labels = labels;
             this.MemorySnapshotSizeBytes = memorySnapshotSizeBytes;
+            this.MountConfig = mountConfig;
             this.Name = name;
+            this.ProxyConfig = proxyConfig;
             this.RegistryId = registryId;
             this.RunConfig = runConfig;
             this.SourceSandboxId = sourceSandboxId;
