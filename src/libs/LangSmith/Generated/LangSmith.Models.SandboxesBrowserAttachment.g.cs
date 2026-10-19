@@ -70,7 +70,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("links_expire_at")]
-        public string? LinksExpireAt { get; set; }
+        public global::System.DateTime? LinksExpireAt { get; set; }
 
         /// <summary>
         /// LocalhostAlias is the sandbox's localhost as the browser sees it: open<br/>
@@ -215,7 +215,7 @@ namespace LangSmith
             string? createdAt,
             int? height,
             string? id,
-            string? linksExpireAt,
+            global::System.DateTime? linksExpireAt,
             string? localhostAlias,
             string? name,
             string? reason,
