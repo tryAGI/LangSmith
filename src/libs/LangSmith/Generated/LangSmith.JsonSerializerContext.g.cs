@@ -619,7 +619,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SortByDatasetColumn), TypeInfoPropertyName = "SortByDatasetColumn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SortParamsForRunsComparisonViewSortOrder), TypeInfoPropertyName = "SortParamsForRunsComparisonViewSortOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SourceType), TypeInfoPropertyName = "SourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.StripeAccountLinksCreate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.StripeBusinessBillingInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.StripeCustomerAddress))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.StripeBusinessInfoInput))]
@@ -1033,6 +1032,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiS3MountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiS3BucketMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGCSBucketMountSpec))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1053,7 +1053,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGCSBucketMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitRepoMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiContextHubRepoMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiAzureBlobContainerMountSpec))]
@@ -1074,11 +1073,13 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesBrowserTab))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesBrowserResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesBrowserAttachment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesBrowserWindowLinks))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCallback))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesProxyHeader))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCaptureSnapshotPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateBrowserPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateBrowserWindowLinksPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateRegistryPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateRegistryPayloadAuthType), TypeInfoPropertyName = "SandboxesCreateRegistryPayloadAuthType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxesCreateSandboxPayload))]
@@ -1556,7 +1557,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRulesValidateSchemaGroupBy?), TypeInfoPropertyName = "NullableRunRulesValidateSchemaGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupByAttribute?), TypeInfoPropertyName = "NullableRunStatsGroupByAttribute2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupBySeriesResponseAttribute?), TypeInfoPropertyName = "NullableRunStatsGroupBySeriesResponseAttribute2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupBySeriesResponseSetBy?), TypeInfoPropertyName = "NullableRunStatsGroupBySeriesResponseSetBy2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1577,6 +1577,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsGroupBySeriesResponseSetBy?), TypeInfoPropertyName = "NullableRunStatsGroupBySeriesResponseSetBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunStatsSelect?), TypeInfoPropertyName = "NullableRunStatsSelect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SSOProviderType?), TypeInfoPropertyName = "NullableSSOProviderType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SavedRunClusteringJobRequestModel?), TypeInfoPropertyName = "NullableSavedRunClusteringJobRequestModel2")]

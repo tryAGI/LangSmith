@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class OrgsClient
+    public partial class SandboxesClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_CreateStripeAccountLinksEndpointServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_CreateLinksToABrowserWindowBetaServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateStripeAccountLinksEndpointSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateLinksToABrowserWindowBetaSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,41 +34,54 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateStripeAccountLinksEndpointSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateLinksToABrowserWindowBetaSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_CreateStripeAccountLinksEndpointSecurityRequirement0,
+            {                s_CreateLinksToABrowserWindowBetaSecurityRequirement0,
             };
-        partial void PrepareCreateStripeAccountLinksEndpointArguments(
+        partial void PrepareCreateLinksToABrowserWindowBetaArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.StripeAccountLinksCreate request);
-        partial void PrepareCreateStripeAccountLinksEndpointRequest(
+            ref string name,
+            ref string attachmentId,
+            global::LangSmith.SandboxesCreateBrowserWindowLinksPayload request);
+        partial void PrepareCreateLinksToABrowserWindowBetaRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.StripeAccountLinksCreate request);
-        partial void ProcessCreateStripeAccountLinksEndpointResponse(
+            string name,
+            string attachmentId,
+            global::LangSmith.SandboxesCreateBrowserWindowLinksPayload request);
+        partial void ProcessCreateLinksToABrowserWindowBetaResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateStripeAccountLinksEndpointResponseContent(
+        partial void ProcessCreateLinksToABrowserWindowBetaResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Stripe Account Links Endpoint<br/>
-        /// Kick off a Stripe account link flow.
+        /// Create links to a browser window (beta)<br/>
+        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. Minting takes being the browser's creator or a role with sandboxes:exec.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="attachmentId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateStripeAccountLinksEndpointAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesBrowserWindowLinks> CreateLinksToABrowserWindowBetaAsync(
+            string name,
+            string attachmentId,
 
-            global::LangSmith.StripeAccountLinksCreate request,
+            global::LangSmith.SandboxesCreateBrowserWindowLinksPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateStripeAccountLinksEndpointAsResponseAsync(
+            var __response = await CreateLinksToABrowserWindowBetaAsResponseAsync(
+                name: name,
+                attachmentId: attachmentId,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -78,16 +91,23 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Create Stripe Account Links Endpoint<br/>
-        /// Kick off a Stripe account link flow.
+        /// Create links to a browser window (beta)<br/>
+        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. Minting takes being the browser's creator or a role with sandboxes:exec.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="attachmentId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateStripeAccountLinksEndpointAsResponseAsync(
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesBrowserWindowLinks>> CreateLinksToABrowserWindowBetaAsResponseAsync(
+            string name,
+            string attachmentId,
 
-            global::LangSmith.StripeAccountLinksCreate request,
+            global::LangSmith.SandboxesCreateBrowserWindowLinksPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,15 +115,17 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateStripeAccountLinksEndpointArguments(
+            PrepareCreateLinksToABrowserWindowBetaArguments(
                 httpClient: HttpClient,
+                name: ref name,
+                attachmentId: ref attachmentId,
                 request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateStripeAccountLinksEndpointSecurityRequirements,
-                operationName: "CreateStripeAccountLinksEndpointAsync");
+                securityRequirements: s_CreateLinksToABrowserWindowBetaSecurityRequirements,
+                operationName: "CreateLinksToABrowserWindowBetaAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -123,9 +145,9 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/orgs/current/stripe_account_links",
+                                path: $"/api/v2/sandboxes/browsers/{name}/attachments/{attachmentId}/links",
                                 baseUri: ResolveBaseUri(
-                                servers: s_CreateStripeAccountLinksEndpointServers,
+                                servers: s_CreateLinksToABrowserWindowBetaServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -170,9 +192,11 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateStripeAccountLinksEndpointRequest(
+                PrepareCreateLinksToABrowserWindowBetaRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    name: name,
+                    attachmentId: attachmentId,
                     request: request);
 
                 return __httpRequest;
@@ -190,9 +214,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateStripeAccountLinksEndpoint",
-                                methodName: "CreateStripeAccountLinksEndpointAsync",
-                                pathTemplate: "\"/api/v1/orgs/current/stripe_account_links\"",
+                                operationId: "CreateLinksToABrowserWindowBeta",
+                                methodName: "CreateLinksToABrowserWindowBetaAsync",
+                                pathTemplate: "$\"/api/v2/sandboxes/browsers/{name}/attachments/{attachmentId}/links\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -224,9 +248,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateStripeAccountLinksEndpoint",
-                                methodName: "CreateStripeAccountLinksEndpointAsync",
-                                pathTemplate: "\"/api/v1/orgs/current/stripe_account_links\"",
+                                operationId: "CreateLinksToABrowserWindowBeta",
+                                methodName: "CreateLinksToABrowserWindowBetaAsync",
+                                pathTemplate: "$\"/api/v2/sandboxes/browsers/{name}/attachments/{attachmentId}/links\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -265,9 +289,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateStripeAccountLinksEndpoint",
-                                methodName: "CreateStripeAccountLinksEndpointAsync",
-                                pathTemplate: "\"/api/v1/orgs/current/stripe_account_links\"",
+                                operationId: "CreateLinksToABrowserWindowBeta",
+                                methodName: "CreateLinksToABrowserWindowBetaAsync",
+                                pathTemplate: "$\"/api/v2/sandboxes/browsers/{name}/attachments/{attachmentId}/links\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -305,7 +329,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateStripeAccountLinksEndpointResponse(
+                ProcessCreateLinksToABrowserWindowBetaResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -313,9 +337,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateStripeAccountLinksEndpoint",
-                                methodName: "CreateStripeAccountLinksEndpointAsync",
-                                pathTemplate: "\"/api/v1/orgs/current/stripe_account_links\"",
+                                operationId: "CreateLinksToABrowserWindowBeta",
+                                methodName: "CreateLinksToABrowserWindowBetaAsync",
+                                pathTemplate: "$\"/api/v2/sandboxes/browsers/{name}/attachments/{attachmentId}/links\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -335,9 +359,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateStripeAccountLinksEndpoint",
-                                methodName: "CreateStripeAccountLinksEndpointAsync",
-                                pathTemplate: "\"/api/v1/orgs/current/stripe_account_links\"",
+                                operationId: "CreateLinksToABrowserWindowBeta",
+                                methodName: "CreateLinksToABrowserWindowBetaAsync",
+                                pathTemplate: "$\"/api/v2/sandboxes/browsers/{name}/attachments/{attachmentId}/links\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -352,38 +376,186 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // An embed origin is not an https origin, or ttl_seconds is out of range
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The caller neither created the browser nor has sandboxes:exec
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Browser or attachment not found
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The browser is not running
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The browser beta is not enabled, or window links are not available
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -402,7 +574,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateStripeAccountLinksEndpointResponseContent(
+                                ProcessCreateLinksToABrowserWindowBetaResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -411,11 +583,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return new global::LangSmith.AutoSDKHttpResponse<string>(
+                                    var __value = global::LangSmith.SandboxesBrowserWindowLinks.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesBrowserWindowLinks>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -435,17 +609,19 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return new global::LangSmith.AutoSDKHttpResponse<string>(
+                                    var __value = await global::LangSmith.SandboxesBrowserWindowLinks.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesBrowserWindowLinks>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -482,24 +658,43 @@ namespace LangSmith
             }
         }
         /// <summary>
-        /// Create Stripe Account Links Endpoint<br/>
-        /// Kick off a Stripe account link flow.
+        /// Create links to a browser window (beta)<br/>
+        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. Minting takes being the browser's creator or a role with sandboxes:exec.
         /// </summary>
-        /// <param name="successPath"></param>
+        /// <param name="name"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="embedOrigins">
+        /// EmbedOrigins are the origins whose pages may show the window's pages in<br/>
+        /// an iframe, such as https://app.example.com: https, or http on<br/>
+        /// localhost, with no path. Without them no page may frame the window.
+        /// </param>
+        /// <param name="ttlSeconds">
+        /// TTLSeconds is how long the links work, from 60 seconds to 24 hours.<br/>
+        /// Defaults to 24 hours.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateStripeAccountLinksEndpointAsync(
-            string successPath,
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
+#endif
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesBrowserWindowLinks> CreateLinksToABrowserWindowBetaAsync(
+            string name,
+            string attachmentId,
+            global::System.Collections.Generic.IList<string>? embedOrigins = default,
+            int? ttlSeconds = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.StripeAccountLinksCreate
+            var __request = new global::LangSmith.SandboxesCreateBrowserWindowLinksPayload
             {
-                SuccessPath = successPath,
+                EmbedOrigins = embedOrigins,
+                TtlSeconds = ttlSeconds,
             };
 
-            return await CreateStripeAccountLinksEndpointAsync(
+            return await CreateLinksToABrowserWindowBetaAsync(
+                name: name,
+                attachmentId: attachmentId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
