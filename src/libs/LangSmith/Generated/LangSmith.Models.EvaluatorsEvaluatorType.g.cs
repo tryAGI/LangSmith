@@ -15,6 +15,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        EvaluatorTypeDecisionModel,
+        /// <summary>
+        ///
+        /// </summary>
         EvaluatorTypeLLM,
     }
 
@@ -31,6 +35,7 @@ namespace LangSmith
             return value switch
             {
                 EvaluatorsEvaluatorType.EvaluatorTypeCode => "code",
+                EvaluatorsEvaluatorType.EvaluatorTypeDecisionModel => "decision_model",
                 EvaluatorsEvaluatorType.EvaluatorTypeLLM => "llm",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace LangSmith
             return value switch
             {
                 "code" => EvaluatorsEvaluatorType.EvaluatorTypeCode,
+                "decision_model" => EvaluatorsEvaluatorType.EvaluatorTypeDecisionModel,
                 "llm" => EvaluatorsEvaluatorType.EvaluatorTypeLLM,
                 _ => null,
             };
