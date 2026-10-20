@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace LangSmith
@@ -9,9 +11,10 @@ namespace LangSmith
     public sealed partial class CreateExampleApiV1ExamplesPostRequest
     {
         /// <summary>
-        ///
+        /// Deprecated: use reference_outputs instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public object? Outputs { get; set; }
 
         /// <summary>
@@ -96,6 +99,12 @@ namespace LangSmith
         public string? CreatedAt { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reference_outputs")]
+        public object? ReferenceOutputs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -105,7 +114,6 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="CreateExampleApiV1ExamplesPostRequest" /> class.
         /// </summary>
         /// <param name="datasetId"></param>
-        /// <param name="outputs"></param>
         /// <param name="sourceRunId"></param>
         /// <param name="sourceSessionId"></param>
         /// <param name="sourceRunStartTime"></param>
@@ -127,12 +135,12 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="createdAt"></param>
+        /// <param name="referenceOutputs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateExampleApiV1ExamplesPostRequest(
             global::System.Guid datasetId,
-            object? outputs,
             global::System.Guid? sourceRunId,
             global::System.Guid? sourceSessionId,
             global::System.DateTime? sourceRunStartTime,
@@ -144,9 +152,9 @@ namespace LangSmith
             bool? useSourceRunIo,
             global::System.Collections.Generic.IList<string>? useSourceRunAttachments,
             bool? useLegacyMessageFormat,
-            string? createdAt)
+            string? createdAt,
+            object? referenceOutputs)
         {
-            this.Outputs = outputs;
             this.DatasetId = datasetId;
             this.SourceRunId = sourceRunId;
             this.SourceSessionId = sourceSessionId;
@@ -160,6 +168,7 @@ namespace LangSmith
             this.UseSourceRunAttachments = useSourceRunAttachments;
             this.UseLegacyMessageFormat = useLegacyMessageFormat;
             this.CreatedAt = createdAt;
+            this.ReferenceOutputs = referenceOutputs;
         }
 
         /// <summary>

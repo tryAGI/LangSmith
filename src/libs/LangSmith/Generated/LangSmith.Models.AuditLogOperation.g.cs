@@ -75,6 +75,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CancelDeploymentRuns,
+        /// <summary>
+        ///
+        /// </summary>
         CaptureSandboxSnapshot,
         /// <summary>
         ///
@@ -204,6 +208,10 @@ namespace LangSmith
         ///
         /// </summary>
         CreateCustomAppEditingSandbox,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateCustomView,
         /// <summary>
         ///
         /// </summary>
@@ -544,6 +552,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteCustomAppEditingSandbox,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteCustomView,
         /// <summary>
         ///
         /// </summary>
@@ -1667,6 +1679,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateCustomView,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateDataPlane,
         /// <summary>
         ///
@@ -2018,6 +2034,7 @@ namespace LangSmith
                 AuditLogOperation.BulkDeleteCustomApps => "bulk_delete_custom_apps",
                 AuditLogOperation.BulkDeleteEvaluators => "bulk_delete_evaluators",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
+                AuditLogOperation.CancelDeploymentRuns => "cancel_deployment_runs",
                 AuditLogOperation.CaptureSandboxSnapshot => "capture_sandbox_snapshot",
                 AuditLogOperation.ClaimPendingOrganizationInvite => "claim_pending_organization_invite",
                 AuditLogOperation.ClaimPendingWorkspaceInvite => "claim_pending_workspace_invite",
@@ -2051,6 +2068,7 @@ namespace LangSmith
                 AuditLogOperation.CreateCustomApp => "create_custom_app",
                 AuditLogOperation.CreateCustomAppEditingCredential => "create_custom_app_editing_credential",
                 AuditLogOperation.CreateCustomAppEditingSandbox => "create_custom_app_editing_sandbox",
+                AuditLogOperation.CreateCustomView => "create_custom_view",
                 AuditLogOperation.CreateDataPlane => "create_data_plane",
                 AuditLogOperation.CreateDataset => "create_dataset",
                 AuditLogOperation.CreateDeployment => "create_deployment",
@@ -2136,6 +2154,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteCredential => "delete_credential",
                 AuditLogOperation.DeleteCustomApp => "delete_custom_app",
                 AuditLogOperation.DeleteCustomAppEditingSandbox => "delete_custom_app_editing_sandbox",
+                AuditLogOperation.DeleteCustomView => "delete_custom_view",
                 AuditLogOperation.DeleteDataPlane => "delete_data_plane",
                 AuditLogOperation.DeleteDataset => "delete_dataset",
                 AuditLogOperation.DeleteDatasets => "delete_datasets",
@@ -2416,6 +2435,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateCustomApp => "update_custom_app",
                 AuditLogOperation.UpdateCustomAppClaim => "update_custom_app_claim",
                 AuditLogOperation.UpdateCustomAppShare => "update_custom_app_share",
+                AuditLogOperation.UpdateCustomView => "update_custom_view",
                 AuditLogOperation.UpdateDataPlane => "update_data_plane",
                 AuditLogOperation.UpdateDataset => "update_dataset",
                 AuditLogOperation.UpdateDatasetSplits => "update_dataset_splits",
@@ -2523,6 +2543,7 @@ namespace LangSmith
                 "bulk_delete_custom_apps" => AuditLogOperation.BulkDeleteCustomApps,
                 "bulk_delete_evaluators" => AuditLogOperation.BulkDeleteEvaluators,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
+                "cancel_deployment_runs" => AuditLogOperation.CancelDeploymentRuns,
                 "capture_sandbox_snapshot" => AuditLogOperation.CaptureSandboxSnapshot,
                 "claim_pending_organization_invite" => AuditLogOperation.ClaimPendingOrganizationInvite,
                 "claim_pending_workspace_invite" => AuditLogOperation.ClaimPendingWorkspaceInvite,
@@ -2556,6 +2577,7 @@ namespace LangSmith
                 "create_custom_app" => AuditLogOperation.CreateCustomApp,
                 "create_custom_app_editing_credential" => AuditLogOperation.CreateCustomAppEditingCredential,
                 "create_custom_app_editing_sandbox" => AuditLogOperation.CreateCustomAppEditingSandbox,
+                "create_custom_view" => AuditLogOperation.CreateCustomView,
                 "create_data_plane" => AuditLogOperation.CreateDataPlane,
                 "create_dataset" => AuditLogOperation.CreateDataset,
                 "create_deployment" => AuditLogOperation.CreateDeployment,
@@ -2641,6 +2663,7 @@ namespace LangSmith
                 "delete_credential" => AuditLogOperation.DeleteCredential,
                 "delete_custom_app" => AuditLogOperation.DeleteCustomApp,
                 "delete_custom_app_editing_sandbox" => AuditLogOperation.DeleteCustomAppEditingSandbox,
+                "delete_custom_view" => AuditLogOperation.DeleteCustomView,
                 "delete_data_plane" => AuditLogOperation.DeleteDataPlane,
                 "delete_dataset" => AuditLogOperation.DeleteDataset,
                 "delete_datasets" => AuditLogOperation.DeleteDatasets,
@@ -2921,6 +2944,7 @@ namespace LangSmith
                 "update_custom_app" => AuditLogOperation.UpdateCustomApp,
                 "update_custom_app_claim" => AuditLogOperation.UpdateCustomAppClaim,
                 "update_custom_app_share" => AuditLogOperation.UpdateCustomAppShare,
+                "update_custom_view" => AuditLogOperation.UpdateCustomView,
                 "update_data_plane" => AuditLogOperation.UpdateDataPlane,
                 "update_dataset" => AuditLogOperation.UpdateDataset,
                 "update_dataset_splits" => AuditLogOperation.UpdateDatasetSplits,

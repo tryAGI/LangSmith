@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LangSmith
 {
     public partial interface IExamplesClient
@@ -34,7 +36,6 @@ namespace LangSmith
         /// Create Example<br/>
         /// Create a new example.
         /// </summary>
-        /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
         /// <param name="sourceRunId"></param>
         /// <param name="sourceSessionId"></param>
@@ -57,12 +58,12 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="createdAt"></param>
+        /// <param name="referenceOutputs"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.Example> CreateExampleAsync(
             global::System.Guid datasetId,
-            object? outputs = default,
             global::System.Guid? sourceRunId = default,
             global::System.Guid? sourceSessionId = default,
             global::System.DateTime? sourceRunStartTime = default,
@@ -75,6 +76,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? useSourceRunAttachments = default,
             bool? useLegacyMessageFormat = default,
             string? createdAt = default,
+            object? referenceOutputs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

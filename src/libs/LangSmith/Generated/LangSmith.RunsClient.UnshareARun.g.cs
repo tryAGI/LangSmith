@@ -636,7 +636,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task UnshareARunAsync(
             global::System.Guid traceId,
-            global::System.Guid? sessionId = default,
+            global::System.Guid sessionId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

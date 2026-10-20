@@ -73,6 +73,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_monitoring_viewed_at")]
+        public global::System.DateTime? AgentMonitoringViewedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -105,6 +111,7 @@ namespace LangSmith
         /// <param name="agentPlatformWelcomeViewedAt"></param>
         /// <param name="getStartedChecklistDismissedAt"></param>
         /// <param name="agentTraceViewedAt"></param>
+        /// <param name="agentMonitoringViewedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -120,7 +127,8 @@ namespace LangSmith
             global::System.DateTime? successViewedAt,
             global::System.DateTime? agentPlatformWelcomeViewedAt,
             global::System.DateTime? getStartedChecklistDismissedAt,
-            global::System.DateTime? agentTraceViewedAt)
+            global::System.DateTime? agentTraceViewedAt,
+            global::System.DateTime? agentMonitoringViewedAt)
         {
             this.Id = id;
             this.LsUserId = lsUserId;
@@ -132,6 +140,7 @@ namespace LangSmith
             this.AgentPlatformWelcomeViewedAt = agentPlatformWelcomeViewedAt;
             this.GetStartedChecklistDismissedAt = getStartedChecklistDismissedAt;
             this.AgentTraceViewedAt = agentTraceViewedAt;
+            this.AgentMonitoringViewedAt = agentMonitoringViewedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

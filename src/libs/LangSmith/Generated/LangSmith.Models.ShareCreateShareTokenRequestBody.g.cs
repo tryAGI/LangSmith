@@ -14,7 +14,8 @@ namespace LangSmith
         /// </summary>
         /// <example>018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public global::System.Guid? SessionId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// trace_id is the root trace UUID to share.<br/>
@@ -22,7 +23,8 @@ namespace LangSmith
         /// </summary>
         /// <example>018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        public global::System.Guid? TraceId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid TraceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +47,8 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ShareCreateShareTokenRequestBody(
-            global::System.Guid? sessionId,
-            global::System.Guid? traceId)
+            global::System.Guid sessionId,
+            global::System.Guid traceId)
         {
             this.SessionId = sessionId;
             this.TraceId = traceId;

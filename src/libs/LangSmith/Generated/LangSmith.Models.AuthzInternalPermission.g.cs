@@ -143,6 +143,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeploymentsCancelRuns,
+        /// <summary>
+        ///
+        /// </summary>
         DeploymentsCreate,
         /// <summary>
         ///
@@ -615,6 +619,7 @@ namespace LangSmith
                 AuthzInternalPermission.DatasetsShare => "datasets:share",
                 AuthzInternalPermission.DatasetsTagOnCreate => "datasets:tag-on-create",
                 AuthzInternalPermission.DatasetsUpdate => "datasets:update",
+                AuthzInternalPermission.DeploymentsCancelRuns => "deployments:cancel-runs",
                 AuthzInternalPermission.DeploymentsCreate => "deployments:create",
                 AuthzInternalPermission.DeploymentsDelete => "deployments:delete",
                 AuthzInternalPermission.DeploymentsRead => "deployments:read",
@@ -765,6 +770,7 @@ namespace LangSmith
                 "datasets:share" => AuthzInternalPermission.DatasetsShare,
                 "datasets:tag-on-create" => AuthzInternalPermission.DatasetsTagOnCreate,
                 "datasets:update" => AuthzInternalPermission.DatasetsUpdate,
+                "deployments:cancel-runs" => AuthzInternalPermission.DeploymentsCancelRuns,
                 "deployments:create" => AuthzInternalPermission.DeploymentsCreate,
                 "deployments:delete" => AuthzInternalPermission.DeploymentsDelete,
                 "deployments:read" => AuthzInternalPermission.DeploymentsRead,
