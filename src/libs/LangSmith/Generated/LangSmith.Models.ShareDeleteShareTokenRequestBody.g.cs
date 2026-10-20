@@ -14,7 +14,8 @@ namespace LangSmith
         /// </summary>
         /// <example>018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public global::System.Guid? SessionId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,7 +34,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ShareDeleteShareTokenRequestBody(
-            global::System.Guid? sessionId)
+            global::System.Guid sessionId)
         {
             this.SessionId = sessionId;
         }

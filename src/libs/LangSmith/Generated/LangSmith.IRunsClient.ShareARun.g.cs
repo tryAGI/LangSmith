@@ -55,8 +55,8 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.ShareCreateShareTokenResponseBody> ShareARunAsync(
             global::System.Guid runId,
-            global::System.Guid? sessionId = default,
-            global::System.Guid? traceId = default,
+            global::System.Guid sessionId,
+            global::System.Guid traceId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
