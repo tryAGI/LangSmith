@@ -61,6 +61,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("get_started_checklist_dismissed_at")]
+        public global::System.DateTime? GetStartedChecklistDismissedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_trace_viewed_at")]
+        public global::System.DateTime? AgentTraceViewedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -91,6 +103,8 @@ namespace LangSmith
         /// <param name="evaluationCompletedAt"></param>
         /// <param name="successViewedAt"></param>
         /// <param name="agentPlatformWelcomeViewedAt"></param>
+        /// <param name="getStartedChecklistDismissedAt"></param>
+        /// <param name="agentTraceViewedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,7 +118,9 @@ namespace LangSmith
             global::System.DateTime? playgroundCompletedAt,
             global::System.DateTime? evaluationCompletedAt,
             global::System.DateTime? successViewedAt,
-            global::System.DateTime? agentPlatformWelcomeViewedAt)
+            global::System.DateTime? agentPlatformWelcomeViewedAt,
+            global::System.DateTime? getStartedChecklistDismissedAt,
+            global::System.DateTime? agentTraceViewedAt)
         {
             this.Id = id;
             this.LsUserId = lsUserId;
@@ -114,6 +130,8 @@ namespace LangSmith
             this.EvaluationCompletedAt = evaluationCompletedAt;
             this.SuccessViewedAt = successViewedAt;
             this.AgentPlatformWelcomeViewedAt = agentPlatformWelcomeViewedAt;
+            this.GetStartedChecklistDismissedAt = getStartedChecklistDismissedAt;
+            this.AgentTraceViewedAt = agentTraceViewedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }
