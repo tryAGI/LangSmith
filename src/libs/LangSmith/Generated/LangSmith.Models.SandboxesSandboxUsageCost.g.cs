@@ -9,6 +9,13 @@ namespace LangSmith
     public sealed partial class SandboxesSandboxUsageCost
     {
         /// <summary>
+        /// Recorded compute usage in Standard Units, as a decimal string, separate from LCU.<br/>
+        /// Null means complete Standard compute usage is unavailable; "0" means known zero usage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compute_standard_units")]
+        public string? ComputeStandardUnits { get; set; }
+
+        /// <summary>
         /// Recorded compute usage in LangSmith Compute Units (LCU), as a decimal string<br/>
         /// with up to six fractional digits and trailing zeros omitted. Snapshots return "0".<br/>
         /// Example: 1.234567
@@ -51,6 +58,13 @@ namespace LangSmith
         public required global::LangSmith.SandboxesUsageCostResourceType ResourceType { get; set; }
 
         /// <summary>
+        /// Allocated storage usage in Standard Units, as a decimal string, separate from LSU.<br/>
+        /// Null means complete Standard storage usage is unavailable; "0" means known zero usage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("storage_standard_units")]
+        public string? StorageStandardUnits { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +86,14 @@ namespace LangSmith
         /// <param name="periodStart"></param>
         /// <param name="resourceId"></param>
         /// <param name="resourceType"></param>
+        /// <param name="computeStandardUnits">
+        /// Recorded compute usage in Standard Units, as a decimal string, separate from LCU.<br/>
+        /// Null means complete Standard compute usage is unavailable; "0" means known zero usage.
+        /// </param>
+        /// <param name="storageStandardUnits">
+        /// Allocated storage usage in Standard Units, as a decimal string, separate from LSU.<br/>
+        /// Null means complete Standard storage usage is unavailable; "0" means known zero usage.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,13 +102,17 @@ namespace LangSmith
             string lsu,
             global::System.DateTime periodStart,
             global::System.Guid resourceId,
-            global::LangSmith.SandboxesUsageCostResourceType resourceType)
+            global::LangSmith.SandboxesUsageCostResourceType resourceType,
+            string? computeStandardUnits,
+            string? storageStandardUnits)
         {
+            this.ComputeStandardUnits = computeStandardUnits;
             this.Lcu = lcu ?? throw new global::System.ArgumentNullException(nameof(lcu));
             this.Lsu = lsu ?? throw new global::System.ArgumentNullException(nameof(lsu));
             this.PeriodStart = periodStart;
             this.ResourceId = resourceId;
             this.ResourceType = resourceType;
+            this.StorageStandardUnits = storageStandardUnits;
         }
 
         /// <summary>
