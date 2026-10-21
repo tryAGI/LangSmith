@@ -282,6 +282,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_type")]
+        public string? EvaluatorType { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alignment_annotation_queue_id")]
         public global::System.Guid? AlignmentAnnotationQueueId { get; set; }
 
@@ -378,6 +384,7 @@ namespace LangSmith
         /// </param>
         /// <param name="evaluatorId"></param>
         /// <param name="evaluatorName"></param>
+        /// <param name="evaluatorType"></param>
         /// <param name="alignmentAnnotationQueueId"></param>
         /// <param name="groupBy"></param>
         /// <param name="spendLimit"></param>
@@ -431,6 +438,7 @@ namespace LangSmith
             bool? transient,
             global::System.Guid? evaluatorId,
             string? evaluatorName,
+            string? evaluatorType,
             global::System.Guid? alignmentAnnotationQueueId,
             global::LangSmith.RunRulesSchemaGroupBy? groupBy,
             global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit,
@@ -481,6 +489,7 @@ namespace LangSmith
             this.EvaluatorVersion = evaluatorVersion;
             this.EvaluatorId = evaluatorId;
             this.EvaluatorName = evaluatorName;
+            this.EvaluatorType = evaluatorType;
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
             this.GroupBy = groupBy;
             this.SpendLimit = spendLimit;

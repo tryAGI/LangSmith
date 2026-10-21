@@ -116,6 +116,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("org_identity_id")]
+        public global::System.Guid? OrgIdentityId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
         public global::System.Guid? OrgRoleId { get; set; }
 
@@ -162,6 +168,7 @@ namespace LangSmith
         /// <param name="isDisabled">
         /// Default Value: false
         /// </param>
+        /// <param name="orgIdentityId"></param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
         /// <param name="tenantIds">
@@ -187,6 +194,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.ProviderUserSlim>? linkedLoginMethods,
             string? displayName,
             bool? isDisabled,
+            global::System.Guid? orgIdentityId,
             global::System.Guid? orgRoleId,
             string? orgRoleName,
             global::System.Collections.Generic.IList<global::System.Guid>? tenantIds)
@@ -207,6 +215,7 @@ namespace LangSmith
             this.LinkedLoginMethods = linkedLoginMethods;
             this.DisplayName = displayName;
             this.IsDisabled = isDisabled;
+            this.OrgIdentityId = orgIdentityId;
             this.OrgRoleId = orgRoleId;
             this.OrgRoleName = orgRoleName;
             this.TenantIds = tenantIds;
