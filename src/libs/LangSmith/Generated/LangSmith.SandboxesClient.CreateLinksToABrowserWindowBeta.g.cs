@@ -60,7 +60,7 @@ namespace LangSmith
 
         /// <summary>
         /// Create links to a browser window (beta)<br/>
-        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. Minting takes being the browser's creator or a role with sandboxes:exec.
+        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. A stopped browser starts when links are minted and when a link is opened, and resumes with its windows. Minting takes being the browser's creator or a role with sandboxes:exec.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="attachmentId"></param>
@@ -92,7 +92,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Create links to a browser window (beta)<br/>
-        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. Minting takes being the browser's creator or a role with sandboxes:exec.
+        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. A stopped browser starts when links are minted and when a link is opened, and resumes with its windows. Minting takes being the browser's creator or a role with sandboxes:exec.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="attachmentId"></param>
@@ -487,43 +487,6 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The browser is not running
-                            if ((int)__response.StatusCode == 409)
-                            {
-                                string? __content_409 = null;
-                                global::System.Exception? __exception_409 = null;
-                                global::LangSmith.SandboxesErrorResponse? __value_409 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_409 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_409,
-                                    responseBody: __content_409,
-                                    responseObject: __value_409,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // The browser beta is not enabled, or window links are not available
                             if ((int)__response.StatusCode == 501)
                             {
@@ -659,7 +622,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Create links to a browser window (beta)<br/>
-        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. Minting takes being the browser's creator or a role with sandboxes:exec.
+        /// Beta: mint a view link and an act link for one window, as every attachment response does, with a chosen lifetime and the origins allowed to embed the window's pages in an iframe. Without embed_origins no page may frame them. An embedded page sends its parent window messages when control changes and when it connects or disconnects (see the browser guide). Either link opens the window to anyone who holds it until it expires; detaching the window ends it early. A stopped browser starts when links are minted and when a link is opened, and resumes with its windows. Minting takes being the browser's creator or a role with sandboxes:exec.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="attachmentId"></param>
