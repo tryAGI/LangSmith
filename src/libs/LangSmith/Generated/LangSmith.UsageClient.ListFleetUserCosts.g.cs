@@ -45,7 +45,8 @@ namespace LangSmith
             ref global::System.DateTime startTime,
             ref global::System.DateTime endTime,
             ref global::LangSmith.GetFleetUsageUsersSortBy? sortBy,
-            ref global::LangSmith.GetFleetUsageUsersSortOrder? sortOrder);
+            ref global::LangSmith.GetFleetUsageUsersSortOrder? sortOrder,
+            ref string? email);
         partial void PrepareListFleetUserCostsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -54,7 +55,8 @@ namespace LangSmith
             global::System.DateTime startTime,
             global::System.DateTime endTime,
             global::LangSmith.GetFleetUsageUsersSortBy? sortBy,
-            global::LangSmith.GetFleetUsageUsersSortOrder? sortOrder);
+            global::LangSmith.GetFleetUsageUsersSortOrder? sortOrder,
+            string? email);
         partial void ProcessListFleetUserCostsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -80,6 +82,7 @@ namespace LangSmith
         /// <param name="sortOrder">
         /// Default Value: desc
         /// </param>
+        /// <param name="email"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -90,6 +93,7 @@ namespace LangSmith
             string? cursor = default,
             global::LangSmith.GetFleetUsageUsersSortBy? sortBy = default,
             global::LangSmith.GetFleetUsageUsersSortOrder? sortOrder = default,
+            string? email = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,6 +104,7 @@ namespace LangSmith
                 cursor: cursor,
                 sortBy: sortBy,
                 sortOrder: sortOrder,
+                email: email,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -122,6 +127,7 @@ namespace LangSmith
         /// <param name="sortOrder">
         /// Default Value: desc
         /// </param>
+        /// <param name="email"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -132,6 +138,7 @@ namespace LangSmith
             string? cursor = default,
             global::LangSmith.GetFleetUsageUsersSortBy? sortBy = default,
             global::LangSmith.GetFleetUsageUsersSortOrder? sortOrder = default,
+            string? email = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -144,7 +151,8 @@ namespace LangSmith
                 startTime: ref startTime,
                 endTime: ref endTime,
                 sortBy: ref sortBy,
-                sortOrder: ref sortOrder);
+                sortOrder: ref sortOrder,
+                email: ref email);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -181,6 +189,7 @@ namespace LangSmith
                                 .AddRequiredParameter("end_time", endTime.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
+                                .AddOptionalParameter("email", email)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -227,7 +236,8 @@ namespace LangSmith
                     startTime: startTime,
                     endTime: endTime,
                     sortBy: sortBy,
-                    sortOrder: sortOrder);
+                    sortOrder: sortOrder,
+                    email: email);
 
                 return __httpRequest;
             }
