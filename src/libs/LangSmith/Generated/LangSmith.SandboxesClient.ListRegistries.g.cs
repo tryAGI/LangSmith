@@ -40,12 +40,16 @@ namespace LangSmith
             };
         partial void PrepareListRegistriesArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? pageSize,
+            ref string? cursor,
             ref int? limit,
             ref int? offset,
             ref string? nameContains);
         partial void PrepareListRegistriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? pageSize,
+            string? cursor,
             int? limit,
             int? offset,
             string? nameContains);
@@ -60,8 +64,14 @@ namespace LangSmith
 
         /// <summary>
         /// List registries<br/>
-        /// List sandbox registries for pulling private images.
+        /// List sandbox registries for pulling private images.<br/>
+        /// Page with page_size and cursor, replaying next_cursor until it is null. Results are ordered newest first, with stable ordering for equal creation times. Keep filters unchanged between pages.<br/>
+        /// Requests without page_size or cursor retain the legacy default of 50 results. Cursor requests default to 20 results, with a maximum of 100.
         /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <param name="nameContains"></param>
@@ -69,6 +79,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesRegistryListResponse> ListRegistriesAsync(
+            int? pageSize = default,
+            string? cursor = default,
             int? limit = default,
             int? offset = default,
             string? nameContains = default,
@@ -76,6 +88,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListRegistriesAsResponseAsync(
+                pageSize: pageSize,
+                cursor: cursor,
                 limit: limit,
                 offset: offset,
                 nameContains: nameContains,
@@ -87,8 +101,14 @@ namespace LangSmith
         }
         /// <summary>
         /// List registries<br/>
-        /// List sandbox registries for pulling private images.
+        /// List sandbox registries for pulling private images.<br/>
+        /// Page with page_size and cursor, replaying next_cursor until it is null. Results are ordered newest first, with stable ordering for equal creation times. Keep filters unchanged between pages.<br/>
+        /// Requests without page_size or cursor retain the legacy default of 50 results. Cursor requests default to 20 results, with a maximum of 100.
         /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <param name="nameContains"></param>
@@ -96,6 +116,8 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesRegistryListResponse>> ListRegistriesAsResponseAsync(
+            int? pageSize = default,
+            string? cursor = default,
             int? limit = default,
             int? offset = default,
             string? nameContains = default,
@@ -106,6 +128,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListRegistriesArguments(
                 httpClient: HttpClient,
+                pageSize: ref pageSize,
+                cursor: ref cursor,
                 limit: ref limit,
                 offset: ref offset,
                 nameContains: ref nameContains);
@@ -139,6 +163,8 @@ namespace LangSmith
                                 servers: s_ListRegistriesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("name_contains", nameContains)
@@ -183,6 +209,8 @@ namespace LangSmith
                 PrepareListRegistriesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    pageSize: pageSize,
+                    cursor: cursor,
                     limit: limit,
                     offset: offset,
                     nameContains: nameContains);
@@ -364,7 +392,7 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request
+                            // invalid cursor pagination or mixed pagination parameters
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -433,6 +461,43 @@ namespace LangSmith
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // out-of-range legacy limit or offset
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::LangSmith.SandboxesValidationErrors? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::LangSmith.SandboxesValidationErrors.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::LangSmith.SandboxesValidationErrors.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesValidationErrors>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
