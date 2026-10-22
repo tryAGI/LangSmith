@@ -137,6 +137,13 @@ namespace LangSmith
         public bool? PreviewVerifyEnabled { get; set; }
 
         /// <summary>
+        /// PreviewVerifyNoTrigger tells fix verification not to request a preview.<br/>
+        /// The deployment builds one itself for the fix commit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preview_verify_no_trigger")]
+        public bool? PreviewVerifyNoTrigger { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priorities")]
@@ -285,6 +292,10 @@ namespace LangSmith
         /// PreviewVerifyEnabled lets this board's fix runs use preview deployments<br/>
         /// when issue validation is enabled for its tracing project.
         /// </param>
+        /// <param name="previewVerifyNoTrigger">
+        /// PreviewVerifyNoTrigger tells fix verification not to request a preview.<br/>
+        /// The deployment builds one itself for the fix commit.
+        /// </param>
         /// <param name="priorities"></param>
         /// <param name="runFilter">
         /// RunFilter is a runs-filter-DSL string scoping which traces Engine analyzes<br/>
@@ -348,6 +359,7 @@ namespace LangSmith
             global::LangSmith.AgentLinearIntegration? linearIntegration,
             global::LangSmith.AgentLinearSyncHealth? linearSyncHealth,
             bool? previewVerifyEnabled,
+            bool? previewVerifyNoTrigger,
             global::System.Collections.Generic.IList<string>? priorities,
             string? runFilter,
             int? selectedTraceCountLast14Days,
@@ -383,6 +395,7 @@ namespace LangSmith
             this.LinearIntegration = linearIntegration;
             this.LinearSyncHealth = linearSyncHealth;
             this.PreviewVerifyEnabled = previewVerifyEnabled;
+            this.PreviewVerifyNoTrigger = previewVerifyNoTrigger;
             this.Priorities = priorities;
             this.RunFilter = runFilter;
             this.SelectedTraceCountLast14Days = selectedTraceCountLast14Days;

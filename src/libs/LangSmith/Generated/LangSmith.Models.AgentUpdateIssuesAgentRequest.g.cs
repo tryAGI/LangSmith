@@ -74,6 +74,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preview_verify_no_trigger")]
+        public bool? PreviewVerifyNoTrigger { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priorities")]
         public global::System.Collections.Generic.IList<string>? Priorities { get; set; }
 
@@ -149,6 +155,7 @@ namespace LangSmith
         /// </param>
         /// <param name="linearIntegration"></param>
         /// <param name="previewVerifyEnabled"></param>
+        /// <param name="previewVerifyNoTrigger"></param>
         /// <param name="priorities"></param>
         /// <param name="runFilter">
         /// Trace-scope DSL. nil = don't change; "" clears it.
@@ -187,6 +194,7 @@ namespace LangSmith
             string? githubRepoUrl,
             global::LangSmith.AgentLinearIntegrationPatch? linearIntegration,
             bool? previewVerifyEnabled,
+            bool? previewVerifyNoTrigger,
             global::System.Collections.Generic.IList<string>? priorities,
             string? runFilter,
             string? sessionAgentOverviewRepoId,
@@ -205,6 +213,7 @@ namespace LangSmith
             this.GithubRepoUrl = githubRepoUrl;
             this.LinearIntegration = linearIntegration;
             this.PreviewVerifyEnabled = previewVerifyEnabled;
+            this.PreviewVerifyNoTrigger = previewVerifyNoTrigger;
             this.Priorities = priorities;
             this.RunFilter = runFilter;
             this.SessionAgentOverviewRepoId = sessionAgentOverviewRepoId;

@@ -74,6 +74,7 @@ namespace LangSmith
         /// </param>
         /// <param name="linearIntegration"></param>
         /// <param name="previewVerifyEnabled"></param>
+        /// <param name="previewVerifyNoTrigger"></param>
         /// <param name="priorities"></param>
         /// <param name="runFilter">
         /// Trace-scope DSL. nil = don't change; "" clears it.
@@ -116,6 +117,7 @@ namespace LangSmith
             string? githubRepoUrl = default,
             global::LangSmith.AgentLinearIntegrationPatch? linearIntegration = default,
             bool? previewVerifyEnabled = default,
+            bool? previewVerifyNoTrigger = default,
             global::System.Collections.Generic.IList<string>? priorities = default,
             string? runFilter = default,
             string? sessionAgentOverviewRepoId = default,
