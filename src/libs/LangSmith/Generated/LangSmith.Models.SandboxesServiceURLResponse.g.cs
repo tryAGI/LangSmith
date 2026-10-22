@@ -22,6 +22,12 @@ namespace LangSmith
         public string? BrowserUrl { get; set; }
 
         /// <summary>
+        /// EmbedOrigins echoes the origins that may embed a LangSmith login URL, normalized; omitted when there are none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("embed_origins")]
+        public global::System.Collections.Generic.IList<string>? EmbedOrigins { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
@@ -52,6 +58,9 @@ namespace LangSmith
         /// Access echoes the enabled LangSmith login level ("restricted"/"workspace"); omitted in token mode.
         /// </param>
         /// <param name="browserUrl"></param>
+        /// <param name="embedOrigins">
+        /// EmbedOrigins echoes the origins that may embed a LangSmith login URL, normalized; omitted when there are none.
+        /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="serviceUrl"></param>
         /// <param name="token">
@@ -63,12 +72,14 @@ namespace LangSmith
         public SandboxesServiceURLResponse(
             global::LangSmith.SandboxesServiceURLResponseAccess? access,
             string? browserUrl,
+            global::System.Collections.Generic.IList<string>? embedOrigins,
             string? expiresAt,
             string? serviceUrl,
             string? token)
         {
             this.Access = access;
             this.BrowserUrl = browserUrl;
+            this.EmbedOrigins = embedOrigins;
             this.ExpiresAt = expiresAt;
             this.ServiceUrl = serviceUrl;
             this.Token = token;

@@ -88,6 +88,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public AgentsClient Agents { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public AlertRulesClient AlertRules { get; }
 
         /// <summary>

@@ -198,6 +198,12 @@ namespace LangSmith
         public int? MaxServiceKeyExpiryDays { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tracing_key_expiry_days")]
+        public int? MaxTracingKeyExpiryDays { get; set; }
+
+        /// <summary>
         /// Default Value: :
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
@@ -343,6 +349,7 @@ namespace LangSmith
         /// <param name="securityContact"></param>
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
+        /// <param name="maxTracingKeyExpiryDays"></param>
         /// <param name="scimGroupNameSeparator">
         /// Default Value: :
         /// </param>
@@ -395,6 +402,7 @@ namespace LangSmith
             string? securityContact,
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
+            int? maxTracingKeyExpiryDays,
             string? scimGroupNameSeparator,
             bool? canExportUsageBackfill,
             bool? llmAuthProxyEnabled,
@@ -438,6 +446,7 @@ namespace LangSmith
             this.SecurityContact = securityContact;
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
+            this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;

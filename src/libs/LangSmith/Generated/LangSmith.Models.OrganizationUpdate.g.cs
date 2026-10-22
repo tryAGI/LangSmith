@@ -83,6 +83,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tracing_key_expiry_days")]
+        public int? MaxTracingKeyExpiryDays { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
         public string? ScimGroupNameSeparator { get; set; }
 
@@ -168,6 +174,7 @@ namespace LangSmith
         /// <param name="securityContact"></param>
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
+        /// <param name="maxTracingKeyExpiryDays"></param>
         /// <param name="scimGroupNameSeparator"></param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
@@ -197,6 +204,7 @@ namespace LangSmith
             string? securityContact,
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
+            int? maxTracingKeyExpiryDays,
             string? scimGroupNameSeparator,
             bool? llmAuthProxyEnabled,
             string? llmAuthProxyJwtAudience,
@@ -221,6 +229,7 @@ namespace LangSmith
             this.SecurityContact = securityContact;
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
+            this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;

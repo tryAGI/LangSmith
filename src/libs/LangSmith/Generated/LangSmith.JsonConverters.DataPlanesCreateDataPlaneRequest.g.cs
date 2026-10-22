@@ -36,7 +36,9 @@ namespace LangSmith.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("additional_tags")) __score0++;
-            if (__jsonProps.Contains("byoiam_enabled")) __score0++;
+            if (__jsonProps.Contains("byoiam")) __score0++;
+            if (__jsonProps.Contains("byoiam.is_enabled")) __score0++;
+            if (__jsonProps.Contains("byoiam.resource_names")) __score0++;
             if (__jsonProps.Contains("byovpc")) __score0++;
             if (__jsonProps.Contains("byovpc.private_app_subnet_ids")) __score0++;
             if (__jsonProps.Contains("byovpc.private_db_subnet_ids")) __score0++;

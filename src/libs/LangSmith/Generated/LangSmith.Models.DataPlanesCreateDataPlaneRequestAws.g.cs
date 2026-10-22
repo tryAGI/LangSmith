@@ -15,10 +15,10 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? AdditionalTags { get; set; }
 
         /// <summary>
-        /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("byoiam_enabled")]
-        public bool? ByoiamEnabled { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoiam")]
+        public global::LangSmith.DataPlanesCreateDataPlaneBYOIAMSettings? Byoiam { get; set; }
 
         /// <summary>
         ///
@@ -60,7 +60,7 @@ namespace LangSmith
         public required string RoleArn { get; set; }
 
         /// <summary>
-        /// TraceStorage selects the run and trace store. Defaults to CLICKHOUSE.
+        /// TraceStorage selects the run and trace store. Defaults to SMITHDB.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_storage")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesDataPlaneTraceStorageJsonConverter))]
@@ -85,16 +85,14 @@ namespace LangSmith
         /// <param name="region"></param>
         /// <param name="roleArn"></param>
         /// <param name="additionalTags"></param>
-        /// <param name="byoiamEnabled">
-        /// Use customer-managed IAM roles created by the LangSmith BYOIAM Terraform module.
-        /// </param>
+        /// <param name="byoiam"></param>
         /// <param name="byovpc"></param>
         /// <param name="eksApiPrivatelinkDisabled">
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="traceStorage">
-        /// TraceStorage selects the run and trace store. Defaults to CLICKHOUSE.
+        /// TraceStorage selects the run and trace store. Defaults to SMITHDB.
         /// </param>
         /// <param name="vpcCidr">
         /// VPCCIDR is used only when LangSmith creates the VPC.
@@ -107,7 +105,7 @@ namespace LangSmith
             string region,
             string roleArn,
             global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags,
-            bool? byoiamEnabled,
+            global::LangSmith.DataPlanesCreateDataPlaneBYOIAMSettings? byoiam,
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             bool? eksApiPrivatelinkDisabled,
             bool? publicLoadBalancer,
@@ -115,7 +113,7 @@ namespace LangSmith
             string? vpcCidr)
         {
             this.AdditionalTags = additionalTags;
-            this.ByoiamEnabled = byoiamEnabled;
+            this.Byoiam = byoiam;
             this.Byovpc = byovpc;
             this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

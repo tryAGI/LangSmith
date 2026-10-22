@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoiam")]
+        public global::LangSmith.DataPlanesDataPlaneBYOIAMSettings? Byoiam { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byovpc")]
         public global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? Byovpc { get; set; }
 
@@ -42,18 +48,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_byoiam_enabled")]
-        public bool? IsByoiamEnabled { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_eks_api_privatelink_disabled")]
         public bool? IsEksApiPrivatelinkDisabled { get; set; }
 
         /// <summary>
         /// IsGCPBYOIAMEnabled is true when the customer created the data plane<br/>
-        /// service accounts. It has its own name because AWS has is_byoiam_enabled.
+        /// service accounts. It has its own name because AWS has the byoiam object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_gcp_byoiam_enabled")]
         public bool? IsGcpByoiamEnabled { get; set; }
@@ -111,16 +111,16 @@ namespace LangSmith
         /// <param name="azureEntraTenantId">
         /// EntraTenantID is the Microsoft Entra tenant of the resource group.
         /// </param>
+        /// <param name="byoiam"></param>
         /// <param name="byovpc"></param>
         /// <param name="cloud"></param>
         /// <param name="gcpProjectId">
         /// ProjectID is the customer project that hosts the data plane.
         /// </param>
-        /// <param name="isByoiamEnabled"></param>
         /// <param name="isEksApiPrivatelinkDisabled"></param>
         /// <param name="isGcpByoiamEnabled">
         /// IsGCPBYOIAMEnabled is true when the customer created the data plane<br/>
-        /// service accounts. It has its own name because AWS has is_byoiam_enabled.
+        /// service accounts. It has its own name because AWS has the byoiam object.
         /// </param>
         /// <param name="isPublicLoadBalancer"></param>
         /// <param name="provisionerServiceAccount">
@@ -143,10 +143,10 @@ namespace LangSmith
         public DataPlanesDataPlaneProvisioningSettings(
             global::System.Collections.Generic.Dictionary<string, string>? additionalTags,
             string? azureEntraTenantId,
+            global::LangSmith.DataPlanesDataPlaneBYOIAMSettings? byoiam,
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             global::LangSmith.DataPlanesDataPlaneCloud? cloud,
             string? gcpProjectId,
-            bool? isByoiamEnabled,
             bool? isEksApiPrivatelinkDisabled,
             bool? isGcpByoiamEnabled,
             bool? isPublicLoadBalancer,
@@ -158,10 +158,10 @@ namespace LangSmith
         {
             this.AdditionalTags = additionalTags;
             this.AzureEntraTenantId = azureEntraTenantId;
+            this.Byoiam = byoiam;
             this.Byovpc = byovpc;
             this.Cloud = cloud;
             this.GcpProjectId = gcpProjectId;
-            this.IsByoiamEnabled = isByoiamEnabled;
             this.IsEksApiPrivatelinkDisabled = isEksApiPrivatelinkDisabled;
             this.IsGcpByoiamEnabled = isGcpByoiamEnabled;
             this.IsPublicLoadBalancer = isPublicLoadBalancer;
