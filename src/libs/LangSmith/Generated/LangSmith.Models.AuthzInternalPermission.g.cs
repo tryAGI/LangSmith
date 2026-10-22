@@ -267,6 +267,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        McpServersCreatePersonal,
+        /// <summary>
+        ///
+        /// </summary>
         McpServersDelete,
         /// <summary>
         ///
@@ -650,6 +654,7 @@ namespace LangSmith
                 AuthzInternalPermission.IssuesRead => "issues:read",
                 AuthzInternalPermission.IssuesUpdate => "issues:update",
                 AuthzInternalPermission.McpServersCreate => "mcp-servers:create",
+                AuthzInternalPermission.McpServersCreatePersonal => "mcp-servers:create-personal",
                 AuthzInternalPermission.McpServersDelete => "mcp-servers:delete",
                 AuthzInternalPermission.McpServersInvoke => "mcp-servers:invoke",
                 AuthzInternalPermission.McpServersRead => "mcp-servers:read",
@@ -801,6 +806,7 @@ namespace LangSmith
                 "issues:read" => AuthzInternalPermission.IssuesRead,
                 "issues:update" => AuthzInternalPermission.IssuesUpdate,
                 "mcp-servers:create" => AuthzInternalPermission.McpServersCreate,
+                "mcp-servers:create-personal" => AuthzInternalPermission.McpServersCreatePersonal,
                 "mcp-servers:delete" => AuthzInternalPermission.McpServersDelete,
                 "mcp-servers:invoke" => AuthzInternalPermission.McpServersInvoke,
                 "mcp-servers:read" => AuthzInternalPermission.McpServersRead,

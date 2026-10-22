@@ -31,6 +31,12 @@ namespace LangSmith
         public global::System.Guid? CreatedBy { get; set; }
 
         /// <summary>
+        /// Origins that may embed a LangSmith login URL in an iframe; omitted when there are none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("embed_origins")]
+        public global::System.Collections.Generic.IList<string>? EmbedOrigins { get; set; }
+
+        /// <summary>
         /// When the share expires. Set only for "token"; a login grant does not expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
@@ -61,6 +67,9 @@ namespace LangSmith
         /// <param name="createdBy">
         /// The LangSmith user who first shared this port, when known.
         /// </param>
+        /// <param name="embedOrigins">
+        /// Origins that may embed a LangSmith login URL in an iframe; omitted when there are none.
+        /// </param>
         /// <param name="expiresAt">
         /// When the share expires. Set only for "token"; a login grant does not expire.
         /// </param>
@@ -72,11 +81,13 @@ namespace LangSmith
             global::System.DateTime createdAt,
             int port,
             global::System.Guid? createdBy,
+            global::System.Collections.Generic.IList<string>? embedOrigins,
             global::System.DateTime? expiresAt)
         {
             this.Access = access;
             this.CreatedAt = createdAt;
             this.CreatedBy = createdBy;
+            this.EmbedOrigins = embedOrigins;
             this.ExpiresAt = expiresAt;
             this.Port = port;
         }

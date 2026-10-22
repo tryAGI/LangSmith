@@ -173,6 +173,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tracing_key_expiry_days")]
+        public int? MaxTracingKeyExpiryDays { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("member_disabled")]
         public bool? MemberDisabled { get; set; }
 
@@ -301,6 +307,7 @@ namespace LangSmith
         /// <param name="maxApiKeyExpiryDays"></param>
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
+        /// <param name="maxTracingKeyExpiryDays"></param>
         /// <param name="memberDisabled"></param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
@@ -347,6 +354,7 @@ namespace LangSmith
             int? maxApiKeyExpiryDays,
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
+            int? maxTracingKeyExpiryDays,
             bool? memberDisabled,
             global::System.Guid? orgRoleId,
             global::LangSmith.OrgsOrganizationRole? orgRoleName,
@@ -388,6 +396,7 @@ namespace LangSmith
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
+            this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;
             this.MemberDisabled = memberDisabled;
             this.OrgRoleId = orgRoleId;
             this.OrgRoleName = orgRoleName;

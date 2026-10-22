@@ -43,6 +43,7 @@ namespace LangSmith
         /// <param name="securityContact"></param>
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
+        /// <param name="maxTracingKeyExpiryDays"></param>
         /// <param name="scimGroupNameSeparator"></param>
         /// <param name="llmAuthProxyEnabled"></param>
         /// <param name="llmAuthProxyJwtAudience"></param>
@@ -72,6 +73,7 @@ namespace LangSmith
             string? securityContact = default,
             int? maxPatExpiryDays = default,
             int? maxServiceKeyExpiryDays = default,
+            int? maxTracingKeyExpiryDays = default,
             string? scimGroupNameSeparator = default,
             bool? llmAuthProxyEnabled = default,
             string? llmAuthProxyJwtAudience = default,

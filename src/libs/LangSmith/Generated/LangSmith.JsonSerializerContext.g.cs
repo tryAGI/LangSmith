@@ -721,6 +721,18 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentTargetAuthInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentUpdateIssuesAgentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentUpdateIssuesAgentRequestAnalysisLevel), TypeInfoPropertyName = "AgentUpdateIssuesAgentRequestAnalysisLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentType), TypeInfoPropertyName = "AgentplatformAgentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgentEnvironment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentEnvironment))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentSourceType2), TypeInfoPropertyName = "AgentplatformAgentSourceType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentCreate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentEnvironmentName), TypeInfoPropertyName = "AgentplatformAgentEnvironmentName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgentRuntimeBinding>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentRuntimeBinding))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgent>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionTarget), TypeInfoPropertyName = "AlertsAlertActionTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionBase))]
@@ -789,6 +801,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CommitsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CommitsListCommitsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.CommitsCommitWithLookups>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesCreateDataPlaneBYOIAMSettings))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesDataPlaneBYOIAMResourceNames))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequest), TypeInfoPropertyName = "DataPlanesCreateDataPlaneRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAws))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesCreateDataPlaneRequestAzure))]
@@ -797,6 +811,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesDataPlaneBYOVPCSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesDataPlaneTraceStorage), TypeInfoPropertyName = "DataPlanesDataPlaneTraceStorage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesCreateErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesDataPlaneBYOIAMSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesDataPlaneCloud), TypeInfoPropertyName = "DataPlanesDataPlaneCloud2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DataPlanesDataPlaneFirewallSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>))]
@@ -1018,21 +1033,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricField), TypeInfoPropertyName = "RunsanalyticsMetricField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricType), TypeInfoPropertyName = "RunsanalyticsMetricType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiAzureBlobMountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiContextHubMountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiFileInfo))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGCSMountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpecType), TypeInfoPropertyName = "SandboxapiGitMountRefSpecType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGrepMatch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountCacheSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountEncryptionSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountKind), TypeInfoPropertyName = "SandboxapiMountKind2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiS3MountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiS3BucketMountSpec))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGCSBucketMountSpec))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1053,6 +1053,21 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiAzureBlobMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiContextHubMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiFileInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGCSMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpecType), TypeInfoPropertyName = "SandboxapiGitMountRefSpecType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGrepMatch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountCacheSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountEncryptionSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountKind), TypeInfoPropertyName = "SandboxapiMountKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiS3MountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiS3BucketMountSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGCSBucketMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitRepoMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiContextHubRepoMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiAzureBlobContainerMountSpec))]
@@ -1331,6 +1346,10 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item), TypeInfoPropertyName = "ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource), TypeInfoPropertyName = "ListRepoTagsApiV1ReposTagsGetSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsSortBy), TypeInfoPropertyName = "GetAgentsSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsSortOrder), TypeInfoPropertyName = "GetAgentsSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsSourceType), TypeInfoPropertyName = "GetAgentsSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsInclude), TypeInfoPropertyName = "GetAgentsInclude2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsStatus), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsItemType), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsDirection2")]
@@ -1536,6 +1555,26 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OCSFCategoryName?), TypeInfoPropertyName = "NullableOCSFCategoryName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.PromptimConfig, global::LangSmith.DemoConfig>?), TypeInfoPropertyName = "NullableAnyOfPromptimConfigDemoConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrganizationDashboardColorScheme?), TypeInfoPropertyName = "NullableOrganizationDashboardColorScheme2")]
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile>), TypeInfoPropertyName = "CustomChartMetricPercentile_3c8b9621ba7cc835")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioInput>), TypeInfoPropertyName = "CustomChartMetricRatioInput_372327652f8276d4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>), TypeInfoPropertyName = "CustomChartMetricRatioOutput_125f522109f228e4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string?>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile>?), TypeInfoPropertyName = "CustomChartMetricPercentile_ff9d133b07e10395")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioInput>?), TypeInfoPropertyName = "CustomChartMetricRatioInput_15ca9eb077ac095f")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrganizationDashboardType?), TypeInfoPropertyName = "NullableOrganizationDashboardType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrganizationRoles?), TypeInfoPropertyName = "NullableOrganizationRoles2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PagerdutySeverity?), TypeInfoPropertyName = "NullablePagerdutySeverity2")]
@@ -1557,26 +1596,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RuleLogActionOutcome?), TypeInfoPropertyName = "NullableRuleLogActionOutcome2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunGroupBy?), TypeInfoPropertyName = "NullableRunGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRuleSpendLimitWindow?), TypeInfoPropertyName = "NullableRunRuleSpendLimitWindow2")]
-    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-    )]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile>), TypeInfoPropertyName = "CustomChartMetricPercentile_3c8b9621ba7cc835")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioInput>), TypeInfoPropertyName = "CustomChartMetricRatioInput_372327652f8276d4")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>), TypeInfoPropertyName = "CustomChartMetricRatioOutput_125f522109f228e4")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string?>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile>?), TypeInfoPropertyName = "CustomChartMetricPercentile_ff9d133b07e10395")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioInput>?), TypeInfoPropertyName = "CustomChartMetricRatioInput_15ca9eb077ac095f")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRulesAlertType?), TypeInfoPropertyName = "NullableRunRulesAlertType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRulesCreateSchemaGroupBy?), TypeInfoPropertyName = "NullableRunRulesCreateSchemaGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunRulesSchemaGroupBy?), TypeInfoPropertyName = "NullableRunRulesSchemaGroupBy2")]
@@ -1606,6 +1625,9 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentCreateIssuesAgentRequestAnalysisLevel?), TypeInfoPropertyName = "NullableAgentCreateIssuesAgentRequestAnalysisLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentIssuesAgentAnalysisLevel?), TypeInfoPropertyName = "NullableAgentIssuesAgentAnalysisLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentUpdateIssuesAgentRequestAnalysisLevel?), TypeInfoPropertyName = "NullableAgentUpdateIssuesAgentRequestAnalysisLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentType?), TypeInfoPropertyName = "NullableAgentplatformAgentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentSourceType2?), TypeInfoPropertyName = "NullableAgentplatformAgentSourceType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentEnvironmentName?), TypeInfoPropertyName = "NullableAgentplatformAgentEnvironmentName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionTarget?), TypeInfoPropertyName = "NullableAlertsAlertActionTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionBaseTarget?), TypeInfoPropertyName = "NullableAlertsAlertActionBaseTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertRuleAggregation?), TypeInfoPropertyName = "NullableAlertsAlertRuleAggregation2")]
@@ -1722,6 +1744,10 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoType?), TypeInfoPropertyName = "NullableListRepoTagsApiV1ReposTagsGetRepoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item?), TypeInfoPropertyName = "NullableListRepoTagsApiV1ReposTagsGetRepoTypesVariant1Item2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource?), TypeInfoPropertyName = "NullableListRepoTagsApiV1ReposTagsGetSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsSortBy?), TypeInfoPropertyName = "NullableGetAgentsSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsSortOrder?), TypeInfoPropertyName = "NullableGetAgentsSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsSourceType?), TypeInfoPropertyName = "NullableGetAgentsSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetAgentsInclude?), TypeInfoPropertyName = "NullableGetAgentsInclude2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsStatus?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsItemType?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsDirection2")]
@@ -1836,6 +1862,9 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SecretConfigInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentGithubRepoInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentGithubRepo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentplatformAgentEnvironment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentplatformAgentRuntimeBinding>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AgentplatformAgent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AlertsAlertAction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AlertsAlertActionBase>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AnnotationqueuesAnnotationQueueItemInput>))]
@@ -2662,6 +2691,18 @@ namespace LangSmith
 
                     || typeToConvert == typeof(global::LangSmith.AgentUpdateIssuesAgentRequestAnalysisLevel?)
 
+                    || typeToConvert == typeof(global::LangSmith.AgentplatformAgentEnvironmentName)
+
+                    || typeToConvert == typeof(global::LangSmith.AgentplatformAgentEnvironmentName?)
+
+                    || typeToConvert == typeof(global::LangSmith.AgentplatformAgentSourceType2)
+
+                    || typeToConvert == typeof(global::LangSmith.AgentplatformAgentSourceType2?)
+
+                    || typeToConvert == typeof(global::LangSmith.AgentplatformAgentType)
+
+                    || typeToConvert == typeof(global::LangSmith.AgentplatformAgentType?)
+
                     || typeToConvert == typeof(global::LangSmith.AlertsAlertActionTarget)
 
                     || typeToConvert == typeof(global::LangSmith.AlertsAlertActionTarget?)
@@ -3073,6 +3114,22 @@ namespace LangSmith
                     || typeToConvert == typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource)
 
                     || typeToConvert == typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsSortBy)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsSortBy?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsSortOrder)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsSortOrder?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsSourceType)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsSourceType?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsInclude)
+
+                    || typeToConvert == typeof(global::LangSmith.GetAgentsInclude?)
 
                     || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsStatus)
 
@@ -4267,6 +4324,36 @@ namespace LangSmith
                     return new global::LangSmith.JsonConverters.AgentUpdateIssuesAgentRequestAnalysisLevelNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::LangSmith.AgentplatformAgentEnvironmentName))
+                {
+                    return new global::LangSmith.JsonConverters.AgentplatformAgentEnvironmentNameJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AgentplatformAgentEnvironmentName?))
+                {
+                    return new global::LangSmith.JsonConverters.AgentplatformAgentEnvironmentNameNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AgentplatformAgentSourceType2))
+                {
+                    return new global::LangSmith.JsonConverters.AgentplatformAgentSourceType2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AgentplatformAgentSourceType2?))
+                {
+                    return new global::LangSmith.JsonConverters.AgentplatformAgentSourceType2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AgentplatformAgentType))
+                {
+                    return new global::LangSmith.JsonConverters.AgentplatformAgentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AgentplatformAgentType?))
+                {
+                    return new global::LangSmith.JsonConverters.AgentplatformAgentTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LangSmith.AlertsAlertActionTarget))
                 {
                     return new global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter();
@@ -5295,6 +5382,46 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.ListRepoTagsApiV1ReposTagsGetSource?))
                 {
                     return new global::LangSmith.JsonConverters.ListRepoTagsApiV1ReposTagsGetSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsSortBy))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsSortByJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsSortBy?))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsSortByNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsSortOrder))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsSortOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsSortOrder?))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsSortOrderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsSourceType))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsSourceTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsSourceType?))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsSourceTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsInclude))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsIncludeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetAgentsInclude?))
+                {
+                    return new global::LangSmith.JsonConverters.GetAgentsIncludeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsStatus))
