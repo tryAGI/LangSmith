@@ -243,6 +243,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        FunctionsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        FunctionsDelete,
+        /// <summary>
+        ///
+        /// </summary>
+        FunctionsUpdate,
+        /// <summary>
+        ///
+        /// </summary>
         GatewayInvoke,
         /// <summary>
         ///
@@ -704,6 +716,9 @@ namespace LangSmith
                 AuthzInternalPermission.FleetSkillsUpdate => "fleet-skills:update",
                 AuthzInternalPermission.FleetReadAdminConfig => "fleet:read-admin-config",
                 AuthzInternalPermission.FleetWriteAdminConfig => "fleet:write-admin-config",
+                AuthzInternalPermission.FunctionsCreate => "functions:create",
+                AuthzInternalPermission.FunctionsDelete => "functions:delete",
+                AuthzInternalPermission.FunctionsUpdate => "functions:update",
                 AuthzInternalPermission.GatewayInvoke => "gateway:invoke",
                 AuthzInternalPermission.IssuesCreate => "issues:create",
                 AuthzInternalPermission.IssuesDelete => "issues:delete",
@@ -870,6 +885,9 @@ namespace LangSmith
                 "fleet-skills:update" => AuthzInternalPermission.FleetSkillsUpdate,
                 "fleet:read-admin-config" => AuthzInternalPermission.FleetReadAdminConfig,
                 "fleet:write-admin-config" => AuthzInternalPermission.FleetWriteAdminConfig,
+                "functions:create" => AuthzInternalPermission.FunctionsCreate,
+                "functions:delete" => AuthzInternalPermission.FunctionsDelete,
+                "functions:update" => AuthzInternalPermission.FunctionsUpdate,
                 "gateway:invoke" => AuthzInternalPermission.GatewayInvoke,
                 "issues:create" => AuthzInternalPermission.IssuesCreate,
                 "issues:delete" => AuthzInternalPermission.IssuesDelete,
