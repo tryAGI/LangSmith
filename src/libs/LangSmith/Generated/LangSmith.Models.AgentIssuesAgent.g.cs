@@ -64,19 +64,19 @@ namespace LangSmith
         public string? EngineVersion { get; set; }
 
         /// <summary>
-        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// Legacy: aliases the oldest GitHub entry in GithubRepos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_base_branch")]
         public string? GithubBaseBranch { get; set; }
 
         /// <summary>
-        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// Legacy: aliases the oldest GitHub entry in GithubRepos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_subdir")]
         public string? GithubRepoSubdir { get; set; }
 
         /// <summary>
-        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// Legacy: aliases the oldest GitHub entry in GithubRepos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_repo_url")]
         public string? GithubRepoUrl { get; set; }
@@ -270,13 +270,13 @@ namespace LangSmith
         /// <param name="cronSchedule"></param>
         /// <param name="engineVersion"></param>
         /// <param name="githubBaseBranch">
-        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// Legacy: aliases the oldest GitHub entry in GithubRepos.
         /// </param>
         /// <param name="githubRepoSubdir">
-        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// Legacy: aliases the oldest GitHub entry in GithubRepos.
         /// </param>
         /// <param name="githubRepoUrl">
-        /// Legacy: aliases the oldest entry in GithubRepos.
+        /// Legacy: aliases the oldest GitHub entry in GithubRepos.
         /// </param>
         /// <param name="githubRepos"></param>
         /// <param name="id"></param>

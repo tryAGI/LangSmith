@@ -639,6 +639,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteGitlabConnection,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteHubEnvironment,
         /// <summary>
         ///
@@ -1987,6 +1991,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpsertGitlabConnection,
+        /// <summary>
+        ///
+        /// </summary>
         UpsertRoleRestriction,
         /// <summary>
         ///
@@ -2175,6 +2183,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteForgeConfiguration => "delete_forge_configuration",
                 AuditLogOperation.DeleteGatewayPolicy => "delete_gateway_policy",
                 AuditLogOperation.DeleteGithubAppConfiguration => "delete_github_app_configuration",
+                AuditLogOperation.DeleteGitlabConnection => "delete_gitlab_connection",
                 AuditLogOperation.DeleteHubEnvironment => "delete_hub_environment",
                 AuditLogOperation.DeleteInsightsJob => "delete_insights_job",
                 AuditLogOperation.DeleteInsightsJobConfig => "delete_insights_job_config",
@@ -2512,6 +2521,7 @@ namespace LangSmith
                 AuditLogOperation.UpsertFeatureDefaultModel => "upsert_feature_default_model",
                 AuditLogOperation.UpsertFeatureDisabledModel => "upsert_feature_disabled_model",
                 AuditLogOperation.UpsertGithubAppConfiguration => "upsert_github_app_configuration",
+                AuditLogOperation.UpsertGitlabConnection => "upsert_gitlab_connection",
                 AuditLogOperation.UpsertRoleRestriction => "upsert_role_restriction",
                 AuditLogOperation.UpsertSlackAppConfiguration => "upsert_slack_app_configuration",
                 AuditLogOperation.UpsertWorkspaceSecret => "upsert_workspace_secret",
@@ -2684,6 +2694,7 @@ namespace LangSmith
                 "delete_forge_configuration" => AuditLogOperation.DeleteForgeConfiguration,
                 "delete_gateway_policy" => AuditLogOperation.DeleteGatewayPolicy,
                 "delete_github_app_configuration" => AuditLogOperation.DeleteGithubAppConfiguration,
+                "delete_gitlab_connection" => AuditLogOperation.DeleteGitlabConnection,
                 "delete_hub_environment" => AuditLogOperation.DeleteHubEnvironment,
                 "delete_insights_job" => AuditLogOperation.DeleteInsightsJob,
                 "delete_insights_job_config" => AuditLogOperation.DeleteInsightsJobConfig,
@@ -3021,6 +3032,7 @@ namespace LangSmith
                 "upsert_feature_default_model" => AuditLogOperation.UpsertFeatureDefaultModel,
                 "upsert_feature_disabled_model" => AuditLogOperation.UpsertFeatureDisabledModel,
                 "upsert_github_app_configuration" => AuditLogOperation.UpsertGithubAppConfiguration,
+                "upsert_gitlab_connection" => AuditLogOperation.UpsertGitlabConnection,
                 "upsert_role_restriction" => AuditLogOperation.UpsertRoleRestriction,
                 "upsert_slack_app_configuration" => AuditLogOperation.UpsertSlackAppConfiguration,
                 "upsert_workspace_secret" => AuditLogOperation.UpsertWorkspaceSecret,

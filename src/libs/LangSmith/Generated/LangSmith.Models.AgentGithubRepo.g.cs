@@ -29,6 +29,13 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RepohostProviderJsonConverter))]
+        public global::LangSmith.RepohostProvider? Provider { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_url")]
         public string? RepoUrl { get; set; }
 
@@ -56,6 +63,7 @@ namespace LangSmith
         /// <param name="baseBranch"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
+        /// <param name="provider"></param>
         /// <param name="repoUrl"></param>
         /// <param name="subdir"></param>
         /// <param name="updatedAt"></param>
@@ -66,6 +74,7 @@ namespace LangSmith
             string? baseBranch,
             global::System.DateTime? createdAt,
             string? id,
+            global::LangSmith.RepohostProvider? provider,
             string? repoUrl,
             string? subdir,
             global::System.DateTime? updatedAt)
@@ -73,6 +82,7 @@ namespace LangSmith
             this.BaseBranch = baseBranch;
             this.CreatedAt = createdAt;
             this.Id = id;
+            this.Provider = provider;
             this.RepoUrl = repoUrl;
             this.Subdir = subdir;
             this.UpdatedAt = updatedAt;

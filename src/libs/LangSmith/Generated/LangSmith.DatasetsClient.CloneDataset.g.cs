@@ -56,7 +56,14 @@ namespace LangSmith
 
         /// <summary>
         /// Clone Dataset<br/>
-        /// Clone a dataset.
+        /// Copy examples from a source dataset into an existing target dataset.<br/>
+        /// Each copied example gets a new ID and keeps the inputs, outputs, metadata,<br/>
+        /// and source run ID of its source example. Attachments are copied when blob<br/>
+        /// storage is enabled. Copying the same examples twice adds them twice.<br/>
+        /// Requires the datasets:clone permission on both datasets. Returns the ID,<br/>
+        /// dataset ID, creation and modification times, and source run ID of each new<br/>
+        /// example. Without example IDs, a source or target that is not found can<br/>
+        /// return an empty list instead of an error.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +86,14 @@ namespace LangSmith
         }
         /// <summary>
         /// Clone Dataset<br/>
-        /// Clone a dataset.
+        /// Copy examples from a source dataset into an existing target dataset.<br/>
+        /// Each copied example gets a new ID and keeps the inputs, outputs, metadata,<br/>
+        /// and source run ID of its source example. Attachments are copied when blob<br/>
+        /// storage is enabled. Copying the same examples twice adds them twice.<br/>
+        /// Requires the datasets:clone permission on both datasets. Returns the ID,<br/>
+        /// dataset ID, creation and modification times, and source run ID of each new<br/>
+        /// example. Without example IDs, a source or target that is not found can<br/>
+        /// return an empty list instead of an error.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -352,6 +366,43 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Example IDs were given and nothing was copied, because none match or either dataset is not found.
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::LangSmith.ProblemDetails? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::LangSmith.ProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::LangSmith.ProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.ProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {
@@ -487,16 +538,34 @@ namespace LangSmith
         }
         /// <summary>
         /// Clone Dataset<br/>
-        /// Clone a dataset.
+        /// Copy examples from a source dataset into an existing target dataset.<br/>
+        /// Each copied example gets a new ID and keeps the inputs, outputs, metadata,<br/>
+        /// and source run ID of its source example. Attachments are copied when blob<br/>
+        /// storage is enabled. Copying the same examples twice adds them twice.<br/>
+        /// Requires the datasets:clone permission on both datasets. Returns the ID,<br/>
+        /// dataset ID, creation and modification times, and source run ID of each new<br/>
+        /// example. Without example IDs, a source or target that is not found can<br/>
+        /// return an empty list instead of an error.
         /// </summary>
-        /// <param name="targetDatasetId"></param>
-        /// <param name="sourceDatasetId"></param>
-        /// <param name="asOf"></param>
+        /// <param name="targetDatasetId">
+        /// ID of the dataset in this workspace that receives the copied examples. Its current examples are kept.
+        /// </param>
+        /// <param name="sourceDatasetId">
+        /// ID of the dataset in this workspace to copy examples from. It is not modified.
+        /// </param>
+        /// <param name="asOf">
+        /// Version of the source dataset to copy. A value that parses as an ISO 8601 date or timestamp copies the examples as they were at that time; latest copies the current examples; any other value is a version tag. Defaults to latest.
+        /// </param>
         /// <param name="examples">
+        /// IDs of source examples to copy. Defaults to every example in the source version. When IDs are given and nothing is copied, because none match or either dataset is not found, the request fails with 404.<br/>
         /// Default Value: []
         /// </param>
-        /// <param name="split"></param>
-        /// <param name="tagValueIds"></param>
+        /// <param name="split">
+        /// Split name, or list of split names, assigned to every copied example in place of its source splits. Defaults to keeping the source splits.
+        /// </param>
+        /// <param name="tagValueIds">
+        /// List of resource tag value IDs to attach to the target dataset, up to 100. Requires the datasets:tag_on_create permission.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

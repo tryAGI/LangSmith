@@ -69,6 +69,12 @@ namespace LangSmith
         public string? Provider { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_above")]
+        public int? PromptTokensAbove { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -88,6 +94,7 @@ namespace LangSmith
         /// <param name="promptCostDetails"></param>
         /// <param name="completionCostDetails"></param>
         /// <param name="provider"></param>
+        /// <param name="promptTokensAbove"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +107,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? matchPath,
             object? promptCostDetails,
             object? completionCostDetails,
-            string? provider)
+            string? provider,
+            int? promptTokensAbove)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.StartTime = startTime;
@@ -111,6 +119,7 @@ namespace LangSmith
             this.PromptCostDetails = promptCostDetails;
             this.CompletionCostDetails = completionCostDetails;
             this.Provider = provider;
+            this.PromptTokensAbove = promptTokensAbove;
         }
 
         /// <summary>

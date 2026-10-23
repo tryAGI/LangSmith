@@ -37,6 +37,20 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RepohostProviderJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.RepohostProvider Provider { get; set; }
+
+        /// <summary>
+        /// ProviderWebBaseURL is the GitLab instance a GitLab fix lives on; null for GitHub.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider_web_base_url")]
+        public string? ProviderWebBaseUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepoUrl { get; set; }
@@ -59,25 +73,33 @@ namespace LangSmith
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
+        /// <param name="provider"></param>
         /// <param name="repoUrl"></param>
         /// <param name="updatedAt"></param>
         /// <param name="branch"></param>
         /// <param name="prNumber"></param>
+        /// <param name="providerWebBaseUrl">
+        /// ProviderWebBaseURL is the GitLab instance a GitLab fix lives on; null for GitHub.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public IssuesFix(
             global::System.DateTime createdAt,
             string id,
+            global::LangSmith.RepohostProvider provider,
             string repoUrl,
             global::System.DateTime updatedAt,
             string? branch,
-            int? prNumber)
+            int? prNumber,
+            string? providerWebBaseUrl)
         {
             this.Branch = branch;
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.PrNumber = prNumber;
+            this.Provider = provider;
+            this.ProviderWebBaseUrl = providerWebBaseUrl;
             this.RepoUrl = repoUrl ?? throw new global::System.ArgumentNullException(nameof(repoUrl));
             this.UpdatedAt = updatedAt;
         }

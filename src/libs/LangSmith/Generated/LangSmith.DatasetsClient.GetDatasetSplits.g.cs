@@ -57,7 +57,9 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// Get Dataset Splits
+        /// Get Dataset Splits<br/>
+        /// List the split names a dataset's examples belong to.<br/>
+        /// An example whose split was never set counts as the base split.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="asOf">
@@ -83,7 +85,9 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Get Dataset Splits
+        /// Get Dataset Splits<br/>
+        /// List the split names a dataset's examples belong to.<br/>
+        /// An example whose split was never set counts as the base split.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="asOf">

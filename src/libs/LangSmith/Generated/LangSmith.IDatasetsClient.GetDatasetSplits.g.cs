@@ -5,7 +5,9 @@ namespace LangSmith
     public partial interface IDatasetsClient
     {
         /// <summary>
-        /// Get Dataset Splits
+        /// Get Dataset Splits<br/>
+        /// List the split names a dataset's examples belong to.<br/>
+        /// An example whose split was never set counts as the base split.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="asOf">
@@ -21,7 +23,9 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Dataset Splits
+        /// Get Dataset Splits<br/>
+        /// List the split names a dataset's examples belong to.<br/>
+        /// An example whose split was never set counts as the base split.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="asOf">
