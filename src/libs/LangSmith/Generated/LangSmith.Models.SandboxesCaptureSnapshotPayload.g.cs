@@ -39,6 +39,14 @@ namespace LangSmith
         public long? FsCapacityBytes { get; set; }
 
         /// <summary>
+        /// ImageConfig sets the command and ports the snapshot records, as a Docker image's ENTRYPOINT, CMD and EXPOSE do. By default a capture keeps<br/>
+        /// those of the snapshot the sandbox was created from; each field given here replaces that one, and an empty list clears it. A function<br/>
+        /// serving the snapshot runs this command and listens on its one exposed port.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_config")]
+        public global::LangSmith.SandboxesSnapshotImageConfig? ImageConfig { get; set; }
+
+        /// <summary>
         /// Sandbox settings to carry into the snapshot. Sandboxes created from it start with each carried setting their create request leaves unset: "mounts" (the mount_config, with its auth), "proxy_config", "env_vars", "resources" (CPU and memory), "lifecycle" (idle_ttl_seconds, delete_after_stop_seconds, preserve_memory_on_stop), and "labels" (merged under this request's labels; reserved com.langchain.* labels are left out). "all" names every one of these. VM memory is captured with include_memory, not here. Warning: mounts, proxy_config and env_vars carry the sandbox's credentials, and every sandbox created from the snapshot can use them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
@@ -107,6 +115,11 @@ namespace LangSmith
         /// <param name="fsCapacityBytes">
         /// required for Docker image export unless the sandbox has a capacity
         /// </param>
+        /// <param name="imageConfig">
+        /// ImageConfig sets the command and ports the snapshot records, as a Docker image's ENTRYPOINT, CMD and EXPOSE do. By default a capture keeps<br/>
+        /// those of the snapshot the sandbox was created from; each field given here replaces that one, and an empty list clears it. A function<br/>
+        /// serving the snapshot runs this command and listens on its one exposed port.
+        /// </param>
         /// <param name="include">
         /// Sandbox settings to carry into the snapshot. Sandboxes created from it start with each carried setting their create request leaves unset: "mounts" (the mount_config, with its auth), "proxy_config", "env_vars", "resources" (CPU and memory), "lifecycle" (idle_ttl_seconds, delete_after_stop_seconds, preserve_memory_on_stop), and "labels" (merged under this request's labels; reserved com.langchain.* labels are left out). "all" names every one of these. VM memory is captured with include_memory, not here. Warning: mounts, proxy_config and env_vars carry the sandbox's credentials, and every sandbox created from the snapshot can use them.
         /// </param>
@@ -139,6 +152,7 @@ namespace LangSmith
             string? description,
             string? dockerImage,
             long? fsCapacityBytes,
+            global::LangSmith.SandboxesSnapshotImageConfig? imageConfig,
             global::System.Collections.Generic.IList<global::LangSmith.SandboxesCaptureSnapshotPayloadIncludeItem>? include,
             bool? includeMemory,
             global::System.Collections.Generic.Dictionary<string, string>? labels,
@@ -150,6 +164,7 @@ namespace LangSmith
             this.Description = description;
             this.DockerImage = dockerImage;
             this.FsCapacityBytes = fsCapacityBytes;
+            this.ImageConfig = imageConfig;
             this.Include = include;
             this.IncludeMemory = includeMemory;
             this.Labels = labels;
