@@ -13,7 +13,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteFilterViewAsync(
+        global::System.Threading.Tasks.Task DeleteFilterViewAsync(
             global::System.Guid sessionId,
             global::System.Guid viewId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -27,7 +27,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> DeleteFilterViewAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse> DeleteFilterViewAsResponseAsync(
             global::System.Guid sessionId,
             global::System.Guid viewId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

@@ -11,15 +11,15 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DisplayName { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string DisplayName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,8 +39,8 @@ namespace LangSmith
             string displayName,
             string? description)
         {
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Description = description;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
         }
 
         /// <summary>
