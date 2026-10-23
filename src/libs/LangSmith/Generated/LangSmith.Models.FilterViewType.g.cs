@@ -4,7 +4,7 @@
 namespace LangSmith
 {
     /// <summary>
-    ///
+    /// Default Value: runs
     /// </summary>
     public enum FilterViewType
     {

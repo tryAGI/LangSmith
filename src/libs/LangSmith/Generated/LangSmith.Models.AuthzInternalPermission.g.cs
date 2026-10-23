@@ -551,6 +551,38 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        WorkspacesAccessControlAssignRestricted,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesCredentialsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesCredentialsReadMetadata,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesCredentialsUse,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesDelete,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesFleetFeedbackReadAll,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesIntegrationsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesIntegrationsRead,
+        /// <summary>
+        ///
+        /// </summary>
         WorkspacesManage,
         /// <summary>
         ///
@@ -575,7 +607,31 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        WorkspacesResourceTagsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesRetentionManage,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesSandboxProxyProfilesManage,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesSecurityPolicyManage,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesSettingsManage,
+        /// <summary>
+        ///
+        /// </summary>
         WorkspacesTracingKeysCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesUsageControlsManage,
     }
 
     /// <summary>
@@ -725,13 +781,27 @@ namespace LangSmith
                 AuthzInternalPermission.SnapshotsCreate => "snapshots:create",
                 AuthzInternalPermission.SnapshotsDelete => "snapshots:delete",
                 AuthzInternalPermission.SnapshotsUpdate => "snapshots:update",
+                AuthzInternalPermission.WorkspacesAccessControlAssignRestricted => "workspaces:access-control:assign-restricted",
+                AuthzInternalPermission.WorkspacesCredentialsManage => "workspaces:credentials:manage",
+                AuthzInternalPermission.WorkspacesCredentialsReadMetadata => "workspaces:credentials:read-metadata",
+                AuthzInternalPermission.WorkspacesCredentialsUse => "workspaces:credentials:use",
+                AuthzInternalPermission.WorkspacesDelete => "workspaces:delete",
+                AuthzInternalPermission.WorkspacesFleetFeedbackReadAll => "workspaces:fleet-feedback:read-all",
+                AuthzInternalPermission.WorkspacesIntegrationsManage => "workspaces:integrations:manage",
+                AuthzInternalPermission.WorkspacesIntegrationsRead => "workspaces:integrations:read",
                 AuthzInternalPermission.WorkspacesManage => "workspaces:manage",
                 AuthzInternalPermission.WorkspacesManageKeys => "workspaces:manage-keys",
                 AuthzInternalPermission.WorkspacesManageMembers => "workspaces:manage-members",
                 AuthzInternalPermission.WorkspacesManageModelConfigs => "workspaces:manage-model-configs",
                 AuthzInternalPermission.WorkspacesManageSecrets => "workspaces:manage-secrets",
                 AuthzInternalPermission.WorkspacesRead => "workspaces:read",
+                AuthzInternalPermission.WorkspacesResourceTagsManage => "workspaces:resource-tags:manage",
+                AuthzInternalPermission.WorkspacesRetentionManage => "workspaces:retention:manage",
+                AuthzInternalPermission.WorkspacesSandboxProxyProfilesManage => "workspaces:sandbox-proxy-profiles:manage",
+                AuthzInternalPermission.WorkspacesSecurityPolicyManage => "workspaces:security-policy:manage",
+                AuthzInternalPermission.WorkspacesSettingsManage => "workspaces:settings:manage",
                 AuthzInternalPermission.WorkspacesTracingKeysCreate => "workspaces:tracing-keys:create",
+                AuthzInternalPermission.WorkspacesUsageControlsManage => "workspaces:usage-controls:manage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -877,13 +947,27 @@ namespace LangSmith
                 "snapshots:create" => AuthzInternalPermission.SnapshotsCreate,
                 "snapshots:delete" => AuthzInternalPermission.SnapshotsDelete,
                 "snapshots:update" => AuthzInternalPermission.SnapshotsUpdate,
+                "workspaces:access-control:assign-restricted" => AuthzInternalPermission.WorkspacesAccessControlAssignRestricted,
+                "workspaces:credentials:manage" => AuthzInternalPermission.WorkspacesCredentialsManage,
+                "workspaces:credentials:read-metadata" => AuthzInternalPermission.WorkspacesCredentialsReadMetadata,
+                "workspaces:credentials:use" => AuthzInternalPermission.WorkspacesCredentialsUse,
+                "workspaces:delete" => AuthzInternalPermission.WorkspacesDelete,
+                "workspaces:fleet-feedback:read-all" => AuthzInternalPermission.WorkspacesFleetFeedbackReadAll,
+                "workspaces:integrations:manage" => AuthzInternalPermission.WorkspacesIntegrationsManage,
+                "workspaces:integrations:read" => AuthzInternalPermission.WorkspacesIntegrationsRead,
                 "workspaces:manage" => AuthzInternalPermission.WorkspacesManage,
                 "workspaces:manage-keys" => AuthzInternalPermission.WorkspacesManageKeys,
                 "workspaces:manage-members" => AuthzInternalPermission.WorkspacesManageMembers,
                 "workspaces:manage-model-configs" => AuthzInternalPermission.WorkspacesManageModelConfigs,
                 "workspaces:manage-secrets" => AuthzInternalPermission.WorkspacesManageSecrets,
                 "workspaces:read" => AuthzInternalPermission.WorkspacesRead,
+                "workspaces:resource-tags:manage" => AuthzInternalPermission.WorkspacesResourceTagsManage,
+                "workspaces:retention:manage" => AuthzInternalPermission.WorkspacesRetentionManage,
+                "workspaces:sandbox-proxy-profiles:manage" => AuthzInternalPermission.WorkspacesSandboxProxyProfilesManage,
+                "workspaces:security-policy:manage" => AuthzInternalPermission.WorkspacesSecurityPolicyManage,
+                "workspaces:settings:manage" => AuthzInternalPermission.WorkspacesSettingsManage,
                 "workspaces:tracing-keys:create" => AuthzInternalPermission.WorkspacesTracingKeysCreate,
+                "workspaces:usage-controls:manage" => AuthzInternalPermission.WorkspacesUsageControlsManage,
                 _ => null,
             };
         }

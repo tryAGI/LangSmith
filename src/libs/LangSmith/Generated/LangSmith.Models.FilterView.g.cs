@@ -11,26 +11,15 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filter_string")]
-        public string? FilterString { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter_string")]
-        public string? TraceFilterString { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter_string")]
-        public string? TreeFilterString { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("thread_filter_string")]
-        public string? ThreadFilterString { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         ///
@@ -42,27 +31,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
-        /// Default Value: runs
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter))]
-        public global::LangSmith.FilterViewType? Type { get; set; }
-
-        /// <summary>
-        /// Default Value: 1
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("syntax_version")]
-        public int? SyntaxVersion { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        public global::System.DateTime? StartTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public string? Duration { get; set; }
 
         /// <summary>
         ///
@@ -73,8 +43,8 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
-        public string? Duration { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("filter_string")]
+        public string? FilterString { get; set; }
 
         /// <summary>
         ///
@@ -92,9 +62,39 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("syntax_version")]
+        public int? SyntaxVersion { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_filter_string")]
+        public string? ThreadFilterString { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter_string")]
+        public string? TraceFilterString { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter_string")]
+        public string? TreeFilterString { get; set; }
+
+        /// <summary>
+        /// Default Value: runs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.FilterViewTypeJsonConverter))]
+        public global::LangSmith.FilterViewType? Type { get; set; }
 
         /// <summary>
         ///
@@ -112,59 +112,59 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterView" /> class.
         /// </summary>
+        /// <param name="createdAt"></param>
         /// <param name="displayName"></param>
         /// <param name="id"></param>
-        /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="filterString"></param>
-        /// <param name="traceFilterString"></param>
-        /// <param name="treeFilterString"></param>
-        /// <param name="threadFilterString"></param>
         /// <param name="description"></param>
-        /// <param name="type">
-        /// Default Value: runs
-        /// </param>
+        /// <param name="duration"></param>
+        /// <param name="endTime"></param>
+        /// <param name="filterString"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
         /// <param name="syntaxVersion">
         /// Default Value: 1
         /// </param>
-        /// <param name="startTime"></param>
-        /// <param name="endTime"></param>
-        /// <param name="duration"></param>
-        /// <param name="sessionId"></param>
+        /// <param name="threadFilterString"></param>
+        /// <param name="traceFilterString"></param>
+        /// <param name="treeFilterString"></param>
+        /// <param name="type">
+        /// Default Value: runs
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FilterView(
+            global::System.DateTime createdAt,
             string displayName,
             global::System.Guid id,
-            global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? description,
+            string? duration,
+            global::System.DateTime? endTime,
             string? filterString,
+            global::System.Guid? sessionId,
+            global::System.DateTime? startTime,
+            int? syntaxVersion,
+            string? threadFilterString,
             string? traceFilterString,
             string? treeFilterString,
-            string? threadFilterString,
-            string? description,
-            global::LangSmith.FilterViewType? type,
-            int? syntaxVersion,
-            global::System.DateTime? startTime,
-            global::System.DateTime? endTime,
-            string? duration,
-            global::System.Guid? sessionId)
+            global::LangSmith.FilterViewType? type)
         {
-            this.FilterString = filterString;
-            this.TraceFilterString = traceFilterString;
-            this.TreeFilterString = treeFilterString;
-            this.ThreadFilterString = threadFilterString;
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.CreatedAt = createdAt;
             this.Description = description;
-            this.Type = type;
-            this.SyntaxVersion = syntaxVersion;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Duration = duration;
+            this.EndTime = endTime;
+            this.FilterString = filterString;
             this.Id = id;
             this.SessionId = sessionId;
-            this.CreatedAt = createdAt;
+            this.StartTime = startTime;
+            this.SyntaxVersion = syntaxVersion;
+            this.ThreadFilterString = threadFilterString;
+            this.TraceFilterString = traceFilterString;
+            this.TreeFilterString = treeFilterString;
+            this.Type = type;
             this.UpdatedAt = updatedAt;
         }
 
