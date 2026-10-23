@@ -6,7 +6,8 @@ namespace LangSmith
     {
         /// <summary>
         /// Unshare Dataset<br/>
-        /// Unshare a dataset.
+        /// Stop sharing a dataset.<br/>
+        /// Its share token stops working. Succeeds when the dataset is not shared.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +19,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Unshare Dataset<br/>
-        /// Unshare a dataset.
+        /// Stop sharing a dataset.<br/>
+        /// Its share token stops working. Succeeds when the dataset is not shared.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -51,6 +51,7 @@ namespace LangSmith
             ref global::LangSmith.ExampleListOrder? order,
             double? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
+            ref bool? excludeDefaultFields,
             bool? descending,
             ref string? filter);
         partial void PrepareReadExamplesRequest(
@@ -67,6 +68,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order,
             double? randomSeed,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select,
+            bool? excludeDefaultFields,
             bool? descending,
             string? filter);
         partial void ProcessReadExamplesResponse(
@@ -104,6 +106,10 @@ namespace LangSmith
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, source_session_id, source_run_start_time, source_trace_id, source_thread_id, metadata, inputs, outputs]
         /// </param>
+        /// <param name="excludeDefaultFields">
+        /// Return only the fields in `select`, plus id. Other default fields (created_at, modified_at, inputs, name, dataset_id) are absent unless selected.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="descending"></param>
         /// <param name="filter"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -121,6 +127,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order = default,
             double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            bool? excludeDefaultFields = default,
             bool? descending = default,
             string? filter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -138,6 +145,7 @@ namespace LangSmith
                 order: order,
                 randomSeed: randomSeed,
                 select: select,
+                excludeDefaultFields: excludeDefaultFields,
                 descending: descending,
                 filter: filter,
                 requestOptions: requestOptions,
@@ -172,6 +180,10 @@ namespace LangSmith
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, source_session_id, source_run_start_time, source_trace_id, source_thread_id, metadata, inputs, outputs]
         /// </param>
+        /// <param name="excludeDefaultFields">
+        /// Return only the fields in `select`, plus id. Other default fields (created_at, modified_at, inputs, name, dataset_id) are absent unless selected.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="descending"></param>
         /// <param name="filter"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -189,6 +201,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order = default,
             double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            bool? excludeDefaultFields = default,
             bool? descending = default,
             string? filter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -209,6 +222,7 @@ namespace LangSmith
                 order: ref order,
                 randomSeed: randomSeed,
                 select: select,
+                excludeDefaultFields: ref excludeDefaultFields,
                 descending: descending,
                 filter: ref filter);
 
@@ -252,6 +266,7 @@ namespace LangSmith
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("random_seed", randomSeed?.ToString())
                                 .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("exclude_default_fields", excludeDefaultFields?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("descending", descending?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("filter", filter)
                                 ;
@@ -306,6 +321,7 @@ namespace LangSmith
                     order: order,
                     randomSeed: randomSeed,
                     select: select,
+                    excludeDefaultFields: excludeDefaultFields,
                     descending: descending,
                     filter: filter);
 

@@ -30,6 +30,10 @@ namespace LangSmith
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, source_session_id, source_run_start_time, source_trace_id, source_thread_id, metadata, inputs, outputs]
         /// </param>
+        /// <param name="excludeDefaultFields">
+        /// Return only the fields in `select`, plus id. Other default fields (created_at, modified_at, inputs, name, dataset_id) are absent unless selected.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="descending"></param>
         /// <param name="filter"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -47,6 +51,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order = default,
             double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            bool? excludeDefaultFields = default,
             bool? descending = default,
             string? filter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -77,6 +82,10 @@ namespace LangSmith
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, source_session_id, source_run_start_time, source_trace_id, source_thread_id, metadata, inputs, outputs]
         /// </param>
+        /// <param name="excludeDefaultFields">
+        /// Return only the fields in `select`, plus id. Other default fields (created_at, modified_at, inputs, name, dataset_id) are absent unless selected.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="descending"></param>
         /// <param name="filter"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -94,6 +103,7 @@ namespace LangSmith
             global::LangSmith.ExampleListOrder? order = default,
             double? randomSeed = default,
             global::System.Collections.Generic.IList<global::LangSmith.ExampleSelect>? select = default,
+            bool? excludeDefaultFields = default,
             bool? descending = default,
             string? filter = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

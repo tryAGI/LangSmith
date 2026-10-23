@@ -6,7 +6,8 @@ namespace LangSmith
     {
         /// <summary>
         /// Read Dataset Share State<br/>
-        /// Get the state of sharing a dataset
+        /// Get a dataset's share token.<br/>
+        /// Returns null when the dataset is not shared.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +19,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Dataset Share State<br/>
-        /// Get the state of sharing a dataset
+        /// Get a dataset's share token.<br/>
+        /// Returns null when the dataset is not shared.
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

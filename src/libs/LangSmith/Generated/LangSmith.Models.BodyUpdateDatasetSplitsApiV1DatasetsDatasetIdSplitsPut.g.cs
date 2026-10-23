@@ -9,20 +9,21 @@ namespace LangSmith
     public sealed partial class BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut
     {
         /// <summary>
-        ///
+        /// Split to add the examples to, or remove them from.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SplitName { get; set; }
 
         /// <summary>
-        ///
+        /// IDs of the examples to change. IDs of examples in other datasets are ignored.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::System.Guid> Examples { get; set; }
 
         /// <summary>
+        /// Remove the examples from the split instead of adding them.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("remove")]
@@ -37,9 +38,14 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut" /> class.
         /// </summary>
-        /// <param name="splitName"></param>
-        /// <param name="examples"></param>
+        /// <param name="splitName">
+        /// Split to add the examples to, or remove them from.
+        /// </param>
+        /// <param name="examples">
+        /// IDs of the examples to change. IDs of examples in other datasets are ignored.
+        /// </param>
         /// <param name="remove">
+        /// Remove the examples from the split instead of adding them.<br/>
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER

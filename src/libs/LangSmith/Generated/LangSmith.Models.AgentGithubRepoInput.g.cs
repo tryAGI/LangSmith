@@ -15,6 +15,13 @@ namespace LangSmith
         public string? BaseBranch { get; set; }
 
         /// <summary>
+        /// Omitted means GitHub.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.RepohostProviderJsonConverter))]
+        public global::LangSmith.RepohostProvider? Provider { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_url")]
@@ -36,6 +43,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="AgentGithubRepoInput" /> class.
         /// </summary>
         /// <param name="baseBranch"></param>
+        /// <param name="provider">
+        /// Omitted means GitHub.
+        /// </param>
         /// <param name="repoUrl"></param>
         /// <param name="subdir"></param>
 #if NET7_0_OR_GREATER
@@ -43,10 +53,12 @@ namespace LangSmith
 #endif
         public AgentGithubRepoInput(
             string? baseBranch,
+            global::LangSmith.RepohostProvider? provider,
             string? repoUrl,
             string? subdir)
         {
             this.BaseBranch = baseBranch;
+            this.Provider = provider;
             this.RepoUrl = repoUrl;
             this.Subdir = subdir;
         }
