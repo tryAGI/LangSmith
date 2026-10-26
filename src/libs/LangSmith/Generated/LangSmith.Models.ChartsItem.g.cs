@@ -12,39 +12,44 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public global::LangSmith.CustomChartsSectionChartDiscriminatorChartType? ChartType { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
 #if NET6_0_OR_GREATER
-        public global::LangSmith.SingleCustomChartResponseSerialized? SingleCustomChartResponseSerialized { get; init; }
+        public global::LangSmith.SingleCustomChartResponseSerialized? Bar { get; init; }
 #else
-        public global::LangSmith.SingleCustomChartResponseSerialized? SingleCustomChartResponseSerialized { get; }
+        public global::LangSmith.SingleCustomChartResponseSerialized? Bar { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SingleCustomChartResponseSerialized))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Bar))]
 #endif
-        public bool IsSingleCustomChartResponseSerialized => SingleCustomChartResponseSerialized != null;
+        public bool IsBar => Bar != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickSingleCustomChartResponseSerialized(
+        public bool TryPickBar(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::LangSmith.SingleCustomChartResponseSerialized? value)
         {
-            value = SingleCustomChartResponseSerialized;
-            return IsSingleCustomChartResponseSerialized;
+            value = Bar;
+            return IsBar;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.SingleCustomChartResponseSerialized PickSingleCustomChartResponseSerialized() => SingleCustomChartResponseSerialized is { } value
+        public global::LangSmith.SingleCustomChartResponseSerialized PickBar() => Bar is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SingleCustomChartResponseSerialized' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bar' but the value was {ToString()}.");
 
         /// <summary>
         ///
@@ -90,20 +95,20 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::LangSmith.SingleCustomChartResponseSerialized?(ChartsItem @this) => @this.SingleCustomChartResponseSerialized;
+        public static implicit operator global::LangSmith.SingleCustomChartResponseSerialized?(ChartsItem @this) => @this.Bar;
 
         /// <summary>
         ///
         /// </summary>
         public ChartsItem(global::LangSmith.SingleCustomChartResponseSerialized? value)
         {
-            SingleCustomChartResponseSerialized = value;
+            Bar = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChartsItem FromSingleCustomChartResponseSerialized(global::LangSmith.SingleCustomChartResponseSerialized? value) => new ChartsItem(value);
+        public static ChartsItem FromBar(global::LangSmith.SingleCustomChartResponseSerialized? value) => new ChartsItem(value);
 
         /// <summary>
         ///
@@ -132,11 +137,14 @@ namespace LangSmith
         ///
         /// </summary>
         public ChartsItem(
-            global::LangSmith.SingleCustomChartResponseSerialized? singleCustomChartResponseSerialized,
+            global::LangSmith.CustomChartsSectionChartDiscriminatorChartType? chartType,
+            global::LangSmith.SingleCustomChartResponseSerialized? bar,
             global::LangSmith.CustomTextBlock? text
             )
         {
-            SingleCustomChartResponseSerialized = singleCustomChartResponseSerialized;
+            ChartType = chartType;
+
+            Bar = bar;
             Text = text;
         }
 
@@ -145,14 +153,14 @@ namespace LangSmith
         /// </summary>
         public object? Object =>
             Text as object ??
-            SingleCustomChartResponseSerialized as object
+            Bar as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            SingleCustomChartResponseSerialized?.ToString() ??
+            Bar?.ToString() ??
             Text?.ToString()
             ;
 
@@ -161,14 +169,14 @@ namespace LangSmith
         /// </summary>
         public bool Validate()
         {
-            return IsSingleCustomChartResponseSerialized && !IsText || !IsSingleCustomChartResponseSerialized && IsText;
+            return IsBar && !IsText || !IsBar && IsText;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::LangSmith.SingleCustomChartResponseSerialized, TResult>? singleCustomChartResponseSerialized = null,
+            global::System.Func<global::LangSmith.SingleCustomChartResponseSerialized, TResult>? bar = null,
             global::System.Func<global::LangSmith.CustomTextBlock, TResult>? text = null,
             bool validate = true)
         {
@@ -177,9 +185,9 @@ namespace LangSmith
                 Validate();
             }
 
-            if (SingleCustomChartResponseSerialized is { } __value0 && singleCustomChartResponseSerialized != null)
+            if (Bar is { } __value0 && bar != null)
             {
-                return singleCustomChartResponseSerialized(__value0);
+                return bar(__value0);
             }
             else if (Text is { } __value1 && text != null)
             {
@@ -193,7 +201,7 @@ namespace LangSmith
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::LangSmith.SingleCustomChartResponseSerialized>? singleCustomChartResponseSerialized = null,
+            global::System.Action<global::LangSmith.SingleCustomChartResponseSerialized>? bar = null,
 
             global::System.Action<global::LangSmith.CustomTextBlock>? text = null,
             bool validate = true)
@@ -203,9 +211,9 @@ namespace LangSmith
                 Validate();
             }
 
-            if (SingleCustomChartResponseSerialized is { } __value0)
+            if (Bar is { } __value0)
             {
-                singleCustomChartResponseSerialized?.Invoke(__value0);
+                bar?.Invoke(__value0);
             }
             else if (Text is { } __value1)
             {
@@ -217,7 +225,7 @@ namespace LangSmith
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::LangSmith.SingleCustomChartResponseSerialized>? singleCustomChartResponseSerialized = null,
+            global::System.Action<global::LangSmith.SingleCustomChartResponseSerialized>? bar = null,
             global::System.Action<global::LangSmith.CustomTextBlock>? text = null,
             bool validate = true)
         {
@@ -226,9 +234,9 @@ namespace LangSmith
                 Validate();
             }
 
-            if (SingleCustomChartResponseSerialized is { } __value0)
+            if (Bar is { } __value0)
             {
-                singleCustomChartResponseSerialized?.Invoke(__value0);
+                bar?.Invoke(__value0);
             }
             else if (Text is { } __value1)
             {
@@ -243,7 +251,7 @@ namespace LangSmith
         {
             var fields = new object?[]
             {
-                SingleCustomChartResponseSerialized,
+                Bar,
                 typeof(global::LangSmith.SingleCustomChartResponseSerialized),
                 Text,
                 typeof(global::LangSmith.CustomTextBlock),
@@ -263,7 +271,7 @@ namespace LangSmith
         public bool Equals(ChartsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::LangSmith.SingleCustomChartResponseSerialized?>.Default.Equals(SingleCustomChartResponseSerialized, other.SingleCustomChartResponseSerialized) &&
+                global::System.Collections.Generic.EqualityComparer<global::LangSmith.SingleCustomChartResponseSerialized?>.Default.Equals(Bar, other.Bar) &&
                 global::System.Collections.Generic.EqualityComparer<global::LangSmith.CustomTextBlock?>.Default.Equals(Text, other.Text)
                 ;
         }
