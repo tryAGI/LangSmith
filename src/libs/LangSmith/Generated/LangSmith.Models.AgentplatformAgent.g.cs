@@ -17,6 +17,12 @@ namespace LangSmith
         public required global::LangSmith.AgentplatformAgentType AgentType { get; set; }
 
         /// <summary>
+        /// AvatarURL is a short-lived URL for the agent avatar, when present.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
+        public string? AvatarUrl { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -91,6 +97,9 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="sourceType"></param>
+        /// <param name="avatarUrl">
+        /// AvatarURL is a short-lived URL for the agent avatar, when present.
+        /// </param>
         /// <param name="owner">
         /// Owner is the owner's full name, falling back to email when available.
         /// </param>
@@ -107,12 +116,14 @@ namespace LangSmith
             string id,
             string name,
             global::LangSmith.AgentplatformAgentSourceType2 sourceType,
+            string? avatarUrl,
             string? owner,
             global::System.Guid? ownerId,
             global::System.Guid? tagKeyId,
             global::System.Guid? tagValueId)
         {
             this.AgentType = agentType;
+            this.AvatarUrl = avatarUrl;
             this.CreatedAt = createdAt;
             this.Environments = environments ?? throw new global::System.ArgumentNullException(nameof(environments));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
