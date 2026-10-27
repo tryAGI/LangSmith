@@ -389,6 +389,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // A requested feature is not enabled for this workspace
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Name already exists
                             if ((int)__response.StatusCode == 409)
                             {
@@ -692,6 +729,9 @@ namespace LangSmith
         /// </param>
         /// <param name="mountConfig"></param>
         /// <param name="name"></param>
+        /// <param name="persistent">
+        /// Persistent (private beta) keeps the sandbox's filesystem across stops (the default, true). Set it to false for a disposable sandbox: its writes are discarded whenever it stops, the next start boots it fresh from its snapshot, and it is never charged for storage. A sandbox that is not persistent cannot preserve memory on stop or have its filesystem captured as a snapshot (exporting a Docker image from it with docker_image still works), and some snapshots captured from other sandboxes cannot start one; such a create is rejected. Setting it to false requires the private beta to be enabled for your workspace.
+        /// </param>
         /// <param name="preserveMemoryOnStop">
         /// PreserveMemoryOnStop, when true, suspends the sandbox's memory on a<br/>
         /// voluntary stop (idle timeout or explicit stop) so the next start resumes<br/>
@@ -721,6 +761,9 @@ namespace LangSmith
         /// </param>
         /// <param name="tagValueIds"></param>
         /// <param name="vcpus"></param>
+        /// <param name="volumes">
+        /// Volumes (beta) attaches existing volumes at mount paths inside the sandbox. At most 4; requires sandbox volumes to be enabled for your workspace. Attaching a volume requires being its creator or holding sandboxes:exec.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -735,6 +778,7 @@ namespace LangSmith
             long? memBytes = default,
             global::LangSmith.SandboxesSandboxMountConfig? mountConfig = default,
             string? name = default,
+            bool? persistent = default,
             bool? preserveMemoryOnStop = default,
             global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             bool? restoreMemory = default,
@@ -744,6 +788,7 @@ namespace LangSmith
             string? snapshotName = default,
             global::System.Collections.Generic.IList<string>? tagValueIds = default,
             int? vcpus = default,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesVolumeMountRequest>? volumes = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -759,6 +804,7 @@ namespace LangSmith
                 MemBytes = memBytes,
                 MountConfig = mountConfig,
                 Name = name,
+                Persistent = persistent,
                 PreserveMemoryOnStop = preserveMemoryOnStop,
                 ProxyConfig = proxyConfig,
                 RestoreMemory = restoreMemory,
@@ -768,6 +814,7 @@ namespace LangSmith
                 SnapshotName = snapshotName,
                 TagValueIds = tagValueIds,
                 Vcpus = vcpus,
+                Volumes = volumes,
             };
 
             return await CreateASandboxAsync(

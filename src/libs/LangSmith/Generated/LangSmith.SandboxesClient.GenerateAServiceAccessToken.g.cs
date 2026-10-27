@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// Generate a service access token<br/>
-        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. With LangSmith login, embed_origins names the pages that may show the URL in an iframe; a viewer signs in from inside the frame through a LangSmith popup. LangSmith login and token access are mutually exclusive per service URL.
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), an embed_url (for an iframe; carries the token in the URL fragment, so no server or Referer sees it), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. embed_origins names the pages that may show the URL in an iframe. In token mode they are bound into the minted token; with LangSmith login they are stored on the grant and a viewer signs in from inside the frame through a LangSmith popup. LangSmith login and token access are mutually exclusive per service URL.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="request"></param>
@@ -84,7 +84,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Generate a service access token<br/>
-        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. With LangSmith login, embed_origins names the pages that may show the URL in an iframe; a viewer signs in from inside the frame through a LangSmith popup. LangSmith login and token access are mutually exclusive per service URL.
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), an embed_url (for an iframe; carries the token in the URL fragment, so no server or Referer sees it), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. embed_origins names the pages that may show the URL in an iframe. In token mode they are bound into the minted token; with LangSmith login they are stored on the grant and a viewer signs in from inside the frame through a LangSmith popup. LangSmith login and token access are mutually exclusive per service URL.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="request"></param>
@@ -681,7 +681,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Generate a service access token<br/>
-        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. With LangSmith login, embed_origins names the pages that may show the URL in an iframe; a viewer signs in from inside the frame through a LangSmith popup. LangSmith login and token access are mutually exclusive per service URL.
+        /// Create a short-lived JWT for accessing an HTTP service running on a specific port inside a sandbox. Returns a browser_url (sets auth cookie via redirect), an embed_url (for an iframe; carries the token in the URL fragment, so no server or Referer sees it), a service_url (for use with the X-Langsmith-Sandbox-Service-Token header), the raw token, and its expiry. Set access=restricted|workspace to instead enable durable LangSmith login (no token; users authenticate with their normal LangSmith session), or access=off to disable it. embed_origins names the pages that may show the URL in an iframe. In token mode they are bound into the minted token; with LangSmith login they are stored on the grant and a viewer signs in from inside the frame through a LangSmith popup. LangSmith login and token access are mutually exclusive per service URL.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="access">
@@ -693,11 +693,12 @@ namespace LangSmith
         /// A LangSmith login grant is durable; token mode is refused (409) while one exists.
         /// </param>
         /// <param name="embedOrigins">
-        /// EmbedOrigins are the pages allowed to show a LangSmith login service URL<br/>
-        /// in an iframe, besides LangSmith itself: at most 5 origins such as<br/>
-        /// https://app.example.com (http only for localhost). Valid only with access<br/>
-        /// "restricted" or "workspace". Each call sets the URL's whole list, so<br/>
-        /// omitting the field removes any origins set before.
+        /// EmbedOrigins are the pages allowed to show the service URL in an iframe,<br/>
+        /// besides LangSmith itself: at most 5 origins such as<br/>
+        /// https://app.example.com (http only for localhost). In token mode they are<br/>
+        /// bound into the minted token, so they last as long as it does. With<br/>
+        /// access "restricted" or "workspace" each call sets the grant's whole list,<br/>
+        /// so omitting the field removes any origins set before.
         /// </param>
         /// <param name="expiresInSeconds"></param>
         /// <param name="port"></param>

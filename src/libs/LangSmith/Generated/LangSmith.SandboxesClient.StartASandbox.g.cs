@@ -40,11 +40,13 @@ namespace LangSmith
             };
         partial void PrepareStartASandboxArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string name);
+            ref string name,
+            global::LangSmith.SandboxesStartSandboxPayload request);
         partial void PrepareStartASandboxRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string name);
+            string name,
+            global::LangSmith.SandboxesStartSandboxPayload request);
         partial void ProcessStartASandboxResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,19 +58,24 @@ namespace LangSmith
 
         /// <summary>
         /// Start a sandbox<br/>
-        /// Start a stopped or failed sandbox. This endpoint is not idempotent.
+        /// Start a stopped or failed sandbox. This endpoint is not idempotent. The optional volumes field is beta and requires sandbox volumes to be enabled for your workspace. Omit it to keep attachments, or send an empty array to detach all volumes. Changing attachments requires a stopped or failed sandbox, runtime access to it (its creator or sandboxes:exec), and, for each newly attached volume, being its creator or holding sandboxes:exec. A start whose volumes differ from those the sandbox's saved memory was captured with fails with 409 unless discard_memory is set, which cold-boots the sandbox without that memory.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSandboxResponse> StartASandboxAsync(
             string name,
+
+            global::LangSmith.SandboxesStartSandboxPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await StartASandboxAsResponseAsync(
                 name: name,
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -77,22 +84,28 @@ namespace LangSmith
         }
         /// <summary>
         /// Start a sandbox<br/>
-        /// Start a stopped or failed sandbox. This endpoint is not idempotent.
+        /// Start a stopped or failed sandbox. This endpoint is not idempotent. The optional volumes field is beta and requires sandbox volumes to be enabled for your workspace. Omit it to keep attachments, or send an empty array to detach all volumes. Changing attachments requires a stopped or failed sandbox, runtime access to it (its creator or sandboxes:exec), and, for each newly attached volume, being its creator or holding sandboxes:exec. A start whose volumes differ from those the sandbox's saved memory was captured with fails with 409 unless discard_memory is set, which cold-boots the sandbox without that memory.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.SandboxesSandboxResponse>> StartASandboxAsResponseAsync(
             string name,
+
+            global::LangSmith.SandboxesStartSandboxPayload request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PrepareStartASandboxArguments(
                 httpClient: HttpClient,
-                name: ref name);
+                name: ref name,
+                request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -151,6 +164,12 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -162,7 +181,8 @@ namespace LangSmith
                 PrepareStartASandboxRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name);
+                    name: name,
+                    request: request);
 
                 return __httpRequest;
             }
@@ -452,6 +472,43 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // volumes cannot change now, or would discard saved memory
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LangSmith.SandboxesErrorResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LangSmith.SandboxesErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SandboxesErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
                             {
@@ -584,6 +641,39 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
+        }
+        /// <summary>
+        /// Start a sandbox<br/>
+        /// Start a stopped or failed sandbox. This endpoint is not idempotent. The optional volumes field is beta and requires sandbox volumes to be enabled for your workspace. Omit it to keep attachments, or send an empty array to detach all volumes. Changing attachments requires a stopped or failed sandbox, runtime access to it (its creator or sandboxes:exec), and, for each newly attached volume, being its creator or holding sandboxes:exec. A start whose volumes differ from those the sandbox's saved memory was captured with fails with 409 unless discard_memory is set, which cold-boots the sandbox without that memory.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="discardMemory">
+        /// DiscardMemory cold-boots the sandbox, discarding any memory saved when it stopped.
+        /// </param>
+        /// <param name="volumes">
+        /// Volumes, when present, replaces the attached volumes. A start whose volumes differ from those the sandbox's saved memory was captured with fails unless discard_memory is set.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::LangSmith.SandboxesSandboxResponse> StartASandboxAsync(
+            string name,
+            bool? discardMemory = default,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesVolumeMountRequest>? volumes = default,
+            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::LangSmith.SandboxesStartSandboxPayload
+            {
+                DiscardMemory = discardMemory,
+                Volumes = volumes,
+            };
+
+            return await StartASandboxAsync(
+                name: name,
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

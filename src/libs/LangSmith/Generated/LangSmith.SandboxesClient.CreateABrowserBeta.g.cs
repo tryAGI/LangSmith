@@ -621,6 +621,10 @@ namespace LangSmith
         /// Name of the browser sandbox. Generated when omitted, as "browser-"<br/>
         /// followed by the browser's ID.
         /// </param>
+        /// <param name="proxyConfig">
+        /// ProxyConfig applies a sandbox's proxy rules to the pages the browser<br/>
+        /// loads: header injection, access control, and relay rules.
+        /// </param>
         /// <param name="vcpus">
         /// VCPUs and MemBytes size the browser sandbox, as for any sandbox. With<br/>
         /// neither set, a browser gets 2 vCPUs and 8 GiB.
@@ -636,6 +640,7 @@ namespace LangSmith
             int? idleTtlSeconds = default,
             long? memBytes = default,
             string? name = default,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig = default,
             long? vcpus = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -646,6 +651,7 @@ namespace LangSmith
                 IdleTtlSeconds = idleTtlSeconds,
                 MemBytes = memBytes,
                 Name = name,
+                ProxyConfig = proxyConfig,
                 Vcpus = vcpus,
             };
 

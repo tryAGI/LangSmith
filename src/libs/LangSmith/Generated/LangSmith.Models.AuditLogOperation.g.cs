@@ -99,6 +99,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CloneSandboxVolume,
+        /// <summary>
+        ///
+        /// </summary>
         ConfirmPaymentCheckoutSession,
         /// <summary>
         ///
@@ -395,6 +399,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateSandboxFunction,
+        /// <summary>
+        ///
+        /// </summary>
         CreateSandboxPolicy,
         /// <summary>
         ///
@@ -408,6 +416,10 @@ namespace LangSmith
         ///
         /// </summary>
         CreateSandboxSnapshot,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateSandboxVolume,
         /// <summary>
         ///
         /// </summary>
@@ -747,6 +759,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteSandboxFunction,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteSandboxPolicy,
         /// <summary>
         ///
@@ -760,6 +776,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteSandboxSnapshot,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteSandboxVolume,
         /// <summary>
         ///
         /// </summary>
@@ -847,6 +867,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeploySandboxFunction,
+        /// <summary>
+        ///
+        /// </summary>
         DetachAccessPolicies,
         /// <summary>
         ///
@@ -904,6 +928,10 @@ namespace LangSmith
         ///
         /// </summary>
         GenerateSandboxDownloadUrl,
+        /// <summary>
+        ///
+        /// </summary>
+        GenerateSandboxFunctionToken,
         /// <summary>
         ///
         /// </summary>
@@ -1075,11 +1103,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        GetSandboxFunction,
+        /// <summary>
+        ///
+        /// </summary>
         GetSandboxRegistry,
         /// <summary>
         ///
         /// </summary>
         GetSandboxSnapshot,
+        /// <summary>
+        ///
+        /// </summary>
+        GetSandboxVolume,
         /// <summary>
         ///
         /// </summary>
@@ -1247,11 +1283,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ListSandboxFunctions,
+        /// <summary>
+        ///
+        /// </summary>
         ListSandboxRegistries,
         /// <summary>
         ///
         /// </summary>
         ListSandboxSnapshots,
+        /// <summary>
+        ///
+        /// </summary>
+        ListSandboxVolumes,
         /// <summary>
         ///
         /// </summary>
@@ -1883,6 +1927,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateSandboxFunction,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateSandboxPolicy,
         /// <summary>
         ///
@@ -1892,6 +1940,10 @@ namespace LangSmith
         ///
         /// </summary>
         UpdateSandboxRegistry,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateSandboxVolume,
         /// <summary>
         ///
         /// </summary>
@@ -2048,6 +2100,7 @@ namespace LangSmith
                 AuditLogOperation.ClaimPendingWorkspaceInvite => "claim_pending_workspace_invite",
                 AuditLogOperation.CloneChartSection => "clone_chart_section",
                 AuditLogOperation.CloneDataset => "clone_dataset",
+                AuditLogOperation.CloneSandboxVolume => "clone_sandbox_volume",
                 AuditLogOperation.ConfirmPaymentCheckoutSession => "confirm_payment_checkout_session",
                 AuditLogOperation.ConfirmSsoUserEmail => "confirm_sso_user_email",
                 AuditLogOperation.CountExamples => "count_examples",
@@ -2122,10 +2175,12 @@ namespace LangSmith
                 AuditLogOperation.CreateProvisionedSaasOrg => "create_provisioned_saas_org",
                 AuditLogOperation.CreateRole => "create_role",
                 AuditLogOperation.CreateSandboxClaim => "create_sandbox_claim",
+                AuditLogOperation.CreateSandboxFunction => "create_sandbox_function",
                 AuditLogOperation.CreateSandboxPolicy => "create_sandbox_policy",
                 AuditLogOperation.CreateSandboxProxyProfile => "create_sandbox_proxy_profile",
                 AuditLogOperation.CreateSandboxRegistry => "create_sandbox_registry",
                 AuditLogOperation.CreateSandboxSnapshot => "create_sandbox_snapshot",
+                AuditLogOperation.CreateSandboxVolume => "create_sandbox_volume",
                 AuditLogOperation.CreateScimGroup => "create_scim_group",
                 AuditLogOperation.CreateScimToken => "create_scim_token",
                 AuditLogOperation.CreateScimUser => "create_scim_user",
@@ -2210,10 +2265,12 @@ namespace LangSmith
                 AuditLogOperation.DeleteRole => "delete_role",
                 AuditLogOperation.DeleteRuns => "delete_runs",
                 AuditLogOperation.DeleteSandboxClaim => "delete_sandbox_claim",
+                AuditLogOperation.DeleteSandboxFunction => "delete_sandbox_function",
                 AuditLogOperation.DeleteSandboxPolicy => "delete_sandbox_policy",
                 AuditLogOperation.DeleteSandboxProxyProfile => "delete_sandbox_proxy_profile",
                 AuditLogOperation.DeleteSandboxRegistry => "delete_sandbox_registry",
                 AuditLogOperation.DeleteSandboxSnapshot => "delete_sandbox_snapshot",
+                AuditLogOperation.DeleteSandboxVolume => "delete_sandbox_volume",
                 AuditLogOperation.DeleteScimGroup => "delete_scim_group",
                 AuditLogOperation.DeleteScimToken => "delete_scim_token",
                 AuditLogOperation.DeleteScimUser => "delete_scim_user",
@@ -2235,6 +2292,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
                 AuditLogOperation.DeleteWorkspacePendingMember => "delete_workspace_pending_member",
                 AuditLogOperation.DeleteWorkspaceSecret => "delete_workspace_secret",
+                AuditLogOperation.DeploySandboxFunction => "deploy_sandbox_function",
                 AuditLogOperation.DetachAccessPolicies => "detach_access_policies",
                 AuditLogOperation.DetachTeamAccessPolicy => "detach_team_access_policy",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
@@ -2250,6 +2308,7 @@ namespace LangSmith
                 AuditLogOperation.GenerateInsightsJobConfig => "generate_insights_job_config",
                 AuditLogOperation.GenerateRunsQuery => "generate_runs_query",
                 AuditLogOperation.GenerateSandboxDownloadUrl => "generate_sandbox_download_url",
+                AuditLogOperation.GenerateSandboxFunctionToken => "generate_sandbox_function_token",
                 AuditLogOperation.GenerateSandboxServiceUrl => "generate_sandbox_service_url",
                 AuditLogOperation.GenerateSharedDatasetQuery => "generate_shared_dataset_query",
                 AuditLogOperation.GetAnnotationQueue => "get_annotation_queue",
@@ -2292,8 +2351,10 @@ namespace LangSmith
                 AuditLogOperation.GetRunUrl => "get_run_url",
                 AuditLogOperation.GetSandboxClaim => "get_sandbox_claim",
                 AuditLogOperation.GetSandboxClaimStatus => "get_sandbox_claim_status",
+                AuditLogOperation.GetSandboxFunction => "get_sandbox_function",
                 AuditLogOperation.GetSandboxRegistry => "get_sandbox_registry",
                 AuditLogOperation.GetSandboxSnapshot => "get_sandbox_snapshot",
+                AuditLogOperation.GetSandboxVolume => "get_sandbox_volume",
                 AuditLogOperation.GetSelfHostedCustomer => "get_self_hosted_customer",
                 AuditLogOperation.GetSharedExamplesCount => "get_shared_examples_count",
                 AuditLogOperation.GetSharedTokens => "get_shared_tokens",
@@ -2335,8 +2396,10 @@ namespace LangSmith
                 AuditLogOperation.ListPendingWorkspaceInvites => "list_pending_workspace_invites",
                 AuditLogOperation.ListPermissions => "list_permissions",
                 AuditLogOperation.ListSandboxClaims => "list_sandbox_claims",
+                AuditLogOperation.ListSandboxFunctions => "list_sandbox_functions",
                 AuditLogOperation.ListSandboxRegistries => "list_sandbox_registries",
                 AuditLogOperation.ListSandboxSnapshots => "list_sandbox_snapshots",
+                AuditLogOperation.ListSandboxVolumes => "list_sandbox_volumes",
                 AuditLogOperation.ListServiceAccounts => "list_service_accounts",
                 AuditLogOperation.ListTagKeys => "list_tag_keys",
                 AuditLogOperation.ListTagValues => "list_tag_values",
@@ -2494,9 +2557,11 @@ namespace LangSmith
                 AuditLogOperation.UpdateProvisionedSaasOrg => "update_provisioned_saas_org",
                 AuditLogOperation.UpdateRole => "update_role",
                 AuditLogOperation.UpdateSandboxClaim => "update_sandbox_claim",
+                AuditLogOperation.UpdateSandboxFunction => "update_sandbox_function",
                 AuditLogOperation.UpdateSandboxPolicy => "update_sandbox_policy",
                 AuditLogOperation.UpdateSandboxProxyProfile => "update_sandbox_proxy_profile",
                 AuditLogOperation.UpdateSandboxRegistry => "update_sandbox_registry",
+                AuditLogOperation.UpdateSandboxVolume => "update_sandbox_volume",
                 AuditLogOperation.UpdateScimGroup => "update_scim_group",
                 AuditLogOperation.UpdateScimToken => "update_scim_token",
                 AuditLogOperation.UpdateScimUser => "update_scim_user",
@@ -2559,6 +2624,7 @@ namespace LangSmith
                 "claim_pending_workspace_invite" => AuditLogOperation.ClaimPendingWorkspaceInvite,
                 "clone_chart_section" => AuditLogOperation.CloneChartSection,
                 "clone_dataset" => AuditLogOperation.CloneDataset,
+                "clone_sandbox_volume" => AuditLogOperation.CloneSandboxVolume,
                 "confirm_payment_checkout_session" => AuditLogOperation.ConfirmPaymentCheckoutSession,
                 "confirm_sso_user_email" => AuditLogOperation.ConfirmSsoUserEmail,
                 "count_examples" => AuditLogOperation.CountExamples,
@@ -2633,10 +2699,12 @@ namespace LangSmith
                 "create_provisioned_saas_org" => AuditLogOperation.CreateProvisionedSaasOrg,
                 "create_role" => AuditLogOperation.CreateRole,
                 "create_sandbox_claim" => AuditLogOperation.CreateSandboxClaim,
+                "create_sandbox_function" => AuditLogOperation.CreateSandboxFunction,
                 "create_sandbox_policy" => AuditLogOperation.CreateSandboxPolicy,
                 "create_sandbox_proxy_profile" => AuditLogOperation.CreateSandboxProxyProfile,
                 "create_sandbox_registry" => AuditLogOperation.CreateSandboxRegistry,
                 "create_sandbox_snapshot" => AuditLogOperation.CreateSandboxSnapshot,
+                "create_sandbox_volume" => AuditLogOperation.CreateSandboxVolume,
                 "create_scim_group" => AuditLogOperation.CreateScimGroup,
                 "create_scim_token" => AuditLogOperation.CreateScimToken,
                 "create_scim_user" => AuditLogOperation.CreateScimUser,
@@ -2721,10 +2789,12 @@ namespace LangSmith
                 "delete_role" => AuditLogOperation.DeleteRole,
                 "delete_runs" => AuditLogOperation.DeleteRuns,
                 "delete_sandbox_claim" => AuditLogOperation.DeleteSandboxClaim,
+                "delete_sandbox_function" => AuditLogOperation.DeleteSandboxFunction,
                 "delete_sandbox_policy" => AuditLogOperation.DeleteSandboxPolicy,
                 "delete_sandbox_proxy_profile" => AuditLogOperation.DeleteSandboxProxyProfile,
                 "delete_sandbox_registry" => AuditLogOperation.DeleteSandboxRegistry,
                 "delete_sandbox_snapshot" => AuditLogOperation.DeleteSandboxSnapshot,
+                "delete_sandbox_volume" => AuditLogOperation.DeleteSandboxVolume,
                 "delete_scim_group" => AuditLogOperation.DeleteScimGroup,
                 "delete_scim_token" => AuditLogOperation.DeleteScimToken,
                 "delete_scim_user" => AuditLogOperation.DeleteScimUser,
@@ -2746,6 +2816,7 @@ namespace LangSmith
                 "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
                 "delete_workspace_pending_member" => AuditLogOperation.DeleteWorkspacePendingMember,
                 "delete_workspace_secret" => AuditLogOperation.DeleteWorkspaceSecret,
+                "deploy_sandbox_function" => AuditLogOperation.DeploySandboxFunction,
                 "detach_access_policies" => AuditLogOperation.DetachAccessPolicies,
                 "detach_team_access_policy" => AuditLogOperation.DetachTeamAccessPolicy,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
@@ -2761,6 +2832,7 @@ namespace LangSmith
                 "generate_insights_job_config" => AuditLogOperation.GenerateInsightsJobConfig,
                 "generate_runs_query" => AuditLogOperation.GenerateRunsQuery,
                 "generate_sandbox_download_url" => AuditLogOperation.GenerateSandboxDownloadUrl,
+                "generate_sandbox_function_token" => AuditLogOperation.GenerateSandboxFunctionToken,
                 "generate_sandbox_service_url" => AuditLogOperation.GenerateSandboxServiceUrl,
                 "generate_shared_dataset_query" => AuditLogOperation.GenerateSharedDatasetQuery,
                 "get_annotation_queue" => AuditLogOperation.GetAnnotationQueue,
@@ -2803,8 +2875,10 @@ namespace LangSmith
                 "get_run_url" => AuditLogOperation.GetRunUrl,
                 "get_sandbox_claim" => AuditLogOperation.GetSandboxClaim,
                 "get_sandbox_claim_status" => AuditLogOperation.GetSandboxClaimStatus,
+                "get_sandbox_function" => AuditLogOperation.GetSandboxFunction,
                 "get_sandbox_registry" => AuditLogOperation.GetSandboxRegistry,
                 "get_sandbox_snapshot" => AuditLogOperation.GetSandboxSnapshot,
+                "get_sandbox_volume" => AuditLogOperation.GetSandboxVolume,
                 "get_self_hosted_customer" => AuditLogOperation.GetSelfHostedCustomer,
                 "get_shared_examples_count" => AuditLogOperation.GetSharedExamplesCount,
                 "get_shared_tokens" => AuditLogOperation.GetSharedTokens,
@@ -2846,8 +2920,10 @@ namespace LangSmith
                 "list_pending_workspace_invites" => AuditLogOperation.ListPendingWorkspaceInvites,
                 "list_permissions" => AuditLogOperation.ListPermissions,
                 "list_sandbox_claims" => AuditLogOperation.ListSandboxClaims,
+                "list_sandbox_functions" => AuditLogOperation.ListSandboxFunctions,
                 "list_sandbox_registries" => AuditLogOperation.ListSandboxRegistries,
                 "list_sandbox_snapshots" => AuditLogOperation.ListSandboxSnapshots,
+                "list_sandbox_volumes" => AuditLogOperation.ListSandboxVolumes,
                 "list_service_accounts" => AuditLogOperation.ListServiceAccounts,
                 "list_tag_keys" => AuditLogOperation.ListTagKeys,
                 "list_tag_values" => AuditLogOperation.ListTagValues,
@@ -3005,9 +3081,11 @@ namespace LangSmith
                 "update_provisioned_saas_org" => AuditLogOperation.UpdateProvisionedSaasOrg,
                 "update_role" => AuditLogOperation.UpdateRole,
                 "update_sandbox_claim" => AuditLogOperation.UpdateSandboxClaim,
+                "update_sandbox_function" => AuditLogOperation.UpdateSandboxFunction,
                 "update_sandbox_policy" => AuditLogOperation.UpdateSandboxPolicy,
                 "update_sandbox_proxy_profile" => AuditLogOperation.UpdateSandboxProxyProfile,
                 "update_sandbox_registry" => AuditLogOperation.UpdateSandboxRegistry,
+                "update_sandbox_volume" => AuditLogOperation.UpdateSandboxVolume,
                 "update_scim_group" => AuditLogOperation.UpdateScimGroup,
                 "update_scim_token" => AuditLogOperation.UpdateScimToken,
                 "update_scim_user" => AuditLogOperation.UpdateScimUser,

@@ -681,10 +681,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="runId"></param>
         /// <param name="address">
-        /// Beta. Addresses the run to an Agent environment in place of session_id or<br/>
+        /// Addresses the run to an Agent environment in place of session_id or<br/>
         /// session_name, as lrn:agents/{id}/environments/{environment}. The environment is<br/>
-        /// case-insensitive. Only workspaces enabled for Agent addressing accept it;<br/>
-        /// others get a 403.<br/>
+        /// case-insensitive. Self-hosted deployments need LangSmith v0.18 or later.<br/>
         /// Example: lrn:agents/support-agent/environments/production
         /// </param>
         /// <param name="dottedOrder"></param>

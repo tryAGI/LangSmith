@@ -87,6 +87,12 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
+        /// Persistent (private beta) reports whether the sandbox keeps its filesystem across stops. When false, its writes are discarded whenever it stops and it is not charged for storage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preserve_memory_on_stop")]
@@ -153,6 +159,12 @@ namespace LangSmith
         public int? Vcpus { get; set; }
 
         /// <summary>
+        /// Volumes (beta) are the volumes attached to the sandbox, in slot order. Absent when the workspace does not have sandbox volumes enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("volumes")]
+        public global::System.Collections.Generic.IList<global::LangSmith.SandboxesSandboxVolumeResponse>? Volumes { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -176,6 +188,9 @@ namespace LangSmith
         /// <param name="memBytes"></param>
         /// <param name="mountConfig"></param>
         /// <param name="name"></param>
+        /// <param name="persistent">
+        /// Persistent (private beta) reports whether the sandbox keeps its filesystem across stops. When false, its writes are discarded whenever it stops and it is not charged for storage.
+        /// </param>
         /// <param name="preserveMemoryOnStop"></param>
         /// <param name="proxyConfig"></param>
         /// <param name="runConfig">
@@ -189,6 +204,9 @@ namespace LangSmith
         /// <param name="updatedAt"></param>
         /// <param name="updatedBy"></param>
         /// <param name="vcpus"></param>
+        /// <param name="volumes">
+        /// Volumes (beta) are the volumes attached to the sandbox, in slot order. Absent when the workspace does not have sandbox volumes enabled.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -206,6 +224,7 @@ namespace LangSmith
             long? memBytes,
             global::LangSmith.SandboxesSandboxMountConfig? mountConfig,
             string? name,
+            bool? persistent,
             bool? preserveMemoryOnStop,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             global::LangSmith.SandboxapiRunConfig? runConfig,
@@ -216,7 +235,8 @@ namespace LangSmith
             string? stoppedAt,
             string? updatedAt,
             string? updatedBy,
-            int? vcpus)
+            int? vcpus,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesSandboxVolumeResponse>? volumes)
         {
             this.AccessDelegation = accessDelegation;
             this.CpuMillicores = cpuMillicores;
@@ -231,6 +251,7 @@ namespace LangSmith
             this.MemBytes = memBytes;
             this.MountConfig = mountConfig;
             this.Name = name;
+            this.Persistent = persistent;
             this.PreserveMemoryOnStop = preserveMemoryOnStop;
             this.ProxyConfig = proxyConfig;
             this.RunConfig = runConfig;
@@ -242,6 +263,7 @@ namespace LangSmith
             this.UpdatedAt = updatedAt;
             this.UpdatedBy = updatedBy;
             this.Vcpus = vcpus;
+            this.Volumes = volumes;
         }
 
         /// <summary>
