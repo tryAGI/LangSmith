@@ -463,6 +463,34 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateTaskset,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTasksetRun,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTasksetTask,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTasksetTaskVersion,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTasksetVersion,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTasksetWorld,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateTasksetWorldVersion,
+        /// <summary>
+        ///
+        /// </summary>
         CreateTeam,
         /// <summary>
         ///
@@ -823,6 +851,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteTaskset,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteTasksetTask,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteTeam,
         /// <summary>
         ///
@@ -888,6 +924,10 @@ namespace LangSmith
         ///
         /// </summary>
         DownloadDataset,
+        /// <summary>
+        ///
+        /// </summary>
+        DownloadTasksetBundle,
         /// <summary>
         ///
         /// </summary>
@@ -1144,6 +1184,14 @@ namespace LangSmith
         ///
         /// </summary>
         GetTagValue,
+        /// <summary>
+        ///
+        /// </summary>
+        GetTasksetTaskFileContent,
+        /// <summary>
+        ///
+        /// </summary>
+        GetTasksetWorldFileContent,
         /// <summary>
         ///
         /// </summary>
@@ -1983,6 +2031,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateTaskset,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateTeam,
         /// <summary>
         ///
@@ -2191,6 +2243,13 @@ namespace LangSmith
                 AuditLogOperation.CreateTagKey => "create_tag_key",
                 AuditLogOperation.CreateTagValue => "create_tag_value",
                 AuditLogOperation.CreateTagging => "create_tagging",
+                AuditLogOperation.CreateTaskset => "create_taskset",
+                AuditLogOperation.CreateTasksetRun => "create_taskset_run",
+                AuditLogOperation.CreateTasksetTask => "create_taskset_task",
+                AuditLogOperation.CreateTasksetTaskVersion => "create_taskset_task_version",
+                AuditLogOperation.CreateTasksetVersion => "create_taskset_version",
+                AuditLogOperation.CreateTasksetWorld => "create_taskset_world",
+                AuditLogOperation.CreateTasksetWorldVersion => "create_taskset_world_version",
                 AuditLogOperation.CreateTeam => "create_team",
                 AuditLogOperation.CreateTeamWorkspaceGrant => "create_team_workspace_grant",
                 AuditLogOperation.CreateTenant => "create_tenant",
@@ -2281,6 +2340,8 @@ namespace LangSmith
                 AuditLogOperation.DeleteTagKey => "delete_tag_key",
                 AuditLogOperation.DeleteTagValue => "delete_tag_value",
                 AuditLogOperation.DeleteTagging => "delete_tagging",
+                AuditLogOperation.DeleteTaskset => "delete_taskset",
+                AuditLogOperation.DeleteTasksetTask => "delete_taskset_task",
                 AuditLogOperation.DeleteTeam => "delete_team",
                 AuditLogOperation.DeleteTeamWorkspaceGrant => "delete_team_workspace_grant",
                 AuditLogOperation.DeleteTool => "delete_tool",
@@ -2298,6 +2359,7 @@ namespace LangSmith
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
                 AuditLogOperation.DownloadCustomAppSource => "download_custom_app_source",
                 AuditLogOperation.DownloadDataset => "download_dataset",
+                AuditLogOperation.DownloadTasksetBundle => "download_taskset_bundle",
                 AuditLogOperation.EvaluateExperiment => "evaluate_experiment",
                 AuditLogOperation.ExecuteCustomCode => "execute_custom_code",
                 AuditLogOperation.ExportAnnotationQueue => "export_annotation_queue",
@@ -2362,6 +2424,8 @@ namespace LangSmith
                 AuditLogOperation.GetSsoSettingsCurrent => "get_sso_settings_current",
                 AuditLogOperation.GetTagKey => "get_tag_key",
                 AuditLogOperation.GetTagValue => "get_tag_value",
+                AuditLogOperation.GetTasksetTaskFileContent => "get_taskset_task_file_content",
+                AuditLogOperation.GetTasksetWorldFileContent => "get_taskset_world_file_content",
                 AuditLogOperation.GetUsageLimits => "get_usage_limits",
                 AuditLogOperation.GetWorkspaceStats => "get_workspace_stats",
                 AuditLogOperation.GetWorkspaceUsageLimitsInfo => "get_workspace_usage_limits_info",
@@ -2571,6 +2635,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
+                AuditLogOperation.UpdateTaskset => "update_taskset",
                 AuditLogOperation.UpdateTeam => "update_team",
                 AuditLogOperation.UpdateTeamWorkspaceGrant => "update_team_workspace_grant",
                 AuditLogOperation.UpdateTool => "update_tool",
@@ -2715,6 +2780,13 @@ namespace LangSmith
                 "create_tag_key" => AuditLogOperation.CreateTagKey,
                 "create_tag_value" => AuditLogOperation.CreateTagValue,
                 "create_tagging" => AuditLogOperation.CreateTagging,
+                "create_taskset" => AuditLogOperation.CreateTaskset,
+                "create_taskset_run" => AuditLogOperation.CreateTasksetRun,
+                "create_taskset_task" => AuditLogOperation.CreateTasksetTask,
+                "create_taskset_task_version" => AuditLogOperation.CreateTasksetTaskVersion,
+                "create_taskset_version" => AuditLogOperation.CreateTasksetVersion,
+                "create_taskset_world" => AuditLogOperation.CreateTasksetWorld,
+                "create_taskset_world_version" => AuditLogOperation.CreateTasksetWorldVersion,
                 "create_team" => AuditLogOperation.CreateTeam,
                 "create_team_workspace_grant" => AuditLogOperation.CreateTeamWorkspaceGrant,
                 "create_tenant" => AuditLogOperation.CreateTenant,
@@ -2805,6 +2877,8 @@ namespace LangSmith
                 "delete_tag_key" => AuditLogOperation.DeleteTagKey,
                 "delete_tag_value" => AuditLogOperation.DeleteTagValue,
                 "delete_tagging" => AuditLogOperation.DeleteTagging,
+                "delete_taskset" => AuditLogOperation.DeleteTaskset,
+                "delete_taskset_task" => AuditLogOperation.DeleteTasksetTask,
                 "delete_team" => AuditLogOperation.DeleteTeam,
                 "delete_team_workspace_grant" => AuditLogOperation.DeleteTeamWorkspaceGrant,
                 "delete_tool" => AuditLogOperation.DeleteTool,
@@ -2822,6 +2896,7 @@ namespace LangSmith
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
                 "download_custom_app_source" => AuditLogOperation.DownloadCustomAppSource,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
+                "download_taskset_bundle" => AuditLogOperation.DownloadTasksetBundle,
                 "evaluate_experiment" => AuditLogOperation.EvaluateExperiment,
                 "execute_custom_code" => AuditLogOperation.ExecuteCustomCode,
                 "export_annotation_queue" => AuditLogOperation.ExportAnnotationQueue,
@@ -2886,6 +2961,8 @@ namespace LangSmith
                 "get_sso_settings_current" => AuditLogOperation.GetSsoSettingsCurrent,
                 "get_tag_key" => AuditLogOperation.GetTagKey,
                 "get_tag_value" => AuditLogOperation.GetTagValue,
+                "get_taskset_task_file_content" => AuditLogOperation.GetTasksetTaskFileContent,
+                "get_taskset_world_file_content" => AuditLogOperation.GetTasksetWorldFileContent,
                 "get_usage_limits" => AuditLogOperation.GetUsageLimits,
                 "get_workspace_stats" => AuditLogOperation.GetWorkspaceStats,
                 "get_workspace_usage_limits_info" => AuditLogOperation.GetWorkspaceUsageLimitsInfo,
@@ -3095,6 +3172,7 @@ namespace LangSmith
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,
+                "update_taskset" => AuditLogOperation.UpdateTaskset,
                 "update_team" => AuditLogOperation.UpdateTeam,
                 "update_team_workspace_grant" => AuditLogOperation.UpdateTeamWorkspaceGrant,
                 "update_tool" => AuditLogOperation.UpdateTool,
