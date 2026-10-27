@@ -43,7 +43,7 @@ namespace LangSmith
         public required global::LangSmith.RepohostProvider Provider { get; set; }
 
         /// <summary>
-        /// ProviderWebBaseURL is the GitLab instance a GitLab fix lives on; null for GitHub.
+        /// ProviderWebBaseURL is the instance the fix was opened on; null on GitHub fixes from before it was recorded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_web_base_url")]
         public string? ProviderWebBaseUrl { get; set; }
@@ -79,7 +79,7 @@ namespace LangSmith
         /// <param name="branch"></param>
         /// <param name="prNumber"></param>
         /// <param name="providerWebBaseUrl">
-        /// ProviderWebBaseURL is the GitLab instance a GitLab fix lives on; null for GitHub.
+        /// ProviderWebBaseURL is the instance the fix was opened on; null on GitHub fixes from before it was recorded.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

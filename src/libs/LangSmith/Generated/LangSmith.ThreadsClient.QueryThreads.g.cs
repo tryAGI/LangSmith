@@ -58,8 +58,8 @@ namespace LangSmith
 
         /// <summary>
         /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
+        /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
+        /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
         /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
@@ -87,8 +87,8 @@ namespace LangSmith
         }
         /// <summary>
         /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
+        /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
+        /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
         /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
@@ -414,43 +414,6 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // missing or invalid authentication
-                            if ((int)__response.StatusCode == 401)
-                            {
-                                string? __content_401 = null;
-                                global::System.Exception? __exception_401 = null;
-                                global::LangSmith.SharedProblemDetails? __value_401 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::LangSmith.SharedProblemDetails.FromJson(__content_401, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_401 = global::LangSmith.SharedProblemDetails.FromJson(__content_401, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_401 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_401,
-                                    responseBody: __content_401,
-                                    responseObject: __value_401,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // forbidden (insufficient permission)
                             if ((int)__response.StatusCode == 403)
                             {
@@ -525,43 +488,6 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // not acceptable (ai_search requires Accept: text/event-stream)
-                            if ((int)__response.StatusCode == 406)
-                            {
-                                string? __content_406 = null;
-                                global::System.Exception? __exception_406 = null;
-                                global::LangSmith.SharedProblemDetails? __value_406 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_406 = global::LangSmith.SharedProblemDetails.FromJson(__content_406, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_406 = global::LangSmith.SharedProblemDetails.FromJson(__content_406, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_406 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_406,
-                                    responseBody: __content_406,
-                                    responseObject: __value_406,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // unprocessable entity (e.g. invalid project UUID)
                             if ((int)__response.StatusCode == 422)
                             {
@@ -599,43 +525,6 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // internal server error
-                            if ((int)__response.StatusCode == 500)
-                            {
-                                string? __content_500 = null;
-                                global::System.Exception? __exception_500 = null;
-                                global::LangSmith.SharedProblemDetails? __value_500 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_500 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_500,
-                                    responseBody: __content_500,
-                                    responseObject: __value_500,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // V2 filter syntax, thread_filters, or ai_search are unavailable for this deployment; use legacy function-style filters without thread_filters or set SMITHDB_QUERY_ENABLED=true
                             if ((int)__response.StatusCode == 501)
                             {
@@ -668,80 +557,6 @@ namespace LangSmith
                                     innerException: __exception_501,
                                     responseBody: __content_501,
                                     responseObject: __value_501,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // service unavailable
-                            if ((int)__response.StatusCode == 503)
-                            {
-                                string? __content_503 = null;
-                                global::System.Exception? __exception_503 = null;
-                                global::LangSmith.SharedProblemDetails? __value_503 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::LangSmith.SharedProblemDetails.FromJson(__content_503, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_503 = global::LangSmith.SharedProblemDetails.FromJson(__content_503, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_503 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_503,
-                                    responseBody: __content_503,
-                                    responseObject: __value_503,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // gateway timeout or deadline exceeded
-                            if ((int)__response.StatusCode == 504)
-                            {
-                                string? __content_504 = null;
-                                global::System.Exception? __exception_504 = null;
-                                global::LangSmith.SharedProblemDetails? __value_504 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_504 = global::LangSmith.SharedProblemDetails.FromJson(__content_504, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_504 = global::LangSmith.SharedProblemDetails.FromJson(__content_504, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_504 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_504,
-                                    responseBody: __content_504,
-                                    responseObject: __value_504,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -845,8 +660,8 @@ namespace LangSmith
         }
         /// <summary>
         /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
+        /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
+        /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
         /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>

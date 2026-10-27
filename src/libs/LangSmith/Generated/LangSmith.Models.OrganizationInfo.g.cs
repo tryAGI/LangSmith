@@ -110,6 +110,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_sso_user")]
+        public bool? IsSsoUser { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
         public bool? SsoOnly { get; set; }
 
@@ -322,6 +328,9 @@ namespace LangSmith
         /// <param name="memberDisabled">
         /// Default Value: false
         /// </param>
+        /// <param name="isSsoUser">
+        /// Default Value: false
+        /// </param>
         /// <param name="ssoOnly">
         /// Default Value: false
         /// </param>
@@ -396,6 +405,7 @@ namespace LangSmith
             global::System.Guid? orgRoleId,
             bool? disabled,
             bool? memberDisabled,
+            bool? isSsoUser,
             bool? ssoOnly,
             bool? jitProvisioningEnabled,
             bool? invitesEnabled,
@@ -441,6 +451,7 @@ namespace LangSmith
             this.OrgRoleId = orgRoleId;
             this.Disabled = disabled;
             this.MemberDisabled = memberDisabled;
+            this.IsSsoUser = isSsoUser;
             this.SsoOnly = ssoOnly;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.InvitesEnabled = invitesEnabled;

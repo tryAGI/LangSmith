@@ -6,8 +6,8 @@ namespace LangSmith
     {
         /// <summary>
         /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
+        /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
+        /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
         /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
@@ -24,8 +24,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
+        /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
+        /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
         /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
@@ -42,8 +42,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query Threads<br/>
-        /// Query threads within a project (session), with cursor-based pagination.<br/>
-        /// Returns threads matching the given time range and optional filters.<br/>
+        /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
+        /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
         /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>

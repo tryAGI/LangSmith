@@ -109,6 +109,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_sso_user")]
+        public bool? IsSsoUser { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jit_provisioning_enabled")]
         public bool? JitProvisioningEnabled { get; set; }
 
@@ -295,6 +301,7 @@ namespace LangSmith
         /// <param name="ipAllowlist"></param>
         /// <param name="ipAllowlistEnabled"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="isSsoUser"></param>
         /// <param name="jitProvisioningEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="llmAuthProxyEnabled"></param>
@@ -353,6 +360,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             bool? ipAllowlistEnabled,
             bool? isPersonal,
+            bool? isSsoUser,
             bool? jitProvisioningEnabled,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
             bool? llmAuthProxyEnabled,
@@ -396,6 +404,7 @@ namespace LangSmith
             this.IpAllowlist = ipAllowlist;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.IsPersonal = isPersonal;
+            this.IsSsoUser = isSsoUser;
             this.JitProvisioningEnabled = jitProvisioningEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
