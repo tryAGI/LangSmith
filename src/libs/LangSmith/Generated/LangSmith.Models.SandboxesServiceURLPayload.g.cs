@@ -21,11 +21,12 @@ namespace LangSmith
         public global::LangSmith.SandboxesServiceURLPayloadAccess? Access { get; set; }
 
         /// <summary>
-        /// EmbedOrigins are the pages allowed to show a LangSmith login service URL<br/>
-        /// in an iframe, besides LangSmith itself: at most 5 origins such as<br/>
-        /// https://app.example.com (http only for localhost). Valid only with access<br/>
-        /// "restricted" or "workspace". Each call sets the URL's whole list, so<br/>
-        /// omitting the field removes any origins set before.
+        /// EmbedOrigins are the pages allowed to show the service URL in an iframe,<br/>
+        /// besides LangSmith itself: at most 5 origins such as<br/>
+        /// https://app.example.com (http only for localhost). In token mode they are<br/>
+        /// bound into the minted token, so they last as long as it does. With<br/>
+        /// access "restricted" or "workspace" each call sets the grant's whole list,<br/>
+        /// so omitting the field removes any origins set before.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embed_origins")]
         public global::System.Collections.Generic.IList<string>? EmbedOrigins { get; set; }
@@ -60,11 +61,12 @@ namespace LangSmith
         /// A LangSmith login grant is durable; token mode is refused (409) while one exists.
         /// </param>
         /// <param name="embedOrigins">
-        /// EmbedOrigins are the pages allowed to show a LangSmith login service URL<br/>
-        /// in an iframe, besides LangSmith itself: at most 5 origins such as<br/>
-        /// https://app.example.com (http only for localhost). Valid only with access<br/>
-        /// "restricted" or "workspace". Each call sets the URL's whole list, so<br/>
-        /// omitting the field removes any origins set before.
+        /// EmbedOrigins are the pages allowed to show the service URL in an iframe,<br/>
+        /// besides LangSmith itself: at most 5 origins such as<br/>
+        /// https://app.example.com (http only for localhost). In token mode they are<br/>
+        /// bound into the minted token, so they last as long as it does. With<br/>
+        /// access "restricted" or "workspace" each call sets the grant's whole list,<br/>
+        /// so omitting the field removes any origins set before.
         /// </param>
         /// <param name="expiresInSeconds"></param>
         /// <param name="port"></param>

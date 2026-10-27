@@ -60,8 +60,10 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? MatchHeaders { get; set; }
 
         /// <summary>
-        /// MatchHosts is only accepted for header injection rules. Provider auth<br/>
-        /// rules use built-in host matching.
+        /// MatchHosts is only accepted for header injection and relay rules.<br/>
+        /// Provider auth rules use built-in host matching. A relay rule may also<br/>
+        /// list IP addresses and CIDR blocks (10.0.0.0/8), which match connections<br/>
+        /// the sandbox makes to an IP address rather than a name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match_hosts")]
         public global::System.Collections.Generic.IList<string>? MatchHosts { get; set; }
@@ -78,6 +80,12 @@ namespace LangSmith
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
+
+        /// <summary>
+        /// RelayID is the ID of the LangSmith relay (a connection of kind relay) that carries connections to match_hosts when type is relay. Those connections leave from the relay's connector, and its network and IP, instead of the sandbox host. Access control still applies first, the first enabled matching relay rule wins, and a matched host never falls back to a direct connection.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("relay_id")]
+        public global::System.Guid? RelayId { get; set; }
 
         /// <summary>
         ///
@@ -110,10 +118,15 @@ namespace LangSmith
         /// MatchHeaders restricts a header injection rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
         /// </param>
         /// <param name="matchHosts">
-        /// MatchHosts is only accepted for header injection rules. Provider auth<br/>
-        /// rules use built-in host matching.
+        /// MatchHosts is only accepted for header injection and relay rules.<br/>
+        /// Provider auth rules use built-in host matching. A relay rule may also<br/>
+        /// list IP addresses and CIDR blocks (10.0.0.0/8), which match connections<br/>
+        /// the sandbox makes to an IP address rather than a name.
         /// </param>
         /// <param name="matchPaths"></param>
+        /// <param name="relayId">
+        /// RelayID is the ID of the LangSmith relay (a connection of kind relay) that carries connections to match_hosts when type is relay. Those connections leave from the relay's connector, and its network and IP, instead of the sandbox host. Access control still applies first, the first enabled matching relay rule wins, and a matched host never falls back to a direct connection.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -130,6 +143,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? matchHeaders,
             global::System.Collections.Generic.IList<string>? matchHosts,
             global::System.Collections.Generic.IList<string>? matchPaths,
+            global::System.Guid? relayId,
             string? type)
         {
             this.Aws = aws;
@@ -143,6 +157,7 @@ namespace LangSmith
             this.MatchHosts = matchHosts;
             this.MatchPaths = matchPaths;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RelayId = relayId;
             this.Type = type;
         }
 

@@ -264,6 +264,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? LlmAuthProxyAllowedUrls { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_sso_available")]
+        public bool? OidcSsoAvailable { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("managed_evals_enabled")]
@@ -366,6 +372,9 @@ namespace LangSmith
         /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
+        /// <param name="oidcSsoAvailable">
+        /// Default Value: false
+        /// </param>
         /// <param name="managedEvalsEnabled"></param>
         /// <param name="managedEvalTermsAcceptedAt"></param>
 #if NET7_0_OR_GREATER
@@ -413,6 +422,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
+            bool? oidcSsoAvailable,
             bool? managedEvalsEnabled,
             string? managedEvalTermsAcceptedAt)
         {
@@ -457,6 +467,7 @@ namespace LangSmith
             this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
+            this.OidcSsoAvailable = oidcSsoAvailable;
             this.ManagedEvalsEnabled = managedEvalsEnabled;
             this.ManagedEvalTermsAcceptedAt = managedEvalTermsAcceptedAt;
         }

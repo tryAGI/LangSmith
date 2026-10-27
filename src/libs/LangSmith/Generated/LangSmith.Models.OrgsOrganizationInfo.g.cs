@@ -183,6 +183,12 @@ namespace LangSmith
         public bool? MemberDisabled { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_sso_available")]
+        public bool? OidcSsoAvailable { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_role_id")]
@@ -309,6 +315,9 @@ namespace LangSmith
         /// <param name="maxServiceKeyExpiryDays"></param>
         /// <param name="maxTracingKeyExpiryDays"></param>
         /// <param name="memberDisabled"></param>
+        /// <param name="oidcSsoAvailable">
+        /// Default Value: false
+        /// </param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
         /// <param name="patCreationDisabled"></param>
@@ -356,6 +365,7 @@ namespace LangSmith
             int? maxServiceKeyExpiryDays,
             int? maxTracingKeyExpiryDays,
             bool? memberDisabled,
+            bool? oidcSsoAvailable,
             global::System.Guid? orgRoleId,
             global::LangSmith.OrgsOrganizationRole? orgRoleName,
             bool? patCreationDisabled,
@@ -398,6 +408,7 @@ namespace LangSmith
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;
             this.MemberDisabled = memberDisabled;
+            this.OidcSsoAvailable = oidcSsoAvailable;
             this.OrgRoleId = orgRoleId;
             this.OrgRoleName = orgRoleName;
             this.PatCreationDisabled = patCreationDisabled;

@@ -69,6 +69,12 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
+        /// Persistent (private beta) keeps the sandbox's filesystem across stops (the default, true). Set it to false for a disposable sandbox: its writes are discarded whenever it stops, the next start boots it fresh from its snapshot, and it is never charged for storage. A sandbox that is not persistent cannot preserve memory on stop or have its filesystem captured as a snapshot (exporting a Docker image from it with docker_image still works), and some snapshots captured from other sandboxes cannot start one; such a create is rejected. Setting it to false requires the private beta to be enabled for your workspace.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
+        /// <summary>
         /// PreserveMemoryOnStop, when true, suspends the sandbox's memory on a<br/>
         /// voluntary stop (idle timeout or explicit stop) so the next start resumes<br/>
         /// from where it left off. Default false discards memory and keeps only the<br/>
@@ -133,6 +139,12 @@ namespace LangSmith
         public int? Vcpus { get; set; }
 
         /// <summary>
+        /// Volumes (beta) attaches existing volumes at mount paths inside the sandbox. At most 4; requires sandbox volumes to be enabled for your workspace. Attaching a volume requires being its creator or holding sandboxes:exec.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("volumes")]
+        public global::System.Collections.Generic.IList<global::LangSmith.SandboxesVolumeMountRequest>? Volumes { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -159,6 +171,9 @@ namespace LangSmith
         /// </param>
         /// <param name="mountConfig"></param>
         /// <param name="name"></param>
+        /// <param name="persistent">
+        /// Persistent (private beta) keeps the sandbox's filesystem across stops (the default, true). Set it to false for a disposable sandbox: its writes are discarded whenever it stops, the next start boots it fresh from its snapshot, and it is never charged for storage. A sandbox that is not persistent cannot preserve memory on stop or have its filesystem captured as a snapshot (exporting a Docker image from it with docker_image still works), and some snapshots captured from other sandboxes cannot start one; such a create is rejected. Setting it to false requires the private beta to be enabled for your workspace.
+        /// </param>
         /// <param name="preserveMemoryOnStop">
         /// PreserveMemoryOnStop, when true, suspends the sandbox's memory on a<br/>
         /// voluntary stop (idle timeout or explicit stop) so the next start resumes<br/>
@@ -188,6 +203,9 @@ namespace LangSmith
         /// </param>
         /// <param name="tagValueIds"></param>
         /// <param name="vcpus"></param>
+        /// <param name="volumes">
+        /// Volumes (beta) attaches existing volumes at mount paths inside the sandbox. At most 4; requires sandbox volumes to be enabled for your workspace. Attaching a volume requires being its creator or holding sandboxes:exec.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -202,6 +220,7 @@ namespace LangSmith
             long? memBytes,
             global::LangSmith.SandboxesSandboxMountConfig? mountConfig,
             string? name,
+            bool? persistent,
             bool? preserveMemoryOnStop,
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             bool? restoreMemory,
@@ -210,7 +229,8 @@ namespace LangSmith
             string? snapshotId,
             string? snapshotName,
             global::System.Collections.Generic.IList<string>? tagValueIds,
-            int? vcpus)
+            int? vcpus,
+            global::System.Collections.Generic.IList<global::LangSmith.SandboxesVolumeMountRequest>? volumes)
         {
             this.AccessDelegation = accessDelegation;
             this.CpuMillicores = cpuMillicores;
@@ -222,6 +242,7 @@ namespace LangSmith
             this.MemBytes = memBytes;
             this.MountConfig = mountConfig;
             this.Name = name;
+            this.Persistent = persistent;
             this.PreserveMemoryOnStop = preserveMemoryOnStop;
             this.ProxyConfig = proxyConfig;
             this.RestoreMemory = restoreMemory;
@@ -231,6 +252,7 @@ namespace LangSmith
             this.SnapshotName = snapshotName;
             this.TagValueIds = tagValueIds;
             this.Vcpus = vcpus;
+            this.Volumes = volumes;
         }
 
         /// <summary>

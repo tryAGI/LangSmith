@@ -38,6 +38,13 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
+        /// ProxyConfig applies a sandbox's proxy rules to the pages the browser<br/>
+        /// loads: header injection, access control, and relay rules.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("proxy_config")]
+        public global::LangSmith.SandboxesProxyConfig? ProxyConfig { get; set; }
+
+        /// <summary>
         /// VCPUs and MemBytes size the browser sandbox, as for any sandbox. With<br/>
         /// neither set, a browser gets 2 vCPUs and 8 GiB.
         /// </summary>
@@ -68,6 +75,10 @@ namespace LangSmith
         /// Name of the browser sandbox. Generated when omitted, as "browser-"<br/>
         /// followed by the browser's ID.
         /// </param>
+        /// <param name="proxyConfig">
+        /// ProxyConfig applies a sandbox's proxy rules to the pages the browser<br/>
+        /// loads: header injection, access control, and relay rules.
+        /// </param>
         /// <param name="vcpus">
         /// VCPUs and MemBytes size the browser sandbox, as for any sandbox. With<br/>
         /// neither set, a browser gets 2 vCPUs and 8 GiB.
@@ -80,12 +91,14 @@ namespace LangSmith
             int? idleTtlSeconds,
             long? memBytes,
             string? name,
+            global::LangSmith.SandboxesProxyConfig? proxyConfig,
             long? vcpus)
         {
             this.Hidpi = hidpi;
             this.IdleTtlSeconds = idleTtlSeconds;
             this.MemBytes = memBytes;
             this.Name = name;
+            this.ProxyConfig = proxyConfig;
             this.Vcpus = vcpus;
         }
 
