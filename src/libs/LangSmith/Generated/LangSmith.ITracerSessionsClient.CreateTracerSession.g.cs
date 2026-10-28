@@ -15,7 +15,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> CreateTracerSessionAsync(
 
             global::LangSmith.TracerSessionCreate request,
             bool? upsert = default,
@@ -32,7 +32,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionWithoutVirtualFields>> CreateTracerSessionAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>> CreateTracerSessionAsResponseAsync(
 
             global::LangSmith.TracerSessionCreate request,
             bool? upsert = default,
@@ -62,7 +62,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> CreateTracerSessionAsync(
             bool? upsert = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             global::System.DateTime? startTime = default,

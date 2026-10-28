@@ -6,9 +6,11 @@ namespace LangSmith
     {
         /// <summary>
         /// Create Feedback With Token Post<br/>
-        /// Create a new feedback with a token.
+        /// Submit feedback for the token's run and key. The token is the credential, so anyone with it can submit feedback.
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// Feedback ingest token. It's a credential: anyone who has it can submit feedback.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -21,9 +23,11 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Feedback With Token Post<br/>
-        /// Create a new feedback with a token.
+        /// Submit feedback for the token's run and key. The token is the credential, so anyone with it can submit feedback.
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// Feedback ingest token. It's a credential: anyone who has it can submit feedback.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -36,9 +40,11 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Feedback With Token Post<br/>
-        /// Create a new feedback with a token.
+        /// Submit feedback for the token's run and key. The token is the credential, so anyone with it can submit feedback.
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// Feedback ingest token. It's a credential: anyone who has it can submit feedback.
+        /// </param>
         /// <param name="score"></param>
         /// <param name="extendTraceRetention">
         /// Default Value: true

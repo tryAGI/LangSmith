@@ -4,56 +4,65 @@
 namespace LangSmith
 {
     /// <summary>
-    /// TracerSession schema.
+    /// Legacy session response model. Use TracerSession for new integrations.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class TracerSessionWithoutVirtualFields
     {
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public object? Extra { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Name { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Description { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Guid? DefaultDatasetId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Guid? ReferenceDatasetId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_tier")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::LangSmith.TraceTier? TraceTier { get; set; }
 
         /// <summary>
@@ -61,6 +70,7 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
@@ -68,12 +78,14 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_run_start_time_live")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? LastRunStartTimeLive { get; set; }
 
         /// <summary>

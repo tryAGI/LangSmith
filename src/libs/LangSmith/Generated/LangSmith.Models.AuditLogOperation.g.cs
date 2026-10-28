@@ -79,6 +79,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CancelTasksetRun,
+        /// <summary>
+        ///
+        /// </summary>
         CaptureSandboxSnapshot,
         /// <summary>
         ///
@@ -2147,6 +2151,7 @@ namespace LangSmith
                 AuditLogOperation.BulkDeleteEvaluators => "bulk_delete_evaluators",
                 AuditLogOperation.CancelBulkExport => "cancel_bulk_export",
                 AuditLogOperation.CancelDeploymentRuns => "cancel_deployment_runs",
+                AuditLogOperation.CancelTasksetRun => "cancel_taskset_run",
                 AuditLogOperation.CaptureSandboxSnapshot => "capture_sandbox_snapshot",
                 AuditLogOperation.ClaimPendingOrganizationInvite => "claim_pending_organization_invite",
                 AuditLogOperation.ClaimPendingWorkspaceInvite => "claim_pending_workspace_invite",
@@ -2684,6 +2689,7 @@ namespace LangSmith
                 "bulk_delete_evaluators" => AuditLogOperation.BulkDeleteEvaluators,
                 "cancel_bulk_export" => AuditLogOperation.CancelBulkExport,
                 "cancel_deployment_runs" => AuditLogOperation.CancelDeploymentRuns,
+                "cancel_taskset_run" => AuditLogOperation.CancelTasksetRun,
                 "capture_sandbox_snapshot" => AuditLogOperation.CaptureSandboxSnapshot,
                 "claim_pending_organization_invite" => AuditLogOperation.ClaimPendingOrganizationInvite,
                 "claim_pending_workspace_invite" => AuditLogOperation.ClaimPendingWorkspaceInvite,

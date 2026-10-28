@@ -34,9 +34,14 @@ namespace LangSmith
         /// Populate Annotation Queue<br/>
         /// Populate annotation queue with runs from an experiment.
         /// </summary>
-        /// <param name="queueId"></param>
-        /// <param name="sessionIds"></param>
+        /// <param name="queueId">
+        /// ID of the annotation queue to add runs to.
+        /// </param>
+        /// <param name="sessionIds">
+        /// Experiments whose runs are added to the queue. Each must be an experiment on a dataset.
+        /// </param>
         /// <param name="extendTraceRetention">
+        /// Upgrade the added traces from short-lived to extended retention.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

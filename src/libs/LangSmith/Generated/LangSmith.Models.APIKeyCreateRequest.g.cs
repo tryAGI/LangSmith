@@ -13,8 +13,11 @@ namespace LangSmith
     ///     If not provided, uses default role based on read_only flag:<br/>
     ///     - WORKSPACE_ADMIN if read_only is False<br/>
     ///     - WORKSPACE_READER if read_only is True<br/>
-    /// org_role_id: UUID of a org role for org-scoped keys<br/>
-    ///     If not provided, defaults to ORG_USER<br/>
+    /// org_role_id: UUID of an org role for service keys.<br/>
+    ///     Workspace-scoped keys accept only the built-in ORGANIZATION_VIEWER<br/>
+    ///     or ORGANIZATION_RESTRICTED role.<br/>
+    ///     Defaults to ORGANIZATION_VIEWER for workspace-scoped keys,<br/>
+    ///     or ORGANIZATION_USER for org-scoped keys.<br/>
     /// default_workspace_id: UUID of the default workspace for PATs.<br/>
     ///     If not provided, uses the current logic (first available workspace).
     /// </summary>

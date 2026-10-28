@@ -9,50 +9,51 @@ namespace LangSmith
     public sealed partial class ExampleUpdateWithID
     {
         /// <summary>
-        ///
+        /// The example's current dataset. An example can't move to another dataset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         public global::System.Guid? DatasetId { get; set; }
 
         /// <summary>
-        ///
+        /// New inputs. Replaces the existing inputs; omit to keep them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         public object? Inputs { get; set; }
 
         /// <summary>
-        ///
+        /// New outputs. Replaces the existing outputs; omit to keep them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         public object? Outputs { get; set; }
 
         /// <summary>
-        ///
+        /// Attachments to rename or keep.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachments_operations")]
         public global::LangSmith.AttachmentsOperations? AttachmentsOperations { get; set; }
 
         /// <summary>
-        ///
+        /// New metadata. Replaces the existing metadata; omit to keep it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
-        ///
+        /// Split or splits to put the example in. Replaces its current splits.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
         public global::LangSmith.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
+        /// Not used.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overwrite")]
         public bool? Overwrite { get; set; }
 
         /// <summary>
-        ///
+        /// ID of the example to update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -67,14 +68,29 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ExampleUpdateWithID" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="datasetId"></param>
-        /// <param name="inputs"></param>
-        /// <param name="outputs"></param>
-        /// <param name="attachmentsOperations"></param>
-        /// <param name="metadata"></param>
-        /// <param name="split"></param>
+        /// <param name="id">
+        /// ID of the example to update.
+        /// </param>
+        /// <param name="datasetId">
+        /// The example's current dataset. An example can't move to another dataset.
+        /// </param>
+        /// <param name="inputs">
+        /// New inputs. Replaces the existing inputs; omit to keep them.
+        /// </param>
+        /// <param name="outputs">
+        /// New outputs. Replaces the existing outputs; omit to keep them.
+        /// </param>
+        /// <param name="attachmentsOperations">
+        /// Attachments to rename or keep.
+        /// </param>
+        /// <param name="metadata">
+        /// New metadata. Replaces the existing metadata; omit to keep it.
+        /// </param>
+        /// <param name="split">
+        /// Split or splits to put the example in. Replaces its current splits.
+        /// </param>
         /// <param name="overwrite">
+        /// Not used.<br/>
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER

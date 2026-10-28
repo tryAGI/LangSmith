@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class WorkspacePatch
     {
         /// <summary>
-        ///
+        /// New workspace name. Letters, digits, spaces and - _ ' @ ( ) only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspacePatch" /> class.
         /// </summary>
-        /// <param name="displayName"></param>
+        /// <param name="displayName">
+        /// New workspace name. Letters, digits, spaces and - _ ' @ ( ) only.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
