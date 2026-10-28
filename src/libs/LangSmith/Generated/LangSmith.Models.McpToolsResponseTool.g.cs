@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class GetToolsApiV1McpToolsGetResponse
+    public sealed partial class McpToolsResponseTool
     {
 
         /// <summary>

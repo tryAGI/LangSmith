@@ -9,8 +9,7 @@ namespace LangSmith
     /// API key GET schema.<br/>
     /// role_id, org_role_id, and access_scope let clients render the key's<br/>
     /// current role state without a second round trip. For workspace-scoped<br/>
-    /// keys, org_role_id is null (the api_key's identity_id points at a<br/>
-    /// workspace identity, so there is no caller-meaningful org role to surface).
+    /// service keys, org_role_id comes from the parent organization identity.
     /// </summary>
     public sealed partial class APIKeyGetResponse
     {

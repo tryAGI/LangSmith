@@ -53,6 +53,14 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::System.Guid>? Ids { get; set; }
 
         /// <summary>
+        /// `include_subtree_usage` enriches selected token and cost fields on root and intermediate runs with subtree totals, and selected `first_token_time` with the earliest observed subtree timestamp.<br/>
+        /// Descendants contribute regardless of this request's filters or time bounds. Runs without observed descendants retain their original values. Defaults to false.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_subtree_usage")]
+        public bool? IncludeSubtreeUsage { get; set; }
+
+        /// <summary>
         /// `is_root` returns only root runs (true) or only non-root runs (false).<br/>
         /// Example: true
         /// </summary>
@@ -208,6 +216,11 @@ namespace LangSmith
         /// `ids` optionally limits the request to these run UUIDs.<br/>
         /// Example: [018e4c7e-a9fb-7ef0-a5b6-6ea3a82e9327, f47ac10b-58cc-4372-a567-0e02b2c3d479]
         /// </param>
+        /// <param name="includeSubtreeUsage">
+        /// `include_subtree_usage` enriches selected token and cost fields on root and intermediate runs with subtree totals, and selected `first_token_time` with the earliest observed subtree timestamp.<br/>
+        /// Descendants contribute regardless of this request's filters or time bounds. Runs without observed descendants retain their original values. Defaults to false.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="isRoot">
         /// `is_root` returns only root runs (true) or only non-root runs (false).<br/>
         /// Example: true
@@ -283,6 +296,7 @@ namespace LangSmith
             string? filter,
             bool? hasError,
             global::System.Collections.Generic.IList<global::System.Guid>? ids,
+            bool? includeSubtreeUsage,
             bool? isRoot,
             global::System.DateTime? maxFeedbackModifiedAt,
             global::System.DateTime? maxStartTime,
@@ -303,6 +317,7 @@ namespace LangSmith
             this.Filter = filter;
             this.HasError = hasError;
             this.Ids = ids;
+            this.IncludeSubtreeUsage = includeSubtreeUsage;
             this.IsRoot = isRoot;
             this.MaxFeedbackModifiedAt = maxFeedbackModifiedAt;
             this.MaxStartTime = maxStartTime;

@@ -10,9 +10,12 @@ namespace LangSmith
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="includeDeleted">
+        /// Also return the workspace if it has been deleted.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="dataPlaneId"></param>
+        /// <param name="dataPlaneId">
+        /// Accepted only from a data plane service; other callers get 403.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -28,9 +31,12 @@ namespace LangSmith
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="includeDeleted">
+        /// Also return the workspace if it has been deleted.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="dataPlaneId"></param>
+        /// <param name="dataPlaneId">
+        /// Accepted only from a data plane service; other callers get 403.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

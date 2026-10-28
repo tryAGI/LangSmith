@@ -5,7 +5,10 @@ namespace LangSmith
     public partial interface IWorkspacesClient
     {
         /// <summary>
-        /// Delete Workspace
+        /// Delete Workspace<br/>
+        /// Delete a workspace and its data.<br/>
+        /// Only the workspace the request is scoped to (the X-Tenant-Id header, or the API key's workspace)<br/>
+        /// can be deleted; any other ID returns 403. Requires the workspace delete permission.
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -16,7 +19,10 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete Workspace
+        /// Delete Workspace<br/>
+        /// Delete a workspace and its data.<br/>
+        /// Only the workspace the request is scoped to (the X-Tenant-Id header, or the API key's workspace)<br/>
+        /// can be deleted; any other ID returns 403. Requires the workspace delete permission.
         /// </summary>
         /// <param name="workspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -67,7 +67,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> CreateTracerSessionAsync(
 
             global::LangSmith.TracerSessionCreate request,
             bool? upsert = default,
@@ -95,7 +95,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionWithoutVirtualFields>> CreateTracerSessionAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>> CreateTracerSessionAsResponseAsync(
 
             global::LangSmith.TracerSessionCreate request,
             bool? upsert = default,
@@ -427,9 +427,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.TracerSessionWithoutVirtualFields.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.TracerSession.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionWithoutVirtualFields>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -459,9 +459,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.TracerSessionWithoutVirtualFields.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.TracerSession.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionWithoutVirtualFields>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -525,7 +525,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> CreateTracerSessionAsync(
             bool? upsert = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueIds = default,
             global::System.DateTime? startTime = default,

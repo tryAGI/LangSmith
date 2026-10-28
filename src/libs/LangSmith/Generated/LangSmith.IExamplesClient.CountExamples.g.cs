@@ -6,18 +6,30 @@ namespace LangSmith
     {
         /// <summary>
         /// Count Examples<br/>
-        /// Count all examples by query params
+        /// Count the examples that match the filters.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// Only count examples with these IDs.
+        /// </param>
         /// <param name="asOf">
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.<br/>
         /// Default Value: latest
         /// </param>
-        /// <param name="metadata"></param>
-        /// <param name="fullTextContains"></param>
-        /// <param name="splits"></param>
-        /// <param name="dataset"></param>
-        /// <param name="filter"></param>
+        /// <param name="metadata">
+        /// JSON object. Only count examples whose metadata contains it.
+        /// </param>
+        /// <param name="fullTextContains">
+        /// Only count examples whose inputs or outputs contain every one of these terms, ignoring case.
+        /// </param>
+        /// <param name="splits">
+        /// Only count examples in any of these splits.
+        /// </param>
+        /// <param name="dataset">
+        /// Only count examples in this dataset.
+        /// </param>
+        /// <param name="filter">
+        /// Filter expression the examples must match.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -33,18 +45,30 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Count Examples<br/>
-        /// Count all examples by query params
+        /// Count the examples that match the filters.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// Only count examples with these IDs.
+        /// </param>
         /// <param name="asOf">
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.<br/>
         /// Default Value: latest
         /// </param>
-        /// <param name="metadata"></param>
-        /// <param name="fullTextContains"></param>
-        /// <param name="splits"></param>
-        /// <param name="dataset"></param>
-        /// <param name="filter"></param>
+        /// <param name="metadata">
+        /// JSON object. Only count examples whose metadata contains it.
+        /// </param>
+        /// <param name="fullTextContains">
+        /// Only count examples whose inputs or outputs contain every one of these terms, ignoring case.
+        /// </param>
+        /// <param name="splits">
+        /// Only count examples in any of these splits.
+        /// </param>
+        /// <param name="dataset">
+        /// Only count examples in this dataset.
+        /// </param>
+        /// <param name="filter">
+        /// Filter expression the examples must match.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>

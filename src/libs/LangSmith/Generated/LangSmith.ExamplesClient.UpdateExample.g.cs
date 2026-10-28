@@ -495,13 +495,26 @@ namespace LangSmith
         /// Update a specific example.
         /// </summary>
         /// <param name="exampleId"></param>
-        /// <param name="datasetId"></param>
-        /// <param name="inputs"></param>
-        /// <param name="outputs"></param>
-        /// <param name="attachmentsOperations"></param>
-        /// <param name="metadata"></param>
-        /// <param name="split"></param>
+        /// <param name="datasetId">
+        /// The example's current dataset. An example can't move to another dataset.
+        /// </param>
+        /// <param name="inputs">
+        /// New inputs. Replaces the existing inputs; omit to keep them.
+        /// </param>
+        /// <param name="outputs">
+        /// New outputs. Replaces the existing outputs; omit to keep them.
+        /// </param>
+        /// <param name="attachmentsOperations">
+        /// Attachments to rename or keep.
+        /// </param>
+        /// <param name="metadata">
+        /// New metadata. Replaces the existing metadata; omit to keep it.
+        /// </param>
+        /// <param name="split">
+        /// Split or splits to put the example in. Replaces its current splits.
+        /// </param>
         /// <param name="overwrite">
+        /// Not used.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

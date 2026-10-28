@@ -24,7 +24,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> GetToolsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.McpToolsResponse> GetToolsAsync(
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,
@@ -52,7 +52,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> GetToolsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.McpToolsResponse>> GetToolsAsResponseAsync(
             string url,
             string? oauthProviderId = default,
             string? lsUserId = default,

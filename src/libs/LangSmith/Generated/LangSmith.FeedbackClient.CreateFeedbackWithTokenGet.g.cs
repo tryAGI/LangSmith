@@ -68,7 +68,9 @@ namespace LangSmith
         /// Create Feedback With Token Get<br/>
         /// Create a new feedback with a token.
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// Feedback ingest token. It's a credential: anyone who has it can submit feedback.
+        /// </param>
         /// <param name="score"></param>
         /// <param name="extendTraceRetention">
         /// Default Value: true
@@ -106,7 +108,9 @@ namespace LangSmith
         /// Create Feedback With Token Get<br/>
         /// Create a new feedback with a token.
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// Feedback ingest token. It's a credential: anyone who has it can submit feedback.
+        /// </param>
         /// <param name="score"></param>
         /// <param name="extendTraceRetention">
         /// Default Value: true

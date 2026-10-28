@@ -7,7 +7,9 @@ namespace LangSmith
         /// <summary>
         /// Update Annotation Queue
         /// </summary>
-        /// <param name="queueId"></param>
+        /// <param name="queueId">
+        /// ID of the annotation queue.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -21,7 +23,9 @@ namespace LangSmith
         /// <summary>
         /// Update Annotation Queue
         /// </summary>
-        /// <param name="queueId"></param>
+        /// <param name="queueId">
+        /// ID of the annotation queue.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -35,25 +39,43 @@ namespace LangSmith
         /// <summary>
         /// Update Annotation Queue
         /// </summary>
-        /// <param name="queueId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="defaultDataset"></param>
+        /// <param name="queueId">
+        /// ID of the annotation queue.
+        /// </param>
+        /// <param name="name">
+        /// New name for the queue.
+        /// </param>
+        /// <param name="description">
+        /// New description.
+        /// </param>
+        /// <param name="defaultDataset">
+        /// Dataset that reviewed runs are added to by default.
+        /// </param>
         /// <param name="numReviewersPerItem">
+        /// How many reviewers must review each run.<br/>
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
         /// <param name="enableReservations">
+        /// Whether a reviewer reserves a run while reviewing it, so others skip it.<br/>
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
         /// <param name="reservationMinutes">
+        /// How long a reservation lasts, in minutes.<br/>
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
-        /// <param name="rubricItems"></param>
-        /// <param name="rubricInstructions"></param>
+        /// <param name="rubricItems">
+        /// Feedback keys reviewers fill in for each run.
+        /// </param>
+        /// <param name="rubricInstructions">
+        /// Instructions shown to reviewers.
+        /// </param>
         /// <param name="metadata">
+        /// Metadata to store on the queue. Replaces the existing metadata.<br/>
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
-        /// <param name="reviewerAccessMode"></param>
+        /// <param name="reviewerAccessMode">
+        /// Who completes a run: any (one reviewer is enough) or assigned (every assigned reviewer must submit).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

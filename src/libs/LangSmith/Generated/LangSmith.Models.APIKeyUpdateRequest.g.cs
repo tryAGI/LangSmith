@@ -7,8 +7,10 @@ namespace LangSmith
     /// API key PATCH schema.<br/>
     /// role_id: New workspace-level role to apply to every workspace identity<br/>
     ///     attached to the key. Optional; omit to leave workspace roles unchanged.<br/>
-    /// org_role_id: New org-level role to apply to the key's org identity. Only<br/>
-    ///     valid for org-scoped keys (workspaces=None at creation). Optional.
+    /// org_role_id: New org-level role to apply to the key's org identity.<br/>
+    ///     Workspace-scoped keys accept only the built-in ORGANIZATION_VIEWER<br/>
+    ///     or ORGANIZATION_RESTRICTED role.<br/>
+    ///     Optional; omit to leave the organization role unchanged.
     /// </summary>
     public sealed partial class APIKeyUpdateRequest
     {
