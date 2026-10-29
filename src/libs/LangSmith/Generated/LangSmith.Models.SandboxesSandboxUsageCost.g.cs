@@ -64,7 +64,7 @@ namespace LangSmith
         public required global::LangSmith.SandboxesUsageCostResourceType ResourceType { get; set; }
 
         /// <summary>
-        /// Storage usage in GiB-hours from hourly attributed-byte samples, including checkpoints. Available with RESOURCE granularity; null means complete usage is unavailable.
+        /// Recorded storage usage in GiB-hours from hourly samples, including checkpoints. Available with RESOURCE granularity. Missing intervals are excluded; null means no usable measurements are available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_gib_hours")]
         public string? StorageGibHours { get; set; }
@@ -112,7 +112,7 @@ namespace LangSmith
         /// Memory usage in GiB-hours, as a decimal string. Available with RESOURCE granularity; null means complete usage is unavailable.
         /// </param>
         /// <param name="storageGibHours">
-        /// Storage usage in GiB-hours from hourly attributed-byte samples, including checkpoints. Available with RESOURCE granularity; null means complete usage is unavailable.
+        /// Recorded storage usage in GiB-hours from hourly samples, including checkpoints. Available with RESOURCE granularity. Missing intervals are excluded; null means no usable measurements are available.
         /// </param>
         /// <param name="storageStandardUnits">
         /// Allocated storage usage in Standard Units, as a decimal string, separate from LSU.<br/>
