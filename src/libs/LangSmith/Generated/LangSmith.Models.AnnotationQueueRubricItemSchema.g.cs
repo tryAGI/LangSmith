@@ -42,6 +42,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("required_if")]
+        public global::LangSmith.RubricItemConditions? RequiredIf { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visible_if")]
+        public global::LangSmith.RubricItemConditions? VisibleIf { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_assertion")]
         public bool? IsAssertion { get; set; }
 
@@ -77,6 +89,8 @@ namespace LangSmith
         /// <param name="valueDescriptions"></param>
         /// <param name="scoreDescriptions"></param>
         /// <param name="isRequired"></param>
+        /// <param name="requiredIf"></param>
+        /// <param name="visibleIf"></param>
         /// <param name="isAssertion"></param>
         /// <param name="regexValidator">
         /// Default Value: {"__missing__":"__missing__"}
@@ -92,6 +106,8 @@ namespace LangSmith
             global::System.Collections.Generic.Dictionary<string, string>? valueDescriptions,
             global::System.Collections.Generic.Dictionary<string, string>? scoreDescriptions,
             bool? isRequired,
+            global::LangSmith.RubricItemConditions? requiredIf,
+            global::LangSmith.RubricItemConditions? visibleIf,
             bool? isAssertion,
             global::LangSmith.AnyOf<string, global::LangSmith.Missing>? regexValidator,
             global::System.Guid? feedbackConfigId,
@@ -102,6 +118,8 @@ namespace LangSmith
             this.ValueDescriptions = valueDescriptions;
             this.ScoreDescriptions = scoreDescriptions;
             this.IsRequired = isRequired;
+            this.RequiredIf = requiredIf;
+            this.VisibleIf = visibleIf;
             this.IsAssertion = isAssertion;
             this.RegexValidator = regexValidator;
             this.FeedbackConfigId = feedbackConfigId;

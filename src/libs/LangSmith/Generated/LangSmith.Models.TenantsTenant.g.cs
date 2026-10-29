@@ -17,6 +17,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_plane_name")]
+        public string? DataPlaneName { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_plane_region")]
+        public string? DataPlaneRegion { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_plane_url")]
         public string? DataPlaneUrl { get; set; }
 
@@ -66,6 +78,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="TenantsTenant" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
+        /// <param name="dataPlaneName"></param>
+        /// <param name="dataPlaneRegion"></param>
         /// <param name="dataPlaneUrl"></param>
         /// <param name="id"></param>
         /// <param name="isPersonal"></param>
@@ -78,6 +92,8 @@ namespace LangSmith
 #endif
         public TenantsTenant(
             string? createdAt,
+            string? dataPlaneName,
+            string? dataPlaneRegion,
             string? dataPlaneUrl,
             string? id,
             bool? isPersonal,
@@ -87,6 +103,8 @@ namespace LangSmith
             string? tenantHandle)
         {
             this.CreatedAt = createdAt;
+            this.DataPlaneName = dataPlaneName;
+            this.DataPlaneRegion = dataPlaneRegion;
             this.DataPlaneUrl = dataPlaneUrl;
             this.Id = id;
             this.IsPersonal = isPersonal;

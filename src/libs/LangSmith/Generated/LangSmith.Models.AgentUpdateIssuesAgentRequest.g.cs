@@ -84,6 +84,13 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Priorities { get; set; }
 
         /// <summary>
+        /// RedTeamTarget sets the external agent endpoint red-team runs probe and<br/>
+        /// its authentication headers. An empty url clears both.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("red_team_target")]
+        public global::LangSmith.AgentRedTeamTargetInput? RedTeamTarget { get; set; }
+
+        /// <summary>
         /// Trace-scope DSL. nil = don't change; "" clears it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_filter")]
@@ -157,6 +164,10 @@ namespace LangSmith
         /// <param name="previewVerifyEnabled"></param>
         /// <param name="previewVerifyNoTrigger"></param>
         /// <param name="priorities"></param>
+        /// <param name="redTeamTarget">
+        /// RedTeamTarget sets the external agent endpoint red-team runs probe and<br/>
+        /// its authentication headers. An empty url clears both.
+        /// </param>
         /// <param name="runFilter">
         /// Trace-scope DSL. nil = don't change; "" clears it.
         /// </param>
@@ -196,6 +207,7 @@ namespace LangSmith
             bool? previewVerifyEnabled,
             bool? previewVerifyNoTrigger,
             global::System.Collections.Generic.IList<string>? priorities,
+            global::LangSmith.AgentRedTeamTargetInput? redTeamTarget,
             string? runFilter,
             string? sessionAgentOverviewRepoId,
             string? sessionLcuSpendLimitMonthly,
@@ -215,6 +227,7 @@ namespace LangSmith
             this.PreviewVerifyEnabled = previewVerifyEnabled;
             this.PreviewVerifyNoTrigger = previewVerifyNoTrigger;
             this.Priorities = priorities;
+            this.RedTeamTarget = redTeamTarget;
             this.RunFilter = runFilter;
             this.SessionAgentOverviewRepoId = sessionAgentOverviewRepoId;
             this.SessionLcuSpendLimitMonthly = sessionLcuSpendLimitMonthly;

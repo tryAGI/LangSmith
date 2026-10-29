@@ -54,13 +54,13 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.SandboxesProxyHeader>? Headers { get; set; }
 
         /// <summary>
-        /// MatchHeaders restricts a header injection rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
+        /// MatchHeaders restricts a header injection or rewrite rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match_headers")]
         public global::System.Collections.Generic.IList<string>? MatchHeaders { get; set; }
 
         /// <summary>
-        /// MatchHosts is only accepted for header injection and relay rules.<br/>
+        /// MatchHosts is only accepted for header injection, rewrite, and relay rules.<br/>
         /// Provider auth rules use built-in host matching. A relay rule may also<br/>
         /// list IP addresses and CIDR blocks (10.0.0.0/8), which match connections<br/>
         /// the sandbox makes to an IP address rather than a name.
@@ -90,6 +90,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rewrite")]
+        public global::LangSmith.SandboxapiProxyRewriteConfig? Rewrite { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
 
@@ -115,10 +121,10 @@ namespace LangSmith
         /// <param name="gcp"></param>
         /// <param name="headers"></param>
         /// <param name="matchHeaders">
-        /// MatchHeaders restricts a header injection rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
+        /// MatchHeaders restricts a header injection or rewrite rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
         /// </param>
         /// <param name="matchHosts">
-        /// MatchHosts is only accepted for header injection and relay rules.<br/>
+        /// MatchHosts is only accepted for header injection, rewrite, and relay rules.<br/>
         /// Provider auth rules use built-in host matching. A relay rule may also<br/>
         /// list IP addresses and CIDR blocks (10.0.0.0/8), which match connections<br/>
         /// the sandbox makes to an IP address rather than a name.
@@ -127,6 +133,7 @@ namespace LangSmith
         /// <param name="relayId">
         /// RelayID is the ID of the LangSmith relay (a connection of kind relay) that carries connections to match_hosts when type is relay. Those connections leave from the relay's connector, and its network and IP, instead of the sandbox host. Access control still applies first, the first enabled matching relay rule wins, and a matched host never falls back to a direct connection.
         /// </param>
+        /// <param name="rewrite"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -144,6 +151,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? matchHosts,
             global::System.Collections.Generic.IList<string>? matchPaths,
             global::System.Guid? relayId,
+            global::LangSmith.SandboxapiProxyRewriteConfig? rewrite,
             string? type)
         {
             this.Aws = aws;
@@ -158,6 +166,7 @@ namespace LangSmith
             this.MatchPaths = matchPaths;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RelayId = relayId;
+            this.Rewrite = rewrite;
             this.Type = type;
         }
 

@@ -62,6 +62,18 @@ namespace LangSmith
         public string? DataPlaneUrl { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_plane_name")]
+        public string? DataPlaneName { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_plane_region")]
+        public string? DataPlaneRegion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,6 +90,8 @@ namespace LangSmith
         /// <param name="organizationId"></param>
         /// <param name="tenantHandle"></param>
         /// <param name="dataPlaneUrl"></param>
+        /// <param name="dataPlaneName"></param>
+        /// <param name="dataPlaneRegion"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,7 +103,9 @@ namespace LangSmith
             bool isDeleted,
             global::System.Guid? organizationId,
             string? tenantHandle,
-            string? dataPlaneUrl)
+            string? dataPlaneUrl,
+            string? dataPlaneName,
+            string? dataPlaneRegion)
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -99,6 +115,8 @@ namespace LangSmith
             this.IsDeleted = isDeleted;
             this.TenantHandle = tenantHandle;
             this.DataPlaneUrl = dataPlaneUrl;
+            this.DataPlaneName = dataPlaneName;
+            this.DataPlaneRegion = dataPlaneRegion;
         }
 
         /// <summary>

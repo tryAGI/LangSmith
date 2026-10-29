@@ -41,7 +41,10 @@ namespace LangSmith
         /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="filter"></param>
+        /// <param name="filter">
+        /// LangSmith filter expression that selects the runs to export. Accepts the function-style syntax, for example eq(run_type, "llm"), and, on LangSmith Cloud and self-hosted versions that support it, the v2 syntax, for example run_type:llm.<br/>
+        /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.
+        /// </param>
         /// <param name="format">
         /// Default Value: Parquet
         /// </param>
