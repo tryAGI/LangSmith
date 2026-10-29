@@ -79,9 +79,16 @@ namespace LangSmith
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `workspace_id`, `user_id`, `api_key_id`,<br/>
-        /// and `run_rule_id`. Values under the same key are ORed; distinct keys<br/>
-        /// are ANDed. A default policy uses an empty built-in matcher value so<br/>
+        /// keys are `organization_id`, `workspace_id`, `agent_id`,<br/>
+        /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
+        /// Values under the same key are ORed; distinct keys are ANDed.<br/>
+        /// `agent_id` and `agent_environment` target requests from Agent<br/>
+        /// deployments and must be combined with exactly one `workspace_id`<br/>
+        /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
+        /// (`LOCAL`, `DEVELOPMENT`, `STAGING`, or `PRODUCTION`) alone targets<br/>
+        /// every Agent in those environments, and both together target those<br/>
+        /// Agents in those environments. Agent keys are<br/>
+        /// not supported in default policies. A default policy uses an empty built-in matcher value so<br/>
         /// the runtime materializes a child for each subject it sees. A<br/>
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
         /// metadata key to bucket each subject by the corresponding<br/>
@@ -151,9 +158,16 @@ namespace LangSmith
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `workspace_id`, `user_id`, `api_key_id`,<br/>
-        /// and `run_rule_id`. Values under the same key are ORed; distinct keys<br/>
-        /// are ANDed. A default policy uses an empty built-in matcher value so<br/>
+        /// keys are `organization_id`, `workspace_id`, `agent_id`,<br/>
+        /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
+        /// Values under the same key are ORed; distinct keys are ANDed.<br/>
+        /// `agent_id` and `agent_environment` target requests from Agent<br/>
+        /// deployments and must be combined with exactly one `workspace_id`<br/>
+        /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
+        /// (`LOCAL`, `DEVELOPMENT`, `STAGING`, or `PRODUCTION`) alone targets<br/>
+        /// every Agent in those environments, and both together target those<br/>
+        /// Agents in those environments. Agent keys are<br/>
+        /// not supported in default policies. A default policy uses an empty built-in matcher value so<br/>
         /// the runtime materializes a child for each subject it sees. A<br/>
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
         /// metadata key to bucket each subject by the corresponding<br/>
@@ -756,9 +770,16 @@ namespace LangSmith
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `workspace_id`, `user_id`, `api_key_id`,<br/>
-        /// and `run_rule_id`. Values under the same key are ORed; distinct keys<br/>
-        /// are ANDed. A default policy uses an empty built-in matcher value so<br/>
+        /// keys are `organization_id`, `workspace_id`, `agent_id`,<br/>
+        /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
+        /// Values under the same key are ORed; distinct keys are ANDed.<br/>
+        /// `agent_id` and `agent_environment` target requests from Agent<br/>
+        /// deployments and must be combined with exactly one `workspace_id`<br/>
+        /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
+        /// (`LOCAL`, `DEVELOPMENT`, `STAGING`, or `PRODUCTION`) alone targets<br/>
+        /// every Agent in those environments, and both together target those<br/>
+        /// Agents in those environments. Agent keys are<br/>
+        /// not supported in default policies. A default policy uses an empty built-in matcher value so<br/>
         /// the runtime materializes a child for each subject it sees. A<br/>
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
         /// metadata key to bucket each subject by the corresponding<br/>

@@ -150,6 +150,13 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Priorities { get; set; }
 
         /// <summary>
+        /// RedTeamTarget is the external A2A endpoint red-team runs probe instead<br/>
+        /// of the validation deployment, or null when none is configured.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("red_team_target")]
+        public global::LangSmith.AgentRedTeamTargetView? RedTeamTarget { get; set; }
+
+        /// <summary>
         /// RunFilter is a runs-filter-DSL string scoping which traces Engine analyzes<br/>
         /// (prompt guidance, not an enforced query). NULL = no scope. Clamped by<br/>
         /// validateRunFilter.
@@ -297,6 +304,10 @@ namespace LangSmith
         /// The deployment builds one itself for the fix commit.
         /// </param>
         /// <param name="priorities"></param>
+        /// <param name="redTeamTarget">
+        /// RedTeamTarget is the external A2A endpoint red-team runs probe instead<br/>
+        /// of the validation deployment, or null when none is configured.
+        /// </param>
         /// <param name="runFilter">
         /// RunFilter is a runs-filter-DSL string scoping which traces Engine analyzes<br/>
         /// (prompt guidance, not an enforced query). NULL = no scope. Clamped by<br/>
@@ -361,6 +372,7 @@ namespace LangSmith
             bool? previewVerifyEnabled,
             bool? previewVerifyNoTrigger,
             global::System.Collections.Generic.IList<string>? priorities,
+            global::LangSmith.AgentRedTeamTargetView? redTeamTarget,
             string? runFilter,
             int? selectedTraceCountLast14Days,
             int? selectedTraceCountLast7Days,
@@ -397,6 +409,7 @@ namespace LangSmith
             this.PreviewVerifyEnabled = previewVerifyEnabled;
             this.PreviewVerifyNoTrigger = previewVerifyNoTrigger;
             this.Priorities = priorities;
+            this.RedTeamTarget = redTeamTarget;
             this.RunFilter = runFilter;
             this.SelectedTraceCountLast14Days = selectedTraceCountLast14Days;
             this.SelectedTraceCountLast7Days = selectedTraceCountLast7Days;

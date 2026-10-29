@@ -35,6 +35,13 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? Categories { get; set; }
 
         /// <summary>
+        /// Whether a reviewer can pick several categories. Categorical feedback only.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allows_multiple_categories")]
+        public bool? AllowsMultipleCategories { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +56,10 @@ namespace LangSmith
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <param name="categories"></param>
+        /// <param name="allowsMultipleCategories">
+        /// Whether a reviewer can pick several categories. Categorical feedback only.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,12 +67,14 @@ namespace LangSmith
             global::LangSmith.FeedbackType type,
             double? min,
             double? max,
-            global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? categories)
+            global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? categories,
+            bool? allowsMultipleCategories)
         {
             this.Type = type;
             this.Min = min;
             this.Max = max;
             this.Categories = categories;
+            this.AllowsMultipleCategories = allowsMultipleCategories;
         }
 
         /// <summary>

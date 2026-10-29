@@ -47,7 +47,8 @@ namespace LangSmith
             ref int? pageSize,
             ref global::LangSmith.GetSandboxesUsageCostsGranularity? granularity,
             ref string? cursor,
-            ref bool? includeTotals);
+            ref bool? includeTotals,
+            ref bool? includeDaily);
         partial void PrepareListHourlySandboxUsageCostsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -58,7 +59,8 @@ namespace LangSmith
             int? pageSize,
             global::LangSmith.GetSandboxesUsageCostsGranularity? granularity,
             string? cursor,
-            bool? includeTotals);
+            bool? includeTotals,
+            bool? includeDaily);
         partial void ProcessListHourlySandboxUsageCostsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -86,6 +88,9 @@ namespace LangSmith
         /// <param name="includeTotals">
         /// Default Value: false
         /// </param>
+        /// <param name="includeDaily">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -98,6 +103,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
             bool? includeTotals = default,
+            bool? includeDaily = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,6 +116,7 @@ namespace LangSmith
                 granularity: granularity,
                 cursor: cursor,
                 includeTotals: includeTotals,
+                includeDaily: includeDaily,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -134,6 +141,9 @@ namespace LangSmith
         /// <param name="includeTotals">
         /// Default Value: false
         /// </param>
+        /// <param name="includeDaily">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -146,6 +156,7 @@ namespace LangSmith
             global::LangSmith.GetSandboxesUsageCostsGranularity? granularity = default,
             string? cursor = default,
             bool? includeTotals = default,
+            bool? includeDaily = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -160,7 +171,8 @@ namespace LangSmith
                 pageSize: ref pageSize,
                 granularity: ref granularity,
                 cursor: ref cursor,
-                includeTotals: ref includeTotals);
+                includeTotals: ref includeTotals,
+                includeDaily: ref includeDaily);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -199,6 +211,7 @@ namespace LangSmith
                                 .AddOptionalParameter("granularity", granularity?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("include_totals", includeTotals?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_daily", includeDaily?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -247,7 +260,8 @@ namespace LangSmith
                     pageSize: pageSize,
                     granularity: granularity,
                     cursor: cursor,
-                    includeTotals: includeTotals);
+                    includeTotals: includeTotals,
+                    includeDaily: includeDaily);
 
                 return __httpRequest;
             }

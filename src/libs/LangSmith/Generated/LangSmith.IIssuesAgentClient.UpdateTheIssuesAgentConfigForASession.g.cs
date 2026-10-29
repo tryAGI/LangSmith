@@ -76,6 +76,10 @@ namespace LangSmith
         /// <param name="previewVerifyEnabled"></param>
         /// <param name="previewVerifyNoTrigger"></param>
         /// <param name="priorities"></param>
+        /// <param name="redTeamTarget">
+        /// RedTeamTarget sets the external agent endpoint red-team runs probe and<br/>
+        /// its authentication headers. An empty url clears both.
+        /// </param>
         /// <param name="runFilter">
         /// Trace-scope DSL. nil = don't change; "" clears it.
         /// </param>
@@ -119,6 +123,7 @@ namespace LangSmith
             bool? previewVerifyEnabled = default,
             bool? previewVerifyNoTrigger = default,
             global::System.Collections.Generic.IList<string>? priorities = default,
+            global::LangSmith.AgentRedTeamTargetInput? redTeamTarget = default,
             string? runFilter = default,
             string? sessionAgentOverviewRepoId = default,
             string? sessionLcuSpendLimitMonthly = default,

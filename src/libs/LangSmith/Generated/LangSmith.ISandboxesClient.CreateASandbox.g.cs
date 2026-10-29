@@ -42,7 +42,9 @@ namespace LangSmith
         /// </param>
         /// <param name="deleteAfterStopSeconds"></param>
         /// <param name="envVars"></param>
-        /// <param name="fsCapacityBytes"></param>
+        /// <param name="fsCapacityBytes">
+        /// Disk for the sandbox, in bytes; defaults to the snapshot's and cannot be smaller. A sandbox with persistent=false gets at most 16 GiB of disk per vCPU, so at most 256 GiB: omit CPU and it is derived from the disk, set it and a larger disk is rejected.
+        /// </param>
         /// <param name="idleTtlSeconds"></param>
         /// <param name="labels">
         /// Labels are free-form key/value metadata persisted with the sandbox and returned on reads. Labels from the source snapshot are inherited unless overridden here.
@@ -53,7 +55,7 @@ namespace LangSmith
         /// <param name="mountConfig"></param>
         /// <param name="name"></param>
         /// <param name="persistent">
-        /// Persistent (private beta) keeps the sandbox's filesystem across stops (the default, true). Set it to false for a disposable sandbox: its writes are discarded whenever it stops, the next start boots it fresh from its snapshot, and it is never charged for storage. A sandbox that is not persistent cannot preserve memory on stop or have its filesystem captured as a snapshot (exporting a Docker image from it with docker_image still works), and some snapshots captured from other sandboxes cannot start one; such a create is rejected. Setting it to false requires the private beta to be enabled for your workspace.
+        /// Persistent keeps the sandbox's filesystem across stops (the default, true). Set it to false for a disposable sandbox: its writes are discarded whenever it stops, the next start boots it fresh from its snapshot, and it is never charged for storage. A sandbox that is not persistent cannot preserve memory on stop or have its filesystem captured as a snapshot (exporting a Docker image from it with docker_image still works), and some snapshots captured from other sandboxes cannot start one; such a create is rejected.
         /// </param>
         /// <param name="preserveMemoryOnStop">
         /// PreserveMemoryOnStop, when true, suspends the sandbox's memory on a<br/>

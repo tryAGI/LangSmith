@@ -87,7 +87,7 @@ namespace LangSmith
         public string? Name { get; set; }
 
         /// <summary>
-        /// Persistent (private beta) reports whether the sandbox keeps its filesystem across stops. When false, its writes are discarded whenever it stops and it is not charged for storage.
+        /// Persistent reports whether the sandbox keeps its filesystem across stops. When false, its writes are discarded whenever it stops and it is not charged for storage.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
@@ -189,7 +189,7 @@ namespace LangSmith
         /// <param name="mountConfig"></param>
         /// <param name="name"></param>
         /// <param name="persistent">
-        /// Persistent (private beta) reports whether the sandbox keeps its filesystem across stops. When false, its writes are discarded whenever it stops and it is not charged for storage.
+        /// Persistent reports whether the sandbox keeps its filesystem across stops. When false, its writes are discarded whenever it stops and it is not charged for storage.
         /// </param>
         /// <param name="preserveMemoryOnStop"></param>
         /// <param name="proxyConfig"></param>
