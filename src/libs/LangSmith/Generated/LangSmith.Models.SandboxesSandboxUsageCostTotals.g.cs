@@ -37,7 +37,7 @@ namespace LangSmith
         public string? MemoryGibHours { get; set; }
 
         /// <summary>
-        /// Storage usage in GiB-hours from hourly attributed-byte samples, including checkpoints. Null means complete usage is unavailable.
+        /// Recorded storage usage in GiB-hours from hourly samples, including checkpoints. Missing intervals are excluded; null means no usable measurements are available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_gib_hours")]
         public string? StorageGibHours { get; set; }
@@ -76,7 +76,7 @@ namespace LangSmith
         /// Memory usage in GiB-hours, as a decimal string. Null means complete usage is unavailable.
         /// </param>
         /// <param name="storageGibHours">
-        /// Storage usage in GiB-hours from hourly attributed-byte samples, including checkpoints. Null means complete usage is unavailable.
+        /// Recorded storage usage in GiB-hours from hourly samples, including checkpoints. Missing intervals are excluded; null means no usable measurements are available.
         /// </param>
         /// <param name="storageStandardUnits">
         /// Total storage usage in Standard Units across the entire filtered interval,<br/>

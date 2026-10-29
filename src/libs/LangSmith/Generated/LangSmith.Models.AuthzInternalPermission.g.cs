@@ -35,22 +35,6 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        AlertsCreate,
-        /// <summary>
-        ///
-        /// </summary>
-        AlertsDelete,
-        /// <summary>
-        ///
-        /// </summary>
-        AlertsRead,
-        /// <summary>
-        ///
-        /// </summary>
-        AlertsUpdate,
-        /// <summary>
-        ///
-        /// </summary>
         AnnotationQueuesCreate,
         /// <summary>
         ///
@@ -395,6 +379,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationPATsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationPATsRead,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationRead,
         /// <summary>
         ///
@@ -468,6 +460,10 @@ namespace LangSmith
         ///
         /// </summary>
         PromptsShare,
+        /// <summary>
+        ///
+        /// </summary>
+        PromptsTag,
         /// <summary>
         ///
         /// </summary>
@@ -664,10 +660,6 @@ namespace LangSmith
                 AuthzInternalPermission.AgentAuthConnectionsRevoke => "agent-auth-connections:revoke",
                 AuthzInternalPermission.AgentAuthConnectionsUpdate => "agent-auth-connections:update",
                 AuthzInternalPermission.AgentAuthCredentialsUse => "agent-auth-credentials:use",
-                AuthzInternalPermission.AlertsCreate => "alerts:create",
-                AuthzInternalPermission.AlertsDelete => "alerts:delete",
-                AuthzInternalPermission.AlertsRead => "alerts:read",
-                AuthzInternalPermission.AlertsUpdate => "alerts:update",
                 AuthzInternalPermission.AnnotationQueuesCreate => "annotation-queues:create",
                 AuthzInternalPermission.AnnotationQueuesDelete => "annotation-queues:delete",
                 AuthzInternalPermission.AnnotationQueuesRead => "annotation-queues:read",
@@ -754,6 +746,8 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationManageModelSecrets => "organization:manage-model-secrets",
                 AuthzInternalPermission.OrganizationMembersManage => "organization:members:manage",
                 AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
+                AuthzInternalPermission.OrganizationPATsManage => "organization:pats:manage",
+                AuthzInternalPermission.OrganizationPATsRead => "organization:pats:read",
                 AuthzInternalPermission.OrganizationRead => "organization:read",
                 AuthzInternalPermission.OrganizationReadMetadata => "organization:read-metadata",
                 AuthzInternalPermission.OrganizationRetentionManage => "organization:retention:manage",
@@ -773,6 +767,7 @@ namespace LangSmith
                 AuthzInternalPermission.PromptsDelete => "prompts:delete",
                 AuthzInternalPermission.PromptsRead => "prompts:read",
                 AuthzInternalPermission.PromptsShare => "prompts:share",
+                AuthzInternalPermission.PromptsTag => "prompts:tag",
                 AuthzInternalPermission.PromptsTagOnCreate => "prompts:tag-on-create",
                 AuthzInternalPermission.PromptsUpdate => "prompts:update",
                 AuthzInternalPermission.RulesConfigureRetention => "rules:configure-retention",
@@ -833,10 +828,6 @@ namespace LangSmith
                 "agent-auth-connections:revoke" => AuthzInternalPermission.AgentAuthConnectionsRevoke,
                 "agent-auth-connections:update" => AuthzInternalPermission.AgentAuthConnectionsUpdate,
                 "agent-auth-credentials:use" => AuthzInternalPermission.AgentAuthCredentialsUse,
-                "alerts:create" => AuthzInternalPermission.AlertsCreate,
-                "alerts:delete" => AuthzInternalPermission.AlertsDelete,
-                "alerts:read" => AuthzInternalPermission.AlertsRead,
-                "alerts:update" => AuthzInternalPermission.AlertsUpdate,
                 "annotation-queues:create" => AuthzInternalPermission.AnnotationQueuesCreate,
                 "annotation-queues:delete" => AuthzInternalPermission.AnnotationQueuesDelete,
                 "annotation-queues:read" => AuthzInternalPermission.AnnotationQueuesRead,
@@ -923,6 +914,8 @@ namespace LangSmith
                 "organization:manage-model-secrets" => AuthzInternalPermission.OrganizationManageModelSecrets,
                 "organization:members:manage" => AuthzInternalPermission.OrganizationMembersManage,
                 "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
+                "organization:pats:manage" => AuthzInternalPermission.OrganizationPATsManage,
+                "organization:pats:read" => AuthzInternalPermission.OrganizationPATsRead,
                 "organization:read" => AuthzInternalPermission.OrganizationRead,
                 "organization:read-metadata" => AuthzInternalPermission.OrganizationReadMetadata,
                 "organization:retention:manage" => AuthzInternalPermission.OrganizationRetentionManage,
@@ -942,6 +935,7 @@ namespace LangSmith
                 "prompts:delete" => AuthzInternalPermission.PromptsDelete,
                 "prompts:read" => AuthzInternalPermission.PromptsRead,
                 "prompts:share" => AuthzInternalPermission.PromptsShare,
+                "prompts:tag" => AuthzInternalPermission.PromptsTag,
                 "prompts:tag-on-create" => AuthzInternalPermission.PromptsTagOnCreate,
                 "prompts:update" => AuthzInternalPermission.PromptsUpdate,
                 "rules:configure-retention" => AuthzInternalPermission.RulesConfigureRetention,
