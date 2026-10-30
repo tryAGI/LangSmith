@@ -143,6 +143,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateAgentPolicy,
+        /// <summary>
+        ///
+        /// </summary>
         CreateAgentRuntimeBinding,
         /// <summary>
         ///
@@ -536,6 +540,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeleteAgentAuthOidcIntegration,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteAgentPolicy,
         /// <summary>
         ///
         /// </summary>
@@ -1719,6 +1727,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateAgentPolicy,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateAlertRule,
         /// <summary>
         ///
@@ -2167,6 +2179,7 @@ namespace LangSmith
                 AuditLogOperation.CreateAgentAuthConnection => "create_agent_auth_connection",
                 AuditLogOperation.CreateAgentAuthOidcIntegration => "create_agent_auth_oidc_integration",
                 AuditLogOperation.CreateAgentEnvironment => "create_agent_environment",
+                AuditLogOperation.CreateAgentPolicy => "create_agent_policy",
                 AuditLogOperation.CreateAgentRuntimeBinding => "create_agent_runtime_binding",
                 AuditLogOperation.CreateAlertRule => "create_alert_rule",
                 AuditLogOperation.CreateAnnotationQueue => "create_annotation_queue",
@@ -2266,6 +2279,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteAgentAuthApp => "delete_agent_auth_app",
                 AuditLogOperation.DeleteAgentAuthConnection => "delete_agent_auth_connection",
                 AuditLogOperation.DeleteAgentAuthOidcIntegration => "delete_agent_auth_oidc_integration",
+                AuditLogOperation.DeleteAgentPolicy => "delete_agent_policy",
                 AuditLogOperation.DeleteAlertRule => "delete_alert_rule",
                 AuditLogOperation.DeleteAnnotationQueue => "delete_annotation_queue",
                 AuditLogOperation.DeleteAnnotationQueueItem => "delete_annotation_queue_item",
@@ -2561,6 +2575,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateAgentAuthApp => "update_agent_auth_app",
                 AuditLogOperation.UpdateAgentAuthConnection => "update_agent_auth_connection",
                 AuditLogOperation.UpdateAgentAuthOidcIntegration => "update_agent_auth_oidc_integration",
+                AuditLogOperation.UpdateAgentPolicy => "update_agent_policy",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
                 AuditLogOperation.UpdateAnnotationQueueItem => "update_annotation_queue_item",
@@ -2705,6 +2720,7 @@ namespace LangSmith
                 "create_agent_auth_connection" => AuditLogOperation.CreateAgentAuthConnection,
                 "create_agent_auth_oidc_integration" => AuditLogOperation.CreateAgentAuthOidcIntegration,
                 "create_agent_environment" => AuditLogOperation.CreateAgentEnvironment,
+                "create_agent_policy" => AuditLogOperation.CreateAgentPolicy,
                 "create_agent_runtime_binding" => AuditLogOperation.CreateAgentRuntimeBinding,
                 "create_alert_rule" => AuditLogOperation.CreateAlertRule,
                 "create_annotation_queue" => AuditLogOperation.CreateAnnotationQueue,
@@ -2804,6 +2820,7 @@ namespace LangSmith
                 "delete_agent_auth_app" => AuditLogOperation.DeleteAgentAuthApp,
                 "delete_agent_auth_connection" => AuditLogOperation.DeleteAgentAuthConnection,
                 "delete_agent_auth_oidc_integration" => AuditLogOperation.DeleteAgentAuthOidcIntegration,
+                "delete_agent_policy" => AuditLogOperation.DeleteAgentPolicy,
                 "delete_alert_rule" => AuditLogOperation.DeleteAlertRule,
                 "delete_annotation_queue" => AuditLogOperation.DeleteAnnotationQueue,
                 "delete_annotation_queue_item" => AuditLogOperation.DeleteAnnotationQueueItem,
@@ -3099,6 +3116,7 @@ namespace LangSmith
                 "update_agent_auth_app" => AuditLogOperation.UpdateAgentAuthApp,
                 "update_agent_auth_connection" => AuditLogOperation.UpdateAgentAuthConnection,
                 "update_agent_auth_oidc_integration" => AuditLogOperation.UpdateAgentAuthOidcIntegration,
+                "update_agent_policy" => AuditLogOperation.UpdateAgentPolicy,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,
                 "update_annotation_queue_item" => AuditLogOperation.UpdateAnnotationQueueItem,

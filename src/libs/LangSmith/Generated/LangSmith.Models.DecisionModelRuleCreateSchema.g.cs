@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class DecisionModelRuleCreateSchema
     {
         /// <summary>
-        ///
+        /// The evaluator's name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -120,7 +120,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DecisionModelRuleCreateSchema" /> class.
         /// </summary>
-        /// <param name="displayName"></param>
+        /// <param name="displayName">
+        /// The evaluator's name.
+        /// </param>
         /// <param name="prompt">
         /// The prompt the model reads, as (role, template) pairs.
         /// </param>

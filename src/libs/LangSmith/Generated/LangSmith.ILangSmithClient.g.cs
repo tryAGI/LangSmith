@@ -383,6 +383,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public TeamsClient Teams { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public TenantClient Tenant { get; }
 
         /// <summary>
