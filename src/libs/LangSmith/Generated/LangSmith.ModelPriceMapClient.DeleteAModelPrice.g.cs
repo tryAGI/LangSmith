@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class ModelPriceMapClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_CreateNewModelPriceServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteAModelPriceServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateNewModelPriceSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteAModelPriceSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,42 +34,44 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateNewModelPriceSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_DeleteAModelPriceSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_CreateNewModelPriceSecurityRequirement0,
+            {                s_DeleteAModelPriceSecurityRequirement0,
             };
-        partial void PrepareCreateNewModelPriceArguments(
+        partial void PrepareDeleteAModelPriceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::LangSmith.ModelPriceMapCreateSchema request);
-        partial void PrepareCreateNewModelPriceRequest(
+            ref global::System.Guid id);
+        partial void PrepareDeleteAModelPriceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::LangSmith.ModelPriceMapCreateSchema request);
-        partial void ProcessCreateNewModelPriceResponse(
+            global::System.Guid id);
+        partial void ProcessDeleteAModelPriceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateNewModelPriceResponseContent(
+        partial void ProcessDeleteAModelPriceResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create New Model Price
+        /// Delete a model price<br/>
+        /// Delete a custom model price from this workspace.<br/>
+        /// Only the workspace's own entries can be deleted; LangSmith default entries<br/>
+        /// cannot. Deleting an ID that does not belong to the workspace succeeds<br/>
+        /// without changing anything. Existing run costs are not recomputed.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateNewModelPriceAsync(
-
-            global::LangSmith.ModelPriceMapCreateSchema request,
+        public async global::System.Threading.Tasks.Task<string> DeleteAModelPriceAsync(
+            global::System.Guid id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateNewModelPriceAsResponseAsync(
-
-                request: request,
+            var __response = await DeleteAModelPriceAsResponseAsync(
+                id: id,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -77,31 +79,32 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Create New Model Price
+        /// Delete a model price<br/>
+        /// Delete a custom model price from this workspace.<br/>
+        /// Only the workspace's own entries can be deleted; LangSmith default entries<br/>
+        /// cannot. Deleting an ID that does not belong to the workspace succeeds<br/>
+        /// without changing anything. Existing run costs are not recomputed.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateNewModelPriceAsResponseAsync(
-
-            global::LangSmith.ModelPriceMapCreateSchema request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> DeleteAModelPriceAsResponseAsync(
+            global::System.Guid id,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateNewModelPriceArguments(
+            PrepareDeleteAModelPriceArguments(
                 httpClient: HttpClient,
-                request: request);
+                id: ref id);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateNewModelPriceSecurityRequirements,
-                operationName: "CreateNewModelPriceAsync");
+                securityRequirements: s_DeleteAModelPriceSecurityRequirements,
+                operationName: "DeleteAModelPriceAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -121,9 +124,9 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/model-price-map",
+                                path: $"/api/v1/model-price-map/{id}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_CreateNewModelPriceServers,
+                                servers: s_DeleteAModelPriceServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -131,7 +134,7 @@ namespace LangSmith
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -154,12 +157,6 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -168,10 +165,10 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateNewModelPriceRequest(
+                PrepareDeleteAModelPriceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    id: id);
 
                 return __httpRequest;
             }
@@ -188,10 +185,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateNewModelPrice",
-                                methodName: "CreateNewModelPriceAsync",
-                                pathTemplate: "\"/api/v1/model-price-map\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteAModelPrice",
+                                methodName: "DeleteAModelPriceAsync",
+                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -222,10 +219,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateNewModelPrice",
-                                methodName: "CreateNewModelPriceAsync",
-                                pathTemplate: "\"/api/v1/model-price-map\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteAModelPrice",
+                                methodName: "DeleteAModelPriceAsync",
+                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -263,10 +260,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateNewModelPrice",
-                                methodName: "CreateNewModelPriceAsync",
-                                pathTemplate: "\"/api/v1/model-price-map\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteAModelPrice",
+                                methodName: "DeleteAModelPriceAsync",
+                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -303,7 +300,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateNewModelPriceResponse(
+                ProcessDeleteAModelPriceResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,10 +308,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateNewModelPrice",
-                                methodName: "CreateNewModelPriceAsync",
-                                pathTemplate: "\"/api/v1/model-price-map\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteAModelPrice",
+                                methodName: "DeleteAModelPriceAsync",
+                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -333,10 +330,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateNewModelPrice",
-                                methodName: "CreateNewModelPriceAsync",
-                                pathTemplate: "\"/api/v1/model-price-map\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteAModelPrice",
+                                methodName: "DeleteAModelPriceAsync",
+                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -400,7 +397,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateNewModelPriceResponseContent(
+                                ProcessDeleteAModelPriceResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -478,57 +475,6 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create New Model Price
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="startTime"></param>
-        /// <param name="matchPath">
-        /// Default Value: [model, model_name, model_id, model_path, endpoint_name]
-        /// </param>
-        /// <param name="matchPattern"></param>
-        /// <param name="promptCost"></param>
-        /// <param name="completionCost"></param>
-        /// <param name="promptCostDetails"></param>
-        /// <param name="completionCostDetails"></param>
-        /// <param name="provider"></param>
-        /// <param name="promptTokensAbove"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateNewModelPriceAsync(
-            string name,
-            string matchPattern,
-            global::LangSmith.AnyOf<double?, string> promptCost,
-            global::LangSmith.AnyOf<double?, string> completionCost,
-            global::System.DateTime? startTime = default,
-            global::System.Collections.Generic.IList<string>? matchPath = default,
-            object? promptCostDetails = default,
-            object? completionCostDetails = default,
-            string? provider = default,
-            int? promptTokensAbove = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.ModelPriceMapCreateSchema
-            {
-                Name = name,
-                StartTime = startTime,
-                MatchPath = matchPath,
-                MatchPattern = matchPattern,
-                PromptCost = promptCost,
-                CompletionCost = completionCost,
-                PromptCostDetails = promptCostDetails,
-                CompletionCostDetails = completionCostDetails,
-                Provider = provider,
-                PromptTokensAbove = promptTokensAbove,
-            };
-
-            return await CreateNewModelPriceAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

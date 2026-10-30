@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class ModelPriceMapClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateModelPriceServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_CreateAModelPriceServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateModelPriceSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateAModelPriceSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,45 +34,48 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdateModelPriceSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateAModelPriceSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_UpdateModelPriceSecurityRequirement0,
+            {                s_CreateAModelPriceSecurityRequirement0,
             };
-        partial void PrepareUpdateModelPriceArguments(
+        partial void PrepareCreateAModelPriceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid id,
-            global::LangSmith.ModelPriceMapUpdateSchema request);
-        partial void PrepareUpdateModelPriceRequest(
+            global::LangSmith.ModelPriceMapCreateSchema request);
+        partial void PrepareCreateAModelPriceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid id,
-            global::LangSmith.ModelPriceMapUpdateSchema request);
-        partial void ProcessUpdateModelPriceResponse(
+            global::LangSmith.ModelPriceMapCreateSchema request);
+        partial void ProcessCreateAModelPriceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateModelPriceResponseContent(
+        partial void ProcessCreateAModelPriceResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Update Model Price
+        /// Create a model price<br/>
+        /// Create a custom model price for this workspace.<br/>
+        /// The entry prices LLM runs whose model name matches `match_pattern`. It<br/>
+        /// applies to runs ingested after it takes effect, which can take a few<br/>
+        /// minutes; costs already recorded on existing runs are not recomputed.<br/>
+        /// Costs are in US dollars per token.<br/>
+        /// Returns 409 if the workspace already has an entry with the same name,<br/>
+        /// match pattern, match path, provider, start time, and prompt token<br/>
+        /// threshold.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<string> CreateAModelPriceAsync(
 
-            global::LangSmith.ModelPriceMapUpdateSchema request,
+            global::LangSmith.ModelPriceMapCreateSchema request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await UpdateModelPriceAsResponseAsync(
-                id: id,
+            var __response = await CreateAModelPriceAsResponseAsync(
 
                 request: request,
                 requestOptions: requestOptions,
@@ -82,17 +85,23 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Update Model Price
+        /// Create a model price<br/>
+        /// Create a custom model price for this workspace.<br/>
+        /// The entry prices LLM runs whose model name matches `match_pattern`. It<br/>
+        /// applies to runs ingested after it takes effect, which can take a few<br/>
+        /// minutes; costs already recorded on existing runs are not recomputed.<br/>
+        /// Costs are in US dollars per token.<br/>
+        /// Returns 409 if the workspace already has an entry with the same name,<br/>
+        /// match pattern, match path, provider, start time, and prompt token<br/>
+        /// threshold.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> UpdateModelPriceAsResponseAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateAModelPriceAsResponseAsync(
 
-            global::LangSmith.ModelPriceMapUpdateSchema request,
+            global::LangSmith.ModelPriceMapCreateSchema request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,16 +109,15 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateModelPriceArguments(
+            PrepareCreateAModelPriceArguments(
                 httpClient: HttpClient,
-                id: ref id,
                 request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_UpdateModelPriceSecurityRequirements,
-                operationName: "UpdateModelPriceAsync");
+                securityRequirements: s_CreateAModelPriceSecurityRequirements,
+                operationName: "CreateAModelPriceAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -129,9 +137,9 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/model-price-map/{id}",
+                                path: "/api/v1/model-price-map",
                                 baseUri: ResolveBaseUri(
-                                servers: s_UpdateModelPriceServers,
+                                servers: s_CreateAModelPriceServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -139,7 +147,7 @@ namespace LangSmith
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Put,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -176,10 +184,9 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareUpdateModelPriceRequest(
+                PrepareCreateAModelPriceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
                     request: request);
 
                 return __httpRequest;
@@ -197,10 +204,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateModelPrice",
-                                methodName: "UpdateModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "PUT",
+                                operationId: "CreateAModelPrice",
+                                methodName: "CreateAModelPriceAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -231,10 +238,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateModelPrice",
-                                methodName: "UpdateModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "PUT",
+                                operationId: "CreateAModelPrice",
+                                methodName: "CreateAModelPriceAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -272,10 +279,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateModelPrice",
-                                methodName: "UpdateModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "PUT",
+                                operationId: "CreateAModelPrice",
+                                methodName: "CreateAModelPriceAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -312,7 +319,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessUpdateModelPriceResponse(
+                ProcessCreateAModelPriceResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -320,10 +327,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateModelPrice",
-                                methodName: "UpdateModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "PUT",
+                                operationId: "CreateAModelPrice",
+                                methodName: "CreateAModelPriceAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -342,10 +349,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateModelPrice",
-                                methodName: "UpdateModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "PUT",
+                                operationId: "CreateAModelPrice",
+                                methodName: "CreateAModelPriceAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -409,7 +416,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessUpdateModelPriceResponseContent(
+                                ProcessCreateAModelPriceResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -489,26 +496,51 @@ namespace LangSmith
             }
         }
         /// <summary>
-        /// Update Model Price
+        /// Create a model price<br/>
+        /// Create a custom model price for this workspace.<br/>
+        /// The entry prices LLM runs whose model name matches `match_pattern`. It<br/>
+        /// applies to runs ingested after it takes effect, which can take a few<br/>
+        /// minutes; costs already recorded on existing runs are not recomputed.<br/>
+        /// Costs are in US dollars per token.<br/>
+        /// Returns 409 if the workspace already has an entry with the same name,<br/>
+        /// match pattern, match path, provider, start time, and prompt token<br/>
+        /// threshold.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="startTime"></param>
+        /// <param name="name">
+        /// Display name for the entry, usually the model name.
+        /// </param>
+        /// <param name="startTime">
+        /// Only price runs that started at or after this time. Null applies to runs from any time.
+        /// </param>
         /// <param name="matchPath">
+        /// Invocation parameter keys checked, in order, for the model name when the run does not report `ls_model_name` metadata.<br/>
         /// Default Value: [model, model_name, model_id, model_path, endpoint_name]
         /// </param>
-        /// <param name="matchPattern"></param>
-        /// <param name="promptCost"></param>
-        /// <param name="completionCost"></param>
-        /// <param name="promptCostDetails"></param>
-        /// <param name="completionCostDetails"></param>
-        /// <param name="provider"></param>
-        /// <param name="promptTokensAbove"></param>
+        /// <param name="matchPattern">
+        /// Regular expression matched against the run's model name, for example `^gpt-4o-mini$`.
+        /// </param>
+        /// <param name="promptCost">
+        /// Cost in US dollars per input (prompt) token.
+        /// </param>
+        /// <param name="completionCost">
+        /// Cost in US dollars per output (completion) token.
+        /// </param>
+        /// <param name="promptCostDetails">
+        /// Cost in US dollars per input token for specific token types, keyed by the token detail name the run reports, for example `cache_read`. Input tokens not covered here are priced at `prompt_cost`.
+        /// </param>
+        /// <param name="completionCostDetails">
+        /// Cost in US dollars per output token for specific token types, keyed by the token detail name the run reports, for example `audio`. Output tokens not covered here are priced at `completion_cost`.
+        /// </param>
+        /// <param name="provider">
+        /// Only price runs from this provider (the `ls_provider` metadata, case-insensitive), for example `openai` or `anthropic`. Null matches any provider.
+        /// </param>
+        /// <param name="promptTokensAbove">
+        /// Only price requests with more input tokens than this, for long-context pricing tiers. Null applies to every request.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<string> CreateAModelPriceAsync(
             string name,
             string matchPattern,
             global::LangSmith.AnyOf<double?, string> promptCost,
@@ -522,7 +554,7 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.ModelPriceMapUpdateSchema
+            var __request = new global::LangSmith.ModelPriceMapCreateSchema
             {
                 Name = name,
                 StartTime = startTime,
@@ -536,8 +568,7 @@ namespace LangSmith
                 PromptTokensAbove = promptTokensAbove,
             };
 
-            return await UpdateModelPriceAsync(
-                id: id,
+            return await CreateAModelPriceAsync(
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

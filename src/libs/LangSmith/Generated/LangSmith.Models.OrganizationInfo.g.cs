@@ -222,13 +222,13 @@ namespace LangSmith
         public bool? CanExportUsageBackfill { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oidc_login_enabled")]
         public bool? OidcLoginEnabled { get; set; }
@@ -258,7 +258,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? DisabledModelProviders { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
         public bool? RestrictBrowserSecrets { get; set; }
@@ -371,15 +371,21 @@ namespace LangSmith
         /// <param name="canExportUsageBackfill">
         /// Default Value: false
         /// </param>
-        /// <param name="llmAuthProxyEnabled"></param>
-        /// <param name="oidcLoginEnabled"></param>
+        /// <param name="llmAuthProxyEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="oidcLoginEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="llmAuthProxyJwtAudience"></param>
         /// <param name="ipAllowlist"></param>
         /// <param name="ipAllowlistEnabled">
         /// Default Value: false
         /// </param>
         /// <param name="disabledModelProviders"></param>
-        /// <param name="restrictBrowserSecrets"></param>
+        /// <param name="restrictBrowserSecrets">
+        /// Default Value: false
+        /// </param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="oidcSsoAvailable">
         /// Default Value: false
