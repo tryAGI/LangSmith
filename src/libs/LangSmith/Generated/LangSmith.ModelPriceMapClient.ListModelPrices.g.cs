@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class ModelPriceMapClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_DeleteModelPriceServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListModelPricesServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_DeleteModelPriceSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListModelPricesSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,40 +34,88 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_DeleteModelPriceSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListModelPricesSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_DeleteModelPriceSecurityRequirement0,
+            {                s_ListModelPricesSecurityRequirement0,
             };
-        partial void PrepareDeleteModelPriceArguments(
+        partial void PrepareListModelPricesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid id);
-        partial void PrepareDeleteModelPriceRequest(
+            ref int? offset,
+            ref int? limit,
+            ref string? q,
+            global::System.Collections.Generic.IList<string>? provider,
+            ref string? sortBy,
+            ref global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder);
+        partial void PrepareListModelPricesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid id);
-        partial void ProcessDeleteModelPriceResponse(
+            int? offset,
+            int? limit,
+            string? q,
+            global::System.Collections.Generic.IList<string>? provider,
+            string? sortBy,
+            global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder);
+        partial void ProcessListModelPricesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeleteModelPriceResponseContent(
+        partial void ProcessListModelPricesResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Delete Model Price
+        /// List model prices<br/>
+        /// List the model prices LangSmith uses to compute run costs in this workspace.<br/>
+        /// Returns both the workspace's custom entries (`tenant_id` set) and the<br/>
+        /// LangSmith default entries (`tenant_id` null). Default entries can be read<br/>
+        /// but not updated or deleted; to price a model differently, for example<br/>
+        /// because of a negotiated rate with an inference provider, create a custom<br/>
+        /// entry with the same match pattern.<br/>
+        /// The total number of matching entries is returned in the<br/>
+        /// `X-Pagination-Total` response header.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="offset">
+        /// Number of entries to skip before this page.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of entries to return.<br/>
+        /// Default Value: 100
+        /// </param>
+        /// <param name="q">
+        /// Case-insensitive substring matched against the entry name, match pattern, and provider. Hyphens and spaces are treated as equivalent.
+        /// </param>
+        /// <param name="provider">
+        /// Only return price maps for these providers (case-insensitive).
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort on. Defaults to match priority order.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort direction for sort_by. Unset start dates sort last.<br/>
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DeleteModelPriceAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>> ListModelPricesAsync(
+            int? offset = default,
+            int? limit = default,
+            string? q = default,
+            global::System.Collections.Generic.IList<string>? provider = default,
+            string? sortBy = default,
+            global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await DeleteModelPriceAsResponseAsync(
-                id: id,
+            var __response = await ListModelPricesAsResponseAsync(
+                offset: offset,
+                limit: limit,
+                q: q,
+                provider: provider,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -75,28 +123,66 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Delete Model Price
+        /// List model prices<br/>
+        /// List the model prices LangSmith uses to compute run costs in this workspace.<br/>
+        /// Returns both the workspace's custom entries (`tenant_id` set) and the<br/>
+        /// LangSmith default entries (`tenant_id` null). Default entries can be read<br/>
+        /// but not updated or deleted; to price a model differently, for example<br/>
+        /// because of a negotiated rate with an inference provider, create a custom<br/>
+        /// entry with the same match pattern.<br/>
+        /// The total number of matching entries is returned in the<br/>
+        /// `X-Pagination-Total` response header.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="offset">
+        /// Number of entries to skip before this page.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of entries to return.<br/>
+        /// Default Value: 100
+        /// </param>
+        /// <param name="q">
+        /// Case-insensitive substring matched against the entry name, match pattern, and provider. Hyphens and spaces are treated as equivalent.
+        /// </param>
+        /// <param name="provider">
+        /// Only return price maps for these providers (case-insensitive).
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort on. Defaults to match priority order.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort direction for sort_by. Unset start dates sort last.<br/>
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> DeleteModelPriceAsResponseAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>>> ListModelPricesAsResponseAsync(
+            int? offset = default,
+            int? limit = default,
+            string? q = default,
+            global::System.Collections.Generic.IList<string>? provider = default,
+            string? sortBy = default,
+            global::LangSmith.ReadModelPriceMapApiV1ModelPriceMapGetSortOrder? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareDeleteModelPriceArguments(
+            PrepareListModelPricesArguments(
                 httpClient: HttpClient,
-                id: ref id);
+                offset: ref offset,
+                limit: ref limit,
+                q: ref q,
+                provider: provider,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_DeleteModelPriceSecurityRequirements,
-                operationName: "DeleteModelPriceAsync");
+                securityRequirements: s_ListModelPricesSecurityRequirements,
+                operationName: "ListModelPricesAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -116,17 +202,25 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/model-price-map/{id}",
+                                path: "/api/v1/model-price-map",
                                 baseUri: ResolveBaseUri(
-                                servers: s_DeleteModelPriceServers,
+                                servers: s_ListModelPricesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("offset", offset?.ToString())
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("q", q)
+                                .AddOptionalParameter("provider", provider, delimiter: ",", explode: true)
+                                .AddOptionalParameter("sort_by", sortBy)
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Delete,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -157,10 +251,15 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareDeleteModelPriceRequest(
+                PrepareListModelPricesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id);
+                    offset: offset,
+                    limit: limit,
+                    q: q,
+                    provider: provider,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder);
 
                 return __httpRequest;
             }
@@ -177,10 +276,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteModelPrice",
-                                methodName: "DeleteModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListModelPrices",
+                                methodName: "ListModelPricesAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -211,10 +310,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteModelPrice",
-                                methodName: "DeleteModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListModelPrices",
+                                methodName: "ListModelPricesAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -252,10 +351,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteModelPrice",
-                                methodName: "DeleteModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListModelPrices",
+                                methodName: "ListModelPricesAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -292,7 +391,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessDeleteModelPriceResponse(
+                ProcessListModelPricesResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -300,10 +399,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteModelPrice",
-                                methodName: "DeleteModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListModelPrices",
+                                methodName: "ListModelPricesAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -322,10 +421,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteModelPrice",
-                                methodName: "DeleteModelPriceAsync",
-                                pathTemplate: "$\"/api/v1/model-price-map/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListModelPrices",
+                                methodName: "ListModelPricesAsync",
+                                pathTemplate: "\"/api/v1/model-price-map\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -389,7 +488,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessDeleteModelPriceResponseContent(
+                                ProcessListModelPricesResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -398,11 +497,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return new global::LangSmith.AutoSDKHttpResponse<string>(
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>), JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -422,17 +523,19 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return new global::LangSmith.AutoSDKHttpResponse<string>(
+                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>), JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.ModelPriceMapSchema>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

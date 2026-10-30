@@ -191,6 +191,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oidc_login_enabled")]
+        public bool? OidcLoginEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oidc_sso_available")]
         public bool? OidcSsoAvailable { get; set; }
 
@@ -229,6 +235,12 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reached_max_workspaces")]
         public bool? ReachedMaxWorkspaces { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restrict_browser_secrets")]
+        public bool? RestrictBrowserSecrets { get; set; }
 
         /// <summary>
         ///
@@ -322,6 +334,9 @@ namespace LangSmith
         /// <param name="maxServiceKeyExpiryDays"></param>
         /// <param name="maxTracingKeyExpiryDays"></param>
         /// <param name="memberDisabled"></param>
+        /// <param name="oidcLoginEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="oidcSsoAvailable">
         /// Default Value: false
         /// </param>
@@ -331,6 +346,9 @@ namespace LangSmith
         /// <param name="permissions"></param>
         /// <param name="publicSharingDisabled"></param>
         /// <param name="reachedMaxWorkspaces"></param>
+        /// <param name="restrictBrowserSecrets">
+        /// Default Value: false
+        /// </param>
         /// <param name="scimGroupNameSeparator"></param>
         /// <param name="securityContact"></param>
         /// <param name="ssoLoginSlug"></param>
@@ -373,6 +391,7 @@ namespace LangSmith
             int? maxServiceKeyExpiryDays,
             int? maxTracingKeyExpiryDays,
             bool? memberDisabled,
+            bool? oidcLoginEnabled,
             bool? oidcSsoAvailable,
             global::System.Guid? orgRoleId,
             global::LangSmith.OrgsOrganizationRole? orgRoleName,
@@ -380,6 +399,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? permissions,
             bool? publicSharingDisabled,
             bool? reachedMaxWorkspaces,
+            bool? restrictBrowserSecrets,
             string? scimGroupNameSeparator,
             string? securityContact,
             string? ssoLoginSlug,
@@ -417,6 +437,7 @@ namespace LangSmith
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;
             this.MemberDisabled = memberDisabled;
+            this.OidcLoginEnabled = oidcLoginEnabled;
             this.OidcSsoAvailable = oidcSsoAvailable;
             this.OrgRoleId = orgRoleId;
             this.OrgRoleName = orgRoleName;
@@ -424,6 +445,7 @@ namespace LangSmith
             this.Permissions = permissions;
             this.PublicSharingDisabled = publicSharingDisabled;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
+            this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.SecurityContact = securityContact;
             this.SsoLoginSlug = ssoLoginSlug;
