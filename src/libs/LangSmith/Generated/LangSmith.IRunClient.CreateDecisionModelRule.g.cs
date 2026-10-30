@@ -40,7 +40,9 @@ namespace LangSmith
         /// its prompt and questions, and attach it to a project or dataset. Each<br/>
         /// question's key becomes a feedback key.
         /// </summary>
-        /// <param name="displayName"></param>
+        /// <param name="displayName">
+        /// The evaluator's name.
+        /// </param>
         /// <param name="sessionId">
         /// The tracing project to evaluate.
         /// </param>
