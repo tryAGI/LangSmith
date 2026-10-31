@@ -39,10 +39,12 @@ namespace LangSmith
             {                s_ListDataPlanesForTheCurrentOrganizationSecurityRequirement0,
             };
         partial void PrepareListDataPlanesForTheCurrentOrganizationArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::LangSmith.GetOrgsCurrentDataPlanesView? view);
         partial void PrepareListDataPlanesForTheCurrentOrganizationRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.GetOrgsCurrentDataPlanesView? view);
         partial void ProcessListDataPlanesForTheCurrentOrganizationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,16 +56,22 @@ namespace LangSmith
 
         /// <summary>
         /// List data planes for the current organization<br/>
-        /// Returns up to 50 data planes owned by the caller's organization across all lifecycle states. Sorted by status priority (active first), then newest first. Requires BYOC to be enabled for the org.
+        /// Returns up to 50 data planes owned by the caller's organization across all lifecycle states. Sorted by status priority (active first), then newest first. Requires BYOC to be enabled for the org.<br/>
+        /// Omit view or use view=FULL for the full response (requires organization:infrastructure:read). view=SUMMARY returns only id, name, api_url, status, and workspaces and requires organization:read or organization:infrastructure:read. Without infrastructure read, workspace references are limited to the caller's memberships.
         /// </summary>
+        /// <param name="view">
+        /// Default Value: FULL
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.DataPlanesListPublicDataPlanesResponse> ListDataPlanesForTheCurrentOrganizationAsync(
+            global::LangSmith.GetOrgsCurrentDataPlanesView? view = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListDataPlanesForTheCurrentOrganizationAsResponseAsync(
+                view: view,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -72,19 +80,25 @@ namespace LangSmith
         }
         /// <summary>
         /// List data planes for the current organization<br/>
-        /// Returns up to 50 data planes owned by the caller's organization across all lifecycle states. Sorted by status priority (active first), then newest first. Requires BYOC to be enabled for the org.
+        /// Returns up to 50 data planes owned by the caller's organization across all lifecycle states. Sorted by status priority (active first), then newest first. Requires BYOC to be enabled for the org.<br/>
+        /// Omit view or use view=FULL for the full response (requires organization:infrastructure:read). view=SUMMARY returns only id, name, api_url, status, and workspaces and requires organization:read or organization:infrastructure:read. Without infrastructure read, workspace references are limited to the caller's memberships.
         /// </summary>
+        /// <param name="view">
+        /// Default Value: FULL
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DataPlanesListPublicDataPlanesResponse>> ListDataPlanesForTheCurrentOrganizationAsResponseAsync(
+            global::LangSmith.GetOrgsCurrentDataPlanesView? view = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListDataPlanesForTheCurrentOrganizationArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                view: ref view);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -114,6 +128,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListDataPlanesForTheCurrentOrganizationServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("view", view?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -153,7 +170,8 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareListDataPlanesForTheCurrentOrganizationRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    view: view);
 
                 return __httpRequest;
             }
@@ -332,24 +350,24 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Invalid organization ID
+                            // Invalid organization ID or view
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_400, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -358,7 +376,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -406,7 +424,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // BYOC not enabled for this organization
+                            // BYOC not enabled or insufficient permissions for the requested view
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -448,19 +466,19 @@ namespace LangSmith
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::System.Collections.Generic.Dictionary<string, string>? __value_500 = null;
+                                global::LangSmith.SharedProblemDetails? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_500, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -469,7 +487,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

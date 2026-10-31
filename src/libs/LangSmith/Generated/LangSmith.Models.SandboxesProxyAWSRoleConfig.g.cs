@@ -22,6 +22,12 @@ namespace LangSmith
         public string? SubjectScope { get; set; }
 
         /// <summary>
+        /// SessionTags are AWS session tags on the role session, for role policies that scope access with ${aws:PrincipalTag/&lt;key&gt;}. The role's trust policy must allow sts:TagSession. At most 50; keys are 1-128 and values 1-256 letters, numbers, spaces or _.:=+-@ (keys may also contain /); keys starting with aws: or langsmith: are reserved. Only valid with role_arn, and cannot be changed after creation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_tags")]
+        public global::System.Collections.Generic.Dictionary<string, string>? SessionTags { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +42,20 @@ namespace LangSmith
         /// <param name="subjectScope">
         /// SubjectScope picks the token subject the role trusts: "workspace" (the default) or "tag:&lt;tag value id&gt;", which must be one of the sandbox's tag_value_ids. Only valid with role_arn.
         /// </param>
+        /// <param name="sessionTags">
+        /// SessionTags are AWS session tags on the role session, for role policies that scope access with ${aws:PrincipalTag/&lt;key&gt;}. The role's trust policy must allow sts:TagSession. At most 50; keys are 1-128 and values 1-256 letters, numbers, spaces or _.:=+-@ (keys may also contain /); keys starting with aws: or langsmith: are reserved. Only valid with role_arn, and cannot be changed after creation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesProxyAWSRoleConfig(
             string roleArn,
-            string? subjectScope)
+            string? subjectScope,
+            global::System.Collections.Generic.Dictionary<string, string>? sessionTags)
         {
             this.RoleArn = roleArn ?? throw new global::System.ArgumentNullException(nameof(roleArn));
             this.SubjectScope = subjectScope;
+            this.SessionTags = sessionTags;
         }
 
         /// <summary>

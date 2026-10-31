@@ -1445,6 +1445,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetThreadsTracesSelect), TypeInfoPropertyName = "GetThreadsTracesSelect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetTracesRunsSelect>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetTracesRunsSelect), TypeInfoPropertyName = "GetTracesRunsSelect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetOrgsCurrentDataPlanesView), TypeInfoPropertyName = "GetOrgsCurrentDataPlanesView2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageAgentsSortBy), TypeInfoPropertyName = "GetFleetUsageAgentsSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageAgentsSortOrder), TypeInfoPropertyName = "GetFleetUsageAgentsSortOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageUsersSortBy), TypeInfoPropertyName = "GetFleetUsageUsersSortBy2")]
@@ -1544,9 +1545,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ScimScimTokenResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSessionsAgentVersionResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.ExperimentViewOverridesExperimentViewOverride>))]
-    #pragma warning disable CS0618 // This registration names a deprecated API model.
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
-    #pragma warning restore CS0618
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1567,6 +1565,9 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AccessScope?), TypeInfoPropertyName = "NullableAccessScope2")]
@@ -1873,6 +1874,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetThreadsStatsSelect?), TypeInfoPropertyName = "NullableGetThreadsStatsSelect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetThreadsTracesSelect?), TypeInfoPropertyName = "NullableGetThreadsTracesSelect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetTracesRunsSelect?), TypeInfoPropertyName = "NullableGetTracesRunsSelect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetOrgsCurrentDataPlanesView?), TypeInfoPropertyName = "NullableGetOrgsCurrentDataPlanesView2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageAgentsSortBy?), TypeInfoPropertyName = "NullableGetFleetUsageAgentsSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageAgentsSortOrder?), TypeInfoPropertyName = "NullableGetFleetUsageAgentsSortOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageUsersSortBy?), TypeInfoPropertyName = "NullableGetFleetUsageUsersSortBy2")]
@@ -2069,8 +2071,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TeamsTeamListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.TenantsTenant>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadStatsSelectField>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadTraceListItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadListItem>))]
     internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2091,6 +2091,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadTraceListItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ThreadsThreadListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ToolsTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.UsagePublicAgentUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.UsagePublicUserUsage>))]
@@ -3409,6 +3411,10 @@ namespace LangSmith
                     || typeToConvert == typeof(global::LangSmith.GetTracesRunsSelect)
 
                     || typeToConvert == typeof(global::LangSmith.GetTracesRunsSelect?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetOrgsCurrentDataPlanesView)
+
+                    || typeToConvert == typeof(global::LangSmith.GetOrgsCurrentDataPlanesView?)
 
                     || typeToConvert == typeof(global::LangSmith.GetFleetUsageAgentsSortBy)
 
@@ -5931,6 +5937,16 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.GetTracesRunsSelect?))
                 {
                     return new global::LangSmith.JsonConverters.GetTracesRunsSelectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetOrgsCurrentDataPlanesView))
+                {
+                    return new global::LangSmith.JsonConverters.GetOrgsCurrentDataPlanesViewJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetOrgsCurrentDataPlanesView?))
+                {
+                    return new global::LangSmith.JsonConverters.GetOrgsCurrentDataPlanesViewNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LangSmith.GetFleetUsageAgentsSortBy))

@@ -2,7 +2,7 @@
 
 namespace LangSmith
 {
-    public sealed partial class GetOrgsCurrentDataPlanesResponse3
+    public sealed partial class SandboxesProxyAWSRoleConfigSessionTags
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.GetOrgsCurrentDataPlanesResponse3? FromJson(
+        public static global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::LangSmith.GetOrgsCurrentDataPlanesResponse3),
-                jsonSerializerContext) as global::LangSmith.GetOrgsCurrentDataPlanesResponse3;
+                typeof(global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags),
+                jsonSerializerContext) as global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::LangSmith.GetOrgsCurrentDataPlanesResponse3? FromJson(
+        public static global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::LangSmith.GetOrgsCurrentDataPlanesResponse3? FromJson(
+        public static global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace LangSmith
                     global::LangSmith.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.GetOrgsCurrentDataPlanesResponse3>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace LangSmith
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.GetOrgsCurrentDataPlanesResponse3?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::LangSmith.GetOrgsCurrentDataPlanesResponse3),
-                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.GetOrgsCurrentDataPlanesResponse3;
+                typeof(global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags),
+                jsonSerializerContext).ConfigureAwait(false)) as global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.GetOrgsCurrentDataPlanesResponse3?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.GetOrgsCurrentDataPlanesResponse3?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace LangSmith
                     global::LangSmith.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.GetOrgsCurrentDataPlanesResponse3?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::LangSmith.SandboxesProxyAWSRoleConfigSessionTags?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
