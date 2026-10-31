@@ -36,6 +36,7 @@ namespace LangSmith.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("role_arn")) __score0++;
+            if (__jsonProps.Contains("session_tags")) __score0++;
             if (__jsonProps.Contains("subject_scope")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("access_key_id")) __score1++;

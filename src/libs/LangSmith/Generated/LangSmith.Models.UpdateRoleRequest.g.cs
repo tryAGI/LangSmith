@@ -23,7 +23,7 @@ namespace LangSmith
         public required string Description { get; set; }
 
         /// <summary>
-        ///
+        /// Permissions to grant. Organization roles do not require organization:read or organization:read-metadata. Omitting these permissions may limit access to organization settings pages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,7 +40,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">
+        /// Permissions to grant. Organization roles do not require organization:read or organization:read-metadata. Omitting these permissions may limit access to organization settings pages.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

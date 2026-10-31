@@ -515,6 +515,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateTracerSession,
+        /// <summary>
+        ///
+        /// </summary>
         CreateWebhookDestination,
         /// <summary>
         ///
@@ -2272,6 +2276,7 @@ namespace LangSmith
                 AuditLogOperation.CreateTeamWorkspaceGrant => "create_team_workspace_grant",
                 AuditLogOperation.CreateTenant => "create_tenant",
                 AuditLogOperation.CreateTool => "create_tool",
+                AuditLogOperation.CreateTracerSession => "create_tracer_session",
                 AuditLogOperation.CreateWebhookDestination => "create_webhook_destination",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
@@ -2813,6 +2818,7 @@ namespace LangSmith
                 "create_team_workspace_grant" => AuditLogOperation.CreateTeamWorkspaceGrant,
                 "create_tenant" => AuditLogOperation.CreateTenant,
                 "create_tool" => AuditLogOperation.CreateTool,
+                "create_tracer_session" => AuditLogOperation.CreateTracerSession,
                 "create_webhook_destination" => AuditLogOperation.CreateWebhookDestination,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,

@@ -304,6 +304,12 @@ namespace LangSmith
         public global::LangSmith.RunRuleSpendLimitSchemaOutput? SpendLimit { get; set; }
 
         /// <summary>
+        /// spend_limit if set; otherwise the organization's default evaluator spend limit, once the rule has made its first evaluator call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("effective_spend_limit")]
+        public global::LangSmith.RunRuleSpendLimitSchemaOutput? EffectiveSpendLimit { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_count")]
@@ -388,6 +394,9 @@ namespace LangSmith
         /// <param name="alignmentAnnotationQueueId"></param>
         /// <param name="groupBy"></param>
         /// <param name="spendLimit"></param>
+        /// <param name="effectiveSpendLimit">
+        /// spend_limit if set; otherwise the organization's default evaluator spend limit, once the rule has made its first evaluator call.
+        /// </param>
         /// <param name="traceCount"></param>
         /// <param name="spendUsd"></param>
 #if NET7_0_OR_GREATER
@@ -442,6 +451,7 @@ namespace LangSmith
             global::System.Guid? alignmentAnnotationQueueId,
             global::LangSmith.RunRulesSchemaGroupBy? groupBy,
             global::LangSmith.RunRuleSpendLimitSchemaOutput? spendLimit,
+            global::LangSmith.RunRuleSpendLimitSchemaOutput? effectiveSpendLimit,
             int? traceCount,
             double? spendUsd)
         {
@@ -493,6 +503,7 @@ namespace LangSmith
             this.AlignmentAnnotationQueueId = alignmentAnnotationQueueId;
             this.GroupBy = groupBy;
             this.SpendLimit = spendLimit;
+            this.EffectiveSpendLimit = effectiveSpendLimit;
             this.TraceCount = traceCount;
             this.SpendUsd = spendUsd;
         }
