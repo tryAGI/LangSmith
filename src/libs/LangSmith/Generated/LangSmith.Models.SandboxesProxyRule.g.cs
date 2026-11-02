@@ -60,10 +60,14 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? MatchHeaders { get; set; }
 
         /// <summary>
-        /// MatchHosts is only accepted for header injection, rewrite, and relay rules.<br/>
-        /// Provider auth rules use built-in host matching. A relay rule may also<br/>
-        /// list IP addresses and CIDR blocks (10.0.0.0/8), which match connections<br/>
-        /// the sandbox makes to an IP address rather than a name.
+        /// MatchHosts lists the hosts a header injection, rewrite, or relay rule<br/>
+        /// covers. AWS and GCP rules match their provider's hosts built in; there<br/>
+        /// MatchHosts optionally narrows them to the listed hosts (e.g.<br/>
+        /// "sts.amazonaws.com", "bigquery.googleapis.com"), and when empty the rule<br/>
+        /// covers every host the provider can authenticate. A host no rule covers is<br/>
+        /// passed through without TLS interception. Azure rules do not accept it. A<br/>
+        /// relay rule may also list IP addresses and CIDR blocks (10.0.0.0/8), which<br/>
+        /// match connections the sandbox makes to an IP address rather than a name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match_hosts")]
         public global::System.Collections.Generic.IList<string>? MatchHosts { get; set; }
@@ -124,10 +128,14 @@ namespace LangSmith
         /// MatchHeaders restricts a header injection or rewrite rule to requests carrying every listed header, each written "name: value" with a lowercase name and an exact value. Pair with headers of the same name to swap a placeholder the sandbox sends (e.g. "authorization: Bearer account-b") for a real credential, so one host can serve several accounts. Rules are evaluated in order and the first match wins.
         /// </param>
         /// <param name="matchHosts">
-        /// MatchHosts is only accepted for header injection, rewrite, and relay rules.<br/>
-        /// Provider auth rules use built-in host matching. A relay rule may also<br/>
-        /// list IP addresses and CIDR blocks (10.0.0.0/8), which match connections<br/>
-        /// the sandbox makes to an IP address rather than a name.
+        /// MatchHosts lists the hosts a header injection, rewrite, or relay rule<br/>
+        /// covers. AWS and GCP rules match their provider's hosts built in; there<br/>
+        /// MatchHosts optionally narrows them to the listed hosts (e.g.<br/>
+        /// "sts.amazonaws.com", "bigquery.googleapis.com"), and when empty the rule<br/>
+        /// covers every host the provider can authenticate. A host no rule covers is<br/>
+        /// passed through without TLS interception. Azure rules do not accept it. A<br/>
+        /// relay rule may also list IP addresses and CIDR blocks (10.0.0.0/8), which<br/>
+        /// match connections the sandbox makes to an IP address rather than a name.
         /// </param>
         /// <param name="matchPaths">
         /// MatchPaths restricts a header injection or rewrite rule to requests whose path matches one of the patterns, so one host can use a different credential per route. The path excludes the query string. A pattern is an exact path (`/v1/runs`); a prefix, written as the prefix followed by a slash and `*` or `**`, which matches any path starting with that prefix (the prefix `/v1` also matches `/v10`); a suffix, written as `*`, a slash, and then the ending, which matches any path that ends with that text (the ending `runs` also matches `/v1/xruns`); or `*` alone for every path. A wildcard in the middle of a path is not supported. An empty list matches every path. Rules are evaluated in order and the first match wins. Rejected on aws, gcp, azure, and relay rules.
