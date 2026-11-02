@@ -42,18 +42,22 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
+            ref string? cursor,
             ref bool? includeStats,
             ref int? limit,
             ref int? offset,
+            ref int? pageSize,
             ref string? tag);
         partial void PrepareListCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
+            string? cursor,
             bool? includeStats,
             int? limit,
             int? offset,
+            int? pageSize,
             string? tag);
         partial void ProcessListCommitsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -66,13 +70,16 @@ namespace LangSmith
 
         /// <summary>
         /// List commits<br/>
-        /// List commits for a repository, with pagination support.<br/>
+        /// List commits for a repository, newest first, with pagination support.<br/>
+        /// Page with page_size and cursor: pass next_cursor from the previous response as cursor, until next_cursor is null.<br/>
+        /// The limit and offset parameters are still accepted but cannot be combined with page_size or cursor.<br/>
         /// This endpoint supports both authenticated and unauthenticated access.<br/>
         /// Authenticated users can access private repositories; unauthenticated users can only access public repositories.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="cursor"></param>
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
@@ -82,6 +89,9 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
         /// <param name="tag"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -89,9 +99,11 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsListCommitsResponse> ListCommitsAsync(
             string owner,
             string repo,
+            string? cursor = default,
             bool? includeStats = default,
             int? limit = default,
             int? offset = default,
+            int? pageSize = default,
             string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -99,9 +111,11 @@ namespace LangSmith
             var __response = await ListCommitsAsResponseAsync(
                 owner: owner,
                 repo: repo,
+                cursor: cursor,
                 includeStats: includeStats,
                 limit: limit,
                 offset: offset,
+                pageSize: pageSize,
                 tag: tag,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -111,13 +125,16 @@ namespace LangSmith
         }
         /// <summary>
         /// List commits<br/>
-        /// List commits for a repository, with pagination support.<br/>
+        /// List commits for a repository, newest first, with pagination support.<br/>
+        /// Page with page_size and cursor: pass next_cursor from the previous response as cursor, until next_cursor is null.<br/>
+        /// The limit and offset parameters are still accepted but cannot be combined with page_size or cursor.<br/>
         /// This endpoint supports both authenticated and unauthenticated access.<br/>
         /// Authenticated users can access private repositories; unauthenticated users can only access public repositories.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="cursor"></param>
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
@@ -127,6 +144,9 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
         /// <param name="tag"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -134,9 +154,11 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CommitsListCommitsResponse>> ListCommitsAsResponseAsync(
             string owner,
             string repo,
+            string? cursor = default,
             bool? includeStats = default,
             int? limit = default,
             int? offset = default,
+            int? pageSize = default,
             string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -147,9 +169,11 @@ namespace LangSmith
                 httpClient: HttpClient,
                 owner: ref owner,
                 repo: ref repo,
+                cursor: ref cursor,
                 includeStats: ref includeStats,
                 limit: ref limit,
                 offset: ref offset,
+                pageSize: ref pageSize,
                 tag: ref tag);
 
 
@@ -181,9 +205,11 @@ namespace LangSmith
                                 servers: s_ListCommitsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
+                                .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("tag", tag)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -228,9 +254,11 @@ namespace LangSmith
                     httpRequestMessage: __httpRequest,
                     owner: owner,
                     repo: repo,
+                    cursor: cursor,
                     includeStats: includeStats,
                     limit: limit,
                     offset: offset,
+                    pageSize: pageSize,
                     tag: tag);
 
                 return __httpRequest;

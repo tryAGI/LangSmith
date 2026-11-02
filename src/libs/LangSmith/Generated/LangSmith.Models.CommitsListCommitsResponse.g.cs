@@ -15,6 +15,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.CommitsCommitWithLookups>? Commits { get; set; }
 
         /// <summary>
+        /// NextCursor is the cursor for the next page, or null when there are no more commits.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("next_cursor")]
+        public string? NextCursor { get; set; }
+
+        /// <summary>
         /// Total number of commits
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
@@ -32,6 +38,9 @@ namespace LangSmith
         /// <param name="commits">
         /// List of commits with lookup information
         /// </param>
+        /// <param name="nextCursor">
+        /// NextCursor is the cursor for the next page, or null when there are no more commits.
+        /// </param>
         /// <param name="total">
         /// Total number of commits
         /// </param>
@@ -40,9 +49,11 @@ namespace LangSmith
 #endif
         public CommitsListCommitsResponse(
             global::System.Collections.Generic.IList<global::LangSmith.CommitsCommitWithLookups>? commits,
+            string? nextCursor,
             int? total)
         {
             this.Commits = commits;
+            this.NextCursor = nextCursor;
             this.Total = total;
         }
 
