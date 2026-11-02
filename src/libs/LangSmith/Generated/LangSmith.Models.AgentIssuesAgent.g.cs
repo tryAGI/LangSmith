@@ -150,8 +150,8 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<string>? Priorities { get; set; }
 
         /// <summary>
-        /// RedTeamTarget is the external A2A endpoint red-team runs probe instead<br/>
-        /// of the validation deployment, or null when none is configured.
+        /// RedTeamTarget is the external endpoint red-team runs probe instead of<br/>
+        /// the validation deployment, or null when none is configured.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("red_team_target")]
         public global::LangSmith.AgentRedTeamTargetView? RedTeamTarget { get; set; }
@@ -305,8 +305,8 @@ namespace LangSmith
         /// </param>
         /// <param name="priorities"></param>
         /// <param name="redTeamTarget">
-        /// RedTeamTarget is the external A2A endpoint red-team runs probe instead<br/>
-        /// of the validation deployment, or null when none is configured.
+        /// RedTeamTarget is the external endpoint red-team runs probe instead of<br/>
+        /// the validation deployment, or null when none is configured.
         /// </param>
         /// <param name="runFilter">
         /// RunFilter is a runs-filter-DSL string scoping which traces Engine analyzes<br/>

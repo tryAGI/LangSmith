@@ -508,7 +508,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="isTracingDisabled">
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="extendEvaluatorTraceRetention">
         /// Default Value: false

@@ -88,7 +88,7 @@ namespace LangSmith
         public bool? ExtendOnly { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_tracing_disabled")]
         public bool? IsTracingDisabled { get; set; }
@@ -271,7 +271,7 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="isTracingDisabled">
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="extendEvaluatorTraceRetention">
         /// Default Value: false

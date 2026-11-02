@@ -6,13 +6,16 @@ namespace LangSmith
     {
         /// <summary>
         /// List commits<br/>
-        /// List commits for a repository, with pagination support.<br/>
+        /// List commits for a repository, newest first, with pagination support.<br/>
+        /// Page with page_size and cursor: pass next_cursor from the previous response as cursor, until next_cursor is null.<br/>
+        /// The limit and offset parameters are still accepted but cannot be combined with page_size or cursor.<br/>
         /// This endpoint supports both authenticated and unauthenticated access.<br/>
         /// Authenticated users can access private repositories; unauthenticated users can only access public repositories.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="cursor"></param>
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
@@ -21,6 +24,9 @@ namespace LangSmith
         /// </param>
         /// <param name="offset">
         /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 20
         /// </param>
         /// <param name="tag"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,21 +35,26 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.CommitsListCommitsResponse> ListCommitsAsync(
             string owner,
             string repo,
+            string? cursor = default,
             bool? includeStats = default,
             int? limit = default,
             int? offset = default,
+            int? pageSize = default,
             string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List commits<br/>
-        /// List commits for a repository, with pagination support.<br/>
+        /// List commits for a repository, newest first, with pagination support.<br/>
+        /// Page with page_size and cursor: pass next_cursor from the previous response as cursor, until next_cursor is null.<br/>
+        /// The limit and offset parameters are still accepted but cannot be combined with page_size or cursor.<br/>
         /// This endpoint supports both authenticated and unauthenticated access.<br/>
         /// Authenticated users can access private repositories; unauthenticated users can only access public repositories.<br/>
         /// The include_stats parameter controls whether download and view statistics are computed (defaults to true).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="cursor"></param>
         /// <param name="includeStats">
         /// Default Value: true
         /// </param>
@@ -53,6 +64,9 @@ namespace LangSmith
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
         /// <param name="tag"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -60,9 +74,11 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CommitsListCommitsResponse>> ListCommitsAsResponseAsync(
             string owner,
             string repo,
+            string? cursor = default,
             bool? includeStats = default,
             int? limit = default,
             int? offset = default,
+            int? pageSize = default,
             string? tag = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

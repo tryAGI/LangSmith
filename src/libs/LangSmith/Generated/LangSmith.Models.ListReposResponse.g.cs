@@ -23,6 +23,12 @@ namespace LangSmith
         public required int Total { get; set; }
 
         /// <summary>
+        /// Cursor for the next page, or null when no pages remain.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("next_cursor")]
+        public string? NextCursor { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,15 +39,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="repos"></param>
         /// <param name="total"></param>
+        /// <param name="nextCursor">
+        /// Cursor for the next page, or null when no pages remain.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListReposResponse(
             global::System.Collections.Generic.IList<global::LangSmith.RepoWithLookups> repos,
-            int total)
+            int total,
+            string? nextCursor)
         {
             this.Repos = repos ?? throw new global::System.ArgumentNullException(nameof(repos));
             this.Total = total;
+            this.NextCursor = nextCursor;
         }
 
         /// <summary>

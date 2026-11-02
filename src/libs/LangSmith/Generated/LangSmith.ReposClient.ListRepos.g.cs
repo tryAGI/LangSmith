@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace LangSmith
 {
     public partial class ReposClient
@@ -40,10 +42,12 @@ namespace LangSmith
             };
         partial void PrepareListReposArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? withLatestManifest,
-            ref bool? includeOwners,
             ref int? limit,
             ref int? offset,
+            ref int? pageSize,
+            ref string? cursor,
+            ref bool? withLatestManifest,
+            ref bool? includeOwners,
             ref string? tenantHandle,
             global::System.Guid? tenantId,
             ref string? query,
@@ -62,10 +66,12 @@ namespace LangSmith
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? withLatestManifest,
-            bool? includeOwners,
             int? limit,
             int? offset,
+            int? pageSize,
+            string? cursor,
+            bool? withLatestManifest,
+            bool? includeOwners,
             string? tenantHandle,
             global::System.Guid? tenantId,
             string? query,
@@ -92,19 +98,31 @@ namespace LangSmith
 
         /// <summary>
         /// List Repos<br/>
-        /// Get all repos.
+        /// Get all repos.<br/>
+        /// Page with page_size and cursor: pass next_cursor from the previous response<br/>
+        /// as cursor until next_cursor is null. The limit and offset parameters are<br/>
+        /// still accepted but cannot be combined with cursor.
         /// </summary>
+        /// <param name="limit">
+        /// Deprecated: use page_size and cursor.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="offset">
+        /// Deprecated: use page_size and cursor.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of repos per page. Max 100.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor">
+        /// Opaque cursor from the previous response's next_cursor. Omit for the first page. Cannot be combined with offset.
+        /// </param>
         /// <param name="withLatestManifest">
         /// Default Value: false
         /// </param>
         /// <param name="includeOwners">
         /// Default Value: false
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 20
-        /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
         /// </param>
         /// <param name="tenantHandle"></param>
         /// <param name="tenantId"></param>
@@ -125,10 +143,12 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.ListReposResponse> ListReposAsync(
-            bool? withLatestManifest = default,
-            bool? includeOwners = default,
             int? limit = default,
             int? offset = default,
+            int? pageSize = default,
+            string? cursor = default,
+            bool? withLatestManifest = default,
+            bool? includeOwners = default,
             string? tenantHandle = default,
             global::System.Guid? tenantId = default,
             string? query = default,
@@ -148,10 +168,12 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListReposAsResponseAsync(
-                withLatestManifest: withLatestManifest,
-                includeOwners: includeOwners,
                 limit: limit,
                 offset: offset,
+                pageSize: pageSize,
+                cursor: cursor,
+                withLatestManifest: withLatestManifest,
+                includeOwners: includeOwners,
                 tenantHandle: tenantHandle,
                 tenantId: tenantId,
                 query: query,
@@ -175,19 +197,31 @@ namespace LangSmith
         }
         /// <summary>
         /// List Repos<br/>
-        /// Get all repos.
+        /// Get all repos.<br/>
+        /// Page with page_size and cursor: pass next_cursor from the previous response<br/>
+        /// as cursor until next_cursor is null. The limit and offset parameters are<br/>
+        /// still accepted but cannot be combined with cursor.
         /// </summary>
+        /// <param name="limit">
+        /// Deprecated: use page_size and cursor.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="offset">
+        /// Deprecated: use page_size and cursor.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of repos per page. Max 100.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor">
+        /// Opaque cursor from the previous response's next_cursor. Omit for the first page. Cannot be combined with offset.
+        /// </param>
         /// <param name="withLatestManifest">
         /// Default Value: false
         /// </param>
         /// <param name="includeOwners">
         /// Default Value: false
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 20
-        /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
         /// </param>
         /// <param name="tenantHandle"></param>
         /// <param name="tenantId"></param>
@@ -208,10 +242,12 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ListReposResponse>> ListReposAsResponseAsync(
-            bool? withLatestManifest = default,
-            bool? includeOwners = default,
             int? limit = default,
             int? offset = default,
+            int? pageSize = default,
+            string? cursor = default,
+            bool? withLatestManifest = default,
+            bool? includeOwners = default,
             string? tenantHandle = default,
             global::System.Guid? tenantId = default,
             string? query = default,
@@ -234,10 +270,12 @@ namespace LangSmith
                 client: HttpClient);
             PrepareListReposArguments(
                 httpClient: HttpClient,
-                withLatestManifest: ref withLatestManifest,
-                includeOwners: ref includeOwners,
                 limit: ref limit,
                 offset: ref offset,
+                pageSize: ref pageSize,
+                cursor: ref cursor,
+                withLatestManifest: ref withLatestManifest,
+                includeOwners: ref includeOwners,
                 tenantHandle: ref tenantHandle,
                 tenantId: tenantId,
                 query: ref query,
@@ -283,10 +321,12 @@ namespace LangSmith
                                 servers: s_ListReposServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("include_owners", includeOwners?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("cursor", cursor)
+                                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_owners", includeOwners?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("tenant_handle", tenantHandle)
                                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                                 .AddOptionalParameter("query", query)
@@ -343,10 +383,12 @@ namespace LangSmith
                 PrepareListReposRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    withLatestManifest: withLatestManifest,
-                    includeOwners: includeOwners,
                     limit: limit,
                     offset: offset,
+                    pageSize: pageSize,
+                    cursor: cursor,
+                    withLatestManifest: withLatestManifest,
+                    includeOwners: includeOwners,
                     tenantHandle: tenantHandle,
                     tenantId: tenantId,
                     query: query,
