@@ -28,10 +28,24 @@ namespace LangSmith
         public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// Workspace that owns the entry. Null for LangSmith default entries, which cannot be updated or deleted.
+        /// Workspace that owns the entry. Null for organization entries and for LangSmith default entries.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         public global::System.Guid? TenantId { get; set; }
+
+        /// <summary>
+        /// Organization that owns the entry, which every workspace in it prices against unless the workspace overrides it. Null otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
+        public global::System.Guid? OrganizationId { get; set; }
+
+        /// <summary>
+        /// Which scope owns the entry. Server-assigned from the route that created it.<br/>
+        /// Default Value: BUILTIN
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ModelPriceMapSchemaScopeJsonConverter))]
+        public global::LangSmith.ModelPriceMapSchemaScope? Scope { get; set; }
 
         /// <summary>
         /// Invocation parameter keys checked, in order, for the model name when the run does not report `ls_model_name` metadata.<br/>
@@ -113,7 +127,14 @@ namespace LangSmith
         /// Only price runs that started at or after this time. Null applies to runs from any time.
         /// </param>
         /// <param name="tenantId">
-        /// Workspace that owns the entry. Null for LangSmith default entries, which cannot be updated or deleted.
+        /// Workspace that owns the entry. Null for organization entries and for LangSmith default entries.
+        /// </param>
+        /// <param name="organizationId">
+        /// Organization that owns the entry, which every workspace in it prices against unless the workspace overrides it. Null otherwise.
+        /// </param>
+        /// <param name="scope">
+        /// Which scope owns the entry. Server-assigned from the route that created it.<br/>
+        /// Default Value: BUILTIN
         /// </param>
         /// <param name="matchPath">
         /// Invocation parameter keys checked, in order, for the model name when the run does not report `ls_model_name` metadata.<br/>
@@ -142,6 +163,8 @@ namespace LangSmith
             global::System.Guid? id,
             global::System.DateTime? startTime,
             global::System.Guid? tenantId,
+            global::System.Guid? organizationId,
+            global::LangSmith.ModelPriceMapSchemaScope? scope,
             global::System.Collections.Generic.IList<string>? matchPath,
             global::System.Collections.Generic.Dictionary<string, string>? promptCostDetails,
             global::System.Collections.Generic.Dictionary<string, string>? completionCostDetails,
@@ -152,6 +175,8 @@ namespace LangSmith
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.StartTime = startTime;
             this.TenantId = tenantId;
+            this.OrganizationId = organizationId;
+            this.Scope = scope;
             this.MatchPath = matchPath;
             this.MatchPattern = matchPattern ?? throw new global::System.ArgumentNullException(nameof(matchPattern));
             this.PromptCost = promptCost ?? throw new global::System.ArgumentNullException(nameof(promptCost));
