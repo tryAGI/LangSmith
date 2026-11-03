@@ -9,7 +9,8 @@ namespace LangSmith
     public sealed partial class DataPlanesDataPlaneProvisioningSettings
     {
         /// <summary>
-        ///
+        /// AdditionalTags are the customer tags on the cloud resources. GCP data<br/>
+        /// planes have none.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additional_tags")]
         public global::System.Collections.Generic.Dictionary<string, string>? AdditionalTags { get; set; }
@@ -107,7 +108,10 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="DataPlanesDataPlaneProvisioningSettings" /> class.
         /// </summary>
-        /// <param name="additionalTags"></param>
+        /// <param name="additionalTags">
+        /// AdditionalTags are the customer tags on the cloud resources. GCP data<br/>
+        /// planes have none.
+        /// </param>
         /// <param name="azureEntraTenantId">
         /// EntraTenantID is the Microsoft Entra tenant of the resource group.
         /// </param>
