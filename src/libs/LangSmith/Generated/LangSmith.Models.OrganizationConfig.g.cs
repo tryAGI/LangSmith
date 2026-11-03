@@ -52,6 +52,18 @@ namespace LangSmith
         public int? CodeEvaluatorExecutionBatchSize { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message_view_batch_rate_limit_per_sec")]
+        public int? MessageViewBatchRateLimitPerSec { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message_view_batch_rate_limit_burst")]
+        public int? MessageViewBatchRateLimitBurst { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_rbac")]
@@ -516,6 +528,8 @@ namespace LangSmith
         /// Default Value: 1
         /// </param>
         /// <param name="codeEvaluatorExecutionBatchSize"></param>
+        /// <param name="messageViewBatchRateLimitPerSec"></param>
+        /// <param name="messageViewBatchRateLimitBurst"></param>
         /// <param name="canUseRbac">
         /// Default Value: false
         /// </param>
@@ -734,6 +748,8 @@ namespace LangSmith
             int? maxIdentities,
             int? maxWorkspaces,
             int? codeEvaluatorExecutionBatchSize,
+            int? messageViewBatchRateLimitPerSec,
+            int? messageViewBatchRateLimitBurst,
             bool? canUseRbac,
             bool? canUseAbac,
             bool? canUseAuditLogs,
@@ -814,6 +830,8 @@ namespace LangSmith
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
             this.CodeEvaluatorExecutionBatchSize = codeEvaluatorExecutionBatchSize;
+            this.MessageViewBatchRateLimitPerSec = messageViewBatchRateLimitPerSec;
+            this.MessageViewBatchRateLimitBurst = messageViewBatchRateLimitBurst;
             this.CanUseRbac = canUseRbac;
             this.CanUseAbac = canUseAbac;
             this.CanUseAuditLogs = canUseAuditLogs;

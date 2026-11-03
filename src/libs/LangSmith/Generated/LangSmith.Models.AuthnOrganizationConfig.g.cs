@@ -410,6 +410,21 @@ namespace LangSmith
         public int? MaxWorkspaces { get; set; }
 
         /// <summary>
+        /// MessageViewBatchRateLimitBurst is a per-org override of the POST /v2/traces/messages<br/>
+        /// burst. nil (or a value &lt;= 0) uses the global default (MESSAGE_VIEW_BATCH_RATE_LIMIT_BURST).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message_view_batch_rate_limit_burst")]
+        public int? MessageViewBatchRateLimitBurst { get; set; }
+
+        /// <summary>
+        /// MessageViewBatchRateLimitPerSec is a per-org override of the POST /v2/traces/messages<br/>
+        /// rate limit, which is applied to each workspace separately. nil (or a value &lt;= 0)<br/>
+        /// uses the global default (MESSAGE_VIEW_BATCH_RATE_LIMIT_PER_SEC).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message_view_batch_rate_limit_per_sec")]
+        public int? MessageViewBatchRateLimitPerSec { get; set; }
+
+        /// <summary>
         /// ModelsConnectViaLangSmithEnabled indicates whether the org can use Connect via<br/>
         /// LangSmith for /langchain gateway model requests. Defaults false.
         /// </summary>
@@ -726,6 +741,15 @@ namespace LangSmith
         /// <param name="maxWorkspaces">
         /// MaxWorkspaces is the maximum number of workspaces allowed in this org. -1 means no limit.
         /// </param>
+        /// <param name="messageViewBatchRateLimitBurst">
+        /// MessageViewBatchRateLimitBurst is a per-org override of the POST /v2/traces/messages<br/>
+        /// burst. nil (or a value &lt;= 0) uses the global default (MESSAGE_VIEW_BATCH_RATE_LIMIT_BURST).
+        /// </param>
+        /// <param name="messageViewBatchRateLimitPerSec">
+        /// MessageViewBatchRateLimitPerSec is a per-org override of the POST /v2/traces/messages<br/>
+        /// rate limit, which is applied to each workspace separately. nil (or a value &lt;= 0)<br/>
+        /// uses the global default (MESSAGE_VIEW_BATCH_RATE_LIMIT_PER_SEC).
+        /// </param>
         /// <param name="modelsConnectViaLangsmithEnabled">
         /// ModelsConnectViaLangSmithEnabled indicates whether the org can use Connect via<br/>
         /// LangSmith for /langchain gateway model requests. Defaults false.
@@ -842,6 +866,8 @@ namespace LangSmith
             string? maxSandboxMemory,
             int? maxSandboxes,
             int? maxWorkspaces,
+            int? messageViewBatchRateLimitBurst,
+            int? messageViewBatchRateLimitPerSec,
             bool? modelsConnectViaLangsmithEnabled,
             int? newRuleEvaluatorCreationVersion,
             string? planTier,
@@ -920,6 +946,8 @@ namespace LangSmith
             this.MaxSandboxMemory = maxSandboxMemory;
             this.MaxSandboxes = maxSandboxes;
             this.MaxWorkspaces = maxWorkspaces;
+            this.MessageViewBatchRateLimitBurst = messageViewBatchRateLimitBurst;
+            this.MessageViewBatchRateLimitPerSec = messageViewBatchRateLimitPerSec;
             this.ModelsConnectViaLangsmithEnabled = modelsConnectViaLangsmithEnabled;
             this.NewRuleEvaluatorCreationVersion = newRuleEvaluatorCreationVersion;
             this.PlanTier = planTier;
