@@ -9,6 +9,14 @@ namespace LangSmith
     public sealed partial class SandboxesCreateBrowserPayload
     {
         /// <summary>
+        /// DeleteAfterStopSeconds deletes the browser this long after it stops.<br/>
+        /// Defaults to the sandbox default; 0 keeps a stopped browser until it is<br/>
+        /// deleted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delete_after_stop_seconds")]
+        public int? DeleteAfterStopSeconds { get; set; }
+
+        /// <summary>
         /// HiDPI renders pages at twice the resolution, so the live view is sharp on<br/>
         /// HiDPI screens, at four times the pixels for the browser to render and<br/>
         /// stream. Off by default, and fixed once the browser is created.
@@ -60,6 +68,11 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="SandboxesCreateBrowserPayload" /> class.
         /// </summary>
+        /// <param name="deleteAfterStopSeconds">
+        /// DeleteAfterStopSeconds deletes the browser this long after it stops.<br/>
+        /// Defaults to the sandbox default; 0 keeps a stopped browser until it is<br/>
+        /// deleted.
+        /// </param>
         /// <param name="hidpi">
         /// HiDPI renders pages at twice the resolution, so the live view is sharp on<br/>
         /// HiDPI screens, at four times the pixels for the browser to render and<br/>
@@ -87,6 +100,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SandboxesCreateBrowserPayload(
+            int? deleteAfterStopSeconds,
             bool? hidpi,
             int? idleTtlSeconds,
             long? memBytes,
@@ -94,6 +108,7 @@ namespace LangSmith
             global::LangSmith.SandboxesProxyConfig? proxyConfig,
             long? vcpus)
         {
+            this.DeleteAfterStopSeconds = deleteAfterStopSeconds;
             this.Hidpi = hidpi;
             this.IdleTtlSeconds = idleTtlSeconds;
             this.MemBytes = memBytes;

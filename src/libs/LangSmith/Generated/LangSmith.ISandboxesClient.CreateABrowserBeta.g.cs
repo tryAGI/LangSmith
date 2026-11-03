@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Create a browser (beta)<br/>
-        /// Beta: create a browser sandbox, which runs one persistent Chrome that other sandboxes attach to. Logins made in it persist across restarts. It keeps its memory when it stops and is never deleted automatically.
+        /// Beta: create a browser sandbox, which runs one persistent Chrome that other sandboxes attach to. Logins made in it persist across restarts. It keeps its memory when it stops. A stopped browser is deleted after the sandbox default, along with its logins, unless delete_after_stop_seconds sets another delay or 0 to keep it.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -22,7 +22,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a browser (beta)<br/>
-        /// Beta: create a browser sandbox, which runs one persistent Chrome that other sandboxes attach to. Logins made in it persist across restarts. It keeps its memory when it stops and is never deleted automatically.
+        /// Beta: create a browser sandbox, which runs one persistent Chrome that other sandboxes attach to. Logins made in it persist across restarts. It keeps its memory when it stops. A stopped browser is deleted after the sandbox default, along with its logins, unless delete_after_stop_seconds sets another delay or 0 to keep it.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -38,8 +38,13 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a browser (beta)<br/>
-        /// Beta: create a browser sandbox, which runs one persistent Chrome that other sandboxes attach to. Logins made in it persist across restarts. It keeps its memory when it stops and is never deleted automatically.
+        /// Beta: create a browser sandbox, which runs one persistent Chrome that other sandboxes attach to. Logins made in it persist across restarts. It keeps its memory when it stops. A stopped browser is deleted after the sandbox default, along with its logins, unless delete_after_stop_seconds sets another delay or 0 to keep it.
         /// </summary>
+        /// <param name="deleteAfterStopSeconds">
+        /// DeleteAfterStopSeconds deletes the browser this long after it stops.<br/>
+        /// Defaults to the sandbox default; 0 keeps a stopped browser until it is<br/>
+        /// deleted.
+        /// </param>
         /// <param name="hidpi">
         /// HiDPI renders pages at twice the resolution, so the live view is sharp on<br/>
         /// HiDPI screens, at four times the pixels for the browser to render and<br/>
@@ -70,6 +75,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "LANGSMITH_BETA_001")]
 #endif
         global::System.Threading.Tasks.Task<global::LangSmith.SandboxesBrowserResponse> CreateABrowserBetaAsync(
+            int? deleteAfterStopSeconds = default,
             bool? hidpi = default,
             int? idleTtlSeconds = default,
             long? memBytes = default,

@@ -34,6 +34,18 @@ namespace LangSmith
         public bool? IsLowerScoreBetter { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("add_categories")]
+        public global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? AddCategories { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("remove_categories")]
+        public global::System.Collections.Generic.IList<double>? RemoveCategories { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +58,8 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="isLowerScoreBetter"></param>
+        /// <param name="addCategories"></param>
+        /// <param name="removeCategories"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,12 +67,16 @@ namespace LangSmith
             string feedbackKey,
             global::System.Guid? id,
             global::LangSmith.FeedbackConfig? feedbackConfig,
-            bool? isLowerScoreBetter)
+            bool? isLowerScoreBetter,
+            global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? addCategories,
+            global::System.Collections.Generic.IList<double>? removeCategories)
         {
             this.Id = id;
             this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.FeedbackConfig = feedbackConfig;
             this.IsLowerScoreBetter = isLowerScoreBetter;
+            this.AddCategories = addCategories;
+            this.RemoveCategories = removeCategories;
         }
 
         /// <summary>

@@ -490,6 +490,8 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="feedbackConfig"></param>
         /// <param name="isLowerScoreBetter"></param>
+        /// <param name="addCategories"></param>
+        /// <param name="removeCategories"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -498,6 +500,8 @@ namespace LangSmith
             global::System.Guid? id = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
             bool? isLowerScoreBetter = default,
+            global::System.Collections.Generic.IList<global::LangSmith.FeedbackCategory>? addCategories = default,
+            global::System.Collections.Generic.IList<double>? removeCategories = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -507,6 +511,8 @@ namespace LangSmith
                 FeedbackKey = feedbackKey,
                 FeedbackConfig = feedbackConfig,
                 IsLowerScoreBetter = isLowerScoreBetter,
+                AddCategories = addCategories,
+                RemoveCategories = removeCategories,
             };
 
             return await UpdateFeedbackConfigEndpointAsync(
