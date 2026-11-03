@@ -9,6 +9,14 @@ namespace LangSmith
     public sealed partial class DataPlanesCreateDataPlaneRequestAzure
     {
         /// <summary>
+        /// AdditionalTags are added to every Azure resource that LangSmith creates.<br/>
+        /// Azure allows only 15 tags on DNS resources, so the limit is 14 plus the<br/>
+        /// managed_by system tag.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("additional_tags")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AzureResourceTag>? AdditionalTags { get; set; }
+
+        /// <summary>
         /// EntraTenantID is the Microsoft Entra tenant of the resource group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("azure_entra_tenant_id")]
@@ -75,6 +83,11 @@ namespace LangSmith
         /// <param name="vpcCidr">
         /// VPCCIDR is the VNet that LangSmith creates.
         /// </param>
+        /// <param name="additionalTags">
+        /// AdditionalTags are added to every Azure resource that LangSmith creates.<br/>
+        /// Azure allows only 15 tags on DNS resources, so the limit is 14 plus the<br/>
+        /// managed_by system tag.
+        /// </param>
         /// <param name="publicLoadBalancer"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -85,8 +98,10 @@ namespace LangSmith
             string region,
             string resourceGroupId,
             string vpcCidr,
+            global::System.Collections.Generic.IList<global::LangSmith.AzureResourceTag>? additionalTags,
             bool? publicLoadBalancer)
         {
+            this.AdditionalTags = additionalTags;
             this.AzureEntraTenantId = azureEntraTenantId ?? throw new global::System.ArgumentNullException(nameof(azureEntraTenantId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PublicLoadBalancer = publicLoadBalancer;

@@ -4,7 +4,8 @@
 namespace LangSmith
 {
     /// <summary>
-    ///
+    /// AdditionalTags are the customer tags on the cloud resources. GCP data<br/>
+    /// planes have none.
     /// </summary>
     public sealed partial class DataPlanesDataPlaneProvisioningSettingsAdditionalTags
     {

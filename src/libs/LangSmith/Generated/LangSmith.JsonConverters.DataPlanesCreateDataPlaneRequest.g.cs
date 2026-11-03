@@ -52,6 +52,7 @@ namespace LangSmith.JsonConverters
             if (__jsonProps.Contains("trace_storage")) __score0++;
             if (__jsonProps.Contains("vpc_cidr")) __score0++;
             var __score1 = 0;
+            if (__jsonProps.Contains("additional_tags")) __score1++;
             if (__jsonProps.Contains("azure_entra_tenant_id")) __score1++;
             if (__jsonProps.Contains("name")) __score1++;
             if (__jsonProps.Contains("public_load_balancer")) __score1++;
