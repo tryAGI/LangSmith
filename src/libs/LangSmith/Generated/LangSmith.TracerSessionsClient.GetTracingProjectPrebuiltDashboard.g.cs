@@ -60,7 +60,7 @@ namespace LangSmith
 
         /// <summary>
         /// Get Tracing Project Prebuilt Dashboard<br/>
-        /// Get a prebuilt dashboard for a tracing project.
+        /// GET with body payload — no resources created. Returns the prebuilt dashboard for the tracing project matching the query passed as the request payload.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="accept"></param>
@@ -89,7 +89,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get Tracing Project Prebuilt Dashboard<br/>
-        /// Get a prebuilt dashboard for a tracing project.
+        /// GET with body payload — no resources created. Returns the prebuilt dashboard for the tracing project matching the query passed as the request payload.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="accept"></param>
@@ -511,7 +511,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get Tracing Project Prebuilt Dashboard<br/>
-        /// Get a prebuilt dashboard for a tracing project.
+        /// GET with body payload — no resources created. Returns the prebuilt dashboard for the tracing project matching the query passed as the request payload.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="accept"></param>
