@@ -375,6 +375,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationModelPriceMapManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationModelPriceMapRead,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationPATsCreate,
         /// <summary>
         ///
@@ -745,6 +753,8 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationManageModelConfigs => "organization:manage-model-configs",
                 AuthzInternalPermission.OrganizationManageModelSecrets => "organization:manage-model-secrets",
                 AuthzInternalPermission.OrganizationMembersManage => "organization:members:manage",
+                AuthzInternalPermission.OrganizationModelPriceMapManage => "organization:model-price-map:manage",
+                AuthzInternalPermission.OrganizationModelPriceMapRead => "organization:model-price-map:read",
                 AuthzInternalPermission.OrganizationPATsCreate => "organization:pats:create",
                 AuthzInternalPermission.OrganizationPATsManage => "organization:pats:manage",
                 AuthzInternalPermission.OrganizationPATsRead => "organization:pats:read",
@@ -913,6 +923,8 @@ namespace LangSmith
                 "organization:manage-model-configs" => AuthzInternalPermission.OrganizationManageModelConfigs,
                 "organization:manage-model-secrets" => AuthzInternalPermission.OrganizationManageModelSecrets,
                 "organization:members:manage" => AuthzInternalPermission.OrganizationMembersManage,
+                "organization:model-price-map:manage" => AuthzInternalPermission.OrganizationModelPriceMapManage,
+                "organization:model-price-map:read" => AuthzInternalPermission.OrganizationModelPriceMapRead,
                 "organization:pats:create" => AuthzInternalPermission.OrganizationPATsCreate,
                 "organization:pats:manage" => AuthzInternalPermission.OrganizationPATsManage,
                 "organization:pats:read" => AuthzInternalPermission.OrganizationPATsRead,

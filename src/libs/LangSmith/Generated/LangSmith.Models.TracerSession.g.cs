@@ -115,19 +115,19 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
-        public string? TotalCost { get; set; }
+        public double? TotalCost { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost")]
-        public string? PromptCost { get; set; }
+        public double? PromptCost { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
-        public string? CompletionCost { get; set; }
+        public double? CompletionCost { get; set; }
 
         /// <summary>
         ///
@@ -251,9 +251,9 @@ namespace LangSmith
             int? totalTokens,
             int? promptTokens,
             int? completionTokens,
-            string? totalCost,
-            string? promptCost,
-            string? completionCost,
+            double? totalCost,
+            double? promptCost,
+            double? completionCost,
             global::System.DateTime? lastRunStartTime,
             global::System.DateTime? lastRunStartTimeLive,
             object? feedbackStats,
