@@ -487,7 +487,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The browser beta is not enabled, or window links are not available
+                            // Browsers are only available on SaaS deployments, or window links are not available
                             if ((int)__response.StatusCode == 501)
                             {
                                 string? __content_501 = null;
