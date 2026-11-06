@@ -45,6 +45,12 @@ namespace LangSmith
         public global::LangSmith.TraceTier? TraceTier { get; set; }
 
         /// <summary>
+        /// Retention in days for traces while trace_tier is longlived. One of 30, 60, 90, 120, 150, 180, 240, 300, 365 or 400, up to the maximum of the deployment. Self-hosted also accepts its configured retention. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention. Omit the field to keep the current value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("longlived_ttl_days")]
+        public int? LonglivedTtlDays { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,6 +65,9 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
         /// <param name="traceTier"></param>
+        /// <param name="longlivedTtlDays">
+        /// Retention in days for traces while trace_tier is longlived. One of 30, 60, 90, 120, 150, 180, 240, 300, 365 or 400, up to the maximum of the deployment. Self-hosted also accepts its configured retention. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention. Omit the field to keep the current value.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,7 +77,8 @@ namespace LangSmith
             global::System.Guid? defaultDatasetId,
             global::System.DateTime? endTime,
             object? extra,
-            global::LangSmith.TraceTier? traceTier)
+            global::LangSmith.TraceTier? traceTier,
+            int? longlivedTtlDays)
         {
             this.Name = name;
             this.Description = description;
@@ -76,6 +86,7 @@ namespace LangSmith
             this.EndTime = endTime;
             this.Extra = extra;
             this.TraceTier = traceTier;
+            this.LonglivedTtlDays = longlivedTtlDays;
         }
 
         /// <summary>
