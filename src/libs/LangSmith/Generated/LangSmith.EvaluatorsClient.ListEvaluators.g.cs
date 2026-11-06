@@ -46,6 +46,7 @@ namespace LangSmith
             ref string? feedbackKey,
             global::System.Collections.Generic.IList<string>? resourceId,
             ref string? agentId,
+            ref string? metadata,
             ref string? sortBy,
             ref bool? sortByDesc,
             ref int? limit,
@@ -59,6 +60,7 @@ namespace LangSmith
             string? feedbackKey,
             global::System.Collections.Generic.IList<string>? resourceId,
             string? agentId,
+            string? metadata,
             string? sortBy,
             bool? sortByDesc,
             int? limit,
@@ -82,6 +84,7 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="resourceId"></param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="sortBy"></param>
         /// <param name="sortByDesc"></param>
         /// <param name="limit">
@@ -100,6 +103,7 @@ namespace LangSmith
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? resourceId = default,
             string? agentId = default,
+            string? metadata = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,
@@ -114,6 +118,7 @@ namespace LangSmith
                 feedbackKey: feedbackKey,
                 resourceId: resourceId,
                 agentId: agentId,
+                metadata: metadata,
                 sortBy: sortBy,
                 sortByDesc: sortByDesc,
                 limit: limit,
@@ -134,6 +139,7 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="resourceId"></param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="sortBy"></param>
         /// <param name="sortByDesc"></param>
         /// <param name="limit">
@@ -152,6 +158,7 @@ namespace LangSmith
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? resourceId = default,
             string? agentId = default,
+            string? metadata = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,
@@ -169,6 +176,7 @@ namespace LangSmith
                 feedbackKey: ref feedbackKey,
                 resourceId: resourceId,
                 agentId: ref agentId,
+                metadata: ref metadata,
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc,
                 limit: ref limit,
@@ -209,6 +217,7 @@ namespace LangSmith
                                 .AddOptionalParameter("feedback_key", feedbackKey)
                                 .AddOptionalParameter("resource_id", resourceId, delimiter: ",", explode: false)
                                 .AddOptionalParameter("agent_id", agentId)
+                                .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -260,6 +269,7 @@ namespace LangSmith
                     feedbackKey: feedbackKey,
                     resourceId: resourceId,
                     agentId: agentId,
+                    metadata: metadata,
                     sortBy: sortBy,
                     sortByDesc: sortByDesc,
                     limit: limit,

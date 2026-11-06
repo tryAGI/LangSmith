@@ -1,0 +1,53 @@
+#nullable enable
+
+namespace LangSmith.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class GetDatasetsSortOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.GetDatasetsSortOrder>
+    {
+        /// <inheritdoc />
+        public override global::LangSmith.GetDatasetsSortOrder Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::LangSmith.GetDatasetsSortOrderExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::LangSmith.GetDatasetsSortOrder)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::LangSmith.GetDatasetsSortOrder);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::LangSmith.GetDatasetsSortOrder value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::LangSmith.GetDatasetsSortOrderExtensions.ToValueString(value));
+        }
+    }
+}

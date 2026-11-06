@@ -11,6 +11,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public string? Provider { get; set; }
 
@@ -29,6 +35,7 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="OrgsLinkedLoginMethod" /> class.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="provider"></param>
         /// <param name="provisioning">
         /// provisioning_method
@@ -37,9 +44,11 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrgsLinkedLoginMethod(
+            string? id,
             string? provider,
             string? provisioning)
         {
+            this.Id = id;
             this.Provider = provider;
             this.Provisioning = provisioning;
         }

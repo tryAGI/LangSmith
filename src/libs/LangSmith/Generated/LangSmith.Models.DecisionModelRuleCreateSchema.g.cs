@@ -112,6 +112,12 @@ namespace LangSmith
         public string? Filter { get; set; }
 
         /// <summary>
+        /// Set to thread_id to evaluate each thread once it goes idle, instead of each run. Requires session_id. Decision models don't support trajectory_id.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public string? GroupBy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -170,6 +176,9 @@ namespace LangSmith
         /// <param name="filter">
         /// Only evaluate runs that match this filter.
         /// </param>
+        /// <param name="groupBy">
+        /// Set to thread_id to evaluate each thread once it goes idle, instead of each run. Requires session_id. Decision models don't support trajectory_id.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -189,7 +198,8 @@ namespace LangSmith
             int? maxRetries,
             global::System.Guid? playgroundSettingsId,
             double? samplingRate,
-            string? filter)
+            string? filter,
+            string? groupBy)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SessionId = sessionId;
@@ -207,6 +217,7 @@ namespace LangSmith
             this.PlaygroundSettingsId = playgroundSettingsId;
             this.SamplingRate = samplingRate;
             this.Filter = filter;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

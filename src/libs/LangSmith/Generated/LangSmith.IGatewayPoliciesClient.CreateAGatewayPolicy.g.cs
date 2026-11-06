@@ -43,6 +43,9 @@ namespace LangSmith
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
         /// metadata key to bucket each subject by the corresponding<br/>
         /// `X-Gateway-*` request header; the materialized child stores both values.<br/>
+        /// With a custom header, the built-in value may name one subject (e.g. one<br/>
+        /// `api_key_id`) to bucket only that subject's requests. It replaces the<br/>
+        /// organization-wide default of the same kind split by the same header.<br/>
         /// **action** is currently always `block`. Spend caps reject the<br/>
         /// request with 402 when the limit is hit; rate limits reject with<br/>
         /// 429 (with a `Retry-After` hint) when a limit is exceeded; guard<br/>
@@ -112,6 +115,9 @@ namespace LangSmith
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
         /// metadata key to bucket each subject by the corresponding<br/>
         /// `X-Gateway-*` request header; the materialized child stores both values.<br/>
+        /// With a custom header, the built-in value may name one subject (e.g. one<br/>
+        /// `api_key_id`) to bucket only that subject's requests. It replaces the<br/>
+        /// organization-wide default of the same kind split by the same header.<br/>
         /// **action** is currently always `block`. Spend caps reject the<br/>
         /// request with 402 when the limit is hit; rate limits reject with<br/>
         /// 429 (with a `Retry-After` hint) when a limit is exceeded; guard<br/>
@@ -181,6 +187,9 @@ namespace LangSmith
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
         /// metadata key to bucket each subject by the corresponding<br/>
         /// `X-Gateway-*` request header; the materialized child stores both values.<br/>
+        /// With a custom header, the built-in value may name one subject (e.g. one<br/>
+        /// `api_key_id`) to bucket only that subject's requests. It replaces the<br/>
+        /// organization-wide default of the same kind split by the same header.<br/>
         /// **action** is currently always `block`. Spend caps reject the<br/>
         /// request with 402 when the limit is hit; rate limits reject with<br/>
         /// 429 (with a `Retry-After` hint) when a limit is exceeded; guard<br/>

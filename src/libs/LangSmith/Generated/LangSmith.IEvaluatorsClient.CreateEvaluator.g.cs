@@ -36,6 +36,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="codeEvaluator"></param>
         /// <param name="llmEvaluator"></param>
+        /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="type"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -44,6 +45,7 @@ namespace LangSmith
         global::System.Threading.Tasks.Task<global::LangSmith.EvaluatorsCreateEvaluatorResponse> CreateEvaluatorAsync(
             global::LangSmith.EvaluatorsCreateCodeEvaluatorRequest? codeEvaluator = default,
             global::LangSmith.EvaluatorsCreateLLMEvaluatorRequest? llmEvaluator = default,
+            object? metadata = default,
             string? name = default,
             global::LangSmith.EvaluatorsEvaluatorType? type = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

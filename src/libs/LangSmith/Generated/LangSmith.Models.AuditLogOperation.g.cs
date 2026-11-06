@@ -755,6 +755,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteOidcSsoLoginMethod,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteOidcSsoSettings,
         /// <summary>
         ///
@@ -1280,6 +1284,10 @@ namespace LangSmith
         ///
         /// </summary>
         ListChartSections,
+        /// <summary>
+        ///
+        /// </summary>
+        ListDatasets,
         /// <summary>
         ///
         /// </summary>
@@ -2344,6 +2352,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteOauthClient => "delete_oauth_client",
                 AuditLogOperation.DeleteOauthProvider => "delete_oauth_provider",
                 AuditLogOperation.DeleteOidcIntegration => "delete_oidc_integration",
+                AuditLogOperation.DeleteOidcSsoLoginMethod => "delete_oidc_sso_login_method",
                 AuditLogOperation.DeleteOidcSsoSettings => "delete_oidc_sso_settings",
                 AuditLogOperation.DeleteOrgChart => "delete_org_chart",
                 AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
@@ -2476,6 +2485,7 @@ namespace LangSmith
                 AuditLogOperation.ListBulkExportDestinations => "list_bulk_export_destinations",
                 AuditLogOperation.ListBulkExports => "list_bulk_exports",
                 AuditLogOperation.ListChartSections => "list_chart_sections",
+                AuditLogOperation.ListDatasets => "list_datasets",
                 AuditLogOperation.ListExamples => "list_examples",
                 AuditLogOperation.ListFeedbackConfigs => "list_feedback_configs",
                 AuditLogOperation.ListFeedbackFormulas => "list_feedback_formulas",
@@ -2888,6 +2898,7 @@ namespace LangSmith
                 "delete_oauth_client" => AuditLogOperation.DeleteOauthClient,
                 "delete_oauth_provider" => AuditLogOperation.DeleteOauthProvider,
                 "delete_oidc_integration" => AuditLogOperation.DeleteOidcIntegration,
+                "delete_oidc_sso_login_method" => AuditLogOperation.DeleteOidcSsoLoginMethod,
                 "delete_oidc_sso_settings" => AuditLogOperation.DeleteOidcSsoSettings,
                 "delete_org_chart" => AuditLogOperation.DeleteOrgChart,
                 "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
@@ -3020,6 +3031,7 @@ namespace LangSmith
                 "list_bulk_export_destinations" => AuditLogOperation.ListBulkExportDestinations,
                 "list_bulk_exports" => AuditLogOperation.ListBulkExports,
                 "list_chart_sections" => AuditLogOperation.ListChartSections,
+                "list_datasets" => AuditLogOperation.ListDatasets,
                 "list_examples" => AuditLogOperation.ListExamples,
                 "list_feedback_configs" => AuditLogOperation.ListFeedbackConfigs,
                 "list_feedback_formulas" => AuditLogOperation.ListFeedbackFormulas,
