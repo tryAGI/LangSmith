@@ -517,6 +517,9 @@ namespace LangSmith
         /// <param name="defaultDatasetId"></param>
         /// <param name="referenceDatasetId"></param>
         /// <param name="traceTier"></param>
+        /// <param name="longlivedTtlDays">
+        /// Retention in days for traces while trace_tier is longlived. One of 30, 60, 90, 120, 150, 180, 240, 300, 365 or 400, up to the maximum of the deployment. Self-hosted also accepts its configured retention. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="numExamples"></param>
         /// <param name="numRepetitions"></param>
@@ -536,6 +539,7 @@ namespace LangSmith
             global::System.Guid? defaultDatasetId = default,
             global::System.Guid? referenceDatasetId = default,
             global::LangSmith.TraceTier? traceTier = default,
+            int? longlivedTtlDays = default,
             global::System.Guid? id = default,
             int? numExamples = default,
             int? numRepetitions = default,
@@ -555,6 +559,7 @@ namespace LangSmith
                 DefaultDatasetId = defaultDatasetId,
                 ReferenceDatasetId = referenceDatasetId,
                 TraceTier = traceTier,
+                LonglivedTtlDays = longlivedTtlDays,
                 Id = id,
                 NumExamples = numExamples,
                 NumRepetitions = numRepetitions,
