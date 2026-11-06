@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class DatasetsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateDatasetSplitsServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListDatasetsServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateDatasetSplitsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListDatasetsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,52 +34,106 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdateDatasetSplitsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListDatasetsSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_UpdateDatasetSplitsSecurityRequirement0,
+            {                s_ListDatasetsSecurityRequirement0,
             };
-        partial void PrepareUpdateDatasetSplitsArguments(
+        partial void PrepareListDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid datasetId,
-            global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request);
-        partial void PrepareUpdateDatasetSplitsRequest(
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::System.Collections.Generic.IList<global::LangSmith.DataType>? dataType,
+            ref string? name,
+            ref string? nameContains,
+            ref string? metadata,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            ref bool? excludeCorrectionsDatasets,
+            global::System.Collections.Generic.IList<global::LangSmith.GetDatasetsSelect>? exclude,
+            ref global::LangSmith.SortByDatasetColumn? sortBy,
+            ref global::LangSmith.GetDatasetsSortOrder? sortOrder,
+            ref int? pageSize,
+            ref string? cursor);
+        partial void PrepareListDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid datasetId,
-            global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request);
-        partial void ProcessUpdateDatasetSplitsResponse(
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::System.Collections.Generic.IList<global::LangSmith.DataType>? dataType,
+            string? name,
+            string? nameContains,
+            string? metadata,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            bool? excludeCorrectionsDatasets,
+            global::System.Collections.Generic.IList<global::LangSmith.GetDatasetsSelect>? exclude,
+            global::LangSmith.SortByDatasetColumn? sortBy,
+            global::LangSmith.GetDatasetsSortOrder? sortOrder,
+            int? pageSize,
+            string? cursor);
+        partial void ProcessListDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateDatasetSplitsResponseContent(
+        partial void ProcessListDatasetsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Update Dataset Splits<br/>
-        /// Add examples to a split, or remove them from it.<br/>
-        /// Returns the IDs of the given examples found in the dataset. Each of them gets<br/>
-        /// a new version, even when its splits do not change. An example's other splits<br/>
-        /// are kept, and an example without a split counts as being in the base split.<br/>
-        /// Removing an example's last split leaves it in no split.
+        /// List datasets<br/>
+        /// Returns one page of the datasets in the workspace, filtered and sorted by the query parameters.<br/>
+        /// Pass the next_cursor of a response as cursor, with the same filters and sort, to get the next page. next_cursor is null on the last page.
         /// </summary>
-        /// <param name="datasetId"></param>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
+        /// <param name="dataType"></param>
+        /// <param name="name"></param>
+        /// <param name="nameContains"></param>
+        /// <param name="metadata"></param>
+        /// <param name="tagValueId"></param>
+        /// <param name="excludeCorrectionsDatasets">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exclude"></param>
+        /// <param name="sortBy">
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::System.Guid>> UpdateDatasetSplitsAsync(
-            global::System.Guid datasetId,
-
-            global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.DatasetsListDatasetsV2Response> ListDatasetsAsync(
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            global::System.Collections.Generic.IList<global::LangSmith.DataType>? dataType = default,
+            string? name = default,
+            string? nameContains = default,
+            string? metadata = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            bool? excludeCorrectionsDatasets = default,
+            global::System.Collections.Generic.IList<global::LangSmith.GetDatasetsSelect>? exclude = default,
+            global::LangSmith.SortByDatasetColumn? sortBy = default,
+            global::LangSmith.GetDatasetsSortOrder? sortOrder = default,
+            int? pageSize = default,
+            string? cursor = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await UpdateDatasetSplitsAsResponseAsync(
-                datasetId: datasetId,
-
-                request: request,
+            var __response = await ListDatasetsAsResponseAsync(
+                id: id,
+                dataType: dataType,
+                name: name,
+                nameContains: nameContains,
+                metadata: metadata,
+                tagValueId: tagValueId,
+                excludeCorrectionsDatasets: excludeCorrectionsDatasets,
+                exclude: exclude,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
+                pageSize: pageSize,
+                cursor: cursor,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -87,39 +141,72 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Update Dataset Splits<br/>
-        /// Add examples to a split, or remove them from it.<br/>
-        /// Returns the IDs of the given examples found in the dataset. Each of them gets<br/>
-        /// a new version, even when its splits do not change. An example's other splits<br/>
-        /// are kept, and an example without a split counts as being in the base split.<br/>
-        /// Removing an example's last split leaves it in no split.
+        /// List datasets<br/>
+        /// Returns one page of the datasets in the workspace, filtered and sorted by the query parameters.<br/>
+        /// Pass the next_cursor of a response as cursor, with the same filters and sort, to get the next page. next_cursor is null on the last page.
         /// </summary>
-        /// <param name="datasetId"></param>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
+        /// <param name="dataType"></param>
+        /// <param name="name"></param>
+        /// <param name="nameContains"></param>
+        /// <param name="metadata"></param>
+        /// <param name="tagValueId"></param>
+        /// <param name="excludeCorrectionsDatasets">
+        /// Default Value: false
+        /// </param>
+        /// <param name="exclude"></param>
+        /// <param name="sortBy">
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::System.Guid>>> UpdateDatasetSplitsAsResponseAsync(
-            global::System.Guid datasetId,
-
-            global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetsListDatasetsV2Response>> ListDatasetsAsResponseAsync(
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            global::System.Collections.Generic.IList<global::LangSmith.DataType>? dataType = default,
+            string? name = default,
+            string? nameContains = default,
+            string? metadata = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            bool? excludeCorrectionsDatasets = default,
+            global::System.Collections.Generic.IList<global::LangSmith.GetDatasetsSelect>? exclude = default,
+            global::LangSmith.SortByDatasetColumn? sortBy = default,
+            global::LangSmith.GetDatasetsSortOrder? sortOrder = default,
+            int? pageSize = default,
+            string? cursor = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateDatasetSplitsArguments(
+            PrepareListDatasetsArguments(
                 httpClient: HttpClient,
-                datasetId: ref datasetId,
-                request: request);
+                id: id,
+                dataType: dataType,
+                name: ref name,
+                nameContains: ref nameContains,
+                metadata: ref metadata,
+                tagValueId: tagValueId,
+                excludeCorrectionsDatasets: ref excludeCorrectionsDatasets,
+                exclude: exclude,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder,
+                pageSize: ref pageSize,
+                cursor: ref cursor);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_UpdateDatasetSplitsSecurityRequirements,
-                operationName: "UpdateDatasetSplitsAsync");
+                securityRequirements: s_ListDatasetsSecurityRequirements,
+                operationName: "ListDatasetsAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -139,17 +226,31 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/datasets/{datasetId}/splits",
+                                path: "/api/v2/datasets",
                                 baseUri: ResolveBaseUri(
-                                servers: s_UpdateDatasetSplitsServers,
+                                servers: s_ListDatasetsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
+                                .AddOptionalParameter("data_type", dataType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("name", name)
+                                .AddOptionalParameter("name_contains", nameContains)
+                                .AddOptionalParameter("metadata", metadata)
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
+                                .AddOptionalParameter("exclude_corrections_datasets", excludeCorrectionsDatasets?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("exclude", exclude, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("cursor", cursor)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Put,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -172,12 +273,6 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -186,11 +281,21 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareUpdateDatasetSplitsRequest(
+                PrepareListDatasetsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
-                    request: request);
+                    id: id,
+                    dataType: dataType,
+                    name: name,
+                    nameContains: nameContains,
+                    metadata: metadata,
+                    tagValueId: tagValueId,
+                    excludeCorrectionsDatasets: excludeCorrectionsDatasets,
+                    exclude: exclude,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder,
+                    pageSize: pageSize,
+                    cursor: cursor);
 
                 return __httpRequest;
             }
@@ -207,10 +312,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateDatasetSplits",
-                                methodName: "UpdateDatasetSplitsAsync",
-                                pathTemplate: "$\"/api/v1/datasets/{datasetId}/splits\"",
-                                httpMethod: "PUT",
+                                operationId: "ListDatasets",
+                                methodName: "ListDatasetsAsync",
+                                pathTemplate: "\"/api/v2/datasets\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -241,10 +346,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateDatasetSplits",
-                                methodName: "UpdateDatasetSplitsAsync",
-                                pathTemplate: "$\"/api/v1/datasets/{datasetId}/splits\"",
-                                httpMethod: "PUT",
+                                operationId: "ListDatasets",
+                                methodName: "ListDatasetsAsync",
+                                pathTemplate: "\"/api/v2/datasets\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -282,10 +387,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateDatasetSplits",
-                                methodName: "UpdateDatasetSplitsAsync",
-                                pathTemplate: "$\"/api/v1/datasets/{datasetId}/splits\"",
-                                httpMethod: "PUT",
+                                operationId: "ListDatasets",
+                                methodName: "ListDatasetsAsync",
+                                pathTemplate: "\"/api/v2/datasets\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -322,7 +427,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessUpdateDatasetSplitsResponse(
+                ProcessListDatasetsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -330,10 +435,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateDatasetSplits",
-                                methodName: "UpdateDatasetSplitsAsync",
-                                pathTemplate: "$\"/api/v1/datasets/{datasetId}/splits\"",
-                                httpMethod: "PUT",
+                                operationId: "ListDatasets",
+                                methodName: "ListDatasetsAsync",
+                                pathTemplate: "\"/api/v2/datasets\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -352,10 +457,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateDatasetSplits",
-                                methodName: "UpdateDatasetSplitsAsync",
-                                pathTemplate: "$\"/api/v1/datasets/{datasetId}/splits\"",
-                                httpMethod: "PUT",
+                                operationId: "ListDatasets",
+                                methodName: "ListDatasetsAsync",
+                                pathTemplate: "\"/api/v2/datasets\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -369,38 +474,149 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // Invalid query parameter or cursor
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Unauthorized
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::LangSmith.SharedProblemDetails? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::LangSmith.SharedProblemDetails.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::LangSmith.SharedProblemDetails.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // No permission to read datasets, or to read one of the requested datasets
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SharedProblemDetails? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Internal Server Error
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::LangSmith.SharedProblemDetails? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -419,7 +635,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessUpdateDatasetSplitsResponseContent(
+                                ProcessListDatasetsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -428,9 +644,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::System.Guid>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::System.Guid>), JsonSerializerContext) ??
+                                    var __value = global::LangSmith.DatasetsListDatasetsV2Response.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::System.Guid>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetsListDatasetsV2Response>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -460,9 +676,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::System.Guid>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::System.Guid>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.DatasetsListDatasetsV2Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::System.Guid>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.DatasetsListDatasetsV2Response>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -501,49 +717,6 @@ namespace LangSmith
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Update Dataset Splits<br/>
-        /// Add examples to a split, or remove them from it.<br/>
-        /// Returns the IDs of the given examples found in the dataset. Each of them gets<br/>
-        /// a new version, even when its splits do not change. An example's other splits<br/>
-        /// are kept, and an example without a split counts as being in the base split.<br/>
-        /// Removing an example's last split leaves it in no split.
-        /// </summary>
-        /// <param name="datasetId"></param>
-        /// <param name="splitName">
-        /// Split to add the examples to, or remove them from.
-        /// </param>
-        /// <param name="examples">
-        /// IDs of the examples to change. IDs of examples in other datasets are ignored.
-        /// </param>
-        /// <param name="remove">
-        /// Remove the examples from the split instead of adding them.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::System.Guid>> UpdateDatasetSplitsAsync(
-            global::System.Guid datasetId,
-            string splitName,
-            global::System.Collections.Generic.IList<global::System.Guid> examples,
-            bool? remove = default,
-            global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::LangSmith.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut
-            {
-                SplitName = splitName,
-                Examples = examples,
-                Remove = remove,
-            };
-
-            return await UpdateDatasetSplitsAsync(
-                datasetId: datasetId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

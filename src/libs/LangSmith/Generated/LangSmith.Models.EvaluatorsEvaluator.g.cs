@@ -54,6 +54,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -103,6 +109,7 @@ namespace LangSmith
         /// <param name="llmEvaluator">
         /// Embedded child evaluator (populated based on type)
         /// </param>
+        /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="runRules"></param>
         /// <param name="tenantId"></param>
@@ -119,6 +126,7 @@ namespace LangSmith
             string? id,
             bool? isManaged,
             global::LangSmith.EvaluatorsLLMEvaluator? llmEvaluator,
+            object? metadata,
             string? name,
             global::System.Collections.Generic.IList<global::LangSmith.EvaluatorsEvaluatorRunRule>? runRules,
             string? tenantId,
@@ -132,6 +140,7 @@ namespace LangSmith
             this.Id = id;
             this.IsManaged = isManaged;
             this.LlmEvaluator = llmEvaluator;
+            this.Metadata = metadata;
             this.Name = name;
             this.RunRules = runRules;
             this.TenantId = tenantId;

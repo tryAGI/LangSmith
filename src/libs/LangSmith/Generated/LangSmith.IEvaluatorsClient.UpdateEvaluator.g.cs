@@ -41,6 +41,7 @@ namespace LangSmith
         /// <param name="evaluatorId"></param>
         /// <param name="codeEvaluator"></param>
         /// <param name="llmEvaluator"></param>
+        /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -49,6 +50,7 @@ namespace LangSmith
             string evaluatorId,
             global::LangSmith.EvaluatorsUpdateCodeEvaluatorRequest? codeEvaluator = default,
             global::LangSmith.EvaluatorsUpdateLLMEvaluatorRequest? llmEvaluator = default,
+            object? metadata = default,
             string? name = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -14,6 +14,7 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="resourceId"></param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="sortBy"></param>
         /// <param name="sortByDesc"></param>
         /// <param name="limit">
@@ -32,6 +33,7 @@ namespace LangSmith
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? resourceId = default,
             string? agentId = default,
+            string? metadata = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,
@@ -48,6 +50,7 @@ namespace LangSmith
         /// <param name="feedbackKey"></param>
         /// <param name="resourceId"></param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="sortBy"></param>
         /// <param name="sortByDesc"></param>
         /// <param name="limit">
@@ -66,6 +69,7 @@ namespace LangSmith
             string? feedbackKey = default,
             global::System.Collections.Generic.IList<string>? resourceId = default,
             string? agentId = default,
+            string? metadata = default,
             string? sortBy = default,
             bool? sortByDesc = default,
             int? limit = default,

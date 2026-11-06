@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class TracerSessionsClient
+    public partial class SessionsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_ReadTracerSessionsServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListTracingProjectsServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ReadTracerSessionsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListTracingProjectsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,99 +34,91 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ReadTracerSessionsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListTracingProjectsSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ReadTracerSessionsSecurityRequirement0,
+            {                s_ListTracingProjectsSecurityRequirement0,
             };
-        partial void PrepareReadTracerSessionsArguments(
+        partial void PrepareListTracingProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            bool? referenceFree,
-            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset,
-            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::System.Collections.Generic.IList<string>? id,
             ref string? name,
             ref string? nameContains,
-            ref string? datasetVersion,
-            ref global::LangSmith.SessionSortableColumns? sortBy,
-            ref bool? sortByDesc,
+            global::System.Collections.Generic.IList<string>? referenceDatasetId,
+            ref bool? referenceFree,
+            global::System.Collections.Generic.IList<string>? tagValueId,
             ref string? metadata,
-            ref string? sortByFeedbackKey,
-            ref global::LangSmith.FeedbackSourceParam? sortByFeedbackSource,
-            ref int? offset,
-            ref int? limit,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            ref bool? facets,
             ref string? filter,
+            ref global::LangSmith.ListSessionsV2SortBy? sortBy,
+            ref global::LangSmith.ListSessionsV2SortOrder? sortOrder,
+            ref string? sortByFeedbackKey,
+            ref global::LangSmith.ListSessionsV2SortByFeedbackSource? sortByFeedbackSource,
+            ref global::System.DateTime? datasetVersion,
             ref bool? includeStats,
+            ref bool? includeFacets,
             ref bool? useApproxStats,
-            global::System.DateTime? statsStartTime,
+            ref global::System.DateTime? statsStartTime,
             global::System.Collections.Generic.IList<string>? statsSelect,
             ref string? statsFilter,
-            ref string? accept);
-        partial void PrepareReadTracerSessionsRequest(
+            ref string? cursor,
+            ref int? pageSize);
+        partial void PrepareListTracingProjectsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? referenceFree,
-            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset,
-            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::System.Collections.Generic.IList<string>? id,
             string? name,
             string? nameContains,
-            string? datasetVersion,
-            global::LangSmith.SessionSortableColumns? sortBy,
-            bool? sortByDesc,
+            global::System.Collections.Generic.IList<string>? referenceDatasetId,
+            bool? referenceFree,
+            global::System.Collections.Generic.IList<string>? tagValueId,
             string? metadata,
-            string? sortByFeedbackKey,
-            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource,
-            int? offset,
-            int? limit,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            bool? facets,
             string? filter,
+            global::LangSmith.ListSessionsV2SortBy? sortBy,
+            global::LangSmith.ListSessionsV2SortOrder? sortOrder,
+            string? sortByFeedbackKey,
+            global::LangSmith.ListSessionsV2SortByFeedbackSource? sortByFeedbackSource,
+            global::System.DateTime? datasetVersion,
             bool? includeStats,
+            bool? includeFacets,
             bool? useApproxStats,
             global::System.DateTime? statsStartTime,
             global::System.Collections.Generic.IList<string>? statsSelect,
             string? statsFilter,
-            string? accept);
-        partial void ProcessReadTracerSessionsResponse(
+            string? cursor,
+            int? pageSize);
+        partial void ProcessListTracingProjectsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessReadTracerSessionsResponseContent(
+        partial void ProcessListTracingProjectsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Read Tracer Sessions<br/>
-        /// List all projects.
+        /// List tracing projects<br/>
+        /// Returns a page of the workspace's tracing projects and experiments. Pass the response's next_cursor as cursor to fetch the next page; next_cursor is null on the last page. A cursor is valid only with the same query parameters as the request that returned it.
         /// </summary>
-        /// <param name="referenceFree"></param>
-        /// <param name="referenceDataset"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
-        /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
-        /// <param name="sortByDesc">
-        /// Default Value: true
-        /// </param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="referenceFree"></param>
+        /// <param name="tagValueId"></param>
         /// <param name="metadata"></param>
+        /// <param name="filter"></param>
+        /// <param name="sortBy">
+        /// Default Value: START_TIME
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
         /// <param name="sortByFeedbackKey"></param>
         /// <param name="sortByFeedbackSource"></param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 100
-        /// </param>
-        /// <param name="tagValueId"></param>
-        /// <param name="facets">
+        /// <param name="datasetVersion"></param>
+        /// <param name="includeStats">
         /// Default Value: false
         /// </param>
-        /// <param name="filter"></param>
-        /// <param name="includeStats">
+        /// <param name="includeFacets">
         /// Default Value: false
         /// </param>
         /// <param name="useApproxStats">
@@ -135,59 +127,60 @@ namespace LangSmith
         /// <param name="statsStartTime"></param>
         /// <param name="statsSelect"></param>
         /// <param name="statsFilter"></param>
-        /// <param name="accept"></param>
+        /// <param name="cursor"></param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>> ReadTracerSessionsAsync(
-            bool? referenceFree = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSessionsListSessionsV2Response> ListTracingProjectsAsync(
+            global::System.Collections.Generic.IList<string>? id = default,
             string? name = default,
             string? nameContains = default,
-            string? datasetVersion = default,
-            global::LangSmith.SessionSortableColumns? sortBy = default,
-            bool? sortByDesc = default,
+            global::System.Collections.Generic.IList<string>? referenceDatasetId = default,
+            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? metadata = default,
-            string? sortByFeedbackKey = default,
-            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource = default,
-            int? offset = default,
-            int? limit = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            bool? facets = default,
             string? filter = default,
+            global::LangSmith.ListSessionsV2SortBy? sortBy = default,
+            global::LangSmith.ListSessionsV2SortOrder? sortOrder = default,
+            string? sortByFeedbackKey = default,
+            global::LangSmith.ListSessionsV2SortByFeedbackSource? sortByFeedbackSource = default,
+            global::System.DateTime? datasetVersion = default,
             bool? includeStats = default,
+            bool? includeFacets = default,
             bool? useApproxStats = default,
             global::System.DateTime? statsStartTime = default,
             global::System.Collections.Generic.IList<string>? statsSelect = default,
             string? statsFilter = default,
-            string? accept = default,
+            string? cursor = default,
+            int? pageSize = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ReadTracerSessionsAsResponseAsync(
-                referenceFree: referenceFree,
-                referenceDataset: referenceDataset,
+            var __response = await ListTracingProjectsAsResponseAsync(
                 id: id,
                 name: name,
                 nameContains: nameContains,
-                datasetVersion: datasetVersion,
-                sortBy: sortBy,
-                sortByDesc: sortByDesc,
+                referenceDatasetId: referenceDatasetId,
+                referenceFree: referenceFree,
+                tagValueId: tagValueId,
                 metadata: metadata,
+                filter: filter,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
                 sortByFeedbackKey: sortByFeedbackKey,
                 sortByFeedbackSource: sortByFeedbackSource,
-                offset: offset,
-                limit: limit,
-                tagValueId: tagValueId,
-                facets: facets,
-                filter: filter,
+                datasetVersion: datasetVersion,
                 includeStats: includeStats,
+                includeFacets: includeFacets,
                 useApproxStats: useApproxStats,
                 statsStartTime: statsStartTime,
                 statsSelect: statsSelect,
                 statsFilter: statsFilter,
-                accept: accept,
+                cursor: cursor,
+                pageSize: pageSize,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -195,36 +188,30 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Read Tracer Sessions<br/>
-        /// List all projects.
+        /// List tracing projects<br/>
+        /// Returns a page of the workspace's tracing projects and experiments. Pass the response's next_cursor as cursor to fetch the next page; next_cursor is null on the last page. A cursor is valid only with the same query parameters as the request that returned it.
         /// </summary>
-        /// <param name="referenceFree"></param>
-        /// <param name="referenceDataset"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
-        /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
-        /// <param name="sortByDesc">
-        /// Default Value: true
-        /// </param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="referenceFree"></param>
+        /// <param name="tagValueId"></param>
         /// <param name="metadata"></param>
+        /// <param name="filter"></param>
+        /// <param name="sortBy">
+        /// Default Value: START_TIME
+        /// </param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
         /// <param name="sortByFeedbackKey"></param>
         /// <param name="sortByFeedbackSource"></param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="limit">
-        /// Default Value: 100
-        /// </param>
-        /// <param name="tagValueId"></param>
-        /// <param name="facets">
+        /// <param name="datasetVersion"></param>
+        /// <param name="includeStats">
         /// Default Value: false
         /// </param>
-        /// <param name="filter"></param>
-        /// <param name="includeStats">
+        /// <param name="includeFacets">
         /// Default Value: false
         /// </param>
         /// <param name="useApproxStats">
@@ -233,68 +220,69 @@ namespace LangSmith
         /// <param name="statsStartTime"></param>
         /// <param name="statsSelect"></param>
         /// <param name="statsFilter"></param>
-        /// <param name="accept"></param>
+        /// <param name="cursor"></param>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>> ReadTracerSessionsAsResponseAsync(
-            bool? referenceFree = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionsListSessionsV2Response>> ListTracingProjectsAsResponseAsync(
+            global::System.Collections.Generic.IList<string>? id = default,
             string? name = default,
             string? nameContains = default,
-            string? datasetVersion = default,
-            global::LangSmith.SessionSortableColumns? sortBy = default,
-            bool? sortByDesc = default,
+            global::System.Collections.Generic.IList<string>? referenceDatasetId = default,
+            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? metadata = default,
-            string? sortByFeedbackKey = default,
-            global::LangSmith.FeedbackSourceParam? sortByFeedbackSource = default,
-            int? offset = default,
-            int? limit = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            bool? facets = default,
             string? filter = default,
+            global::LangSmith.ListSessionsV2SortBy? sortBy = default,
+            global::LangSmith.ListSessionsV2SortOrder? sortOrder = default,
+            string? sortByFeedbackKey = default,
+            global::LangSmith.ListSessionsV2SortByFeedbackSource? sortByFeedbackSource = default,
+            global::System.DateTime? datasetVersion = default,
             bool? includeStats = default,
+            bool? includeFacets = default,
             bool? useApproxStats = default,
             global::System.DateTime? statsStartTime = default,
             global::System.Collections.Generic.IList<string>? statsSelect = default,
             string? statsFilter = default,
-            string? accept = default,
+            string? cursor = default,
+            int? pageSize = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareReadTracerSessionsArguments(
+            PrepareListTracingProjectsArguments(
                 httpClient: HttpClient,
-                referenceFree: referenceFree,
-                referenceDataset: referenceDataset,
                 id: id,
                 name: ref name,
                 nameContains: ref nameContains,
-                datasetVersion: ref datasetVersion,
-                sortBy: ref sortBy,
-                sortByDesc: ref sortByDesc,
+                referenceDatasetId: referenceDatasetId,
+                referenceFree: ref referenceFree,
+                tagValueId: tagValueId,
                 metadata: ref metadata,
+                filter: ref filter,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder,
                 sortByFeedbackKey: ref sortByFeedbackKey,
                 sortByFeedbackSource: ref sortByFeedbackSource,
-                offset: ref offset,
-                limit: ref limit,
-                tagValueId: tagValueId,
-                facets: ref facets,
-                filter: ref filter,
+                datasetVersion: ref datasetVersion,
                 includeStats: ref includeStats,
+                includeFacets: ref includeFacets,
                 useApproxStats: ref useApproxStats,
-                statsStartTime: statsStartTime,
+                statsStartTime: ref statsStartTime,
                 statsSelect: statsSelect,
                 statsFilter: ref statsFilter,
-                accept: ref accept);
+                cursor: ref cursor,
+                pageSize: ref pageSize);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ReadTracerSessionsSecurityRequirements,
-                operationName: "ReadTracerSessionsAsync");
+                securityRequirements: s_ListTracingProjectsSecurityRequirements,
+                operationName: "ListTracingProjectsAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -314,32 +302,32 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/sessions",
+                                path: "/api/v2/sessions",
                                 baseUri: ResolveBaseUri(
-                                servers: s_ReadTracerSessionsServers,
+                                servers: s_ListTracingProjectsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("reference_free", referenceFree?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("reference_dataset", referenceDataset, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("dataset_version", datasetVersion)
-                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
-                                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("reference_dataset_id", referenceDatasetId, delimiter: ",", explode: true)
+                                .AddOptionalParameter("reference_free", referenceFree?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("tag_value_id", tagValueId, delimiter: ",", explode: true)
                                 .AddOptionalParameter("metadata", metadata)
+                                .AddOptionalParameter("filter", filter)
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
                                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
                                 .AddOptionalParameter("sort_by_feedback_source", sortByFeedbackSource?.ToValueString())
-                                .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
-                                .AddOptionalParameter("facets", facets?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("filter", filter)
+                                .AddOptionalParameter("dataset_version", datasetVersion?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_facets", includeFacets?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("use_approx_stats", useApproxStats?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString())
+                                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("stats_select", statsSelect, delimiter: ",", explode: true)
                                 .AddOptionalParameter("stats_filter", statsFilter)
+                                .AddOptionalParameter("cursor", cursor)
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -370,12 +358,6 @@ namespace LangSmith
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-
-            if (accept != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
-            }
-
                 global::LangSmith.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -384,31 +366,30 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareReadTracerSessionsRequest(
+                PrepareListTracingProjectsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    referenceFree: referenceFree,
-                    referenceDataset: referenceDataset,
                     id: id,
                     name: name,
                     nameContains: nameContains,
-                    datasetVersion: datasetVersion,
-                    sortBy: sortBy,
-                    sortByDesc: sortByDesc,
+                    referenceDatasetId: referenceDatasetId,
+                    referenceFree: referenceFree,
+                    tagValueId: tagValueId,
                     metadata: metadata,
+                    filter: filter,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder,
                     sortByFeedbackKey: sortByFeedbackKey,
                     sortByFeedbackSource: sortByFeedbackSource,
-                    offset: offset,
-                    limit: limit,
-                    tagValueId: tagValueId,
-                    facets: facets,
-                    filter: filter,
+                    datasetVersion: datasetVersion,
                     includeStats: includeStats,
+                    includeFacets: includeFacets,
                     useApproxStats: useApproxStats,
                     statsStartTime: statsStartTime,
                     statsSelect: statsSelect,
                     statsFilter: statsFilter,
-                    accept: accept);
+                    cursor: cursor,
+                    pageSize: pageSize);
 
                 return __httpRequest;
             }
@@ -425,9 +406,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ReadTracerSessions",
-                                methodName: "ReadTracerSessionsAsync",
-                                pathTemplate: "\"/api/v1/sessions\"",
+                                operationId: "ListTracingProjects",
+                                methodName: "ListTracingProjectsAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -459,9 +440,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ReadTracerSessions",
-                                methodName: "ReadTracerSessionsAsync",
-                                pathTemplate: "\"/api/v1/sessions\"",
+                                operationId: "ListTracingProjects",
+                                methodName: "ListTracingProjectsAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -500,9 +481,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ReadTracerSessions",
-                                methodName: "ReadTracerSessionsAsync",
-                                pathTemplate: "\"/api/v1/sessions\"",
+                                operationId: "ListTracingProjects",
+                                methodName: "ListTracingProjectsAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -540,7 +521,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessReadTracerSessionsResponse(
+                ProcessListTracingProjectsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -548,9 +529,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ReadTracerSessions",
-                                methodName: "ReadTracerSessionsAsync",
-                                pathTemplate: "\"/api/v1/sessions\"",
+                                operationId: "ListTracingProjects",
+                                methodName: "ListTracingProjectsAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -570,9 +551,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ReadTracerSessions",
-                                methodName: "ReadTracerSessionsAsync",
-                                pathTemplate: "\"/api/v1/sessions\"",
+                                operationId: "ListTracingProjects",
+                                methodName: "ListTracingProjectsAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -587,38 +568,75 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // Invalid query parameters or cursor
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The caller may not read one or more of the requested projects
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SharedProblemDetails? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -637,7 +655,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessReadTracerSessionsResponseContent(
+                                ProcessListTracingProjectsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -646,9 +664,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.TracerSession>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>), JsonSerializerContext) ??
+                                    var __value = global::LangSmith.TracerSessionsListSessionsV2Response.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionsListSessionsV2Response>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -678,9 +696,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.TracerSession>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.TracerSessionsListSessionsV2Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.TracerSession>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSessionsListSessionsV2Response>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

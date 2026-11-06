@@ -23,6 +23,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -44,6 +50,7 @@ namespace LangSmith
         /// </summary>
         /// <param name="codeEvaluator"></param>
         /// <param name="llmEvaluator"></param>
+        /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -52,11 +59,13 @@ namespace LangSmith
         public EvaluatorsCreateEvaluatorRequest(
             global::LangSmith.EvaluatorsCreateCodeEvaluatorRequest? codeEvaluator,
             global::LangSmith.EvaluatorsCreateLLMEvaluatorRequest? llmEvaluator,
+            object? metadata,
             string? name,
             global::LangSmith.EvaluatorsEvaluatorType? type)
         {
             this.CodeEvaluator = codeEvaluator;
             this.LlmEvaluator = llmEvaluator;
+            this.Metadata = metadata;
             this.Name = name;
             this.Type = type;
         }

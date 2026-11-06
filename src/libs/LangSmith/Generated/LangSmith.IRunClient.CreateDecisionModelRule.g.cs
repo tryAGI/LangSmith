@@ -90,6 +90,9 @@ namespace LangSmith
         /// <param name="filter">
         /// Only evaluate runs that match this filter.
         /// </param>
+        /// <param name="groupBy">
+        /// Set to thread_id to evaluate each thread once it goes idle, instead of each run. Requires session_id. Decision models don't support trajectory_id.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -110,6 +113,7 @@ namespace LangSmith
             global::System.Guid? playgroundSettingsId = default,
             double? samplingRate = default,
             string? filter = default,
+            string? groupBy = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
