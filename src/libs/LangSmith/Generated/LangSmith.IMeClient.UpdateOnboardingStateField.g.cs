@@ -16,7 +16,8 @@ namespace LangSmith
         /// - agent_platform_welcome_viewed_at<br/>
         /// - get_started_checklist_dismissed_at<br/>
         /// - agent_trace_viewed_at<br/>
-        /// - agent_monitoring_viewed_at
+        /// - agent_monitoring_viewed_at<br/>
+        /// - agent_edited_at
         /// </summary>
         /// <param name="field"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -38,7 +39,8 @@ namespace LangSmith
         /// - agent_platform_welcome_viewed_at<br/>
         /// - get_started_checklist_dismissed_at<br/>
         /// - agent_trace_viewed_at<br/>
-        /// - agent_monitoring_viewed_at
+        /// - agent_monitoring_viewed_at<br/>
+        /// - agent_edited_at
         /// </summary>
         /// <param name="field"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

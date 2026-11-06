@@ -79,6 +79,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_edited_at")]
+        public global::System.DateTime? AgentEditedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("get_started_path")]
         public global::LangSmith.GetStartedPath? GetStartedPath { get; set; }
 
@@ -118,6 +124,7 @@ namespace LangSmith
         /// <param name="getStartedChecklistDismissedAt"></param>
         /// <param name="agentTraceViewedAt"></param>
         /// <param name="agentMonitoringViewedAt"></param>
+        /// <param name="agentEditedAt"></param>
         /// <param name="getStartedPath"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -136,6 +143,7 @@ namespace LangSmith
             global::System.DateTime? getStartedChecklistDismissedAt,
             global::System.DateTime? agentTraceViewedAt,
             global::System.DateTime? agentMonitoringViewedAt,
+            global::System.DateTime? agentEditedAt,
             global::LangSmith.GetStartedPath? getStartedPath)
         {
             this.Id = id;
@@ -149,6 +157,7 @@ namespace LangSmith
             this.GetStartedChecklistDismissedAt = getStartedChecklistDismissedAt;
             this.AgentTraceViewedAt = agentTraceViewedAt;
             this.AgentMonitoringViewedAt = agentMonitoringViewedAt;
+            this.AgentEditedAt = agentEditedAt;
             this.GetStartedPath = getStartedPath;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
