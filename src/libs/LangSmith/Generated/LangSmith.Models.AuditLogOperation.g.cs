@@ -115,6 +115,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ConnectGatewayVendorAdminKey,
+        /// <summary>
+        ///
+        /// </summary>
         CountExamples,
         /// <summary>
         ///
@@ -944,6 +948,10 @@ namespace LangSmith
         ///
         /// </summary>
         DiffDatasetVersions,
+        /// <summary>
+        ///
+        /// </summary>
+        DisconnectGatewayVendorAdminKey,
         /// <summary>
         ///
         /// </summary>
@@ -2192,6 +2200,7 @@ namespace LangSmith
                 AuditLogOperation.CloneSandboxVolume => "clone_sandbox_volume",
                 AuditLogOperation.ConfirmPaymentCheckoutSession => "confirm_payment_checkout_session",
                 AuditLogOperation.ConfirmSsoUserEmail => "confirm_sso_user_email",
+                AuditLogOperation.ConnectGatewayVendorAdminKey => "connect_gateway_vendor_admin_key",
                 AuditLogOperation.CountExamples => "count_examples",
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
                 AuditLogOperation.CreateAgent => "create_agent",
@@ -2400,6 +2409,7 @@ namespace LangSmith
                 AuditLogOperation.DetachAccessPolicies => "detach_access_policies",
                 AuditLogOperation.DetachTeamAccessPolicy => "detach_team_access_policy",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
+                AuditLogOperation.DisconnectGatewayVendorAdminKey => "disconnect_gateway_vendor_admin_key",
                 AuditLogOperation.DownloadCustomAppSource => "download_custom_app_source",
                 AuditLogOperation.DownloadDataset => "download_dataset",
                 AuditLogOperation.DownloadTasksetBundle => "download_taskset_bundle",
@@ -2738,6 +2748,7 @@ namespace LangSmith
                 "clone_sandbox_volume" => AuditLogOperation.CloneSandboxVolume,
                 "confirm_payment_checkout_session" => AuditLogOperation.ConfirmPaymentCheckoutSession,
                 "confirm_sso_user_email" => AuditLogOperation.ConfirmSsoUserEmail,
+                "connect_gateway_vendor_admin_key" => AuditLogOperation.ConnectGatewayVendorAdminKey,
                 "count_examples" => AuditLogOperation.CountExamples,
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
                 "create_agent" => AuditLogOperation.CreateAgent,
@@ -2946,6 +2957,7 @@ namespace LangSmith
                 "detach_access_policies" => AuditLogOperation.DetachAccessPolicies,
                 "detach_team_access_policy" => AuditLogOperation.DetachTeamAccessPolicy,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
+                "disconnect_gateway_vendor_admin_key" => AuditLogOperation.DisconnectGatewayVendorAdminKey,
                 "download_custom_app_source" => AuditLogOperation.DownloadCustomAppSource,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
                 "download_taskset_bundle" => AuditLogOperation.DownloadTasksetBundle,
