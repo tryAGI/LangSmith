@@ -499,27 +499,19 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
-        /// <param name="title">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="description">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="index">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="layout">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="index"></param>
+        /// <param name="layout"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description = default,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
-            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>? layout = default,
+            string? title = default,
+            string? description = default,
+            int? index = default,
+            global::LangSmith.DashboardLayoutInput? layout = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -44,7 +44,7 @@ namespace LangSmith
             ref string? name,
             ref string? nameContains,
             global::System.Collections.Generic.IList<string>? referenceDatasetId,
-            ref bool? referenceFree,
+            global::System.Collections.Generic.IList<global::LangSmith.ListSessionsV2TypeItem>? type,
             global::System.Collections.Generic.IList<string>? tagValueId,
             ref string? metadata,
             ref string? filter,
@@ -68,7 +68,7 @@ namespace LangSmith
             string? name,
             string? nameContains,
             global::System.Collections.Generic.IList<string>? referenceDatasetId,
-            bool? referenceFree,
+            global::System.Collections.Generic.IList<global::LangSmith.ListSessionsV2TypeItem>? type,
             global::System.Collections.Generic.IList<string>? tagValueId,
             string? metadata,
             string? filter,
@@ -102,7 +102,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="referenceDatasetId"></param>
-        /// <param name="referenceFree"></param>
+        /// <param name="type"></param>
         /// <param name="tagValueId"></param>
         /// <param name="metadata"></param>
         /// <param name="filter"></param>
@@ -139,7 +139,7 @@ namespace LangSmith
             string? name = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<string>? referenceDatasetId = default,
-            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListSessionsV2TypeItem>? type = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? metadata = default,
             string? filter = default,
@@ -164,7 +164,7 @@ namespace LangSmith
                 name: name,
                 nameContains: nameContains,
                 referenceDatasetId: referenceDatasetId,
-                referenceFree: referenceFree,
+                type: type,
                 tagValueId: tagValueId,
                 metadata: metadata,
                 filter: filter,
@@ -195,7 +195,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="referenceDatasetId"></param>
-        /// <param name="referenceFree"></param>
+        /// <param name="type"></param>
         /// <param name="tagValueId"></param>
         /// <param name="metadata"></param>
         /// <param name="filter"></param>
@@ -232,7 +232,7 @@ namespace LangSmith
             string? name = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<string>? referenceDatasetId = default,
-            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListSessionsV2TypeItem>? type = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? metadata = default,
             string? filter = default,
@@ -260,7 +260,7 @@ namespace LangSmith
                 name: ref name,
                 nameContains: ref nameContains,
                 referenceDatasetId: referenceDatasetId,
-                referenceFree: ref referenceFree,
+                type: type,
                 tagValueId: tagValueId,
                 metadata: ref metadata,
                 filter: ref filter,
@@ -311,7 +311,7 @@ namespace LangSmith
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("reference_dataset_id", referenceDatasetId, delimiter: ",", explode: true)
-                                .AddOptionalParameter("reference_free", referenceFree?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("type", type, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("tag_value_id", tagValueId, delimiter: ",", explode: true)
                                 .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("filter", filter)
@@ -373,7 +373,7 @@ namespace LangSmith
                     name: name,
                     nameContains: nameContains,
                     referenceDatasetId: referenceDatasetId,
-                    referenceFree: referenceFree,
+                    type: type,
                     tagValueId: tagValueId,
                     metadata: metadata,
                     filter: filter,

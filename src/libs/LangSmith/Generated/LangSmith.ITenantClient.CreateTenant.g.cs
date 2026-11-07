@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.Tenant> CreateTenantAsync(
 
             global::LangSmith.TenantCreate request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -25,7 +25,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AppSchemasTenant>> CreateTenantAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Tenant>> CreateTenantAsResponseAsync(
 
             global::LangSmith.TenantCreate request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -44,7 +44,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateTenantAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.Tenant> CreateTenantAsync(
             string displayName,
             global::System.Guid? id = default,
             global::System.Guid? organizationId = default,

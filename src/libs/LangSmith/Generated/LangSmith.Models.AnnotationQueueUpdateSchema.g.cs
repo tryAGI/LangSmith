@@ -27,28 +27,22 @@ namespace LangSmith
         public global::System.Guid? DefaultDataset { get; set; }
 
         /// <summary>
-        /// How many reviewers must review each run.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// How many reviewers must review each run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_reviewers_per_item")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? NumReviewersPerItem { get; set; }
+        public int? NumReviewersPerItem { get; set; }
 
         /// <summary>
-        /// Whether a reviewer reserves a run while reviewing it, so others skip it.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Whether a reviewer reserves a run while reviewing it, so others skip it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_reservations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<bool?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>? EnableReservations { get; set; }
+        public bool? EnableReservations { get; set; }
 
         /// <summary>
-        /// How long a reservation lasts, in minutes.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// How long a reservation lasts, in minutes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reservation_minutes")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? ReservationMinutes { get; set; }
+        public int? ReservationMinutes { get; set; }
 
         /// <summary>
         /// Feedback keys reviewers fill in for each run.
@@ -63,12 +57,10 @@ namespace LangSmith
         public string? RubricInstructions { get; set; }
 
         /// <summary>
-        /// Metadata to store on the queue. Replaces the existing metadata.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Metadata to store on the queue. Replaces the existing metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<object, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<object, global::LangSmith.Missing>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Who completes a run: any (one reviewer is enough) or assigned (every assigned reviewer must submit).
@@ -95,16 +87,13 @@ namespace LangSmith
         /// Dataset that reviewed runs are added to by default.
         /// </param>
         /// <param name="numReviewersPerItem">
-        /// How many reviewers must review each run.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// How many reviewers must review each run.
         /// </param>
         /// <param name="enableReservations">
-        /// Whether a reviewer reserves a run while reviewing it, so others skip it.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Whether a reviewer reserves a run while reviewing it, so others skip it.
         /// </param>
         /// <param name="reservationMinutes">
-        /// How long a reservation lasts, in minutes.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// How long a reservation lasts, in minutes.
         /// </param>
         /// <param name="rubricItems">
         /// Feedback keys reviewers fill in for each run.
@@ -113,8 +102,7 @@ namespace LangSmith
         /// Instructions shown to reviewers.
         /// </param>
         /// <param name="metadata">
-        /// Metadata to store on the queue. Replaces the existing metadata.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Metadata to store on the queue. Replaces the existing metadata.
         /// </param>
         /// <param name="reviewerAccessMode">
         /// Who completes a run: any (one reviewer is enough) or assigned (every assigned reviewer must submit).
@@ -126,12 +114,12 @@ namespace LangSmith
             string? name,
             string? description,
             global::System.Guid? defaultDataset,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem,
-            global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>? enableReservations,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? reservationMinutes,
+            int? numReviewersPerItem,
+            bool? enableReservations,
+            int? reservationMinutes,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems,
             string? rubricInstructions,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata,
+            object? metadata,
             global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode? reviewerAccessMode)
         {
             this.Name = name;

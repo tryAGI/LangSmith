@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     /// Tenant schema.
     /// </summary>
-    public sealed partial class AppSchemasTenant
+    public sealed partial class Tenant
     {
         /// <summary>
         ///
@@ -80,7 +80,7 @@ namespace LangSmith
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppSchemasTenant" /> class.
+        /// Initializes a new instance of the <see cref="Tenant" /> class.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
@@ -95,7 +95,7 @@ namespace LangSmith
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AppSchemasTenant(
+        public Tenant(
             global::System.Guid id,
             global::System.DateTime createdAt,
             string displayName,
@@ -120,9 +120,9 @@ namespace LangSmith
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppSchemasTenant" /> class.
+        /// Initializes a new instance of the <see cref="Tenant" /> class.
         /// </summary>
-        public AppSchemasTenant()
+        public Tenant()
         {
         }
 

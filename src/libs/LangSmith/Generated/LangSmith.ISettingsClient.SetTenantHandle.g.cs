@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudTenantsTenant> SetTenantHandleAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.TenantForUser> SetTenantHandleAsync(
 
             global::LangSmith.SetTenantHandleRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -25,7 +25,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AppHubCrudTenantsTenant>> SetTenantHandleAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>> SetTenantHandleAsResponseAsync(
 
             global::LangSmith.SetTenantHandleRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -38,7 +38,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudTenantsTenant> SetTenantHandleAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.TenantForUser> SetTenantHandleAsync(
             string tenantHandle,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

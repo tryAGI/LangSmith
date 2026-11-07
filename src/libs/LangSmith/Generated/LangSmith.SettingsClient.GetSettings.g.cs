@@ -54,12 +54,12 @@ namespace LangSmith
 
         /// <summary>
         /// Get Settings<br/>
-        /// Get settings.
+        /// Get the current workspace.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AppHubCrudTenantsTenant> GetSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TenantForUser> GetSettingsAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -72,12 +72,12 @@ namespace LangSmith
         }
         /// <summary>
         /// Get Settings<br/>
-        /// Get settings.
+        /// Get the current workspace.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AppHubCrudTenantsTenant>> GetSettingsAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>> GetSettingsAsResponseAsync(
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -354,9 +354,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.AppHubCrudTenantsTenant.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.TenantForUser.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AppHubCrudTenantsTenant>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -386,9 +386,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.AppHubCrudTenantsTenant.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.TenantForUser.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AppHubCrudTenantsTenant>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
