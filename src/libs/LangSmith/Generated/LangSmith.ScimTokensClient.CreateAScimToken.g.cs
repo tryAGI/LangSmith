@@ -389,7 +389,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden - requires OrganizationAuthenticationManage permission
+                            // Forbidden - requires OrganizationScimTokensManage permission
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;

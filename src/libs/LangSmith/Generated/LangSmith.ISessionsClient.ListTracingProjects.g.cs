@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="referenceDatasetId"></param>
-        /// <param name="referenceFree"></param>
+        /// <param name="type"></param>
         /// <param name="tagValueId"></param>
         /// <param name="metadata"></param>
         /// <param name="filter"></param>
@@ -49,7 +49,7 @@ namespace LangSmith
             string? name = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<string>? referenceDatasetId = default,
-            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListSessionsV2TypeItem>? type = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? metadata = default,
             string? filter = default,
@@ -76,7 +76,7 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="referenceDatasetId"></param>
-        /// <param name="referenceFree"></param>
+        /// <param name="type"></param>
         /// <param name="tagValueId"></param>
         /// <param name="metadata"></param>
         /// <param name="filter"></param>
@@ -113,7 +113,7 @@ namespace LangSmith
             string? name = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<string>? referenceDatasetId = default,
-            bool? referenceFree = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListSessionsV2TypeItem>? type = default,
             global::System.Collections.Generic.IList<string>? tagValueId = default,
             string? metadata = default,
             string? filter = default,

@@ -58,10 +58,10 @@ namespace LangSmith
         public bool? IsAssertion { get; set; }
 
         /// <summary>
-        /// Default Value: {"__missing__":"__missing__"}
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("regex_validator")]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? RegexValidator { get; set; }
+        public string? RegexValidator { get; set; }
 
         /// <summary>
         ///
@@ -92,9 +92,7 @@ namespace LangSmith
         /// <param name="requiredIf"></param>
         /// <param name="visibleIf"></param>
         /// <param name="isAssertion"></param>
-        /// <param name="regexValidator">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
+        /// <param name="regexValidator"></param>
         /// <param name="feedbackConfigId"></param>
         /// <param name="feedbackConfig"></param>
 #if NET7_0_OR_GREATER
@@ -109,7 +107,7 @@ namespace LangSmith
             global::LangSmith.RubricItemConditions? requiredIf,
             global::LangSmith.RubricItemConditions? visibleIf,
             bool? isAssertion,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? regexValidator,
+            string? regexValidator,
             global::System.Guid? feedbackConfigId,
             global::LangSmith.FeedbackConfigSchema? feedbackConfig)
         {

@@ -508,16 +508,13 @@ namespace LangSmith
         /// Dataset that reviewed runs are added to by default.
         /// </param>
         /// <param name="numReviewersPerItem">
-        /// How many reviewers must review each run.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// How many reviewers must review each run.
         /// </param>
         /// <param name="enableReservations">
-        /// Whether a reviewer reserves a run while reviewing it, so others skip it.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Whether a reviewer reserves a run while reviewing it, so others skip it.
         /// </param>
         /// <param name="reservationMinutes">
-        /// How long a reservation lasts, in minutes.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// How long a reservation lasts, in minutes.
         /// </param>
         /// <param name="rubricItems">
         /// Feedback keys reviewers fill in for each run.
@@ -526,8 +523,7 @@ namespace LangSmith
         /// Instructions shown to reviewers.
         /// </param>
         /// <param name="metadata">
-        /// Metadata to store on the queue. Replaces the existing metadata.<br/>
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Metadata to store on the queue. Replaces the existing metadata.
         /// </param>
         /// <param name="reviewerAccessMode">
         /// Who completes a run: any (one reviewer is enough) or assigned (every assigned reviewer must submit).
@@ -540,12 +536,12 @@ namespace LangSmith
             string? name = default,
             string? description = default,
             global::System.Guid? defaultDataset = default,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? numReviewersPerItem = default,
-            global::LangSmith.AnyOf<bool?, global::LangSmith.Missing>? enableReservations = default,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? reservationMinutes = default,
+            int? numReviewersPerItem = default,
+            bool? enableReservations = default,
+            int? reservationMinutes = default,
             global::System.Collections.Generic.IList<global::LangSmith.AnnotationQueueRubricItemSchema>? rubricItems = default,
             string? rubricInstructions = default,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,
+            object? metadata = default,
             global::LangSmith.AnnotationQueueUpdateSchemaReviewerAccessMode? reviewerAccessMode = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

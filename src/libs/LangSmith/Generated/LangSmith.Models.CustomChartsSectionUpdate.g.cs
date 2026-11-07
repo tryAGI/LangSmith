@@ -9,32 +9,28 @@ namespace LangSmith
     public sealed partial class CustomChartsSectionUpdate
     {
         /// <summary>
-        /// Default Value: {"__missing__":"__missing__"}
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
-        /// Default Value: {"__missing__":"__missing__"}
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<string, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<string, global::LangSmith.Missing>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
-        /// Default Value: {"__missing__":"__missing__"}
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<int?, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
-        /// Default Value: {"__missing__":"__missing__"}
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("layout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AnyOfJsonConverter<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>))]
-        public global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>? Layout { get; set; }
+        public global::LangSmith.DashboardLayoutInput? Layout { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,26 +41,18 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomChartsSectionUpdate" /> class.
         /// </summary>
-        /// <param name="title">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="description">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="index">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="layout">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="index"></param>
+        /// <param name="layout"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartsSectionUpdate(
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index,
-            global::LangSmith.AnyOf<global::LangSmith.DashboardLayoutInput, global::LangSmith.Missing>? layout)
+            string? title,
+            string? description,
+            int? index,
+            global::LangSmith.DashboardLayoutInput? layout)
         {
             this.Title = title;
             this.Description = description;

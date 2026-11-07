@@ -186,6 +186,14 @@ namespace LangSmith
         public object? Traces { get; set; }
 
         /// <summary>
+        /// "actionable" (there is something to do; it may carry PRs or LangSmith<br/>
+        /// assets) or "finding" (an observation only). Defaults to "actionable".
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.IssuesIssueTypeJsonConverter))]
+        public global::LangSmith.IssuesIssueType? Type { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
@@ -255,6 +263,10 @@ namespace LangSmith
         /// <param name="tags"></param>
         /// <param name="tenantId"></param>
         /// <param name="traces"></param>
+        /// <param name="type">
+        /// "actionable" (there is something to do; it may carry PRs or LangSmith<br/>
+        /// assets) or "finding" (an observation only). Defaults to "actionable".
+        /// </param>
         /// <param name="updatedAt"></param>
         /// <param name="validationResult"></param>
         /// <param name="watchingSince"></param>
@@ -291,6 +303,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? tags,
             string? tenantId,
             object? traces,
+            global::LangSmith.IssuesIssueType? type,
             string? updatedAt,
             global::LangSmith.IssuesIssueValidationResult? validationResult,
             string? watchingSince)
@@ -324,6 +337,7 @@ namespace LangSmith
             this.Tags = tags;
             this.TenantId = tenantId;
             this.Traces = traces;
+            this.Type = type;
             this.UpdatedAt = updatedAt;
             this.ValidationResult = validationResult;
             this.WatchingSince = watchingSince;

@@ -373,6 +373,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public SqlClient Sql { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public TagTransitionsClient TagTransitions { get; }
 
         /// <summary>

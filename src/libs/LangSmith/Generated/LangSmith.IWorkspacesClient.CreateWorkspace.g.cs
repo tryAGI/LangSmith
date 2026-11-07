@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateWorkspaceAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.Tenant> CreateWorkspaceAsync(
 
             global::LangSmith.WorkspaceCreate request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -25,7 +25,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AppSchemasTenant>> CreateWorkspaceAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Tenant>> CreateWorkspaceAsResponseAsync(
 
             global::LangSmith.WorkspaceCreate request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -40,7 +40,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AppSchemasTenant> CreateWorkspaceAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.Tenant> CreateWorkspaceAsync(
             string displayName,
             global::System.Guid? id = default,
             string? tenantHandle = default,

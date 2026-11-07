@@ -41,12 +41,14 @@ namespace LangSmith
         partial void PrepareListOrganizationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? skipCreate,
-            ref bool? includeTier);
+            ref bool? includeTier,
+            ref bool? includeAll);
         partial void PrepareListOrganizationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? skipCreate,
-            bool? includeTier);
+            bool? includeTier,
+            bool? includeAll);
         partial void ProcessListOrganizationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,12 +60,16 @@ namespace LangSmith
 
         /// <summary>
         /// List Organizations<br/>
-        /// Get all orgs visible to this auth
+        /// List memberships, or all organizations for instance admins opting in or using a PAT.
         /// </summary>
         /// <param name="skipCreate">
         /// Default Value: false
         /// </param>
         /// <param name="includeTier">
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeAll">
+        /// List all organizations on the instance. Requires an instance administrator.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -72,12 +78,14 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.OrganizationPGSchemaSlim>> ListOrganizationsAsync(
             bool? skipCreate = default,
             bool? includeTier = default,
+            bool? includeAll = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListOrganizationsAsResponseAsync(
                 skipCreate: skipCreate,
                 includeTier: includeTier,
+                includeAll: includeAll,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -86,12 +94,16 @@ namespace LangSmith
         }
         /// <summary>
         /// List Organizations<br/>
-        /// Get all orgs visible to this auth
+        /// List memberships, or all organizations for instance admins opting in or using a PAT.
         /// </summary>
         /// <param name="skipCreate">
         /// Default Value: false
         /// </param>
         /// <param name="includeTier">
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeAll">
+        /// List all organizations on the instance. Requires an instance administrator.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -100,6 +112,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.OrganizationPGSchemaSlim>>> ListOrganizationsAsResponseAsync(
             bool? skipCreate = default,
             bool? includeTier = default,
+            bool? includeAll = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,7 +121,8 @@ namespace LangSmith
             PrepareListOrganizationsArguments(
                 httpClient: HttpClient,
                 skipCreate: ref skipCreate,
-                includeTier: ref includeTier);
+                includeTier: ref includeTier,
+                includeAll: ref includeAll);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -141,6 +155,7 @@ namespace LangSmith
                             __pathBuilder
                                 .AddOptionalParameter("skip_create", skipCreate?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include_tier", includeTier?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_all", includeAll?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -183,7 +198,8 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     skipCreate: skipCreate,
-                    includeTier: includeTier);
+                    includeTier: includeTier,
+                    includeAll: includeAll);
 
                 return __httpRequest;
             }

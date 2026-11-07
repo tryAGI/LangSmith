@@ -39,47 +39,31 @@ namespace LangSmith
         /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
-        /// <param name="title">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="description">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="index">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="index"></param>
         /// <param name="chartType">
-        /// Default Value: {"__missing__":"__missing__"}
+        /// Enum for custom chart types.
         /// </param>
-        /// <param name="series">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="sectionId">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="metadata">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="commonFilters">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
-        /// <param name="markdown">
-        /// Default Value: {"__missing__":"__missing__"}
-        /// </param>
+        /// <param name="series"></param>
+        /// <param name="sectionId"></param>
+        /// <param name="metadata"></param>
+        /// <param name="commonFilters"></param>
+        /// <param name="markdown"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse> UpdateChartAsync(
             global::System.Guid chartId,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? title = default,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? description = default,
-            global::LangSmith.AnyOf<int?, global::LangSmith.Missing>? index = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartType?, global::LangSmith.Missing>? chartType = default,
-            global::LangSmith.AnyOf<global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>, global::LangSmith.Missing>? series = default,
-            global::LangSmith.AnyOf<global::System.Guid?, global::LangSmith.Missing>? sectionId = default,
-            global::LangSmith.AnyOf<object, global::LangSmith.Missing>? metadata = default,
-            global::LangSmith.AnyOf<global::LangSmith.CustomChartSeriesFilters, global::LangSmith.Missing>? commonFilters = default,
-            global::LangSmith.AnyOf<string, global::LangSmith.Missing>? markdown = default,
+            string? title = default,
+            string? description = default,
+            int? index = default,
+            global::LangSmith.CustomChartType? chartType = default,
+            global::System.Collections.Generic.IList<global::LangSmith.CustomChartSeriesUpdate>? series = default,
+            global::System.Guid? sectionId = default,
+            object? metadata = default,
+            global::LangSmith.CustomChartSeriesFilters? commonFilters = default,
+            string? markdown = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

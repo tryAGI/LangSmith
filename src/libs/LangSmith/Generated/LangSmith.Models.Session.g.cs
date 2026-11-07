@@ -59,7 +59,7 @@ namespace LangSmith
         public global::LangSmith.SessionTraceTier? TraceTier { get; set; }
 
         /// <summary>
-        /// Retention in days for traces while trace_tier is longlived. One of 30, 60, 90, 120, 150, 180, 240, 300, 365 or 400, up to the maximum of the deployment. Self-hosted also accepts its configured retention. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention.
+        /// Retention in days for traces while trace_tier is longlived. One of the deployment's allowed values (allowed_longlived_ttl_days in /info), up to the maximum of the deployment. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("longlived_ttl_days")]
         public int? LonglivedTtlDays { get; set; }
@@ -199,6 +199,14 @@ namespace LangSmith
         public global::LangSmith.ExperimentProgress? ExperimentProgress { get; set; }
 
         /// <summary>
+        /// `PROJECT` for a tracing project, `AGENT` for an Agent's tracing project, or `EXPERIMENT` for an evaluation run against a dataset.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SessionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.SessionType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -211,6 +219,9 @@ namespace LangSmith
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="type">
+        /// `PROJECT` for a tracing project, `AGENT` for an Agent's tracing project, or `EXPERIMENT` for an evaluation run against a dataset.
+        /// </param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
         /// <param name="description"></param>
@@ -220,7 +231,7 @@ namespace LangSmith
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="longlivedTtlDays">
-        /// Retention in days for traces while trace_tier is longlived. One of 30, 60, 90, 120, 150, 180, 240, 300, 365 or 400, up to the maximum of the deployment. Self-hosted also accepts its configured retention. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention.
+        /// Retention in days for traces while trace_tier is longlived. One of the deployment's allowed values (allowed_longlived_ttl_days in /info), up to the maximum of the deployment. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention.
         /// </param>
         /// <param name="runCount"></param>
         /// <param name="latencyP50"></param>
@@ -254,6 +265,7 @@ namespace LangSmith
             string name,
             global::System.Guid id,
             global::System.Guid tenantId,
+            global::LangSmith.SessionType type,
             global::System.DateTime? endTime,
             object? extra,
             string? description,
@@ -313,6 +325,7 @@ namespace LangSmith
             this.StreamingRate = streamingRate;
             this.TestRunNumber = testRunNumber;
             this.ExperimentProgress = experimentProgress;
+            this.Type = type;
         }
 
         /// <summary>

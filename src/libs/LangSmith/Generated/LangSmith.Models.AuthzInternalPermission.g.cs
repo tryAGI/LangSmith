@@ -407,6 +407,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationScimTokensManage,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationSecurityPolicyManage,
         /// <summary>
         ///
@@ -761,6 +765,7 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationRead => "organization:read",
                 AuthzInternalPermission.OrganizationReadMetadata => "organization:read-metadata",
                 AuthzInternalPermission.OrganizationRetentionManage => "organization:retention:manage",
+                AuthzInternalPermission.OrganizationScimTokensManage => "organization:scim-tokens:manage",
                 AuthzInternalPermission.OrganizationSecurityPolicyManage => "organization:security-policy:manage",
                 AuthzInternalPermission.OrganizationServiceKeyManage => "organization:service-key:manage",
                 AuthzInternalPermission.OrganizationSettingsManage => "organization:settings:manage",
@@ -931,6 +936,7 @@ namespace LangSmith
                 "organization:read" => AuthzInternalPermission.OrganizationRead,
                 "organization:read-metadata" => AuthzInternalPermission.OrganizationReadMetadata,
                 "organization:retention:manage" => AuthzInternalPermission.OrganizationRetentionManage,
+                "organization:scim-tokens:manage" => AuthzInternalPermission.OrganizationScimTokensManage,
                 "organization:security-policy:manage" => AuthzInternalPermission.OrganizationSecurityPolicyManage,
                 "organization:service-key:manage" => AuthzInternalPermission.OrganizationServiceKeyManage,
                 "organization:settings:manage" => AuthzInternalPermission.OrganizationSettingsManage,

@@ -17,6 +17,13 @@ namespace LangSmith
         public required global::LangSmith.AgentplatformAgentType AgentType { get; set; }
 
         /// <summary>
+        /// The agent's permanent identifier, assigned by LangSmith and never reused; workload identity subjects name the agent by it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_uuid")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid AgentUuid { get; set; }
+
+        /// <summary>
         /// AvatarURL is a short-lived URL for the agent avatar, when present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
@@ -92,6 +99,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="AgentplatformAgent" /> class.
         /// </summary>
         /// <param name="agentType"></param>
+        /// <param name="agentUuid">
+        /// The agent's permanent identifier, assigned by LangSmith and never reused; workload identity subjects name the agent by it.
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="environments"></param>
         /// <param name="id"></param>
@@ -111,6 +121,7 @@ namespace LangSmith
 #endif
         public AgentplatformAgent(
             global::LangSmith.AgentplatformAgentType agentType,
+            global::System.Guid agentUuid,
             global::System.DateTime createdAt,
             global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgentEnvironment> environments,
             string id,
@@ -123,6 +134,7 @@ namespace LangSmith
             global::System.Guid? tagValueId)
         {
             this.AgentType = agentType;
+            this.AgentUuid = agentUuid;
             this.AvatarUrl = avatarUrl;
             this.CreatedAt = createdAt;
             this.Environments = environments ?? throw new global::System.ArgumentNullException(nameof(environments));
