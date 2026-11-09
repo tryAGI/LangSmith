@@ -55,7 +55,8 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// List Current Workspace Secrets
+        /// List Current Workspace Secrets<br/>
+        /// List the current workspace's secret keys. Values are never returned.
         /// </summary>
         /// <param name="includeConfigs">
         /// If true, include the hosts each secret may be sent to.<br/>
@@ -78,7 +79,8 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// List Current Workspace Secrets
+        /// List Current Workspace Secrets<br/>
+        /// List the current workspace's secret keys. Values are never returned.
         /// </summary>
         /// <param name="includeConfigs">
         /// If true, include the hosts each secret may be sent to.<br/>
