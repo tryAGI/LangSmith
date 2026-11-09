@@ -407,6 +407,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateRedactionRule,
+        /// <summary>
+        ///
+        /// </summary>
         CreateRole,
         /// <summary>
         ///
@@ -804,6 +808,10 @@ namespace LangSmith
         ///
         /// </summary>
         DeletePromptWebhook,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteRedactionRule,
         /// <summary>
         ///
         /// </summary>
@@ -2011,6 +2019,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateRedactionRule,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateRole,
         /// <summary>
         ///
@@ -2273,6 +2285,7 @@ namespace LangSmith
                 AuditLogOperation.CreatePromptCanvasQuickAction => "create_prompt_canvas_quick_action",
                 AuditLogOperation.CreatePromptWebhook => "create_prompt_webhook",
                 AuditLogOperation.CreateProvisionedSaasOrg => "create_provisioned_saas_org",
+                AuditLogOperation.CreateRedactionRule => "create_redaction_rule",
                 AuditLogOperation.CreateRole => "create_role",
                 AuditLogOperation.CreateSandboxClaim => "create_sandbox_claim",
                 AuditLogOperation.CreateSandboxFunction => "create_sandbox_function",
@@ -2373,6 +2386,7 @@ namespace LangSmith
                 AuditLogOperation.DeletePlaygroundSettings => "delete_playground_settings",
                 AuditLogOperation.DeletePromptCanvasQuickAction => "delete_prompt_canvas_quick_action",
                 AuditLogOperation.DeletePromptWebhook => "delete_prompt_webhook",
+                AuditLogOperation.DeleteRedactionRule => "delete_redaction_rule",
                 AuditLogOperation.DeleteRole => "delete_role",
                 AuditLogOperation.DeleteRuns => "delete_runs",
                 AuditLogOperation.DeleteSandboxClaim => "delete_sandbox_claim",
@@ -2674,6 +2688,7 @@ namespace LangSmith
                 AuditLogOperation.UpdatePromptCanvasQuickAction => "update_prompt_canvas_quick_action",
                 AuditLogOperation.UpdatePromptWebhook => "update_prompt_webhook",
                 AuditLogOperation.UpdateProvisionedSaasOrg => "update_provisioned_saas_org",
+                AuditLogOperation.UpdateRedactionRule => "update_redaction_rule",
                 AuditLogOperation.UpdateRole => "update_role",
                 AuditLogOperation.UpdateSandboxClaim => "update_sandbox_claim",
                 AuditLogOperation.UpdateSandboxFunction => "update_sandbox_function",
@@ -2821,6 +2836,7 @@ namespace LangSmith
                 "create_prompt_canvas_quick_action" => AuditLogOperation.CreatePromptCanvasQuickAction,
                 "create_prompt_webhook" => AuditLogOperation.CreatePromptWebhook,
                 "create_provisioned_saas_org" => AuditLogOperation.CreateProvisionedSaasOrg,
+                "create_redaction_rule" => AuditLogOperation.CreateRedactionRule,
                 "create_role" => AuditLogOperation.CreateRole,
                 "create_sandbox_claim" => AuditLogOperation.CreateSandboxClaim,
                 "create_sandbox_function" => AuditLogOperation.CreateSandboxFunction,
@@ -2921,6 +2937,7 @@ namespace LangSmith
                 "delete_playground_settings" => AuditLogOperation.DeletePlaygroundSettings,
                 "delete_prompt_canvas_quick_action" => AuditLogOperation.DeletePromptCanvasQuickAction,
                 "delete_prompt_webhook" => AuditLogOperation.DeletePromptWebhook,
+                "delete_redaction_rule" => AuditLogOperation.DeleteRedactionRule,
                 "delete_role" => AuditLogOperation.DeleteRole,
                 "delete_runs" => AuditLogOperation.DeleteRuns,
                 "delete_sandbox_claim" => AuditLogOperation.DeleteSandboxClaim,
@@ -3222,6 +3239,7 @@ namespace LangSmith
                 "update_prompt_canvas_quick_action" => AuditLogOperation.UpdatePromptCanvasQuickAction,
                 "update_prompt_webhook" => AuditLogOperation.UpdatePromptWebhook,
                 "update_provisioned_saas_org" => AuditLogOperation.UpdateProvisionedSaasOrg,
+                "update_redaction_rule" => AuditLogOperation.UpdateRedactionRule,
                 "update_role" => AuditLogOperation.UpdateRole,
                 "update_sandbox_claim" => AuditLogOperation.UpdateSandboxClaim,
                 "update_sandbox_function" => AuditLogOperation.UpdateSandboxFunction,

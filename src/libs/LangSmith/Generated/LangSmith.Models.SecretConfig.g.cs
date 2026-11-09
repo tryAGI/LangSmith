@@ -34,7 +34,7 @@ namespace LangSmith
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// Whether a secret config comes from the built-in catalog or an admin.
+        /// DEFAULT for a built-in provider host, CUSTOM for one an admin set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SecretConfigSourceJsonConverter))]
@@ -66,7 +66,7 @@ namespace LangSmith
         /// Exact host or a leading '*.' wildcard, e.g. 'api.openai.com'.
         /// </param>
         /// <param name="source">
-        /// Whether a secret config comes from the built-in catalog or an admin.
+        /// DEFAULT for a built-in provider host, CUSTOM for one an admin set.
         /// </param>
         /// <param name="headerName">
         /// HTTP header the secret is sent in. Null leaves it to the consumer.

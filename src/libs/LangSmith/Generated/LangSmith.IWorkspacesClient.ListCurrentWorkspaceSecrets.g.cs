@@ -5,7 +5,8 @@ namespace LangSmith
     public partial interface IWorkspacesClient
     {
         /// <summary>
-        /// List Current Workspace Secrets
+        /// List Current Workspace Secrets<br/>
+        /// List the current workspace's secret keys. Values are never returned.
         /// </summary>
         /// <param name="includeConfigs">
         /// If true, include the hosts each secret may be sent to.<br/>
@@ -19,7 +20,8 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List Current Workspace Secrets
+        /// List Current Workspace Secrets<br/>
+        /// List the current workspace's secret keys. Values are never returned.
         /// </summary>
         /// <param name="includeConfigs">
         /// If true, include the hosts each secret may be sent to.<br/>

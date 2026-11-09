@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class WorkspaceSecret
     {
         /// <summary>
-        ///
+        /// Secret name, e.g. OPENAI_API_KEY.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,7 +30,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceSecret" /> class.
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">
+        /// Secret name, e.g. OPENAI_API_KEY.
+        /// </param>
         /// <param name="configs">
         /// Hosts the secret may be sent to, with built-in defaults applied. Listed secrets include it only when include_configs is true.
         /// </param>

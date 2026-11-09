@@ -7,9 +7,10 @@ namespace LangSmith
         /// <summary>
         /// Put Current Workspace Secret<br/>
         /// Create or update a workspace secret and the hosts it may be sent to.<br/>
-        /// Omit `value` to keep the current one; it is required to create a secret.<br/>
-        /// `configs` replaces the secret's hosts; omitted or empty restores the<br/>
-        /// built-in defaults for known provider keys. The value is never returned.
+        /// Requires workspace admin. Omit value to keep the current one; it is<br/>
+        /// required to create a secret. configs replaces the secret's hosts; omitted<br/>
+        /// or empty restores the built-in defaults for known provider keys. The value<br/>
+        /// is never returned.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="request"></param>
@@ -25,9 +26,10 @@ namespace LangSmith
         /// <summary>
         /// Put Current Workspace Secret<br/>
         /// Create or update a workspace secret and the hosts it may be sent to.<br/>
-        /// Omit `value` to keep the current one; it is required to create a secret.<br/>
-        /// `configs` replaces the secret's hosts; omitted or empty restores the<br/>
-        /// built-in defaults for known provider keys. The value is never returned.
+        /// Requires workspace admin. Omit value to keep the current one; it is<br/>
+        /// required to create a secret. configs replaces the secret's hosts; omitted<br/>
+        /// or empty restores the built-in defaults for known provider keys. The value<br/>
+        /// is never returned.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="request"></param>
@@ -43,9 +45,10 @@ namespace LangSmith
         /// <summary>
         /// Put Current Workspace Secret<br/>
         /// Create or update a workspace secret and the hosts it may be sent to.<br/>
-        /// Omit `value` to keep the current one; it is required to create a secret.<br/>
-        /// `configs` replaces the secret's hosts; omitted or empty restores the<br/>
-        /// built-in defaults for known provider keys. The value is never returned.
+        /// Requires workspace admin. Omit value to keep the current one; it is<br/>
+        /// required to create a secret. configs replaces the secret's hosts; omitted<br/>
+        /// or empty restores the built-in defaults for known provider keys. The value<br/>
+        /// is never returned.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value">

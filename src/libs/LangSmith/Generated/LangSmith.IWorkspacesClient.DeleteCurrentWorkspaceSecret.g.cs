@@ -6,7 +6,8 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete Current Workspace Secret<br/>
-        /// Delete a workspace secret and its allowed hosts. Missing keys succeed.
+        /// Delete a workspace secret and its allowed hosts.<br/>
+        /// Requires workspace admin. Missing keys succeed.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +19,8 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Current Workspace Secret<br/>
-        /// Delete a workspace secret and its allowed hosts. Missing keys succeed.
+        /// Delete a workspace secret and its allowed hosts.<br/>
+        /// Requires workspace admin. Missing keys succeed.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
