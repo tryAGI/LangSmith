@@ -51,10 +51,10 @@ namespace LangSmith
         public object? Manifest { get; set; }
 
         /// <summary>
-        /// The SHA of the manifest
+        /// The base64-encoded SHA-256 of the manifest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest_sha")]
-        public global::System.Collections.Generic.IList<int>? ManifestSha { get; set; }
+        public byte[]? ManifestSha { get; set; }
 
         /// <summary>
         /// Number of API downloads
@@ -123,7 +123,7 @@ namespace LangSmith
         /// The manifest of the commit
         /// </param>
         /// <param name="manifestSha">
-        /// The SHA of the manifest
+        /// The base64-encoded SHA-256 of the manifest
         /// </param>
         /// <param name="numDownloads">
         /// Number of API downloads
@@ -154,7 +154,7 @@ namespace LangSmith
             string? fullName,
             global::System.Guid? id,
             object? manifest,
-            global::System.Collections.Generic.IList<int>? manifestSha,
+            byte[]? manifestSha,
             int? numDownloads,
             int? numViews,
             string? parentCommitHash,

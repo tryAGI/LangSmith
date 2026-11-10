@@ -46,6 +46,7 @@ namespace LangSmith
             ref global::LangSmith.GetAgentsSortOrder? sortOrder,
             global::System.Collections.Generic.IList<string>? id,
             ref string? name,
+            ref string? search,
             ref global::LangSmith.GetAgentsSourceType? sourceType);
         partial void PrepareListAgentsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -56,6 +57,7 @@ namespace LangSmith
             global::LangSmith.GetAgentsSortOrder? sortOrder,
             global::System.Collections.Generic.IList<string>? id,
             string? name,
+            string? search,
             global::LangSmith.GetAgentsSourceType? sourceType);
         partial void ProcessListAgentsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -82,6 +84,7 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="search"></param>
         /// <param name="sourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -93,6 +96,7 @@ namespace LangSmith
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
             global::System.Collections.Generic.IList<string>? id = default,
             string? name = default,
+            string? search = default,
             global::LangSmith.GetAgentsSourceType? sourceType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -104,6 +108,7 @@ namespace LangSmith
                 sortOrder: sortOrder,
                 id: id,
                 name: name,
+                search: search,
                 sourceType: sourceType,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -127,6 +132,7 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="search"></param>
         /// <param name="sourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -138,6 +144,7 @@ namespace LangSmith
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
             global::System.Collections.Generic.IList<string>? id = default,
             string? name = default,
+            string? search = default,
             global::LangSmith.GetAgentsSourceType? sourceType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -152,6 +159,7 @@ namespace LangSmith
                 sortOrder: ref sortOrder,
                 id: id,
                 name: ref name,
+                search: ref search,
                 sourceType: ref sourceType);
 
 
@@ -189,6 +197,7 @@ namespace LangSmith
                                 .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
                                 .AddOptionalParameter("id", id, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
+                                .AddOptionalParameter("search", search)
                                 .AddOptionalParameter("source_type", sourceType?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -237,6 +246,7 @@ namespace LangSmith
                     sortOrder: sortOrder,
                     id: id,
                     name: name,
+                    search: search,
                     sourceType: sourceType);
 
                 return __httpRequest;
