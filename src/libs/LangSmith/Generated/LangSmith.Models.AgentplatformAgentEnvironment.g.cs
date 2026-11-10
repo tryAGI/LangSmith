@@ -31,6 +31,13 @@ namespace LangSmith
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
+        /// Identifier is the sub of this environment's agent access tokens:<br/>
+        /// ws:&lt;workspace&gt;:agent:&lt;agent uuid&gt;:env:&lt;ENV&gt;. Omitted when none can be issued.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("identifier")]
+        public string? Identifier { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runtime_bindings")]
@@ -64,6 +71,10 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="tracerSessionId"></param>
         /// <param name="tracerSessionName"></param>
+        /// <param name="identifier">
+        /// Identifier is the sub of this environment's agent access tokens:<br/>
+        /// ws:&lt;workspace&gt;:agent:&lt;agent uuid&gt;:env:&lt;ENV&gt;. Omitted when none can be issued.
+        /// </param>
         /// <param name="runtimeBindings"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,11 +85,13 @@ namespace LangSmith
             global::System.Guid id,
             global::System.Guid tracerSessionId,
             string tracerSessionName,
+            string? identifier,
             global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgentRuntimeBinding>? runtimeBindings)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Environment = environment;
             this.Id = id;
+            this.Identifier = identifier;
             this.RuntimeBindings = runtimeBindings;
             this.TracerSessionId = tracerSessionId;
             this.TracerSessionName = tracerSessionName ?? throw new global::System.ArgumentNullException(nameof(tracerSessionName));

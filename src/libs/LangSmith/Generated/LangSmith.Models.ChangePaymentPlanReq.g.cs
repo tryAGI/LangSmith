@@ -63,6 +63,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Plus112026,
+        /// <summary>
+        ///
+        /// </summary>
         Premier,
         /// <summary>
         ///
@@ -107,6 +111,7 @@ namespace LangSmith
                 ChangePaymentPlanReq.Plus012026 => "plus_01_2026",
                 ChangePaymentPlanReq.Plus072026 => "plus_07_2026",
                 ChangePaymentPlanReq.Plus102026 => "plus_10_2026",
+                ChangePaymentPlanReq.Plus112026 => "plus_11_2026",
                 ChangePaymentPlanReq.Premier => "premier",
                 ChangePaymentPlanReq.Startup => "startup",
                 ChangePaymentPlanReq.Startup072026 => "startup_07_2026",
@@ -135,6 +140,7 @@ namespace LangSmith
                 "plus_01_2026" => ChangePaymentPlanReq.Plus012026,
                 "plus_07_2026" => ChangePaymentPlanReq.Plus072026,
                 "plus_10_2026" => ChangePaymentPlanReq.Plus102026,
+                "plus_11_2026" => ChangePaymentPlanReq.Plus112026,
                 "premier" => ChangePaymentPlanReq.Premier,
                 "startup" => ChangePaymentPlanReq.Startup,
                 "startup_07_2026" => ChangePaymentPlanReq.Startup072026,

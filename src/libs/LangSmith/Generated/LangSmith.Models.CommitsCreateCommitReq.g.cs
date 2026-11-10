@@ -18,7 +18,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
-        public object? Manifest { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Manifest { get; set; }
 
         /// <summary>
         ///
@@ -41,8 +42,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="CommitsCreateCommitReq" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="manifest"></param>
+        /// <param name="description"></param>
         /// <param name="parentCommit"></param>
         /// <param name="skipWebhooks">
         /// SkipWebhooks allows skipping webhook notifications. Can be true (boolean) to skip all, or an array of webhook UUIDs to skip specific ones.
@@ -51,13 +52,13 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CommitsCreateCommitReq(
+            object manifest,
             string? description,
-            object? manifest,
             string? parentCommit,
             object? skipWebhooks)
         {
             this.Description = description;
-            this.Manifest = manifest;
+            this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.ParentCommit = parentCommit;
             this.SkipWebhooks = skipWebhooks;
         }

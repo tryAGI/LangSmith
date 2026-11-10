@@ -635,8 +635,8 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CommitsCreateCommitResponse> CreateACommitAsync(
             string owner,
             string repo,
+            object manifest,
             string? description = default,
-            object? manifest = default,
             string? parentCommit = default,
             object? skipWebhooks = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

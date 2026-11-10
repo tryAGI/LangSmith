@@ -2075,6 +2075,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateSsoLoginProtocol,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateSsoSettings,
         /// <summary>
         ///
@@ -2702,6 +2706,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateSelfHostedCustomer => "update_self_hosted_customer",
                 AuditLogOperation.UpdateSelfHostedLicense => "update_self_hosted_license",
                 AuditLogOperation.UpdateServiceKey => "update_service_key",
+                AuditLogOperation.UpdateSsoLoginProtocol => "update_sso_login_protocol",
                 AuditLogOperation.UpdateSsoSettings => "update_sso_settings",
                 AuditLogOperation.UpdateTagKey => "update_tag_key",
                 AuditLogOperation.UpdateTagValue => "update_tag_value",
@@ -3253,6 +3258,7 @@ namespace LangSmith
                 "update_self_hosted_customer" => AuditLogOperation.UpdateSelfHostedCustomer,
                 "update_self_hosted_license" => AuditLogOperation.UpdateSelfHostedLicense,
                 "update_service_key" => AuditLogOperation.UpdateServiceKey,
+                "update_sso_login_protocol" => AuditLogOperation.UpdateSsoLoginProtocol,
                 "update_sso_settings" => AuditLogOperation.UpdateSsoSettings,
                 "update_tag_key" => AuditLogOperation.UpdateTagKey,
                 "update_tag_value" => AuditLogOperation.UpdateTagValue,

@@ -37,6 +37,13 @@ namespace LangSmith
         public global::LangSmith.SSOProviderType? ProviderType { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string SsoLoginSlug { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,6 +55,7 @@ namespace LangSmith
         /// <param name="providerId"></param>
         /// <param name="organizationId"></param>
         /// <param name="organizationDisplayName"></param>
+        /// <param name="ssoLoginSlug"></param>
         /// <param name="providerType">
         /// Default Value: saml
         /// </param>
@@ -58,12 +66,14 @@ namespace LangSmith
             global::System.Guid providerId,
             global::System.Guid organizationId,
             string organizationDisplayName,
+            string ssoLoginSlug,
             global::LangSmith.SSOProviderType? providerType)
         {
             this.ProviderId = providerId;
             this.OrganizationId = organizationId;
             this.OrganizationDisplayName = organizationDisplayName ?? throw new global::System.ArgumentNullException(nameof(organizationDisplayName));
             this.ProviderType = providerType;
+            this.SsoLoginSlug = ssoLoginSlug ?? throw new global::System.ArgumentNullException(nameof(ssoLoginSlug));
         }
 
         /// <summary>

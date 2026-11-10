@@ -20,6 +20,7 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="search"></param>
         /// <param name="sourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -31,6 +32,7 @@ namespace LangSmith
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
             global::System.Collections.Generic.IList<string>? id = default,
             string? name = default,
+            string? search = default,
             global::LangSmith.GetAgentsSourceType? sourceType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -50,6 +52,7 @@ namespace LangSmith
         /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="search"></param>
         /// <param name="sourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -61,6 +64,7 @@ namespace LangSmith
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
             global::System.Collections.Generic.IList<string>? id = default,
             string? name = default,
+            string? search = default,
             global::LangSmith.GetAgentsSourceType? sourceType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -75,6 +75,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        Plus112026,
+        /// <summary>
+        ///
+        /// </summary>
         PlusLegacy,
         /// <summary>
         ///
@@ -126,6 +130,7 @@ namespace LangSmith
                 PaymentPlanTier.Plus012026 => "plus_01_2026",
                 PaymentPlanTier.Plus072026 => "plus_07_2026",
                 PaymentPlanTier.Plus102026 => "plus_10_2026",
+                PaymentPlanTier.Plus112026 => "plus_11_2026",
                 PaymentPlanTier.PlusLegacy => "plus_legacy",
                 PaymentPlanTier.Premier => "premier",
                 PaymentPlanTier.Startup => "startup",
@@ -158,6 +163,7 @@ namespace LangSmith
                 "plus_01_2026" => PaymentPlanTier.Plus012026,
                 "plus_07_2026" => PaymentPlanTier.Plus072026,
                 "plus_10_2026" => PaymentPlanTier.Plus102026,
+                "plus_11_2026" => PaymentPlanTier.Plus112026,
                 "plus_legacy" => PaymentPlanTier.PlusLegacy,
                 "premier" => PaymentPlanTier.Premier,
                 "startup" => PaymentPlanTier.Startup,
