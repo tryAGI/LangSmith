@@ -517,6 +517,7 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
+        /// <param name="threadFilter"></param>
         /// <param name="backfillFrom"></param>
         /// <param name="useCorrectionsDataset">
         /// Default Value: false
@@ -577,6 +578,7 @@ namespace LangSmith
             string? filter = default,
             string? traceFilter = default,
             string? treeFilter = default,
+            string? threadFilter = default,
             global::System.DateTime? backfillFrom = default,
             bool? useCorrectionsDataset = default,
             int? numFewShotExamples = default,
@@ -620,6 +622,7 @@ namespace LangSmith
                 Filter = filter,
                 TraceFilter = traceFilter,
                 TreeFilter = treeFilter,
+                ThreadFilter = threadFilter,
                 BackfillFrom = backfillFrom,
                 UseCorrectionsDataset = useCorrectionsDataset,
                 NumFewShotExamples = numFewShotExamples,

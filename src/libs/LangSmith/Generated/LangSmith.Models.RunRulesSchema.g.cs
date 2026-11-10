@@ -87,6 +87,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_filter")]
+        public string? ThreadFilter { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_annotation_queue_id")]
         public global::System.Guid? AddToAnnotationQueueId { get; set; }
 
@@ -347,6 +353,7 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
+        /// <param name="threadFilter"></param>
         /// <param name="addToAnnotationQueueId"></param>
         /// <param name="addToAnnotationQueueName"></param>
         /// <param name="addToDatasetId"></param>
@@ -418,6 +425,7 @@ namespace LangSmith
             string? filter,
             string? traceFilter,
             string? treeFilter,
+            string? threadFilter,
             global::System.Guid? addToAnnotationQueueId,
             string? addToAnnotationQueueName,
             global::System.Guid? addToDatasetId,
@@ -467,6 +475,7 @@ namespace LangSmith
             this.Filter = filter;
             this.TraceFilter = traceFilter;
             this.TreeFilter = treeFilter;
+            this.ThreadFilter = threadFilter;
             this.AddToAnnotationQueueId = addToAnnotationQueueId;
             this.AddToAnnotationQueueName = addToAnnotationQueueName;
             this.AddToDatasetId = addToDatasetId;

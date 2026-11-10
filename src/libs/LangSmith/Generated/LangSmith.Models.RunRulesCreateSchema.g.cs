@@ -61,6 +61,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thread_filter")]
+        public string? ThreadFilter { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_from")]
         public global::System.DateTime? BackfillFrom { get; set; }
 
@@ -221,6 +227,7 @@ namespace LangSmith
         /// <param name="filter"></param>
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
+        /// <param name="threadFilter"></param>
         /// <param name="backfillFrom"></param>
         /// <param name="useCorrectionsDataset">
         /// Default Value: false
@@ -273,6 +280,7 @@ namespace LangSmith
             string? filter,
             string? traceFilter,
             string? treeFilter,
+            string? threadFilter,
             global::System.DateTime? backfillFrom,
             bool? useCorrectionsDataset,
             int? numFewShotExamples,
@@ -306,6 +314,7 @@ namespace LangSmith
             this.Filter = filter;
             this.TraceFilter = traceFilter;
             this.TreeFilter = treeFilter;
+            this.ThreadFilter = threadFilter;
             this.BackfillFrom = backfillFrom;
             this.UseCorrectionsDataset = useCorrectionsDataset;
             this.NumFewShotExamples = numFewShotExamples;
