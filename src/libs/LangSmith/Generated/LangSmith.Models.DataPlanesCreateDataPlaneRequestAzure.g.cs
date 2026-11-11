@@ -24,6 +24,14 @@ namespace LangSmith
         public required string AzureEntraTenantId { get; set; }
 
         /// <summary>
+        /// Use customer-managed identities created by the LangSmith BYOC Terraform<br/>
+        /// module with byo_iam = true. LangSmith then needs no User Access<br/>
+        /// Administrator assignment on the resource group.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("byoiam")]
+        public global::LangSmith.DataPlanesDataPlaneBYOIAMSettings? Byoiam { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -88,6 +96,11 @@ namespace LangSmith
         /// Azure allows only 15 tags on DNS resources, so the limit is 14 plus the<br/>
         /// managed_by system tag.
         /// </param>
+        /// <param name="byoiam">
+        /// Use customer-managed identities created by the LangSmith BYOC Terraform<br/>
+        /// module with byo_iam = true. LangSmith then needs no User Access<br/>
+        /// Administrator assignment on the resource group.
+        /// </param>
         /// <param name="publicLoadBalancer"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -99,10 +112,12 @@ namespace LangSmith
             string resourceGroupId,
             string vpcCidr,
             global::System.Collections.Generic.IList<global::LangSmith.AzureResourceTag>? additionalTags,
+            global::LangSmith.DataPlanesDataPlaneBYOIAMSettings? byoiam,
             bool? publicLoadBalancer)
         {
             this.AdditionalTags = additionalTags;
             this.AzureEntraTenantId = azureEntraTenantId ?? throw new global::System.ArgumentNullException(nameof(azureEntraTenantId));
+            this.Byoiam = byoiam;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));

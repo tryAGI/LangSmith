@@ -9,8 +9,9 @@ namespace LangSmith
     public sealed partial class SandboxesLoadBrowserExtensionsResponse
     {
         /// <summary>
-        /// Loaded are the ids of the extensions this call loaded; empty when Chrome<br/>
-        /// already had every extension in the directory.
+        /// Loaded are the ids of the extensions this call loaded, by loading them<br/>
+        /// or by relaunching Chrome; empty when Chrome already had every extension<br/>
+        /// in the directory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("loaded")]
         public global::System.Collections.Generic.IList<string>? Loaded { get; set; }
@@ -25,8 +26,9 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesLoadBrowserExtensionsResponse" /> class.
         /// </summary>
         /// <param name="loaded">
-        /// Loaded are the ids of the extensions this call loaded; empty when Chrome<br/>
-        /// already had every extension in the directory.
+        /// Loaded are the ids of the extensions this call loaded, by loading them<br/>
+        /// or by relaunching Chrome; empty when Chrome already had every extension<br/>
+        /// in the directory.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

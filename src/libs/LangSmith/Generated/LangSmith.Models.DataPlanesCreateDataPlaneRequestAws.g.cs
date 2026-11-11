@@ -33,6 +33,18 @@ namespace LangSmith
         public bool? EksApiPrivatelinkDisabled { get; set; }
 
         /// <summary>
+        /// Ingress restricts inbound access to the data plane load balancer.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ingress")]
+        public global::LangSmith.DataPlanesDataPlaneIngressSettings? Ingress { get; set; }
+
+        /// <summary>
+        /// SandboxesEnabled turns on sandboxes when the data plane is created. Defaults to false.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_sandboxes_enabled")]
+        public bool? IsSandboxesEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -90,6 +102,12 @@ namespace LangSmith
         /// <param name="eksApiPrivatelinkDisabled">
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
+        /// <param name="ingress">
+        /// Ingress restricts inbound access to the data plane load balancer.
+        /// </param>
+        /// <param name="isSandboxesEnabled">
+        /// SandboxesEnabled turns on sandboxes when the data plane is created. Defaults to false.
+        /// </param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="traceStorage">
         /// TraceStorage selects the run and trace store. Defaults to SMITHDB.
@@ -108,6 +126,8 @@ namespace LangSmith
             global::LangSmith.DataPlanesCreateDataPlaneBYOIAMSettings? byoiam,
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
             bool? eksApiPrivatelinkDisabled,
+            global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress,
+            bool? isSandboxesEnabled,
             bool? publicLoadBalancer,
             global::LangSmith.DataPlanesDataPlaneTraceStorage? traceStorage,
             string? vpcCidr)
@@ -116,6 +136,8 @@ namespace LangSmith
             this.Byoiam = byoiam;
             this.Byovpc = byovpc;
             this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
+            this.Ingress = ingress;
+            this.IsSandboxesEnabled = isSandboxesEnabled;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));

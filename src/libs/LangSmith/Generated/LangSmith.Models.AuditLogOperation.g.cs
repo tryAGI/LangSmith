@@ -1303,6 +1303,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ListCustomApps,
+        /// <summary>
+        ///
+        /// </summary>
         ListDatasets,
         /// <summary>
         ///
@@ -2513,6 +2517,7 @@ namespace LangSmith
                 AuditLogOperation.ListBulkExportDestinations => "list_bulk_export_destinations",
                 AuditLogOperation.ListBulkExports => "list_bulk_exports",
                 AuditLogOperation.ListChartSections => "list_chart_sections",
+                AuditLogOperation.ListCustomApps => "list_custom_apps",
                 AuditLogOperation.ListDatasets => "list_datasets",
                 AuditLogOperation.ListExamples => "list_examples",
                 AuditLogOperation.ListFeedbackConfigs => "list_feedback_configs",
@@ -3065,6 +3070,7 @@ namespace LangSmith
                 "list_bulk_export_destinations" => AuditLogOperation.ListBulkExportDestinations,
                 "list_bulk_exports" => AuditLogOperation.ListBulkExports,
                 "list_chart_sections" => AuditLogOperation.ListChartSections,
+                "list_custom_apps" => AuditLogOperation.ListCustomApps,
                 "list_datasets" => AuditLogOperation.ListDatasets,
                 "list_examples" => AuditLogOperation.ListExamples,
                 "list_feedback_configs" => AuditLogOperation.ListFeedbackConfigs,
