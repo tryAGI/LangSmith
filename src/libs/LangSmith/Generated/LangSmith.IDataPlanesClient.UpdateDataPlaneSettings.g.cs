@@ -41,6 +41,10 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="firewall"></param>
         /// <param name="fleetOidc"></param>
+        /// <param name="ingress">
+        /// Ingress is supported only for AWS data planes.<br/>
+        /// Ingress replaces the current allowed source CIDR list.
+        /// </param>
         /// <param name="maintenanceWindow">
         /// MaintenanceWindow is a weekly UTC window: two hours on AWS and GCP, or four hours on Azure.
         /// </param>
@@ -52,6 +56,7 @@ namespace LangSmith
             global::System.Guid id,
             global::LangSmith.DataPlanesUpdateDataPlaneFirewallSettings? firewall = default,
             global::LangSmith.DataPlanesUpdateDataPlaneFleetOIDCSettings? fleetOidc = default,
+            global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress = default,
             string? maintenanceWindow = default,
             global::LangSmith.DataPlanesUpdateDataPlaneTTLSettings? ttl = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

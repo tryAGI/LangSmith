@@ -68,7 +68,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> UpdateRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.GetRepoResponse> UpdateRepoAsync(
             string owner,
             string repo,
 
@@ -97,7 +97,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateRepoResponse>> UpdateRepoAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.GetRepoResponse>> UpdateRepoAsResponseAsync(
             string owner,
             string repo,
 
@@ -429,9 +429,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.CreateRepoResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.GetRepoResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateRepoResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.GetRepoResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -461,9 +461,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.CreateRepoResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.GetRepoResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateRepoResponse>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.GetRepoResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -518,7 +518,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.CreateRepoResponse> UpdateRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.GetRepoResponse> UpdateRepoAsync(
             string owner,
             string repo,
             string? description = default,

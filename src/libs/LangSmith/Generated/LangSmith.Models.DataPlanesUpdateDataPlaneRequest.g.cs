@@ -21,6 +21,13 @@ namespace LangSmith
         public global::LangSmith.DataPlanesUpdateDataPlaneFleetOIDCSettings? FleetOidc { get; set; }
 
         /// <summary>
+        /// Ingress is supported only for AWS data planes.<br/>
+        /// Ingress replaces the current allowed source CIDR list.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ingress")]
+        public global::LangSmith.DataPlanesDataPlaneIngressSettings? Ingress { get; set; }
+
+        /// <summary>
         /// MaintenanceWindow is a weekly UTC window: two hours on AWS and GCP, or four hours on Azure.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintenance_window")]
@@ -43,6 +50,10 @@ namespace LangSmith
         /// </summary>
         /// <param name="firewall"></param>
         /// <param name="fleetOidc"></param>
+        /// <param name="ingress">
+        /// Ingress is supported only for AWS data planes.<br/>
+        /// Ingress replaces the current allowed source CIDR list.
+        /// </param>
         /// <param name="maintenanceWindow">
         /// MaintenanceWindow is a weekly UTC window: two hours on AWS and GCP, or four hours on Azure.
         /// </param>
@@ -53,11 +64,13 @@ namespace LangSmith
         public DataPlanesUpdateDataPlaneRequest(
             global::LangSmith.DataPlanesUpdateDataPlaneFirewallSettings? firewall,
             global::LangSmith.DataPlanesUpdateDataPlaneFleetOIDCSettings? fleetOidc,
+            global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress,
             string? maintenanceWindow,
             global::LangSmith.DataPlanesUpdateDataPlaneTTLSettings? ttl)
         {
             this.Firewall = firewall;
             this.FleetOidc = fleetOidc;
+            this.Ingress = ingress;
             this.MaintenanceWindow = maintenanceWindow;
             this.Ttl = ttl;
         }

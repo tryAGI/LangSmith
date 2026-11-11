@@ -66,6 +66,12 @@ namespace LangSmith
         public bool? IsPublicLoadBalancer { get; set; }
 
         /// <summary>
+        /// IsSandboxesEnabled is whether sandboxes are turned on.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_sandboxes_enabled")]
+        public bool? IsSandboxesEnabled { get; set; }
+
+        /// <summary>
         /// ProvisionerServiceAccount is the customer service account that the<br/>
         /// control plane impersonates.
         /// </summary>
@@ -127,6 +133,9 @@ namespace LangSmith
         /// service accounts. It has its own name because AWS has the byoiam object.
         /// </param>
         /// <param name="isPublicLoadBalancer"></param>
+        /// <param name="isSandboxesEnabled">
+        /// IsSandboxesEnabled is whether sandboxes are turned on.
+        /// </param>
         /// <param name="provisionerServiceAccount">
         /// ProvisionerServiceAccount is the customer service account that the<br/>
         /// control plane impersonates.
@@ -154,6 +163,7 @@ namespace LangSmith
             bool? isEksApiPrivatelinkDisabled,
             bool? isGcpByoiamEnabled,
             bool? isPublicLoadBalancer,
+            bool? isSandboxesEnabled,
             string? provisionerServiceAccount,
             string? resourceGroupId,
             string? roleArn,
@@ -169,6 +179,7 @@ namespace LangSmith
             this.IsEksApiPrivatelinkDisabled = isEksApiPrivatelinkDisabled;
             this.IsGcpByoiamEnabled = isGcpByoiamEnabled;
             this.IsPublicLoadBalancer = isPublicLoadBalancer;
+            this.IsSandboxesEnabled = isSandboxesEnabled;
             this.ProvisionerServiceAccount = provisionerServiceAccount;
             this.ResourceGroupId = resourceGroupId;
             this.RoleArn = roleArn;

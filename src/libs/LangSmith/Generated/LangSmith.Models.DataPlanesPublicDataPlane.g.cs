@@ -41,6 +41,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ingress")]
+        public global::LangSmith.DataPlanesDataPlaneIngressSettings? Ingress { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintenance_window")]
         public string? MaintenanceWindow { get; set; }
 
@@ -101,6 +107,7 @@ namespace LangSmith
         /// <param name="firewall"></param>
         /// <param name="fleetOidc"></param>
         /// <param name="id"></param>
+        /// <param name="ingress"></param>
         /// <param name="maintenanceWindow"></param>
         /// <param name="name"></param>
         /// <param name="provisioningSettings"></param>
@@ -118,6 +125,7 @@ namespace LangSmith
             global::LangSmith.DataPlanesDataPlaneFirewallSettings? firewall,
             global::LangSmith.DataPlanesDataPlaneFleetOIDCSettings? fleetOidc,
             string? id,
+            global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress,
             string? maintenanceWindow,
             string? name,
             global::LangSmith.DataPlanesDataPlaneProvisioningSettings? provisioningSettings,
@@ -132,6 +140,7 @@ namespace LangSmith
             this.Firewall = firewall;
             this.FleetOidc = fleetOidc;
             this.Id = id;
+            this.Ingress = ingress;
             this.MaintenanceWindow = maintenanceWindow;
             this.Name = name;
             this.ProvisioningSettings = provisioningSettings;

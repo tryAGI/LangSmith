@@ -45,6 +45,8 @@ namespace LangSmith.JsonConverters
             if (__jsonProps.Contains("byovpc.public_subnet_ids")) __score0++;
             if (__jsonProps.Contains("byovpc.vpc_id")) __score0++;
             if (__jsonProps.Contains("eks_api_privatelink_disabled")) __score0++;
+            if (__jsonProps.Contains("ingress")) __score0++;
+            if (__jsonProps.Contains("is_sandboxes_enabled")) __score0++;
             if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("public_load_balancer")) __score0++;
             if (__jsonProps.Contains("region")) __score0++;
@@ -54,6 +56,7 @@ namespace LangSmith.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("additional_tags")) __score1++;
             if (__jsonProps.Contains("azure_entra_tenant_id")) __score1++;
+            if (__jsonProps.Contains("byoiam")) __score1++;
             if (__jsonProps.Contains("name")) __score1++;
             if (__jsonProps.Contains("public_load_balancer")) __score1++;
             if (__jsonProps.Contains("region")) __score1++;
