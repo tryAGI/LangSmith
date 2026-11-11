@@ -98,7 +98,7 @@ namespace LangSmith
         public global::LangSmith.SandboxapiProxyRewriteConfig? Rewrite { get; set; }
 
         /// <summary>
-        ///
+        /// Type selects the rule action; attribution adds up to 16 literal plaintext X- metadata headers to every proxy-handled HTTP(S) destination, independently of credential rules. At most one attribution rule is allowed, without matching, provider, relay, rewrite or environment fields.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
@@ -144,7 +144,9 @@ namespace LangSmith
         /// RelayID is the ID of the LangSmith relay (a connection of kind relay) that carries connections to match_hosts when type is relay. Those connections leave from the relay's connector, and its network and IP, instead of the sandbox host. Access control still applies first, the first enabled matching relay rule wins, and a matched host never falls back to a direct connection.
         /// </param>
         /// <param name="rewrite"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Type selects the rule action; attribution adds up to 16 literal plaintext X- metadata headers to every proxy-handled HTTP(S) destination, independently of credential rules. At most one attribution rule is allowed, without matching, provider, relay, rewrite or environment fields.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
