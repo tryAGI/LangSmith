@@ -27,6 +27,12 @@ namespace LangSmith
         public global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? Byovpc { get; set; }
 
         /// <summary>
+        /// CustomerManagedKeys encrypts data plane storage with customer-managed KMS keys.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("customer_managed_keys")]
+        public global::LangSmith.DataPlanesCreateDataPlaneCMKSettings? CustomerManagedKeys { get; set; }
+
+        /// <summary>
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eks_api_privatelink_disabled")]
@@ -99,6 +105,9 @@ namespace LangSmith
         /// <param name="additionalTags"></param>
         /// <param name="byoiam"></param>
         /// <param name="byovpc"></param>
+        /// <param name="customerManagedKeys">
+        /// CustomerManagedKeys encrypts data plane storage with customer-managed KMS keys.
+        /// </param>
         /// <param name="eksApiPrivatelinkDisabled">
         /// Use a public EKS API endpoint restricted to LangSmith control-plane egress IPs instead of creating a managed PrivateLink endpoint service. Defaults to false.
         /// </param>
@@ -125,6 +134,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.AwsResourceTag>? additionalTags,
             global::LangSmith.DataPlanesCreateDataPlaneBYOIAMSettings? byoiam,
             global::LangSmith.DataPlanesDataPlaneBYOVPCSettings? byovpc,
+            global::LangSmith.DataPlanesCreateDataPlaneCMKSettings? customerManagedKeys,
             bool? eksApiPrivatelinkDisabled,
             global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress,
             bool? isSandboxesEnabled,
@@ -135,6 +145,7 @@ namespace LangSmith
             this.AdditionalTags = additionalTags;
             this.Byoiam = byoiam;
             this.Byovpc = byovpc;
+            this.CustomerManagedKeys = customerManagedKeys;
             this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
             this.Ingress = ingress;
             this.IsSandboxesEnabled = isSandboxesEnabled;

@@ -41,6 +41,7 @@ namespace LangSmith
         /// <param name="invitesEnabled"></param>
         /// <param name="maxApiKeyExpiryDays"></param>
         /// <param name="securityContact"></param>
+        /// <param name="securityContacts"></param>
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
         /// <param name="maxTracingKeyExpiryDays"></param>
@@ -71,6 +72,7 @@ namespace LangSmith
             bool? invitesEnabled = default,
             int? maxApiKeyExpiryDays = default,
             string? securityContact = default,
+            global::System.Collections.Generic.IList<string>? securityContacts = default,
             int? maxPatExpiryDays = default,
             int? maxServiceKeyExpiryDays = default,
             int? maxTracingKeyExpiryDays = default,

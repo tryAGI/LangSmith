@@ -127,6 +127,12 @@ namespace LangSmith
         public string? SecurityContact { get; set; }
 
         /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contacts")]
+        public global::System.Collections.Generic.IList<string>? SecurityContacts { get; set; }
+
+        /// <summary>
         /// Default Value: :
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scim_group_name_separator")]
@@ -176,6 +182,9 @@ namespace LangSmith
         /// Default Value: false
         /// </param>
         /// <param name="securityContact"></param>
+        /// <param name="securityContacts">
+        /// Default Value: []
+        /// </param>
         /// <param name="scimGroupNameSeparator">
         /// Default Value: :
         /// </param>
@@ -201,6 +210,7 @@ namespace LangSmith
             bool? byocCreateSaasWorkspaceEnabled,
             bool? defaultSsoProvision,
             string? securityContact,
+            global::System.Collections.Generic.IList<string>? securityContacts,
             string? scimGroupNameSeparator)
         {
             this.Id = id;
@@ -221,6 +231,7 @@ namespace LangSmith
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.SecurityContact = securityContact;
+            this.SecurityContacts = securityContacts;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
         }
 

@@ -12,10 +12,6 @@ namespace LangSmith
         ///
         /// </summary>
         SandboxDelegationModeExplicit,
-        /// <summary>
-        ///
-        /// </summary>
-        SandboxDelegationModeInherit,
     }
 
     /// <summary>
@@ -31,7 +27,6 @@ namespace LangSmith
             return value switch
             {
                 AuthSandboxDelegationMode.SandboxDelegationModeExplicit => "EXPLICIT",
-                AuthSandboxDelegationMode.SandboxDelegationModeInherit => "INHERIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +38,6 @@ namespace LangSmith
             return value switch
             {
                 "EXPLICIT" => AuthSandboxDelegationMode.SandboxDelegationModeExplicit,
-                "INHERIT" => AuthSandboxDelegationMode.SandboxDelegationModeInherit,
                 _ => null,
             };
         }

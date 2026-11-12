@@ -22,6 +22,13 @@ namespace LangSmith
         public string? NextCursor { get; set; }
 
         /// <summary>
+        /// Total visible Agents matching the filters, independently of the cursor.<br/>
+        /// Omitted unless include_count is true.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
+        public int? TotalCount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -32,15 +39,21 @@ namespace LangSmith
         /// </summary>
         /// <param name="items"></param>
         /// <param name="nextCursor"></param>
+        /// <param name="totalCount">
+        /// Total visible Agents matching the filters, independently of the cursor.<br/>
+        /// Omitted unless include_count is true.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentplatformAgentListResponse(
             global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgent> items,
-            string? nextCursor)
+            string? nextCursor,
+            int? totalCount)
         {
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.NextCursor = nextCursor;
+            this.TotalCount = totalCount;
         }
 
         /// <summary>

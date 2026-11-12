@@ -192,6 +192,12 @@ namespace LangSmith
         public string? SecurityContact { get; set; }
 
         /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contacts")]
+        public global::System.Collections.Generic.IList<string>? SecurityContacts { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_pat_expiry_days")]
@@ -362,6 +368,9 @@ namespace LangSmith
         /// </param>
         /// <param name="maxApiKeyExpiryDays"></param>
         /// <param name="securityContact"></param>
+        /// <param name="securityContacts">
+        /// Default Value: []
+        /// </param>
         /// <param name="maxPatExpiryDays"></param>
         /// <param name="maxServiceKeyExpiryDays"></param>
         /// <param name="maxTracingKeyExpiryDays"></param>
@@ -425,6 +434,7 @@ namespace LangSmith
             bool? defaultSsoProvision,
             int? maxApiKeyExpiryDays,
             string? securityContact,
+            global::System.Collections.Generic.IList<string>? securityContacts,
             int? maxPatExpiryDays,
             int? maxServiceKeyExpiryDays,
             int? maxTracingKeyExpiryDays,
@@ -471,6 +481,7 @@ namespace LangSmith
             this.DefaultSsoProvision = defaultSsoProvision;
             this.MaxApiKeyExpiryDays = maxApiKeyExpiryDays;
             this.SecurityContact = securityContact;
+            this.SecurityContacts = securityContacts;
             this.MaxPatExpiryDays = maxPatExpiryDays;
             this.MaxServiceKeyExpiryDays = maxServiceKeyExpiryDays;
             this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;

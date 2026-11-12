@@ -257,6 +257,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("security_contacts")]
+        public global::System.Collections.Generic.IList<string>? SecurityContacts { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]
         public string? SsoLoginSlug { get; set; }
 
@@ -351,6 +357,7 @@ namespace LangSmith
         /// </param>
         /// <param name="scimGroupNameSeparator"></param>
         /// <param name="securityContact"></param>
+        /// <param name="securityContacts"></param>
         /// <param name="ssoLoginSlug"></param>
         /// <param name="ssoOnly"></param>
         /// <param name="tier"></param>
@@ -402,6 +409,7 @@ namespace LangSmith
             bool? restrictBrowserSecrets,
             string? scimGroupNameSeparator,
             string? securityContact,
+            global::System.Collections.Generic.IList<string>? securityContacts,
             string? ssoLoginSlug,
             bool? ssoOnly,
             string? tier,
@@ -448,6 +456,7 @@ namespace LangSmith
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.SecurityContact = securityContact;
+            this.SecurityContacts = securityContacts;
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
             this.Tier = tier;
