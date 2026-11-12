@@ -338,6 +338,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public RulesClient Rules { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public RunClient Run { get; }
 
         /// <summary>

@@ -111,6 +111,12 @@ namespace LangSmith
         public global::LangSmith.AuditLogServer? Server { get; set; }
 
         /// <summary>
+        /// Agent access token the request minted. The entry is written to the org of the agent the token names.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_access_token")]
+        public global::LangSmith.AuditLogAgentAccessToken? AgentAccessToken { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -156,6 +162,9 @@ namespace LangSmith
         /// <param name="server">
         /// Managed Tools MCP server the request reached.
         /// </param>
+        /// <param name="agentAccessToken">
+        /// Agent access token the request minted. The entry is written to the org of the agent the token names.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -176,7 +185,8 @@ namespace LangSmith
             bool? isToolError,
             global::LangSmith.AuditLogGateway? gateway,
             global::LangSmith.AuditLogUpstream? upstream,
-            global::LangSmith.AuditLogServer? server)
+            global::LangSmith.AuditLogServer? server,
+            global::LangSmith.AuditLogAgentAccessToken? agentAccessToken)
         {
             this.RequestMethod = requestMethod;
             this.RequestPath = requestPath;
@@ -195,6 +205,7 @@ namespace LangSmith
             this.Gateway = gateway;
             this.Upstream = upstream;
             this.Server = server;
+            this.AgentAccessToken = agentAccessToken;
         }
 
         /// <summary>
