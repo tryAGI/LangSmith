@@ -136,6 +136,12 @@ namespace LangSmith
         public int? MaxFreeLanggraphCloudDeployments { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("free_deployment_ttl_days")]
+        public int? FreeDeploymentTtlDays { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_enabled")]
@@ -560,6 +566,7 @@ namespace LangSmith
         /// <param name="maxFreeLanggraphCloudDeployments">
         /// Default Value: 0
         /// </param>
+        /// <param name="freeDeploymentTtlDays"></param>
         /// <param name="sandboxEnabled">
         /// Default Value: false
         /// </param>
@@ -762,6 +769,7 @@ namespace LangSmith
             bool? canUseLanggraphCloud,
             int? maxLanggraphCloudDeployments,
             int? maxFreeLanggraphCloudDeployments,
+            int? freeDeploymentTtlDays,
             bool? sandboxEnabled,
             bool? sandboxRestrictedEgress,
             int? maxSandboxes,
@@ -844,6 +852,7 @@ namespace LangSmith
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
+            this.FreeDeploymentTtlDays = freeDeploymentTtlDays;
             this.SandboxEnabled = sandboxEnabled;
             this.SandboxRestrictedEgress = sandboxRestrictedEgress;
             this.MaxSandboxes = maxSandboxes;

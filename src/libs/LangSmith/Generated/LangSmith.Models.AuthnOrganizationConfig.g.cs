@@ -246,6 +246,14 @@ namespace LangSmith
         public double? FleetLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
+        /// FreeDeploymentTTLDays is the lifetime in days of the free deployments this org<br/>
+        /// creates; they are deleted when it ends and limited to the SERVERLESS_S tier.<br/>
+        /// nil or a value &lt;= 0 means free deployments never expire.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("free_deployment_ttl_days")]
+        public int? FreeDeploymentTtlDays { get; set; }
+
+        /// <summary>
         /// GatewayPIIRedactionEnabled indicates whether this org can use PII<br/>
         /// detection/redaction inside gateway data protection (guard) policies.<br/>
         /// When this is off, PII-configured guard policies are unavailable as a<br/>
@@ -654,6 +662,11 @@ namespace LangSmith
         /// FleetLCUSpendLimitMonthly caps an org's monthly Fleet LCU spend, resolved from<br/>
         /// Metronome custom fields. nil or negative means unlimited; 0 blocks all runs.
         /// </param>
+        /// <param name="freeDeploymentTtlDays">
+        /// FreeDeploymentTTLDays is the lifetime in days of the free deployments this org<br/>
+        /// creates; they are deleted when it ends and limited to the SERVERLESS_S tier.<br/>
+        /// nil or a value &lt;= 0 means free deployments never expire.
+        /// </param>
         /// <param name="gatewayPiiRedactionEnabled">
         /// GatewayPIIRedactionEnabled indicates whether this org can use PII<br/>
         /// detection/redaction inside gateway data protection (guard) policies.<br/>
@@ -841,6 +854,7 @@ namespace LangSmith
             double? engineLcuSpendLimitMonthly,
             bool? fleetBuiltinModelsEnabled,
             double? fleetLcuSpendLimitMonthly,
+            int? freeDeploymentTtlDays,
             bool? gatewayPiiRedactionEnabled,
             bool? ipAllowlistEnabled,
             bool? isAnonymous,
@@ -921,6 +935,7 @@ namespace LangSmith
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.FleetBuiltinModelsEnabled = fleetBuiltinModelsEnabled;
             this.FleetLcuSpendLimitMonthly = fleetLcuSpendLimitMonthly;
+            this.FreeDeploymentTtlDays = freeDeploymentTtlDays;
             this.GatewayPiiRedactionEnabled = gatewayPiiRedactionEnabled;
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.IsAnonymous = isAnonymous;

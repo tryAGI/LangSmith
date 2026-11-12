@@ -1379,6 +1379,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ListRules,
+        /// <summary>
+        ///
+        /// </summary>
         ListSandboxClaims,
         /// <summary>
         ///
@@ -1440,6 +1444,10 @@ namespace LangSmith
         ///
         /// </summary>
         McpProxyGet,
+        /// <summary>
+        ///
+        /// </summary>
+        MintAgentAccessToken,
         /// <summary>
         ///
         /// </summary>
@@ -1724,6 +1732,10 @@ namespace LangSmith
         ///
         /// </summary>
         TestWebhookDestination,
+        /// <summary>
+        ///
+        /// </summary>
+        TriggerFleetManagedToolsMigration,
         /// <summary>
         ///
         /// </summary>
@@ -2536,6 +2548,7 @@ namespace LangSmith
                 AuditLogOperation.ListPendingOrganizationInvites => "list_pending_organization_invites",
                 AuditLogOperation.ListPendingWorkspaceInvites => "list_pending_workspace_invites",
                 AuditLogOperation.ListPermissions => "list_permissions",
+                AuditLogOperation.ListRules => "list_rules",
                 AuditLogOperation.ListSandboxClaims => "list_sandbox_claims",
                 AuditLogOperation.ListSandboxFunctions => "list_sandbox_functions",
                 AuditLogOperation.ListSandboxRegistries => "list_sandbox_registries",
@@ -2552,6 +2565,7 @@ namespace LangSmith
                 AuditLogOperation.Login => "login",
                 AuditLogOperation.McpProxy => "mcp_proxy",
                 AuditLogOperation.McpProxyGet => "mcp_proxy_get",
+                AuditLogOperation.MintAgentAccessToken => "mint_agent_access_token",
                 AuditLogOperation.MintSelfHostedLicense => "mint_self_hosted_license",
                 AuditLogOperation.PopulateAnnotationQueue => "populate_annotation_queue",
                 AuditLogOperation.PurchasePrepaidGatewayProviderCredits => "purchase_prepaid_gateway_provider_credits",
@@ -2623,6 +2637,7 @@ namespace LangSmith
                 AuditLogOperation.TestOpGeneric => "test_op_generic",
                 AuditLogOperation.TestPromptWebhook => "test_prompt_webhook",
                 AuditLogOperation.TestWebhookDestination => "test_webhook_destination",
+                AuditLogOperation.TriggerFleetManagedToolsMigration => "trigger_fleet_managed_tools_migration",
                 AuditLogOperation.TriggerForgeConfiguration => "trigger_forge_configuration",
                 AuditLogOperation.UnshareDataset => "unshare_dataset",
                 AuditLogOperation.UnshareEntities => "unshare_entities",
@@ -3089,6 +3104,7 @@ namespace LangSmith
                 "list_pending_organization_invites" => AuditLogOperation.ListPendingOrganizationInvites,
                 "list_pending_workspace_invites" => AuditLogOperation.ListPendingWorkspaceInvites,
                 "list_permissions" => AuditLogOperation.ListPermissions,
+                "list_rules" => AuditLogOperation.ListRules,
                 "list_sandbox_claims" => AuditLogOperation.ListSandboxClaims,
                 "list_sandbox_functions" => AuditLogOperation.ListSandboxFunctions,
                 "list_sandbox_registries" => AuditLogOperation.ListSandboxRegistries,
@@ -3105,6 +3121,7 @@ namespace LangSmith
                 "login" => AuditLogOperation.Login,
                 "mcp_proxy" => AuditLogOperation.McpProxy,
                 "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
+                "mint_agent_access_token" => AuditLogOperation.MintAgentAccessToken,
                 "mint_self_hosted_license" => AuditLogOperation.MintSelfHostedLicense,
                 "populate_annotation_queue" => AuditLogOperation.PopulateAnnotationQueue,
                 "purchase_prepaid_gateway_provider_credits" => AuditLogOperation.PurchasePrepaidGatewayProviderCredits,
@@ -3176,6 +3193,7 @@ namespace LangSmith
                 "test_op_generic" => AuditLogOperation.TestOpGeneric,
                 "test_prompt_webhook" => AuditLogOperation.TestPromptWebhook,
                 "test_webhook_destination" => AuditLogOperation.TestWebhookDestination,
+                "trigger_fleet_managed_tools_migration" => AuditLogOperation.TriggerFleetManagedToolsMigration,
                 "trigger_forge_configuration" => AuditLogOperation.TriggerForgeConfiguration,
                 "unshare_dataset" => AuditLogOperation.UnshareDataset,
                 "unshare_entities" => AuditLogOperation.UnshareEntities,

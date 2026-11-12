@@ -81,6 +81,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("match_port")]
+        public int? MatchPort { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("match_scheme")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.SandboxesProxyRuleMatchSchemeJsonConverter))]
+        public global::LangSmith.SandboxesProxyRuleMatchScheme? MatchScheme { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -140,6 +153,8 @@ namespace LangSmith
         /// <param name="matchPaths">
         /// MatchPaths restricts a header injection or rewrite rule to requests whose path matches one of the patterns, so one host can use a different credential per route. The path excludes the query string. A pattern is an exact path (`/v1/runs`); a prefix, written as the prefix followed by a slash and `*` or `**`, which matches any path starting with that prefix (the prefix `/v1` also matches `/v10`); a suffix, written as `*`, a slash, and then the ending, which matches any path that ends with that text (the ending `runs` also matches `/v1/xruns`); or `*` alone for every path. A wildcard in the middle of a path is not supported. An empty list matches every path. Rules are evaluated in order and the first match wins. Rejected on aws, gcp, azure, and relay rules.
         /// </param>
+        /// <param name="matchPort"></param>
+        /// <param name="matchScheme"></param>
         /// <param name="relayId">
         /// RelayID is the ID of the LangSmith relay (a connection of kind relay) that carries connections to match_hosts when type is relay. Those connections leave from the relay's connector, and its network and IP, instead of the sandbox host. Access control still applies first, the first enabled matching relay rule wins, and a matched host never falls back to a direct connection.
         /// </param>
@@ -162,6 +177,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? matchHeaders,
             global::System.Collections.Generic.IList<string>? matchHosts,
             global::System.Collections.Generic.IList<string>? matchPaths,
+            int? matchPort,
+            global::LangSmith.SandboxesProxyRuleMatchScheme? matchScheme,
             global::System.Guid? relayId,
             global::LangSmith.SandboxapiProxyRewriteConfig? rewrite,
             string? type)
@@ -176,6 +193,8 @@ namespace LangSmith
             this.MatchHeaders = matchHeaders;
             this.MatchHosts = matchHosts;
             this.MatchPaths = matchPaths;
+            this.MatchPort = matchPort;
+            this.MatchScheme = matchScheme;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RelayId = relayId;
             this.Rewrite = rewrite;

@@ -50,7 +50,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
             global::System.Collections.Generic.IList<global::System.Guid>? userIds,
             bool? isDisabled,
-            ref global::LangSmith.MemberSortField? sortBy);
+            ref global::LangSmith.MemberSortField? sortBy,
+            ref bool? needsOidcSsoSignIn);
         partial void PrepareGetCurrentActiveOrgMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -62,7 +63,8 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? lsUserIds,
             global::System.Collections.Generic.IList<global::System.Guid>? userIds,
             bool? isDisabled,
-            global::LangSmith.MemberSortField? sortBy);
+            global::LangSmith.MemberSortField? sortBy,
+            bool? needsOidcSsoSignIn);
         partial void ProcessGetCurrentActiveOrgMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -100,6 +102,9 @@ namespace LangSmith
         /// Field to sort by<br/>
         /// Default Value: created_at
         /// </param>
+        /// <param name="needsOidcSsoSignIn">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -113,6 +118,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? userIds = default,
             bool? isDisabled = default,
             global::LangSmith.MemberSortField? sortBy = default,
+            bool? needsOidcSsoSignIn = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -126,6 +132,7 @@ namespace LangSmith
                 userIds: userIds,
                 isDisabled: isDisabled,
                 sortBy: sortBy,
+                needsOidcSsoSignIn: needsOidcSsoSignIn,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -160,6 +167,9 @@ namespace LangSmith
         /// Field to sort by<br/>
         /// Default Value: created_at
         /// </param>
+        /// <param name="needsOidcSsoSignIn">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -173,6 +183,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::System.Guid>? userIds = default,
             bool? isDisabled = default,
             global::LangSmith.MemberSortField? sortBy = default,
+            bool? needsOidcSsoSignIn = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -188,7 +199,8 @@ namespace LangSmith
                 lsUserIds: lsUserIds,
                 userIds: userIds,
                 isDisabled: isDisabled,
-                sortBy: ref sortBy);
+                sortBy: ref sortBy,
+                needsOidcSsoSignIn: ref needsOidcSsoSignIn);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -228,6 +240,7 @@ namespace LangSmith
                                 .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("is_disabled", isDisabled?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("needs_oidc_sso_sign_in", needsOidcSsoSignIn?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -277,7 +290,8 @@ namespace LangSmith
                     lsUserIds: lsUserIds,
                     userIds: userIds,
                     isDisabled: isDisabled,
-                    sortBy: sortBy);
+                    sortBy: sortBy,
+                    needsOidcSsoSignIn: needsOidcSsoSignIn);
 
                 return __httpRequest;
             }
