@@ -44,6 +44,7 @@ namespace LangSmith.JsonConverters
             if (__jsonProps.Contains("byovpc.private_db_subnet_ids")) __score0++;
             if (__jsonProps.Contains("byovpc.public_subnet_ids")) __score0++;
             if (__jsonProps.Contains("byovpc.vpc_id")) __score0++;
+            if (__jsonProps.Contains("customer_managed_keys")) __score0++;
             if (__jsonProps.Contains("eks_api_privatelink_disabled")) __score0++;
             if (__jsonProps.Contains("ingress")) __score0++;
             if (__jsonProps.Contains("is_sandboxes_enabled")) __score0++;

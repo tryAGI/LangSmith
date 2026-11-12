@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class TracerSessionsClient
+    public partial class SessionsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateTracerSessionServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_CreateAProjectOrExperimentServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateTracerSessionSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateAProjectOrExperimentSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,48 +34,48 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdateTracerSessionSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateAProjectOrExperimentSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_UpdateTracerSessionSecurityRequirement0,
+            {                s_CreateAProjectOrExperimentSecurityRequirement0,
             };
-        partial void PrepareUpdateTracerSessionArguments(
+        partial void PrepareCreateAProjectOrExperimentArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid sessionId,
-            global::LangSmith.TracerSessionUpdate request);
-        partial void PrepareUpdateTracerSessionRequest(
+            ref bool? upsert,
+            global::LangSmith.TracerSessionsCreateSessionRequest request);
+        partial void PrepareCreateAProjectOrExperimentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid sessionId,
-            global::LangSmith.TracerSessionUpdate request);
-        partial void ProcessUpdateTracerSessionResponse(
+            bool? upsert,
+            global::LangSmith.TracerSessionsCreateSessionRequest request);
+        partial void ProcessCreateAProjectOrExperimentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateTracerSessionResponseContent(
+        partial void ProcessCreateAProjectOrExperimentResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Update Tracer Session<br/>
-        /// Update a project.
+        /// Create a project or experiment<br/>
+        /// Create a session, or update an existing session with the same name when upsert is true. Returns the refreshed session representation without optional run statistics.
         /// </summary>
-        /// <param name="sessionId"></param>
+        /// <param name="upsert"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> UpdateTracerSessionAsync(
-            global::System.Guid sessionId,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.Session> CreateAProjectOrExperimentAsync(
 
-            global::LangSmith.TracerSessionUpdate request,
+            global::LangSmith.TracerSessionsCreateSessionRequest request,
+            bool? upsert = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await UpdateTracerSessionAsResponseAsync(
-                sessionId: sessionId,
+            var __response = await CreateAProjectOrExperimentAsResponseAsync(
 
                 request: request,
+                upsert: upsert,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -83,18 +83,18 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Update Tracer Session<br/>
-        /// Update a project.
+        /// Create a project or experiment<br/>
+        /// Create a session, or update an existing session with the same name when upsert is true. Returns the refreshed session representation without optional run statistics.
         /// </summary>
-        /// <param name="sessionId"></param>
+        /// <param name="upsert"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>> UpdateTracerSessionAsResponseAsync(
-            global::System.Guid sessionId,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Session>> CreateAProjectOrExperimentAsResponseAsync(
 
-            global::LangSmith.TracerSessionUpdate request,
+            global::LangSmith.TracerSessionsCreateSessionRequest request,
+            bool? upsert = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,16 +102,16 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateTracerSessionArguments(
+            PrepareCreateAProjectOrExperimentArguments(
                 httpClient: HttpClient,
-                sessionId: ref sessionId,
+                upsert: ref upsert,
                 request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_UpdateTracerSessionSecurityRequirements,
-                operationName: "UpdateTracerSessionAsync");
+                securityRequirements: s_CreateAProjectOrExperimentSecurityRequirements,
+                operationName: "CreateAProjectOrExperimentAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -131,17 +131,20 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/sessions/{sessionId}",
+                                path: "/api/v2/sessions",
                                 baseUri: ResolveBaseUri(
-                                servers: s_UpdateTracerSessionServers,
+                                servers: s_CreateAProjectOrExperimentServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("upsert", upsert?.ToString().ToLowerInvariant())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: new global::System.Net.Http.HttpMethod("PATCH"),
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -178,10 +181,10 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareUpdateTracerSessionRequest(
+                PrepareCreateAProjectOrExperimentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId,
+                    upsert: upsert,
                     request: request);
 
                 return __httpRequest;
@@ -199,10 +202,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateTracerSession",
-                                methodName: "UpdateTracerSessionAsync",
-                                pathTemplate: "$\"/api/v1/sessions/{sessionId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "CreateAProjectOrExperiment",
+                                methodName: "CreateAProjectOrExperimentAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -233,10 +236,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateTracerSession",
-                                methodName: "UpdateTracerSessionAsync",
-                                pathTemplate: "$\"/api/v1/sessions/{sessionId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "CreateAProjectOrExperiment",
+                                methodName: "CreateAProjectOrExperimentAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -274,10 +277,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateTracerSession",
-                                methodName: "UpdateTracerSessionAsync",
-                                pathTemplate: "$\"/api/v1/sessions/{sessionId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "CreateAProjectOrExperiment",
+                                methodName: "CreateAProjectOrExperimentAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -314,7 +317,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessUpdateTracerSessionResponse(
+                ProcessCreateAProjectOrExperimentResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -322,10 +325,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateTracerSession",
-                                methodName: "UpdateTracerSessionAsync",
-                                pathTemplate: "$\"/api/v1/sessions/{sessionId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "CreateAProjectOrExperiment",
+                                methodName: "CreateAProjectOrExperimentAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -344,10 +347,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateTracerSession",
-                                methodName: "UpdateTracerSessionAsync",
-                                pathTemplate: "$\"/api/v1/sessions/{sessionId}\"",
-                                httpMethod: "PATCH",
+                                operationId: "CreateAProjectOrExperiment",
+                                methodName: "CreateAProjectOrExperimentAsync",
+                                pathTemplate: "\"/api/v2/sessions\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -361,38 +364,223 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // Invalid request
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Authentication required
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::LangSmith.SharedProblemDetails? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::LangSmith.SharedProblemDetails.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::LangSmith.SharedProblemDetails.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Permission denied
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SharedProblemDetails? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Dataset not found
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::LangSmith.SharedProblemDetails? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::LangSmith.SharedProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::LangSmith.SharedProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Session conflict
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LangSmith.SharedProblemDetails? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LangSmith.SharedProblemDetails.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LangSmith.SharedProblemDetails.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Internal server error
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::LangSmith.SharedProblemDetails? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::LangSmith.SharedProblemDetails.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -411,7 +599,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessUpdateTracerSessionResponseContent(
+                                ProcessCreateAProjectOrExperimentResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -420,9 +608,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.TracerSession.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.Session.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Session>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -452,9 +640,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.TracerSession.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.Session.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TracerSession>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Session>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -495,47 +683,76 @@ namespace LangSmith
             }
         }
         /// <summary>
-        /// Update Tracer Session<br/>
-        /// Update a project.
+        /// Create a project or experiment<br/>
+        /// Create a session, or update an existing session with the same name when upsert is true. Returns the refreshed session representation without optional run statistics.
         /// </summary>
-        /// <param name="sessionId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
+        /// <param name="upsert"></param>
         /// <param name="defaultDatasetId"></param>
+        /// <param name="description"></param>
         /// <param name="endTime"></param>
+        /// <param name="evaluatorKeys"></param>
         /// <param name="extra"></param>
-        /// <param name="traceTier"></param>
+        /// <param name="id"></param>
+        /// <param name="kickedOffBy"></param>
         /// <param name="longlivedTtlDays">
-        /// Retention in days for traces while trace_tier is longlived. One of the deployment's allowed values (allowed_longlived_ttl_days in /info), up to the maximum of the deployment. The value is kept while trace_tier is shortlived. Null means the project uses the workspace retention. Omit the field to keep the current value.
+        /// LonglivedTTLDays overrides long-lived trace retention. Null restores the workspace default.
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="numExamples"></param>
+        /// <param name="numRepetitions"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="tagValueIds"></param>
+        /// <param name="traceTier"></param>
+        /// <param name="type">
+        /// Type identifies a tracing project, Agent tracing project, or experiment.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.TracerSession> UpdateTracerSessionAsync(
-            global::System.Guid sessionId,
-            string? name = default,
-            string? description = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.Session> CreateAProjectOrExperimentAsync(
+            global::LangSmith.TracerSessionsCreateSessionRequestType type,
+            bool? upsert = default,
             global::System.Guid? defaultDatasetId = default,
+            string? description = default,
             global::System.DateTime? endTime = default,
+            global::System.Collections.Generic.IList<string>? evaluatorKeys = default,
             object? extra = default,
-            global::LangSmith.TraceTier? traceTier = default,
+            global::System.Guid? id = default,
+            string? kickedOffBy = default,
             int? longlivedTtlDays = default,
+            string? name = default,
+            int? numExamples = default,
+            int? numRepetitions = default,
+            global::System.Guid? referenceDatasetId = default,
+            global::System.DateTime? startTime = default,
+            global::System.Collections.Generic.IList<string>? tagValueIds = default,
+            global::LangSmith.TracerSessionsCreateSessionRequestTraceTier? traceTier = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.TracerSessionUpdate
+            var __request = new global::LangSmith.TracerSessionsCreateSessionRequest
             {
-                Name = name,
-                Description = description,
                 DefaultDatasetId = defaultDatasetId,
+                Description = description,
                 EndTime = endTime,
+                EvaluatorKeys = evaluatorKeys,
                 Extra = extra,
-                TraceTier = traceTier,
+                Id = id,
+                KickedOffBy = kickedOffBy,
                 LonglivedTtlDays = longlivedTtlDays,
+                Name = name,
+                NumExamples = numExamples,
+                NumRepetitions = numRepetitions,
+                ReferenceDatasetId = referenceDatasetId,
+                StartTime = startTime,
+                TagValueIds = tagValueIds,
+                TraceTier = traceTier,
+                Type = type,
             };
 
-            return await UpdateTracerSessionAsync(
-                sessionId: sessionId,
+            return await CreateAProjectOrExperimentAsync(
+                upsert: upsert,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

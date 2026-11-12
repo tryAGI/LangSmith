@@ -3,10 +3,10 @@
 
 namespace LangSmith
 {
-    public partial class RunClient
+    public partial class SessionsClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_ListRulesServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_GetATracingProjectServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListRulesSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_GetATracingProjectSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,78 +34,53 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListRulesSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_GetATracingProjectSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ListRulesSecurityRequirement0,
+            {                s_GetATracingProjectSecurityRequirement0,
             };
-        partial void PrepareListRulesArguments(
+        partial void PrepareGetATracingProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Guid? datasetId,
-            global::System.Guid? sessionId,
-            ref global::LangSmith.ListRulesApiV1RunsRulesGetType? type,
-            ref string? nameContains,
-            global::System.Collections.Generic.IList<global::System.Guid>? id,
-            global::System.Guid? evaluatorId,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            ref bool? includeBackfillProgress);
-        partial void PrepareListRulesRequest(
+            ref global::System.Guid sessionId,
+            ref bool? includeStats,
+            ref global::System.DateTime? statsStartTime);
+        partial void PrepareGetATracingProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid? datasetId,
-            global::System.Guid? sessionId,
-            global::LangSmith.ListRulesApiV1RunsRulesGetType? type,
-            string? nameContains,
-            global::System.Collections.Generic.IList<global::System.Guid>? id,
-            global::System.Guid? evaluatorId,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            bool? includeBackfillProgress);
-        partial void ProcessListRulesResponse(
+            global::System.Guid sessionId,
+            bool? includeStats,
+            global::System.DateTime? statsStartTime);
+        partial void ProcessGetATracingProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListRulesResponseContent(
+        partial void ProcessGetATracingProjectResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Rules<br/>
-        /// List all run rules.
+        /// Get a tracing project<br/>
+        /// Returns one tracing project or experiment by ID. Pass include_stats=true to include run statistics.
         /// </summary>
-        /// <param name="datasetId"></param>
         /// <param name="sessionId"></param>
-        /// <param name="type"></param>
-        /// <param name="nameContains"></param>
-        /// <param name="id"></param>
-        /// <param name="evaluatorId"></param>
-        /// <param name="tagValueId"></param>
-        /// <param name="includeBackfillProgress">
+        /// <param name="includeStats">
         /// Default Value: false
         /// </param>
+        /// <param name="statsStartTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>> ListRulesAsync(
-            global::System.Guid? datasetId = default,
-            global::System.Guid? sessionId = default,
-            global::LangSmith.ListRulesApiV1RunsRulesGetType? type = default,
-            string? nameContains = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::System.Guid? evaluatorId = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            bool? includeBackfillProgress = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.Session> GetATracingProjectAsync(
+            global::System.Guid sessionId,
+            bool? includeStats = default,
+            global::System.DateTime? statsStartTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListRulesAsResponseAsync(
-                datasetId: datasetId,
+            var __response = await GetATracingProjectAsResponseAsync(
                 sessionId: sessionId,
-                type: type,
-                nameContains: nameContains,
-                id: id,
-                evaluatorId: evaluatorId,
-                tagValueId: tagValueId,
-                includeBackfillProgress: includeBackfillProgress,
+                includeStats: includeStats,
+                statsStartTime: statsStartTime,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -113,52 +88,37 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// List Rules<br/>
-        /// List all run rules.
+        /// Get a tracing project<br/>
+        /// Returns one tracing project or experiment by ID. Pass include_stats=true to include run statistics.
         /// </summary>
-        /// <param name="datasetId"></param>
         /// <param name="sessionId"></param>
-        /// <param name="type"></param>
-        /// <param name="nameContains"></param>
-        /// <param name="id"></param>
-        /// <param name="evaluatorId"></param>
-        /// <param name="tagValueId"></param>
-        /// <param name="includeBackfillProgress">
+        /// <param name="includeStats">
         /// Default Value: false
         /// </param>
+        /// <param name="statsStartTime"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>>> ListRulesAsResponseAsync(
-            global::System.Guid? datasetId = default,
-            global::System.Guid? sessionId = default,
-            global::LangSmith.ListRulesApiV1RunsRulesGetType? type = default,
-            string? nameContains = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::System.Guid? evaluatorId = default,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            bool? includeBackfillProgress = default,
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Session>> GetATracingProjectAsResponseAsync(
+            global::System.Guid sessionId,
+            bool? includeStats = default,
+            global::System.DateTime? statsStartTime = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListRulesArguments(
+            PrepareGetATracingProjectArguments(
                 httpClient: HttpClient,
-                datasetId: datasetId,
-                sessionId: sessionId,
-                type: ref type,
-                nameContains: ref nameContains,
-                id: id,
-                evaluatorId: evaluatorId,
-                tagValueId: tagValueId,
-                includeBackfillProgress: ref includeBackfillProgress);
+                sessionId: ref sessionId,
+                includeStats: ref includeStats,
+                statsStartTime: ref statsStartTime);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListRulesSecurityRequirements,
-                operationName: "ListRulesAsync");
+                securityRequirements: s_GetATracingProjectSecurityRequirements,
+                operationName: "GetATracingProjectAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -178,19 +138,13 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/runs/rules",
+                                path: $"/api/v2/sessions/{sessionId}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_ListRulesServers,
+                                servers: s_GetATracingProjectServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("dataset_id", datasetId?.ToString())
-                                .AddOptionalParameter("session_id", sessionId?.ToString())
-                                .AddOptionalParameter("type", type?.ToValueString())
-                                .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
-                                .AddOptionalParameter("evaluator_id", evaluatorId?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
-                                .AddOptionalParameter("include_backfill_progress", includeBackfillProgress?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("stats_start_time", statsStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -229,17 +183,12 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListRulesRequest(
+                PrepareGetATracingProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
                     sessionId: sessionId,
-                    type: type,
-                    nameContains: nameContains,
-                    id: id,
-                    evaluatorId: evaluatorId,
-                    tagValueId: tagValueId,
-                    includeBackfillProgress: includeBackfillProgress);
+                    includeStats: includeStats,
+                    statsStartTime: statsStartTime);
 
                 return __httpRequest;
             }
@@ -256,9 +205,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRules",
-                                methodName: "ListRulesAsync",
-                                pathTemplate: "\"/api/v1/runs/rules\"",
+                                operationId: "GetATracingProject",
+                                methodName: "GetATracingProjectAsync",
+                                pathTemplate: "$\"/api/v2/sessions/{sessionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -290,9 +239,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRules",
-                                methodName: "ListRulesAsync",
-                                pathTemplate: "\"/api/v1/runs/rules\"",
+                                operationId: "GetATracingProject",
+                                methodName: "GetATracingProjectAsync",
+                                pathTemplate: "$\"/api/v2/sessions/{sessionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -331,9 +280,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRules",
-                                methodName: "ListRulesAsync",
-                                pathTemplate: "\"/api/v1/runs/rules\"",
+                                operationId: "GetATracingProject",
+                                methodName: "GetATracingProjectAsync",
+                                pathTemplate: "$\"/api/v2/sessions/{sessionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -371,7 +320,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListRulesResponse(
+                ProcessGetATracingProjectResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -379,9 +328,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRules",
-                                methodName: "ListRulesAsync",
-                                pathTemplate: "\"/api/v1/runs/rules\"",
+                                operationId: "GetATracingProject",
+                                methodName: "GetATracingProjectAsync",
+                                pathTemplate: "$\"/api/v2/sessions/{sessionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -401,9 +350,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListRules",
-                                methodName: "ListRulesAsync",
-                                pathTemplate: "\"/api/v1/runs/rules\"",
+                                operationId: "GetATracingProject",
+                                methodName: "GetATracingProjectAsync",
+                                pathTemplate: "$\"/api/v2/sessions/{sessionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -418,38 +367,75 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
-                            if ((int)__response.StatusCode == 422)
+                            // Invalid project ID or query parameters
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The caller may not read this project
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SharedProblemDetails? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -468,7 +454,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListRulesResponseContent(
+                                ProcessGetATracingProjectResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -477,9 +463,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>), JsonSerializerContext) ??
+                                    var __value = global::LangSmith.Session.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Session>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -509,9 +495,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.Session.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.RunRulesSchema>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Session>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

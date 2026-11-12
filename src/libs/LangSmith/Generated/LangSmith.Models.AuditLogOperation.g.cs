@@ -271,6 +271,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateFeedback,
+        /// <summary>
+        ///
+        /// </summary>
         CreateFeedbackConfig,
         /// <summary>
         ///
@@ -1599,6 +1603,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ReadTracerSession,
+        /// <summary>
+        ///
+        /// </summary>
         ReadTracingDashboard,
         /// <summary>
         ///
@@ -2271,6 +2279,7 @@ namespace LangSmith
                 AuditLogOperation.CreateExamples => "create_examples",
                 AuditLogOperation.CreateExperimentViaUpload => "create_experiment_via_upload",
                 AuditLogOperation.CreateExperimentViewOverride => "create_experiment_view_override",
+                AuditLogOperation.CreateFeedback => "create_feedback",
                 AuditLogOperation.CreateFeedbackConfig => "create_feedback_config",
                 AuditLogOperation.CreateFeedbackFormula => "create_feedback_formula",
                 AuditLogOperation.CreateFilterView => "create_filter_view",
@@ -2603,6 +2612,7 @@ namespace LangSmith
                 AuditLogOperation.ReadSharedDelta => "read_shared_delta",
                 AuditLogOperation.ReadSharedDeltaStream => "read_shared_delta_stream",
                 AuditLogOperation.ReadTeamAccessPolicies => "read_team_access_policies",
+                AuditLogOperation.ReadTracerSession => "read_tracer_session",
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
                 AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
                 AuditLogOperation.RefreshMcpGatewayTools => "refresh_mcp_gateway_tools",
@@ -2827,6 +2837,7 @@ namespace LangSmith
                 "create_examples" => AuditLogOperation.CreateExamples,
                 "create_experiment_via_upload" => AuditLogOperation.CreateExperimentViaUpload,
                 "create_experiment_view_override" => AuditLogOperation.CreateExperimentViewOverride,
+                "create_feedback" => AuditLogOperation.CreateFeedback,
                 "create_feedback_config" => AuditLogOperation.CreateFeedbackConfig,
                 "create_feedback_formula" => AuditLogOperation.CreateFeedbackFormula,
                 "create_filter_view" => AuditLogOperation.CreateFilterView,
@@ -3159,6 +3170,7 @@ namespace LangSmith
                 "read_shared_delta" => AuditLogOperation.ReadSharedDelta,
                 "read_shared_delta_stream" => AuditLogOperation.ReadSharedDeltaStream,
                 "read_team_access_policies" => AuditLogOperation.ReadTeamAccessPolicies,
+                "read_tracer_session" => AuditLogOperation.ReadTracerSession,
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
                 "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
                 "refresh_mcp_gateway_tools" => AuditLogOperation.RefreshMcpGatewayTools,

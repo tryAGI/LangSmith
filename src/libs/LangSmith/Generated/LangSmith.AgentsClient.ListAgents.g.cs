@@ -41,6 +41,7 @@ namespace LangSmith
         partial void PrepareListAgentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? pageSize,
+            ref bool? includeCount,
             ref string? cursor,
             ref global::LangSmith.GetAgentsSortBy? sortBy,
             ref global::LangSmith.GetAgentsSortOrder? sortOrder,
@@ -52,6 +53,7 @@ namespace LangSmith
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? pageSize,
+            bool? includeCount,
             string? cursor,
             global::LangSmith.GetAgentsSortBy? sortBy,
             global::LangSmith.GetAgentsSortOrder? sortOrder,
@@ -75,6 +77,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="includeCount">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="sortBy">
         /// Default Value: last_run_start_time
@@ -91,6 +96,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AgentplatformAgentListResponse> ListAgentsAsync(
             int? pageSize = default,
+            bool? includeCount = default,
             string? cursor = default,
             global::LangSmith.GetAgentsSortBy? sortBy = default,
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
@@ -103,6 +109,7 @@ namespace LangSmith
         {
             var __response = await ListAgentsAsResponseAsync(
                 pageSize: pageSize,
+                includeCount: includeCount,
                 cursor: cursor,
                 sortBy: sortBy,
                 sortOrder: sortOrder,
@@ -123,6 +130,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="includeCount">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="sortBy">
         /// Default Value: last_run_start_time
@@ -139,6 +149,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AgentplatformAgentListResponse>> ListAgentsAsResponseAsync(
             int? pageSize = default,
+            bool? includeCount = default,
             string? cursor = default,
             global::LangSmith.GetAgentsSortBy? sortBy = default,
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
@@ -154,6 +165,7 @@ namespace LangSmith
             PrepareListAgentsArguments(
                 httpClient: HttpClient,
                 pageSize: ref pageSize,
+                includeCount: ref includeCount,
                 cursor: ref cursor,
                 sortBy: ref sortBy,
                 sortOrder: ref sortOrder,
@@ -192,6 +204,7 @@ namespace LangSmith
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("include_count", includeCount?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
@@ -241,6 +254,7 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     pageSize: pageSize,
+                    includeCount: includeCount,
                     cursor: cursor,
                     sortBy: sortBy,
                     sortOrder: sortOrder,

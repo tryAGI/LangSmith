@@ -11,6 +11,9 @@ namespace LangSmith
         /// <param name="pageSize">
         /// Default Value: 20
         /// </param>
+        /// <param name="includeCount">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="sortBy">
         /// Default Value: last_run_start_time
@@ -27,6 +30,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AgentplatformAgentListResponse> ListAgentsAsync(
             int? pageSize = default,
+            bool? includeCount = default,
             string? cursor = default,
             global::LangSmith.GetAgentsSortBy? sortBy = default,
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
@@ -42,6 +46,9 @@ namespace LangSmith
         /// </summary>
         /// <param name="pageSize">
         /// Default Value: 20
+        /// </param>
+        /// <param name="includeCount">
+        /// Default Value: false
         /// </param>
         /// <param name="cursor"></param>
         /// <param name="sortBy">
@@ -59,6 +66,7 @@ namespace LangSmith
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AgentplatformAgentListResponse>> ListAgentsAsResponseAsync(
             int? pageSize = default,
+            bool? includeCount = default,
             string? cursor = default,
             global::LangSmith.GetAgentsSortBy? sortBy = default,
             global::LangSmith.GetAgentsSortOrder? sortOrder = default,
