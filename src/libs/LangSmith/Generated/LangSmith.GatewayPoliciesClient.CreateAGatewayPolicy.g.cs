@@ -74,14 +74,17 @@ namespace LangSmith
         /// - `model_fallback`:<br/>
         /// `{"strategy": "priority_fallback", "triggers": {"status_codes": [429, 502, 503, 504]}, "chain": {"selector": {"type": "provider_model", "provider": "openai", "model": "gpt-4o"}, "candidates": [{"type": "provider_model", "provider": "openai", "model": "gpt-4o-mini"}, {"type": "model_config", "model_config_id": "&lt;playground-settings-uuid&gt;"}]}}`<br/>
         /// Optional `ejection: {"failure_threshold": &lt;1-1000&gt;, "cooldown_seconds": &lt;1-300&gt;}` skips a candidate for `cooldown_seconds` after it fails the chain's triggers `failure_threshold` times within `cooldown_seconds`. Failures are counted per policy and candidate, only provider failures count, and success does not reset the count. The last candidate is never skipped.<br/>
-        /// `chain.candidates` is an ordered list of 1–5 direct provider models or saved workspace model configurations. A non-empty `workspace_id` matcher is required. `provider_model` selectors are workspace-only; `alias` selectors may be narrowed by `user_id` or `api_key_id`. Provider/model selectors are unique within a workspace, while alias names are reserved across the organization and may intentionally shadow a model name.<br/>
+        /// `chain.candidates` is an ordered list of 1–5 direct provider models or saved workspace model configurations. A non-empty `workspace_id` matcher is required. `provider_model` selectors are workspace-only; `alias` selectors may be narrowed by `user_id` or `api_key_id`. Team-scoped model fallbacks are not supported. Provider/model selectors are unique within a workspace, while alias names are reserved across the organization and may intentionally shadow a model name.<br/>
+        /// With `"strategy": "weighted"`, each request tries the distinct `chain.candidates` in a random order favoring higher `weight` (required, 1–1000), and trigger failures fall through that order. `chain.candidates` must include the selector's model: the same `provider_model`, or for a `providers/&lt;name&gt;` selector, that saved model configuration. Weighted chains don't support alias selectors. `priority_fallback` rejects `weight`.<br/>
         /// - `rate_limit` / `default_rate_limit`:<br/>
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `workspace_id`, `agent_id`,<br/>
+        /// keys are `organization_id`, `team_id`, `workspace_id`, `agent_id`,<br/>
         /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
         /// Values under the same key are ORed; distinct keys are ANDed.<br/>
+        /// `team_id` must be an organization-level team UUID, not a workspace child team UUID.<br/>
+        /// Membership in a workspace child team matches its organization parent team ID. Team IDs are not checked for existence.<br/>
         /// `agent_id` and `agent_environment` target requests from Agent<br/>
         /// deployments and must be combined with exactly one `workspace_id`<br/>
         /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
@@ -156,14 +159,17 @@ namespace LangSmith
         /// - `model_fallback`:<br/>
         /// `{"strategy": "priority_fallback", "triggers": {"status_codes": [429, 502, 503, 504]}, "chain": {"selector": {"type": "provider_model", "provider": "openai", "model": "gpt-4o"}, "candidates": [{"type": "provider_model", "provider": "openai", "model": "gpt-4o-mini"}, {"type": "model_config", "model_config_id": "&lt;playground-settings-uuid&gt;"}]}}`<br/>
         /// Optional `ejection: {"failure_threshold": &lt;1-1000&gt;, "cooldown_seconds": &lt;1-300&gt;}` skips a candidate for `cooldown_seconds` after it fails the chain's triggers `failure_threshold` times within `cooldown_seconds`. Failures are counted per policy and candidate, only provider failures count, and success does not reset the count. The last candidate is never skipped.<br/>
-        /// `chain.candidates` is an ordered list of 1–5 direct provider models or saved workspace model configurations. A non-empty `workspace_id` matcher is required. `provider_model` selectors are workspace-only; `alias` selectors may be narrowed by `user_id` or `api_key_id`. Provider/model selectors are unique within a workspace, while alias names are reserved across the organization and may intentionally shadow a model name.<br/>
+        /// `chain.candidates` is an ordered list of 1–5 direct provider models or saved workspace model configurations. A non-empty `workspace_id` matcher is required. `provider_model` selectors are workspace-only; `alias` selectors may be narrowed by `user_id` or `api_key_id`. Team-scoped model fallbacks are not supported. Provider/model selectors are unique within a workspace, while alias names are reserved across the organization and may intentionally shadow a model name.<br/>
+        /// With `"strategy": "weighted"`, each request tries the distinct `chain.candidates` in a random order favoring higher `weight` (required, 1–1000), and trigger failures fall through that order. `chain.candidates` must include the selector's model: the same `provider_model`, or for a `providers/&lt;name&gt;` selector, that saved model configuration. Weighted chains don't support alias selectors. `priority_fallback` rejects `weight`.<br/>
         /// - `rate_limit` / `default_rate_limit`:<br/>
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `workspace_id`, `agent_id`,<br/>
+        /// keys are `organization_id`, `team_id`, `workspace_id`, `agent_id`,<br/>
         /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
         /// Values under the same key are ORed; distinct keys are ANDed.<br/>
+        /// `team_id` must be an organization-level team UUID, not a workspace child team UUID.<br/>
+        /// Membership in a workspace child team matches its organization parent team ID. Team IDs are not checked for existence.<br/>
         /// `agent_id` and `agent_environment` target requests from Agent<br/>
         /// deployments and must be combined with exactly one `workspace_id`<br/>
         /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
@@ -771,14 +777,17 @@ namespace LangSmith
         /// - `model_fallback`:<br/>
         /// `{"strategy": "priority_fallback", "triggers": {"status_codes": [429, 502, 503, 504]}, "chain": {"selector": {"type": "provider_model", "provider": "openai", "model": "gpt-4o"}, "candidates": [{"type": "provider_model", "provider": "openai", "model": "gpt-4o-mini"}, {"type": "model_config", "model_config_id": "&lt;playground-settings-uuid&gt;"}]}}`<br/>
         /// Optional `ejection: {"failure_threshold": &lt;1-1000&gt;, "cooldown_seconds": &lt;1-300&gt;}` skips a candidate for `cooldown_seconds` after it fails the chain's triggers `failure_threshold` times within `cooldown_seconds`. Failures are counted per policy and candidate, only provider failures count, and success does not reset the count. The last candidate is never skipped.<br/>
-        /// `chain.candidates` is an ordered list of 1–5 direct provider models or saved workspace model configurations. A non-empty `workspace_id` matcher is required. `provider_model` selectors are workspace-only; `alias` selectors may be narrowed by `user_id` or `api_key_id`. Provider/model selectors are unique within a workspace, while alias names are reserved across the organization and may intentionally shadow a model name.<br/>
+        /// `chain.candidates` is an ordered list of 1–5 direct provider models or saved workspace model configurations. A non-empty `workspace_id` matcher is required. `provider_model` selectors are workspace-only; `alias` selectors may be narrowed by `user_id` or `api_key_id`. Team-scoped model fallbacks are not supported. Provider/model selectors are unique within a workspace, while alias names are reserved across the organization and may intentionally shadow a model name.<br/>
+        /// With `"strategy": "weighted"`, each request tries the distinct `chain.candidates` in a random order favoring higher `weight` (required, 1–1000), and trigger failures fall through that order. `chain.candidates` must include the selector's model: the same `provider_model`, or for a `providers/&lt;name&gt;` selector, that saved model configuration. Weighted chains don't support alias selectors. `priority_fallback` rejects `weight`.<br/>
         /// - `rate_limit` / `default_rate_limit`:<br/>
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `workspace_id`, `agent_id`,<br/>
+        /// keys are `organization_id`, `team_id`, `workspace_id`, `agent_id`,<br/>
         /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
         /// Values under the same key are ORed; distinct keys are ANDed.<br/>
+        /// `team_id` must be an organization-level team UUID, not a workspace child team UUID.<br/>
+        /// Membership in a workspace child team matches its organization parent team ID. Team IDs are not checked for existence.<br/>
         /// `agent_id` and `agent_environment` target requests from Agent<br/>
         /// deployments and must be combined with exactly one `workspace_id`<br/>
         /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>

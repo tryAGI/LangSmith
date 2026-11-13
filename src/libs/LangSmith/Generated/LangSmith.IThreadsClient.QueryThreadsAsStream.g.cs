@@ -8,7 +8,8 @@ namespace LangSmith
         /// Query Threads<br/>
         /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
         /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
+        /// `ai_search` cannot be combined with `sem_filter`. With full AI search enabled, `ai_search` translates natural language into query filters and time bounds and cannot be combined with explicit filter expressions. Otherwise, `ai_search` retains legacy semantic-only behavior. Use `sem_filter` for semantic-only matching combined with structured filters. AI search requires organization consent.<br/>
+        /// When semantic matching is needed, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -26,13 +27,14 @@ namespace LangSmith
         /// Query Threads<br/>
         /// GET with body payload — no resources created. Returns the threads in a tracing project matching the query passed as the request payload.<br/>
         /// Results are filtered by the given time range and optional filters, with cursor-based pagination.<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
+        /// `ai_search` cannot be combined with `sem_filter`. With full AI search enabled, `ai_search` translates natural language into query filters and time bounds and cannot be combined with explicit filter expressions. Otherwise, `ai_search` retains legacy semantic-only behavior. Use `sem_filter` for semantic-only matching combined with structured filters. AI search requires organization consent.<br/>
+        /// When semantic matching is needed, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="aiSearch">
-        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the thread.<br/>
-        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// `ai_search` translates natural language into structured filters, semantic criteria and time bounds.<br/>
+        /// Cannot be combined with sem_filter. With full AI search enabled, also cannot be combined with explicit filter expressions; otherwise retains legacy semantic-only behavior.<br/>
         /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
         /// Example: A conversation about a refund request
         /// </param>
@@ -58,6 +60,9 @@ namespace LangSmith
         /// <param name="projectId">
         /// `project_id` is the tracing project UUID.<br/>
         /// Example: 0190a1b2-c3d4-7ef0-a5b6-6ea3a82e9328
+        /// </param>
+        /// <param name="semFilter">
+        /// SemFilter evaluates a plain-language criterion against trajectory messages, AND-ed with structured filters.
         /// </param>
         /// <param name="threadFilter">
         /// `thread_filter` narrows results using a LangSmith filter expression evaluated against each complete thread summary.<br/>
@@ -90,6 +95,7 @@ namespace LangSmith
             global::System.DateTime? minStartTime = default,
             int? pageSize = default,
             global::System.Guid? projectId = default,
+            string? semFilter = default,
             string? threadFilter = default,
             string? traceFilter = default,
             string? treeFilter = default,

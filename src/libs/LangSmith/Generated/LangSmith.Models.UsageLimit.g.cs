@@ -71,6 +71,12 @@ namespace LangSmith
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_inherited_from_org_default")]
+        public bool? IsInheritedFromOrgDefault { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -93,6 +99,9 @@ namespace LangSmith
         /// </param>
         /// <param name="sessionId"></param>
         /// <param name="identityId"></param>
+        /// <param name="isInheritedFromOrgDefault">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,7 +114,8 @@ namespace LangSmith
             global::System.Guid? id,
             global::LangSmith.UsageLimitScope? scope,
             global::System.Guid? sessionId,
-            global::System.Guid? identityId)
+            global::System.Guid? identityId,
+            bool? isInheritedFromOrgDefault)
         {
             this.LimitType = limitType;
             this.LimitValue = limitValue;
@@ -116,6 +126,7 @@ namespace LangSmith
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.IsInheritedFromOrgDefault = isInheritedFromOrgDefault;
         }
 
         /// <summary>
