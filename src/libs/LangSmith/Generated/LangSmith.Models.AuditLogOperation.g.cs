@@ -655,6 +655,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteEntitlements,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteEvaluator,
         /// <summary>
         ///
@@ -1096,6 +1100,10 @@ namespace LangSmith
         ///
         /// </summary>
         GetDatasetVersions,
+        /// <summary>
+        ///
+        /// </summary>
+        GetEntitlements,
         /// <summary>
         ///
         /// </summary>
@@ -1883,6 +1891,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateEntitlements,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateEvaluator,
         /// <summary>
         ///
@@ -2379,6 +2391,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteDatasets => "delete_datasets",
                 AuditLogOperation.DeleteDeployment => "delete_deployment",
                 AuditLogOperation.DeleteDirectory => "delete_directory",
+                AuditLogOperation.DeleteEntitlements => "delete_entitlements",
                 AuditLogOperation.DeleteEvaluator => "delete_evaluator",
                 AuditLogOperation.DeleteExample => "delete_example",
                 AuditLogOperation.DeleteExamples => "delete_examples",
@@ -2490,6 +2503,7 @@ namespace LangSmith
                 AuditLogOperation.GetDatasetComparisonView => "get_dataset_comparison_view",
                 AuditLogOperation.GetDatasetVersion => "get_dataset_version",
                 AuditLogOperation.GetDatasetVersions => "get_dataset_versions",
+                AuditLogOperation.GetEntitlements => "get_entitlements",
                 AuditLogOperation.GetExample => "get_example",
                 AuditLogOperation.GetExperimentViewOverride => "get_experiment_view_override",
                 AuditLogOperation.GetExperimentViewOverrides => "get_experiment_view_overrides",
@@ -2686,6 +2700,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateDatasetVersion => "update_dataset_version",
                 AuditLogOperation.UpdateDefaultSsoProvisionOrganization => "update_default_sso_provision_organization",
                 AuditLogOperation.UpdateDeployment => "update_deployment",
+                AuditLogOperation.UpdateEntitlements => "update_entitlements",
                 AuditLogOperation.UpdateEvaluator => "update_evaluator",
                 AuditLogOperation.UpdateExample => "update_example",
                 AuditLogOperation.UpdateExamples => "update_examples",
@@ -2938,6 +2953,7 @@ namespace LangSmith
                 "delete_datasets" => AuditLogOperation.DeleteDatasets,
                 "delete_deployment" => AuditLogOperation.DeleteDeployment,
                 "delete_directory" => AuditLogOperation.DeleteDirectory,
+                "delete_entitlements" => AuditLogOperation.DeleteEntitlements,
                 "delete_evaluator" => AuditLogOperation.DeleteEvaluator,
                 "delete_example" => AuditLogOperation.DeleteExample,
                 "delete_examples" => AuditLogOperation.DeleteExamples,
@@ -3049,6 +3065,7 @@ namespace LangSmith
                 "get_dataset_comparison_view" => AuditLogOperation.GetDatasetComparisonView,
                 "get_dataset_version" => AuditLogOperation.GetDatasetVersion,
                 "get_dataset_versions" => AuditLogOperation.GetDatasetVersions,
+                "get_entitlements" => AuditLogOperation.GetEntitlements,
                 "get_example" => AuditLogOperation.GetExample,
                 "get_experiment_view_override" => AuditLogOperation.GetExperimentViewOverride,
                 "get_experiment_view_overrides" => AuditLogOperation.GetExperimentViewOverrides,
@@ -3245,6 +3262,7 @@ namespace LangSmith
                 "update_dataset_version" => AuditLogOperation.UpdateDatasetVersion,
                 "update_default_sso_provision_organization" => AuditLogOperation.UpdateDefaultSsoProvisionOrganization,
                 "update_deployment" => AuditLogOperation.UpdateDeployment,
+                "update_entitlements" => AuditLogOperation.UpdateEntitlements,
                 "update_evaluator" => AuditLogOperation.UpdateEvaluator,
                 "update_example" => AuditLogOperation.UpdateExample,
                 "update_examples" => AuditLogOperation.UpdateExamples,
