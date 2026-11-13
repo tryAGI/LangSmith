@@ -9,7 +9,8 @@ namespace LangSmith
         /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
         /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
         /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
+        /// `ai_search` cannot be combined with `sem_filter`. With full AI search enabled, `ai_search` translates natural language into query filters and time bounds and cannot be combined with explicit filter expressions. Otherwise, `ai_search` retains legacy semantic-only behavior. Use `sem_filter` for semantic-only matching combined with structured filters. AI search requires organization consent.<br/>
+        /// When semantic matching is needed, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -30,7 +31,8 @@ namespace LangSmith
         /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
         /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
         /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
+        /// `ai_search` cannot be combined with `sem_filter`. With full AI search enabled, `ai_search` translates natural language into query filters and time bounds and cannot be combined with explicit filter expressions. Otherwise, `ai_search` retains legacy semantic-only behavior. Use `sem_filter` for semantic-only matching combined with structured filters. AI search requires organization consent.<br/>
+        /// When semantic matching is needed, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -51,14 +53,15 @@ namespace LangSmith
         /// Returns a paginated list of traces (root runs) for a single tracing project. Each item carries the trace's root run plus optional trace-wide aggregates (`total_tokens`, `total_cost`, `first_token_time`) under `trace_aggregates`, so clients never have to merge by `trace_id`.<br/>
         /// Traces are scanned within a `start_time` window: `min_start_time` defaults to 24 hours before the request, `max_start_time` defaults to the request time. Set either explicitly to widen or narrow the window.<br/>
         /// Supports filters (`trace_filter`, `tree_filter`), cursor pagination (`cursor`), and field projection (`selects`).<br/>
-        /// When `ai_search` is set, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
+        /// `ai_search` cannot be combined with `sem_filter`. With full AI search enabled, `ai_search` translates natural language into query filters and time bounds and cannot be combined with explicit filter expressions. Otherwise, `ai_search` retains legacy semantic-only behavior. Use `sem_filter` for semantic-only matching combined with structured filters. AI search requires organization consent.<br/>
+        /// When semantic matching is needed, `Accept: text/event-stream` is required; requests without it return 406. AI search is unavailable on deployments that route queries to the v1 backend and returns 501 there.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <param name="aiSearch">
-        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the trace.<br/>
-        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// `ai_search` translates natural language into structured filters, semantic criteria and time bounds.<br/>
+        /// Cannot be combined with sem_filter. With full AI search enabled, also cannot be combined with explicit filter expressions; otherwise retains legacy semantic-only behavior.<br/>
         /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
         /// Example: A run that contains a billing dispute
         /// </param>
@@ -96,6 +99,9 @@ namespace LangSmith
         /// `selects` lists which properties to include on each returned trace. Properties listed here are routed to the appropriate sub-object on each item: `total_tokens`, `total_cost`, and `first_token_time` appear under `trace_aggregates`; everything else appears under `root_run`. If omitted, only `id` is returned on `root_run`.<br/>
         /// Example: [ID, NAME, START_TIME, STATUS, TOTAL_TOKENS, TOTAL_COST, FIRST_TOKEN_TIME]
         /// </param>
+        /// <param name="semFilter">
+        /// SemFilter evaluates a plain-language criterion against trajectory messages, AND-ed with structured filters.
+        /// </param>
         /// <param name="traceFilter">
         /// `trace_filter` narrows results to traces whose root run matches this LangSmith filter expression. This filter targets root runs only — `is_root = true` is implied.<br/>
         /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
@@ -123,6 +129,7 @@ namespace LangSmith
             int? pageSize = default,
             global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects = default,
+            string? semFilter = default,
             string? traceFilter = default,
             global::System.Collections.Generic.IList<global::System.Guid>? traceIds = default,
             string? treeFilter = default,

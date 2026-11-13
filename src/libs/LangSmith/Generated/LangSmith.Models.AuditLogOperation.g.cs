@@ -1719,6 +1719,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        TagSandboxSnapshot,
+        /// <summary>
+        ///
+        /// </summary>
         TestAlertRule,
         /// <summary>
         ///
@@ -2641,6 +2645,7 @@ namespace LangSmith
                 AuditLogOperation.SubmitNpsResponse => "submit_nps_response",
                 AuditLogOperation.SubmitProductFeedback => "submit_product_feedback",
                 AuditLogOperation.SyncExamples => "sync_examples",
+                AuditLogOperation.TagSandboxSnapshot => "tag_sandbox_snapshot",
                 AuditLogOperation.TestAlertRule => "test_alert_rule",
                 AuditLogOperation.TestEvaluator => "test_evaluator",
                 AuditLogOperation.TestFleetWebhook => "test_fleet_webhook",
@@ -3199,6 +3204,7 @@ namespace LangSmith
                 "submit_nps_response" => AuditLogOperation.SubmitNpsResponse,
                 "submit_product_feedback" => AuditLogOperation.SubmitProductFeedback,
                 "sync_examples" => AuditLogOperation.SyncExamples,
+                "tag_sandbox_snapshot" => AuditLogOperation.TagSandboxSnapshot,
                 "test_alert_rule" => AuditLogOperation.TestAlertRule,
                 "test_evaluator" => AuditLogOperation.TestEvaluator,
                 "test_fleet_webhook" => AuditLogOperation.TestFleetWebhook,

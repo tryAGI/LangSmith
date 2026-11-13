@@ -9,8 +9,8 @@ namespace LangSmith
     public sealed partial class QueryQueryTracesRequestBody
     {
         /// <summary>
-        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the trace.<br/>
-        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// `ai_search` translates natural language into structured filters, semantic criteria and time bounds.<br/>
+        /// Cannot be combined with sem_filter. With full AI search enabled, also cannot be combined with explicit filter expressions; otherwise retains legacy semantic-only behavior.<br/>
         /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
         /// Example: A run that contains a billing dispute
         /// </summary>
@@ -84,6 +84,12 @@ namespace LangSmith
         public global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? Selects { get; set; }
 
         /// <summary>
+        /// SemFilter evaluates a plain-language criterion against trajectory messages, AND-ed with structured filters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sem_filter")]
+        public string? SemFilter { get; set; }
+
+        /// <summary>
         /// `trace_filter` narrows results to traces whose root run matches this LangSmith filter expression. This filter targets root runs only — `is_root = true` is implied.<br/>
         /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
         /// Example: eq(status, "error")
@@ -116,8 +122,8 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="QueryQueryTracesRequestBody" /> class.
         /// </summary>
         /// <param name="aiSearch">
-        /// `ai_search` is a plain-language criterion evaluated against the messages from the agent trajectory scoped to the trace.<br/>
-        /// AND-ed with the ordinary filters. Requires semantic filtering enabled for the deployment.<br/>
+        /// `ai_search` translates natural language into structured filters, semantic criteria and time bounds.<br/>
+        /// Cannot be combined with sem_filter. With full AI search enabled, also cannot be combined with explicit filter expressions; otherwise retains legacy semantic-only behavior.<br/>
         /// Must contain nonempty text of at most 2000 UTF-8 bytes.<br/>
         /// Example: A run that contains a billing dispute
         /// </param>
@@ -155,6 +161,9 @@ namespace LangSmith
         /// `selects` lists which properties to include on each returned trace. Properties listed here are routed to the appropriate sub-object on each item: `total_tokens`, `total_cost`, and `first_token_time` appear under `trace_aggregates`; everything else appears under `root_run`. If omitted, only `id` is returned on `root_run`.<br/>
         /// Example: [ID, NAME, START_TIME, STATUS, TOTAL_TOKENS, TOTAL_COST, FIRST_TOKEN_TIME]
         /// </param>
+        /// <param name="semFilter">
+        /// SemFilter evaluates a plain-language criterion against trajectory messages, AND-ed with structured filters.
+        /// </param>
         /// <param name="traceFilter">
         /// `trace_filter` narrows results to traces whose root run matches this LangSmith filter expression. This filter targets root runs only — `is_root = true` is implied.<br/>
         /// See https://docs.langchain.com/langsmith/trace-query-syntax#filter-query-language for syntax.<br/>
@@ -180,6 +189,7 @@ namespace LangSmith
             int? pageSize,
             global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::LangSmith.QueryRunSelectField>? selects,
+            string? semFilter,
             string? traceFilter,
             global::System.Collections.Generic.IList<global::System.Guid>? traceIds,
             string? treeFilter)
@@ -193,6 +203,7 @@ namespace LangSmith
             this.PageSize = pageSize;
             this.ProjectId = projectId;
             this.Selects = selects;
+            this.SemFilter = semFilter;
             this.TraceFilter = traceFilter;
             this.TraceIds = traceIds;
             this.TreeFilter = treeFilter;
