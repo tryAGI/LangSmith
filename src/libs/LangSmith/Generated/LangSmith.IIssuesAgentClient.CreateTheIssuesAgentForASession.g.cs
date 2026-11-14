@@ -80,6 +80,10 @@ namespace LangSmith
         /// <param name="runFilter">
         /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
         /// </param>
+        /// <param name="userInstructions">
+        /// Freeform preferences Engine reads as context, including on the board's<br/>
+        /// first scan. Omit or send "" for none.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -97,6 +101,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepoInput>? githubRepos = default,
             global::System.Collections.Generic.IList<string>? priorities = default,
             string? runFilter = default,
+            string? userInstructions = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

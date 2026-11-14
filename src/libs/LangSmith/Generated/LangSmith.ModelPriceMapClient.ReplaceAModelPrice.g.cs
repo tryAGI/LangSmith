@@ -72,7 +72,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ReplaceAModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ModelPriceMapSchema> ReplaceAModelPriceAsync(
             global::System.Guid id,
 
             global::LangSmith.ModelPriceMapUpdateSchema request,
@@ -105,7 +105,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> ReplaceAModelPriceAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ModelPriceMapSchema>> ReplaceAModelPriceAsResponseAsync(
             global::System.Guid id,
 
             global::LangSmith.ModelPriceMapUpdateSchema request,
@@ -375,6 +375,80 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The workspace has no custom entry with this ID. LangSmith default entries and organization entries are also a 404 here.
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::LangSmith.ProblemDetails? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::LangSmith.ProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::LangSmith.ProblemDetails.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.ProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Another entry already has these match conditions.
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LangSmith.ProblemDetails? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LangSmith.ProblemDetails.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LangSmith.ProblemDetails.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.ProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation Error
                             if ((int)__response.StatusCode == 422)
                             {
@@ -434,11 +508,13 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return new global::LangSmith.AutoSDKHttpResponse<string>(
+                                    var __value = global::LangSmith.ModelPriceMapSchema.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ModelPriceMapSchema>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -458,17 +534,19 @@ namespace LangSmith
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return new global::LangSmith.AutoSDKHttpResponse<string>(
+                                    var __value = await global::LangSmith.ModelPriceMapSchema.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ModelPriceMapSchema>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -550,7 +628,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> ReplaceAModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.ModelPriceMapSchema> ReplaceAModelPriceAsync(
             global::System.Guid id,
             string name,
             string matchPattern,

@@ -62,7 +62,7 @@ namespace LangSmith
 
         /// <summary>
         /// Query public shared trace runs<br/>
-        /// Returns all runs within the trace identified by the share token. The share token supplies the tenant, project, and trace scope.<br/>
+        /// GET with body payload — no resources created. Returns all runs within the trace identified by the share token. The share token supplies the tenant, project, and trace scope.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -95,7 +95,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Query public shared trace runs<br/>
-        /// Returns all runs within the trace identified by the share token. The share token supplies the tenant, project, and trace scope.<br/>
+        /// GET with body payload — no resources created. Returns all runs within the trace identified by the share token. The share token supplies the tenant, project, and trace scope.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>
@@ -711,7 +711,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Query public shared trace runs<br/>
-        /// Returns all runs within the trace identified by the share token. The share token supplies the tenant, project, and trace scope.<br/>
+        /// GET with body payload — no resources created. Returns all runs within the trace identified by the share token. The share token supplies the tenant, project, and trace scope.<br/>
         /// Self-hosted deployments require LangSmith `v0.16` or later.
         /// </summary>
         /// <param name="accept"></param>

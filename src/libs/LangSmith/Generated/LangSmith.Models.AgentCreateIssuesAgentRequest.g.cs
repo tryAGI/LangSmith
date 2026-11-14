@@ -70,6 +70,13 @@ namespace LangSmith
         public string? RunFilter { get; set; }
 
         /// <summary>
+        /// Freeform preferences Engine reads as context, including on the board's<br/>
+        /// first scan. Omit or send "" for none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_instructions")]
+        public string? UserInstructions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -107,6 +114,10 @@ namespace LangSmith
         /// <param name="runFilter">
         /// Runs-filter-DSL trace scope; omit/null/empty for no scope.
         /// </param>
+        /// <param name="userInstructions">
+        /// Freeform preferences Engine reads as context, including on the board's<br/>
+        /// first scan. Omit or send "" for none.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,7 +130,8 @@ namespace LangSmith
             string? githubRepoUrl,
             global::System.Collections.Generic.IList<global::LangSmith.AgentGithubRepoInput>? githubRepos,
             global::System.Collections.Generic.IList<string>? priorities,
-            string? runFilter)
+            string? runFilter,
+            string? userInstructions)
         {
             this.AnalysisLevel = analysisLevel;
             this.AutoOpenFixPr = autoOpenFixPr;
@@ -130,6 +142,7 @@ namespace LangSmith
             this.GithubRepos = githubRepos;
             this.Priorities = priorities;
             this.RunFilter = runFilter;
+            this.UserInstructions = userInstructions;
         }
 
         /// <summary>

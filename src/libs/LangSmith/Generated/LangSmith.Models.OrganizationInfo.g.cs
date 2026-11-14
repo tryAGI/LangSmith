@@ -230,6 +230,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_access_instance_admin")]
+        public bool? CanAccessInstanceAdmin { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
@@ -380,6 +386,9 @@ namespace LangSmith
         /// <param name="canExportUsageBackfill">
         /// Default Value: false
         /// </param>
+        /// <param name="canAccessInstanceAdmin">
+        /// Default Value: false
+        /// </param>
         /// <param name="llmAuthProxyEnabled">
         /// Default Value: false
         /// </param>
@@ -440,6 +449,7 @@ namespace LangSmith
             int? maxTracingKeyExpiryDays,
             string? scimGroupNameSeparator,
             bool? canExportUsageBackfill,
+            bool? canAccessInstanceAdmin,
             bool? llmAuthProxyEnabled,
             bool? oidcLoginEnabled,
             string? llmAuthProxyJwtAudience,
@@ -487,6 +497,7 @@ namespace LangSmith
             this.MaxTracingKeyExpiryDays = maxTracingKeyExpiryDays;
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.CanExportUsageBackfill = canExportUsageBackfill;
+            this.CanAccessInstanceAdmin = canAccessInstanceAdmin;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.OidcLoginEnabled = oidcLoginEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;

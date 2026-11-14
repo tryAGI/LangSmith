@@ -4,16 +4,16 @@
 namespace LangSmith
 {
     /// <summary>
-    /// Enum for feedback levels.
+    /// Feedback level: run for feedback on a run, session for feedback on a whole tracing project (session level requires a session filter).
     /// </summary>
     public enum FeedbackLevel
     {
         /// <summary>
-        ///
+        /// run for feedback on a run, session for feedback on a whole tracing project (session level requires a session filter).
         /// </summary>
         Run,
         /// <summary>
-        ///
+        /// run for feedback on a run, session for feedback on a whole tracing project (session level requires a session filter).
         /// </summary>
         Session,
     }

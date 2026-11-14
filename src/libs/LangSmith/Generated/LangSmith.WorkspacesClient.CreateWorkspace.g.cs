@@ -62,7 +62,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.Tenant> CreateWorkspaceAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TenantForUser> CreateWorkspaceAsync(
 
             global::LangSmith.WorkspaceCreate request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -85,7 +85,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Tenant>> CreateWorkspaceAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>> CreateWorkspaceAsResponseAsync(
 
             global::LangSmith.WorkspaceCreate request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -352,24 +352,61 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Validation Error
+                            // Another workspace already has this name or ID.
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::LangSmith.ProblemDetails? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::LangSmith.ProblemDetails.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::LangSmith.ProblemDetails.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.ProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request has an invalid path, query, header, or body parameter.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2>? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2>.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2>.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -378,7 +415,7 @@ namespace LangSmith
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -411,9 +448,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.Tenant.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.TenantForUser.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Tenant>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -443,9 +480,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.Tenant.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.TenantForUser.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.Tenant>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.TenantForUser>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -495,7 +532,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.Tenant> CreateWorkspaceAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.TenantForUser> CreateWorkspaceAsync(
             string displayName,
             global::System.Guid? id = default,
             string? tenantHandle = default,
