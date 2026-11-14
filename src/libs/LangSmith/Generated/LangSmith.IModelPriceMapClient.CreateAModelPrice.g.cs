@@ -19,7 +19,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateAModelPriceAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.ModelPriceMapSchema> CreateAModelPriceAsync(
 
             global::LangSmith.ModelPriceMapCreateSchema request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -39,7 +39,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> CreateAModelPriceAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.ModelPriceMapSchema>> CreateAModelPriceAsResponseAsync(
 
             global::LangSmith.ModelPriceMapCreateSchema request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -89,7 +89,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateAModelPriceAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.ModelPriceMapSchema> CreateAModelPriceAsync(
             string name,
             string matchPattern,
             global::LangSmith.AnyOf<double?, string> promptCost,

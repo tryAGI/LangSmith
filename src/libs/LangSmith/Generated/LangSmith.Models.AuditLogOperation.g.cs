@@ -39,6 +39,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        AddUserGroupMembers,
+        /// <summary>
+        ///
+        /// </summary>
         ArchiveComputerEnvironment,
         /// <summary>
         ///
@@ -48,6 +52,10 @@ namespace LangSmith
         ///
         /// </summary>
         AttachTeamAccessPolicy,
+        /// <summary>
+        ///
+        /// </summary>
+        AttachUserGroupAccessPolicy,
         /// <summary>
         ///
         /// </summary>
@@ -535,6 +543,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateUserGroup,
+        /// <summary>
+        ///
+        /// </summary>
+        CreateUserGroupWorkspaceGrant,
+        /// <summary>
+        ///
+        /// </summary>
         CreateWebhookDestination,
         /// <summary>
         ///
@@ -931,6 +947,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteUserGroup,
+        /// <summary>
+        ///
+        /// </summary>
+        DeleteUserGroupWorkspaceGrant,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteWebhookDestination,
         /// <summary>
         ///
@@ -960,6 +984,10 @@ namespace LangSmith
         ///
         /// </summary>
         DetachTeamAccessPolicy,
+        /// <summary>
+        ///
+        /// </summary>
+        DetachUserGroupAccessPolicy,
         /// <summary>
         ///
         /// </summary>
@@ -1200,6 +1228,10 @@ namespace LangSmith
         ///
         /// </summary>
         GetSandboxFunction,
+        /// <summary>
+        ///
+        /// </summary>
+        GetSandboxFunctionLogs,
         /// <summary>
         ///
         /// </summary>
@@ -1619,6 +1651,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ReadUserGroupAccessPolicies,
+        /// <summary>
+        ///
+        /// </summary>
         ReadWorkspaceEncryptedSecrets,
         /// <summary>
         ///
@@ -1640,6 +1676,10 @@ namespace LangSmith
         ///
         /// </summary>
         RemoveTeamMember,
+        /// <summary>
+        ///
+        /// </summary>
+        RemoveUserGroupMember,
         /// <summary>
         ///
         /// </summary>
@@ -2163,6 +2203,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateUserGroup,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateUserGroupWorkspaceGrant,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateWebhookDestination,
         /// <summary>
         ///
@@ -2237,9 +2285,11 @@ namespace LangSmith
                 AuditLogOperation.AddMembersToWorkspaceBatch => "add_members_to_workspace_batch",
                 AuditLogOperation.AddRunsToAnnotationQueue => "add_runs_to_annotation_queue",
                 AuditLogOperation.AddTeamMembers => "add_team_members",
+                AuditLogOperation.AddUserGroupMembers => "add_user_group_members",
                 AuditLogOperation.ArchiveComputerEnvironment => "archive_computer_environment",
                 AuditLogOperation.AttachAccessPolicies => "attach_access_policies",
                 AuditLogOperation.AttachTeamAccessPolicy => "attach_team_access_policy",
+                AuditLogOperation.AttachUserGroupAccessPolicy => "attach_user_group_access_policy",
                 AuditLogOperation.BatchDeleteSandboxClaims => "batch_delete_sandbox_claims",
                 AuditLogOperation.BatchQueryRuns => "batch_query_runs",
                 AuditLogOperation.BatchQueryTraceMessages => "batch_query_trace_messages",
@@ -2361,6 +2411,8 @@ namespace LangSmith
                 AuditLogOperation.CreateTenant => "create_tenant",
                 AuditLogOperation.CreateTool => "create_tool",
                 AuditLogOperation.CreateTracerSession => "create_tracer_session",
+                AuditLogOperation.CreateUserGroup => "create_user_group",
+                AuditLogOperation.CreateUserGroupWorkspaceGrant => "create_user_group_workspace_grant",
                 AuditLogOperation.CreateWebhookDestination => "create_webhook_destination",
                 AuditLogOperation.CreateWorkspace => "create_workspace",
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
@@ -2460,6 +2512,8 @@ namespace LangSmith
                 AuditLogOperation.DeleteTracerSession => "delete_tracer_session",
                 AuditLogOperation.DeleteTracerSessions => "delete_tracer_sessions",
                 AuditLogOperation.DeleteUsageLimit => "delete_usage_limit",
+                AuditLogOperation.DeleteUserGroup => "delete_user_group",
+                AuditLogOperation.DeleteUserGroupWorkspaceGrant => "delete_user_group_workspace_grant",
                 AuditLogOperation.DeleteWebhookDestination => "delete_webhook_destination",
                 AuditLogOperation.DeleteWorkspace => "delete_workspace",
                 AuditLogOperation.DeleteWorkspaceMember => "delete_workspace_member",
@@ -2468,6 +2522,7 @@ namespace LangSmith
                 AuditLogOperation.DeploySandboxFunction => "deploy_sandbox_function",
                 AuditLogOperation.DetachAccessPolicies => "detach_access_policies",
                 AuditLogOperation.DetachTeamAccessPolicy => "detach_team_access_policy",
+                AuditLogOperation.DetachUserGroupAccessPolicy => "detach_user_group_access_policy",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
                 AuditLogOperation.DisconnectGatewayVendorAdminKey => "disconnect_gateway_vendor_admin_key",
                 AuditLogOperation.DownloadCustomAppSource => "download_custom_app_source",
@@ -2528,6 +2583,7 @@ namespace LangSmith
                 AuditLogOperation.GetSandboxClaim => "get_sandbox_claim",
                 AuditLogOperation.GetSandboxClaimStatus => "get_sandbox_claim_status",
                 AuditLogOperation.GetSandboxFunction => "get_sandbox_function",
+                AuditLogOperation.GetSandboxFunctionLogs => "get_sandbox_function_logs",
                 AuditLogOperation.GetSandboxRegistry => "get_sandbox_registry",
                 AuditLogOperation.GetSandboxSnapshot => "get_sandbox_snapshot",
                 AuditLogOperation.GetSandboxVolume => "get_sandbox_volume",
@@ -2632,12 +2688,14 @@ namespace LangSmith
                 AuditLogOperation.ReadTeamAccessPolicies => "read_team_access_policies",
                 AuditLogOperation.ReadTracerSession => "read_tracer_session",
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
+                AuditLogOperation.ReadUserGroupAccessPolicies => "read_user_group_access_policies",
                 AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
                 AuditLogOperation.RefreshMcpGatewayTools => "refresh_mcp_gateway_tools",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
                 AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
                 AuditLogOperation.RemoveTeamMember => "remove_team_member",
+                AuditLogOperation.RemoveUserGroupMember => "remove_user_group_member",
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAgentAuthAgent => "resolve_agent_auth_agent",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
@@ -2768,6 +2826,8 @@ namespace LangSmith
                 AuditLogOperation.UpdateTracerSession => "update_tracer_session",
                 AuditLogOperation.UpdateTtlSettings => "update_ttl_settings",
                 AuditLogOperation.UpdateUsageLimit => "update_usage_limit",
+                AuditLogOperation.UpdateUserGroup => "update_user_group",
+                AuditLogOperation.UpdateUserGroupWorkspaceGrant => "update_user_group_workspace_grant",
                 AuditLogOperation.UpdateWebhookDestination => "update_webhook_destination",
                 AuditLogOperation.UpdateWorkspace => "update_workspace",
                 AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
@@ -2799,9 +2859,11 @@ namespace LangSmith
                 "add_members_to_workspace_batch" => AuditLogOperation.AddMembersToWorkspaceBatch,
                 "add_runs_to_annotation_queue" => AuditLogOperation.AddRunsToAnnotationQueue,
                 "add_team_members" => AuditLogOperation.AddTeamMembers,
+                "add_user_group_members" => AuditLogOperation.AddUserGroupMembers,
                 "archive_computer_environment" => AuditLogOperation.ArchiveComputerEnvironment,
                 "attach_access_policies" => AuditLogOperation.AttachAccessPolicies,
                 "attach_team_access_policy" => AuditLogOperation.AttachTeamAccessPolicy,
+                "attach_user_group_access_policy" => AuditLogOperation.AttachUserGroupAccessPolicy,
                 "batch_delete_sandbox_claims" => AuditLogOperation.BatchDeleteSandboxClaims,
                 "batch_query_runs" => AuditLogOperation.BatchQueryRuns,
                 "batch_query_trace_messages" => AuditLogOperation.BatchQueryTraceMessages,
@@ -2923,6 +2985,8 @@ namespace LangSmith
                 "create_tenant" => AuditLogOperation.CreateTenant,
                 "create_tool" => AuditLogOperation.CreateTool,
                 "create_tracer_session" => AuditLogOperation.CreateTracerSession,
+                "create_user_group" => AuditLogOperation.CreateUserGroup,
+                "create_user_group_workspace_grant" => AuditLogOperation.CreateUserGroupWorkspaceGrant,
                 "create_webhook_destination" => AuditLogOperation.CreateWebhookDestination,
                 "create_workspace" => AuditLogOperation.CreateWorkspace,
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
@@ -3022,6 +3086,8 @@ namespace LangSmith
                 "delete_tracer_session" => AuditLogOperation.DeleteTracerSession,
                 "delete_tracer_sessions" => AuditLogOperation.DeleteTracerSessions,
                 "delete_usage_limit" => AuditLogOperation.DeleteUsageLimit,
+                "delete_user_group" => AuditLogOperation.DeleteUserGroup,
+                "delete_user_group_workspace_grant" => AuditLogOperation.DeleteUserGroupWorkspaceGrant,
                 "delete_webhook_destination" => AuditLogOperation.DeleteWebhookDestination,
                 "delete_workspace" => AuditLogOperation.DeleteWorkspace,
                 "delete_workspace_member" => AuditLogOperation.DeleteWorkspaceMember,
@@ -3030,6 +3096,7 @@ namespace LangSmith
                 "deploy_sandbox_function" => AuditLogOperation.DeploySandboxFunction,
                 "detach_access_policies" => AuditLogOperation.DetachAccessPolicies,
                 "detach_team_access_policy" => AuditLogOperation.DetachTeamAccessPolicy,
+                "detach_user_group_access_policy" => AuditLogOperation.DetachUserGroupAccessPolicy,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
                 "disconnect_gateway_vendor_admin_key" => AuditLogOperation.DisconnectGatewayVendorAdminKey,
                 "download_custom_app_source" => AuditLogOperation.DownloadCustomAppSource,
@@ -3090,6 +3157,7 @@ namespace LangSmith
                 "get_sandbox_claim" => AuditLogOperation.GetSandboxClaim,
                 "get_sandbox_claim_status" => AuditLogOperation.GetSandboxClaimStatus,
                 "get_sandbox_function" => AuditLogOperation.GetSandboxFunction,
+                "get_sandbox_function_logs" => AuditLogOperation.GetSandboxFunctionLogs,
                 "get_sandbox_registry" => AuditLogOperation.GetSandboxRegistry,
                 "get_sandbox_snapshot" => AuditLogOperation.GetSandboxSnapshot,
                 "get_sandbox_volume" => AuditLogOperation.GetSandboxVolume,
@@ -3194,12 +3262,14 @@ namespace LangSmith
                 "read_team_access_policies" => AuditLogOperation.ReadTeamAccessPolicies,
                 "read_tracer_session" => AuditLogOperation.ReadTracerSession,
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
+                "read_user_group_access_policies" => AuditLogOperation.ReadUserGroupAccessPolicies,
                 "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
                 "refresh_mcp_gateway_tools" => AuditLogOperation.RefreshMcpGatewayTools,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
                 "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
                 "remove_team_member" => AuditLogOperation.RemoveTeamMember,
+                "remove_user_group_member" => AuditLogOperation.RemoveUserGroupMember,
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_agent_auth_agent" => AuditLogOperation.ResolveAgentAuthAgent,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
@@ -3330,6 +3400,8 @@ namespace LangSmith
                 "update_tracer_session" => AuditLogOperation.UpdateTracerSession,
                 "update_ttl_settings" => AuditLogOperation.UpdateTtlSettings,
                 "update_usage_limit" => AuditLogOperation.UpdateUsageLimit,
+                "update_user_group" => AuditLogOperation.UpdateUserGroup,
+                "update_user_group_workspace_grant" => AuditLogOperation.UpdateUserGroupWorkspaceGrant,
                 "update_webhook_destination" => AuditLogOperation.UpdateWebhookDestination,
                 "update_workspace" => AuditLogOperation.UpdateWorkspace,
                 "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,

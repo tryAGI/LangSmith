@@ -29,6 +29,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_access_instance_admin")]
+        public bool? CanAccessInstanceAdmin { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_export_usage_backfill")]
         public bool? CanExportUsageBackfill { get; set; }
 
@@ -302,6 +308,7 @@ namespace LangSmith
         /// <param name="apiKeyCreationFromApiKeysEnabled"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
+        /// <param name="canAccessInstanceAdmin"></param>
         /// <param name="canExportUsageBackfill"></param>
         /// <param name="config"></param>
         /// <param name="defaultSsoProvision"></param>
@@ -372,6 +379,7 @@ namespace LangSmith
             bool? apiKeyCreationFromApiKeysEnabled,
             string? avatarUrl,
             bool? byocCreateSaasWorkspaceEnabled,
+            bool? canAccessInstanceAdmin,
             bool? canExportUsageBackfill,
             global::LangSmith.AuthnOrganizationConfig? config,
             bool? defaultSsoProvision,
@@ -419,6 +427,7 @@ namespace LangSmith
             this.ApiKeyCreationFromApiKeysEnabled = apiKeyCreationFromApiKeysEnabled;
             this.AvatarUrl = avatarUrl;
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
+            this.CanAccessInstanceAdmin = canAccessInstanceAdmin;
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.Config = config;
             this.DefaultSsoProvision = defaultSsoProvision;

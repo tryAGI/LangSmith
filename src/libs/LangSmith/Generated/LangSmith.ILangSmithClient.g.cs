@@ -393,11 +393,6 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public TeamsClient Teams { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public TenantClient Tenant { get; }
 
         /// <summary>
@@ -434,6 +429,11 @@ namespace LangSmith
         ///
         /// </summary>
         public UsageLimitsClient UsageLimits { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public UserGroupsClient UserGroups { get; }
 
         /// <summary>
         ///
