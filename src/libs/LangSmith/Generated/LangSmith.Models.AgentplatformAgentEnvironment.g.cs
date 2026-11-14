@@ -32,7 +32,7 @@ namespace LangSmith
 
         /// <summary>
         /// Identifier is the sub of this environment's agent access tokens:<br/>
-        /// ws:&lt;workspace&gt;:agent:&lt;agent uuid&gt;:env:&lt;ENV&gt;. Omitted when none can be issued.
+        /// agent:&lt;agent uuid&gt;:env:&lt;env&gt;. Omitted when none can be issued.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifier")]
         public string? Identifier { get; set; }
@@ -73,7 +73,7 @@ namespace LangSmith
         /// <param name="tracerSessionName"></param>
         /// <param name="identifier">
         /// Identifier is the sub of this environment's agent access tokens:<br/>
-        /// ws:&lt;workspace&gt;:agent:&lt;agent uuid&gt;:env:&lt;ENV&gt;. Omitted when none can be issued.
+        /// agent:&lt;agent uuid&gt;:env:&lt;env&gt;. Omitted when none can be issued.
         /// </param>
         /// <param name="runtimeBindings"></param>
 #if NET7_0_OR_GREATER

@@ -9,6 +9,18 @@ namespace LangSmith
     public sealed partial class GatewayPoliciesSpendUsage
     {
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providers")]
+        public global::System.Collections.Generic.IList<string>? Providers { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        public string? Scope { get; set; }
+
+        /// <summary>
         /// SpendUSD is the spend recorded in this window.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spend_usd")]
@@ -29,6 +41,8 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="GatewayPoliciesSpendUsage" /> class.
         /// </summary>
+        /// <param name="providers"></param>
+        /// <param name="scope"></param>
         /// <param name="spendUsd">
         /// SpendUSD is the spend recorded in this window.
         /// </param>
@@ -39,9 +53,13 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GatewayPoliciesSpendUsage(
+            global::System.Collections.Generic.IList<string>? providers,
+            string? scope,
             double? spendUsd,
             string? window)
         {
+            this.Providers = providers;
+            this.Scope = scope;
             this.SpendUsd = spendUsd;
             this.Window = window;
         }

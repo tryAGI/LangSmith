@@ -117,6 +117,12 @@ namespace LangSmith
         public required int TotalRuns { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rubric_keys")]
+        public global::System.Collections.Generic.IList<string>? RubricKeys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -152,6 +158,7 @@ namespace LangSmith
         /// <param name="assignedReviewers">
         /// Default Value: []
         /// </param>
+        /// <param name="rubricKeys"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -172,7 +179,8 @@ namespace LangSmith
             global::System.Guid? runRuleId,
             global::System.Guid? defaultDataset,
             object? metadata,
-            global::System.Collections.Generic.IList<global::LangSmith.AssignedReviewerSchema>? assignedReviewers)
+            global::System.Collections.Generic.IList<global::LangSmith.AssignedReviewerSchema>? assignedReviewers,
+            global::System.Collections.Generic.IList<string>? rubricKeys)
         {
             this.Description = description;
             this.CreatedAt = createdAt;
@@ -191,6 +199,7 @@ namespace LangSmith
             this.Metadata = metadata;
             this.AssignedReviewers = assignedReviewers;
             this.TotalRuns = totalRuns;
+            this.RubricKeys = rubricKeys;
         }
 
         /// <summary>

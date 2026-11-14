@@ -50,7 +50,8 @@ namespace LangSmith
             ref global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType? queueType,
             ref bool? assignedToMe,
             ref string? sortBy,
-            ref bool? sortByDesc);
+            ref bool? sortByDesc,
+            ref bool? includeRubricKeys);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -64,7 +65,8 @@ namespace LangSmith
             global::LangSmith.GetAnnotationQueuesApiV1AnnotationQueuesGetQueueType? queueType,
             bool? assignedToMe,
             string? sortBy,
-            bool? sortByDesc);
+            bool? sortByDesc,
+            bool? includeRubricKeys);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -96,6 +98,9 @@ namespace LangSmith
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
+        /// <param name="includeRubricKeys">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -111,6 +116,7 @@ namespace LangSmith
             bool? assignedToMe = default,
             string? sortBy = default,
             bool? sortByDesc = default,
+            bool? includeRubricKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -126,6 +132,7 @@ namespace LangSmith
                 assignedToMe: assignedToMe,
                 sortBy: sortBy,
                 sortByDesc: sortByDesc,
+                includeRubricKeys: includeRubricKeys,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -154,6 +161,9 @@ namespace LangSmith
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
+        /// <param name="includeRubricKeys">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -169,6 +179,7 @@ namespace LangSmith
             bool? assignedToMe = default,
             string? sortBy = default,
             bool? sortByDesc = default,
+            bool? includeRubricKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -186,7 +197,8 @@ namespace LangSmith
                 queueType: ref queueType,
                 assignedToMe: ref assignedToMe,
                 sortBy: ref sortBy,
-                sortByDesc: ref sortByDesc);
+                sortByDesc: ref sortByDesc,
+                includeRubricKeys: ref includeRubricKeys);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -228,6 +240,7 @@ namespace LangSmith
                                 .AddOptionalParameter("assigned_to_me", assignedToMe?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy)
                                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_rubric_keys", includeRubricKeys?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -279,7 +292,8 @@ namespace LangSmith
                     queueType: queueType,
                     assignedToMe: assignedToMe,
                     sortBy: sortBy,
-                    sortByDesc: sortByDesc);
+                    sortByDesc: sortByDesc,
+                    includeRubricKeys: includeRubricKeys);
 
                 return __httpRequest;
             }
