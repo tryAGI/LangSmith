@@ -57,7 +57,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AgentplatformAgent> CreateAnAgentAsync(
             string id,
-            global::LangSmith.AgentplatformAgentSourceType2 sourceType,
+            global::LangSmith.AgentplatformAgentSourceType sourceType,
             global::LangSmith.AgentplatformAgentType? agentType = default,
             string? name = default,
             bool? productionOnly = default,

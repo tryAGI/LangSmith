@@ -17,33 +17,33 @@ namespace LangSmith.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1Discriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::LangSmith.AppFeedbackSource? app = default;
-            if (discriminator?.Type == global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType.App)
+            if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.App)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AppFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AppFeedbackSource> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AppFeedbackSource)}");
                 app = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.APIFeedbackSource? api = default;
-            if (discriminator?.Type == global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType.Api)
+            if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.Api)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.APIFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.APIFeedbackSource> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.APIFeedbackSource)}");
                 api = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.ModelFeedbackSource? model = default;
-            if (discriminator?.Type == global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType.Model)
+            if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.Model)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.ModelFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.ModelFeedbackSource> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.ModelFeedbackSource)}");
                 model = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::LangSmith.AutoEvalFeedbackSource? autoEval = default;
-            if (discriminator?.Type == global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType.AutoEval)
+            if (discriminator?.Type == global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType.AutoEval)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.AutoEvalFeedbackSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.AutoEvalFeedbackSource> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::LangSmith.AutoEvalFeedbackSource)}");

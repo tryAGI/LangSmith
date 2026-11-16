@@ -73,9 +73,9 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AgentplatformAgentSourceType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AgentplatformAgentSourceTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AgentplatformAgentSourceType2 SourceType { get; set; }
+        public required global::LangSmith.AgentplatformAgentSourceType SourceType { get; set; }
 
         /// <summary>
         ///
@@ -126,7 +126,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgentEnvironment> environments,
             string id,
             string name,
-            global::LangSmith.AgentplatformAgentSourceType2 sourceType,
+            global::LangSmith.AgentplatformAgentSourceType sourceType,
             string? avatarUrl,
             string? owner,
             global::System.Guid? ownerId,

@@ -130,7 +130,7 @@ namespace LangSmith
             string? feedbackThreadId = default,
             bool? extendTraceRetention = default,
             global::System.Guid? id = default,
-            global::LangSmith.FeedbackSourceVariant12? feedbackSource = default,
+            global::LangSmith.FeedbackSourceVariant1? feedbackSource = default,
             global::LangSmith.FeedbackConfig? feedbackConfig = default,
             global::System.Guid? feedbackConfigId = default,
             object? extra = default,
