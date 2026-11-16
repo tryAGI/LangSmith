@@ -41,9 +41,9 @@ namespace LangSmith
         /// Agent runtime kind. Use EXTERNAL for an application hosted outside LangSmith.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AgentplatformAgentSourceType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AgentplatformAgentSourceTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::LangSmith.AgentplatformAgentSourceType2 SourceType { get; set; }
+        public required global::LangSmith.AgentplatformAgentSourceType SourceType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +77,7 @@ namespace LangSmith
 #endif
         public AgentplatformAgentCreate(
             string id,
-            global::LangSmith.AgentplatformAgentSourceType2 sourceType,
+            global::LangSmith.AgentplatformAgentSourceType sourceType,
             global::LangSmith.AgentplatformAgentType? agentType,
             string? name,
             bool? productionOnly)

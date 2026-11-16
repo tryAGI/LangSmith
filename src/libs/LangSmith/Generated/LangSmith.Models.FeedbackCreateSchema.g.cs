@@ -121,7 +121,7 @@ namespace LangSmith
         /// Where the feedback came from, as an object whose type is api, app, model, or auto_eval.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        public global::LangSmith.FeedbackSourceVariant12? FeedbackSource { get; set; }
+        public global::LangSmith.FeedbackSourceVariant1? FeedbackSource { get; set; }
 
         /// <summary>
         /// The scale the score is checked against. If the feedback key already has a feedback config, this must match it exactly or the request is rejected; if it has none, this becomes the key's feedback config.
@@ -242,7 +242,7 @@ namespace LangSmith
             string? feedbackThreadId,
             bool? extendTraceRetention,
             global::System.Guid? id,
-            global::LangSmith.FeedbackSourceVariant12? feedbackSource,
+            global::LangSmith.FeedbackSourceVariant1? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
             global::System.Guid? feedbackConfigId,
             object? extra)

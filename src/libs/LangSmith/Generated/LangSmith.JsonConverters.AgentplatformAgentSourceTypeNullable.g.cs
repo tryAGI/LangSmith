@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AgentplatformAgentSourceType2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AgentplatformAgentSourceType2?>
+    public sealed class AgentplatformAgentSourceTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AgentplatformAgentSourceType?>
     {
         /// <inheritdoc />
-        public override global::LangSmith.AgentplatformAgentSourceType2? Read(
+        public override global::LangSmith.AgentplatformAgentSourceType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.AgentplatformAgentSourceType2Extensions.ToEnum(stringValue);
+                        return global::LangSmith.AgentplatformAgentSourceTypeExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.AgentplatformAgentSourceType2)numValue;
+                    return (global::LangSmith.AgentplatformAgentSourceType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::LangSmith.AgentplatformAgentSourceType2?);
+                    return default(global::LangSmith.AgentplatformAgentSourceType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.AgentplatformAgentSourceType2? value,
+            global::LangSmith.AgentplatformAgentSourceType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace LangSmith.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::LangSmith.AgentplatformAgentSourceType2Extensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::LangSmith.AgentplatformAgentSourceTypeExtensions.ToValueString(value.Value));
             }
         }
     }

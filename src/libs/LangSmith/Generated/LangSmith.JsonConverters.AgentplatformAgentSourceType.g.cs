@@ -3,10 +3,10 @@
 namespace LangSmith.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class FilterViewType2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.FilterViewType2?>
+    public sealed class AgentplatformAgentSourceTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.AgentplatformAgentSourceType>
     {
         /// <inheritdoc />
-        public override global::LangSmith.FilterViewType2? Read(
+        public override global::LangSmith.AgentplatformAgentSourceType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace LangSmith.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::LangSmith.FilterViewType2Extensions.ToEnum(stringValue);
+                        return global::LangSmith.AgentplatformAgentSourceTypeExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace LangSmith.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::LangSmith.FilterViewType2)numValue;
+                    return (global::LangSmith.AgentplatformAgentSourceType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::LangSmith.FilterViewType2?);
+                    return default(global::LangSmith.AgentplatformAgentSourceType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace LangSmith.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::LangSmith.FilterViewType2? value,
+            global::LangSmith.AgentplatformAgentSourceType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::LangSmith.FilterViewType2Extensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::LangSmith.AgentplatformAgentSourceTypeExtensions.ToValueString(value));
         }
     }
 }

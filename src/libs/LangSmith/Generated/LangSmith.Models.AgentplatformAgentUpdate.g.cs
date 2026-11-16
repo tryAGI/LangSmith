@@ -31,8 +31,8 @@ namespace LangSmith
         /// New runtime kind. Only EXTERNAL agents without runtime bindings can change kind.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AgentplatformAgentSourceType2JsonConverter))]
-        public global::LangSmith.AgentplatformAgentSourceType2? SourceType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AgentplatformAgentSourceTypeJsonConverter))]
+        public global::LangSmith.AgentplatformAgentSourceType? SourceType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +62,7 @@ namespace LangSmith
             global::LangSmith.AgentplatformAgentType? agentType,
             string? name,
             global::System.Guid? ownerId,
-            global::LangSmith.AgentplatformAgentSourceType2? sourceType)
+            global::LangSmith.AgentplatformAgentSourceType? sourceType)
         {
             this.AgentType = agentType;
             this.Name = name;

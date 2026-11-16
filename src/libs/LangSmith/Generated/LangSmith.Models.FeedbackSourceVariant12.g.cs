@@ -12,7 +12,7 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
-        public global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType? Type { get; }
+        public global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// Feedback from the LangChainPlus App.
@@ -257,7 +257,7 @@ namespace LangSmith
         ///
         /// </summary>
         public FeedbackSourceVariant12(
-            global::LangSmith.FeedbackCreateSchemaFeedbackSourceVariant1DiscriminatorType? type,
+            global::LangSmith.FeedbackCreateCoreSchemaFeedbackSourceVariant1DiscriminatorType? type,
             global::LangSmith.AppFeedbackSource? app,
             global::LangSmith.APIFeedbackSource? api,
             global::LangSmith.ModelFeedbackSource? model,

@@ -630,7 +630,7 @@ namespace LangSmith
             global::LangSmith.AgentplatformAgentType? agentType = default,
             string? name = default,
             global::System.Guid? ownerId = default,
-            global::LangSmith.AgentplatformAgentSourceType2? sourceType = default,
+            global::LangSmith.AgentplatformAgentSourceType? sourceType = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

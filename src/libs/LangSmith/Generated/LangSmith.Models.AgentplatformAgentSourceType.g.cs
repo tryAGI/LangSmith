@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public enum AgentplatformAgentSourceType2
+    public enum AgentplatformAgentSourceType
     {
         /// <summary>
         ///
@@ -29,33 +29,33 @@ namespace LangSmith
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class AgentplatformAgentSourceType2Extensions
+    public static class AgentplatformAgentSourceTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this AgentplatformAgentSourceType2 value)
+        public static string ToValueString(this AgentplatformAgentSourceType value)
         {
             return value switch
             {
-                AgentplatformAgentSourceType2.AgentSourceExternal => "EXTERNAL",
-                AgentplatformAgentSourceType2.AgentSourceFleet => "FLEET",
-                AgentplatformAgentSourceType2.AgentSourceLSD => "LSD",
-                AgentplatformAgentSourceType2.AgentSourceMDA => "MDA",
+                AgentplatformAgentSourceType.AgentSourceExternal => "EXTERNAL",
+                AgentplatformAgentSourceType.AgentSourceFleet => "FLEET",
+                AgentplatformAgentSourceType.AgentSourceLSD => "LSD",
+                AgentplatformAgentSourceType.AgentSourceMDA => "MDA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AgentplatformAgentSourceType2? ToEnum(string value)
+        public static AgentplatformAgentSourceType? ToEnum(string value)
         {
             return value switch
             {
-                "EXTERNAL" => AgentplatformAgentSourceType2.AgentSourceExternal,
-                "FLEET" => AgentplatformAgentSourceType2.AgentSourceFleet,
-                "LSD" => AgentplatformAgentSourceType2.AgentSourceLSD,
-                "MDA" => AgentplatformAgentSourceType2.AgentSourceMDA,
+                "EXTERNAL" => AgentplatformAgentSourceType.AgentSourceExternal,
+                "FLEET" => AgentplatformAgentSourceType.AgentSourceFleet,
+                "LSD" => AgentplatformAgentSourceType.AgentSourceLSD,
+                "MDA" => AgentplatformAgentSourceType.AgentSourceMDA,
                 _ => null,
             };
         }

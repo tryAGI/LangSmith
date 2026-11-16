@@ -76,7 +76,7 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        public global::LangSmith.FeedbackSourceVariant1? FeedbackSource { get; set; }
+        public global::LangSmith.FeedbackSourceVariant12? FeedbackSource { get; set; }
 
         /// <summary>
         ///
@@ -142,7 +142,7 @@ namespace LangSmith
             global::System.Guid? feedbackGroupId,
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? id,
-            global::LangSmith.FeedbackSourceVariant1? feedbackSource,
+            global::LangSmith.FeedbackSourceVariant12? feedbackSource,
             global::LangSmith.FeedbackConfig? feedbackConfig,
             object? extra)
         {
