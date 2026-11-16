@@ -51,6 +51,18 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RunningRunsByPriority,
+        /// <summary>
+        ///
+        /// </summary>
+        StartableRunsByPriority,
+        /// <summary>
+        ///
+        /// </summary>
+        StartableRunsWaitMaxByPriority,
+        /// <summary>
+        ///
+        /// </summary>
         WorkerCount,
     }
 
@@ -76,6 +88,9 @@ namespace LangSmith
                 HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
                 HostProjectChartMetric.RestartCount => "restart_count",
                 HostProjectChartMetric.RunQueueWaitTime => "run_queue_wait_time",
+                HostProjectChartMetric.RunningRunsByPriority => "running_runs_by_priority",
+                HostProjectChartMetric.StartableRunsByPriority => "startable_runs_by_priority",
+                HostProjectChartMetric.StartableRunsWaitMaxByPriority => "startable_runs_wait_max_by_priority",
                 HostProjectChartMetric.WorkerCount => "worker_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -97,6 +112,9 @@ namespace LangSmith
                 "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,
                 "restart_count" => HostProjectChartMetric.RestartCount,
                 "run_queue_wait_time" => HostProjectChartMetric.RunQueueWaitTime,
+                "running_runs_by_priority" => HostProjectChartMetric.RunningRunsByPriority,
+                "startable_runs_by_priority" => HostProjectChartMetric.StartableRunsByPriority,
+                "startable_runs_wait_max_by_priority" => HostProjectChartMetric.StartableRunsWaitMaxByPriority,
                 "worker_count" => HostProjectChartMetric.WorkerCount,
                 _ => null,
             };
