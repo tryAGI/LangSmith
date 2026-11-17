@@ -17,6 +17,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assigned_to")]
+        public global::System.Collections.Generic.IList<string>? AssignedTo { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_by")]
         public global::System.Collections.Generic.IList<string>? CompletedBy { get; set; }
 
@@ -97,6 +103,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="AnnotationqueuesAnnotationQueueListItem" /> class.
         /// </summary>
         /// <param name="addedAt"></param>
+        /// <param name="assignedTo"></param>
         /// <param name="completedBy"></param>
         /// <param name="effectiveAddedAt"></param>
         /// <param name="id"></param>
@@ -116,6 +123,7 @@ namespace LangSmith
 #endif
         public AnnotationqueuesAnnotationQueueListItem(
             string? addedAt,
+            global::System.Collections.Generic.IList<string>? assignedTo,
             global::System.Collections.Generic.IList<string>? completedBy,
             string? effectiveAddedAt,
             string? id,
@@ -130,6 +138,7 @@ namespace LangSmith
             string? threadId)
         {
             this.AddedAt = addedAt;
+            this.AssignedTo = assignedTo;
             this.CompletedBy = completedBy;
             this.EffectiveAddedAt = effectiveAddedAt;
             this.Id = id;
