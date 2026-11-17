@@ -22,6 +22,13 @@ namespace LangSmith
         public required string GcpProjectId { get; set; }
 
         /// <summary>
+        /// MTUBytes is the VPC network's MTU, 1300 to 8896, for example 1440 to match<br/>
+        /// a peered network or interconnect. Defaults to GCP's 1460.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mtu_bytes")]
+        public long? MtuBytes { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -88,6 +95,10 @@ namespace LangSmith
         /// <param name="byoiamEnabled">
         /// Use customer-managed service accounts created by the LangSmith GCP BYOC Terraform module with byo_iam = true.
         /// </param>
+        /// <param name="mtuBytes">
+        /// MTUBytes is the VPC network's MTU, 1300 to 8896, for example 1440 to match<br/>
+        /// a peered network or interconnect. Defaults to GCP's 1460.
+        /// </param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="sandboxesEnabled">
         /// Deploy LangSmith sandboxes in the data plane. Defaults to false.
@@ -102,11 +113,13 @@ namespace LangSmith
             string region,
             string vpcCidr,
             bool? byoiamEnabled,
+            long? mtuBytes,
             bool? publicLoadBalancer,
             bool? sandboxesEnabled)
         {
             this.ByoiamEnabled = byoiamEnabled;
             this.GcpProjectId = gcpProjectId ?? throw new global::System.ArgumentNullException(nameof(gcpProjectId));
+            this.MtuBytes = mtuBytes;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ProvisionerServiceAccount = provisionerServiceAccount ?? throw new global::System.ArgumentNullException(nameof(provisionerServiceAccount));
             this.PublicLoadBalancer = publicLoadBalancer;

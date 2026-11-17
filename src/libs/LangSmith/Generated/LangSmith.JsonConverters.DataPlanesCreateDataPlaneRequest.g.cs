@@ -66,6 +66,7 @@ namespace LangSmith.JsonConverters
             var __score2 = 0;
             if (__jsonProps.Contains("byoiam_enabled")) __score2++;
             if (__jsonProps.Contains("gcp_project_id")) __score2++;
+            if (__jsonProps.Contains("mtu_bytes")) __score2++;
             if (__jsonProps.Contains("name")) __score2++;
             if (__jsonProps.Contains("provisioner_service_account")) __score2++;
             if (__jsonProps.Contains("public_load_balancer")) __score2++;
