@@ -80,17 +80,18 @@ namespace LangSmith
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `user_group_id`, `workspace_id`, `agent_id`,<br/>
+        /// keys are `organization_id`, `user_group_id`, `workspace_id`, `agent_uuid`,<br/>
         /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
         /// Values under the same key are ORed; distinct keys are ANDed.<br/>
         /// `user_group_id` must be an organization-level User Group UUID, not a workspace child User Group UUID.<br/>
         /// Membership in a workspace child User Group matches its organization parent User Group ID. User Group IDs are not checked for existence.<br/>
-        /// `agent_id` and `agent_environment` target requests from Agent<br/>
-        /// deployments and must be combined with exactly one `workspace_id`<br/>
-        /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
+        /// `agent_uuid` and `agent_environment` target requests from Agent<br/>
+        /// deployments: `agent_uuid` alone targets those Agents, `agent_environment`<br/>
         /// (`LOCAL`, `DEVELOPMENT`, `STAGING`, or `PRODUCTION`) alone targets<br/>
         /// every Agent in those environments, and both together target those<br/>
-        /// Agents in those environments. Agent keys are<br/>
+        /// Agents in those environments. `agent_uuid` can't be combined with<br/>
+        /// `workspace_id`; `agent_environment` alone may add one `workspace_id`.<br/>
+        /// Agent keys are<br/>
         /// not supported in default policies. A default policy uses an empty built-in matcher value so<br/>
         /// the runtime materializes a child for each subject it sees. A<br/>
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
@@ -165,17 +166,18 @@ namespace LangSmith
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `user_group_id`, `workspace_id`, `agent_id`,<br/>
+        /// keys are `organization_id`, `user_group_id`, `workspace_id`, `agent_uuid`,<br/>
         /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
         /// Values under the same key are ORed; distinct keys are ANDed.<br/>
         /// `user_group_id` must be an organization-level User Group UUID, not a workspace child User Group UUID.<br/>
         /// Membership in a workspace child User Group matches its organization parent User Group ID. User Group IDs are not checked for existence.<br/>
-        /// `agent_id` and `agent_environment` target requests from Agent<br/>
-        /// deployments and must be combined with exactly one `workspace_id`<br/>
-        /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
+        /// `agent_uuid` and `agent_environment` target requests from Agent<br/>
+        /// deployments: `agent_uuid` alone targets those Agents, `agent_environment`<br/>
         /// (`LOCAL`, `DEVELOPMENT`, `STAGING`, or `PRODUCTION`) alone targets<br/>
         /// every Agent in those environments, and both together target those<br/>
-        /// Agents in those environments. Agent keys are<br/>
+        /// Agents in those environments. `agent_uuid` can't be combined with<br/>
+        /// `workspace_id`; `agent_environment` alone may add one `workspace_id`.<br/>
+        /// Agent keys are<br/>
         /// not supported in default policies. A default policy uses an empty built-in matcher value so<br/>
         /// the runtime materializes a child for each subject it sees. A<br/>
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>
@@ -783,17 +785,18 @@ namespace LangSmith
         /// `{"version": 1, "limits": [{"metric": "requests"|"tokens", "window": "minute"|"hour", "value": &lt;integer&gt;}]}`<br/>
         /// `limits` must be non-empty; each `metric`/`window` pair may appear at most once. `value` is 1..1000000000000000.<br/>
         /// **subject_matchers** is a list of `{key, value}` pairs. Built-in<br/>
-        /// keys are `organization_id`, `user_group_id`, `workspace_id`, `agent_id`,<br/>
+        /// keys are `organization_id`, `user_group_id`, `workspace_id`, `agent_uuid`,<br/>
         /// `agent_environment`, `user_id`, `api_key_id`, and `run_rule_id`.<br/>
         /// Values under the same key are ORed; distinct keys are ANDed.<br/>
         /// `user_group_id` must be an organization-level User Group UUID, not a workspace child User Group UUID.<br/>
         /// Membership in a workspace child User Group matches its organization parent User Group ID. User Group IDs are not checked for existence.<br/>
-        /// `agent_id` and `agent_environment` target requests from Agent<br/>
-        /// deployments and must be combined with exactly one `workspace_id`<br/>
-        /// matcher: `agent_id` alone targets those Agents, `agent_environment`<br/>
+        /// `agent_uuid` and `agent_environment` target requests from Agent<br/>
+        /// deployments: `agent_uuid` alone targets those Agents, `agent_environment`<br/>
         /// (`LOCAL`, `DEVELOPMENT`, `STAGING`, or `PRODUCTION`) alone targets<br/>
         /// every Agent in those environments, and both together target those<br/>
-        /// Agents in those environments. Agent keys are<br/>
+        /// Agents in those environments. `agent_uuid` can't be combined with<br/>
+        /// `workspace_id`; `agent_environment` alone may add one `workspace_id`.<br/>
+        /// Agent keys are<br/>
         /// not supported in default policies. A default policy uses an empty built-in matcher value so<br/>
         /// the runtime materializes a child for each subject it sees. A<br/>
         /// `default_spend_cap` and `default_rate_limit` may add one empty custom<br/>

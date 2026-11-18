@@ -9,6 +9,9 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -17,6 +20,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionUpdate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -24,6 +28,9 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -32,6 +39,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionUpdate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -39,6 +47,9 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
@@ -48,6 +59,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
+            global::LangSmith.AccessScope? accessScope = default,
             string? title = default,
             string? description = default,
             int? index = default,

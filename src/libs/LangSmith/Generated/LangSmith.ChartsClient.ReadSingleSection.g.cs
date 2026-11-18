@@ -41,11 +41,13 @@ namespace LangSmith
         partial void PrepareReadSingleSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sectionId,
+            ref global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartsSectionRequest request);
         partial void PrepareReadSingleSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sectionId,
+            global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartsSectionRequest request);
         partial void ProcessReadSingleSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -61,6 +63,9 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -69,6 +74,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionRequest request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,6 +82,7 @@ namespace LangSmith
                 sectionId: sectionId,
 
                 request: request,
+                accessScope: accessScope,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -87,6 +94,9 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -95,6 +105,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionRequest request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -105,6 +116,7 @@ namespace LangSmith
             PrepareReadSingleSectionArguments(
                 httpClient: HttpClient,
                 sectionId: ref sectionId,
+                accessScope: ref accessScope,
                 request: request);
 
 
@@ -135,6 +147,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_ReadSingleSectionServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -182,6 +197,7 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     sectionId: sectionId,
+                    accessScope: accessScope,
                     request: request);
 
                 return __httpRequest;
@@ -499,6 +515,9 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="timezone">
         /// Default Value: UTC
         /// </param>
@@ -517,6 +536,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
+            global::LangSmith.AccessScope? accessScope = default,
             string? timezone = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
@@ -538,6 +558,7 @@ namespace LangSmith
 
             return await ReadSingleSectionAsync(
                 sectionId: sectionId,
+                accessScope: accessScope,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

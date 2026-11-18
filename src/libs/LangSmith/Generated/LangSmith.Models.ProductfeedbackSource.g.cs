@@ -12,6 +12,10 @@ namespace LangSmith
         ///
         /// </summary>
         SourceLangSmithCLI,
+        /// <summary>
+        ///
+        /// </summary>
+        SourceLangSmithMCP,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace LangSmith
             return value switch
             {
                 ProductfeedbackSource.SourceLangSmithCLI => "LANGSMITH_CLI",
+                ProductfeedbackSource.SourceLangSmithMCP => "LANGSMITH_MCP",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace LangSmith
             return value switch
             {
                 "LANGSMITH_CLI" => ProductfeedbackSource.SourceLangSmithCLI,
+                "LANGSMITH_MCP" => ProductfeedbackSource.SourceLangSmithMCP,
                 _ => null,
             };
         }

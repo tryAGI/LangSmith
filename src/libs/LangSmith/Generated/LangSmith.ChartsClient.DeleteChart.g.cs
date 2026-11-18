@@ -40,11 +40,13 @@ namespace LangSmith
             };
         partial void PrepareDeleteChartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid chartId);
+            ref global::System.Guid chartId,
+            ref global::LangSmith.AccessScope? accessScope);
         partial void PrepareDeleteChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid chartId);
+            global::System.Guid chartId,
+            global::LangSmith.AccessScope? accessScope);
         partial void ProcessDeleteChartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,16 +61,21 @@ namespace LangSmith
         /// Delete a chart.
         /// </summary>
         /// <param name="chartId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteChartAsync(
             global::System.Guid chartId,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await DeleteChartAsResponseAsync(
                 chartId: chartId,
+                accessScope: accessScope,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -80,11 +87,15 @@ namespace LangSmith
         /// Delete a chart.
         /// </summary>
         /// <param name="chartId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> DeleteChartAsResponseAsync(
             global::System.Guid chartId,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -92,7 +103,8 @@ namespace LangSmith
                 client: HttpClient);
             PrepareDeleteChartArguments(
                 httpClient: HttpClient,
-                chartId: ref chartId);
+                chartId: ref chartId,
+                accessScope: ref accessScope);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -122,6 +134,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_DeleteChartServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -162,7 +177,8 @@ namespace LangSmith
                 PrepareDeleteChartRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    chartId: chartId);
+                    chartId: chartId,
+                    accessScope: accessScope);
 
                 return __httpRequest;
             }

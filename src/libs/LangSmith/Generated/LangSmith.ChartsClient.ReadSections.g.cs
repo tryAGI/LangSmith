@@ -40,6 +40,7 @@ namespace LangSmith
             };
         partial void PrepareReadSectionsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::LangSmith.AccessScope? accessScope,
             ref int? limit,
             ref int? offset,
             ref string? titleContains,
@@ -50,6 +51,7 @@ namespace LangSmith
         partial void PrepareReadSectionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.AccessScope? accessScope,
             int? limit,
             int? offset,
             string? titleContains,
@@ -70,6 +72,9 @@ namespace LangSmith
         /// Read Sections<br/>
         /// Get all sections for the tenant.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
@@ -89,6 +94,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>> ReadSectionsAsync(
+            global::LangSmith.AccessScope? accessScope = default,
             int? limit = default,
             int? offset = default,
             string? titleContains = default,
@@ -100,6 +106,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ReadSectionsAsResponseAsync(
+                accessScope: accessScope,
                 limit: limit,
                 offset: offset,
                 titleContains: titleContains,
@@ -117,6 +124,9 @@ namespace LangSmith
         /// Read Sections<br/>
         /// Get all sections for the tenant.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
@@ -136,6 +146,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>>> ReadSectionsAsResponseAsync(
+            global::LangSmith.AccessScope? accessScope = default,
             int? limit = default,
             int? offset = default,
             string? titleContains = default,
@@ -150,6 +161,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareReadSectionsArguments(
                 httpClient: HttpClient,
+                accessScope: ref accessScope,
                 limit: ref limit,
                 offset: ref offset,
                 titleContains: ref titleContains,
@@ -187,6 +199,7 @@ namespace LangSmith
                                 servers: s_ReadSectionsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("title_contains", titleContains)
@@ -235,6 +248,7 @@ namespace LangSmith
                 PrepareReadSectionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accessScope: accessScope,
                     limit: limit,
                     offset: offset,
                     titleContains: titleContains,

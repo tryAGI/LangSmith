@@ -41,11 +41,13 @@ namespace LangSmith
         partial void PrepareUpdateSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sectionId,
+            ref global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartsSectionUpdate request);
         partial void PrepareUpdateSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sectionId,
+            global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartsSectionUpdate request);
         partial void ProcessUpdateSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -61,6 +63,9 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -69,6 +74,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionUpdate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,6 +82,7 @@ namespace LangSmith
                 sectionId: sectionId,
 
                 request: request,
+                accessScope: accessScope,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -87,6 +94,9 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -95,6 +105,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionUpdate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -105,6 +116,7 @@ namespace LangSmith
             PrepareUpdateSectionArguments(
                 httpClient: HttpClient,
                 sectionId: ref sectionId,
+                accessScope: ref accessScope,
                 request: request);
 
 
@@ -135,6 +147,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_UpdateSectionServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -182,6 +197,7 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     sectionId: sectionId,
+                    accessScope: accessScope,
                     request: request);
 
                 return __httpRequest;
@@ -499,6 +515,9 @@ namespace LangSmith
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
@@ -508,6 +527,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
+            global::LangSmith.AccessScope? accessScope = default,
             string? title = default,
             string? description = default,
             int? index = default,
@@ -525,6 +545,7 @@ namespace LangSmith
 
             return await UpdateSectionAsync(
                 sectionId: sectionId,
+                accessScope: accessScope,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

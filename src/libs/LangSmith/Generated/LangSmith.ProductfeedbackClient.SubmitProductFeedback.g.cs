@@ -607,9 +607,9 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.ProductfeedbackProductFeedback> SubmitProductFeedbackAsync(
             global::LangSmith.ProductfeedbackCategory category,
             string message,
+            global::LangSmith.ProductfeedbackSource source,
             string? idempotencyKey = default,
             global::LangSmith.ProductfeedbackClientContext? client = default,
-            global::LangSmith.ProductfeedbackSource source = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

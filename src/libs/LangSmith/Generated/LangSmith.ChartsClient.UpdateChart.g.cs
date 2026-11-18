@@ -41,11 +41,13 @@ namespace LangSmith
         partial void PrepareUpdateChartArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid chartId,
+            ref global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartUpdate request);
         partial void PrepareUpdateChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid chartId,
+            global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartUpdate request);
         partial void ProcessUpdateChartResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -61,6 +63,9 @@ namespace LangSmith
         /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -69,6 +74,7 @@ namespace LangSmith
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,6 +82,7 @@ namespace LangSmith
                 chartId: chartId,
 
                 request: request,
+                accessScope: accessScope,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -87,6 +94,9 @@ namespace LangSmith
         /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -95,6 +105,7 @@ namespace LangSmith
             global::System.Guid chartId,
 
             global::LangSmith.CustomChartUpdate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -105,6 +116,7 @@ namespace LangSmith
             PrepareUpdateChartArguments(
                 httpClient: HttpClient,
                 chartId: ref chartId,
+                accessScope: ref accessScope,
                 request: request);
 
 
@@ -135,6 +147,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_UpdateChartServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -182,6 +197,7 @@ namespace LangSmith
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     chartId: chartId,
+                    accessScope: accessScope,
                     request: request);
 
                 return __httpRequest;
@@ -499,6 +515,9 @@ namespace LangSmith
         /// Update a chart or text block.
         /// </summary>
         /// <param name="chartId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
@@ -515,6 +534,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse> UpdateChartAsync(
             global::System.Guid chartId,
+            global::LangSmith.AccessScope? accessScope = default,
             string? title = default,
             string? description = default,
             int? index = default,
@@ -542,6 +562,7 @@ namespace LangSmith
 
             return await UpdateChartAsync(
                 chartId: chartId,
+                accessScope: accessScope,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

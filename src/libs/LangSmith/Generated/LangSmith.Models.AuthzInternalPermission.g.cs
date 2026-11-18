@@ -319,6 +319,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationChartsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationChartsRead,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationEngineManage,
         /// <summary>
         ///
@@ -743,6 +751,8 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationAuthenticationManage => "organization:authentication:manage",
                 AuthzInternalPermission.OrganizationBillingManage => "organization:billing:manage",
                 AuthzInternalPermission.OrganizationBillingRead => "organization:billing:read",
+                AuthzInternalPermission.OrganizationChartsManage => "organization:charts:manage",
+                AuthzInternalPermission.OrganizationChartsRead => "organization:charts:read",
                 AuthzInternalPermission.OrganizationEngineManage => "organization:engine:manage",
                 AuthzInternalPermission.OrganizationEngineRead => "organization:engine:read",
                 AuthzInternalPermission.OrganizationGatewayManage => "organization:gateway:manage",
@@ -914,6 +924,8 @@ namespace LangSmith
                 "organization:authentication:manage" => AuthzInternalPermission.OrganizationAuthenticationManage,
                 "organization:billing:manage" => AuthzInternalPermission.OrganizationBillingManage,
                 "organization:billing:read" => AuthzInternalPermission.OrganizationBillingRead,
+                "organization:charts:manage" => AuthzInternalPermission.OrganizationChartsManage,
+                "organization:charts:read" => AuthzInternalPermission.OrganizationChartsRead,
                 "organization:engine:manage" => AuthzInternalPermission.OrganizationEngineManage,
                 "organization:engine:read" => AuthzInternalPermission.OrganizationEngineRead,
                 "organization:gateway:manage" => AuthzInternalPermission.OrganizationGatewayManage,

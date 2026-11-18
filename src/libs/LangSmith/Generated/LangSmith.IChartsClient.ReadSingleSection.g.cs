@@ -9,6 +9,9 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -17,6 +20,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionRequest request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -24,6 +28,9 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -32,6 +39,7 @@ namespace LangSmith
             global::System.Guid sectionId,
 
             global::LangSmith.CustomChartsSectionRequest request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -39,6 +47,9 @@ namespace LangSmith
         /// Get a single section by ID.
         /// </summary>
         /// <param name="sectionId"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="timezone">
         /// Default Value: UTC
         /// </param>
@@ -57,6 +68,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
+            global::LangSmith.AccessScope? accessScope = default,
             string? timezone = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
