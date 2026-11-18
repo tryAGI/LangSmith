@@ -48,7 +48,8 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.ProductfeedbackSourceJsonConverter))]
-        public global::LangSmith.ProductfeedbackSource Source { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::LangSmith.ProductfeedbackSource Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,8 +64,8 @@ namespace LangSmith
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="message"></param>
-        /// <param name="client"></param>
         /// <param name="source"></param>
+        /// <param name="client"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,8 +74,8 @@ namespace LangSmith
             global::System.DateTime createdAt,
             global::System.Guid id,
             string message,
-            global::LangSmith.ProductfeedbackClientContext? client,
-            global::LangSmith.ProductfeedbackSource source)
+            global::LangSmith.ProductfeedbackSource source,
+            global::LangSmith.ProductfeedbackClientContext? client)
         {
             this.Category = category;
             this.Client = client;

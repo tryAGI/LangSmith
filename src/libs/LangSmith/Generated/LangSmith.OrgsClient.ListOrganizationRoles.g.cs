@@ -39,10 +39,14 @@ namespace LangSmith
             {                s_ListOrganizationRolesSecurityRequirement0,
             };
         partial void PrepareListOrganizationRolesArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortByVariant1Item>? sortBy,
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortOrderVariant1Item>? sortOrder);
         partial void PrepareListOrganizationRolesRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortByVariant1Item>? sortBy,
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortOrderVariant1Item>? sortOrder);
         partial void ProcessListOrganizationRolesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,14 +59,24 @@ namespace LangSmith
         /// <summary>
         /// List Organization Roles
         /// </summary>
+        /// <param name="sortBy">
+        /// Fields to sort by, applied in the order supplied within existing scope and built-in role priorities. Repeat this parameter for multiple fields. Omit to preserve the default ordering.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort directions corresponding positionally to sort_by fields. Supply one direction for all fields, or repeat this parameter once per field. Omit to sort all requested fields ascending. Ignored when sort_by is omitted. Scope and built-in role priorities are unchanged.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.Role>> ListOrganizationRolesAsync(
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortByVariant1Item>? sortBy = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortOrderVariant1Item>? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListOrganizationRolesAsResponseAsync(
+                sortBy: sortBy,
+                sortOrder: sortOrder,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -72,17 +86,27 @@ namespace LangSmith
         /// <summary>
         /// List Organization Roles
         /// </summary>
+        /// <param name="sortBy">
+        /// Fields to sort by, applied in the order supplied within existing scope and built-in role priorities. Repeat this parameter for multiple fields. Omit to preserve the default ordering.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort directions corresponding positionally to sort_by fields. Supply one direction for all fields, or repeat this parameter once per field. Omit to sort all requested fields ascending. Ignored when sort_by is omitted. Scope and built-in role priorities are unchanged.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.Role>>> ListOrganizationRolesAsResponseAsync(
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortByVariant1Item>? sortBy = default,
+            global::System.Collections.Generic.IList<global::LangSmith.ListOrganizationRolesApiV1OrgsCurrentRolesGetSortOrderVariant1Item>? sortOrder = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListOrganizationRolesArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                sortBy: sortBy,
+                sortOrder: sortOrder);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -112,6 +136,10 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListOrganizationRolesServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("sort_by", sortBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("sort_order", sortOrder, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -151,7 +179,9 @@ namespace LangSmith
                     request: __httpRequest);
                 PrepareListOrganizationRolesRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder);
 
                 return __httpRequest;
             }
@@ -330,6 +360,43 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Validation Error
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::LangSmith.HTTPValidationError? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::LangSmith.HTTPValidationError.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {

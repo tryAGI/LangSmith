@@ -40,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareCreateChartArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request);
         partial void PrepareCreateChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request);
         partial void ProcessCreateChartResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -58,6 +60,9 @@ namespace LangSmith
         /// Create Chart<br/>
         /// Create a chart or dashboard text block.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -65,12 +70,14 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse> CreateChartAsync(
 
             global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateChartAsResponseAsync(
 
                 request: request,
+                accessScope: accessScope,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -81,6 +88,9 @@ namespace LangSmith
         /// Create Chart<br/>
         /// Create a chart or dashboard text block.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -88,6 +98,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse>> CreateChartAsResponseAsync(
 
             global::LangSmith.CreateChartApiV1ChartsCreatePostRequest request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,6 +106,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareCreateChartArguments(
                 httpClient: HttpClient,
+                accessScope: ref accessScope,
                 request: request);
 
 
@@ -125,6 +137,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_CreateChartServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -171,6 +186,7 @@ namespace LangSmith
                 PrepareCreateChartRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accessScope: accessScope,
                     request: request);
 
                 return __httpRequest;
@@ -487,10 +503,14 @@ namespace LangSmith
         /// Create Chart<br/>
         /// Create a chart or dashboard text block.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CreateChartApiV1ChartsCreatePostResponse> CreateChartAsync(
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -499,6 +519,7 @@ namespace LangSmith
             };
 
             return await CreateChartAsync(
+                accessScope: accessScope,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

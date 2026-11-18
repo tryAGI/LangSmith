@@ -28,6 +28,19 @@ namespace LangSmith
         public int? Index { get; set; }
 
         /// <summary>
+        /// Default Value: workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.AccessScopeJsonConverter))]
+        public global::LangSmith.AccessScope? AccessScope { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
+        public global::System.Guid? TenantId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -65,6 +78,10 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
+        /// <param name="tenantId"></param>
         /// <param name="chartCount"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
@@ -76,6 +93,8 @@ namespace LangSmith
             global::System.Guid id,
             string? description,
             int? index,
+            global::LangSmith.AccessScope? accessScope,
+            global::System.Guid? tenantId,
             int? chartCount,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt)
@@ -83,6 +102,8 @@ namespace LangSmith
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description;
             this.Index = index;
+            this.AccessScope = accessScope;
+            this.TenantId = tenantId;
             this.Id = id;
             this.ChartCount = chartCount;
             this.CreatedAt = createdAt;

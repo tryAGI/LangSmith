@@ -8,6 +8,9 @@ namespace LangSmith
         /// Read Sections<br/>
         /// Get all sections for the tenant.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
@@ -27,6 +30,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>> ReadSectionsAsync(
+            global::LangSmith.AccessScope? accessScope = default,
             int? limit = default,
             int? offset = default,
             string? titleContains = default,
@@ -40,6 +44,9 @@ namespace LangSmith
         /// Read Sections<br/>
         /// Get all sections for the tenant.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
@@ -59,6 +66,7 @@ namespace LangSmith
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.CustomChartsSectionResponse>>> ReadSectionsAsResponseAsync(
+            global::LangSmith.AccessScope? accessScope = default,
             int? limit = default,
             int? offset = default,
             string? titleContains = default,

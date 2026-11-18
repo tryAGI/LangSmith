@@ -40,10 +40,12 @@ namespace LangSmith
             };
         partial void PrepareCreateSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartsSectionCreate request);
         partial void PrepareCreateSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::LangSmith.AccessScope? accessScope,
             global::LangSmith.CustomChartsSectionCreate request);
         partial void ProcessCreateSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -58,6 +60,9 @@ namespace LangSmith
         /// Create Section<br/>
         /// Create a new section.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -65,12 +70,14 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> CreateSectionAsync(
 
             global::LangSmith.CustomChartsSectionCreate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateSectionAsResponseAsync(
 
                 request: request,
+                accessScope: accessScope,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -81,6 +88,9 @@ namespace LangSmith
         /// Create Section<br/>
         /// Create a new section.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -88,6 +98,7 @@ namespace LangSmith
         public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.CustomChartsSectionResponse>> CreateSectionAsResponseAsync(
 
             global::LangSmith.CustomChartsSectionCreate request,
+            global::LangSmith.AccessScope? accessScope = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,6 +108,7 @@ namespace LangSmith
                 client: HttpClient);
             PrepareCreateSectionArguments(
                 httpClient: HttpClient,
+                accessScope: ref accessScope,
                 request: request);
 
 
@@ -127,6 +139,9 @@ namespace LangSmith
                                 baseUri: ResolveBaseUri(
                                 servers: s_CreateSectionServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
+                            __pathBuilder
+                                .AddOptionalParameter("access_scope", accessScope?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -173,6 +188,7 @@ namespace LangSmith
                 PrepareCreateSectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    accessScope: accessScope,
                     request: request);
 
                 return __httpRequest;
@@ -489,6 +505,9 @@ namespace LangSmith
         /// Create Section<br/>
         /// Create a new section.
         /// </summary>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
@@ -497,6 +516,7 @@ namespace LangSmith
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::LangSmith.CustomChartsSectionResponse> CreateSectionAsync(
             string title,
+            global::LangSmith.AccessScope? accessScope = default,
             string? description = default,
             int? index = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -510,6 +530,7 @@ namespace LangSmith
             };
 
             return await CreateSectionAsync(
+                accessScope: accessScope,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

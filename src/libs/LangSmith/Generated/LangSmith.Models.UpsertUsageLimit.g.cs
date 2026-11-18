@@ -50,6 +50,12 @@ namespace LangSmith
         public global::System.Guid? IdentityId { get; set; }
 
         /// <summary>
+        /// Usage levels that send an alert, at most one per `kind`. Omitting this field or sending an empty list removes all alert thresholds.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("alert_thresholds")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? AlertThresholds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -69,6 +75,9 @@ namespace LangSmith
         /// </param>
         /// <param name="sessionId"></param>
         /// <param name="identityId"></param>
+        /// <param name="alertThresholds">
+        /// Usage levels that send an alert, at most one per `kind`. Omitting this field or sending an empty list removes all alert thresholds.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,7 +87,8 @@ namespace LangSmith
             global::System.Guid? id,
             global::LangSmith.UsageLimitScope? scope,
             global::System.Guid? sessionId,
-            global::System.Guid? identityId)
+            global::System.Guid? identityId,
+            global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? alertThresholds)
         {
             this.LimitType = limitType;
             this.LimitValue = limitValue;
@@ -86,6 +96,7 @@ namespace LangSmith
             this.Scope = scope;
             this.SessionId = sessionId;
             this.IdentityId = identityId;
+            this.AlertThresholds = alertThresholds;
         }
 
         /// <summary>
