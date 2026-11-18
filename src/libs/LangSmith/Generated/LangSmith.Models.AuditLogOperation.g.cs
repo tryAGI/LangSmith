@@ -995,6 +995,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DisableAgentEnvironment,
+        /// <summary>
+        ///
+        /// </summary>
         DisconnectGatewayVendorAdminKey,
         /// <summary>
         ///
@@ -1008,6 +1012,10 @@ namespace LangSmith
         ///
         /// </summary>
         DownloadTasksetBundle,
+        /// <summary>
+        ///
+        /// </summary>
+        EnableAgentEnvironment,
         /// <summary>
         ///
         /// </summary>
@@ -2528,10 +2536,12 @@ namespace LangSmith
                 AuditLogOperation.DetachTeamAccessPolicy => "detach_team_access_policy",
                 AuditLogOperation.DetachUserGroupAccessPolicy => "detach_user_group_access_policy",
                 AuditLogOperation.DiffDatasetVersions => "diff_dataset_versions",
+                AuditLogOperation.DisableAgentEnvironment => "disable_agent_environment",
                 AuditLogOperation.DisconnectGatewayVendorAdminKey => "disconnect_gateway_vendor_admin_key",
                 AuditLogOperation.DownloadCustomAppSource => "download_custom_app_source",
                 AuditLogOperation.DownloadDataset => "download_dataset",
                 AuditLogOperation.DownloadTasksetBundle => "download_taskset_bundle",
+                AuditLogOperation.EnableAgentEnvironment => "enable_agent_environment",
                 AuditLogOperation.EvaluateExperiment => "evaluate_experiment",
                 AuditLogOperation.ExecuteCustomCode => "execute_custom_code",
                 AuditLogOperation.ExportAnnotationQueue => "export_annotation_queue",
@@ -3103,10 +3113,12 @@ namespace LangSmith
                 "detach_team_access_policy" => AuditLogOperation.DetachTeamAccessPolicy,
                 "detach_user_group_access_policy" => AuditLogOperation.DetachUserGroupAccessPolicy,
                 "diff_dataset_versions" => AuditLogOperation.DiffDatasetVersions,
+                "disable_agent_environment" => AuditLogOperation.DisableAgentEnvironment,
                 "disconnect_gateway_vendor_admin_key" => AuditLogOperation.DisconnectGatewayVendorAdminKey,
                 "download_custom_app_source" => AuditLogOperation.DownloadCustomAppSource,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
                 "download_taskset_bundle" => AuditLogOperation.DownloadTasksetBundle,
+                "enable_agent_environment" => AuditLogOperation.EnableAgentEnvironment,
                 "evaluate_experiment" => AuditLogOperation.EvaluateExperiment,
                 "execute_custom_code" => AuditLogOperation.ExecuteCustomCode,
                 "export_annotation_queue" => AuditLogOperation.ExportAnnotationQueue,
