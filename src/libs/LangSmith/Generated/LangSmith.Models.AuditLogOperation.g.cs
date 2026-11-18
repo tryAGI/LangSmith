@@ -1843,6 +1843,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateAgentRuntime,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateAlertRule,
         /// <summary>
         ///
@@ -2736,6 +2740,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateAgentAuthConnection => "update_agent_auth_connection",
                 AuditLogOperation.UpdateAgentAuthOidcIntegration => "update_agent_auth_oidc_integration",
                 AuditLogOperation.UpdateAgentPolicy => "update_agent_policy",
+                AuditLogOperation.UpdateAgentRuntime => "update_agent_runtime",
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
                 AuditLogOperation.UpdateAnnotationQueueItem => "update_annotation_queue_item",
@@ -3310,6 +3315,7 @@ namespace LangSmith
                 "update_agent_auth_connection" => AuditLogOperation.UpdateAgentAuthConnection,
                 "update_agent_auth_oidc_integration" => AuditLogOperation.UpdateAgentAuthOidcIntegration,
                 "update_agent_policy" => AuditLogOperation.UpdateAgentPolicy,
+                "update_agent_runtime" => AuditLogOperation.UpdateAgentRuntime,
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,
                 "update_annotation_queue_item" => AuditLogOperation.UpdateAnnotationQueueItem,
