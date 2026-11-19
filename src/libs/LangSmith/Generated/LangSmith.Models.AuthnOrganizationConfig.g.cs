@@ -466,6 +466,12 @@ namespace LangSmith
         public string? PremierPlanApprovalDate { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("private_network_connections_enabled")]
+        public bool? PrivateNetworkConnectionsEnabled { get; set; }
+
+        /// <summary>
         /// PromptOptimizationJobsEnabled indicates whether the org can use the prompt optimization jobs feature.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization_jobs_enabled")]
@@ -781,6 +787,7 @@ namespace LangSmith
         /// <param name="premierPlanApprovalDate">
         /// PremierPlanApprovalDate is the date when the org was approved for the premier plan in YYYY-MM-DD format.
         /// </param>
+        /// <param name="privateNetworkConnectionsEnabled"></param>
         /// <param name="promptOptimizationJobsEnabled">
         /// PromptOptimizationJobsEnabled indicates whether the org can use the prompt optimization jobs feature.
         /// </param>
@@ -887,6 +894,7 @@ namespace LangSmith
             string? planTier,
             string? playgroundEvaluatorStrategy,
             string? premierPlanApprovalDate,
+            bool? privateNetworkConnectionsEnabled,
             bool? promptOptimizationJobsEnabled,
             bool? sandboxEnabled,
             bool? sandboxRestrictedEgress,
@@ -968,6 +976,7 @@ namespace LangSmith
             this.PlanTier = planTier;
             this.PlaygroundEvaluatorStrategy = playgroundEvaluatorStrategy;
             this.PremierPlanApprovalDate = premierPlanApprovalDate;
+            this.PrivateNetworkConnectionsEnabled = privateNetworkConnectionsEnabled;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.SandboxEnabled = sandboxEnabled;
             this.SandboxRestrictedEgress = sandboxRestrictedEgress;

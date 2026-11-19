@@ -58,7 +58,7 @@ namespace LangSmith
 
         /// <summary>
         /// Get a user<br/>
-        /// Returns one user of your application and its traits in a tracing project. URL-encode `user_id` in the path, so that a `/` in it is sent as `%2F`.
+        /// Returns one user of your application and its traits in a tracing project. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="userId"></param>
@@ -82,7 +82,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get a user<br/>
-        /// Returns one user of your application and its traits in a tracing project. URL-encode `user_id` in the path, so that a `/` in it is sent as `%2F`.
+        /// Returns one user of your application and its traits in a tracing project. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="userId"></param>
