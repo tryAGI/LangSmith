@@ -353,6 +353,11 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        public RunsanalyticsClient Runsanalytics { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public SandboxesClient Sandboxes { get; }
 
         /// <summary>
@@ -434,6 +439,11 @@ namespace LangSmith
         ///
         /// </summary>
         public UserGroupsClient UserGroups { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public UsersClient Users { get; }
 
         /// <summary>
         ///

@@ -50,12 +50,6 @@ namespace LangSmith
         public global::System.Guid? IdentityId { get; set; }
 
         /// <summary>
-        /// Usage levels that send an alert, at most one per `kind`. Omitting this field or sending an empty list removes all alert thresholds.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("alert_thresholds")]
-        public global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? AlertThresholds { get; set; }
-
-        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
@@ -105,9 +99,6 @@ namespace LangSmith
         /// </param>
         /// <param name="sessionId"></param>
         /// <param name="identityId"></param>
-        /// <param name="alertThresholds">
-        /// Usage levels that send an alert, at most one per `kind`. Omitting this field or sending an empty list removes all alert thresholds.
-        /// </param>
         /// <param name="isInheritedFromOrgDefault">
         /// Default Value: false
         /// </param>
@@ -124,7 +115,6 @@ namespace LangSmith
             global::LangSmith.UsageLimitScope? scope,
             global::System.Guid? sessionId,
             global::System.Guid? identityId,
-            global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? alertThresholds,
             bool? isInheritedFromOrgDefault)
         {
             this.LimitType = limitType;
@@ -133,7 +123,6 @@ namespace LangSmith
             this.Scope = scope;
             this.SessionId = sessionId;
             this.IdentityId = identityId;
-            this.AlertThresholds = alertThresholds;
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

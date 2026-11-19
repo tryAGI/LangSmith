@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Delete Org Default Usage Limit<br/>
-        /// Clear the organization's default monthly trace limit. Existing workspace limits are unchanged.
+        /// Clear the organization's default monthly trace limit and alert thresholds. Existing workspace limits are unchanged.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,7 +16,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Org Default Usage Limit<br/>
-        /// Clear the organization's default monthly trace limit. Existing workspace limits are unchanged.
+        /// Clear the organization's default monthly trace limit and alert thresholds. Existing workspace limits are unchanged.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

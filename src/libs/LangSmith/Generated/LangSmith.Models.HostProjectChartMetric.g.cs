@@ -31,6 +31,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OutOfMemoryRestarts,
+        /// <summary>
+        ///
+        /// </summary>
         P95Latency,
         /// <summary>
         ///
@@ -83,6 +87,7 @@ namespace LangSmith
                 HostProjectChartMetric.ErrorResponsesPerSecond => "error_responses_per_second",
                 HostProjectChartMetric.LgRunCount => "lg_run_count",
                 HostProjectChartMetric.MemoryUsage => "memory_usage",
+                HostProjectChartMetric.OutOfMemoryRestarts => "out_of_memory_restarts",
                 HostProjectChartMetric.P95Latency => "p95_latency",
                 HostProjectChartMetric.ReplicaCount => "replica_count",
                 HostProjectChartMetric.ResponsesPerSecond => "responses_per_second",
@@ -107,6 +112,7 @@ namespace LangSmith
                 "error_responses_per_second" => HostProjectChartMetric.ErrorResponsesPerSecond,
                 "lg_run_count" => HostProjectChartMetric.LgRunCount,
                 "memory_usage" => HostProjectChartMetric.MemoryUsage,
+                "out_of_memory_restarts" => HostProjectChartMetric.OutOfMemoryRestarts,
                 "p95_latency" => HostProjectChartMetric.P95Latency,
                 "replica_count" => HostProjectChartMetric.ReplicaCount,
                 "responses_per_second" => HostProjectChartMetric.ResponsesPerSecond,

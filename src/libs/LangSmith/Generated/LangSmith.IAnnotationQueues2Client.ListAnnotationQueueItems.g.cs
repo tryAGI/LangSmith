@@ -20,6 +20,8 @@ namespace LangSmith
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
+        /// <param name="agreement"></param>
+        /// <param name="hasUnresolvedKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -32,6 +34,8 @@ namespace LangSmith
             global::System.DateTime? minStartTime = default,
             global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement? agreement = default,
+            bool? hasUnresolvedKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -50,6 +54,8 @@ namespace LangSmith
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
+        /// <param name="agreement"></param>
+        /// <param name="hasUnresolvedKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -62,6 +68,8 @@ namespace LangSmith
             global::System.DateTime? minStartTime = default,
             global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement? agreement = default,
+            bool? hasUnresolvedKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

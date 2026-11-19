@@ -82,7 +82,7 @@ namespace LangSmith
         public bool? CanUseAuditLogs { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_teams")]
         public bool? CanUseTeams { get; set; }
@@ -545,9 +545,7 @@ namespace LangSmith
         /// <param name="canUseAuditLogs">
         /// Default Value: false
         /// </param>
-        /// <param name="canUseTeams">
-        /// Default Value: false
-        /// </param>
+        /// <param name="canUseTeams"></param>
         /// <param name="canAddSeats">
         /// Default Value: true
         /// </param>

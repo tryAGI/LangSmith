@@ -449,6 +449,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OptimizePromptResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgDefaultApplyTo), TypeInfoPropertyName = "OrgDefaultApplyTo2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgDefaultMonthlyTraceLimit))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgIdentityPatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgMemberIdentity))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgPendingIdentity))]
@@ -518,7 +519,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueryParamsForPublicRunSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QuerySessionFeedbackConfigIds))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.QueueInfoResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RemoveRepoOwnerRequest))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -539,6 +539,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RemoveRepoOwnerRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RepoTag))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RepoTagRequest))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
@@ -707,7 +708,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UpsertUsageLimit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UsageLimitType), TypeInfoPropertyName = "UsageLimitType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UsageLimitScope), TypeInfoPropertyName = "UsageLimitScope2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UsageLimit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UserOnboardingStateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UserWithPassword))]
@@ -759,6 +759,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.AgentplatformAgent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgreementAnswer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgreementState), TypeInfoPropertyName = "AgreementState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionTarget), TypeInfoPropertyName = "AlertsAlertActionTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionBase))]
@@ -792,6 +794,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesAnnotationQueueItemListStatus), TypeInfoPropertyName = "AnnotationqueuesAnnotationQueueItemListStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesAnnotationQueueItemPlacementResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesAnnotationQueueListItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.AnnotationqueuesItemKeyAgreement>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesItemKeyAgreement))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesAnnotationQueueReviewStatus), TypeInfoPropertyName = "AnnotationqueuesAnnotationQueueReviewStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesCreateAnnotationQueueItemStatusRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnnotationqueuesCreateAnnotationQueueItemStatusResponse))]
@@ -882,6 +886,11 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.DirectoryDirectoryEntryOutput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryDirectoryEntryOutput), TypeInfoPropertyName = "DirectoryDirectoryEntryOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DirectoryErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EndusersCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EndusersListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.EndusersUser>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EndusersUser))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EndusersUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ErrutilUserError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.EvaluatorsBulkDeleteEvaluatorsResponse))]
@@ -1022,15 +1031,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthDeviceCodeResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthOAuthClientCredentialsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthOAuthClientView))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthOAuthClientListResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OauthOAuthClientView>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthOIDCProviderMetadata))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthTokenErrorResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthTokenResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthUpdateOAuthClientRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthUserinfoResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgsLinkedLoginMethod))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgsListOrgsResponse))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1051,6 +1051,15 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthOAuthClientListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OauthOAuthClientView>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthOIDCProviderMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthTokenErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthTokenResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthUpdateOAuthClientRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OauthUserinfoResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgsLinkedLoginMethod))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgsListOrgsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.OrgsOrg>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgsOrg))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.OrgsOrgMemberEnriched))]
@@ -1127,6 +1136,11 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricField), TypeInfoPropertyName = "RunsanalyticsMetricField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricType), TypeInfoPropertyName = "RunsanalyticsMetricType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsProjectUser))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsProjectUserStatsStatus), TypeInfoPropertyName = "RunsanalyticsProjectUserStatsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsQueryUsersRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsQueryUsersResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.RunsanalyticsProjectUser>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiAzureBlobMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiContextHubMountSpec))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiFileInfo))]
@@ -1499,6 +1513,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsStatus), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsItemType), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsAgreement2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement), TypeInfoPropertyName = "GetPlatformAnnotationQueuesItemsCountAgreement2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DeletePlatformHubReposDirectoriesRepoType), TypeInfoPropertyName = "DeletePlatformHubReposDirectoriesRepoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesStatus), TypeInfoPropertyName = "GetPlatformIssuesStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.GetPlatformIssuesActivityItem>))]
@@ -1527,22 +1543,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageAgentsSortBy), TypeInfoPropertyName = "GetFleetUsageAgentsSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageAgentsSortOrder), TypeInfoPropertyName = "GetFleetUsageAgentsSortOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageUsersSortBy), TypeInfoPropertyName = "GetFleetUsageUsersSortBy2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageUsersSortOrder), TypeInfoPropertyName = "GetFleetUsageUsersSortOrder2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsCreateWorkspaceApiV1WorkspacesPostResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.PatchWorkspaceApiV1WorkspacesWorkspaceIdPatchResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsPatchWorkspaceApiV1WorkspacesWorkspaceIdPatchResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PatchWorkspaceApiV1WorkspacesWorkspaceIdPatchResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteResponse3>), TypeInfoPropertyName = "AllOfProblemDetailsDeleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DeleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsGetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetSharedTokensApiV1WorkspacesCurrentSharedGetResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsGetSharedTokensApiV1WorkspacesCurrentSharedGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSharedTokensApiV1WorkspacesCurrentSharedGetResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse3>), TypeInfoPropertyName = "AllOfProblemDetailsBulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1563,6 +1563,22 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetFleetUsageUsersSortOrder), TypeInfoPropertyName = "GetFleetUsageUsersSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TracerSession>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsCreateWorkspaceApiV1WorkspacesPostResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateWorkspaceApiV1WorkspacesPostResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.TenantForUser>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.PatchWorkspaceApiV1WorkspacesWorkspaceIdPatchResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsPatchWorkspaceApiV1WorkspacesWorkspaceIdPatchResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.PatchWorkspaceApiV1WorkspacesWorkspaceIdPatchResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteResponse3>), TypeInfoPropertyName = "AllOfProblemDetailsDeleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DeleteWorkspaceApiV1WorkspacesWorkspaceIdDeleteResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsGetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetSharedTokensApiV1WorkspacesCurrentSharedGetResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsGetSharedTokensApiV1WorkspacesCurrentSharedGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetSharedTokensApiV1WorkspacesCurrentSharedGetResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse3>), TypeInfoPropertyName = "AllOfProblemDetailsBulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse2>), TypeInfoPropertyName = "AllOfProblemDetailsListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostResponse3>), TypeInfoPropertyName = "AllOfProblemDetailsUpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostResponse32")]
@@ -1856,6 +1872,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentType?), TypeInfoPropertyName = "NullableAgentplatformAgentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentSourceType?), TypeInfoPropertyName = "NullableAgentplatformAgentSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgentplatformAgentEnvironmentName?), TypeInfoPropertyName = "NullableAgentplatformAgentEnvironmentName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AgreementState?), TypeInfoPropertyName = "NullableAgreementState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionTarget?), TypeInfoPropertyName = "NullableAlertsAlertActionTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertActionBaseTarget?), TypeInfoPropertyName = "NullableAlertsAlertActionBaseTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AlertsAlertRuleAggregation?), TypeInfoPropertyName = "NullableAlertsAlertRuleAggregation2")]
@@ -1914,6 +1931,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricEntity?), TypeInfoPropertyName = "NullableRunsanalyticsMetricEntity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricField?), TypeInfoPropertyName = "NullableRunsanalyticsMetricField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsMetricType?), TypeInfoPropertyName = "NullableRunsanalyticsMetricType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.RunsanalyticsProjectUserStatsStatus?), TypeInfoPropertyName = "NullableRunsanalyticsProjectUserStatsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiGitMountRefSpecType?), TypeInfoPropertyName = "NullableSandboxapiGitMountRefSpecType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountKind?), TypeInfoPropertyName = "NullableSandboxapiMountKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.SandboxapiMountSpecDiscriminatorType?), TypeInfoPropertyName = "NullableSandboxapiMountSpecDiscriminatorType2")]
@@ -2007,6 +2025,8 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsStatus?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsItemType?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsAgreement2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement?), TypeInfoPropertyName = "NullableGetPlatformAnnotationQueuesItemsCountAgreement2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.DeletePlatformHubReposDirectoriesRepoType?), TypeInfoPropertyName = "NullableDeletePlatformHubReposDirectoriesRepoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesStatus?), TypeInfoPropertyName = "NullableGetPlatformIssuesStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.GetPlatformIssuesActivityItem?), TypeInfoPropertyName = "NullableGetPlatformIssuesActivityItem2")]
@@ -2045,26 +2065,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.UpdateTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdPatchResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsUpdateTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdPatchResponse22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsGetTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdGetResponse22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsDeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesPostResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsCreateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesPostResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagValuesApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagValuesApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsGetTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.UpdateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdPatchResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsUpdateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdPatchResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsDeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateTaggingApiV1WorkspacesCurrentTaggingsPostResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsCreateTaggingApiV1WorkspacesCurrentTaggingsPostResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTaggingsApiV1WorkspacesCurrentTaggingsGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTaggingsApiV1WorkspacesCurrentTaggingsGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteTaggingApiV1WorkspacesCurrentTaggingsTaggingIdDeleteResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsDeleteTaggingApiV1WorkspacesCurrentTaggingsTaggingIdDeleteResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagsApiV1WorkspacesCurrentTagsGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagsApiV1WorkspacesCurrentTagsGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponse22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagsForResourcesApiV1WorkspacesCurrentTagsResourcesPostResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagsForResourcesApiV1WorkspacesCurrentTagsResourcesPostResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.PatchRunsResponse3>?), TypeInfoPropertyName = "NullableAllOfStringPatchRunsResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>?), TypeInfoPropertyName = "NullableAnyOfRunStatsDictionaryStringRunStats2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.CreateRunsResponse3>?), TypeInfoPropertyName = "NullableAllOfStringCreateRunsResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.CreateRunsBatchResponse3>?), TypeInfoPropertyName = "NullableAllOfStringCreateRunsBatchResponse32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>?), TypeInfoPropertyName = "NullableAnyOfFeedbackIngestTokenSchemaIListFeedbackIngestTokenSchema2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateChartApiV1ChartsCreatePostResponse?), TypeInfoPropertyName = "NullableCreateChartApiV1ChartsCreatePostResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateChartApiV1ChartsCreatePostResponseDiscriminatorChartType?), TypeInfoPropertyName = "NullableCreateChartApiV1ChartsCreatePostResponseDiscriminatorChartType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponse?), TypeInfoPropertyName = "NullableReadSingleChartApiV1ChartsChartIdPostResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponseDiscriminatorChartType?), TypeInfoPropertyName = "NullableReadSingleChartApiV1ChartsChartIdPostResponseDiscriminatorChartType2")]
     internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2085,6 +2085,26 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.CustomChartFeedbackCountMetric, global::LangSmith.CustomChartMetricCount, global::LangSmith.CustomChartFeedbackScoreMetricScalar, global::LangSmith.CustomChartMetricScalar, global::LangSmith.CustomChartFeedbackScoreMetricPercentile, global::LangSmith.CustomChartMetricPercentile, global::LangSmith.CustomChartMetricRatioOutput>?), TypeInfoPropertyName = "CustomChartMetricRatioOutput_99ecc4c2c22d8e42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesPostResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsCreateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesPostResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagValuesApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagValuesApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.GetTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsGetTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.UpdateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdPatchResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsUpdateTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdPatchResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsDeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.CreateTaggingApiV1WorkspacesCurrentTaggingsPostResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsCreateTaggingApiV1WorkspacesCurrentTaggingsPostResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTaggingsApiV1WorkspacesCurrentTaggingsGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTaggingsApiV1WorkspacesCurrentTaggingsGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.DeleteTaggingApiV1WorkspacesCurrentTaggingsTaggingIdDeleteResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsDeleteTaggingApiV1WorkspacesCurrentTaggingsTaggingIdDeleteResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagsApiV1WorkspacesCurrentTagsGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagsApiV1WorkspacesCurrentTagsGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagsForResourceApiV1WorkspacesCurrentTagsResourceGetResponse22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListTagsForResourcesApiV1WorkspacesCurrentTagsResourcesPostResponse3>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListTagsForResourcesApiV1WorkspacesCurrentTagsResourcesPostResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.PatchRunsResponse3>?), TypeInfoPropertyName = "NullableAllOfStringPatchRunsResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>?), TypeInfoPropertyName = "NullableAnyOfRunStatsDictionaryStringRunStats2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.CreateRunsResponse3>?), TypeInfoPropertyName = "NullableAllOfStringCreateRunsResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<string, global::LangSmith.CreateRunsBatchResponse3>?), TypeInfoPropertyName = "NullableAllOfStringCreateRunsBatchResponse32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AnyOf<global::LangSmith.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::LangSmith.FeedbackIngestTokenSchema>>?), TypeInfoPropertyName = "NullableAnyOfFeedbackIngestTokenSchemaIListFeedbackIngestTokenSchema2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateChartApiV1ChartsCreatePostResponse?), TypeInfoPropertyName = "NullableCreateChartApiV1ChartsCreatePostResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.CreateChartApiV1ChartsCreatePostResponseDiscriminatorChartType?), TypeInfoPropertyName = "NullableCreateChartApiV1ChartsCreatePostResponseDiscriminatorChartType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponse?), TypeInfoPropertyName = "NullableReadSingleChartApiV1ChartsChartIdPostResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.ReadSingleChartApiV1ChartsChartIdPostResponseDiscriminatorChartType?), TypeInfoPropertyName = "NullableReadSingleChartApiV1ChartsChartIdPostResponseDiscriminatorChartType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponse?), TypeInfoPropertyName = "NullableUpdateChartApiV1ChartsChartIdPatchResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.UpdateChartApiV1ChartsChartIdPatchResponseDiscriminatorChartType?), TypeInfoPropertyName = "NullableUpdateChartApiV1ChartsChartIdPatchResponseDiscriminatorChartType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListReposApiV1ReposGetResponse2>?), TypeInfoPropertyName = "NullableAllOfProblemDetailsListReposApiV1ReposGetResponse22")]
@@ -2146,6 +2166,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ModelPriceMapSchema>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.ModelPriceMapProviderSchema>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OCSFResourceDetails>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AlertThreshold>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OrgMemberIdentity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.OrgPendingIdentity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>))]
@@ -2177,7 +2198,6 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.PendingIdentity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EntitiesItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.APIKeyGetResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AlertThreshold>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SecretConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SecretConfigInput>))]
@@ -2207,6 +2227,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.QueryRunSelectField>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.DatasetsV2ExampleWithRuns>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.QueryRunResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EndusersUser>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsBulkDeleteEvaluatorFailedItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsEvaluatorRunRule>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.EvaluatorsSpendGroup>))]
@@ -2244,6 +2265,7 @@ namespace LangSmith
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RulesCodeEvaluator>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RulesEvaluator>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RulesWebhook>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.RunsanalyticsProjectUser>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesBatchDeleteSkipped>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesBrowserTab>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::LangSmith.SandboxesBrowserAttachment>))]
@@ -3109,6 +3131,10 @@ namespace LangSmith
 
                     || typeToConvert == typeof(global::LangSmith.AgentplatformAgentType?)
 
+                    || typeToConvert == typeof(global::LangSmith.AgreementState)
+
+                    || typeToConvert == typeof(global::LangSmith.AgreementState?)
+
                     || typeToConvert == typeof(global::LangSmith.AlertsAlertActionTarget)
 
                     || typeToConvert == typeof(global::LangSmith.AlertsAlertActionTarget?)
@@ -3340,6 +3366,10 @@ namespace LangSmith
                     || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType)
 
                     || typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType?)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsProjectUserStatsStatus)
+
+                    || typeToConvert == typeof(global::LangSmith.RunsanalyticsProjectUserStatsStatus?)
 
                     || typeToConvert == typeof(global::LangSmith.SandboxapiGitMountRefSpecType)
 
@@ -3664,6 +3694,14 @@ namespace LangSmith
                     || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection)
 
                     || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement)
+
+                    || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement?)
+
+                    || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement)
+
+                    || typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement?)
 
                     || typeToConvert == typeof(global::LangSmith.DeletePlatformHubReposDirectoriesRepoType)
 
@@ -5034,6 +5072,16 @@ namespace LangSmith
                     return new global::LangSmith.JsonConverters.AgentplatformAgentTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::LangSmith.AgreementState))
+                {
+                    return new global::LangSmith.JsonConverters.AgreementStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.AgreementState?))
+                {
+                    return new global::LangSmith.JsonConverters.AgreementStateNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::LangSmith.AlertsAlertActionTarget))
                 {
                     return new global::LangSmith.JsonConverters.AlertsAlertActionTargetJsonConverter();
@@ -5612,6 +5660,16 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.RunsanalyticsMetricType?))
                 {
                     return new global::LangSmith.JsonConverters.RunsanalyticsMetricTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsProjectUserStatsStatus))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsProjectUserStatsStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.RunsanalyticsProjectUserStatsStatus?))
+                {
+                    return new global::LangSmith.JsonConverters.RunsanalyticsProjectUserStatsStatusNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LangSmith.SandboxapiGitMountRefSpecType))
@@ -6422,6 +6480,26 @@ namespace LangSmith
                 if (typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsDirection?))
                 {
                     return new global::LangSmith.JsonConverters.GetPlatformAnnotationQueuesItemsDirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement))
+                {
+                    return new global::LangSmith.JsonConverters.GetPlatformAnnotationQueuesItemsAgreementJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement?))
+                {
+                    return new global::LangSmith.JsonConverters.GetPlatformAnnotationQueuesItemsAgreementNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement))
+                {
+                    return new global::LangSmith.JsonConverters.GetPlatformAnnotationQueuesItemsCountAgreementJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement?))
+                {
+                    return new global::LangSmith.JsonConverters.GetPlatformAnnotationQueuesItemsCountAgreementNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::LangSmith.DeletePlatformHubReposDirectoriesRepoType))
