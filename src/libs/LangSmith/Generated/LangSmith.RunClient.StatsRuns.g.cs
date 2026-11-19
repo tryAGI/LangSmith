@@ -56,13 +56,13 @@ namespace LangSmith
 
         /// <summary>
         /// Stats Runs<br/>
-        /// Get all runs by query in body payload.
+        /// GET with body payload — no resources created. Returns the run statistics matching the query passed as the request payload.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.RunStatsResponse> StatsRunsAsync(
 
             global::LangSmith.RunStatsQueryParams request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -79,13 +79,13 @@ namespace LangSmith
         }
         /// <summary>
         /// Stats Runs<br/>
-        /// Get all runs by query in body payload.
+        /// GET with body payload — no resources created. Returns the run statistics matching the query passed as the request payload.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>>> StatsRunsAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.RunStatsResponse>> StatsRunsAsResponseAsync(
 
             global::LangSmith.RunStatsQueryParams request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -411,9 +411,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::LangSmith.RunStatsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.RunStatsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -443,9 +443,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.RunStatsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.RunStatsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -487,7 +487,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Stats Runs<br/>
-        /// Get all runs by query in body payload.
+        /// GET with body payload — no resources created. Returns the run statistics matching the query passed as the request payload.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="trace">
@@ -522,7 +522,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.RunStatsResponse> StatsRunsAsync(
             global::System.Collections.Generic.IList<global::System.Guid> session,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? trace = default,

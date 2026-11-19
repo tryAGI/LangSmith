@@ -103,6 +103,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ClearAnnotationQueueItemFinal,
+        /// <summary>
+        ///
+        /// </summary>
         CloneChartSection,
         /// <summary>
         ///
@@ -1719,6 +1723,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        SetAnnotationQueueItemFinal,
+        /// <summary>
+        ///
+        /// </summary>
         SetTenantHandle,
         /// <summary>
         ///
@@ -2313,6 +2321,7 @@ namespace LangSmith
                 AuditLogOperation.CaptureSandboxSnapshot => "capture_sandbox_snapshot",
                 AuditLogOperation.ClaimPendingOrganizationInvite => "claim_pending_organization_invite",
                 AuditLogOperation.ClaimPendingWorkspaceInvite => "claim_pending_workspace_invite",
+                AuditLogOperation.ClearAnnotationQueueItemFinal => "clear_annotation_queue_item_final",
                 AuditLogOperation.CloneChartSection => "clone_chart_section",
                 AuditLogOperation.CloneDataset => "clone_dataset",
                 AuditLogOperation.CloneSandboxVolume => "clone_sandbox_volume",
@@ -2717,6 +2726,7 @@ namespace LangSmith
                 AuditLogOperation.RevokePersonalAccessToken => "revoke_personal_access_token",
                 AuditLogOperation.RotateOauthClientSecret => "rotate_oauth_client_secret",
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
+                AuditLogOperation.SetAnnotationQueueItemFinal => "set_annotation_queue_item_final",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
                 AuditLogOperation.ShareRun => "share_run",
@@ -2890,6 +2900,7 @@ namespace LangSmith
                 "capture_sandbox_snapshot" => AuditLogOperation.CaptureSandboxSnapshot,
                 "claim_pending_organization_invite" => AuditLogOperation.ClaimPendingOrganizationInvite,
                 "claim_pending_workspace_invite" => AuditLogOperation.ClaimPendingWorkspaceInvite,
+                "clear_annotation_queue_item_final" => AuditLogOperation.ClearAnnotationQueueItemFinal,
                 "clone_chart_section" => AuditLogOperation.CloneChartSection,
                 "clone_dataset" => AuditLogOperation.CloneDataset,
                 "clone_sandbox_volume" => AuditLogOperation.CloneSandboxVolume,
@@ -3294,6 +3305,7 @@ namespace LangSmith
                 "revoke_personal_access_token" => AuditLogOperation.RevokePersonalAccessToken,
                 "rotate_oauth_client_secret" => AuditLogOperation.RotateOauthClientSecret,
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
+                "set_annotation_queue_item_final" => AuditLogOperation.SetAnnotationQueueItemFinal,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
                 "share_run" => AuditLogOperation.ShareRun,

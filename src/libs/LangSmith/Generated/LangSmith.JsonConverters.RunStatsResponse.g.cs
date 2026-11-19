@@ -1,0 +1,183 @@
+#nullable enable
+#pragma warning disable CS0618 // Type or member is obsolete
+
+namespace LangSmith.JsonConverters
+{
+    /// <inheritdoc />
+    public class RunStatsResponseJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::LangSmith.RunStatsResponse>
+    {
+        /// <inheritdoc />
+        public override global::LangSmith.RunStatsResponse Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+            {
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+
+                }
+            }
+
+            var __score0 = 0;
+            if (__jsonProps.Contains("completion_cost")) __score0++;
+            if (__jsonProps.Contains("completion_cost_details")) __score0++;
+            if (__jsonProps.Contains("completion_token_details")) __score0++;
+            if (__jsonProps.Contains("completion_tokens")) __score0++;
+            if (__jsonProps.Contains("completion_tokens_p50")) __score0++;
+            if (__jsonProps.Contains("completion_tokens_p99")) __score0++;
+            if (__jsonProps.Contains("cost_p50")) __score0++;
+            if (__jsonProps.Contains("cost_p99")) __score0++;
+            if (__jsonProps.Contains("error_rate")) __score0++;
+            if (__jsonProps.Contains("feedback_stats")) __score0++;
+            if (__jsonProps.Contains("first_token_p50")) __score0++;
+            if (__jsonProps.Contains("first_token_p99")) __score0++;
+            if (__jsonProps.Contains("last_run_start_time")) __score0++;
+            if (__jsonProps.Contains("latency_p50")) __score0++;
+            if (__jsonProps.Contains("latency_p99")) __score0++;
+            if (__jsonProps.Contains("median_tokens")) __score0++;
+            if (__jsonProps.Contains("prompt_cost")) __score0++;
+            if (__jsonProps.Contains("prompt_cost_details")) __score0++;
+            if (__jsonProps.Contains("prompt_token_details")) __score0++;
+            if (__jsonProps.Contains("prompt_tokens")) __score0++;
+            if (__jsonProps.Contains("prompt_tokens_p50")) __score0++;
+            if (__jsonProps.Contains("prompt_tokens_p99")) __score0++;
+            if (__jsonProps.Contains("run_count")) __score0++;
+            if (__jsonProps.Contains("run_facets")) __score0++;
+            if (__jsonProps.Contains("streaming_rate")) __score0++;
+            if (__jsonProps.Contains("tokens_p99")) __score0++;
+            if (__jsonProps.Contains("total_cost")) __score0++;
+            if (__jsonProps.Contains("total_tokens")) __score0++;
+            var __score1 = 0;
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+
+            global::LangSmith.RunStats? runStats = default;
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>? runStatsResponseVariant2 = default;
+            if (__bestIndex >= 0)
+            {
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.RunStats), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.RunStats> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.RunStats).Name}");
+                        runStats = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
+                }
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>).Name}");
+                        runStatsResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
+                }
+            }
+
+            if (runStats == null && runStatsResponseVariant2 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.RunStats), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.RunStats> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.RunStats).Name}");
+                    runStats = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
+            }
+
+            if (runStats == null && runStatsResponseVariant2 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>).Name}");
+                    runStatsResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
+            }
+
+            var __value = new global::LangSmith.RunStatsResponse(
+                runStats,
+
+                runStatsResponseVariant2
+                );
+
+            return __value;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::LangSmith.RunStatsResponse value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+            if (value.IsRunStats)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::LangSmith.RunStats), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::LangSmith.RunStats?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::LangSmith.RunStats).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRunStats(), typeInfo);
+            }
+            else if (value.IsRunStatsResponseVariant2)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRunStatsResponseVariant2(), typeInfo);
+            }
+        }
+    }
+}

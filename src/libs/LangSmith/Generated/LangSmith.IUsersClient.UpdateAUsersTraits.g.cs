@@ -6,7 +6,7 @@ namespace LangSmith
     {
         /// <summary>
         /// Update a user's traits<br/>
-        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, so that a `/` in it is sent as `%2F`.
+        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="userId"></param>
@@ -23,7 +23,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a user's traits<br/>
-        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, so that a `/` in it is sent as `%2F`.
+        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="userId"></param>
@@ -40,7 +40,7 @@ namespace LangSmith
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a user's traits<br/>
-        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, so that a `/` in it is sent as `%2F`.
+        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="userId"></param>

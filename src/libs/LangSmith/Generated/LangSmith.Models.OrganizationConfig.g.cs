@@ -144,6 +144,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("private_network_connections_enabled")]
+        public bool? PrivateNetworkConnectionsEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_enabled")]
         public bool? SandboxEnabled { get; set; }
 
@@ -565,6 +571,9 @@ namespace LangSmith
         /// Default Value: 0
         /// </param>
         /// <param name="freeDeploymentTtlDays"></param>
+        /// <param name="privateNetworkConnectionsEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="sandboxEnabled">
         /// Default Value: false
         /// </param>
@@ -768,6 +777,7 @@ namespace LangSmith
             int? maxLanggraphCloudDeployments,
             int? maxFreeLanggraphCloudDeployments,
             int? freeDeploymentTtlDays,
+            bool? privateNetworkConnectionsEnabled,
             bool? sandboxEnabled,
             bool? sandboxRestrictedEgress,
             int? maxSandboxes,
@@ -851,6 +861,7 @@ namespace LangSmith
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
             this.FreeDeploymentTtlDays = freeDeploymentTtlDays;
+            this.PrivateNetworkConnectionsEnabled = privateNetworkConnectionsEnabled;
             this.SandboxEnabled = sandboxEnabled;
             this.SandboxRestrictedEgress = sandboxRestrictedEgress;
             this.MaxSandboxes = maxSandboxes;

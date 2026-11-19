@@ -6,33 +6,33 @@ namespace LangSmith
     {
         /// <summary>
         /// Stats Runs<br/>
-        /// Get all runs by query in body payload.
+        /// GET with body payload — no resources created. Returns the run statistics matching the query passed as the request payload.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.RunStatsResponse> StatsRunsAsync(
 
             global::LangSmith.RunStatsQueryParams request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stats Runs<br/>
-        /// Get all runs by query in body payload.
+        /// GET with body payload — no resources created. Returns the run statistics matching the query passed as the request payload.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>>> StatsRunsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.RunStatsResponse>> StatsRunsAsResponseAsync(
 
             global::LangSmith.RunStatsQueryParams request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stats Runs<br/>
-        /// Get all runs by query in body payload.
+        /// GET with body payload — no resources created. Returns the run statistics matching the query passed as the request payload.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="trace">
@@ -67,7 +67,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AnyOf<global::LangSmith.RunStats, global::System.Collections.Generic.Dictionary<string, global::LangSmith.RunStats>>> StatsRunsAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.RunStatsResponse> StatsRunsAsync(
             global::System.Collections.Generic.IList<global::System.Guid> session,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? trace = default,

@@ -6,7 +6,7 @@ namespace LangSmith
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class StatsRunsApiV1RunsStatsPostResponse2
+    public sealed partial class RunStatsResponseVariant2
     {
 
         /// <summary>
