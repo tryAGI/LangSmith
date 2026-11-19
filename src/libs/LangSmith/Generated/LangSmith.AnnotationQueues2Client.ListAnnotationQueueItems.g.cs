@@ -47,7 +47,9 @@ namespace LangSmith
             ref global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType,
             ref global::System.DateTime? minStartTime,
             ref global::System.DateTime? maxStartTime,
-            ref global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction);
+            ref global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction,
+            ref global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement? agreement,
+            ref bool? hasUnresolvedKeys);
         partial void PrepareListAnnotationQueueItemsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -58,7 +60,9 @@ namespace LangSmith
             global::LangSmith.GetPlatformAnnotationQueuesItemsItemType? itemType,
             global::System.DateTime? minStartTime,
             global::System.DateTime? maxStartTime,
-            global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction);
+            global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement? agreement,
+            bool? hasUnresolvedKeys);
         partial void ProcessListAnnotationQueueItemsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -84,6 +88,8 @@ namespace LangSmith
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
+        /// <param name="agreement"></param>
+        /// <param name="hasUnresolvedKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -96,6 +102,8 @@ namespace LangSmith
             global::System.DateTime? minStartTime = default,
             global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement? agreement = default,
+            bool? hasUnresolvedKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,6 +116,8 @@ namespace LangSmith
                 minStartTime: minStartTime,
                 maxStartTime: maxStartTime,
                 direction: direction,
+                agreement: agreement,
+                hasUnresolvedKeys: hasUnresolvedKeys,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -130,6 +140,8 @@ namespace LangSmith
         /// <param name="direction">
         /// Default Value: forward
         /// </param>
+        /// <param name="agreement"></param>
+        /// <param name="hasUnresolvedKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -142,6 +154,8 @@ namespace LangSmith
             global::System.DateTime? minStartTime = default,
             global::System.DateTime? maxStartTime = default,
             global::LangSmith.GetPlatformAnnotationQueuesItemsDirection? direction = default,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsAgreement? agreement = default,
+            bool? hasUnresolvedKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -156,7 +170,9 @@ namespace LangSmith
                 itemType: ref itemType,
                 minStartTime: ref minStartTime,
                 maxStartTime: ref maxStartTime,
-                direction: ref direction);
+                direction: ref direction,
+                agreement: ref agreement,
+                hasUnresolvedKeys: ref hasUnresolvedKeys);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -194,6 +210,8 @@ namespace LangSmith
                                 .AddOptionalParameter("min_start_time", minStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("max_start_time", maxStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("direction", direction?.ToValueString())
+                                .AddOptionalParameter("agreement", agreement?.ToValueString())
+                                .AddOptionalParameter("has_unresolved_keys", hasUnresolvedKeys?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -242,7 +260,9 @@ namespace LangSmith
                     itemType: itemType,
                     minStartTime: minStartTime,
                     maxStartTime: maxStartTime,
-                    direction: direction);
+                    direction: direction,
+                    agreement: agreement,
+                    hasUnresolvedKeys: hasUnresolvedKeys);
 
                 return __httpRequest;
             }
@@ -527,6 +547,43 @@ namespace LangSmith
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Multi-reviewer queues are not on for the workspace
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::LangSmith.SharedProblemDetails? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = __content_501 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = __content_501 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 is { Length: > 0 } ? __content_501 : __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

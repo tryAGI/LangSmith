@@ -56,7 +56,7 @@ namespace LangSmith
 
         /// <summary>
         /// Delete Usage Limit<br/>
-        /// Delete a usage limit, including its alert thresholds.
+        /// Delete a specific usage limit.
         /// </summary>
         /// <param name="usageLimitId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -77,7 +77,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Delete Usage Limit<br/>
-        /// Delete a usage limit, including its alert thresholds.
+        /// Delete a specific usage limit.
         /// </summary>
         /// <param name="usageLimitId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

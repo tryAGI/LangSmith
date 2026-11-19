@@ -15,6 +15,12 @@ namespace LangSmith
         public int? LimitValue { get; set; }
 
         /// <summary>
+        /// Alert thresholds copied into workspaces that inherit the default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("alert_thresholds")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? AlertThresholds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -24,13 +30,18 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="OrgDefaultMonthlyTraceLimit" /> class.
         /// </summary>
         /// <param name="limitValue"></param>
+        /// <param name="alertThresholds">
+        /// Alert thresholds copied into workspaces that inherit the default.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrgDefaultMonthlyTraceLimit(
-            int? limitValue)
+            int? limitValue,
+            global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? alertThresholds)
         {
             this.LimitValue = limitValue;
+            this.AlertThresholds = alertThresholds;
         }
 
         /// <summary>

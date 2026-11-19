@@ -22,6 +22,12 @@ namespace LangSmith
         public global::LangSmith.OrgDefaultApplyTo? ApplyTo { get; set; }
 
         /// <summary>
+        /// Usage levels that send an alert, at most one per `kind`. Omitting this field or sending an empty list removes all alert thresholds from the default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("alert_thresholds")]
+        public global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? AlertThresholds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -32,15 +38,20 @@ namespace LangSmith
         /// </summary>
         /// <param name="limitValue"></param>
         /// <param name="applyTo"></param>
+        /// <param name="alertThresholds">
+        /// Usage levels that send an alert, at most one per `kind`. Omitting this field or sending an empty list removes all alert thresholds from the default.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateOrgDefaultMonthlyTraceLimit(
             int limitValue,
-            global::LangSmith.OrgDefaultApplyTo? applyTo)
+            global::LangSmith.OrgDefaultApplyTo? applyTo,
+            global::System.Collections.Generic.IList<global::LangSmith.AlertThreshold>? alertThresholds)
         {
             this.LimitValue = limitValue;
             this.ApplyTo = applyTo;
+            this.AlertThresholds = alertThresholds;
         }
 
         /// <summary>

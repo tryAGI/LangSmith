@@ -45,7 +45,9 @@ namespace LangSmith
             ref string? startTime,
             ref string? endTime,
             ref global::System.DateTime? minStartTime,
-            ref global::System.DateTime? maxStartTime);
+            ref global::System.DateTime? maxStartTime,
+            ref global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement? agreement,
+            ref bool? hasUnresolvedKeys);
         partial void PrepareGetTheAnnotationQueueItemCountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -54,7 +56,9 @@ namespace LangSmith
             string? startTime,
             string? endTime,
             global::System.DateTime? minStartTime,
-            global::System.DateTime? maxStartTime);
+            global::System.DateTime? maxStartTime,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement? agreement,
+            bool? hasUnresolvedKeys);
         partial void ProcessGetTheAnnotationQueueItemCountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -74,6 +78,8 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="minStartTime"></param>
         /// <param name="maxStartTime"></param>
+        /// <param name="agreement"></param>
+        /// <param name="hasUnresolvedKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -84,6 +90,8 @@ namespace LangSmith
             string? endTime = default,
             global::System.DateTime? minStartTime = default,
             global::System.DateTime? maxStartTime = default,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement? agreement = default,
+            bool? hasUnresolvedKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -94,6 +102,8 @@ namespace LangSmith
                 endTime: endTime,
                 minStartTime: minStartTime,
                 maxStartTime: maxStartTime,
+                agreement: agreement,
+                hasUnresolvedKeys: hasUnresolvedKeys,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -110,6 +120,8 @@ namespace LangSmith
         /// <param name="endTime"></param>
         /// <param name="minStartTime"></param>
         /// <param name="maxStartTime"></param>
+        /// <param name="agreement"></param>
+        /// <param name="hasUnresolvedKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
@@ -120,6 +132,8 @@ namespace LangSmith
             string? endTime = default,
             global::System.DateTime? minStartTime = default,
             global::System.DateTime? maxStartTime = default,
+            global::LangSmith.GetPlatformAnnotationQueuesItemsCountAgreement? agreement = default,
+            bool? hasUnresolvedKeys = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,7 +146,9 @@ namespace LangSmith
                 startTime: ref startTime,
                 endTime: ref endTime,
                 minStartTime: ref minStartTime,
-                maxStartTime: ref maxStartTime);
+                maxStartTime: ref maxStartTime,
+                agreement: ref agreement,
+                hasUnresolvedKeys: ref hasUnresolvedKeys);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
@@ -168,6 +184,8 @@ namespace LangSmith
                                 .AddOptionalParameter("end_time", endTime)
                                 .AddOptionalParameter("min_start_time", minStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("max_start_time", maxStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("agreement", agreement?.ToValueString())
+                                .AddOptionalParameter("has_unresolved_keys", hasUnresolvedKeys?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -214,7 +232,9 @@ namespace LangSmith
                     startTime: startTime,
                     endTime: endTime,
                     minStartTime: minStartTime,
-                    maxStartTime: maxStartTime);
+                    maxStartTime: maxStartTime,
+                    agreement: agreement,
+                    hasUnresolvedKeys: hasUnresolvedKeys);
 
                 return __httpRequest;
             }
@@ -573,6 +593,43 @@ namespace LangSmith
                                     innerException: __exception_500,
                                     responseBody: __content_500,
                                     responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Multi-reviewer queues are not on for the workspace
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::System.Collections.Generic.Dictionary<string, string>? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = __content_501 is not { Length: > 0 } ? null : (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_501, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = __content_501 is not { Length: > 0 } ? null : (global::System.Collections.Generic.Dictionary<string, string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_501, typeof(global::System.Collections.Generic.Dictionary<string, string>), JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::System.Collections.Generic.Dictionary<string, string>>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 is { Length: > 0 } ? __content_501 : __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

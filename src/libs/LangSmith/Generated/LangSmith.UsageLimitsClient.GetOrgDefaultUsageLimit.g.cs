@@ -54,7 +54,7 @@ namespace LangSmith
 
         /// <summary>
         /// Get Org Default Usage Limit<br/>
-        /// Get the organization's default monthly trace limit for workspaces.
+        /// Get the organization's default monthly trace limit and alert thresholds for workspaces.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -72,7 +72,7 @@ namespace LangSmith
         }
         /// <summary>
         /// Get Org Default Usage Limit<br/>
-        /// Get the organization's default monthly trace limit for workspaces.
+        /// Get the organization's default monthly trace limit and alert thresholds for workspaces.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
