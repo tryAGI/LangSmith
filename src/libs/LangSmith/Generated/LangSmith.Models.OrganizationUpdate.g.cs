@@ -129,6 +129,12 @@ namespace LangSmith
         public bool? RestrictBrowserSecrets { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("gateway_auto_mode_approval_enabled")]
+        public bool? GatewayAutoModeApprovalEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("byoc_create_saas_workspace_enabled")]
@@ -188,6 +194,9 @@ namespace LangSmith
         /// <param name="ipAllowlist"></param>
         /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
+        /// <param name="gatewayAutoModeApprovalEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="topicSearchEnabled">
@@ -219,6 +228,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? ipAllowlist,
             global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
+            bool? gatewayAutoModeApprovalEnabled,
             bool? byocCreateSaasWorkspaceEnabled,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
             bool? topicSearchEnabled,
@@ -245,6 +255,7 @@ namespace LangSmith
             this.IpAllowlist = ipAllowlist;
             this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
+            this.GatewayAutoModeApprovalEnabled = gatewayAutoModeApprovalEnabled;
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.TopicSearchEnabled = topicSearchEnabled;

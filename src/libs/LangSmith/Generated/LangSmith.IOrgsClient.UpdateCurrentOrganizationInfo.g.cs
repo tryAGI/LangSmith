@@ -51,6 +51,9 @@ namespace LangSmith
         /// <param name="ipAllowlist"></param>
         /// <param name="disabledModelProviders"></param>
         /// <param name="restrictBrowserSecrets"></param>
+        /// <param name="gatewayAutoModeApprovalEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="topicSearchEnabled">
@@ -82,6 +85,7 @@ namespace LangSmith
             global::System.Collections.Generic.IList<string>? ipAllowlist = default,
             global::System.Collections.Generic.IList<string>? disabledModelProviders = default,
             bool? restrictBrowserSecrets = default,
+            bool? gatewayAutoModeApprovalEnabled = default,
             bool? byocCreateSaasWorkspaceEnabled = default,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls = default,
             bool? topicSearchEnabled = default,

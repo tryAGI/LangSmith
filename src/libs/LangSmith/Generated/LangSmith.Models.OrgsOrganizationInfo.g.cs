@@ -83,6 +83,12 @@ namespace LangSmith
         public string? EngineLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("gateway_auto_mode_approval_enabled")]
+        public bool? GatewayAutoModeApprovalEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -321,6 +327,9 @@ namespace LangSmith
         /// limit; null means the admin set no limit. The effective enforced limit is the<br/>
         /// minimum of this and the finance/plan limits carried on Config.
         /// </param>
+        /// <param name="gatewayAutoModeApprovalEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="id"></param>
         /// <param name="invitesEnabled"></param>
         /// <param name="ipAllowlist"></param>
@@ -388,6 +397,7 @@ namespace LangSmith
             string? displayName,
             bool? engineEnabled,
             string? engineLcuSpendLimitMonthly,
+            bool? gatewayAutoModeApprovalEnabled,
             string? id,
             bool? invitesEnabled,
             global::System.Collections.Generic.IList<string>? ipAllowlist,
@@ -436,6 +446,7 @@ namespace LangSmith
             this.DisplayName = displayName;
             this.EngineEnabled = engineEnabled;
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
+            this.GatewayAutoModeApprovalEnabled = gatewayAutoModeApprovalEnabled;
             this.Id = id;
             this.InvitesEnabled = invitesEnabled;
             this.IpAllowlist = ipAllowlist;
