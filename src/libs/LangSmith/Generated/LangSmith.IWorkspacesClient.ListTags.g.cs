@@ -5,7 +5,10 @@ namespace LangSmith
     public partial interface IWorkspacesClient
     {
         /// <summary>
-        /// List Tags
+        /// List Tags<br/>
+        /// List the workspace's tag keys, each with its values.<br/>
+        /// With resource_type, only values applied to at least one resource of that<br/>
+        /// type are returned, and keys with no such values are left out.
         /// </summary>
         /// <param name="resourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -16,7 +19,10 @@ namespace LangSmith
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List Tags
+        /// List Tags<br/>
+        /// List the workspace's tag keys, each with its values.<br/>
+        /// With resource_type, only values applied to at least one resource of that<br/>
+        /// type are returned, and keys with no such values are left out.
         /// </summary>
         /// <param name="resourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

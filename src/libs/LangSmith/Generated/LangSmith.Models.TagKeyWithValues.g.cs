@@ -46,7 +46,8 @@ namespace LangSmith
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
-        public global::System.Collections.Generic.IList<global::LangSmith.TagValue>? Values { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::LangSmith.TagValue> Values { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,8 +62,8 @@ namespace LangSmith
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="description"></param>
         /// <param name="values"></param>
+        /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,15 +72,15 @@ namespace LangSmith
             global::System.Guid id,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? description,
-            global::System.Collections.Generic.IList<global::LangSmith.TagValue>? values)
+            global::System.Collections.Generic.IList<global::LangSmith.TagValue> values,
+            string? description)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Description = description;
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Values = values;
+            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
         }
 
         /// <summary>

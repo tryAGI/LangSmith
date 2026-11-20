@@ -55,7 +55,10 @@ namespace LangSmith
             ref string content);
 
         /// <summary>
-        /// List Tags
+        /// List Tags<br/>
+        /// List the workspace's tag keys, each with its values.<br/>
+        /// With resource_type, only values applied to at least one resource of that<br/>
+        /// type are returned, and keys with no such values are left out.
         /// </summary>
         /// <param name="resourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -75,7 +78,10 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// List Tags
+        /// List Tags<br/>
+        /// List the workspace's tag keys, each with its values.<br/>
+        /// With resource_type, only values applied to at least one resource of that<br/>
+        /// type are returned, and keys with no such values are left out.
         /// </summary>
         /// <param name="resourceType"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

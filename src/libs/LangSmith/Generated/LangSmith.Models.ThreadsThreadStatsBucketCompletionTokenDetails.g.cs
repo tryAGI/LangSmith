@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    ///
+    /// `completion_token_details` contains completion-token totals by category.
     /// </summary>
-    public sealed partial class DeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse
+    public sealed partial class ThreadsThreadStatsBucketCompletionTokenDetails
     {
 
         /// <summary>

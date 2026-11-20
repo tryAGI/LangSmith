@@ -58,6 +58,7 @@ namespace LangSmith
         /// Query Thread Stats<br/>
         /// GET with body payload — no resources created. Returns aggregate statistics for threads in a tracing project.<br/>
         /// The response includes the thread counts, run counts, latency percentiles, rates, token totals, and cost totals requested in `select`.<br/>
+        /// Set `stride` to return the statistics as a time series in `buckets`.<br/>
         /// Self-hosted deployments require LangSmith `v0.17` or later.
         /// </summary>
         /// <param name="request"></param>
@@ -83,6 +84,7 @@ namespace LangSmith
         /// Query Thread Stats<br/>
         /// GET with body payload — no resources created. Returns aggregate statistics for threads in a tracing project.<br/>
         /// The response includes the thread counts, run counts, latency percentiles, rates, token totals, and cost totals requested in `select`.<br/>
+        /// Set `stride` to return the statistics as a time series in `buckets`.<br/>
         /// Self-hosted deployments require LangSmith `v0.17` or later.
         /// </summary>
         /// <param name="request"></param>
@@ -641,6 +643,7 @@ namespace LangSmith
         /// Query Thread Stats<br/>
         /// GET with body payload — no resources created. Returns aggregate statistics for threads in a tracing project.<br/>
         /// The response includes the thread counts, run counts, latency percentiles, rates, token totals, and cost totals requested in `select`.<br/>
+        /// Set `stride` to return the statistics as a time series in `buckets`.<br/>
         /// Self-hosted deployments require LangSmith `v0.17` or later.
         /// </summary>
         /// <param name="filter">
@@ -665,6 +668,9 @@ namespace LangSmith
         /// `select` lists the aggregate statistics to compute and return. At least one value is required.<br/>
         /// Example: [THREAD_COUNT, TRACE_COUNT, TOTAL_TOKENS, TOTAL_COST]
         /// </param>
+        /// <param name="stride">
+        /// `stride` returns the statistics as a time series in `buckets`. Each thread counts once, in the bucket containing the start of its most recent trace. Omit for a single aggregate over the whole window.
+        /// </param>
         /// <param name="threadFilter">
         /// `thread_filter` narrows eligible threads using a LangSmith filter expression evaluated against the complete thread summary.<br/>
         /// Example: gte(turn_count, 3)
@@ -686,6 +692,7 @@ namespace LangSmith
             string? filter = default,
             global::System.DateTime? maxStartTime = default,
             global::System.DateTime? minStartTime = default,
+            global::LangSmith.QueryStrideRequestBody? stride = default,
             string? threadFilter = default,
             string? traceFilter = default,
             string? treeFilter = default,
@@ -699,6 +706,7 @@ namespace LangSmith
                 MinStartTime = minStartTime,
                 ProjectId = projectId,
                 Select = select,
+                Stride = stride,
                 ThreadFilter = threadFilter,
                 TraceFilter = traceFilter,
                 TreeFilter = treeFilter,
