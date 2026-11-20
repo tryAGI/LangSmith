@@ -276,6 +276,12 @@ namespace LangSmith
         public bool? RestrictBrowserSecrets { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("gateway_auto_mode_approval_enabled")]
+        public bool? GatewayAutoModeApprovalEnabled { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_allowed_urls")]
@@ -404,6 +410,9 @@ namespace LangSmith
         /// <param name="restrictBrowserSecrets">
         /// Default Value: false
         /// </param>
+        /// <param name="gatewayAutoModeApprovalEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="llmAuthProxyAllowedUrls"></param>
         /// <param name="oidcSsoAvailable">
         /// Default Value: false
@@ -457,6 +466,7 @@ namespace LangSmith
             bool? ipAllowlistEnabled,
             global::System.Collections.Generic.IList<string>? disabledModelProviders,
             bool? restrictBrowserSecrets,
+            bool? gatewayAutoModeApprovalEnabled,
             global::System.Collections.Generic.IList<string>? llmAuthProxyAllowedUrls,
             bool? oidcSsoAvailable,
             bool? managedEvalsEnabled,
@@ -505,6 +515,7 @@ namespace LangSmith
             this.IpAllowlistEnabled = ipAllowlistEnabled;
             this.DisabledModelProviders = disabledModelProviders;
             this.RestrictBrowserSecrets = restrictBrowserSecrets;
+            this.GatewayAutoModeApprovalEnabled = gatewayAutoModeApprovalEnabled;
             this.LlmAuthProxyAllowedUrls = llmAuthProxyAllowedUrls;
             this.OidcSsoAvailable = oidcSsoAvailable;
             this.ManagedEvalsEnabled = managedEvalsEnabled;

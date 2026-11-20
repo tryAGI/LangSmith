@@ -117,6 +117,12 @@ namespace LangSmith
         public global::LangSmith.AuditLogAgentAccessToken? AgentAccessToken { get; set; }
 
         /// <summary>
+        /// Agent the request was refused for because it is disabled, or whose access token named another agent than the API key.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_check")]
+        public global::LangSmith.AuditLogAgentCheck? AgentCheck { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -165,6 +171,9 @@ namespace LangSmith
         /// <param name="agentAccessToken">
         /// Agent access token the request minted. The entry is written to the org of the agent the token names.
         /// </param>
+        /// <param name="agentCheck">
+        /// Agent the request was refused for because it is disabled, or whose access token named another agent than the API key.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -186,7 +195,8 @@ namespace LangSmith
             global::LangSmith.AuditLogGateway? gateway,
             global::LangSmith.AuditLogUpstream? upstream,
             global::LangSmith.AuditLogServer? server,
-            global::LangSmith.AuditLogAgentAccessToken? agentAccessToken)
+            global::LangSmith.AuditLogAgentAccessToken? agentAccessToken,
+            global::LangSmith.AuditLogAgentCheck? agentCheck)
         {
             this.RequestMethod = requestMethod;
             this.RequestPath = requestPath;
@@ -206,6 +216,7 @@ namespace LangSmith
             this.Upstream = upstream;
             this.Server = server;
             this.AgentAccessToken = agentAccessToken;
+            this.AgentCheck = agentCheck;
         }
 
         /// <summary>
