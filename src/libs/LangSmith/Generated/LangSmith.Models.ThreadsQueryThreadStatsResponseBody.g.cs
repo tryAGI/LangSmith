@@ -9,6 +9,12 @@ namespace LangSmith
     public sealed partial class ThreadsQueryThreadStatsResponseBody
     {
         /// <summary>
+        /// `buckets` holds the statistics for each time bucket in ascending order. Populated only when `stride` is set.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("buckets")]
+        public global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadStatsBucket>? Buckets { get; set; }
+
+        /// <summary>
         /// `completion_cost` is the completion cost across matching traces in USD.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
@@ -137,6 +143,9 @@ namespace LangSmith
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadsQueryThreadStatsResponseBody" /> class.
         /// </summary>
+        /// <param name="buckets">
+        /// `buckets` holds the statistics for each time bucket in ascending order. Populated only when `stride` is set.
+        /// </param>
         /// <param name="completionCost">
         /// `completion_cost` is the completion cost across matching traces in USD.
         /// </param>
@@ -201,6 +210,7 @@ namespace LangSmith
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ThreadsQueryThreadStatsResponseBody(
+            global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadStatsBucket>? buckets,
             double? completionCost,
             global::System.Collections.Generic.Dictionary<string, double>? completionCostDetails,
             global::System.Collections.Generic.Dictionary<string, long>? completionTokenDetails,
@@ -222,6 +232,7 @@ namespace LangSmith
             int? totalTokens,
             int? traceCount)
         {
+            this.Buckets = buckets;
             this.CompletionCost = completionCost;
             this.CompletionCostDetails = completionCostDetails;
             this.CompletionTokenDetails = completionTokenDetails;

@@ -4,9 +4,9 @@
 namespace LangSmith
 {
     /// <summary>
-    ///
+    /// `prompt_cost_details` contains prompt-cost totals by category.
     /// </summary>
-    public sealed partial class DeleteTagValueApiV1WorkspacesCurrentTagKeysTagKeyIdTagValuesTagValueIdDeleteResponse
+    public sealed partial class ThreadsThreadStatsBucketPromptCostDetails
     {
 
         /// <summary>

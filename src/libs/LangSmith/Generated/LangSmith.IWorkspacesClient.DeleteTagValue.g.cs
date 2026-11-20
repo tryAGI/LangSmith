@@ -12,7 +12,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteTagValueAsync(
+        global::System.Threading.Tasks.Task DeleteTagValueAsync(
             global::System.Guid tagKeyId,
             global::System.Guid tagValueId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
@@ -25,7 +25,7 @@ namespace LangSmith
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<string>> DeleteTagValueAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse> DeleteTagValueAsResponseAsync(
             global::System.Guid tagKeyId,
             global::System.Guid tagValueId,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,

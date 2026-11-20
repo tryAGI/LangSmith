@@ -27,7 +27,7 @@ namespace LangSmith
         public string? TemplateFormat { get; set; }
 
         /// <summary>
-        ///
+        /// Output schema for the evaluator's feedback. Not accepted for decision-model (TypeSafe or OpenAI Decisions) evaluators, whose schema comes from their questions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         public object? Schema { get; set; }
@@ -62,7 +62,9 @@ namespace LangSmith
         /// <param name="hubRef"></param>
         /// <param name="prompt"></param>
         /// <param name="templateFormat"></param>
-        /// <param name="schema"></param>
+        /// <param name="schema">
+        /// Output schema for the evaluator's feedback. Not accepted for decision-model (TypeSafe or OpenAI Decisions) evaluators, whose schema comes from their questions.
+        /// </param>
         /// <param name="variableMapping"></param>
         /// <param name="model"></param>
         /// <param name="playgroundSettingsId"></param>

@@ -51,6 +51,12 @@ namespace LangSmith
         public required global::System.Collections.Generic.IList<global::LangSmith.ThreadsThreadStatsSelectField> Select { get; set; }
 
         /// <summary>
+        /// `stride` returns the statistics as a time series in `buckets`. Each thread counts once, in the bucket containing the start of its most recent trace. Omit for a single aggregate over the whole window.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
+        public global::LangSmith.QueryStrideRequestBody? Stride { get; set; }
+
+        /// <summary>
         /// `thread_filter` narrows eligible threads using a LangSmith filter expression evaluated against the complete thread summary.<br/>
         /// Example: gte(turn_count, 3)
         /// </summary>
@@ -105,6 +111,9 @@ namespace LangSmith
         /// <param name="minStartTime">
         /// `min_start_time` is the inclusive lower bound on thread activity (RFC3339 date-time). Defaults to 1 day before now (UTC) when omitted.
         /// </param>
+        /// <param name="stride">
+        /// `stride` returns the statistics as a time series in `buckets`. Each thread counts once, in the bucket containing the start of its most recent trace. Omit for a single aggregate over the whole window.
+        /// </param>
         /// <param name="threadFilter">
         /// `thread_filter` narrows eligible threads using a LangSmith filter expression evaluated against the complete thread summary.<br/>
         /// Example: gte(turn_count, 3)
@@ -126,6 +135,7 @@ namespace LangSmith
             string? filter,
             global::System.DateTime? maxStartTime,
             global::System.DateTime? minStartTime,
+            global::LangSmith.QueryStrideRequestBody? stride,
             string? threadFilter,
             string? traceFilter,
             string? treeFilter)
@@ -135,6 +145,7 @@ namespace LangSmith
             this.MinStartTime = minStartTime;
             this.ProjectId = projectId;
             this.Select = select ?? throw new global::System.ArgumentNullException(nameof(select));
+            this.Stride = stride;
             this.ThreadFilter = threadFilter;
             this.TraceFilter = traceFilter;
             this.TreeFilter = treeFilter;
