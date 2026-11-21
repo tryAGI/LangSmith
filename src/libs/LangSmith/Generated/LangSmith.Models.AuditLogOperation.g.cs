@@ -575,6 +575,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteAgentAuthAppInstallation,
+        /// <summary>
+        ///
+        /// </summary>
         DeleteAgentAuthConnection,
         /// <summary>
         ///
@@ -2439,6 +2443,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteAccessPolicy => "delete_access_policy",
                 AuditLogOperation.DeleteAgent => "delete_agent",
                 AuditLogOperation.DeleteAgentAuthApp => "delete_agent_auth_app",
+                AuditLogOperation.DeleteAgentAuthAppInstallation => "delete_agent_auth_app_installation",
                 AuditLogOperation.DeleteAgentAuthConnection => "delete_agent_auth_connection",
                 AuditLogOperation.DeleteAgentAuthOidcIntegration => "delete_agent_auth_oidc_integration",
                 AuditLogOperation.DeleteAgentEnvironmentApiKey => "delete_agent_environment_api_key",
@@ -3018,6 +3023,7 @@ namespace LangSmith
                 "delete_access_policy" => AuditLogOperation.DeleteAccessPolicy,
                 "delete_agent" => AuditLogOperation.DeleteAgent,
                 "delete_agent_auth_app" => AuditLogOperation.DeleteAgentAuthApp,
+                "delete_agent_auth_app_installation" => AuditLogOperation.DeleteAgentAuthAppInstallation,
                 "delete_agent_auth_connection" => AuditLogOperation.DeleteAgentAuthConnection,
                 "delete_agent_auth_oidc_integration" => AuditLogOperation.DeleteAgentAuthOidcIntegration,
                 "delete_agent_environment_api_key" => AuditLogOperation.DeleteAgentEnvironmentApiKey,
