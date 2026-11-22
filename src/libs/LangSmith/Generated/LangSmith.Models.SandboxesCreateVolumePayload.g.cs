@@ -9,26 +9,26 @@ namespace LangSmith
     public sealed partial class SandboxesCreateVolumePayload
     {
         /// <summary>
-        ///
+        /// Free-text description, at most 1024 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        ///
+        /// Labels to filter and identify the volume by. Keys are lowercase letters, digits, dots and hyphens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         public global::System.Collections.Generic.Dictionary<string, string>? Labels { get; set; }
 
         /// <summary>
-        /// Name is unique within the workspace.
+        /// Name of the volume, unique within the workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// SizeBytes is the volume's capacity, rounded up to a whole GiB.
+        /// Capacity in bytes, rounded up to a whole GiB.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,13 +44,17 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="SandboxesCreateVolumePayload" /> class.
         /// </summary>
         /// <param name="name">
-        /// Name is unique within the workspace.
+        /// Name of the volume, unique within the workspace.
         /// </param>
         /// <param name="sizeBytes">
-        /// SizeBytes is the volume's capacity, rounded up to a whole GiB.
+        /// Capacity in bytes, rounded up to a whole GiB.
         /// </param>
-        /// <param name="description"></param>
-        /// <param name="labels"></param>
+        /// <param name="description">
+        /// Free-text description, at most 1024 characters.
+        /// </param>
+        /// <param name="labels">
+        /// Labels to filter and identify the volume by. Keys are lowercase letters, digits, dots and hyphens.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

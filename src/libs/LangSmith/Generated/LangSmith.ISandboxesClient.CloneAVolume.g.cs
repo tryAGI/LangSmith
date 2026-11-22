@@ -45,8 +45,12 @@ namespace LangSmith
         /// **Beta:** This API is in active development and may change without notice. Requires sandbox volumes to be enabled for your workspace. Create a new volume holding a copy-on-write copy of an existing one. A volume attached read-write to a sandbox that is not stopped cannot be cloned. Only the volume's creator, or a role with sandboxes:exec, may clone it.
         /// </summary>
         /// <param name="volume"></param>
-        /// <param name="description"></param>
-        /// <param name="labels"></param>
+        /// <param name="description">
+        /// Free-text description of the new volume, at most 1024 characters.
+        /// </param>
+        /// <param name="labels">
+        /// Labels for the new volume. Keys are lowercase letters, digits, dots and hyphens.
+        /// </param>
         /// <param name="name">
         /// Name of the new volume, unique within the workspace.
         /// </param>

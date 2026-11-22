@@ -606,13 +606,17 @@ namespace LangSmith
         /// [Beta] Create a volume<br/>
         /// **Beta:** This API is in active development and may change without notice. Requires sandbox volumes to be enabled for your workspace. Create an empty volume that can be attached to sandboxes at a mount path. The size is rounded up to a whole GiB.
         /// </summary>
-        /// <param name="description"></param>
-        /// <param name="labels"></param>
+        /// <param name="description">
+        /// Free-text description, at most 1024 characters.
+        /// </param>
+        /// <param name="labels">
+        /// Labels to filter and identify the volume by. Keys are lowercase letters, digits, dots and hyphens.
+        /// </param>
         /// <param name="name">
-        /// Name is unique within the workspace.
+        /// Name of the volume, unique within the workspace.
         /// </param>
         /// <param name="sizeBytes">
-        /// SizeBytes is the volume's capacity, rounded up to a whole GiB.
+        /// Capacity in bytes, rounded up to a whole GiB.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

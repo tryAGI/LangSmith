@@ -1087,6 +1087,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        GetAnnotationQueueItemReviews,
+        /// <summary>
+        ///
+        /// </summary>
         GetAnnotationQueueItems,
         /// <summary>
         ///
@@ -1675,6 +1679,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ReadWorkspaceSecrets,
+        /// <summary>
+        ///
+        /// </summary>
         RefreshMcpGatewayTools,
         /// <summary>
         ///
@@ -1876,6 +1884,10 @@ namespace LangSmith
         ///
         /// </summary>
         UpdateAnnotationQueueItem,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateAnnotationQueueItemReview,
         /// <summary>
         ///
         /// </summary>
@@ -2571,6 +2583,7 @@ namespace LangSmith
                 AuditLogOperation.GenerateSharedDatasetQuery => "generate_shared_dataset_query",
                 AuditLogOperation.GetAnnotationQueue => "get_annotation_queue",
                 AuditLogOperation.GetAnnotationQueueArchivedSize => "get_annotation_queue_archived_size",
+                AuditLogOperation.GetAnnotationQueueItemReviews => "get_annotation_queue_item_reviews",
                 AuditLogOperation.GetAnnotationQueueItems => "get_annotation_queue_items",
                 AuditLogOperation.GetAnnotationQueueRun => "get_annotation_queue_run",
                 AuditLogOperation.GetAnnotationQueueRuns => "get_annotation_queue_runs",
@@ -2718,6 +2731,7 @@ namespace LangSmith
                 AuditLogOperation.ReadTracingDashboard => "read_tracing_dashboard",
                 AuditLogOperation.ReadUserGroupAccessPolicies => "read_user_group_access_policies",
                 AuditLogOperation.ReadWorkspaceEncryptedSecrets => "read_workspace_encrypted_secrets",
+                AuditLogOperation.ReadWorkspaceSecrets => "read_workspace_secrets",
                 AuditLogOperation.RefreshMcpGatewayTools => "refresh_mcp_gateway_tools",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
                 AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
@@ -2769,6 +2783,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateAlertRule => "update_alert_rule",
                 AuditLogOperation.UpdateAnnotationQueue => "update_annotation_queue",
                 AuditLogOperation.UpdateAnnotationQueueItem => "update_annotation_queue_item",
+                AuditLogOperation.UpdateAnnotationQueueItemReview => "update_annotation_queue_item_review",
                 AuditLogOperation.UpdateAnnotationQueueRun => "update_annotation_queue_run",
                 AuditLogOperation.UpdateBasicAuthUser => "update_basic_auth_user",
                 AuditLogOperation.UpdateBulkExportDestination => "update_bulk_export_destination",
@@ -3151,6 +3166,7 @@ namespace LangSmith
                 "generate_shared_dataset_query" => AuditLogOperation.GenerateSharedDatasetQuery,
                 "get_annotation_queue" => AuditLogOperation.GetAnnotationQueue,
                 "get_annotation_queue_archived_size" => AuditLogOperation.GetAnnotationQueueArchivedSize,
+                "get_annotation_queue_item_reviews" => AuditLogOperation.GetAnnotationQueueItemReviews,
                 "get_annotation_queue_items" => AuditLogOperation.GetAnnotationQueueItems,
                 "get_annotation_queue_run" => AuditLogOperation.GetAnnotationQueueRun,
                 "get_annotation_queue_runs" => AuditLogOperation.GetAnnotationQueueRuns,
@@ -3298,6 +3314,7 @@ namespace LangSmith
                 "read_tracing_dashboard" => AuditLogOperation.ReadTracingDashboard,
                 "read_user_group_access_policies" => AuditLogOperation.ReadUserGroupAccessPolicies,
                 "read_workspace_encrypted_secrets" => AuditLogOperation.ReadWorkspaceEncryptedSecrets,
+                "read_workspace_secrets" => AuditLogOperation.ReadWorkspaceSecrets,
                 "refresh_mcp_gateway_tools" => AuditLogOperation.RefreshMcpGatewayTools,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
                 "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
@@ -3349,6 +3366,7 @@ namespace LangSmith
                 "update_alert_rule" => AuditLogOperation.UpdateAlertRule,
                 "update_annotation_queue" => AuditLogOperation.UpdateAnnotationQueue,
                 "update_annotation_queue_item" => AuditLogOperation.UpdateAnnotationQueueItem,
+                "update_annotation_queue_item_review" => AuditLogOperation.UpdateAnnotationQueueItemReview,
                 "update_annotation_queue_run" => AuditLogOperation.UpdateAnnotationQueueRun,
                 "update_basic_auth_user" => AuditLogOperation.UpdateBasicAuthUser,
                 "update_bulk_export_destination" => AuditLogOperation.UpdateBulkExportDestination,
