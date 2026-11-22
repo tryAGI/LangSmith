@@ -9,13 +9,13 @@ namespace LangSmith
     public sealed partial class SandboxesCloneVolumePayload
     {
         /// <summary>
-        ///
+        /// Free-text description of the new volume, at most 1024 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        ///
+        /// Labels for the new volume. Keys are lowercase letters, digits, dots and hyphens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         public global::System.Collections.Generic.Dictionary<string, string>? Labels { get; set; }
@@ -39,8 +39,12 @@ namespace LangSmith
         /// <param name="name">
         /// Name of the new volume, unique within the workspace.
         /// </param>
-        /// <param name="description"></param>
-        /// <param name="labels"></param>
+        /// <param name="description">
+        /// Free-text description of the new volume, at most 1024 characters.
+        /// </param>
+        /// <param name="labels">
+        /// Labels for the new volume. Keys are lowercase letters, digits, dots and hyphens.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class WorkspacesClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_ListCurrentWorkspaceSecretsServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_ListWorkspaceSecretsServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListCurrentWorkspaceSecretsSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_ListWorkspaceSecretsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,43 +34,54 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListCurrentWorkspaceSecretsSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_ListWorkspaceSecretsSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_ListCurrentWorkspaceSecretsSecurityRequirement0,
+            {                s_ListWorkspaceSecretsSecurityRequirement0,
             };
-        partial void PrepareListCurrentWorkspaceSecretsArguments(
+        partial void PrepareListWorkspaceSecretsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? pageSize,
+            ref string? cursor,
             ref bool? includeConfigs);
-        partial void PrepareListCurrentWorkspaceSecretsRequest(
+        partial void PrepareListWorkspaceSecretsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? pageSize,
+            string? cursor,
             bool? includeConfigs);
-        partial void ProcessListCurrentWorkspaceSecretsResponse(
+        partial void ProcessListWorkspaceSecretsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListCurrentWorkspaceSecretsResponseContent(
+        partial void ProcessListWorkspaceSecretsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Current Workspace Secrets<br/>
-        /// List the current workspace's secret keys. Values are never returned.
+        /// List workspace secrets<br/>
+        /// List the current workspace's secret keys in ascending key order. Secret values are never returned. Set include_configs to include allowed hosts and header configuration. Pass next_cursor as cursor to retrieve the next page, keeping include_configs unchanged. Pagination reflects the current secrets on each request, rather than a snapshot.
         /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="includeConfigs">
-        /// If true, include the hosts each secret may be sent to.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>> ListCurrentWorkspaceSecretsAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.WorkspacesListSecretsResponse> ListWorkspaceSecretsAsync(
+            int? pageSize = default,
+            string? cursor = default,
             bool? includeConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListCurrentWorkspaceSecretsAsResponseAsync(
+            var __response = await ListWorkspaceSecretsAsResponseAsync(
+                pageSize: pageSize,
+                cursor: cursor,
                 includeConfigs: includeConfigs,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -79,32 +90,39 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// List Current Workspace Secrets<br/>
-        /// List the current workspace's secret keys. Values are never returned.
+        /// List workspace secrets<br/>
+        /// List the current workspace's secret keys in ascending key order. Secret values are never returned. Set include_configs to include allowed hosts and header configuration. Pass next_cursor as cursor to retrieve the next page, keeping include_configs unchanged. Pagination reflects the current secrets on each request, rather than a snapshot.
         /// </summary>
+        /// <param name="pageSize">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="cursor"></param>
         /// <param name="includeConfigs">
-        /// If true, include the hosts each secret may be sent to.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>>> ListCurrentWorkspaceSecretsAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.WorkspacesListSecretsResponse>> ListWorkspaceSecretsAsResponseAsync(
+            int? pageSize = default,
+            string? cursor = default,
             bool? includeConfigs = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListCurrentWorkspaceSecretsArguments(
+            PrepareListWorkspaceSecretsArguments(
                 httpClient: HttpClient,
+                pageSize: ref pageSize,
+                cursor: ref cursor,
                 includeConfigs: ref includeConfigs);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListCurrentWorkspaceSecretsSecurityRequirements,
-                operationName: "ListCurrentWorkspaceSecretsAsync");
+                securityRequirements: s_ListWorkspaceSecretsSecurityRequirements,
+                operationName: "ListWorkspaceSecretsAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -124,11 +142,13 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: "/api/v1/workspaces/current/secrets",
+                                path: "/api/v2/workspaces/current/secrets",
                                 baseUri: ResolveBaseUri(
-                                servers: s_ListCurrentWorkspaceSecretsServers,
+                                servers: s_ListWorkspaceSecretsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             __pathBuilder
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
+                                .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("include_configs", includeConfigs?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -168,9 +188,11 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListCurrentWorkspaceSecretsRequest(
+                PrepareListWorkspaceSecretsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    pageSize: pageSize,
+                    cursor: cursor,
                     includeConfigs: includeConfigs);
 
                 return __httpRequest;
@@ -188,9 +210,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListCurrentWorkspaceSecrets",
-                                methodName: "ListCurrentWorkspaceSecretsAsync",
-                                pathTemplate: "\"/api/v1/workspaces/current/secrets\"",
+                                operationId: "ListWorkspaceSecrets",
+                                methodName: "ListWorkspaceSecretsAsync",
+                                pathTemplate: "\"/api/v2/workspaces/current/secrets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -222,9 +244,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListCurrentWorkspaceSecrets",
-                                methodName: "ListCurrentWorkspaceSecretsAsync",
-                                pathTemplate: "\"/api/v1/workspaces/current/secrets\"",
+                                operationId: "ListWorkspaceSecrets",
+                                methodName: "ListWorkspaceSecretsAsync",
+                                pathTemplate: "\"/api/v2/workspaces/current/secrets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -263,9 +285,9 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListCurrentWorkspaceSecrets",
-                                methodName: "ListCurrentWorkspaceSecretsAsync",
-                                pathTemplate: "\"/api/v1/workspaces/current/secrets\"",
+                                operationId: "ListWorkspaceSecrets",
+                                methodName: "ListWorkspaceSecretsAsync",
+                                pathTemplate: "\"/api/v2/workspaces/current/secrets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -303,7 +325,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListCurrentWorkspaceSecretsResponse(
+                ProcessListWorkspaceSecretsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,9 +333,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListCurrentWorkspaceSecrets",
-                                methodName: "ListCurrentWorkspaceSecretsAsync",
-                                pathTemplate: "\"/api/v1/workspaces/current/secrets\"",
+                                operationId: "ListWorkspaceSecrets",
+                                methodName: "ListWorkspaceSecretsAsync",
+                                pathTemplate: "\"/api/v2/workspaces/current/secrets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -333,9 +355,9 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListCurrentWorkspaceSecrets",
-                                methodName: "ListCurrentWorkspaceSecretsAsync",
-                                pathTemplate: "\"/api/v1/workspaces/current/secrets\"",
+                                operationId: "ListWorkspaceSecrets",
+                                methodName: "ListWorkspaceSecretsAsync",
+                                pathTemplate: "\"/api/v2/workspaces/current/secrets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -350,38 +372,75 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // The request has an invalid path, query, header, or body parameter.
-                            if ((int)__response.StatusCode == 422)
+                            // invalid query parameters or cursor
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse2>? __value_422 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::LangSmith.SharedProblemDetails? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse2>.FromJson(__content_422, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse2>.FromJson(__content_422, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
 
-                                throw global::LangSmith.ApiException<global::LangSmith.AllOf<global::LangSmith.ProblemDetails, global::LangSmith.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetResponse2>?>.Create(
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // forbidden
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::LangSmith.SharedProblemDetails? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -400,7 +459,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListCurrentWorkspaceSecretsResponseContent(
+                                ProcessListWorkspaceSecretsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -409,9 +468,9 @@ namespace LangSmith
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>), JsonSerializerContext) ??
+                                    var __value = global::LangSmith.WorkspacesListSecretsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.WorkspacesListSecretsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -441,9 +500,9 @@ namespace LangSmith
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::LangSmith.WorkspacesListSecretsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::LangSmith.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::LangSmith.WorkspaceSecret>>(
+                                    return new global::LangSmith.AutoSDKHttpResponse<global::LangSmith.WorkspacesListSecretsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::LangSmith.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -78,6 +78,13 @@ namespace LangSmith
         public required string RoleArn { get; set; }
 
         /// <summary>
+        /// Tier selects the initial size and availability of the data plane. DEV is smaller and not highly available. Defaults to PROD. The tier applies only at creation and is not returned when the data plane is read.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesDataPlaneTierJsonConverter))]
+        public global::LangSmith.DataPlanesDataPlaneTier? Tier { get; set; }
+
+        /// <summary>
         /// TraceStorage selects the run and trace store. Defaults to SMITHDB.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_storage")]
@@ -118,6 +125,9 @@ namespace LangSmith
         /// SandboxesEnabled turns on sandboxes when the data plane is created. Defaults to false.
         /// </param>
         /// <param name="publicLoadBalancer"></param>
+        /// <param name="tier">
+        /// Tier selects the initial size and availability of the data plane. DEV is smaller and not highly available. Defaults to PROD. The tier applies only at creation and is not returned when the data plane is read.
+        /// </param>
         /// <param name="traceStorage">
         /// TraceStorage selects the run and trace store. Defaults to SMITHDB.
         /// </param>
@@ -139,6 +149,7 @@ namespace LangSmith
             global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress,
             bool? isSandboxesEnabled,
             bool? publicLoadBalancer,
+            global::LangSmith.DataPlanesDataPlaneTier? tier,
             global::LangSmith.DataPlanesDataPlaneTraceStorage? traceStorage,
             string? vpcCidr)
         {
@@ -153,6 +164,7 @@ namespace LangSmith
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));
             this.RoleArn = roleArn ?? throw new global::System.ArgumentNullException(nameof(roleArn));
+            this.Tier = tier;
             this.TraceStorage = traceStorage;
             this.VpcCidr = vpcCidr;
         }
