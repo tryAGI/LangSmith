@@ -819,6 +819,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DeleteOrganization,
+        /// <summary>
+        ///
+        /// </summary>
         DeletePendingOrganizationInvite,
         /// <summary>
         ///
@@ -2516,6 +2520,7 @@ namespace LangSmith
                 AuditLogOperation.DeleteOrgChartSection => "delete_org_chart_section",
                 AuditLogOperation.DeleteOrgMember => "delete_org_member",
                 AuditLogOperation.DeleteOrgPendingMember => "delete_org_pending_member",
+                AuditLogOperation.DeleteOrganization => "delete_organization",
                 AuditLogOperation.DeletePendingOrganizationInvite => "delete_pending_organization_invite",
                 AuditLogOperation.DeletePendingWorkspaceInvite => "delete_pending_workspace_invite",
                 AuditLogOperation.DeletePersonalAccessToken => "delete_personal_access_token",
@@ -3099,6 +3104,7 @@ namespace LangSmith
                 "delete_org_chart_section" => AuditLogOperation.DeleteOrgChartSection,
                 "delete_org_member" => AuditLogOperation.DeleteOrgMember,
                 "delete_org_pending_member" => AuditLogOperation.DeleteOrgPendingMember,
+                "delete_organization" => AuditLogOperation.DeleteOrganization,
                 "delete_pending_organization_invite" => AuditLogOperation.DeletePendingOrganizationInvite,
                 "delete_pending_workspace_invite" => AuditLogOperation.DeletePendingWorkspaceInvite,
                 "delete_personal_access_token" => AuditLogOperation.DeletePersonalAccessToken,
