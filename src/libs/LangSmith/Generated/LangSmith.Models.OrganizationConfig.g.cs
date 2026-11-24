@@ -184,6 +184,24 @@ namespace LangSmith
         public string? MaxSandboxMemory { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_creates_per_second")]
+        public int? MaxSandboxCreatesPerSecond { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_create_burst")]
+        public int? MaxSandboxCreateBurst { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_create_rate_limits")]
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.SandboxCreateRateLimit>? SandboxCreateRateLimits { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_saml_sso")]
@@ -598,6 +616,13 @@ namespace LangSmith
         /// <param name="maxSandboxMemory">
         /// Default Value: 400Gi
         /// </param>
+        /// <param name="maxSandboxCreatesPerSecond">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="maxSandboxCreateBurst">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="sandboxCreateRateLimits"></param>
         /// <param name="canUseSamlSso">
         /// Default Value: false
         /// </param>
@@ -793,6 +818,9 @@ namespace LangSmith
             int? maxSandboxes,
             string? maxSandboxCpu,
             string? maxSandboxMemory,
+            int? maxSandboxCreatesPerSecond,
+            int? maxSandboxCreateBurst,
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.SandboxCreateRateLimit>? sandboxCreateRateLimits,
             bool? canUseSamlSso,
             bool? canUseBulkExport,
             bool? showUpdatedSidenav,
@@ -878,6 +906,9 @@ namespace LangSmith
             this.MaxSandboxes = maxSandboxes;
             this.MaxSandboxCpu = maxSandboxCpu;
             this.MaxSandboxMemory = maxSandboxMemory;
+            this.MaxSandboxCreatesPerSecond = maxSandboxCreatesPerSecond;
+            this.MaxSandboxCreateBurst = maxSandboxCreateBurst;
+            this.SandboxCreateRateLimits = sandboxCreateRateLimits;
             this.CanUseSamlSso = canUseSamlSso;
             this.CanUseBulkExport = canUseBulkExport;
             this.ShowUpdatedSidenav = showUpdatedSidenav;

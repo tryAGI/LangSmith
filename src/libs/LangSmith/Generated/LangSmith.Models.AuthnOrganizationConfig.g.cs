@@ -400,6 +400,20 @@ namespace LangSmith
         public string? MaxSandboxCpu { get; set; }
 
         /// <summary>
+        /// MaxSandboxCreateBurst is how many sandbox creates a workspace may make at<br/>
+        /// once before MaxSandboxCreatesPerSecond paces them. 0 means one second's worth.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_create_burst")]
+        public int? MaxSandboxCreateBurst { get; set; }
+
+        /// <summary>
+        /// MaxSandboxCreatesPerSecond is the sustained rate of sandbox creates allowed<br/>
+        /// per workspace. 0 or -1 means unlimited; use -1 to lift a non-zero default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_creates_per_second")]
+        public int? MaxSandboxCreatesPerSecond { get; set; }
+
+        /// <summary>
         /// MaxSandboxMemory is the total memory allowed for sandboxes (e.g., "8Gi", "16Gi").
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_sandbox_memory")]
@@ -476,6 +490,17 @@ namespace LangSmith
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization_jobs_enabled")]
         public bool? PromptOptimizationJobsEnabled { get; set; }
+
+        /// <summary>
+        /// SandboxCreateRateLimits sets the create rate for a service creating sandboxes<br/>
+        /// on a workspace's behalf, keyed by service identity (e.g. "sandbox-evals").<br/>
+        /// Each service is paced separately from the workspace's own creates; one not<br/>
+        /// listed uses MaxSandboxCreatesPerSecond and MaxSandboxCreateBurst. Entries from<br/>
+        /// the org, plan and customer layers merge, a later layer replacing an earlier<br/>
+        /// one's entry for the same service.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_create_rate_limits")]
+        public global::System.Collections.Generic.Dictionary<string, global::LangSmith.AuthnSandboxCreateRateLimit>? SandboxCreateRateLimits { get; set; }
 
         /// <summary>
         /// SandboxEnabled indicates whether this org can use sandboxes.
@@ -751,6 +776,14 @@ namespace LangSmith
         /// <param name="maxSandboxCpu">
         /// MaxSandboxCpu is the total CPU cores allowed for sandboxes (e.g., "4", "8").
         /// </param>
+        /// <param name="maxSandboxCreateBurst">
+        /// MaxSandboxCreateBurst is how many sandbox creates a workspace may make at<br/>
+        /// once before MaxSandboxCreatesPerSecond paces them. 0 means one second's worth.
+        /// </param>
+        /// <param name="maxSandboxCreatesPerSecond">
+        /// MaxSandboxCreatesPerSecond is the sustained rate of sandbox creates allowed<br/>
+        /// per workspace. 0 or -1 means unlimited; use -1 to lift a non-zero default.
+        /// </param>
         /// <param name="maxSandboxMemory">
         /// MaxSandboxMemory is the total memory allowed for sandboxes (e.g., "8Gi", "16Gi").
         /// </param>
@@ -790,6 +823,14 @@ namespace LangSmith
         /// <param name="privateNetworkConnectionsEnabled"></param>
         /// <param name="promptOptimizationJobsEnabled">
         /// PromptOptimizationJobsEnabled indicates whether the org can use the prompt optimization jobs feature.
+        /// </param>
+        /// <param name="sandboxCreateRateLimits">
+        /// SandboxCreateRateLimits sets the create rate for a service creating sandboxes<br/>
+        /// on a workspace's behalf, keyed by service identity (e.g. "sandbox-evals").<br/>
+        /// Each service is paced separately from the workspace's own creates; one not<br/>
+        /// listed uses MaxSandboxCreatesPerSecond and MaxSandboxCreateBurst. Entries from<br/>
+        /// the org, plan and customer layers merge, a later layer replacing an earlier<br/>
+        /// one's entry for the same service.
         /// </param>
         /// <param name="sandboxEnabled">
         /// SandboxEnabled indicates whether this org can use sandboxes.
@@ -884,6 +925,8 @@ namespace LangSmith
             int? maxLanggraphCloudDeployments,
             int? maxPromptWebhooks,
             string? maxSandboxCpu,
+            int? maxSandboxCreateBurst,
+            int? maxSandboxCreatesPerSecond,
             string? maxSandboxMemory,
             int? maxSandboxes,
             int? maxWorkspaces,
@@ -896,6 +939,7 @@ namespace LangSmith
             string? premierPlanApprovalDate,
             bool? privateNetworkConnectionsEnabled,
             bool? promptOptimizationJobsEnabled,
+            global::System.Collections.Generic.Dictionary<string, global::LangSmith.AuthnSandboxCreateRateLimit>? sandboxCreateRateLimits,
             bool? sandboxEnabled,
             bool? sandboxRestrictedEgress,
             bool? showPlaygroundPromptCanvas,
@@ -966,6 +1010,8 @@ namespace LangSmith
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.MaxPromptWebhooks = maxPromptWebhooks;
             this.MaxSandboxCpu = maxSandboxCpu;
+            this.MaxSandboxCreateBurst = maxSandboxCreateBurst;
+            this.MaxSandboxCreatesPerSecond = maxSandboxCreatesPerSecond;
             this.MaxSandboxMemory = maxSandboxMemory;
             this.MaxSandboxes = maxSandboxes;
             this.MaxWorkspaces = maxWorkspaces;
@@ -978,6 +1024,7 @@ namespace LangSmith
             this.PremierPlanApprovalDate = premierPlanApprovalDate;
             this.PrivateNetworkConnectionsEnabled = privateNetworkConnectionsEnabled;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
+            this.SandboxCreateRateLimits = sandboxCreateRateLimits;
             this.SandboxEnabled = sandboxEnabled;
             this.SandboxRestrictedEgress = sandboxRestrictedEgress;
             this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;

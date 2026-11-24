@@ -117,6 +117,12 @@ namespace LangSmith
         public global::LangSmith.AuditLogAgentAccessToken? AgentAccessToken { get; set; }
 
         /// <summary>
+        /// Sandbox cluster an instance-admin registration or rotation call wrote. Never the cluster's secret.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sandbox_cluster")]
+        public global::LangSmith.AuditLogSandboxCluster? SandboxCluster { get; set; }
+
+        /// <summary>
         /// Agent the request was refused for because it is disabled, or whose access token named another agent than the API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_check")]
@@ -171,6 +177,9 @@ namespace LangSmith
         /// <param name="agentAccessToken">
         /// Agent access token the request minted. The entry is written to the org of the agent the token names.
         /// </param>
+        /// <param name="sandboxCluster">
+        /// Sandbox cluster an instance-admin registration or rotation call wrote. Never the cluster's secret.
+        /// </param>
         /// <param name="agentCheck">
         /// Agent the request was refused for because it is disabled, or whose access token named another agent than the API key.
         /// </param>
@@ -196,6 +205,7 @@ namespace LangSmith
             global::LangSmith.AuditLogUpstream? upstream,
             global::LangSmith.AuditLogServer? server,
             global::LangSmith.AuditLogAgentAccessToken? agentAccessToken,
+            global::LangSmith.AuditLogSandboxCluster? sandboxCluster,
             global::LangSmith.AuditLogAgentCheck? agentCheck)
         {
             this.RequestMethod = requestMethod;
@@ -216,6 +226,7 @@ namespace LangSmith
             this.Upstream = upstream;
             this.Server = server;
             this.AgentAccessToken = agentAccessToken;
+            this.SandboxCluster = sandboxCluster;
             this.AgentCheck = agentCheck;
         }
 
