@@ -1027,6 +1027,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        DownloadTasksetRunArtifacts,
+        /// <summary>
+        ///
+        /// </summary>
         EnableAgentEnvironment,
         /// <summary>
         ///
@@ -1096,6 +1100,10 @@ namespace LangSmith
         ///
         /// </summary>
         GetAnnotationQueueItems,
+        /// <summary>
+        ///
+        /// </summary>
+        GetAnnotationQueueReviewers,
         /// <summary>
         ///
         /// </summary>
@@ -2271,6 +2279,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UploadTasksetRunArtifacts,
+        /// <summary>
+        ///
+        /// </summary>
         UpsertFeatureDefaultModel,
         /// <summary>
         ///
@@ -2572,6 +2584,7 @@ namespace LangSmith
                 AuditLogOperation.DownloadCustomAppSource => "download_custom_app_source",
                 AuditLogOperation.DownloadDataset => "download_dataset",
                 AuditLogOperation.DownloadTasksetBundle => "download_taskset_bundle",
+                AuditLogOperation.DownloadTasksetRunArtifacts => "download_taskset_run_artifacts",
                 AuditLogOperation.EnableAgentEnvironment => "enable_agent_environment",
                 AuditLogOperation.EvaluateExperiment => "evaluate_experiment",
                 AuditLogOperation.ExecuteCustomCode => "execute_custom_code",
@@ -2590,6 +2603,7 @@ namespace LangSmith
                 AuditLogOperation.GetAnnotationQueueArchivedSize => "get_annotation_queue_archived_size",
                 AuditLogOperation.GetAnnotationQueueItemReviews => "get_annotation_queue_item_reviews",
                 AuditLogOperation.GetAnnotationQueueItems => "get_annotation_queue_items",
+                AuditLogOperation.GetAnnotationQueueReviewers => "get_annotation_queue_reviewers",
                 AuditLogOperation.GetAnnotationQueueRun => "get_annotation_queue_run",
                 AuditLogOperation.GetAnnotationQueueRuns => "get_annotation_queue_runs",
                 AuditLogOperation.GetAnnotationQueueSize => "get_annotation_queue_size",
@@ -2883,6 +2897,7 @@ namespace LangSmith
                 AuditLogOperation.UpdateWorkspaceMember => "update_workspace_member",
                 AuditLogOperation.UpdateWorkspacePendingMember => "update_workspace_pending_member",
                 AuditLogOperation.UpdateWorkspaceSecrets => "update_workspace_secrets",
+                AuditLogOperation.UploadTasksetRunArtifacts => "upload_taskset_run_artifacts",
                 AuditLogOperation.UpsertFeatureDefaultModel => "upsert_feature_default_model",
                 AuditLogOperation.UpsertFeatureDisabledModel => "upsert_feature_disabled_model",
                 AuditLogOperation.UpsertGithubAppConfiguration => "upsert_github_app_configuration",
@@ -3156,6 +3171,7 @@ namespace LangSmith
                 "download_custom_app_source" => AuditLogOperation.DownloadCustomAppSource,
                 "download_dataset" => AuditLogOperation.DownloadDataset,
                 "download_taskset_bundle" => AuditLogOperation.DownloadTasksetBundle,
+                "download_taskset_run_artifacts" => AuditLogOperation.DownloadTasksetRunArtifacts,
                 "enable_agent_environment" => AuditLogOperation.EnableAgentEnvironment,
                 "evaluate_experiment" => AuditLogOperation.EvaluateExperiment,
                 "execute_custom_code" => AuditLogOperation.ExecuteCustomCode,
@@ -3174,6 +3190,7 @@ namespace LangSmith
                 "get_annotation_queue_archived_size" => AuditLogOperation.GetAnnotationQueueArchivedSize,
                 "get_annotation_queue_item_reviews" => AuditLogOperation.GetAnnotationQueueItemReviews,
                 "get_annotation_queue_items" => AuditLogOperation.GetAnnotationQueueItems,
+                "get_annotation_queue_reviewers" => AuditLogOperation.GetAnnotationQueueReviewers,
                 "get_annotation_queue_run" => AuditLogOperation.GetAnnotationQueueRun,
                 "get_annotation_queue_runs" => AuditLogOperation.GetAnnotationQueueRuns,
                 "get_annotation_queue_size" => AuditLogOperation.GetAnnotationQueueSize,
@@ -3467,6 +3484,7 @@ namespace LangSmith
                 "update_workspace_member" => AuditLogOperation.UpdateWorkspaceMember,
                 "update_workspace_pending_member" => AuditLogOperation.UpdateWorkspacePendingMember,
                 "update_workspace_secrets" => AuditLogOperation.UpdateWorkspaceSecrets,
+                "upload_taskset_run_artifacts" => AuditLogOperation.UploadTasksetRunArtifacts,
                 "upsert_feature_default_model" => AuditLogOperation.UpsertFeatureDefaultModel,
                 "upsert_feature_disabled_model" => AuditLogOperation.UpsertFeatureDisabledModel,
                 "upsert_github_app_configuration" => AuditLogOperation.UpsertGithubAppConfiguration,
