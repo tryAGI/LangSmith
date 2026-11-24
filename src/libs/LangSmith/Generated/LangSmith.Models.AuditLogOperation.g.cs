@@ -11,6 +11,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ActivateSandboxCluster,
+        /// <summary>
+        ///
+        /// </summary>
         AddAnnotationQueueReviewer,
         /// <summary>
         ///
@@ -128,6 +132,10 @@ namespace LangSmith
         ///
         /// </summary>
         ConnectGatewayVendorAdminKey,
+        /// <summary>
+        ///
+        /// </summary>
+        CordonSandboxCluster,
         /// <summary>
         ///
         /// </summary>
@@ -1059,6 +1067,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        FinishSandboxClusterRotation,
+        /// <summary>
+        ///
+        /// </summary>
+        ForgetSandboxCluster,
+        /// <summary>
+        ///
+        /// </summary>
         GenerateDataset,
         /// <summary>
         ///
@@ -1515,6 +1531,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        MapSandboxWorkspaceCluster,
+        /// <summary>
+        ///
+        /// </summary>
         McpProxy,
         /// <summary>
         ///
@@ -1703,6 +1723,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RegisterSandboxCluster,
+        /// <summary>
+        ///
+        /// </summary>
         ReinstatePersonalAccessToken,
         /// <summary>
         ///
@@ -1731,6 +1755,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RetireSandboxCluster,
+        /// <summary>
+        ///
+        /// </summary>
         RevokeOauthGrant,
         /// <summary>
         ///
@@ -1743,11 +1771,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RotateSandboxClusterSecret,
+        /// <summary>
+        ///
+        /// </summary>
         SendSsoEmailConfirmation,
         /// <summary>
         ///
         /// </summary>
         SetAnnotationQueueItemFinal,
+        /// <summary>
+        ///
+        /// </summary>
+        SetSandboxClusterDefault,
         /// <summary>
         ///
         /// </summary>
@@ -1840,6 +1876,10 @@ namespace LangSmith
         ///
         /// </summary>
         TriggerForgeConfiguration,
+        /// <summary>
+        ///
+        /// </summary>
+        UnmapSandboxWorkspaceCluster,
         /// <summary>
         ///
         /// </summary>
@@ -2159,6 +2199,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        UpdateSandboxClusterVolumeUuid,
+        /// <summary>
+        ///
+        /// </summary>
         UpdateSandboxFunction,
         /// <summary>
         ///
@@ -2168,6 +2212,10 @@ namespace LangSmith
         ///
         /// </summary>
         UpdateSandboxProxyProfile,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateSandboxRecreateRefusal,
         /// <summary>
         ///
         /// </summary>
@@ -2330,6 +2378,7 @@ namespace LangSmith
         {
             return value switch
             {
+                AuditLogOperation.ActivateSandboxCluster => "activate_sandbox_cluster",
                 AuditLogOperation.AddAnnotationQueueReviewer => "add_annotation_queue_reviewer",
                 AuditLogOperation.AddBasicAuthUsersToOrg => "add_basic_auth_users_to_org",
                 AuditLogOperation.AddItemsToAnnotationQueue => "add_items_to_annotation_queue",
@@ -2360,6 +2409,7 @@ namespace LangSmith
                 AuditLogOperation.ConfirmPaymentCheckoutSession => "confirm_payment_checkout_session",
                 AuditLogOperation.ConfirmSsoUserEmail => "confirm_sso_user_email",
                 AuditLogOperation.ConnectGatewayVendorAdminKey => "connect_gateway_vendor_admin_key",
+                AuditLogOperation.CordonSandboxCluster => "cordon_sandbox_cluster",
                 AuditLogOperation.CountExamples => "count_examples",
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
                 AuditLogOperation.CreateAgent => "create_agent",
@@ -2592,6 +2642,8 @@ namespace LangSmith
                 AuditLogOperation.ExportGranularUsageDeploymentsCsv => "export_granular_usage_deployments_csv",
                 AuditLogOperation.ExportGranularUsageTracesCsv => "export_granular_usage_traces_csv",
                 AuditLogOperation.ExportUsageBackfillCsv => "export_usage_backfill_csv",
+                AuditLogOperation.FinishSandboxClusterRotation => "finish_sandbox_cluster_rotation",
+                AuditLogOperation.ForgetSandboxCluster => "forget_sandbox_cluster",
                 AuditLogOperation.GenerateDataset => "generate_dataset",
                 AuditLogOperation.GenerateInsightsJobConfig => "generate_insights_job_config",
                 AuditLogOperation.GenerateRunsQuery => "generate_runs_query",
@@ -2706,6 +2758,7 @@ namespace LangSmith
                 AuditLogOperation.ListWorkspaceMembers => "list_workspace_members",
                 AuditLogOperation.ListWorkspaces => "list_workspaces",
                 AuditLogOperation.Login => "login",
+                AuditLogOperation.MapSandboxWorkspaceCluster => "map_sandbox_workspace_cluster",
                 AuditLogOperation.McpProxy => "mcp_proxy",
                 AuditLogOperation.McpProxyGet => "mcp_proxy_get",
                 AuditLogOperation.MintAgentAccessToken => "mint_agent_access_token",
@@ -2753,6 +2806,7 @@ namespace LangSmith
                 AuditLogOperation.ReadWorkspaceSecrets => "read_workspace_secrets",
                 AuditLogOperation.RefreshMcpGatewayTools => "refresh_mcp_gateway_tools",
                 AuditLogOperation.RegisterMcpServerOauth => "register_mcp_server_oauth",
+                AuditLogOperation.RegisterSandboxCluster => "register_sandbox_cluster",
                 AuditLogOperation.ReinstatePersonalAccessToken => "reinstate_personal_access_token",
                 AuditLogOperation.RemoveAnnotationQueueReviewer => "remove_annotation_queue_reviewer",
                 AuditLogOperation.RemoveTeamMember => "remove_team_member",
@@ -2760,11 +2814,14 @@ namespace LangSmith
                 AuditLogOperation.RenameFilterView => "rename_filter_view",
                 AuditLogOperation.ResolveAgentAuthAgent => "resolve_agent_auth_agent",
                 AuditLogOperation.ResolveAnnotationQueueRun => "resolve_annotation_queue_run",
+                AuditLogOperation.RetireSandboxCluster => "retire_sandbox_cluster",
                 AuditLogOperation.RevokeOauthGrant => "revoke_oauth_grant",
                 AuditLogOperation.RevokePersonalAccessToken => "revoke_personal_access_token",
                 AuditLogOperation.RotateOauthClientSecret => "rotate_oauth_client_secret",
+                AuditLogOperation.RotateSandboxClusterSecret => "rotate_sandbox_cluster_secret",
                 AuditLogOperation.SendSsoEmailConfirmation => "send_sso_email_confirmation",
                 AuditLogOperation.SetAnnotationQueueItemFinal => "set_annotation_queue_item_final",
+                AuditLogOperation.SetSandboxClusterDefault => "set_sandbox_cluster_default",
                 AuditLogOperation.SetTenantHandle => "set_tenant_handle",
                 AuditLogOperation.ShareDataset => "share_dataset",
                 AuditLogOperation.ShareRun => "share_run",
@@ -2788,6 +2845,7 @@ namespace LangSmith
                 AuditLogOperation.TestWebhookDestination => "test_webhook_destination",
                 AuditLogOperation.TriggerFleetManagedToolsMigration => "trigger_fleet_managed_tools_migration",
                 AuditLogOperation.TriggerForgeConfiguration => "trigger_forge_configuration",
+                AuditLogOperation.UnmapSandboxWorkspaceCluster => "unmap_sandbox_workspace_cluster",
                 AuditLogOperation.UnshareDataset => "unshare_dataset",
                 AuditLogOperation.UnshareEntities => "unshare_entities",
                 AuditLogOperation.UnshareRun => "unshare_run",
@@ -2867,9 +2925,11 @@ namespace LangSmith
                 AuditLogOperation.UpdateRedactionRule => "update_redaction_rule",
                 AuditLogOperation.UpdateRole => "update_role",
                 AuditLogOperation.UpdateSandboxClaim => "update_sandbox_claim",
+                AuditLogOperation.UpdateSandboxClusterVolumeUuid => "update_sandbox_cluster_volume_uuid",
                 AuditLogOperation.UpdateSandboxFunction => "update_sandbox_function",
                 AuditLogOperation.UpdateSandboxPolicy => "update_sandbox_policy",
                 AuditLogOperation.UpdateSandboxProxyProfile => "update_sandbox_proxy_profile",
+                AuditLogOperation.UpdateSandboxRecreateRefusal => "update_sandbox_recreate_refusal",
                 AuditLogOperation.UpdateSandboxRegistry => "update_sandbox_registry",
                 AuditLogOperation.UpdateSandboxVolume => "update_sandbox_volume",
                 AuditLogOperation.UpdateScimGroup => "update_scim_group",
@@ -2917,6 +2977,7 @@ namespace LangSmith
         {
             return value switch
             {
+                "activate_sandbox_cluster" => AuditLogOperation.ActivateSandboxCluster,
                 "add_annotation_queue_reviewer" => AuditLogOperation.AddAnnotationQueueReviewer,
                 "add_basic_auth_users_to_org" => AuditLogOperation.AddBasicAuthUsersToOrg,
                 "add_items_to_annotation_queue" => AuditLogOperation.AddItemsToAnnotationQueue,
@@ -2947,6 +3008,7 @@ namespace LangSmith
                 "confirm_payment_checkout_session" => AuditLogOperation.ConfirmPaymentCheckoutSession,
                 "confirm_sso_user_email" => AuditLogOperation.ConfirmSsoUserEmail,
                 "connect_gateway_vendor_admin_key" => AuditLogOperation.ConnectGatewayVendorAdminKey,
+                "cordon_sandbox_cluster" => AuditLogOperation.CordonSandboxCluster,
                 "count_examples" => AuditLogOperation.CountExamples,
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
                 "create_agent" => AuditLogOperation.CreateAgent,
@@ -3179,6 +3241,8 @@ namespace LangSmith
                 "export_granular_usage_deployments_csv" => AuditLogOperation.ExportGranularUsageDeploymentsCsv,
                 "export_granular_usage_traces_csv" => AuditLogOperation.ExportGranularUsageTracesCsv,
                 "export_usage_backfill_csv" => AuditLogOperation.ExportUsageBackfillCsv,
+                "finish_sandbox_cluster_rotation" => AuditLogOperation.FinishSandboxClusterRotation,
+                "forget_sandbox_cluster" => AuditLogOperation.ForgetSandboxCluster,
                 "generate_dataset" => AuditLogOperation.GenerateDataset,
                 "generate_insights_job_config" => AuditLogOperation.GenerateInsightsJobConfig,
                 "generate_runs_query" => AuditLogOperation.GenerateRunsQuery,
@@ -3293,6 +3357,7 @@ namespace LangSmith
                 "list_workspace_members" => AuditLogOperation.ListWorkspaceMembers,
                 "list_workspaces" => AuditLogOperation.ListWorkspaces,
                 "login" => AuditLogOperation.Login,
+                "map_sandbox_workspace_cluster" => AuditLogOperation.MapSandboxWorkspaceCluster,
                 "mcp_proxy" => AuditLogOperation.McpProxy,
                 "mcp_proxy_get" => AuditLogOperation.McpProxyGet,
                 "mint_agent_access_token" => AuditLogOperation.MintAgentAccessToken,
@@ -3340,6 +3405,7 @@ namespace LangSmith
                 "read_workspace_secrets" => AuditLogOperation.ReadWorkspaceSecrets,
                 "refresh_mcp_gateway_tools" => AuditLogOperation.RefreshMcpGatewayTools,
                 "register_mcp_server_oauth" => AuditLogOperation.RegisterMcpServerOauth,
+                "register_sandbox_cluster" => AuditLogOperation.RegisterSandboxCluster,
                 "reinstate_personal_access_token" => AuditLogOperation.ReinstatePersonalAccessToken,
                 "remove_annotation_queue_reviewer" => AuditLogOperation.RemoveAnnotationQueueReviewer,
                 "remove_team_member" => AuditLogOperation.RemoveTeamMember,
@@ -3347,11 +3413,14 @@ namespace LangSmith
                 "rename_filter_view" => AuditLogOperation.RenameFilterView,
                 "resolve_agent_auth_agent" => AuditLogOperation.ResolveAgentAuthAgent,
                 "resolve_annotation_queue_run" => AuditLogOperation.ResolveAnnotationQueueRun,
+                "retire_sandbox_cluster" => AuditLogOperation.RetireSandboxCluster,
                 "revoke_oauth_grant" => AuditLogOperation.RevokeOauthGrant,
                 "revoke_personal_access_token" => AuditLogOperation.RevokePersonalAccessToken,
                 "rotate_oauth_client_secret" => AuditLogOperation.RotateOauthClientSecret,
+                "rotate_sandbox_cluster_secret" => AuditLogOperation.RotateSandboxClusterSecret,
                 "send_sso_email_confirmation" => AuditLogOperation.SendSsoEmailConfirmation,
                 "set_annotation_queue_item_final" => AuditLogOperation.SetAnnotationQueueItemFinal,
+                "set_sandbox_cluster_default" => AuditLogOperation.SetSandboxClusterDefault,
                 "set_tenant_handle" => AuditLogOperation.SetTenantHandle,
                 "share_dataset" => AuditLogOperation.ShareDataset,
                 "share_run" => AuditLogOperation.ShareRun,
@@ -3375,6 +3444,7 @@ namespace LangSmith
                 "test_webhook_destination" => AuditLogOperation.TestWebhookDestination,
                 "trigger_fleet_managed_tools_migration" => AuditLogOperation.TriggerFleetManagedToolsMigration,
                 "trigger_forge_configuration" => AuditLogOperation.TriggerForgeConfiguration,
+                "unmap_sandbox_workspace_cluster" => AuditLogOperation.UnmapSandboxWorkspaceCluster,
                 "unshare_dataset" => AuditLogOperation.UnshareDataset,
                 "unshare_entities" => AuditLogOperation.UnshareEntities,
                 "unshare_run" => AuditLogOperation.UnshareRun,
@@ -3454,9 +3524,11 @@ namespace LangSmith
                 "update_redaction_rule" => AuditLogOperation.UpdateRedactionRule,
                 "update_role" => AuditLogOperation.UpdateRole,
                 "update_sandbox_claim" => AuditLogOperation.UpdateSandboxClaim,
+                "update_sandbox_cluster_volume_uuid" => AuditLogOperation.UpdateSandboxClusterVolumeUuid,
                 "update_sandbox_function" => AuditLogOperation.UpdateSandboxFunction,
                 "update_sandbox_policy" => AuditLogOperation.UpdateSandboxPolicy,
                 "update_sandbox_proxy_profile" => AuditLogOperation.UpdateSandboxProxyProfile,
+                "update_sandbox_recreate_refusal" => AuditLogOperation.UpdateSandboxRecreateRefusal,
                 "update_sandbox_registry" => AuditLogOperation.UpdateSandboxRegistry,
                 "update_sandbox_volume" => AuditLogOperation.UpdateSandboxVolume,
                 "update_scim_group" => AuditLogOperation.UpdateScimGroup,
