@@ -72,6 +72,13 @@ namespace LangSmith
         public bool? IsSandboxesEnabled { get; set; }
 
         /// <summary>
+        /// LoadBalancerType is the load balancer in front of the data plane ingress.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("load_balancer_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesDataPlaneLoadBalancerTypeJsonConverter))]
+        public global::LangSmith.DataPlanesDataPlaneLoadBalancerType? LoadBalancerType { get; set; }
+
+        /// <summary>
         /// ProvisionerServiceAccount is the customer service account that the<br/>
         /// control plane impersonates.
         /// </summary>
@@ -136,6 +143,9 @@ namespace LangSmith
         /// <param name="isSandboxesEnabled">
         /// IsSandboxesEnabled is whether sandboxes are turned on.
         /// </param>
+        /// <param name="loadBalancerType">
+        /// LoadBalancerType is the load balancer in front of the data plane ingress.
+        /// </param>
         /// <param name="provisionerServiceAccount">
         /// ProvisionerServiceAccount is the customer service account that the<br/>
         /// control plane impersonates.
@@ -164,6 +174,7 @@ namespace LangSmith
             bool? isGcpByoiamEnabled,
             bool? isPublicLoadBalancer,
             bool? isSandboxesEnabled,
+            global::LangSmith.DataPlanesDataPlaneLoadBalancerType? loadBalancerType,
             string? provisionerServiceAccount,
             string? resourceGroupId,
             string? roleArn,
@@ -180,6 +191,7 @@ namespace LangSmith
             this.IsGcpByoiamEnabled = isGcpByoiamEnabled;
             this.IsPublicLoadBalancer = isPublicLoadBalancer;
             this.IsSandboxesEnabled = isSandboxesEnabled;
+            this.LoadBalancerType = loadBalancerType;
             this.ProvisionerServiceAccount = provisionerServiceAccount;
             this.ResourceGroupId = resourceGroupId;
             this.RoleArn = roleArn;

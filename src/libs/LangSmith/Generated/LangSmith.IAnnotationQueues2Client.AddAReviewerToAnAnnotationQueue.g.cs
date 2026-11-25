@@ -40,12 +40,16 @@ namespace LangSmith
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="identityId"></param>
+        /// <param name="shouldRedistribute">
+        /// Give the new reviewer pending reviews nobody has opened. Defaults to true. Only applies when the queue's reviews per item is a number.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::LangSmith.AnnotationqueuesAddReviewerResponse> AddAReviewerToAnAnnotationQueueAsync(
             string queueId,
             string identityId,
+            bool? shouldRedistribute = default,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

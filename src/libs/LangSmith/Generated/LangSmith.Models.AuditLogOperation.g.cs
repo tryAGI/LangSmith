@@ -155,6 +155,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        CreateAgentAuthAppInstallation,
+        /// <summary>
+        ///
+        /// </summary>
         CreateAgentAuthConnection,
         /// <summary>
         ///
@@ -2414,6 +2418,7 @@ namespace LangSmith
                 AuditLogOperation.CreateAccessPolicy => "create_access_policy",
                 AuditLogOperation.CreateAgent => "create_agent",
                 AuditLogOperation.CreateAgentAuthApp => "create_agent_auth_app",
+                AuditLogOperation.CreateAgentAuthAppInstallation => "create_agent_auth_app_installation",
                 AuditLogOperation.CreateAgentAuthConnection => "create_agent_auth_connection",
                 AuditLogOperation.CreateAgentAuthOidcIntegration => "create_agent_auth_oidc_integration",
                 AuditLogOperation.CreateAgentEnvironment => "create_agent_environment",
@@ -3013,6 +3018,7 @@ namespace LangSmith
                 "create_access_policy" => AuditLogOperation.CreateAccessPolicy,
                 "create_agent" => AuditLogOperation.CreateAgent,
                 "create_agent_auth_app" => AuditLogOperation.CreateAgentAuthApp,
+                "create_agent_auth_app_installation" => AuditLogOperation.CreateAgentAuthAppInstallation,
                 "create_agent_auth_connection" => AuditLogOperation.CreateAgentAuthConnection,
                 "create_agent_auth_oidc_integration" => AuditLogOperation.CreateAgentAuthOidcIntegration,
                 "create_agent_environment" => AuditLogOperation.CreateAgentEnvironment,

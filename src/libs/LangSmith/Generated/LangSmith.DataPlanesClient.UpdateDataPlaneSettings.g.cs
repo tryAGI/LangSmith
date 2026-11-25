@@ -576,7 +576,7 @@ namespace LangSmith
         /// <param name="firewall"></param>
         /// <param name="fleetOidc"></param>
         /// <param name="ingress">
-        /// Ingress is supported only for AWS data planes.<br/>
+        /// Ingress is supported for AWS and GCP data planes.<br/>
         /// Ingress replaces the current allowed source CIDR list.
         /// </param>
         /// <param name="maintenanceWindow">

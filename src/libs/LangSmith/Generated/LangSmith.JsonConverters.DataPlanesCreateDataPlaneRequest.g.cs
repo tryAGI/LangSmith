@@ -48,6 +48,7 @@ namespace LangSmith.JsonConverters
             if (__jsonProps.Contains("eks_api_privatelink_disabled")) __score0++;
             if (__jsonProps.Contains("ingress")) __score0++;
             if (__jsonProps.Contains("is_sandboxes_enabled")) __score0++;
+            if (__jsonProps.Contains("load_balancer_type")) __score0++;
             if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("public_load_balancer")) __score0++;
             if (__jsonProps.Contains("region")) __score0++;
