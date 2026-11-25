@@ -6,7 +6,7 @@ namespace LangSmith
     public partial class UsersClient
     {
 
-        private static readonly global::LangSmith.AutoSDKServer[] s_CreateAUserServers = new global::LangSmith.AutoSDKServer[]
+        private static readonly global::LangSmith.AutoSDKServer[] s_UpdateUserTraitsServers = new global::LangSmith.AutoSDKServer[]
         {            new global::LangSmith.AutoSDKServer(
                 id: "https-api-smith-langchain-com",
                 name: "api.smith.langchain.com",
@@ -20,7 +20,7 @@ namespace LangSmith
         };
 
 
-        private static readonly global::LangSmith.EndPointSecurityRequirement s_CreateAUserSecurityRequirement0 =
+        private static readonly global::LangSmith.EndPointSecurityRequirement s_UpdateUserTraitsSecurityRequirement0 =
             new global::LangSmith.EndPointSecurityRequirement
             {
                 Authorizations = new global::LangSmith.EndPointAuthorizationRequirement[]
@@ -34,46 +34,51 @@ namespace LangSmith
                     },
                 },
             };
-        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_CreateAUserSecurityRequirements =
+        private static readonly global::LangSmith.EndPointSecurityRequirement[] s_UpdateUserTraitsSecurityRequirements =
             new global::LangSmith.EndPointSecurityRequirement[]
-            {                s_CreateAUserSecurityRequirement0,
+            {                s_UpdateUserTraitsSecurityRequirement0,
             };
-        partial void PrepareCreateAUserArguments(
+        partial void PrepareUpdateUserTraitsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            global::LangSmith.EndusersCreateRequest request);
-        partial void PrepareCreateAUserRequest(
+            ref string userId,
+            global::LangSmith.EndusersUpdateRequest request);
+        partial void PrepareUpdateUserTraitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::LangSmith.EndusersCreateRequest request);
-        partial void ProcessCreateAUserResponse(
+            string userId,
+            global::LangSmith.EndusersUpdateRequest request);
+        partial void ProcessUpdateUserTraitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateAUserResponseContent(
+        partial void ProcessUpdateUserTraitsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a user<br/>
-        /// Stores a user of your application and its traits, such as `name` and `email`, for one tracing project. `user_id` is the ID your runs send in `metadata.user_id`: 1 to 512 characters. `traits` is an optional JSON object of at most 50 keys per request and 16384 bytes as stored, with no null values; `name` and `email` must be strings. Creating a user that already exists returns 409 and never changes the stored traits.
+        /// Update user traits<br/>
+        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="userId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.EndusersUser> CreateAUserAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.EndusersUser> UpdateUserTraitsAsync(
             global::System.Guid sessionId,
+            string userId,
 
-            global::LangSmith.EndusersCreateRequest request,
+            global::LangSmith.EndusersUpdateRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateAUserAsResponseAsync(
+            var __response = await UpdateUserTraitsAsResponseAsync(
                 sessionId: sessionId,
+                userId: userId,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -83,18 +88,20 @@ namespace LangSmith
             return __response.Body;
         }
         /// <summary>
-        /// Create a user<br/>
-        /// Stores a user of your application and its traits, such as `name` and `email`, for one tracing project. `user_id` is the ID your runs send in `metadata.user_id`: 1 to 512 characters. `traits` is an optional JSON object of at most 50 keys per request and 16384 bytes as stored, with no null values; `name` and `email` must be strings. Creating a user that already exists returns 409 and never changes the stored traits.
+        /// Update user traits<br/>
+        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="userId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::LangSmith.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.EndusersUser>> CreateAUserAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.AutoSDKHttpResponse<global::LangSmith.EndusersUser>> UpdateUserTraitsAsResponseAsync(
             global::System.Guid sessionId,
+            string userId,
 
-            global::LangSmith.EndusersCreateRequest request,
+            global::LangSmith.EndusersUpdateRequest request,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,16 +109,17 @@ namespace LangSmith
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateAUserArguments(
+            PrepareUpdateUserTraitsArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
+                userId: ref userId,
                 request: request);
 
 
             var __authorizations = global::LangSmith.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateAUserSecurityRequirements,
-                operationName: "CreateAUserAsync");
+                securityRequirements: s_UpdateUserTraitsSecurityRequirements,
+                operationName: "UpdateUserTraitsAsync");
 
             using var __timeoutCancellationTokenSource = global::LangSmith.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -131,9 +139,9 @@ namespace LangSmith
             {
 
                             var __pathBuilder = new global::LangSmith.PathBuilder(
-                                path: $"/api/v1/platform/sessions/{sessionId}/users",
+                                path: $"/api/v1/platform/sessions/{sessionId}/users/{userId}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_CreateAUserServers,
+                                servers: s_UpdateUserTraitsServers,
                                 defaultBaseUrl: "https://api.smith.langchain.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::LangSmith.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -141,7 +149,7 @@ namespace LangSmith
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -178,10 +186,11 @@ namespace LangSmith
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateAUserRequest(
+                PrepareUpdateUserTraitsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     sessionId: sessionId,
+                    userId: userId,
                     request: request);
 
                 return __httpRequest;
@@ -199,10 +208,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAUser",
-                                methodName: "CreateAUserAsync",
-                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateUserTraits",
+                                methodName: "UpdateUserTraitsAsync",
+                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users/{userId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -233,10 +242,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAUser",
-                                methodName: "CreateAUserAsync",
-                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateUserTraits",
+                                methodName: "UpdateUserTraitsAsync",
+                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users/{userId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -274,10 +283,10 @@ namespace LangSmith
                         await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAUser",
-                                methodName: "CreateAUserAsync",
-                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateUserTraits",
+                                methodName: "UpdateUserTraitsAsync",
+                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users/{userId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -314,7 +323,7 @@ namespace LangSmith
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateAUserResponse(
+                ProcessUpdateUserTraitsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -322,10 +331,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAUser",
-                                methodName: "CreateAUserAsync",
-                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateUserTraits",
+                                methodName: "UpdateUserTraitsAsync",
+                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users/{userId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -344,10 +353,10 @@ namespace LangSmith
                     await global::LangSmith.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::LangSmith.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAUser",
-                                methodName: "CreateAUserAsync",
-                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateUserTraits",
+                                methodName: "UpdateUserTraitsAsync",
+                                pathTemplate: "$\"/api/v1/platform/sessions/{sessionId}/users/{userId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -361,7 +370,7 @@ namespace LangSmith
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Invalid JSON, unknown field, body over 65536 bytes, or invalid tracing project ID
+                            // Invalid JSON, unknown field, body over 65536 bytes, invalid tracing project ID, or invalid user ID encoding
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -435,7 +444,7 @@ namespace LangSmith
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Tracing project not found
+                            // User not found
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -467,43 +476,6 @@ namespace LangSmith
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // The user already exists
-                            if ((int)__response.StatusCode == 409)
-                            {
-                                string? __content_409 = null;
-                                global::System.Exception? __exception_409 = null;
-                                global::LangSmith.SharedProblemDetails? __value_409 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::LangSmith.SharedProblemDetails.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_409 = __ex;
-                                }
-
-
-                                throw global::LangSmith.ApiException<global::LangSmith.SharedProblemDetails>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_409 is { Length: > 0 } ? __content_409 : __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_409,
-                                    responseBody: __content_409,
-                                    responseObject: __value_409,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -596,7 +568,7 @@ namespace LangSmith
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateAUserResponseContent(
+                                ProcessUpdateUserTraitsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -680,34 +652,32 @@ namespace LangSmith
             }
         }
         /// <summary>
-        /// Create a user<br/>
-        /// Stores a user of your application and its traits, such as `name` and `email`, for one tracing project. `user_id` is the ID your runs send in `metadata.user_id`: 1 to 512 characters. `traits` is an optional JSON object of at most 50 keys per request and 16384 bytes as stored, with no null values; `name` and `email` must be strings. Creating a user that already exists returns 409 and never changes the stored traits.
+        /// Update user traits<br/>
+        /// Merges `traits` into the stored traits of an existing user of your application in a tracing project: keys you send overwrite stored values, keys you do not send are kept, and a key sent as `null` is removed. `traits` is a JSON object of at most 50 keys per request; `name` and `email` must be strings or null. The merged traits may be at most 16384 bytes as stored. Every successful update sets `updated_at`. Updating a user that does not exist returns 404 and never creates it. Because the response includes the stored traits, the caller needs permission to read runs as well as create them. URL-encode `user_id` in the path, but send a `/` in it as is, not as `%2F`. A user ID with a `.` or `..` part, `//`, or a leading `/` cannot be used in the path: proxies rewrite it to a different path.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="userId"></param>
         /// <param name="traits">
-        /// Traits to store, such as name and email. Defaults to an empty object.
-        /// </param>
-        /// <param name="userId">
-        /// The user's ID, as sent in metadata.user_id on runs.
+        /// Traits to merge into the stored traits. A key with a null value is removed.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::LangSmith.EndusersUser> CreateAUserAsync(
+        public async global::System.Threading.Tasks.Task<global::LangSmith.EndusersUser> UpdateUserTraitsAsync(
             global::System.Guid sessionId,
             string userId,
-            object? traits = default,
+            object traits,
             global::LangSmith.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::LangSmith.EndusersCreateRequest
+            var __request = new global::LangSmith.EndusersUpdateRequest
             {
                 Traits = traits,
-                UserId = userId,
             };
 
-            return await CreateAUserAsync(
+            return await UpdateUserTraitsAsync(
                 sessionId: sessionId,
+                userId: userId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
