@@ -51,6 +51,13 @@ namespace LangSmith
         public bool? IsSandboxesEnabled { get; set; }
 
         /// <summary>
+        /// LoadBalancerType selects the load balancer in front of the data plane ingress. Choose ALB to attach your own AWS WAF web ACL. Defaults to NLB.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("load_balancer_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::LangSmith.JsonConverters.DataPlanesDataPlaneLoadBalancerTypeJsonConverter))]
+        public global::LangSmith.DataPlanesDataPlaneLoadBalancerType? LoadBalancerType { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -124,6 +131,9 @@ namespace LangSmith
         /// <param name="isSandboxesEnabled">
         /// SandboxesEnabled turns on sandboxes when the data plane is created. Defaults to false.
         /// </param>
+        /// <param name="loadBalancerType">
+        /// LoadBalancerType selects the load balancer in front of the data plane ingress. Choose ALB to attach your own AWS WAF web ACL. Defaults to NLB.
+        /// </param>
         /// <param name="publicLoadBalancer"></param>
         /// <param name="tier">
         /// Tier selects the initial size and availability of the data plane. DEV is smaller and not highly available. Defaults to PROD. The tier applies only at creation and is not returned when the data plane is read.
@@ -148,6 +158,7 @@ namespace LangSmith
             bool? eksApiPrivatelinkDisabled,
             global::LangSmith.DataPlanesDataPlaneIngressSettings? ingress,
             bool? isSandboxesEnabled,
+            global::LangSmith.DataPlanesDataPlaneLoadBalancerType? loadBalancerType,
             bool? publicLoadBalancer,
             global::LangSmith.DataPlanesDataPlaneTier? tier,
             global::LangSmith.DataPlanesDataPlaneTraceStorage? traceStorage,
@@ -160,6 +171,7 @@ namespace LangSmith
             this.EksApiPrivatelinkDisabled = eksApiPrivatelinkDisabled;
             this.Ingress = ingress;
             this.IsSandboxesEnabled = isSandboxesEnabled;
+            this.LoadBalancerType = loadBalancerType;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PublicLoadBalancer = publicLoadBalancer;
             this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));

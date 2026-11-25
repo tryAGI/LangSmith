@@ -11,7 +11,15 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        RunStatusCancelled,
+        /// <summary>
+        ///
+        /// </summary>
         RunStatusError,
+        /// <summary>
+        ///
+        /// </summary>
+        RunStatusInterrupted,
         /// <summary>
         ///
         /// </summary>
@@ -34,7 +42,9 @@ namespace LangSmith
         {
             return value switch
             {
+                QueryRunStatus.RunStatusCancelled => "CANCELLED",
                 QueryRunStatus.RunStatusError => "ERROR",
+                QueryRunStatus.RunStatusInterrupted => "INTERRUPTED",
                 QueryRunStatus.RunStatusPending => "PENDING",
                 QueryRunStatus.RunStatusSuccess => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -47,7 +57,9 @@ namespace LangSmith
         {
             return value switch
             {
+                "CANCELLED" => QueryRunStatus.RunStatusCancelled,
                 "ERROR" => QueryRunStatus.RunStatusError,
+                "INTERRUPTED" => QueryRunStatus.RunStatusInterrupted,
                 "PENDING" => QueryRunStatus.RunStatusPending,
                 "SUCCESS" => QueryRunStatus.RunStatusSuccess,
                 _ => null,

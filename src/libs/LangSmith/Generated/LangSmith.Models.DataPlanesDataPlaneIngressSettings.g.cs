@@ -9,7 +9,7 @@ namespace LangSmith
     public sealed partial class DataPlanesDataPlaneIngressSettings
     {
         /// <summary>
-        /// IPv4 CIDR blocks allowed to reach the data plane load balancer on port 443. Empty allows all sources. A private load balancer also always allows the data plane VPC CIDR.
+        /// IPv4 CIDR blocks allowed to reach the data plane load balancer on port 443. Empty allows all sources. On AWS, a private load balancer also always allows the data plane VPC CIDR. On GCP, the load balancer also always allows the cluster's node and pod CIDRs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_source_cidrs")]
         public global::System.Collections.Generic.IList<string>? AllowedSourceCidrs { get; set; }
@@ -24,7 +24,7 @@ namespace LangSmith
         /// Initializes a new instance of the <see cref="DataPlanesDataPlaneIngressSettings" /> class.
         /// </summary>
         /// <param name="allowedSourceCidrs">
-        /// IPv4 CIDR blocks allowed to reach the data plane load balancer on port 443. Empty allows all sources. A private load balancer also always allows the data plane VPC CIDR.
+        /// IPv4 CIDR blocks allowed to reach the data plane load balancer on port 443. Empty allows all sources. On AWS, a private load balancer also always allows the data plane VPC CIDR. On GCP, the load balancer also always allows the cluster's node and pod CIDRs.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
