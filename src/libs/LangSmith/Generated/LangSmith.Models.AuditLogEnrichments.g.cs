@@ -93,6 +93,12 @@ namespace LangSmith
         public bool? IsToolError { get; set; }
 
         /// <summary>
+        /// Set when the call came from the Tool Gateway simulator. `run` called the tool as usual. `check` ran the gateway's checks and stopped before calling the server, so no tool ran even when the operation succeeded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("simulation")]
+        public global::LangSmith.AuditLogEnrichmentsSimulation? Simulation { get; set; }
+
+        /// <summary>
         /// Managed Tools gateway the request went through.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gateway")]
@@ -165,6 +171,9 @@ namespace LangSmith
         /// <param name="isToolError">
         /// True when the invoked tool reported a failure inside a successful response.
         /// </param>
+        /// <param name="simulation">
+        /// Set when the call came from the Tool Gateway simulator. `run` called the tool as usual. `check` ran the gateway's checks and stopped before calling the server, so no tool ran even when the operation succeeded.
+        /// </param>
         /// <param name="gateway">
         /// Managed Tools gateway the request went through.
         /// </param>
@@ -201,6 +210,7 @@ namespace LangSmith
             string? toolName,
             string? caller,
             bool? isToolError,
+            global::LangSmith.AuditLogEnrichmentsSimulation? simulation,
             global::LangSmith.AuditLogGateway? gateway,
             global::LangSmith.AuditLogUpstream? upstream,
             global::LangSmith.AuditLogServer? server,
@@ -222,6 +232,7 @@ namespace LangSmith
             this.ToolName = toolName;
             this.Caller = caller;
             this.IsToolError = isToolError;
+            this.Simulation = simulation;
             this.Gateway = gateway;
             this.Upstream = upstream;
             this.Server = server;

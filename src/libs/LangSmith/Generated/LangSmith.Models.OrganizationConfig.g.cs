@@ -445,6 +445,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_user_model_keys_required")]
+        public bool? FleetUserModelKeysRequired { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models_connect_via_langsmith_enabled")]
         public bool? ModelsConnectViaLangsmithEnabled { get; set; }
 
@@ -744,6 +750,9 @@ namespace LangSmith
         /// <param name="fleetBuiltinModelsEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="fleetUserModelKeysRequired">
+        /// Default Value: false
+        /// </param>
         /// <param name="modelsConnectViaLangsmithEnabled">
         /// Default Value: false
         /// </param>
@@ -861,6 +870,7 @@ namespace LangSmith
             bool? langsmithDeploymentDistributedRuntimeEnabled,
             bool? agentBuilderEnabled,
             bool? fleetBuiltinModelsEnabled,
+            bool? fleetUserModelKeysRequired,
             bool? modelsConnectViaLangsmithEnabled,
             bool? devZeroDeploymentsEnabled,
             double? fleetLcuSpendLimitMonthly,
@@ -949,6 +959,7 @@ namespace LangSmith
             this.LangsmithDeploymentDistributedRuntimeEnabled = langsmithDeploymentDistributedRuntimeEnabled;
             this.AgentBuilderEnabled = agentBuilderEnabled;
             this.FleetBuiltinModelsEnabled = fleetBuiltinModelsEnabled;
+            this.FleetUserModelKeysRequired = fleetUserModelKeysRequired;
             this.ModelsConnectViaLangsmithEnabled = modelsConnectViaLangsmithEnabled;
             this.DevZeroDeploymentsEnabled = devZeroDeploymentsEnabled;
             this.FleetLcuSpendLimitMonthly = fleetLcuSpendLimitMonthly;
