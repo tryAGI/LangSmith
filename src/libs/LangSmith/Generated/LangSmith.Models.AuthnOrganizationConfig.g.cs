@@ -246,6 +246,14 @@ namespace LangSmith
         public double? FleetLcuSpendLimitMonthly { get; set; }
 
         /// <summary>
+        /// FleetUserModelKeysRequired requires Fleet agents to call models only with a key<br/>
+        /// an agent editor attached from their own credentials, never workspace or org secrets.<br/>
+        /// The general-purpose agent does not support this yet and still uses workspace keys.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fleet_user_model_keys_required")]
+        public bool? FleetUserModelKeysRequired { get; set; }
+
+        /// <summary>
         /// FreeDeploymentTTLDays is the lifetime in days of the free deployments this org<br/>
         /// creates; they are deleted when it ends and limited to the SERVERLESS_S tier.<br/>
         /// nil or a value &lt;= 0 means free deployments never expire.
@@ -693,6 +701,11 @@ namespace LangSmith
         /// FleetLCUSpendLimitMonthly caps an org's monthly Fleet LCU spend, resolved from<br/>
         /// Metronome custom fields. nil or negative means unlimited; 0 blocks all runs.
         /// </param>
+        /// <param name="fleetUserModelKeysRequired">
+        /// FleetUserModelKeysRequired requires Fleet agents to call models only with a key<br/>
+        /// an agent editor attached from their own credentials, never workspace or org secrets.<br/>
+        /// The general-purpose agent does not support this yet and still uses workspace keys.
+        /// </param>
         /// <param name="freeDeploymentTtlDays">
         /// FreeDeploymentTTLDays is the lifetime in days of the free deployments this org<br/>
         /// creates; they are deleted when it ends and limited to the SERVERLESS_S tier.<br/>
@@ -902,6 +915,7 @@ namespace LangSmith
             double? engineLcuSpendLimitMonthly,
             bool? fleetBuiltinModelsEnabled,
             double? fleetLcuSpendLimitMonthly,
+            bool? fleetUserModelKeysRequired,
             int? freeDeploymentTtlDays,
             bool? gatewayPiiRedactionEnabled,
             bool? ipAllowlistEnabled,
@@ -987,6 +1001,7 @@ namespace LangSmith
             this.EngineLcuSpendLimitMonthly = engineLcuSpendLimitMonthly;
             this.FleetBuiltinModelsEnabled = fleetBuiltinModelsEnabled;
             this.FleetLcuSpendLimitMonthly = fleetLcuSpendLimitMonthly;
+            this.FleetUserModelKeysRequired = fleetUserModelKeysRequired;
             this.FreeDeploymentTtlDays = freeDeploymentTtlDays;
             this.GatewayPiiRedactionEnabled = gatewayPiiRedactionEnabled;
             this.IpAllowlistEnabled = ipAllowlistEnabled;

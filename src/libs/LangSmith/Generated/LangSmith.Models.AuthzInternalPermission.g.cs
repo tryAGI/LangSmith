@@ -63,6 +63,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        ChartsCreatePublicLink,
+        /// <summary>
+        ///
+        /// </summary>
         ChartsDelete,
         /// <summary>
         ///
@@ -100,6 +104,10 @@ namespace LangSmith
         ///
         /// </summary>
         DatasetsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        DatasetsCreatePublicLink,
         /// <summary>
         ///
         /// </summary>
@@ -195,7 +203,19 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        FleetAgentsManage,
+        /// <summary>
+        ///
+        /// </summary>
         FleetAgentsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetAgentsShare,
+        /// <summary>
+        ///
+        /// </summary>
+        FleetAgentsShareWithWorkspace,
         /// <summary>
         ///
         /// </summary>
@@ -275,7 +295,15 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        McpServersManage,
+        /// <summary>
+        ///
+        /// </summary>
         McpServersRead,
+        /// <summary>
+        ///
+        /// </summary>
+        McpServersShare,
         /// <summary>
         ///
         /// </summary>
@@ -411,6 +439,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        OrganizationResourcesShare,
+        /// <summary>
+        ///
+        /// </summary>
         OrganizationRetentionManage,
         /// <summary>
         ///
@@ -475,6 +507,10 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        PromptsMakePublic,
+        /// <summary>
+        ///
+        /// </summary>
         PromptsRead,
         /// <summary>
         ///
@@ -516,6 +552,10 @@ namespace LangSmith
         ///
         /// </summary>
         RunsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        RunsCreatePublicLink,
         /// <summary>
         ///
         /// </summary>
@@ -564,6 +604,34 @@ namespace LangSmith
         ///
         /// </summary>
         SandboxesUpdate,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsDelete,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsManage,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsRead,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsShare,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsShareWithWorkspace,
+        /// <summary>
+        ///
+        /// </summary>
+        SkillsUpdate,
         /// <summary>
         ///
         /// </summary>
@@ -639,6 +707,14 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        WorkspacesResourcesAdminAll,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkspacesResourcesReadMetadata,
+        /// <summary>
+        ///
+        /// </summary>
         WorkspacesRetentionManage,
         /// <summary>
         ///
@@ -687,6 +763,7 @@ namespace LangSmith
                 AuthzInternalPermission.BulkExportsManage => "bulk-exports:manage",
                 AuthzInternalPermission.BulkExportsRead => "bulk-exports:read",
                 AuthzInternalPermission.ChartsCreate => "charts:create",
+                AuthzInternalPermission.ChartsCreatePublicLink => "charts:create-public-link",
                 AuthzInternalPermission.ChartsDelete => "charts:delete",
                 AuthzInternalPermission.ChartsRead => "charts:read",
                 AuthzInternalPermission.ChartsUpdate => "charts:update",
@@ -697,6 +774,7 @@ namespace LangSmith
                 AuthzInternalPermission.CustomAppsUpdate => "custom-apps:update",
                 AuthzInternalPermission.DatasetsClone => "datasets:clone",
                 AuthzInternalPermission.DatasetsCreate => "datasets:create",
+                AuthzInternalPermission.DatasetsCreatePublicLink => "datasets:create-public-link",
                 AuthzInternalPermission.DatasetsDelete => "datasets:delete",
                 AuthzInternalPermission.DatasetsDownload => "datasets:download",
                 AuthzInternalPermission.DatasetsRead => "datasets:read",
@@ -720,7 +798,10 @@ namespace LangSmith
                 AuthzInternalPermission.FleetAgentsCreate => "fleet-agents:create",
                 AuthzInternalPermission.FleetAgentsDelete => "fleet-agents:delete",
                 AuthzInternalPermission.FleetAgentsInvoke => "fleet-agents:invoke",
+                AuthzInternalPermission.FleetAgentsManage => "fleet-agents:manage",
                 AuthzInternalPermission.FleetAgentsRead => "fleet-agents:read",
+                AuthzInternalPermission.FleetAgentsShare => "fleet-agents:share",
+                AuthzInternalPermission.FleetAgentsShareWithWorkspace => "fleet-agents:share-with-workspace",
                 AuthzInternalPermission.FleetAgentsUpdate => "fleet-agents:update",
                 AuthzInternalPermission.FleetSkillsCreate => "fleet-skills:create",
                 AuthzInternalPermission.FleetSkillsDelete => "fleet-skills:delete",
@@ -740,7 +821,9 @@ namespace LangSmith
                 AuthzInternalPermission.McpServersCreatePersonal => "mcp-servers:create-personal",
                 AuthzInternalPermission.McpServersDelete => "mcp-servers:delete",
                 AuthzInternalPermission.McpServersInvoke => "mcp-servers:invoke",
+                AuthzInternalPermission.McpServersManage => "mcp-servers:manage",
                 AuthzInternalPermission.McpServersRead => "mcp-servers:read",
+                AuthzInternalPermission.McpServersShare => "mcp-servers:share",
                 AuthzInternalPermission.McpServersUpdate => "mcp-servers:update",
                 AuthzInternalPermission.ModelPriceMapCreate => "model-price-map:create",
                 AuthzInternalPermission.ModelPriceMapDelete => "model-price-map:delete",
@@ -774,6 +857,7 @@ namespace LangSmith
                 AuthzInternalPermission.OrganizationPATsRead => "organization:pats:read",
                 AuthzInternalPermission.OrganizationRead => "organization:read",
                 AuthzInternalPermission.OrganizationReadMetadata => "organization:read-metadata",
+                AuthzInternalPermission.OrganizationResourcesShare => "organization:resources:share",
                 AuthzInternalPermission.OrganizationRetentionManage => "organization:retention:manage",
                 AuthzInternalPermission.OrganizationScimTokensManage => "organization:scim-tokens:manage",
                 AuthzInternalPermission.OrganizationSecurityPolicyManage => "organization:security-policy:manage",
@@ -790,6 +874,7 @@ namespace LangSmith
                 AuthzInternalPermission.ProjectsUpdate => "projects:update",
                 AuthzInternalPermission.PromptsCreate => "prompts:create",
                 AuthzInternalPermission.PromptsDelete => "prompts:delete",
+                AuthzInternalPermission.PromptsMakePublic => "prompts:make-public",
                 AuthzInternalPermission.PromptsRead => "prompts:read",
                 AuthzInternalPermission.PromptsShare => "prompts:share",
                 AuthzInternalPermission.PromptsTag => "prompts:tag",
@@ -801,6 +886,7 @@ namespace LangSmith
                 AuthzInternalPermission.RulesRead => "rules:read",
                 AuthzInternalPermission.RulesUpdate => "rules:update",
                 AuthzInternalPermission.RunsCreate => "runs:create",
+                AuthzInternalPermission.RunsCreatePublicLink => "runs:create-public-link",
                 AuthzInternalPermission.RunsDelete => "runs:delete",
                 AuthzInternalPermission.RunsRead => "runs:read",
                 AuthzInternalPermission.RunsReadInputs => "runs:read-inputs",
@@ -813,6 +899,13 @@ namespace LangSmith
                 AuthzInternalPermission.SandboxesRead => "sandboxes:read",
                 AuthzInternalPermission.SandboxesTagOnCreate => "sandboxes:tag-on-create",
                 AuthzInternalPermission.SandboxesUpdate => "sandboxes:update",
+                AuthzInternalPermission.SkillsCreate => "skills:create",
+                AuthzInternalPermission.SkillsDelete => "skills:delete",
+                AuthzInternalPermission.SkillsManage => "skills:manage",
+                AuthzInternalPermission.SkillsRead => "skills:read",
+                AuthzInternalPermission.SkillsShare => "skills:share",
+                AuthzInternalPermission.SkillsShareWithWorkspace => "skills:share-with-workspace",
+                AuthzInternalPermission.SkillsUpdate => "skills:update",
                 AuthzInternalPermission.SnapshotsCreate => "snapshots:create",
                 AuthzInternalPermission.SnapshotsDelete => "snapshots:delete",
                 AuthzInternalPermission.SnapshotsUpdate => "snapshots:update",
@@ -831,6 +924,8 @@ namespace LangSmith
                 AuthzInternalPermission.WorkspacesManageSecrets => "workspaces:manage-secrets",
                 AuthzInternalPermission.WorkspacesRead => "workspaces:read",
                 AuthzInternalPermission.WorkspacesResourceTagsManage => "workspaces:resource-tags:manage",
+                AuthzInternalPermission.WorkspacesResourcesAdminAll => "workspaces:resources:admin-all",
+                AuthzInternalPermission.WorkspacesResourcesReadMetadata => "workspaces:resources:read-metadata",
                 AuthzInternalPermission.WorkspacesRetentionManage => "workspaces:retention:manage",
                 AuthzInternalPermission.WorkspacesSandboxProxyProfilesManage => "workspaces:sandbox-proxy-profiles:manage",
                 AuthzInternalPermission.WorkspacesSecurityPolicyManage => "workspaces:security-policy:manage",
@@ -860,6 +955,7 @@ namespace LangSmith
                 "bulk-exports:manage" => AuthzInternalPermission.BulkExportsManage,
                 "bulk-exports:read" => AuthzInternalPermission.BulkExportsRead,
                 "charts:create" => AuthzInternalPermission.ChartsCreate,
+                "charts:create-public-link" => AuthzInternalPermission.ChartsCreatePublicLink,
                 "charts:delete" => AuthzInternalPermission.ChartsDelete,
                 "charts:read" => AuthzInternalPermission.ChartsRead,
                 "charts:update" => AuthzInternalPermission.ChartsUpdate,
@@ -870,6 +966,7 @@ namespace LangSmith
                 "custom-apps:update" => AuthzInternalPermission.CustomAppsUpdate,
                 "datasets:clone" => AuthzInternalPermission.DatasetsClone,
                 "datasets:create" => AuthzInternalPermission.DatasetsCreate,
+                "datasets:create-public-link" => AuthzInternalPermission.DatasetsCreatePublicLink,
                 "datasets:delete" => AuthzInternalPermission.DatasetsDelete,
                 "datasets:download" => AuthzInternalPermission.DatasetsDownload,
                 "datasets:read" => AuthzInternalPermission.DatasetsRead,
@@ -893,7 +990,10 @@ namespace LangSmith
                 "fleet-agents:create" => AuthzInternalPermission.FleetAgentsCreate,
                 "fleet-agents:delete" => AuthzInternalPermission.FleetAgentsDelete,
                 "fleet-agents:invoke" => AuthzInternalPermission.FleetAgentsInvoke,
+                "fleet-agents:manage" => AuthzInternalPermission.FleetAgentsManage,
                 "fleet-agents:read" => AuthzInternalPermission.FleetAgentsRead,
+                "fleet-agents:share" => AuthzInternalPermission.FleetAgentsShare,
+                "fleet-agents:share-with-workspace" => AuthzInternalPermission.FleetAgentsShareWithWorkspace,
                 "fleet-agents:update" => AuthzInternalPermission.FleetAgentsUpdate,
                 "fleet-skills:create" => AuthzInternalPermission.FleetSkillsCreate,
                 "fleet-skills:delete" => AuthzInternalPermission.FleetSkillsDelete,
@@ -913,7 +1013,9 @@ namespace LangSmith
                 "mcp-servers:create-personal" => AuthzInternalPermission.McpServersCreatePersonal,
                 "mcp-servers:delete" => AuthzInternalPermission.McpServersDelete,
                 "mcp-servers:invoke" => AuthzInternalPermission.McpServersInvoke,
+                "mcp-servers:manage" => AuthzInternalPermission.McpServersManage,
                 "mcp-servers:read" => AuthzInternalPermission.McpServersRead,
+                "mcp-servers:share" => AuthzInternalPermission.McpServersShare,
                 "mcp-servers:update" => AuthzInternalPermission.McpServersUpdate,
                 "model-price-map:create" => AuthzInternalPermission.ModelPriceMapCreate,
                 "model-price-map:delete" => AuthzInternalPermission.ModelPriceMapDelete,
@@ -947,6 +1049,7 @@ namespace LangSmith
                 "organization:pats:read" => AuthzInternalPermission.OrganizationPATsRead,
                 "organization:read" => AuthzInternalPermission.OrganizationRead,
                 "organization:read-metadata" => AuthzInternalPermission.OrganizationReadMetadata,
+                "organization:resources:share" => AuthzInternalPermission.OrganizationResourcesShare,
                 "organization:retention:manage" => AuthzInternalPermission.OrganizationRetentionManage,
                 "organization:scim-tokens:manage" => AuthzInternalPermission.OrganizationScimTokensManage,
                 "organization:security-policy:manage" => AuthzInternalPermission.OrganizationSecurityPolicyManage,
@@ -963,6 +1066,7 @@ namespace LangSmith
                 "projects:update" => AuthzInternalPermission.ProjectsUpdate,
                 "prompts:create" => AuthzInternalPermission.PromptsCreate,
                 "prompts:delete" => AuthzInternalPermission.PromptsDelete,
+                "prompts:make-public" => AuthzInternalPermission.PromptsMakePublic,
                 "prompts:read" => AuthzInternalPermission.PromptsRead,
                 "prompts:share" => AuthzInternalPermission.PromptsShare,
                 "prompts:tag" => AuthzInternalPermission.PromptsTag,
@@ -974,6 +1078,7 @@ namespace LangSmith
                 "rules:read" => AuthzInternalPermission.RulesRead,
                 "rules:update" => AuthzInternalPermission.RulesUpdate,
                 "runs:create" => AuthzInternalPermission.RunsCreate,
+                "runs:create-public-link" => AuthzInternalPermission.RunsCreatePublicLink,
                 "runs:delete" => AuthzInternalPermission.RunsDelete,
                 "runs:read" => AuthzInternalPermission.RunsRead,
                 "runs:read-inputs" => AuthzInternalPermission.RunsReadInputs,
@@ -986,6 +1091,13 @@ namespace LangSmith
                 "sandboxes:read" => AuthzInternalPermission.SandboxesRead,
                 "sandboxes:tag-on-create" => AuthzInternalPermission.SandboxesTagOnCreate,
                 "sandboxes:update" => AuthzInternalPermission.SandboxesUpdate,
+                "skills:create" => AuthzInternalPermission.SkillsCreate,
+                "skills:delete" => AuthzInternalPermission.SkillsDelete,
+                "skills:manage" => AuthzInternalPermission.SkillsManage,
+                "skills:read" => AuthzInternalPermission.SkillsRead,
+                "skills:share" => AuthzInternalPermission.SkillsShare,
+                "skills:share-with-workspace" => AuthzInternalPermission.SkillsShareWithWorkspace,
+                "skills:update" => AuthzInternalPermission.SkillsUpdate,
                 "snapshots:create" => AuthzInternalPermission.SnapshotsCreate,
                 "snapshots:delete" => AuthzInternalPermission.SnapshotsDelete,
                 "snapshots:update" => AuthzInternalPermission.SnapshotsUpdate,
@@ -1004,6 +1116,8 @@ namespace LangSmith
                 "workspaces:manage-secrets" => AuthzInternalPermission.WorkspacesManageSecrets,
                 "workspaces:read" => AuthzInternalPermission.WorkspacesRead,
                 "workspaces:resource-tags:manage" => AuthzInternalPermission.WorkspacesResourceTagsManage,
+                "workspaces:resources:admin-all" => AuthzInternalPermission.WorkspacesResourcesAdminAll,
+                "workspaces:resources:read-metadata" => AuthzInternalPermission.WorkspacesResourcesReadMetadata,
                 "workspaces:retention:manage" => AuthzInternalPermission.WorkspacesRetentionManage,
                 "workspaces:sandbox-proxy-profiles:manage" => AuthzInternalPermission.WorkspacesSandboxProxyProfilesManage,
                 "workspaces:security-policy:manage" => AuthzInternalPermission.WorkspacesSecurityPolicyManage,
