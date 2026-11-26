@@ -17,7 +17,7 @@ namespace LangSmith
         public required global::LangSmith.AlertThresholdKind Kind { get; set; }
 
         /// <summary>
-        /// 1-100 for `PERCENT`; a positive number for `COUNT`.
+        /// 1-100 for `PERCENT`; for `COUNT`, a positive number no greater than the limit's `limit_value` when it has one.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,7 +36,7 @@ namespace LangSmith
         /// `PERCENT` of the limit, or an absolute `COUNT` in the limit's unit.
         /// </param>
         /// <param name="value">
-        /// 1-100 for `PERCENT`; a positive number for `COUNT`.
+        /// 1-100 for `PERCENT`; for `COUNT`, a positive number no greater than the limit's `limit_value` when it has one.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
