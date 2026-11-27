@@ -41,6 +41,12 @@ namespace LangSmith
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_manage_sandbox_clusters")]
+        public bool? CanManageSandboxClusters { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         public global::LangSmith.AuthnOrganizationConfig? Config { get; set; }
 
@@ -316,6 +322,7 @@ namespace LangSmith
         /// <param name="byocCreateSaasWorkspaceEnabled"></param>
         /// <param name="canAccessInstanceAdmin"></param>
         /// <param name="canExportUsageBackfill"></param>
+        /// <param name="canManageSandboxClusters"></param>
         /// <param name="config"></param>
         /// <param name="defaultSsoProvision"></param>
         /// <param name="disabled"></param>
@@ -390,6 +397,7 @@ namespace LangSmith
             bool? byocCreateSaasWorkspaceEnabled,
             bool? canAccessInstanceAdmin,
             bool? canExportUsageBackfill,
+            bool? canManageSandboxClusters,
             global::LangSmith.AuthnOrganizationConfig? config,
             bool? defaultSsoProvision,
             bool? disabled,
@@ -439,6 +447,7 @@ namespace LangSmith
             this.ByocCreateSaasWorkspaceEnabled = byocCreateSaasWorkspaceEnabled;
             this.CanAccessInstanceAdmin = canAccessInstanceAdmin;
             this.CanExportUsageBackfill = canExportUsageBackfill;
+            this.CanManageSandboxClusters = canManageSandboxClusters;
             this.Config = config;
             this.DefaultSsoProvision = defaultSsoProvision;
             this.Disabled = disabled;
