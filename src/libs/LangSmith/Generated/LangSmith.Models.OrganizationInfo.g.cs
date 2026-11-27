@@ -236,6 +236,12 @@ namespace LangSmith
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_manage_sandbox_clusters")]
+        public bool? CanManageSandboxClusters { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_auth_proxy_enabled")]
         public bool? LlmAuthProxyEnabled { get; set; }
 
@@ -395,6 +401,9 @@ namespace LangSmith
         /// <param name="canAccessInstanceAdmin">
         /// Default Value: false
         /// </param>
+        /// <param name="canManageSandboxClusters">
+        /// Default Value: false
+        /// </param>
         /// <param name="llmAuthProxyEnabled">
         /// Default Value: false
         /// </param>
@@ -459,6 +468,7 @@ namespace LangSmith
             string? scimGroupNameSeparator,
             bool? canExportUsageBackfill,
             bool? canAccessInstanceAdmin,
+            bool? canManageSandboxClusters,
             bool? llmAuthProxyEnabled,
             bool? oidcLoginEnabled,
             string? llmAuthProxyJwtAudience,
@@ -508,6 +518,7 @@ namespace LangSmith
             this.ScimGroupNameSeparator = scimGroupNameSeparator;
             this.CanExportUsageBackfill = canExportUsageBackfill;
             this.CanAccessInstanceAdmin = canAccessInstanceAdmin;
+            this.CanManageSandboxClusters = canManageSandboxClusters;
             this.LlmAuthProxyEnabled = llmAuthProxyEnabled;
             this.OidcLoginEnabled = oidcLoginEnabled;
             this.LlmAuthProxyJwtAudience = llmAuthProxyJwtAudience;
